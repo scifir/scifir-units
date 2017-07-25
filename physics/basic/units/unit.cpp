@@ -49,6 +49,11 @@ namespace physics::units
 		actual_dimensions = move(new_actual_dimensions);
 	}
 
+	unit::unit(const unit& new_value,string init_value) : unit(new_value)
+	{
+		dimensions(init_value);
+	}
+
 	unit::unit(string init_value) : unit()
 	{
 		if(!isdigit(init_value[0]))

@@ -24,6 +24,7 @@ namespace physics::units
 			unit(math::topology::space_type, string = "");
 			//unit(math::topology::space_type, dimension_symbol = m, prefix_symbol = normal_prefix);
 			unit(math::number::unit_number, unit_real_dimensions, const unit_actual_dimensions&);
+			unit(const unit&,string);
 			explicit unit(string);
 
 			unit operator +(const unit&);
@@ -215,7 +216,7 @@ namespace physics::units
 			{
 			}
 
-			unit_crtp(const unit& new_value,string init_value) : unit(new_value, init_value)
+			unit_crtp(const unit& new_value,string init_value) : unit(new_value,init_value)
 			{
 			}
 
