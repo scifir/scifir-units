@@ -1,0 +1,6 @@
+#ifndef DETAILED_ATOM_HPP_INCLUDED
+#define DETAILED_ATOM_HPP_INCLUDED
+
+using namespace std;
+
+#endif // DETAILED_ATOM_HPP_INCLUDED
