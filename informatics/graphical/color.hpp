@@ -48,10 +48,10 @@ namespace informatics
 				return (alpha == 0);
 			}
 
-			inline void print() const
+			/*void print() const
 			{
 				wcout << *this;
-			}
+			}*/
 
 		private:
 			int red;
@@ -61,6 +61,6 @@ namespace informatics
 	};
 }
 
-wostream& operator <<(wostream&, const color&);
+wostream& operator <<(wostream&, const informatics::color&);
 
 #endif // COLOR_HPP_INCLUDED
