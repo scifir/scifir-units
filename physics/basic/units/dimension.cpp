@@ -231,9 +231,9 @@ namespace physics::units
 		string dimension_name;
 		string prefix_name;
 		set<string> prefixes_options {"Y", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "u", "n", "p", "f", "a", "z", "y"};
-		if(prefixes_options.count(x.substr(0,1)) and x != "angle" and x != "solid_angle" and x != "m")
+		if(prefixes_options.count(x.substr(0,1)) and x != "angle" and x != "solid_angle" and x != "m" and x.substr(0,2) != "da")
 		{
-			prefix_name = x.substr(0, 1);
+			prefix_name = x.substr(0,1);
 			dimension_name = x.substr(1);
 			new_prefix = create_prefix(prefix_name);
 		}
