@@ -85,21 +85,21 @@ namespace physics::units
 			}
 
 			template<typename U>
-			U operator *(const scalar_unit<U>& x)
+			unit operator *(const scalar_unit<U>& x)
 			{
-				return U(unit::operator*(x));
+				return unit(unit::operator*(x));
 			}
 
 			template<typename U>
-			U operator /(const scalar_unit<U>& x)
+			unit operator /(const scalar_unit<U>& x)
 			{
-				return U(unit::operator/(x));
+				return unit(unit::operator/(x));
 			}
 
 			template<typename U>
-			U operator ^(const scalar_unit<U>& x)
+			unit operator ^(const scalar_unit<U>& x)
 			{
-				return U(unit::operator^(x));
+				return unit(unit::operator^(x));
 			}
 
 			template<typename U>
