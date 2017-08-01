@@ -545,23 +545,23 @@ namespace physics::units
 	const string abbreviation_dalton::name = "dalton";
 	const string abbreviation_dalton::symbol = "Da";
 
-	abbreviation_uma::abbreviation_uma(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_uma>(new_prefix, new_scale)
+	abbreviation_amu::abbreviation_amu(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_amu>(new_prefix, new_scale)
 	{
 	}
 
-	abbreviation_uma::abbreviation_uma(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_uma>(new_prefix, new_scale)
+	abbreviation_amu::abbreviation_amu(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_amu>(new_prefix, new_scale)
 	{
 	}
 
-	int abbreviation_uma::get_enum_type() const
+	int abbreviation_amu::get_enum_type() const
 	{
-		return abbreviation_symbol::uma;
+		return abbreviation_symbol::amu;
 	}
 
-	const string abbreviation_uma::dimensions_match = "g";
-	const long long abbreviation_uma::factor = 1.6605388628/*E−27*/;
-	const string abbreviation_uma::name = "uma";
-	const string abbreviation_uma::symbol = "uma";
+	const string abbreviation_amu::dimensions_match = "g";
+	const long long abbreviation_amu::factor = 1.6605388628/*E−27*/;
+	const string abbreviation_amu::name = "amu";
+	const string abbreviation_amu::symbol = "amu";
 
 	abbreviation_barn::abbreviation_barn(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_barn>(new_prefix, new_scale)
 	{
@@ -661,8 +661,8 @@ namespace physics::units
 				return new abbreviation_electron_volt();
 			case Da:
 				return new abbreviation_dalton();
-			case uma:
-				return new abbreviation_uma();
+			case amu:
+				return new abbreviation_amu();
 			case barn:
 				return new abbreviation_barn();
 			case M:
@@ -814,9 +814,9 @@ namespace physics::units
 		{
 			return new abbreviation_dalton(*new_prefix);
 		}
-		else if(abbreviation_name == "uma")
+		else if(abbreviation_name == "amu")
 		{
-			return new abbreviation_uma(*new_prefix);
+			return new abbreviation_amu(*new_prefix);
 		}
 		else if(abbreviation_name == "barn")
 		{
