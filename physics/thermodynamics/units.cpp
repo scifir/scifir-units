@@ -8,6 +8,7 @@ namespace physics::units
 	const string action::dimensions_match = "kg*m2/s";
 	const string power::dimensions_match = "kg*m2/s3";
 	const string power_density::dimensions_match = "kg/m*s3";
+	const string enthalpy::dimensions_match = "kg*m2/s2";
 	const string entropy::dimensions_match = "kg*m2/K*s2";
 	const string heat_capacity::dimensions_match = "kg*m2/K*s2";
 	const string heat_flux_density::dimensions_match = "kg/s3";

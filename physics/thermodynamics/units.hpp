@@ -41,6 +41,14 @@ namespace physics::units
 			static const string dimensions_match;
 	};
 
+	class enthalpy : public scalar_unit<enthalpy>
+	{
+		public:
+			using scalar_unit::scalar_unit;
+
+			static const string dimensions_match;
+	};
+
 	class entropy : public scalar_unit<entropy>
 	{
 		public:
