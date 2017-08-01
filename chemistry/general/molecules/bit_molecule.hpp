@@ -1,0 +1,6 @@
+#ifndef BIT_MOLECULE_HPP_INCLUDED
+#define BIT_MOLECULE_HPP_INCLUDED
+
+using namespace std;
+
+#endif // BIT_MOLECULE_HPP_INCLUDED

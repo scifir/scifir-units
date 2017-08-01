@@ -33,8 +33,290 @@ namespace chemistry
 		{7, atomic_orbital_p}
 	};
 
-	template<typename T>
-	atom<T>* get_atom(string atom_specie)
+	informatics::color atom::get_atomic_color() const
+    {
+            	if (get_z() == 1)
+				{
+					return informatics::color(239,239,239);
+				}
+				switch(get_atomic_group())
+				{
+				case IA:
+					return informatics::color(244,212,66);
+				case IIA:
+					return informatics::color(244,128,66);
+				case IIIA:
+					return informatics::color(66,197,244);
+				case IVA:
+					return informatics::color(40,40,40);
+				case VA:
+					return informatics::color(43,145,79);
+				case VIA:
+					return informatics::color(244,66,66);
+				case VIIA:
+					return informatics::color(244,66,220);
+				}
+				return informatics::color(70,70,70);
+    }
+
+	atomic_pattern atom::get_atomic_pattern() const
+	{
+		switch(get_period())
+		{
+		case 1:
+			return atomic_pattern::none;
+		case 2:
+			return atomic_pattern::none;
+		case 3:
+			return atomic_pattern::line;
+		case 4:
+			return atomic_pattern::prepicated_line;
+		case 5:
+			return atomic_pattern::wave_line;
+		case 6:
+			return atomic_pattern::prepicated_wave_line;
+		case 7:
+			return atomic_pattern::circles;
+		}
+	}
+
+	molecular_geometry atom::get_molecular_geometry() const
+	{
+		// Check number of bonds and of unpaired electrons
+		if (get_bonds_number() == 2)
+		{
+			if(get_lone_pairs() == 0)
+			{
+				return molecular_geometry::linear;
+			}
+			else if(get_lone_pairs() == 1)
+			{
+				return molecular_geometry::bent;
+			}
+			else if(get_lone_pairs() == 2)
+			{
+				return molecular_geometry::bent;
+			}
+			else if(get_lone_pairs() == 3)
+			{
+				return molecular_geometry::linear;
+			}
+		}
+		else if(get_bonds_number() == 3)
+		{
+			if(get_lone_pairs() == 0)
+			{
+				return molecular_geometry::trigonal_planar;
+			}
+			else if(get_lone_pairs() == 1)
+			{
+				return molecular_geometry::trigonal_pyramidal;
+			}
+			else if(get_lone_pairs() == 2)
+			{
+				return molecular_geometry::t_shaped;
+			}
+		}
+		else if(get_bonds_number() == 4)
+		{
+			if(get_lone_pairs() == 0)
+			{
+				return molecular_geometry::tetrahedral;
+			}
+			else if(get_lone_pairs() == 1)
+			{
+				return molecular_geometry::seesaw;
+			}
+			else if(get_lone_pairs() == 2)
+			{
+				return molecular_geometry::square_planar;
+			}
+		}
+		else if(get_bonds_number() == 5)
+		{
+			if(get_lone_pairs() == 0)
+			{
+				return molecular_geometry::trigonal_bipyramidal;
+			}
+			else if(get_lone_pairs() == 1)
+			{
+				return molecular_geometry::square_pyramidal;
+			}
+			else if(get_lone_pairs() == 2)
+			{
+				return molecular_geometry::planar_pentagonal;
+			}
+		}
+		else if(get_bonds_number() == 6)
+		{
+			if(get_lone_pairs() == 0)
+			{
+				return molecular_geometry::octahedral;
+			}
+			else if(get_lone_pairs() == 1)
+			{
+				return molecular_geometry::pentagonal_pyramidal;
+			}
+		}
+		else if(get_bonds_number() == 7)
+		{
+			if(get_lone_pairs() == 0)
+			{
+				return molecular_geometry::pentagonal_bipyramidal;
+			}
+		}
+		else if(get_bonds_number() == 8)
+		{
+			if(get_lone_pairs() == 0)
+			{
+				return molecular_geometry::square_antipristamic;
+			}
+		}
+		else if(get_bonds_number() == 9)
+		{
+			if(get_lone_pairs() == 0)
+			{
+				return molecular_geometry::tricapped_trigonal_prismatic;
+			}
+		}
+		throw "No atomic geometry found. Bonds number: " + get_bonds_number() + ", lone pairs: " + get_lone_pairs();
+	}
+
+	bool atom::is_valence_full() const
+			{
+				if(is_atomic_group_a())
+				{
+					if(get_valence_electrons_number() == 2 or get_valence_electrons_number() == 8)
+					{
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+				}
+				return false;
+			}
+
+	bool atom::is_chiral() const
+	{
+
+	}
+
+	math::number::angle_number get_molecular_geometry_angle(const atom& x,edge_position position1,edge_position position2)
+	{
+		switch (x.get_molecular_geometry())
+		{
+		case molecular_geometry::linear:
+			return math::number::angle_number(180);
+		case molecular_geometry::bent:
+			if (x.get_lone_pairs() == 1)
+			{
+				return math::number::angle_number(120);
+			}
+			else if(x.get_lone_pairs() == 2)
+			{
+				return math::number::angle_number(109.5);
+			}
+		case molecular_geometry::trigonal_planar:
+			return math::number::angle_number(120);
+		case molecular_geometry::trigonal_pyramidal:
+			return math::number::angle_number(109.5);
+		case molecular_geometry::t_shaped:
+			if ((position1 == edge_position::t_shaped_ax and position2 == edge_position::t_shaped_eq) or (position1 == edge_position::t_shaped_eq and position2 == edge_position::t_shaped_ax))
+			{
+				return math::number::angle_number(90);
+			}
+			else if (position1 == edge_position::t_shaped_ax and position2 == edge_position::t_shaped_ax)
+			{
+				return math::number::angle_number(180);
+			}
+		case molecular_geometry::tetrahedral:
+			return math::number::angle_number(109.5);
+		case molecular_geometry::seesaw:
+			if (position1 == edge_position::seesaw_ax and position2 == edge_position::seesaw_ax)
+			{
+				return math::number::angle_number(173.1);
+			}
+			else if (position1 == edge_position::seesaw_eq and position2 == edge_position::seesaw_eq)
+			{
+				return math::number::angle_number(101.6);
+			}
+			else if ((position1 == edge_position::seesaw_ax and position2 == edge_position::seesaw_eq) or (position2 == edge_position::seesaw_ax and position1 == edge_position::seesaw_eq))
+			{
+				return math::number::angle_number(90);
+			}
+		case molecular_geometry::square_planar:
+			return math::number::angle_number(90);
+		case molecular_geometry::trigonal_bipyramidal:
+			if (position1 == edge_position::trigonal_bipyramidal_ax and position2 == edge_position::trigonal_bipyramidal_ax)
+			{
+				return math::number::angle_number(180);
+			}
+			else if ((position1 == edge_position::trigonal_bipyramidal_ax and position2 == edge_position::trigonal_bipyramidal_eq) or (position1 == edge_position::trigonal_bipyramidal_eq and position2 == edge_position::trigonal_bipyramidal_ax))
+			{
+				return math::number::angle_number(90);
+			}
+			else if (position1 == edge_position::trigonal_bipyramidal_eq and position2 == edge_position::trigonal_bipyramidal_eq)
+			{
+				return math::number::angle_number(120);
+			}
+		case molecular_geometry::square_pyramidal:
+			return math::number::angle_number(90);
+		case molecular_geometry::planar_pentagonal:
+			return math::number::angle_number(72);
+		case molecular_geometry::octahedral:
+			return math::number::angle_number(90);
+		case molecular_geometry::pentagonal_pyramidal:
+			if ((position1 == edge_position::pentagonal_pyramidal_ax and position2 == edge_position::pentagonal_pyramidal_eq) or (position1 == edge_position::pentagonal_pyramidal_eq and position2 == edge_position::pentagonal_pyramidal_ax))
+			{
+				return math::number::angle_number(90);
+			}
+			else if (position1 == edge_position::pentagonal_pyramidal_eq and position2 == edge_position::pentagonal_pyramidal_eq)
+			{
+				return math::number::angle_number(72);
+			}
+		case molecular_geometry::pentagonal_bipyramidal:
+			if (position1 == edge_position::pentagonal_bipyramidal_ax and position2 == edge_position::pentagonal_bipyramidal_ax)
+			{
+				return math::number::angle_number(180);
+			}
+			else if (position1 == edge_position::pentagonal_bipyramidal_eq and position2 == edge_position::pentagonal_bipyramidal_eq)
+			{
+				return math::number::angle_number(72);
+			}
+			else if ((position1 == edge_position::pentagonal_bipyramidal_ax and position2 == edge_position::pentagonal_bipyramidal_eq) or (position1 == edge_position::pentagonal_bipyramidal_eq and position2 == edge_position::pentagonal_bipyramidal_ax))
+			{
+				return math::number::angle_number(90);
+			}
+		case molecular_geometry::square_antipristamic:
+			return math::number::angle_number(50); // TODO: Finish this calculation
+		case molecular_geometry::tricapped_trigonal_prismatic:
+			return math::number::angle_number(50); // TODO: Finish this calculation
+		}
+	}
+
+	bool are_isotopes(const atom& x,const atom& y)
+	{
+		return (x.get_z() == y.get_z() and x.get_mass_number() != y.get_mass_number());
+	}
+
+	bool are_isobares(const atom& x,const atom& y)
+	{
+		return (x.get_mass_number() == y.get_mass_number() and x.get_z() != y.get_z());
+	}
+
+	bool are_isoelectronics(const atom& x,const atom& y)
+	{
+		return (x.get_electronic_configuration() == y.get_electronic_configuration());
+	}
+
+	bool same_element(const atom& x,const atom& y)
+	{
+		return (x.get_z() == y.get_z() and x.get_mass_number() == y.get_mass_number());
+	}
+
+	atom* get_atom(string atom_specie)
 	{
 		/*switch(atom_specie)
 		{
@@ -276,4 +558,28 @@ namespace chemistry
 			return atom::Uuo;
 		}*/
 	}
+}
+
+bool operator ==(const chemistry::atom& x,const chemistry::atom& y)
+{
+	return (x.get_z() == y.get_z() and x.get_mass_number() == y.get_mass_number() and chemistry::are_isoelectronics(x,y));
+}
+
+bool operator !=(const chemistry::atom& x,const chemistry::atom& y)
+{
+	return !(x == y);
+}
+
+wostream& operator <<(wostream& os,const chemistry::atom& x)
+{
+	wostringstream charge_text;
+	if (x.get_ionic_charge() < 0)
+	{
+		charge_text << abs(x.get_ionic_charge()) << "-";
+	}
+	else if (x.get_ionic_charge() > 0)
+	{
+		charge_text << abs(x.get_ionic_charge()) << "+";
+	}
+	return os << "[" << x.get_symbol().c_str() << "]" << charge_text.str();
 }
