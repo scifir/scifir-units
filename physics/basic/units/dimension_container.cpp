@@ -10,11 +10,11 @@ using namespace std;
 
 namespace physics::units
 {
-	unit_actual_dimensions::unit_actual_dimensions() : map<int,shared_ptr<dimension_abstract>>()
+	vector_actual_dimensions::vector_actual_dimensions() : map<int,shared_ptr<dimension_abstract>>()
 	{
 	}
 
-	unit_actual_dimensions::unit_actual_dimensions(const unit_actual_dimensions& actual_dimensions)
+	vector_actual_dimensions::vector_actual_dimensions(const vector_actual_dimensions& actual_dimensions)
 	{
 		for (const auto& new_actual_dimension : actual_dimensions)
 		{
@@ -22,11 +22,11 @@ namespace physics::units
 		}
 	}
 
-	unit_real_dimensions::unit_real_dimensions() : map<int,shared_ptr<dimension>>()
+	vector_real_dimensions::vector_real_dimensions() : map<int,shared_ptr<dimension>>()
 	{
 	}
 
-	unit_real_dimensions::unit_real_dimensions(const unit_real_dimensions& real_dimensions)
+	vector_real_dimensions::vector_real_dimensions(const vector_real_dimensions& real_dimensions)
 	{
 		for (const auto& new_real_dimension : real_dimensions)
 		{
@@ -34,7 +34,7 @@ namespace physics::units
 		}
 	}
 
-	string get_dimension_structure(const unit_actual_dimensions& actual_dimensions)
+	string get_dimension_structure(const vector_actual_dimensions& actual_dimensions)
 	{
 		string value;
 		for (const auto& actual_dimension : actual_dimensions)
@@ -70,9 +70,9 @@ namespace physics::units
 		return value;
 	}
 
-	unit_actual_dimensions multiply_actual_dimensions(const unit_actual_dimensions& x,const unit_actual_dimensions& y)
+	vector_actual_dimensions multiply_actual_dimensions(const vector_actual_dimensions& x,const vector_actual_dimensions& y)
 	{
-		unit_actual_dimensions new_actual_dimensions = x;
+		vector_actual_dimensions new_actual_dimensions = x;
 		for(const auto& key : y)
 		{
 			if(new_actual_dimensions.count(key.first))
@@ -91,9 +91,9 @@ namespace physics::units
 		return move(new_actual_dimensions);
 	}
 
-	unit_real_dimensions multiply_real_dimensions(const unit_real_dimensions& x,const unit_real_dimensions& y)
+	vector_real_dimensions multiply_real_dimensions(const vector_real_dimensions& x,const vector_real_dimensions& y)
 	{
-		unit_real_dimensions new_real_dimensions = x;
+		vector_real_dimensions new_real_dimensions = x;
 		for(const auto& key : y)
 		{
 			if(new_real_dimensions.count(key.first))
@@ -112,9 +112,9 @@ namespace physics::units
 		return move(new_real_dimensions);
 	}
 
-	unit_actual_dimensions divide_actual_dimensions(const unit_actual_dimensions& x,const unit_actual_dimensions& y)
+	vector_actual_dimensions divide_actual_dimensions(const vector_actual_dimensions& x,const vector_actual_dimensions& y)
 	{
-		unit_actual_dimensions new_actual_dimensions = x;
+		vector_actual_dimensions new_actual_dimensions = x;
 		for(const auto& key : y)
 		{
 			if(new_actual_dimensions.count(key.first))
@@ -134,9 +134,9 @@ namespace physics::units
 		return move(new_actual_dimensions);
 	}
 
-	unit_real_dimensions divide_real_dimensions(const unit_real_dimensions& x,const unit_real_dimensions& y)
+	vector_real_dimensions divide_real_dimensions(const vector_real_dimensions& x,const vector_real_dimensions& y)
 	{
-		unit_real_dimensions new_real_dimensions = x;
+		vector_real_dimensions new_real_dimensions = x;
 		for(const auto& key : y)
 		{
 			if(new_real_dimensions.count(key.first))

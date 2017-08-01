@@ -23,7 +23,7 @@ using namespace std;
 
 namespace physics::units
 {
-	unit::unit() : value(math::number::unit_number(0)), real_dimensions(unit_real_dimensions()), actual_dimensions(unit_actual_dimensions())
+	unit::unit() : value(math::number::unit_number(0)), real_dimensions(vector_real_dimensions()), actual_dimensions(vector_actual_dimensions())
 	{
 	}
 
@@ -42,7 +42,7 @@ namespace physics::units
 		value = new_value;
 	}*/
 
-	unit::unit(math::number::unit_number new_value, unit_real_dimensions new_real_dimensions, const unit_actual_dimensions& new_actual_dimensions) : unit()
+	unit::unit(math::number::unit_number new_value, vector_real_dimensions new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : unit()
 	{
 		value = move(new_value);
 		real_dimensions = move(new_real_dimensions);
@@ -121,9 +121,9 @@ namespace physics::units
 			y.set_same_prefix(get_actual_dimensions());
 		}
 		new_value *= y.get_value().get_value();
-		unit_real_dimensions new_real_dimensions = multiply_real_dimensions(get_real_dimensions(),y.get_real_dimensions());
-		unit_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(get_actual_dimensions(),y.get_actual_dimensions());
-		/*unit_real_dimensions new_real_dimensions = get_real_dimensions();
+		vector_real_dimensions new_real_dimensions = multiply_real_dimensions(get_real_dimensions(),y.get_real_dimensions());
+		vector_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(get_actual_dimensions(),y.get_actual_dimensions());
+		/*vector_real_dimensions new_real_dimensions = get_real_dimensions();
 		for(auto& key : y.get_real_dimensions())
 		{
 			if(new_real_dimensions.count(key.first))
@@ -139,7 +139,7 @@ namespace physics::units
 				new_real_dimensions[key.first] = key.second;
 			}
 		}
-		unit_actual_dimensions new_actual_dimensions = get_actual_dimensions();
+		vector_actual_dimensions new_actual_dimensions = get_actual_dimensions();
 		for(auto& key : y.get_actual_dimensions())
 		{
 			if(new_actual_dimensions.count(key.first))
@@ -167,9 +167,9 @@ namespace physics::units
 			y.set_same_prefix(unit::get_actual_dimensions());
 		}
 		new_value /= y.get_value().get_value();
-		unit_real_dimensions new_real_dimensions = divide_real_dimensions(get_real_dimensions(),y.get_real_dimensions());
-		unit_actual_dimensions new_actual_dimensions = divide_actual_dimensions(get_actual_dimensions(),y.get_actual_dimensions());
-		/*unit_real_dimensions new_real_dimensions = get_real_dimensions();
+		vector_real_dimensions new_real_dimensions = divide_real_dimensions(get_real_dimensions(),y.get_real_dimensions());
+		vector_actual_dimensions new_actual_dimensions = divide_actual_dimensions(get_actual_dimensions(),y.get_actual_dimensions());
+		/*vector_real_dimensions new_real_dimensions = get_real_dimensions();
 		for(const auto& key : y.get_real_dimensions())
 		{
 			if(new_real_dimensions.count(key.first))
@@ -186,7 +186,7 @@ namespace physics::units
 				*new_real_dimensions[key.first] ^= -1;
 			}
 		}
-		unit_actual_dimensions new_actual_dimensions = get_actual_dimensions();
+		vector_actual_dimensions new_actual_dimensions = get_actual_dimensions();
 		for(const auto& key : y.get_actual_dimensions())
 		{
 			if(new_actual_dimensions.count(key.first))
@@ -289,7 +289,7 @@ namespace physics::units
 				}
 			}
 			actual_dimensions.empty();
-			unit_actual_dimensions new_actual_dimensions = create_actual_dimensions(new_dimensions);
+			vector_actual_dimensions new_actual_dimensions = create_actual_dimensions(new_dimensions);
 			for(auto& new_actual_dimension : new_actual_dimensions)
 			{
 				add_prefix(new_actual_dimension.second->get_dimension_prefixes());
@@ -315,7 +315,7 @@ namespace physics::units
 	/// Calculates if the dimensions are equal related to the given string
 	bool unit::equal_dimensions(string dimension_structure) const
 	{
-		unit_real_dimensions structure_dimensions = create_real_dimensions(dimension_structure);
+		vector_real_dimensions structure_dimensions = create_real_dimensions(dimension_structure);
 		return equal_dimensions(structure_dimensions);
 	}
 
@@ -333,9 +333,9 @@ namespace physics::units
 	}
 
 	/// Calculates if the dimensions are equal related to the real dimensions map
-	bool unit::equal_dimensions(const unit_real_dimensions& second_dimensions) const
+	bool unit::equal_dimensions(const vector_real_dimensions& second_dimensions) const
 	{
-		unit_real_dimensions real_dimensions_tmp = get_real_dimensions();
+		vector_real_dimensions real_dimensions_tmp = get_real_dimensions();
 		if(real_dimensions_tmp.size() == second_dimensions.size())
 		{
 			for(const auto& key : second_dimensions)
@@ -375,13 +375,13 @@ namespace physics::units
 	}
 
 	/// Returns the real dimensions map
-	const unit_real_dimensions& unit::get_real_dimensions() const
+	const vector_real_dimensions& unit::get_real_dimensions() const
 	{
 		return real_dimensions;
 	}
 
 	/// Returns the actual dimensions map
-	const unit_actual_dimensions& unit::get_actual_dimensions() const
+	const vector_actual_dimensions& unit::get_actual_dimensions() const
 	{
 		return actual_dimensions;
 	}
@@ -435,7 +435,7 @@ namespace physics::units
 	}
 
 	/// Updates the prefixes of the unit to the actual dimensions given
-	void unit::set_same_prefix(const unit_actual_dimensions& new_dimensions)
+	void unit::set_same_prefix(const vector_actual_dimensions& new_dimensions)
 	{
 		for(const auto& map_value : actual_dimensions)
 		{
@@ -521,7 +521,7 @@ namespace physics::units
 						*add_abbreviation ^= -1;
 					}
 					actual_dimensions[add_abbreviation->get_enum_type()] = add_abbreviation;
-					unit_real_dimensions abbreviation_dimensions = create_real_dimensions(add_abbreviation->get_dimensions_match());
+					vector_real_dimensions abbreviation_dimensions = create_real_dimensions(add_abbreviation->get_dimensions_match());
 					for(const auto& map_value : abbreviation_dimensions)
 					{
 						for(int i = 0; i < abs(new_scale); i++)
@@ -592,7 +592,7 @@ namespace physics::units
 							*add_abbreviation ^= -1;
 						}
 						actual_dimensions[add_abbreviation->get_enum_type()] = add_abbreviation;
-						unit_real_dimensions abbreviation_dimensions = create_real_dimensions(add_abbreviation->get_dimensions_match());
+						vector_real_dimensions abbreviation_dimensions = create_real_dimensions(add_abbreviation->get_dimensions_match());
 						for(const auto& map_value : abbreviation_dimensions)
 						{
 							for(int i = 0; i < abs(new_scale); i++)
@@ -626,9 +626,9 @@ namespace physics::units
 	}
 
 	/// Creates the real dimensions related to the given string
-	unit_real_dimensions unit::create_real_dimensions(string init_value) const
+	vector_real_dimensions unit::create_real_dimensions(string init_value) const
 	{
-		unit_real_dimensions dimensions = unit_real_dimensions();
+		vector_real_dimensions dimensions = vector_real_dimensions();
 		int new_start = 0;
 		int j = new_start;
 		boost::algorithm::erase_all(init_value, " ");
@@ -683,7 +683,7 @@ namespace physics::units
 				}
 				if(new_abbreviation_actual != nullptr)
 				{
-					unit_real_dimensions abbreviation_dimensions = create_real_dimensions(new_abbreviation_actual->get_dimensions_match());
+					vector_real_dimensions abbreviation_dimensions = create_real_dimensions(new_abbreviation_actual->get_dimensions_match());
 					for(const auto& map_value : abbreviation_dimensions)
 					{
 						for(int i = 0; i < abs(new_scale); i++)
@@ -717,9 +717,9 @@ namespace physics::units
 	}
 
 	/// Creates the actual dimensions related to the given string
-	unit_actual_dimensions unit::create_actual_dimensions(string init_value) const
+	vector_actual_dimensions unit::create_actual_dimensions(string init_value) const
 	{
-		unit_actual_dimensions dimensions = unit_actual_dimensions();
+		vector_actual_dimensions dimensions = vector_actual_dimensions();
 		int new_start = 0;
 		int j = new_start;
 		boost::algorithm::erase_all(init_value, " ");
@@ -825,7 +825,7 @@ namespace physics::units
 		shared_ptr<abbreviation> new_abbreviation = shared_ptr<abbreviation>(create_abbreviation(abbreviation_name));
 		if(valid_abbreviation(new_abbreviation))
 		{
-			unit_actual_dimensions abbreviation_dimensions = create_actual_dimensions(new_abbreviation->get_dimensions_match());
+			vector_actual_dimensions abbreviation_dimensions = create_actual_dimensions(new_abbreviation->get_dimensions_match());
 			for(const auto& abbreviation_dimension : abbreviation_dimensions)
 			{
 				remove_prefix(actual_dimensions[abbreviation_dimension.second->get_enum_type()]->get_dimension_prefixes());
@@ -865,7 +865,7 @@ namespace physics::units
 	/// Fix: This function should calculate related to the actual dimensions and not to the real dimensions
 	bool unit::valid_abbreviation(shared_ptr<abbreviation> new_abbreviation)
 	{
-		unit_real_dimensions abbreviation_dimensions = create_real_dimensions(new_abbreviation->get_dimensions_match());
+		vector_real_dimensions abbreviation_dimensions = create_real_dimensions(new_abbreviation->get_dimensions_match());
 		for(auto& map_value : abbreviation_dimensions)
 		{
 			bool find = false;
@@ -891,7 +891,7 @@ namespace physics::units
 	/// Calculates if the abbreviation is valid related to the real dimensions
 	bool unit::valid_abbreviation_real(shared_ptr<abbreviation> new_abbreviation)
 	{
-		unit_real_dimensions abbreviation_dimensions = create_real_dimensions(new_abbreviation->get_dimensions_match());
+		vector_real_dimensions abbreviation_dimensions = create_real_dimensions(new_abbreviation->get_dimensions_match());
 		return equal_dimensions(abbreviation_dimensions);
 	}
 
@@ -938,7 +938,7 @@ namespace physics::units
 		return equal_dimensions(x.get_real_dimensions(),y.get_real_dimensions());
 	}
 
-	bool equal_dimensions(const unit_real_dimensions& x,const unit_real_dimensions& y)
+	bool equal_dimensions(const vector_real_dimensions& x,const vector_real_dimensions& y)
 	{
 		if(x.size() == y.size())
 		{
@@ -965,12 +965,12 @@ namespace physics::units
 	unit sqrt(const unit& x)
 	{
 		math::number::unit_number new_value = math::number::sqrt(x.get_value());
-		unit_real_dimensions new_real_dimensions = x.get_real_dimensions();
+		vector_real_dimensions new_real_dimensions = x.get_real_dimensions();
 		for(auto& new_real_dimension : new_real_dimensions)
 		{
 			new_real_dimension.second->sqrt();
 		}
-		unit_actual_dimensions new_actual_dimensions = x.get_actual_dimensions();
+		vector_actual_dimensions new_actual_dimensions = x.get_actual_dimensions();
 		for(auto& new_actual_dimension : new_actual_dimensions)
 		{
 			new_actual_dimension.second->sqrt();
@@ -981,12 +981,12 @@ namespace physics::units
 	unit sqrt_nth(const unit& x, int y)
 	{
 		math::number::unit_number new_value = math::number::sqrt_nth(x.get_value(), y);
-		unit_real_dimensions new_real_dimensions = x.get_real_dimensions();
+		vector_real_dimensions new_real_dimensions = x.get_real_dimensions();
 		for(auto& new_real_dimension : new_real_dimensions)
 		{
 			new_real_dimension.second->sqrt_nth(y);
 		}
-		unit_actual_dimensions new_actual_dimensions = x.get_actual_dimensions();
+		vector_actual_dimensions new_actual_dimensions = x.get_actual_dimensions();
 		for(auto& new_actual_dimension : new_actual_dimensions)
 		{
 			new_actual_dimension.second->sqrt_nth(y);
@@ -1001,7 +1001,7 @@ namespace physics::units
 	}
 
 	/// \deprecated
-	unit get_unit_from_dimensions(math::topology::space_type value, unit_real_dimensions dimensions)
+	unit get_unit_from_dimensions(math::topology::space_type value, vector_real_dimensions dimensions)
 	{
 		if(dimensions.size() == 1)
 		{

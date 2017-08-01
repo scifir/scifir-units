@@ -348,8 +348,8 @@ namespace physics::units
 						angle1 = cartesian_3d_to_spherical_angle1(new_x, new_y, new_z);
 						angle2 = cartesian_3d_to_spherical_angle2(new_x, new_y, new_z);
 					}
-					unit_real_dimensions new_real_dimensions = multiply_real_dimensions(unit::get_real_dimensions(), y.get_real_dimensions());
-					unit_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(unit::get_actual_dimensions(), y.get_actual_dimensions());
+					vector_real_dimensions new_real_dimensions = multiply_real_dimensions(unit::get_real_dimensions(), y.get_real_dimensions());
+					vector_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(unit::get_actual_dimensions(), y.get_actual_dimensions());
 					unit new_unit = unit(new_value, new_real_dimensions, new_actual_dimensions);
 					list<angle_type> angles;
 					angles.push_back(angle1);
@@ -427,8 +427,8 @@ namespace physics::units
 			vector_unit_tuple operator *(const scalar_unit<U>& x)
 			{
 				space_type new_value = unit::value.get_value() * x.get_value().get_value();
-				unit_real_dimensions new_real_dimensions = multiply_real_dimensions(unit::get_real_dimensions(), x.get_real_dimensions());
-				unit_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(unit::get_actual_dimensions(), x.get_actual_dimensions());
+				vector_real_dimensions new_real_dimensions = multiply_real_dimensions(unit::get_real_dimensions(), x.get_real_dimensions());
+				vector_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(unit::get_actual_dimensions(), x.get_actual_dimensions());
 				unit new_unit = unit(new_value, new_real_dimensions, new_actual_dimensions);
 				if(is_1d())
 				{
@@ -448,8 +448,8 @@ namespace physics::units
 			vector_unit_tuple operator /(const scalar_unit<U>& x)
 			{
 				space_type new_value = unit::value.get_value() / x.get_value().get_value();
-				unit_real_dimensions new_real_dimensions = divide_real_dimensions(unit::get_real_dimensions(), x.get_real_dimensions());
-				unit_actual_dimensions new_actual_dimensions = divide_actual_dimensions(unit::get_actual_dimensions(), x.get_actual_dimensions());
+				vector_real_dimensions new_real_dimensions = divide_real_dimensions(unit::get_real_dimensions(), x.get_real_dimensions());
+				vector_actual_dimensions new_actual_dimensions = divide_actual_dimensions(unit::get_actual_dimensions(), x.get_actual_dimensions());
 				unit new_unit = unit(new_value, new_real_dimensions, new_actual_dimensions);
 				if(is_1d())
 				{
@@ -754,15 +754,32 @@ wostream& operator <<(wostream& os, const physics::units::vector_unit<T>& x)
 	}
 	else
 	{
-		int i = 0;
-		for(const auto& angle : x.get_angles())
+		//wcout << "holaas" << endl; // TODO: this function doesn't work well because L strings block the execution when displayed with angles_text.str()
+		int i = 1;
+		wstring angle_symbol;
+		math::topology::angle_container angles = x.get_angles();
+		for(const auto& angle : angles)
 		{
-			//angles_text << angle << L"θ" << i << L" ";
-			angles_text << "angle" << (i + 1) << ": " << angle << " ";
+			//wcout << "angle" << endl;
+			if (i == 1)
+			{
+				//angle_symbol = L"θ";
+				os << L"θ";
+			}
+			else if (i == 2)
+			{
+				//angle_symbol == L"φ";
+				os << L"φ";
+			}
+			//wcout << "angle: " << angle << endl;
+			//wcout << angle_symbol << endl;
+			//angles_text << angle << L"θ" << L" ";
 			i++;
 		}
 	}
-	return os << x.physics::units::unit::get_value() << " " << angles_text.str();
+	//wcout << "A" << endl;
+	//wcout << angles_text.str() << endl;
+	return os << x.physics::units::unit::get_value();// << " " << angles_text.str();
 }
 
 template<typename T>

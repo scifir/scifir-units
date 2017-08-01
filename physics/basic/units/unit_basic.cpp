@@ -62,8 +62,8 @@ namespace physics::units
 				final_string = unit_string;
 			}
 			math::number::unit_number new_value = 0;
-			unit_real_dimensions new_real_dimensions = unit_real_dimensions();
-			unit_actual_dimensions new_actual_dimensions = unit_actual_dimensions();
+			vector_real_dimensions new_real_dimensions = vector_real_dimensions();
+			vector_actual_dimensions new_actual_dimensions = vector_actual_dimensions();
 			dimension* new_real_dimension = new dimension_temperature(*new_prefix);
 			dimension_abstract* new_actual_dimension = new dimension_temperature(*new_prefix);
 			if (final_string == "°C")

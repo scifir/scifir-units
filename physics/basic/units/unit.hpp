@@ -23,7 +23,7 @@ namespace physics::units
 			unit();
 			unit(math::topology::space_type, string = "");
 			//unit(math::topology::space_type, dimension_symbol = m, prefix_symbol = normal_prefix);
-			unit(math::number::unit_number, unit_real_dimensions, const unit_actual_dimensions&);
+			unit(math::number::unit_number, vector_real_dimensions, const vector_actual_dimensions&);
 			unit(const unit&,string);
 			explicit unit(string);
 
@@ -77,12 +77,12 @@ namespace physics::units
 			unit operator ^(T y)
 			{
 				math::number::unit_number new_value = value ^ y;
-				unit_real_dimensions new_real_dimensions = real_dimensions;
+				vector_real_dimensions new_real_dimensions = real_dimensions;
 				for(auto& new_real_dimension : new_real_dimensions)
 				{
 					*new_real_dimension.second ^= y;
 				}
-				unit_actual_dimensions new_actual_dimensions = actual_dimensions;
+				vector_actual_dimensions new_actual_dimensions = actual_dimensions;
 				for(const auto& new_actual_dimension : new_actual_dimensions)
 				{
 					*new_actual_dimension.second ^= y;
@@ -128,12 +128,12 @@ namespace physics::units
 			void dimensions(string);
 			bool equal_dimensions(string) const;
 			bool equal_dimensions(dimension_symbol) const;
-			bool equal_dimensions(const unit_real_dimensions&) const;
+			bool equal_dimensions(const vector_real_dimensions&) const;
 			bool empty_dimensions() const;
-			void set_same_prefix(const unit_actual_dimensions&);
+			void set_same_prefix(const vector_actual_dimensions&);
 
-			const unit_real_dimensions& get_real_dimensions() const;
-			const unit_actual_dimensions& get_actual_dimensions() const;
+			const vector_real_dimensions& get_real_dimensions() const;
+			const vector_actual_dimensions& get_actual_dimensions() const;
 			const math::number::unit_number& get_value() const;
 
 			bool is_defined() const;
@@ -162,8 +162,8 @@ namespace physics::units
 
 		protected:
 			math::number::unit_number value;
-			unit_real_dimensions real_dimensions;
-			unit_actual_dimensions actual_dimensions;
+			vector_real_dimensions real_dimensions;
+			vector_actual_dimensions actual_dimensions;
 
 		private:
 			void add_prefix(shared_ptr<prefix>);
@@ -172,8 +172,8 @@ namespace physics::units
 			void remove_prefix(dimension_prefixes);
 
 			void initialize_dimensions(string);
-			unit_real_dimensions create_real_dimensions(string) const;
-			unit_actual_dimensions create_actual_dimensions(string) const;
+			vector_real_dimensions create_real_dimensions(string) const;
+			vector_actual_dimensions create_actual_dimensions(string) const;
 
 			[[deprecated]]
 			void swap_prefix(shared_ptr<dimension_abstract>, shared_ptr<dimension_abstract>);
@@ -204,7 +204,7 @@ namespace physics::units
 			{
 			}*/
 
-			unit_crtp(math::number::unit_number new_value, unit_real_dimensions new_real_dimensions, const unit_actual_dimensions& new_actual_dimensions) : unit(new_value, new_real_dimensions, new_actual_dimensions)
+			unit_crtp(math::number::unit_number new_value, vector_real_dimensions new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : unit(new_value, new_real_dimensions, new_actual_dimensions)
 			{
 			}
 
@@ -225,14 +225,14 @@ namespace physics::units
 				return new T(static_cast<const T&>(*this));
 			}
 
-			virtual const string& get_dimensions_match() const
+			string get_dimensions_match() const
 			{
 				return T::dimensions_match;
 			}
 	};
 
 	/*bool equal_dimensions(const unit&,const unit&);
-	bool equal_dimensions(const unit_real_dimensions&,const unit_real_dimensions&);*/
+	bool equal_dimensions(const vector_real_dimensions&,const vector_real_dimensions&);*/
 
 	math::topology::space_type abs(const unit&);
 	physics::units::unit sqrt(const unit&);
@@ -240,15 +240,15 @@ namespace physics::units
 	bool equal_dimensions(const unit&,const unit&);
 
 	[[deprecated]]
-	unit get_unit_from_dimensions(math::topology::space_type, unit_real_dimensions);
+	unit get_unit_from_dimensions(math::topology::space_type, vector_real_dimensions);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 physics::units::unit operator +(T x, const physics::units::unit& y)
 {
 	math::number::unit_number new_value = y.get_value();
-	physics::units::unit_real_dimensions new_real_dimensions = y.get_real_dimensions();
-	physics::units::unit_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
+	physics::units::vector_real_dimensions new_real_dimensions = y.get_real_dimensions();
+	physics::units::vector_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
 	return physics::units::unit(x + new_value, new_real_dimensions, new_actual_dimensions);
 }
 
@@ -256,8 +256,8 @@ template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 physics::units::unit operator -(T x, const physics::units::unit& y)
 {
 	math::number::unit_number new_value = y.get_value();
-	physics::units::unit_real_dimensions new_real_dimensions = y.get_real_dimensions();
-	physics::units::unit_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
+	physics::units::vector_real_dimensions new_real_dimensions = y.get_real_dimensions();
+	physics::units::vector_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
 	return physics::units::unit(x - new_value, new_real_dimensions, new_actual_dimensions);
 }
 
@@ -265,8 +265,8 @@ template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 physics::units::unit operator *(T x, const physics::units::unit& y)
 {
 	math::number::unit_number new_value = y.get_value();
-	physics::units::unit_real_dimensions new_real_dimensions = y.get_real_dimensions();
-	physics::units::unit_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
+	physics::units::vector_real_dimensions new_real_dimensions = y.get_real_dimensions();
+	physics::units::vector_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
 	return physics::units::unit(x * new_value, new_real_dimensions, new_actual_dimensions);
 }
 
@@ -274,8 +274,8 @@ template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 physics::units::unit operator /(T x, const physics::units::unit& y)
 {
 	math::number::unit_number new_value = y.get_value();
-	physics::units::unit_real_dimensions new_real_dimensions = y.get_real_dimensions();
-	physics::units::unit_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
+	physics::units::vector_real_dimensions new_real_dimensions = y.get_real_dimensions();
+	physics::units::vector_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
 	return physics::units::unit(x / new_value, new_real_dimensions, new_actual_dimensions);
 }
 
