@@ -29,6 +29,8 @@ namespace physics::units
 	};
 
 	string get_dimension_structure(const vector_actual_dimensions&);
+	vector_real_dimensions create_real_dimensions(string);
+	vector_actual_dimensions create_actual_dimensions(string);
 
 	vector_actual_dimensions multiply_actual_dimensions(const vector_actual_dimensions&,const vector_actual_dimensions&);
 	vector_real_dimensions multiply_real_dimensions(const vector_real_dimensions&,const vector_real_dimensions&);

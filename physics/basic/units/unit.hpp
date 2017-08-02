@@ -172,8 +172,6 @@ namespace physics::units
 			void remove_prefix(dimension_prefixes);
 
 			void initialize_dimensions(string);
-			vector_real_dimensions create_real_dimensions(string) const;
-			vector_actual_dimensions create_actual_dimensions(string) const;
 
 			[[deprecated]]
 			void swap_prefix(shared_ptr<dimension_abstract>, shared_ptr<dimension_abstract>);

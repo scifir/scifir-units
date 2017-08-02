@@ -3,6 +3,8 @@
 #include "dimension_container.hpp"
 #include "conversion.hpp"
 
+#include "boost/algorithm/string/erase.hpp"
+
 #include <map>
 #include <string>
 
@@ -68,6 +70,176 @@ namespace physics::units
 		}
 		value = value.substr(0,value.length() - 1);
 		return value;
+	}
+
+	/// Creates the real dimensions related to the given string
+	vector_real_dimensions create_real_dimensions(string init_value)
+	{
+		vector_real_dimensions dimensions = vector_real_dimensions();
+		int new_start = 0;
+		int j = new_start;
+		boost::algorithm::erase_all(init_value, " ");
+		bool numerator = true;
+		string new_dimension;
+		int new_scale = 1;
+		int new_size = 1;
+		while(isalnum(init_value[j]) or init_value[j] == '*' or init_value[j] == '/')
+		{
+			if(isdigit(init_value[j]))
+			{
+				new_dimension = init_value.substr(new_start, new_size - 1);
+				new_scale = stoi(init_value.substr(j, 1));
+			}
+			else if(!isalnum(init_value[j + 1]))
+			{
+				new_dimension = init_value.substr(new_start, new_size);
+			}
+			if(init_value[j] == '*')
+			{
+				new_start = j + 1;
+				new_size = 0;
+			}
+			else if(init_value[j] == '/')
+			{
+				numerator = false;
+				new_start = j + 1;
+				new_size = 0;
+			}
+			if(!new_dimension.empty())
+			{
+				dimension* new_dimension_real = create_dimension(new_dimension);
+				abbreviation* new_abbreviation_actual;
+				if(new_dimension_real != nullptr)
+				{
+					shared_ptr<dimension> add_dimension = shared_ptr<dimension>(new_dimension_real);
+					if(new_scale > 1)
+					{
+						*add_dimension ^= new_scale;
+					}
+					if(numerator == false)
+					{
+						*add_dimension ^= -1;
+					}
+					dimensions[add_dimension->get_enum_type()] = add_dimension;
+
+					new_abbreviation_actual = nullptr;
+				}
+				else
+				{
+					new_abbreviation_actual = create_abbreviation(new_dimension);
+				}
+				if(new_abbreviation_actual != nullptr)
+				{
+					vector_real_dimensions abbreviation_dimensions = create_real_dimensions(new_abbreviation_actual->get_dimensions_match());
+					for(const auto& map_value : abbreviation_dimensions)
+					{
+						for(int i = 0; i < abs(new_scale); i++)
+						{
+							if(dimensions.count(map_value.first) > 0)
+							{
+								if(numerator == true)
+								{
+									*dimensions[map_value.first] *= *map_value.second;
+								}
+								else
+								{
+									*dimensions[map_value.first] /= *map_value.second;
+								}
+							}
+							else
+							{
+								dimensions[map_value.first] = map_value.second;
+							}
+						}
+					}
+				}
+				new_dimension.clear();
+				new_scale = 1;
+				new_size = 0;
+			}
+			j++;
+			new_size++;
+		}
+		return dimensions;
+	}
+
+	/// Creates the actual dimensions related to the given string
+	vector_actual_dimensions create_actual_dimensions(string init_value)
+	{
+		vector_actual_dimensions dimensions = vector_actual_dimensions();
+		int new_start = 0;
+		int j = new_start;
+		boost::algorithm::erase_all(init_value, " ");
+		bool numerator = true;
+		string new_dimension;
+		int new_scale = 1;
+		int new_size = 1;
+		while(isalnum(init_value[j]) or init_value[j] == '*' or init_value[j] == '/')
+		{
+			if(isdigit(init_value[j]))
+			{
+				new_dimension = init_value.substr(new_start, new_size - 1);
+				new_scale = stoi(init_value.substr(j, 1));
+			}
+			else if(!isalnum(init_value[j + 1]))
+			{
+				new_dimension = init_value.substr(new_start, new_size);
+			}
+			if(init_value[j] == '*')
+			{
+				new_start = j + 1;
+				new_size = 0;
+			}
+			else if(init_value[j] == '/')
+			{
+				numerator = false;
+				new_start = j + 1;
+				new_size = 0;
+			}
+			if(!new_dimension.empty())
+			{
+				dimension* new_dimension_real = create_dimension(new_dimension);
+				abbreviation* new_abbreviation_actual;
+				if(new_dimension_real != nullptr)
+				{
+					shared_ptr<dimension> add_dimension = shared_ptr<dimension>(create_dimension(new_dimension));
+					if(new_scale > 1)
+					{
+						*add_dimension ^= new_scale;
+					}
+					if(numerator == false)
+					{
+						*add_dimension ^= -1;
+					}
+					dimensions[add_dimension->get_enum_type()] = add_dimension;
+
+					new_abbreviation_actual = nullptr;
+				}
+				else
+				{
+					new_abbreviation_actual = create_abbreviation(new_dimension);
+				}
+				if(new_abbreviation_actual != nullptr)
+				{
+					shared_ptr<abbreviation> add_abbreviation = shared_ptr<abbreviation>(new_abbreviation_actual);
+					if(new_scale > 1)
+					{
+						*add_abbreviation ^= new_scale;
+					}
+					if(numerator == false)
+					{
+						*add_abbreviation ^= -1;
+					}
+					dimensions[add_abbreviation->get_enum_type()] = add_abbreviation;
+				}
+				new_dimension.clear();
+				new_scale = 1;
+				new_size = 0;
+			}
+			j++;
+			new_size++;
+		}
+		return dimensions;
 	}
 
 	vector_actual_dimensions multiply_actual_dimensions(const vector_actual_dimensions& x,const vector_actual_dimensions& y)
