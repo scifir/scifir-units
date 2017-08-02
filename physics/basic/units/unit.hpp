@@ -125,7 +125,7 @@ namespace physics::units
 			unit& operator--();
 			unit operator--(int);
 
-			void dimensions(string);
+			void change_dimensions(string);
 			bool equal_dimensions(string) const;
 			bool equal_dimensions(dimension_symbol) const;
 			bool equal_dimensions(const vector_real_dimensions&) const;

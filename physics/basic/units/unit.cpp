@@ -51,7 +51,7 @@ namespace physics::units
 
 	unit::unit(const unit& new_value,string init_value) : unit(new_value)
 	{
-		dimensions(init_value);
+		change_dimensions(init_value);
 	}
 
 	unit::unit(string init_value) : unit()
@@ -270,7 +270,7 @@ namespace physics::units
 	}
 
 	/// Sets the dimensions to the dimensions given string. It invalidates the object if the dimensions aren't compatible with the real dimensions
-	void unit::dimensions(string new_dimensions)
+	void unit::change_dimensions(string new_dimensions)
 	{
 		if(equal_dimensions(new_dimensions))
 		{
