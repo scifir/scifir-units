@@ -7,6 +7,7 @@
 #include "prefix.hpp"
 
 #include <map>
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -37,5 +38,8 @@ namespace physics::units
 	vector_actual_dimensions divide_actual_dimensions(const vector_actual_dimensions&,const vector_actual_dimensions&);
 	vector_real_dimensions divide_real_dimensions(const vector_real_dimensions&,const vector_real_dimensions&);
 }
+
+wostream& operator <<(wostream&, const physics::units::vector_real_dimensions&);
+wostream& operator <<(wostream&, const physics::units::vector_actual_dimensions&);
 
 #endif // DIMENSION_CONTAINER_HPP_INCLUDED

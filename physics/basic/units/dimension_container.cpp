@@ -328,3 +328,73 @@ namespace physics::units
 		return move(new_real_dimensions);
 	}
 }
+
+wostream& operator <<(wostream& os, const physics::units::vector_real_dimensions& x)
+{
+	wostringstream dimension_text;
+	wostringstream dimension_up_text;
+	wostringstream dimension_down_text;
+	for(const auto& real_dimension : x)
+	{
+		if(real_dimension.second->get_scale() > 0)
+		{
+			dimension_up_text << *real_dimension.second << " ";
+		}
+		else
+		{
+			dimension_down_text << *real_dimension.second << " ";
+		}
+	}
+	if(dimension_up_text.tellp() > 0 and dimension_down_text.tellp() > 0)
+	{
+		dimension_text << dimension_up_text.str() << "/ " << dimension_down_text.str();
+	}
+	else if(dimension_up_text.tellp() > 0)
+	{
+		dimension_text << dimension_up_text.str();
+	}
+	else if(dimension_down_text.tellp() > 0)
+	{
+		dimension_text << "1/" << dimension_down_text.str();
+	}
+	else
+	{
+		dimension_text << "[empty]";
+	}
+	return os << dimension_text.str();
+}
+
+wostream& operator <<(wostream& os, const physics::units::vector_actual_dimensions& x)
+{
+	wostringstream dimension_text;
+	wostringstream dimension_up_text;
+	wostringstream dimension_down_text;
+	for(const auto& actual_dimension : x)
+	{
+		if(actual_dimension.second->get_scale() > 0)
+		{
+			dimension_up_text << *actual_dimension.second << " ";
+		}
+		else
+		{
+			dimension_down_text << *actual_dimension.second << " ";
+		}
+	}
+	if(dimension_up_text.tellp() > 0 and dimension_down_text.tellp() > 0)
+	{
+		dimension_text << dimension_up_text.str() << "/ " << dimension_down_text.str();
+	}
+	else if(dimension_up_text.tellp() > 0)
+	{
+		dimension_text << dimension_up_text.str();
+	}
+	else if(dimension_down_text.tellp() > 0)
+	{
+		dimension_text << "1/" << dimension_down_text.str();
+	}
+	else
+	{
+		dimension_text << "[empty]";
+	}
+	return os << dimension_text.str();
+}

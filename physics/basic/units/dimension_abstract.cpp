@@ -245,7 +245,7 @@ wostream& operator <<(wostream& os, const physics::units::dimension_abstract& x)
 			wstring dimension_symbol = wstring(x.get_symbol().begin(), x.get_symbol().end());
 			if(abs(prefix.second->scale) > 1)
 			{
-				prefix_text << prefix_symbol << dimension_symbol << prefix.second->scale << "*";
+				prefix_text << prefix_symbol << dimension_symbol << abs(prefix.second->scale) << "*";
 			}
 			else
 			{
