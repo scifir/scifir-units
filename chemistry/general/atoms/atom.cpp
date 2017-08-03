@@ -33,6 +33,10 @@ namespace chemistry
 		{7, atomic_orbital_p}
 	};
 
+	atom::atom()
+	{
+	}
+
 	informatics::color atom::get_atomic_color() const
     {
             	if (get_z() == 1)

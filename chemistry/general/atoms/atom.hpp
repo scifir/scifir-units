@@ -45,9 +45,7 @@ namespace chemistry
 	class atom
 	{
 		public:
-			atom()
-			{
-			}
+			atom();
 
 			virtual atom_symbol get_enum_type() const = 0;
 
