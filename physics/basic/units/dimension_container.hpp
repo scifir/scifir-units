@@ -37,6 +37,8 @@ namespace physics::units
 	vector_real_dimensions multiply_real_dimensions(const vector_real_dimensions&,const vector_real_dimensions&);
 	vector_actual_dimensions divide_actual_dimensions(const vector_actual_dimensions&,const vector_actual_dimensions&);
 	vector_real_dimensions divide_real_dimensions(const vector_real_dimensions&,const vector_real_dimensions&);
+	vector_actual_dimensions power_actual_dimensions(const vector_actual_dimensions&,int);
+	vector_real_dimensions power_real_dimensions(const vector_real_dimensions&,int);
 }
 
 wostream& operator <<(wostream&, const physics::units::vector_real_dimensions&);

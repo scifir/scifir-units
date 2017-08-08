@@ -327,6 +327,30 @@ namespace physics::units
 		}
 		return move(new_real_dimensions);
 	}
+
+	vector_actual_dimensions power_actual_dimensions(const vector_actual_dimensions& actual_dimensions,int scale)
+	{
+		vector_actual_dimensions new_actual_dimensions = vector_actual_dimensions();
+		for (auto& dimension : actual_dimensions)
+		{
+			auto new_dimension = dimension.second;
+			*new_dimension ^= scale;
+			new_actual_dimensions[dimension.first] = new_dimension;
+		}
+		return new_actual_dimensions;
+	}
+
+	vector_real_dimensions power_real_dimensions(const vector_real_dimensions& real_dimensions,int scale)
+	{
+		vector_real_dimensions new_real_dimensions = vector_real_dimensions();
+		for (auto& dimension : real_dimensions)
+		{
+			auto new_dimension = dimension.second;
+			*new_dimension ^= scale;
+			new_real_dimensions[dimension.first] = new_dimension;
+		}
+		return new_real_dimensions;
+	}
 }
 
 wostream& operator <<(wostream& os, const physics::units::vector_real_dimensions& x)
