@@ -8,26 +8,26 @@ using namespace physics::units;
 
 namespace physics::units
 {
-	class volumetric_flow : public scalar_unit<volumetric_flow>
+	class volumetric_flow : public scalar_unit_crtp<volumetric_flow>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class diffusion_coefficient : public scalar_unit<diffusion_coefficient>
+	class diffusion_coefficient : public scalar_unit_crtp<diffusion_coefficient>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class compressibility : public scalar_unit<compressibility>
+	class compressibility : public scalar_unit_crtp<compressibility>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};

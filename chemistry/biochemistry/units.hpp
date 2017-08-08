@@ -9,10 +9,10 @@ using namespace physics::units;
 
 namespace physics::units
 {
-	class catalytic_efficiency : public scalar_unit<catalytic_efficiency>
+	class catalytic_efficiency : public scalar_unit_crtp<catalytic_efficiency>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};

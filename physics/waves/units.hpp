@@ -9,18 +9,18 @@ using namespace std;
 
 namespace physics::units
 {
-	class wavenumber : public scalar_unit<wavenumber>
+	class wavenumber : public scalar_unit_crtp<wavenumber>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class frequency : public scalar_unit<frequency>
+	class frequency : public scalar_unit_crtp<frequency>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};

@@ -9,50 +9,50 @@ using namespace physics::units;
 
 namespace physics::units
 {
-	class molarity : public scalar_unit<molarity>
+	class molarity : public scalar_unit_crtp<molarity>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class molality : public scalar_unit<molality>
+	class molality : public scalar_unit_crtp<molality>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class linear_mass_density : public scalar_unit<linear_mass_density>
+	class linear_mass_density : public scalar_unit_crtp<linear_mass_density>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class area_density : public scalar_unit<area_density>
+	class area_density : public scalar_unit_crtp<area_density>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class dynamic_viscosity : public scalar_unit<dynamic_viscosity>
+	class dynamic_viscosity : public scalar_unit_crtp<dynamic_viscosity>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class mass_flow_rate : public scalar_unit<mass_flow_rate>
+	class mass_flow_rate : public scalar_unit_crtp<mass_flow_rate>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};

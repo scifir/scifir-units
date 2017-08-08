@@ -22,8 +22,8 @@ namespace math::topology
 			hyper_spherical_coordinates(function<space_type()>, direction_symbol);
 			hyper_spherical_coordinates(function<space_type()>, angle_type);
 			hyper_spherical_coordinates(function<space_type()>, angle_type, angle_type);
-			hyper_spherical_coordinates(function<space_type()>, list<angle_type>);
-			hyper_spherical_coordinates(function<space_type()>, boost::variant<list<angle_type>,direction_symbol>);
+			hyper_spherical_coordinates(function<space_type()>, math::topology::angle_container);
+			hyper_spherical_coordinates(function<space_type()>, boost::variant<math::topology::angle_container,direction_symbol>);
 
 			space_type get_r() const;
 			const math::number::angle_number& get_angle1() const;

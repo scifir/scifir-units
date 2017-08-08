@@ -9,58 +9,58 @@ using namespace std;
 
 namespace physics::units
 {
-	class impulse : public vector_unit<impulse>
+	class impulse : public vector_unit_crtp<impulse>
 	{
 		public:
-			using vector_unit::vector_unit;
+			using vector_unit_crtp::vector_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class force : public vector_unit<force>
+	class force : public vector_unit_crtp<force>
 	{
 		public:
-			using vector_unit::vector_unit;
+			using vector_unit_crtp::vector_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class torque : public vector_unit<torque>
+	class torque : public vector_unit_crtp<torque>
 	{
 		public:
-			using vector_unit::vector_unit;
+			using vector_unit_crtp::vector_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class pressure : public vector_unit<pressure>
+	class pressure : public vector_unit_crtp<pressure>
 	{
 		public:
-			using vector_unit::vector_unit;
+			using vector_unit_crtp::vector_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class surface_tension : public vector_unit<surface_tension>
+	class surface_tension : public vector_unit_crtp<surface_tension>
 	{
 		public:
-			using vector_unit::vector_unit;
+			using vector_unit_crtp::vector_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class stiffness : public scalar_unit<stiffness>
+	class stiffness : public scalar_unit_crtp<stiffness>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class moment_of_inertia : public scalar_unit<stiffness>
+	class moment_of_inertia : public scalar_unit_crtp<stiffness>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};

@@ -9,106 +9,106 @@ using namespace physics::units;
 
 namespace physics::units
 {
-	class density : public scalar_unit<density>
+	class density : public scalar_unit_crtp<density>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class viscosity : public scalar_unit<viscosity>
+	class viscosity : public scalar_unit_crtp<viscosity>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class specific_volume : public scalar_unit<specific_volume>
+	class specific_volume : public scalar_unit_crtp<specific_volume>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class specific_heat_capacity : public scalar_unit<specific_heat_capacity>
+	class specific_heat_capacity : public scalar_unit_crtp<specific_heat_capacity>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class specific_entropy : public scalar_unit<specific_entropy>
+	class specific_entropy : public scalar_unit_crtp<specific_entropy>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class specific_energy : public scalar_unit<specific_energy>
+	class specific_energy : public scalar_unit_crtp<specific_energy>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class molar_volume : public scalar_unit<molar_volume>
+	class molar_volume : public scalar_unit_crtp<molar_volume>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class molar_mass : public scalar_unit<molar_mass>
+	class molar_mass : public scalar_unit_crtp<molar_mass>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class molar_heat_capacity : public scalar_unit<molar_heat_capacity>
+	class molar_heat_capacity : public scalar_unit_crtp<molar_heat_capacity>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class molar_entropy : public scalar_unit<molar_entropy>
+	class molar_entropy : public scalar_unit_crtp<molar_entropy>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class molar_energy : public scalar_unit<molar_energy>
+	class molar_energy : public scalar_unit_crtp<molar_energy>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class molar_conductivity : public scalar_unit<molar_conductivity>
+	class molar_conductivity : public scalar_unit_crtp<molar_conductivity>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class energy_density : public scalar_unit<energy_density>
+	class energy_density : public scalar_unit_crtp<energy_density>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};

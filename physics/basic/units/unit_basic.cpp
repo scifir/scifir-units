@@ -18,15 +18,23 @@ using namespace std;
 namespace physics::units
 {
 	const string length::dimensions_match = "m";
+	const vector_real_dimensions length::real_dimensions = create_real_dimensions(length::dimensions_match);
 
 	const string time::dimensions_match = "s";
+	const vector_real_dimensions time::real_dimensions = create_real_dimensions(time::dimensions_match);
 
+	void time::change_display(physics::units::display_mode new_display_mode)
+	{
+		display_mode = new_display_mode;
+	}
 
 	const string mass::dimensions_match = "g";
+	const vector_real_dimensions mass::real_dimensions = create_real_dimensions(mass::dimensions_match);
 
 	const string charge::dimensions_match = "C";
+	const vector_real_dimensions charge::real_dimensions = create_real_dimensions(charge::dimensions_match);
 
-	temperature::temperature(string init_value) : scalar_unit<temperature>()
+	temperature::temperature(string init_value) : scalar_unit_crtp<temperature>(init_value)
 	{
 		if(!isdigit(init_value[0]))
 		{
@@ -82,11 +90,12 @@ namespace physics::units
 			{
 				throw invalid_argument("Temperature string does not contains °C or °F");
 			}
-			*this = unit(new_value,new_real_dimensions,new_actual_dimensions);
+			*this = auto_unit(new_value,new_real_dimensions,new_actual_dimensions);
 		}
 	}
 
 	const string temperature::dimensions_match = "K";
+	const vector_real_dimensions temperature::real_dimensions = create_real_dimensions(temperature::dimensions_match);
 
 	void temperature::add_prefix(shared_ptr<prefix> prefix)
 	{
@@ -101,1488 +110,1540 @@ namespace physics::units
 	}
 
 	const string mole::dimensions_match = "mol";
+	const vector_real_dimensions mole::real_dimensions = create_real_dimensions(mole::dimensions_match);
 
 	const string light::dimensions_match = "cd";
+	const vector_real_dimensions light::real_dimensions = create_real_dimensions(light::dimensions_match);
 
 	const string data::dimensions_match = "B";
+	const vector_real_dimensions data::real_dimensions = create_real_dimensions(data::dimensions_match);
 }
 
-physics::units::unit operator"" _Ym(unsigned long long int x)
+wostream& operator <<(wostream& os, const physics::units::time& x)
 {
-	return physics::units::unit(x, "Ym");
+	if (x.get_display_mode() == physics::units::display_mode::time_display)
+	{
+		wostringstream output;
+		physics::units::time remaining_time = x;
+		physics::units::time one_year("365 day");
+		/*if (x > one_year)
+		{
+			output << int(trunc(x / one_year)) << L"y ";
+			remaining_time -= one_year;
+		}
+		physics::units::time one_month("30 day");
+		if (remaining_time > one_month)
+		{
+			output << int(trunc(remaining_time / one_month)) << L"m ";
+			remaining_time -= one_month;
+		}
+		physics::units::time one_day("1 day");
+		if (remaining_time > one_day)
+		{
+			output << int(trunc(remaining_time / one_day)) << L"d ";
+			remaining_time -= one_day;
+		}
+		physics::units::time one_hour("1 hour");
+		if (remaining_time > one_hour)
+		{
+			remaining_time.change_dimensions("hour");
+			output << int(remaining_time.get_value()) << L"h ";
+			remaining_time -= one_hour;
+		}
+		physics::units::time one_minute("1 min");
+		if (remaining_time > one_minute)
+		{
+			remaining_time.change_dimensions("min");
+			output << int(remaining_time.get_value()) << L"min ";
+			remaining_time -= one_minute;
+		}
+		remaining_time.change_dimensions("s");
+		output << remaining_time.get_value() << L"s ";*/
+
+		return os << output.str();
+	}
+	else
+	{
+		return os << static_cast<const physics::units::unit&>(x);
+	}
+}
+
+physics::units::auto_unit operator"" _Ym(unsigned long long int x)
+{
+	return physics::units::auto_unit(x, "Ym");
 }
 
-physics::units::unit operator"" _Zm(unsigned long long int x)
+physics::units::auto_unit operator"" _Zm(unsigned long long int x)
 {
-	return physics::units::unit(x, "Zm");
+	return physics::units::auto_unit(x, "Zm");
 }
 
-physics::units::unit operator"" _Em(unsigned long long int x)
+physics::units::auto_unit operator"" _Em(unsigned long long int x)
 {
-	return physics::units::unit(x, "Em");
+	return physics::units::auto_unit(x, "Em");
 }
 
-physics::units::unit operator"" _Pm(unsigned long long int x)
+physics::units::auto_unit operator"" _Pm(unsigned long long int x)
 {
-	return physics::units::unit(x, "Pm");
+	return physics::units::auto_unit(x, "Pm");
 }
 
-physics::units::unit operator"" _Tm(unsigned long long int x)
+physics::units::auto_unit operator"" _Tm(unsigned long long int x)
 {
-	return physics::units::unit(x, "Tm");
+	return physics::units::auto_unit(x, "Tm");
 }
 
-physics::units::unit operator"" _Gm(unsigned long long int x)
+physics::units::auto_unit operator"" _Gm(unsigned long long int x)
 {
-	return physics::units::unit(x, "Gm");
+	return physics::units::auto_unit(x, "Gm");
 }
 
-physics::units::unit operator"" _Mm(unsigned long long int x)
+physics::units::auto_unit operator"" _Mm(unsigned long long int x)
 {
-	return physics::units::unit(x, "Mm");
+	return physics::units::auto_unit(x, "Mm");
 }
 
-physics::units::unit operator"" _km(unsigned long long int x)
+physics::units::auto_unit operator"" _km(unsigned long long int x)
 {
-	return physics::units::unit(x, "km");
+	return physics::units::auto_unit(x, "km");
 }
 
-physics::units::unit operator"" _hm(unsigned long long int x)
+physics::units::auto_unit operator"" _hm(unsigned long long int x)
 {
-	return physics::units::unit(x, "hm");
+	return physics::units::auto_unit(x, "hm");
 }
 
-physics::units::unit operator"" _dam(unsigned long long int x)
+physics::units::auto_unit operator"" _dam(unsigned long long int x)
 {
-	return physics::units::unit(x, "dam");
+	return physics::units::auto_unit(x, "dam");
 }
 
-physics::units::unit operator"" _m(unsigned long long int x)
+physics::units::auto_unit operator"" _m(unsigned long long int x)
 {
-	return physics::units::unit(x, "m");
+	return physics::units::auto_unit(x, "m");
 }
 
-physics::units::unit operator"" _dm(unsigned long long int x)
+physics::units::auto_unit operator"" _dm(unsigned long long int x)
 {
-	return physics::units::unit(x, "dm");
+	return physics::units::auto_unit(x, "dm");
 }
 
-physics::units::unit operator"" _cm(unsigned long long int x)
+physics::units::auto_unit operator"" _cm(unsigned long long int x)
 {
-	return physics::units::unit(x, "cm");
+	return physics::units::auto_unit(x, "cm");
 }
 
-physics::units::unit operator"" _mm(unsigned long long int x)
+physics::units::auto_unit operator"" _mm(unsigned long long int x)
 {
-	return physics::units::unit(x, "mm");
+	return physics::units::auto_unit(x, "mm");
 }
 
-physics::units::unit operator"" _um(unsigned long long int x)
+physics::units::auto_unit operator"" _um(unsigned long long int x)
 {
-	return physics::units::unit(x, "um");
+	return physics::units::auto_unit(x, "um");
 }
 
-physics::units::unit operator"" _nm(unsigned long long int x)
+physics::units::auto_unit operator"" _nm(unsigned long long int x)
 {
-	return physics::units::unit(x, "nm");
+	return physics::units::auto_unit(x, "nm");
 }
 
-physics::units::unit operator"" _pm(unsigned long long int x)
+physics::units::auto_unit operator"" _pm(unsigned long long int x)
 {
-	return physics::units::unit(x, "pm");
+	return physics::units::auto_unit(x, "pm");
 }
 
-physics::units::unit operator"" _fm(unsigned long long int x)
+physics::units::auto_unit operator"" _fm(unsigned long long int x)
 {
-	return physics::units::unit(x, "fm");
+	return physics::units::auto_unit(x, "fm");
 }
 
-physics::units::unit operator"" _am(unsigned long long int x)
+physics::units::auto_unit operator"" _am(unsigned long long int x)
 {
-	return physics::units::unit(x, "am");
+	return physics::units::auto_unit(x, "am");
 }
 
-physics::units::unit operator"" _zm(unsigned long long int x)
+physics::units::auto_unit operator"" _zm(unsigned long long int x)
 {
-	return physics::units::unit(x, "zm");
+	return physics::units::auto_unit(x, "zm");
 }
 
-physics::units::unit operator"" _ym(unsigned long long int x)
+physics::units::auto_unit operator"" _ym(unsigned long long int x)
 {
-	return physics::units::unit(x, "ym");
+	return physics::units::auto_unit(x, "ym");
 }
 
-physics::units::unit operator"" _s(unsigned long long int x)
+physics::units::auto_unit operator"" _s(unsigned long long int x)
 {
-	return physics::units::unit(x, "s");
+	return physics::units::auto_unit(x, "s");
 }
 
-physics::units::unit operator"" _ds(unsigned long long int x)
+physics::units::auto_unit operator"" _ds(unsigned long long int x)
 {
-	return physics::units::unit(x, "ds");
+	return physics::units::auto_unit(x, "ds");
 }
 
-physics::units::unit operator"" _cs(unsigned long long int x)
+physics::units::auto_unit operator"" _cs(unsigned long long int x)
 {
-	return physics::units::unit(x, "cs");
+	return physics::units::auto_unit(x, "cs");
 }
 
-physics::units::unit operator"" _ss(unsigned long long int x)
+physics::units::auto_unit operator"" _ss(unsigned long long int x)
 {
-	return physics::units::unit(x, "ss");
+	return physics::units::auto_unit(x, "ss");
 }
 
-physics::units::unit operator"" _us(unsigned long long int x)
+physics::units::auto_unit operator"" _us(unsigned long long int x)
 {
-	return physics::units::unit(x, "us");
+	return physics::units::auto_unit(x, "us");
 }
 
-physics::units::unit operator"" _ns(unsigned long long int x)
+physics::units::auto_unit operator"" _ns(unsigned long long int x)
 {
-	return physics::units::unit(x, "ns");
+	return physics::units::auto_unit(x, "ns");
 }
 
-physics::units::unit operator"" _ps(unsigned long long int x)
+physics::units::auto_unit operator"" _ps(unsigned long long int x)
 {
-	return physics::units::unit(x, "ps");
+	return physics::units::auto_unit(x, "ps");
 }
 
-physics::units::unit operator"" _fs(unsigned long long int x)
+physics::units::auto_unit operator"" _fs(unsigned long long int x)
 {
-	return physics::units::unit(x, "fs");
+	return physics::units::auto_unit(x, "fs");
 }
 
-physics::units::unit operator"" _as(unsigned long long int x)
+physics::units::auto_unit operator"" _as(unsigned long long int x)
 {
-	return physics::units::unit(x, "as");
+	return physics::units::auto_unit(x, "as");
 }
 
-physics::units::unit operator"" _zs(unsigned long long int x)
+physics::units::auto_unit operator"" _zs(unsigned long long int x)
 {
-	return physics::units::unit(x, "zs");
+	return physics::units::auto_unit(x, "zs");
 }
 
-physics::units::unit operator"" _ys(unsigned long long int x)
+physics::units::auto_unit operator"" _ys(unsigned long long int x)
 {
-	return physics::units::unit(x, "ys");
+	return physics::units::auto_unit(x, "ys");
 }
 
-physics::units::unit operator"" _Yg(unsigned long long int x)
+physics::units::auto_unit operator"" _Yg(unsigned long long int x)
 {
-	return physics::units::unit(x, "Yg");
+	return physics::units::auto_unit(x, "Yg");
 }
 
-physics::units::unit operator"" _Zg(unsigned long long int x)
+physics::units::auto_unit operator"" _Zg(unsigned long long int x)
 {
-	return physics::units::unit(x, "Zg");
+	return physics::units::auto_unit(x, "Zg");
 }
 
-physics::units::unit operator"" _Eg(unsigned long long int x)
+physics::units::auto_unit operator"" _Eg(unsigned long long int x)
 {
-	return physics::units::unit(x, "Eg");
+	return physics::units::auto_unit(x, "Eg");
 }
 
-physics::units::unit operator"" _Pg(unsigned long long int x)
+physics::units::auto_unit operator"" _Pg(unsigned long long int x)
 {
-	return physics::units::unit(x, "Pg");
+	return physics::units::auto_unit(x, "Pg");
 }
 
-physics::units::unit operator"" _Tg(unsigned long long int x)
+physics::units::auto_unit operator"" _Tg(unsigned long long int x)
 {
-	return physics::units::unit(x, "Tg");
+	return physics::units::auto_unit(x, "Tg");
 }
 
-physics::units::unit operator"" _Gg(unsigned long long int x)
+physics::units::auto_unit operator"" _Gg(unsigned long long int x)
 {
-	return physics::units::unit(x, "Gg");
+	return physics::units::auto_unit(x, "Gg");
 }
 
-physics::units::unit operator"" _Mg(unsigned long long int x)
+physics::units::auto_unit operator"" _Mg(unsigned long long int x)
 {
-	return physics::units::unit(x, "Mg");
+	return physics::units::auto_unit(x, "Mg");
 }
 
-physics::units::unit operator"" _kg(unsigned long long int x)
+physics::units::auto_unit operator"" _kg(unsigned long long int x)
 {
-	return physics::units::unit(x, "kg");
+	return physics::units::auto_unit(x, "kg");
 }
 
-physics::units::unit operator"" _hg(unsigned long long int x)
+physics::units::auto_unit operator"" _hg(unsigned long long int x)
 {
-	return physics::units::unit(x, "hg");
+	return physics::units::auto_unit(x, "hg");
 }
 
-physics::units::unit operator"" _dag(unsigned long long int x)
+physics::units::auto_unit operator"" _dag(unsigned long long int x)
 {
-	return physics::units::unit(x, "dag");
+	return physics::units::auto_unit(x, "dag");
 }
 
-physics::units::unit operator"" _g(unsigned long long int x)
+physics::units::auto_unit operator"" _g(unsigned long long int x)
 {
-	return physics::units::unit(x, "g");
+	return physics::units::auto_unit(x, "g");
 }
 
-physics::units::unit operator"" _dg(unsigned long long int x)
+physics::units::auto_unit operator"" _dg(unsigned long long int x)
 {
-	return physics::units::unit(x, "dg");
+	return physics::units::auto_unit(x, "dg");
 }
 
-physics::units::unit operator"" _cg(unsigned long long int x)
+physics::units::auto_unit operator"" _cg(unsigned long long int x)
 {
-	return physics::units::unit(x, "cg");
+	return physics::units::auto_unit(x, "cg");
 }
 
-physics::units::unit operator"" _gg(unsigned long long int x)
+physics::units::auto_unit operator"" _gg(unsigned long long int x)
 {
-	return physics::units::unit(x, "gg");
+	return physics::units::auto_unit(x, "gg");
 }
 
-physics::units::unit operator"" _ug(unsigned long long int x)
+physics::units::auto_unit operator"" _ug(unsigned long long int x)
 {
-	return physics::units::unit(x, "ug");
+	return physics::units::auto_unit(x, "ug");
 }
 
-physics::units::unit operator"" _ng(unsigned long long int x)
+physics::units::auto_unit operator"" _ng(unsigned long long int x)
 {
-	return physics::units::unit(x, "ng");
+	return physics::units::auto_unit(x, "ng");
 }
 
-physics::units::unit operator"" _pg(unsigned long long int x)
+physics::units::auto_unit operator"" _pg(unsigned long long int x)
 {
-	return physics::units::unit(x, "pg");
+	return physics::units::auto_unit(x, "pg");
 }
 
-physics::units::unit operator"" _fg(unsigned long long int x)
+physics::units::auto_unit operator"" _fg(unsigned long long int x)
 {
-	return physics::units::unit(x, "fg");
+	return physics::units::auto_unit(x, "fg");
 }
 
-physics::units::unit operator"" _ag(unsigned long long int x)
+physics::units::auto_unit operator"" _ag(unsigned long long int x)
 {
-	return physics::units::unit(x, "ag");
+	return physics::units::auto_unit(x, "ag");
 }
 
-physics::units::unit operator"" _zg(unsigned long long int x)
+physics::units::auto_unit operator"" _zg(unsigned long long int x)
 {
-	return physics::units::unit(x, "zg");
+	return physics::units::auto_unit(x, "zg");
 }
 
-physics::units::unit operator"" _yg(unsigned long long int x)
+physics::units::auto_unit operator"" _yg(unsigned long long int x)
 {
-	return physics::units::unit(x, "yg");
+	return physics::units::auto_unit(x, "yg");
 }
 
-physics::units::unit operator"" _YC(unsigned long long int x)
+physics::units::auto_unit operator"" _YC(unsigned long long int x)
 {
-	return physics::units::unit(x, "YC");
+	return physics::units::auto_unit(x, "YC");
 }
 
-physics::units::unit operator"" _ZC(unsigned long long int x)
+physics::units::auto_unit operator"" _ZC(unsigned long long int x)
 {
-	return physics::units::unit(x, "ZC");
+	return physics::units::auto_unit(x, "ZC");
 }
 
-physics::units::unit operator"" _EC(unsigned long long int x)
+physics::units::auto_unit operator"" _EC(unsigned long long int x)
 {
-	return physics::units::unit(x, "EC");
+	return physics::units::auto_unit(x, "EC");
 }
 
-physics::units::unit operator"" _PC(unsigned long long int x)
+physics::units::auto_unit operator"" _PC(unsigned long long int x)
 {
-	return physics::units::unit(x, "PC");
+	return physics::units::auto_unit(x, "PC");
 }
 
-physics::units::unit operator"" _TC(unsigned long long int x)
+physics::units::auto_unit operator"" _TC(unsigned long long int x)
 {
-	return physics::units::unit(x, "TC");
+	return physics::units::auto_unit(x, "TC");
 }
 
-physics::units::unit operator"" _GC(unsigned long long int x)
+physics::units::auto_unit operator"" _GC(unsigned long long int x)
 {
-	return physics::units::unit(x, "GC");
+	return physics::units::auto_unit(x, "GC");
 }
 
-physics::units::unit operator"" _MC(unsigned long long int x)
+physics::units::auto_unit operator"" _MC(unsigned long long int x)
 {
-	return physics::units::unit(x, "MC");
+	return physics::units::auto_unit(x, "MC");
 }
 
-physics::units::unit operator"" _kC(unsigned long long int x)
+physics::units::auto_unit operator"" _kC(unsigned long long int x)
 {
-	return physics::units::unit(x, "kC");
+	return physics::units::auto_unit(x, "kC");
 }
 
-physics::units::unit operator"" _hC(unsigned long long int x)
+physics::units::auto_unit operator"" _hC(unsigned long long int x)
 {
-	return physics::units::unit(x, "hC");
+	return physics::units::auto_unit(x, "hC");
 }
 
-physics::units::unit operator"" _daC(unsigned long long int x)
+physics::units::auto_unit operator"" _daC(unsigned long long int x)
 {
-	return physics::units::unit(x, "daC");
+	return physics::units::auto_unit(x, "daC");
 }
 
-physics::units::unit operator"" _C(unsigned long long int x)
+physics::units::auto_unit operator"" _C(unsigned long long int x)
 {
-	return physics::units::unit(x, "C");
+	return physics::units::auto_unit(x, "C");
 }
 
-physics::units::unit operator"" _dC(unsigned long long int x)
+physics::units::auto_unit operator"" _dC(unsigned long long int x)
 {
-	return physics::units::unit(x, "dC");
+	return physics::units::auto_unit(x, "dC");
 }
 
-physics::units::unit operator"" _cC(unsigned long long int x)
+physics::units::auto_unit operator"" _cC(unsigned long long int x)
 {
-	return physics::units::unit(x, "cC");
+	return physics::units::auto_unit(x, "cC");
 }
 
-physics::units::unit operator"" _CC(unsigned long long int x)
+physics::units::auto_unit operator"" _CC(unsigned long long int x)
 {
-	return physics::units::unit(x, "CC");
+	return physics::units::auto_unit(x, "CC");
 }
 
-physics::units::unit operator"" _uC(unsigned long long int x)
+physics::units::auto_unit operator"" _uC(unsigned long long int x)
 {
-	return physics::units::unit(x, "uC");
+	return physics::units::auto_unit(x, "uC");
 }
 
-physics::units::unit operator"" _nC(unsigned long long int x)
+physics::units::auto_unit operator"" _nC(unsigned long long int x)
 {
-	return physics::units::unit(x, "nC");
+	return physics::units::auto_unit(x, "nC");
 }
 
-physics::units::unit operator"" _pC(unsigned long long int x)
+physics::units::auto_unit operator"" _pC(unsigned long long int x)
 {
-	return physics::units::unit(x, "pC");
+	return physics::units::auto_unit(x, "pC");
 }
 
-physics::units::unit operator"" _fC(unsigned long long int x)
+physics::units::auto_unit operator"" _fC(unsigned long long int x)
 {
-	return physics::units::unit(x, "fC");
+	return physics::units::auto_unit(x, "fC");
 }
 
-physics::units::unit operator"" _aC(unsigned long long int x)
+physics::units::auto_unit operator"" _aC(unsigned long long int x)
 {
-	return physics::units::unit(x, "aC");
+	return physics::units::auto_unit(x, "aC");
 }
 
-physics::units::unit operator"" _zC(unsigned long long int x)
+physics::units::auto_unit operator"" _zC(unsigned long long int x)
 {
-	return physics::units::unit(x, "zC");
+	return physics::units::auto_unit(x, "zC");
 }
 
-physics::units::unit operator"" _yC(unsigned long long int x)
+physics::units::auto_unit operator"" _yC(unsigned long long int x)
 {
-	return physics::units::unit(x, "yC");
+	return physics::units::auto_unit(x, "yC");
 }
 
-physics::units::unit operator"" _YK(unsigned long long int x)
+physics::units::auto_unit operator"" _YK(unsigned long long int x)
 {
-	return physics::units::unit(x, "YK");
+	return physics::units::auto_unit(x, "YK");
 }
 
-physics::units::unit operator"" _ZK(unsigned long long int x)
+physics::units::auto_unit operator"" _ZK(unsigned long long int x)
 {
-	return physics::units::unit(x, "ZK");
+	return physics::units::auto_unit(x, "ZK");
 }
 
-physics::units::unit operator"" _EK(unsigned long long int x)
+physics::units::auto_unit operator"" _EK(unsigned long long int x)
 {
-	return physics::units::unit(x, "EK");
+	return physics::units::auto_unit(x, "EK");
 }
 
-physics::units::unit operator"" _PK(unsigned long long int x)
+physics::units::auto_unit operator"" _PK(unsigned long long int x)
 {
-	return physics::units::unit(x, "PK");
+	return physics::units::auto_unit(x, "PK");
 }
 
-physics::units::unit operator"" _TK(unsigned long long int x)
+physics::units::auto_unit operator"" _TK(unsigned long long int x)
 {
-	return physics::units::unit(x, "TK");
+	return physics::units::auto_unit(x, "TK");
 }
 
-physics::units::unit operator"" _GK(unsigned long long int x)
+physics::units::auto_unit operator"" _GK(unsigned long long int x)
 {
-	return physics::units::unit(x, "GK");
+	return physics::units::auto_unit(x, "GK");
 }
 
-physics::units::unit operator"" _MK(unsigned long long int x)
+physics::units::auto_unit operator"" _MK(unsigned long long int x)
 {
-	return physics::units::unit(x, "MK");
+	return physics::units::auto_unit(x, "MK");
 }
 
-physics::units::unit operator"" _kK(unsigned long long int x)
+physics::units::auto_unit operator"" _kK(unsigned long long int x)
 {
-	return physics::units::unit(x, "kK");
+	return physics::units::auto_unit(x, "kK");
 }
 
-physics::units::unit operator"" _hK(unsigned long long int x)
+physics::units::auto_unit operator"" _hK(unsigned long long int x)
 {
-	return physics::units::unit(x, "hK");
+	return physics::units::auto_unit(x, "hK");
 }
 
-physics::units::unit operator"" _daK(unsigned long long int x)
+physics::units::auto_unit operator"" _daK(unsigned long long int x)
 {
-	return physics::units::unit(x, "daK");
+	return physics::units::auto_unit(x, "daK");
 }
 
-physics::units::unit operator"" _K(unsigned long long int x)
+physics::units::auto_unit operator"" _K(unsigned long long int x)
 {
-	return physics::units::unit(x, "K");
+	return physics::units::auto_unit(x, "K");
 }
 
-physics::units::unit operator"" _dK(unsigned long long int x)
+physics::units::auto_unit operator"" _dK(unsigned long long int x)
 {
-	return physics::units::unit(x, "dK");
+	return physics::units::auto_unit(x, "dK");
 }
 
-physics::units::unit operator"" _cK(unsigned long long int x)
+physics::units::auto_unit operator"" _cK(unsigned long long int x)
 {
-	return physics::units::unit(x, "cK");
+	return physics::units::auto_unit(x, "cK");
 }
 
-physics::units::unit operator"" _KK(unsigned long long int x)
+physics::units::auto_unit operator"" _KK(unsigned long long int x)
 {
-	return physics::units::unit(x, "KK");
+	return physics::units::auto_unit(x, "KK");
 }
 
-physics::units::unit operator"" _uK(unsigned long long int x)
+physics::units::auto_unit operator"" _uK(unsigned long long int x)
 {
-	return physics::units::unit(x, "uK");
+	return physics::units::auto_unit(x, "uK");
 }
 
-physics::units::unit operator"" _nK(unsigned long long int x)
+physics::units::auto_unit operator"" _nK(unsigned long long int x)
 {
-	return physics::units::unit(x, "nK");
+	return physics::units::auto_unit(x, "nK");
 }
 
-physics::units::unit operator"" _pK(unsigned long long int x)
+physics::units::auto_unit operator"" _pK(unsigned long long int x)
 {
-	return physics::units::unit(x, "pK");
+	return physics::units::auto_unit(x, "pK");
 }
 
-physics::units::unit operator"" _fK(unsigned long long int x)
+physics::units::auto_unit operator"" _fK(unsigned long long int x)
 {
-	return physics::units::unit(x, "fK");
+	return physics::units::auto_unit(x, "fK");
 }
 
-physics::units::unit operator"" _aK(unsigned long long int x)
+physics::units::auto_unit operator"" _aK(unsigned long long int x)
 {
-	return physics::units::unit(x, "aK");
+	return physics::units::auto_unit(x, "aK");
 }
 
-physics::units::unit operator"" _zK(unsigned long long int x)
+physics::units::auto_unit operator"" _zK(unsigned long long int x)
 {
-	return physics::units::unit(x, "zK");
+	return physics::units::auto_unit(x, "zK");
 }
 
-physics::units::unit operator"" _yK(unsigned long long int x)
+physics::units::auto_unit operator"" _yK(unsigned long long int x)
 {
-	return physics::units::unit(x, "yK");
+	return physics::units::auto_unit(x, "yK");
 }
 
-physics::units::unit operator"" _Ymol(unsigned long long int x)
+physics::units::auto_unit operator"" _Ymol(unsigned long long int x)
 {
-	return physics::units::unit(x, "Ymol");
+	return physics::units::auto_unit(x, "Ymol");
 }
 
-physics::units::unit operator"" _Zmol(unsigned long long int x)
+physics::units::auto_unit operator"" _Zmol(unsigned long long int x)
 {
-	return physics::units::unit(x, "Zmol");
+	return physics::units::auto_unit(x, "Zmol");
 }
 
-physics::units::unit operator"" _Emol(unsigned long long int x)
+physics::units::auto_unit operator"" _Emol(unsigned long long int x)
 {
-	return physics::units::unit(x, "Emol");
+	return physics::units::auto_unit(x, "Emol");
 }
 
-physics::units::unit operator"" _Pmol(unsigned long long int x)
+physics::units::auto_unit operator"" _Pmol(unsigned long long int x)
 {
-	return physics::units::unit(x, "Pmol");
+	return physics::units::auto_unit(x, "Pmol");
 }
 
-physics::units::unit operator"" _Tmol(unsigned long long int x)
+physics::units::auto_unit operator"" _Tmol(unsigned long long int x)
 {
-	return physics::units::unit(x, "Tmol");
+	return physics::units::auto_unit(x, "Tmol");
 }
 
-physics::units::unit operator"" _Gmol(unsigned long long int x)
+physics::units::auto_unit operator"" _Gmol(unsigned long long int x)
 {
-	return physics::units::unit(x, "Gmol");
+	return physics::units::auto_unit(x, "Gmol");
 }
 
-physics::units::unit operator"" _Mmol(unsigned long long int x)
+physics::units::auto_unit operator"" _Mmol(unsigned long long int x)
 {
-	return physics::units::unit(x, "Mmol");
+	return physics::units::auto_unit(x, "Mmol");
 }
 
-physics::units::unit operator"" _kmol(unsigned long long int x)
+physics::units::auto_unit operator"" _kmol(unsigned long long int x)
 {
-	return physics::units::unit(x, "kmol");
+	return physics::units::auto_unit(x, "kmol");
 }
 
-physics::units::unit operator"" _hmol(unsigned long long int x)
+physics::units::auto_unit operator"" _hmol(unsigned long long int x)
 {
-	return physics::units::unit(x, "hmol");
+	return physics::units::auto_unit(x, "hmol");
 }
 
-physics::units::unit operator"" _damol(unsigned long long int x)
+physics::units::auto_unit operator"" _damol(unsigned long long int x)
 {
-	return physics::units::unit(x, "damol");
+	return physics::units::auto_unit(x, "damol");
 }
 
-physics::units::unit operator"" _mol(unsigned long long int x)
+physics::units::auto_unit operator"" _mol(unsigned long long int x)
 {
-	return physics::units::unit(x, "mol");
+	return physics::units::auto_unit(x, "mol");
 }
 
-physics::units::unit operator"" _dmol(unsigned long long int x)
+physics::units::auto_unit operator"" _dmol(unsigned long long int x)
 {
-	return physics::units::unit(x, "dmol");
+	return physics::units::auto_unit(x, "dmol");
 }
 
-physics::units::unit operator"" _cmol(unsigned long long int x)
+physics::units::auto_unit operator"" _cmol(unsigned long long int x)
 {
-	return physics::units::unit(x, "cmol");
+	return physics::units::auto_unit(x, "cmol");
 }
 
-physics::units::unit operator"" _molmol(unsigned long long int x)
+physics::units::auto_unit operator"" _molmol(unsigned long long int x)
 {
-	return physics::units::unit(x, "molmol");
+	return physics::units::auto_unit(x, "molmol");
 }
 
-physics::units::unit operator"" _umol(unsigned long long int x)
+physics::units::auto_unit operator"" _umol(unsigned long long int x)
 {
-	return physics::units::unit(x, "umol");
+	return physics::units::auto_unit(x, "umol");
 }
 
-physics::units::unit operator"" _nmol(unsigned long long int x)
+physics::units::auto_unit operator"" _nmol(unsigned long long int x)
 {
-	return physics::units::unit(x, "nmol");
+	return physics::units::auto_unit(x, "nmol");
 }
 
-physics::units::unit operator"" _pmol(unsigned long long int x)
+physics::units::auto_unit operator"" _pmol(unsigned long long int x)
 {
-	return physics::units::unit(x, "pmol");
+	return physics::units::auto_unit(x, "pmol");
 }
 
-physics::units::unit operator"" _fmol(unsigned long long int x)
+physics::units::auto_unit operator"" _fmol(unsigned long long int x)
 {
-	return physics::units::unit(x, "fmol");
+	return physics::units::auto_unit(x, "fmol");
 }
 
-physics::units::unit operator"" _amol(unsigned long long int x)
+physics::units::auto_unit operator"" _amol(unsigned long long int x)
 {
-	return physics::units::unit(x, "amol");
+	return physics::units::auto_unit(x, "amol");
 }
 
-physics::units::unit operator"" _zmol(unsigned long long int x)
+physics::units::auto_unit operator"" _zmol(unsigned long long int x)
 {
-	return physics::units::unit(x, "zmol");
+	return physics::units::auto_unit(x, "zmol");
 }
 
-physics::units::unit operator"" _ymol(unsigned long long int x)
+physics::units::auto_unit operator"" _ymol(unsigned long long int x)
 {
-	return physics::units::unit(x, "ymol");
+	return physics::units::auto_unit(x, "ymol");
 }
 
-physics::units::unit operator"" _Ycd(unsigned long long int x)
+physics::units::auto_unit operator"" _Ycd(unsigned long long int x)
 {
-	return physics::units::unit(x, "Ycd");
+	return physics::units::auto_unit(x, "Ycd");
 }
 
-physics::units::unit operator"" _Zcd(unsigned long long int x)
+physics::units::auto_unit operator"" _Zcd(unsigned long long int x)
 {
-	return physics::units::unit(x, "Zcd");
+	return physics::units::auto_unit(x, "Zcd");
 }
 
-physics::units::unit operator"" _Ecd(unsigned long long int x)
+physics::units::auto_unit operator"" _Ecd(unsigned long long int x)
 {
-	return physics::units::unit(x, "Ecd");
+	return physics::units::auto_unit(x, "Ecd");
 }
 
-physics::units::unit operator"" _Pcd(unsigned long long int x)
+physics::units::auto_unit operator"" _Pcd(unsigned long long int x)
 {
-	return physics::units::unit(x, "Pcd");
+	return physics::units::auto_unit(x, "Pcd");
 }
 
-physics::units::unit operator"" _Tcd(unsigned long long int x)
+physics::units::auto_unit operator"" _Tcd(unsigned long long int x)
 {
-	return physics::units::unit(x, "Tcd");
+	return physics::units::auto_unit(x, "Tcd");
 }
 
-physics::units::unit operator"" _Gcd(unsigned long long int x)
+physics::units::auto_unit operator"" _Gcd(unsigned long long int x)
 {
-	return physics::units::unit(x, "Gcd");
+	return physics::units::auto_unit(x, "Gcd");
 }
 
-physics::units::unit operator"" _Mcd(unsigned long long int x)
+physics::units::auto_unit operator"" _Mcd(unsigned long long int x)
 {
-	return physics::units::unit(x, "Mcd");
+	return physics::units::auto_unit(x, "Mcd");
 }
 
-physics::units::unit operator"" _kcd(unsigned long long int x)
+physics::units::auto_unit operator"" _kcd(unsigned long long int x)
 {
-	return physics::units::unit(x, "kcd");
+	return physics::units::auto_unit(x, "kcd");
 }
 
-physics::units::unit operator"" _hcd(unsigned long long int x)
+physics::units::auto_unit operator"" _hcd(unsigned long long int x)
 {
-	return physics::units::unit(x, "hcd");
+	return physics::units::auto_unit(x, "hcd");
 }
 
-physics::units::unit operator"" _dacd(unsigned long long int x)
+physics::units::auto_unit operator"" _dacd(unsigned long long int x)
 {
-	return physics::units::unit(x, "dacd");
+	return physics::units::auto_unit(x, "dacd");
 }
 
-physics::units::unit operator"" _cd(unsigned long long int x)
+physics::units::auto_unit operator"" _cd(unsigned long long int x)
 {
-	return physics::units::unit(x, "cd");
+	return physics::units::auto_unit(x, "cd");
 }
 
-physics::units::unit operator"" _dcd(unsigned long long int x)
+physics::units::auto_unit operator"" _dcd(unsigned long long int x)
 {
-	return physics::units::unit(x, "dcd");
+	return physics::units::auto_unit(x, "dcd");
 }
 
-physics::units::unit operator"" _ccd(unsigned long long int x)
+physics::units::auto_unit operator"" _ccd(unsigned long long int x)
 {
-	return physics::units::unit(x, "ccd");
+	return physics::units::auto_unit(x, "ccd");
 }
 
-physics::units::unit operator"" _cdcd(unsigned long long int x)
+physics::units::auto_unit operator"" _cdcd(unsigned long long int x)
 {
-	return physics::units::unit(x, "cdcd");
+	return physics::units::auto_unit(x, "cdcd");
 }
 
-physics::units::unit operator"" _ucd(unsigned long long int x)
+physics::units::auto_unit operator"" _ucd(unsigned long long int x)
 {
-	return physics::units::unit(x, "ucd");
+	return physics::units::auto_unit(x, "ucd");
 }
 
-physics::units::unit operator"" _ncd(unsigned long long int x)
+physics::units::auto_unit operator"" _ncd(unsigned long long int x)
 {
-	return physics::units::unit(x, "ncd");
+	return physics::units::auto_unit(x, "ncd");
 }
 
-physics::units::unit operator"" _pcd(unsigned long long int x)
+physics::units::auto_unit operator"" _pcd(unsigned long long int x)
 {
-	return physics::units::unit(x, "pcd");
+	return physics::units::auto_unit(x, "pcd");
 }
 
-physics::units::unit operator"" _fcd(unsigned long long int x)
+physics::units::auto_unit operator"" _fcd(unsigned long long int x)
 {
-	return physics::units::unit(x, "fcd");
+	return physics::units::auto_unit(x, "fcd");
 }
 
-physics::units::unit operator"" _acd(unsigned long long int x)
+physics::units::auto_unit operator"" _acd(unsigned long long int x)
 {
-	return physics::units::unit(x, "acd");
+	return physics::units::auto_unit(x, "acd");
 }
 
-physics::units::unit operator"" _zcd(unsigned long long int x)
+physics::units::auto_unit operator"" _zcd(unsigned long long int x)
 {
-	return physics::units::unit(x, "zcd");
+	return physics::units::auto_unit(x, "zcd");
 }
 
-physics::units::unit operator"" _ycd(unsigned long long int x)
+physics::units::auto_unit operator"" _ycd(unsigned long long int x)
 {
-	return physics::units::unit(x, "ycd");
+	return physics::units::auto_unit(x, "ycd");
 }
 
-physics::units::unit operator"" _angle(unsigned long long int x)
+physics::units::auto_unit operator"" _angle(unsigned long long int x)
 {
-	return physics::units::unit(x, "angle");
+	return physics::units::auto_unit(x, "angle");
 }
 
-physics::units::unit operator"" _solid_angle(unsigned long long int x)
+physics::units::auto_unit operator"" _solid_angle(unsigned long long int x)
 {
-	return physics::units::unit(x, "solid_angle");
+	return physics::units::auto_unit(x, "solid_angle");
 }
 
-physics::units::unit operator"" _YB(unsigned long long int x)
+physics::units::auto_unit operator"" _YB(unsigned long long int x)
 {
-	return physics::units::unit(x, "YB");
+	return physics::units::auto_unit(x, "YB");
 }
 
-physics::units::unit operator"" _ZB(unsigned long long int x)
+physics::units::auto_unit operator"" _ZB(unsigned long long int x)
 {
-	return physics::units::unit(x, "ZB");
+	return physics::units::auto_unit(x, "ZB");
 }
 
-physics::units::unit operator"" _EB(unsigned long long int x)
+physics::units::auto_unit operator"" _EB(unsigned long long int x)
 {
-	return physics::units::unit(x, "EB");
+	return physics::units::auto_unit(x, "EB");
 }
 
-physics::units::unit operator"" _PB(unsigned long long int x)
+physics::units::auto_unit operator"" _PB(unsigned long long int x)
 {
-	return physics::units::unit(x, "PB");
+	return physics::units::auto_unit(x, "PB");
 }
 
-physics::units::unit operator"" _TB(unsigned long long int x)
+physics::units::auto_unit operator"" _TB(unsigned long long int x)
 {
-	return physics::units::unit(x, "TB");
+	return physics::units::auto_unit(x, "TB");
 }
 
-physics::units::unit operator"" _GB(unsigned long long int x)
+physics::units::auto_unit operator"" _GB(unsigned long long int x)
 {
-	return physics::units::unit(x, "GB");
+	return physics::units::auto_unit(x, "GB");
 }
 
-physics::units::unit operator"" _MB(unsigned long long int x)
+physics::units::auto_unit operator"" _MB(unsigned long long int x)
 {
-	return physics::units::unit(x, "MB");
+	return physics::units::auto_unit(x, "MB");
 }
 
-physics::units::unit operator"" _kB(unsigned long long int x)
+physics::units::auto_unit operator"" _kB(unsigned long long int x)
 {
-	return physics::units::unit(x, "kB");
+	return physics::units::auto_unit(x, "kB");
 }
 
-physics::units::unit operator"" _B(unsigned long long int x)
+physics::units::auto_unit operator"" _B(unsigned long long int x)
 {
-	return physics::units::unit(x, "B");
+	return physics::units::auto_unit(x, "B");
 }
 
-physics::units::unit operator"" _Ym(long double x)
+physics::units::auto_unit operator"" _Ym(long double x)
 {
-	return physics::units::unit(x, "Ym");
+	return physics::units::auto_unit(x, "Ym");
 }
 
-physics::units::unit operator"" _Zm(long double x)
+physics::units::auto_unit operator"" _Zm(long double x)
 {
-	return physics::units::unit(x, "Zm");
+	return physics::units::auto_unit(x, "Zm");
 }
 
-physics::units::unit operator"" _Em(long double x)
+physics::units::auto_unit operator"" _Em(long double x)
 {
-	return physics::units::unit(x, "Em");
+	return physics::units::auto_unit(x, "Em");
 }
 
-physics::units::unit operator"" _Pm(long double x)
+physics::units::auto_unit operator"" _Pm(long double x)
 {
-	return physics::units::unit(x, "Pm");
+	return physics::units::auto_unit(x, "Pm");
 }
 
-physics::units::unit operator"" _Tm(long double x)
+physics::units::auto_unit operator"" _Tm(long double x)
 {
-	return physics::units::unit(x, "Tm");
+	return physics::units::auto_unit(x, "Tm");
 }
 
-physics::units::unit operator"" _Gm(long double x)
+physics::units::auto_unit operator"" _Gm(long double x)
 {
-	return physics::units::unit(x, "Gm");
+	return physics::units::auto_unit(x, "Gm");
 }
 
-physics::units::unit operator"" _Mm(long double x)
+physics::units::auto_unit operator"" _Mm(long double x)
 {
-	return physics::units::unit(x, "Mm");
+	return physics::units::auto_unit(x, "Mm");
 }
 
-physics::units::unit operator"" _km(long double x)
+physics::units::auto_unit operator"" _km(long double x)
 {
-	return physics::units::unit(x, "km");
+	return physics::units::auto_unit(x, "km");
 }
 
-physics::units::unit operator"" _hm(long double x)
+physics::units::auto_unit operator"" _hm(long double x)
 {
-	return physics::units::unit(x, "hm");
+	return physics::units::auto_unit(x, "hm");
 }
 
-physics::units::unit operator"" _dam(long double x)
+physics::units::auto_unit operator"" _dam(long double x)
 {
-	return physics::units::unit(x, "dam");
+	return physics::units::auto_unit(x, "dam");
 }
 
-physics::units::unit operator"" _m(long double x)
+physics::units::auto_unit operator"" _m(long double x)
 {
-	return physics::units::unit(x, "m");
+	return physics::units::auto_unit(x, "m");
 }
 
-physics::units::unit operator"" _dm(long double x)
+physics::units::auto_unit operator"" _dm(long double x)
 {
-	return physics::units::unit(x, "dm");
+	return physics::units::auto_unit(x, "dm");
 }
 
-physics::units::unit operator"" _cm(long double x)
+physics::units::auto_unit operator"" _cm(long double x)
 {
-	return physics::units::unit(x, "cm");
+	return physics::units::auto_unit(x, "cm");
 }
 
-physics::units::unit operator"" _mm(long double x)
+physics::units::auto_unit operator"" _mm(long double x)
 {
-	return physics::units::unit(x, "mm");
+	return physics::units::auto_unit(x, "mm");
 }
 
-physics::units::unit operator"" _um(long double x)
+physics::units::auto_unit operator"" _um(long double x)
 {
-	return physics::units::unit(x, "um");
+	return physics::units::auto_unit(x, "um");
 }
 
-physics::units::unit operator"" _nm(long double x)
+physics::units::auto_unit operator"" _nm(long double x)
 {
-	return physics::units::unit(x, "nm");
+	return physics::units::auto_unit(x, "nm");
 }
 
-physics::units::unit operator"" _pm(long double x)
+physics::units::auto_unit operator"" _pm(long double x)
 {
-	return physics::units::unit(x, "pm");
+	return physics::units::auto_unit(x, "pm");
 }
 
-physics::units::unit operator"" _fm(long double x)
+physics::units::auto_unit operator"" _fm(long double x)
 {
-	return physics::units::unit(x, "fm");
+	return physics::units::auto_unit(x, "fm");
 }
 
-physics::units::unit operator"" _am(long double x)
+physics::units::auto_unit operator"" _am(long double x)
 {
-	return physics::units::unit(x, "am");
+	return physics::units::auto_unit(x, "am");
 }
 
-physics::units::unit operator"" _zm(long double x)
+physics::units::auto_unit operator"" _zm(long double x)
 {
-	return physics::units::unit(x, "zm");
+	return physics::units::auto_unit(x, "zm");
 }
 
-physics::units::unit operator"" _ym(long double x)
+physics::units::auto_unit operator"" _ym(long double x)
 {
-	return physics::units::unit(x, "ym");
+	return physics::units::auto_unit(x, "ym");
 }
 
-physics::units::unit operator"" _s(long double x)
+physics::units::auto_unit operator"" _s(long double x)
 {
-	return physics::units::unit(x, "s");
+	return physics::units::auto_unit(x, "s");
 }
 
-physics::units::unit operator"" _ds(long double x)
+physics::units::auto_unit operator"" _ds(long double x)
 {
-	return physics::units::unit(x, "ds");
+	return physics::units::auto_unit(x, "ds");
 }
 
-physics::units::unit operator"" _cs(long double x)
+physics::units::auto_unit operator"" _cs(long double x)
 {
-	return physics::units::unit(x, "cs");
+	return physics::units::auto_unit(x, "cs");
 }
 
-physics::units::unit operator"" _ss(long double x)
+physics::units::auto_unit operator"" _ss(long double x)
 {
-	return physics::units::unit(x, "ss");
+	return physics::units::auto_unit(x, "ss");
 }
 
-physics::units::unit operator"" _us(long double x)
+physics::units::auto_unit operator"" _us(long double x)
 {
-	return physics::units::unit(x, "us");
+	return physics::units::auto_unit(x, "us");
 }
 
-physics::units::unit operator"" _ns(long double x)
+physics::units::auto_unit operator"" _ns(long double x)
 {
-	return physics::units::unit(x, "ns");
+	return physics::units::auto_unit(x, "ns");
 }
 
-physics::units::unit operator"" _ps(long double x)
+physics::units::auto_unit operator"" _ps(long double x)
 {
-	return physics::units::unit(x, "ps");
+	return physics::units::auto_unit(x, "ps");
 }
 
-physics::units::unit operator"" _fs(long double x)
+physics::units::auto_unit operator"" _fs(long double x)
 {
-	return physics::units::unit(x, "fs");
+	return physics::units::auto_unit(x, "fs");
 }
 
-physics::units::unit operator"" _as(long double x)
+physics::units::auto_unit operator"" _as(long double x)
 {
-	return physics::units::unit(x, "as");
+	return physics::units::auto_unit(x, "as");
 }
 
-physics::units::unit operator"" _zs(long double x)
+physics::units::auto_unit operator"" _zs(long double x)
 {
-	return physics::units::unit(x, "zs");
+	return physics::units::auto_unit(x, "zs");
 }
 
-physics::units::unit operator"" _ys(long double x)
+physics::units::auto_unit operator"" _ys(long double x)
 {
-	return physics::units::unit(x, "ys");
+	return physics::units::auto_unit(x, "ys");
 }
 
-physics::units::unit operator"" _Yg(long double x)
+physics::units::auto_unit operator"" _Yg(long double x)
 {
-	return physics::units::unit(x, "Yg");
+	return physics::units::auto_unit(x, "Yg");
 }
 
-physics::units::unit operator"" _Zg(long double x)
+physics::units::auto_unit operator"" _Zg(long double x)
 {
-	return physics::units::unit(x, "Zg");
+	return physics::units::auto_unit(x, "Zg");
 }
 
-physics::units::unit operator"" _Eg(long double x)
+physics::units::auto_unit operator"" _Eg(long double x)
 {
-	return physics::units::unit(x, "Eg");
+	return physics::units::auto_unit(x, "Eg");
 }
 
-physics::units::unit operator"" _Pg(long double x)
+physics::units::auto_unit operator"" _Pg(long double x)
 {
-	return physics::units::unit(x, "Pg");
+	return physics::units::auto_unit(x, "Pg");
 }
 
-physics::units::unit operator"" _Tg(long double x)
+physics::units::auto_unit operator"" _Tg(long double x)
 {
-	return physics::units::unit(x, "Tg");
+	return physics::units::auto_unit(x, "Tg");
 }
 
-physics::units::unit operator"" _Gg(long double x)
+physics::units::auto_unit operator"" _Gg(long double x)
 {
-	return physics::units::unit(x, "Gg");
+	return physics::units::auto_unit(x, "Gg");
 }
 
-physics::units::unit operator"" _Mg(long double x)
+physics::units::auto_unit operator"" _Mg(long double x)
 {
-	return physics::units::unit(x, "Mg");
+	return physics::units::auto_unit(x, "Mg");
 }
 
-physics::units::unit operator"" _kg(long double x)
+physics::units::auto_unit operator"" _kg(long double x)
 {
-	return physics::units::unit(x, "kg");
+	return physics::units::auto_unit(x, "kg");
 }
 
-physics::units::unit operator"" _hg(long double x)
+physics::units::auto_unit operator"" _hg(long double x)
 {
-	return physics::units::unit(x, "hg");
+	return physics::units::auto_unit(x, "hg");
 }
 
-physics::units::unit operator"" _dag(long double x)
+physics::units::auto_unit operator"" _dag(long double x)
 {
-	return physics::units::unit(x, "dag");
+	return physics::units::auto_unit(x, "dag");
 }
 
-physics::units::unit operator"" _g(long double x)
+physics::units::auto_unit operator"" _g(long double x)
 {
-	return physics::units::unit(x, "g");
+	return physics::units::auto_unit(x, "g");
 }
 
-physics::units::unit operator"" _dg(long double x)
+physics::units::auto_unit operator"" _dg(long double x)
 {
-	return physics::units::unit(x, "dg");
+	return physics::units::auto_unit(x, "dg");
 }
 
-physics::units::unit operator"" _cg(long double x)
+physics::units::auto_unit operator"" _cg(long double x)
 {
-	return physics::units::unit(x, "cg");
+	return physics::units::auto_unit(x, "cg");
 }
 
-physics::units::unit operator"" _gg(long double x)
+physics::units::auto_unit operator"" _gg(long double x)
 {
-	return physics::units::unit(x, "gg");
+	return physics::units::auto_unit(x, "gg");
 }
 
-physics::units::unit operator"" _ug(long double x)
+physics::units::auto_unit operator"" _ug(long double x)
 {
-	return physics::units::unit(x, "ug");
+	return physics::units::auto_unit(x, "ug");
 }
 
-physics::units::unit operator"" _ng(long double x)
+physics::units::auto_unit operator"" _ng(long double x)
 {
-	return physics::units::unit(x, "ng");
+	return physics::units::auto_unit(x, "ng");
 }
 
-physics::units::unit operator"" _pg(long double x)
+physics::units::auto_unit operator"" _pg(long double x)
 {
-	return physics::units::unit(x, "pg");
+	return physics::units::auto_unit(x, "pg");
 }
 
-physics::units::unit operator"" _fg(long double x)
+physics::units::auto_unit operator"" _fg(long double x)
 {
-	return physics::units::unit(x, "fg");
+	return physics::units::auto_unit(x, "fg");
 }
 
-physics::units::unit operator"" _ag(long double x)
+physics::units::auto_unit operator"" _ag(long double x)
 {
-	return physics::units::unit(x, "ag");
+	return physics::units::auto_unit(x, "ag");
 }
 
-physics::units::unit operator"" _zg(long double x)
+physics::units::auto_unit operator"" _zg(long double x)
 {
-	return physics::units::unit(x, "zg");
+	return physics::units::auto_unit(x, "zg");
 }
 
-physics::units::unit operator"" _yg(long double x)
+physics::units::auto_unit operator"" _yg(long double x)
 {
-	return physics::units::unit(x, "yg");
+	return physics::units::auto_unit(x, "yg");
 }
 
-physics::units::unit operator"" _YC(long double x)
+physics::units::auto_unit operator"" _YC(long double x)
 {
-	return physics::units::unit(x, "YC");
+	return physics::units::auto_unit(x, "YC");
 }
 
-physics::units::unit operator"" _ZC(long double x)
+physics::units::auto_unit operator"" _ZC(long double x)
 {
-	return physics::units::unit(x, "ZC");
+	return physics::units::auto_unit(x, "ZC");
 }
 
-physics::units::unit operator"" _EC(long double x)
+physics::units::auto_unit operator"" _EC(long double x)
 {
-	return physics::units::unit(x, "EC");
+	return physics::units::auto_unit(x, "EC");
 }
 
-physics::units::unit operator"" _PC(long double x)
+physics::units::auto_unit operator"" _PC(long double x)
 {
-	return physics::units::unit(x, "PC");
+	return physics::units::auto_unit(x, "PC");
 }
 
-physics::units::unit operator"" _TC(long double x)
+physics::units::auto_unit operator"" _TC(long double x)
 {
-	return physics::units::unit(x, "TC");
+	return physics::units::auto_unit(x, "TC");
 }
 
-physics::units::unit operator"" _GC(long double x)
+physics::units::auto_unit operator"" _GC(long double x)
 {
-	return physics::units::unit(x, "GC");
+	return physics::units::auto_unit(x, "GC");
 }
 
-physics::units::unit operator"" _MC(long double x)
+physics::units::auto_unit operator"" _MC(long double x)
 {
-	return physics::units::unit(x, "MC");
+	return physics::units::auto_unit(x, "MC");
 }
 
-physics::units::unit operator"" _kC(long double x)
+physics::units::auto_unit operator"" _kC(long double x)
 {
-	return physics::units::unit(x, "kC");
+	return physics::units::auto_unit(x, "kC");
 }
 
-physics::units::unit operator"" _hC(long double x)
+physics::units::auto_unit operator"" _hC(long double x)
 {
-	return physics::units::unit(x, "hC");
+	return physics::units::auto_unit(x, "hC");
 }
 
-physics::units::unit operator"" _daC(long double x)
+physics::units::auto_unit operator"" _daC(long double x)
 {
-	return physics::units::unit(x, "daC");
+	return physics::units::auto_unit(x, "daC");
 }
 
-physics::units::unit operator"" _C(long double x)
+physics::units::auto_unit operator"" _C(long double x)
 {
-	return physics::units::unit(x, "C");
+	return physics::units::auto_unit(x, "C");
 }
 
-physics::units::unit operator"" _dC(long double x)
+physics::units::auto_unit operator"" _dC(long double x)
 {
-	return physics::units::unit(x, "dC");
+	return physics::units::auto_unit(x, "dC");
 }
 
-physics::units::unit operator"" _cC(long double x)
+physics::units::auto_unit operator"" _cC(long double x)
 {
-	return physics::units::unit(x, "cC");
+	return physics::units::auto_unit(x, "cC");
 }
 
-physics::units::unit operator"" _CC(long double x)
+physics::units::auto_unit operator"" _CC(long double x)
 {
-	return physics::units::unit(x, "CC");
+	return physics::units::auto_unit(x, "CC");
 }
 
-physics::units::unit operator"" _uC(long double x)
+physics::units::auto_unit operator"" _uC(long double x)
 {
-	return physics::units::unit(x, "uC");
+	return physics::units::auto_unit(x, "uC");
 }
 
-physics::units::unit operator"" _nC(long double x)
+physics::units::auto_unit operator"" _nC(long double x)
 {
-	return physics::units::unit(x, "nC");
+	return physics::units::auto_unit(x, "nC");
 }
 
-physics::units::unit operator"" _pC(long double x)
+physics::units::auto_unit operator"" _pC(long double x)
 {
-	return physics::units::unit(x, "pC");
+	return physics::units::auto_unit(x, "pC");
 }
 
-physics::units::unit operator"" _fC(long double x)
+physics::units::auto_unit operator"" _fC(long double x)
 {
-	return physics::units::unit(x, "fC");
+	return physics::units::auto_unit(x, "fC");
 }
 
-physics::units::unit operator"" _aC(long double x)
+physics::units::auto_unit operator"" _aC(long double x)
 {
-	return physics::units::unit(x, "aC");
+	return physics::units::auto_unit(x, "aC");
 }
 
-physics::units::unit operator"" _zC(long double x)
+physics::units::auto_unit operator"" _zC(long double x)
 {
-	return physics::units::unit(x, "zC");
+	return physics::units::auto_unit(x, "zC");
 }
 
-physics::units::unit operator"" _yC(long double x)
+physics::units::auto_unit operator"" _yC(long double x)
 {
-	return physics::units::unit(x, "yC");
+	return physics::units::auto_unit(x, "yC");
 }
 
-physics::units::unit operator"" _YK(long double x)
+physics::units::auto_unit operator"" _YK(long double x)
 {
-	return physics::units::unit(x, "YK");
+	return physics::units::auto_unit(x, "YK");
 }
 
-physics::units::unit operator"" _ZK(long double x)
+physics::units::auto_unit operator"" _ZK(long double x)
 {
-	return physics::units::unit(x, "ZK");
+	return physics::units::auto_unit(x, "ZK");
 }
 
-physics::units::unit operator"" _EK(long double x)
+physics::units::auto_unit operator"" _EK(long double x)
 {
-	return physics::units::unit(x, "EK");
+	return physics::units::auto_unit(x, "EK");
 }
 
-physics::units::unit operator"" _PK(long double x)
+physics::units::auto_unit operator"" _PK(long double x)
 {
-	return physics::units::unit(x, "PK");
+	return physics::units::auto_unit(x, "PK");
 }
 
-physics::units::unit operator"" _TK(long double x)
+physics::units::auto_unit operator"" _TK(long double x)
 {
-	return physics::units::unit(x, "TK");
+	return physics::units::auto_unit(x, "TK");
 }
 
-physics::units::unit operator"" _GK(long double x)
+physics::units::auto_unit operator"" _GK(long double x)
 {
-	return physics::units::unit(x, "GK");
+	return physics::units::auto_unit(x, "GK");
 }
 
-physics::units::unit operator"" _MK(long double x)
+physics::units::auto_unit operator"" _MK(long double x)
 {
-	return physics::units::unit(x, "MK");
+	return physics::units::auto_unit(x, "MK");
 }
 
-physics::units::unit operator"" _kK(long double x)
+physics::units::auto_unit operator"" _kK(long double x)
 {
-	return physics::units::unit(x, "kK");
+	return physics::units::auto_unit(x, "kK");
 }
 
-physics::units::unit operator"" _hK(long double x)
+physics::units::auto_unit operator"" _hK(long double x)
 {
-	return physics::units::unit(x, "hK");
+	return physics::units::auto_unit(x, "hK");
 }
 
-physics::units::unit operator"" _daK(long double x)
+physics::units::auto_unit operator"" _daK(long double x)
 {
-	return physics::units::unit(x, "daK");
+	return physics::units::auto_unit(x, "daK");
 }
 
-physics::units::unit operator"" _K(long double x)
+physics::units::auto_unit operator"" _K(long double x)
 {
-	return physics::units::unit(x, "K");
+	return physics::units::auto_unit(x, "K");
 }
 
-physics::units::unit operator"" _dK(long double x)
+physics::units::auto_unit operator"" _dK(long double x)
 {
-	return physics::units::unit(x, "dK");
+	return physics::units::auto_unit(x, "dK");
 }
 
-physics::units::unit operator"" _cK(long double x)
+physics::units::auto_unit operator"" _cK(long double x)
 {
-	return physics::units::unit(x, "cK");
+	return physics::units::auto_unit(x, "cK");
 }
 
-physics::units::unit operator"" _KK(long double x)
+physics::units::auto_unit operator"" _KK(long double x)
 {
-	return physics::units::unit(x, "KK");
+	return physics::units::auto_unit(x, "KK");
 }
 
-physics::units::unit operator"" _uK(long double x)
+physics::units::auto_unit operator"" _uK(long double x)
 {
-	return physics::units::unit(x, "uK");
+	return physics::units::auto_unit(x, "uK");
 }
 
-physics::units::unit operator"" _nK(long double x)
+physics::units::auto_unit operator"" _nK(long double x)
 {
-	return physics::units::unit(x, "nK");
+	return physics::units::auto_unit(x, "nK");
 }
 
-physics::units::unit operator"" _pK(long double x)
+physics::units::auto_unit operator"" _pK(long double x)
 {
-	return physics::units::unit(x, "pK");
+	return physics::units::auto_unit(x, "pK");
 }
 
-physics::units::unit operator"" _fK(long double x)
+physics::units::auto_unit operator"" _fK(long double x)
 {
-	return physics::units::unit(x, "fK");
+	return physics::units::auto_unit(x, "fK");
 }
 
-physics::units::unit operator"" _aK(long double x)
+physics::units::auto_unit operator"" _aK(long double x)
 {
-	return physics::units::unit(x, "aK");
+	return physics::units::auto_unit(x, "aK");
 }
 
-physics::units::unit operator"" _zK(long double x)
+physics::units::auto_unit operator"" _zK(long double x)
 {
-	return physics::units::unit(x, "zK");
+	return physics::units::auto_unit(x, "zK");
 }
 
-physics::units::unit operator"" _yK(long double x)
+physics::units::auto_unit operator"" _yK(long double x)
 {
-	return physics::units::unit(x, "yK");
+	return physics::units::auto_unit(x, "yK");
 }
 
-physics::units::unit operator"" _Ymol(long double x)
+physics::units::auto_unit operator"" _Ymol(long double x)
 {
-	return physics::units::unit(x, "Ymol");
+	return physics::units::auto_unit(x, "Ymol");
 }
 
-physics::units::unit operator"" _Zmol(long double x)
+physics::units::auto_unit operator"" _Zmol(long double x)
 {
-	return physics::units::unit(x, "Zmol");
+	return physics::units::auto_unit(x, "Zmol");
 }
 
-physics::units::unit operator"" _Emol(long double x)
+physics::units::auto_unit operator"" _Emol(long double x)
 {
-	return physics::units::unit(x, "Emol");
+	return physics::units::auto_unit(x, "Emol");
 }
 
-physics::units::unit operator"" _Pmol(long double x)
+physics::units::auto_unit operator"" _Pmol(long double x)
 {
-	return physics::units::unit(x, "Pmol");
+	return physics::units::auto_unit(x, "Pmol");
 }
 
-physics::units::unit operator"" _Tmol(long double x)
+physics::units::auto_unit operator"" _Tmol(long double x)
 {
-	return physics::units::unit(x, "Tmol");
+	return physics::units::auto_unit(x, "Tmol");
 }
 
-physics::units::unit operator"" _Gmol(long double x)
+physics::units::auto_unit operator"" _Gmol(long double x)
 {
-	return physics::units::unit(x, "Gmol");
+	return physics::units::auto_unit(x, "Gmol");
 }
 
-physics::units::unit operator"" _Mmol(long double x)
+physics::units::auto_unit operator"" _Mmol(long double x)
 {
-	return physics::units::unit(x, "Mmol");
+	return physics::units::auto_unit(x, "Mmol");
 }
 
-physics::units::unit operator"" _kmol(long double x)
+physics::units::auto_unit operator"" _kmol(long double x)
 {
-	return physics::units::unit(x, "kmol");
+	return physics::units::auto_unit(x, "kmol");
 }
 
-physics::units::unit operator"" _hmol(long double x)
+physics::units::auto_unit operator"" _hmol(long double x)
 {
-	return physics::units::unit(x, "hmol");
+	return physics::units::auto_unit(x, "hmol");
 }
 
-physics::units::unit operator"" _damol(long double x)
+physics::units::auto_unit operator"" _damol(long double x)
 {
-	return physics::units::unit(x, "damol");
+	return physics::units::auto_unit(x, "damol");
 }
 
-physics::units::unit operator"" _mol(long double x)
+physics::units::auto_unit operator"" _mol(long double x)
 {
-	return physics::units::unit(x, "mol");
+	return physics::units::auto_unit(x, "mol");
 }
 
-physics::units::unit operator"" _dmol(long double x)
+physics::units::auto_unit operator"" _dmol(long double x)
 {
-	return physics::units::unit(x, "dmol");
+	return physics::units::auto_unit(x, "dmol");
 }
 
-physics::units::unit operator"" _cmol(long double x)
+physics::units::auto_unit operator"" _cmol(long double x)
 {
-	return physics::units::unit(x, "cmol");
+	return physics::units::auto_unit(x, "cmol");
 }
 
-physics::units::unit operator"" _molmol(long double x)
+physics::units::auto_unit operator"" _molmol(long double x)
 {
-	return physics::units::unit(x, "molmol");
+	return physics::units::auto_unit(x, "molmol");
 }
 
-physics::units::unit operator"" _umol(long double x)
+physics::units::auto_unit operator"" _umol(long double x)
 {
-	return physics::units::unit(x, "umol");
+	return physics::units::auto_unit(x, "umol");
 }
 
-physics::units::unit operator"" _nmol(long double x)
+physics::units::auto_unit operator"" _nmol(long double x)
 {
-	return physics::units::unit(x, "nmol");
+	return physics::units::auto_unit(x, "nmol");
 }
 
-physics::units::unit operator"" _pmol(long double x)
+physics::units::auto_unit operator"" _pmol(long double x)
 {
-	return physics::units::unit(x, "pmol");
+	return physics::units::auto_unit(x, "pmol");
 }
 
-physics::units::unit operator"" _fmol(long double x)
+physics::units::auto_unit operator"" _fmol(long double x)
 {
-	return physics::units::unit(x, "fmol");
+	return physics::units::auto_unit(x, "fmol");
 }
 
-physics::units::unit operator"" _amol(long double x)
+physics::units::auto_unit operator"" _amol(long double x)
 {
-	return physics::units::unit(x, "amol");
+	return physics::units::auto_unit(x, "amol");
 }
 
-physics::units::unit operator"" _zmol(long double x)
+physics::units::auto_unit operator"" _zmol(long double x)
 {
-	return physics::units::unit(x, "zmol");
+	return physics::units::auto_unit(x, "zmol");
 }
 
-physics::units::unit operator"" _ymol(long double x)
+physics::units::auto_unit operator"" _ymol(long double x)
 {
-	return physics::units::unit(x, "ymol");
+	return physics::units::auto_unit(x, "ymol");
 }
 
-physics::units::unit operator"" _Ycd(long double x)
+physics::units::auto_unit operator"" _Ycd(long double x)
 {
-	return physics::units::unit(x, "Ycd");
+	return physics::units::auto_unit(x, "Ycd");
 }
 
-physics::units::unit operator"" _Zcd(long double x)
+physics::units::auto_unit operator"" _Zcd(long double x)
 {
-	return physics::units::unit(x, "Zcd");
+	return physics::units::auto_unit(x, "Zcd");
 }
 
-physics::units::unit operator"" _Ecd(long double x)
+physics::units::auto_unit operator"" _Ecd(long double x)
 {
-	return physics::units::unit(x, "Ecd");
+	return physics::units::auto_unit(x, "Ecd");
 }
 
-physics::units::unit operator"" _Pcd(long double x)
+physics::units::auto_unit operator"" _Pcd(long double x)
 {
-	return physics::units::unit(x, "Pcd");
+	return physics::units::auto_unit(x, "Pcd");
 }
 
-physics::units::unit operator"" _Tcd(long double x)
+physics::units::auto_unit operator"" _Tcd(long double x)
 {
-	return physics::units::unit(x, "Tcd");
+	return physics::units::auto_unit(x, "Tcd");
 }
 
-physics::units::unit operator"" _Gcd(long double x)
+physics::units::auto_unit operator"" _Gcd(long double x)
 {
-	return physics::units::unit(x, "Gcd");
+	return physics::units::auto_unit(x, "Gcd");
 }
 
-physics::units::unit operator"" _Mcd(long double x)
+physics::units::auto_unit operator"" _Mcd(long double x)
 {
-	return physics::units::unit(x, "Mcd");
+	return physics::units::auto_unit(x, "Mcd");
 }
 
-physics::units::unit operator"" _kcd(long double x)
+physics::units::auto_unit operator"" _kcd(long double x)
 {
-	return physics::units::unit(x, "kcd");
+	return physics::units::auto_unit(x, "kcd");
 }
 
-physics::units::unit operator"" _hcd(long double x)
+physics::units::auto_unit operator"" _hcd(long double x)
 {
-	return physics::units::unit(x, "hcd");
+	return physics::units::auto_unit(x, "hcd");
 }
 
-physics::units::unit operator"" _dacd(long double x)
+physics::units::auto_unit operator"" _dacd(long double x)
 {
-	return physics::units::unit(x, "dacd");
+	return physics::units::auto_unit(x, "dacd");
 }
 
-physics::units::unit operator"" _cd(long double x)
+physics::units::auto_unit operator"" _cd(long double x)
 {
-	return physics::units::unit(x, "cd");
+	return physics::units::auto_unit(x, "cd");
 }
 
-physics::units::unit operator"" _dcd(long double x)
+physics::units::auto_unit operator"" _dcd(long double x)
 {
-	return physics::units::unit(x, "dcd");
+	return physics::units::auto_unit(x, "dcd");
 }
 
-physics::units::unit operator"" _ccd(long double x)
+physics::units::auto_unit operator"" _ccd(long double x)
 {
-	return physics::units::unit(x, "ccd");
+	return physics::units::auto_unit(x, "ccd");
 }
 
-physics::units::unit operator"" _cdcd(long double x)
+physics::units::auto_unit operator"" _cdcd(long double x)
 {
-	return physics::units::unit(x, "cdcd");
+	return physics::units::auto_unit(x, "cdcd");
 }
 
-physics::units::unit operator"" _ucd(long double x)
+physics::units::auto_unit operator"" _ucd(long double x)
 {
-	return physics::units::unit(x, "ucd");
+	return physics::units::auto_unit(x, "ucd");
 }
 
-physics::units::unit operator"" _ncd(long double x)
+physics::units::auto_unit operator"" _ncd(long double x)
 {
-	return physics::units::unit(x, "ncd");
+	return physics::units::auto_unit(x, "ncd");
 }
 
-physics::units::unit operator"" _pcd(long double x)
+physics::units::auto_unit operator"" _pcd(long double x)
 {
-	return physics::units::unit(x, "pcd");
+	return physics::units::auto_unit(x, "pcd");
 }
 
-physics::units::unit operator"" _fcd(long double x)
+physics::units::auto_unit operator"" _fcd(long double x)
 {
-	return physics::units::unit(x, "fcd");
+	return physics::units::auto_unit(x, "fcd");
 }
 
-physics::units::unit operator"" _acd(long double x)
+physics::units::auto_unit operator"" _acd(long double x)
 {
-	return physics::units::unit(x, "acd");
+	return physics::units::auto_unit(x, "acd");
 }
 
-physics::units::unit operator"" _zcd(long double x)
+physics::units::auto_unit operator"" _zcd(long double x)
 {
-	return physics::units::unit(x, "zcd");
+	return physics::units::auto_unit(x, "zcd");
 }
 
-physics::units::unit operator"" _ycd(long double x)
+physics::units::auto_unit operator"" _ycd(long double x)
 {
-	return physics::units::unit(x, "ycd");
+	return physics::units::auto_unit(x, "ycd");
 }
 
-physics::units::unit operator"" _angle(long double x)
+physics::units::auto_unit operator"" _angle(long double x)
 {
-	return physics::units::unit(x, "angle");
+	return physics::units::auto_unit(x, "angle");
 }
 
-physics::units::unit operator"" _solid_angle(long double x)
+physics::units::auto_unit operator"" _solid_angle(long double x)
 {
-	return physics::units::unit(x, "solid_angle");
+	return physics::units::auto_unit(x, "solid_angle");
 }
 
-physics::units::unit operator"" _YB(long double x)
+physics::units::auto_unit operator"" _YB(long double x)
 {
-	return physics::units::unit(x, "YB");
+	return physics::units::auto_unit(x, "YB");
 }
 
-physics::units::unit operator"" _ZB(long double x)
+physics::units::auto_unit operator"" _ZB(long double x)
 {
-	return physics::units::unit(x, "ZB");
+	return physics::units::auto_unit(x, "ZB");
 }
 
-physics::units::unit operator"" _EB(long double x)
+physics::units::auto_unit operator"" _EB(long double x)
 {
-	return physics::units::unit(x, "EB");
+	return physics::units::auto_unit(x, "EB");
 }
 
-physics::units::unit operator"" _PB(long double x)
+physics::units::auto_unit operator"" _PB(long double x)
 {
-	return physics::units::unit(x, "PB");
+	return physics::units::auto_unit(x, "PB");
 }
 
-physics::units::unit operator"" _TB(long double x)
+physics::units::auto_unit operator"" _TB(long double x)
 {
-	return physics::units::unit(x, "TB");
+	return physics::units::auto_unit(x, "TB");
 }
 
-physics::units::unit operator"" _GB(long double x)
+physics::units::auto_unit operator"" _GB(long double x)
 {
-	return physics::units::unit(x, "GB");
+	return physics::units::auto_unit(x, "GB");
 }
 
-physics::units::unit operator"" _MB(long double x)
+physics::units::auto_unit operator"" _MB(long double x)
 {
-	return physics::units::unit(x, "MB");
+	return physics::units::auto_unit(x, "MB");
 }
 
-physics::units::unit operator"" _kB(long double x)
+physics::units::auto_unit operator"" _kB(long double x)
 {
-	return physics::units::unit(x, "kB");
+	return physics::units::auto_unit(x, "kB");
 }
 
-physics::units::unit operator"" _B(long double x)
+physics::units::auto_unit operator"" _B(long double x)
 {
-	return physics::units::unit(x, "B");
+	return physics::units::auto_unit(x, "B");
 }

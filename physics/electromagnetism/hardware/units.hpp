@@ -9,58 +9,58 @@ using namespace physics::units;
 
 namespace physics::units
 {
-	class electrical_conductivity : public scalar_unit<electrical_conductivity>
+	class electrical_conductivity : public scalar_unit_crtp<electrical_conductivity>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class electric_resistance : public scalar_unit<electric_resistance>
+	class electric_resistance : public scalar_unit_crtp<electric_resistance>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class electric_conductance : public scalar_unit<electric_conductance>
+	class electric_conductance : public scalar_unit_crtp<electric_conductance>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class permittivity : public scalar_unit<permittivity>
+	class permittivity : public scalar_unit_crtp<permittivity>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class resistivity : public scalar_unit<resistivity>
+	class resistivity : public scalar_unit_crtp<resistivity>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class linear_charge_density : public scalar_unit<linear_charge_density>
+	class linear_charge_density : public scalar_unit_crtp<linear_charge_density>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class frequency_drift : public scalar_unit<frequency_drift>
+	class frequency_drift : public scalar_unit_crtp<frequency_drift>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};

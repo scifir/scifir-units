@@ -1,6 +1,9 @@
 #ifndef UNITS_HPP_INCLUDED
 #define UNITS_HPP_INCLUDED
 
+#include "physics/basic/units/auto_unit.hpp"
+#include "physics/basic/units/auto_scalar.hpp"
+#include "physics/basic/units/auto_vector.hpp"
 #include "physics/basic/units/unit_basic.hpp"
 #include "physics/astronomy/units.hpp"
 #include "physics/electromagnetism/electricity/units.hpp"

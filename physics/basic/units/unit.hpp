@@ -17,78 +17,43 @@ using namespace std;
 
 namespace physics::units
 {
+	class auto_unit;
+
 	class unit
 	{
 		public:
 			unit();
-			unit(math::topology::space_type, string = "");
+			explicit unit(math::topology::space_type, string = "");
 			//unit(math::topology::space_type, dimension_symbol = m, prefix_symbol = normal_prefix);
-			unit(math::number::unit_number, vector_real_dimensions, const vector_actual_dimensions&);
-			unit(const unit&,string);
+			explicit unit(math::number::unit_number, vector_real_dimensions, const vector_actual_dimensions&); // TODO: check what to change here now that vector_real_dimensions is unneeded
+			explicit unit(const unit&,string);
+			explicit unit(const auto_unit&,string);
 			explicit unit(string);
 
-			unit operator +(const unit&);
-			unit operator -(const unit&);
-			unit operator *(const unit&);
-			unit operator /(const unit&);
-			unit operator ^(const unit&);
+			auto_unit operator +(const unit&);
+			auto_unit operator -(const unit&);
+			auto_unit operator *(const unit&);
+			auto_unit operator /(const unit&);
+			auto_unit operator ^(const unit&);
 			void operator +=(const unit&);
 			void operator -=(const unit&);
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			auto_unit operator +(T y);
+			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			auto_unit operator -(T y);
+			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			auto_unit operator *(T y);
+			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			auto_unit operator /(T y);
+			template<typename T, typename = typename enable_if<is_integer_number<T>::value>::type>
+			auto_unit operator ^(T y);
+
+			/*template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 			void operator =(T y)
 			{
 				value = y;
-			}
-
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			unit operator +(T y)
-			{
-				unit z = *this;
-				z += y;
-				return move(z);
-			}
-
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			unit operator -(T y)
-			{
-				unit z = *this;
-				z -= y;
-				return move(z);
-			}
-
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			unit operator *(T y)
-			{
-				unit z = *this;
-				z *= y;
-				return move(z);
-			}
-
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			unit operator /(T y)
-			{
-				unit z = *this;
-				z /= y;
-				return move(z);
-			}
-
-			template<typename T, typename = typename enable_if<is_integer_number<T>::value>::type>
-			unit operator ^(T y)
-			{
-				math::number::unit_number new_value = value ^ y;
-				vector_real_dimensions new_real_dimensions = real_dimensions;
-				for(auto& new_real_dimension : new_real_dimensions)
-				{
-					*new_real_dimension.second ^= y;
-				}
-				vector_actual_dimensions new_actual_dimensions = actual_dimensions;
-				for(const auto& new_actual_dimension : new_actual_dimensions)
-				{
-					*new_actual_dimension.second ^= y;
-				}
-				return move(unit(new_value, new_real_dimensions, new_actual_dimensions));
-			}
+			}*/
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 			void operator +=(T y)
@@ -114,16 +79,16 @@ namespace physics::units
 				value /= y;
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<is_integer_number<T>::value>::type>
 			void operator ^=(T y)
 			{
 				value = value ^ y;
 			}
 
 			unit& operator++();
-			unit operator++(int);
+			unit& operator++(int);
 			unit& operator--();
-			unit operator--(int);
+			unit& operator--(int);
 
 			void change_dimensions(string);
 			bool equal_dimensions(string) const;
@@ -132,9 +97,10 @@ namespace physics::units
 			bool empty_dimensions() const;
 			void set_same_prefix(const vector_actual_dimensions&);
 
-			const vector_real_dimensions& get_real_dimensions() const;
+			virtual string get_dimensions_match() const = 0;
+			virtual vector_real_dimensions get_real_dimensions() const = 0;
 			const vector_actual_dimensions& get_actual_dimensions() const;
-			const math::number::unit_number& get_value() const;
+			virtual const math::number::unit_number& get_value() const;
 
 			bool is_defined() const;
 			void invalidate(int);
@@ -162,8 +128,9 @@ namespace physics::units
 
 		protected:
 			math::number::unit_number value;
-			vector_real_dimensions real_dimensions;
 			vector_actual_dimensions actual_dimensions;
+
+			string initial_dimensions_get_structure(string) const;
 
 		private:
 			void add_prefix(shared_ptr<prefix>);
@@ -187,22 +154,50 @@ namespace physics::units
 	};
 
 	template<typename T>
-	class unit_crtp : public unit
+	class unit_crtp : public virtual unit
 	{
 		public:
-			unit_crtp() : unit()
+			//using unit::unit;
+
+			unit_crtp(const unit& new_unit) : unit(new_unit)
+			{
+				if(!new_unit.equal_dimensions(get_dimensions_match()))
+				{
+					unit::invalidate(7);
+				}
+			}
+
+			explicit unit_crtp(math::topology::space_type new_value, string init_value) : unit(new_value,init_value)
+			{
+				// TODO: finish this function
+			}
+
+			explicit unit_crtp(const unit& new_unit,string init_value) : unit(new_unit,init_value)
+			{
+				if(!new_unit.equal_dimensions(get_dimensions_match()))
+				{
+					unit::invalidate(7);
+				}
+			}
+
+			explicit unit_crtp(string init_value) : unit(init_value)
+			{
+				// TODO: finish this function
+			}
+
+			/*unit_crtp() : unit()
 			{
 			}
 
 			unit_crtp(math::topology::space_type new_value, string dimension_structure) : unit(new_value, dimension_structure)
 			{
-			}
+			}*/
 
 			/*unit_crtp(math::topology::space_type new_value, dimension_symbol dimension_name, prefix_symbol prefix_name) : unit(new_value, dimension_name, prefix_name)
 			{
 			}*/
 
-			unit_crtp(math::number::unit_number new_value, vector_real_dimensions new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : unit(new_value, new_real_dimensions, new_actual_dimensions)
+			/*unit_crtp(math::number::unit_number new_value, vector_real_dimensions new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : unit(new_value, new_real_dimensions, new_actual_dimensions)
 			{
 			}
 
@@ -216,16 +211,21 @@ namespace physics::units
 
 			unit_crtp(const unit& new_value,string init_value) : unit(new_value,init_value)
 			{
-			}
+			}*/
 
 			virtual T* clone() const
 			{
 				return new T(static_cast<const T&>(*this));
 			}
 
-			string get_dimensions_match() const
+			virtual string get_dimensions_match() const
 			{
 				return T::dimensions_match;
+			}
+
+			virtual vector_real_dimensions get_real_dimensions() const
+			{
+				return T::real_dimensions;
 			}
 	};
 
@@ -233,48 +233,12 @@ namespace physics::units
 	bool equal_dimensions(const vector_real_dimensions&,const vector_real_dimensions&);*/
 
 	math::topology::space_type abs(const unit&);
-	physics::units::unit sqrt(const unit&);
-	physics::units::unit sqrt_nth(const unit&, int);
+	auto_unit sqrt(const unit&);
+	auto_unit sqrt_nth(const unit&, int);
 	bool equal_dimensions(const unit&,const unit&);
 
-	[[deprecated]]
-	unit get_unit_from_dimensions(math::topology::space_type, vector_real_dimensions);
-}
-
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::unit operator +(T x, const physics::units::unit& y)
-{
-	math::number::unit_number new_value = y.get_value();
-	physics::units::vector_real_dimensions new_real_dimensions = y.get_real_dimensions();
-	physics::units::vector_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
-	return physics::units::unit(x + new_value, new_real_dimensions, new_actual_dimensions);
-}
-
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::unit operator -(T x, const physics::units::unit& y)
-{
-	math::number::unit_number new_value = y.get_value();
-	physics::units::vector_real_dimensions new_real_dimensions = y.get_real_dimensions();
-	physics::units::vector_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
-	return physics::units::unit(x - new_value, new_real_dimensions, new_actual_dimensions);
-}
-
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::unit operator *(T x, const physics::units::unit& y)
-{
-	math::number::unit_number new_value = y.get_value();
-	physics::units::vector_real_dimensions new_real_dimensions = y.get_real_dimensions();
-	physics::units::vector_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
-	return physics::units::unit(x * new_value, new_real_dimensions, new_actual_dimensions);
-}
-
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::unit operator /(T x, const physics::units::unit& y)
-{
-	math::number::unit_number new_value = y.get_value();
-	physics::units::vector_real_dimensions new_real_dimensions = y.get_real_dimensions();
-	physics::units::vector_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
-	return physics::units::unit(x / new_value, new_real_dimensions, new_actual_dimensions);
+	//[[deprecated]]
+	//unit* get_unit_from_dimensions(math::topology::space_type, vector_real_dimensions);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
@@ -296,6 +260,9 @@ bool operator <(const physics::units::unit&, const physics::units::unit&);
 bool operator >(const physics::units::unit&, const physics::units::unit&);
 bool operator <=(const physics::units::unit&, const physics::units::unit&);
 bool operator >=(const physics::units::unit&, const physics::units::unit&);
+
+bool operator ==(const physics::units::unit&, string);
+bool operator !=(const physics::units::unit&, string);
 
 void operator +=(wstring&, const physics::units::unit&);
 wstring operator +(const wstring&, const physics::units::unit&);

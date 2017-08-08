@@ -8,26 +8,26 @@ using namespace std;
 
 namespace physics::units
 {
-	class area : public scalar_unit<area>
+	class area : public scalar_unit_crtp<area>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class volume : public scalar_unit<volume>
+	class volume : public scalar_unit_crtp<volume>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class curvature : public scalar_unit<curvature>
+	class curvature : public scalar_unit_crtp<curvature>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};

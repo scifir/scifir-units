@@ -9,42 +9,42 @@ using namespace std;
 
 namespace physics::units
 {
-	class electric_displacement_field : public vector_unit<electric_displacement_field>
+	class electric_displacement_field : public vector_unit_crtp<electric_displacement_field>
 	{
 		public:
-			using vector_unit::vector_unit;
+			using vector_unit_crtp::vector_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class electric_charge_density : public scalar_unit<electric_charge_density>
+	class electric_charge_density : public scalar_unit_crtp<electric_charge_density>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class electric_current_density : public scalar_unit<electric_current_density>
+	class electric_current_density : public scalar_unit_crtp<electric_current_density>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class electric_field_strength : public vector_unit<electric_field_strength>
+	class electric_field_strength : public vector_unit_crtp<electric_field_strength>
 	{
 		public:
-			using vector_unit::vector_unit;
+			using vector_unit_crtp::vector_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class electron_mobility : public scalar_unit<electron_mobility>
+	class electron_mobility : public scalar_unit_crtp<electron_mobility>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};

@@ -7,10 +7,10 @@ using namespace std;
 
 namespace physics::units
 {
-	class transfer_speed : public scalar_unit<transfer_speed>
+	class transfer_speed : public scalar_unit_crtp<transfer_speed>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};

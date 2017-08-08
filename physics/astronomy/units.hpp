@@ -9,10 +9,10 @@ using namespace std;
 
 namespace physics::units
 {
-	class specific_angular_momentum : public vector_unit<specific_angular_momentum>
+	class specific_angular_momentum : public vector_unit_crtp<specific_angular_momentum>
 	{
 		public:
-			using vector_unit::vector_unit;
+			using vector_unit_crtp::vector_unit_crtp;
 
 			static const string dimensions_match;
 	};

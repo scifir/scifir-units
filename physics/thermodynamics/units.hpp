@@ -9,114 +9,114 @@ using namespace std;
 
 namespace physics::units
 {
-	class energy : public scalar_unit<energy>
+	class energy : public scalar_unit_crtp<energy>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class action : public scalar_unit<action>
+	class action : public scalar_unit_crtp<action>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class power : public scalar_unit<power>
+	class power : public scalar_unit_crtp<power>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class power_density : public scalar_unit<power_density>
+	class power_density : public scalar_unit_crtp<power_density>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class enthalpy : public scalar_unit<enthalpy>
+	class enthalpy : public scalar_unit_crtp<enthalpy>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class entropy : public scalar_unit<entropy>
+	class entropy : public scalar_unit_crtp<entropy>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class heat_capacity : public scalar_unit<heat_capacity>
+	class heat_capacity : public scalar_unit_crtp<heat_capacity>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class heat_flux_density : public scalar_unit<heat_flux_density>
+	class heat_flux_density : public scalar_unit_crtp<heat_flux_density>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class thermal_conductivity : public scalar_unit<thermal_conductivity>
+	class thermal_conductivity : public scalar_unit_crtp<thermal_conductivity>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class thermal_diffusivity : public scalar_unit<thermal_diffusivity>
+	class thermal_diffusivity : public scalar_unit_crtp<thermal_diffusivity>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class thermal_resistance : public scalar_unit<thermal_resistance>
+	class thermal_resistance : public scalar_unit_crtp<thermal_resistance>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class thermal_expansion_coefficient : public scalar_unit<thermal_expansion_coefficient>
+	class thermal_expansion_coefficient : public scalar_unit_crtp<thermal_expansion_coefficient>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class temperature_gradient : public vector_unit<temperature_gradient>
+	class temperature_gradient : public vector_unit_crtp<temperature_gradient>
 	{
 		public:
-			using vector_unit::vector_unit;
+			using vector_unit_crtp::vector_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class energy_flux_density : public scalar_unit<energy_flux_density>
+	class energy_flux_density : public scalar_unit_crtp<energy_flux_density>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};

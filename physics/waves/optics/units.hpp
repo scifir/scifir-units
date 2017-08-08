@@ -9,58 +9,58 @@ using namespace std;
 
 namespace physics::units
 {
-	class optical_power : public scalar_unit<optical_power>
+	class optical_power : public scalar_unit_crtp<optical_power>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class luminance : public scalar_unit<luminance>
+	class luminance : public scalar_unit_crtp<luminance>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class luminous_energy : public scalar_unit<luminous_energy>
+	class luminous_energy : public scalar_unit_crtp<luminous_energy>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class luminous_exposure : public scalar_unit<luminous_exposure>
+	class luminous_exposure : public scalar_unit_crtp<luminous_exposure>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class luminous_efficacy : public scalar_unit<luminous_efficacy>
+	class luminous_efficacy : public scalar_unit_crtp<luminous_efficacy>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class ionizing_radiation : public scalar_unit<ionizing_radiation>
+	class ionizing_radiation : public scalar_unit_crtp<ionizing_radiation>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class absorbed_dose : public scalar_unit<absorbed_dose>
+	class absorbed_dose : public scalar_unit_crtp<absorbed_dose>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};

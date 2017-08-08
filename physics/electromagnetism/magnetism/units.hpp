@@ -10,77 +10,77 @@ using namespace physics::units;
 namespace physics::units
 {
 	// TODO: vector_field
-	class polarization_density : public scalar_unit<polarization_density>
+	class polarization_density : public scalar_unit_crtp<polarization_density>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
 	// TODO: vector_field
-	class magnetic_permeability : public scalar_unit<magnetic_permeability>
+	class magnetic_permeability : public scalar_unit_crtp<magnetic_permeability>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
 	// TODO: vector_field
-	class magnetization : public scalar_unit<magnetization>
+	class magnetization : public scalar_unit_crtp<magnetization>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class magnetic_moment : public vector_unit<magnetic_moment>
+	class magnetic_moment : public vector_unit_crtp<magnetic_moment>
 	{
 		public:
-			using vector_unit::vector_unit;
+			using vector_unit_crtp::vector_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class magnetic_reluctance : public scalar_unit<magnetic_reluctance>
+	class magnetic_reluctance : public scalar_unit_crtp<magnetic_reluctance>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
 	// TODO: vector_field
-	class magnetic_vector_potential : public scalar_unit<magnetic_vector_potential>
+	class magnetic_vector_potential : public scalar_unit_crtp<magnetic_vector_potential>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class magnetic_rigidity : public scalar_unit<magnetic_rigidity>
+	class magnetic_rigidity : public scalar_unit_crtp<magnetic_rigidity>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class magnetomotive_force : public vector_unit<magnetomotive_force>
+	class magnetomotive_force : public vector_unit_crtp<magnetomotive_force>
 	{
 		public:
-			using vector_unit::vector_unit;
+			using vector_unit_crtp::vector_unit_crtp;
 
 			static const string dimensions_match;
 	};
 
-	class magnetic_susceptibility : public scalar_unit<magnetic_susceptibility>
+	class magnetic_susceptibility : public scalar_unit_crtp<magnetic_susceptibility>
 	{
 		public:
-			using scalar_unit::scalar_unit;
+			using scalar_unit_crtp::scalar_unit_crtp;
 
 			static const string dimensions_match;
 	};

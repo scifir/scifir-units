@@ -23,7 +23,7 @@ using namespace std;
 
 namespace physics::units
 {
-	unit::unit() : value(math::number::unit_number(0)), real_dimensions(vector_real_dimensions()), actual_dimensions(vector_actual_dimensions())
+	unit::unit() : value(math::number::unit_number(0)), actual_dimensions(vector_actual_dimensions())
 	{
 	}
 
@@ -45,7 +45,6 @@ namespace physics::units
 	unit::unit(math::number::unit_number new_value, vector_real_dimensions new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : unit()
 	{
 		value = move(new_value);
-		real_dimensions = move(new_real_dimensions);
 		actual_dimensions = move(new_actual_dimensions);
 	}
 
@@ -76,46 +75,46 @@ namespace physics::units
 		}
 	}
 
-	unit unit::operator +(const unit& x)
+	auto_unit unit::operator +(const unit& x)
 	{
 		if(x.equal_dimensions(get_real_dimensions()))
 		{
-			unit a = *this;
-			unit y = x;
+			auto_unit a = *this;
+			auto_unit y = x;
 			y.set_same_prefix(unit::get_actual_dimensions());
 			a += y.get_value().get_value();
 			return move(a);
 		}
 		else
 		{
-			unit y = 0;
+			auto_unit y = auto_unit(0);
 			y.invalidate(8);
 			return move(y);
 		}
 	}
 
-	unit unit::operator -(const unit& x)
+	auto_unit unit::operator -(const unit& x)
 	{
 		if(x.equal_dimensions(get_real_dimensions()))
 		{
-			unit a = *this;
-			unit y = x;
+			auto_unit a = *this;
+			auto_unit y = x;
 			y.set_same_prefix(unit::get_actual_dimensions());
 			a -= y.get_value().get_value();
 			return move(a);
 		}
 		else
 		{
-			unit y = 0;
+			auto_unit y = auto_unit(0);
 			y.invalidate(9);
 			return move(y);
 		}
 	}
 
-	unit unit::operator *(const unit& x)
+	auto_unit unit::operator *(const unit& x)
 	{
 		math::number::unit_number new_value = value;
-		unit y = x;
+		auto_unit y = x;
 		if(y.equal_dimensions(get_real_dimensions()))
 		{
 			y.set_same_prefix(get_actual_dimensions());
@@ -155,13 +154,13 @@ namespace physics::units
 				new_actual_dimensions[key.first] = key.second;
 			}
 		}*/
-		return move(unit(new_value, new_real_dimensions, new_actual_dimensions));
+		return move(auto_unit(new_value, new_real_dimensions, new_actual_dimensions));
 	}
 
-	unit unit::operator /(const unit& x)
+	auto_unit unit::operator /(const unit& x)
 	{
 		math::number::unit_number new_value = value;
-		unit y = x;
+		auto_unit y = x;
 		if(y.equal_dimensions(get_real_dimensions()))
 		{
 			y.set_same_prefix(unit::get_actual_dimensions());
@@ -203,14 +202,14 @@ namespace physics::units
 				*new_actual_dimensions[key.first] ^= -1;
 			}
 		}*/
-		return move(unit(new_value, new_real_dimensions, new_actual_dimensions));
+		return move(auto_unit(new_value, new_real_dimensions, new_actual_dimensions));
 	}
 
-	unit unit::operator ^(const unit& x)
+	auto_unit unit::operator ^(const unit& x)
 	{
 		if(empty_dimensions())
 		{
-			unit y = *this;
+			auto_unit y = *this;
 			if(unit::empty_dimensions())
 			{
 				y ^= int(x.get_value().get_value());
@@ -219,7 +218,7 @@ namespace physics::units
 		}
 		else
 		{
-			unit y = 0;
+			auto_unit y = auto_unit(0);
 			y.invalidate(10);
 			return move(y);
 		}
@@ -249,9 +248,9 @@ namespace physics::units
 		return *this;
 	}
 
-	unit unit::operator++(int)
+	unit& unit::operator++(int)
 	{
-		unit tmp(*this);
+		unit& tmp(*this);
 		operator++();
 		return tmp;
 	}
@@ -262,9 +261,9 @@ namespace physics::units
 		return *this;
 	}
 
-	unit unit::operator--(int)
+	unit& unit::operator--(int)
 	{
-		unit tmp(*this);
+		unit& tmp(*this);
 		operator--();
 		return tmp;
 	}
@@ -281,7 +280,7 @@ namespace physics::units
 				if(new_actual_abbreviation != nullptr)
 				{
 					shared_ptr<abbreviation> actual_abbreviation = shared_ptr<abbreviation>(new_actual_abbreviation);
-					unit abbreviation_unit("1 " + actual_abbreviation->get_dimensions_match());
+					auto_unit abbreviation_unit("1 " + actual_abbreviation->get_dimensions_match());
 					for(auto& actual_dimension2 : abbreviation_unit.get_actual_dimensions())
 					{
 						remove_prefix(actual_dimension2.second->get_dimension_prefixes());
@@ -297,7 +296,7 @@ namespace physics::units
 				if(new_actual_abbreviation != nullptr)
 				{
 					shared_ptr<abbreviation> actual_abbreviation = shared_ptr<abbreviation>(new_actual_abbreviation);
-					unit abbreviation_unit("1 " + actual_abbreviation->get_dimensions_match());
+					auto_unit abbreviation_unit("1 " + actual_abbreviation->get_dimensions_match());
 					for(auto& actual_dimension2 : abbreviation_unit.get_actual_dimensions())
 					{
 						add_prefix(actual_dimension2.second->get_dimension_prefixes());
@@ -322,6 +321,7 @@ namespace physics::units
 	/// Calculates if the dimensions are equal related to the symbol
 	bool unit::equal_dimensions(dimension_symbol new_dimension) const
 	{
+		vector_real_dimensions real_dimensions = get_real_dimensions();
 		if(real_dimensions.count(new_dimension) == 1 and real_dimensions.at(new_dimension)->get_scale() == 1)
 		{
 			return true;
@@ -342,6 +342,7 @@ namespace physics::units
 			{
 				if(real_dimensions_tmp.count(key.first) == 0 or *real_dimensions_tmp[key.first] != *key.second)
 				{
+					wcout << "here!" << endl;
 					return false;
 				}
 			}
@@ -349,14 +350,6 @@ namespace physics::units
 		}
 		else
 		{
-			for(const auto& key : real_dimensions_tmp)
-			{
-				wcout << *key.second << endl;
-			}
-			for(const auto& key : second_dimensions)
-			{
-				wcout << *key.second << endl;
-			}
 			return false;
 		}
 	}
@@ -364,7 +357,7 @@ namespace physics::units
 	/// Returns true if the dimensions are empty
 	bool unit::empty_dimensions() const
 	{
-		if(real_dimensions.size() == 0)
+		if(get_real_dimensions().size() == 0)
 		{
 			return true;
 		}
@@ -372,12 +365,6 @@ namespace physics::units
 		{
 			return false;
 		}
-	}
-
-	/// Returns the real dimensions map
-	const vector_real_dimensions& unit::get_real_dimensions() const
-	{
-		return real_dimensions;
 	}
 
 	/// Returns the actual dimensions map
@@ -501,7 +488,7 @@ namespace physics::units
 						*actual_dimension ^= -1;
 					}
 					actual_dimensions[actual_dimension->get_enum_type()] = actual_dimension;
-					real_dimensions[real_dimension->get_enum_type()] = real_dimension;
+					//real_dimensions[real_dimension->get_enum_type()] = real_dimension;
 
 					new_abbreviation_actual = nullptr;
 				}
@@ -524,9 +511,9 @@ namespace physics::units
 					vector_real_dimensions abbreviation_dimensions = create_real_dimensions(add_abbreviation->get_dimensions_match());
 					for(const auto& map_value : abbreviation_dimensions)
 					{
-						for(int i = 0; i < abs(new_scale); i++)
-						{
-							if(real_dimensions.count(map_value.first) > 0)
+						//for(int i = 0; i < abs(new_scale); i++)
+						//{
+							/*if(real_dimensions.count(map_value.first) > 0)
 							{
 								if(numerator == true)
 								{
@@ -540,8 +527,8 @@ namespace physics::units
 							else
 							{
 								real_dimensions[map_value.first] = map_value.second;
-							}
-						}
+							}*/
+						//}
 					}
 				}
 				else if(get_conversion.count(new_dimension) > 0)
@@ -571,7 +558,7 @@ namespace physics::units
 							*real_dimension ^= -1;
 							*actual_dimension ^= -1;
 						}
-						real_dimensions[real_dimension->get_enum_type()] = real_dimension;
+						//real_dimensions[real_dimension->get_enum_type()] = real_dimension;
 						actual_dimensions[actual_dimension->get_enum_type()] = actual_dimension;
 
 						new_abbreviation_actual = nullptr;
@@ -595,9 +582,9 @@ namespace physics::units
 						vector_real_dimensions abbreviation_dimensions = create_real_dimensions(add_abbreviation->get_dimensions_match());
 						for(const auto& map_value : abbreviation_dimensions)
 						{
-							for(int i = 0; i < abs(new_scale); i++)
-							{
-								if(real_dimensions.count(map_value.first) > 0)
+							//for(int i = 0; i < abs(new_scale); i++)
+							//{
+								/*if(real_dimensions.count(map_value.first) > 0)
 								{
 									if(numerator == true)
 									{
@@ -611,8 +598,8 @@ namespace physics::units
 								else
 								{
 									real_dimensions[map_value.first] = map_value.second;
-								}
-							}
+								}*/
+							//}
 						}
 					}
 				}
@@ -625,17 +612,38 @@ namespace physics::units
 		}
 	}
 
+	string unit::initial_dimensions_get_structure(string init_value) const
+	{
+		if(!isdigit(init_value[0]))
+		{
+			throw invalid_argument("Unit string bad defined: '" + init_value + "'");
+		}
+		else
+		{
+			int i = 0;
+			while(isdigit(init_value[i]) || init_value[i] == '.')
+			{
+				i++;
+			}
+			if(init_value[i] != ' ')
+			{
+				throw invalid_argument("Unit string must have the value separated from units with a single space");
+			}
+			return init_value.substr(i);
+		}
+	}
+
 	/// \deprecated
 	/// Deprecated in order for the dimensions() function to be used only
 	void unit::set_prefix(prefix_symbol prefix_type)
 	{
-		if(real_dimensions.size() == 1)
+		/*if(real_dimensions.size() == 1)
 		{
 			shared_ptr<dimension_abstract> old_dimension = actual_dimensions.begin()->second;
 			actual_dimensions.begin()->second->change_prefix(prefix_type);
 			shared_ptr<dimension_abstract> new_dimension = actual_dimensions.begin()->second;
 			swap_prefix(old_dimension, new_dimension);
-		}
+		}*/
 	}
 
 	/// \deprecated
@@ -792,7 +800,7 @@ namespace physics::units
 		return math::number::abs(x.get_value());
 	}
 
-	unit sqrt(const unit& x)
+	auto_unit sqrt(const unit& x)
 	{
 		math::number::unit_number new_value = math::number::sqrt(x.get_value());
 		vector_real_dimensions new_real_dimensions = x.get_real_dimensions();
@@ -805,10 +813,10 @@ namespace physics::units
 		{
 			new_actual_dimension.second->sqrt();
 		}
-		return unit(new_value, new_real_dimensions, new_actual_dimensions);
+		return auto_unit(new_value, new_real_dimensions, new_actual_dimensions);
 	}
 
-	unit sqrt_nth(const unit& x, int y)
+	auto_unit sqrt_nth(const unit& x, int y)
 	{
 		math::number::unit_number new_value = math::number::sqrt_nth(x.get_value(), y);
 		vector_real_dimensions new_real_dimensions = x.get_real_dimensions();
@@ -821,7 +829,7 @@ namespace physics::units
 		{
 			new_actual_dimension.second->sqrt_nth(y);
 		}
-		return unit(new_value, new_real_dimensions, new_actual_dimensions);
+		return auto_unit(new_value, new_real_dimensions, new_actual_dimensions);
 	}
 
 	/// Calculates if the dimensions are equal related to the unit
@@ -831,7 +839,7 @@ namespace physics::units
 	}
 
 	/// \deprecated
-	unit get_unit_from_dimensions(math::topology::space_type value, vector_real_dimensions dimensions)
+	/*unit* get_unit_from_dimensions(math::topology::space_type value, vector_real_dimensions dimensions)
 	{
 		if(dimensions.size() == 1)
 		{
@@ -847,19 +855,19 @@ namespace physics::units
 				switch(key)
 				{
 					case m:
-						return length(value);
+						return new length(value);
 					case s:
-						return time(value);
+						return new time(value);
 					case g:
-						return mass(value);
+						return new mass(value);
 					case A:
-						return charge(value);
+						return new charge(value);
 					case K:
-						return temperature(value);
+						return new temperature(value);
 					case mol:
-						return mole(value);
+						return new mole(value);
 					case cd:
-						return light(value);
+						return new light(value);
 				}
 			}
 			else
@@ -871,8 +879,8 @@ namespace physics::units
 		{
 			// Compound dimensions
 		}
-		return unit(value);
-	}
+		return new unit(value);
+	}*/
 }
 
 bool operator ==(const physics::units::unit& x, const physics::units::unit& y)
@@ -932,6 +940,17 @@ bool operator <=(const physics::units::unit& x, const physics::units::unit& y)
 bool operator >=(const physics::units::unit& x, const physics::units::unit& y)
 {
 	return !(x < y);
+}
+
+bool operator ==(const physics::units::unit& x, string y_init)
+{
+	physics::units::auto_unit y(y_init);
+	return (x == y);
+}
+
+bool operator !=(const physics::units::unit& x, string y_init)
+{
+	return !(x == y_init);
 }
 
 void operator +=(wstring& x, const physics::units::unit& y)
@@ -994,13 +1013,13 @@ wostream& operator <<(wostream& os, const physics::units::unit& x)
 	return os << x.get_value() << " " << dimension_text.str();
 }
 
-istream& operator >>(istream& is, physics::units::unit& x)
+/*istream& operator >>(istream& is, physics::units::auto_unit& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	physics::units::unit c(b);
+	physics::units::auto_unit c(b);
 	x = c;
 	return is;
-}
+}*/

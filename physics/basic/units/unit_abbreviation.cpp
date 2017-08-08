@@ -3,5122 +3,5122 @@
 using namespace std;
 using namespace physics::units;
 
-unit operator"" _YHz(unsigned long long int x)
+auto_unit operator"" _YHz(unsigned long long int x)
 {
-	return unit(x, "YHz");
+	return auto_unit(x, "YHz");
 }
 
-unit operator"" _ZHz(unsigned long long int x)
+auto_unit operator"" _ZHz(unsigned long long int x)
 {
-	return unit(x, "ZHz");
+	return auto_unit(x, "ZHz");
 }
 
-unit operator"" _EHz(unsigned long long int x)
+auto_unit operator"" _EHz(unsigned long long int x)
 {
-	return unit(x, "EHz");
+	return auto_unit(x, "EHz");
 }
 
-unit operator"" _PHz(unsigned long long int x)
+auto_unit operator"" _PHz(unsigned long long int x)
 {
-	return unit(x, "PHz");
+	return auto_unit(x, "PHz");
 }
 
-unit operator"" _THz(unsigned long long int x)
+auto_unit operator"" _THz(unsigned long long int x)
 {
-	return unit(x, "THz");
+	return auto_unit(x, "THz");
 }
 
-unit operator"" _GHz(unsigned long long int x)
+auto_unit operator"" _GHz(unsigned long long int x)
 {
-	return unit(x, "GHz");
+	return auto_unit(x, "GHz");
 }
 
-unit operator"" _MHz(unsigned long long int x)
+auto_unit operator"" _MHz(unsigned long long int x)
 {
-	return unit(x, "MHz");
+	return auto_unit(x, "MHz");
 }
 
-unit operator"" _kHz(unsigned long long int x)
+auto_unit operator"" _kHz(unsigned long long int x)
 {
-	return unit(x, "kHz");
+	return auto_unit(x, "kHz");
 }
 
-unit operator"" _hHz(unsigned long long int x)
+auto_unit operator"" _hHz(unsigned long long int x)
 {
-	return unit(x, "hHz");
+	return auto_unit(x, "hHz");
 }
 
-unit operator"" _daHz(unsigned long long int x)
+auto_unit operator"" _daHz(unsigned long long int x)
 {
-	return unit(x, "daHz");
+	return auto_unit(x, "daHz");
 }
 
-unit operator"" _Hz(unsigned long long int x)
+auto_unit operator"" _Hz(unsigned long long int x)
 {
-	return unit(x, "Hz");
+	return auto_unit(x, "Hz");
 }
 
-unit operator"" _dHz(unsigned long long int x)
+auto_unit operator"" _dHz(unsigned long long int x)
 {
-	return unit(x, "dHz");
+	return auto_unit(x, "dHz");
 }
 
-unit operator"" _cHz(unsigned long long int x)
+auto_unit operator"" _cHz(unsigned long long int x)
 {
-	return unit(x, "cHz");
+	return auto_unit(x, "cHz");
 }
 
-unit operator"" _mHz(unsigned long long int x)
+auto_unit operator"" _mHz(unsigned long long int x)
 {
-	return unit(x, "mHz");
+	return auto_unit(x, "mHz");
 }
 
-unit operator"" _uHz(unsigned long long int x)
+auto_unit operator"" _uHz(unsigned long long int x)
 {
-	return unit(x, "uHz");
+	return auto_unit(x, "uHz");
 }
 
-unit operator"" _nHz(unsigned long long int x)
+auto_unit operator"" _nHz(unsigned long long int x)
 {
-	return unit(x, "nHz");
+	return auto_unit(x, "nHz");
 }
 
-unit operator"" _pHz(unsigned long long int x)
+auto_unit operator"" _pHz(unsigned long long int x)
 {
-	return unit(x, "pHz");
+	return auto_unit(x, "pHz");
 }
 
-unit operator"" _fHz(unsigned long long int x)
+auto_unit operator"" _fHz(unsigned long long int x)
 {
-	return unit(x, "fHz");
+	return auto_unit(x, "fHz");
 }
 
-unit operator"" _aHz(unsigned long long int x)
+auto_unit operator"" _aHz(unsigned long long int x)
 {
-	return unit(x, "aHz");
+	return auto_unit(x, "aHz");
 }
 
-unit operator"" _zHz(unsigned long long int x)
+auto_unit operator"" _zHz(unsigned long long int x)
 {
-	return unit(x, "zHz");
+	return auto_unit(x, "zHz");
 }
 
-unit operator"" _yHz(unsigned long long int x)
+auto_unit operator"" _yHz(unsigned long long int x)
 {
-	return unit(x, "yHz");
+	return auto_unit(x, "yHz");
 }
 
-unit operator"" _YN(unsigned long long int x)
+auto_unit operator"" _YN(unsigned long long int x)
 {
-	return unit(x, "YN");
+	return auto_unit(x, "YN");
 }
 
-unit operator"" _ZN(unsigned long long int x)
+auto_unit operator"" _ZN(unsigned long long int x)
 {
-	return unit(x, "ZN");
+	return auto_unit(x, "ZN");
 }
 
-unit operator"" _EN(unsigned long long int x)
+auto_unit operator"" _EN(unsigned long long int x)
 {
-	return unit(x, "EN");
+	return auto_unit(x, "EN");
 }
 
-unit operator"" _PN(unsigned long long int x)
+auto_unit operator"" _PN(unsigned long long int x)
 {
-	return unit(x, "PN");
+	return auto_unit(x, "PN");
 }
 
-unit operator"" _TN(unsigned long long int x)
+auto_unit operator"" _TN(unsigned long long int x)
 {
-	return unit(x, "TN");
+	return auto_unit(x, "TN");
 }
 
-unit operator"" _GN(unsigned long long int x)
+auto_unit operator"" _GN(unsigned long long int x)
 {
-	return unit(x, "GN");
+	return auto_unit(x, "GN");
 }
 
-unit operator"" _MN(unsigned long long int x)
+auto_unit operator"" _MN(unsigned long long int x)
 {
-	return unit(x, "MN");
+	return auto_unit(x, "MN");
 }
 
-unit operator"" _kN(unsigned long long int x)
+auto_unit operator"" _kN(unsigned long long int x)
 {
-	return unit(x, "kN");
+	return auto_unit(x, "kN");
 }
 
-unit operator"" _hN(unsigned long long int x)
+auto_unit operator"" _hN(unsigned long long int x)
 {
-	return unit(x, "hN");
+	return auto_unit(x, "hN");
 }
 
-unit operator"" _daN(unsigned long long int x)
+auto_unit operator"" _daN(unsigned long long int x)
 {
-	return unit(x, "daN");
+	return auto_unit(x, "daN");
 }
 
-unit operator"" _N(unsigned long long int x)
+auto_unit operator"" _N(unsigned long long int x)
 {
-	return unit(x, "N");
+	return auto_unit(x, "N");
 }
 
-unit operator"" _dN(unsigned long long int x)
+auto_unit operator"" _dN(unsigned long long int x)
 {
-	return unit(x, "dN");
+	return auto_unit(x, "dN");
 }
 
-unit operator"" _cN(unsigned long long int x)
+auto_unit operator"" _cN(unsigned long long int x)
 {
-	return unit(x, "cN");
+	return auto_unit(x, "cN");
 }
 
-unit operator"" _mN(unsigned long long int x)
+auto_unit operator"" _mN(unsigned long long int x)
 {
-	return unit(x, "mN");
+	return auto_unit(x, "mN");
 }
 
-unit operator"" _uN(unsigned long long int x)
+auto_unit operator"" _uN(unsigned long long int x)
 {
-	return unit(x, "uN");
+	return auto_unit(x, "uN");
 }
 
-unit operator"" _nN(unsigned long long int x)
+auto_unit operator"" _nN(unsigned long long int x)
 {
-	return unit(x, "nN");
+	return auto_unit(x, "nN");
 }
 
-unit operator"" _pN(unsigned long long int x)
+auto_unit operator"" _pN(unsigned long long int x)
 {
-	return unit(x, "pN");
+	return auto_unit(x, "pN");
 }
 
-unit operator"" _fN(unsigned long long int x)
+auto_unit operator"" _fN(unsigned long long int x)
 {
-	return unit(x, "fN");
+	return auto_unit(x, "fN");
 }
 
-unit operator"" _aN(unsigned long long int x)
+auto_unit operator"" _aN(unsigned long long int x)
 {
-	return unit(x, "aN");
+	return auto_unit(x, "aN");
 }
 
-unit operator"" _zN(unsigned long long int x)
+auto_unit operator"" _zN(unsigned long long int x)
 {
-	return unit(x, "zN");
+	return auto_unit(x, "zN");
 }
 
-unit operator"" _yN(unsigned long long int x)
+auto_unit operator"" _yN(unsigned long long int x)
 {
-	return unit(x, "yN");
+	return auto_unit(x, "yN");
 }
 
-unit operator"" _YPa(unsigned long long int x)
+auto_unit operator"" _YPa(unsigned long long int x)
 {
-	return unit(x, "YPa");
+	return auto_unit(x, "YPa");
 }
 
-unit operator"" _ZPa(unsigned long long int x)
+auto_unit operator"" _ZPa(unsigned long long int x)
 {
-	return unit(x, "ZPa");
+	return auto_unit(x, "ZPa");
 }
 
-unit operator"" _EPa(unsigned long long int x)
+auto_unit operator"" _EPa(unsigned long long int x)
 {
-	return unit(x, "EPa");
+	return auto_unit(x, "EPa");
 }
 
-unit operator"" _PPa(unsigned long long int x)
+auto_unit operator"" _PPa(unsigned long long int x)
 {
-	return unit(x, "PPa");
+	return auto_unit(x, "PPa");
 }
 
-unit operator"" _TPa(unsigned long long int x)
+auto_unit operator"" _TPa(unsigned long long int x)
 {
-	return unit(x, "TPa");
+	return auto_unit(x, "TPa");
 }
 
-unit operator"" _GPa(unsigned long long int x)
+auto_unit operator"" _GPa(unsigned long long int x)
 {
-	return unit(x, "GPa");
+	return auto_unit(x, "GPa");
 }
 
-unit operator"" _MPa(unsigned long long int x)
+auto_unit operator"" _MPa(unsigned long long int x)
 {
-	return unit(x, "MPa");
+	return auto_unit(x, "MPa");
 }
 
-unit operator"" _kPa(unsigned long long int x)
+auto_unit operator"" _kPa(unsigned long long int x)
 {
-	return unit(x, "kPa");
+	return auto_unit(x, "kPa");
 }
 
-unit operator"" _hPa(unsigned long long int x)
+auto_unit operator"" _hPa(unsigned long long int x)
 {
-	return unit(x, "hPa");
+	return auto_unit(x, "hPa");
 }
 
-unit operator"" _daPa(unsigned long long int x)
+auto_unit operator"" _daPa(unsigned long long int x)
 {
-	return unit(x, "daPa");
+	return auto_unit(x, "daPa");
 }
 
-unit operator"" _Pa(unsigned long long int x)
+auto_unit operator"" _Pa(unsigned long long int x)
 {
-	return unit(x, "Pa");
+	return auto_unit(x, "Pa");
 }
 
-unit operator"" _dPa(unsigned long long int x)
+auto_unit operator"" _dPa(unsigned long long int x)
 {
-	return unit(x, "dPa");
+	return auto_unit(x, "dPa");
 }
 
-unit operator"" _cPa(unsigned long long int x)
+auto_unit operator"" _cPa(unsigned long long int x)
 {
-	return unit(x, "cPa");
+	return auto_unit(x, "cPa");
 }
 
-unit operator"" _mPa(unsigned long long int x)
+auto_unit operator"" _mPa(unsigned long long int x)
 {
-	return unit(x, "mPa");
+	return auto_unit(x, "mPa");
 }
 
-unit operator"" _uPa(unsigned long long int x)
+auto_unit operator"" _uPa(unsigned long long int x)
 {
-	return unit(x, "uPa");
+	return auto_unit(x, "uPa");
 }
 
-unit operator"" _nPa(unsigned long long int x)
+auto_unit operator"" _nPa(unsigned long long int x)
 {
-	return unit(x, "nPa");
+	return auto_unit(x, "nPa");
 }
 
-unit operator"" _pPa(unsigned long long int x)
+auto_unit operator"" _pPa(unsigned long long int x)
 {
-	return unit(x, "pPa");
+	return auto_unit(x, "pPa");
 }
 
-unit operator"" _fPa(unsigned long long int x)
+auto_unit operator"" _fPa(unsigned long long int x)
 {
-	return unit(x, "fPa");
+	return auto_unit(x, "fPa");
 }
 
-unit operator"" _aPa(unsigned long long int x)
+auto_unit operator"" _aPa(unsigned long long int x)
 {
-	return unit(x, "aPa");
+	return auto_unit(x, "aPa");
 }
 
-unit operator"" _zPa(unsigned long long int x)
+auto_unit operator"" _zPa(unsigned long long int x)
 {
-	return unit(x, "zPa");
+	return auto_unit(x, "zPa");
 }
 
-unit operator"" _yPa(unsigned long long int x)
+auto_unit operator"" _yPa(unsigned long long int x)
 {
-	return unit(x, "yPa");
+	return auto_unit(x, "yPa");
 }
 
-unit operator"" _YJ(unsigned long long int x)
+auto_unit operator"" _YJ(unsigned long long int x)
 {
-	return unit(x, "YJ");
+	return auto_unit(x, "YJ");
 }
 
-unit operator"" _ZJ(unsigned long long int x)
+auto_unit operator"" _ZJ(unsigned long long int x)
 {
-	return unit(x, "ZJ");
+	return auto_unit(x, "ZJ");
 }
 
-unit operator"" _EJ(unsigned long long int x)
+auto_unit operator"" _EJ(unsigned long long int x)
 {
-	return unit(x, "EJ");
+	return auto_unit(x, "EJ");
 }
 
-unit operator"" _PJ(unsigned long long int x)
+auto_unit operator"" _PJ(unsigned long long int x)
 {
-	return unit(x, "PJ");
+	return auto_unit(x, "PJ");
 }
 
-unit operator"" _TJ(unsigned long long int x)
+auto_unit operator"" _TJ(unsigned long long int x)
 {
-	return unit(x, "TJ");
+	return auto_unit(x, "TJ");
 }
 
-unit operator"" _GJ(unsigned long long int x)
+auto_unit operator"" _GJ(unsigned long long int x)
 {
-	return unit(x, "GJ");
+	return auto_unit(x, "GJ");
 }
 
-unit operator"" _MJ(unsigned long long int x)
+auto_unit operator"" _MJ(unsigned long long int x)
 {
-	return unit(x, "MJ");
+	return auto_unit(x, "MJ");
 }
 
-unit operator"" _kJ(unsigned long long int x)
+auto_unit operator"" _kJ(unsigned long long int x)
 {
-	return unit(x, "kJ");
+	return auto_unit(x, "kJ");
 }
 
-unit operator"" _hJ(unsigned long long int x)
+auto_unit operator"" _hJ(unsigned long long int x)
 {
-	return unit(x, "hJ");
+	return auto_unit(x, "hJ");
 }
 
-unit operator"" _daJ(unsigned long long int x)
+auto_unit operator"" _daJ(unsigned long long int x)
 {
-	return unit(x, "daJ");
+	return auto_unit(x, "daJ");
 }
 
-unit operator"" _J(unsigned long long int x)
+auto_unit operator"" _J(unsigned long long int x)
 {
-	return unit(x, "J");
+	return auto_unit(x, "J");
 }
 
-unit operator"" _dJ(unsigned long long int x)
+auto_unit operator"" _dJ(unsigned long long int x)
 {
-	return unit(x, "dJ");
+	return auto_unit(x, "dJ");
 }
 
-unit operator"" _cJ(unsigned long long int x)
+auto_unit operator"" _cJ(unsigned long long int x)
 {
-	return unit(x, "cJ");
+	return auto_unit(x, "cJ");
 }
 
-unit operator"" _mJ(unsigned long long int x)
+auto_unit operator"" _mJ(unsigned long long int x)
 {
-	return unit(x, "mJ");
+	return auto_unit(x, "mJ");
 }
 
-unit operator"" _uJ(unsigned long long int x)
+auto_unit operator"" _uJ(unsigned long long int x)
 {
-	return unit(x, "uJ");
+	return auto_unit(x, "uJ");
 }
 
-unit operator"" _nJ(unsigned long long int x)
+auto_unit operator"" _nJ(unsigned long long int x)
 {
-	return unit(x, "nJ");
+	return auto_unit(x, "nJ");
 }
 
-unit operator"" _pJ(unsigned long long int x)
+auto_unit operator"" _pJ(unsigned long long int x)
 {
-	return unit(x, "pJ");
+	return auto_unit(x, "pJ");
 }
 
-unit operator"" _fJ(unsigned long long int x)
+auto_unit operator"" _fJ(unsigned long long int x)
 {
-	return unit(x, "fJ");
+	return auto_unit(x, "fJ");
 }
 
-unit operator"" _aJ(unsigned long long int x)
+auto_unit operator"" _aJ(unsigned long long int x)
 {
-	return unit(x, "aJ");
+	return auto_unit(x, "aJ");
 }
 
-unit operator"" _zJ(unsigned long long int x)
+auto_unit operator"" _zJ(unsigned long long int x)
 {
-	return unit(x, "zJ");
+	return auto_unit(x, "zJ");
 }
 
-unit operator"" _yJ(unsigned long long int x)
+auto_unit operator"" _yJ(unsigned long long int x)
 {
-	return unit(x, "yJ");
+	return auto_unit(x, "yJ");
 }
 
-unit operator"" _YW(unsigned long long int x)
+auto_unit operator"" _YW(unsigned long long int x)
 {
-	return unit(x, "YW");
+	return auto_unit(x, "YW");
 }
 
-unit operator"" _ZW(unsigned long long int x)
+auto_unit operator"" _ZW(unsigned long long int x)
 {
-	return unit(x, "ZW");
+	return auto_unit(x, "ZW");
 }
 
-unit operator"" _EW(unsigned long long int x)
+auto_unit operator"" _EW(unsigned long long int x)
 {
-	return unit(x, "EW");
+	return auto_unit(x, "EW");
 }
 
-unit operator"" _PW(unsigned long long int x)
+auto_unit operator"" _PW(unsigned long long int x)
 {
-	return unit(x, "PW");
+	return auto_unit(x, "PW");
 }
 
-unit operator"" _TW(unsigned long long int x)
+auto_unit operator"" _TW(unsigned long long int x)
 {
-	return unit(x, "TW");
+	return auto_unit(x, "TW");
 }
 
-unit operator"" _GW(unsigned long long int x)
+auto_unit operator"" _GW(unsigned long long int x)
 {
-	return unit(x, "GW");
+	return auto_unit(x, "GW");
 }
 
-unit operator"" _MW(unsigned long long int x)
+auto_unit operator"" _MW(unsigned long long int x)
 {
-	return unit(x, "MW");
+	return auto_unit(x, "MW");
 }
 
-unit operator"" _kW(unsigned long long int x)
+auto_unit operator"" _kW(unsigned long long int x)
 {
-	return unit(x, "kW");
+	return auto_unit(x, "kW");
 }
 
-unit operator"" _hW(unsigned long long int x)
+auto_unit operator"" _hW(unsigned long long int x)
 {
-	return unit(x, "hW");
+	return auto_unit(x, "hW");
 }
 
-unit operator"" _daW(unsigned long long int x)
+auto_unit operator"" _daW(unsigned long long int x)
 {
-	return unit(x, "daW");
+	return auto_unit(x, "daW");
 }
 
-unit operator"" _W(unsigned long long int x)
+auto_unit operator"" _W(unsigned long long int x)
 {
-	return unit(x, "W");
+	return auto_unit(x, "W");
 }
 
-unit operator"" _dW(unsigned long long int x)
+auto_unit operator"" _dW(unsigned long long int x)
 {
-	return unit(x, "dW");
+	return auto_unit(x, "dW");
 }
 
-unit operator"" _cW(unsigned long long int x)
+auto_unit operator"" _cW(unsigned long long int x)
 {
-	return unit(x, "cW");
+	return auto_unit(x, "cW");
 }
 
-unit operator"" _mW(unsigned long long int x)
+auto_unit operator"" _mW(unsigned long long int x)
 {
-	return unit(x, "mW");
+	return auto_unit(x, "mW");
 }
 
-unit operator"" _uW(unsigned long long int x)
+auto_unit operator"" _uW(unsigned long long int x)
 {
-	return unit(x, "uW");
+	return auto_unit(x, "uW");
 }
 
-unit operator"" _nW(unsigned long long int x)
+auto_unit operator"" _nW(unsigned long long int x)
 {
-	return unit(x, "nW");
+	return auto_unit(x, "nW");
 }
 
-unit operator"" _pW(unsigned long long int x)
+auto_unit operator"" _pW(unsigned long long int x)
 {
-	return unit(x, "pW");
+	return auto_unit(x, "pW");
 }
 
-unit operator"" _fW(unsigned long long int x)
+auto_unit operator"" _fW(unsigned long long int x)
 {
-	return unit(x, "fW");
+	return auto_unit(x, "fW");
 }
 
-unit operator"" _aW(unsigned long long int x)
+auto_unit operator"" _aW(unsigned long long int x)
 {
-	return unit(x, "aW");
+	return auto_unit(x, "aW");
 }
 
-unit operator"" _zW(unsigned long long int x)
+auto_unit operator"" _zW(unsigned long long int x)
 {
-	return unit(x, "zW");
+	return auto_unit(x, "zW");
 }
 
-unit operator"" _yW(unsigned long long int x)
+auto_unit operator"" _yW(unsigned long long int x)
 {
-	return unit(x, "yW");
+	return auto_unit(x, "yW");
 }
 
-unit operator"" _YA(unsigned long long int x)
+auto_unit operator"" _YA(unsigned long long int x)
 {
-	return unit(x, "YA");
+	return auto_unit(x, "YA");
 }
 
-unit operator"" _ZA(unsigned long long int x)
+auto_unit operator"" _ZA(unsigned long long int x)
 {
-	return unit(x, "ZA");
+	return auto_unit(x, "ZA");
 }
 
-unit operator"" _EA(unsigned long long int x)
+auto_unit operator"" _EA(unsigned long long int x)
 {
-	return unit(x, "EA");
+	return auto_unit(x, "EA");
 }
 
-unit operator"" _PA(unsigned long long int x)
+auto_unit operator"" _PA(unsigned long long int x)
 {
-	return unit(x, "PA");
+	return auto_unit(x, "PA");
 }
 
-unit operator"" _TA(unsigned long long int x)
+auto_unit operator"" _TA(unsigned long long int x)
 {
-	return unit(x, "TA");
+	return auto_unit(x, "TA");
 }
 
-unit operator"" _GA(unsigned long long int x)
+auto_unit operator"" _GA(unsigned long long int x)
 {
-	return unit(x, "GA");
+	return auto_unit(x, "GA");
 }
 
-unit operator"" _MA(unsigned long long int x)
+auto_unit operator"" _MA(unsigned long long int x)
 {
-	return unit(x, "MA");
+	return auto_unit(x, "MA");
 }
 
-unit operator"" _kA(unsigned long long int x)
+auto_unit operator"" _kA(unsigned long long int x)
 {
-	return unit(x, "kA");
+	return auto_unit(x, "kA");
 }
 
-unit operator"" _hA(unsigned long long int x)
+auto_unit operator"" _hA(unsigned long long int x)
 {
-	return unit(x, "hA");
+	return auto_unit(x, "hA");
 }
 
-unit operator"" _daA(unsigned long long int x)
+auto_unit operator"" _daA(unsigned long long int x)
 {
-	return unit(x, "daA");
+	return auto_unit(x, "daA");
 }
 
-unit operator"" _A(unsigned long long int x)
+auto_unit operator"" _A(unsigned long long int x)
 {
-	return unit(x, "A");
+	return auto_unit(x, "A");
 }
 
-unit operator"" _dA(unsigned long long int x)
+auto_unit operator"" _dA(unsigned long long int x)
 {
-	return unit(x, "dA");
+	return auto_unit(x, "dA");
 }
 
-unit operator"" _cA(unsigned long long int x)
+auto_unit operator"" _cA(unsigned long long int x)
 {
-	return unit(x, "cA");
+	return auto_unit(x, "cA");
 }
 
-unit operator"" _mA(unsigned long long int x)
+auto_unit operator"" _mA(unsigned long long int x)
 {
-	return unit(x, "mA");
+	return auto_unit(x, "mA");
 }
 
-unit operator"" _uA(unsigned long long int x)
+auto_unit operator"" _uA(unsigned long long int x)
 {
-	return unit(x, "uA");
+	return auto_unit(x, "uA");
 }
 
-unit operator"" _nA(unsigned long long int x)
+auto_unit operator"" _nA(unsigned long long int x)
 {
-	return unit(x, "nA");
+	return auto_unit(x, "nA");
 }
 
-unit operator"" _pA(unsigned long long int x)
+auto_unit operator"" _pA(unsigned long long int x)
 {
-	return unit(x, "pA");
+	return auto_unit(x, "pA");
 }
 
-unit operator"" _fA(unsigned long long int x)
+auto_unit operator"" _fA(unsigned long long int x)
 {
-	return unit(x, "fA");
+	return auto_unit(x, "fA");
 }
 
-unit operator"" _aA(unsigned long long int x)
+auto_unit operator"" _aA(unsigned long long int x)
 {
-	return unit(x, "aA");
+	return auto_unit(x, "aA");
 }
 
-unit operator"" _zA(unsigned long long int x)
+auto_unit operator"" _zA(unsigned long long int x)
 {
-	return unit(x, "zA");
+	return auto_unit(x, "zA");
 }
 
-unit operator"" _yA(unsigned long long int x)
+auto_unit operator"" _yA(unsigned long long int x)
 {
-	return unit(x, "yA");
+	return auto_unit(x, "yA");
 }
 
-unit operator"" _YV(unsigned long long int x)
+auto_unit operator"" _YV(unsigned long long int x)
 {
-	return unit(x, "YV");
+	return auto_unit(x, "YV");
 }
 
-unit operator"" _ZV(unsigned long long int x)
+auto_unit operator"" _ZV(unsigned long long int x)
 {
-	return unit(x, "ZV");
+	return auto_unit(x, "ZV");
 }
 
-unit operator"" _EV(unsigned long long int x)
+auto_unit operator"" _EV(unsigned long long int x)
 {
-	return unit(x, "EV");
+	return auto_unit(x, "EV");
 }
 
-unit operator"" _PV(unsigned long long int x)
+auto_unit operator"" _PV(unsigned long long int x)
 {
-	return unit(x, "PV");
+	return auto_unit(x, "PV");
 }
 
-unit operator"" _TV(unsigned long long int x)
+auto_unit operator"" _TV(unsigned long long int x)
 {
-	return unit(x, "TV");
+	return auto_unit(x, "TV");
 }
 
-unit operator"" _GV(unsigned long long int x)
+auto_unit operator"" _GV(unsigned long long int x)
 {
-	return unit(x, "GV");
+	return auto_unit(x, "GV");
 }
 
-unit operator"" _MV(unsigned long long int x)
+auto_unit operator"" _MV(unsigned long long int x)
 {
-	return unit(x, "MV");
+	return auto_unit(x, "MV");
 }
 
-unit operator"" _kV(unsigned long long int x)
+auto_unit operator"" _kV(unsigned long long int x)
 {
-	return unit(x, "kV");
+	return auto_unit(x, "kV");
 }
 
-unit operator"" _hV(unsigned long long int x)
+auto_unit operator"" _hV(unsigned long long int x)
 {
-	return unit(x, "hV");
+	return auto_unit(x, "hV");
 }
 
-unit operator"" _daV(unsigned long long int x)
+auto_unit operator"" _daV(unsigned long long int x)
 {
-	return unit(x, "daV");
+	return auto_unit(x, "daV");
 }
 
-unit operator"" _V(unsigned long long int x)
+auto_unit operator"" _V(unsigned long long int x)
 {
-	return unit(x, "V");
+	return auto_unit(x, "V");
 }
 
-unit operator"" _dV(unsigned long long int x)
+auto_unit operator"" _dV(unsigned long long int x)
 {
-	return unit(x, "dV");
+	return auto_unit(x, "dV");
 }
 
-unit operator"" _cV(unsigned long long int x)
+auto_unit operator"" _cV(unsigned long long int x)
 {
-	return unit(x, "cV");
+	return auto_unit(x, "cV");
 }
 
-unit operator"" _mV(unsigned long long int x)
+auto_unit operator"" _mV(unsigned long long int x)
 {
-	return unit(x, "mV");
+	return auto_unit(x, "mV");
 }
 
-unit operator"" _uV(unsigned long long int x)
+auto_unit operator"" _uV(unsigned long long int x)
 {
-	return unit(x, "uV");
+	return auto_unit(x, "uV");
 }
 
-unit operator"" _nV(unsigned long long int x)
+auto_unit operator"" _nV(unsigned long long int x)
 {
-	return unit(x, "nV");
+	return auto_unit(x, "nV");
 }
 
-unit operator"" _pV(unsigned long long int x)
+auto_unit operator"" _pV(unsigned long long int x)
 {
-	return unit(x, "pV");
+	return auto_unit(x, "pV");
 }
 
-unit operator"" _fV(unsigned long long int x)
+auto_unit operator"" _fV(unsigned long long int x)
 {
-	return unit(x, "fV");
+	return auto_unit(x, "fV");
 }
 
-unit operator"" _aV(unsigned long long int x)
+auto_unit operator"" _aV(unsigned long long int x)
 {
-	return unit(x, "aV");
+	return auto_unit(x, "aV");
 }
 
-unit operator"" _zV(unsigned long long int x)
+auto_unit operator"" _zV(unsigned long long int x)
 {
-	return unit(x, "zV");
+	return auto_unit(x, "zV");
 }
 
-unit operator"" _yV(unsigned long long int x)
+auto_unit operator"" _yV(unsigned long long int x)
 {
-	return unit(x, "yV");
+	return auto_unit(x, "yV");
 }
 
-unit operator"" _YF(unsigned long long int x)
+auto_unit operator"" _YF(unsigned long long int x)
 {
-	return unit(x, "YF");
+	return auto_unit(x, "YF");
 }
 
-unit operator"" _ZF(unsigned long long int x)
+auto_unit operator"" _ZF(unsigned long long int x)
 {
-	return unit(x, "ZF");
+	return auto_unit(x, "ZF");
 }
 
-unit operator"" _EF(unsigned long long int x)
+auto_unit operator"" _EF(unsigned long long int x)
 {
-	return unit(x, "EF");
+	return auto_unit(x, "EF");
 }
 
-unit operator"" _PF(unsigned long long int x)
+auto_unit operator"" _PF(unsigned long long int x)
 {
-	return unit(x, "PF");
+	return auto_unit(x, "PF");
 }
 
-unit operator"" _TF(unsigned long long int x)
+auto_unit operator"" _TF(unsigned long long int x)
 {
-	return unit(x, "TF");
+	return auto_unit(x, "TF");
 }
 
-unit operator"" _GF(unsigned long long int x)
+auto_unit operator"" _GF(unsigned long long int x)
 {
-	return unit(x, "GF");
+	return auto_unit(x, "GF");
 }
 
-unit operator"" _MF(unsigned long long int x)
+auto_unit operator"" _MF(unsigned long long int x)
 {
-	return unit(x, "MF");
+	return auto_unit(x, "MF");
 }
 
-unit operator"" _kF(unsigned long long int x)
+auto_unit operator"" _kF(unsigned long long int x)
 {
-	return unit(x, "kF");
+	return auto_unit(x, "kF");
 }
 
-unit operator"" _hF(unsigned long long int x)
+auto_unit operator"" _hF(unsigned long long int x)
 {
-	return unit(x, "hF");
+	return auto_unit(x, "hF");
 }
 
-unit operator"" _daF(unsigned long long int x)
+auto_unit operator"" _daF(unsigned long long int x)
 {
-	return unit(x, "daF");
+	return auto_unit(x, "daF");
 }
 
-unit operator"" _F(unsigned long long int x)
+auto_unit operator"" _F(unsigned long long int x)
 {
-	return unit(x, "F");
+	return auto_unit(x, "F");
 }
 
-unit operator"" _dF(unsigned long long int x)
+auto_unit operator"" _dF(unsigned long long int x)
 {
-	return unit(x, "dF");
+	return auto_unit(x, "dF");
 }
 
-unit operator"" _cF(unsigned long long int x)
+auto_unit operator"" _cF(unsigned long long int x)
 {
-	return unit(x, "cF");
+	return auto_unit(x, "cF");
 }
 
-unit operator"" _mF(unsigned long long int x)
+auto_unit operator"" _mF(unsigned long long int x)
 {
-	return unit(x, "mF");
+	return auto_unit(x, "mF");
 }
 
-unit operator"" _uF(unsigned long long int x)
+auto_unit operator"" _uF(unsigned long long int x)
 {
-	return unit(x, "uF");
+	return auto_unit(x, "uF");
 }
 
-unit operator"" _nF(unsigned long long int x)
+auto_unit operator"" _nF(unsigned long long int x)
 {
-	return unit(x, "nF");
+	return auto_unit(x, "nF");
 }
 
-unit operator"" _pF(unsigned long long int x)
+auto_unit operator"" _pF(unsigned long long int x)
 {
-	return unit(x, "pF");
+	return auto_unit(x, "pF");
 }
 
-unit operator"" _fF(unsigned long long int x)
+auto_unit operator"" _fF(unsigned long long int x)
 {
-	return unit(x, "fF");
+	return auto_unit(x, "fF");
 }
 
-unit operator"" _aF(unsigned long long int x)
+auto_unit operator"" _aF(unsigned long long int x)
 {
-	return unit(x, "aF");
+	return auto_unit(x, "aF");
 }
 
-unit operator"" _zF(unsigned long long int x)
+auto_unit operator"" _zF(unsigned long long int x)
 {
-	return unit(x, "zF");
+	return auto_unit(x, "zF");
 }
 
-unit operator"" _yF(unsigned long long int x)
+auto_unit operator"" _yF(unsigned long long int x)
 {
-	return unit(x, "yF");
+	return auto_unit(x, "yF");
 }
 
-unit operator"" _YOhm(unsigned long long int x)
+auto_unit operator"" _YOhm(unsigned long long int x)
 {
-	return unit(x, "YOhm");
+	return auto_unit(x, "YOhm");
 }
 
-unit operator"" _ZOhm(unsigned long long int x)
+auto_unit operator"" _ZOhm(unsigned long long int x)
 {
-	return unit(x, "ZOhm");
+	return auto_unit(x, "ZOhm");
 }
 
-unit operator"" _EOhm(unsigned long long int x)
+auto_unit operator"" _EOhm(unsigned long long int x)
 {
-	return unit(x, "EOhm");
+	return auto_unit(x, "EOhm");
 }
 
-unit operator"" _POhm(unsigned long long int x)
+auto_unit operator"" _POhm(unsigned long long int x)
 {
-	return unit(x, "POhm");
+	return auto_unit(x, "POhm");
 }
 
-unit operator"" _TOhm(unsigned long long int x)
+auto_unit operator"" _TOhm(unsigned long long int x)
 {
-	return unit(x, "TOhm");
+	return auto_unit(x, "TOhm");
 }
 
-unit operator"" _GOhm(unsigned long long int x)
+auto_unit operator"" _GOhm(unsigned long long int x)
 {
-	return unit(x, "GOhm");
+	return auto_unit(x, "GOhm");
 }
 
-unit operator"" _MOhm(unsigned long long int x)
+auto_unit operator"" _MOhm(unsigned long long int x)
 {
-	return unit(x, "MOhm");
+	return auto_unit(x, "MOhm");
 }
 
-unit operator"" _kOhm(unsigned long long int x)
+auto_unit operator"" _kOhm(unsigned long long int x)
 {
-	return unit(x, "kOhm");
+	return auto_unit(x, "kOhm");
 }
 
-unit operator"" _hOhm(unsigned long long int x)
+auto_unit operator"" _hOhm(unsigned long long int x)
 {
-	return unit(x, "hOhm");
+	return auto_unit(x, "hOhm");
 }
 
-unit operator"" _daOhm(unsigned long long int x)
+auto_unit operator"" _daOhm(unsigned long long int x)
 {
-	return unit(x, "daOhm");
+	return auto_unit(x, "daOhm");
 }
 
-unit operator"" _Ohm(unsigned long long int x)
+auto_unit operator"" _Ohm(unsigned long long int x)
 {
-	return unit(x, "Ohm");
+	return auto_unit(x, "Ohm");
 }
 
-unit operator"" _dOhm(unsigned long long int x)
+auto_unit operator"" _dOhm(unsigned long long int x)
 {
-	return unit(x, "dOhm");
+	return auto_unit(x, "dOhm");
 }
 
-unit operator"" _cOhm(unsigned long long int x)
+auto_unit operator"" _cOhm(unsigned long long int x)
 {
-	return unit(x, "cOhm");
+	return auto_unit(x, "cOhm");
 }
 
-unit operator"" _mOhm(unsigned long long int x)
+auto_unit operator"" _mOhm(unsigned long long int x)
 {
-	return unit(x, "mOhm");
+	return auto_unit(x, "mOhm");
 }
 
-unit operator"" _uOhm(unsigned long long int x)
+auto_unit operator"" _uOhm(unsigned long long int x)
 {
-	return unit(x, "uOhm");
+	return auto_unit(x, "uOhm");
 }
 
-unit operator"" _nOhm(unsigned long long int x)
+auto_unit operator"" _nOhm(unsigned long long int x)
 {
-	return unit(x, "nOhm");
+	return auto_unit(x, "nOhm");
 }
 
-unit operator"" _pOhm(unsigned long long int x)
+auto_unit operator"" _pOhm(unsigned long long int x)
 {
-	return unit(x, "pOhm");
+	return auto_unit(x, "pOhm");
 }
 
-unit operator"" _fOhm(unsigned long long int x)
+auto_unit operator"" _fOhm(unsigned long long int x)
 {
-	return unit(x, "fOhm");
+	return auto_unit(x, "fOhm");
 }
 
-unit operator"" _aOhm(unsigned long long int x)
+auto_unit operator"" _aOhm(unsigned long long int x)
 {
-	return unit(x, "aOhm");
+	return auto_unit(x, "aOhm");
 }
 
-unit operator"" _zOhm(unsigned long long int x)
+auto_unit operator"" _zOhm(unsigned long long int x)
 {
-	return unit(x, "zOhm");
+	return auto_unit(x, "zOhm");
 }
 
-unit operator"" _yOhm(unsigned long long int x)
+auto_unit operator"" _yOhm(unsigned long long int x)
 {
-	return unit(x, "yOhm");
+	return auto_unit(x, "yOhm");
 }
 
-unit operator"" _YS(unsigned long long int x)
+auto_unit operator"" _YS(unsigned long long int x)
 {
-	return unit(x, "YS");
+	return auto_unit(x, "YS");
 }
 
-unit operator"" _ZS(unsigned long long int x)
+auto_unit operator"" _ZS(unsigned long long int x)
 {
-	return unit(x, "ZS");
+	return auto_unit(x, "ZS");
 }
 
-unit operator"" _ES(unsigned long long int x)
+auto_unit operator"" _ES(unsigned long long int x)
 {
-	return unit(x, "ES");
+	return auto_unit(x, "ES");
 }
 
-unit operator"" _PS(unsigned long long int x)
+auto_unit operator"" _PS(unsigned long long int x)
 {
-	return unit(x, "PS");
+	return auto_unit(x, "PS");
 }
 
-unit operator"" _TS(unsigned long long int x)
+auto_unit operator"" _TS(unsigned long long int x)
 {
-	return unit(x, "TS");
+	return auto_unit(x, "TS");
 }
 
-unit operator"" _GS(unsigned long long int x)
+auto_unit operator"" _GS(unsigned long long int x)
 {
-	return unit(x, "GS");
+	return auto_unit(x, "GS");
 }
 
-unit operator"" _MS(unsigned long long int x)
+auto_unit operator"" _MS(unsigned long long int x)
 {
-	return unit(x, "MS");
+	return auto_unit(x, "MS");
 }
 
-unit operator"" _kS(unsigned long long int x)
+auto_unit operator"" _kS(unsigned long long int x)
 {
-	return unit(x, "kS");
+	return auto_unit(x, "kS");
 }
 
-unit operator"" _hS(unsigned long long int x)
+auto_unit operator"" _hS(unsigned long long int x)
 {
-	return unit(x, "hS");
+	return auto_unit(x, "hS");
 }
 
-unit operator"" _daS(unsigned long long int x)
+auto_unit operator"" _daS(unsigned long long int x)
 {
-	return unit(x, "daS");
+	return auto_unit(x, "daS");
 }
 
-unit operator"" _S(unsigned long long int x)
+auto_unit operator"" _S(unsigned long long int x)
 {
-	return unit(x, "S");
+	return auto_unit(x, "S");
 }
 
-unit operator"" _dS(unsigned long long int x)
+auto_unit operator"" _dS(unsigned long long int x)
 {
-	return unit(x, "dS");
+	return auto_unit(x, "dS");
 }
 
-unit operator"" _cS(unsigned long long int x)
+auto_unit operator"" _cS(unsigned long long int x)
 {
-	return unit(x, "cS");
+	return auto_unit(x, "cS");
 }
 
-unit operator"" _mS(unsigned long long int x)
+auto_unit operator"" _mS(unsigned long long int x)
 {
-	return unit(x, "mS");
+	return auto_unit(x, "mS");
 }
 
-unit operator"" _uS(unsigned long long int x)
+auto_unit operator"" _uS(unsigned long long int x)
 {
-	return unit(x, "uS");
+	return auto_unit(x, "uS");
 }
 
-unit operator"" _nS(unsigned long long int x)
+auto_unit operator"" _nS(unsigned long long int x)
 {
-	return unit(x, "nS");
+	return auto_unit(x, "nS");
 }
 
-unit operator"" _pS(unsigned long long int x)
+auto_unit operator"" _pS(unsigned long long int x)
 {
-	return unit(x, "pS");
+	return auto_unit(x, "pS");
 }
 
-unit operator"" _fS(unsigned long long int x)
+auto_unit operator"" _fS(unsigned long long int x)
 {
-	return unit(x, "fS");
+	return auto_unit(x, "fS");
 }
 
-unit operator"" _aS(unsigned long long int x)
+auto_unit operator"" _aS(unsigned long long int x)
 {
-	return unit(x, "aS");
+	return auto_unit(x, "aS");
 }
 
-unit operator"" _zS(unsigned long long int x)
+auto_unit operator"" _zS(unsigned long long int x)
 {
-	return unit(x, "zS");
+	return auto_unit(x, "zS");
 }
 
-unit operator"" _yS(unsigned long long int x)
+auto_unit operator"" _yS(unsigned long long int x)
 {
-	return unit(x, "yS");
+	return auto_unit(x, "yS");
 }
 
-unit operator"" _YWb(unsigned long long int x)
+auto_unit operator"" _YWb(unsigned long long int x)
 {
-	return unit(x, "YWb");
+	return auto_unit(x, "YWb");
 }
 
-unit operator"" _ZWb(unsigned long long int x)
+auto_unit operator"" _ZWb(unsigned long long int x)
 {
-	return unit(x, "ZWb");
+	return auto_unit(x, "ZWb");
 }
 
-unit operator"" _EWb(unsigned long long int x)
+auto_unit operator"" _EWb(unsigned long long int x)
 {
-	return unit(x, "EWb");
+	return auto_unit(x, "EWb");
 }
 
-unit operator"" _PWb(unsigned long long int x)
+auto_unit operator"" _PWb(unsigned long long int x)
 {
-	return unit(x, "PWb");
+	return auto_unit(x, "PWb");
 }
 
-unit operator"" _TWb(unsigned long long int x)
+auto_unit operator"" _TWb(unsigned long long int x)
 {
-	return unit(x, "TWb");
+	return auto_unit(x, "TWb");
 }
 
-unit operator"" _GWb(unsigned long long int x)
+auto_unit operator"" _GWb(unsigned long long int x)
 {
-	return unit(x, "GWb");
+	return auto_unit(x, "GWb");
 }
 
-unit operator"" _MWb(unsigned long long int x)
+auto_unit operator"" _MWb(unsigned long long int x)
 {
-	return unit(x, "MWb");
+	return auto_unit(x, "MWb");
 }
 
-unit operator"" _kWb(unsigned long long int x)
+auto_unit operator"" _kWb(unsigned long long int x)
 {
-	return unit(x, "kWb");
+	return auto_unit(x, "kWb");
 }
 
-unit operator"" _hWb(unsigned long long int x)
+auto_unit operator"" _hWb(unsigned long long int x)
 {
-	return unit(x, "hWb");
+	return auto_unit(x, "hWb");
 }
 
-unit operator"" _daWb(unsigned long long int x)
+auto_unit operator"" _daWb(unsigned long long int x)
 {
-	return unit(x, "daWb");
+	return auto_unit(x, "daWb");
 }
 
-unit operator"" _Wb(unsigned long long int x)
+auto_unit operator"" _Wb(unsigned long long int x)
 {
-	return unit(x, "Wb");
+	return auto_unit(x, "Wb");
 }
 
-unit operator"" _dWb(unsigned long long int x)
+auto_unit operator"" _dWb(unsigned long long int x)
 {
-	return unit(x, "dWb");
+	return auto_unit(x, "dWb");
 }
 
-unit operator"" _cWb(unsigned long long int x)
+auto_unit operator"" _cWb(unsigned long long int x)
 {
-	return unit(x, "cWb");
+	return auto_unit(x, "cWb");
 }
 
-unit operator"" _mWb(unsigned long long int x)
+auto_unit operator"" _mWb(unsigned long long int x)
 {
-	return unit(x, "mWb");
+	return auto_unit(x, "mWb");
 }
 
-unit operator"" _uWb(unsigned long long int x)
+auto_unit operator"" _uWb(unsigned long long int x)
 {
-	return unit(x, "uWb");
+	return auto_unit(x, "uWb");
 }
 
-unit operator"" _nWb(unsigned long long int x)
+auto_unit operator"" _nWb(unsigned long long int x)
 {
-	return unit(x, "nWb");
+	return auto_unit(x, "nWb");
 }
 
-unit operator"" _pWb(unsigned long long int x)
+auto_unit operator"" _pWb(unsigned long long int x)
 {
-	return unit(x, "pWb");
+	return auto_unit(x, "pWb");
 }
 
-unit operator"" _fWb(unsigned long long int x)
+auto_unit operator"" _fWb(unsigned long long int x)
 {
-	return unit(x, "fWb");
+	return auto_unit(x, "fWb");
 }
 
-unit operator"" _aWb(unsigned long long int x)
+auto_unit operator"" _aWb(unsigned long long int x)
 {
-	return unit(x, "aWb");
+	return auto_unit(x, "aWb");
 }
 
-unit operator"" _zWb(unsigned long long int x)
+auto_unit operator"" _zWb(unsigned long long int x)
 {
-	return unit(x, "zWb");
+	return auto_unit(x, "zWb");
 }
 
-unit operator"" _yWb(unsigned long long int x)
+auto_unit operator"" _yWb(unsigned long long int x)
 {
-	return unit(x, "yWb");
+	return auto_unit(x, "yWb");
 }
 
-unit operator"" _YT(unsigned long long int x)
+auto_unit operator"" _YT(unsigned long long int x)
 {
-	return unit(x, "YT");
+	return auto_unit(x, "YT");
 }
 
-unit operator"" _ZT(unsigned long long int x)
+auto_unit operator"" _ZT(unsigned long long int x)
 {
-	return unit(x, "ZT");
+	return auto_unit(x, "ZT");
 }
 
-unit operator"" _ET(unsigned long long int x)
+auto_unit operator"" _ET(unsigned long long int x)
 {
-	return unit(x, "ET");
+	return auto_unit(x, "ET");
 }
 
-unit operator"" _PT(unsigned long long int x)
+auto_unit operator"" _PT(unsigned long long int x)
 {
-	return unit(x, "PT");
+	return auto_unit(x, "PT");
 }
 
-unit operator"" _TT(unsigned long long int x)
+auto_unit operator"" _TT(unsigned long long int x)
 {
-	return unit(x, "TT");
+	return auto_unit(x, "TT");
 }
 
-unit operator"" _GT(unsigned long long int x)
+auto_unit operator"" _GT(unsigned long long int x)
 {
-	return unit(x, "GT");
+	return auto_unit(x, "GT");
 }
 
-/*unit operator"" _MT(unsigned long long int x)
+/*auto_unit operator"" _MT(unsigned long long int x)
 {
-	return unit(x, "MT");
+	return auto_unit(x, "MT");
 }*/
 
-unit operator"" _kT(unsigned long long int x)
+auto_unit operator"" _kT(unsigned long long int x)
 {
-	return unit(x, "kT");
+	return auto_unit(x, "kT");
 }
 
-unit operator"" _hT(unsigned long long int x)
+auto_unit operator"" _hT(unsigned long long int x)
 {
-	return unit(x, "hT");
+	return auto_unit(x, "hT");
 }
 
-unit operator"" _daT(unsigned long long int x)
+auto_unit operator"" _daT(unsigned long long int x)
 {
-	return unit(x, "daT");
+	return auto_unit(x, "daT");
 }
 
-unit operator"" _T(unsigned long long int x)
+auto_unit operator"" _T(unsigned long long int x)
 {
-	return unit(x, "T");
+	return auto_unit(x, "T");
 }
 
-unit operator"" _dT(unsigned long long int x)
+auto_unit operator"" _dT(unsigned long long int x)
 {
-	return unit(x, "dT");
+	return auto_unit(x, "dT");
 }
 
-unit operator"" _cT(unsigned long long int x)
+auto_unit operator"" _cT(unsigned long long int x)
 {
-	return unit(x, "cT");
+	return auto_unit(x, "cT");
 }
 
-unit operator"" _mT(unsigned long long int x)
+auto_unit operator"" _mT(unsigned long long int x)
 {
-	return unit(x, "mT");
+	return auto_unit(x, "mT");
 }
 
-unit operator"" _uT(unsigned long long int x)
+auto_unit operator"" _uT(unsigned long long int x)
 {
-	return unit(x, "uT");
+	return auto_unit(x, "uT");
 }
 
-unit operator"" _nT(unsigned long long int x)
+auto_unit operator"" _nT(unsigned long long int x)
 {
-	return unit(x, "nT");
+	return auto_unit(x, "nT");
 }
 
-unit operator"" _pT(unsigned long long int x)
+auto_unit operator"" _pT(unsigned long long int x)
 {
-	return unit(x, "pT");
+	return auto_unit(x, "pT");
 }
 
-unit operator"" _fT(unsigned long long int x)
+auto_unit operator"" _fT(unsigned long long int x)
 {
-	return unit(x, "fT");
+	return auto_unit(x, "fT");
 }
 
-unit operator"" _aT(unsigned long long int x)
+auto_unit operator"" _aT(unsigned long long int x)
 {
-	return unit(x, "aT");
+	return auto_unit(x, "aT");
 }
 
-unit operator"" _zT(unsigned long long int x)
+auto_unit operator"" _zT(unsigned long long int x)
 {
-	return unit(x, "zT");
+	return auto_unit(x, "zT");
 }
 
-unit operator"" _yT(unsigned long long int x)
+auto_unit operator"" _yT(unsigned long long int x)
 {
-	return unit(x, "yT");
+	return auto_unit(x, "yT");
 }
 
-unit operator"" _YH(unsigned long long int x)
+auto_unit operator"" _YH(unsigned long long int x)
 {
-	return unit(x, "YH");
+	return auto_unit(x, "YH");
 }
 
-unit operator"" _ZH(unsigned long long int x)
+auto_unit operator"" _ZH(unsigned long long int x)
 {
-	return unit(x, "ZH");
+	return auto_unit(x, "ZH");
 }
 
-unit operator"" _EH(unsigned long long int x)
+auto_unit operator"" _EH(unsigned long long int x)
 {
-	return unit(x, "EH");
+	return auto_unit(x, "EH");
 }
 
-unit operator"" _PH(unsigned long long int x)
+auto_unit operator"" _PH(unsigned long long int x)
 {
-	return unit(x, "PH");
+	return auto_unit(x, "PH");
 }
 
-unit operator"" _TH(unsigned long long int x)
+auto_unit operator"" _TH(unsigned long long int x)
 {
-	return unit(x, "TH");
+	return auto_unit(x, "TH");
 }
 
-unit operator"" _GH(unsigned long long int x)
+auto_unit operator"" _GH(unsigned long long int x)
 {
-	return unit(x, "GH");
+	return auto_unit(x, "GH");
 }
 
-unit operator"" _MH(unsigned long long int x)
+auto_unit operator"" _MH(unsigned long long int x)
 {
-	return unit(x, "MH");
+	return auto_unit(x, "MH");
 }
 
-unit operator"" _kH(unsigned long long int x)
+auto_unit operator"" _kH(unsigned long long int x)
 {
-	return unit(x, "kH");
+	return auto_unit(x, "kH");
 }
 
-unit operator"" _hH(unsigned long long int x)
+auto_unit operator"" _hH(unsigned long long int x)
 {
-	return unit(x, "hH");
+	return auto_unit(x, "hH");
 }
 
-unit operator"" _daH(unsigned long long int x)
+auto_unit operator"" _daH(unsigned long long int x)
 {
-	return unit(x, "daH");
+	return auto_unit(x, "daH");
 }
 
-unit operator"" _H(unsigned long long int x)
+auto_unit operator"" _H(unsigned long long int x)
 {
-	return unit(x, "H");
+	return auto_unit(x, "H");
 }
 
-unit operator"" _dH(unsigned long long int x)
+auto_unit operator"" _dH(unsigned long long int x)
 {
-	return unit(x, "dH");
+	return auto_unit(x, "dH");
 }
 
-unit operator"" _cH(unsigned long long int x)
+auto_unit operator"" _cH(unsigned long long int x)
 {
-	return unit(x, "cH");
+	return auto_unit(x, "cH");
 }
 
-unit operator"" _mH(unsigned long long int x)
+auto_unit operator"" _mH(unsigned long long int x)
 {
-	return unit(x, "mH");
+	return auto_unit(x, "mH");
 }
 
-unit operator"" _uH(unsigned long long int x)
+auto_unit operator"" _uH(unsigned long long int x)
 {
-	return unit(x, "uH");
+	return auto_unit(x, "uH");
 }
 
-unit operator"" _nH(unsigned long long int x)
+auto_unit operator"" _nH(unsigned long long int x)
 {
-	return unit(x, "nH");
+	return auto_unit(x, "nH");
 }
 
-unit operator"" _pH(unsigned long long int x)
+auto_unit operator"" _pH(unsigned long long int x)
 {
-	return unit(x, "pH");
+	return auto_unit(x, "pH");
 }
 
-unit operator"" _fH(unsigned long long int x)
+auto_unit operator"" _fH(unsigned long long int x)
 {
-	return unit(x, "fH");
+	return auto_unit(x, "fH");
 }
 
-unit operator"" _aH(unsigned long long int x)
+auto_unit operator"" _aH(unsigned long long int x)
 {
-	return unit(x, "aH");
+	return auto_unit(x, "aH");
 }
 
-unit operator"" _zH(unsigned long long int x)
+auto_unit operator"" _zH(unsigned long long int x)
 {
-	return unit(x, "zH");
+	return auto_unit(x, "zH");
 }
 
-unit operator"" _yH(unsigned long long int x)
+auto_unit operator"" _yH(unsigned long long int x)
 {
-	return unit(x, "yH");
+	return auto_unit(x, "yH");
 }
 
-unit operator"" _Ylm(unsigned long long int x)
+auto_unit operator"" _Ylm(unsigned long long int x)
 {
-	return unit(x, "Ylm");
+	return auto_unit(x, "Ylm");
 }
 
-unit operator"" _Zlm(unsigned long long int x)
+auto_unit operator"" _Zlm(unsigned long long int x)
 {
-	return unit(x, "Zlm");
+	return auto_unit(x, "Zlm");
 }
 
-unit operator"" _Elm(unsigned long long int x)
+auto_unit operator"" _Elm(unsigned long long int x)
 {
-	return unit(x, "Elm");
+	return auto_unit(x, "Elm");
 }
 
-unit operator"" _Plm(unsigned long long int x)
+auto_unit operator"" _Plm(unsigned long long int x)
 {
-	return unit(x, "Plm");
+	return auto_unit(x, "Plm");
 }
 
-unit operator"" _Tlm(unsigned long long int x)
+auto_unit operator"" _Tlm(unsigned long long int x)
 {
-	return unit(x, "Tlm");
+	return auto_unit(x, "Tlm");
 }
 
-unit operator"" _Glm(unsigned long long int x)
+auto_unit operator"" _Glm(unsigned long long int x)
 {
-	return unit(x, "Glm");
+	return auto_unit(x, "Glm");
 }
 
-unit operator"" _Mlm(unsigned long long int x)
+auto_unit operator"" _Mlm(unsigned long long int x)
 {
-	return unit(x, "Mlm");
+	return auto_unit(x, "Mlm");
 }
 
-unit operator"" _klm(unsigned long long int x)
+auto_unit operator"" _klm(unsigned long long int x)
 {
-	return unit(x, "klm");
+	return auto_unit(x, "klm");
 }
 
-unit operator"" _hlm(unsigned long long int x)
+auto_unit operator"" _hlm(unsigned long long int x)
 {
-	return unit(x, "hlm");
+	return auto_unit(x, "hlm");
 }
 
-unit operator"" _dalm(unsigned long long int x)
+auto_unit operator"" _dalm(unsigned long long int x)
 {
-	return unit(x, "dalm");
+	return auto_unit(x, "dalm");
 }
 
-unit operator"" _lm(unsigned long long int x)
+auto_unit operator"" _lm(unsigned long long int x)
 {
-	return unit(x, "lm");
+	return auto_unit(x, "lm");
 }
 
-unit operator"" _dlm(unsigned long long int x)
+auto_unit operator"" _dlm(unsigned long long int x)
 {
-	return unit(x, "dlm");
+	return auto_unit(x, "dlm");
 }
 
-unit operator"" _clm(unsigned long long int x)
+auto_unit operator"" _clm(unsigned long long int x)
 {
-	return unit(x, "clm");
+	return auto_unit(x, "clm");
 }
 
-unit operator"" _mlm(unsigned long long int x)
+auto_unit operator"" _mlm(unsigned long long int x)
 {
-	return unit(x, "mlm");
+	return auto_unit(x, "mlm");
 }
 
-unit operator"" _ulm(unsigned long long int x)
+auto_unit operator"" _ulm(unsigned long long int x)
 {
-	return unit(x, "ulm");
+	return auto_unit(x, "ulm");
 }
 
-unit operator"" _nlm(unsigned long long int x)
+auto_unit operator"" _nlm(unsigned long long int x)
 {
-	return unit(x, "nlm");
+	return auto_unit(x, "nlm");
 }
 
-unit operator"" _plm(unsigned long long int x)
+auto_unit operator"" _plm(unsigned long long int x)
 {
-	return unit(x, "plm");
+	return auto_unit(x, "plm");
 }
 
-unit operator"" _flm(unsigned long long int x)
+auto_unit operator"" _flm(unsigned long long int x)
 {
-	return unit(x, "flm");
+	return auto_unit(x, "flm");
 }
 
-unit operator"" _alm(unsigned long long int x)
+auto_unit operator"" _alm(unsigned long long int x)
 {
-	return unit(x, "alm");
+	return auto_unit(x, "alm");
 }
 
-unit operator"" _zlm(unsigned long long int x)
+auto_unit operator"" _zlm(unsigned long long int x)
 {
-	return unit(x, "zlm");
+	return auto_unit(x, "zlm");
 }
 
-unit operator"" _ylm(unsigned long long int x)
+auto_unit operator"" _ylm(unsigned long long int x)
 {
-	return unit(x, "ylm");
+	return auto_unit(x, "ylm");
 }
 
-unit operator"" _Ylx(unsigned long long int x)
+auto_unit operator"" _Ylx(unsigned long long int x)
 {
-	return unit(x, "Ylx");
+	return auto_unit(x, "Ylx");
 }
 
-unit operator"" _Zlx(unsigned long long int x)
+auto_unit operator"" _Zlx(unsigned long long int x)
 {
-	return unit(x, "Zlx");
+	return auto_unit(x, "Zlx");
 }
 
-unit operator"" _Elx(unsigned long long int x)
+auto_unit operator"" _Elx(unsigned long long int x)
 {
-	return unit(x, "Elx");
+	return auto_unit(x, "Elx");
 }
 
-unit operator"" _Plx(unsigned long long int x)
+auto_unit operator"" _Plx(unsigned long long int x)
 {
-	return unit(x, "Plx");
+	return auto_unit(x, "Plx");
 }
 
-unit operator"" _Tlx(unsigned long long int x)
+auto_unit operator"" _Tlx(unsigned long long int x)
 {
-	return unit(x, "Tlx");
+	return auto_unit(x, "Tlx");
 }
 
-unit operator"" _Glx(unsigned long long int x)
+auto_unit operator"" _Glx(unsigned long long int x)
 {
-	return unit(x, "Glx");
+	return auto_unit(x, "Glx");
 }
 
-unit operator"" _Mlx(unsigned long long int x)
+auto_unit operator"" _Mlx(unsigned long long int x)
 {
-	return unit(x, "Mlx");
+	return auto_unit(x, "Mlx");
 }
 
-unit operator"" _klx(unsigned long long int x)
+auto_unit operator"" _klx(unsigned long long int x)
 {
-	return unit(x, "klx");
+	return auto_unit(x, "klx");
 }
 
-unit operator"" _hlx(unsigned long long int x)
+auto_unit operator"" _hlx(unsigned long long int x)
 {
-	return unit(x, "hlx");
+	return auto_unit(x, "hlx");
 }
 
-unit operator"" _dalx(unsigned long long int x)
+auto_unit operator"" _dalx(unsigned long long int x)
 {
-	return unit(x, "dalx");
+	return auto_unit(x, "dalx");
 }
 
-unit operator"" _lx(unsigned long long int x)
+auto_unit operator"" _lx(unsigned long long int x)
 {
-	return unit(x, "lx");
+	return auto_unit(x, "lx");
 }
 
-unit operator"" _dlx(unsigned long long int x)
+auto_unit operator"" _dlx(unsigned long long int x)
 {
-	return unit(x, "dlx");
+	return auto_unit(x, "dlx");
 }
 
-unit operator"" _clx(unsigned long long int x)
+auto_unit operator"" _clx(unsigned long long int x)
 {
-	return unit(x, "clx");
+	return auto_unit(x, "clx");
 }
 
-unit operator"" _mlx(unsigned long long int x)
+auto_unit operator"" _mlx(unsigned long long int x)
 {
-	return unit(x, "mlx");
+	return auto_unit(x, "mlx");
 }
 
-unit operator"" _ulx(unsigned long long int x)
+auto_unit operator"" _ulx(unsigned long long int x)
 {
-	return unit(x, "ulx");
+	return auto_unit(x, "ulx");
 }
 
-unit operator"" _nlx(unsigned long long int x)
+auto_unit operator"" _nlx(unsigned long long int x)
 {
-	return unit(x, "nlx");
+	return auto_unit(x, "nlx");
 }
 
-unit operator"" _plx(unsigned long long int x)
+auto_unit operator"" _plx(unsigned long long int x)
 {
-	return unit(x, "plx");
+	return auto_unit(x, "plx");
 }
 
-unit operator"" _flx(unsigned long long int x)
+auto_unit operator"" _flx(unsigned long long int x)
 {
-	return unit(x, "flx");
+	return auto_unit(x, "flx");
 }
 
-unit operator"" _alx(unsigned long long int x)
+auto_unit operator"" _alx(unsigned long long int x)
 {
-	return unit(x, "alx");
+	return auto_unit(x, "alx");
 }
 
-unit operator"" _zlx(unsigned long long int x)
+auto_unit operator"" _zlx(unsigned long long int x)
 {
-	return unit(x, "zlx");
+	return auto_unit(x, "zlx");
 }
 
-unit operator"" _ylx(unsigned long long int x)
+auto_unit operator"" _ylx(unsigned long long int x)
 {
-	return unit(x, "ylx");
+	return auto_unit(x, "ylx");
 }
 
-unit operator"" _YBq(unsigned long long int x)
+auto_unit operator"" _YBq(unsigned long long int x)
 {
-	return unit(x, "YBq");
+	return auto_unit(x, "YBq");
 }
 
-unit operator"" _ZBq(unsigned long long int x)
+auto_unit operator"" _ZBq(unsigned long long int x)
 {
-	return unit(x, "ZBq");
+	return auto_unit(x, "ZBq");
 }
 
-unit operator"" _EBq(unsigned long long int x)
+auto_unit operator"" _EBq(unsigned long long int x)
 {
-	return unit(x, "EBq");
+	return auto_unit(x, "EBq");
 }
 
-unit operator"" _PBq(unsigned long long int x)
+auto_unit operator"" _PBq(unsigned long long int x)
 {
-	return unit(x, "PBq");
+	return auto_unit(x, "PBq");
 }
 
-unit operator"" _TBq(unsigned long long int x)
+auto_unit operator"" _TBq(unsigned long long int x)
 {
-	return unit(x, "TBq");
+	return auto_unit(x, "TBq");
 }
 
-unit operator"" _GBq(unsigned long long int x)
+auto_unit operator"" _GBq(unsigned long long int x)
 {
-	return unit(x, "GBq");
+	return auto_unit(x, "GBq");
 }
 
-unit operator"" _MBq(unsigned long long int x)
+auto_unit operator"" _MBq(unsigned long long int x)
 {
-	return unit(x, "MBq");
+	return auto_unit(x, "MBq");
 }
 
-unit operator"" _kBq(unsigned long long int x)
+auto_unit operator"" _kBq(unsigned long long int x)
 {
-	return unit(x, "kBq");
+	return auto_unit(x, "kBq");
 }
 
-unit operator"" _hBq(unsigned long long int x)
+auto_unit operator"" _hBq(unsigned long long int x)
 {
-	return unit(x, "hBq");
+	return auto_unit(x, "hBq");
 }
 
-unit operator"" _daBq(unsigned long long int x)
+auto_unit operator"" _daBq(unsigned long long int x)
 {
-	return unit(x, "daBq");
+	return auto_unit(x, "daBq");
 }
 
-unit operator"" _Bq(unsigned long long int x)
+auto_unit operator"" _Bq(unsigned long long int x)
 {
-	return unit(x, "Bq");
+	return auto_unit(x, "Bq");
 }
 
-unit operator"" _dBq(unsigned long long int x)
+auto_unit operator"" _dBq(unsigned long long int x)
 {
-	return unit(x, "dBq");
+	return auto_unit(x, "dBq");
 }
 
-unit operator"" _cBq(unsigned long long int x)
+auto_unit operator"" _cBq(unsigned long long int x)
 {
-	return unit(x, "cBq");
+	return auto_unit(x, "cBq");
 }
 
-unit operator"" _mBq(unsigned long long int x)
+auto_unit operator"" _mBq(unsigned long long int x)
 {
-	return unit(x, "mBq");
+	return auto_unit(x, "mBq");
 }
 
-unit operator"" _uBq(unsigned long long int x)
+auto_unit operator"" _uBq(unsigned long long int x)
 {
-	return unit(x, "uBq");
+	return auto_unit(x, "uBq");
 }
 
-unit operator"" _nBq(unsigned long long int x)
+auto_unit operator"" _nBq(unsigned long long int x)
 {
-	return unit(x, "nBq");
+	return auto_unit(x, "nBq");
 }
 
-unit operator"" _pBq(unsigned long long int x)
+auto_unit operator"" _pBq(unsigned long long int x)
 {
-	return unit(x, "pBq");
+	return auto_unit(x, "pBq");
 }
 
-unit operator"" _fBq(unsigned long long int x)
+auto_unit operator"" _fBq(unsigned long long int x)
 {
-	return unit(x, "fBq");
+	return auto_unit(x, "fBq");
 }
 
-unit operator"" _aBq(unsigned long long int x)
+auto_unit operator"" _aBq(unsigned long long int x)
 {
-	return unit(x, "aBq");
+	return auto_unit(x, "aBq");
 }
 
-unit operator"" _zBq(unsigned long long int x)
+auto_unit operator"" _zBq(unsigned long long int x)
 {
-	return unit(x, "zBq");
+	return auto_unit(x, "zBq");
 }
 
-unit operator"" _yBq(unsigned long long int x)
+auto_unit operator"" _yBq(unsigned long long int x)
 {
-	return unit(x, "yBq");
+	return auto_unit(x, "yBq");
 }
 
-unit operator"" _YGy(unsigned long long int x)
+auto_unit operator"" _YGy(unsigned long long int x)
 {
-	return unit(x, "YGy");
+	return auto_unit(x, "YGy");
 }
 
-unit operator"" _ZGy(unsigned long long int x)
+auto_unit operator"" _ZGy(unsigned long long int x)
 {
-	return unit(x, "ZGy");
+	return auto_unit(x, "ZGy");
 }
 
-unit operator"" _EGy(unsigned long long int x)
+auto_unit operator"" _EGy(unsigned long long int x)
 {
-	return unit(x, "EGy");
+	return auto_unit(x, "EGy");
 }
 
-unit operator"" _PGy(unsigned long long int x)
+auto_unit operator"" _PGy(unsigned long long int x)
 {
-	return unit(x, "PGy");
+	return auto_unit(x, "PGy");
 }
 
-unit operator"" _TGy(unsigned long long int x)
+auto_unit operator"" _TGy(unsigned long long int x)
 {
-	return unit(x, "TGy");
+	return auto_unit(x, "TGy");
 }
 
-unit operator"" _GGy(unsigned long long int x)
+auto_unit operator"" _GGy(unsigned long long int x)
 {
-	return unit(x, "GGy");
+	return auto_unit(x, "GGy");
 }
 
-unit operator"" _MGy(unsigned long long int x)
+auto_unit operator"" _MGy(unsigned long long int x)
 {
-	return unit(x, "MGy");
+	return auto_unit(x, "MGy");
 }
 
-unit operator"" _kGy(unsigned long long int x)
+auto_unit operator"" _kGy(unsigned long long int x)
 {
-	return unit(x, "kGy");
+	return auto_unit(x, "kGy");
 }
 
-unit operator"" _hGy(unsigned long long int x)
+auto_unit operator"" _hGy(unsigned long long int x)
 {
-	return unit(x, "hGy");
+	return auto_unit(x, "hGy");
 }
 
-unit operator"" _daGy(unsigned long long int x)
+auto_unit operator"" _daGy(unsigned long long int x)
 {
-	return unit(x, "daGy");
+	return auto_unit(x, "daGy");
 }
 
-unit operator"" _Gy(unsigned long long int x)
+auto_unit operator"" _Gy(unsigned long long int x)
 {
-	return unit(x, "Gy");
+	return auto_unit(x, "Gy");
 }
 
-unit operator"" _dGy(unsigned long long int x)
+auto_unit operator"" _dGy(unsigned long long int x)
 {
-	return unit(x, "dGy");
+	return auto_unit(x, "dGy");
 }
 
-unit operator"" _cGy(unsigned long long int x)
+auto_unit operator"" _cGy(unsigned long long int x)
 {
-	return unit(x, "cGy");
+	return auto_unit(x, "cGy");
 }
 
-unit operator"" _mGy(unsigned long long int x)
+auto_unit operator"" _mGy(unsigned long long int x)
 {
-	return unit(x, "mGy");
+	return auto_unit(x, "mGy");
 }
 
-unit operator"" _uGy(unsigned long long int x)
+auto_unit operator"" _uGy(unsigned long long int x)
 {
-	return unit(x, "uGy");
+	return auto_unit(x, "uGy");
 }
 
-unit operator"" _nGy(unsigned long long int x)
+auto_unit operator"" _nGy(unsigned long long int x)
 {
-	return unit(x, "nGy");
+	return auto_unit(x, "nGy");
 }
 
-unit operator"" _pGy(unsigned long long int x)
+auto_unit operator"" _pGy(unsigned long long int x)
 {
-	return unit(x, "pGy");
+	return auto_unit(x, "pGy");
 }
 
-unit operator"" _fGy(unsigned long long int x)
+auto_unit operator"" _fGy(unsigned long long int x)
 {
-	return unit(x, "fGy");
+	return auto_unit(x, "fGy");
 }
 
-unit operator"" _aGy(unsigned long long int x)
+auto_unit operator"" _aGy(unsigned long long int x)
 {
-	return unit(x, "aGy");
+	return auto_unit(x, "aGy");
 }
 
-unit operator"" _zGy(unsigned long long int x)
+auto_unit operator"" _zGy(unsigned long long int x)
 {
-	return unit(x, "zGy");
+	return auto_unit(x, "zGy");
 }
 
-unit operator"" _yGy(unsigned long long int x)
+auto_unit operator"" _yGy(unsigned long long int x)
 {
-	return unit(x, "yGy");
+	return auto_unit(x, "yGy");
 }
 
-unit operator"" _YSv(unsigned long long int x)
+auto_unit operator"" _YSv(unsigned long long int x)
 {
-	return unit(x, "YSv");
+	return auto_unit(x, "YSv");
 }
 
-unit operator"" _ZSv(unsigned long long int x)
+auto_unit operator"" _ZSv(unsigned long long int x)
 {
-	return unit(x, "ZSv");
+	return auto_unit(x, "ZSv");
 }
 
-unit operator"" _ESv(unsigned long long int x)
+auto_unit operator"" _ESv(unsigned long long int x)
 {
-	return unit(x, "ESv");
+	return auto_unit(x, "ESv");
 }
 
-unit operator"" _PSv(unsigned long long int x)
+auto_unit operator"" _PSv(unsigned long long int x)
 {
-	return unit(x, "PSv");
+	return auto_unit(x, "PSv");
 }
 
-unit operator"" _TSv(unsigned long long int x)
+auto_unit operator"" _TSv(unsigned long long int x)
 {
-	return unit(x, "TSv");
+	return auto_unit(x, "TSv");
 }
 
-unit operator"" _GSv(unsigned long long int x)
+auto_unit operator"" _GSv(unsigned long long int x)
 {
-	return unit(x, "GSv");
+	return auto_unit(x, "GSv");
 }
 
-unit operator"" _MSv(unsigned long long int x)
+auto_unit operator"" _MSv(unsigned long long int x)
 {
-	return unit(x, "MSv");
+	return auto_unit(x, "MSv");
 }
 
-unit operator"" _kSv(unsigned long long int x)
+auto_unit operator"" _kSv(unsigned long long int x)
 {
-	return unit(x, "kSv");
+	return auto_unit(x, "kSv");
 }
 
-unit operator"" _hSv(unsigned long long int x)
+auto_unit operator"" _hSv(unsigned long long int x)
 {
-	return unit(x, "hSv");
+	return auto_unit(x, "hSv");
 }
 
-unit operator"" _daSv(unsigned long long int x)
+auto_unit operator"" _daSv(unsigned long long int x)
 {
-	return unit(x, "daSv");
+	return auto_unit(x, "daSv");
 }
 
-unit operator"" _Sv(unsigned long long int x)
+auto_unit operator"" _Sv(unsigned long long int x)
 {
-	return unit(x, "Sv");
+	return auto_unit(x, "Sv");
 }
 
-unit operator"" _dSv(unsigned long long int x)
+auto_unit operator"" _dSv(unsigned long long int x)
 {
-	return unit(x, "dSv");
+	return auto_unit(x, "dSv");
 }
 
-unit operator"" _cSv(unsigned long long int x)
+auto_unit operator"" _cSv(unsigned long long int x)
 {
-	return unit(x, "cSv");
+	return auto_unit(x, "cSv");
 }
 
-unit operator"" _mSv(unsigned long long int x)
+auto_unit operator"" _mSv(unsigned long long int x)
 {
-	return unit(x, "mSv");
+	return auto_unit(x, "mSv");
 }
 
-unit operator"" _uSv(unsigned long long int x)
+auto_unit operator"" _uSv(unsigned long long int x)
 {
-	return unit(x, "uSv");
+	return auto_unit(x, "uSv");
 }
 
-unit operator"" _nSv(unsigned long long int x)
+auto_unit operator"" _nSv(unsigned long long int x)
 {
-	return unit(x, "nSv");
+	return auto_unit(x, "nSv");
 }
 
-unit operator"" _pSv(unsigned long long int x)
+auto_unit operator"" _pSv(unsigned long long int x)
 {
-	return unit(x, "pSv");
+	return auto_unit(x, "pSv");
 }
 
-unit operator"" _fSv(unsigned long long int x)
+auto_unit operator"" _fSv(unsigned long long int x)
 {
-	return unit(x, "fSv");
+	return auto_unit(x, "fSv");
 }
 
-unit operator"" _aSv(unsigned long long int x)
+auto_unit operator"" _aSv(unsigned long long int x)
 {
-	return unit(x, "aSv");
+	return auto_unit(x, "aSv");
 }
 
-unit operator"" _zSv(unsigned long long int x)
+auto_unit operator"" _zSv(unsigned long long int x)
 {
-	return unit(x, "zSv");
+	return auto_unit(x, "zSv");
 }
 
-unit operator"" _ySv(unsigned long long int x)
+auto_unit operator"" _ySv(unsigned long long int x)
 {
-	return unit(x, "ySv");
+	return auto_unit(x, "ySv");
 }
 
-unit operator"" _Ykat(unsigned long long int x)
+auto_unit operator"" _Ykat(unsigned long long int x)
 {
-	return unit(x, "Ykat");
+	return auto_unit(x, "Ykat");
 }
 
-unit operator"" _Zkat(unsigned long long int x)
+auto_unit operator"" _Zkat(unsigned long long int x)
 {
-	return unit(x, "Zkat");
+	return auto_unit(x, "Zkat");
 }
 
-unit operator"" _Ekat(unsigned long long int x)
+auto_unit operator"" _Ekat(unsigned long long int x)
 {
-	return unit(x, "Ekat");
+	return auto_unit(x, "Ekat");
 }
 
-unit operator"" _Pkat(unsigned long long int x)
+auto_unit operator"" _Pkat(unsigned long long int x)
 {
-	return unit(x, "Pkat");
+	return auto_unit(x, "Pkat");
 }
 
-unit operator"" _Tkat(unsigned long long int x)
+auto_unit operator"" _Tkat(unsigned long long int x)
 {
-	return unit(x, "Tkat");
+	return auto_unit(x, "Tkat");
 }
 
-unit operator"" _Gkat(unsigned long long int x)
+auto_unit operator"" _Gkat(unsigned long long int x)
 {
-	return unit(x, "Gkat");
+	return auto_unit(x, "Gkat");
 }
 
-unit operator"" _Mkat(unsigned long long int x)
+auto_unit operator"" _Mkat(unsigned long long int x)
 {
-	return unit(x, "Mkat");
+	return auto_unit(x, "Mkat");
 }
 
-unit operator"" _kkat(unsigned long long int x)
+auto_unit operator"" _kkat(unsigned long long int x)
 {
-	return unit(x, "kkat");
+	return auto_unit(x, "kkat");
 }
 
-unit operator"" _hkat(unsigned long long int x)
+auto_unit operator"" _hkat(unsigned long long int x)
 {
-	return unit(x, "hkat");
+	return auto_unit(x, "hkat");
 }
 
-unit operator"" _dakat(unsigned long long int x)
+auto_unit operator"" _dakat(unsigned long long int x)
 {
-	return unit(x, "dakat");
+	return auto_unit(x, "dakat");
 }
 
-unit operator"" _kat(unsigned long long int x)
+auto_unit operator"" _kat(unsigned long long int x)
 {
-	return unit(x, "kat");
+	return auto_unit(x, "kat");
 }
 
-unit operator"" _dkat(unsigned long long int x)
+auto_unit operator"" _dkat(unsigned long long int x)
 {
-	return unit(x, "dkat");
+	return auto_unit(x, "dkat");
 }
 
-unit operator"" _ckat(unsigned long long int x)
+auto_unit operator"" _ckat(unsigned long long int x)
 {
-	return unit(x, "ckat");
+	return auto_unit(x, "ckat");
 }
 
-unit operator"" _mkat(unsigned long long int x)
+auto_unit operator"" _mkat(unsigned long long int x)
 {
-	return unit(x, "mkat");
+	return auto_unit(x, "mkat");
 }
 
-unit operator"" _ukat(unsigned long long int x)
+auto_unit operator"" _ukat(unsigned long long int x)
 {
-	return unit(x, "ukat");
+	return auto_unit(x, "ukat");
 }
 
-unit operator"" _nkat(unsigned long long int x)
+auto_unit operator"" _nkat(unsigned long long int x)
 {
-	return unit(x, "nkat");
+	return auto_unit(x, "nkat");
 }
 
-unit operator"" _pkat(unsigned long long int x)
+auto_unit operator"" _pkat(unsigned long long int x)
 {
-	return unit(x, "pkat");
+	return auto_unit(x, "pkat");
 }
 
-unit operator"" _fkat(unsigned long long int x)
+auto_unit operator"" _fkat(unsigned long long int x)
 {
-	return unit(x, "fkat");
+	return auto_unit(x, "fkat");
 }
 
-unit operator"" _akat(unsigned long long int x)
+auto_unit operator"" _akat(unsigned long long int x)
 {
-	return unit(x, "akat");
+	return auto_unit(x, "akat");
 }
 
-unit operator"" _zkat(unsigned long long int x)
+auto_unit operator"" _zkat(unsigned long long int x)
 {
-	return unit(x, "zkat");
+	return auto_unit(x, "zkat");
 }
 
-unit operator"" _ykat(unsigned long long int x)
+auto_unit operator"" _ykat(unsigned long long int x)
 {
-	return unit(x, "ykat");
+	return auto_unit(x, "ykat");
 }
 
-unit operator"" _angstrom(unsigned long long int x)
+auto_unit operator"" _angstrom(unsigned long long int x)
 {
-	return unit(x, "angstrom");
+	return auto_unit(x, "angstrom");
 }
 
-unit operator"" _L(unsigned long long int x)
+auto_unit operator"" _L(unsigned long long int x)
 {
-	return unit(x, "L");
+	return auto_unit(x, "L");
 }
 
-unit operator"" _mL(unsigned long long int x)
+auto_unit operator"" _mL(unsigned long long int x)
 {
-	return unit(x, "mL");
+	return auto_unit(x, "mL");
 }
 
-unit operator"" _min(unsigned long long int x)
+auto_unit operator"" _min(unsigned long long int x)
 {
-	return unit(x, "min");
+	return auto_unit(x, "min");
 }
 
-unit operator"" _hour(unsigned long long int x)
+auto_unit operator"" _hour(unsigned long long int x)
 {
-	return unit(x, "hour");
+	return auto_unit(x, "hour");
 }
 
-unit operator"" _day(unsigned long long int x)
+auto_unit operator"" _day(unsigned long long int x)
 {
-	return unit(x, "day");
+	return auto_unit(x, "day");
 }
 
-unit operator"" _YAU(unsigned long long int x)
+auto_unit operator"" _YAU(unsigned long long int x)
 {
-	return unit(x, "YAU");
+	return auto_unit(x, "YAU");
 }
 
-unit operator"" _ZAU(unsigned long long int x)
+auto_unit operator"" _ZAU(unsigned long long int x)
 {
-	return unit(x, "ZAU");
+	return auto_unit(x, "ZAU");
 }
 
-unit operator"" _EAU(unsigned long long int x)
+auto_unit operator"" _EAU(unsigned long long int x)
 {
-	return unit(x, "EAU");
+	return auto_unit(x, "EAU");
 }
 
-unit operator"" _PAU(unsigned long long int x)
+auto_unit operator"" _PAU(unsigned long long int x)
 {
-	return unit(x, "PAU");
+	return auto_unit(x, "PAU");
 }
 
-unit operator"" _TAU(unsigned long long int x)
+auto_unit operator"" _TAU(unsigned long long int x)
 {
-	return unit(x, "TAU");
+	return auto_unit(x, "TAU");
 }
 
-unit operator"" _GAU(unsigned long long int x)
+auto_unit operator"" _GAU(unsigned long long int x)
 {
-	return unit(x, "GAU");
+	return auto_unit(x, "GAU");
 }
 
-unit operator"" _MAU(unsigned long long int x)
+auto_unit operator"" _MAU(unsigned long long int x)
 {
-	return unit(x, "MAU");
+	return auto_unit(x, "MAU");
 }
 
-unit operator"" _kAU(unsigned long long int x)
+auto_unit operator"" _kAU(unsigned long long int x)
 {
-	return unit(x, "kAU");
+	return auto_unit(x, "kAU");
 }
 
-unit operator"" _hAU(unsigned long long int x)
+auto_unit operator"" _hAU(unsigned long long int x)
 {
-	return unit(x, "hAU");
+	return auto_unit(x, "hAU");
 }
 
-unit operator"" _daAU(unsigned long long int x)
+auto_unit operator"" _daAU(unsigned long long int x)
 {
-	return unit(x, "daAU");
+	return auto_unit(x, "daAU");
 }
 
-unit operator"" _AU(unsigned long long int x)
+auto_unit operator"" _AU(unsigned long long int x)
 {
-	return unit(x, "AU");
+	return auto_unit(x, "AU");
 }
 
-unit operator"" _dAU(unsigned long long int x)
+auto_unit operator"" _dAU(unsigned long long int x)
 {
-	return unit(x, "dAU");
+	return auto_unit(x, "dAU");
 }
 
-unit operator"" _cAU(unsigned long long int x)
+auto_unit operator"" _cAU(unsigned long long int x)
 {
-	return unit(x, "cAU");
+	return auto_unit(x, "cAU");
 }
 
-unit operator"" _mAU(unsigned long long int x)
+auto_unit operator"" _mAU(unsigned long long int x)
 {
-	return unit(x, "mAU");
+	return auto_unit(x, "mAU");
 }
 
-unit operator"" _uAU(unsigned long long int x)
+auto_unit operator"" _uAU(unsigned long long int x)
 {
-	return unit(x, "uAU");
+	return auto_unit(x, "uAU");
 }
 
-unit operator"" _nAU(unsigned long long int x)
+auto_unit operator"" _nAU(unsigned long long int x)
 {
-	return unit(x, "nAU");
+	return auto_unit(x, "nAU");
 }
 
-unit operator"" _pAU(unsigned long long int x)
+auto_unit operator"" _pAU(unsigned long long int x)
 {
-	return unit(x, "pAU");
+	return auto_unit(x, "pAU");
 }
 
-unit operator"" _fAU(unsigned long long int x)
+auto_unit operator"" _fAU(unsigned long long int x)
 {
-	return unit(x, "fAU");
+	return auto_unit(x, "fAU");
 }
 
-unit operator"" _aAU(unsigned long long int x)
+auto_unit operator"" _aAU(unsigned long long int x)
 {
-	return unit(x, "aAU");
+	return auto_unit(x, "aAU");
 }
 
-unit operator"" _zAU(unsigned long long int x)
+auto_unit operator"" _zAU(unsigned long long int x)
 {
-	return unit(x, "zAU");
+	return auto_unit(x, "zAU");
 }
 
-unit operator"" _yAU(unsigned long long int x)
+auto_unit operator"" _yAU(unsigned long long int x)
 {
-	return unit(x, "yAU");
+	return auto_unit(x, "yAU");
 }
 
-unit operator"" _Ypc(unsigned long long int x)
+auto_unit operator"" _Ypc(unsigned long long int x)
 {
-	return unit(x, "Ypc");
+	return auto_unit(x, "Ypc");
 }
 
-unit operator"" _Zpc(unsigned long long int x)
+auto_unit operator"" _Zpc(unsigned long long int x)
 {
-	return unit(x, "Zpc");
+	return auto_unit(x, "Zpc");
 }
 
-unit operator"" _Epc(unsigned long long int x)
+auto_unit operator"" _Epc(unsigned long long int x)
 {
-	return unit(x, "Epc");
+	return auto_unit(x, "Epc");
 }
 
-unit operator"" _Ppc(unsigned long long int x)
+auto_unit operator"" _Ppc(unsigned long long int x)
 {
-	return unit(x, "Ppc");
+	return auto_unit(x, "Ppc");
 }
 
-unit operator"" _Tpc(unsigned long long int x)
+auto_unit operator"" _Tpc(unsigned long long int x)
 {
-	return unit(x, "Tpc");
+	return auto_unit(x, "Tpc");
 }
 
-unit operator"" _Gpc(unsigned long long int x)
+auto_unit operator"" _Gpc(unsigned long long int x)
 {
-	return unit(x, "Gpc");
+	return auto_unit(x, "Gpc");
 }
 
-unit operator"" _Mpc(unsigned long long int x)
+auto_unit operator"" _Mpc(unsigned long long int x)
 {
-	return unit(x, "Mpc");
+	return auto_unit(x, "Mpc");
 }
 
-unit operator"" _kpc(unsigned long long int x)
+auto_unit operator"" _kpc(unsigned long long int x)
 {
-	return unit(x, "kpc");
+	return auto_unit(x, "kpc");
 }
 
-unit operator"" _hpc(unsigned long long int x)
+auto_unit operator"" _hpc(unsigned long long int x)
 {
-	return unit(x, "hpc");
+	return auto_unit(x, "hpc");
 }
 
-unit operator"" _dapc(unsigned long long int x)
+auto_unit operator"" _dapc(unsigned long long int x)
 {
-	return unit(x, "dapc");
+	return auto_unit(x, "dapc");
 }
 
-unit operator"" _pc(unsigned long long int x)
+auto_unit operator"" _pc(unsigned long long int x)
 {
-	return unit(x, "pc");
+	return auto_unit(x, "pc");
 }
 
-unit operator"" _dpc(unsigned long long int x)
+auto_unit operator"" _dpc(unsigned long long int x)
 {
-	return unit(x, "dpc");
+	return auto_unit(x, "dpc");
 }
 
-unit operator"" _cpc(unsigned long long int x)
+auto_unit operator"" _cpc(unsigned long long int x)
 {
-	return unit(x, "cpc");
+	return auto_unit(x, "cpc");
 }
 
-unit operator"" _mpc(unsigned long long int x)
+auto_unit operator"" _mpc(unsigned long long int x)
 {
-	return unit(x, "mpc");
+	return auto_unit(x, "mpc");
 }
 
-unit operator"" _upc(unsigned long long int x)
+auto_unit operator"" _upc(unsigned long long int x)
 {
-	return unit(x, "upc");
+	return auto_unit(x, "upc");
 }
 
-unit operator"" _npc(unsigned long long int x)
+auto_unit operator"" _npc(unsigned long long int x)
 {
-	return unit(x, "npc");
+	return auto_unit(x, "npc");
 }
 
-unit operator"" _ppc(unsigned long long int x)
+auto_unit operator"" _ppc(unsigned long long int x)
 {
-	return unit(x, "ppc");
+	return auto_unit(x, "ppc");
 }
 
-unit operator"" _fpc(unsigned long long int x)
+auto_unit operator"" _fpc(unsigned long long int x)
 {
-	return unit(x, "fpc");
+	return auto_unit(x, "fpc");
 }
 
-unit operator"" _apc(unsigned long long int x)
+auto_unit operator"" _apc(unsigned long long int x)
 {
-	return unit(x, "apc");
+	return auto_unit(x, "apc");
 }
 
-unit operator"" _zpc(unsigned long long int x)
+auto_unit operator"" _zpc(unsigned long long int x)
 {
-	return unit(x, "zpc");
+	return auto_unit(x, "zpc");
 }
 
-unit operator"" _ypc(unsigned long long int x)
+auto_unit operator"" _ypc(unsigned long long int x)
 {
-	return unit(x, "ypc");
+	return auto_unit(x, "ypc");
 }
 
-unit operator"" _YeV(unsigned long long int x)
+auto_unit operator"" _YeV(unsigned long long int x)
 {
-	return unit(x, "YeV");
+	return auto_unit(x, "YeV");
 }
 
-unit operator"" _ZeV(unsigned long long int x)
+auto_unit operator"" _ZeV(unsigned long long int x)
 {
-	return unit(x, "ZeV");
+	return auto_unit(x, "ZeV");
 }
 
-unit operator"" _EeV(unsigned long long int x)
+auto_unit operator"" _EeV(unsigned long long int x)
 {
-	return unit(x, "EeV");
+	return auto_unit(x, "EeV");
 }
 
-unit operator"" _PeV(unsigned long long int x)
+auto_unit operator"" _PeV(unsigned long long int x)
 {
-	return unit(x, "PeV");
+	return auto_unit(x, "PeV");
 }
 
-unit operator"" _TeV(unsigned long long int x)
+auto_unit operator"" _TeV(unsigned long long int x)
 {
-	return unit(x, "TeV");
+	return auto_unit(x, "TeV");
 }
 
-unit operator"" _GeV(unsigned long long int x)
+auto_unit operator"" _GeV(unsigned long long int x)
 {
-	return unit(x, "GeV");
+	return auto_unit(x, "GeV");
 }
 
-unit operator"" _MeV(unsigned long long int x)
+auto_unit operator"" _MeV(unsigned long long int x)
 {
-	return unit(x, "MeV");
+	return auto_unit(x, "MeV");
 }
 
-unit operator"" _keV(unsigned long long int x)
+auto_unit operator"" _keV(unsigned long long int x)
 {
-	return unit(x, "keV");
+	return auto_unit(x, "keV");
 }
 
-unit operator"" _heV(unsigned long long int x)
+auto_unit operator"" _heV(unsigned long long int x)
 {
-	return unit(x, "heV");
+	return auto_unit(x, "heV");
 }
 
-unit operator"" _daeV(unsigned long long int x)
+auto_unit operator"" _daeV(unsigned long long int x)
 {
-	return unit(x, "daeV");
+	return auto_unit(x, "daeV");
 }
 
-unit operator"" _eV(unsigned long long int x)
+auto_unit operator"" _eV(unsigned long long int x)
 {
-	return unit(x, "eV");
+	return auto_unit(x, "eV");
 }
 
-unit operator"" _deV(unsigned long long int x)
+auto_unit operator"" _deV(unsigned long long int x)
 {
-	return unit(x, "deV");
+	return auto_unit(x, "deV");
 }
 
-unit operator"" _ceV(unsigned long long int x)
+auto_unit operator"" _ceV(unsigned long long int x)
 {
-	return unit(x, "ceV");
+	return auto_unit(x, "ceV");
 }
 
-unit operator"" _meV(unsigned long long int x)
+auto_unit operator"" _meV(unsigned long long int x)
 {
-	return unit(x, "meV");
+	return auto_unit(x, "meV");
 }
 
-unit operator"" _ueV(unsigned long long int x)
+auto_unit operator"" _ueV(unsigned long long int x)
 {
-	return unit(x, "ueV");
+	return auto_unit(x, "ueV");
 }
 
-unit operator"" _neV(unsigned long long int x)
+auto_unit operator"" _neV(unsigned long long int x)
 {
-	return unit(x, "neV");
+	return auto_unit(x, "neV");
 }
 
-unit operator"" _peV(unsigned long long int x)
+auto_unit operator"" _peV(unsigned long long int x)
 {
-	return unit(x, "peV");
+	return auto_unit(x, "peV");
 }
 
-unit operator"" _feV(unsigned long long int x)
+auto_unit operator"" _feV(unsigned long long int x)
 {
-	return unit(x, "feV");
+	return auto_unit(x, "feV");
 }
 
-unit operator"" _aeV(unsigned long long int x)
+auto_unit operator"" _aeV(unsigned long long int x)
 {
-	return unit(x, "aeV");
+	return auto_unit(x, "aeV");
 }
 
-unit operator"" _zeV(unsigned long long int x)
+auto_unit operator"" _zeV(unsigned long long int x)
 {
-	return unit(x, "zeV");
+	return auto_unit(x, "zeV");
 }
 
-unit operator"" _yeV(unsigned long long int x)
+auto_unit operator"" _yeV(unsigned long long int x)
 {
-	return unit(x, "yeV");
+	return auto_unit(x, "yeV");
 }
 
-unit operator"" _Da(unsigned long long int x)
+auto_unit operator"" _Da(unsigned long long int x)
 {
-	return unit(x, "Da");
+	return auto_unit(x, "Da");
 }
 
-unit operator"" _amu(unsigned long long int x)
+auto_unit operator"" _amu(unsigned long long int x)
 {
-	return unit(x, "amu");
+	return auto_unit(x, "amu");
 }
 
-unit operator"" _Yb(unsigned long long int x)
+auto_unit operator"" _Yb(unsigned long long int x)
 {
-	return unit(x, "Yb");
+	return auto_unit(x, "Yb");
 }
 
-unit operator"" _Zb(unsigned long long int x)
+auto_unit operator"" _Zb(unsigned long long int x)
 {
-	return unit(x, "Zb");
+	return auto_unit(x, "Zb");
 }
 
-unit operator"" _Eb(unsigned long long int x)
+auto_unit operator"" _Eb(unsigned long long int x)
 {
-	return unit(x, "Eb");
+	return auto_unit(x, "Eb");
 }
 
-unit operator"" _Pb(unsigned long long int x)
+auto_unit operator"" _Pb(unsigned long long int x)
 {
-	return unit(x, "Pb");
+	return auto_unit(x, "Pb");
 }
 
-unit operator"" _Tb(unsigned long long int x)
+auto_unit operator"" _Tb(unsigned long long int x)
 {
-	return unit(x, "Tb");
+	return auto_unit(x, "Tb");
 }
 
-unit operator"" _Gb(unsigned long long int x)
+auto_unit operator"" _Gb(unsigned long long int x)
 {
-	return unit(x, "Gb");
+	return auto_unit(x, "Gb");
 }
 
-unit operator"" _Mb(unsigned long long int x)
+auto_unit operator"" _Mb(unsigned long long int x)
 {
-	return unit(x, "Mb");
+	return auto_unit(x, "Mb");
 }
 
-unit operator"" _kb(unsigned long long int x)
+auto_unit operator"" _kb(unsigned long long int x)
 {
-	return unit(x, "kb");
+	return auto_unit(x, "kb");
 }
 
-unit operator"" _hb(unsigned long long int x)
+auto_unit operator"" _hb(unsigned long long int x)
 {
-	return unit(x, "hb");
+	return auto_unit(x, "hb");
 }
 
-unit operator"" _dab(unsigned long long int x)
+auto_unit operator"" _dab(unsigned long long int x)
 {
-	return unit(x, "dab");
+	return auto_unit(x, "dab");
 }
 
-unit operator"" _b(unsigned long long int x)
+auto_unit operator"" _b(unsigned long long int x)
 {
-	return unit(x, "b");
+	return auto_unit(x, "b");
 }
 
-unit operator"" _db(unsigned long long int x)
+auto_unit operator"" _db(unsigned long long int x)
 {
-	return unit(x, "db");
+	return auto_unit(x, "db");
 }
 
-unit operator"" _cb(unsigned long long int x)
+auto_unit operator"" _cb(unsigned long long int x)
 {
-	return unit(x, "cb");
+	return auto_unit(x, "cb");
 }
 
-unit operator"" _mb(unsigned long long int x)
+auto_unit operator"" _mb(unsigned long long int x)
 {
-	return unit(x, "mb");
+	return auto_unit(x, "mb");
 }
 
-unit operator"" _ub(unsigned long long int x)
+auto_unit operator"" _ub(unsigned long long int x)
 {
-	return unit(x, "ub");
+	return auto_unit(x, "ub");
 }
 
-unit operator"" _nb(unsigned long long int x)
+auto_unit operator"" _nb(unsigned long long int x)
 {
-	return unit(x, "nb");
+	return auto_unit(x, "nb");
 }
 
-unit operator"" _pb(unsigned long long int x)
+auto_unit operator"" _pb(unsigned long long int x)
 {
-	return unit(x, "pb");
+	return auto_unit(x, "pb");
 }
 
-unit operator"" _fb(unsigned long long int x)
+auto_unit operator"" _fb(unsigned long long int x)
 {
-	return unit(x, "fb");
+	return auto_unit(x, "fb");
 }
 
-unit operator"" _ab(unsigned long long int x)
+auto_unit operator"" _ab(unsigned long long int x)
 {
-	return unit(x, "ab");
+	return auto_unit(x, "ab");
 }
 
-unit operator"" _zb(unsigned long long int x)
+auto_unit operator"" _zb(unsigned long long int x)
 {
-	return unit(x, "zb");
+	return auto_unit(x, "zb");
 }
 
-unit operator"" _yb(unsigned long long int x)
+auto_unit operator"" _yb(unsigned long long int x)
 {
-	return unit(x, "yb");
+	return auto_unit(x, "yb");
 }
 
-unit operator"" _YM(unsigned long long int x)
+auto_unit operator"" _YM(unsigned long long int x)
 {
-	return unit(x, "YM");
+	return auto_unit(x, "YM");
 }
 
-unit operator"" _ZM(unsigned long long int x)
+auto_unit operator"" _ZM(unsigned long long int x)
 {
-	return unit(x, "ZM");
+	return auto_unit(x, "ZM");
 }
 
-unit operator"" _EM(unsigned long long int x)
+auto_unit operator"" _EM(unsigned long long int x)
 {
-	return unit(x, "EM");
+	return auto_unit(x, "EM");
 }
 
-unit operator"" _PM(unsigned long long int x)
+auto_unit operator"" _PM(unsigned long long int x)
 {
-	return unit(x, "PM");
+	return auto_unit(x, "PM");
 }
 
-unit operator"" _TM(unsigned long long int x)
+auto_unit operator"" _TM(unsigned long long int x)
 {
-	return unit(x, "TM");
+	return auto_unit(x, "TM");
 }
 
-unit operator"" _GM(unsigned long long int x)
+auto_unit operator"" _GM(unsigned long long int x)
 {
-	return unit(x, "GM");
+	return auto_unit(x, "GM");
 }
 
-unit operator"" _MM(unsigned long long int x)
+auto_unit operator"" _MM(unsigned long long int x)
 {
-	return unit(x, "MM");
+	return auto_unit(x, "MM");
 }
 
-unit operator"" _kM(unsigned long long int x)
+auto_unit operator"" _kM(unsigned long long int x)
 {
-	return unit(x, "kM");
+	return auto_unit(x, "kM");
 }
 
-unit operator"" _hM(unsigned long long int x)
+auto_unit operator"" _hM(unsigned long long int x)
 {
-	return unit(x, "hM");
+	return auto_unit(x, "hM");
 }
 
-unit operator"" _daM(unsigned long long int x)
+auto_unit operator"" _daM(unsigned long long int x)
 {
-	return unit(x, "daM");
+	return auto_unit(x, "daM");
 }
 
-unit operator"" _M(unsigned long long int x)
+auto_unit operator"" _M(unsigned long long int x)
 {
-	return unit(x, "M");
+	return auto_unit(x, "M");
 }
 
-unit operator"" _dM(unsigned long long int x)
+auto_unit operator"" _dM(unsigned long long int x)
 {
-	return unit(x, "dM");
+	return auto_unit(x, "dM");
 }
 
-unit operator"" _cM(unsigned long long int x)
+auto_unit operator"" _cM(unsigned long long int x)
 {
-	return unit(x, "cM");
+	return auto_unit(x, "cM");
 }
 
-unit operator"" _mM(unsigned long long int x)
+auto_unit operator"" _mM(unsigned long long int x)
 {
-	return unit(x, "mM");
+	return auto_unit(x, "mM");
 }
 
-unit operator"" _uM(unsigned long long int x)
+auto_unit operator"" _uM(unsigned long long int x)
 {
-	return unit(x, "uM");
+	return auto_unit(x, "uM");
 }
 
-unit operator"" _nM(unsigned long long int x)
+auto_unit operator"" _nM(unsigned long long int x)
 {
-	return unit(x, "nM");
+	return auto_unit(x, "nM");
 }
 
-unit operator"" _pM(unsigned long long int x)
+auto_unit operator"" _pM(unsigned long long int x)
 {
-	return unit(x, "pM");
+	return auto_unit(x, "pM");
 }
 
-unit operator"" _fM(unsigned long long int x)
+auto_unit operator"" _fM(unsigned long long int x)
 {
-	return unit(x, "fM");
+	return auto_unit(x, "fM");
 }
 
-unit operator"" _aM(unsigned long long int x)
+auto_unit operator"" _aM(unsigned long long int x)
 {
-	return unit(x, "aM");
+	return auto_unit(x, "aM");
 }
 
-unit operator"" _zM(unsigned long long int x)
+auto_unit operator"" _zM(unsigned long long int x)
 {
-	return unit(x, "zM");
+	return auto_unit(x, "zM");
 }
 
-unit operator"" _yM(unsigned long long int x)
+auto_unit operator"" _yM(unsigned long long int x)
 {
-	return unit(x, "yM");
+	return auto_unit(x, "yM");
 }
 
-unit operator"" _YHz(long double x)
+auto_unit operator"" _YHz(long double x)
 {
-	return unit(x, "YHz");
+	return auto_unit(x, "YHz");
 }
 
-unit operator"" _ZHz(long double x)
+auto_unit operator"" _ZHz(long double x)
 {
-	return unit(x, "ZHz");
+	return auto_unit(x, "ZHz");
 }
 
-unit operator"" _EHz(long double x)
+auto_unit operator"" _EHz(long double x)
 {
-	return unit(x, "EHz");
+	return auto_unit(x, "EHz");
 }
 
-unit operator"" _PHz(long double x)
+auto_unit operator"" _PHz(long double x)
 {
-	return unit(x, "PHz");
+	return auto_unit(x, "PHz");
 }
 
-unit operator"" _THz(long double x)
+auto_unit operator"" _THz(long double x)
 {
-	return unit(x, "THz");
+	return auto_unit(x, "THz");
 }
 
-unit operator"" _GHz(long double x)
+auto_unit operator"" _GHz(long double x)
 {
-	return unit(x, "GHz");
+	return auto_unit(x, "GHz");
 }
 
-unit operator"" _MHz(long double x)
+auto_unit operator"" _MHz(long double x)
 {
-	return unit(x, "MHz");
+	return auto_unit(x, "MHz");
 }
 
-unit operator"" _kHz(long double x)
+auto_unit operator"" _kHz(long double x)
 {
-	return unit(x, "kHz");
+	return auto_unit(x, "kHz");
 }
 
-unit operator"" _hHz(long double x)
+auto_unit operator"" _hHz(long double x)
 {
-	return unit(x, "hHz");
+	return auto_unit(x, "hHz");
 }
 
-unit operator"" _daHz(long double x)
+auto_unit operator"" _daHz(long double x)
 {
-	return unit(x, "daHz");
+	return auto_unit(x, "daHz");
 }
 
-unit operator"" _Hz(long double x)
+auto_unit operator"" _Hz(long double x)
 {
-	return unit(x, "Hz");
+	return auto_unit(x, "Hz");
 }
 
-unit operator"" _dHz(long double x)
+auto_unit operator"" _dHz(long double x)
 {
-	return unit(x, "dHz");
+	return auto_unit(x, "dHz");
 }
 
-unit operator"" _cHz(long double x)
+auto_unit operator"" _cHz(long double x)
 {
-	return unit(x, "cHz");
+	return auto_unit(x, "cHz");
 }
 
-unit operator"" _mHz(long double x)
+auto_unit operator"" _mHz(long double x)
 {
-	return unit(x, "mHz");
+	return auto_unit(x, "mHz");
 }
 
-unit operator"" _uHz(long double x)
+auto_unit operator"" _uHz(long double x)
 {
-	return unit(x, "uHz");
+	return auto_unit(x, "uHz");
 }
 
-unit operator"" _nHz(long double x)
+auto_unit operator"" _nHz(long double x)
 {
-	return unit(x, "nHz");
+	return auto_unit(x, "nHz");
 }
 
-unit operator"" _pHz(long double x)
+auto_unit operator"" _pHz(long double x)
 {
-	return unit(x, "pHz");
+	return auto_unit(x, "pHz");
 }
 
-unit operator"" _fHz(long double x)
+auto_unit operator"" _fHz(long double x)
 {
-	return unit(x, "fHz");
+	return auto_unit(x, "fHz");
 }
 
-unit operator"" _aHz(long double x)
+auto_unit operator"" _aHz(long double x)
 {
-	return unit(x, "aHz");
+	return auto_unit(x, "aHz");
 }
 
-unit operator"" _zHz(long double x)
+auto_unit operator"" _zHz(long double x)
 {
-	return unit(x, "zHz");
+	return auto_unit(x, "zHz");
 }
 
-unit operator"" _yHz(long double x)
+auto_unit operator"" _yHz(long double x)
 {
-	return unit(x, "yHz");
+	return auto_unit(x, "yHz");
 }
 
-unit operator"" _YN(long double x)
+auto_unit operator"" _YN(long double x)
 {
-	return unit(x, "YN");
+	return auto_unit(x, "YN");
 }
 
-unit operator"" _ZN(long double x)
+auto_unit operator"" _ZN(long double x)
 {
-	return unit(x, "ZN");
+	return auto_unit(x, "ZN");
 }
 
-unit operator"" _EN(long double x)
+auto_unit operator"" _EN(long double x)
 {
-	return unit(x, "EN");
+	return auto_unit(x, "EN");
 }
 
-unit operator"" _PN(long double x)
+auto_unit operator"" _PN(long double x)
 {
-	return unit(x, "PN");
+	return auto_unit(x, "PN");
 }
 
-unit operator"" _TN(long double x)
+auto_unit operator"" _TN(long double x)
 {
-	return unit(x, "TN");
+	return auto_unit(x, "TN");
 }
 
-unit operator"" _GN(long double x)
+auto_unit operator"" _GN(long double x)
 {
-	return unit(x, "GN");
+	return auto_unit(x, "GN");
 }
 
-unit operator"" _MN(long double x)
+auto_unit operator"" _MN(long double x)
 {
-	return unit(x, "MN");
+	return auto_unit(x, "MN");
 }
 
-unit operator"" _kN(long double x)
+auto_unit operator"" _kN(long double x)
 {
-	return unit(x, "kN");
+	return auto_unit(x, "kN");
 }
 
-unit operator"" _hN(long double x)
+auto_unit operator"" _hN(long double x)
 {
-	return unit(x, "hN");
+	return auto_unit(x, "hN");
 }
 
-unit operator"" _daN(long double x)
+auto_unit operator"" _daN(long double x)
 {
-	return unit(x, "daN");
+	return auto_unit(x, "daN");
 }
 
-unit operator"" _N(long double x)
+auto_unit operator"" _N(long double x)
 {
-	return unit(x, "N");
+	return auto_unit(x, "N");
 }
 
-unit operator"" _dN(long double x)
+auto_unit operator"" _dN(long double x)
 {
-	return unit(x, "dN");
+	return auto_unit(x, "dN");
 }
 
-unit operator"" _cN(long double x)
+auto_unit operator"" _cN(long double x)
 {
-	return unit(x, "cN");
+	return auto_unit(x, "cN");
 }
 
-unit operator"" _mN(long double x)
+auto_unit operator"" _mN(long double x)
 {
-	return unit(x, "mN");
+	return auto_unit(x, "mN");
 }
 
-unit operator"" _uN(long double x)
+auto_unit operator"" _uN(long double x)
 {
-	return unit(x, "uN");
+	return auto_unit(x, "uN");
 }
 
-unit operator"" _nN(long double x)
+auto_unit operator"" _nN(long double x)
 {
-	return unit(x, "nN");
+	return auto_unit(x, "nN");
 }
 
-unit operator"" _pN(long double x)
+auto_unit operator"" _pN(long double x)
 {
-	return unit(x, "pN");
+	return auto_unit(x, "pN");
 }
 
-unit operator"" _fN(long double x)
+auto_unit operator"" _fN(long double x)
 {
-	return unit(x, "fN");
+	return auto_unit(x, "fN");
 }
 
-unit operator"" _aN(long double x)
+auto_unit operator"" _aN(long double x)
 {
-	return unit(x, "aN");
+	return auto_unit(x, "aN");
 }
 
-unit operator"" _zN(long double x)
+auto_unit operator"" _zN(long double x)
 {
-	return unit(x, "zN");
+	return auto_unit(x, "zN");
 }
 
-unit operator"" _yN(long double x)
+auto_unit operator"" _yN(long double x)
 {
-	return unit(x, "yN");
+	return auto_unit(x, "yN");
 }
 
-unit operator"" _YPa(long double x)
+auto_unit operator"" _YPa(long double x)
 {
-	return unit(x, "YPa");
+	return auto_unit(x, "YPa");
 }
 
-unit operator"" _ZPa(long double x)
+auto_unit operator"" _ZPa(long double x)
 {
-	return unit(x, "ZPa");
+	return auto_unit(x, "ZPa");
 }
 
-unit operator"" _EPa(long double x)
+auto_unit operator"" _EPa(long double x)
 {
-	return unit(x, "EPa");
+	return auto_unit(x, "EPa");
 }
 
-unit operator"" _PPa(long double x)
+auto_unit operator"" _PPa(long double x)
 {
-	return unit(x, "PPa");
+	return auto_unit(x, "PPa");
 }
 
-unit operator"" _TPa(long double x)
+auto_unit operator"" _TPa(long double x)
 {
-	return unit(x, "TPa");
+	return auto_unit(x, "TPa");
 }
 
-unit operator"" _GPa(long double x)
+auto_unit operator"" _GPa(long double x)
 {
-	return unit(x, "GPa");
+	return auto_unit(x, "GPa");
 }
 
-unit operator"" _MPa(long double x)
+auto_unit operator"" _MPa(long double x)
 {
-	return unit(x, "MPa");
+	return auto_unit(x, "MPa");
 }
 
-unit operator"" _kPa(long double x)
+auto_unit operator"" _kPa(long double x)
 {
-	return unit(x, "kPa");
+	return auto_unit(x, "kPa");
 }
 
-unit operator"" _hPa(long double x)
+auto_unit operator"" _hPa(long double x)
 {
-	return unit(x, "hPa");
+	return auto_unit(x, "hPa");
 }
 
-unit operator"" _daPa(long double x)
+auto_unit operator"" _daPa(long double x)
 {
-	return unit(x, "daPa");
+	return auto_unit(x, "daPa");
 }
 
-unit operator"" _Pa(long double x)
+auto_unit operator"" _Pa(long double x)
 {
-	return unit(x, "Pa");
+	return auto_unit(x, "Pa");
 }
 
-unit operator"" _dPa(long double x)
+auto_unit operator"" _dPa(long double x)
 {
-	return unit(x, "dPa");
+	return auto_unit(x, "dPa");
 }
 
-unit operator"" _cPa(long double x)
+auto_unit operator"" _cPa(long double x)
 {
-	return unit(x, "cPa");
+	return auto_unit(x, "cPa");
 }
 
-unit operator"" _mPa(long double x)
+auto_unit operator"" _mPa(long double x)
 {
-	return unit(x, "mPa");
+	return auto_unit(x, "mPa");
 }
 
-unit operator"" _uPa(long double x)
+auto_unit operator"" _uPa(long double x)
 {
-	return unit(x, "uPa");
+	return auto_unit(x, "uPa");
 }
 
-unit operator"" _nPa(long double x)
+auto_unit operator"" _nPa(long double x)
 {
-	return unit(x, "nPa");
+	return auto_unit(x, "nPa");
 }
 
-unit operator"" _pPa(long double x)
+auto_unit operator"" _pPa(long double x)
 {
-	return unit(x, "pPa");
+	return auto_unit(x, "pPa");
 }
 
-unit operator"" _fPa(long double x)
+auto_unit operator"" _fPa(long double x)
 {
-	return unit(x, "fPa");
+	return auto_unit(x, "fPa");
 }
 
-unit operator"" _aPa(long double x)
+auto_unit operator"" _aPa(long double x)
 {
-	return unit(x, "aPa");
+	return auto_unit(x, "aPa");
 }
 
-unit operator"" _zPa(long double x)
+auto_unit operator"" _zPa(long double x)
 {
-	return unit(x, "zPa");
+	return auto_unit(x, "zPa");
 }
 
-unit operator"" _yPa(long double x)
+auto_unit operator"" _yPa(long double x)
 {
-	return unit(x, "yPa");
+	return auto_unit(x, "yPa");
 }
 
-unit operator"" _YJ(long double x)
+auto_unit operator"" _YJ(long double x)
 {
-	return unit(x, "YJ");
+	return auto_unit(x, "YJ");
 }
 
-unit operator"" _ZJ(long double x)
+auto_unit operator"" _ZJ(long double x)
 {
-	return unit(x, "ZJ");
+	return auto_unit(x, "ZJ");
 }
 
-unit operator"" _EJ(long double x)
+auto_unit operator"" _EJ(long double x)
 {
-	return unit(x, "EJ");
+	return auto_unit(x, "EJ");
 }
 
-unit operator"" _PJ(long double x)
+auto_unit operator"" _PJ(long double x)
 {
-	return unit(x, "PJ");
+	return auto_unit(x, "PJ");
 }
 
-unit operator"" _TJ(long double x)
+auto_unit operator"" _TJ(long double x)
 {
-	return unit(x, "TJ");
+	return auto_unit(x, "TJ");
 }
 
-unit operator"" _GJ(long double x)
+auto_unit operator"" _GJ(long double x)
 {
-	return unit(x, "GJ");
+	return auto_unit(x, "GJ");
 }
 
-unit operator"" _MJ(long double x)
+auto_unit operator"" _MJ(long double x)
 {
-	return unit(x, "MJ");
+	return auto_unit(x, "MJ");
 }
 
-unit operator"" _kJ(long double x)
+auto_unit operator"" _kJ(long double x)
 {
-	return unit(x, "kJ");
+	return auto_unit(x, "kJ");
 }
 
-unit operator"" _hJ(long double x)
+auto_unit operator"" _hJ(long double x)
 {
-	return unit(x, "hJ");
+	return auto_unit(x, "hJ");
 }
 
-unit operator"" _daJ(long double x)
+auto_unit operator"" _daJ(long double x)
 {
-	return unit(x, "daJ");
+	return auto_unit(x, "daJ");
 }
 
-unit operator"" _J(long double x)
+auto_unit operator"" _J(long double x)
 {
-	return unit(x, "J");
+	return auto_unit(x, "J");
 }
 
-unit operator"" _dJ(long double x)
+auto_unit operator"" _dJ(long double x)
 {
-	return unit(x, "dJ");
+	return auto_unit(x, "dJ");
 }
 
-unit operator"" _cJ(long double x)
+auto_unit operator"" _cJ(long double x)
 {
-	return unit(x, "cJ");
+	return auto_unit(x, "cJ");
 }
 
-unit operator"" _mJ(long double x)
+auto_unit operator"" _mJ(long double x)
 {
-	return unit(x, "mJ");
+	return auto_unit(x, "mJ");
 }
 
-unit operator"" _uJ(long double x)
+auto_unit operator"" _uJ(long double x)
 {
-	return unit(x, "uJ");
+	return auto_unit(x, "uJ");
 }
 
-unit operator"" _nJ(long double x)
+auto_unit operator"" _nJ(long double x)
 {
-	return unit(x, "nJ");
+	return auto_unit(x, "nJ");
 }
 
-unit operator"" _pJ(long double x)
+auto_unit operator"" _pJ(long double x)
 {
-	return unit(x, "pJ");
+	return auto_unit(x, "pJ");
 }
 
-unit operator"" _fJ(long double x)
+auto_unit operator"" _fJ(long double x)
 {
-	return unit(x, "fJ");
+	return auto_unit(x, "fJ");
 }
 
-unit operator"" _aJ(long double x)
+auto_unit operator"" _aJ(long double x)
 {
-	return unit(x, "aJ");
+	return auto_unit(x, "aJ");
 }
 
-unit operator"" _zJ(long double x)
+auto_unit operator"" _zJ(long double x)
 {
-	return unit(x, "zJ");
+	return auto_unit(x, "zJ");
 }
 
-unit operator"" _yJ(long double x)
+auto_unit operator"" _yJ(long double x)
 {
-	return unit(x, "yJ");
+	return auto_unit(x, "yJ");
 }
 
-unit operator"" _YW(long double x)
+auto_unit operator"" _YW(long double x)
 {
-	return unit(x, "YW");
+	return auto_unit(x, "YW");
 }
 
-unit operator"" _ZW(long double x)
+auto_unit operator"" _ZW(long double x)
 {
-	return unit(x, "ZW");
+	return auto_unit(x, "ZW");
 }
 
-unit operator"" _EW(long double x)
+auto_unit operator"" _EW(long double x)
 {
-	return unit(x, "EW");
+	return auto_unit(x, "EW");
 }
 
-unit operator"" _PW(long double x)
+auto_unit operator"" _PW(long double x)
 {
-	return unit(x, "PW");
+	return auto_unit(x, "PW");
 }
 
-unit operator"" _TW(long double x)
+auto_unit operator"" _TW(long double x)
 {
-	return unit(x, "TW");
+	return auto_unit(x, "TW");
 }
 
-unit operator"" _GW(long double x)
+auto_unit operator"" _GW(long double x)
 {
-	return unit(x, "GW");
+	return auto_unit(x, "GW");
 }
 
-unit operator"" _MW(long double x)
+auto_unit operator"" _MW(long double x)
 {
-	return unit(x, "MW");
+	return auto_unit(x, "MW");
 }
 
-unit operator"" _kW(long double x)
+auto_unit operator"" _kW(long double x)
 {
-	return unit(x, "kW");
+	return auto_unit(x, "kW");
 }
 
-unit operator"" _hW(long double x)
+auto_unit operator"" _hW(long double x)
 {
-	return unit(x, "hW");
+	return auto_unit(x, "hW");
 }
 
-unit operator"" _daW(long double x)
+auto_unit operator"" _daW(long double x)
 {
-	return unit(x, "daW");
+	return auto_unit(x, "daW");
 }
 
-unit operator"" _W(long double x)
+auto_unit operator"" _W(long double x)
 {
-	return unit(x, "W");
+	return auto_unit(x, "W");
 }
 
-unit operator"" _dW(long double x)
+auto_unit operator"" _dW(long double x)
 {
-	return unit(x, "dW");
+	return auto_unit(x, "dW");
 }
 
-unit operator"" _cW(long double x)
+auto_unit operator"" _cW(long double x)
 {
-	return unit(x, "cW");
+	return auto_unit(x, "cW");
 }
 
-unit operator"" _mW(long double x)
+auto_unit operator"" _mW(long double x)
 {
-	return unit(x, "mW");
+	return auto_unit(x, "mW");
 }
 
-unit operator"" _uW(long double x)
+auto_unit operator"" _uW(long double x)
 {
-	return unit(x, "uW");
+	return auto_unit(x, "uW");
 }
 
-unit operator"" _nW(long double x)
+auto_unit operator"" _nW(long double x)
 {
-	return unit(x, "nW");
+	return auto_unit(x, "nW");
 }
 
-unit operator"" _pW(long double x)
+auto_unit operator"" _pW(long double x)
 {
-	return unit(x, "pW");
+	return auto_unit(x, "pW");
 }
 
-unit operator"" _fW(long double x)
+auto_unit operator"" _fW(long double x)
 {
-	return unit(x, "fW");
+	return auto_unit(x, "fW");
 }
 
-unit operator"" _aW(long double x)
+auto_unit operator"" _aW(long double x)
 {
-	return unit(x, "aW");
+	return auto_unit(x, "aW");
 }
 
-unit operator"" _zW(long double x)
+auto_unit operator"" _zW(long double x)
 {
-	return unit(x, "zW");
+	return auto_unit(x, "zW");
 }
 
-unit operator"" _yW(long double x)
+auto_unit operator"" _yW(long double x)
 {
-	return unit(x, "yW");
+	return auto_unit(x, "yW");
 }
 
-unit operator"" _YA(long double x)
+auto_unit operator"" _YA(long double x)
 {
-	return unit(x, "YA");
+	return auto_unit(x, "YA");
 }
 
-unit operator"" _ZA(long double x)
+auto_unit operator"" _ZA(long double x)
 {
-	return unit(x, "ZA");
+	return auto_unit(x, "ZA");
 }
 
-unit operator"" _EA(long double x)
+auto_unit operator"" _EA(long double x)
 {
-	return unit(x, "EA");
+	return auto_unit(x, "EA");
 }
 
-unit operator"" _PA(long double x)
+auto_unit operator"" _PA(long double x)
 {
-	return unit(x, "PA");
+	return auto_unit(x, "PA");
 }
 
-unit operator"" _TA(long double x)
+auto_unit operator"" _TA(long double x)
 {
-	return unit(x, "TA");
+	return auto_unit(x, "TA");
 }
 
-unit operator"" _GA(long double x)
+auto_unit operator"" _GA(long double x)
 {
-	return unit(x, "GA");
+	return auto_unit(x, "GA");
 }
 
-unit operator"" _MA(long double x)
+auto_unit operator"" _MA(long double x)
 {
-	return unit(x, "MA");
+	return auto_unit(x, "MA");
 }
 
-unit operator"" _kA(long double x)
+auto_unit operator"" _kA(long double x)
 {
-	return unit(x, "kA");
+	return auto_unit(x, "kA");
 }
 
-unit operator"" _hA(long double x)
+auto_unit operator"" _hA(long double x)
 {
-	return unit(x, "hA");
+	return auto_unit(x, "hA");
 }
 
-unit operator"" _daA(long double x)
+auto_unit operator"" _daA(long double x)
 {
-	return unit(x, "daA");
+	return auto_unit(x, "daA");
 }
 
-unit operator"" _A(long double x)
+auto_unit operator"" _A(long double x)
 {
-	return unit(x, "A");
+	return auto_unit(x, "A");
 }
 
-unit operator"" _dA(long double x)
+auto_unit operator"" _dA(long double x)
 {
-	return unit(x, "dA");
+	return auto_unit(x, "dA");
 }
 
-unit operator"" _cA(long double x)
+auto_unit operator"" _cA(long double x)
 {
-	return unit(x, "cA");
+	return auto_unit(x, "cA");
 }
 
-unit operator"" _mA(long double x)
+auto_unit operator"" _mA(long double x)
 {
-	return unit(x, "mA");
+	return auto_unit(x, "mA");
 }
 
-unit operator"" _uA(long double x)
+auto_unit operator"" _uA(long double x)
 {
-	return unit(x, "uA");
+	return auto_unit(x, "uA");
 }
 
-unit operator"" _nA(long double x)
+auto_unit operator"" _nA(long double x)
 {
-	return unit(x, "nA");
+	return auto_unit(x, "nA");
 }
 
-unit operator"" _pA(long double x)
+auto_unit operator"" _pA(long double x)
 {
-	return unit(x, "pA");
+	return auto_unit(x, "pA");
 }
 
-unit operator"" _fA(long double x)
+auto_unit operator"" _fA(long double x)
 {
-	return unit(x, "fA");
+	return auto_unit(x, "fA");
 }
 
-unit operator"" _aA(long double x)
+auto_unit operator"" _aA(long double x)
 {
-	return unit(x, "aA");
+	return auto_unit(x, "aA");
 }
 
-unit operator"" _zA(long double x)
+auto_unit operator"" _zA(long double x)
 {
-	return unit(x, "zA");
+	return auto_unit(x, "zA");
 }
 
-unit operator"" _yA(long double x)
+auto_unit operator"" _yA(long double x)
 {
-	return unit(x, "yA");
+	return auto_unit(x, "yA");
 }
 
-unit operator"" _YV(long double x)
+auto_unit operator"" _YV(long double x)
 {
-	return unit(x, "YV");
+	return auto_unit(x, "YV");
 }
 
-unit operator"" _ZV(long double x)
+auto_unit operator"" _ZV(long double x)
 {
-	return unit(x, "ZV");
+	return auto_unit(x, "ZV");
 }
 
-unit operator"" _EV(long double x)
+auto_unit operator"" _EV(long double x)
 {
-	return unit(x, "EV");
+	return auto_unit(x, "EV");
 }
 
-unit operator"" _PV(long double x)
+auto_unit operator"" _PV(long double x)
 {
-	return unit(x, "PV");
+	return auto_unit(x, "PV");
 }
 
-unit operator"" _TV(long double x)
+auto_unit operator"" _TV(long double x)
 {
-	return unit(x, "TV");
+	return auto_unit(x, "TV");
 }
 
-unit operator"" _GV(long double x)
+auto_unit operator"" _GV(long double x)
 {
-	return unit(x, "GV");
+	return auto_unit(x, "GV");
 }
 
-unit operator"" _MV(long double x)
+auto_unit operator"" _MV(long double x)
 {
-	return unit(x, "MV");
+	return auto_unit(x, "MV");
 }
 
-unit operator"" _kV(long double x)
+auto_unit operator"" _kV(long double x)
 {
-	return unit(x, "kV");
+	return auto_unit(x, "kV");
 }
 
-unit operator"" _hV(long double x)
+auto_unit operator"" _hV(long double x)
 {
-	return unit(x, "hV");
+	return auto_unit(x, "hV");
 }
 
-unit operator"" _daV(long double x)
+auto_unit operator"" _daV(long double x)
 {
-	return unit(x, "daV");
+	return auto_unit(x, "daV");
 }
 
-unit operator"" _V(long double x)
+auto_unit operator"" _V(long double x)
 {
-	return unit(x, "V");
+	return auto_unit(x, "V");
 }
 
-unit operator"" _dV(long double x)
+auto_unit operator"" _dV(long double x)
 {
-	return unit(x, "dV");
+	return auto_unit(x, "dV");
 }
 
-unit operator"" _cV(long double x)
+auto_unit operator"" _cV(long double x)
 {
-	return unit(x, "cV");
+	return auto_unit(x, "cV");
 }
 
-unit operator"" _mV(long double x)
+auto_unit operator"" _mV(long double x)
 {
-	return unit(x, "mV");
+	return auto_unit(x, "mV");
 }
 
-unit operator"" _uV(long double x)
+auto_unit operator"" _uV(long double x)
 {
-	return unit(x, "uV");
+	return auto_unit(x, "uV");
 }
 
-unit operator"" _nV(long double x)
+auto_unit operator"" _nV(long double x)
 {
-	return unit(x, "nV");
+	return auto_unit(x, "nV");
 }
 
-unit operator"" _pV(long double x)
+auto_unit operator"" _pV(long double x)
 {
-	return unit(x, "pV");
+	return auto_unit(x, "pV");
 }
 
-unit operator"" _fV(long double x)
+auto_unit operator"" _fV(long double x)
 {
-	return unit(x, "fV");
+	return auto_unit(x, "fV");
 }
 
-unit operator"" _aV(long double x)
+auto_unit operator"" _aV(long double x)
 {
-	return unit(x, "aV");
+	return auto_unit(x, "aV");
 }
 
-unit operator"" _zV(long double x)
+auto_unit operator"" _zV(long double x)
 {
-	return unit(x, "zV");
+	return auto_unit(x, "zV");
 }
 
-unit operator"" _yV(long double x)
+auto_unit operator"" _yV(long double x)
 {
-	return unit(x, "yV");
+	return auto_unit(x, "yV");
 }
 
-unit operator"" _YF(long double x)
+auto_unit operator"" _YF(long double x)
 {
-	return unit(x, "YF");
+	return auto_unit(x, "YF");
 }
 
-unit operator"" _ZF(long double x)
+auto_unit operator"" _ZF(long double x)
 {
-	return unit(x, "ZF");
+	return auto_unit(x, "ZF");
 }
 
-unit operator"" _EF(long double x)
+auto_unit operator"" _EF(long double x)
 {
-	return unit(x, "EF");
+	return auto_unit(x, "EF");
 }
 
-unit operator"" _PF(long double x)
+auto_unit operator"" _PF(long double x)
 {
-	return unit(x, "PF");
+	return auto_unit(x, "PF");
 }
 
-unit operator"" _TF(long double x)
+auto_unit operator"" _TF(long double x)
 {
-	return unit(x, "TF");
+	return auto_unit(x, "TF");
 }
 
-unit operator"" _GF(long double x)
+auto_unit operator"" _GF(long double x)
 {
-	return unit(x, "GF");
+	return auto_unit(x, "GF");
 }
 
-unit operator"" _MF(long double x)
+auto_unit operator"" _MF(long double x)
 {
-	return unit(x, "MF");
+	return auto_unit(x, "MF");
 }
 
-unit operator"" _kF(long double x)
+auto_unit operator"" _kF(long double x)
 {
-	return unit(x, "kF");
+	return auto_unit(x, "kF");
 }
 
-unit operator"" _hF(long double x)
+auto_unit operator"" _hF(long double x)
 {
-	return unit(x, "hF");
+	return auto_unit(x, "hF");
 }
 
-unit operator"" _daF(long double x)
+auto_unit operator"" _daF(long double x)
 {
-	return unit(x, "daF");
+	return auto_unit(x, "daF");
 }
 
-unit operator"" _F(long double x)
+auto_unit operator"" _F(long double x)
 {
-	return unit(x, "F");
+	return auto_unit(x, "F");
 }
 
-unit operator"" _dF(long double x)
+auto_unit operator"" _dF(long double x)
 {
-	return unit(x, "dF");
+	return auto_unit(x, "dF");
 }
 
-unit operator"" _cF(long double x)
+auto_unit operator"" _cF(long double x)
 {
-	return unit(x, "cF");
+	return auto_unit(x, "cF");
 }
 
-unit operator"" _mF(long double x)
+auto_unit operator"" _mF(long double x)
 {
-	return unit(x, "mF");
+	return auto_unit(x, "mF");
 }
 
-unit operator"" _uF(long double x)
+auto_unit operator"" _uF(long double x)
 {
-	return unit(x, "uF");
+	return auto_unit(x, "uF");
 }
 
-unit operator"" _nF(long double x)
+auto_unit operator"" _nF(long double x)
 {
-	return unit(x, "nF");
+	return auto_unit(x, "nF");
 }
 
-unit operator"" _pF(long double x)
+auto_unit operator"" _pF(long double x)
 {
-	return unit(x, "pF");
+	return auto_unit(x, "pF");
 }
 
-unit operator"" _fF(long double x)
+auto_unit operator"" _fF(long double x)
 {
-	return unit(x, "fF");
+	return auto_unit(x, "fF");
 }
 
-unit operator"" _aF(long double x)
+auto_unit operator"" _aF(long double x)
 {
-	return unit(x, "aF");
+	return auto_unit(x, "aF");
 }
 
-unit operator"" _zF(long double x)
+auto_unit operator"" _zF(long double x)
 {
-	return unit(x, "zF");
+	return auto_unit(x, "zF");
 }
 
-unit operator"" _yF(long double x)
+auto_unit operator"" _yF(long double x)
 {
-	return unit(x, "yF");
+	return auto_unit(x, "yF");
 }
 
-unit operator"" _YOhm(long double x)
+auto_unit operator"" _YOhm(long double x)
 {
-	return unit(x, "YOhm");
+	return auto_unit(x, "YOhm");
 }
 
-unit operator"" _ZOhm(long double x)
+auto_unit operator"" _ZOhm(long double x)
 {
-	return unit(x, "ZOhm");
+	return auto_unit(x, "ZOhm");
 }
 
-unit operator"" _EOhm(long double x)
+auto_unit operator"" _EOhm(long double x)
 {
-	return unit(x, "EOhm");
+	return auto_unit(x, "EOhm");
 }
 
-unit operator"" _POhm(long double x)
+auto_unit operator"" _POhm(long double x)
 {
-	return unit(x, "POhm");
+	return auto_unit(x, "POhm");
 }
 
-unit operator"" _TOhm(long double x)
+auto_unit operator"" _TOhm(long double x)
 {
-	return unit(x, "TOhm");
+	return auto_unit(x, "TOhm");
 }
 
-unit operator"" _GOhm(long double x)
+auto_unit operator"" _GOhm(long double x)
 {
-	return unit(x, "GOhm");
+	return auto_unit(x, "GOhm");
 }
 
-unit operator"" _MOhm(long double x)
+auto_unit operator"" _MOhm(long double x)
 {
-	return unit(x, "MOhm");
+	return auto_unit(x, "MOhm");
 }
 
-unit operator"" _kOhm(long double x)
+auto_unit operator"" _kOhm(long double x)
 {
-	return unit(x, "kOhm");
+	return auto_unit(x, "kOhm");
 }
 
-unit operator"" _hOhm(long double x)
+auto_unit operator"" _hOhm(long double x)
 {
-	return unit(x, "hOhm");
+	return auto_unit(x, "hOhm");
 }
 
-unit operator"" _daOhm(long double x)
+auto_unit operator"" _daOhm(long double x)
 {
-	return unit(x, "daOhm");
+	return auto_unit(x, "daOhm");
 }
 
-unit operator"" _Ohm(long double x)
+auto_unit operator"" _Ohm(long double x)
 {
-	return unit(x, "Ohm");
+	return auto_unit(x, "Ohm");
 }
 
-unit operator"" _dOhm(long double x)
+auto_unit operator"" _dOhm(long double x)
 {
-	return unit(x, "dOhm");
+	return auto_unit(x, "dOhm");
 }
 
-unit operator"" _cOhm(long double x)
+auto_unit operator"" _cOhm(long double x)
 {
-	return unit(x, "cOhm");
+	return auto_unit(x, "cOhm");
 }
 
-unit operator"" _mOhm(long double x)
+auto_unit operator"" _mOhm(long double x)
 {
-	return unit(x, "mOhm");
+	return auto_unit(x, "mOhm");
 }
 
-unit operator"" _uOhm(long double x)
+auto_unit operator"" _uOhm(long double x)
 {
-	return unit(x, "uOhm");
+	return auto_unit(x, "uOhm");
 }
 
-unit operator"" _nOhm(long double x)
+auto_unit operator"" _nOhm(long double x)
 {
-	return unit(x, "nOhm");
+	return auto_unit(x, "nOhm");
 }
 
-unit operator"" _pOhm(long double x)
+auto_unit operator"" _pOhm(long double x)
 {
-	return unit(x, "pOhm");
+	return auto_unit(x, "pOhm");
 }
 
-unit operator"" _fOhm(long double x)
+auto_unit operator"" _fOhm(long double x)
 {
-	return unit(x, "fOhm");
+	return auto_unit(x, "fOhm");
 }
 
-unit operator"" _aOhm(long double x)
+auto_unit operator"" _aOhm(long double x)
 {
-	return unit(x, "aOhm");
+	return auto_unit(x, "aOhm");
 }
 
-unit operator"" _zOhm(long double x)
+auto_unit operator"" _zOhm(long double x)
 {
-	return unit(x, "zOhm");
+	return auto_unit(x, "zOhm");
 }
 
-unit operator"" _yOhm(long double x)
+auto_unit operator"" _yOhm(long double x)
 {
-	return unit(x, "yOhm");
+	return auto_unit(x, "yOhm");
 }
 
-unit operator"" _YS(long double x)
+auto_unit operator"" _YS(long double x)
 {
-	return unit(x, "YS");
+	return auto_unit(x, "YS");
 }
 
-unit operator"" _ZS(long double x)
+auto_unit operator"" _ZS(long double x)
 {
-	return unit(x, "ZS");
+	return auto_unit(x, "ZS");
 }
 
-unit operator"" _ES(long double x)
+auto_unit operator"" _ES(long double x)
 {
-	return unit(x, "ES");
+	return auto_unit(x, "ES");
 }
 
-unit operator"" _PS(long double x)
+auto_unit operator"" _PS(long double x)
 {
-	return unit(x, "PS");
+	return auto_unit(x, "PS");
 }
 
-unit operator"" _TS(long double x)
+auto_unit operator"" _TS(long double x)
 {
-	return unit(x, "TS");
+	return auto_unit(x, "TS");
 }
 
-unit operator"" _GS(long double x)
+auto_unit operator"" _GS(long double x)
 {
-	return unit(x, "GS");
+	return auto_unit(x, "GS");
 }
 
-unit operator"" _MS(long double x)
+auto_unit operator"" _MS(long double x)
 {
-	return unit(x, "MS");
+	return auto_unit(x, "MS");
 }
 
-unit operator"" _kS(long double x)
+auto_unit operator"" _kS(long double x)
 {
-	return unit(x, "kS");
+	return auto_unit(x, "kS");
 }
 
-unit operator"" _hS(long double x)
+auto_unit operator"" _hS(long double x)
 {
-	return unit(x, "hS");
+	return auto_unit(x, "hS");
 }
 
-unit operator"" _daS(long double x)
+auto_unit operator"" _daS(long double x)
 {
-	return unit(x, "daS");
+	return auto_unit(x, "daS");
 }
 
-unit operator"" _S(long double x)
+auto_unit operator"" _S(long double x)
 {
-	return unit(x, "S");
+	return auto_unit(x, "S");
 }
 
-unit operator"" _dS(long double x)
+auto_unit operator"" _dS(long double x)
 {
-	return unit(x, "dS");
+	return auto_unit(x, "dS");
 }
 
-unit operator"" _cS(long double x)
+auto_unit operator"" _cS(long double x)
 {
-	return unit(x, "cS");
+	return auto_unit(x, "cS");
 }
 
-unit operator"" _mS(long double x)
+auto_unit operator"" _mS(long double x)
 {
-	return unit(x, "mS");
+	return auto_unit(x, "mS");
 }
 
-unit operator"" _uS(long double x)
+auto_unit operator"" _uS(long double x)
 {
-	return unit(x, "uS");
+	return auto_unit(x, "uS");
 }
 
-unit operator"" _nS(long double x)
+auto_unit operator"" _nS(long double x)
 {
-	return unit(x, "nS");
+	return auto_unit(x, "nS");
 }
 
-unit operator"" _pS(long double x)
+auto_unit operator"" _pS(long double x)
 {
-	return unit(x, "pS");
+	return auto_unit(x, "pS");
 }
 
-unit operator"" _fS(long double x)
+auto_unit operator"" _fS(long double x)
 {
-	return unit(x, "fS");
+	return auto_unit(x, "fS");
 }
 
-unit operator"" _aS(long double x)
+auto_unit operator"" _aS(long double x)
 {
-	return unit(x, "aS");
+	return auto_unit(x, "aS");
 }
 
-unit operator"" _zS(long double x)
+auto_unit operator"" _zS(long double x)
 {
-	return unit(x, "zS");
+	return auto_unit(x, "zS");
 }
 
-unit operator"" _yS(long double x)
+auto_unit operator"" _yS(long double x)
 {
-	return unit(x, "yS");
+	return auto_unit(x, "yS");
 }
 
-unit operator"" _YWb(long double x)
+auto_unit operator"" _YWb(long double x)
 {
-	return unit(x, "YWb");
+	return auto_unit(x, "YWb");
 }
 
-unit operator"" _ZWb(long double x)
+auto_unit operator"" _ZWb(long double x)
 {
-	return unit(x, "ZWb");
+	return auto_unit(x, "ZWb");
 }
 
-unit operator"" _EWb(long double x)
+auto_unit operator"" _EWb(long double x)
 {
-	return unit(x, "EWb");
+	return auto_unit(x, "EWb");
 }
 
-unit operator"" _PWb(long double x)
+auto_unit operator"" _PWb(long double x)
 {
-	return unit(x, "PWb");
+	return auto_unit(x, "PWb");
 }
 
-unit operator"" _TWb(long double x)
+auto_unit operator"" _TWb(long double x)
 {
-	return unit(x, "TWb");
+	return auto_unit(x, "TWb");
 }
 
-unit operator"" _GWb(long double x)
+auto_unit operator"" _GWb(long double x)
 {
-	return unit(x, "GWb");
+	return auto_unit(x, "GWb");
 }
 
-unit operator"" _MWb(long double x)
+auto_unit operator"" _MWb(long double x)
 {
-	return unit(x, "MWb");
+	return auto_unit(x, "MWb");
 }
 
-unit operator"" _kWb(long double x)
+auto_unit operator"" _kWb(long double x)
 {
-	return unit(x, "kWb");
+	return auto_unit(x, "kWb");
 }
 
-unit operator"" _hWb(long double x)
+auto_unit operator"" _hWb(long double x)
 {
-	return unit(x, "hWb");
+	return auto_unit(x, "hWb");
 }
 
-unit operator"" _daWb(long double x)
+auto_unit operator"" _daWb(long double x)
 {
-	return unit(x, "daWb");
+	return auto_unit(x, "daWb");
 }
 
-unit operator"" _Wb(long double x)
+auto_unit operator"" _Wb(long double x)
 {
-	return unit(x, "Wb");
+	return auto_unit(x, "Wb");
 }
 
-unit operator"" _dWb(long double x)
+auto_unit operator"" _dWb(long double x)
 {
-	return unit(x, "dWb");
+	return auto_unit(x, "dWb");
 }
 
-unit operator"" _cWb(long double x)
+auto_unit operator"" _cWb(long double x)
 {
-	return unit(x, "cWb");
+	return auto_unit(x, "cWb");
 }
 
-unit operator"" _mWb(long double x)
+auto_unit operator"" _mWb(long double x)
 {
-	return unit(x, "mWb");
+	return auto_unit(x, "mWb");
 }
 
-unit operator"" _uWb(long double x)
+auto_unit operator"" _uWb(long double x)
 {
-	return unit(x, "uWb");
+	return auto_unit(x, "uWb");
 }
 
-unit operator"" _nWb(long double x)
+auto_unit operator"" _nWb(long double x)
 {
-	return unit(x, "nWb");
+	return auto_unit(x, "nWb");
 }
 
-unit operator"" _pWb(long double x)
+auto_unit operator"" _pWb(long double x)
 {
-	return unit(x, "pWb");
+	return auto_unit(x, "pWb");
 }
 
-unit operator"" _fWb(long double x)
+auto_unit operator"" _fWb(long double x)
 {
-	return unit(x, "fWb");
+	return auto_unit(x, "fWb");
 }
 
-unit operator"" _aWb(long double x)
+auto_unit operator"" _aWb(long double x)
 {
-	return unit(x, "aWb");
+	return auto_unit(x, "aWb");
 }
 
-unit operator"" _zWb(long double x)
+auto_unit operator"" _zWb(long double x)
 {
-	return unit(x, "zWb");
+	return auto_unit(x, "zWb");
 }
 
-unit operator"" _yWb(long double x)
+auto_unit operator"" _yWb(long double x)
 {
-	return unit(x, "yWb");
+	return auto_unit(x, "yWb");
 }
 
-unit operator"" _YT(long double x)
+auto_unit operator"" _YT(long double x)
 {
-	return unit(x, "YT");
+	return auto_unit(x, "YT");
 }
 
-unit operator"" _ZT(long double x)
+auto_unit operator"" _ZT(long double x)
 {
-	return unit(x, "ZT");
+	return auto_unit(x, "ZT");
 }
 
-unit operator"" _ET(long double x)
+auto_unit operator"" _ET(long double x)
 {
-	return unit(x, "ET");
+	return auto_unit(x, "ET");
 }
 
-unit operator"" _PT(long double x)
+auto_unit operator"" _PT(long double x)
 {
-	return unit(x, "PT");
+	return auto_unit(x, "PT");
 }
 
-unit operator"" _TT(long double x)
+auto_unit operator"" _TT(long double x)
 {
-	return unit(x, "TT");
+	return auto_unit(x, "TT");
 }
 
-unit operator"" _GT(long double x)
+auto_unit operator"" _GT(long double x)
 {
-	return unit(x, "GT");
+	return auto_unit(x, "GT");
 }
 
-/*unit operator"" _MT(long double x)
+/*auto_unit operator"" _MT(long double x)
 {
-	return unit(x, "MT");
+	return auto_unit(x, "MT");
 }*/
 
-unit operator"" _kT(long double x)
+auto_unit operator"" _kT(long double x)
 {
-	return unit(x, "kT");
+	return auto_unit(x, "kT");
 }
 
-unit operator"" _hT(long double x)
+auto_unit operator"" _hT(long double x)
 {
-	return unit(x, "hT");
+	return auto_unit(x, "hT");
 }
 
-unit operator"" _daT(long double x)
+auto_unit operator"" _daT(long double x)
 {
-	return unit(x, "daT");
+	return auto_unit(x, "daT");
 }
 
-unit operator"" _T(long double x)
+auto_unit operator"" _T(long double x)
 {
-	return unit(x, "T");
+	return auto_unit(x, "T");
 }
 
-unit operator"" _dT(long double x)
+auto_unit operator"" _dT(long double x)
 {
-	return unit(x, "dT");
+	return auto_unit(x, "dT");
 }
 
-unit operator"" _cT(long double x)
+auto_unit operator"" _cT(long double x)
 {
-	return unit(x, "cT");
+	return auto_unit(x, "cT");
 }
 
-unit operator"" _mT(long double x)
+auto_unit operator"" _mT(long double x)
 {
-	return unit(x, "mT");
+	return auto_unit(x, "mT");
 }
 
-unit operator"" _uT(long double x)
+auto_unit operator"" _uT(long double x)
 {
-	return unit(x, "uT");
+	return auto_unit(x, "uT");
 }
 
-unit operator"" _nT(long double x)
+auto_unit operator"" _nT(long double x)
 {
-	return unit(x, "nT");
+	return auto_unit(x, "nT");
 }
 
-unit operator"" _pT(long double x)
+auto_unit operator"" _pT(long double x)
 {
-	return unit(x, "pT");
+	return auto_unit(x, "pT");
 }
 
-unit operator"" _fT(long double x)
+auto_unit operator"" _fT(long double x)
 {
-	return unit(x, "fT");
+	return auto_unit(x, "fT");
 }
 
-unit operator"" _aT(long double x)
+auto_unit operator"" _aT(long double x)
 {
-	return unit(x, "aT");
+	return auto_unit(x, "aT");
 }
 
-unit operator"" _zT(long double x)
+auto_unit operator"" _zT(long double x)
 {
-	return unit(x, "zT");
+	return auto_unit(x, "zT");
 }
 
-unit operator"" _yT(long double x)
+auto_unit operator"" _yT(long double x)
 {
-	return unit(x, "yT");
+	return auto_unit(x, "yT");
 }
 
-unit operator"" _YH(long double x)
+auto_unit operator"" _YH(long double x)
 {
-	return unit(x, "YH");
+	return auto_unit(x, "YH");
 }
 
-unit operator"" _ZH(long double x)
+auto_unit operator"" _ZH(long double x)
 {
-	return unit(x, "ZH");
+	return auto_unit(x, "ZH");
 }
 
-unit operator"" _EH(long double x)
+auto_unit operator"" _EH(long double x)
 {
-	return unit(x, "EH");
+	return auto_unit(x, "EH");
 }
 
-unit operator"" _PH(long double x)
+auto_unit operator"" _PH(long double x)
 {
-	return unit(x, "PH");
+	return auto_unit(x, "PH");
 }
 
-unit operator"" _TH(long double x)
+auto_unit operator"" _TH(long double x)
 {
-	return unit(x, "TH");
+	return auto_unit(x, "TH");
 }
 
-unit operator"" _GH(long double x)
+auto_unit operator"" _GH(long double x)
 {
-	return unit(x, "GH");
+	return auto_unit(x, "GH");
 }
 
-unit operator"" _MH(long double x)
+auto_unit operator"" _MH(long double x)
 {
-	return unit(x, "MH");
+	return auto_unit(x, "MH");
 }
 
-unit operator"" _kH(long double x)
+auto_unit operator"" _kH(long double x)
 {
-	return unit(x, "kH");
+	return auto_unit(x, "kH");
 }
 
-unit operator"" _hH(long double x)
+auto_unit operator"" _hH(long double x)
 {
-	return unit(x, "hH");
+	return auto_unit(x, "hH");
 }
 
-unit operator"" _daH(long double x)
+auto_unit operator"" _daH(long double x)
 {
-	return unit(x, "daH");
+	return auto_unit(x, "daH");
 }
 
-unit operator"" _H(long double x)
+auto_unit operator"" _H(long double x)
 {
-	return unit(x, "H");
+	return auto_unit(x, "H");
 }
 
-unit operator"" _dH(long double x)
+auto_unit operator"" _dH(long double x)
 {
-	return unit(x, "dH");
+	return auto_unit(x, "dH");
 }
 
-unit operator"" _cH(long double x)
+auto_unit operator"" _cH(long double x)
 {
-	return unit(x, "cH");
+	return auto_unit(x, "cH");
 }
 
-unit operator"" _mH(long double x)
+auto_unit operator"" _mH(long double x)
 {
-	return unit(x, "mH");
+	return auto_unit(x, "mH");
 }
 
-unit operator"" _uH(long double x)
+auto_unit operator"" _uH(long double x)
 {
-	return unit(x, "uH");
+	return auto_unit(x, "uH");
 }
 
-unit operator"" _nH(long double x)
+auto_unit operator"" _nH(long double x)
 {
-	return unit(x, "nH");
+	return auto_unit(x, "nH");
 }
 
-unit operator"" _pH(long double x)
+auto_unit operator"" _pH(long double x)
 {
-	return unit(x, "pH");
+	return auto_unit(x, "pH");
 }
 
-unit operator"" _fH(long double x)
+auto_unit operator"" _fH(long double x)
 {
-	return unit(x, "fH");
+	return auto_unit(x, "fH");
 }
 
-unit operator"" _aH(long double x)
+auto_unit operator"" _aH(long double x)
 {
-	return unit(x, "aH");
+	return auto_unit(x, "aH");
 }
 
-unit operator"" _zH(long double x)
+auto_unit operator"" _zH(long double x)
 {
-	return unit(x, "zH");
+	return auto_unit(x, "zH");
 }
 
-unit operator"" _yH(long double x)
+auto_unit operator"" _yH(long double x)
 {
-	return unit(x, "yH");
+	return auto_unit(x, "yH");
 }
 
-unit operator"" _Ylm(long double x)
+auto_unit operator"" _Ylm(long double x)
 {
-	return unit(x, "Ylm");
+	return auto_unit(x, "Ylm");
 }
 
-unit operator"" _Zlm(long double x)
+auto_unit operator"" _Zlm(long double x)
 {
-	return unit(x, "Zlm");
+	return auto_unit(x, "Zlm");
 }
 
-unit operator"" _Elm(long double x)
+auto_unit operator"" _Elm(long double x)
 {
-	return unit(x, "Elm");
+	return auto_unit(x, "Elm");
 }
 
-unit operator"" _Plm(long double x)
+auto_unit operator"" _Plm(long double x)
 {
-	return unit(x, "Plm");
+	return auto_unit(x, "Plm");
 }
 
-unit operator"" _Tlm(long double x)
+auto_unit operator"" _Tlm(long double x)
 {
-	return unit(x, "Tlm");
+	return auto_unit(x, "Tlm");
 }
 
-unit operator"" _Glm(long double x)
+auto_unit operator"" _Glm(long double x)
 {
-	return unit(x, "Glm");
+	return auto_unit(x, "Glm");
 }
 
-unit operator"" _Mlm(long double x)
+auto_unit operator"" _Mlm(long double x)
 {
-	return unit(x, "Mlm");
+	return auto_unit(x, "Mlm");
 }
 
-unit operator"" _klm(long double x)
+auto_unit operator"" _klm(long double x)
 {
-	return unit(x, "klm");
+	return auto_unit(x, "klm");
 }
 
-unit operator"" _hlm(long double x)
+auto_unit operator"" _hlm(long double x)
 {
-	return unit(x, "hlm");
+	return auto_unit(x, "hlm");
 }
 
-unit operator"" _dalm(long double x)
+auto_unit operator"" _dalm(long double x)
 {
-	return unit(x, "dalm");
+	return auto_unit(x, "dalm");
 }
 
-unit operator"" _lm(long double x)
+auto_unit operator"" _lm(long double x)
 {
-	return unit(x, "lm");
+	return auto_unit(x, "lm");
 }
 
-unit operator"" _dlm(long double x)
+auto_unit operator"" _dlm(long double x)
 {
-	return unit(x, "dlm");
+	return auto_unit(x, "dlm");
 }
 
-unit operator"" _clm(long double x)
+auto_unit operator"" _clm(long double x)
 {
-	return unit(x, "clm");
+	return auto_unit(x, "clm");
 }
 
-unit operator"" _mlm(long double x)
+auto_unit operator"" _mlm(long double x)
 {
-	return unit(x, "mlm");
+	return auto_unit(x, "mlm");
 }
 
-unit operator"" _ulm(long double x)
+auto_unit operator"" _ulm(long double x)
 {
-	return unit(x, "ulm");
+	return auto_unit(x, "ulm");
 }
 
-unit operator"" _nlm(long double x)
+auto_unit operator"" _nlm(long double x)
 {
-	return unit(x, "nlm");
+	return auto_unit(x, "nlm");
 }
 
-unit operator"" _plm(long double x)
+auto_unit operator"" _plm(long double x)
 {
-	return unit(x, "plm");
+	return auto_unit(x, "plm");
 }
 
-unit operator"" _flm(long double x)
+auto_unit operator"" _flm(long double x)
 {
-	return unit(x, "flm");
+	return auto_unit(x, "flm");
 }
 
-unit operator"" _alm(long double x)
+auto_unit operator"" _alm(long double x)
 {
-	return unit(x, "alm");
+	return auto_unit(x, "alm");
 }
 
-unit operator"" _zlm(long double x)
+auto_unit operator"" _zlm(long double x)
 {
-	return unit(x, "zlm");
+	return auto_unit(x, "zlm");
 }
 
-unit operator"" _ylm(long double x)
+auto_unit operator"" _ylm(long double x)
 {
-	return unit(x, "ylm");
+	return auto_unit(x, "ylm");
 }
 
-unit operator"" _Ylx(long double x)
+auto_unit operator"" _Ylx(long double x)
 {
-	return unit(x, "Ylx");
+	return auto_unit(x, "Ylx");
 }
 
-unit operator"" _Zlx(long double x)
+auto_unit operator"" _Zlx(long double x)
 {
-	return unit(x, "Zlx");
+	return auto_unit(x, "Zlx");
 }
 
-unit operator"" _Elx(long double x)
+auto_unit operator"" _Elx(long double x)
 {
-	return unit(x, "Elx");
+	return auto_unit(x, "Elx");
 }
 
-unit operator"" _Plx(long double x)
+auto_unit operator"" _Plx(long double x)
 {
-	return unit(x, "Plx");
+	return auto_unit(x, "Plx");
 }
 
-unit operator"" _Tlx(long double x)
+auto_unit operator"" _Tlx(long double x)
 {
-	return unit(x, "Tlx");
+	return auto_unit(x, "Tlx");
 }
 
-unit operator"" _Glx(long double x)
+auto_unit operator"" _Glx(long double x)
 {
-	return unit(x, "Glx");
+	return auto_unit(x, "Glx");
 }
 
-unit operator"" _Mlx(long double x)
+auto_unit operator"" _Mlx(long double x)
 {
-	return unit(x, "Mlx");
+	return auto_unit(x, "Mlx");
 }
 
-unit operator"" _klx(long double x)
+auto_unit operator"" _klx(long double x)
 {
-	return unit(x, "klx");
+	return auto_unit(x, "klx");
 }
 
-unit operator"" _hlx(long double x)
+auto_unit operator"" _hlx(long double x)
 {
-	return unit(x, "hlx");
+	return auto_unit(x, "hlx");
 }
 
-unit operator"" _dalx(long double x)
+auto_unit operator"" _dalx(long double x)
 {
-	return unit(x, "dalx");
+	return auto_unit(x, "dalx");
 }
 
-unit operator"" _lx(long double x)
+auto_unit operator"" _lx(long double x)
 {
-	return unit(x, "lx");
+	return auto_unit(x, "lx");
 }
 
-unit operator"" _dlx(long double x)
+auto_unit operator"" _dlx(long double x)
 {
-	return unit(x, "dlx");
+	return auto_unit(x, "dlx");
 }
 
-unit operator"" _clx(long double x)
+auto_unit operator"" _clx(long double x)
 {
-	return unit(x, "clx");
+	return auto_unit(x, "clx");
 }
 
-unit operator"" _mlx(long double x)
+auto_unit operator"" _mlx(long double x)
 {
-	return unit(x, "mlx");
+	return auto_unit(x, "mlx");
 }
 
-unit operator"" _ulx(long double x)
+auto_unit operator"" _ulx(long double x)
 {
-	return unit(x, "ulx");
+	return auto_unit(x, "ulx");
 }
 
-unit operator"" _nlx(long double x)
+auto_unit operator"" _nlx(long double x)
 {
-	return unit(x, "nlx");
+	return auto_unit(x, "nlx");
 }
 
-unit operator"" _plx(long double x)
+auto_unit operator"" _plx(long double x)
 {
-	return unit(x, "plx");
+	return auto_unit(x, "plx");
 }
 
-unit operator"" _flx(long double x)
+auto_unit operator"" _flx(long double x)
 {
-	return unit(x, "flx");
+	return auto_unit(x, "flx");
 }
 
-unit operator"" _alx(long double x)
+auto_unit operator"" _alx(long double x)
 {
-	return unit(x, "alx");
+	return auto_unit(x, "alx");
 }
 
-unit operator"" _zlx(long double x)
+auto_unit operator"" _zlx(long double x)
 {
-	return unit(x, "zlx");
+	return auto_unit(x, "zlx");
 }
 
-unit operator"" _ylx(long double x)
+auto_unit operator"" _ylx(long double x)
 {
-	return unit(x, "ylx");
+	return auto_unit(x, "ylx");
 }
 
-unit operator"" _YBq(long double x)
+auto_unit operator"" _YBq(long double x)
 {
-	return unit(x, "YBq");
+	return auto_unit(x, "YBq");
 }
 
-unit operator"" _ZBq(long double x)
+auto_unit operator"" _ZBq(long double x)
 {
-	return unit(x, "ZBq");
+	return auto_unit(x, "ZBq");
 }
 
-unit operator"" _EBq(long double x)
+auto_unit operator"" _EBq(long double x)
 {
-	return unit(x, "EBq");
+	return auto_unit(x, "EBq");
 }
 
-unit operator"" _PBq(long double x)
+auto_unit operator"" _PBq(long double x)
 {
-	return unit(x, "PBq");
+	return auto_unit(x, "PBq");
 }
 
-unit operator"" _TBq(long double x)
+auto_unit operator"" _TBq(long double x)
 {
-	return unit(x, "TBq");
+	return auto_unit(x, "TBq");
 }
 
-unit operator"" _GBq(long double x)
+auto_unit operator"" _GBq(long double x)
 {
-	return unit(x, "GBq");
+	return auto_unit(x, "GBq");
 }
 
-unit operator"" _MBq(long double x)
+auto_unit operator"" _MBq(long double x)
 {
-	return unit(x, "MBq");
+	return auto_unit(x, "MBq");
 }
 
-unit operator"" _kBq(long double x)
+auto_unit operator"" _kBq(long double x)
 {
-	return unit(x, "kBq");
+	return auto_unit(x, "kBq");
 }
 
-unit operator"" _hBq(long double x)
+auto_unit operator"" _hBq(long double x)
 {
-	return unit(x, "hBq");
+	return auto_unit(x, "hBq");
 }
 
-unit operator"" _daBq(long double x)
+auto_unit operator"" _daBq(long double x)
 {
-	return unit(x, "daBq");
+	return auto_unit(x, "daBq");
 }
 
-unit operator"" _Bq(long double x)
+auto_unit operator"" _Bq(long double x)
 {
-	return unit(x, "Bq");
+	return auto_unit(x, "Bq");
 }
 
-unit operator"" _dBq(long double x)
+auto_unit operator"" _dBq(long double x)
 {
-	return unit(x, "dBq");
+	return auto_unit(x, "dBq");
 }
 
-unit operator"" _cBq(long double x)
+auto_unit operator"" _cBq(long double x)
 {
-	return unit(x, "cBq");
+	return auto_unit(x, "cBq");
 }
 
-unit operator"" _mBq(long double x)
+auto_unit operator"" _mBq(long double x)
 {
-	return unit(x, "mBq");
+	return auto_unit(x, "mBq");
 }
 
-unit operator"" _uBq(long double x)
+auto_unit operator"" _uBq(long double x)
 {
-	return unit(x, "uBq");
+	return auto_unit(x, "uBq");
 }
 
-unit operator"" _nBq(long double x)
+auto_unit operator"" _nBq(long double x)
 {
-	return unit(x, "nBq");
+	return auto_unit(x, "nBq");
 }
 
-unit operator"" _pBq(long double x)
+auto_unit operator"" _pBq(long double x)
 {
-	return unit(x, "pBq");
+	return auto_unit(x, "pBq");
 }
 
-unit operator"" _fBq(long double x)
+auto_unit operator"" _fBq(long double x)
 {
-	return unit(x, "fBq");
+	return auto_unit(x, "fBq");
 }
 
-unit operator"" _aBq(long double x)
+auto_unit operator"" _aBq(long double x)
 {
-	return unit(x, "aBq");
+	return auto_unit(x, "aBq");
 }
 
-unit operator"" _zBq(long double x)
+auto_unit operator"" _zBq(long double x)
 {
-	return unit(x, "zBq");
+	return auto_unit(x, "zBq");
 }
 
-unit operator"" _yBq(long double x)
+auto_unit operator"" _yBq(long double x)
 {
-	return unit(x, "yBq");
+	return auto_unit(x, "yBq");
 }
 
-unit operator"" _YGy(long double x)
+auto_unit operator"" _YGy(long double x)
 {
-	return unit(x, "YGy");
+	return auto_unit(x, "YGy");
 }
 
-unit operator"" _ZGy(long double x)
+auto_unit operator"" _ZGy(long double x)
 {
-	return unit(x, "ZGy");
+	return auto_unit(x, "ZGy");
 }
 
-unit operator"" _EGy(long double x)
+auto_unit operator"" _EGy(long double x)
 {
-	return unit(x, "EGy");
+	return auto_unit(x, "EGy");
 }
 
-unit operator"" _PGy(long double x)
+auto_unit operator"" _PGy(long double x)
 {
-	return unit(x, "PGy");
+	return auto_unit(x, "PGy");
 }
 
-unit operator"" _TGy(long double x)
+auto_unit operator"" _TGy(long double x)
 {
-	return unit(x, "TGy");
+	return auto_unit(x, "TGy");
 }
 
-unit operator"" _GGy(long double x)
+auto_unit operator"" _GGy(long double x)
 {
-	return unit(x, "GGy");
+	return auto_unit(x, "GGy");
 }
 
-unit operator"" _MGy(long double x)
+auto_unit operator"" _MGy(long double x)
 {
-	return unit(x, "MGy");
+	return auto_unit(x, "MGy");
 }
 
-unit operator"" _kGy(long double x)
+auto_unit operator"" _kGy(long double x)
 {
-	return unit(x, "kGy");
+	return auto_unit(x, "kGy");
 }
 
-unit operator"" _hGy(long double x)
+auto_unit operator"" _hGy(long double x)
 {
-	return unit(x, "hGy");
+	return auto_unit(x, "hGy");
 }
 
-unit operator"" _daGy(long double x)
+auto_unit operator"" _daGy(long double x)
 {
-	return unit(x, "daGy");
+	return auto_unit(x, "daGy");
 }
 
-unit operator"" _Gy(long double x)
+auto_unit operator"" _Gy(long double x)
 {
-	return unit(x, "Gy");
+	return auto_unit(x, "Gy");
 }
 
-unit operator"" _dGy(long double x)
+auto_unit operator"" _dGy(long double x)
 {
-	return unit(x, "dGy");
+	return auto_unit(x, "dGy");
 }
 
-unit operator"" _cGy(long double x)
+auto_unit operator"" _cGy(long double x)
 {
-	return unit(x, "cGy");
+	return auto_unit(x, "cGy");
 }
 
-unit operator"" _mGy(long double x)
+auto_unit operator"" _mGy(long double x)
 {
-	return unit(x, "mGy");
+	return auto_unit(x, "mGy");
 }
 
-unit operator"" _uGy(long double x)
+auto_unit operator"" _uGy(long double x)
 {
-	return unit(x, "uGy");
+	return auto_unit(x, "uGy");
 }
 
-unit operator"" _nGy(long double x)
+auto_unit operator"" _nGy(long double x)
 {
-	return unit(x, "nGy");
+	return auto_unit(x, "nGy");
 }
 
-unit operator"" _pGy(long double x)
+auto_unit operator"" _pGy(long double x)
 {
-	return unit(x, "pGy");
+	return auto_unit(x, "pGy");
 }
 
-unit operator"" _fGy(long double x)
+auto_unit operator"" _fGy(long double x)
 {
-	return unit(x, "fGy");
+	return auto_unit(x, "fGy");
 }
 
-unit operator"" _aGy(long double x)
+auto_unit operator"" _aGy(long double x)
 {
-	return unit(x, "aGy");
+	return auto_unit(x, "aGy");
 }
 
-unit operator"" _zGy(long double x)
+auto_unit operator"" _zGy(long double x)
 {
-	return unit(x, "zGy");
+	return auto_unit(x, "zGy");
 }
 
-unit operator"" _yGy(long double x)
+auto_unit operator"" _yGy(long double x)
 {
-	return unit(x, "yGy");
+	return auto_unit(x, "yGy");
 }
 
-unit operator"" _YSv(long double x)
+auto_unit operator"" _YSv(long double x)
 {
-	return unit(x, "YSv");
+	return auto_unit(x, "YSv");
 }
 
-unit operator"" _ZSv(long double x)
+auto_unit operator"" _ZSv(long double x)
 {
-	return unit(x, "ZSv");
+	return auto_unit(x, "ZSv");
 }
 
-unit operator"" _ESv(long double x)
+auto_unit operator"" _ESv(long double x)
 {
-	return unit(x, "ESv");
+	return auto_unit(x, "ESv");
 }
 
-unit operator"" _PSv(long double x)
+auto_unit operator"" _PSv(long double x)
 {
-	return unit(x, "PSv");
+	return auto_unit(x, "PSv");
 }
 
-unit operator"" _TSv(long double x)
+auto_unit operator"" _TSv(long double x)
 {
-	return unit(x, "TSv");
+	return auto_unit(x, "TSv");
 }
 
-unit operator"" _GSv(long double x)
+auto_unit operator"" _GSv(long double x)
 {
-	return unit(x, "GSv");
+	return auto_unit(x, "GSv");
 }
 
-unit operator"" _MSv(long double x)
+auto_unit operator"" _MSv(long double x)
 {
-	return unit(x, "MSv");
+	return auto_unit(x, "MSv");
 }
 
-unit operator"" _kSv(long double x)
+auto_unit operator"" _kSv(long double x)
 {
-	return unit(x, "kSv");
+	return auto_unit(x, "kSv");
 }
 
-unit operator"" _hSv(long double x)
+auto_unit operator"" _hSv(long double x)
 {
-	return unit(x, "hSv");
+	return auto_unit(x, "hSv");
 }
 
-unit operator"" _daSv(long double x)
+auto_unit operator"" _daSv(long double x)
 {
-	return unit(x, "daSv");
+	return auto_unit(x, "daSv");
 }
 
-unit operator"" _Sv(long double x)
+auto_unit operator"" _Sv(long double x)
 {
-	return unit(x, "Sv");
+	return auto_unit(x, "Sv");
 }
 
-unit operator"" _dSv(long double x)
+auto_unit operator"" _dSv(long double x)
 {
-	return unit(x, "dSv");
+	return auto_unit(x, "dSv");
 }
 
-unit operator"" _cSv(long double x)
+auto_unit operator"" _cSv(long double x)
 {
-	return unit(x, "cSv");
+	return auto_unit(x, "cSv");
 }
 
-unit operator"" _mSv(long double x)
+auto_unit operator"" _mSv(long double x)
 {
-	return unit(x, "mSv");
+	return auto_unit(x, "mSv");
 }
 
-unit operator"" _uSv(long double x)
+auto_unit operator"" _uSv(long double x)
 {
-	return unit(x, "uSv");
+	return auto_unit(x, "uSv");
 }
 
-unit operator"" _nSv(long double x)
+auto_unit operator"" _nSv(long double x)
 {
-	return unit(x, "nSv");
+	return auto_unit(x, "nSv");
 }
 
-unit operator"" _pSv(long double x)
+auto_unit operator"" _pSv(long double x)
 {
-	return unit(x, "pSv");
+	return auto_unit(x, "pSv");
 }
 
-unit operator"" _fSv(long double x)
+auto_unit operator"" _fSv(long double x)
 {
-	return unit(x, "fSv");
+	return auto_unit(x, "fSv");
 }
 
-unit operator"" _aSv(long double x)
+auto_unit operator"" _aSv(long double x)
 {
-	return unit(x, "aSv");
+	return auto_unit(x, "aSv");
 }
 
-unit operator"" _zSv(long double x)
+auto_unit operator"" _zSv(long double x)
 {
-	return unit(x, "zSv");
+	return auto_unit(x, "zSv");
 }
 
-unit operator"" _ySv(long double x)
+auto_unit operator"" _ySv(long double x)
 {
-	return unit(x, "ySv");
+	return auto_unit(x, "ySv");
 }
 
-unit operator"" _Ykat(long double x)
+auto_unit operator"" _Ykat(long double x)
 {
-	return unit(x, "Ykat");
+	return auto_unit(x, "Ykat");
 }
 
-unit operator"" _Zkat(long double x)
+auto_unit operator"" _Zkat(long double x)
 {
-	return unit(x, "Zkat");
+	return auto_unit(x, "Zkat");
 }
 
-unit operator"" _Ekat(long double x)
+auto_unit operator"" _Ekat(long double x)
 {
-	return unit(x, "Ekat");
+	return auto_unit(x, "Ekat");
 }
 
-unit operator"" _Pkat(long double x)
+auto_unit operator"" _Pkat(long double x)
 {
-	return unit(x, "Pkat");
+	return auto_unit(x, "Pkat");
 }
 
-unit operator"" _Tkat(long double x)
+auto_unit operator"" _Tkat(long double x)
 {
-	return unit(x, "Tkat");
+	return auto_unit(x, "Tkat");
 }
 
-unit operator"" _Gkat(long double x)
+auto_unit operator"" _Gkat(long double x)
 {
-	return unit(x, "Gkat");
+	return auto_unit(x, "Gkat");
 }
 
-unit operator"" _Mkat(long double x)
+auto_unit operator"" _Mkat(long double x)
 {
-	return unit(x, "Mkat");
+	return auto_unit(x, "Mkat");
 }
 
-unit operator"" _kkat(long double x)
+auto_unit operator"" _kkat(long double x)
 {
-	return unit(x, "kkat");
+	return auto_unit(x, "kkat");
 }
 
-unit operator"" _hkat(long double x)
+auto_unit operator"" _hkat(long double x)
 {
-	return unit(x, "hkat");
+	return auto_unit(x, "hkat");
 }
 
-unit operator"" _dakat(long double x)
+auto_unit operator"" _dakat(long double x)
 {
-	return unit(x, "dakat");
+	return auto_unit(x, "dakat");
 }
 
-unit operator"" _kat(long double x)
+auto_unit operator"" _kat(long double x)
 {
-	return unit(x, "kat");
+	return auto_unit(x, "kat");
 }
 
-unit operator"" _dkat(long double x)
+auto_unit operator"" _dkat(long double x)
 {
-	return unit(x, "dkat");
+	return auto_unit(x, "dkat");
 }
 
-unit operator"" _ckat(long double x)
+auto_unit operator"" _ckat(long double x)
 {
-	return unit(x, "ckat");
+	return auto_unit(x, "ckat");
 }
 
-unit operator"" _mkat(long double x)
+auto_unit operator"" _mkat(long double x)
 {
-	return unit(x, "mkat");
+	return auto_unit(x, "mkat");
 }
 
-unit operator"" _ukat(long double x)
+auto_unit operator"" _ukat(long double x)
 {
-	return unit(x, "ukat");
+	return auto_unit(x, "ukat");
 }
 
-unit operator"" _nkat(long double x)
+auto_unit operator"" _nkat(long double x)
 {
-	return unit(x, "nkat");
+	return auto_unit(x, "nkat");
 }
 
-unit operator"" _pkat(long double x)
+auto_unit operator"" _pkat(long double x)
 {
-	return unit(x, "pkat");
+	return auto_unit(x, "pkat");
 }
 
-unit operator"" _fkat(long double x)
+auto_unit operator"" _fkat(long double x)
 {
-	return unit(x, "fkat");
+	return auto_unit(x, "fkat");
 }
 
-unit operator"" _akat(long double x)
+auto_unit operator"" _akat(long double x)
 {
-	return unit(x, "akat");
+	return auto_unit(x, "akat");
 }
 
-unit operator"" _zkat(long double x)
+auto_unit operator"" _zkat(long double x)
 {
-	return unit(x, "zkat");
+	return auto_unit(x, "zkat");
 }
 
-unit operator"" _ykat(long double x)
+auto_unit operator"" _ykat(long double x)
 {
-	return unit(x, "ykat");
+	return auto_unit(x, "ykat");
 }
 
-unit operator"" _angstrom(long double x)
+auto_unit operator"" _angstrom(long double x)
 {
-	return unit(x, "angstrom");
+	return auto_unit(x, "angstrom");
 }
 
-unit operator"" _L(long double x)
+auto_unit operator"" _L(long double x)
 {
-	return unit(x, "L");
+	return auto_unit(x, "L");
 }
 
-unit operator"" _mL(long double x)
+auto_unit operator"" _mL(long double x)
 {
-	return unit(x, "mL");
+	return auto_unit(x, "mL");
 }
 
-unit operator"" _min(long double x)
+auto_unit operator"" _min(long double x)
 {
-	return unit(x, "min");
+	return auto_unit(x, "min");
 }
 
-unit operator"" _hour(long double x)
+auto_unit operator"" _hour(long double x)
 {
-	return unit(x, "hour");
+	return auto_unit(x, "hour");
 }
 
-unit operator"" _day(long double x)
+auto_unit operator"" _day(long double x)
 {
-	return unit(x, "day");
+	return auto_unit(x, "day");
 }
 
-unit operator"" _YAU(long double x)
+auto_unit operator"" _YAU(long double x)
 {
-	return unit(x, "YAU");
+	return auto_unit(x, "YAU");
 }
 
-unit operator"" _ZAU(long double x)
+auto_unit operator"" _ZAU(long double x)
 {
-	return unit(x, "ZAU");
+	return auto_unit(x, "ZAU");
 }
 
-unit operator"" _EAU(long double x)
+auto_unit operator"" _EAU(long double x)
 {
-	return unit(x, "EAU");
+	return auto_unit(x, "EAU");
 }
 
-unit operator"" _PAU(long double x)
+auto_unit operator"" _PAU(long double x)
 {
-	return unit(x, "PAU");
+	return auto_unit(x, "PAU");
 }
 
-unit operator"" _TAU(long double x)
+auto_unit operator"" _TAU(long double x)
 {
-	return unit(x, "TAU");
+	return auto_unit(x, "TAU");
 }
 
-unit operator"" _GAU(long double x)
+auto_unit operator"" _GAU(long double x)
 {
-	return unit(x, "GAU");
+	return auto_unit(x, "GAU");
 }
 
-unit operator"" _MAU(long double x)
+auto_unit operator"" _MAU(long double x)
 {
-	return unit(x, "MAU");
+	return auto_unit(x, "MAU");
 }
 
-unit operator"" _kAU(long double x)
+auto_unit operator"" _kAU(long double x)
 {
-	return unit(x, "kAU");
+	return auto_unit(x, "kAU");
 }
 
-unit operator"" _hAU(long double x)
+auto_unit operator"" _hAU(long double x)
 {
-	return unit(x, "hAU");
+	return auto_unit(x, "hAU");
 }
 
-unit operator"" _daAU(long double x)
+auto_unit operator"" _daAU(long double x)
 {
-	return unit(x, "daAU");
+	return auto_unit(x, "daAU");
 }
 
-unit operator"" _AU(long double x)
+auto_unit operator"" _AU(long double x)
 {
-	return unit(x, "AU");
+	return auto_unit(x, "AU");
 }
 
-unit operator"" _dAU(long double x)
+auto_unit operator"" _dAU(long double x)
 {
-	return unit(x, "dAU");
+	return auto_unit(x, "dAU");
 }
 
-unit operator"" _cAU(long double x)
+auto_unit operator"" _cAU(long double x)
 {
-	return unit(x, "cAU");
+	return auto_unit(x, "cAU");
 }
 
-unit operator"" _mAU(long double x)
+auto_unit operator"" _mAU(long double x)
 {
-	return unit(x, "mAU");
+	return auto_unit(x, "mAU");
 }
 
-unit operator"" _uAU(long double x)
+auto_unit operator"" _uAU(long double x)
 {
-	return unit(x, "uAU");
+	return auto_unit(x, "uAU");
 }
 
-unit operator"" _nAU(long double x)
+auto_unit operator"" _nAU(long double x)
 {
-	return unit(x, "nAU");
+	return auto_unit(x, "nAU");
 }
 
-unit operator"" _pAU(long double x)
+auto_unit operator"" _pAU(long double x)
 {
-	return unit(x, "pAU");
+	return auto_unit(x, "pAU");
 }
 
-unit operator"" _fAU(long double x)
+auto_unit operator"" _fAU(long double x)
 {
-	return unit(x, "fAU");
+	return auto_unit(x, "fAU");
 }
 
-unit operator"" _aAU(long double x)
+auto_unit operator"" _aAU(long double x)
 {
-	return unit(x, "aAU");
+	return auto_unit(x, "aAU");
 }
 
-unit operator"" _zAU(long double x)
+auto_unit operator"" _zAU(long double x)
 {
-	return unit(x, "zAU");
+	return auto_unit(x, "zAU");
 }
 
-unit operator"" _yAU(long double x)
+auto_unit operator"" _yAU(long double x)
 {
-	return unit(x, "yAU");
+	return auto_unit(x, "yAU");
 }
 
-unit operator"" _Ypc(long double x)
+auto_unit operator"" _Ypc(long double x)
 {
-	return unit(x, "Ypc");
+	return auto_unit(x, "Ypc");
 }
 
-unit operator"" _Zpc(long double x)
+auto_unit operator"" _Zpc(long double x)
 {
-	return unit(x, "Zpc");
+	return auto_unit(x, "Zpc");
 }
 
-unit operator"" _Epc(long double x)
+auto_unit operator"" _Epc(long double x)
 {
-	return unit(x, "Epc");
+	return auto_unit(x, "Epc");
 }
 
-unit operator"" _Ppc(long double x)
+auto_unit operator"" _Ppc(long double x)
 {
-	return unit(x, "Ppc");
+	return auto_unit(x, "Ppc");
 }
 
-unit operator"" _Tpc(long double x)
+auto_unit operator"" _Tpc(long double x)
 {
-	return unit(x, "Tpc");
+	return auto_unit(x, "Tpc");
 }
 
-unit operator"" _Gpc(long double x)
+auto_unit operator"" _Gpc(long double x)
 {
-	return unit(x, "Gpc");
+	return auto_unit(x, "Gpc");
 }
 
-unit operator"" _Mpc(long double x)
+auto_unit operator"" _Mpc(long double x)
 {
-	return unit(x, "Mpc");
+	return auto_unit(x, "Mpc");
 }
 
-unit operator"" _kpc(long double x)
+auto_unit operator"" _kpc(long double x)
 {
-	return unit(x, "kpc");
+	return auto_unit(x, "kpc");
 }
 
-unit operator"" _hpc(long double x)
+auto_unit operator"" _hpc(long double x)
 {
-	return unit(x, "hpc");
+	return auto_unit(x, "hpc");
 }
 
-unit operator"" _dapc(long double x)
+auto_unit operator"" _dapc(long double x)
 {
-	return unit(x, "dapc");
+	return auto_unit(x, "dapc");
 }
 
-unit operator"" _pc(long double x)
+auto_unit operator"" _pc(long double x)
 {
-	return unit(x, "pc");
+	return auto_unit(x, "pc");
 }
 
-unit operator"" _dpc(long double x)
+auto_unit operator"" _dpc(long double x)
 {
-	return unit(x, "dpc");
+	return auto_unit(x, "dpc");
 }
 
-unit operator"" _cpc(long double x)
+auto_unit operator"" _cpc(long double x)
 {
-	return unit(x, "cpc");
+	return auto_unit(x, "cpc");
 }
 
-unit operator"" _mpc(long double x)
+auto_unit operator"" _mpc(long double x)
 {
-	return unit(x, "mpc");
+	return auto_unit(x, "mpc");
 }
 
-unit operator"" _upc(long double x)
+auto_unit operator"" _upc(long double x)
 {
-	return unit(x, "upc");
+	return auto_unit(x, "upc");
 }
 
-unit operator"" _npc(long double x)
+auto_unit operator"" _npc(long double x)
 {
-	return unit(x, "npc");
+	return auto_unit(x, "npc");
 }
 
-unit operator"" _ppc(long double x)
+auto_unit operator"" _ppc(long double x)
 {
-	return unit(x, "ppc");
+	return auto_unit(x, "ppc");
 }
 
-unit operator"" _fpc(long double x)
+auto_unit operator"" _fpc(long double x)
 {
-	return unit(x, "fpc");
+	return auto_unit(x, "fpc");
 }
 
-unit operator"" _apc(long double x)
+auto_unit operator"" _apc(long double x)
 {
-	return unit(x, "apc");
+	return auto_unit(x, "apc");
 }
 
-unit operator"" _zpc(long double x)
+auto_unit operator"" _zpc(long double x)
 {
-	return unit(x, "zpc");
+	return auto_unit(x, "zpc");
 }
 
-unit operator"" _ypc(long double x)
+auto_unit operator"" _ypc(long double x)
 {
-	return unit(x, "ypc");
+	return auto_unit(x, "ypc");
 }
 
-unit operator"" _YeV(long double x)
+auto_unit operator"" _YeV(long double x)
 {
-	return unit(x, "YeV");
+	return auto_unit(x, "YeV");
 }
 
-unit operator"" _ZeV(long double x)
+auto_unit operator"" _ZeV(long double x)
 {
-	return unit(x, "ZeV");
+	return auto_unit(x, "ZeV");
 }
 
-unit operator"" _EeV(long double x)
+auto_unit operator"" _EeV(long double x)
 {
-	return unit(x, "EeV");
+	return auto_unit(x, "EeV");
 }
 
-unit operator"" _PeV(long double x)
+auto_unit operator"" _PeV(long double x)
 {
-	return unit(x, "PeV");
+	return auto_unit(x, "PeV");
 }
 
-unit operator"" _TeV(long double x)
+auto_unit operator"" _TeV(long double x)
 {
-	return unit(x, "TeV");
+	return auto_unit(x, "TeV");
 }
 
-unit operator"" _GeV(long double x)
+auto_unit operator"" _GeV(long double x)
 {
-	return unit(x, "GeV");
+	return auto_unit(x, "GeV");
 }
 
-unit operator"" _MeV(long double x)
+auto_unit operator"" _MeV(long double x)
 {
-	return unit(x, "MeV");
+	return auto_unit(x, "MeV");
 }
 
-unit operator"" _keV(long double x)
+auto_unit operator"" _keV(long double x)
 {
-	return unit(x, "keV");
+	return auto_unit(x, "keV");
 }
 
-unit operator"" _heV(long double x)
+auto_unit operator"" _heV(long double x)
 {
-	return unit(x, "heV");
+	return auto_unit(x, "heV");
 }
 
-unit operator"" _daeV(long double x)
+auto_unit operator"" _daeV(long double x)
 {
-	return unit(x, "daeV");
+	return auto_unit(x, "daeV");
 }
 
-unit operator"" _eV(long double x)
+auto_unit operator"" _eV(long double x)
 {
-	return unit(x, "eV");
+	return auto_unit(x, "eV");
 }
 
-unit operator"" _deV(long double x)
+auto_unit operator"" _deV(long double x)
 {
-	return unit(x, "deV");
+	return auto_unit(x, "deV");
 }
 
-unit operator"" _ceV(long double x)
+auto_unit operator"" _ceV(long double x)
 {
-	return unit(x, "ceV");
+	return auto_unit(x, "ceV");
 }
 
-unit operator"" _meV(long double x)
+auto_unit operator"" _meV(long double x)
 {
-	return unit(x, "meV");
+	return auto_unit(x, "meV");
 }
 
-unit operator"" _ueV(long double x)
+auto_unit operator"" _ueV(long double x)
 {
-	return unit(x, "ueV");
+	return auto_unit(x, "ueV");
 }
 
-unit operator"" _neV(long double x)
+auto_unit operator"" _neV(long double x)
 {
-	return unit(x, "neV");
+	return auto_unit(x, "neV");
 }
 
-unit operator"" _peV(long double x)
+auto_unit operator"" _peV(long double x)
 {
-	return unit(x, "peV");
+	return auto_unit(x, "peV");
 }
 
-unit operator"" _feV(long double x)
+auto_unit operator"" _feV(long double x)
 {
-	return unit(x, "feV");
+	return auto_unit(x, "feV");
 }
 
-unit operator"" _aeV(long double x)
+auto_unit operator"" _aeV(long double x)
 {
-	return unit(x, "aeV");
+	return auto_unit(x, "aeV");
 }
 
-unit operator"" _zeV(long double x)
+auto_unit operator"" _zeV(long double x)
 {
-	return unit(x, "zeV");
+	return auto_unit(x, "zeV");
 }
 
-unit operator"" _yeV(long double x)
+auto_unit operator"" _yeV(long double x)
 {
-	return unit(x, "yeV");
+	return auto_unit(x, "yeV");
 }
 
-unit operator"" _Da(long double x)
+auto_unit operator"" _Da(long double x)
 {
-	return unit(x, "Da");
+	return auto_unit(x, "Da");
 }
 
-unit operator"" _amu(long double x)
+auto_unit operator"" _amu(long double x)
 {
-	return unit(x, "amu");
+	return auto_unit(x, "amu");
 }
 
-unit operator"" _Yb(long double x)
+auto_unit operator"" _Yb(long double x)
 {
-	return unit(x, "Yb");
+	return auto_unit(x, "Yb");
 }
 
-unit operator"" _Zb(long double x)
+auto_unit operator"" _Zb(long double x)
 {
-	return unit(x, "Zb");
+	return auto_unit(x, "Zb");
 }
 
-unit operator"" _Eb(long double x)
+auto_unit operator"" _Eb(long double x)
 {
-	return unit(x, "Eb");
+	return auto_unit(x, "Eb");
 }
 
-unit operator"" _Pb(long double x)
+auto_unit operator"" _Pb(long double x)
 {
-	return unit(x, "Pb");
+	return auto_unit(x, "Pb");
 }
 
-unit operator"" _Tb(long double x)
+auto_unit operator"" _Tb(long double x)
 {
-	return unit(x, "Tb");
+	return auto_unit(x, "Tb");
 }
 
-unit operator"" _Gb(long double x)
+auto_unit operator"" _Gb(long double x)
 {
-	return unit(x, "Gb");
+	return auto_unit(x, "Gb");
 }
 
-unit operator"" _Mb(long double x)
+auto_unit operator"" _Mb(long double x)
 {
-	return unit(x, "Mb");
+	return auto_unit(x, "Mb");
 }
 
-unit operator"" _kb(long double x)
+auto_unit operator"" _kb(long double x)
 {
-	return unit(x, "kb");
+	return auto_unit(x, "kb");
 }
 
-unit operator"" _hb(long double x)
+auto_unit operator"" _hb(long double x)
 {
-	return unit(x, "hb");
+	return auto_unit(x, "hb");
 }
 
-unit operator"" _dab(long double x)
+auto_unit operator"" _dab(long double x)
 {
-	return unit(x, "dab");
+	return auto_unit(x, "dab");
 }
 
-unit operator"" _b(long double x)
+auto_unit operator"" _b(long double x)
 {
-	return unit(x, "b");
+	return auto_unit(x, "b");
 }
 
-unit operator"" _db(long double x)
+auto_unit operator"" _db(long double x)
 {
-	return unit(x, "db");
+	return auto_unit(x, "db");
 }
 
-unit operator"" _cb(long double x)
+auto_unit operator"" _cb(long double x)
 {
-	return unit(x, "cb");
+	return auto_unit(x, "cb");
 }
 
-unit operator"" _mb(long double x)
+auto_unit operator"" _mb(long double x)
 {
-	return unit(x, "mb");
+	return auto_unit(x, "mb");
 }
 
-unit operator"" _ub(long double x)
+auto_unit operator"" _ub(long double x)
 {
-	return unit(x, "ub");
+	return auto_unit(x, "ub");
 }
 
-unit operator"" _nb(long double x)
+auto_unit operator"" _nb(long double x)
 {
-	return unit(x, "nb");
+	return auto_unit(x, "nb");
 }
 
-unit operator"" _pb(long double x)
+auto_unit operator"" _pb(long double x)
 {
-	return unit(x, "pb");
+	return auto_unit(x, "pb");
 }
 
-unit operator"" _fb(long double x)
+auto_unit operator"" _fb(long double x)
 {
-	return unit(x, "fb");
+	return auto_unit(x, "fb");
 }
 
-unit operator"" _ab(long double x)
+auto_unit operator"" _ab(long double x)
 {
-	return unit(x, "ab");
+	return auto_unit(x, "ab");
 }
 
-unit operator"" _zb(long double x)
+auto_unit operator"" _zb(long double x)
 {
-	return unit(x, "zb");
+	return auto_unit(x, "zb");
 }
 
-unit operator"" _yb(long double x)
+auto_unit operator"" _yb(long double x)
 {
-	return unit(x, "yb");
+	return auto_unit(x, "yb");
 }
 
-unit operator"" _YM(long double x)
+auto_unit operator"" _YM(long double x)
 {
-	return unit(x, "YM");
+	return auto_unit(x, "YM");
 }
 
-unit operator"" _ZM(long double x)
+auto_unit operator"" _ZM(long double x)
 {
-	return unit(x, "ZM");
+	return auto_unit(x, "ZM");
 }
 
-unit operator"" _EM(long double x)
+auto_unit operator"" _EM(long double x)
 {
-	return unit(x, "EM");
+	return auto_unit(x, "EM");
 }
 
-unit operator"" _PM(long double x)
+auto_unit operator"" _PM(long double x)
 {
-	return unit(x, "PM");
+	return auto_unit(x, "PM");
 }
 
-unit operator"" _TM(long double x)
+auto_unit operator"" _TM(long double x)
 {
-	return unit(x, "TM");
+	return auto_unit(x, "TM");
 }
 
-unit operator"" _GM(long double x)
+auto_unit operator"" _GM(long double x)
 {
-	return unit(x, "GM");
+	return auto_unit(x, "GM");
 }
 
-unit operator"" _MM(long double x)
+auto_unit operator"" _MM(long double x)
 {
-	return unit(x, "MM");
+	return auto_unit(x, "MM");
 }
 
-unit operator"" _kM(long double x)
+auto_unit operator"" _kM(long double x)
 {
-	return unit(x, "kM");
+	return auto_unit(x, "kM");
 }
 
-unit operator"" _hM(long double x)
+auto_unit operator"" _hM(long double x)
 {
-	return unit(x, "hM");
+	return auto_unit(x, "hM");
 }
 
-unit operator"" _daM(long double x)
+auto_unit operator"" _daM(long double x)
 {
-	return unit(x, "daM");
+	return auto_unit(x, "daM");
 }
 
-unit operator"" _M(long double x)
+auto_unit operator"" _M(long double x)
 {
-	return unit(x, "M");
+	return auto_unit(x, "M");
 }
 
-unit operator"" _dM(long double x)
+auto_unit operator"" _dM(long double x)
 {
-	return unit(x, "dM");
+	return auto_unit(x, "dM");
 }
 
-unit operator"" _cM(long double x)
+auto_unit operator"" _cM(long double x)
 {
-	return unit(x, "cM");
+	return auto_unit(x, "cM");
 }
 
-unit operator"" _mM(long double x)
+auto_unit operator"" _mM(long double x)
 {
-	return unit(x, "mM");
+	return auto_unit(x, "mM");
 }
 
-unit operator"" _uM(long double x)
+auto_unit operator"" _uM(long double x)
 {
-	return unit(x, "uM");
+	return auto_unit(x, "uM");
 }
 
-unit operator"" _nM(long double x)
+auto_unit operator"" _nM(long double x)
 {
-	return unit(x, "nM");
+	return auto_unit(x, "nM");
 }
 
-unit operator"" _pM(long double x)
+auto_unit operator"" _pM(long double x)
 {
-	return unit(x, "pM");
+	return auto_unit(x, "pM");
 }
 
-unit operator"" _fM(long double x)
+auto_unit operator"" _fM(long double x)
 {
-	return unit(x, "fM");
+	return auto_unit(x, "fM");
 }
 
-unit operator"" _aM(long double x)
+auto_unit operator"" _aM(long double x)
 {
-	return unit(x, "aM");
+	return auto_unit(x, "aM");
 }
 
-unit operator"" _zM(long double x)
+auto_unit operator"" _zM(long double x)
 {
-	return unit(x, "zM");
+	return auto_unit(x, "zM");
 }
 
-unit operator"" _yM(long double x)
+auto_unit operator"" _yM(long double x)
 {
-	return unit(x, "yM");
+	return auto_unit(x, "yM");
 }
