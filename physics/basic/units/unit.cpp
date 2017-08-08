@@ -953,6 +953,60 @@ bool operator !=(const physics::units::unit& x, string y_init)
 	return !(x == y_init);
 }
 
+bool operator <(const physics::units::unit& x, string y_init)
+{
+	physics::units::auto_unit y(y_init);
+	return (x < y);
+}
+
+bool operator >(const physics::units::unit& x, string y_init)
+{
+	physics::units::auto_unit y(y_init);
+	return (x > y);
+}
+
+bool operator <=(const physics::units::unit& x, string y_init)
+{
+	return !(x > y_init);
+}
+
+bool operator >=(const physics::units::unit& x, string y_init)
+{
+	return !(x < y_init);
+}
+
+bool operator ==(string x_init, const physics::units::unit& y)
+{
+	return (y == x_init);
+}
+
+bool operator !=(string x_init, const physics::units::unit& y)
+{
+	return (y != x_init);
+}
+
+bool operator <(string x_init, const physics::units::unit& y)
+{
+	physics::units::auto_unit x(x_init);
+	return (x < y);
+}
+
+bool operator >(string x_init, const physics::units::unit& y)
+{
+	physics::units::auto_unit x(x_init);
+	return (x > y);
+}
+
+bool operator <=(string x_init, const physics::units::unit& y)
+{
+	return !(x_init > y);
+}
+
+bool operator >=(string x_init, const physics::units::unit& y)
+{
+	return !(x_init < y);
+}
+
 void operator +=(wstring& x, const physics::units::unit& y)
 {
 	wostringstream output;

@@ -263,6 +263,17 @@ bool operator >=(const physics::units::unit&, const physics::units::unit&);
 
 bool operator ==(const physics::units::unit&, string);
 bool operator !=(const physics::units::unit&, string);
+bool operator <(const physics::units::unit&, string);
+bool operator >(const physics::units::unit&, string);
+bool operator <=(const physics::units::unit&, string);
+bool operator >=(const physics::units::unit&, string);
+
+bool operator ==(string, const physics::units::unit&);
+bool operator !=(string, const physics::units::unit&);
+bool operator <(string, const physics::units::unit&);
+bool operator >(string, const physics::units::unit&);
+bool operator <=(string, const physics::units::unit&);
+bool operator >=(string, const physics::units::unit&);
 
 void operator +=(wstring&, const physics::units::unit&);
 wstring operator +(const wstring&, const physics::units::unit&);
