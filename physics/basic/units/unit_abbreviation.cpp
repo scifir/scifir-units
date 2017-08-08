@@ -2563,6 +2563,11 @@ auto_unit operator"" _yM(unsigned long long int x)
 	return auto_unit(x, "yM");
 }
 
+auto_unit operator"" _particles(unsigned long long int x)
+{
+	return auto_unit(x, "particles");
+}
+
 auto_unit operator"" _YHz(long double x)
 {
 	return auto_unit(x, "YHz");

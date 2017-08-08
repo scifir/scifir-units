@@ -3,6 +3,8 @@
 #include "dimension_container.hpp"
 #include "prefix.hpp"
 
+#include "chemistry/constants.hpp"
+
 #include <iostream>
 #include <set>
 #include <string>
@@ -599,6 +601,24 @@ namespace physics::units
 	const string abbreviation_molarity::name = "molarity";
 	const string abbreviation_molarity::symbol = "M";
 
+	abbreviation_particles::abbreviation_particles(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_particles>(new_prefix, new_scale)
+	{
+	}
+
+	abbreviation_particles::abbreviation_particles(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_particles>(new_prefix, new_scale)
+	{
+	}
+
+	int abbreviation_particles::get_enum_type() const
+	{
+		return abbreviation_symbol::particles;
+	}
+
+	const string abbreviation_particles::dimensions_match = "mol";
+	const long long abbreviation_particles::factor = 1/chemistry::avogadro_constant;
+	const string abbreviation_particles::name = "particles";
+	const string abbreviation_particles::symbol = "particles";
+
 	abbreviation* create_abbreviation(abbreviation_symbol new_abbreviation)
 	{
 		switch(new_abbreviation)
@@ -667,6 +687,8 @@ namespace physics::units
 				return new abbreviation_barn();
 			case M:
 				return new abbreviation_molarity();
+			case particles:
+				return new abbreviation_particles();
 		}
 		return nullptr;
 	}
@@ -677,7 +699,7 @@ namespace physics::units
 		string abbreviation_name;
 		string prefix_name;
 		set<string> prefixes_options {"Y", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "u", "n", "p", "f", "a", "z", "y"};
-		if(prefixes_options.count(x.substr(0,1)))
+		if(prefixes_options.count(x.substr(0,1)) and x.substr(0,9) != "particles")
 		{
 			prefix_name = x.substr(0, 1);
 			abbreviation_name = x.substr(1);
@@ -825,6 +847,10 @@ namespace physics::units
 		else if(abbreviation_name == "M")
 		{
 			return new abbreviation_molarity(*new_prefix);
+		}
+		else if(abbreviation_name == "particles")
+		{
+			return new abbreviation_particles(*new_prefix);
 		}
 		else
 		{

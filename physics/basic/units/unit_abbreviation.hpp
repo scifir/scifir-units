@@ -549,6 +549,8 @@ auto_unit operator"" _aM(unsigned long long int);
 auto_unit operator"" _zM(unsigned long long int);
 auto_unit operator"" _yM(unsigned long long int);
 
+auto_unit operator"" _particles(unsigned long long int);
+
 auto_unit operator"" _YHz(long double);
 auto_unit operator"" _ZHz(long double);
 auto_unit operator"" _EHz(long double);

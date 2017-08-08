@@ -14,7 +14,7 @@ namespace physics::units
 {
 	enum abbreviation_symbol
 	{
-		Hz = 9, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, normal_abbreviation, L, minute, h, d, AU, pc, eV, Da, amu, barn, M
+		Hz = 9, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, normal_abbreviation, L, minute, h, d, AU, pc, eV, Da, amu, barn, M, particles
 	};
 
 	class abbreviation : public dimension_abstract
@@ -507,6 +507,20 @@ namespace physics::units
 		public:
 			abbreviation_molarity(prefix_symbol = normal_prefix, int = 1);
 			abbreviation_molarity(prefix&, int = 1);
+
+			virtual int get_enum_type() const;
+
+			static const string dimensions_match;
+			static const long long factor;
+			static const string name;
+			static const string symbol;
+	};
+
+	class abbreviation_particles: public abbreviation_crtp<abbreviation_particles>
+	{
+		public:
+			abbreviation_particles(prefix_symbol = normal_prefix, int = 1);
+			abbreviation_particles(prefix&, int = 1);
 
 			virtual int get_enum_type() const;
 
