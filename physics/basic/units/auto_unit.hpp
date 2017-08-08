@@ -109,8 +109,8 @@ template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 physics::units::auto_unit operator /(T x, const physics::units::unit& y)
 {
 	math::number::unit_number new_value = y.get_value();
-	physics::units::vector_real_dimensions new_real_dimensions = y.get_real_dimensions();
-	physics::units::vector_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
+	physics::units::vector_real_dimensions new_real_dimensions = power_real_dimensions(y.get_real_dimensions(),-1);
+	physics::units::vector_actual_dimensions new_actual_dimensions = power_actual_dimensions(y.get_actual_dimensions(),-1);
 	return physics::units::auto_unit(x / new_value, new_real_dimensions, new_actual_dimensions);
 }
 
