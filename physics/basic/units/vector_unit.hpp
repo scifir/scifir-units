@@ -22,6 +22,67 @@
 #include <string>
 #include <vector>
 
+#define VECTOR_UNIT_HPP(name) class name : public vector_unit_crtp<name> \
+	{	\
+		public: \
+			name(const unit&); \
+			explicit name(const unit&,direction_symbol); \
+			explicit name(const unit&,angle_type); \
+			explicit name(const unit&,angle_type,angle_type); \
+			explicit name(const unit&,math::topology::angle_container); \
+			explicit name(string); \
+			explicit name(string,angle_type); \
+			explicit name(string,angle_type,angle_type); \
+			explicit name(string,math::topology::angle_container); \
+			name(const vector_unit&); \
+\
+			static const string dimensions_match; \
+			static const vector_real_dimensions real_dimensions; \
+	}
+
+#define VECTOR_UNIT_CPP(name,dimensions) name::name(const unit& new_value) : unit(new_value),vector_unit_crtp<name>(new_value) \
+			{ \
+			} \
+\
+			name::name(const unit& new_value,direction_symbol new_direction) : unit(new_value),vector_unit_crtp<name>(new_value,new_direction) \
+			{ \
+			} \
+\
+			name::name(const unit& new_value,angle_type new_angle1) : unit(new_value),vector_unit_crtp<name>(new_value,new_angle1) \
+			{ \
+			} \
+\
+			name::name(const unit& new_value,angle_type new_angle1,angle_type new_angle2) : unit(new_value),vector_unit_crtp<name>(new_value,new_angle1,new_angle2) \
+			{ \
+			} \
+\
+			name::name(const unit& new_value,math::topology::angle_container new_angles) : unit(new_value),vector_unit_crtp<name>(new_value,new_angles) \
+			{ \
+			} \
+\
+			name::name(string init_value) : unit(init_value),vector_unit_crtp<name>(init_value) \
+			{ \
+			} \
+\
+			name::name(string init_value,angle_type new_angle1) : unit(init_value),vector_unit_crtp<name>(init_value,new_angle1) \
+			{ \
+			} \
+\
+			name::name(string init_value,angle_type new_angle1,angle_type new_angle2) : unit(init_value),vector_unit_crtp<name>(init_value,new_angle1,new_angle2) \
+			{ \
+			} \
+\
+			name::name(string init_value,math::topology::angle_container new_angles) : unit(init_value),vector_unit_crtp<name>(init_value,new_angles) \
+			{ \
+			} \
+\
+			name::name(const vector_unit& x) : unit(x),vector_unit_crtp<name>(x) \
+			{ \
+			} \
+\
+const string name::dimensions_match = dimensions; \
+const vector_real_dimensions name::real_dimensions = create_real_dimensions(dimensions)
+
 using namespace std;
 using namespace math::topology;
 
@@ -134,7 +195,7 @@ namespace physics::units
 	};
 
 	template<typename T>
-	class vector_unit_crtp : public vector_unit, public unit_crtp<T>
+	class vector_unit_crtp : public unit_crtp<T>,public vector_unit
 	{
 		public:
 			vector_unit_crtp(const unit& new_value) : unit(new_value),unit_crtp<T>(new_value),vector_unit(new_value)
@@ -153,7 +214,7 @@ namespace physics::units
 			{
 			}
 
-			explicit vector_unit_crtp(const unit& new_value,list<angle_type> new_angles) : unit(new_value),unit_crtp<T>(new_value),vector_unit(new_value,new_angles)
+			explicit vector_unit_crtp(const unit& new_value,math::topology::angle_container new_angles) : unit(new_value),unit_crtp<T>(new_value),vector_unit(new_value,new_angles)
 			{
 			}
 
@@ -169,7 +230,7 @@ namespace physics::units
 			{
 			}
 
-			explicit vector_unit_crtp(string init_value,list<angle_type> new_angles) : unit(init_value),unit_crtp<T>(init_value),vector_unit(init_value,new_angles)
+			explicit vector_unit_crtp(string init_value,math::topology::angle_container new_angles) : unit(init_value),unit_crtp<T>(init_value),vector_unit(init_value,new_angles)
 			{
 			}
 
