@@ -509,11 +509,11 @@ namespace physics::units
 					}
 					actual_dimensions[add_abbreviation->get_enum_type()] = add_abbreviation;
 					vector_real_dimensions abbreviation_dimensions = create_real_dimensions(add_abbreviation->get_dimensions_match());
-					for(const auto& map_value : abbreviation_dimensions)
+					/*for(const auto& map_value : abbreviation_dimensions)
 					{
-						//for(int i = 0; i < abs(new_scale); i++)
-						//{
-							/*if(real_dimensions.count(map_value.first) > 0)
+						for(int i = 0; i < abs(new_scale); i++)
+						{
+							if(real_dimensions.count(map_value.first) > 0)
 							{
 								if(numerator == true)
 								{
@@ -527,9 +527,9 @@ namespace physics::units
 							else
 							{
 								real_dimensions[map_value.first] = map_value.second;
-							}*/
-						//}
-					}
+							}
+						}
+					}*/
 				}
 				else if(get_conversion.count(new_dimension) > 0)
 				{
@@ -580,11 +580,11 @@ namespace physics::units
 						}
 						actual_dimensions[add_abbreviation->get_enum_type()] = add_abbreviation;
 						vector_real_dimensions abbreviation_dimensions = create_real_dimensions(add_abbreviation->get_dimensions_match());
-						for(const auto& map_value : abbreviation_dimensions)
+						/*for(const auto& map_value : abbreviation_dimensions)
 						{
-							//for(int i = 0; i < abs(new_scale); i++)
-							//{
-								/*if(real_dimensions.count(map_value.first) > 0)
+							for(int i = 0; i < abs(new_scale); i++)
+							{
+								if(real_dimensions.count(map_value.first) > 0)
 								{
 									if(numerator == true)
 									{
@@ -598,9 +598,9 @@ namespace physics::units
 								else
 								{
 									real_dimensions[map_value.first] = map_value.second;
-								}*/
-							//}
-						}
+								}
+							}
+						}*/
 					}
 				}
 				new_dimension.clear();
@@ -704,24 +704,24 @@ namespace physics::units
 	bool unit::valid_abbreviation(shared_ptr<abbreviation> new_abbreviation)
 	{
 		vector_real_dimensions abbreviation_dimensions = create_real_dimensions(new_abbreviation->get_dimensions_match());
-		for(auto& map_value : abbreviation_dimensions)
+		/*for(auto& map_value : abbreviation_dimensions)
 		{
 			bool find = false;
 			for(auto& map_value2 : actual_dimensions)
 			{
-				/*if (dimension_enum.count(map_value2.second->get_symbol()) > 0)
+				if (dimension_enum.count(map_value2.second->get_symbol()) > 0)
 				{
 					if (map_value.second->get_symbol() == map_value2.second->get_symbol() and map_value.second->get_scale() <= map_value2.second->get_scale())
 					{
 						find = true;
 					}
-				}*/
+				}
 			}
 			if(find == false)
 			{
 				return false;
 			}
-		}
+		}*/
 		return true;
 	}
 
