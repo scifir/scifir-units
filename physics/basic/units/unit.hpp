@@ -24,7 +24,7 @@ namespace physics::units
 		public:
 			unit();
 			explicit unit(math::topology::space_type, string = "");
-			explicit unit(math::number::unit_number, vector_real_dimensions, const vector_actual_dimensions&); // TODO: check what to change here now that vector_real_dimensions is unneeded
+			explicit unit(math::number::unit_number, const vector_actual_dimensions&);
 			explicit unit(const unit&,string);
 			explicit unit(const auto_unit&,string);
 			explicit unit(string);

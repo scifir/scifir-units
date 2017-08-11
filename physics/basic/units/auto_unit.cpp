@@ -10,10 +10,8 @@ namespace physics::units
 	{
 	}
 
-	auto_unit::auto_unit(math::number::unit_number new_value, const vector_real_dimensions& new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : real_dimensions(new_real_dimensions),unit()
+	auto_unit::auto_unit(math::number::unit_number new_value, const vector_real_dimensions& new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : real_dimensions(new_real_dimensions),unit(new_value,new_actual_dimensions)
 	{
-		value = move(new_value);
-		actual_dimensions = move(new_actual_dimensions);
 	}
 
 	auto_unit::auto_unit(const unit& new_value) : real_dimensions(new_value.get_real_dimensions()),unit(new_value)

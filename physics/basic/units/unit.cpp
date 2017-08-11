@@ -33,7 +33,7 @@ namespace physics::units
 		initialize_dimensions(dimension_structure);
 	}
 
-	unit::unit(math::number::unit_number new_value, vector_real_dimensions new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : unit()
+	unit::unit(math::number::unit_number new_value, const vector_actual_dimensions& new_actual_dimensions) : unit()
 	{
 		value = move(new_value);
 		actual_dimensions = move(new_actual_dimensions);
