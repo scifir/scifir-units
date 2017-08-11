@@ -98,27 +98,6 @@ namespace physics::units
 			bool is_defined() const;
 			void invalidate(int);
 
-			[[deprecated]]
-			void set_prefix(prefix_symbol);
-
-			[[deprecated]]
-			void set_prefix(dimension_symbol, prefix_symbol);
-
-			[[deprecated]]
-			void add_abbreviation(abbreviation_symbol);
-
-			[[deprecated]]
-			void add_abbreviation(abbreviation_symbol, prefix_symbol);
-
-			[[deprecated]]
-			void change_abbreviation(abbreviation_symbol, abbreviation_symbol);
-
-			[[deprecated]]
-			bool valid_abbreviation(shared_ptr<abbreviation>);
-
-			[[deprecated]]
-			bool valid_abbreviation_real(shared_ptr<abbreviation>);
-
 		protected:
 			math::number::unit_number value;
 			vector_actual_dimensions actual_dimensions;
@@ -132,18 +111,6 @@ namespace physics::units
 			void remove_prefix(dimension_prefixes);
 
 			void initialize_dimensions(string);
-
-			[[deprecated]]
-			void swap_prefix(shared_ptr<dimension_abstract>, shared_ptr<dimension_abstract>);
-
-			[[deprecated]]
-			void swap_prefix(prefix_symbol, prefix_symbol);
-
-			[[deprecated]]
-			void add_internal_abbreviation(abbreviation_symbol);
-
-			[[deprecated]]
-			void delete_internal_abbreviation(abbreviation_symbol);
 	};
 
 	template<typename T>
@@ -196,9 +163,6 @@ namespace physics::units
 	auto_unit sqrt(const unit&);
 	auto_unit sqrt_nth(const unit&, int);
 	bool equal_dimensions(const unit&,const unit&);
-
-	//[[deprecated]]
-	//unit* get_unit_from_dimensions(math::topology::space_type, vector_real_dimensions);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>

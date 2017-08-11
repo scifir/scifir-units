@@ -138,14 +138,6 @@ namespace physics::units
 		add_prefix(new_prefix);
 	}
 
-	/// \deprecated
-	/// Changes the specified prefix by another prefix
-	void dimension_abstract::change_prefix(prefix_symbol previous_prefix, prefix_symbol new_prefix)
-	{
-		remove_prefix(previous_prefix);
-		add_prefix(new_prefix);
-	}
-
 	int dimension_abstract::total_factor()
 	{
 		int sum = 0;

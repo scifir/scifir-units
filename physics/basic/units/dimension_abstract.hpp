@@ -53,7 +53,6 @@ namespace physics::units
 			template <typename T,typename = typename enable_if<is_integer_number<T>::value>::type>
 			void operator ^=(T x)
 			{
-				//scale *= x;
 				if (x < 0)
 				{
 					for (auto& prefix : prefixes)
@@ -77,11 +76,7 @@ namespace physics::units
 			void sqrt();
 			void sqrt_nth(int);
 
-			[[deprecated]]
-			void change_prefix(prefix_symbol,prefix_symbol);
-
 		private:
-			//int scale;
 			dimension_prefixes prefixes;
 	};
 }
