@@ -24,7 +24,6 @@ namespace physics::units
 		public:
 			unit();
 			explicit unit(math::topology::space_type, string = "");
-			//unit(math::topology::space_type, dimension_symbol = m, prefix_symbol = normal_prefix);
 			explicit unit(math::number::unit_number, vector_real_dimensions, const vector_actual_dimensions&); // TODO: check what to change here now that vector_real_dimensions is unneeded
 			explicit unit(const unit&,string);
 			explicit unit(const auto_unit&,string);
@@ -48,12 +47,6 @@ namespace physics::units
 			auto_unit operator /(T y);
 			template<typename T, typename = typename enable_if<is_integer_number<T>::value>::type>
 			auto_unit operator ^(T y);
-
-			/*template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			void operator =(T y)
-			{
-				value = y;
-			}*/
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 			void operator +=(T y)
@@ -157,8 +150,6 @@ namespace physics::units
 	class unit_crtp : public virtual unit
 	{
 		public:
-			//using unit::unit;
-
 			unit_crtp(const unit& new_unit) : unit(new_unit)
 			{
 				if(!new_unit.equal_dimensions(get_dimensions_match()))
@@ -185,34 +176,6 @@ namespace physics::units
 				// TODO: finish this function
 			}
 
-			/*unit_crtp() : unit()
-			{
-			}
-
-			unit_crtp(math::topology::space_type new_value, string dimension_structure) : unit(new_value, dimension_structure)
-			{
-			}*/
-
-			/*unit_crtp(math::topology::space_type new_value, dimension_symbol dimension_name, prefix_symbol prefix_name) : unit(new_value, dimension_name, prefix_name)
-			{
-			}*/
-
-			/*unit_crtp(math::number::unit_number new_value, vector_real_dimensions new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : unit(new_value, new_real_dimensions, new_actual_dimensions)
-			{
-			}
-
-			unit_crtp(string init_value) : unit(init_value)
-			{
-			}
-
-			unit_crtp(const unit& new_unit) : unit(new_unit)
-			{
-			}
-
-			unit_crtp(const unit& new_value,string init_value) : unit(new_value,init_value)
-			{
-			}*/
-
 			virtual T* clone() const
 			{
 				return new T(static_cast<const T&>(*this));
@@ -228,9 +191,6 @@ namespace physics::units
 				return T::real_dimensions;
 			}
 	};
-
-	/*bool equal_dimensions(const unit&,const unit&);
-	bool equal_dimensions(const vector_real_dimensions&,const vector_real_dimensions&);*/
 
 	math::topology::space_type abs(const unit&);
 	auto_unit sqrt(const unit&);

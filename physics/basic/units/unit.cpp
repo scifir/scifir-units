@@ -33,15 +33,6 @@ namespace physics::units
 		initialize_dimensions(dimension_structure);
 	}
 
-	/*unit::unit(math::topology::space_type new_value, dimension_symbol dimension_name, prefix_symbol prefix_name) : unit()
-	{
-		shared_ptr<dimension> new_dimension = shared_ptr<dimension>(create_dimension(dimension_name));
-		real_dimensions[dimension_name] = new_dimension;
-		new_dimension->change_prefix(prefix_name);
-		actual_dimensions[dimension_name] = new_dimension;
-		value = new_value;
-	}*/
-
 	unit::unit(math::number::unit_number new_value, vector_real_dimensions new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : unit()
 	{
 		value = move(new_value);
@@ -122,38 +113,6 @@ namespace physics::units
 		new_value *= y.get_value().get_value();
 		vector_real_dimensions new_real_dimensions = multiply_real_dimensions(get_real_dimensions(),y.get_real_dimensions());
 		vector_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(get_actual_dimensions(),y.get_actual_dimensions());
-		/*vector_real_dimensions new_real_dimensions = get_real_dimensions();
-		for(auto& key : y.get_real_dimensions())
-		{
-			if(new_real_dimensions.count(key.first))
-			{
-				*new_real_dimensions[key.first] *= *key.second;
-				if(new_real_dimensions[key.first]->get_scale() == 0)
-				{
-					new_real_dimensions.erase(key.first);
-				}
-			}
-			else
-			{
-				new_real_dimensions[key.first] = key.second;
-			}
-		}
-		vector_actual_dimensions new_actual_dimensions = get_actual_dimensions();
-		for(auto& key : y.get_actual_dimensions())
-		{
-			if(new_actual_dimensions.count(key.first))
-			{
-				*new_actual_dimensions[key.first] *= *key.second;
-				if(new_actual_dimensions[key.first]->get_scale() == 0)
-				{
-					new_actual_dimensions.erase(key.first);
-				}
-			}
-			else
-			{
-				new_actual_dimensions[key.first] = key.second;
-			}
-		}*/
 		return move(auto_unit(new_value, new_real_dimensions, new_actual_dimensions));
 	}
 
@@ -168,40 +127,6 @@ namespace physics::units
 		new_value /= y.get_value().get_value();
 		vector_real_dimensions new_real_dimensions = divide_real_dimensions(get_real_dimensions(),y.get_real_dimensions());
 		vector_actual_dimensions new_actual_dimensions = divide_actual_dimensions(get_actual_dimensions(),y.get_actual_dimensions());
-		/*vector_real_dimensions new_real_dimensions = get_real_dimensions();
-		for(const auto& key : y.get_real_dimensions())
-		{
-			if(new_real_dimensions.count(key.first))
-			{
-				*new_real_dimensions[key.first] /= *key.second;
-				if(new_real_dimensions[key.first]->get_scale() == 0)
-				{
-					new_real_dimensions.erase(key.first);
-				}
-			}
-			else
-			{
-				new_real_dimensions[key.first] = key.second;
-				*new_real_dimensions[key.first] ^= -1;
-			}
-		}
-		vector_actual_dimensions new_actual_dimensions = get_actual_dimensions();
-		for(const auto& key : y.get_actual_dimensions())
-		{
-			if(new_actual_dimensions.count(key.first))
-			{
-				*new_actual_dimensions[key.first] /= *key.second;
-				if(new_actual_dimensions[key.first]->get_scale() == 0)
-				{
-					new_actual_dimensions.erase(key.first);
-				}
-			}
-			else
-			{
-				new_actual_dimensions[key.first] = key.second;
-				*new_actual_dimensions[key.first] ^= -1;
-			}
-		}*/
 		return move(auto_unit(new_value, new_real_dimensions, new_actual_dimensions));
 	}
 
@@ -439,7 +364,6 @@ namespace physics::units
 	/// Creates the real dimensions and the actual dimensions that the function gives
 	void unit::initialize_dimensions(string init_value)
 	{
-		//wcout << "initialize dimensions: " << init_value.c_str() << endl;
 		int new_start = 0;
 		int j = new_start;
 		boost::algorithm::erase_all(init_value, " ");
@@ -770,30 +694,6 @@ namespace physics::units
 		value *= create_abbreviation(old_abbreviation_name)->get_factor();
 		actual_dimensions.erase(old_abbreviation_name);
 	}
-
-	/*bool equal_dimensions(const unit& x,const unit& y)
-	{
-		return equal_dimensions(x.get_real_dimensions(),y.get_real_dimensions());
-	}
-
-	bool equal_dimensions(const vector_real_dimensions& x,const vector_real_dimensions& y)
-	{
-		if(x.size() == y.size())
-		{
-			for(auto& key : y)
-			{
-				if(x[key.first] != key.second)
-				{
-					return false;
-				}
-			}
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}*/
 
 	math::topology::space_type abs(const unit& x)
 	{
