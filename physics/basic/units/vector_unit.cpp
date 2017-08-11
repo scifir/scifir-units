@@ -414,7 +414,6 @@ namespace physics::units
 		if(x.empty_dimensions())
 		{
 			auto_unit new_unit = *this ^ x;
-			/*auto_unit new_unit = unit::operator^(*this, x);*/
 			if(is_1d())
 			{
 				return auto_vector(new_unit, directions.direction.get_direction());
