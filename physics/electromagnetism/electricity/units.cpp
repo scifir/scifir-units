@@ -4,9 +4,9 @@ using namespace std;
 
 namespace physics::units
 {
-	const string electric_displacement_field::dimensions_match = "A*s/m2";
-	const string electric_charge_density::dimensions_match = "A*s/m3";
-	const string electric_current_density::dimensions_match = "A/m2";
-	const string electric_field_strength::dimensions_match = "kg*m/A*s3";
-	const string electron_mobility::dimensions_match = "A*s2/kg";
+	VECTOR_UNIT_CPP(electric_displacement_field,"A*s/m2");
+	SCALAR_UNIT_CPP(electric_charge_density,"A*s/m3");
+	SCALAR_UNIT_CPP(electric_current_density,"A/m2");
+	VECTOR_UNIT_CPP(electric_field_strength,"kg*m/A*s3");
+	SCALAR_UNIT_CPP(electron_mobility,"A*s2/kg");
 }

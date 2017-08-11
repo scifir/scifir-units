@@ -6,5 +6,5 @@ using namespace std;
 
 namespace physics::units
 {
-    const string catalytic_efficiency::dimensions_match = "m3/s*mol";
+	SCALAR_UNIT_CPP(catalytic_efficiency,"m3/s*mol");
 }

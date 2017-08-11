@@ -4,7 +4,7 @@ using namespace std;
 
 namespace physics::units
 {
-	const string volumetric_flow::dimensions_match = "m3/s";
-	const string diffusion_coefficient::dimensions_match = "m2/s";
-	const string compressibility::dimensions_match = "m*s2/kg";
+	SCALAR_UNIT_CPP(volumetric_flow,"m3/s");
+	SCALAR_UNIT_CPP(diffusion_coefficient,"m2/s");
+	SCALAR_UNIT_CPP(compressibility,"m*s2/kg");
 }

@@ -1,7 +1,6 @@
 #ifndef PHYSICS_MECHANICS_MOVEMENT_UNITS_HPP_INCLUDED
 #define PHYSICS_MECHANICS_MOVEMENT_UNITS_HPP_INCLUDED
 
-#include "physics/basic/units/unit.hpp"
 #include "physics/basic/units/scalar_unit.hpp"
 #include "physics/basic/units/vector_unit.hpp"
 

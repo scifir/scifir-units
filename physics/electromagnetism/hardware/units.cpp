@@ -4,11 +4,11 @@ using namespace std;
 
 namespace physics::units
 {
-	const string electrical_conductivity::dimensions_match = "A2*s3/kg*m3";
-	const string electric_resistance::dimensions_match = "kg*m2/A2*s3";
-	const string electric_conductance::dimensions_match = "A2*s3/kg*m2";
-	const string permittivity::dimensions_match = "A2*s4/kg*m3";
-	const string resistivity::dimensions_match = "kg*m3/A2*s3";
-	const string linear_charge_density::dimensions_match = "A*s/m";
-	const string frequency_drift::dimensions_match = "1/s2";
+	SCALAR_UNIT_CPP(electrical_conductivity,"A2*s3/kg*m3");
+	SCALAR_UNIT_CPP(electric_resistance,"kg*m2/A2*s3");
+	SCALAR_UNIT_CPP(electric_conductance,"A2*s3/kg*m2");
+	SCALAR_UNIT_CPP(permittivity,"A2*s4/kg*m3");
+	SCALAR_UNIT_CPP(resistivity,"kg*m3/A2*s3");
+	SCALAR_UNIT_CPP(linear_charge_density,"A*s/m");
+	SCALAR_UNIT_CPP(frequency_drift,"1/s2");
 }

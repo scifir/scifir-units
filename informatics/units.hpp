@@ -7,13 +7,7 @@ using namespace std;
 
 namespace physics::units
 {
-	class transfer_speed : public scalar_unit_crtp<transfer_speed>
-	{
-		public:
-			using scalar_unit_crtp::scalar_unit_crtp;
-
-			static const string dimensions_match;
-	};
+	SCALAR_UNIT_HPP(transfer_speed);
 }
 
 #endif // INFORMATIC_UNITS_HPP_INCLUDED

@@ -4,6 +4,6 @@ using namespace std;
 
 namespace physics::units
 {
-	const string wavenumber::dimensions_match = "1/m";
-	const string frequency::dimensions_match = "1/m";
+	SCALAR_UNIT_CPP(wavenumber,"1/m");
+	SCALAR_UNIT_CPP(frequency,"1/m");
 }

@@ -4,13 +4,13 @@ using namespace std;
 
 namespace physics::units
 {
-	const string polarization_density::dimensions_match = "A*s/m2";
-	const string magnetic_permeability::dimensions_match = "A2*s2/kg*m";
-	const string magnetization::dimensions_match = "A/m";
-	const string magnetic_moment::dimensions_match = "A*m2";
-	const string magnetic_reluctance::dimensions_match = "A2*s2/kg*m2";
-	const string magnetic_vector_potential::dimensions_match = "kg*m/A*s2";
-	const string magnetic_rigidity::dimensions_match = "kg*m/A*s2";
-	const string magnetomotive_force::dimensions_match = "A";
-	const string magnetic_susceptibility::dimensions_match = "A2*s2/kg*m";
+	SCALAR_UNIT_CPP(polarization_density,"A*s/m2");
+	SCALAR_UNIT_CPP(magnetic_permeability,"A2*s2/kg*m");
+	SCALAR_UNIT_CPP(magnetization,"A/m");
+	VECTOR_UNIT_CPP(magnetic_moment,"A*m2");
+	SCALAR_UNIT_CPP(magnetic_reluctance,"A2*s2/kg*m2");
+	VECTOR_UNIT_CPP(magnetic_vector_potential,"kg*m/A*s2");
+	SCALAR_UNIT_CPP(magnetic_rigidity,"kg*m/A*s2");
+	VECTOR_UNIT_CPP(magnetomotive_force,"A");
+	SCALAR_UNIT_CPP(magnetic_susceptibility,"A2*s2/kg*m");
 }

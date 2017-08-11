@@ -4,11 +4,11 @@ using namespace std;
 
 namespace physics::units
 {
-	const string optical_power::dimensions_match = "1/m";
-	const string luminance::dimensions_match = "cd/m2";
-	const string luminous_energy::dimensions_match = "cd*sr*s";
-	const string luminous_exposure::dimensions_match = "cd*sr*s/m2";
-	const string luminous_efficacy::dimensions_match = "lm/W";
-	const string ionizing_radiation::dimensions_match = "A*s/kg";
-	const string absorbed_dose::dimensions_match = "m2/s3";
+	SCALAR_UNIT_CPP(optical_power,"1/m");
+	SCALAR_UNIT_CPP(luminance,"cd/m2");
+	SCALAR_UNIT_CPP(luminous_energy,"cd*sr*s");
+	SCALAR_UNIT_CPP(luminous_exposure,"cd*sr*s/m2");
+	SCALAR_UNIT_CPP(luminous_efficacy,"lm/W");
+	SCALAR_UNIT_CPP(ionizing_radiation,"A*s/kg");
+	SCALAR_UNIT_CPP(absorbed_dose,"m2/s3");
 }

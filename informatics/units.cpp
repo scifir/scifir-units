@@ -4,5 +4,5 @@ using namespace std;
 
 namespace physics::units
 {
-	const string transfer_speed::dimensions_match = "B/s";
+	SCALAR_UNIT_CPP(transfer_speed,"B/s");
 }
