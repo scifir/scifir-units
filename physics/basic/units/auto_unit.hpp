@@ -29,7 +29,7 @@ namespace physics::units
 	};
 
 	template<typename T, typename>
-	auto_unit unit::operator +(T y)
+	auto_unit unit::operator +(T y) const
 	{
 		auto_unit z = *this;
 		z += y;
@@ -37,7 +37,7 @@ namespace physics::units
 	}
 
 	template<typename T, typename>
-	auto_unit unit::operator -(T y)
+	auto_unit unit::operator -(T y) const
 	{
 		auto_unit z = *this;
 		z -= y;
@@ -45,7 +45,7 @@ namespace physics::units
 	}
 
 	template<typename T, typename>
-	auto_unit unit::operator *(T y)
+	auto_unit unit::operator *(T y) const
 	{
 		auto_unit z = *this;
 		z *= y;
@@ -53,7 +53,7 @@ namespace physics::units
 	}
 
 	template<typename T, typename>
-	auto_unit unit::operator /(T y)
+	auto_unit unit::operator /(T y) const
 	{
 		auto_unit z = *this;
 		z /= y;
@@ -61,7 +61,7 @@ namespace physics::units
 	}
 
 	template<typename T, typename>
-	auto_unit unit::operator ^(T y)
+	auto_unit unit::operator ^(T y) const
 	{
 		math::number::unit_number new_value = value ^ y;
 		vector_real_dimensions new_real_dimensions = power_real_dimensions(get_real_dimensions(),y);

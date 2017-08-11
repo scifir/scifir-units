@@ -29,24 +29,24 @@ namespace physics::units
 			explicit unit(const auto_unit&,string);
 			explicit unit(string);
 
-			auto_unit operator +(const unit&);
-			auto_unit operator -(const unit&);
-			auto_unit operator *(const unit&);
-			auto_unit operator /(const unit&);
-			auto_unit operator ^(const unit&);
+			auto_unit operator +(const unit&) const;
+			auto_unit operator -(const unit&) const;
+			auto_unit operator *(const unit&) const;
+			auto_unit operator /(const unit&) const;
+			auto_unit operator ^(const unit&) const;
 			void operator +=(const unit&);
 			void operator -=(const unit&);
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			auto_unit operator +(T y);
+			auto_unit operator +(T y) const;
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			auto_unit operator -(T y);
+			auto_unit operator -(T y) const;
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			auto_unit operator *(T y);
+			auto_unit operator *(T y) const;
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			auto_unit operator /(T y);
+			auto_unit operator /(T y) const;
 			template<typename T, typename = typename enable_if<is_integer_number<T>::value>::type>
-			auto_unit operator ^(T y);
+			auto_unit operator ^(T y) const;
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 			void operator +=(T y)

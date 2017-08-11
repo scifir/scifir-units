@@ -66,7 +66,7 @@ namespace physics::units
 		}
 	}
 
-	auto_unit unit::operator +(const unit& x)
+	auto_unit unit::operator +(const unit& x) const
 	{
 		if(x.equal_dimensions(get_real_dimensions()))
 		{
@@ -84,7 +84,7 @@ namespace physics::units
 		}
 	}
 
-	auto_unit unit::operator -(const unit& x)
+	auto_unit unit::operator -(const unit& x) const
 	{
 		if(x.equal_dimensions(get_real_dimensions()))
 		{
@@ -102,7 +102,7 @@ namespace physics::units
 		}
 	}
 
-	auto_unit unit::operator *(const unit& x)
+	auto_unit unit::operator *(const unit& x) const
 	{
 		math::number::unit_number new_value = value;
 		auto_unit y = x;
@@ -116,7 +116,7 @@ namespace physics::units
 		return move(auto_unit(new_value, new_real_dimensions, new_actual_dimensions));
 	}
 
-	auto_unit unit::operator /(const unit& x)
+	auto_unit unit::operator /(const unit& x) const
 	{
 		math::number::unit_number new_value = value;
 		auto_unit y = x;
@@ -130,7 +130,7 @@ namespace physics::units
 		return move(auto_unit(new_value, new_real_dimensions, new_actual_dimensions));
 	}
 
-	auto_unit unit::operator ^(const unit& x)
+	auto_unit unit::operator ^(const unit& x) const
 	{
 		if(x.empty_dimensions())
 		{
