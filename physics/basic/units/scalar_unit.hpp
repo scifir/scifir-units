@@ -6,6 +6,19 @@
 
 #include <type_traits>
 
+#define SCALAR_UNIT_HPP_BEGIN(name) class name : public scalar_unit_crtp<name> \
+	{	\
+		public: \
+			explicit name(math::topology::space_type,string); \
+			name(string); \
+			name(const unit&); \
+			explicit name(const unit&,string)
+
+#define SCALAR_UNIT_HPP_END() public: \
+			static const string dimensions_match; \
+			static const vector_real_dimensions real_dimensions; \
+	}
+
 #define SCALAR_UNIT_HPP(name) class name : public scalar_unit_crtp<name> \
 	{	\
 		public: \

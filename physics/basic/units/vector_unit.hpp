@@ -22,6 +22,25 @@
 #include <string>
 #include <vector>
 
+#define VECTOR_UNIT_HPP_BEGIN(name) class name : public vector_unit_crtp<name> \
+	{	\
+		public: \
+			name(const unit&); \
+			explicit name(const unit&,direction_symbol); \
+			explicit name(const unit&,angle_type); \
+			explicit name(const unit&,angle_type,angle_type); \
+			explicit name(const unit&,math::topology::angle_container); \
+			explicit name(string); \
+			explicit name(string,angle_type); \
+			explicit name(string,angle_type,angle_type); \
+			explicit name(string,math::topology::angle_container); \
+			name(const vector_unit&)
+
+#define	VECTOR_UNIT_HPP_END() public: \
+		static const string dimensions_match; \
+		static const vector_real_dimensions real_dimensions; \
+	}
+
 #define VECTOR_UNIT_HPP(name) class name : public vector_unit_crtp<name> \
 	{	\
 		public: \
