@@ -17,24 +17,22 @@ using namespace std;
 
 namespace physics::units
 {
-	const string length::dimensions_match = "m";
-	const vector_real_dimensions length::real_dimensions = create_real_dimensions(length::dimensions_match);
-
-	const string time::dimensions_match = "s";
-	const vector_real_dimensions time::real_dimensions = create_real_dimensions(time::dimensions_match);
+	SCALAR_UNIT_CPP(length,"m");
+	SCALAR_UNIT_CPP(time,"s");
 
 	void time::change_display(physics::units::display_mode new_display_mode)
 	{
 		display_mode = new_display_mode;
 	}
 
-	const string mass::dimensions_match = "g";
-	const vector_real_dimensions mass::real_dimensions = create_real_dimensions(mass::dimensions_match);
+	SCALAR_UNIT_CPP(mass,"g");
+	SCALAR_UNIT_CPP(charge,"C");
 
-	const string charge::dimensions_match = "C";
-	const vector_real_dimensions charge::real_dimensions = create_real_dimensions(charge::dimensions_match);
+	temperature::temperature(math::topology::space_type new_value,string init_value) : unit(new_value,init_value),scalar_unit_crtp<temperature>(new_value,init_value)
+	{
+	}
 
-	temperature::temperature(string init_value) : scalar_unit_crtp<temperature>(init_value)
+	temperature::temperature(string init_value) : unit(init_value),scalar_unit_crtp<temperature>(init_value)
 	{
 		if(!isdigit(init_value[0]))
 		{
@@ -94,8 +92,16 @@ namespace physics::units
 		}
 	}
 
+	temperature::temperature(const unit& new_unit) : unit(new_unit),scalar_unit_crtp<temperature>(new_unit)
+	{
+	}
+
+	temperature::temperature(const unit& new_unit,string init_value) : unit(new_unit,init_value),scalar_unit_crtp<temperature>(new_unit,init_value)
+	{
+	}
+
 	const string temperature::dimensions_match = "K";
-	const vector_real_dimensions temperature::real_dimensions = create_real_dimensions(temperature::dimensions_match);
+	const vector_real_dimensions temperature::real_dimensions = create_real_dimensions("K");
 
 	void temperature::add_prefix(shared_ptr<prefix> prefix)
 	{
@@ -109,14 +115,9 @@ namespace physics::units
 		}
 	}
 
-	const string mole::dimensions_match = "mol";
-	const vector_real_dimensions mole::real_dimensions = create_real_dimensions(mole::dimensions_match);
-
-	const string light::dimensions_match = "cd";
-	const vector_real_dimensions light::real_dimensions = create_real_dimensions(light::dimensions_match);
-
-	const string data::dimensions_match = "B";
-	const vector_real_dimensions data::real_dimensions = create_real_dimensions(data::dimensions_match);
+	SCALAR_UNIT_CPP(mole,"mol");
+	SCALAR_UNIT_CPP(light,"cd");
+	SCALAR_UNIT_CPP(data,"B");
 }
 
 wostream& operator <<(wostream& os, const physics::units::time& x)

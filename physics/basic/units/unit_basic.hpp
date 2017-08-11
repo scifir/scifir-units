@@ -1,5 +1,5 @@
-#ifndef UNIT_HPP_
-#define UNIT_HPP_
+#ifndef PHYSICS_BASIC_UNITS_UNIT_BASIC_HPP
+#define PHYSICS_BASIC_UNITS_UNIT_BASIC_HPP
 
 #include "prefix.hpp"
 #include "scalar_unit.hpp"
@@ -14,23 +14,10 @@ namespace physics::units
 {
 	enum display_mode {unit_display,time_display,particles_display};
 
-	class length: public scalar_unit_crtp<length>
-	{
+	SCALAR_UNIT_HPP(length);
+
+	SCALAR_UNIT_HPP_BEGIN(time);
 		public:
-			using scalar_unit_crtp::scalar_unit_crtp;
-
-			static const string dimensions_match;
-			static const vector_real_dimensions real_dimensions;
-	};
-
-	class time: public scalar_unit_crtp<time>
-	{
-		public:
-			using scalar_unit_crtp::scalar_unit_crtp;
-
-			static const string dimensions_match;
-			static const vector_real_dimensions real_dimensions;
-
 			void change_display(physics::units::display_mode);
 
 			inline const physics::units::display_mode& get_display_mode() const
@@ -40,66 +27,19 @@ namespace physics::units
 
 		private:
 			physics::units::display_mode display_mode;
-	};
+	SCALAR_UNIT_HPP_END();
 
-	class mass: public scalar_unit_crtp<mass>
-	{
-		public:
-			using scalar_unit_crtp::scalar_unit_crtp;
+	SCALAR_UNIT_HPP(mass);
+	SCALAR_UNIT_HPP(charge);
 
-			static const string dimensions_match;
-			static const vector_real_dimensions real_dimensions;
-	};
-
-	class charge: public scalar_unit_crtp<charge>
-	{
-		public:
-			using scalar_unit_crtp::scalar_unit_crtp;
-
-			static const string dimensions_match;
-			static const vector_real_dimensions real_dimensions;
-	};
-
-	class temperature: public scalar_unit_crtp<temperature>
-	{
-		public:
-			using scalar_unit_crtp::scalar_unit_crtp;
-			temperature(string);
-
-			static const string dimensions_match;
-			static const vector_real_dimensions real_dimensions;
-
+	SCALAR_UNIT_HPP_BEGIN(temperature);
 		private:
 			void add_prefix(shared_ptr<prefix>);
-	};
+	SCALAR_UNIT_HPP_END();
 
-	class mole: public scalar_unit_crtp<mole>
-	{
-		public:
-			using scalar_unit_crtp::scalar_unit_crtp;
-
-			static const string dimensions_match;
-			static const vector_real_dimensions real_dimensions;
-	};
-
-	class light: public scalar_unit_crtp<light>
-	{
-		public:
-			using scalar_unit_crtp::scalar_unit_crtp;
-
-			static const string dimensions_match;
-			static const vector_real_dimensions real_dimensions;
-	};
-
-	class data: public scalar_unit_crtp<data>
-	{
-		public:
-			using scalar_unit_crtp::scalar_unit_crtp;
-
-			static const string dimensions_match;
-			static const vector_real_dimensions real_dimensions;
-	};
-
+	SCALAR_UNIT_HPP(mole);
+	SCALAR_UNIT_HPP(light);
+	SCALAR_UNIT_HPP(data);
 }
 
 wostream& operator <<(wostream&, const physics::units::time&);
