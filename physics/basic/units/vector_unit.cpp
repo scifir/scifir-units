@@ -42,17 +42,6 @@ namespace physics::units
 	{
 	}
 
-	/*vector_unit::vector_unit(vector_unit_tuple new_tuple) : unit_crtp<T>(move(get<0>(new_tuple))), hyper_spherical_coordinates(lambda_value(), move(boost::apply_visitor(
-      [](auto val){ return hyper_spherical_coordinates(lambda_value(),val); },
-		get<1>(new_tuple)
-    )))
-	{
-	}*/
-
-	/*vector_unit::vector_unit(vector_unit_tuple new_tuple) : unit_crtp<T>(move(get<0>(new_tuple))), hyper_spherical_coordinates(lambda_value(), get<1>(new_tuple))
-	{
-	}*/
-
 	vector_unit::vector_unit(const vector_unit& x) : unit(x),hyper_spherical_coordinates(lambda_value(),x.get_angles())
 	{
 		*this = x;

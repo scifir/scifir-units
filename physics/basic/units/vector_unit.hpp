@@ -103,12 +103,6 @@ namespace physics::units
 			explicit vector_unit(string,angle_type,angle_type);
 			explicit vector_unit(string,math::topology::angle_container);
 			vector_unit(const vector_unit&);
-			/*vector_unit(vector_unit_tuple new_tuple) : unit_crtp<T>(move(get<0>(new_tuple))), hyper_spherical_coordinates(lambda_value(), move(boost::apply_visitor(
-      [](auto val){ return hyper_spherical_coordinates(lambda_value(),val); },
-		get<1>(new_tuple)
-    )))*/
-
-			/*vector_unit(vector_unit_tuple new_tuple) : unit_crtp<T>(move(get<0>(new_tuple))), hyper_spherical_coordinates(lambda_value(), get<1>(new_tuple))*/
 
 			void operator =(const vector_unit&);
 
