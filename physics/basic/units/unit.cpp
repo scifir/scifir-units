@@ -132,14 +132,9 @@ namespace physics::units
 
 	auto_unit unit::operator ^(const unit& x)
 	{
-		if(empty_dimensions())
+		if(x.empty_dimensions())
 		{
-			auto_unit y = *this;
-			if(unit::empty_dimensions())
-			{
-				y ^= int(x.get_value().get_value());
-			}
-			return move(y);
+			return move(*this ^ int(x.get_value().get_value()));
 		}
 		else
 		{

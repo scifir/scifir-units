@@ -64,16 +64,8 @@ namespace physics::units
 	auto_unit unit::operator ^(T y)
 	{
 		math::number::unit_number new_value = value ^ y;
-		vector_real_dimensions new_real_dimensions = get_real_dimensions();
-		for(auto& new_real_dimension : new_real_dimensions)
-		{
-			*new_real_dimension.second ^= y;
-		}
-		vector_actual_dimensions new_actual_dimensions = actual_dimensions;
-		for(const auto& new_actual_dimension : new_actual_dimensions)
-		{
-			*new_actual_dimension.second ^= y;
-		}
+		vector_real_dimensions new_real_dimensions = power_real_dimensions(get_real_dimensions(),y);
+		vector_actual_dimensions new_actual_dimensions = power_actual_dimensions(actual_dimensions,y);
 		return move(auto_unit(new_value, new_real_dimensions, new_actual_dimensions));
 	}
 }

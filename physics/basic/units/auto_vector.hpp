@@ -59,7 +59,7 @@ namespace physics::units
 	template<typename U,typename>
 	auto_vector vector_unit::operator ^(U y)
 	{
-		auto_unit new_value = auto_unit(float(unit::value ^ y));
+		auto_unit new_value = auto_unit(unit::operator^(*this,y));
 		if (is_1d())
 		{
 			return auto_vector(new_value, get_direction());
