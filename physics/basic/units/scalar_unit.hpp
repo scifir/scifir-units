@@ -65,24 +65,24 @@ namespace physics::units
 			explicit scalar_unit(const unit&,string);
 
 			void operator =(const scalar_unit&);
-			auto_scalar operator +(const scalar_unit&);
-			auto_scalar operator -(const scalar_unit&);
-			auto_scalar operator *(const scalar_unit&);
-			auto_scalar operator /(const scalar_unit&);
-			auto_scalar operator ^(const scalar_unit&);
+			auto_scalar operator +(const scalar_unit&) const;
+			auto_scalar operator -(const scalar_unit&) const;
+			auto_scalar operator *(const scalar_unit&) const;
+			auto_scalar operator /(const scalar_unit&) const;
+			auto_scalar operator ^(const scalar_unit&) const;
 			void operator +=(const scalar_unit&);
 			void operator -=(const scalar_unit&);
 
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			auto_scalar operator +(U y);
+			auto_scalar operator +(U) const;
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			auto_scalar operator -(U y);
+			auto_scalar operator -(U) const;
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			auto_scalar operator *(U y);
+			auto_scalar operator *(U) const;
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			auto_scalar operator /(U y);
+			auto_scalar operator /(U) const;
 			template<typename U, typename = typename enable_if<is_integer_number<U>::value>::type>
-			auto_scalar operator ^(U y);
+			auto_scalar operator ^(U) const;
 
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
 			void operator +=(U y)
@@ -133,6 +133,76 @@ namespace physics::units
 
 			explicit scalar_unit_crtp(const unit& new_unit,string init_value) : unit(new_unit,init_value),unit_crtp<T>(new_unit,init_value),scalar_unit(new_unit,init_value)
 			{
+			}
+
+			template<typename U>
+			void operator =(const scalar_unit_crtp<U>& x)
+			{
+				scalar_unit::operator=(x);
+			}
+
+			template<typename U>
+			auto_scalar operator +(const scalar_unit_crtp<U>&) const;
+			template<typename U>
+			auto_scalar operator -(const scalar_unit_crtp<U>&) const;
+			template<typename U>
+			auto_scalar operator *(const scalar_unit_crtp<U>&) const;
+			template<typename U>
+			auto_scalar operator /(const scalar_unit_crtp<U>&) const;
+			template<typename U>
+			auto_scalar operator ^(const scalar_unit_crtp<U>&) const;
+
+			template<typename U>
+			void operator +=(const scalar_unit_crtp<U>& x)
+			{
+				scalar_unit::operator+=(x);
+			}
+
+			template<typename U>
+			void operator -=(const scalar_unit_crtp<U>& x)
+			{
+				scalar_unit::operator-=(x);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_scalar operator +(U) const;
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_scalar operator -(U) const;
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_scalar operator *(U) const;
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_scalar operator /(U) const;
+			template<typename U, typename = typename enable_if<is_integer_number<U>::value>::type>
+			auto_scalar operator ^(U) const;
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator +=(U y)
+			{
+				scalar_unit::operator+=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator -=(U y)
+			{
+				scalar_unit::operator-=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator *=(U y)
+			{
+				scalar_unit::operator*=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator /=(U y)
+			{
+				scalar_unit::operator/=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator ^=(U y)
+			{
+				scalar_unit::operator^=(y);
 			}
 	};
 }

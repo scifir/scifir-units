@@ -260,21 +260,21 @@ namespace physics::units
 		}
 	}
 
-	auto_vector vector_unit::operator +(const vector_unit& y)
+	auto_vector vector_unit::operator +(const vector_unit& y) const
 	{
 		auto_vector z = *this;
 		z += y;
 		return z;
 	}
 
-	auto_vector vector_unit::operator -(const vector_unit& y)
+	auto_vector vector_unit::operator -(const vector_unit& y) const
 	{
 		auto_vector z = *this;
 		z -= y;
 		return z;
 	}
 
-	auto_vector vector_unit::operator *(const vector_unit& y)
+	auto_vector vector_unit::operator *(const vector_unit& y) const
 	{
 		if(unit::is_defined() and y.is_defined() and is_3d() and y.is_3d())
 		{
@@ -369,7 +369,7 @@ namespace physics::units
 		}
 	}
 
-	auto_vector vector_unit::operator *(const scalar_unit& x)
+	auto_vector vector_unit::operator *(const scalar_unit& x) const
 	{
 		space_type new_value = unit::value.get_value() * x.get_value().get_value();
 		vector_real_dimensions new_real_dimensions = multiply_real_dimensions(get_real_dimensions(), x.get_real_dimensions());
@@ -389,7 +389,7 @@ namespace physics::units
 		}
 	}
 
-	auto_vector vector_unit::operator /(const scalar_unit& x)
+	auto_vector vector_unit::operator /(const scalar_unit& x) const
 	{
 		space_type new_value = unit::value.get_value() / x.get_value().get_value();
 		vector_real_dimensions new_real_dimensions = divide_real_dimensions(get_real_dimensions(), x.get_real_dimensions());
@@ -409,7 +409,7 @@ namespace physics::units
 		}
 	}
 
-	auto_vector vector_unit::operator ^(const scalar_unit& x)
+	auto_vector vector_unit::operator ^(const scalar_unit& x) const
 	{
 		if(x.empty_dimensions())
 		{

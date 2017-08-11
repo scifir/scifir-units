@@ -132,26 +132,26 @@ namespace physics::units
 				return new T(static_cast<const T&>(*this));
 			}*/
 
-			auto_vector operator +(const vector_unit&);
-			auto_vector operator -(const vector_unit&);
-			auto_vector operator *(const vector_unit&);
+			auto_vector operator +(const vector_unit&) const;
+			auto_vector operator -(const vector_unit&) const;
+			auto_vector operator *(const vector_unit&) const;
 			void operator +=(const vector_unit&);
 			void operator -=(const vector_unit&);
 
-			auto_vector operator *(const scalar_unit&);
-			auto_vector operator /(const scalar_unit&);
-			auto_vector operator ^(const scalar_unit&);
+			auto_vector operator *(const scalar_unit&) const;
+			auto_vector operator /(const scalar_unit&) const;
+			auto_vector operator ^(const scalar_unit&) const;
 
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			auto_vector operator +(U y);
+			auto_vector operator +(U) const;
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			auto_vector operator -(U y);
+			auto_vector operator -(U) const;
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			auto_vector operator *(U y);
+			auto_vector operator *(U) const;
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			auto_vector operator /(U y);
+			auto_vector operator /(U) const;
 			template<typename U, typename = typename enable_if<is_integer_number<U>::value>::type>
-			auto_vector operator ^(U);
+			auto_vector operator ^(U) const;
 
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
 			void operator +=(U y)
@@ -249,6 +249,73 @@ namespace physics::units
 
 			vector_unit_crtp(const vector_unit& x) : unit(x),unit_crtp<T>(x),vector_unit(x)
 			{
+			}
+
+			template<typename U>
+			auto_vector operator +(const vector_unit_crtp<U>&) const;
+			template<typename U>
+			auto_vector operator -(const vector_unit_crtp<U>&) const;
+			template<typename U>
+			auto_vector operator *(const vector_unit_crtp<U>&) const;
+
+			template<typename U>
+			void operator +=(const vector_unit_crtp<U>& x)
+			{
+				vector_unit::operator+=(x);
+			}
+
+			template<typename U>
+			void operator -=(const vector_unit_crtp<U>& x)
+			{
+				vector_unit::operator-=(x);
+			}
+
+			template<typename U>
+			auto_vector operator *(const scalar_unit_crtp<U>&) const;
+			template<typename U>
+			auto_vector operator /(const scalar_unit_crtp<U>&) const;
+			template<typename U>
+			auto_vector operator ^(const scalar_unit_crtp<U>&) const;
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_vector operator +(U) const;
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_vector operator -(U) const;
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_vector operator *(U) const;
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_vector operator /(U) const;
+			template<typename U, typename = typename enable_if<is_integer_number<U>::value>::type>
+			auto_vector operator ^(U) const;
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator +=(U y)
+			{
+				vector_unit::operator+=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator -=(U y)
+			{
+				vector_unit::operator-=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator *=(U y)
+			{
+				vector_unit::operator*=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator /=(U y)
+			{
+				vector_unit::operator/=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator ^=(U y)
+			{
+				vector_unit::operator^=(y);
 			}
 	};
 

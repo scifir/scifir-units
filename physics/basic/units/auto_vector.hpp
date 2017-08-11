@@ -25,7 +25,7 @@ namespace physics::units
 	};
 
 	template<typename U,typename>
-	auto_vector vector_unit::operator +(U y)
+	auto_vector vector_unit::operator +(U y) const
 	{
 		auto_vector z = *this;
 		z += y;
@@ -33,7 +33,7 @@ namespace physics::units
 	}
 
 	template<typename U,typename>
-	auto_vector vector_unit::operator -(U y)
+	auto_vector vector_unit::operator -(U y) const
 	{
 		auto_vector z = *this;
 		z -= y;
@@ -41,7 +41,7 @@ namespace physics::units
 	}
 
 	template<typename U,typename>
-	auto_vector vector_unit::operator *(U y)
+	auto_vector vector_unit::operator *(U y) const
 	{
 		auto_vector z = *this;
 		z *= y;
@@ -49,7 +49,7 @@ namespace physics::units
 	}
 
 	template<typename U,typename>
-	auto_vector vector_unit::operator /(U y)
+	auto_vector vector_unit::operator /(U y) const
 	{
 		auto_vector z = *this;
 		z /= y;
@@ -57,7 +57,7 @@ namespace physics::units
 	}
 
 	template<typename U,typename>
-	auto_vector vector_unit::operator ^(U y)
+	auto_vector vector_unit::operator ^(U y) const
 	{
 		auto_unit new_value = auto_unit(unit::operator^(*this,y));
 		if (is_1d())
@@ -71,6 +71,83 @@ namespace physics::units
 			new_angles.push_back(float(directions.angles[1]));
 			return auto_vector(new_value, new_angles);
 		}
+	}
+
+	template<typename T>
+	template<typename U>
+	auto_vector vector_unit_crtp<T>::operator +(const vector_unit_crtp<U>& x) const
+	{
+		return vector_unit::operator+(x);
+	}
+
+	template<typename T>
+	template<typename U>
+	auto_vector vector_unit_crtp<T>::operator -(const vector_unit_crtp<U>& x) const
+	{
+		return vector_unit::operator-(x);
+	}
+
+	template<typename T>
+	template<typename U>
+	auto_vector vector_unit_crtp<T>::operator *(const vector_unit_crtp<U>& x) const
+	{
+		return vector_unit::operator*(x);
+	}
+
+	template<typename T>
+	template<typename U>
+	auto_vector vector_unit_crtp<T>::operator *(const scalar_unit_crtp<U>& x) const
+	{
+		return vector_unit::operator*(x);
+	}
+
+	template<typename T>
+	template<typename U>
+	auto_vector vector_unit_crtp<T>::operator /(const scalar_unit_crtp<U>& x) const
+	{
+		return vector_unit::operator/(x);
+	}
+
+	template<typename T>
+	template<typename U>
+	auto_vector vector_unit_crtp<T>::operator ^(const scalar_unit_crtp<U>& x) const
+	{
+		return vector_unit::operator^(x);
+	}
+
+	template<typename T>
+	template<typename U, typename>
+	auto_vector vector_unit_crtp<T>::operator +(U y) const
+	{
+		return vector_unit::operator+(y);
+	}
+
+	template<typename T>
+	template<typename U, typename>
+	auto_vector vector_unit_crtp<T>::operator -(U y) const
+	{
+		return vector_unit::operator-(y);
+	}
+
+	template<typename T>
+	template<typename U, typename>
+	auto_vector vector_unit_crtp<T>::operator *(U y) const
+	{
+		return vector_unit::operator*(y);
+	}
+
+	template<typename T>
+	template<typename U, typename>
+	auto_vector vector_unit_crtp<T>::operator /(U y) const
+	{
+		return vector_unit::operator/(y);
+	}
+
+	template<typename T>
+	template<typename U, typename>
+	auto_vector vector_unit_crtp<T>::operator ^(U y) const
+	{
+		return vector_unit::operator^(y);
 	}
 }
 

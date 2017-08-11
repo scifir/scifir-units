@@ -23,7 +23,7 @@ namespace physics::units
 	};
 
 	template<typename U, typename>
-	auto_scalar scalar_unit::operator +(U y)
+	auto_scalar scalar_unit::operator +(U y) const
 	{
 		auto_scalar z = *this;
 		z += y;
@@ -31,7 +31,7 @@ namespace physics::units
 	}
 
 	template<typename U, typename>
-	auto_scalar scalar_unit::operator -(U y)
+	auto_scalar scalar_unit::operator -(U y) const
 	{
 		auto_scalar z = *this;
 		z -= y;
@@ -39,7 +39,7 @@ namespace physics::units
 	}
 
 	template<typename U, typename>
-	auto_scalar scalar_unit::operator *(U y)
+	auto_scalar scalar_unit::operator *(U y) const
 	{
 		auto_scalar z = *this;
 		z *= y;
@@ -47,7 +47,7 @@ namespace physics::units
 	}
 
 	template<typename U, typename>
-	auto_scalar scalar_unit::operator /(U y)
+	auto_scalar scalar_unit::operator /(U y) const
 	{
 		auto_scalar z = *this;
 		z /= y;
@@ -55,10 +55,80 @@ namespace physics::units
 	}
 
 	template<typename U, typename>
-	auto_scalar scalar_unit::operator ^(U y)
+	auto_scalar scalar_unit::operator ^(U y) const
 	{
 		auto_scalar a = unit::operator^(y);
 		return a;
+	}
+
+	template<typename T>
+	template<typename U>
+	auto_scalar scalar_unit_crtp<T>::operator +(const scalar_unit_crtp<U>& x) const
+	{
+		return scalar_unit::operator+(x);
+	}
+
+	template<typename T>
+	template<typename U>
+	auto_scalar scalar_unit_crtp<T>::operator -(const scalar_unit_crtp<U>& x) const
+	{
+		return scalar_unit::operator-(x);
+	}
+
+	template<typename T>
+	template<typename U>
+	auto_scalar scalar_unit_crtp<T>::operator *(const scalar_unit_crtp<U>& x) const
+	{
+		return scalar_unit::operator*(x);
+	}
+
+	template<typename T>
+	template<typename U>
+	auto_scalar scalar_unit_crtp<T>::operator /(const scalar_unit_crtp<U>& x) const
+	{
+		return scalar_unit::operator/(x);
+	}
+
+	template<typename T>
+	template<typename U>
+	auto_scalar scalar_unit_crtp<T>::operator ^(const scalar_unit_crtp<U>& x) const
+	{
+		return scalar_unit::operator^(x);
+	}
+
+	template<typename T>
+	template<typename U, typename>
+	auto_scalar scalar_unit_crtp<T>::operator +(U y) const
+	{
+		return scalar_unit::operator+(y);
+	}
+
+	template<typename T>
+	template<typename U, typename>
+	auto_scalar scalar_unit_crtp<T>::operator -(U y) const
+	{
+		return scalar_unit::operator-(y);
+	}
+
+	template<typename T>
+	template<typename U, typename>
+	auto_scalar scalar_unit_crtp<T>::operator *(U y) const
+	{
+		return scalar_unit::operator*(y);
+	}
+
+	template<typename T>
+	template<typename U, typename>
+	auto_scalar scalar_unit_crtp<T>::operator /(U y) const
+	{
+		return scalar_unit::operator/(y);
+	}
+
+	template<typename T>
+	template<typename U, typename>
+	auto_scalar scalar_unit_crtp<T>::operator ^(U y) const
+	{
+		return scalar_unit::operator^(y);
 	}
 }
 

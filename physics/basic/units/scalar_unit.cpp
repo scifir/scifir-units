@@ -41,27 +41,27 @@ namespace physics::units
 		}
 	}
 
-	auto_scalar scalar_unit::operator +(const scalar_unit& x)
+	auto_scalar scalar_unit::operator +(const scalar_unit& x) const
 	{
 		return auto_scalar(unit::operator+(x));
 	}
 
-	auto_scalar scalar_unit::operator -(const scalar_unit& x)
+	auto_scalar scalar_unit::operator -(const scalar_unit& x) const
 	{
 		return auto_scalar(unit::operator-(x));
 	}
 
-	auto_scalar scalar_unit::operator *(const scalar_unit& x)
+	auto_scalar scalar_unit::operator *(const scalar_unit& x) const
 	{
 		return auto_scalar(unit::operator*(x));
 	}
 
-	auto_scalar scalar_unit::operator /(const scalar_unit& x)
+	auto_scalar scalar_unit::operator /(const scalar_unit& x) const
 	{
 		return auto_scalar(unit::operator/(x));
 	}
 
-	auto_scalar scalar_unit::operator ^(const scalar_unit& x)
+	auto_scalar scalar_unit::operator ^(const scalar_unit& x) const
 	{
 		return auto_scalar(unit::operator^(x));
 	}
