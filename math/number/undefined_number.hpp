@@ -79,35 +79,35 @@ namespace math::number
 				}
 			}
 
-			T operator +(const T& new_number)
+			T operator +(const T& new_number) const
 			{
 				T z = *clone();
 				z += new_number;
 				return z;
 			}
 
-			T operator -(const T& new_number)
+			T operator -(const T& new_number) const
 			{
 				T z = *clone();
 				z -= new_number;
 				return z;
 			}
 
-			T operator *(const T& new_number)
+			T operator *(const T& new_number) const
 			{
 				T z = *clone();
 				z *= new_number;
 				return z;
 			}
 
-			T operator /(const T& new_number)
+			T operator /(const T& new_number) const
 			{
 				T z = *clone();
 				z /= new_number;
 				return z;
 			}
 
-			T operator ^(const T& new_number)
+			T operator ^(const T& new_number) const
 			{
 				T z = *clone();
 				z ^= new_number;
@@ -201,7 +201,7 @@ namespace math::number
 			}
 
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			T operator +(U new_number)
+			T operator +(U new_number) const
 			{
 				T z = *clone();
 				z += new_number;
@@ -209,7 +209,7 @@ namespace math::number
 			}
 
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			T operator -(U new_number)
+			T operator -(U new_number) const
 			{
 				T z = *clone();
 				z -= new_number;
@@ -217,7 +217,7 @@ namespace math::number
 			}
 
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			T operator *(U new_number)
+			T operator *(U new_number) const
 			{
 				T z = *clone();
 				z *= new_number;
@@ -225,7 +225,7 @@ namespace math::number
 			}
 
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			T operator /(U new_number)
+			T operator /(U new_number) const
 			{
 				T z = *clone();
 				z /= new_number;
@@ -233,7 +233,7 @@ namespace math::number
 			}
 
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			T operator ^(U new_number)
+			T operator ^(U new_number) const
 			{
 				T z = *clone();
 				z ^= new_number;
