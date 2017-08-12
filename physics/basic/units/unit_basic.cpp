@@ -3,6 +3,7 @@
 #include "dimension.hpp"
 #include "prefix.hpp"
 #include "math/number/unit_number.hpp"
+#include "chemistry/constants.hpp"
 
 #include <cassert>
 #include <cctype>
@@ -116,6 +117,19 @@ namespace physics::units
 	}
 
 	SCALAR_UNIT_CPP(mole,"mol");
+
+	int mole::number_of_particles() const
+	{
+		if (unit::actual_dimensions.count(particles))
+		{
+			return unit::value;
+		}
+		else
+		{
+			return unit::value*chemistry::avogadro_constant;
+		}
+	}
+
 	SCALAR_UNIT_CPP(light,"cd");
 	SCALAR_UNIT_CPP(data,"B");
 }
@@ -129,7 +143,7 @@ wostream& operator <<(wostream& os, const physics::units::time& x)
 		physics::units::time one_year("365 day");
 		/*if (x > one_year)
 		{
-			output << int(trunc(x / one_year)) << L"y ";
+			output << int(trunc((x / one_year).get_value()) << L"y ";
 			remaining_time -= one_year;
 		}
 		physics::units::time one_month("30 day");

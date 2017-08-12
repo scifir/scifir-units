@@ -12,7 +12,7 @@
 
 namespace physics::units
 {
-	enum display_mode {unit_display,time_display,particles_display};
+	enum display_mode {unit_display,time_display};
 
 	SCALAR_UNIT_HPP(length);
 
@@ -37,7 +37,11 @@ namespace physics::units
 			void add_prefix(shared_ptr<prefix>);
 	SCALAR_UNIT_HPP_END();
 
-	SCALAR_UNIT_HPP(mole);
+	SCALAR_UNIT_HPP_BEGIN(mole);
+		public:
+			int number_of_particles() const;
+	SCALAR_UNIT_HPP_END();
+
 	SCALAR_UNIT_HPP(light);
 	SCALAR_UNIT_HPP(data);
 }
