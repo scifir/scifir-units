@@ -29,6 +29,8 @@ namespace physics::units
 			explicit unit(const auto_unit&,string);
 			explicit unit(string);
 
+			void operator =(const unit&);
+
 			auto_unit operator +(const unit&) const;
 			auto_unit operator -(const unit&) const;
 			auto_unit operator *(const unit&) const;
