@@ -14,6 +14,7 @@ namespace physics::units
 	SCALAR_UNIT_HPP(area_density);
 	SCALAR_UNIT_HPP(dynamic_viscosity);
 	SCALAR_UNIT_HPP(mass_flow_rate);
+	SCALAR_UNIT_HPP(catalytic_activity);
 }
 
 #endif // CHEMISTRY_GENERAL_SUBSTANCE_UNITS_HPP_INCLUDED

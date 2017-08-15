@@ -12,6 +12,7 @@ namespace physics::units
 	SCALAR_UNIT_HPP(electrical_conductivity);
 	SCALAR_UNIT_HPP(electric_resistance);
 	SCALAR_UNIT_HPP(electric_conductance);
+	SCALAR_UNIT_HPP(capacitance);
 	SCALAR_UNIT_HPP(permittivity);
 	SCALAR_UNIT_HPP(resistivity);
 	SCALAR_UNIT_HPP(linear_charge_density);

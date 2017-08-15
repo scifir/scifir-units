@@ -8,6 +8,7 @@ using namespace std;
 
 namespace physics::units
 {
+	SCALAR_UNIT_HPP(radioactivity);
 	VECTOR_UNIT_HPP(irradiance);
 	VECTOR_UNIT_HPP(radiant_exposure);
 	SCALAR_UNIT_HPP(radiant_intensity);

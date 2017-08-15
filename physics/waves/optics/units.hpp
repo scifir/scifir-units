@@ -10,6 +10,8 @@ namespace physics::units
 {
 	SCALAR_UNIT_HPP(optical_power);
 	SCALAR_UNIT_HPP(luminance);
+	SCALAR_UNIT_HPP(illuminance);
+	SCALAR_UNIT_HPP(luminous_flux);
 	SCALAR_UNIT_HPP(luminous_energy);
 	SCALAR_UNIT_HPP(luminous_exposure);
 	SCALAR_UNIT_HPP(luminous_efficacy);
