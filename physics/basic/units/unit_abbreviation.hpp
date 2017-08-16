@@ -4,6 +4,8 @@
 #include "unit.hpp"
 #include "auto_unit.hpp"
 
+#include "units.hpp"
+
 using namespace physics::units;
 
 frequency operator"" _YHz(unsigned long long int);
