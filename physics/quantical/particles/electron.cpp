@@ -6,7 +6,7 @@ using namespace physics::units;
 
 namespace physics
 {
-    //const mass electron::common_mass(12,"g");
+    const mass electron::common_mass(12,"g");
 
 	electron::electron(float new_spin)
 	{
