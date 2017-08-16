@@ -4,7 +4,6 @@
 #include "physics/basic/units/scalar_unit.hpp"
 
 using namespace std;
-using namespace physics::units;
 
 namespace physics::units
 {

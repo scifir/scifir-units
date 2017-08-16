@@ -1,10 +1,11 @@
-#include "units.hpp"
+#include "physics/electromagnetism/electricity/units.hpp"
 
 using namespace std;
 
 namespace physics::units
 {
 	SCALAR_UNIT_CPP(electric_current,"A");
+	SCALAR_UNIT_CPP(voltage,"V");
 	VECTOR_UNIT_CPP(electric_displacement_field,"A*s/m2");
 	SCALAR_UNIT_CPP(electric_charge_density,"A*s/m3");
 	SCALAR_UNIT_CPP(electric_current_density,"A/m2");

@@ -2,10 +2,10 @@
 #define CHEMISTRY_GENERAL_MATTER_UNITS_HPP_INCLUDED
 
 #include "physics/basic/units/unit.hpp"
-using namespace std;
-using namespace physics::units;
 
-namespace chemistry::general::matter::units
+using namespace std;
+
+namespace physics::units
 {
 
 }

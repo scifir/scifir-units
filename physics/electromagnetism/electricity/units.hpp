@@ -9,6 +9,7 @@ using namespace std;
 namespace physics::units
 {
 	SCALAR_UNIT_HPP(electric_current);
+	SCALAR_UNIT_HPP(voltage);
 	VECTOR_UNIT_HPP(electric_displacement_field);
 	SCALAR_UNIT_HPP(electric_charge_density);
 	SCALAR_UNIT_HPP(electric_current_density);
