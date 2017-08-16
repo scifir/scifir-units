@@ -10,6 +10,14 @@ namespace physics::units
 	{
 	}
 
+	vector_unit::vector_unit(math::topology::space_type new_value,string init_value) : unit(new_value,init_value),hyper_spherical_coordinates(lambda_value(), direction_symbol::left)
+	{
+	}
+
+	vector_unit::vector_unit(const unit& new_value,string init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), direction_symbol::left)
+	{
+	}
+
 	vector_unit::vector_unit(const unit& new_value, direction_symbol new_direction) : unit(new_value), hyper_spherical_coordinates(lambda_value(), new_direction)
 	{
 	}

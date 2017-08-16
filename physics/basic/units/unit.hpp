@@ -129,7 +129,6 @@ namespace physics::units
 
 			explicit unit_crtp(math::topology::space_type new_value, string init_value) : unit(new_value,init_value)
 			{
-				// TODO: finish this function
 			}
 
 			explicit unit_crtp(const unit& new_unit,string init_value) : unit(new_unit,init_value)
@@ -142,7 +141,6 @@ namespace physics::units
 
 			explicit unit_crtp(string init_value) : unit(init_value)
 			{
-				// TODO: finish this function
 			}
 
 			virtual T* clone() const

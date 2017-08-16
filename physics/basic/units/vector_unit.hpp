@@ -26,6 +26,8 @@
 	{	\
 		public: \
 			name(const unit&); \
+			explicit name(math::topology::space_type,string); \
+			explicit name(const unit&,string); \
 			explicit name(const unit&,direction_symbol); \
 			explicit name(const unit&,angle_type); \
 			explicit name(const unit&,angle_type,angle_type); \
@@ -45,6 +47,8 @@
 	{	\
 		public: \
 			name(const unit&); \
+			explicit name(math::topology::space_type,string); \
+			explicit name(const unit&,string); \
 			explicit name(const unit&,direction_symbol); \
 			explicit name(const unit&,angle_type); \
 			explicit name(const unit&,angle_type,angle_type); \
@@ -60,6 +64,14 @@
 	}
 
 #define VECTOR_UNIT_CPP(name,dimensions) name::name(const unit& new_value) : unit(new_value),vector_unit_crtp<name>(new_value) \
+			{ \
+			} \
+\
+			name::name(math::topology::space_type new_value,string init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,init_value) \
+			{ \
+			} \
+\
+			name::name(const unit& new_value,string init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,init_value) \
 			{ \
 			} \
 \
@@ -113,6 +125,8 @@ namespace physics::units
 	{
 		public:
 			vector_unit(const unit&);
+			explicit vector_unit(math::topology::space_type,string);
+			explicit vector_unit(const unit&,string);
 			explicit vector_unit(const unit&,direction_symbol);
 			explicit vector_unit(const unit&,angle_type);
 			explicit vector_unit(const unit&,angle_type,angle_type);
@@ -212,6 +226,14 @@ namespace physics::units
 	{
 		public:
 			vector_unit_crtp(const unit& new_value) : unit(new_value),unit_crtp<T>(new_value),vector_unit(new_value)
+			{
+			}
+
+			explicit vector_unit_crtp(math::topology::space_type new_value,string init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,init_value)
+			{
+			}
+
+			explicit vector_unit_crtp(const unit& new_value,string init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,init_value)
 			{
 			}
 
