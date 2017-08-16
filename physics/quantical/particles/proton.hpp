@@ -1,7 +1,7 @@
 #ifndef PROTON_HPP_INCLUDED
 #define PROTON_HPP_INCLUDED
 
-#include "physics/units.hpp"
+#include "units.hpp"
 
 using namespace std;
 using namespace physics::units;

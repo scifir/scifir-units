@@ -1,7 +1,7 @@
 #ifndef CHEMISTRY_LABORATORY_SUBSTANCE_SUBSTANCE_HPP_INCLUDED
 #define CHEMISTRY_LABORATORY_SUBSTANCE_SUBSTANCE_HPP_INCLUDED
 
-#include "physics/units.hpp"
+#include "units.hpp"
 
 using namespace std;
 using namespace physics::units;

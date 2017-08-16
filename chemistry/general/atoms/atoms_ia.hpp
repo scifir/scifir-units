@@ -3,7 +3,7 @@
 
 #include "normal_atom.hpp"
 
-#include "physics/units.hpp"
+#include "units.hpp"
 
 namespace chemistry
 {

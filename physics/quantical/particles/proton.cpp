@@ -1,6 +1,6 @@
 #include "proton.hpp"
 
-#include "physics/units.hpp"
+#include "units.hpp"
 
 using namespace physics::units;
 

@@ -4,7 +4,7 @@
 #include <memory>
 
 #include "chemistry/general/atoms/atom.hpp"
-#include "physics/units.hpp"
+#include "units.hpp"
 
 using namespace std;
 using namespace physics::units;
