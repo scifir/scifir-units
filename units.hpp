@@ -18,7 +18,6 @@
 #include "physics/waves/acoustics/units.hpp"
 #include "physics/waves/optics/units.hpp"
 #include "physics/waves/radiometry/units.hpp"
-#include "physics/basic/units/unit_abbreviation.hpp"
 
 #include "informatics/units.hpp"
 
@@ -26,6 +25,8 @@
 #include "chemistry/general/atoms/units.hpp"
 #include "chemistry/general/matter/units.hpp"
 #include "chemistry/general/substance/units.hpp"
+
+#include "physics/basic/units/unit_abbreviation.hpp"
 
 using namespace std;
 
