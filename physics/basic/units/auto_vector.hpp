@@ -22,6 +22,76 @@ namespace physics::units
 			explicit auto_vector(string,angle_type,angle_type);
 			explicit auto_vector(string,math::topology::angle_container);
 			auto_vector(const vector_unit&);
+
+			auto_vector operator +(const vector_unit&) const;
+			auto_vector operator -(const vector_unit&) const;
+			auto_vector operator *(const vector_unit&) const;
+			void operator +=(const vector_unit&);
+			void operator -=(const vector_unit&);
+
+			auto_vector operator *(const scalar_unit&) const;
+			auto_vector operator /(const scalar_unit&) const;
+			auto_vector operator ^(const scalar_unit&) const;
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_vector operator +(U x) const
+			{
+				return vector_unit::operator+(x);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_vector operator -(U x) const
+			{
+				return vector_unit::operator-(x);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_vector operator *(U x) const
+			{
+				return vector_unit::operator*(x);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_vector operator /(U x) const
+			{
+				return vector_unit::operator/(x);
+			}
+
+			template<typename U, typename = typename enable_if<is_integer_number<U>::value>::type>
+			auto_vector operator ^(U x) const
+			{
+				return vector_unit::operator^(x);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator +=(U y)
+			{
+				vector_unit::operator+=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator -=(U y)
+			{
+				vector_unit::operator-=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator *=(U y)
+			{
+				vector_unit::operator*=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator /=(U y)
+			{
+				vector_unit::operator/=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator ^=(U y)
+			{
+				vector_unit::operator^=(y);
+			}
 	};
 
 	template<typename U,typename>

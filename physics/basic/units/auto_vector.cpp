@@ -43,4 +43,44 @@ namespace physics::units
 	auto_vector::auto_vector(const vector_unit& x) : unit(x),auto_unit(x),vector_unit(x)
 	{
 	}
+
+	auto_vector auto_vector::operator +(const vector_unit& x) const
+	{
+		return vector_unit::operator+(x);
+	}
+
+	auto_vector auto_vector::operator -(const vector_unit& x) const
+	{
+		return vector_unit::operator-(x);
+	}
+
+	auto_vector auto_vector::operator *(const vector_unit& x) const
+	{
+		return vector_unit::operator*(x);
+	}
+
+	void auto_vector::operator +=(const vector_unit& x)
+	{
+		vector_unit::operator+=(x);
+	}
+
+	void auto_vector::operator -=(const vector_unit& x)
+	{
+		vector_unit::operator-=(x);
+	}
+
+	auto_vector auto_vector::operator *(const scalar_unit& x) const
+	{
+		return vector_unit::operator*(x);
+	}
+
+	auto_vector auto_vector::operator /(const scalar_unit& x) const
+	{
+		return vector_unit::operator/(x);
+	}
+
+	auto_vector auto_vector::operator ^(const scalar_unit& x) const
+	{
+		return vector_unit::operator^(x);
+	}
 }

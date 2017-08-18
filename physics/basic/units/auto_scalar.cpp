@@ -41,4 +41,44 @@ namespace physics::units
 		value = x.get_value();
 		actual_dimensions = x.get_actual_dimensions();
 	}
+
+	void auto_scalar::operator =(const scalar_unit& x)
+	{
+		scalar_unit::operator=(x);
+	}
+
+	auto_scalar auto_scalar::operator +(const scalar_unit& x) const
+	{
+		return scalar_unit::operator+(x);
+	}
+
+	auto_scalar auto_scalar::operator -(const scalar_unit& x) const
+	{
+		return scalar_unit::operator-(x);
+	}
+
+	auto_scalar auto_scalar::operator *(const scalar_unit& x) const
+	{
+		return scalar_unit::operator*(x);
+	}
+
+	auto_scalar auto_scalar::operator /(const scalar_unit& x) const
+	{
+		return scalar_unit::operator/(x);
+	}
+
+	auto_scalar auto_scalar::operator ^(const scalar_unit& x) const
+	{
+		return scalar_unit::operator^(x);
+	}
+
+	void auto_scalar::operator +=(const scalar_unit& x)
+	{
+		scalar_unit::operator+=(x);
+	}
+
+	void auto_scalar::operator -=(const scalar_unit& x)
+	{
+		scalar_unit::operator-=(x);
+	}
 }
