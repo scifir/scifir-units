@@ -49,7 +49,7 @@ namespace physics::units
 
 	string auto_unit::get_dimensions_match() const
 	{
-		return "";
+		return get_dimension_structure(real_dimensions);
 	}
 
 	vector_real_dimensions auto_unit::get_real_dimensions() const

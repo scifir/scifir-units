@@ -72,6 +72,42 @@ namespace physics::units
 		return value;
 	}
 
+	string get_dimension_structure(const vector_real_dimensions& real_dimensions)
+	{
+		string value;
+		for (const auto& real_dimension : real_dimensions)
+		{
+			if (real_dimension.second->get_scale() > 0)
+			{
+				if (real_dimension.second->get_scale() > 1)
+				{
+					value += real_dimension.second->get_symbol() + to_string(real_dimension.second->get_scale()) + "*";
+				}
+				else
+				{
+					value += real_dimension.second->get_symbol() + "*";
+				}
+			}
+		}
+		value = value.substr(0,value.length() - 1) + "/";
+		for (const auto& real_dimension : real_dimensions)
+		{
+			if (real_dimension.second->get_scale() < 0)
+			{
+				if (real_dimension.second->get_scale() < -1)
+				{
+					value += real_dimension.second->get_symbol() + "*";
+				}
+				else
+				{
+					value += real_dimension.second->get_symbol() + to_string(real_dimension.second->get_scale()) + "*";
+				}
+			}
+		}
+		value = value.substr(0,value.length() - 1);
+		return value;
+	}
+
 	/// Creates the real dimensions related to the given string
 	vector_real_dimensions create_real_dimensions(string init_value)
 	{
