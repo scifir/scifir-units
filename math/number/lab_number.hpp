@@ -21,11 +21,11 @@ namespace math::number
 
 			const math::topology::space_type& get_error_value() const;
 
-			lab_number operator +(const lab_number&);
-			lab_number operator -(const lab_number&);
-			lab_number operator *(const lab_number&);
-			lab_number operator /(const lab_number&);
-			lab_number operator ^(const lab_number&);
+			lab_number operator +(const lab_number&) const;
+			lab_number operator -(const lab_number&) const;
+			lab_number operator *(const lab_number&) const;
+			lab_number operator /(const lab_number&) const;
+			lab_number operator ^(const lab_number&) const;
 			void operator +=(const lab_number&);
 			void operator -=(const lab_number&);
 			void operator *=(const lab_number&);
@@ -39,31 +39,31 @@ namespace math::number
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			lab_number operator +(T y)
+			lab_number operator +(T y) const
 			{
 				return lab_number(value + y,error_value);
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			lab_number operator -(T y)
+			lab_number operator -(T y) const
 			{
 				return lab_number(value - y,error_value);
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			lab_number operator *(T y)
+			lab_number operator *(T y) const
 			{
 				return lab_number(value * y,error_value * y);
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			lab_number operator /(T y)
+			lab_number operator /(T y) const
 			{
 				return lab_number(value / y,error_value / y);
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			lab_number operator ^(T y)
+			lab_number operator ^(T y) const
 			{
 				return lab_number(std::pow(value, y),pow(error_value,y));
 			}

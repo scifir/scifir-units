@@ -21,27 +21,27 @@ namespace math::number
 		return error_value;
 	}
 
-	lab_number lab_number::operator +(const lab_number& x)
+	lab_number lab_number::operator +(const lab_number& x) const
 	{
 		return lab_number(value + x.get_value(), error_value + x.get_error_value());
 	}
 
-	lab_number lab_number::operator -(const lab_number& x)
+	lab_number lab_number::operator -(const lab_number& x) const
 	{
 		return lab_number(value - x.get_value(), error_value - x.get_error_value());
 	}
 
-	lab_number lab_number::operator *(const lab_number& x)
+	lab_number lab_number::operator *(const lab_number& x) const
 	{
 		return lab_number(value * x.get_value(), error_value * x.get_error_value());
 	}
 
-	lab_number lab_number::operator /(const lab_number& x)
+	lab_number lab_number::operator /(const lab_number& x) const
 	{
 		return lab_number(value / x.get_value(), error_value / x.get_error_value());
 	}
 
-	lab_number lab_number::operator ^(const lab_number& x)
+	lab_number lab_number::operator ^(const lab_number& x) const
 	{
 		return lab_number(pow(value, x.get_value()), pow(error_value, x.get_error_value()));
 	}

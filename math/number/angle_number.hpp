@@ -31,8 +31,8 @@ namespace math::number
 				return float(value);
 			}
 
-			angle_number operator +(const angle_number&);
-			angle_number operator -(const angle_number&);
+			angle_number operator +(const angle_number&) const;
+			angle_number operator -(const angle_number&) const;
 			void operator +=(const angle_number&);
 			void operator -=(const angle_number&);
 
@@ -44,31 +44,31 @@ namespace math::number
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			angle_number operator +(T y)
+			angle_number operator +(T y) const
 			{
 				return angle_number(value + y);
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			angle_number operator -(T y)
+			angle_number operator -(T y) const
 			{
 				return angle_number(value - y);
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			angle_number operator *(T y)
+			angle_number operator *(T y) const
 			{
 				return angle_number(value * y);
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			angle_number operator /(T y)
+			angle_number operator /(T y) const
 			{
 				return angle_number(value / y);
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			angle_number operator ^(T y)
+			angle_number operator ^(T y) const
 			{
 				return angle_number(std::pow(value, y));
 			}

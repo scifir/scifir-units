@@ -26,12 +26,12 @@ namespace math
 			normalize_value();
 		}
 
-		angle_number angle_number::operator +(const angle_number& x)
+		angle_number angle_number::operator +(const angle_number& x) const
 		{
 			return angle_number(value + x.get_value());
 		}
 
-		angle_number angle_number::operator -(const angle_number& x)
+		angle_number angle_number::operator -(const angle_number& x) const
 		{
 			return angle_number(value - x.get_value());
 		}
