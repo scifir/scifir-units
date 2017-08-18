@@ -33,8 +33,7 @@ namespace physics::units
 
 	auto_unit& auto_unit::operator =(const auto_unit& x)
 	{
-		value = x.get_value();
-		actual_dimensions = x.get_actual_dimensions();
+		unit::operator=(x);
 	}
 
 	auto_unit& auto_unit::operator =(auto_unit&& x)
@@ -45,8 +44,7 @@ namespace physics::units
 
 	auto_unit& auto_unit::operator =(const unit& x)
 	{
-		value = x.get_value();
-		actual_dimensions = x.get_actual_dimensions();
+		unit::operator=(x);
 	}
 
 	string auto_unit::get_dimensions_match() const

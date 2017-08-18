@@ -68,8 +68,15 @@ namespace physics::units
 
 	void unit::operator =(const unit& x)
 	{
-		actual_dimensions = x.get_actual_dimensions();
-		value = x.get_value();
+		if (physics::units::equal_dimensions(*this,x))
+		{
+			actual_dimensions = x.get_actual_dimensions();
+			value = x.get_value();
+		}
+		else
+		{
+			invalidate(11);
+		}
 	}
 
 	auto_unit unit::operator +(const unit& x) const
