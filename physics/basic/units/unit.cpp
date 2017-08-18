@@ -407,20 +407,16 @@ namespace physics::units
 				abbreviation* new_abbreviation_actual;
 				if(new_dimension_real != nullptr)
 				{
-					shared_ptr<dimension> real_dimension = shared_ptr<dimension>(new_dimension_real);
 					shared_ptr<dimension> actual_dimension = shared_ptr<dimension>(create_dimension(new_dimension));
 					if(new_scale > 1)
 					{
-						*real_dimension ^= new_scale;
 						*actual_dimension ^= new_scale;
 					}
 					if(numerator == false)
 					{
-						*real_dimension ^= -1;
 						*actual_dimension ^= -1;
 					}
 					actual_dimensions[actual_dimension->get_enum_type()] = actual_dimension;
-					//real_dimensions[real_dimension->get_enum_type()] = real_dimension;
 
 					new_abbreviation_actual = nullptr;
 				}
@@ -440,28 +436,6 @@ namespace physics::units
 						*add_abbreviation ^= -1;
 					}
 					actual_dimensions[add_abbreviation->get_enum_type()] = add_abbreviation;
-					vector_real_dimensions abbreviation_dimensions = create_real_dimensions(add_abbreviation->get_dimensions_match());
-					/*for(const auto& map_value : abbreviation_dimensions)
-					{
-						for(int i = 0; i < abs(new_scale); i++)
-						{
-							if(real_dimensions.count(map_value.first) > 0)
-							{
-								if(numerator == true)
-								{
-									*real_dimensions[map_value.first] *= *map_value.second;
-								}
-								else
-								{
-									*real_dimensions[map_value.first] /= *map_value.second;
-								}
-							}
-							else
-							{
-								real_dimensions[map_value.first] = map_value.second;
-							}
-						}
-					}*/
 				}
 				else if(get_conversion.count(new_dimension) > 0)
 				{
@@ -478,19 +452,15 @@ namespace physics::units
 					abbreviation* new_abbreviation_actual;
 					if(new_dimension_real != nullptr)
 					{
-						shared_ptr<dimension> real_dimension = shared_ptr<dimension>(new_dimension_real);
 						shared_ptr<dimension> actual_dimension = shared_ptr<dimension>(create_dimension(new_conversion.unit_to));
 						if(new_scale > 1)
 						{
-							*real_dimension ^= new_scale;
 							*actual_dimension ^= new_scale;
 						}
 						if(numerator == false)
 						{
-							*real_dimension ^= -1;
 							*actual_dimension ^= -1;
 						}
-						//real_dimensions[real_dimension->get_enum_type()] = real_dimension;
 						actual_dimensions[actual_dimension->get_enum_type()] = actual_dimension;
 
 						new_abbreviation_actual = nullptr;
@@ -511,28 +481,6 @@ namespace physics::units
 							*add_abbreviation ^= -1;
 						}
 						actual_dimensions[add_abbreviation->get_enum_type()] = add_abbreviation;
-						vector_real_dimensions abbreviation_dimensions = create_real_dimensions(add_abbreviation->get_dimensions_match());
-						/*for(const auto& map_value : abbreviation_dimensions)
-						{
-							for(int i = 0; i < abs(new_scale); i++)
-							{
-								if(real_dimensions.count(map_value.first) > 0)
-								{
-									if(numerator == true)
-									{
-										*real_dimensions[map_value.first] *= *map_value.second;
-									}
-									else
-									{
-										*real_dimensions[map_value.first] /= *map_value.second;
-									}
-								}
-								else
-								{
-									real_dimensions[map_value.first] = map_value.second;
-								}
-							}
-						}*/
 					}
 				}
 				new_dimension.clear();
