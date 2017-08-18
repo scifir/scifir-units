@@ -84,3 +84,53 @@ namespace physics::units
 		return vector_unit::operator^(x);
 	}
 }
+
+physics::units::auto_vector operator +(const physics::units::scalar_unit& x,const physics::units::vector_unit& y)
+{
+	physics::units::auto_vector z = physics::units::auto_vector(x,y.get_angles());
+	return z + y;
+}
+
+physics::units::auto_vector operator -(const physics::units::scalar_unit& x,const physics::units::vector_unit& y)
+{
+	physics::units::auto_vector z = physics::units::auto_vector(x,y.get_angles());
+	return z - y;
+}
+
+physics::units::auto_vector operator *(const physics::units::scalar_unit& x,const physics::units::vector_unit& y)
+{
+	return y * x;
+}
+
+physics::units::auto_vector operator +(const physics::units::scalar_unit& x,const physics::units::auto_unit& y)
+{
+	return x + dynamic_cast<const physics::units::vector_unit&>(y);
+}
+
+physics::units::auto_vector operator -(const physics::units::scalar_unit& x,const physics::units::auto_unit& y)
+{
+	return x - dynamic_cast<const physics::units::vector_unit&>(y);
+}
+
+physics::units::auto_vector operator *(const physics::units::scalar_unit& x,const physics::units::auto_unit& y)
+{
+	return x * dynamic_cast<const physics::units::vector_unit&>(y);
+}
+
+template<typename T>
+physics::units::auto_vector operator +(const physics::units::scalar_unit& x,const physics::units::vector_unit_crtp<T>& y)
+{
+	return x + dynamic_cast<const physics::units::vector_unit&>(y);
+}
+
+template<typename T>
+physics::units::auto_vector operator -(const physics::units::scalar_unit& x,const physics::units::vector_unit_crtp<T>& y)
+{
+	return x - dynamic_cast<const physics::units::vector_unit&>(y);
+}
+
+template<typename T>
+physics::units::auto_vector operator *(const physics::units::scalar_unit& x,const physics::units::vector_unit_crtp<T>& y)
+{
+	return x * dynamic_cast<const physics::units::vector_unit&>(y);
+}

@@ -221,10 +221,50 @@ namespace physics::units
 	}
 }
 
+physics::units::auto_vector operator +(const physics::units::scalar_unit&,const physics::units::vector_unit&);
+physics::units::auto_vector operator -(const physics::units::scalar_unit&,const physics::units::vector_unit&);
+physics::units::auto_vector operator *(const physics::units::scalar_unit&,const physics::units::vector_unit&);
+physics::units::auto_vector operator +(const physics::units::scalar_unit&,const physics::units::auto_unit&);
+physics::units::auto_vector operator -(const physics::units::scalar_unit&,const physics::units::auto_unit&);
+physics::units::auto_vector operator *(const physics::units::scalar_unit&,const physics::units::auto_unit&);
+template<typename T>
+physics::units::auto_vector operator +(const physics::units::scalar_unit&,const physics::units::vector_unit_crtp<T>&);
+template<typename T>
+physics::units::auto_vector operator -(const physics::units::scalar_unit&,const physics::units::vector_unit_crtp<T>&);
+template<typename T>
+physics::units::auto_vector operator *(const physics::units::scalar_unit&,const physics::units::vector_unit_crtp<T>&);
+
+template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+physics::units::auto_vector operator +(U x,const physics::units::vector_unit& y)
+{
+	return physics::units::auto_vector(y+x,y.get_angles());
+}
+
+template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+physics::units::auto_vector operator -(U x,const physics::units::vector_unit& y)
+{
+	physics::units::auto_vector z = y;
+	z.invert();
+	z = x;
+	return physics::units::auto_vector(z-y);
+}
+
 template<typename U, typename = typename enable_if<is_number<U>::value>::type>
 physics::units::auto_vector operator *(U x,const physics::units::vector_unit& y)
 {
 	return physics::units::auto_vector(y*x,y.get_angles());
+}
+
+template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+physics::units::auto_vector operator +(U x,const physics::units::auto_vector& y)
+{
+	return x + static_cast<const physics::units::vector_unit&>(y);
+}
+
+template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+physics::units::auto_vector operator -(U x,const physics::units::auto_vector& y)
+{
+	return x - static_cast<const physics::units::vector_unit&>(y);
 }
 
 template<typename U, typename = typename enable_if<is_number<U>::value>::type>
@@ -233,11 +273,22 @@ physics::units::auto_vector operator *(U x,const physics::units::auto_vector& y)
 	return x * static_cast<const physics::units::vector_unit&>(y);
 }
 
-/*template<typename T>
-template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
+physics::units::auto_vector operator +(U x,const physics::units::vector_unit_crtp<T>& y)
+{
+	return x + static_cast<const physics::units::vector_unit&>(y);
+}
+
+template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
+physics::units::auto_vector operator -(U x,const physics::units::vector_unit_crtp<T>& y)
+{
+	return x - static_cast<const physics::units::vector_unit&>(y);
+}
+
+template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
 physics::units::auto_vector operator *(U x,const physics::units::vector_unit_crtp<T>& y)
 {
 	return x * static_cast<const physics::units::vector_unit&>(y);
-}*/
+}
 
 #endif // PHYSICS_BASIC_UNITS_AUTO_VECTOR_HPP_INCLUDED
