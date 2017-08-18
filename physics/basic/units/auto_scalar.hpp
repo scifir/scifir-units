@@ -201,4 +201,99 @@ namespace physics::units
 	}
 }
 
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+physics::units::auto_scalar operator +(T x, const physics::units::scalar_unit& y)
+{
+	return physics::units::auto_scalar(x + static_cast<const physics::units::unit&>(y));
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+physics::units::auto_scalar operator -(T x, const physics::units::scalar_unit& y)
+{
+	return physics::units::auto_scalar(x - static_cast<const physics::units::unit&>(y));
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+physics::units::auto_scalar operator *(T x, const physics::units::scalar_unit& y)
+{
+	return physics::units::auto_scalar(x * static_cast<const physics::units::unit&>(y));
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+physics::units::auto_scalar operator /(T x, const physics::units::scalar_unit& y)
+{
+	return physics::units::auto_scalar(x / static_cast<const physics::units::unit&>(y));
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+physics::units::auto_scalar operator ^(T x, const physics::units::scalar_unit& y)
+{
+	return physics::units::auto_scalar(x ^ static_cast<const physics::units::unit&>(y));
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+physics::units::auto_scalar operator +(T x, const physics::units::auto_scalar& y)
+{
+	return x + static_cast<const physics::units::scalar_unit&>(y);
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+physics::units::auto_scalar operator -(T x, const physics::units::auto_scalar& y)
+{
+	return x - static_cast<const physics::units::scalar_unit&>(y);
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+physics::units::auto_scalar operator *(T x, const physics::units::auto_scalar& y)
+{
+	return x * static_cast<const physics::units::scalar_unit&>(y);
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+physics::units::auto_scalar operator /(T x, const physics::units::auto_scalar& y)
+{
+	return x / static_cast<const physics::units::scalar_unit&>(y);
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+physics::units::auto_scalar operator ^(T x, const physics::units::auto_scalar& y)
+{
+	return x ^ static_cast<const physics::units::scalar_unit&>(y);
+}
+
+/*template<typename T>
+template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+physics::units::auto_scalar operator +(U x, const physics::units::scalar_unit_crtp<T>& y)
+{
+	return x + static_cast<const physics::units::scalar_unit&>(y);
+}
+
+template<typename T>
+template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+physics::units::auto_scalar operator -U x, const physics::units::scalar_unit_crtp<T>& y)
+{
+	return x - static_cast<const physics::units::scalar_unit&>(y);
+}
+
+template<typename T>
+template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+physics::units::auto_scalar operator *(U x, const physics::units::scalar_unit_crtp<T>& y)
+{
+	return x * static_cast<const physics::units::scalar_unit&>(y);
+}
+
+template<typename T>
+template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+physics::units::auto_scalar operator /(U x, const physics::units::scalar_unit_crtp<T>& y)
+{
+	return x / static_cast<const physics::units::scalar_unit&>(y);
+}
+
+template<typename T>
+template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+physics::units::auto_scalar operator ^(U x, const physics::units::scalar_unit_crtp<T>& y)
+{
+	return x ^ static_cast<const physics::units::scalar_unit&>(y);
+}*/
+
 #endif // AUTO_SCALAR_HPP_INCLUDED
