@@ -442,17 +442,17 @@ namespace physics::units
 					conversion new_conversion = get_conversion[new_dimension];
 					if(numerator == true)
 					{
-						value *= new_conversion.factor * new_scale;
+						value *= new_conversion.get_factor() * new_scale;
 					}
 					else
 					{
-						value /= new_conversion.factor * new_scale;
+						value /= new_conversion.get_factor() * new_scale;
 					}
-					dimension* new_dimension_real = create_dimension(new_conversion.unit_to);
+					dimension* new_dimension_real = create_dimension(new_conversion.get_unit_to());
 					abbreviation* new_abbreviation_actual;
 					if(new_dimension_real != nullptr)
 					{
-						shared_ptr<dimension> actual_dimension = shared_ptr<dimension>(create_dimension(new_conversion.unit_to));
+						shared_ptr<dimension> actual_dimension = shared_ptr<dimension>(create_dimension(new_conversion.get_unit_to()));
 						if(new_scale > 1)
 						{
 							*actual_dimension ^= new_scale;
@@ -467,7 +467,7 @@ namespace physics::units
 					}
 					else
 					{
-						new_abbreviation_actual = create_abbreviation(new_conversion.unit_to);
+						new_abbreviation_actual = create_abbreviation(new_conversion.get_unit_to());
 					}
 					if(new_abbreviation_actual != nullptr)
 					{
