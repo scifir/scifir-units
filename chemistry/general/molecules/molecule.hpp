@@ -17,6 +17,7 @@
 #include "units.hpp"
 #include "chemistry/general/atoms/atom.hpp"
 #include "chemistry/general/molecules/atomic_bond.hpp"
+#include "math/topology/point_3d.hpp"
 
 using namespace std;
 
@@ -96,10 +97,10 @@ namespace chemistry
             void print_image_2d() const; //TODO: pending function
             void print_image_3d() const; //TODO: pending function
 		private:
-			<tuple<shared_ptr<atom>,point>> get_image_3d_calculate_atom_position(shared_ptr<atom>,tuple<shared_ptr<atom>,point>) const; //TODO: pending function
-			void get_atoms_image_3d(vector<tuple<shared_ptr<atom>,point>>) const; //TODO: pending function
-			//void get_unpaired_electrons_image_3d(vector<tuple<point,math_vector>>) const; //TODO: pending function
-			void get_bonds_image_3d(vector<tuple<shared_ptr<atom>,point>>) const; //TODO: pending function
+			tuple<shared_ptr<atom>,math::point_3d> get_image_3d_calculate_atom_position(shared_ptr<atom>,tuple<shared_ptr<atom>,math::point_3d>,tuple<shared_ptr<atom>,math::point_3d>) const; //TODO: pending function
+			void get_atoms_image_3d(vector<tuple<shared_ptr<atom>,math::point_3d>>) const; //TODO: pending function
+			//void get_unpaired_electrons_image_3d(vector<tuple<math::point_3d,math_vector>>) const; //TODO: pending function
+			void get_bonds_image_3d(vector<tuple<shared_ptr<atom>,math::point_3d>>) const; //TODO: pending function
 	};
 
 	bool are_isomers(const molecule&,const molecule&); //TODO: pending function

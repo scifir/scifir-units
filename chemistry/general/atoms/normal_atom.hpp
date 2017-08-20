@@ -43,7 +43,7 @@ namespace chemistry
             virtual int get_lone_pairs() const
             {
             	int unpaired_electrons = get_electrons_number();
-            	for (const auto& bond : get_bonds())
+            	for (const auto& bond : atom::get_bonds())
 				{
 					unpaired_electrons -= bond.get_total_electrons();
 				}

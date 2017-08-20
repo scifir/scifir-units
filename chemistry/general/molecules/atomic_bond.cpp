@@ -1,10 +1,12 @@
 #include "atomic_bond.hpp"
 
+#include "../../../units.hpp"
+
 using namespace std;
 
 namespace chemistry
 {
-	atomic_bond::atomic_bond(const shared_ptr<atom>& x,const shared_ptr<atom>& y,atomic_bond_weight new_atomic_bond_weight) : weight(new_atomic_bond_weight)
+	atomic_bond::atomic_bond(const shared_ptr<atom>& x,const shared_ptr<atom>& y,atomic_bond_weight new_atomic_bond_weight) : weight(new_atomic_bond_weight),bond_length(0)
 	{
 		atom1 = weak_ptr<atom>(x);
 		atom2 = weak_ptr<atom>(y);

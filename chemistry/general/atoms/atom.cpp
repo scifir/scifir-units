@@ -183,7 +183,7 @@ namespace chemistry
 				return molecular_geometry::tricapped_trigonal_prismatic;
 			}
 		}
-		throw "No atomic geometry found. Bonds number: " + get_bonds_number() + ", lone pairs: " + get_lone_pairs();
+		throw "No atomic geometry found. Bonds number: " + to_string(get_bonds_number()) + ", lone pairs: " + to_string(get_lone_pairs());
 	}
 
 	bool atom::is_valence_full() const
