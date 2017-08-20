@@ -12,7 +12,7 @@
 
 using namespace std;
 
-namespace math::topology
+namespace math
 {
 	class hyper_spherical_coordinates : public coordinates_nd
 	{
@@ -22,13 +22,13 @@ namespace math::topology
 			hyper_spherical_coordinates(function<space_type()>, direction_symbol);
 			hyper_spherical_coordinates(function<space_type()>, angle_type);
 			hyper_spherical_coordinates(function<space_type()>, angle_type, angle_type);
-			hyper_spherical_coordinates(function<space_type()>, math::topology::angle_container);
-			hyper_spherical_coordinates(function<space_type()>, boost::variant<math::topology::angle_container,direction_symbol>);
+			hyper_spherical_coordinates(function<space_type()>, math::angle_container);
+			hyper_spherical_coordinates(function<space_type()>, boost::variant<math::angle_container,direction_symbol>);
 
 			space_type get_r() const;
-			const math::number::angle_number& get_angle1() const;
-			const math::number::angle_number& get_angle2() const;
-			const math::number::angle_number& get_angle(int) const;
+			const math::angle_number& get_angle1() const;
+			const math::angle_number& get_angle2() const;
+			const math::angle_number& get_angle(int) const;
 			const angle_container& get_angles() const;
 			const direction_symbol& get_direction() const;
 
@@ -51,9 +51,9 @@ namespace math::topology
 			void rotate(int, angle_type);
 
 			void convert_cartesian_2d(space_type, space_type);
-			void convert_polar(space_type, const math::number::angle_number&);
+			void convert_polar(space_type, const math::angle_number&);
 			void convert_cartesian_3d(space_type, space_type, space_type);
-			void convert_cylindrical(space_type, const math::number::angle_number&, space_type);
+			void convert_cylindrical(space_type, const math::angle_number&, space_type);
 
 		protected:
 			function<space_type()> r;

@@ -11,7 +11,7 @@ namespace physics::units
 	class auto_scalar : public auto_unit, public scalar_unit
 	{
 		public:
-			explicit auto_scalar(math::topology::space_type, string = "");
+			explicit auto_scalar(math::space_type, string = "");
 			explicit auto_scalar(const unit&,string);
 			explicit auto_scalar(string);
 			auto_scalar(const auto_unit&);

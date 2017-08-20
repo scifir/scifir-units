@@ -29,7 +29,7 @@ namespace physics::units
 	SCALAR_UNIT_CPP(mass,"g");
 	SCALAR_UNIT_CPP(charge,"C");
 
-	temperature::temperature(math::topology::space_type new_value,string init_value) : unit(new_value,init_value),scalar_unit_crtp<temperature>(new_value,init_value)
+	temperature::temperature(math::space_type new_value,string init_value) : unit(new_value,init_value),scalar_unit_crtp<temperature>(new_value,init_value)
 	{
 	}
 
@@ -68,7 +68,7 @@ namespace physics::units
 				new_prefix = new prefix_normal();
 				final_string = unit_string;
 			}
-			math::number::unit_number new_value = 0;
+			math::unit_number new_value = 0;
 			vector_real_dimensions new_real_dimensions = vector_real_dimensions();
 			vector_actual_dimensions new_actual_dimensions = vector_actual_dimensions();
 			dimension* new_real_dimension = new dimension_temperature(*new_prefix);

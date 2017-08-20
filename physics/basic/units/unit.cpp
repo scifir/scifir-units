@@ -23,17 +23,17 @@ using namespace std;
 
 namespace physics::units
 {
-	unit::unit() : value(math::number::unit_number(0)), actual_dimensions(vector_actual_dimensions())
+	unit::unit() : value(math::unit_number(0)), actual_dimensions(vector_actual_dimensions())
 	{
 	}
 
-	unit::unit(math::topology::space_type new_value, string dimension_structure) : unit()
+	unit::unit(math::space_type new_value, string dimension_structure) : unit()
 	{
-		value = math::number::unit_number(new_value);
+		value = math::unit_number(new_value);
 		initialize_dimensions(dimension_structure);
 	}
 
-	unit::unit(math::number::unit_number new_value, const vector_actual_dimensions& new_actual_dimensions) : unit()
+	unit::unit(math::unit_number new_value, const vector_actual_dimensions& new_actual_dimensions) : unit()
 	{
 		value = move(new_value);
 		actual_dimensions = move(new_actual_dimensions);
@@ -57,7 +57,7 @@ namespace physics::units
 			{
 				i++;
 			}
-			value = math::number::unit_number(stof(init_value.substr(0, i)));
+			value = math::unit_number(stof(init_value.substr(0, i)));
 			if(init_value[i] != ' ')
 			{
 				throw invalid_argument("Unit string must have the value separated from units with a single space");
@@ -117,7 +117,7 @@ namespace physics::units
 
 	auto_unit unit::operator *(const unit& x) const
 	{
-		math::number::unit_number new_value = value;
+		math::unit_number new_value = value;
 		auto_unit y = x;
 		if(y.equal_dimensions(get_real_dimensions()))
 		{
@@ -131,7 +131,7 @@ namespace physics::units
 
 	auto_unit unit::operator /(const unit& x) const
 	{
-		math::number::unit_number new_value = value;
+		math::unit_number new_value = value;
 		auto_unit y = x;
 		if(y.equal_dimensions(get_real_dimensions()))
 		{
@@ -307,7 +307,7 @@ namespace physics::units
 	}
 
 	/// Returns the unit_number that stores the value
-	const math::number::unit_number& unit::get_value() const
+	const math::unit_number& unit::get_value() const
 	{
 		return value;
 	}
@@ -513,14 +513,14 @@ namespace physics::units
 		}
 	}
 
-	math::topology::space_type abs(const unit& x)
+	math::space_type abs(const unit& x)
 	{
-		return math::number::abs(x.get_value());
+		return math::abs(x.get_value());
 	}
 
 	auto_unit sqrt(const unit& x)
 	{
-		math::number::unit_number new_value = math::number::sqrt(x.get_value());
+		math::unit_number new_value = math::sqrt(x.get_value());
 		vector_real_dimensions new_real_dimensions = x.get_real_dimensions();
 		for(auto& new_real_dimension : new_real_dimensions)
 		{
@@ -536,7 +536,7 @@ namespace physics::units
 
 	auto_unit sqrt_nth(const unit& x, int y)
 	{
-		math::number::unit_number new_value = math::number::sqrt_nth(x.get_value(), y);
+		math::unit_number new_value = math::sqrt_nth(x.get_value(), y);
 		vector_real_dimensions new_real_dimensions = x.get_real_dimensions();
 		for(auto& new_real_dimension : new_real_dimensions)
 		{

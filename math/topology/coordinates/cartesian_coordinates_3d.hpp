@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace math::topology
+namespace math
 {
 	class cartesian_coordinates_3d : public coordinates_3d
 	{

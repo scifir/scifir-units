@@ -8,7 +8,7 @@
 
 using namespace std;
 
-namespace math::topology
+namespace math
 {
 	class directional_coordinates : public coordinates_1d
 	{

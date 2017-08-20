@@ -26,16 +26,16 @@
 	{	\
 		public: \
 			name(const unit&); \
-			explicit name(math::topology::space_type,string); \
+			explicit name(math::space_type,string); \
 			explicit name(const unit&,string); \
 			explicit name(const unit&,direction_symbol); \
 			explicit name(const unit&,angle_type); \
 			explicit name(const unit&,angle_type,angle_type); \
-			explicit name(const unit&,math::topology::angle_container); \
+			explicit name(const unit&,math::angle_container); \
 			explicit name(string); \
 			explicit name(string,angle_type); \
 			explicit name(string,angle_type,angle_type); \
-			explicit name(string,math::topology::angle_container); \
+			explicit name(string,math::angle_container); \
 			name(const vector_unit&)
 
 #define	VECTOR_UNIT_HPP_END() public: \
@@ -47,16 +47,16 @@
 	{	\
 		public: \
 			name(const unit&); \
-			explicit name(math::topology::space_type,string); \
+			explicit name(math::space_type,string); \
 			explicit name(const unit&,string); \
 			explicit name(const unit&,direction_symbol); \
 			explicit name(const unit&,angle_type); \
 			explicit name(const unit&,angle_type,angle_type); \
-			explicit name(const unit&,math::topology::angle_container); \
+			explicit name(const unit&,math::angle_container); \
 			explicit name(string); \
 			explicit name(string,angle_type); \
 			explicit name(string,angle_type,angle_type); \
-			explicit name(string,math::topology::angle_container); \
+			explicit name(string,math::angle_container); \
 			name(const vector_unit&); \
 \
 			static const string dimensions_match; \
@@ -67,7 +67,7 @@
 			{ \
 			} \
 \
-			name::name(math::topology::space_type new_value,string init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,init_value) \
+			name::name(math::space_type new_value,string init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,init_value) \
 			{ \
 			} \
 \
@@ -87,7 +87,7 @@
 			{ \
 			} \
 \
-			name::name(const unit& new_value,math::topology::angle_container new_angles) : unit(new_value),vector_unit_crtp<name>(new_value,new_angles) \
+			name::name(const unit& new_value,math::angle_container new_angles) : unit(new_value),vector_unit_crtp<name>(new_value,new_angles) \
 			{ \
 			} \
 \
@@ -103,7 +103,7 @@
 			{ \
 			} \
 \
-			name::name(string init_value,math::topology::angle_container new_angles) : unit(init_value),vector_unit_crtp<name>(init_value,new_angles) \
+			name::name(string init_value,math::angle_container new_angles) : unit(init_value),vector_unit_crtp<name>(init_value,new_angles) \
 			{ \
 			} \
 \
@@ -115,7 +115,7 @@ const string name::dimensions_match = dimensions; \
 const vector_real_dimensions name::real_dimensions = create_real_dimensions(dimensions)
 
 using namespace std;
-using namespace math::topology;
+using namespace math;
 
 namespace physics::units
 {
@@ -125,16 +125,16 @@ namespace physics::units
 	{
 		public:
 			vector_unit(const unit&);
-			explicit vector_unit(math::topology::space_type,string);
+			explicit vector_unit(math::space_type,string);
 			explicit vector_unit(const unit&,string);
 			explicit vector_unit(const unit&,direction_symbol);
 			explicit vector_unit(const unit&,angle_type);
 			explicit vector_unit(const unit&,angle_type,angle_type);
-			explicit vector_unit(const unit&,math::topology::angle_container);
+			explicit vector_unit(const unit&,math::angle_container);
 			explicit vector_unit(string);
 			explicit vector_unit(string,angle_type);
 			explicit vector_unit(string,angle_type,angle_type);
-			explicit vector_unit(string,math::topology::angle_container);
+			explicit vector_unit(string,math::angle_container);
 			vector_unit(const vector_unit&);
 
 			void operator =(const vector_unit&);
@@ -185,7 +185,7 @@ namespace physics::units
 				unit::value *= y;
 				if(y < 0)
 				{
-					for(math::number::angle_number& angle : directions.angles)
+					for(math::angle_number& angle : directions.angles)
 					{
 						angle *= -1;
 					}
@@ -198,7 +198,7 @@ namespace physics::units
 				unit::value /= y;
 				if(y < 0)
 				{
-					for(math::number::angle_number& angle : directions.angles)
+					for(math::angle_number& angle : directions.angles)
 					{
 						angle *= -1;
 					}
@@ -229,7 +229,7 @@ namespace physics::units
 			{
 			}
 
-			explicit vector_unit_crtp(math::topology::space_type new_value,string init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,init_value)
+			explicit vector_unit_crtp(math::space_type new_value,string init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,init_value)
 			{
 			}
 
@@ -249,7 +249,7 @@ namespace physics::units
 			{
 			}
 
-			explicit vector_unit_crtp(const unit& new_value,math::topology::angle_container new_angles) : unit(new_value),unit_crtp<T>(new_value),vector_unit(new_value,new_angles)
+			explicit vector_unit_crtp(const unit& new_value,math::angle_container new_angles) : unit(new_value),unit_crtp<T>(new_value),vector_unit(new_value,new_angles)
 			{
 			}
 
@@ -265,7 +265,7 @@ namespace physics::units
 			{
 			}
 
-			explicit vector_unit_crtp(string init_value,math::topology::angle_container new_angles) : unit(init_value),unit_crtp<T>(init_value),vector_unit(init_value,new_angles)
+			explicit vector_unit_crtp(string init_value,math::angle_container new_angles) : unit(init_value),unit_crtp<T>(init_value),vector_unit(init_value,new_angles)
 			{
 			}
 

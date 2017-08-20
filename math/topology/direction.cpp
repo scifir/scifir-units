@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace math::topology
+namespace math
 {
 	direction::direction(direction_symbol new_direction) : direction_value(new_direction)
 	{
@@ -171,7 +171,7 @@ namespace math::topology
 	}
 }
 
-bool operator ==(const math::topology::direction& x, const math::topology::direction& y)
+bool operator ==(const math::direction& x, const math::direction& y)
 {
 	if(x.get_direction() == y.get_direction())
 	{
@@ -183,12 +183,12 @@ bool operator ==(const math::topology::direction& x, const math::topology::direc
 	}
 }
 
-bool operator !=(const math::topology::direction& x, const math::topology::direction& y)
+bool operator !=(const math::direction& x, const math::direction& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const math::topology::direction& x, math::topology::direction_symbol y)
+bool operator ==(const math::direction& x, math::direction_symbol y)
 {
 	if(x.get_direction() == y)
 	{
@@ -200,22 +200,22 @@ bool operator ==(const math::topology::direction& x, math::topology::direction_s
 	}
 }
 
-bool operator !=(const math::topology::direction& x, math::topology::direction_symbol y)
+bool operator !=(const math::direction& x, math::direction_symbol y)
 {
 	return !(x == y);
 }
 
-bool operator ==(math::topology::direction_symbol y, const math::topology::direction& x)
+bool operator ==(math::direction_symbol y, const math::direction& x)
 {
 	return (x == y);
 }
 
-bool operator !=(math::topology::direction_symbol y, const math::topology::direction& x)
+bool operator !=(math::direction_symbol y, const math::direction& x)
 {
 	return !(x == y);
 }
 
-bool operator ==(const math::topology::direction_lr& x, const math::topology::direction_lr& y)
+bool operator ==(const math::direction_lr& x, const math::direction_lr& y)
 {
 	if(x.get_direction() == y.get_direction())
 	{
@@ -227,14 +227,14 @@ bool operator ==(const math::topology::direction_lr& x, const math::topology::di
 	}
 }
 
-bool operator !=(const math::topology::direction_lr& x, const math::topology::direction_lr& y)
+bool operator !=(const math::direction_lr& x, const math::direction_lr& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const math::topology::direction_lr& x, math::topology::direction_symbol y)
+bool operator ==(const math::direction_lr& x, math::direction_symbol y)
 {
-	if (!(y == math::topology::left or y == math::topology::right))
+	if (!(y == math::left or y == math::right))
 	{
 		throw invalid_argument("direction_lr cannot be compared with a direction different than left or right");
 	}
@@ -248,17 +248,17 @@ bool operator ==(const math::topology::direction_lr& x, math::topology::directio
 	}
 }
 
-bool operator !=(const math::topology::direction_lr& x, math::topology::direction_symbol y)
+bool operator !=(const math::direction_lr& x, math::direction_symbol y)
 {
 	return !(x == y);
 }
 
-bool operator ==(math::topology::direction_symbol y, const math::topology::direction_lr& x)
+bool operator ==(math::direction_symbol y, const math::direction_lr& x)
 {
 	return (x == y);
 }
 
-bool operator !=(math::topology::direction_symbol y, const math::topology::direction_lr& x)
+bool operator !=(math::direction_symbol y, const math::direction_lr& x)
 {
 	return !(x == y);
 }

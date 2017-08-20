@@ -10,11 +10,11 @@ using namespace std;
 
 namespace physics::units
 {
-	auto_unit::auto_unit(math::topology::space_type new_value, string dimension_structure) : real_dimensions(create_real_dimensions(dimension_structure)),unit(new_value,dimension_structure)
+	auto_unit::auto_unit(math::space_type new_value, string dimension_structure) : real_dimensions(create_real_dimensions(dimension_structure)),unit(new_value,dimension_structure)
 	{
 	}
 
-	auto_unit::auto_unit(math::number::unit_number new_value, const vector_real_dimensions& new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : real_dimensions(new_real_dimensions),unit(new_value,new_actual_dimensions)
+	auto_unit::auto_unit(math::unit_number new_value, const vector_real_dimensions& new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : real_dimensions(new_real_dimensions),unit(new_value,new_actual_dimensions)
 	{
 	}
 

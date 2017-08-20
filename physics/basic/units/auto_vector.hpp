@@ -16,11 +16,11 @@ namespace physics::units
 			explicit auto_vector(const unit&,direction_symbol);
 			explicit auto_vector(const unit&,angle_type);
 			explicit auto_vector(const unit&,angle_type,angle_type);
-			explicit auto_vector(const unit&,math::topology::angle_container);
+			explicit auto_vector(const unit&,math::angle_container);
 			explicit auto_vector(string);
 			explicit auto_vector(string,angle_type);
 			explicit auto_vector(string,angle_type,angle_type);
-			explicit auto_vector(string,math::topology::angle_container);
+			explicit auto_vector(string,math::angle_container);
 			auto_vector(const vector_unit&);
 
 			auto_vector operator +(const vector_unit&) const;

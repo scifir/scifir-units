@@ -4,7 +4,7 @@ using namespace std;
 
 namespace physics::units
 {
-	auto_scalar::auto_scalar(math::topology::space_type new_value, string dimension_structure) : unit(new_value,dimension_structure),auto_unit(new_value,dimension_structure),scalar_unit(new_value,dimension_structure)
+	auto_scalar::auto_scalar(math::space_type new_value, string dimension_structure) : unit(new_value,dimension_structure),auto_unit(new_value,dimension_structure),scalar_unit(new_value,dimension_structure)
 	{
 	}
 

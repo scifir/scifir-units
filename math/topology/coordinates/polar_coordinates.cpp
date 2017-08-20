@@ -4,12 +4,12 @@
 
 using namespace std;
 
-namespace math::topology
+namespace math
 {
 	polar_coordinates::polar_coordinates(function<space_type()> new_r,angle_type new_angle) : coordinates_2d()
 	{
 		r = new_r;
-		angle = math::number::angle_number(new_angle);
+		angle = math::angle_number(new_angle);
 	}
 
 	space_type polar_coordinates::get_r() const
@@ -17,7 +17,7 @@ namespace math::topology
 		return r();
 	}
 
-	const math::number::angle_number& polar_coordinates::get_angle() const
+	const math::angle_number& polar_coordinates::get_angle() const
 	{
 		return angle;
 	}

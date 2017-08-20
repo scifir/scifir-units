@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace math::topology
+namespace math
 {
 	directional_coordinates::directional_coordinates(function<space_type()> new_r,direction_symbol new_direction) : r(new_r),direction(new_direction), coordinates_1d()
 	{

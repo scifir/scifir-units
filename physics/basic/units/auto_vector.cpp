@@ -20,7 +20,7 @@ namespace physics::units
 	{
 	}
 
-	auto_vector::auto_vector(const unit& new_value,math::topology::angle_container new_angles) : unit(new_value),auto_unit(new_value),vector_unit(new_value,new_angles)
+	auto_vector::auto_vector(const unit& new_value,math::angle_container new_angles) : unit(new_value),auto_unit(new_value),vector_unit(new_value,new_angles)
 	{
 	}
 
@@ -36,7 +36,7 @@ namespace physics::units
 	{
 	}
 
-	auto_vector::auto_vector(string init_value,math::topology::angle_container new_angles) : unit(init_value),auto_unit(init_value),vector_unit(init_value,new_angles)
+	auto_vector::auto_vector(string init_value,math::angle_container new_angles) : unit(init_value),auto_unit(init_value),vector_unit(init_value,new_angles)
 	{
 	}
 

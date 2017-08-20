@@ -23,8 +23,8 @@ namespace physics::units
 	{
 		public:
 			unit();
-			explicit unit(math::topology::space_type, string = "");
-			explicit unit(math::number::unit_number, const vector_actual_dimensions&);
+			explicit unit(math::space_type, string = "");
+			explicit unit(math::unit_number, const vector_actual_dimensions&);
 			explicit unit(const unit&,string);
 			explicit unit(const auto_unit&,string);
 			explicit unit(string);
@@ -95,13 +95,13 @@ namespace physics::units
 			virtual string get_dimensions_match() const = 0;
 			virtual vector_real_dimensions get_real_dimensions() const = 0;
 			const vector_actual_dimensions& get_actual_dimensions() const;
-			virtual const math::number::unit_number& get_value() const;
+			virtual const math::unit_number& get_value() const;
 
 			bool is_defined() const;
 			void invalidate(int);
 
 		protected:
-			math::number::unit_number value;
+			math::unit_number value;
 			vector_actual_dimensions actual_dimensions;
 
 			string initial_dimensions_get_structure(string) const;
@@ -127,7 +127,7 @@ namespace physics::units
 				}
 			}
 
-			explicit unit_crtp(math::topology::space_type new_value, string init_value) : unit(new_value,init_value)
+			explicit unit_crtp(math::space_type new_value, string init_value) : unit(new_value,init_value)
 			{
 			}
 
@@ -159,18 +159,18 @@ namespace physics::units
 			}
 	};
 
-	math::topology::space_type abs(const unit&);
+	math::space_type abs(const unit&);
 	auto_unit sqrt(const unit&);
 	auto_unit sqrt_nth(const unit&, int);
 	bool equal_dimensions(const unit&,const unit&);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-math::number::unit_number operator ^(T x, const physics::units::unit& y)
+math::unit_number operator ^(T x, const physics::units::unit& y)
 {
 	if(y.empty_dimensions())
 	{
-		return math::number::unit_number(pow(x, y.get_value().get_value()));
+		return math::unit_number(pow(x, y.get_value().get_value()));
 	}
 	else
 	{

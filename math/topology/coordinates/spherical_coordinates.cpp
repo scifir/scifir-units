@@ -4,13 +4,13 @@
 
 using namespace std;
 
-namespace math::topology
+namespace math
 {
 	spherical_coordinates::spherical_coordinates(function<space_type()> new_value,angle_type new_angle1,angle_type new_angle2) : coordinates_3d()
 	{
 		r = new_value;
-		angle1 = math::number::angle_number(new_angle1);
-		angle2 = math::number::angle_number(new_angle2);
+		angle1 = math::angle_number(new_angle1);
+		angle2 = math::angle_number(new_angle2);
 	}
 
 	space_type spherical_coordinates::get_r() const
@@ -18,12 +18,12 @@ namespace math::topology
 		return r();
 	}
 
-	const math::number::angle_number& spherical_coordinates::get_angle1() const
+	const math::angle_number& spherical_coordinates::get_angle1() const
 	{
 		return angle1;
 	}
 
-	const math::number::angle_number& spherical_coordinates::get_angle2() const
+	const math::angle_number& spherical_coordinates::get_angle2() const
 	{
 		return angle2;
 	}

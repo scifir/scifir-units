@@ -7,9 +7,9 @@
 #include <cmath>
 
 using namespace std;
-using namespace math::number;
+using namespace math;
 
-namespace math::topology
+namespace math
 {
 	class coordinates_2d
 	{
@@ -28,17 +28,17 @@ namespace math::topology
 
 	inline angle_type cartesian_2d_to_polar_angle(space_type x,space_type y)
 	{
-		return math::number::atan_grade(y/x);
+		return math::atan_grade(y/x);
 	}
 
 	inline space_type polar_to_cartesian_2d_x(space_type r,const angle_number& angle)
 	{
-		return r*math::number::cos(angle);
+		return r*math::cos(angle);
 	}
 
 	inline space_type polar_to_cartesian_2d_y(space_type r,const angle_number& angle)
 	{
-		return r*math::number::sin(angle);
+		return r*math::sin(angle);
 	}
 }
 

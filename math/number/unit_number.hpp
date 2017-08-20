@@ -11,13 +11,13 @@
 #include <string>
 using namespace std;
 
-namespace math::number
+namespace math
 {
 	class unit_number : public virtual undefined_number<unit_number>
 	{
 		public:
 			unit_number();
-			unit_number(math::topology::space_type);
+			unit_number(math::space_type);
 
 			void operator =(const unit_number&);
 
@@ -25,6 +25,6 @@ namespace math::number
 	};
 }
 
-wostream& operator <<(wostream&, const math::number::unit_number&);
+wostream& operator <<(wostream&, const math::unit_number&);
 
 #endif // UNIT_NUMBER_HPP_INCLUDED

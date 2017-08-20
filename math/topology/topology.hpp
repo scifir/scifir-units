@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace math::topology
+namespace math
 {
 	typedef float angle_type;
 	typedef float space_type;

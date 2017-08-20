@@ -9,7 +9,7 @@
 #define SCALAR_UNIT_HPP_BEGIN(name) class name : public scalar_unit_crtp<name> \
 	{	\
 		public: \
-			explicit name(math::topology::space_type,string); \
+			explicit name(math::space_type,string); \
 			name(string); \
 			name(const unit&); \
 			explicit name(const unit&,string)
@@ -22,7 +22,7 @@
 #define SCALAR_UNIT_HPP(name) class name : public scalar_unit_crtp<name> \
 	{	\
 		public: \
-			explicit name(math::topology::space_type,string); \
+			explicit name(math::space_type,string); \
 			name(string); \
 			name(const unit&); \
 			explicit name(const unit&,string); \
@@ -31,7 +31,7 @@
 			static const vector_real_dimensions real_dimensions; \
 	}
 
-#define SCALAR_UNIT_CPP(name,dimensions) name::name(math::topology::space_type new_value,string init_value) : unit(new_value,init_value),scalar_unit_crtp<name>(new_value,init_value) \
+#define SCALAR_UNIT_CPP(name,dimensions) name::name(math::space_type new_value,string init_value) : unit(new_value,init_value),scalar_unit_crtp<name>(new_value,init_value) \
 			{ \
 			} \
 \
@@ -60,7 +60,7 @@ namespace physics::units
 	{
 		public:
 			scalar_unit(const unit&);
-			explicit scalar_unit(math::topology::space_type,string);
+			explicit scalar_unit(math::space_type,string);
 			explicit scalar_unit(string);
 			explicit scalar_unit(const unit&,string);
 
@@ -119,7 +119,7 @@ namespace physics::units
 	class scalar_unit_crtp : public unit_crtp<T>,public scalar_unit
 	{
 		public:
-			explicit scalar_unit_crtp(math::topology::space_type new_value,string init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),scalar_unit(new_value,init_value)
+			explicit scalar_unit_crtp(math::space_type new_value,string init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),scalar_unit(new_value,init_value)
 			{
 			}
 

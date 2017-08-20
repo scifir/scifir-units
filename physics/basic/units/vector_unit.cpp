@@ -10,7 +10,7 @@ namespace physics::units
 	{
 	}
 
-	vector_unit::vector_unit(math::topology::space_type new_value,string init_value) : unit(new_value,init_value),hyper_spherical_coordinates(lambda_value(), direction_symbol::left)
+	vector_unit::vector_unit(math::space_type new_value,string init_value) : unit(new_value,init_value),hyper_spherical_coordinates(lambda_value(), direction_symbol::left)
 	{
 	}
 
@@ -30,7 +30,7 @@ namespace physics::units
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, math::topology::angle_container new_angles) : unit(new_value), hyper_spherical_coordinates(lambda_value(), new_angles)
+	vector_unit::vector_unit(const unit& new_value, math::angle_container new_angles) : unit(new_value), hyper_spherical_coordinates(lambda_value(), new_angles)
 	{
 	}
 
@@ -46,7 +46,7 @@ namespace physics::units
 	{
 	}
 
-	vector_unit::vector_unit(string init_value, math::topology::angle_container new_angles) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
+	vector_unit::vector_unit(string init_value, math::angle_container new_angles) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
 	{
 	}
 
@@ -307,7 +307,7 @@ namespace physics::units
 			vector_real_dimensions new_real_dimensions = multiply_real_dimensions(get_real_dimensions(), y.get_real_dimensions());
 			vector_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(unit::get_actual_dimensions(), y.get_actual_dimensions());
 			auto_unit new_unit = auto_unit(new_value, new_real_dimensions, new_actual_dimensions);
-			math::topology::angle_container angles;
+			math::angle_container angles;
 			angles.push_back(angle1);
 			angles.push_back(angle2);
 			return auto_vector(new_unit, angles);
@@ -336,7 +336,7 @@ namespace physics::units
 					if(unit::value < 0)
 					{
 						directions.direction.invert();
-						unit::value = math::number::abs(unit::value);
+						unit::value = math::abs(unit::value);
 					}
 				}
 			}
@@ -471,8 +471,8 @@ namespace physics::units
 
 	bool same_direction(const vector_unit& x, const vector_unit& y)
 	{
-		math::topology::angle_container compare_angles = x.get_angles();
-		math::topology::angle_container other_angles = y.get_angles();
+		math::angle_container compare_angles = x.get_angles();
+		math::angle_container other_angles = y.get_angles();
 		for(int i = 0; i < compare_angles.size(); i++)
 		{
 			if(compare_angles[i] != other_angles[i])
@@ -485,11 +485,11 @@ namespace physics::units
 
 	bool parallel(const vector_unit& x, const vector_unit& y)
 	{
-		math::topology::angle_container compare_angles = x.get_angles();
-		math::topology::angle_container other_angles = y.get_angles();
+		math::angle_container compare_angles = x.get_angles();
+		math::angle_container other_angles = y.get_angles();
 		for(int i = 0; i < compare_angles.size(); i++)
 		{
-			if(!math::number::parallel(compare_angles[i], other_angles[i]))
+			if(!math::parallel(compare_angles[i], other_angles[i]))
 			{
 				return false;
 			}
@@ -499,11 +499,11 @@ namespace physics::units
 
 	bool orthogonal(const vector_unit& x,const vector_unit& y)
 	{
-		math::topology::angle_container compare_angles = x.get_angles();
-		math::topology::angle_container other_angles = y.get_angles();
+		math::angle_container compare_angles = x.get_angles();
+		math::angle_container other_angles = y.get_angles();
 		for(int i = 0; i < compare_angles.size(); i++)
 		{
-			if(math::number::orthogonal(compare_angles[i], other_angles[i]))
+			if(math::orthogonal(compare_angles[i], other_angles[i]))
 			{
 				return true;
 			}
@@ -578,7 +578,7 @@ wostream& operator <<(wostream& os, const physics::units::vector_unit& x)
 		//wcout << "holaas" << endl; // TODO: this function doesn't work well because L strings block the execution when displayed with angles_text.str()
 		int i = 1;
 		wstring angle_symbol;
-		math::topology::angle_container angles = x.get_angles();
+		math::angle_container angles = x.get_angles();
 		for(const auto& angle : angles)
 		{
 			//wcout << "angle" << endl;

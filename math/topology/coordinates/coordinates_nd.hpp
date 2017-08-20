@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace math::topology
+namespace math
 {
 	class coordinates_nd
 	{

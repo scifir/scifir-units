@@ -336,7 +336,7 @@ namespace chemistry
             }
 	};
 
-	math::number::angle_number get_molecular_geometry_angle(const atom&); // TODO: finish two angles
+	math::angle_number get_molecular_geometry_angle(const atom&); // TODO: finish two angles
 
 	bool are_isotopes(const atom&,const atom&);
 	bool are_isobares(const atom&,const atom&);

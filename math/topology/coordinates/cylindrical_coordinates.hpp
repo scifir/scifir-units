@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace math::topology
+namespace math
 {
 	class cylindrical_coordinates : public coordinates_3d
 	{
@@ -14,7 +14,7 @@ namespace math::topology
 			cylindrical_coordinates(space_type,angle_type,space_type);
 
 			space_type get_r() const;
-			const math::number::angle_number& get_angle() const;
+			const math::angle_number& get_angle() const;
 			const space_type& get_z() const;
 
 			virtual space_type get_value() const;
@@ -24,7 +24,7 @@ namespace math::topology
 
 		private:
 			space_type r;
-			math::number::angle_number angle;
+			math::angle_number angle;
 			space_type z;
 	};
 }

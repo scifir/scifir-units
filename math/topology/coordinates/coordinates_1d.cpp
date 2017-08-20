@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace math::topology
+namespace math
 {
 	coordinates_1d::coordinates_1d()
 	{

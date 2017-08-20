@@ -4,12 +4,12 @@
 
 using namespace std;
 
-namespace math::topology
+namespace math
 {
 	cylindrical_coordinates::cylindrical_coordinates(space_type new_r,angle_type new_angle,space_type new_z) : coordinates_3d()
 	{
 		r = new_r;
-		angle = math::number::angle_number(new_angle);
+		angle = math::angle_number(new_angle);
 		z = new_z;
 	}
 
@@ -18,7 +18,7 @@ namespace math::topology
 		return r;
 	}
 
-	const math::number::angle_number& cylindrical_coordinates::get_angle() const
+	const math::angle_number& cylindrical_coordinates::get_angle() const
 	{
 		return angle;
 	}

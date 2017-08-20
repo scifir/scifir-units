@@ -6,11 +6,10 @@
 #include "boost/math/constants/constants.hpp"
 
 using namespace std;
-using namespace math::topology;
 
 namespace math
 {
-	constexpr topology::angle_type PI = boost::math::constants::pi<math::topology::angle_type>();
+	constexpr angle_type PI = boost::math::constants::pi<math::angle_type>();
 }
 
 #endif // CONSTANTS_HPP_INCLUDED

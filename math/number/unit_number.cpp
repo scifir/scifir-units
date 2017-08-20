@@ -10,13 +10,13 @@
 
 using namespace std;
 
-namespace math::number
+namespace math
 {
 	unit_number::unit_number() : undefined_number<unit_number>()
 	{
 	}
 
-	unit_number::unit_number(math::topology::space_type new_value) : undefined_number<unit_number>(new_value)
+	unit_number::unit_number(math::space_type new_value) : undefined_number<unit_number>(new_value)
 	{
 	}
 
@@ -92,7 +92,7 @@ namespace math::number
 	}
 }
 
-wostream& operator <<(wostream& os, const math::number::unit_number& x)
+wostream& operator <<(wostream& os, const math::unit_number& x)
 {
 	return os << x.print();
 }

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace math::topology
+namespace math
 {
 	cartesian_coordinates_2d::cartesian_coordinates_2d(space_type new_x,space_type new_y) : coordinates_2d()
 	{
