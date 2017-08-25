@@ -23,13 +23,12 @@ using namespace std;
 
 namespace physics::units
 {
-	unit::unit() : value(math::unit_number(0)), actual_dimensions(vector_actual_dimensions())
+	unit::unit() : value(0),actual_dimensions()
 	{
 	}
 
-	unit::unit(math::space_type new_value, string dimension_structure) : unit()
+	unit::unit(math::space_type new_value, string dimension_structure) : value(new_value),actual_dimensions()
 	{
-		value = math::unit_number(new_value);
 		initialize_dimensions(dimension_structure);
 	}
 

@@ -26,9 +26,8 @@ namespace physics::units
 		}
 	}
 
-	dimension_abstract::dimension_abstract(prefix_symbol prefix_name, int new_scale)
+	dimension_abstract::dimension_abstract(prefix_symbol prefix_name, int new_scale) : prefixes()
 	{
-		prefixes = dimension_prefixes();
 		add_prefix(prefix_name);
 	}
 
@@ -36,9 +35,8 @@ namespace physics::units
 	{
 	}
 
-	dimension_abstract::dimension_abstract(prefix& new_prefix, int new_scale)
+	dimension_abstract::dimension_abstract(prefix& new_prefix, int new_scale) : prefixes()
 	{
-		prefixes = dimension_prefixes();
 		shared_ptr<prefix> a = shared_ptr<prefix>(&new_prefix);
 		prefixes[a->get_enum_type()] = a;
 	}
