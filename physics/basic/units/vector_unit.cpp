@@ -282,44 +282,6 @@ namespace physics::units
 		return z;
 	}
 
-	auto_vector vector_unit::operator *(const vector_unit& y) const
-	{
-		if(unit::is_defined() and y.is_defined() and is_3d() and y.is_3d())
-		{
-			space_type new_value;
-			angle_type angle1;
-			angle_type angle2;
-			if(y.get_angle(1) == get_angle(1) and y.get_angle(2) == get_angle(2))
-			{
-				new_value = 0;
-				angle1 = 0;
-				angle2 = 0;
-			}
-			else
-			{
-				space_type new_x = y_projection() * y.z_projection() - z_projection() * y.y_projection();
-				space_type new_y = z_projection() * y.x_projection() - x_projection() * y.z_projection();
-				space_type new_z = x_projection() * y.y_projection() - y_projection() * y.x_projection();
-				new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
-				angle1 = cartesian_3d_to_spherical_angle1(new_x, new_y, new_z);
-				angle2 = cartesian_3d_to_spherical_angle2(new_x, new_y, new_z);
-			}
-			vector_real_dimensions new_real_dimensions = multiply_real_dimensions(get_real_dimensions(), y.get_real_dimensions());
-			vector_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(unit::get_actual_dimensions(), y.get_actual_dimensions());
-			auto_unit new_unit = auto_unit(new_value, new_real_dimensions, new_actual_dimensions);
-			math::angle_container angles;
-			angles.push_back(angle1);
-			angles.push_back(angle2);
-			return auto_vector(new_unit, angles);
-		}
-		else
-		{
-			auto_unit z = auto_unit(0);
-			z.invalidate(13);
-			return auto_vector(z,direction_symbol::left);
-		}
-	}
-
 	void vector_unit::operator +=(const vector_unit& y)
 	{
 		if(equal_dimensions(y.get_real_dimensions()) and unit::is_defined() and y.is_defined())
@@ -455,6 +417,48 @@ namespace physics::units
 
 	auto_scalar dot_product(const vector_unit& x, const vector_unit& y)
 	{
+		math::unit_number new_value = x.x_projection()*y.x_projection() + x.y_projection()*y.y_projection() + x.z_projection()*y.z_projection();
+		vector_real_dimensions new_real_dimensions = multiply_real_dimensions(x.get_real_dimensions(), y.get_real_dimensions());
+		vector_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(x.get_actual_dimensions(), y.get_actual_dimensions());
+		return auto_scalar(new_value,new_real_dimensions,new_actual_dimensions);
+	}
+
+	auto_vector cross_product(const vector_unit& x,const vector_unit& y)
+	{
+		if(x.is_defined() and y.is_defined() and x.is_3d() and y.is_3d())
+		{
+			space_type new_value;
+			angle_type angle1;
+			angle_type angle2;
+			if(y.get_angle(1) == x.get_angle(1) and y.get_angle(2) == x.get_angle(2))
+			{
+				new_value = 0;
+				angle1 = 0;
+				angle2 = 0;
+			}
+			else
+			{
+				space_type new_x = x.y_projection() * y.z_projection() - x.z_projection() * y.y_projection();
+				space_type new_y = x.z_projection() * y.x_projection() - x.x_projection() * y.z_projection();
+				space_type new_z = x.x_projection() * y.y_projection() - x.y_projection() * y.x_projection();
+				new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
+				angle1 = cartesian_3d_to_spherical_angle1(new_x, new_y, new_z);
+				angle2 = cartesian_3d_to_spherical_angle2(new_x, new_y, new_z);
+			}
+			vector_real_dimensions new_real_dimensions = multiply_real_dimensions(x.get_real_dimensions(), y.get_real_dimensions());
+			vector_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(x.get_actual_dimensions(), y.get_actual_dimensions());
+			auto_unit new_unit = auto_unit(new_value, new_real_dimensions, new_actual_dimensions);
+			math::angle_container angles;
+			angles.push_back(angle1);
+			angles.push_back(angle2);
+			return auto_vector(new_unit, angles);
+		}
+		else
+		{
+			auto_unit z = auto_unit(0);
+			z.invalidate(13);
+			return auto_vector(z,direction_symbol::left);
+		}
 	}
 
 	bool same_spacial_dimensions(const vector_unit& x, const vector_unit& y)

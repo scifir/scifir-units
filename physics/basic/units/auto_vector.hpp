@@ -25,7 +25,6 @@ namespace physics::units
 
 			auto_vector operator +(const vector_unit&) const;
 			auto_vector operator -(const vector_unit&) const;
-			auto_vector operator *(const vector_unit&) const;
 			void operator +=(const vector_unit&);
 			void operator -=(const vector_unit&);
 
@@ -155,13 +154,6 @@ namespace physics::units
 	auto_vector vector_unit_crtp<T>::operator -(const vector_unit_crtp<U>& x) const
 	{
 		return vector_unit::operator-(x);
-	}
-
-	template<typename T>
-	template<typename U>
-	auto_vector vector_unit_crtp<T>::operator *(const vector_unit_crtp<U>& x) const
-	{
-		return vector_unit::operator*(x);
 	}
 
 	template<typename T>

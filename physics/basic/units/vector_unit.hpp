@@ -148,7 +148,6 @@ namespace physics::units
 
 			auto_vector operator +(const vector_unit&) const;
 			auto_vector operator -(const vector_unit&) const;
-			auto_vector operator *(const vector_unit&) const;
 			void operator +=(const vector_unit&);
 			void operator -=(const vector_unit&);
 
@@ -277,8 +276,6 @@ namespace physics::units
 			auto_vector operator +(const vector_unit_crtp<U>&) const;
 			template<typename U>
 			auto_vector operator -(const vector_unit_crtp<U>&) const;
-			template<typename U>
-			auto_vector operator *(const vector_unit_crtp<U>&) const;
 
 			template<typename U>
 			void operator +=(const vector_unit_crtp<U>& x)
@@ -344,6 +341,7 @@ namespace physics::units
 	auto_vector sqrt(const vector_unit&);
 	auto_vector sqrt_nth(const vector_unit&,int);
 	auto_scalar dot_product(const vector_unit&,const vector_unit&);
+	auto_vector cross_product(const vector_unit&,const vector_unit&);
 	bool same_spacial_dimensions(const vector_unit&,const vector_unit&);
 	bool same_direction(const vector_unit&,const vector_unit&);
 	bool parallel(const vector_unit&,const vector_unit&);
