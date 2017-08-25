@@ -12,6 +12,10 @@ namespace physics::units
 	{
 	}
 
+	auto_scalar::auto_scalar(math::unit_number new_value, const vector_real_dimensions& new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : unit(new_value,new_actual_dimensions),auto_unit(new_value,new_real_dimensions,new_actual_dimensions),scalar_unit(new_value,new_actual_dimensions)
+	{
+	}
+
 	auto_scalar::auto_scalar(const unit& new_value,string init_value) : unit(new_value,init_value),auto_unit(new_value,init_value),scalar_unit(new_value,init_value)
 	{
 	}

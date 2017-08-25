@@ -12,6 +12,7 @@ namespace physics::units
 	{
 		public:
 			explicit auto_scalar(math::space_type, string = "");
+			explicit auto_scalar(math::unit_number, const vector_real_dimensions&, const vector_actual_dimensions&);
 			explicit auto_scalar(const unit&,string);
 			explicit auto_scalar(string);
 			auto_scalar(const auto_unit&);

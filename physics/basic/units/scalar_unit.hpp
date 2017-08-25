@@ -61,6 +61,7 @@ namespace physics::units
 		public:
 			scalar_unit(const unit&);
 			explicit scalar_unit(math::space_type,string);
+			explicit scalar_unit(math::unit_number, const vector_actual_dimensions&);
 			explicit scalar_unit(string);
 			explicit scalar_unit(const unit&,string);
 

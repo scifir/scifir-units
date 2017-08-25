@@ -9,6 +9,10 @@ namespace physics::units
 	{
 	}
 
+	scalar_unit::scalar_unit(math::unit_number new_value, const vector_actual_dimensions& new_actual_dimensions) : unit(new_value,new_actual_dimensions)
+	{
+	}
+
 	scalar_unit::scalar_unit(string init_value) : unit(init_value)
 	{
 	}
