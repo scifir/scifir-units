@@ -9,6 +9,7 @@ namespace physics::units
 {
 	SCALAR_UNIT_HPP(molarity);
 	SCALAR_UNIT_HPP(molality);
+	SCALAR_UNIT_HPP(concentration);
 	SCALAR_UNIT_HPP(linear_mass_density);
 	SCALAR_UNIT_HPP(area_density);
 	SCALAR_UNIT_HPP(dynamic_viscosity);
