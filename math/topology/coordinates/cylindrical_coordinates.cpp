@@ -6,11 +6,8 @@ using namespace std;
 
 namespace math
 {
-	cylindrical_coordinates::cylindrical_coordinates(space_type new_r,angle_type new_angle,space_type new_z) : coordinates_3d()
+	cylindrical_coordinates::cylindrical_coordinates(space_type new_r,angle_type new_angle,space_type new_z) : coordinates_3d(),r(new_r),angle(new_angle),z(new_z)
 	{
-		r = new_r;
-		angle = math::angle_number(new_angle);
-		z = new_z;
 	}
 
 	space_type cylindrical_coordinates::get_r() const

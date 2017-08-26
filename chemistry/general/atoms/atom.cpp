@@ -33,7 +33,7 @@ namespace chemistry
 		{7, atomic_orbital_p}
 	};
 
-	atom::atom()
+	atom::atom() : bonds()
 	{
 	}
 
