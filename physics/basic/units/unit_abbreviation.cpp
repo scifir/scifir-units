@@ -2568,6 +2568,16 @@ mole operator"" _particles(unsigned long long int x)
 	return mole(x, "particles");
 }
 
+concentration operator"" _ppm(unsigned long long int x)
+{
+	return concentration(x, "ppm");
+}
+
+concentration operator"" _ppb(unsigned long long int x)
+{
+	return concentration(x, "ppb");
+}
+
 frequency operator"" _YHz(long double x)
 {
 	return frequency(x, "YHz");
@@ -5126,4 +5136,14 @@ molarity operator"" _zM(long double x)
 molarity operator"" _yM(long double x)
 {
 	return molarity(x, "yM");
+}
+
+concentration operator"" _ppm(long double x)
+{
+	return concentration(x, "ppm");
+}
+
+concentration operator"" _ppb(long double x)
+{
+	return concentration(x, "ppb");
 }

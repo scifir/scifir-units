@@ -619,6 +619,42 @@ namespace physics::units
 	const string abbreviation_particles::name = "particles";
 	const string abbreviation_particles::symbol = "particles";
 
+	abbreviation_ppm::abbreviation_ppm(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_ppm>(new_prefix, new_scale)
+	{
+	}
+
+	abbreviation_ppm::abbreviation_ppm(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_ppm>(new_prefix, new_scale)
+	{
+	}
+
+	int abbreviation_ppm::get_enum_type() const
+	{
+		return abbreviation_symbol::ppm;
+	}
+
+	const string abbreviation_ppm::dimensions_match = "g/g";
+	const long long abbreviation_ppm::factor = 1/10^6;
+	const string abbreviation_ppm::name = "parts per million";
+	const string abbreviation_ppm::symbol = "ppm";
+
+	abbreviation_ppb::abbreviation_ppb(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_ppb>(new_prefix, new_scale)
+	{
+	}
+
+	abbreviation_ppb::abbreviation_ppb(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_ppb>(new_prefix, new_scale)
+	{
+	}
+
+	int abbreviation_ppb::get_enum_type() const
+	{
+		return abbreviation_symbol::ppb;
+	}
+
+	const string abbreviation_ppb::dimensions_match = "g/g";
+	const long long abbreviation_ppb::factor = 1/10^9;
+	const string abbreviation_ppb::name = "parts per billion";
+	const string abbreviation_ppb::symbol = "ppb";
+
 	abbreviation* create_abbreviation(abbreviation_symbol new_abbreviation)
 	{
 		switch(new_abbreviation)
@@ -689,6 +725,10 @@ namespace physics::units
 				return new abbreviation_molarity();
 			case particles:
 				return new abbreviation_particles();
+			case ppm:
+				return new abbreviation_ppm();
+			case ppb:
+				return new abbreviation_ppb();
 		}
 		return nullptr;
 	}
@@ -699,7 +739,7 @@ namespace physics::units
 		string abbreviation_name;
 		string prefix_name;
 		set<string> prefixes_options {"Y", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "u", "n", "p", "f", "a", "z", "y"};
-		if(prefixes_options.count(x.substr(0,1)) and x.substr(0,9) != "particles")
+		if(prefixes_options.count(x.substr(0,1)) and x.substr(0,9) != "particles" and x.substr(0,3) != "ppm" and x.substr(0,3) != "ppb")
 		{
 			prefix_name = x.substr(0, 1);
 			abbreviation_name = x.substr(1);
@@ -851,6 +891,14 @@ namespace physics::units
 		else if(abbreviation_name == "particles")
 		{
 			return new abbreviation_particles(*new_prefix);
+		}
+		else if(abbreviation_name == "ppm")
+		{
+			return new abbreviation_ppm(*new_prefix);
+		}
+		else if(abbreviation_name == "ppb")
+		{
+			return new abbreviation_ppb(*new_prefix);
 		}
 		else
 		{

@@ -14,7 +14,7 @@ namespace physics::units
 {
 	enum abbreviation_symbol
 	{
-		Hz = 9, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, normal_abbreviation, L, minute, h, d, AU, pc, eV, Da, amu, barn, M, particles
+		Hz = 9, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, normal_abbreviation, L, minute, h, d, AU, pc, eV, Da, amu, barn, M, particles, ppm, ppb
 	};
 
 	class abbreviation : public dimension_abstract
@@ -521,6 +521,34 @@ namespace physics::units
 		public:
 			abbreviation_particles(prefix_symbol = normal_prefix, int = 1);
 			abbreviation_particles(prefix&, int = 1);
+
+			virtual int get_enum_type() const;
+
+			static const string dimensions_match;
+			static const long long factor;
+			static const string name;
+			static const string symbol;
+	};
+
+	class abbreviation_ppm: public abbreviation_crtp<abbreviation_ppm>
+	{
+		public:
+			abbreviation_ppm(prefix_symbol = normal_prefix, int = 1);
+			abbreviation_ppm(prefix&, int = 1);
+
+			virtual int get_enum_type() const;
+
+			static const string dimensions_match;
+			static const long long factor;
+			static const string name;
+			static const string symbol;
+	};
+
+	class abbreviation_ppb: public abbreviation_crtp<abbreviation_ppb>
+	{
+		public:
+			abbreviation_ppb(prefix_symbol = normal_prefix, int = 1);
+			abbreviation_ppb(prefix&, int = 1);
 
 			virtual int get_enum_type() const;
 
