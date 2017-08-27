@@ -3,6 +3,8 @@
 
 #include "physics/basic/units/scalar_unit.hpp"
 
+#include <iostream>
+
 using namespace std;
 
 namespace physics::units
@@ -16,5 +18,7 @@ namespace physics::units
 	SCALAR_UNIT_HPP(mass_flow_rate);
 	SCALAR_UNIT_HPP(catalytic_activity);
 }
+
+wostream& operator <<(wostream&, const physics::units::concentration&);
 
 #endif // CHEMISTRY_GENERAL_SUBSTANCE_UNITS_HPP_INCLUDED
