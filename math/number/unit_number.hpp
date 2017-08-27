@@ -21,7 +21,7 @@ namespace math
 
 			void operator =(const unit_number&);
 
-			virtual wstring print() const override;
+			virtual wstring print(int = 2) const;
 	};
 }
 

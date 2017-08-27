@@ -33,12 +33,12 @@ namespace math
 		}
 	}
 
-	wstring unit_number::print() const
+	wstring unit_number::print(int number_of_decimals) const
 	{
 		wostringstream output;
 		double integer_part;
 		modf(get_value(),&integer_part);
-		output << setprecision(to_string(int(integer_part)).length() + 2);
+		output << setprecision(to_string(int(integer_part)).length() + number_of_decimals);
 		if(is_defined())
 		{
 			if(get_value() >= 0)

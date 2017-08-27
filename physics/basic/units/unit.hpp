@@ -101,6 +101,8 @@ namespace physics::units
 			bool is_defined() const;
 			void invalidate(int);
 
+			wstring display(int = 2) const;
+
 		protected:
 			math::unit_number value;
 			vector_actual_dimensions actual_dimensions;

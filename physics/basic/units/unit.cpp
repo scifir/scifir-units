@@ -334,6 +334,43 @@ namespace physics::units
 		value.invalidate(x);
 	}
 
+	wstring unit::display(int number_of_decimals) const
+	{
+		/*locale loc = locale("en_US.UTF8");
+		os.imbue(loc);*/
+		wostringstream dimension_text;
+		wostringstream dimension_up_text;
+		wostringstream dimension_down_text;
+		for(const auto& actual_dimension : get_actual_dimensions())
+		{
+			if(actual_dimension.second->get_scale() > 0)
+			{
+				dimension_up_text << *actual_dimension.second;
+			}
+			else
+			{
+				dimension_down_text << *actual_dimension.second;
+			}
+		}
+		if(dimension_up_text.tellp() > 0 and dimension_down_text.tellp() > 0)
+		{
+			dimension_text << dimension_up_text.str() << "/" << dimension_down_text.str();
+		}
+		else if(dimension_up_text.tellp() > 0)
+		{
+			dimension_text << dimension_up_text.str();
+		}
+		else if(dimension_down_text.tellp() > 0)
+		{
+			dimension_text << "1/" << dimension_down_text.str();
+		}
+		else
+		{
+			dimension_text << "[empty]";
+		}
+		return value.print(number_of_decimals) + L" " + dimension_text.str();
+	}
+
 	/// Updates the value to the prefix added
 	void unit::add_prefix(shared_ptr<prefix> new_prefix,float prefix_base)
 	{
@@ -716,39 +753,7 @@ wstring operator +(const physics::units::unit& y, const wstring& x)
 
 wostream& operator <<(wostream& os, const physics::units::unit& x)
 {
-	/*locale loc = locale("en_US.UTF8");
-	os.imbue(loc);*/
-	wostringstream dimension_text;
-	wostringstream dimension_up_text;
-	wostringstream dimension_down_text;
-	for(const auto& actual_dimension : x.get_actual_dimensions())
-	{
-		if(actual_dimension.second->get_scale() > 0)
-		{
-			dimension_up_text << *actual_dimension.second;
-		}
-		else
-		{
-			dimension_down_text << *actual_dimension.second;
-		}
-	}
-	if(dimension_up_text.tellp() > 0 and dimension_down_text.tellp() > 0)
-	{
-		dimension_text << dimension_up_text.str() << "/" << dimension_down_text.str();
-	}
-	else if(dimension_up_text.tellp() > 0)
-	{
-		dimension_text << dimension_up_text.str();
-	}
-	else if(dimension_down_text.tellp() > 0)
-	{
-		dimension_text << "1/" << dimension_down_text.str();
-	}
-	else
-	{
-		dimension_text << "[empty]";
-	}
-	return os << x.get_value() << " " << dimension_text.str();
+	return os << x.display();
 }
 
 /*istream& operator >>(istream& is, physics::units::auto_unit& x)
