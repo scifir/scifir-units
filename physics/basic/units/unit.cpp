@@ -52,15 +52,22 @@ namespace physics::units
 		else
 		{
 			int i = 0;
-			while(isdigit(init_value[i]) || init_value[i] == '.')
+			while(isdigit(init_value[i]) || init_value[i] == '.' || init_value[i] == ' ')
 			{
+				if (init_value[i] == ' ' and !isdigit(init_value[i + 1]))
+				{
+					break;
+				}
 				i++;
 			}
-			value = math::unit_number(stof(init_value.substr(0, i)));
 			if(init_value[i] != ' ')
 			{
 				throw invalid_argument("Unit string must have the value separated from units with a single space");
 			}
+			string string_value = init_value.substr(0, i);
+			boost::algorithm::erase_all(string_value, " ");
+			boost::algorithm::erase_all(string_value, ".");
+			value = math::unit_number(stof(string_value));
 			initialize_dimensions(init_value.substr(i));
 		}
 	}
