@@ -27,7 +27,7 @@ namespace physics::units
 
 			virtual const string& get_dimensions_match() const = 0;
 			virtual int get_enum_type() const = 0;
-			virtual const long long& get_factor() const = 0;
+			virtual const long double& get_factor() const = 0;
 	};
 
 	template<typename T>
@@ -52,7 +52,7 @@ namespace physics::units
 				return T::dimensions_match;
 			}
 
-			virtual const long long& get_factor() const
+			virtual const long double& get_factor() const
 			{
 				return T::factor;
 			}
@@ -77,7 +77,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -91,7 +91,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -105,7 +105,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -119,7 +119,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -133,7 +133,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -147,7 +147,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -161,7 +161,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -175,7 +175,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -189,7 +189,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -203,7 +203,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -217,7 +217,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -231,7 +231,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -245,7 +245,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -259,7 +259,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -273,7 +273,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -287,7 +287,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -301,7 +301,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -315,7 +315,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -329,7 +329,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -343,7 +343,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -357,7 +357,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -371,7 +371,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -385,7 +385,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -399,7 +399,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -413,7 +413,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -427,7 +427,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -441,7 +441,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -455,7 +455,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -469,7 +469,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -483,7 +483,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -497,7 +497,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -511,7 +511,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -525,7 +525,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -539,7 +539,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};
@@ -553,7 +553,7 @@ namespace physics::units
 			virtual int get_enum_type() const;
 
 			static const string dimensions_match;
-			static const long long factor;
+			static const long double factor;
 			static const string name;
 			static const string symbol;
 	};

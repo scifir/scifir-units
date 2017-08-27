@@ -39,7 +39,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_normal::dimensions_match = "";
-	const long long abbreviation_normal::factor = 1;
+	const long double abbreviation_normal::factor = 1;
 	const string abbreviation_normal::name = "";
 	const string abbreviation_normal::symbol = "";
 
@@ -57,7 +57,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_hertz::dimensions_match = "1/s";
-	const long long abbreviation_hertz::factor = 1;
+	const long double abbreviation_hertz::factor = 1;
 	const string abbreviation_hertz::name = "hertz";
 	const string abbreviation_hertz::symbol = "Hz";
 
@@ -75,7 +75,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_newton::dimensions_match = "kg*m/s2";
-	const long long abbreviation_newton::factor = 1;
+	const long double abbreviation_newton::factor = 1;
 	const string abbreviation_newton::name = "newton";
 	const string abbreviation_newton::symbol = "N";
 
@@ -93,7 +93,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_pascal::dimensions_match = "kg/m*s2";
-	const long long abbreviation_pascal::factor = 1;
+	const long double abbreviation_pascal::factor = 1;
 	const string abbreviation_pascal::name = "pascal";
 	const string abbreviation_pascal::symbol = "Pa";
 
@@ -111,7 +111,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_joule::dimensions_match = "kg/m2*s2";
-	const long long abbreviation_joule::factor = 1;
+	const long double abbreviation_joule::factor = 1;
 	const string abbreviation_joule::name = "joule";
 	const string abbreviation_joule::symbol = "J";
 
@@ -129,7 +129,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_watt::dimensions_match = "kg/m2*s3";
-	const long long abbreviation_watt::factor = 1;
+	const long double abbreviation_watt::factor = 1;
 	const string abbreviation_watt::name = "watt";
 	const string abbreviation_watt::symbol = "W";
 
@@ -147,7 +147,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_ampere::dimensions_match = "C/s";
-	const long long abbreviation_ampere::factor = 1;
+	const long double abbreviation_ampere::factor = 1;
 	const string abbreviation_ampere::name = "ampere";
 	const string abbreviation_ampere::symbol = "A";
 
@@ -165,7 +165,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_volt::dimensions_match = "kg*m2/s3*A";
-	const long long abbreviation_volt::factor = 1;
+	const long double abbreviation_volt::factor = 1;
 	const string abbreviation_volt::name = "volt";
 	const string abbreviation_volt::symbol = "V";
 
@@ -183,7 +183,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_farad::dimensions_match = "s4*A2/kg*m2";
-	const long long abbreviation_farad::factor = 1;
+	const long double abbreviation_farad::factor = 1;
 	const string abbreviation_farad::name = "farad";
 	const string abbreviation_farad::symbol = "F";
 
@@ -201,7 +201,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_ohm::dimensions_match = "kg*m2/s3*A2";
-	const long long abbreviation_ohm::factor = 1;
+	const long double abbreviation_ohm::factor = 1;
 	const string abbreviation_ohm::name = "ohm";
 	const string abbreviation_ohm::symbol = "Ω";
 
@@ -219,7 +219,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_siemens::dimensions_match = "s3*A2/kg*m2";
-	const long long abbreviation_siemens::factor = 1;
+	const long double abbreviation_siemens::factor = 1;
 	const string abbreviation_siemens::name = "siemens";
 	const string abbreviation_siemens::symbol = "S";
 
@@ -237,7 +237,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_weber::dimensions_match = "kg*m2/s2*A";
-	const long long abbreviation_weber::factor = 1;
+	const long double abbreviation_weber::factor = 1;
 	const string abbreviation_weber::name = "weber";
 	const string abbreviation_weber::symbol = "Wb";
 
@@ -255,7 +255,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_tesla::dimensions_match = "kg/s2*A";
-	const long long abbreviation_tesla::factor = 1;
+	const long double abbreviation_tesla::factor = 1;
 	const string abbreviation_tesla::name = "tesla";
 	const string abbreviation_tesla::symbol = "T";
 
@@ -273,7 +273,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_henry::dimensions_match = "kg*m2/s2*A2";
-	const long long abbreviation_henry::factor = 1;
+	const long double abbreviation_henry::factor = 1;
 	const string abbreviation_henry::name = "henry";
 	const string abbreviation_henry::symbol = "H";
 
@@ -291,7 +291,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_lumen::dimensions_match = "cd";
-	const long long abbreviation_lumen::factor = 1;
+	const long double abbreviation_lumen::factor = 1;
 	const string abbreviation_lumen::name = "lumen";
 	const string abbreviation_lumen::symbol = "lm";
 
@@ -309,7 +309,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_lux::dimensions_match = "cd/m2";
-	const long long abbreviation_lux::factor = 1;
+	const long double abbreviation_lux::factor = 1;
 	const string abbreviation_lux::name = "lux";
 	const string abbreviation_lux::symbol = "lx";
 
@@ -327,7 +327,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_becquerel::dimensions_match = "1/s";
-	const long long abbreviation_becquerel::factor = 1;
+	const long double abbreviation_becquerel::factor = 1;
 	const string abbreviation_becquerel::name = "becquerel";
 	const string abbreviation_becquerel::symbol = "Bq";
 
@@ -345,7 +345,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_gray::dimensions_match = "m2/s2";
-	const long long abbreviation_gray::factor = 1;
+	const long double abbreviation_gray::factor = 1;
 	const string abbreviation_gray::name = "gray";
 	const string abbreviation_gray::symbol = "Gy";
 
@@ -363,7 +363,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_sievert::dimensions_match = "m2/s2";
-	const long long abbreviation_sievert::factor = 1;
+	const long double abbreviation_sievert::factor = 1;
 	const string abbreviation_sievert::name = "sievert";
 	const string abbreviation_sievert::symbol = "Sv";
 
@@ -381,7 +381,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_katal::dimensions_match = "mol/s";
-	const long long abbreviation_katal::factor = 1;
+	const long double abbreviation_katal::factor = 1;
 	const string abbreviation_katal::name = "katal";
 	const string abbreviation_katal::symbol = "kat";
 
@@ -399,7 +399,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_angstrom::dimensions_match = "1/m10";
-	const long long abbreviation_angstrom::factor = 1;
+	const long double abbreviation_angstrom::factor = 1;
 	const string abbreviation_angstrom::name = "angstrom";
 	const string abbreviation_angstrom::symbol = "Å";
 
@@ -417,7 +417,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_litre::dimensions_match = "dm3";
-	const long long abbreviation_litre::factor = 1;
+	const long double abbreviation_litre::factor = 1;
 	const string abbreviation_litre::name = "litre";
 	const string abbreviation_litre::symbol = "L";
 
@@ -435,7 +435,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_minute::dimensions_match = "s";
-	const long long abbreviation_minute::factor = 60;
+	const long double abbreviation_minute::factor = 60;
 	const string abbreviation_minute::name = "minute";
 	const string abbreviation_minute::symbol = "min";
 
@@ -453,7 +453,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_hour::dimensions_match = "s";
-	const long long abbreviation_hour::factor = 3600;
+	const long double abbreviation_hour::factor = 3600;
 	const string abbreviation_hour::name = "hour";
 	const string abbreviation_hour::symbol = "h";
 
@@ -471,7 +471,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_day::dimensions_match = "s";
-	const long long abbreviation_day::factor = 86400;
+	const long double abbreviation_day::factor = 86400;
 	const string abbreviation_day::name = "day";
 	const string abbreviation_day::symbol = "d";
 
@@ -489,7 +489,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_astronomical_unit::dimensions_match = "m";
-	const long long abbreviation_astronomical_unit::factor = 149597870700;
+	const long double abbreviation_astronomical_unit::factor = 149597870700;
 	const string abbreviation_astronomical_unit::name = "astronomical_unit";
 	const string abbreviation_astronomical_unit::symbol = "AU";
 
@@ -507,7 +507,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_parsec::dimensions_match = "m";
-	const long long abbreviation_parsec::factor = 30856775814913700;
+	const long double abbreviation_parsec::factor = 30856775814913700;
 	const string abbreviation_parsec::name = "parsec";
 	const string abbreviation_parsec::symbol = "pc";
 
@@ -525,7 +525,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_electron_volt::dimensions_match = "kg*m2/s2";
-	const long long abbreviation_electron_volt::factor = 1.60217656535/*E−19*/;
+	const long double abbreviation_electron_volt::factor = 1.60217656535/*e−19*/;
 	const string abbreviation_electron_volt::name = "electron_volt";
 	const string abbreviation_electron_volt::symbol = "eV";
 
@@ -543,7 +543,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_dalton::dimensions_match = "kg";
-	const long long abbreviation_dalton::factor = 1.6605388628/*E−27*/;
+	const long double abbreviation_dalton::factor = 1.6605388628/*e−27*/;
 	const string abbreviation_dalton::name = "dalton";
 	const string abbreviation_dalton::symbol = "Da";
 
@@ -561,7 +561,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_amu::dimensions_match = "g";
-	const long long abbreviation_amu::factor = 1.6605388628/*E−27*/;
+	const long double abbreviation_amu::factor = 1.6605388628/*e−27*/;
 	const string abbreviation_amu::name = "amu";
 	const string abbreviation_amu::symbol = "amu";
 
@@ -579,7 +579,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_barn::dimensions_match = "m2";
-	const long long abbreviation_barn::factor = 10 ^ -28;
+	const long double abbreviation_barn::factor = 10 ^ -28;
 	const string abbreviation_barn::name = "barn";
 	const string abbreviation_barn::symbol = "b";
 
@@ -597,7 +597,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_molarity::dimensions_match = "mol/L";
-	const long long abbreviation_molarity::factor = 1;
+	const long double abbreviation_molarity::factor = 1;
 	const string abbreviation_molarity::name = "molarity";
 	const string abbreviation_molarity::symbol = "M";
 
@@ -615,7 +615,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_particles::dimensions_match = "mol";
-	const long long abbreviation_particles::factor = 1/chemistry::avogadro_constant;
+	const long double abbreviation_particles::factor = 1/chemistry::avogadro_constant;
 	const string abbreviation_particles::name = "particles";
 	const string abbreviation_particles::symbol = "particles";
 
@@ -633,7 +633,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_ppm::dimensions_match = "g/g";
-	const long long abbreviation_ppm::factor = 1/10^6;
+	const long double abbreviation_ppm::factor = 1/10^6;
 	const string abbreviation_ppm::name = "parts per million";
 	const string abbreviation_ppm::symbol = "ppm";
 
@@ -651,7 +651,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_ppb::dimensions_match = "g/g";
-	const long long abbreviation_ppb::factor = 1/10^9;
+	const long double abbreviation_ppb::factor = 1/10^9;
 	const string abbreviation_ppb::name = "parts per billion";
 	const string abbreviation_ppb::symbol = "ppb";
 
