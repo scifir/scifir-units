@@ -66,7 +66,6 @@ namespace physics::units
 			}
 			string string_value = init_value.substr(0, i);
 			boost::algorithm::erase_all(string_value, " ");
-			boost::algorithm::erase_all(string_value, ".");
 			value = math::unit_number(stof(string_value));
 			initialize_dimensions(init_value.substr(i));
 		}
