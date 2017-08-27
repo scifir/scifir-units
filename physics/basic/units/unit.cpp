@@ -207,7 +207,7 @@ namespace physics::units
 		{
 			for(auto& actual_dimension : actual_dimensions)
 			{
-				remove_prefix(actual_dimension.second->get_dimension_prefixes());
+				remove_prefix(actual_dimension.second->get_dimension_prefixes(),actual_dimension.second->get_prefix_base());
 				abbreviation* new_actual_abbreviation = create_abbreviation(actual_dimension.second->get_symbol());
 				if(new_actual_abbreviation != nullptr)
 				{
@@ -215,7 +215,7 @@ namespace physics::units
 					auto_unit abbreviation_unit("1 " + actual_abbreviation->get_dimensions_match());
 					for(auto& actual_dimension2 : abbreviation_unit.get_actual_dimensions())
 					{
-						remove_prefix(actual_dimension2.second->get_dimension_prefixes());
+						remove_prefix(actual_dimension2.second->get_dimension_prefixes(),actual_dimension2.second->get_prefix_base());
 					}
 				}
 			}
@@ -223,7 +223,7 @@ namespace physics::units
 			vector_actual_dimensions new_actual_dimensions = create_actual_dimensions(new_dimensions);
 			for(auto& new_actual_dimension : new_actual_dimensions)
 			{
-				add_prefix(new_actual_dimension.second->get_dimension_prefixes());
+				add_prefix(new_actual_dimension.second->get_dimension_prefixes(),new_actual_dimension.second->get_prefix_base());
 				abbreviation* new_actual_abbreviation = create_abbreviation(new_actual_dimension.second->get_symbol());
 				if(new_actual_abbreviation != nullptr)
 				{
@@ -231,7 +231,7 @@ namespace physics::units
 					auto_unit abbreviation_unit("1 " + actual_abbreviation->get_dimensions_match());
 					for(auto& actual_dimension2 : abbreviation_unit.get_actual_dimensions())
 					{
-						add_prefix(actual_dimension2.second->get_dimension_prefixes());
+						add_prefix(actual_dimension2.second->get_dimension_prefixes(),actual_dimension2.second->get_prefix_base());
 					}
 				}
 			}
@@ -324,32 +324,32 @@ namespace physics::units
 	}
 
 	/// Updates the value to the prefix added
-	void unit::add_prefix(shared_ptr<prefix> new_prefix)
+	void unit::add_prefix(shared_ptr<prefix> new_prefix,float prefix_base)
 	{
-		value /= pow(10, new_prefix->get_conversion_factor() * new_prefix->scale);
+		value /= pow(prefix_base, new_prefix->get_conversion_factor() * new_prefix->scale);
 	}
 
 	/// Updates the value to the set of prefixes added
-	void unit::add_prefix(dimension_prefixes new_prefixes)
+	void unit::add_prefix(dimension_prefixes new_prefixes,float prefix_base)
 	{
 		for(auto& map_value : new_prefixes)
 		{
-			add_prefix(map_value.second);
+			add_prefix(map_value.second,prefix_base);
 		}
 	}
 
 	/// Updates the value to the prefix removed
-	void unit::remove_prefix(shared_ptr<prefix> old_prefix)
+	void unit::remove_prefix(shared_ptr<prefix> old_prefix,float prefix_base)
 	{
-		value *= pow(10, old_prefix->get_conversion_factor() * old_prefix->scale);
+		value *= pow(prefix_base, old_prefix->get_conversion_factor() * old_prefix->scale);
 	}
 
 	/// Updates the value to the set of prefixes removed
-	void unit::remove_prefix(dimension_prefixes new_prefixes)
+	void unit::remove_prefix(dimension_prefixes new_prefixes,float prefix_base)
 	{
 		for(auto& map_value : new_prefixes)
 		{
-			remove_prefix(map_value.second);
+			remove_prefix(map_value.second,prefix_base);
 		}
 	}
 
@@ -358,12 +358,12 @@ namespace physics::units
 	{
 		for(const auto& map_value : actual_dimensions)
 		{
-			remove_prefix(map_value.second->get_dimension_prefixes());
+			remove_prefix(map_value.second->get_dimension_prefixes(),map_value.second->get_prefix_base());
 		}
 		actual_dimensions.clear();
 		for(const auto& map_value : new_dimensions)
 		{
-			add_prefix(map_value.second->get_dimension_prefixes());
+			add_prefix(map_value.second->get_dimension_prefixes(),map_value.second->get_prefix_base());
 			actual_dimensions[map_value.second->get_enum_type()] = map_value.second;
 		}
 	}

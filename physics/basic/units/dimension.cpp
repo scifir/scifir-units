@@ -197,6 +197,11 @@ namespace physics::units
 		return cd;
 	}
 
+	float dimension_byte::get_prefix_base() const
+	{
+		return 10.0793684;
+	}
+
 	dimension* create_dimension(dimension_symbol x)
 	{
 		switch(x)

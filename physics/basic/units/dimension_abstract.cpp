@@ -56,6 +56,11 @@ namespace physics::units
 		return prefixes;
 	}
 
+	float dimension_abstract::get_prefix_base() const
+	{
+		return 10;
+	}
+
 	void dimension_abstract::add_prefix(prefix_symbol prefix_name)
 	{
 		if(prefixes.count(prefix_name) > 0)

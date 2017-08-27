@@ -37,6 +37,7 @@ namespace physics::units
 			virtual const string& get_name() const = 0;
 			const int get_scale() const;
 			virtual const string& get_symbol() const = 0;
+			virtual float get_prefix_base() const;
 
 			void add_prefix(prefix_symbol);
 			void add_prefix(const prefix&);

@@ -107,10 +107,10 @@ namespace physics::units
 			string initial_dimensions_get_structure(string) const;
 
 		private:
-			void add_prefix(shared_ptr<prefix>);
-			void add_prefix(dimension_prefixes);
-			void remove_prefix(shared_ptr<prefix>);
-			void remove_prefix(dimension_prefixes);
+			void add_prefix(shared_ptr<prefix>,float);
+			void add_prefix(dimension_prefixes,float);
+			void remove_prefix(shared_ptr<prefix>,float);
+			void remove_prefix(dimension_prefixes,float);
 
 			void initialize_dimensions(string);
 	};

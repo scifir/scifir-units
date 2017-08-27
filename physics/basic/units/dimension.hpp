@@ -173,6 +173,7 @@ namespace physics::units
 			dimension_byte(prefix&);
 
 			virtual int get_enum_type() const;
+			virtual float get_prefix_base() const;
 
 			static const string name;
 			static const string symbol;
