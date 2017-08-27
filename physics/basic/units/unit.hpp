@@ -28,6 +28,7 @@ namespace physics::units
 			explicit unit(const unit&,string);
 			explicit unit(const auto_unit&,string);
 			explicit unit(string);
+			unit(const unit&);
 
 			void operator =(const unit&);
 
@@ -140,6 +141,10 @@ namespace physics::units
 			}
 
 			explicit unit_crtp(string init_value) : unit(init_value)
+			{
+			}
+
+			unit_crtp(const unit_crtp<T>& x) : unit(x)
 			{
 			}
 

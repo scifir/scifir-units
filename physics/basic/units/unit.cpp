@@ -71,6 +71,11 @@ namespace physics::units
 		}
 	}
 
+	unit::unit(const unit& x)
+	{
+		*this = x;
+	}
+
 	void unit::operator =(const unit& x)
 	{
 		if (physics::units::equal_dimensions(*this,x))
