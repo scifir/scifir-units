@@ -21,6 +21,13 @@ namespace physics::units
 	SCALAR_UNIT_CPP(length,"m");
 	SCALAR_UNIT_CPP(time,"s");
 
+	time::operator std::chrono::seconds() const
+	{
+		physics::units::time a = *this;
+		a.change_dimensions("s");
+		return std::chrono::seconds(int(a.get_value()));
+	}
+
 	void time::change_display(physics::units::display_mode new_display_mode)
 	{
 		display_mode = new_display_mode;

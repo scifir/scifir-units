@@ -6,6 +6,7 @@
 #include "auto_scalar.hpp"
 #include "unit.hpp"
 
+#include <chrono>
 #include <iostream>
 #include <memory>
 #include <sstream>
@@ -18,6 +19,8 @@ namespace physics::units
 
 	SCALAR_UNIT_HPP_BEGIN(time);
 		public:
+			explicit operator std::chrono::seconds() const;
+
 			void change_display(physics::units::display_mode);
 
 			inline const physics::units::display_mode& get_display_mode() const
