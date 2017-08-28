@@ -229,6 +229,11 @@ namespace physics::units
 						remove_prefix(actual_dimension2.second->get_dimension_prefixes(),actual_dimension2.second->get_prefix_base());
 					}
 				}
+				shared_ptr<abbreviation> actual_dimension_ptr = dynamic_pointer_cast<abbreviation>(actual_dimension.second);
+				if (actual_dimension_ptr)
+				{
+					value *= actual_dimension_ptr->get_factor();
+				}
 			}
 			actual_dimensions.empty();
 			vector_actual_dimensions new_actual_dimensions = create_actual_dimensions(new_dimensions);
@@ -244,6 +249,11 @@ namespace physics::units
 					{
 						add_prefix(actual_dimension2.second->get_dimension_prefixes(),actual_dimension2.second->get_prefix_base());
 					}
+				}
+				shared_ptr<abbreviation> new_actual_dimension_ptr = dynamic_pointer_cast<abbreviation>(new_actual_dimension.second);
+				if (new_actual_dimension_ptr)
+				{
+					value /= new_actual_dimension_ptr->get_factor();
 				}
 			}
 			actual_dimensions = new_actual_dimensions;
