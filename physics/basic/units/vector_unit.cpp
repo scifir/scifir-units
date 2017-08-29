@@ -461,7 +461,7 @@ namespace physics::units
 		}
 	}
 
-	bool same_spacial_dimensions(const vector_unit& x, const vector_unit& y)
+	bool same_nd(const vector_unit& x, const vector_unit& y)
 	{
 		if(x.get_angles().size() == y.get_angles().size())
 		{
@@ -518,7 +518,7 @@ namespace physics::units
 
 bool operator ==(const physics::units::vector_unit& x, const physics::units::vector_unit& y)
 {
-	if(physics::units::same_spacial_dimensions(x, y))
+	if(physics::units::same_nd(x, y))
 	{
 		if(x.unit::get_value() == y.unit::get_value() and physics::units::same_direction(x, y))
 		{

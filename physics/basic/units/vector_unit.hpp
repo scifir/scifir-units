@@ -342,7 +342,7 @@ namespace physics::units
 	auto_vector sqrt_nth(const vector_unit&,int);
 	auto_scalar dot_product(const vector_unit&,const vector_unit&);
 	auto_vector cross_product(const vector_unit&,const vector_unit&);
-	bool same_spacial_dimensions(const vector_unit&,const vector_unit&);
+	bool same_nd(const vector_unit&,const vector_unit&);
 	bool same_direction(const vector_unit&,const vector_unit&);
 	bool parallel(const vector_unit&,const vector_unit&);
 	bool orthogonal(const vector_unit&,const vector_unit&);
