@@ -89,6 +89,11 @@ namespace physics::units
 		}
 	}
 
+	unit::operator float() const
+	{
+		return value.get_value();
+	}
+
 	auto_unit unit::operator +(const unit& x) const
 	{
 		if(x.equal_dimensions(get_real_dimensions()))

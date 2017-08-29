@@ -32,6 +32,8 @@ namespace physics::units
 
 			void operator =(const unit&);
 
+			operator float() const;
+
 			auto_unit operator +(const unit&) const;
 			auto_unit operator -(const unit&) const;
 			auto_unit operator *(const unit&) const;
