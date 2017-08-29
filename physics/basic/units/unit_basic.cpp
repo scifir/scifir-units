@@ -870,14 +870,14 @@ physics::units::light operator"" _ycd(unsigned long long int x)
 	return physics::units::light(x, "ycd");
 }
 
-physics::units::auto_unit operator"" _angle(unsigned long long int x)
+physics::units::angle operator"" _angle(unsigned long long int x)
 {
-	return physics::units::auto_unit(x, "angle");
+	return physics::units::angle(x, "angle");
 }
 
-physics::units::auto_unit operator"" _solid_angle(unsigned long long int x)
+physics::units::solid_angle operator"" _solid_angle(unsigned long long int x)
 {
-	return physics::units::auto_unit(x, "solid_angle");
+	return physics::units::solid_angle(x, "solid_angle");
 }
 
 physics::units::data operator"" _YB(unsigned long long int x)
@@ -1600,14 +1600,14 @@ physics::units::light operator"" _ycd(long double x)
 	return physics::units::light(x, "ycd");
 }
 
-physics::units::auto_unit operator"" _angle(long double x)
+physics::units::angle operator"" _angle(long double x)
 {
-	return physics::units::auto_unit(x, "angle");
+	return physics::units::angle(x, "angle");
 }
 
-physics::units::auto_unit operator"" _solid_angle(long double x)
+physics::units::solid_angle operator"" _solid_angle(long double x)
 {
-	return physics::units::auto_unit(x, "solid_angle");
+	return physics::units::solid_angle(x, "solid_angle");
 }
 
 physics::units::data operator"" _YB(long double x)

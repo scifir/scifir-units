@@ -198,9 +198,9 @@ physics::units::light operator"" _acd(unsigned long long int);
 physics::units::light operator"" _zcd(unsigned long long int);
 physics::units::light operator"" _ycd(unsigned long long int);
 
-physics::units::auto_unit operator"" _angle(unsigned long long int);
+physics::units::angle operator"" _angle(unsigned long long int);
 
-physics::units::auto_unit operator"" _solid_angle(unsigned long long int);
+physics::units::solid_angle operator"" _solid_angle(unsigned long long int);
 
 physics::units::data operator"" _YB(unsigned long long int);
 physics::units::data operator"" _ZB(unsigned long long int);
@@ -354,9 +354,9 @@ physics::units::light operator"" _acd(long double);
 physics::units::light operator"" _zcd(long double);
 physics::units::light operator"" _ycd(long double);
 
-physics::units::auto_unit operator"" _angle(long double);
+physics::units::angle operator"" _angle(long double);
 
-physics::units::auto_unit operator"" _solid_angle(long double);
+physics::units::solid_angle operator"" _solid_angle(long double);
 
 physics::units::data operator"" _YB(long double);
 physics::units::data operator"" _ZB(long double);
