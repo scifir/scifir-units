@@ -28,11 +28,6 @@ namespace physics::units
 		return std::chrono::seconds(int(a.get_value()));
 	}
 
-	void time::change_display(physics::units::display_mode new_display_mode)
-	{
-		display_mode = new_display_mode;
-	}
-
 	SCALAR_UNIT_CPP(mass,"g");
 	SCALAR_UNIT_CPP(charge,"C");
 
@@ -40,7 +35,7 @@ namespace physics::units
 	{
 	}
 
-	temperature::temperature(string init_value) : unit(init_value),scalar_unit_crtp<temperature>(init_value)
+	temperature::temperature(string init_value) : unit(),scalar_unit_crtp<temperature>()
 	{
 		if(!isdigit(init_value[0]))
 		{
@@ -92,11 +87,19 @@ namespace physics::units
 				new_real_dimensions[K] = shared_ptr<dimension>(new_real_dimension);
 				new_actual_dimensions[K] = shared_ptr<dimension_abstract>(new_actual_dimension);
 			}
+			else if (final_string == "K")
+			{
+				new_value = stold(init_value.substr(0,i));
+				new_real_dimensions[K] = shared_ptr<dimension>(new_real_dimension);
+				new_actual_dimensions[K] = shared_ptr<dimension_abstract>(new_actual_dimension);
+			}
 			else
 			{
 				throw invalid_argument("Temperature string does not contains °C or °F");
 			}
-			*this = auto_unit(new_value,new_real_dimensions,new_actual_dimensions);
+			//value = new_value;
+			//actual_dimensions = new_actual_dimensions;
+			*this = auto_scalar(new_value,new_real_dimensions,new_actual_dimensions);
 		}
 	}
 
