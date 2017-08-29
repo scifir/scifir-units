@@ -40,7 +40,7 @@ namespace physics::units
 
 			virtual dimension* clone() const
 			{
-				return new T(static_cast<T const &>(*this));
+				return new T(static_cast<const T&>(*this));
 			}
 
 			virtual const string& get_name() const
