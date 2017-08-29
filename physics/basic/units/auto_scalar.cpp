@@ -32,18 +32,21 @@ namespace physics::units
 	{
 		value = x.get_value();
 		actual_dimensions = x.get_actual_dimensions();
+		return *this;
 	}
 
 	auto_scalar& auto_scalar::operator =(auto_unit&& x)
 	{
 		value = move(x.get_value());
 		actual_dimensions = move(x.get_actual_dimensions());
+		return *this;
 	}
 
 	auto_scalar& auto_scalar::operator =(const unit& x)
 	{
 		value = x.get_value();
 		actual_dimensions = x.get_actual_dimensions();
+		return *this;
 	}
 
 	void auto_scalar::operator =(const scalar_unit& x)
