@@ -12,7 +12,7 @@ namespace physics::units
 {
 	enum dimension_symbol
 	{
-		m = 0, angle, solid_angle, s, g, C, K, mol, cd, B
+		m = 0, angle_symbol, solid_angle_symbol, s, g, C, K, mol, cd, B
 	};
 
 	class dimension : public dimension_abstract

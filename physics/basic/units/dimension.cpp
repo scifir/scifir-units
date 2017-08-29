@@ -58,7 +58,7 @@ namespace physics::units
 
 	int dimension_angle::get_enum_type() const
 	{
-		return angle;
+		return angle_symbol;
 	}
 
 	dimension_solid_angle::dimension_solid_angle(prefix_symbol new_prefix) :
@@ -75,7 +75,7 @@ namespace physics::units
 
 	int dimension_solid_angle::get_enum_type() const
 	{
-		return solid_angle;
+		return solid_angle_symbol;
 	}
 
 	dimension_mass::dimension_mass(prefix_symbol new_prefix) :
@@ -208,9 +208,9 @@ namespace physics::units
 		{
 			case m:
 				return new dimension_length();
-			case angle:
+			case angle_symbol:
 				return new dimension_angle();
-			case solid_angle:
+			case solid_angle_symbol:
 				return new dimension_solid_angle();
 			case g:
 				return new dimension_mass();

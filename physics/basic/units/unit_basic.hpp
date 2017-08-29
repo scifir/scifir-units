@@ -50,6 +50,8 @@ namespace physics::units
 
 	SCALAR_UNIT_HPP(light);
 	SCALAR_UNIT_HPP(data);
+	SCALAR_UNIT_HPP(angle);
+	SCALAR_UNIT_HPP(solid_angle);
 }
 
 wostream& operator <<(wostream&, const physics::units::time&);

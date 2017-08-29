@@ -142,6 +142,8 @@ namespace physics::units
 
 	SCALAR_UNIT_CPP(light,"cd");
 	SCALAR_UNIT_CPP(data,"B");
+	SCALAR_UNIT_CPP(angle,"angle");
+	SCALAR_UNIT_CPP(solid_angle,"solid_angle");
 }
 
 wostream& operator <<(wostream& os, const physics::units::time& x)
