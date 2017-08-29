@@ -332,18 +332,6 @@ namespace physics::units
 		return value;
 	}
 
-	/// Returns true if the unit is defined
-	bool unit::is_defined() const
-	{
-		return value.is_defined();
-	}
-
-	/// Invalidates the function
-	void unit::invalidate(int x)
-	{
-		value.invalidate(x);
-	}
-
 	wstring unit::display(int number_of_decimals) const
 	{
 		/*locale loc = locale("en_US.UTF8");

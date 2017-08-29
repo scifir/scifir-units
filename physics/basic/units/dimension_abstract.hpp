@@ -32,7 +32,11 @@ namespace physics::units
 			dimension_abstract(prefix&,int);
 			virtual dimension_abstract* clone() const = 0;
 
-			const dimension_prefixes& get_dimension_prefixes() const;
+			inline const dimension_prefixes& get_dimension_prefixes() const
+			{
+				return prefixes;
+			}
+
 			virtual int get_enum_type() const = 0;
 			virtual const string& get_name() const = 0;
 			const int get_scale() const;

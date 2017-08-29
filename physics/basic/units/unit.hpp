@@ -98,8 +98,17 @@ namespace physics::units
 			const vector_actual_dimensions& get_actual_dimensions() const;
 			virtual const math::unit_number& get_value() const;
 
-			bool is_defined() const;
-			void invalidate(int);
+			/// Returns true if it's defined
+			inline bool is_defined() const
+			{
+				return value.is_defined();
+			}
+
+			/// Invalidates the unit for cases when there are errors
+			inline void invalidate(int x)
+			{
+				value.invalidate(x);
+			}
 
 			wstring display(int = 2) const;
 

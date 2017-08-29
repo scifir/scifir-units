@@ -21,7 +21,10 @@ namespace physics::units
 		public:
 			explicit operator std::chrono::seconds() const;
 
-			void change_display(physics::units::display_mode);
+			inline void change_display(physics::units::display_mode new_display_mode)
+			{
+				display_mode = new_display_mode;
+			}
 
 			inline const physics::units::display_mode& get_display_mode() const
 			{

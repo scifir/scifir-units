@@ -51,11 +51,6 @@ namespace physics::units
 		return sum;
 	}
 
-	const dimension_prefixes& dimension_abstract::get_dimension_prefixes() const
-	{
-		return prefixes;
-	}
-
 	float dimension_abstract::get_prefix_base() const
 	{
 		return 10;
