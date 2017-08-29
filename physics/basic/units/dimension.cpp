@@ -27,30 +27,12 @@ namespace physics::units
 	{
 	}
 
-	dimension_length::dimension_length(prefix_symbol new_prefix) :
-		dimension_crtp<dimension_length>(new_prefix)
-	{
-	}
-
-	dimension_length::dimension_length(prefix& new_prefix) : dimension_crtp<dimension_length>(new_prefix)
-	{
-	}
-
 	const string dimension_length::name = "meter";
 	const string dimension_length::symbol = "m";
 
 	int dimension_length::get_enum_type() const
 	{
 		return m;
-	}
-
-	dimension_angle::dimension_angle(prefix_symbol new_prefix) :
-		dimension_crtp<dimension_angle>(new_prefix)
-	{
-	}
-
-	dimension_angle::dimension_angle(prefix& new_prefix) : dimension_crtp<dimension_angle>(new_prefix)
-	{
 	}
 
 	const string dimension_angle::name = "angle";
@@ -61,30 +43,12 @@ namespace physics::units
 		return angle_symbol;
 	}
 
-	dimension_solid_angle::dimension_solid_angle(prefix_symbol new_prefix) :
-		dimension_crtp<dimension_solid_angle>(new_prefix)
-	{
-	}
-
-	dimension_solid_angle::dimension_solid_angle(prefix& new_prefix) : dimension_crtp<dimension_solid_angle>(new_prefix)
-	{
-	}
-
 	const string dimension_solid_angle::name = "solid angle";
 	const string dimension_solid_angle::symbol = "solid_angle";
 
 	int dimension_solid_angle::get_enum_type() const
 	{
 		return solid_angle_symbol;
-	}
-
-	dimension_mass::dimension_mass(prefix_symbol new_prefix) :
-		dimension_crtp<dimension_mass>(new_prefix)
-	{
-	}
-
-	dimension_mass::dimension_mass(prefix& new_prefix) : dimension_crtp<dimension_mass>(new_prefix)
-	{
 	}
 
 	const string dimension_mass::name = "gram";
@@ -95,30 +59,12 @@ namespace physics::units
 		return g;
 	}
 
-	dimension_time::dimension_time(prefix_symbol new_prefix) :
-		dimension_crtp<dimension_time>(new_prefix)
-	{
-	}
-
-	dimension_time::dimension_time(prefix& new_prefix) : dimension_crtp<dimension_time>(new_prefix)
-	{
-	}
-
 	const string dimension_time::name = "second";
 	const string dimension_time::symbol = "s";
 
 	int dimension_time::get_enum_type() const
 	{
 		return s;
-	}
-
-	dimension_charge::dimension_charge(prefix_symbol new_prefix) :
-		dimension_crtp<dimension_charge>(new_prefix)
-	{
-	}
-
-	dimension_charge::dimension_charge(prefix& new_prefix) : dimension_crtp<dimension_charge>(new_prefix)
-	{
 	}
 
 	const string dimension_charge::name = "coulomb";
@@ -129,30 +75,12 @@ namespace physics::units
 		return A;
 	}
 
-	dimension_temperature::dimension_temperature(prefix_symbol new_prefix) :
-		dimension_crtp<dimension_temperature>(new_prefix)
-	{
-	}
-
-	dimension_temperature::dimension_temperature(prefix& new_prefix) : dimension_crtp<dimension_temperature>(new_prefix)
-	{
-	}
-
 	const string dimension_temperature::name = "kelvin";
 	const string dimension_temperature::symbol = "K";
 
 	int dimension_temperature::get_enum_type() const
 	{
 		return K;
-	}
-
-	dimension_mole::dimension_mole(prefix_symbol new_prefix) :
-		dimension_crtp<dimension_mole>(new_prefix)
-	{
-	}
-
-	dimension_mole::dimension_mole(prefix& new_prefix) : dimension_crtp<dimension_mole>(new_prefix)
-	{
 	}
 
 	const string dimension_mole::name = "mole";
@@ -163,30 +91,12 @@ namespace physics::units
 		return mol;
 	}
 
-	dimension_light::dimension_light(prefix_symbol new_prefix) :
-		dimension_crtp<dimension_light>(new_prefix)
-	{
-	}
-
-	dimension_light::dimension_light(prefix& new_prefix) : dimension_crtp<dimension_light>(new_prefix)
-	{
-	}
-
 	const string dimension_light::name = "candela";
 	const string dimension_light::symbol = "cd";
 
 	int dimension_light::get_enum_type() const
 	{
 		return cd;
-	}
-
-	dimension_byte::dimension_byte(prefix_symbol new_prefix) :
-		dimension_crtp<dimension_byte>(new_prefix)
-	{
-	}
-
-	dimension_byte::dimension_byte(prefix& new_prefix) : dimension_crtp<dimension_byte>(new_prefix)
-	{
 	}
 
 	const string dimension_byte::name = "byte";

@@ -79,7 +79,7 @@ namespace physics::units
 	class prefix_yotta: public prefix_crtp<prefix_yotta>
 	{
 		public:
-			prefix_yotta();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -91,7 +91,7 @@ namespace physics::units
 	class prefix_zetta: public prefix_crtp<prefix_zetta>
 	{
 		public:
-			prefix_zetta();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -103,7 +103,7 @@ namespace physics::units
 	class prefix_exa: public prefix_crtp<prefix_exa>
 	{
 		public:
-			prefix_exa();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -115,7 +115,7 @@ namespace physics::units
 	class prefix_peta: public prefix_crtp<prefix_peta>
 	{
 		public:
-			prefix_peta();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -127,7 +127,7 @@ namespace physics::units
 	class prefix_tera: public prefix_crtp<prefix_tera>
 	{
 		public:
-			prefix_tera();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -139,7 +139,7 @@ namespace physics::units
 	class prefix_giga: public prefix_crtp<prefix_giga>
 	{
 		public:
-			prefix_giga();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -151,7 +151,7 @@ namespace physics::units
 	class prefix_mega: public prefix_crtp<prefix_mega>
 	{
 		public:
-			prefix_mega();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -163,7 +163,7 @@ namespace physics::units
 	class prefix_kilo: public prefix_crtp<prefix_kilo>
 	{
 		public:
-			prefix_kilo();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -175,7 +175,7 @@ namespace physics::units
 	class prefix_hecto: public prefix_crtp<prefix_hecto>
 	{
 		public:
-			prefix_hecto();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -187,7 +187,7 @@ namespace physics::units
 	class prefix_deca: public prefix_crtp<prefix_deca>
 	{
 		public:
-			prefix_deca();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -199,7 +199,7 @@ namespace physics::units
 	class prefix_normal: public prefix_crtp<prefix_normal>
 	{
 		public:
-			prefix_normal();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -211,7 +211,7 @@ namespace physics::units
 	class prefix_deci: public prefix_crtp<prefix_deci>
 	{
 		public:
-			prefix_deci();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -223,7 +223,7 @@ namespace physics::units
 	class prefix_centi: public prefix_crtp<prefix_centi>
 	{
 		public:
-			prefix_centi();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -235,7 +235,7 @@ namespace physics::units
 	class prefix_milli: public prefix_crtp<prefix_milli>
 	{
 		public:
-			prefix_milli();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -247,7 +247,7 @@ namespace physics::units
 	class prefix_micro: public prefix_crtp<prefix_micro>
 	{
 		public:
-			prefix_micro();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -259,7 +259,7 @@ namespace physics::units
 	class prefix_nano: public prefix_crtp<prefix_nano>
 	{
 		public:
-			prefix_nano();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -271,7 +271,7 @@ namespace physics::units
 	class prefix_pico: public prefix_crtp<prefix_pico>
 	{
 		public:
-			prefix_pico();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -283,7 +283,7 @@ namespace physics::units
 	class prefix_femto: public prefix_crtp<prefix_femto>
 	{
 		public:
-			prefix_femto();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -295,7 +295,7 @@ namespace physics::units
 	class prefix_atto: public prefix_crtp<prefix_atto>
 	{
 		public:
-			prefix_atto();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -307,7 +307,7 @@ namespace physics::units
 	class prefix_zepto: public prefix_crtp<prefix_zepto>
 	{
 		public:
-			prefix_zepto();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 
@@ -319,7 +319,7 @@ namespace physics::units
 	class prefix_yocto: public prefix_crtp<prefix_yocto>
 	{
 		public:
-			prefix_yocto();
+			using prefix_crtp::prefix_crtp;
 
 			virtual prefix_symbol get_enum_type() const;
 

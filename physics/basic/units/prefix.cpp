@@ -12,10 +12,6 @@ namespace physics::units
 	{
 	}
 
-	prefix_yotta::prefix_yotta() : prefix_crtp<prefix_yotta>()
-	{
-	}
-
 	const int prefix_yotta::conversion_factor = 24;
 	const string prefix_yotta::name = "yotta";
 	const string prefix_yotta::symbol = "Y";
@@ -23,10 +19,6 @@ namespace physics::units
 	prefix_symbol prefix_yotta::get_enum_type() const
 	{
 		return prefix_symbol::yotta;
-	}
-
-	prefix_zetta::prefix_zetta() : prefix_crtp<prefix_zetta>()
-	{
 	}
 
 	const int prefix_zetta::conversion_factor = 21;
@@ -38,10 +30,6 @@ namespace physics::units
 		return prefix_symbol::zetta;
 	}
 
-	prefix_exa::prefix_exa() : prefix_crtp<prefix_exa>()
-	{
-	}
-
 	const int prefix_exa::conversion_factor = 18;
 	const string prefix_exa::name = "exa";
 	const string prefix_exa::symbol = "E";
@@ -49,10 +37,6 @@ namespace physics::units
 	prefix_symbol prefix_exa::get_enum_type() const
 	{
 		return prefix_symbol::exa;
-	}
-
-	prefix_peta::prefix_peta() : prefix_crtp<prefix_peta>()
-	{
 	}
 
 	const int prefix_peta::conversion_factor = 15;
@@ -64,10 +48,6 @@ namespace physics::units
 		return prefix_symbol::peta;
 	}
 
-	prefix_tera::prefix_tera() : prefix_crtp<prefix_tera>()
-	{
-	}
-
 	const int prefix_tera::conversion_factor = 12;
 	const string prefix_tera::name = "tera";
 	const string prefix_tera::symbol = "T";
@@ -75,10 +55,6 @@ namespace physics::units
 	prefix_symbol prefix_tera::get_enum_type() const
 	{
 		return prefix_symbol::tera;
-	}
-
-	prefix_giga::prefix_giga() : prefix_crtp<prefix_giga>()
-	{
 	}
 
 	const int prefix_giga::conversion_factor = 9;
@@ -90,10 +66,6 @@ namespace physics::units
 		return prefix_symbol::giga;
 	}
 
-	prefix_mega::prefix_mega() : prefix_crtp<prefix_mega>()
-	{
-	}
-
 	const int prefix_mega::conversion_factor = 6;
 	const string prefix_mega::name = "mega";
 	const string prefix_mega::symbol = "M";
@@ -101,10 +73,6 @@ namespace physics::units
 	prefix_symbol prefix_mega::get_enum_type() const
 	{
 		return prefix_symbol::mega;
-	}
-
-	prefix_kilo::prefix_kilo() : prefix_crtp<prefix_kilo>()
-	{
 	}
 
 	const int prefix_kilo::conversion_factor = 3;
@@ -116,10 +84,6 @@ namespace physics::units
 		return prefix_symbol::kilo;
 	}
 
-	prefix_hecto::prefix_hecto() : prefix_crtp<prefix_hecto>()
-	{
-	}
-
 	const int prefix_hecto::conversion_factor = 2;
 	const string prefix_hecto::name = "hecto";
 	const string prefix_hecto::symbol = "h";
@@ -127,10 +91,6 @@ namespace physics::units
 	prefix_symbol prefix_hecto::get_enum_type() const
 	{
 		return prefix_symbol::hecto;
-	}
-
-	prefix_deca::prefix_deca() : prefix_crtp<prefix_deca>()
-	{
 	}
 
 	const int prefix_deca::conversion_factor = 1;
@@ -142,10 +102,6 @@ namespace physics::units
 		return prefix_symbol::deca;
 	}
 
-	prefix_normal::prefix_normal() : prefix_crtp<prefix_normal>()
-	{
-	}
-
 	const int prefix_normal::conversion_factor = 0;
 	const string prefix_normal::name = "";
 	const string prefix_normal::symbol = "";
@@ -153,10 +109,6 @@ namespace physics::units
 	prefix_symbol prefix_normal::get_enum_type() const
 	{
 		return prefix_symbol::normal_prefix;
-	}
-
-	prefix_deci::prefix_deci() : prefix_crtp<prefix_deci>()
-	{
 	}
 
 	const int prefix_deci::conversion_factor = -1;
@@ -168,10 +120,6 @@ namespace physics::units
 		return prefix_symbol::deci;
 	}
 
-	prefix_centi::prefix_centi() : prefix_crtp<prefix_centi>()
-	{
-	}
-
 	const int prefix_centi::conversion_factor = -2;
 	const string prefix_centi::name = "centi";
 	const string prefix_centi::symbol = "c";
@@ -179,10 +127,6 @@ namespace physics::units
 	prefix_symbol prefix_centi::get_enum_type() const
 	{
 		return prefix_symbol::centi;
-	}
-
-	prefix_milli::prefix_milli() : prefix_crtp<prefix_milli>()
-	{
 	}
 
 	const int prefix_milli::conversion_factor = -3;
@@ -194,10 +138,6 @@ namespace physics::units
 		return prefix_symbol::milli;
 	}
 
-	prefix_micro::prefix_micro() : prefix_crtp<prefix_micro>()
-	{
-	}
-
 	const int prefix_micro::conversion_factor = -6;
 	const string prefix_micro::name = "micro";
 	const string prefix_micro::symbol = "μ";
@@ -205,10 +145,6 @@ namespace physics::units
 	prefix_symbol prefix_micro::get_enum_type() const
 	{
 		return prefix_symbol::micro;
-	}
-
-	prefix_nano::prefix_nano() : prefix_crtp<prefix_nano>()
-	{
 	}
 
 	const int prefix_nano::conversion_factor = -9;
@@ -220,10 +156,6 @@ namespace physics::units
 		return prefix_symbol::nano;
 	}
 
-	prefix_pico::prefix_pico() : prefix_crtp<prefix_pico>()
-	{
-	}
-
 	const int prefix_pico::conversion_factor = -12;
 	const string prefix_pico::name = "pico";
 	const string prefix_pico::symbol = "p";
@@ -231,10 +163,6 @@ namespace physics::units
 	prefix_symbol prefix_pico::get_enum_type() const
 	{
 		return prefix_symbol::pico;
-	}
-
-	prefix_femto::prefix_femto() : prefix_crtp<prefix_femto>()
-	{
 	}
 
 	const int prefix_femto::conversion_factor = -15;
@@ -246,10 +174,6 @@ namespace physics::units
 		return prefix_symbol::femto;
 	}
 
-	prefix_atto::prefix_atto() : prefix_crtp<prefix_atto>()
-	{
-	}
-
 	const int prefix_atto::conversion_factor = -18;
 	const string prefix_atto::name = "atto";
 	const string prefix_atto::symbol = "a";
@@ -259,10 +183,6 @@ namespace physics::units
 		return prefix_symbol::atto;
 	}
 
-	prefix_zepto::prefix_zepto() : prefix_crtp<prefix_zepto>()
-	{
-	}
-
 	const int prefix_zepto::conversion_factor = -21;
 	const string prefix_zepto::name = "zepto";
 	const string prefix_zepto::symbol = "z";
@@ -270,10 +190,6 @@ namespace physics::units
 	prefix_symbol prefix_zepto::get_enum_type() const
 	{
 		return prefix_symbol::zepto;
-	}
-
-	prefix_yocto::prefix_yocto() : prefix_crtp<prefix_yocto>()
-	{
 	}
 
 	const int prefix_yocto::conversion_factor = -24;

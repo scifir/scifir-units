@@ -34,7 +34,7 @@ namespace physics::units
 	class abbreviation_crtp : public abbreviation
 	{
 		public:
-			abbreviation_crtp(prefix_symbol new_prefix, int new_scale = 1) : abbreviation(new_prefix, new_scale)
+			abbreviation_crtp(prefix_symbol new_prefix = normal_prefix, int new_scale = 1) : abbreviation(new_prefix, new_scale)
 			{
 			}
 
@@ -71,8 +71,7 @@ namespace physics::units
 	class abbreviation_normal: public abbreviation_crtp<abbreviation_normal>
 	{
 		public:
-			abbreviation_normal(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_normal(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -85,8 +84,7 @@ namespace physics::units
 	class abbreviation_hertz: public abbreviation_crtp<abbreviation_hertz>
 	{
 		public:
-			abbreviation_hertz(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_hertz(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -99,8 +97,7 @@ namespace physics::units
 	class abbreviation_newton: public abbreviation_crtp<abbreviation_newton>
 	{
 		public:
-			abbreviation_newton(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_newton(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -113,8 +110,7 @@ namespace physics::units
 	class abbreviation_pascal: public abbreviation_crtp<abbreviation_pascal>
 	{
 		public:
-			abbreviation_pascal(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_pascal(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -127,8 +123,7 @@ namespace physics::units
 	class abbreviation_joule: public abbreviation_crtp<abbreviation_joule>
 	{
 		public:
-			abbreviation_joule(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_joule(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -141,8 +136,7 @@ namespace physics::units
 	class abbreviation_watt: public abbreviation_crtp<abbreviation_watt>
 	{
 		public:
-			abbreviation_watt(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_watt(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -155,8 +149,7 @@ namespace physics::units
 	class abbreviation_ampere: public abbreviation_crtp<abbreviation_ampere>
 	{
 		public:
-			abbreviation_ampere(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_ampere(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -169,8 +162,7 @@ namespace physics::units
 	class abbreviation_volt: public abbreviation_crtp<abbreviation_volt>
 	{
 		public:
-			abbreviation_volt(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_volt(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -183,8 +175,7 @@ namespace physics::units
 	class abbreviation_farad: public abbreviation_crtp<abbreviation_farad>
 	{
 		public:
-			abbreviation_farad(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_farad(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -197,8 +188,7 @@ namespace physics::units
 	class abbreviation_ohm: public abbreviation_crtp<abbreviation_ohm>
 	{
 		public:
-			abbreviation_ohm(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_ohm(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -211,8 +201,7 @@ namespace physics::units
 	class abbreviation_siemens: public abbreviation_crtp<abbreviation_siemens>
 	{
 		public:
-			abbreviation_siemens(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_siemens(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -225,8 +214,7 @@ namespace physics::units
 	class abbreviation_weber: public abbreviation_crtp<abbreviation_weber>
 	{
 		public:
-			abbreviation_weber(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_weber(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -239,8 +227,7 @@ namespace physics::units
 	class abbreviation_tesla: public abbreviation_crtp<abbreviation_tesla>
 	{
 		public:
-			abbreviation_tesla(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_tesla(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -253,8 +240,7 @@ namespace physics::units
 	class abbreviation_henry: public abbreviation_crtp<abbreviation_henry>
 	{
 		public:
-			abbreviation_henry(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_henry(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -267,8 +253,7 @@ namespace physics::units
 	class abbreviation_lumen: public abbreviation_crtp<abbreviation_lumen>
 	{
 		public:
-			abbreviation_lumen(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_lumen(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -281,8 +266,7 @@ namespace physics::units
 	class abbreviation_lux: public abbreviation_crtp<abbreviation_lux>
 	{
 		public:
-			abbreviation_lux(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_lux(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -295,8 +279,7 @@ namespace physics::units
 	class abbreviation_becquerel: public abbreviation_crtp<abbreviation_becquerel>
 	{
 		public:
-			abbreviation_becquerel(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_becquerel(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -309,8 +292,7 @@ namespace physics::units
 	class abbreviation_gray: public abbreviation_crtp<abbreviation_gray>
 	{
 		public:
-			abbreviation_gray(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_gray(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -323,8 +305,7 @@ namespace physics::units
 	class abbreviation_sievert: public abbreviation_crtp<abbreviation_sievert>
 	{
 		public:
-			abbreviation_sievert(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_sievert(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -337,8 +318,7 @@ namespace physics::units
 	class abbreviation_katal: public abbreviation_crtp<abbreviation_katal>
 	{
 		public:
-			abbreviation_katal(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_katal(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -351,8 +331,7 @@ namespace physics::units
 	class abbreviation_angstrom: public abbreviation_crtp<abbreviation_angstrom>
 	{
 		public:
-			abbreviation_angstrom(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_angstrom(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -365,8 +344,7 @@ namespace physics::units
 	class abbreviation_litre: public abbreviation_crtp<abbreviation_litre>
 	{
 		public:
-			abbreviation_litre(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_litre(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -379,8 +357,7 @@ namespace physics::units
 	class abbreviation_minute: public abbreviation_crtp<abbreviation_minute>
 	{
 		public:
-			abbreviation_minute(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_minute(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -393,8 +370,7 @@ namespace physics::units
 	class abbreviation_hour: public abbreviation_crtp<abbreviation_hour>
 	{
 		public:
-			abbreviation_hour(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_hour(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -407,8 +383,7 @@ namespace physics::units
 	class abbreviation_day: public abbreviation_crtp<abbreviation_day>
 	{
 		public:
-			abbreviation_day(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_day(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -421,8 +396,7 @@ namespace physics::units
 	class abbreviation_astronomical_unit: public abbreviation_crtp<abbreviation_astronomical_unit>
 	{
 		public:
-			abbreviation_astronomical_unit(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_astronomical_unit(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -435,8 +409,7 @@ namespace physics::units
 	class abbreviation_parsec: public abbreviation_crtp<abbreviation_parsec>
 	{
 		public:
-			abbreviation_parsec(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_parsec(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -449,8 +422,7 @@ namespace physics::units
 	class abbreviation_electron_volt: public abbreviation_crtp<abbreviation_electron_volt>
 	{
 		public:
-			abbreviation_electron_volt(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_electron_volt(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -463,8 +435,7 @@ namespace physics::units
 	class abbreviation_dalton: public abbreviation_crtp<abbreviation_dalton>
 	{
 		public:
-			abbreviation_dalton(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_dalton(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -477,8 +448,7 @@ namespace physics::units
 	class abbreviation_amu: public abbreviation_crtp<abbreviation_amu>
 	{
 		public:
-			abbreviation_amu(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_amu(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -491,8 +461,7 @@ namespace physics::units
 	class abbreviation_barn: public abbreviation_crtp<abbreviation_barn>
 	{
 		public:
-			abbreviation_barn(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_barn(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -505,8 +474,7 @@ namespace physics::units
 	class abbreviation_molarity: public abbreviation_crtp<abbreviation_molarity>
 	{
 		public:
-			abbreviation_molarity(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_molarity(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -519,8 +487,7 @@ namespace physics::units
 	class abbreviation_particles: public abbreviation_crtp<abbreviation_particles>
 	{
 		public:
-			abbreviation_particles(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_particles(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -533,8 +500,7 @@ namespace physics::units
 	class abbreviation_ppm: public abbreviation_crtp<abbreviation_ppm>
 	{
 		public:
-			abbreviation_ppm(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_ppm(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -547,8 +513,7 @@ namespace physics::units
 	class abbreviation_ppb: public abbreviation_crtp<abbreviation_ppb>
 	{
 		public:
-			abbreviation_ppb(prefix_symbol = normal_prefix, int = 1);
-			abbreviation_ppb(prefix&, int = 1);
+			using abbreviation_crtp::abbreviation_crtp;
 
 			virtual int get_enum_type() const;
 

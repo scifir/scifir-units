@@ -25,14 +25,6 @@ namespace physics::units
 	{
 	}
 
-	abbreviation_normal::abbreviation_normal(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_normal>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_normal::abbreviation_normal(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_normal>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_normal::get_enum_type() const
 	{
 		return abbreviation_symbol::normal_abbreviation;
@@ -42,14 +34,6 @@ namespace physics::units
 	const float abbreviation_normal::factor = 1;
 	const string abbreviation_normal::name = "";
 	const string abbreviation_normal::symbol = "";
-
-	abbreviation_hertz::abbreviation_hertz(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_hertz>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_hertz::abbreviation_hertz(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_hertz>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_hertz::get_enum_type() const
 	{
@@ -61,14 +45,6 @@ namespace physics::units
 	const string abbreviation_hertz::name = "hertz";
 	const string abbreviation_hertz::symbol = "Hz";
 
-	abbreviation_newton::abbreviation_newton(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_newton>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_newton::abbreviation_newton(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_newton>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_newton::get_enum_type() const
 	{
 		return abbreviation_symbol::N;
@@ -78,14 +54,6 @@ namespace physics::units
 	const float abbreviation_newton::factor = 1;
 	const string abbreviation_newton::name = "newton";
 	const string abbreviation_newton::symbol = "N";
-
-	abbreviation_pascal::abbreviation_pascal(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_pascal>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_pascal::abbreviation_pascal(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_pascal>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_pascal::get_enum_type() const
 	{
@@ -97,14 +65,6 @@ namespace physics::units
 	const string abbreviation_pascal::name = "pascal";
 	const string abbreviation_pascal::symbol = "Pa";
 
-	abbreviation_joule::abbreviation_joule(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_joule>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_joule::abbreviation_joule(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_joule>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_joule::get_enum_type() const
 	{
 		return abbreviation_symbol::J;
@@ -114,14 +74,6 @@ namespace physics::units
 	const float abbreviation_joule::factor = 1;
 	const string abbreviation_joule::name = "joule";
 	const string abbreviation_joule::symbol = "J";
-
-	abbreviation_watt::abbreviation_watt(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_watt>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_watt::abbreviation_watt(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_watt>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_watt::get_enum_type() const
 	{
@@ -133,14 +85,6 @@ namespace physics::units
 	const string abbreviation_watt::name = "watt";
 	const string abbreviation_watt::symbol = "W";
 
-	abbreviation_ampere::abbreviation_ampere(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_ampere>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_ampere::abbreviation_ampere(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_ampere>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_ampere::get_enum_type() const
 	{
 		return abbreviation_symbol::A;
@@ -150,14 +94,6 @@ namespace physics::units
 	const float abbreviation_ampere::factor = 1;
 	const string abbreviation_ampere::name = "ampere";
 	const string abbreviation_ampere::symbol = "A";
-
-	abbreviation_volt::abbreviation_volt(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_volt>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_volt::abbreviation_volt(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_volt>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_volt::get_enum_type() const
 	{
@@ -169,14 +105,6 @@ namespace physics::units
 	const string abbreviation_volt::name = "volt";
 	const string abbreviation_volt::symbol = "V";
 
-	abbreviation_farad::abbreviation_farad(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_farad>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_farad::abbreviation_farad(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_farad>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_farad::get_enum_type() const
 	{
 		return abbreviation_symbol::F;
@@ -186,14 +114,6 @@ namespace physics::units
 	const float abbreviation_farad::factor = 1;
 	const string abbreviation_farad::name = "farad";
 	const string abbreviation_farad::symbol = "F";
-
-	abbreviation_ohm::abbreviation_ohm(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_ohm>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_ohm::abbreviation_ohm(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_ohm>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_ohm::get_enum_type() const
 	{
@@ -205,14 +125,6 @@ namespace physics::units
 	const string abbreviation_ohm::name = "ohm";
 	const string abbreviation_ohm::symbol = "Ω";
 
-	abbreviation_siemens::abbreviation_siemens(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_siemens>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_siemens::abbreviation_siemens(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_siemens>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_siemens::get_enum_type() const
 	{
 		return abbreviation_symbol::S;
@@ -222,14 +134,6 @@ namespace physics::units
 	const float abbreviation_siemens::factor = 1;
 	const string abbreviation_siemens::name = "siemens";
 	const string abbreviation_siemens::symbol = "S";
-
-	abbreviation_weber::abbreviation_weber(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_weber>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_weber::abbreviation_weber(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_weber>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_weber::get_enum_type() const
 	{
@@ -241,14 +145,6 @@ namespace physics::units
 	const string abbreviation_weber::name = "weber";
 	const string abbreviation_weber::symbol = "Wb";
 
-	abbreviation_tesla::abbreviation_tesla(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_tesla>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_tesla::abbreviation_tesla(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_tesla>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_tesla::get_enum_type() const
 	{
 		return abbreviation_symbol::T;
@@ -258,14 +154,6 @@ namespace physics::units
 	const float abbreviation_tesla::factor = 1;
 	const string abbreviation_tesla::name = "tesla";
 	const string abbreviation_tesla::symbol = "T";
-
-	abbreviation_henry::abbreviation_henry(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_henry>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_henry::abbreviation_henry(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_henry>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_henry::get_enum_type() const
 	{
@@ -277,14 +165,6 @@ namespace physics::units
 	const string abbreviation_henry::name = "henry";
 	const string abbreviation_henry::symbol = "H";
 
-	abbreviation_lumen::abbreviation_lumen(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_lumen>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_lumen::abbreviation_lumen(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_lumen>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_lumen::get_enum_type() const
 	{
 		return abbreviation_symbol::lm;
@@ -294,14 +174,6 @@ namespace physics::units
 	const float abbreviation_lumen::factor = 1;
 	const string abbreviation_lumen::name = "lumen";
 	const string abbreviation_lumen::symbol = "lm";
-
-	abbreviation_lux::abbreviation_lux(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_lux>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_lux::abbreviation_lux(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_lux>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_lux::get_enum_type() const
 	{
@@ -313,14 +185,6 @@ namespace physics::units
 	const string abbreviation_lux::name = "lux";
 	const string abbreviation_lux::symbol = "lx";
 
-	abbreviation_becquerel::abbreviation_becquerel(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_becquerel>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_becquerel::abbreviation_becquerel(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_becquerel>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_becquerel::get_enum_type() const
 	{
 		return abbreviation_symbol::Bq;
@@ -330,14 +194,6 @@ namespace physics::units
 	const float abbreviation_becquerel::factor = 1;
 	const string abbreviation_becquerel::name = "becquerel";
 	const string abbreviation_becquerel::symbol = "Bq";
-
-	abbreviation_gray::abbreviation_gray(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_gray>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_gray::abbreviation_gray(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_gray>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_gray::get_enum_type() const
 	{
@@ -349,14 +205,6 @@ namespace physics::units
 	const string abbreviation_gray::name = "gray";
 	const string abbreviation_gray::symbol = "Gy";
 
-	abbreviation_sievert::abbreviation_sievert(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_sievert>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_sievert::abbreviation_sievert(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_sievert>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_sievert::get_enum_type() const
 	{
 		return abbreviation_symbol::Sv;
@@ -366,14 +214,6 @@ namespace physics::units
 	const float abbreviation_sievert::factor = 1;
 	const string abbreviation_sievert::name = "sievert";
 	const string abbreviation_sievert::symbol = "Sv";
-
-	abbreviation_katal::abbreviation_katal(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_katal>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_katal::abbreviation_katal(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_katal>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_katal::get_enum_type() const
 	{
@@ -385,14 +225,6 @@ namespace physics::units
 	const string abbreviation_katal::name = "katal";
 	const string abbreviation_katal::symbol = "kat";
 
-	abbreviation_angstrom::abbreviation_angstrom(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_angstrom>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_angstrom::abbreviation_angstrom(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_angstrom>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_angstrom::get_enum_type() const
 	{
 		return abbreviation_symbol::angstrom;
@@ -402,14 +234,6 @@ namespace physics::units
 	const float abbreviation_angstrom::factor = 1;
 	const string abbreviation_angstrom::name = "angstrom";
 	const string abbreviation_angstrom::symbol = "Å";
-
-	abbreviation_litre::abbreviation_litre(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_litre>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_litre::abbreviation_litre(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_litre>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_litre::get_enum_type() const
 	{
@@ -421,14 +245,6 @@ namespace physics::units
 	const string abbreviation_litre::name = "litre";
 	const string abbreviation_litre::symbol = "L";
 
-	abbreviation_minute::abbreviation_minute(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_minute>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_minute::abbreviation_minute(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_minute>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_minute::get_enum_type() const
 	{
 		return abbreviation_symbol::minute;
@@ -438,14 +254,6 @@ namespace physics::units
 	const float abbreviation_minute::factor = 60;
 	const string abbreviation_minute::name = "minute";
 	const string abbreviation_minute::symbol = "min";
-
-	abbreviation_hour::abbreviation_hour(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_hour>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_hour::abbreviation_hour(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_hour>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_hour::get_enum_type() const
 	{
@@ -457,14 +265,6 @@ namespace physics::units
 	const string abbreviation_hour::name = "hour";
 	const string abbreviation_hour::symbol = "h";
 
-	abbreviation_day::abbreviation_day(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_day>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_day::abbreviation_day(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_day>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_day::get_enum_type() const
 	{
 		return abbreviation_symbol::d;
@@ -474,14 +274,6 @@ namespace physics::units
 	const float abbreviation_day::factor = 86400;
 	const string abbreviation_day::name = "day";
 	const string abbreviation_day::symbol = "d";
-
-	abbreviation_astronomical_unit::abbreviation_astronomical_unit(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_astronomical_unit>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_astronomical_unit::abbreviation_astronomical_unit(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_astronomical_unit>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_astronomical_unit::get_enum_type() const
 	{
@@ -493,14 +285,6 @@ namespace physics::units
 	const string abbreviation_astronomical_unit::name = "astronomical_unit";
 	const string abbreviation_astronomical_unit::symbol = "AU";
 
-	abbreviation_parsec::abbreviation_parsec(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_parsec>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_parsec::abbreviation_parsec(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_parsec>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_parsec::get_enum_type() const
 	{
 		return abbreviation_symbol::pc;
@@ -510,14 +294,6 @@ namespace physics::units
 	const float abbreviation_parsec::factor = 30856775814913700;
 	const string abbreviation_parsec::name = "parsec";
 	const string abbreviation_parsec::symbol = "pc";
-
-	abbreviation_electron_volt::abbreviation_electron_volt(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_electron_volt>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_electron_volt::abbreviation_electron_volt(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_electron_volt>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_electron_volt::get_enum_type() const
 	{
@@ -529,14 +305,6 @@ namespace physics::units
 	const string abbreviation_electron_volt::name = "electron_volt";
 	const string abbreviation_electron_volt::symbol = "eV";
 
-	abbreviation_dalton::abbreviation_dalton(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_dalton>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_dalton::abbreviation_dalton(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_dalton>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_dalton::get_enum_type() const
 	{
 		return abbreviation_symbol::Da;
@@ -546,14 +314,6 @@ namespace physics::units
 	const float abbreviation_dalton::factor = 1.6605388628/*e−27*/;
 	const string abbreviation_dalton::name = "dalton";
 	const string abbreviation_dalton::symbol = "Da";
-
-	abbreviation_amu::abbreviation_amu(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_amu>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_amu::abbreviation_amu(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_amu>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_amu::get_enum_type() const
 	{
@@ -565,14 +325,6 @@ namespace physics::units
 	const string abbreviation_amu::name = "amu";
 	const string abbreviation_amu::symbol = "amu";
 
-	abbreviation_barn::abbreviation_barn(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_barn>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_barn::abbreviation_barn(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_barn>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_barn::get_enum_type() const
 	{
 		return abbreviation_symbol::barn;
@@ -582,14 +334,6 @@ namespace physics::units
 	const float abbreviation_barn::factor = 10 ^ -28;
 	const string abbreviation_barn::name = "barn";
 	const string abbreviation_barn::symbol = "b";
-
-	abbreviation_molarity::abbreviation_molarity(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_molarity>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_molarity::abbreviation_molarity(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_molarity>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_molarity::get_enum_type() const
 	{
@@ -601,14 +345,6 @@ namespace physics::units
 	const string abbreviation_molarity::name = "molarity";
 	const string abbreviation_molarity::symbol = "M";
 
-	abbreviation_particles::abbreviation_particles(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_particles>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_particles::abbreviation_particles(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_particles>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_particles::get_enum_type() const
 	{
 		return abbreviation_symbol::particles;
@@ -619,14 +355,6 @@ namespace physics::units
 	const string abbreviation_particles::name = "particles";
 	const string abbreviation_particles::symbol = "particles";
 
-	abbreviation_ppm::abbreviation_ppm(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_ppm>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_ppm::abbreviation_ppm(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_ppm>(new_prefix, new_scale)
-	{
-	}
-
 	int abbreviation_ppm::get_enum_type() const
 	{
 		return abbreviation_symbol::ppm;
@@ -636,14 +364,6 @@ namespace physics::units
 	const float abbreviation_ppm::factor = 1/10^6;
 	const string abbreviation_ppm::name = "parts per million";
 	const string abbreviation_ppm::symbol = "ppm";
-
-	abbreviation_ppb::abbreviation_ppb(prefix_symbol new_prefix, int new_scale) : abbreviation_crtp<abbreviation_ppb>(new_prefix, new_scale)
-	{
-	}
-
-	abbreviation_ppb::abbreviation_ppb(prefix& new_prefix, int new_scale) : abbreviation_crtp<abbreviation_ppb>(new_prefix, new_scale)
-	{
-	}
 
 	int abbreviation_ppb::get_enum_type() const
 	{

@@ -30,11 +30,7 @@ namespace physics::units
 	class dimension_crtp : public dimension
 	{
 		public:
-			dimension_crtp() : dimension()
-			{
-			}
-
-			dimension_crtp(prefix_symbol new_prefix, int new_scale = 1) : dimension(new_prefix, new_scale)
+			dimension_crtp(prefix_symbol new_prefix = normal_prefix, int new_scale = 1) : dimension(new_prefix, new_scale)
 			{
 			}
 
@@ -61,8 +57,7 @@ namespace physics::units
 	class dimension_length: public dimension_crtp<dimension_length>
 	{
 		public:
-			dimension_length(prefix_symbol = normal_prefix);
-			dimension_length(prefix&);
+			using dimension_crtp::dimension_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -73,8 +68,7 @@ namespace physics::units
 	class dimension_angle: public dimension_crtp<dimension_angle>
 	{
 		public:
-			dimension_angle(prefix_symbol = normal_prefix);
-			dimension_angle(prefix&);
+			using dimension_crtp::dimension_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -85,8 +79,7 @@ namespace physics::units
 	class dimension_solid_angle: public dimension_crtp<dimension_solid_angle>
 	{
 		public:
-			dimension_solid_angle(prefix_symbol = normal_prefix);
-			dimension_solid_angle(prefix&);
+			using dimension_crtp::dimension_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -97,8 +90,7 @@ namespace physics::units
 	class dimension_time: public dimension_crtp<dimension_time>
 	{
 		public:
-			dimension_time(prefix_symbol = normal_prefix);
-			dimension_time(prefix&);
+			using dimension_crtp::dimension_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -109,8 +101,7 @@ namespace physics::units
 	class dimension_mass: public dimension_crtp<dimension_mass>
 	{
 		public:
-			dimension_mass(prefix_symbol = normal_prefix);
-			dimension_mass(prefix&);
+			using dimension_crtp::dimension_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -121,8 +112,7 @@ namespace physics::units
 	class dimension_charge: public dimension_crtp<dimension_charge>
 	{
 		public:
-			dimension_charge(prefix_symbol = normal_prefix);
-			dimension_charge(prefix&);
+			using dimension_crtp::dimension_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -133,8 +123,7 @@ namespace physics::units
 	class dimension_temperature: public dimension_crtp<dimension_temperature>
 	{
 		public:
-			dimension_temperature(prefix_symbol = normal_prefix);
-			dimension_temperature(prefix&);
+			using dimension_crtp::dimension_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -145,8 +134,7 @@ namespace physics::units
 	class dimension_mole: public dimension_crtp<dimension_mole>
 	{
 		public:
-			dimension_mole(prefix_symbol = normal_prefix);
-			dimension_mole(prefix&);
+			using dimension_crtp::dimension_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -157,8 +145,7 @@ namespace physics::units
 	class dimension_light: public dimension_crtp<dimension_light>
 	{
 		public:
-			dimension_light(prefix_symbol = normal_prefix);
-			dimension_light(prefix&);
+			using dimension_crtp::dimension_crtp;
 
 			virtual int get_enum_type() const;
 
@@ -169,8 +156,7 @@ namespace physics::units
 	class dimension_byte: public dimension_crtp<dimension_byte>
 	{
 		public:
-			dimension_byte(prefix_symbol = normal_prefix);
-			dimension_byte(prefix&);
+			using dimension_crtp::dimension_crtp;
 
 			virtual int get_enum_type() const;
 			virtual float get_prefix_base() const;
