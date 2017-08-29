@@ -338,10 +338,12 @@ namespace physics::units
 			}
 	};
 
+	auto_scalar norm(const vector_unit&);
 	auto_vector sqrt(const vector_unit&);
 	auto_vector sqrt_nth(const vector_unit&,int);
 	auto_scalar dot_product(const vector_unit&,const vector_unit&);
 	auto_vector cross_product(const vector_unit&,const vector_unit&);
+	math::angle_number angle_between_vectors(const vector_unit&,const vector_unit&);
 	bool same_nd(const vector_unit&,const vector_unit&);
 	bool same_direction(const vector_unit&,const vector_unit&);
 	bool parallel(const vector_unit&,const vector_unit&);

@@ -403,6 +403,11 @@ namespace physics::units
 		}
 	}
 
+	auto_scalar norm(const vector_unit& x)
+	{
+		return auto_scalar(x);
+	}
+
 	auto_vector sqrt(const vector_unit& x)
 	{
 		auto_unit new_value = physics::units::sqrt(x);
@@ -459,6 +464,11 @@ namespace physics::units
 			z.invalidate(13);
 			return auto_vector(z,direction_symbol::left);
 		}
+	}
+
+	math::angle_number angle_between_vectors(const vector_unit& x,const vector_unit& y)
+	{
+		return math::acos(float(dot_product(x,y)/(norm(x)*norm(y))));
 	}
 
 	bool same_nd(const vector_unit& x, const vector_unit& y)
