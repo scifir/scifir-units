@@ -5,6 +5,10 @@ using namespace std;
 
 namespace physics::units
 {
+	scalar_unit::scalar_unit() : unit()
+	{
+	}
+
 	scalar_unit::scalar_unit(math::space_type new_value, string init_value) : unit(new_value, init_value)
 	{
 	}

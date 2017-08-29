@@ -122,6 +122,10 @@ namespace physics::units
 	class unit_crtp : public virtual unit
 	{
 		public:
+			unit_crtp() : unit()
+			{
+			}
+
 			unit_crtp(const unit& new_unit) : unit(new_unit)
 			{
 				if(!new_unit.equal_dimensions(get_dimensions_match()))

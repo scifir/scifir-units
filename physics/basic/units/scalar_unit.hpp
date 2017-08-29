@@ -59,6 +59,7 @@ namespace physics::units
 	class scalar_unit : public virtual unit
 	{
 		public:
+			scalar_unit();
 			scalar_unit(const unit&);
 			explicit scalar_unit(math::space_type,string);
 			explicit scalar_unit(math::unit_number, const vector_actual_dimensions&);
@@ -120,6 +121,10 @@ namespace physics::units
 	class scalar_unit_crtp : public unit_crtp<T>,public scalar_unit
 	{
 		public:
+			scalar_unit_crtp() : unit(),unit_crtp<T>(),scalar_unit()
+			{
+			}
+
 			explicit scalar_unit_crtp(math::space_type new_value,string init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),scalar_unit(new_value,init_value)
 			{
 			}
