@@ -272,29 +272,22 @@ namespace physics::units
 			{
 			}
 
-			template<typename U>
-			auto_vector operator +(const vector_unit_crtp<U>&) const;
-			template<typename U>
-			auto_vector operator -(const vector_unit_crtp<U>&) const;
+			auto_vector operator +(const vector_unit&) const;
+			auto_vector operator -(const vector_unit&) const;
 
-			template<typename U>
-			void operator +=(const vector_unit_crtp<U>& x)
+			void operator +=(const vector_unit& x)
 			{
 				vector_unit::operator+=(x);
 			}
 
-			template<typename U>
-			void operator -=(const vector_unit_crtp<U>& x)
+			void operator -=(const vector_unit& x)
 			{
 				vector_unit::operator-=(x);
 			}
 
-			template<typename U>
-			auto_vector operator *(const scalar_unit_crtp<U>&) const;
-			template<typename U>
-			auto_vector operator /(const scalar_unit_crtp<U>&) const;
-			template<typename U>
-			auto_vector operator ^(const scalar_unit_crtp<U>&) const;
+			auto_vector operator *(const scalar_unit&) const;
+			auto_vector operator /(const scalar_unit&) const;
+			auto_vector operator ^(const scalar_unit&) const;
 
 			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
 			auto_vector operator +(U) const;

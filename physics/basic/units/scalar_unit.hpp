@@ -141,31 +141,23 @@ namespace physics::units
 			{
 			}
 
-			template<typename U>
-			void operator =(const scalar_unit_crtp<U>& x)
+			void operator =(const scalar_unit& x)
 			{
-				scalar_unit::operator=(x);
+				scalar_unit::operator =(x);
 			}
 
-			template<typename U>
-			auto_scalar operator +(const scalar_unit_crtp<U>&) const;
-			template<typename U>
-			auto_scalar operator -(const scalar_unit_crtp<U>&) const;
-			template<typename U>
-			auto_scalar operator *(const scalar_unit_crtp<U>&) const;
-			template<typename U>
-			auto_scalar operator /(const scalar_unit_crtp<U>&) const;
-			template<typename U>
-			auto_scalar operator ^(const scalar_unit_crtp<U>&) const;
+			auto_scalar operator +(const scalar_unit&) const;
+			auto_scalar operator -(const scalar_unit&) const;
+			auto_scalar operator *(const scalar_unit&) const;
+			auto_scalar operator /(const scalar_unit&) const;
+			auto_scalar operator ^(const scalar_unit&) const;
 
-			template<typename U>
-			void operator +=(const scalar_unit_crtp<U>& x)
+			void operator +=(const scalar_unit& x)
 			{
 				scalar_unit::operator+=(x);
 			}
 
-			template<typename U>
-			void operator -=(const scalar_unit_crtp<U>& x)
+			void operator -=(const scalar_unit& x)
 			{
 				scalar_unit::operator-=(x);
 			}

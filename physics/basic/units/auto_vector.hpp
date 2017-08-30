@@ -143,36 +143,31 @@ namespace physics::units
 	}
 
 	template<typename T>
-	template<typename U>
-	auto_vector vector_unit_crtp<T>::operator +(const vector_unit_crtp<U>& x) const
+	auto_vector vector_unit_crtp<T>::operator +(const vector_unit& x) const
 	{
 		return vector_unit::operator+(x);
 	}
 
 	template<typename T>
-	template<typename U>
-	auto_vector vector_unit_crtp<T>::operator -(const vector_unit_crtp<U>& x) const
+	auto_vector vector_unit_crtp<T>::operator -(const vector_unit& x) const
 	{
 		return vector_unit::operator-(x);
 	}
 
 	template<typename T>
-	template<typename U>
-	auto_vector vector_unit_crtp<T>::operator *(const scalar_unit_crtp<U>& x) const
+	auto_vector vector_unit_crtp<T>::operator *(const scalar_unit& x) const
 	{
 		return vector_unit::operator*(x);
 	}
 
 	template<typename T>
-	template<typename U>
-	auto_vector vector_unit_crtp<T>::operator /(const scalar_unit_crtp<U>& x) const
+	auto_vector vector_unit_crtp<T>::operator /(const scalar_unit& x) const
 	{
 		return vector_unit::operator/(x);
 	}
 
 	template<typename T>
-	template<typename U>
-	auto_vector vector_unit_crtp<T>::operator ^(const scalar_unit_crtp<U>& x) const
+	auto_vector vector_unit_crtp<T>::operator ^(const scalar_unit& x) const
 	{
 		return vector_unit::operator^(x);
 	}
