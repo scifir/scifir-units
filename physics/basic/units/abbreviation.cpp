@@ -459,7 +459,7 @@ namespace physics::units
 		string abbreviation_name;
 		string prefix_name;
 		set<string> prefixes_options {"Y", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "u", "n", "p", "f", "a", "z", "y"};
-		if(prefixes_options.count(x.substr(0,1)) and x.substr(0,9) != "particles" and x.substr(0,3) != "ppm" and x.substr(0,3) != "ppb" and x.substr(0,3) != "min" and x != "h" and x != "d")
+		if(prefixes_options.count(x.substr(0,1)) and x.substr(0,9) != "particles" and x.substr(0,3) != "ppm" and x.substr(0,3) != "ppb" and x.substr(0,3) != "min" and x != "h" and x != "d" and x != "Pa")
 		{
 			prefix_name = x.substr(0, 1);
 			abbreviation_name = x.substr(1);

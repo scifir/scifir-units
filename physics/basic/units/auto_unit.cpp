@@ -89,7 +89,7 @@ namespace physics::units
 				abbreviation* new_abbreviation_actual;
 				if(new_dimension_real != nullptr)
 				{
-					shared_ptr<dimension> real_dimension = shared_ptr<dimension>(new_dimension_real);
+					shared_ptr<dimension> real_dimension (new_dimension_real);
 					if(new_scale > 1)
 					{
 						*real_dimension ^= new_scale;
@@ -108,7 +108,7 @@ namespace physics::units
 				}
 				if(new_abbreviation_actual != nullptr)
 				{
-					shared_ptr<abbreviation> add_abbreviation = shared_ptr<abbreviation>(new_abbreviation_actual);
+					shared_ptr<abbreviation> add_abbreviation (new_abbreviation_actual);
 					if(new_scale > 1)
 					{
 						*add_abbreviation ^= new_scale;
@@ -155,7 +155,7 @@ namespace physics::units
 					abbreviation* new_abbreviation_actual;
 					if(new_dimension_real != nullptr)
 					{
-						shared_ptr<dimension> real_dimension = shared_ptr<dimension>(new_dimension_real);
+						shared_ptr<dimension> real_dimension (new_dimension_real);
 						if(new_scale > 1)
 						{
 							*real_dimension ^= new_scale;
@@ -174,7 +174,7 @@ namespace physics::units
 					}
 					if(new_abbreviation_actual != nullptr)
 					{
-						shared_ptr<abbreviation> add_abbreviation = shared_ptr<abbreviation>(new_abbreviation_actual);
+						shared_ptr<abbreviation> add_abbreviation (new_abbreviation_actual);
 						if(new_scale > 1)
 						{
 							*add_abbreviation ^= new_scale;

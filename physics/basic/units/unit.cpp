@@ -227,7 +227,7 @@ namespace physics::units
 				abbreviation* new_actual_abbreviation = create_abbreviation(actual_dimension.second->get_symbol());
 				if(new_actual_abbreviation != nullptr)
 				{
-					shared_ptr<abbreviation> actual_abbreviation = shared_ptr<abbreviation>(new_actual_abbreviation);
+					shared_ptr<abbreviation> actual_abbreviation (new_actual_abbreviation);
 					auto_unit abbreviation_unit("1 " + actual_abbreviation->get_dimensions_match());
 					for(auto& actual_dimension2 : abbreviation_unit.get_actual_dimensions())
 					{
@@ -248,7 +248,7 @@ namespace physics::units
 				abbreviation* new_actual_abbreviation = create_abbreviation(new_actual_dimension.second->get_symbol());
 				if(new_actual_abbreviation != nullptr)
 				{
-					shared_ptr<abbreviation> actual_abbreviation = shared_ptr<abbreviation>(new_actual_abbreviation);
+					shared_ptr<abbreviation> actual_abbreviation (new_actual_abbreviation);
 					auto_unit abbreviation_unit("1 " + actual_abbreviation->get_dimensions_match());
 					for(auto& actual_dimension2 : abbreviation_unit.get_actual_dimensions())
 					{
@@ -457,7 +457,7 @@ namespace physics::units
 				abbreviation* new_abbreviation_actual;
 				if(new_dimension_real != nullptr)
 				{
-					shared_ptr<dimension> actual_dimension = shared_ptr<dimension>(create_dimension(new_dimension));
+					shared_ptr<dimension> actual_dimension (create_dimension(new_dimension));
 					if(new_scale > 1)
 					{
 						*actual_dimension ^= new_scale;
@@ -476,7 +476,7 @@ namespace physics::units
 				}
 				if(new_abbreviation_actual != nullptr)
 				{
-					shared_ptr<abbreviation> add_abbreviation = shared_ptr<abbreviation>(new_abbreviation_actual);
+					shared_ptr<abbreviation> add_abbreviation (new_abbreviation_actual);
 					if(new_scale > 1)
 					{
 						*add_abbreviation ^= new_scale;
@@ -502,7 +502,7 @@ namespace physics::units
 					abbreviation* new_abbreviation_actual;
 					if(new_dimension_real != nullptr)
 					{
-						shared_ptr<dimension> actual_dimension = shared_ptr<dimension>(create_dimension(new_conversion.get_unit_to()));
+						shared_ptr<dimension> actual_dimension (create_dimension(new_conversion.get_unit_to()));
 						if(new_scale > 1)
 						{
 							*actual_dimension ^= new_scale;
@@ -521,7 +521,7 @@ namespace physics::units
 					}
 					if(new_abbreviation_actual != nullptr)
 					{
-						shared_ptr<abbreviation> add_abbreviation = shared_ptr<abbreviation>(new_abbreviation_actual);
+						shared_ptr<abbreviation> add_abbreviation (new_abbreviation_actual);
 						if(new_scale > 1)
 						{
 							*add_abbreviation ^= new_scale;
