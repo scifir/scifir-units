@@ -22,9 +22,8 @@ namespace physics::units
 	{
 	}
 
-	auto_unit::auto_unit(const unit& new_value,string init_value) : real_dimensions(create_real_dimensions(init_value)),unit(new_value)
+	auto_unit::auto_unit(const unit& new_value,string init_value) : real_dimensions(create_real_dimensions(init_value)),unit(new_value,init_value)
 	{
-		change_dimensions(init_value);
 	}
 
 	auto_unit::auto_unit(string init_value) : real_dimensions(create_real_dimensions(initial_dimensions_get_structure(init_value))),unit(init_value)

@@ -40,7 +40,7 @@ namespace physics::units
 
 	unit::unit(const unit& new_value,string init_value) : unit(new_value)
 	{
-		change_dimensions(init_value);
+		actual_dimensions = create_actual_dimensions(init_value);
 	}
 
 	unit::unit(string init_value) : unit()
@@ -301,7 +301,6 @@ namespace physics::units
 			{
 				if(real_dimensions_tmp.count(key.first) == 0 or *real_dimensions_tmp[key.first] != *key.second)
 				{
-					wcout << "here!" << endl;
 					return false;
 				}
 			}
@@ -411,12 +410,22 @@ namespace physics::units
 		for(const auto& map_value : actual_dimensions)
 		{
 			remove_prefix(map_value.second->get_dimension_prefixes(),map_value.second->get_prefix_base());
+			shared_ptr<abbreviation> actual_dimension_ptr = dynamic_pointer_cast<abbreviation>(map_value.second);
+			if (actual_dimension_ptr)
+			{
+				value *= actual_dimension_ptr->get_factor();
+			}
 		}
 		actual_dimensions.clear();
 		for(const auto& map_value : new_dimensions)
 		{
 			add_prefix(map_value.second->get_dimension_prefixes(),map_value.second->get_prefix_base());
 			actual_dimensions[map_value.second->get_enum_type()] = map_value.second;
+			shared_ptr<abbreviation> actual_dimension_ptr = dynamic_pointer_cast<abbreviation>(map_value.second);
+			if (actual_dimension_ptr)
+			{
+				value /= actual_dimension_ptr->get_factor();
+			}
 		}
 	}
 
