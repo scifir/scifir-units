@@ -151,7 +151,7 @@ namespace physics::units
 
 			explicit unit_crtp(const unit& new_unit,string init_value) : unit(new_unit,init_value)
 			{
-				if(!new_unit.equal_dimensions(get_dimensions_match()))
+				if(!equal_dimensions(init_value))
 				{
 					unit::invalidate(7);
 				}
