@@ -73,7 +73,8 @@ namespace physics::units
 
 	unit::unit(const unit& x)
 	{
-		*this = x;
+		actual_dimensions = x.get_actual_dimensions();
+		value = x.get_value();
 	}
 
 	void unit::operator =(const unit& x)
