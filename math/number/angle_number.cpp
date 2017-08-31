@@ -85,7 +85,7 @@ namespace math
 			{
 				math::angle_type decimal_part;
 				math::angle_type value_remainder = modf(value / 360,&decimal_part);
-				value = 360 - abs(value_remainder * 360);
+				value = 360 - std::abs(value_remainder * 360);
 			}
 			if (value > 359.99)
 			{
