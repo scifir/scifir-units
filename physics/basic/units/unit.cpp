@@ -175,20 +175,24 @@ namespace physics::units
 
 	void unit::operator +=(const unit& x)
 	{
+		auto_unit z = x;
+		z.set_same_prefix(get_actual_dimensions());
 		if(!x.equal_dimensions(get_real_dimensions()))
 		{
 			invalidate(8);
 		}
-		unit::value += x.get_value();
+		unit::value += z.get_value();
 	}
 
 	void unit::operator -=(const unit& x)
 	{
+		auto_unit z = x;
+		z.set_same_prefix(get_actual_dimensions());
 		if(!x.equal_dimensions(get_real_dimensions()))
 		{
 			invalidate(9);
 		}
-		unit::value -= x.get_value();
+		unit::value -= z.get_value();
 	}
 
 	unit& unit::operator++()
