@@ -169,6 +169,13 @@ wostream& operator <<(wostream& os, const physics::units::time& x)
 			output << total_of_years << L"y ";
 			remaining_time -= physics::units::time(total_of_years * 365,"d");
 		}
+		physics::units::time one_month("30 d");
+		if (remaining_time >= one_month)
+		{
+			int total_of_months = int(trunc((remaining_time / one_month).get_value()));
+			output << total_of_months << L"m ";
+			remaining_time -= physics::units::time(total_of_months * 30,"d");
+		}
 		physics::units::time one_day("1 d");
 		if (remaining_time >= one_day)
 		{
