@@ -31,6 +31,8 @@ namespace physics::units
 				return display_mode;
 			}
 
+			wstring get_finish_date() const;
+
 		private:
 			physics::units::display_mode display_mode;
 	SCALAR_UNIT_HPP_END();
