@@ -17,6 +17,7 @@ namespace physics::units
 	SCALAR_UNIT_HPP(molar_volume);
 	SCALAR_UNIT_HPP(molar_mass);
 	SCALAR_UNIT_HPP(molar_heat_capacity);
+	SCALAR_UNIT_HPP(molar_enthalpy);
 	SCALAR_UNIT_HPP(molar_entropy);
 	SCALAR_UNIT_HPP(molar_energy);
 	SCALAR_UNIT_HPP(molar_conductivity);

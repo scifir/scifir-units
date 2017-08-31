@@ -15,6 +15,7 @@ namespace physics::units
 	SCALAR_UNIT_CPP(molar_volume,"m3/mol");
 	SCALAR_UNIT_CPP(molar_mass,"g/mol");
 	SCALAR_UNIT_CPP(molar_heat_capacity,"m2*g/s2*K*mol");
+	SCALAR_UNIT_CPP(molar_enthalpy,"m2*g/s2*mol");
 	SCALAR_UNIT_CPP(molar_entropy,"m2*g/s2*K*mol");
 	SCALAR_UNIT_CPP(molar_energy,"m2*g/s2*mol");
 	SCALAR_UNIT_CPP(molar_conductivity,"s3*A2/g*mol");
