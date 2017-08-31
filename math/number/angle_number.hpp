@@ -4,6 +4,7 @@
 #include "math/constants.hpp"
 #include "math/topology/topology.hpp"
 #include "informatics/types/is_number.hpp"
+#include "physics/basic/units/unit.hpp"
 
 #include "boost/math/constants/constants.hpp"
 
@@ -12,6 +13,7 @@
 #include <type_traits>
 
 using namespace std;
+using namespace physics::units;
 
 namespace math
 {
@@ -20,6 +22,7 @@ namespace math
 		public:
 			angle_number();
 			angle_number(math::angle_type);
+			angle_number(const unit&);
 
 			virtual angle_number* clone() const
 			{
