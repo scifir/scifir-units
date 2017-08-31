@@ -169,13 +169,6 @@ wostream& operator <<(wostream& os, const physics::units::time& x)
 			output << total_of_years << L"y ";
 			remaining_time -= physics::units::time(total_of_years * 365,"d");
 		}
-		physics::units::time one_month("30 d");
-		if (remaining_time >= one_month)
-		{
-			int total_of_months = int(trunc((remaining_time / one_month).get_value()));
-			output << total_of_months << L"m ";
-			remaining_time -= physics::units::time(total_of_months * 30,"d");
-		}
 		physics::units::time one_day("1 d");
 		if (remaining_time >= one_day)
 		{
@@ -186,7 +179,6 @@ wostream& operator <<(wostream& os, const physics::units::time& x)
 		physics::units::time one_hour("1 h");
 		if (remaining_time >= one_hour)
 		{
-			remaining_time.change_dimensions("h");
 			int total_of_hours = int(trunc((remaining_time / one_hour).get_value()));
 			output << total_of_hours << L"h ";
 			remaining_time -= physics::units::time(total_of_hours,"h");
@@ -194,7 +186,6 @@ wostream& operator <<(wostream& os, const physics::units::time& x)
 		physics::units::time one_minute("1 min");
 		if (remaining_time >= one_minute)
 		{
-			remaining_time.change_dimensions("min");
 			int total_of_minutes = int(trunc((remaining_time / one_minute).get_value()));
 			output << total_of_minutes << L"min ";
 			remaining_time -= physics::units::time(total_of_minutes,"min");
