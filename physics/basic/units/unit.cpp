@@ -640,7 +640,9 @@ bool operator <(const physics::units::unit& x, const physics::units::unit& y)
 	{
 		throw invalid_argument("Units of different dimensions cannot be compared");
 	}
-	if(x.get_value() < y.get_value())
+	physics::units::auto_unit z = x;
+	z.set_same_prefix(y.get_actual_dimensions());
+	if(z.get_value() < y.get_value())
 	{
 		return true;
 	}
@@ -656,7 +658,9 @@ bool operator >(const physics::units::unit& x, const physics::units::unit& y)
 	{
 		throw invalid_argument("Units of different dimensions cannot be compared");
 	}
-	if(x.get_value() > y.get_value())
+	physics::units::auto_unit z = x;
+	z.set_same_prefix(y.get_actual_dimensions());
+	if(z.get_value() > y.get_value())
 	{
 		return true;
 	}
