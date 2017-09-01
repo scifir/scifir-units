@@ -22,6 +22,20 @@ namespace physics::units
 	SCALAR_UNIT_HPP(molar_energy);
 	SCALAR_UNIT_HPP(molar_conductivity);
 	SCALAR_UNIT_HPP(energy_density);
+
+	class cas_number
+	{
+		public:
+			cas_number(string);
+
+			inline string get_value() const
+			{
+				return value;
+			}
+
+		private:
+			string value;
+	};
 }
 
 #endif // CHEMISTRY_GENERAL_COMPOUNDS_UNITS_HPP_INCLUDED

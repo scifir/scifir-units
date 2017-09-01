@@ -20,4 +20,8 @@ namespace physics::units
 	SCALAR_UNIT_CPP(molar_energy,"m2*g/s2*mol");
 	SCALAR_UNIT_CPP(molar_conductivity,"s3*A2/g*mol");
 	SCALAR_UNIT_CPP(energy_density,"g/m*s2");
+
+	cas_number::cas_number(string new_value) : value(new_value)
+	{
+	}
 }
