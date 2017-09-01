@@ -6,14 +6,22 @@
 #include "units.hpp"
 #include "physics/particles.hpp"
 
+#include <cstdint>
+
+using namespace chemistry;
+
 namespace chemistry
 {
 	template<typename T>
 	class normal_atom : public atom_crtp<T>
 	{
 		public:
-			normal_atom(int new_ionic_charge = 1,int new_neutrons_number = T::neutrons_number) : neutrons_number(new_neutrons_number),ionic_charge(new_ionic_charge),atom_crtp<T>()
+			normal_atom(int new_ionic_charge = 0,int new_neutrons_number = T::neutrons_number) : neutrons_number(new_neutrons_number),ionic_charge(new_ionic_charge),atom_crtp<T>()
 			{
+				if (new_ionic_charge > atom_crtp<T>::get_z())
+				{
+					throw "ionic charge is greater than z";
+				}
 			}
 
 			virtual int get_ionic_charge() const
@@ -26,7 +34,7 @@ namespace chemistry
             	return (atom_crtp<T>::get_z() - get_ionic_charge());
             }
 
-            virtual const unsigned int& get_mass_number() const
+            virtual const unsigned int get_mass_number() const
             {
             	return neutrons_number;
             }
@@ -45,7 +53,8 @@ namespace chemistry
             	int unpaired_electrons = get_electrons_number();
             	for (const auto& bond : atom::get_bonds())
 				{
-					unpaired_electrons -= bond.get_total_electrons();
+					shared_ptr<atomic_bond> bond_lock = bond.lock();
+					//unpaired_electrons -= bond_lock->get_total_electrons();
 				}
 				return unpaired_electrons / 2;
             }
@@ -69,8 +78,8 @@ namespace chemistry
 			}
 
 		private:
-			unsigned int neutrons_number;
-			int ionic_charge;
+			uint8_t neutrons_number;
+			uint8_t ionic_charge;
 	};
 }
 
