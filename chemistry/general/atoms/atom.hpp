@@ -27,7 +27,7 @@ namespace chemistry
 	enum atomic_orbital_type {atomic_orbital_s,atomic_orbital_p,atomic_orbital_d,atomic_orbital_f};
 	enum class atomic_bond_type {ionic,covalent,metallic};
 	enum class atomic_bond_weight {single,dual,triple};
-	enum class crystal_structure {hexagonal};
+	enum class crystal_structure {bcc,hexagonal};
 	enum class magnetic_ordering {diamagnetic,paramagnetic};
 
 	extern vector<vector<int>> electronic_configuration_order;
@@ -316,7 +316,38 @@ namespace chemistry
 
 			virtual const int get_valence_number() const
 			{
-				return T::valence_number;
+				if (get_atomic_group() == IA)
+				{
+					return 1;
+				}
+				else if(get_atomic_group() == IIA)
+				{
+					return 2;
+				}
+				else if(get_atomic_group() == IIIA)
+				{
+					return 3;
+				}
+				else if(get_atomic_group() == IVA)
+				{
+					return 4;
+				}
+				else if(get_atomic_group() == VA)
+				{
+					return 5;
+				}
+				else if(get_atomic_group() == VIA)
+				{
+					return 6;
+				}
+				else if(get_atomic_group() == VIIA)
+				{
+					return 7;
+				}
+				else if(get_atomic_group() == VIIIA)
+				{
+					return 8;
+				}
 			}
 
 			virtual const length& get_atomic_radius() const
@@ -411,7 +442,7 @@ namespace chemistry
 
 			virtual bool is_common_isotope() const
             {
-            	return (get_mass_number() == T::neutrons_number);
+            	return (get_mass_number() == T::mass_number);
             }
 	};
 

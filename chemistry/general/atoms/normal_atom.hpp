@@ -16,7 +16,7 @@ namespace chemistry
 	class normal_atom : public atom_crtp<T>
 	{
 		public:
-			normal_atom(int new_ionic_charge = 0,int new_neutrons_number = T::neutrons_number) : neutrons_number(new_neutrons_number),ionic_charge(new_ionic_charge),atom_crtp<T>()
+			normal_atom(int new_ionic_charge = 0,int new_neutrons_number = T::mass_number) : mass_number(new_neutrons_number),ionic_charge(new_ionic_charge),atom_crtp<T>()
 			{
 				if (new_ionic_charge > atom_crtp<T>::get_z())
 				{
@@ -36,7 +36,7 @@ namespace chemistry
 
             virtual const unsigned int get_mass_number() const
             {
-            	return neutrons_number;
+            	return mass_number;
             }
 
             virtual string get_electronic_configuration() const // TODO: finish function
@@ -78,7 +78,7 @@ namespace chemistry
 			}
 
 		private:
-			uint8_t neutrons_number;
+			uint8_t mass_number;
 			uint8_t ionic_charge;
 	};
 }
