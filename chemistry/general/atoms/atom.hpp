@@ -348,6 +348,49 @@ namespace chemistry
 				{
 					return 8;
 				}
+				if (get_atomic_group() == IIIB)
+				{
+					return 3;
+				}
+				else if (get_atomic_group() == IVB)
+				{
+					return 4;
+				}
+				else if (get_atomic_group() == VB)
+				{
+					return 5;
+				}
+				else if (get_atomic_group() == VIB)
+				{
+					return 6;
+				}
+				else if (get_atomic_group() == VIIB)
+				{
+					return 7;
+				}
+				else if (get_atomic_group() == VIIIB)
+				{
+					if (get_z() == 26 or get_z() == 44 or get_z() == 76 or get_z() == 108)
+					{
+						return 8;
+					}
+					else if (get_z() == 27 or get_z() == 45 or get_z() == 77 or get_z() == 109)
+					{
+						return 9;
+					}
+					else if (get_z() == 28 or get_z() == 46 or get_z() == 78 or get_z() == 110)
+					{
+						return 10;
+					}
+				}
+				else if (get_atomic_group() == IB)
+				{
+					return 11;
+				}
+				else if (get_atomic_group() == IIB)
+				{
+					return 12;
+				}
 			}
 
 			virtual const length& get_atomic_radius() const
