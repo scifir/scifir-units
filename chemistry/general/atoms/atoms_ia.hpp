@@ -5,13 +5,6 @@
 
 #include "units.hpp"
 
-#define ATOM_HPP(name) using normal_atom::normal_atom; \
-	name()
-
-#define ATOM_CPP(name) name::name() : normal_atom<name>() \
-	{ \
-	}
-
 namespace chemistry
 {
 	class atom_H : public normal_atom<atom_H>
