@@ -57,22 +57,22 @@ namespace chemistry
 			virtual const float get_electronegativity() const = 0;
 			virtual const bool is_radioactive() const = 0;
 
-			virtual const temperature& get_melting_point() const = 0;
+			/*virtual const temperature& get_melting_point() const = 0;
 			virtual const temperature& get_boiling_point() const = 0;
 			virtual const density& get_density_stp() const = 0;
 
 			virtual const molar_enthalpy& get_heat_of_fusion() const = 0;
 			virtual const molar_enthalpy& get_heat_of_vaporization() const = 0;
-			virtual const molar_heat_capacity& get_heat_capacity() const = 0;
+			virtual const molar_heat_capacity& get_heat_capacity() const = 0;*/
 
 			virtual const molar_energy& get_ionization_energy() const = 0;
 			virtual const length& get_covalent_radius() const = 0;
 			virtual const length& get_van_der_waals_radius() const = 0;
 
-			virtual const crystal_structure get_crystal_structure() const = 0;
+			/*virtual const crystal_structure get_crystal_structure() const = 0;
 			virtual const thermal_conductivity& get_thermal_conductivity() const = 0;
 			virtual const magnetic_ordering& get_magnetic_ordering() const = 0;
-			virtual const magnetic_susceptibility& get_magnetic_susceptibility() const = 0;
+			virtual const magnetic_susceptibility& get_magnetic_susceptibility() const = 0;*/
 			virtual const cas_number& get_cas_number() const = 0;
 
 			inline const vector<weak_ptr<atomic_bond>>& get_bonds() const
@@ -185,6 +185,11 @@ namespace chemistry
             inline bool is_actinide() const
             {
             	return (get_atomic_group() == AC);
+            }
+
+            inline bool is_rare_earth() const
+            {
+            	return (is_lanthanide() or is_atom_specimen(atom_symbol::Sc) or is_atom_specimen(atom_symbol::Y));
             }
 
             inline bool is_atomic_group_a() const
@@ -413,7 +418,7 @@ namespace chemistry
 				return T::radioactive;
 			}
 
-			virtual const temperature& get_melting_point() const
+			/*virtual const temperature& get_melting_point() const
 			{
 				return T::melting_point;
 			}
@@ -441,7 +446,7 @@ namespace chemistry
 			virtual const molar_heat_capacity& get_heat_capacity() const
 			{
 				return T::heat_capacity;
-			}
+			}*/
 
 			virtual const molar_energy& get_ionization_energy() const
 			{
@@ -458,7 +463,7 @@ namespace chemistry
 				return T::van_der_waals_radius;
 			}
 
-			virtual const crystal_structure get_crystal_structure() const
+			/*virtual const crystal_structure get_crystal_structure() const
 			{
 				return T::crystal_structure;
 			}
@@ -476,7 +481,7 @@ namespace chemistry
 			virtual const magnetic_susceptibility& get_magnetic_susceptibility() const
 			{
 				return T::magnetic_susceptibility;
-			}
+			}*/
 
 			virtual const cas_number& get_cas_number() const
 			{
