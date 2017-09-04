@@ -326,7 +326,7 @@ namespace chemistry
 				return T::z;
 			}
 
-			virtual const int get_valence_number() const
+			virtual const int get_valence_number() const // TODO: finish this function
 			{
 				if (get_atomic_group() == IA)
 				{
