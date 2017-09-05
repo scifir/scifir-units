@@ -78,7 +78,7 @@ namespace chemistry
 	const string atom_Nh::symbol = "Nh";
 
 	const length atom_Nh::atomic_radius = 170_pm;
-	const mass atom_Nh::standard_atomic_mass = 0;
+	const mass atom_Nh::standard_atomic_mass = 0_amu;
 
 	const molar_energy atom_Nh::ionization_energy ("704.9 kJ/mol");
 	const length atom_Nh::covalent_radius = 180_pm;

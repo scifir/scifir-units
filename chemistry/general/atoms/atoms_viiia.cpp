@@ -70,7 +70,7 @@ namespace chemistry
 	const length atom_Xe::covalent_radius = 140_pm;
 	const length atom_Xe::van_der_waals_radius = 216_pm;
 
-	const cas_number atom_Xe::cas_number (7440-63-3);
+	const cas_number atom_Xe::cas_number ("7440-63-3");
 
 	ATOM_CPP(atom_Rn)
 

@@ -112,7 +112,7 @@ namespace chemistry
 			static const atomic_block block = atomic_block::p;
 
 			static const int z = 49;
-			static const int mass_number = 114.818_amu;
+			static const int mass_number = 66;
 
 			static const length atomic_radius;
 			static const mass standard_atomic_mass;
