@@ -39,28 +39,28 @@ namespace chemistry
 
 	informatics::color atom::get_atomic_color() const
     {
-            	if (get_z() == 1)
-				{
-					return informatics::color(239,239,239);
-				}
-				switch(get_atomic_group())
-				{
-				case IA:
-					return informatics::color(244,212,66);
-				case IIA:
-					return informatics::color(244,128,66);
-				case IIIA:
-					return informatics::color(66,197,244);
-				case IVA:
-					return informatics::color(40,40,40);
-				case VA:
-					return informatics::color(43,145,79);
-				case VIA:
-					return informatics::color(244,66,66);
-				case VIIA:
-					return informatics::color(244,66,220);
-				}
-				return informatics::color(70,70,70);
+		if (get_z() == 1)
+		{
+			return informatics::color(239,239,239);
+		}
+		switch(get_atomic_group())
+		{
+		case IA:
+			return informatics::color(244,212,66);
+		case IIA:
+			return informatics::color(244,128,66);
+		case IIIA:
+			return informatics::color(66,197,244);
+		case IVA:
+			return informatics::color(40,40,40);
+		case VA:
+			return informatics::color(43,145,79);
+		case VIA:
+			return informatics::color(244,66,66);
+		case VIIA:
+			return informatics::color(244,66,220);
+		}
+		return informatics::color(70,70,70);
     }
 
 	atomic_pattern atom::get_atomic_pattern() const
