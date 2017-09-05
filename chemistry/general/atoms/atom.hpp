@@ -97,6 +97,8 @@ namespace chemistry
 				return (x == get_enum_type());
 			}
 
+			virtual bool is_factible() const = 0;
+
 			virtual int get_ionic_charge() const = 0;
 
             inline bool is_ion() const

@@ -24,6 +24,11 @@ namespace chemistry
 				}
 			}
 
+			virtual bool is_factible() const
+			{
+				return true;
+			}
+
 			virtual int get_ionic_charge() const
 			{
 				return ionic_charge;
