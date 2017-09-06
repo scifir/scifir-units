@@ -55,6 +55,29 @@ namespace chemistry
 		return formula_text.str();
 	}
 
+	wstring molecule::get_canonical_formula() const
+	{
+		vector<shared_ptr<atom>> atoms = get_atoms();
+		wostringstream formula_text;
+		for (const auto& atom : atoms)
+		{
+			int atom_number = 0;
+			for (const auto& atom2 : atoms)
+			{
+				if (atom == atom2)
+				{
+					continue;
+				}
+				if (same_specimen(*atom,*atom2))
+				{
+					atom_number++;
+				}
+			}
+			formula_text << atom->get_symbol().c_str() << atom_number;
+		}
+		return formula_text.str();
+	}
+
 	bool molecule::has_atom(atom_symbol x) const
 	{
 		vector<shared_ptr<atom>> atoms = get_atoms();
