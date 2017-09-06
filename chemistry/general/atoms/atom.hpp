@@ -509,6 +509,7 @@ namespace chemistry
 	bool are_isobares(const atom&,const atom&);
 	bool are_isoelectronics(const atom&,const atom&);
 	bool same_element(const atom&,const atom&);
+	bool same_specimen(const atom&,const atom&);
 }
 
 bool operator ==(const chemistry::atom&,const chemistry::atom&);

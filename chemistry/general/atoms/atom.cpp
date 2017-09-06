@@ -320,6 +320,11 @@ namespace chemistry
 		return (x.get_z() == y.get_z() and x.get_mass_number() == y.get_mass_number());
 	}
 
+	bool same_specimen(const atom& x,const atom& y)
+	{
+		return (x.get_enum_type() == y.get_enum_type());
+	}
+
 	atom* get_atom(string atom_specie)
 	{
 		/*switch(atom_specie)
