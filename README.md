@@ -14,4 +14,4 @@ MagickScience has atoms and molecules to use inside scientific software! It's un
 
 ## Team
 
-MagickScience is developed by [Ismael Correa](https://github.com/Iarfen/), a software developer of 26 years old. You can email if you find bugs, request new features, or have any other need, at ismael.correa.castro@gmail.com.
+MagickScience is developed by [Ismael Correa](https://github.com/Iarfen/), a software developer of 27 years old. You can email if you find bugs, request new features, or have any other need, at ismael.correa.castro@gmail.com.
