@@ -46,13 +46,13 @@ namespace chemistry
             }
 
 			wstring get_formula() const; //TODO: pending function
-			wstring get_canonical_formula() const; //TODO: pending function
+			wstring get_canonical_formula() const;
 
-			int get_ionic_charge() const; //TODO: pending function
-            bool is_ion() const; //TODO: pending function
-            bool is_anion() const; //TODO: pending function
-            bool is_cation() const; //TODO: pending function
-            bool is_neutral() const; //TODO: pending function
+			int get_ionic_charge() const;
+            bool is_ion() const;
+            bool is_anion() const;
+            bool is_cation() const;
+            bool is_neutral() const;
 
             inline bool is_very_big_molecule() const
             {

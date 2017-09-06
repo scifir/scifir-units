@@ -78,6 +78,69 @@ namespace chemistry
 		return formula_text.str();
 	}
 
+	int molecule::get_ionic_charge() const
+	{
+		vector<shared_ptr<atom>> atoms = get_atoms();
+		int ionic_charge = 0;
+		for (const auto& atom : atoms)
+		{
+			ionic_charge += atom->get_ionic_charge();
+		}
+		return ionic_charge;
+	}
+
+	bool molecule::is_ion() const
+	{
+		vector<shared_ptr<atom>> atoms = get_atoms();
+		for (const auto& atom : atoms)
+		{
+			if (!atom->is_ion())
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	bool molecule::is_anion() const
+	{
+		vector<shared_ptr<atom>> atoms = get_atoms();
+		for (const auto& atom : atoms)
+		{
+			if (!atom->is_anion())
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	bool molecule::is_cation() const
+	{
+		vector<shared_ptr<atom>> atoms = get_atoms();
+		for (const auto& atom : atoms)
+		{
+			if (!atom->is_cation())
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	bool molecule::is_neutral() const
+	{
+		vector<shared_ptr<atom>> atoms = get_atoms();
+		for (const auto& atom : atoms)
+		{
+			if (!atom->is_neutral())
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
 	bool molecule::has_atom(atom_symbol x) const
 	{
 		vector<shared_ptr<atom>> atoms = get_atoms();
