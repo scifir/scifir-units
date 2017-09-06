@@ -43,7 +43,18 @@ namespace chemistry
 
 			inline atomic_bond_type get_atomic_bond_type()
 			{
-
+				if (atom1.lock()->is_non_metallic() and atom2.lock()->is_metallic())
+				{
+					return ionic;
+				}
+				else if(atom1.lock()->is_non_metallic() and atom2.lock()->is_non_metallic())
+				{
+					return covalent;
+				}
+				else if(atom1.lock()->is_metallic() and atom2.lock()->is_metallic())
+				{
+					return metallic;
+				}
 			}
 
 			inline bool is_flexible() const
