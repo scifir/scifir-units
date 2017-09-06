@@ -19,5 +19,6 @@
 #include "atoms/atoms_viiib.hpp"
 #include "atoms/atoms_ac.hpp"
 #include "atoms/atoms_la.hpp"
+#include "atoms/atoms.hpp"
 
 #endif // CHEMISTRY_GENERAL_ATOMS_HPP_INCLUDED
