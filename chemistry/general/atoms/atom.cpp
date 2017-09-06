@@ -37,7 +37,7 @@ namespace chemistry
 	{
 	}
 
-	void atom::add_bond(const atomic_bond& x)
+	void atom::add_bond(const shared_ptr<atomic_bond>& x)
 	{
 		if (true) // test if the bond has the atom itself at atom1 or atom2
 		{

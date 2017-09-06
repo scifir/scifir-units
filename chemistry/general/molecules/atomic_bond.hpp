@@ -14,7 +14,7 @@ namespace chemistry
 	class atomic_bond
 	{
 		public:
-			atomic_bond(const atom&,const atom&,atomic_bond_weight);
+			atomic_bond(const shared_ptr<atom>&,const shared_ptr<atom>&,atomic_bond_weight);
 
 			inline const length& get_bond_length()
 			{
@@ -43,17 +43,17 @@ namespace chemistry
 
 			inline atomic_bond_type get_atomic_bond_type()
 			{
-				if (atom1.lock()->is_non_metallic() and atom2.lock()->is_metallic())
+				if (atom1.lock()->is_non_metal() and atom2.lock()->is_metallic())
 				{
-					return ionic;
+					return atomic_bond_type::ionic;
 				}
-				else if(atom1.lock()->is_non_metallic() and atom2.lock()->is_non_metallic())
+				else if(atom1.lock()->is_non_metal() and atom2.lock()->is_non_metal())
 				{
-					return covalent;
+					return atomic_bond_type::covalent;
 				}
 				else if(atom1.lock()->is_metallic() and atom2.lock()->is_metallic())
 				{
-					return metallic;
+					return atomic_bond_type::metallic;
 				}
 			}
 
