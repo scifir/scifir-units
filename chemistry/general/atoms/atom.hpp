@@ -99,6 +99,8 @@ namespace chemistry
 
 			virtual bool is_factible() const = 0;
 
+			void add_bond(const atomic_bond&);
+
 			virtual int get_ionic_charge() const = 0;
 
             inline bool is_ion() const

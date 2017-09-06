@@ -37,6 +37,14 @@ namespace chemistry
 	{
 	}
 
+	void atom::add_bond(const atomic_bond& x)
+	{
+		if (true) // test if the bond has the atom itself at atom1 or atom2
+		{
+			bonds.push_back(weak_ptr<atomic_bond>(x));
+		}
+	}
+
 	informatics::color atom::get_atomic_color() const
     {
 		if (get_z() == 1)
