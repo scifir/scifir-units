@@ -14,7 +14,7 @@ namespace chemistry
 	class atomic_bond
 	{
 		public:
-			atomic_bond(const shared_ptr<atom>&,const shared_ptr<atom>&,atomic_bond_weight);
+			atomic_bond(const atom&,const atom&,atomic_bond_weight);
 
 			inline const length& get_bond_length()
 			{
