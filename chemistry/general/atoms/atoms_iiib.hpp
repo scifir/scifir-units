@@ -1,5 +1,5 @@
-#ifndef CHEMISTRY_GENERAL_ATOMS_ATOMS_IB_HPP
-#define CHEMISTRY_GENERAL_ATOMS_ATOMS_IB_HPP
+#ifndef CHEMISTRY_GENERAL_ATOMS_ATOMS_IIIB_HPP
+#define CHEMISTRY_GENERAL_ATOMS_ATOMS_IIIB_HPP
 
 #include "normal_atom.hpp"
 
@@ -7,7 +7,7 @@
 
 namespace chemistry
 {
-class atom_Sc : public normal_atom<atom_Sc>
+	class atom_Sc : public normal_atom<atom_Sc>
 	{
 		public:
 			ATOM_HPP(atom_Sc);
@@ -68,4 +68,4 @@ class atom_Sc : public normal_atom<atom_Sc>
 	};
 }
 
-#endif // CHEMISTRY_GENERAL_ATOMS_ATOMS_IB_HPP
+#endif // CHEMISTRY_GENERAL_ATOMS_ATOMS_IIIB_HPP
