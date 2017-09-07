@@ -1,5 +1,5 @@
-#ifndef CHEMISTRY_GENERAL_ATOMS_HPP_INCLUDED
-#define CHEMISTRY_GENERAL_ATOMS_HPP_INCLUDED
+#ifndef CHEMISTRY_GENERAL_ATOMS_ATOMS_HPP_INCLUDED
+#define CHEMISTRY_GENERAL_ATOMS_ATOMS_HPP_INCLUDED
 
 using namespace std;
 
@@ -25,7 +25,8 @@ using namespace std;
 
 namespace chemistry
 {
-	atom* create_atom(string);
+	atom* create_atom(string,int = 0);
+	atom* create_atom(string,int,int);
 }
 
-#endif // CHEMISTRY_GENERAL_ATOMS_HPP_INCLUDED
+#endif // CHEMISTRY_GENERAL_ATOMS_ATOMS_HPP_INCLUDED
