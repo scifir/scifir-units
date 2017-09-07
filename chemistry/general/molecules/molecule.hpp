@@ -28,7 +28,7 @@ namespace chemistry
 	class molecule
 	{
 		public:
-			molecule(string); // it can be a file path or the contents of a file of a molecule, two cases
+			molecule();
 
 			virtual vector<shared_ptr<atom>> get_atoms() const = 0;
 			virtual vector<shared_ptr<atomic_bond>> get_bonds() const = 0;
@@ -63,6 +63,7 @@ namespace chemistry
 
             bool has_atom(atom_symbol) const;
             bool has_bond(string) const;
+            bool has_bond_group(string) const;
             bool has_functional_group(functional_group) const; //TODO: pending function
 
             bool is_cyclical() const; //TODO: pending function

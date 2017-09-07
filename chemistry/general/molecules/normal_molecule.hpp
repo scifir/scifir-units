@@ -10,10 +10,10 @@ using namespace std;
 
 namespace chemistry
 {
-	class normal_molecule
+	class normal_molecule : public molecule
 	{
 		public:
-			normal_molecule();
+			normal_molecule(string);
 
 			virtual vector<shared_ptr<atom>> get_atoms() const;
 			virtual vector<shared_ptr<atomic_bond>> get_bonds() const;

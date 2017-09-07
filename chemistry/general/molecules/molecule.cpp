@@ -4,6 +4,10 @@ using namespace std;
 
 namespace chemistry
 {
+	molecule::molecule()
+	{
+	}
+
 	mass molecule::get_standard_atomic_mass() const
 	{
 		vector<shared_ptr<atom>> atoms = get_atoms();
@@ -64,10 +68,6 @@ namespace chemistry
 			int atom_number = 0;
 			for (const auto& atom2 : atoms)
 			{
-				if (atom == atom2)
-				{
-					continue;
-				}
 				if (same_specimen(*atom,*atom2))
 				{
 					atom_number++;
@@ -167,9 +167,17 @@ namespace chemistry
 		return false;
 	}
 
-	bool molecule::has_functional_group(functional_group x) const
+	bool molecule::has_bond_group(string x) const
 	{
 
+	}
+
+	bool molecule::has_functional_group(functional_group x) const
+	{
+		if (x == functional_group::carbonyl)
+		{
+			return has_bond("C=0");
+		}
 	}
 
 	bool molecule::is_cyclical() const
