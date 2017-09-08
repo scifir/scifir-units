@@ -24,6 +24,11 @@ namespace chemistry
 				}
 			}
 
+			virtual bool is_exotic() const
+			{
+				return false;
+			}
+
 			virtual bool is_factible() const
 			{
 				return true;

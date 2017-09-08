@@ -247,6 +247,8 @@ namespace chemistry
             	return !is_common_isotope();
             }
 
+            virtual bool is_exotic() const = 0;
+
             informatics::color get_atomic_color() const; // TODO: finish function
 
 			atomic_pattern get_atomic_pattern() const;
