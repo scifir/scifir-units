@@ -32,6 +32,27 @@ namespace chemistry
 
 			virtual bool is_factible() const
 			{
+				if (get_ionic_charge() > atom_crtp<T>::get_z())
+				{
+					return false;
+				}
+				if (atom:is_atomic_group_a())
+				{
+					if (atom::is_atom_specimen(atom_symbol::H) or atom::is_atom_specimen(atom_symbol::He))
+					{
+						if ((get_ionic_charge() < 0) and (abs(get_ionic_charge()) > (2 - atom_crtp<T>::get_z())))
+						{
+							return false;
+						}
+					}
+					else
+					{
+						if ((get_ionic_charge() < 0) and (abs(get_ionic_charge()) > (8 - atom_crtp<T>::get_z())))
+						{
+							return false;
+						}
+					}
+				}
 				return true;
 			}
 

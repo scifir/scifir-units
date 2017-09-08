@@ -34,6 +34,8 @@ namespace chemistry
 			virtual vector<shared_ptr<atomic_bond>> get_bonds() const = 0;
 			virtual int get_total_atoms() const = 0;
 
+			bool is_factible() const;
+
 			mass get_standard_atomic_mass() const;
 			mass get_real_mass() const;
 			mass get_real_mass_simplified() const;

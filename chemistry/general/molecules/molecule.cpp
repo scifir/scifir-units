@@ -8,6 +8,19 @@ namespace chemistry
 	{
 	}
 
+	bool molecule::is_factible() const
+	{
+		vector<shared_ptr<atom>> atoms = get_atoms();
+		for (const auto& atom: atoms)
+		{
+			if (!atom->is_factible())
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
 	mass molecule::get_standard_atomic_mass() const
 	{
 		vector<shared_ptr<atom>> atoms = get_atoms();
