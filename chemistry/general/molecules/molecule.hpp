@@ -97,6 +97,9 @@ namespace chemistry
             void print() const; //TODO: pending function
             void print_image_2d() const; //TODO: pending function
             void print_image_3d() const; //TODO: pending function
+
+            virtual void save(string,string) const = 0;
+
 		private:
 			tuple<shared_ptr<atom>,math::point_3d> get_image_3d_calculate_atom_position(shared_ptr<atom>,tuple<shared_ptr<atom>,math::point_3d>,tuple<shared_ptr<atom>,math::point_3d>) const; //TODO: pending function
 			void get_atoms_image_3d(vector<tuple<shared_ptr<atom>,math::point_3d>>) const; //TODO: pending function

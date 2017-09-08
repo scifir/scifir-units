@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
 using namespace rapidxml;
 using namespace std;
@@ -43,8 +44,11 @@ namespace chemistry
 				int atom2_index = stoi(atom2) - 1;
 				shared_ptr<atomic_bond> new_atomic_bond = make_shared<atomic_bond>(atoms[atom1_index],atoms[atom2_index],atomic_bond_weight::single);
 				bonds.push_back(new_atomic_bond);
-				atoms[atom1_index]->add_bond(new_atomic_bond);
-				atoms[atom2_index]->add_bond(new_atomic_bond);
+				if (!atoms[atom1_index]->bonded_to(*atoms[atom2_index]))
+				{
+					atoms[atom1_index]->add_bond(new_atomic_bond);
+					atoms[atom2_index]->add_bond(new_atomic_bond);
+				}
 			}
 			// detect if the bond is double or triple to get the weight
 			atom1_index++;
@@ -69,5 +73,53 @@ namespace chemistry
 	int normal_molecule::get_total_atoms() const
 	{
 		return atoms.size();
+	}
+
+	void normal_molecule::save(string file_path,string file_name) const
+	{
+		ostringstream file_content;
+		file_content << "<molecule>";
+		file_content << "\n\t<atoms>";
+		int atoms_count = 0;
+		for (const auto& atom : atoms)
+		{
+			file_content << atom->get_file_format();
+			atoms_count++;
+			if (atoms_count < atoms.size())
+			{
+				file_content << " ";
+			}
+		}
+		file_content << "<atoms>";
+		file_content << "\n\t<bonds>";
+		int atom1_index = 0;
+		for (const auto& atom1 : atoms)
+		{
+			int atom2_index = 0;
+			int bonds_count = 0;
+			for (const auto& atom2 : atoms)
+			{
+				if (atom1->bonded_to(*atom2))
+				{
+					file_content << (atom2_index + 1);
+					bonds_count++;
+					if (bonds_count < atom1->get_bonds_number())
+					{
+						file_content << " ";
+					}
+				}
+				atom2_index++;
+			}
+			atom1_index++;
+			if (atom1_index != atoms.size())
+			{
+				file_content << ";";
+			}
+		}
+		file_content << "</bonds>";
+		file_content << "\n</molecule>";
+		FILE* new_file = fopen(file_name.c_str(),"w");
+		fputs(file_content.str().c_str(),new_file);
+		fclose(new_file);
 	}
 }

@@ -2,6 +2,7 @@
 #define NORMAL_MOLECULE_HPP_INCLUDED
 
 #include <memory>
+#include <string>
 #include <vector>
 
 #include "chemistry/general/molecules/molecule.hpp"
@@ -19,6 +20,8 @@ namespace chemistry
 			virtual vector<shared_ptr<atomic_bond>> get_bonds() const;
 			virtual vector<vector<bool>> get_bonds_graph() const;
 			virtual int get_total_atoms() const;
+
+			virtual void save(string,string) const;
 
 		private:
 			vector<shared_ptr<atom>> atoms;
