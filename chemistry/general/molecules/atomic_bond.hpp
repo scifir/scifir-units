@@ -16,6 +16,16 @@ namespace chemistry
 		public:
 			atomic_bond(const shared_ptr<atom>&,const shared_ptr<atom>&,atomic_bond_weight);
 
+			inline const weak_ptr<atom>& get_atom1() const
+			{
+				return atom1;
+			}
+
+			inline const weak_ptr<atom>& get_atom2() const
+			{
+				return atom2;
+			}
+
 			inline const length& get_bond_length()
 			{
 				return bond_length;
@@ -26,19 +36,21 @@ namespace chemistry
 				//return bond_enthalpy;
 			}*/
 
-			bool is_covalent() const
+			inline bool is_covalent() const
 			{
 				return (is_covalent_polar() or is_covalent_apolar());
 			}
 
-			bool is_covalent_polar() const
+			inline bool is_covalent_polar() const
 			{
-
+				return !is_covalent_apolar();
 			}
 
-			bool is_covalent_apolar() const
+			inline bool is_covalent_apolar() const
 			{
-
+				shared_ptr<atom> atom1_lock = atom1.lock();
+				shared_ptr<atom> atom2_lock = atom2.lock();
+				return (atom1_lock->get_electronegativity() == atom2_lock->get_electronegativity());
 			}
 
 			inline atomic_bond_type get_atomic_bond_type()
