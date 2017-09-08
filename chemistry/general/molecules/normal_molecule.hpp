@@ -15,10 +15,10 @@ namespace chemistry
 	{
 		public:
 			normal_molecule(string);
+			normal_molecule(vector<shared_ptr<atom>>,vector<shared_ptr<atomic_bond>>);
 
 			virtual vector<shared_ptr<atom>> get_atoms() const;
 			virtual vector<shared_ptr<atomic_bond>> get_bonds() const;
-			virtual vector<vector<bool>> get_bonds_graph() const;
 			virtual int get_total_atoms() const;
 
 			virtual void save(string,string) const;
@@ -26,7 +26,6 @@ namespace chemistry
 		private:
 			vector<shared_ptr<atom>> atoms;
 			vector<shared_ptr<atomic_bond>> bonds;
-			vector<vector<bool>> bonds_graph;
 	};
 }
 

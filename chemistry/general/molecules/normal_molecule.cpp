@@ -13,14 +13,23 @@ using namespace std;
 
 namespace chemistry
 {
-	normal_molecule::normal_molecule(string new_file) : atoms(),bonds(),bonds_graph(),molecule()
+	normal_molecule::normal_molecule(string new_file) : atoms(),bonds(),molecule()
 	{
 		xml_document<> doc;
+		if (new_file.substr(0,10) == "<molecule>")
+		{
+			char * cstr = new char [new_file.length()+1];
+			std::strcpy (cstr, new_file.c_str());
+			doc.parse<0>(cstr);
+		}
+		else
+		{
+			ifstream theFile (new_file);
+			vector<char> buffer((istreambuf_iterator<char>(theFile)), istreambuf_iterator<char>());
+			buffer.push_back('\0');
+			doc.parse<0>(&buffer[0]);
+		}
 		xml_node<> * root_node;
-		ifstream theFile (new_file);
-		vector<char> buffer((istreambuf_iterator<char>(theFile)), istreambuf_iterator<char>());
-		buffer.push_back('\0');
-		doc.parse<0>(&buffer[0]);
 		root_node = doc.first_node("molecule");
 		xml_node<> * atoms_node = root_node->first_node("atoms");
 		vector<string> file_atoms = vector<string>();
@@ -43,9 +52,9 @@ namespace chemistry
 			{
 				int atom2_index = stoi(atom2) - 1;
 				shared_ptr<atomic_bond> new_atomic_bond = make_shared<atomic_bond>(atoms[atom1_index],atoms[atom2_index],atomic_bond_weight::single);
-				bonds.push_back(new_atomic_bond);
 				if (!atoms[atom1_index]->bonded_to(*atoms[atom2_index]))
 				{
+					bonds.push_back(new_atomic_bond);
 					atoms[atom1_index]->add_bond(new_atomic_bond);
 					atoms[atom2_index]->add_bond(new_atomic_bond);
 				}
@@ -53,6 +62,10 @@ namespace chemistry
 			// detect if the bond is double or triple to get the weight
 			atom1_index++;
 		}
+	}
+
+	normal_molecule::normal_molecule(vector<shared_ptr<atom>> new_atoms,vector<shared_ptr<atomic_bond>> new_bonds) : atoms(new_atoms),bonds(new_bonds),molecule()
+	{
 	}
 
 	vector<shared_ptr<atom>> normal_molecule::get_atoms() const
@@ -63,11 +76,6 @@ namespace chemistry
 	vector<shared_ptr<atomic_bond>> normal_molecule::get_bonds() const
 	{
 		return bonds;
-	}
-
-	vector<vector<bool>> normal_molecule::get_bonds_graph() const
-	{
-		return bonds_graph;
 	}
 
 	int normal_molecule::get_total_atoms() const
