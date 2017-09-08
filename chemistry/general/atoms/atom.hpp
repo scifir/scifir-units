@@ -257,7 +257,7 @@ namespace chemistry
 
 			molecular_geometry get_molecular_geometry() const;
 
-			bool is_valence_full() const; // TODO: finish function
+			bool is_valence_full() const;
 
 			bool is_chiral() const; //TODO: finish function
 

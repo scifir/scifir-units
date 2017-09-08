@@ -216,20 +216,24 @@ namespace chemistry
 	}
 
 	bool atom::is_valence_full() const
+	{
+		if(is_atomic_group_a())
+		{
+			if((is_atom_specimen(atom_symbol::H) or is_atom_specimen(atom_symbol::He)) and get_valence_electrons_number() == 2)
 			{
-				if(is_atomic_group_a())
-				{
-					if(get_valence_electrons_number() == 2 or get_valence_electrons_number() == 8)
-					{
-						return true;
-					}
-					else
-					{
-						return false;
-					}
-				}
+				return true;
+			}
+			else if(get_valence_electrons_number() == 8)
+			{
+				return true;
+			}
+			else
+			{
 				return false;
 			}
+		}
+		return false;
+	}
 
 	bool atom::is_chiral() const
 	{
