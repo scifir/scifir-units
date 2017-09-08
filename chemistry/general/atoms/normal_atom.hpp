@@ -36,7 +36,7 @@ namespace chemistry
 				{
 					return false;
 				}
-				if (atom:is_atomic_group_a())
+				if (atom::is_atomic_group_a())
 				{
 					if (atom::is_atom_specimen(atom_symbol::H) or atom::is_atom_specimen(atom_symbol::He))
 					{
