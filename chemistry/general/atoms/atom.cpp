@@ -1,4 +1,5 @@
 #include "atom.hpp"
+#include "../molecules/atomic_bond.hpp"
 
 #include <cmath>
 #include <iostream>
@@ -39,9 +40,29 @@ namespace chemistry
 
 	void atom::add_bond(const shared_ptr<atomic_bond>& x)
 	{
-		if (true) // test if the bond has the atom itself at atom1 or atom2
+		shared_ptr<atom> bond_atom1 = x->get_atom1().lock();
+		shared_ptr<atom> bond_atom2 = x->get_atom2().lock();
+		if (this == &*bond_atom1 or this == &*bond_atom2)
 		{
 			bonds.push_back(weak_ptr<atomic_bond>(x));
+		}
+	}
+
+	bool atom::bonded_to(const atom& x) const
+	{
+		if (this == &x)
+		{
+			return false;
+		}
+		for (const auto& bond : bonds)
+		{
+			shared_ptr<atomic_bond> bond_lock = bond.lock();
+			shared_ptr<atom> atom1_lock = bond_lock->get_atom1().lock();
+			shared_ptr<atom> atom2_lock = bond_lock->get_atom2().lock();
+			if (&x == &*atom1_lock or &x == &*atom2_lock)
+			{
+				return true;
+			}
 		}
 	}
 

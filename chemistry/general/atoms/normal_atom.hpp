@@ -7,6 +7,7 @@
 #include "physics/particles.hpp"
 
 #include <cstdint>
+#include <sstream>
 
 using namespace chemistry;
 
@@ -85,6 +86,17 @@ namespace chemistry
 
 			virtual void print_image_3d() const // TODO: finish function
 			{
+			}
+
+			virtual string get_file_format() const
+			{
+				ostringstream output;
+				output << atom_crtp<T>::get_symbol();
+				if (atom::is_uncommon_isotope())
+				{
+					output << "[" << mass_number << "]";
+				}
+				return output.str();
 			}
 
 		private:

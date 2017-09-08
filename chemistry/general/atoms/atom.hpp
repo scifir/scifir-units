@@ -101,6 +101,8 @@ namespace chemistry
 
 			void add_bond(const shared_ptr<atomic_bond>&);
 
+			bool bonded_to(const atom&) const;
+
 			virtual int get_ionic_charge() const = 0;
 
             inline bool is_ion() const
@@ -285,6 +287,9 @@ namespace chemistry
             //virtual c_canvas_t get_image_2d() const = 0; // TODO: finish function
             //virtual c_canvas_t get_detailed_image_2d() const = 0; // TODO: finish function
             //virtual GLObject get_image_3d() const = 0; // TODO: finish function
+
+            virtual string get_file_format() const = 0;
+
 		private:
 			vector<weak_ptr<atomic_bond>> bonds;
 	};
