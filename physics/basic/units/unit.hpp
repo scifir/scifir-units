@@ -30,7 +30,9 @@ namespace physics::units
 			explicit unit(string);
 			unit(const unit&);
 
-			void operator =(const unit&);
+			unit& operator =(const unit&);
+
+			virtual unit* clone() const = 0;
 
 			explicit operator float() const;
 
@@ -165,9 +167,9 @@ namespace physics::units
 			{
 			}
 
-			virtual T* clone() const
+			virtual unit* clone() const
 			{
-				return new T(static_cast<const T&>(*this));
+				return new T(dynamic_cast<const T&>(*this));
 			}
 
 			virtual string get_dimensions_match() const

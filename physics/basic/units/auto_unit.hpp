@@ -21,6 +21,8 @@ namespace physics::units
 			auto_unit& operator =(auto_unit&&);
 			auto_unit& operator =(const unit&);
 
+			virtual unit* clone() const;
+
 			vector_real_dimensions initialize_real_dimensions(string);
 
 			virtual string get_dimensions_match() const;

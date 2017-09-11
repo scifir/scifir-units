@@ -32,15 +32,12 @@ namespace physics::units
 		initialize_dimensions(dimension_structure);
 	}
 
-	unit::unit(math::unit_number new_value, const vector_actual_dimensions& new_actual_dimensions) : unit()
+	unit::unit(math::unit_number new_value, const vector_actual_dimensions& new_actual_dimensions) : value(move(new_value)),actual_dimensions(move(new_actual_dimensions))
 	{
-		value = move(new_value);
-		actual_dimensions = move(new_actual_dimensions);
 	}
 
-	unit::unit(const unit& new_value,string init_value) : unit(new_value)
+	unit::unit(const unit& new_value,string init_value) : value(new_value.get_value()),actual_dimensions(create_actual_dimensions(init_value))
 	{
-		actual_dimensions = create_actual_dimensions(init_value);
 	}
 
 	unit::unit(string init_value) : unit()
@@ -71,13 +68,11 @@ namespace physics::units
 		}
 	}
 
-	unit::unit(const unit& x)
+	unit::unit(const unit& x) : value(x.get_value()),actual_dimensions(x.get_actual_dimensions())
 	{
-		actual_dimensions = x.get_actual_dimensions();
-		value = x.get_value();
 	}
 
-	void unit::operator =(const unit& x)
+	unit& unit::operator =(const unit& x)
 	{
 		if (physics::units::equal_dimensions(*this,x))
 		{
@@ -88,6 +83,7 @@ namespace physics::units
 		{
 			invalidate(11);
 		}
+		return *this;
 	}
 
 	unit::operator float() const
