@@ -15,6 +15,7 @@ namespace physics::units
 			explicit auto_unit(const unit&,string);
 			explicit auto_unit(string);
 			auto_unit(const auto_unit&);
+			auto_unit(auto_unit&&);
 			auto_unit(const unit&);
 
 			auto_unit& operator =(const auto_unit&);

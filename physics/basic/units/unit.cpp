@@ -72,12 +72,30 @@ namespace physics::units
 	{
 	}
 
+	unit::unit(unit&& x) : value(move(x.get_value())),actual_dimensions(move(x.get_actual_dimensions()))
+	{
+	}
+
 	unit& unit::operator =(const unit& x)
 	{
 		if (physics::units::equal_dimensions(*this,x))
 		{
 			actual_dimensions = x.get_actual_dimensions();
 			value = x.get_value();
+		}
+		else
+		{
+			invalidate(11);
+		}
+		return *this;
+	}
+
+	unit& unit::operator =(unit&& x)
+	{
+		if (physics::units::equal_dimensions(*this,x))
+		{
+			actual_dimensions = move(x.get_actual_dimensions());
+			value = move(x.get_value());
 		}
 		else
 		{

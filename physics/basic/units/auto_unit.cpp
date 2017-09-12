@@ -18,10 +18,6 @@ namespace physics::units
 	{
 	}
 
-	auto_unit::auto_unit(const unit& new_value) : unit(new_value),real_dimensions(new_value.get_real_dimensions())
-	{
-	}
-
 	auto_unit::auto_unit(const unit& new_value,string init_value) : unit(new_value,init_value),real_dimensions(create_real_dimensions(init_value))
 	{
 	}
@@ -31,6 +27,14 @@ namespace physics::units
 	}
 
 	auto_unit::auto_unit(const auto_unit& x) : unit(static_cast<const unit&>(x)),real_dimensions(x.get_real_dimensions())
+	{
+	}
+
+	auto_unit::auto_unit(auto_unit&& x) : unit(static_cast<unit&&>(x)),real_dimensions(move(x.get_real_dimensions()))
+	{
+	}
+
+	auto_unit::auto_unit(const unit& new_value) : unit(new_value),real_dimensions(new_value.get_real_dimensions())
 	{
 	}
 

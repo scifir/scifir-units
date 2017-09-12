@@ -29,8 +29,10 @@ namespace physics::units
 			explicit unit(const auto_unit&,string);
 			explicit unit(string);
 			unit(const unit&);
+			unit(unit&&);
 
 			unit& operator =(const unit&);
+			unit& operator =(unit&&);
 
 			virtual unit* clone() const = 0;
 
