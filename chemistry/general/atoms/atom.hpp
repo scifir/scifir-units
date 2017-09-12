@@ -251,7 +251,7 @@ namespace chemistry
 
             virtual bool is_exotic() const = 0;
 
-            informatics::color get_atomic_color() const; // TODO: finish function
+            informatics::color get_atomic_color() const;
 
 			atomic_pattern get_atomic_pattern() const;
 
@@ -259,19 +259,19 @@ namespace chemistry
 
 			bool is_valence_full() const;
 
-			bool is_chiral() const; //TODO: finish function
+			bool is_chiral() const;
 
 			inline bool is_achiral() const
 			{
 				return !is_chiral();
 			}
 
-			/*electron_cloud get_electron_cloud() const // TODO: finish function
+			/*electron_cloud get_electron_cloud() const
 			{
 
 			}
 
-			void print_electron_cloud() const // TODO: finish function
+			void print_electron_cloud() const
 			{
 				electron_cloud x = get_electron_cloud();
 				x.print_3d();
@@ -284,9 +284,9 @@ namespace chemistry
 
             virtual void print_image_2d() const = 0;
             virtual void print_image_3d() const = 0;
-            //virtual c_canvas_t get_image_2d() const = 0; // TODO: finish function
-            //virtual c_canvas_t get_detailed_image_2d() const = 0; // TODO: finish function
-            //virtual GLObject get_image_3d() const = 0; // TODO: finish function
+            //virtual c_canvas_t get_image_2d() const = 0;
+            //virtual c_canvas_t get_detailed_image_2d() const = 0;
+            //virtual GLObject get_image_3d() const = 0;
 
             virtual string get_file_format() const = 0;
 
@@ -337,7 +337,7 @@ namespace chemistry
 				return T::z;
 			}
 
-			virtual const int get_valence_number() const // TODO: finish this function
+			virtual const int get_valence_number() const
 			{
 				if (get_atomic_group() == IA)
 				{
@@ -512,7 +512,7 @@ namespace chemistry
             }
 	};
 
-	math::angle_number get_molecular_geometry_angle(const atom&); // TODO: finish two angles
+	math::angle_number get_molecular_geometry_angle(const atom&);
 
 	bool are_isotopes(const atom&,const atom&);
 	bool are_isobares(const atom&,const atom&);

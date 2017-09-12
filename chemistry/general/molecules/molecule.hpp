@@ -1,13 +1,6 @@
 #ifndef MOLECULE_HPP_INCLUDED
 #define MOLECULE_HPP_INCLUDED
 
-// TODO: 3D display of molecules
-// TODO: 2D display of molecules by printing inside 2D a 3D molecule
-// TODO: XML format extension for .sm files for molecules including atoms number and bonds graph
-// TODO: Constructor by opening an .sm file
-// TODO: Chemistry Creator program for creating molecules with .sm extension
-// TODO: Constructor of molecules by passing a formated string
-
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -46,7 +39,7 @@ namespace chemistry
             	return get_real_mass() + get_electrons_mass();
             }
 
-			wstring get_formula() const; //TODO: pending function
+			wstring get_formula() const;
 			wstring get_canonical_formula() const;
 
 			int get_ionic_charge() const;
@@ -60,17 +53,17 @@ namespace chemistry
             	return (get_total_atoms() <= 500);
             }
 
-            //dipole get_dipole() const; //TODO: pending function
+            //dipole get_dipole() const;
 
             bool has_atom(atom_symbol) const;
             bool has_bond(string) const;
             bool has_bond_group(string) const;
-            bool has_functional_group(functional_group) const; //TODO: pending function
+            bool has_functional_group(functional_group) const;
 
-            bool is_cyclical() const; //TODO: pending function
-            bool is_acyclical() const; //TODO: pending function
-            bool is_polar() const; //TODO: pending function
-            bool is_apolar() const; //TODO: pending function
+            bool is_cyclical() const;
+            bool is_acyclical() const;
+            bool is_polar() const;
+            bool is_apolar() const;
             bool is_chiral() const;
             bool is_achiral() const;
             bool is_protic() const;
@@ -86,37 +79,37 @@ namespace chemistry
 				return !is_organic();
 			}
 
-            bool is_biochemical() const; //TODO: pending function
+            bool is_biochemical() const;
 
             int number_of_chiral_atoms() const;
             int number_of_enantiomers() const;
 
-            bool is_eter(); //TODO: create all the headers of those functions. pending function
+            bool is_eter() const;
 
-            //c_canvas_t get_image_2d() const; //TODO: pending function
-            //GLObject get_image_3d() const; //TODO: pending function
-            void print() const; //TODO: pending function
-            void print_image_2d() const; //TODO: pending function
-            void print_image_3d() const; //TODO: pending function
+            //c_canvas_t get_image_2d() const;
+            //GLObject get_image_3d() const;
+            void print() const;
+            void print_image_2d() const;
+            void print_image_3d() const;
 
             virtual void save(string,string) const = 0;
 
 		private:
-			tuple<shared_ptr<atom>,math::point_3d> get_image_3d_calculate_atom_position(shared_ptr<atom>,tuple<shared_ptr<atom>,math::point_3d>,tuple<shared_ptr<atom>,math::point_3d>) const; //TODO: pending function
-			void get_atoms_image_3d(vector<tuple<shared_ptr<atom>,math::point_3d>>) const; //TODO: pending function
-			//void get_unpaired_electrons_image_3d(vector<tuple<math::point_3d,math_vector>>) const; //TODO: pending function
-			void get_bonds_image_3d(vector<tuple<shared_ptr<atom>,math::point_3d>>) const; //TODO: pending function
+			tuple<shared_ptr<atom>,math::point_3d> get_image_3d_calculate_atom_position(shared_ptr<atom>,tuple<shared_ptr<atom>,math::point_3d>,tuple<shared_ptr<atom>,math::point_3d>) const;
+			void get_atoms_image_3d(vector<tuple<shared_ptr<atom>,math::point_3d>>) const;
+			//void get_unpaired_electrons_image_3d(vector<tuple<math::point_3d,math_vector>>) const;
+			void get_bonds_image_3d(vector<tuple<shared_ptr<atom>,math::point_3d>>) const;
 	};
 
-	bool are_isomers(const molecule&,const molecule&); //TODO: pending function
-	bool are_conformational_isomers(const molecule&,const molecule&); //TODO: pending function
-	bool are_enantiomers(const molecule&,const molecule&); //TODO: pending function
-	bool are_miscible(const molecule&,const molecule&); //TODO: pending function
-	bool are_inmiscible(const molecule&,const molecule&); //TODO: pending function
+	bool are_isomers(const molecule&,const molecule&);
+	bool are_conformational_isomers(const molecule&,const molecule&);
+	bool are_enantiomers(const molecule&,const molecule&);
+	bool are_miscible(const molecule&,const molecule&);
+	bool are_inmiscible(const molecule&,const molecule&);
 }
 
-wostream& operator <<(wostream&,const chemistry::molecule&); //TODO: pending function
-bool operator ==(const chemistry::molecule&,const chemistry::molecule&); //TODO: pending function
-bool operator !=(const chemistry::molecule&,const chemistry::molecule&); //TODO: pending function
+wostream& operator <<(wostream&,const chemistry::molecule&);
+bool operator ==(const chemistry::molecule&,const chemistry::molecule&);
+bool operator !=(const chemistry::molecule&,const chemistry::molecule&);
 
 #endif // MOLECULE_HPP_INCLUDED

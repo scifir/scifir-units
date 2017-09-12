@@ -71,7 +71,7 @@ namespace chemistry
             	return mass_number;
             }
 
-            virtual string get_electronic_configuration() const // TODO: finish function
+            virtual string get_electronic_configuration() const
             {
             	int remaining_electrons = get_electrons_number();
             	if (remaining_electrons == 0)
@@ -101,11 +101,11 @@ namespace chemistry
             	return mass(get_electrons_number() * physics::electron::common_mass,"amu");
             }
 
-			virtual void print_image_2d() const // TODO: finish function
+			virtual void print_image_2d() const
 			{
 			}
 
-			virtual void print_image_3d() const // TODO: finish function
+			virtual void print_image_3d() const
 			{
 			}
 
