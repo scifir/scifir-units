@@ -26,7 +26,7 @@ namespace math
 
 	angle_number::angle_number(const unit& x)
 	{
-		if (x.empty_dimensions())
+		if (x.has_empty_dimensions())
 		{
 			value = float(x);
 			normalize_value();
