@@ -925,16 +925,6 @@ physics::units::light operator"" _ycd(unsigned long long int x)
 	return physics::units::light(x, "ycd");
 }
 
-physics::units::angle operator"" _angle(unsigned long long int x)
-{
-	return physics::units::angle(x, "angle");
-}
-
-physics::units::solid_angle operator"" _solid_angle(unsigned long long int x)
-{
-	return physics::units::solid_angle(x, "solid_angle");
-}
-
 physics::units::data operator"" _YB(unsigned long long int x)
 {
 	return physics::units::data(x, "YB");
@@ -1653,16 +1643,6 @@ physics::units::light operator"" _zcd(long double x)
 physics::units::light operator"" _ycd(long double x)
 {
 	return physics::units::light(x, "ycd");
-}
-
-physics::units::angle operator"" _angle(long double x)
-{
-	return physics::units::angle(x, "angle");
-}
-
-physics::units::solid_angle operator"" _solid_angle(long double x)
-{
-	return physics::units::solid_angle(x, "solid_angle");
 }
 
 physics::units::data operator"" _YB(long double x)
