@@ -72,7 +72,7 @@ namespace math
 						message = L"Exponent of dimensions doesn't exist";
 						break;
 					case 11:
-						message = L"Cannot set dimensions to an incompatible combination";
+						message = L"Cannot set dimensions to a different nd";
 						break;
 					case 12:
 						message = L"Temperature prefixes cannot be negative";
