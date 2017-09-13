@@ -35,7 +35,7 @@ namespace physics::units
 	{
 	}
 
-	dimension_abstract::dimension_abstract(prefix& new_prefix, int new_scale) : prefixes()
+	dimension_abstract::dimension_abstract(const prefix& new_prefix, int new_scale) : prefixes()
 	{
 		shared_ptr<prefix> a = shared_ptr<prefix>(&new_prefix);
 		prefixes[a->get_enum_type()] = a;

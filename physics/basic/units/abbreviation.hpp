@@ -22,7 +22,7 @@ namespace physics::units
 		public:
 			abbreviation();
 			abbreviation(prefix_symbol, int = 1);
-			abbreviation(prefix&, int = 1);
+			abbreviation(const prefix&, int = 1);
 			virtual abbreviation* clone() const = 0;
 
 			virtual const string& get_dimensions_match() const = 0;
@@ -38,7 +38,7 @@ namespace physics::units
 			{
 			}
 
-			abbreviation_crtp(prefix& new_prefix, int new_scale = 1) : abbreviation(new_prefix, new_scale)
+			abbreviation_crtp(const prefix& new_prefix, int new_scale = 1) : abbreviation(new_prefix, new_scale)
 			{
 			}
 

@@ -20,7 +20,7 @@ namespace physics::units
 		public:
 			dimension();
 			dimension(prefix_symbol, int = 1);
-			dimension(prefix&, int = 1);
+			dimension(const prefix&, int = 1);
 			virtual dimension* clone() const = 0;
 
 			virtual int get_enum_type() const = 0;
@@ -34,7 +34,7 @@ namespace physics::units
 			{
 			}
 
-			dimension_crtp(prefix& new_prefix, int new_scale = 1) : dimension(new_prefix, new_scale)
+			dimension_crtp(const prefix& new_prefix, int new_scale = 1) : dimension(new_prefix, new_scale)
 			{
 			}
 
