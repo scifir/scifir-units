@@ -21,7 +21,7 @@ namespace physics::units
 	{
 	}
 
-	abbreviation::abbreviation(const prefix& new_prefix, int new_scale) : dimension_abstract(new_prefix, new_scale)
+	abbreviation::abbreviation(prefix& new_prefix, int new_scale) : dimension_abstract(new_prefix, new_scale)
 	{
 	}
 

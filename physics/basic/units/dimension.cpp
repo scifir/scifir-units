@@ -23,7 +23,7 @@ namespace physics::units
 	{
 	}
 
-	dimension::dimension(const prefix& prefix_name, int new_scale) : dimension_abstract(prefix_name, new_scale)
+	dimension::dimension(prefix& prefix_name, int new_scale) : dimension_abstract(prefix_name, new_scale)
 	{
 	}
 

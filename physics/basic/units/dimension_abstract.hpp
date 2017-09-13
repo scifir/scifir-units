@@ -29,7 +29,7 @@ namespace physics::units
 		public:
 			dimension_abstract();
 			dimension_abstract(prefix_symbol,int);
-			dimension_abstract(const prefix&,int);
+			dimension_abstract(prefix&,int);
 			virtual dimension_abstract* clone() const = 0;
 
 			inline const dimension_prefixes& get_dimension_prefixes() const
