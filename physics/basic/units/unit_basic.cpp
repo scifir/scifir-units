@@ -113,12 +113,52 @@ namespace physics::units
 		}
 	}
 
-	temperature::temperature(const unit& new_unit) : unit(new_unit),scalar_unit_crtp<temperature>(new_unit)
+	temperature::temperature(const unit& x) : unit(x),scalar_unit_crtp<temperature>(x)
+	{
+	}
+
+	temperature::temperature(unit&& x) : unit(move(x)),scalar_unit_crtp<temperature>(move(x))
 	{
 	}
 
 	temperature::temperature(const unit& new_unit,string init_value) : unit(new_unit,init_value),scalar_unit_crtp<temperature>(new_unit,init_value)
 	{
+	}
+
+	temperature::temperature(unit&& new_unit,string init_value) : unit(move(new_unit),init_value),scalar_unit_crtp<temperature>(move(new_unit),init_value)
+	{
+	}
+
+	temperature::temperature(const temperature& x) : unit(x),scalar_unit_crtp<temperature>(x)
+	{
+	}
+
+	temperature::temperature(temperature&& x) : unit(move(x)),scalar_unit_crtp<temperature>(move(x))
+	{
+	}
+
+	temperature& temperature::operator =(const temperature& x)
+	{
+		scalar_unit_crtp<temperature>::operator=(x);
+		return *this;
+	}
+
+	temperature& temperature::operator =(temperature&& x)
+	{
+		scalar_unit_crtp<temperature>::operator=(move(x));
+		return *this;
+	}
+
+	temperature& temperature::operator =(const unit& x)
+	{
+		unit::operator=(x);
+		return *this;
+	}
+
+	temperature& temperature::operator =(unit&& x)
+	{
+		unit::operator=(move(x));
+		return *this;
 	}
 
 	const string temperature::dimensions_match = "K";

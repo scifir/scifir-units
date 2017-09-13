@@ -23,13 +23,13 @@ namespace physics::units
 	{
 		public:
 			unit();
+			unit(const unit&);
+			unit(unit&&);
 			explicit unit(math::space_type, string = "");
 			explicit unit(math::unit_number, const vector_actual_dimensions&);
 			explicit unit(const unit&,string);
-			explicit unit(const auto_unit&,string);
+			explicit unit(unit&&,string);
 			explicit unit(string);
-			unit(const unit&);
-			unit(unit&&);
 
 			unit& operator =(const unit&);
 			unit& operator =(unit&&);
@@ -141,12 +141,12 @@ namespace physics::units
 			{
 			}
 
-			unit_crtp(const unit& new_unit) : unit(new_unit)
+			unit_crtp(const unit_crtp<T>& x) : unit(x)
 			{
-				if(!new_unit.equal_dimensions(get_dimensions_match()))
-				{
-					unit::invalidate(7);
-				}
+			}
+
+			unit_crtp(unit_crtp<T>&& x) : unit(move(x))
+			{
 			}
 
 			explicit unit_crtp(math::space_type new_value, string init_value) : unit(new_value,init_value)
@@ -161,12 +161,32 @@ namespace physics::units
 				}
 			}
 
+			explicit unit_crtp(unit&& new_unit,string init_value) : unit(move(new_unit),init_value)
+			{
+				if(!equal_dimensions(init_value))
+				{
+					unit::invalidate(7);
+				}
+			}
+
 			explicit unit_crtp(string init_value) : unit(init_value)
 			{
 			}
 
-			unit_crtp(const unit_crtp<T>& x) : unit(x)
+			unit_crtp(const unit& new_unit) : unit(new_unit)
 			{
+				if(!new_unit.equal_dimensions(get_dimensions_match()))
+				{
+					unit::invalidate(7);
+				}
+			}
+
+			unit_crtp(unit&& new_unit) : unit(move(new_unit))
+			{
+				if(!new_unit.equal_dimensions(get_dimensions_match()))
+				{
+					unit::invalidate(7);
+				}
 			}
 
 			virtual unit* clone() const

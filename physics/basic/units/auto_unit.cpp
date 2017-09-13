@@ -10,6 +10,14 @@ using namespace std;
 
 namespace physics::units
 {
+	auto_unit::auto_unit(const auto_unit& x) : unit(x),real_dimensions(x.get_real_dimensions())
+	{
+	}
+
+	auto_unit::auto_unit(auto_unit&& x) : unit(move(x)),real_dimensions(move(x.get_real_dimensions()))
+	{
+	}
+
 	auto_unit::auto_unit(math::space_type new_value, string dimension_structure) : unit(new_value,dimension_structure),real_dimensions(create_real_dimensions(dimension_structure))
 	{
 	}
@@ -22,19 +30,19 @@ namespace physics::units
 	{
 	}
 
+	auto_unit::auto_unit(unit&& new_value,string init_value) : unit(move(new_value),init_value),real_dimensions(create_real_dimensions(init_value))
+	{
+	}
+
 	auto_unit::auto_unit(string init_value) : unit(init_value),real_dimensions(create_real_dimensions(initial_dimensions_get_structure(init_value)))
 	{
 	}
 
-	auto_unit::auto_unit(const auto_unit& x) : unit(static_cast<const unit&>(x)),real_dimensions(x.get_real_dimensions())
+	auto_unit::auto_unit(const unit& x) : unit(x),real_dimensions(x.get_real_dimensions())
 	{
 	}
 
-	auto_unit::auto_unit(auto_unit&& x) : unit(static_cast<unit&&>(x)),real_dimensions(move(x.get_real_dimensions()))
-	{
-	}
-
-	auto_unit::auto_unit(const unit& new_value) : unit(new_value),real_dimensions(new_value.get_real_dimensions())
+	auto_unit::auto_unit(unit&& x) : unit(move(x)),real_dimensions(move(x.get_real_dimensions()))
 	{
 	}
 
@@ -46,14 +54,19 @@ namespace physics::units
 
 	auto_unit& auto_unit::operator =(auto_unit&& x)
 	{
-		value = move(x.get_value());
-		actual_dimensions = move(x.get_actual_dimensions());
+		unit::operator=(move(x));
 		return *this;
 	}
 
 	auto_unit& auto_unit::operator =(const unit& x)
 	{
 		unit::operator=(x);
+		return *this;
+	}
+
+	auto_unit& auto_unit::operator =(unit&& x)
+	{
+		unit::operator=(move(x));
 		return *this;
 	}
 

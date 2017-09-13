@@ -12,16 +12,37 @@ namespace physics::units
 	class auto_vector : public auto_unit, public vector_unit
 	{
 		public:
-			auto_vector(const unit&);
+			auto_vector(const auto_vector&);
+			auto_vector(auto_vector&&);
 			explicit auto_vector(const unit&,direction_symbol);
 			explicit auto_vector(const unit&,angle_type);
 			explicit auto_vector(const unit&,angle_type,angle_type);
 			explicit auto_vector(const unit&,math::angle_container);
-			explicit auto_vector(string);
+			explicit auto_vector(unit&&,direction_symbol);
+			explicit auto_vector(unit&&,angle_type);
+			explicit auto_vector(unit&&,angle_type,angle_type);
+			explicit auto_vector(unit&&,math::angle_container);
+			explicit auto_vector(const unit&,direction_symbol,string);
+			explicit auto_vector(const unit&,angle_type,string);
+			explicit auto_vector(const unit&,angle_type,angle_type,string);
+			explicit auto_vector(const unit&,math::angle_container,string);
+			explicit auto_vector(unit&&,direction_symbol,string);
+			explicit auto_vector(unit&&,angle_type,string);
+			explicit auto_vector(unit&&,angle_type,angle_type,string);
+			explicit auto_vector(unit&&,math::angle_container,string);
+			explicit auto_vector(string,direction_symbol);
 			explicit auto_vector(string,angle_type);
 			explicit auto_vector(string,angle_type,angle_type);
 			explicit auto_vector(string,math::angle_container);
 			auto_vector(const vector_unit&);
+			auto_vector(vector_unit&&);
+
+			auto_vector& operator =(const auto_vector&);
+			auto_vector& operator =(auto_vector&&);
+			auto_vector& operator =(const vector_unit&);
+			auto_vector& operator =(vector_unit&&);
+			auto_vector& operator =(const unit&);
+			auto_vector& operator =(unit&&);
 
 			auto_vector operator +(const vector_unit&) const;
 			auto_vector operator -(const vector_unit&) const;

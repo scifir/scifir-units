@@ -11,18 +11,24 @@ namespace physics::units
 	class auto_scalar : public auto_unit, public scalar_unit
 	{
 		public:
+			auto_scalar(const auto_scalar&);
+			auto_scalar(auto_scalar&&) noexcept;
 			explicit auto_scalar(math::space_type, string = "");
 			explicit auto_scalar(math::unit_number, const vector_real_dimensions&, const vector_actual_dimensions&);
 			explicit auto_scalar(const unit&,string);
+			explicit auto_scalar(unit&&,string);
 			explicit auto_scalar(string);
-			auto_scalar(const auto_unit&);
 			auto_scalar(const unit&);
+			auto_scalar(unit&&);
 
-			auto_scalar& operator =(const auto_unit&);
-			auto_scalar& operator =(auto_unit&&);
+			auto_scalar& operator =(const auto_scalar&);
+			auto_scalar& operator =(auto_scalar&&);
 			auto_scalar& operator =(const unit&);
+			auto_scalar& operator =(unit&&);
 
-			void operator =(const scalar_unit&);
+			auto_scalar& operator =(const auto_vector&) = delete;
+			auto_scalar& operator =(auto_vector&&) = delete;
+
 			auto_scalar operator +(const scalar_unit&) const;
 			auto_scalar operator -(const scalar_unit&) const;
 			auto_scalar operator *(const scalar_unit&) const;

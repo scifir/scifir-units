@@ -9,6 +9,14 @@ namespace physics::units
 	{
 	}
 
+	scalar_unit::scalar_unit(const scalar_unit& x) : unit(x)
+	{
+	}
+
+	scalar_unit::scalar_unit(scalar_unit&& x) : unit(move(x))
+	{
+	}
+
 	scalar_unit::scalar_unit(math::space_type new_value, string init_value) : unit(new_value, init_value)
 	{
 	}
@@ -21,32 +29,44 @@ namespace physics::units
 	{
 	}
 
-	scalar_unit::scalar_unit(const unit& new_unit) : unit(new_unit)
-	{
-	}
-
 	scalar_unit::scalar_unit(const unit& new_value,string init_value) : unit(new_value, init_value)
 	{
 	}
 
-	void scalar_unit::operator =(const scalar_unit& x)
+	scalar_unit::scalar_unit(unit&& new_value,string init_value) : unit(move(new_value), init_value)
 	{
-		if(x.is_defined())
-		{
-			if(x.equal_dimensions(get_dimensions_match()))
-			{
-				unit::value = x.get_value();
-				unit::actual_dimensions = x.get_actual_dimensions();
-			}
-			else
-			{
-				unit::invalidate(7);
-			}
-		}
-		else
-		{
-			unit::invalidate(1);
-		}
+	}
+
+	scalar_unit::scalar_unit(const unit& x) : unit(x)
+	{
+	}
+
+	scalar_unit::scalar_unit(unit&& x) : unit(move(x))
+	{
+	}
+
+	scalar_unit& scalar_unit::operator =(const scalar_unit& x)
+	{
+		unit::operator=(x);
+		return *this;
+	}
+
+	scalar_unit& scalar_unit::operator =(scalar_unit&& x)
+	{
+		unit::operator=(move(x));
+		return *this;
+	}
+
+	scalar_unit& scalar_unit::operator =(const unit& x)
+	{
+		unit::operator=(x);
+		return *this;
+	}
+
+	scalar_unit& scalar_unit::operator =(unit&& x)
+	{
+		unit::operator=(move(x));
+		return *this;
 	}
 
 	auto_scalar scalar_unit::operator +(const scalar_unit& x) const

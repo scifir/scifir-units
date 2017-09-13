@@ -10,17 +10,20 @@ namespace physics::units
 	class auto_unit : public virtual unit
 	{
 		public:
+			auto_unit(const auto_unit&);
+			auto_unit(auto_unit&&);
 			explicit auto_unit(math::space_type, string = "");
 			explicit auto_unit(math::unit_number, const vector_real_dimensions&, const vector_actual_dimensions&);
 			explicit auto_unit(const unit&,string);
+			explicit auto_unit(unit&&,string);
 			explicit auto_unit(string);
-			auto_unit(const auto_unit&);
-			auto_unit(auto_unit&&);
 			auto_unit(const unit&);
+			auto_unit(unit&&);
 
 			auto_unit& operator =(const auto_unit&);
 			auto_unit& operator =(auto_unit&&);
 			auto_unit& operator =(const unit&);
+			auto_unit& operator =(unit&&);
 
 			virtual unit* clone() const;
 

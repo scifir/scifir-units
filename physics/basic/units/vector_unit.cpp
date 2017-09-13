@@ -6,15 +6,17 @@ using namespace std;
 
 namespace physics::units
 {
-	vector_unit::vector_unit(const unit& new_value) : unit(new_value), hyper_spherical_coordinates(lambda_value())
+	vector_unit::vector_unit(const vector_unit& x) : unit(x),hyper_spherical_coordinates(lambda_value(),x.get_angles())
 	{
+		operator=(x);
+	}
+
+	vector_unit::vector_unit(vector_unit&& x) : unit(move(x)),hyper_spherical_coordinates(lambda_value(),move(x.get_angles()))
+	{
+		operator=(move(x));
 	}
 
 	vector_unit::vector_unit(math::space_type new_value,string init_value) : unit(new_value,init_value),hyper_spherical_coordinates(lambda_value(), direction_symbol::left)
-	{
-	}
-
-	vector_unit::vector_unit(const unit& new_value,string init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), direction_symbol::left)
 	{
 	}
 
@@ -34,7 +36,55 @@ namespace physics::units
 	{
 	}
 
-	vector_unit::vector_unit(string init_value) : unit(init_value), hyper_spherical_coordinates(lambda_value())
+	vector_unit::vector_unit(unit&& new_value, direction_symbol new_direction) : unit(move(new_value)), hyper_spherical_coordinates(lambda_value(), new_direction)
+	{
+	}
+
+	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1) : unit(move(new_value)), hyper_spherical_coordinates(lambda_value(), new_angle1)
+	{
+	}
+
+	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, angle_type new_angle2) : unit(move(new_value)), hyper_spherical_coordinates(lambda_value(), new_angle1, new_angle2)
+	{
+	}
+
+	vector_unit::vector_unit(unit&& new_value, math::angle_container new_angles) : unit(move(new_value)), hyper_spherical_coordinates(lambda_value(), new_angles)
+	{
+	}
+
+	vector_unit::vector_unit(const unit& new_value, direction_symbol new_direction, string init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_direction)
+	{
+	}
+
+	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1, string init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_angle1)
+	{
+	}
+
+	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1, angle_type new_angle2, string init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_angle1, new_angle2)
+	{
+	}
+
+	vector_unit::vector_unit(const unit& new_value, math::angle_container new_angles, string init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
+	{
+	}
+
+	vector_unit::vector_unit(unit&& new_value, direction_symbol new_direction, string init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_direction)
+	{
+	}
+
+	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, string init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_angle1)
+	{
+	}
+
+	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, angle_type new_angle2, string init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_angle1, new_angle2)
+	{
+	}
+
+	vector_unit::vector_unit(unit&& new_value, math::angle_container new_angles, string init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
+	{
+	}
+
+	vector_unit::vector_unit(string init_value, direction_symbol new_direction) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_direction)
 	{
 	}
 
@@ -50,9 +100,62 @@ namespace physics::units
 	{
 	}
 
-	vector_unit::vector_unit(const vector_unit& x) : unit(x),hyper_spherical_coordinates(lambda_value(),x.get_angles())
+	vector_unit& vector_unit::operator =(const vector_unit& x)
 	{
-		*this = x;
+		if (same_nd(*this,x))
+		{
+			unit::operator=(x);
+			r = lambda_value();
+			if (x.is_1d())
+			{
+				directions.direction = x.get_direction();
+				unidimensional = true;
+			}
+			else
+			{
+				directions.angles = x.get_angles();
+			}
+		}
+		else
+		{
+			invalidate(11);
+		}
+		return *this;
+	}
+
+	vector_unit& vector_unit::operator =(vector_unit&& x)
+	{
+		if (same_nd(*this,x))
+		{
+			unit::operator=(move(x));
+			r = lambda_value();
+			if (x.is_1d())
+			{
+				directions.direction = move(x.get_direction());
+				unidimensional = true;
+			}
+			else
+			{
+				directions.angles = move(x.get_angles());
+			}
+		}
+		else
+		{
+			invalidate(11);
+		}
+		return *this;
+	}
+
+	vector_unit& vector_unit::operator =(const unit& x)
+	{
+		unit::operator=(x);
+		return *this;
+	}
+
+	vector_unit& vector_unit::operator =(unit&& x)
+	{
+		unit::operator=(move(x));
+		return *this;
 	}
 
 	void vector_unit::point_to(direction_symbol x)
@@ -238,36 +341,6 @@ namespace physics::units
 		}
 	}
 
-	void vector_unit::operator =(const vector_unit& x)
-	{
-		if(x.is_defined())
-		{
-			if(x.equal_dimensions(get_dimensions_match()))
-			{
-				unit::value = x.unit::get_value();
-				r = lambda_value();
-				unit::actual_dimensions = x.get_actual_dimensions();
-				if (x.is_1d())
-				{
-					directions.direction = x.get_direction();
-					unidimensional = true;
-				}
-				else
-				{
-					directions.angles = x.get_angles();
-				}
-			}
-			else
-			{
-				unit::invalidate(7);
-			}
-		}
-		else
-		{
-			unit::invalidate(1);
-		}
-	}
-
 	auto_vector vector_unit::operator +(const vector_unit& y) const
 	{
 		auto_vector z = *this;
@@ -399,13 +472,13 @@ namespace physics::units
 		}
 		else
 		{
-			return auto_vector(0, {});
+			return auto_vector("0 m", direction_symbol::left);
 		}
 	}
 
 	auto_scalar norm(const vector_unit& x)
 	{
-		return auto_scalar(x);
+		return auto_scalar(x.unit::get_value(),x.get_real_dimensions(),x.get_actual_dimensions());
 	}
 
 	auto_vector sqrt(const vector_unit& x)
@@ -623,7 +696,7 @@ istream& operator >>(istream& is, physics::units::vector_unit& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	physics::units::auto_vector c(b);
+	physics::units::auto_vector c(b,10,10);
 	x = c;
 	return is;
 }

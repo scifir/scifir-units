@@ -1,14 +1,20 @@
 #include "auto_scalar.hpp"
 
+#include <iostream>
+
 using namespace std;
 
 namespace physics::units
 {
-	auto_scalar::auto_scalar(math::space_type new_value, string dimension_structure) : unit(new_value,dimension_structure),auto_unit(new_value,dimension_structure),scalar_unit(new_value,dimension_structure)
+	auto_scalar::auto_scalar(const auto_scalar& x) : unit(x),auto_unit(x),scalar_unit(x)
 	{
 	}
 
-	auto_scalar::auto_scalar(const unit& new_value) : unit(new_value),auto_unit(new_value),scalar_unit(new_value)
+	auto_scalar::auto_scalar(auto_scalar&& x) noexcept : unit(move(x)),auto_unit(move(x)),scalar_unit(move(x))
+	{
+	}
+
+	auto_scalar::auto_scalar(math::space_type new_value, string dimension_structure) : unit(new_value,dimension_structure),auto_unit(new_value,dimension_structure),scalar_unit(new_value,dimension_structure)
 	{
 	}
 
@@ -20,38 +26,44 @@ namespace physics::units
 	{
 	}
 
+	auto_scalar::auto_scalar(unit&& new_value,string init_value) : unit(move(new_value),init_value),auto_unit(move(new_value),init_value),scalar_unit(move(new_value),init_value)
+	{
+	}
+
 	auto_scalar::auto_scalar(string init_value) : unit(init_value),auto_unit(init_value),scalar_unit(init_value)
 	{
 	}
 
-	auto_scalar::auto_scalar(const auto_unit& x) : unit(x),auto_unit(x),scalar_unit(x)
+	auto_scalar::auto_scalar(const unit& x) : unit(x),auto_unit(x),scalar_unit(x)
 	{
 	}
 
-	auto_scalar& auto_scalar::operator =(const auto_unit& x)
+	auto_scalar::auto_scalar(unit&& x) : unit(move(x)),auto_unit(move(x)),scalar_unit(move(x))
 	{
-		value = x.get_value();
-		actual_dimensions = x.get_actual_dimensions();
+	}
+
+	auto_scalar& auto_scalar::operator =(const auto_scalar& x)
+	{
+		scalar_unit::operator=(x);
 		return *this;
 	}
 
-	auto_scalar& auto_scalar::operator =(auto_unit&& x)
+	auto_scalar& auto_scalar::operator =(auto_scalar&& x)
 	{
-		value = move(x.get_value());
-		actual_dimensions = move(x.get_actual_dimensions());
+		scalar_unit::operator=(move(x));
 		return *this;
 	}
 
 	auto_scalar& auto_scalar::operator =(const unit& x)
 	{
-		value = x.get_value();
-		actual_dimensions = x.get_actual_dimensions();
+		scalar_unit::operator=(x);
 		return *this;
 	}
 
-	void auto_scalar::operator =(const scalar_unit& x)
+	auto_scalar& auto_scalar::operator =(unit&& x)
 	{
-		scalar_unit::operator=(x);
+		scalar_unit::operator=(move(x));
+		return *this;
 	}
 
 	auto_scalar auto_scalar::operator +(const scalar_unit& x) const
