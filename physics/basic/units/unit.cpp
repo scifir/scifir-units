@@ -313,20 +313,6 @@ namespace physics::units
 		return equal_dimensions(structure_dimensions);
 	}
 
-	/// Calculates if the dimensions are equal related to the symbol
-	bool unit::equal_dimensions(dimension_symbol new_dimension) const
-	{
-		vector_real_dimensions real_dimensions = get_real_dimensions();
-		if(real_dimensions.count(new_dimension) == 1 and real_dimensions.at(new_dimension)->get_scale() == 1)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-
 	/// Calculates if the dimensions are equal related to the real dimensions map
 	bool unit::equal_dimensions(const vector_real_dimensions& second_dimensions) const
 	{

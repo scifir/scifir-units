@@ -94,7 +94,6 @@ namespace physics::units
 
 			void change_dimensions(string);
 			bool equal_dimensions(string) const;
-			bool equal_dimensions(dimension_symbol) const;
 			bool equal_dimensions(const vector_real_dimensions&) const;
 			bool empty_dimensions() const;
 			void set_same_prefix(const vector_actual_dimensions&);
