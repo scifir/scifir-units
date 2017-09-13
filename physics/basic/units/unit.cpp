@@ -347,22 +347,8 @@ namespace physics::units
 		}
 	}
 
-	/// Returns the actual dimensions map
-	const vector_actual_dimensions& unit::get_actual_dimensions() const
+	wstring unit::display_dimensions() const
 	{
-		return actual_dimensions;
-	}
-
-	/// Returns the unit_number that stores the value
-	const math::unit_number& unit::get_value() const
-	{
-		return value;
-	}
-
-	wstring unit::display(int number_of_decimals) const
-	{
-		/*locale loc = locale("en_US.UTF8");
-		os.imbue(loc);*/
 		wostringstream dimension_text;
 		wostringstream dimension_up_text;
 		wostringstream dimension_down_text;
@@ -393,7 +379,26 @@ namespace physics::units
 		{
 			dimension_text << "[empty]";
 		}
-		return value.print(number_of_decimals) + L" " + dimension_text.str();
+		return dimension_text.str();
+	}
+
+	/// Returns the actual dimensions map
+	const vector_actual_dimensions& unit::get_actual_dimensions() const
+	{
+		return actual_dimensions;
+	}
+
+	/// Returns the unit_number that stores the value
+	const math::unit_number& unit::get_value() const
+	{
+		return value;
+	}
+
+	wstring unit::display(int number_of_decimals) const
+	{
+		/*locale loc = locale("en_US.UTF8");
+		os.imbue(loc);*/
+		return value.print(number_of_decimals) + L" " + display_dimensions();
 	}
 
 	/// Updates the value to the prefix added

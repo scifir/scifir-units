@@ -96,6 +96,7 @@ namespace physics::units
 			bool has_dimensions(string) const;
 			bool has_dimensions(const vector_real_dimensions&) const;
 			bool has_empty_dimensions() const;
+			wstring display_dimensions() const;
 			void set_same_prefix(const vector_actual_dimensions&);
 
 			virtual string get_dimensions_match() const = 0;
