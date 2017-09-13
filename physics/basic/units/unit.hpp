@@ -93,9 +93,9 @@ namespace physics::units
 			unit& operator--(int);
 
 			void change_dimensions(string);
-			bool equal_dimensions(string) const;
-			bool equal_dimensions(const vector_real_dimensions&) const;
-			bool empty_dimensions() const;
+			bool has_dimensions(string) const;
+			bool has_dimensions(const vector_real_dimensions&) const;
+			bool has_empty_dimensions() const;
 			void set_same_prefix(const vector_actual_dimensions&);
 
 			virtual string get_dimensions_match() const = 0;
@@ -154,7 +154,7 @@ namespace physics::units
 
 			explicit unit_crtp(const unit& new_unit,string init_value) : unit(new_unit,init_value)
 			{
-				if(!equal_dimensions(init_value))
+				if(!has_dimensions(init_value))
 				{
 					unit::invalidate(7);
 				}
@@ -162,7 +162,7 @@ namespace physics::units
 
 			explicit unit_crtp(unit&& new_unit,string init_value) : unit(move(new_unit),init_value)
 			{
-				if(!equal_dimensions(init_value))
+				if(!has_dimensions(init_value))
 				{
 					unit::invalidate(7);
 				}
@@ -174,7 +174,7 @@ namespace physics::units
 
 			unit_crtp(const unit& new_unit) : unit(new_unit)
 			{
-				if(!new_unit.equal_dimensions(get_dimensions_match()))
+				if(!new_unit.has_dimensions(get_dimensions_match()))
 				{
 					unit::invalidate(7);
 				}
@@ -182,7 +182,7 @@ namespace physics::units
 
 			unit_crtp(unit&& new_unit) : unit(move(new_unit))
 			{
-				if(!new_unit.equal_dimensions(get_dimensions_match()))
+				if(!new_unit.has_dimensions(get_dimensions_match()))
 				{
 					unit::invalidate(7);
 				}
@@ -213,7 +213,7 @@ namespace physics::units
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 math::unit_number operator ^(T x, const physics::units::unit& y)
 {
-	if(y.empty_dimensions())
+	if(y.has_empty_dimensions())
 	{
 		return math::unit_number(pow(x, y.get_value().get_value()));
 	}

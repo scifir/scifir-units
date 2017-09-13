@@ -129,7 +129,7 @@ namespace physics::units
 
 	auto_unit unit::operator +(const unit& x) const
 	{
-		if(x.equal_dimensions(get_real_dimensions()))
+		if(x.has_dimensions(get_real_dimensions()))
 		{
 			auto_unit a = *this;
 			auto_unit y = x;
@@ -147,7 +147,7 @@ namespace physics::units
 
 	auto_unit unit::operator -(const unit& x) const
 	{
-		if(x.equal_dimensions(get_real_dimensions()))
+		if(x.has_dimensions(get_real_dimensions()))
 		{
 			auto_unit a = *this;
 			auto_unit y = x;
@@ -167,7 +167,7 @@ namespace physics::units
 	{
 		math::unit_number new_value = value;
 		auto_unit y = x;
-		if(y.equal_dimensions(get_real_dimensions()))
+		if(y.has_dimensions(get_real_dimensions()))
 		{
 			y.set_same_prefix(get_actual_dimensions());
 		}
@@ -181,7 +181,7 @@ namespace physics::units
 	{
 		math::unit_number new_value = value;
 		auto_unit y = x;
-		if(y.equal_dimensions(get_real_dimensions()))
+		if(y.has_dimensions(get_real_dimensions()))
 		{
 			y.set_same_prefix(unit::get_actual_dimensions());
 		}
@@ -193,7 +193,7 @@ namespace physics::units
 
 	auto_unit unit::operator ^(const unit& x) const
 	{
-		if(x.empty_dimensions())
+		if(x.has_empty_dimensions())
 		{
 			return move(*this ^ int(x.get_value().get_value()));
 		}
@@ -209,7 +209,7 @@ namespace physics::units
 	{
 		auto_unit z = x;
 		z.set_same_prefix(get_actual_dimensions());
-		if(!x.equal_dimensions(get_real_dimensions()))
+		if(!x.has_dimensions(get_real_dimensions()))
 		{
 			invalidate(8);
 		}
@@ -220,7 +220,7 @@ namespace physics::units
 	{
 		auto_unit z = x;
 		z.set_same_prefix(get_actual_dimensions());
-		if(!x.equal_dimensions(get_real_dimensions()))
+		if(!x.has_dimensions(get_real_dimensions()))
 		{
 			invalidate(9);
 		}
@@ -256,7 +256,7 @@ namespace physics::units
 	/// Sets the dimensions to the dimensions given string. It invalidates the object if the dimensions aren't compatible with the real dimensions
 	void unit::change_dimensions(string new_dimensions)
 	{
-		if(equal_dimensions(new_dimensions))
+		if(has_dimensions(new_dimensions))
 		{
 			for(auto& actual_dimension : actual_dimensions)
 			{
@@ -307,14 +307,14 @@ namespace physics::units
 	}
 
 	/// Calculates if the dimensions are equal related to the given string
-	bool unit::equal_dimensions(string dimension_structure) const
+	bool unit::has_dimensions(string dimension_structure) const
 	{
 		vector_real_dimensions structure_dimensions = create_real_dimensions(dimension_structure);
-		return equal_dimensions(structure_dimensions);
+		return has_dimensions(structure_dimensions);
 	}
 
 	/// Calculates if the dimensions are equal related to the real dimensions map
-	bool unit::equal_dimensions(const vector_real_dimensions& second_dimensions) const
+	bool unit::has_dimensions(const vector_real_dimensions& second_dimensions) const
 	{
 		vector_real_dimensions real_dimensions_tmp = get_real_dimensions();
 		if(real_dimensions_tmp.size() == second_dimensions.size())
@@ -335,7 +335,7 @@ namespace physics::units
 	}
 
 	/// Returns true if the dimensions are empty
-	bool unit::empty_dimensions() const
+	bool unit::has_empty_dimensions() const
 	{
 		if(get_real_dimensions().size() == 0)
 		{
@@ -635,7 +635,7 @@ namespace physics::units
 	/// Calculates if the dimensions are equal related to the unit
 	bool equal_dimensions(const unit& x, const unit& y)
 	{
-		return x.equal_dimensions(y.get_real_dimensions());
+		return x.has_dimensions(y.get_real_dimensions());
 	}
 }
 

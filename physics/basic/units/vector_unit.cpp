@@ -357,7 +357,7 @@ namespace physics::units
 
 	void vector_unit::operator +=(const vector_unit& y)
 	{
-		if(equal_dimensions(y.get_real_dimensions()) and unit::is_defined() and y.is_defined())
+		if(has_dimensions(y.get_real_dimensions()) and unit::is_defined() and y.is_defined())
 		{
 			if(is_1d())
 			{
@@ -400,7 +400,7 @@ namespace physics::units
 
 	void vector_unit::operator -=(const vector_unit& y)
 	{
-		if(equal_dimensions(y.get_real_dimensions()) and unit::is_defined() and y.is_defined())
+		if(has_dimensions(y.get_real_dimensions()) and unit::is_defined() and y.is_defined())
 		{
 			auto_vector z = auto_vector(y);
 			z.invert();
@@ -454,7 +454,7 @@ namespace physics::units
 
 	auto_vector vector_unit::operator ^(const scalar_unit& x) const
 	{
-		if(x.empty_dimensions())
+		if(x.has_empty_dimensions())
 		{
 			auto_unit new_unit = *this ^ x;
 			if(is_1d())

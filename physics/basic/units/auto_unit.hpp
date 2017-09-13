@@ -117,7 +117,7 @@ physics::units::auto_unit operator /(T x, const physics::units::unit& y)
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 physics::units::auto_unit operator ^(T x, const physics::units::unit& y)
 {
-	if (y.empty_dimensions())
+	if (y.has_empty_dimensions())
 	{
 		math::unit_number new_value = y.get_value();
 		physics::units::vector_real_dimensions new_real_dimensions = power_real_dimensions(y.get_real_dimensions(),new_value);
