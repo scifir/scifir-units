@@ -75,18 +75,32 @@ namespace chemistry
 	wstring molecule::get_canonical_formula() const
 	{
 		vector<shared_ptr<atom>> atoms = get_atoms();
+		vector<shared_ptr<atom>> atoms_used = vector<shared_ptr<atom>>();
 		wostringstream formula_text;
-		for (const auto& atom : atoms)
+		for (const shared_ptr<atom>& atom1 : atoms)
 		{
 			int atom_number = 0;
-			for (const auto& atom2 : atoms)
+			bool is_repeated = false;
+			for (const shared_ptr<atom>& atom_used : atoms_used)
 			{
-				if (same_specimen(*atom,*atom2))
+				if (same_specimen(*atom_used,*atom1))
+				{
+					is_repeated = true;
+				}
+			}
+			if (is_repeated)
+			{
+				continue;
+			}
+			for (const shared_ptr<atom>& atom2 : atoms)
+			{
+				if (same_specimen(*atom1,*atom2))
 				{
 					atom_number++;
 				}
 			}
-			formula_text << atom->get_symbol().c_str() << atom_number;
+			formula_text << atom1->get_symbol().c_str() << atom_number;
+			atoms_used.push_back(atom1);
 		}
 		return formula_text.str();
 	}
