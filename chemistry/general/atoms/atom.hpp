@@ -103,6 +103,8 @@ namespace chemistry
 
 			bool bonded_to(const atom&) const;
 
+			shared_ptr<atomic_bond> get_bond_of(const atom&) const;
+
 			virtual int get_ionic_charge() const = 0;
 
             inline bool is_ion() const

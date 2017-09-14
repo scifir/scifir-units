@@ -66,6 +66,25 @@ namespace chemistry
 		}
 	}
 
+	shared_ptr<atomic_bond> atom::get_bond_of(const atom& x) const
+	{
+		if (this == &x)
+		{
+			return nullptr;
+		}
+		for (const auto& bond : bonds)
+		{
+			shared_ptr<atomic_bond> bond_lock = bond.lock();
+			shared_ptr<atom> atom1_lock = bond_lock->get_atom1().lock();
+			shared_ptr<atom> atom2_lock = bond_lock->get_atom2().lock();
+			if (&x == &*atom1_lock or &x == &*atom2_lock)
+			{
+				return bond_lock;
+			}
+		}
+		return nullptr;
+	}
+
 	informatics::color atom::get_atomic_color() const
     {
 		if (get_z() == 1)
