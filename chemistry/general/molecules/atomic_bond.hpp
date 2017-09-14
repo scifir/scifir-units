@@ -26,9 +26,14 @@ namespace chemistry
 				return atom2;
 			}
 
-			inline const length& get_bond_length()
+			inline const length& get_bond_length() const
 			{
 				return bond_length;
+			}
+
+			inline const atomic_bond_weight& get_atomic_bond_weight() const
+			{
+				return weight;
 			}
 
 			/*inline enthalpy get_bond_enthalpy()
@@ -77,6 +82,21 @@ namespace chemistry
 			inline bool is_rigid() const
 			{
 				return !is_flexible();
+			}
+
+			inline bool is_single() const
+			{
+				return (weight == atomic_bond_weight::single);
+			}
+
+			inline bool is_double() const
+			{
+				return (weight == atomic_bond_weight::dual);
+			}
+
+			inline bool is_triple() const
+			{
+				return (weight == atomic_bond_weight::triple);
 			}
 
 			int get_total_electrons() const;
