@@ -156,9 +156,9 @@ namespace physics::units
 		}
 		else
 		{
-			list<angle_type> new_angles = list<angle_type>();
-			new_angles.push_back(float(directions.angles[0]));
-			new_angles.push_back(float(directions.angles[1]));
+			math::angle_container new_angles = math::angle_container();
+			new_angles.push_back(directions.angles[0]);
+			new_angles.push_back(directions.angles[1]);
 			return auto_vector(new_value, new_angles);
 		}
 	}
