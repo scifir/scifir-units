@@ -70,6 +70,41 @@ namespace physics::units
 		return *this;
 	}
 
+	auto_unit auto_unit::operator +(const auto_unit& x) const
+	{
+		return unit::operator+(x);
+	}
+
+	auto_unit auto_unit::operator -(const auto_unit& x) const
+	{
+		return unit::operator-(x);
+	}
+
+	auto_unit auto_unit::operator *(const auto_unit& x) const
+	{
+		return unit::operator*(x);
+	}
+
+	auto_unit auto_unit::operator /(const auto_unit& x) const
+	{
+		return unit::operator/(x);
+	}
+
+	auto_unit auto_unit::operator ^(const auto_unit& x) const
+	{
+		return unit::operator^(x);
+	}
+
+	void auto_unit::operator +=(const auto_unit& x)
+	{
+		unit::operator+=(x);
+	}
+
+	void auto_unit::operator -=(const auto_unit& x)
+	{
+		unit::operator-=(x);
+	}
+
 	unit* auto_unit::clone() const
 	{
 		return new auto_unit(*this);

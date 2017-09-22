@@ -25,6 +25,74 @@ namespace physics::units
 			auto_unit& operator =(const unit&);
 			auto_unit& operator =(unit&&);
 
+			auto_unit operator +(const auto_unit&) const;
+			auto_unit operator -(const auto_unit&) const;
+			auto_unit operator *(const auto_unit&) const;
+			auto_unit operator /(const auto_unit&) const;
+			auto_unit operator ^(const auto_unit&) const;
+			void operator +=(const auto_unit&);
+			void operator -=(const auto_unit&);
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_unit operator +(U x) const
+			{
+				return unit::operator+(x);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_unit operator -(U x) const
+			{
+				return unit::operator-(x);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_unit operator *(U x) const
+			{
+				return unit::operator*(x);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			auto_unit operator /(U x) const
+			{
+				return unit::operator/(x);
+			}
+
+			template<typename U, typename = typename enable_if<is_integer_number<U>::value>::type>
+			auto_unit operator ^(U x) const
+			{
+				return unit::operator^(x);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator +=(U y)
+			{
+				unit::operator+=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator -=(U y)
+			{
+				unit::operator-=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator *=(U y)
+			{
+				unit::operator*=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator /=(U y)
+			{
+				unit::operator/=(y);
+			}
+
+			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			void operator ^=(U y)
+			{
+				unit::operator^=(y);
+			}
+
 			virtual unit* clone() const;
 
 			vector_real_dimensions initialize_real_dimensions(string);
@@ -130,6 +198,36 @@ physics::units::auto_unit operator ^(T x, const physics::units::unit& y)
 		y.invalidate(10);
 		return move(y);
 	}
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+physics::units::auto_unit operator +(T x, const physics::units::auto_unit& y)
+{
+	return x + static_cast<const physics::units::unit&>(y);
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+physics::units::auto_unit operator -(T x, const physics::units::auto_unit& y)
+{
+	return x - static_cast<const physics::units::unit&>(y);
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+physics::units::auto_unit operator *(T x, const physics::units::auto_unit& y)
+{
+	return x * static_cast<const physics::units::unit&>(y);
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+physics::units::auto_unit operator /(T x, const physics::units::auto_unit& y)
+{
+	return x / static_cast<const physics::units::unit&>(y);
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+physics::units::auto_unit operator ^(T x, const physics::units::auto_unit& y)
+{
+	return x ^ static_cast<const physics::units::unit&>(y);
 }
 
 #endif // PHYSICS_BASIC_UNITS_AUTO_UNIT_HPP_INCLUDED
