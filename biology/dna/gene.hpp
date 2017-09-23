@@ -1,19 +1,51 @@
-#ifndef GENE_HPP_INCLUDED
-#define GENE_HPP_INCLUDED
+#ifndef BIOLOGY_DNA_GENE_HPP_INCLUDED
+#define BIOLOGY_DNA_GENE_HPP_INCLUDED
 
-// TODO: gene should contain atoms, dna only should include a vector of genes
+#include "boost/variant.hpp"
+
+#include "chemistry/general/molecules/normal_molecule.hpp"
+
+#include <cstdint>
+#include <vector>
 
 using namespace std;
 
 namespace biology
 {
+	typedef boost::variant<vector<uint8_t>,vector<uint16_t>,vector<uint32_t>> vector_nitrogenous_bases;
+	typedef int gen_index_type;
+
 	class gene
 	{
 		public:
 			gene();
+			explicit gene(vector_nitrogenous_bases,string);
+			explicit gene(string,string);
+
+			inline int get_bases() const
+			{
+				return 1;
+				//return bases;
+			}
+
+			inline int number_of_bases() const
+			{
+				return 1;
+				//return bases.size();
+			}
+
+			//molecule operator[](int) const;
+
+			void switch_base(gen_index_type,uint8_t);
+			void insert_base(gen_index_type,uint8_t);
+			void remove_base(gen_index_type);
 
 			//vector<protein> get_codons_proteins() const;
+
+		private:
+			//vector_nitrogenous_bases bases;
+			string name;
 	};
 }
 
-#endif // GENE_HPP_INCLUDED
+#endif // BIOLOGY_DNA_GENE_HPP_INCLUDED

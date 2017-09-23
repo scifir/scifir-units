@@ -1,7 +1,7 @@
 #ifndef NITROGENOUS_BASE_HPP_INCLUDED
 #define NITROGENOUS_BASE_HPP_INCLUDED
 
-#include "chemistry/general/compounds/compound.hpp"
+#include "chemistry/general/molecules/normal_molecule.hpp"
 
 #include <string>
 using namespace std;
@@ -13,7 +13,7 @@ namespace biology
 		class nitrogenous_base
 		{
 			public:
-				chemistry::compounds::compound compound;
+				chemistry::normal_molecule molecule;
 
 				nitrogenous_base(string);
 		};
