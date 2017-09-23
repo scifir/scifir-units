@@ -472,7 +472,7 @@ namespace chemistry
 		{
 			return new atom_No(new_ionic_charge);
 		}
-		else if (new_atom == "Lr")
+		else
 		{
 			return new atom_Lr(new_ionic_charge);
 		}
@@ -948,7 +948,7 @@ namespace chemistry
 		{
 			return new atom_No(new_ionic_charge,new_neutrons_number);
 		}
-		else if (new_atom == "Lr")
+		else
 		{
 			return new atom_Lr(new_ionic_charge,new_neutrons_number);
 		}

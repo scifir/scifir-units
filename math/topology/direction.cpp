@@ -168,6 +168,7 @@ namespace math
 		{
 			return left_top_front;
 		}
+		return left;
 	}
 }
 

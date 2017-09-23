@@ -416,6 +416,7 @@ namespace chemistry
 				{
 					return 12;
 				}
+				return 1;
 			}
 
 			virtual const length& get_atomic_radius() const

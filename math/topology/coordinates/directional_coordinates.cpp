@@ -4,7 +4,7 @@ using namespace std;
 
 namespace math
 {
-	directional_coordinates::directional_coordinates(function<space_type()> new_r,direction_symbol new_direction) : r(new_r),direction(new_direction), coordinates_1d()
+	directional_coordinates::directional_coordinates(function<space_type()> new_r,direction_symbol new_direction) : coordinates_1d(),r(new_r),direction(new_direction)
 	{
 
 	}
@@ -15,7 +15,7 @@ namespace math
 		{
 			return r();
 		}
-		else if (direction == left)
+		else
 		{
 			return -r();
 		}

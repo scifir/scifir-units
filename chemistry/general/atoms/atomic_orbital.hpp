@@ -55,7 +55,7 @@ namespace chemistry
 		public:
 			vector<orbital> orbitals;
 			orbital_symbol orbital_specie;
-			int orbital_max;
+			unsigned int orbital_max;
 
 			orbital_group(orbital_symbol);
 			void add(orbital);

@@ -20,6 +20,8 @@ namespace chemistry
 			return 4;
 		case atomic_bond_weight::triple:
 			return 6;
+		default:
+			return 2;
 		}
 	}
 

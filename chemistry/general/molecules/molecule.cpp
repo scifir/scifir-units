@@ -196,7 +196,7 @@ namespace chemistry
 
 	bool molecule::has_bond_group(string x) const
 	{
-
+		return true;
 	}
 
 	bool molecule::has_functional_group(functional_group x) const
@@ -209,22 +209,22 @@ namespace chemistry
 
 	bool molecule::is_cyclical() const
     {
-
+		return true;
     }
 
     bool molecule::is_acyclical() const
     {
-
+		return true;
     }
 
     bool molecule::is_polar() const
     {
-
+		return true;
     }
 
     bool molecule::is_apolar() const
 	{
-
+		return true;
 	}
 
 	bool molecule::is_chiral() const

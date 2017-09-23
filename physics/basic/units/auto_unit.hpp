@@ -95,7 +95,7 @@ namespace physics::units
 
 			virtual unit* clone() const;
 
-			vector_real_dimensions initialize_real_dimensions(string);
+			void initialize_real_dimensions(string);
 
 			virtual string get_dimensions_match() const;
 			virtual vector_real_dimensions get_real_dimensions() const;

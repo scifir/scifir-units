@@ -126,7 +126,7 @@ namespace physics::units
 				return new dimension_mass();
 			case s:
 				return new dimension_time();
-			case A:
+			case C:
 				return new dimension_charge();
 			case K:
 				return new dimension_temperature();

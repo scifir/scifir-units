@@ -58,6 +58,8 @@ namespace chemistry
 				return orbital_d(period, electron_number);
 			case orbital_symbol::f:
 				return orbital_f(period, electron_number);
+			default:
+				return orbital_s(period, electron_number);
 		}
 	}
 

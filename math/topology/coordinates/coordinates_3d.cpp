@@ -20,7 +20,11 @@ namespace math
 		return tuple<space_type,angle_type,angle_type>(new_value,angle1,angle2);
 	}
 
-	tuple<space_type,angle_type,angle_type> spherical_to_cartesian(space_type x,angle_type y,angle_type z)
+	tuple<space_type,space_type,space_type> spherical_to_cartesian(space_type r,angle_type angle1,angle_type angle2)
 	{
+		space_type x = r * math::cos(angle1) * math::sin(angle2);
+		space_type y = r * math::sin(angle1) * math::sin(angle2);
+		space_type z = r * math::cos(angle2);
+		return tuple<space_type,space_type,space_type>(x,y,z);
 	}
 }

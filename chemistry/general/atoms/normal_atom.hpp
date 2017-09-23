@@ -17,7 +17,7 @@ namespace chemistry
 	class normal_atom : public atom_crtp<T>
 	{
 		public:
-			normal_atom(int new_ionic_charge = 0,int new_neutrons_number = T::mass_number) : mass_number(new_neutrons_number),ionic_charge(new_ionic_charge),atom_crtp<T>()
+			normal_atom(int new_ionic_charge = 0,int new_neutrons_number = T::mass_number) : atom_crtp<T>(),mass_number(new_neutrons_number),ionic_charge(new_ionic_charge)
 			{
 				if (new_ionic_charge > atom_crtp<T>::get_z())
 				{
@@ -78,6 +78,7 @@ namespace chemistry
 				{
 					return "empty configuration";
 				}
+				return "";
             }
 
             virtual int get_lone_pairs() const

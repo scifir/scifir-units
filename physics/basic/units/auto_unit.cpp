@@ -110,7 +110,7 @@ namespace physics::units
 		return new auto_unit(*this);
 	}
 
-	vector_real_dimensions auto_unit::initialize_real_dimensions(string init_value)
+	void auto_unit::initialize_real_dimensions(string init_value)
 	{
 		int new_start = 0;
 		int j = new_start;

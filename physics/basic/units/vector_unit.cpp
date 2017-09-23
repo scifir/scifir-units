@@ -430,6 +430,10 @@ namespace physics::units
 		{
 			return auto_vector(new_unit, directions.angles[0], directions.angles[1]);
 		}
+		else
+		{
+			return auto_vector(new_unit, directions.angles);
+		}
 	}
 
 	auto_vector vector_unit::operator /(const scalar_unit& x) const
@@ -449,6 +453,10 @@ namespace physics::units
 		else if(is_3d())
 		{
 			return auto_vector(new_unit, directions.angles[0], directions.angles[1]);
+		}
+		else
+		{
+			return auto_vector(new_unit, directions.angles);
 		}
 	}
 
@@ -470,10 +478,7 @@ namespace physics::units
 				return auto_vector(new_unit, directions.angles[0], directions.angles[1]);
 			}
 		}
-		else
-		{
-			return auto_vector("0 m", direction_symbol::left);
-		}
+		return auto_vector("0 m", direction_symbol::left);
 	}
 
 	auto_scalar norm(const vector_unit& x)
@@ -560,7 +565,7 @@ namespace physics::units
 	{
 		math::angle_container compare_angles = x.get_angles();
 		math::angle_container other_angles = y.get_angles();
-		for(int i = 0; i < compare_angles.size(); i++)
+		for(unsigned int i = 0; i < compare_angles.size(); i++)
 		{
 			if(compare_angles[i] != other_angles[i])
 			{
@@ -574,7 +579,7 @@ namespace physics::units
 	{
 		math::angle_container compare_angles = x.get_angles();
 		math::angle_container other_angles = y.get_angles();
-		for(int i = 0; i < compare_angles.size(); i++)
+		for(unsigned int i = 0; i < compare_angles.size(); i++)
 		{
 			if(!math::parallel(compare_angles[i], other_angles[i]))
 			{
@@ -588,7 +593,7 @@ namespace physics::units
 	{
 		math::angle_container compare_angles = x.get_angles();
 		math::angle_container other_angles = y.get_angles();
-		for(int i = 0; i < compare_angles.size(); i++)
+		for(unsigned int i = 0; i < compare_angles.size(); i++)
 		{
 			if(math::orthogonal(compare_angles[i], other_angles[i]))
 			{

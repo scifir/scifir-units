@@ -64,6 +64,7 @@ namespace chemistry
 				return true;
 			}
 		}
+		return false;
 	}
 
 	shared_ptr<atomic_bond> atom::get_bond_of(const atom& x) const
@@ -130,6 +131,7 @@ namespace chemistry
 		case 7:
 			return atomic_pattern::circles;
 		}
+		return atomic_pattern::none;
 	}
 
 	molecular_geometry atom::get_molecular_geometry() const
@@ -256,7 +258,7 @@ namespace chemistry
 
 	bool atom::is_chiral() const
 	{
-
+		return true;
 	}
 
 	math::angle_number get_molecular_geometry_angle(const atom& x,edge_position position1,edge_position position2)
@@ -350,6 +352,7 @@ namespace chemistry
 		case molecular_geometry::tricapped_trigonal_prismatic:
 			return math::angle_number(50);
 		}
+		return math::angle_number(180);
 	}
 
 	bool are_isotopes(const atom& x,const atom& y)

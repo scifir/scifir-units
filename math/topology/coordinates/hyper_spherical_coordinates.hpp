@@ -28,13 +28,13 @@ namespace math
 			space_type get_r() const;
 			const math::angle_number& get_angle1() const;
 			const math::angle_number& get_angle2() const;
-			const math::angle_number& get_angle(int) const;
+			const math::angle_number& get_angle(unsigned int) const;
 			const angle_container& get_angles() const;
 			const direction_symbol& get_direction() const;
 
 			virtual space_type get_value() const;
-			virtual space_type n_projection(int) const;
-			virtual bool is_nd(int) const;
+			virtual space_type n_projection(unsigned int) const;
+			virtual bool is_nd(unsigned int) const;
 			virtual int get_nd() const;
 
 			const bool& is_1d() const;
