@@ -23,6 +23,23 @@ namespace biology
     	return (genes.count(x) > 0);
     }
 
+    void chromosome::load_gene(string new_gen) const
+    {
+    	if (!is_gene_loaded(new_gen))
+    	{
+			for (rapidxml::xml_node<>* gene_node = chromosome_node->first_node("gene"); gene_node; gene_node = gene_node->next_sibling())
+			{
+				string gene_name = gene_node->first_attribute("name")->value();
+				if (new_gen == gene_name)
+				{
+					string gene_bases = gene_node->value();
+					gene new_gene(gene_bases,gene_name);
+					genes[gene_name] = new_gene;
+				}
+			}
+    	}
+    }
+
     void chromosome::load_genes(vector<string> new_genes) const
     {
 		vector<string> loadable_genes;
