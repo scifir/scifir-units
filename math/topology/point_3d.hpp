@@ -3,6 +3,9 @@
 
 #include "topology.hpp"
 
+#include <iostream>
+#include <string>
+
 using namespace std;
 
 namespace math
@@ -10,6 +13,7 @@ namespace math
 	class point_3d
 	{
 		public:
+			point_3d();
 			point_3d(space_type,space_type,space_type);
 
 			inline space_type get_x() const
@@ -29,13 +33,20 @@ namespace math
 
 			space_type distance_to_origin() const;
 
+			wstring display() const;
+			void print() const;
+
 		private:
 			space_type x;
 			space_type y;
 			space_type z;
 	};
 
-	space_type distance(point_3d,point_3d);
+	space_type distance(const point_3d&,const point_3d&);
 }
+
+bool operator ==(const math::point_3d&,const math::point_3d&);
+bool operator !=(const math::point_3d&,const math::point_3d&);
+wostream& operator <<(wostream&,const math::point_3d&);
 
 #endif // MATH_TOPOLOGY_POINT_3D_HPP_INCLUDED
