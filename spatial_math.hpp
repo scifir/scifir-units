@@ -7,6 +7,8 @@
 #include "math/topology/direction.hpp"
 #include "math/topology/point_2d.hpp"
 #include "math/topology/point_3d.hpp"
+#include "math/topology/line_2d.hpp"
+#include "math/topology/line_3d.hpp"
 
 #include "math/topology/coordinates/coordinates_1d.hpp"
 #include "math/topology/coordinates/directional_coordinates.hpp"
@@ -22,6 +24,8 @@
 
 #include "math/topology/figure_2d/figure_2d.hpp"
 #include "math/topology/figure_2d/circle.hpp"
+#include "math/topology/figure_2d/irregular_polygon.hpp"
+#include "math/topology/figure_2d/linear_figure_2d.hpp"
 #include "math/topology/figure_2d/parallelogram.hpp"
 #include "math/topology/figure_2d/polygon.hpp"
 #include "math/topology/figure_2d/rectangle.hpp"
