@@ -33,4 +33,6 @@
 #include "math/topology/figure_2d/square.hpp"
 #include "math/topology/figure_2d/triangle.hpp"
 
+#include "math/topology/figure_3d/figure_3d.hpp"
+
 #endif // SPATIAL_MATH_HPP_INCLUDED
