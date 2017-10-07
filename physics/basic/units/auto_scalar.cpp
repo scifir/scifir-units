@@ -10,7 +10,7 @@ namespace physics::units
 	{
 	}
 
-	auto_scalar::auto_scalar(auto_scalar&& x) noexcept : unit(move(x)),auto_unit(move(x)),scalar_unit(move(x))
+	auto_scalar::auto_scalar(auto_scalar&& x) : unit(move(x)),auto_unit(move(x)),scalar_unit(move(x))
 	{
 	}
 
