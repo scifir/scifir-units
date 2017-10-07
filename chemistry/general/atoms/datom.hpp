@@ -1,6 +1,17 @@
-#ifndef DETAILED_ATOM_HPP_INCLUDED
-#define DETAILED_ATOM_HPP_INCLUDED
+#ifndef CHEMISTRY_GENERAL_ATOMS_DATOM_HPP_INCLUDED
+#define CHEMISTRY_GENERAL_ATOMS_DATOM_HPP_INCLUDED
+
+#include <string>
 
 using namespace std;
 
-#endif // DETAILED_ATOM_HPP_INCLUDED
+namespace chemistry
+{
+	class datom
+	{
+		public:
+			datom(const string&);
+	};
+}
+
+#endif // CHEMISTRY_GENERAL_ATOMS_DATOM_HPP_INCLUDED

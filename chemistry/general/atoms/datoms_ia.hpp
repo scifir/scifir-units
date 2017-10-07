@@ -1,1 +1,12 @@
-// datom is the abbreviation of detailed_atom
+#ifndef CHEMISTRY_GENERAL_ATOMS_DATOMS_IA_HPP_INCLUDED
+#define CHEMISTRY_GENERAL_ATOMS_DATOMS_IA_HPP_INCLUDED
+
+#include "datom.hpp"
+
+using namespace std;
+
+namespace chemistry
+{
+}
+
+#endif // CHEMISTRY_GENERAL_ATOMS_DATOMS_IA_HPP_INCLUDED

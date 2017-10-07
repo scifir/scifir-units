@@ -65,6 +65,11 @@ namespace chemistry
 		return atoms_mass;
 	}
 
+	wstring molecule::get_name() const
+	{
+		return L"unfinished";
+	}
+
 	wstring molecule::get_formula() const
 	{
 		vector<shared_ptr<atom>> atoms = get_atoms();

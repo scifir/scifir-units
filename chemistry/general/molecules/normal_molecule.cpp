@@ -107,6 +107,11 @@ namespace chemistry
 		return atoms.size();
 	}
 
+	void normal_molecule::add_atom(const atom& x)
+	{
+
+	}
+
 	void normal_molecule::save(string file_path,string file_name) const
 	{
 		ostringstream file_content;

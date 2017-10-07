@@ -21,6 +21,8 @@ namespace chemistry
 			virtual vector<shared_ptr<atomic_bond>> get_bonds() const;
 			virtual int get_total_atoms() const;
 
+			virtual void add_atom(const atom&);
+
 			virtual void save(string,string) const;
 
 		private:

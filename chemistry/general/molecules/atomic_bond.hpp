@@ -58,6 +58,13 @@ namespace chemistry
 				return (atom1_lock->get_electronegativity() == atom2_lock->get_electronegativity());
 			}
 
+			inline bool is_ionic() const
+			{
+				shared_ptr<atom> atom1_lock = atom1.lock();
+				shared_ptr<atom> atom2_lock = atom2.lock();
+				return ((atom1_lock->get_electronegativity() - atom2_lock->get_electronegativity()) >= 2);
+			}
+
 			inline atomic_bond_type get_atomic_bond_type()
 			{
 				if (atom1.lock()->is_non_metal() and atom2.lock()->is_metallic())

@@ -39,6 +39,7 @@ namespace chemistry
             	return get_real_mass() + get_electrons_mass();
             }
 
+            wstring get_name() const;
 			wstring get_formula() const;
 			wstring get_canonical_formula() const;
 
@@ -59,6 +60,8 @@ namespace chemistry
             bool has_bond(string) const;
             bool has_bond_group(string) const;
             bool has_functional_group(functional_group) const;
+
+            virtual void add_atom(const atom&) = 0;
 
             bool is_cyclical() const;
             bool is_acyclical() const;
