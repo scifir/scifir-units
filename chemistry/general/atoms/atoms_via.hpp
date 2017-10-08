@@ -12,23 +12,23 @@ namespace chemistry
 		public:
 			ATOM_HPP(atom_O);
 
-			static const atom_symbol enum_type = atom_symbol::O;
+			static constexpr atom_symbol enum_type = atom_symbol::O;
 
 			static const string name;
 			static const string symbol;
 
-			static const atomic_group group = VIA;
-			static const int period = 2;
-			static const atomic_block block = atomic_block::p;
+			static constexpr atomic_group group = VIA;
+			static constexpr unsigned int period = 2;
+			static constexpr atomic_block block = atomic_block::p;
 
-			static const int z = 8;
-			static const int mass_number = 8;
+			static constexpr unsigned int z = 8;
+			static constexpr unsigned int mass_number = 8;
 
 			static const length atomic_radius;
 			static const mass standard_atomic_mass;
 
 			static constexpr float electronegativity = 3.44;
-			static const bool radioactive = false;
+			static constexpr bool radioactive = false;
 
 			static const molar_energy ionization_energy;
 			static const length covalent_radius;
@@ -42,23 +42,23 @@ namespace chemistry
 		public:
 			ATOM_HPP(atom_S);
 
-			static const atom_symbol enum_type = atom_symbol::S;
+			static constexpr atom_symbol enum_type = atom_symbol::S;
 
 			static const string name;
 			static const string symbol;
 
-			static const atomic_group group = VIA;
-			static const int period = 3;
-			static const atomic_block block = atomic_block::p;
+			static constexpr atomic_group group = VIA;
+			static constexpr unsigned int period = 3;
+			static constexpr atomic_block block = atomic_block::p;
 
-			static const int z = 16;
-			static const int mass_number = 16;
+			static constexpr unsigned int z = 16;
+			static constexpr unsigned int mass_number = 16;
 
 			static const length atomic_radius;
 			static const mass standard_atomic_mass;
 
 			static constexpr float electronegativity = 2.58;
-			static const bool radioactive = false;
+			static constexpr bool radioactive = false;
 
 			static const molar_energy ionization_energy;
 			static const length covalent_radius;
@@ -72,23 +72,23 @@ namespace chemistry
 		public:
 			ATOM_HPP(atom_Se);
 
-			static const atom_symbol enum_type = atom_symbol::Se;
+			static constexpr atom_symbol enum_type = atom_symbol::Se;
 
 			static const string name;
 			static const string symbol;
 
-			static const atomic_group group = VIA;
-			static const int period = 4;
-			static const atomic_block block = atomic_block::p;
+			static constexpr atomic_group group = VIA;
+			static constexpr unsigned int period = 4;
+			static constexpr atomic_block block = atomic_block::p;
 
-			static const int z = 34;
-			static const int mass_number = 45;
+			static constexpr unsigned int z = 34;
+			static constexpr unsigned int mass_number = 45;
 
 			static const length atomic_radius;
 			static const mass standard_atomic_mass;
 
 			static constexpr float electronegativity = 2.55;
-			static const bool radioactive = false;
+			static constexpr bool radioactive = false;
 
 			static const molar_energy ionization_energy;
 			static const length covalent_radius;
@@ -102,23 +102,23 @@ namespace chemistry
 		public:
 			ATOM_HPP(atom_Te);
 
-			static const atom_symbol enum_type = atom_symbol::Te;
+			static constexpr atom_symbol enum_type = atom_symbol::Te;
 
 			static const string name;
 			static const string symbol;
 
-			static const atomic_group group = VIA;
-			static const int period = 5;
-			static const atomic_block block = atomic_block::p;
+			static constexpr atomic_group group = VIA;
+			static constexpr unsigned int period = 5;
+			static constexpr atomic_block block = atomic_block::p;
 
-			static const int z = 52;
-			static const int mass_number = 76;
+			static constexpr unsigned int z = 52;
+			static constexpr unsigned int mass_number = 76;
 
 			static const length atomic_radius;
 			static const mass standard_atomic_mass;
 
 			static constexpr float electronegativity = 2.1;
-			static const bool radioactive = false;
+			static constexpr bool radioactive = false;
 
 			static const molar_energy ionization_energy;
 			static const length covalent_radius;
@@ -132,23 +132,23 @@ namespace chemistry
 		public:
 			ATOM_HPP(atom_Po);
 
-			static const atom_symbol enum_type = atom_symbol::Po;
+			static constexpr atom_symbol enum_type = atom_symbol::Po;
 
 			static const string name;
 			static const string symbol;
 
-			static const atomic_group group = VIA;
-			static const int period = 6;
-			static const atomic_block block = atomic_block::p;
+			static constexpr atomic_group group = VIA;
+			static constexpr unsigned int period = 6;
+			static constexpr atomic_block block = atomic_block::p;
 
-			static const int z = 84;
-			static const int mass_number = 125;
+			static constexpr unsigned int z = 84;
+			static constexpr unsigned int mass_number = 125;
 
 			static const length atomic_radius;
 			static const mass standard_atomic_mass;
 
 			static constexpr float electronegativity = 2.0;
-			static const bool radioactive = false;
+			static constexpr bool radioactive = false;
 
 			static const molar_energy ionization_energy;
 			static const length covalent_radius;
@@ -162,23 +162,23 @@ namespace chemistry
 		public:
 			ATOM_HPP(atom_Lv);
 
-			static const atom_symbol enum_type = atom_symbol::Lv;
+			static constexpr atom_symbol enum_type = atom_symbol::Lv;
 
 			static const string name;
 			static const string symbol;
 
-			static const atomic_group group = VIA;
-			static const int period = 7;
-			static const atomic_block block = atomic_block::p;
+			static constexpr atomic_group group = VIA;
+			static constexpr unsigned int period = 7;
+			static constexpr atomic_block block = atomic_block::p;
 
-			static const int z = 116;
-			static const int mass_number = 177;
+			static constexpr unsigned int z = 116;
+			static constexpr unsigned int mass_number = 177;
 
 			static const length atomic_radius;
 			static const mass standard_atomic_mass;
 
 			static constexpr float electronegativity = 0;
-			static const bool radioactive = false;
+			static constexpr bool radioactive = false;
 
 			static const molar_energy ionization_energy;
 			static const length covalent_radius;

@@ -52,10 +52,10 @@ namespace chemistry
 			virtual const string& get_symbol() const = 0;
 
 			virtual const atomic_group get_atomic_group() const = 0;
-			virtual const int get_period() const = 0;
+			virtual const unsigned int get_period() const = 0;
 			virtual const atomic_block get_atomic_block() const = 0;
 
-			virtual const int get_z() const = 0;
+			virtual const unsigned int get_z() const = 0;
 			virtual const int get_valence_number() const = 0;
 
 			virtual const length& get_atomic_radius() const = 0;
@@ -324,7 +324,7 @@ namespace chemistry
 				return T::group;
 			}
 
-			virtual const int get_period() const
+			virtual const unsigned int get_period() const
 			{
 				return T::period;
 			}
@@ -334,7 +334,7 @@ namespace chemistry
 				return T::block;
 			}
 
-			virtual const int get_z() const
+			virtual const unsigned int get_z() const
 			{
 				return T::z;
 			}
