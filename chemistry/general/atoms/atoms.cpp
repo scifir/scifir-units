@@ -2,7 +2,7 @@
 
 namespace chemistry
 {
-	atom* create_atom(string new_atom,int new_ionic_charge)
+	atom* create_atom(const string& new_atom,int new_ionic_charge)
 	{
 		if (new_atom == "H")
 		{
@@ -478,7 +478,7 @@ namespace chemistry
 		}
 	}
 
-	atom* create_atom(string new_atom,int new_ionic_charge,int new_neutrons_number)
+	atom* create_atom(const string& new_atom,int new_ionic_charge,int new_neutrons_number)
 	{
 		if (new_atom == "H")
 		{

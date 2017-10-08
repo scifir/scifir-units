@@ -25,11 +25,11 @@ namespace physics::units
 			unit();
 			unit(const unit&);
 			unit(unit&&);
-			explicit unit(math::space_type, string = "");
+			explicit unit(math::space_type, const string& = "");
 			explicit unit(math::unit_number, const vector_actual_dimensions&);
-			explicit unit(const unit&,string);
-			explicit unit(unit&&,string);
-			explicit unit(string);
+			explicit unit(const unit&,const string&);
+			explicit unit(unit&&,const string&);
+			explicit unit(const string&);
 
 			unit& operator =(const unit&);
 			unit& operator =(unit&&);
@@ -92,8 +92,8 @@ namespace physics::units
 			unit& operator--();
 			unit& operator--(int);
 
-			void change_dimensions(string);
-			bool has_dimensions(string) const;
+			void change_dimensions(const string&);
+			bool has_dimensions(const string&) const;
 			bool has_dimensions(const vector_real_dimensions&) const;
 			bool has_empty_dimensions() const;
 			wstring display_dimensions() const;
@@ -122,7 +122,7 @@ namespace physics::units
 			math::unit_number value;
 			vector_actual_dimensions actual_dimensions;
 
-			string initial_dimensions_get_structure(string) const;
+			string initial_dimensions_get_structure(const string&) const;
 
 		private:
 			void add_prefix(shared_ptr<prefix>,float);
@@ -149,19 +149,11 @@ namespace physics::units
 			{
 			}
 
-			explicit unit_crtp(math::space_type new_value, string init_value) : unit(new_value,init_value)
+			explicit unit_crtp(math::space_type new_value, const string& init_value) : unit(new_value,init_value)
 			{
 			}
 
-			explicit unit_crtp(const unit& new_unit,string init_value) : unit(new_unit,init_value)
-			{
-				if(!has_dimensions(init_value))
-				{
-					unit::invalidate(7);
-				}
-			}
-
-			explicit unit_crtp(unit&& new_unit,string init_value) : unit(move(new_unit),init_value)
+			explicit unit_crtp(const unit& new_unit,const string& init_value) : unit(new_unit,init_value)
 			{
 				if(!has_dimensions(init_value))
 				{
@@ -169,7 +161,15 @@ namespace physics::units
 				}
 			}
 
-			explicit unit_crtp(string init_value) : unit(init_value)
+			explicit unit_crtp(unit&& new_unit,const string& init_value) : unit(move(new_unit),init_value)
+			{
+				if(!has_dimensions(init_value))
+				{
+					unit::invalidate(7);
+				}
+			}
+
+			explicit unit_crtp(const string& init_value) : unit(init_value)
 			{
 			}
 
@@ -231,19 +231,19 @@ bool operator >(const physics::units::unit&, const physics::units::unit&);
 bool operator <=(const physics::units::unit&, const physics::units::unit&);
 bool operator >=(const physics::units::unit&, const physics::units::unit&);
 
-bool operator ==(const physics::units::unit&, string);
-bool operator !=(const physics::units::unit&, string);
-bool operator <(const physics::units::unit&, string);
-bool operator >(const physics::units::unit&, string);
-bool operator <=(const physics::units::unit&, string);
-bool operator >=(const physics::units::unit&, string);
+bool operator ==(const physics::units::unit&, const string&);
+bool operator !=(const physics::units::unit&, const string&);
+bool operator <(const physics::units::unit&, const string&);
+bool operator >(const physics::units::unit&, const string&);
+bool operator <=(const physics::units::unit&, const string&);
+bool operator >=(const physics::units::unit&, const string&);
 
-bool operator ==(string, const physics::units::unit&);
-bool operator !=(string, const physics::units::unit&);
-bool operator <(string, const physics::units::unit&);
-bool operator >(string, const physics::units::unit&);
-bool operator <=(string, const physics::units::unit&);
-bool operator >=(string, const physics::units::unit&);
+bool operator ==(const string&, const physics::units::unit&);
+bool operator !=(const string&, const physics::units::unit&);
+bool operator <(const string&, const physics::units::unit&);
+bool operator >(const string&, const physics::units::unit&);
+bool operator <=(const string&, const physics::units::unit&);
+bool operator >=(const string&, const physics::units::unit&);
 
 void operator +=(wstring&, const physics::units::unit&);
 wstring operator +(const wstring&, const physics::units::unit&);

@@ -166,7 +166,7 @@ namespace physics::units
 	};
 
 	dimension* create_dimension(dimension_symbol);
-	dimension* create_dimension(string);
+	dimension* create_dimension(const string&);
 }
 
 #endif

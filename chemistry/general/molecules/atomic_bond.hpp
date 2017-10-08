@@ -107,7 +107,7 @@ namespace chemistry
 			}
 
 			int get_total_electrons() const;
-			bool is_bond(string) const;
+			bool is_bond(const string&) const;
 
 		private:
 			weak_ptr<atom> atom1;

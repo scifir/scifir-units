@@ -186,7 +186,7 @@ namespace chemistry
 		return false;
 	}
 
-	bool molecule::has_bond(string x) const
+	bool molecule::has_bond(const string& x) const
 	{
 		vector<shared_ptr<atomic_bond>> bonds = get_bonds();
 		for (const auto& bond : bonds)
@@ -199,7 +199,7 @@ namespace chemistry
 		return false;
 	}
 
-	bool molecule::has_bond_group(string x) const
+	bool molecule::has_bond_group(const string& x) const
 	{
 		return true;
 	}

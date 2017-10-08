@@ -12,11 +12,11 @@ namespace physics::units
 		public:
 			auto_unit(const auto_unit&);
 			auto_unit(auto_unit&&);
-			explicit auto_unit(math::space_type, string = "");
+			explicit auto_unit(math::space_type, const string& = "");
 			explicit auto_unit(math::unit_number, const vector_real_dimensions&, const vector_actual_dimensions&);
-			explicit auto_unit(const unit&,string);
-			explicit auto_unit(unit&&,string);
-			explicit auto_unit(string);
+			explicit auto_unit(const unit&,const string&);
+			explicit auto_unit(unit&&,const string&);
+			explicit auto_unit(const string&);
 			auto_unit(const unit&);
 			auto_unit(unit&&);
 

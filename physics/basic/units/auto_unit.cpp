@@ -18,7 +18,7 @@ namespace physics::units
 	{
 	}
 
-	auto_unit::auto_unit(math::space_type new_value, string dimension_structure) : unit(new_value,dimension_structure),real_dimensions(create_real_dimensions(dimension_structure))
+	auto_unit::auto_unit(math::space_type new_value, const string& dimension_structure) : unit(new_value,dimension_structure),real_dimensions(create_real_dimensions(dimension_structure))
 	{
 	}
 
@@ -26,15 +26,15 @@ namespace physics::units
 	{
 	}
 
-	auto_unit::auto_unit(const unit& new_value,string init_value) : unit(new_value,init_value),real_dimensions(create_real_dimensions(init_value))
+	auto_unit::auto_unit(const unit& new_value,const string& init_value) : unit(new_value,init_value),real_dimensions(create_real_dimensions(init_value))
 	{
 	}
 
-	auto_unit::auto_unit(unit&& new_value,string init_value) : unit(move(new_value),init_value),real_dimensions(create_real_dimensions(init_value))
+	auto_unit::auto_unit(unit&& new_value,const string& init_value) : unit(move(new_value),init_value),real_dimensions(create_real_dimensions(init_value))
 	{
 	}
 
-	auto_unit::auto_unit(string init_value) : unit(init_value),real_dimensions(create_real_dimensions(initial_dimensions_get_structure(init_value)))
+	auto_unit::auto_unit(const string& init_value) : unit(init_value),real_dimensions(create_real_dimensions(initial_dimensions_get_structure(init_value)))
 	{
 	}
 

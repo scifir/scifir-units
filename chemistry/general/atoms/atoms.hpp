@@ -25,8 +25,8 @@ using namespace std;
 
 namespace chemistry
 {
-	atom* create_atom(string,int = 0);
-	atom* create_atom(string,int,int);
+	atom* create_atom(const string&,int = 0);
+	atom* create_atom(const string&,int,int);
 }
 
 #endif // CHEMISTRY_GENERAL_ATOMS_ATOMS_HPP_INCLUDED

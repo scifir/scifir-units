@@ -19,8 +19,8 @@ namespace biology
 	{
 		public:
 			gene();
-			explicit gene(vector_nitrogenous_bases,string);
-			explicit gene(string,string);
+			explicit gene(vector_nitrogenous_bases,const string&);
+			explicit gene(const string&,const string&);
 
 			inline int get_bases() const
 			{

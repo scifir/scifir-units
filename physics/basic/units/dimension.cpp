@@ -140,7 +140,7 @@ namespace physics::units
 		return nullptr;
 	}
 
-	dimension* create_dimension(string x)
+	dimension* create_dimension(const string& x)
 	{
 		prefix* new_prefix;
 		string dimension_name;

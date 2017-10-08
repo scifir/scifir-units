@@ -13,11 +13,11 @@ namespace physics::units
 		public:
 			auto_scalar(const auto_scalar&);
 			auto_scalar(auto_scalar&&);
-			explicit auto_scalar(math::space_type, string = "");
+			explicit auto_scalar(math::space_type, const string& = "");
 			explicit auto_scalar(math::unit_number, const vector_real_dimensions&, const vector_actual_dimensions&);
-			explicit auto_scalar(const unit&,string);
-			explicit auto_scalar(unit&&,string);
-			explicit auto_scalar(string);
+			explicit auto_scalar(const unit&,const string&);
+			explicit auto_scalar(unit&&,const string&);
+			explicit auto_scalar(const string&);
 			auto_scalar(const unit&);
 			auto_scalar(unit&&);
 

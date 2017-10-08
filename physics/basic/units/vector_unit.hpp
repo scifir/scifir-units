@@ -27,7 +27,7 @@
 		public: \
 			name(const name&); \
 			name(name&&); \
-			explicit name(math::space_type,string); \
+			explicit name(math::space_type,const string&); \
 			explicit name(const unit&,direction_symbol); \
 			explicit name(const unit&,angle_type); \
 			explicit name(const unit&,angle_type,angle_type); \
@@ -36,18 +36,18 @@
 			explicit name(unit&&,angle_type); \
 			explicit name(unit&&,angle_type,angle_type); \
 			explicit name(unit&&,math::angle_container); \
-			explicit name(const unit&,direction_symbol,string); \
-			explicit name(const unit&,angle_type,string); \
-			explicit name(const unit&,angle_type,angle_type,string); \
-			explicit name(const unit&,math::angle_container,string); \
-			explicit name(unit&&,direction_symbol,string); \
-			explicit name(unit&&,angle_type,string); \
-			explicit name(unit&&,angle_type,angle_type,string); \
-			explicit name(unit&&,math::angle_container,string); \
-			explicit name(string,direction_symbol); \
-			explicit name(string,angle_type); \
-			explicit name(string,angle_type,angle_type); \
-			explicit name(string,math::angle_container); \
+			explicit name(const unit&,direction_symbol,const string&); \
+			explicit name(const unit&,angle_type,const string&); \
+			explicit name(const unit&,angle_type,angle_type,const string&); \
+			explicit name(const unit&,math::angle_container,const string&); \
+			explicit name(unit&&,direction_symbol,const string&); \
+			explicit name(unit&&,angle_type,const string&); \
+			explicit name(unit&&,angle_type,angle_type,const string&); \
+			explicit name(unit&&,math::angle_container,const string&); \
+			explicit name(const string&,direction_symbol); \
+			explicit name(const string&,angle_type); \
+			explicit name(const string&,angle_type,angle_type); \
+			explicit name(const string&,math::angle_container); \
 			name(const vector_unit&); \
 			name(vector_unit&&); \
 \
@@ -68,7 +68,7 @@
 		public: \
 			name(const name&); \
 			name(name&&); \
-			explicit name(math::space_type,string); \
+			explicit name(math::space_type,const string&); \
 			explicit name(const unit&,direction_symbol); \
 			explicit name(const unit&,angle_type); \
 			explicit name(const unit&,angle_type,angle_type); \
@@ -77,18 +77,18 @@
 			explicit name(unit&&,angle_type); \
 			explicit name(unit&&,angle_type,angle_type); \
 			explicit name(unit&&,math::angle_container); \
-			explicit name(const unit&,direction_symbol,string); \
-			explicit name(const unit&,angle_type,string); \
-			explicit name(const unit&,angle_type,angle_type,string); \
-			explicit name(const unit&,math::angle_container,string); \
-			explicit name(unit&&,direction_symbol,string); \
-			explicit name(unit&&,angle_type,string); \
-			explicit name(unit&&,angle_type,angle_type,string); \
-			explicit name(unit&&,math::angle_container,string); \
-			explicit name(string,direction_symbol); \
-			explicit name(string,angle_type); \
-			explicit name(string,angle_type,angle_type); \
-			explicit name(string,math::angle_container); \
+			explicit name(const unit&,direction_symbol,const string&); \
+			explicit name(const unit&,angle_type,const string&); \
+			explicit name(const unit&,angle_type,angle_type,const string&); \
+			explicit name(const unit&,math::angle_container,const string&); \
+			explicit name(unit&&,direction_symbol,const string&); \
+			explicit name(unit&&,angle_type,const string&); \
+			explicit name(unit&&,angle_type,angle_type,const string&); \
+			explicit name(unit&&,math::angle_container,const string&); \
+			explicit name(const string&,direction_symbol); \
+			explicit name(const string&,angle_type); \
+			explicit name(const string&,angle_type,angle_type); \
+			explicit name(const string&,math::angle_container); \
 			name(const vector_unit&); \
 			name(vector_unit&&); \
 \
@@ -111,7 +111,7 @@
 			{ \
 			} \
 \
-			name::name(math::space_type new_value,string init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,init_value) \
+			name::name(math::space_type new_value,const string& init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,init_value) \
 			{ \
 			} \
 \
@@ -147,51 +147,51 @@
 			{ \
 			} \
 \
-			name::name(const unit& new_value,direction_symbol new_direction, string init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,new_direction,init_value) \
+			name::name(const unit& new_value,direction_symbol new_direction, const string& init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,new_direction,init_value) \
 			{ \
 			} \
 \
-			name::name(const unit& new_value,angle_type new_angle1, string init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,new_angle1,init_value) \
+			name::name(const unit& new_value,angle_type new_angle1, const string& init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,new_angle1,init_value) \
 			{ \
 			} \
 \
-			name::name(const unit& new_value,angle_type new_angle1,angle_type new_angle2, string init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,new_angle1,new_angle2,init_value) \
+			name::name(const unit& new_value,angle_type new_angle1,angle_type new_angle2, const string& init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,new_angle1,new_angle2,init_value) \
 			{ \
 			} \
 \
-			name::name(const unit& new_value,math::angle_container new_angles, string init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,new_angles,init_value) \
+			name::name(const unit& new_value,math::angle_container new_angles, const string& init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,new_angles,init_value) \
 			{ \
 			} \
 \
-			name::name(unit&& new_value,direction_symbol new_direction, string init_value) : unit(move(new_value),init_value),vector_unit_crtp<name>(move(new_value),new_direction,init_value) \
+			name::name(unit&& new_value,direction_symbol new_direction, const string& init_value) : unit(move(new_value),init_value),vector_unit_crtp<name>(move(new_value),new_direction,init_value) \
 			{ \
 			} \
 \
-			name::name(unit&& new_value,angle_type new_angle1, string init_value) : unit(move(new_value),init_value),vector_unit_crtp<name>(move(new_value),new_angle1,init_value) \
+			name::name(unit&& new_value,angle_type new_angle1, const string& init_value) : unit(move(new_value),init_value),vector_unit_crtp<name>(move(new_value),new_angle1,init_value) \
 			{ \
 			} \
 \
-			name::name(unit&& new_value,angle_type new_angle1,angle_type new_angle2, string init_value) : unit(move(new_value),init_value),vector_unit_crtp<name>(move(new_value),new_angle1,new_angle2,init_value) \
+			name::name(unit&& new_value,angle_type new_angle1,angle_type new_angle2, const string& init_value) : unit(move(new_value),init_value),vector_unit_crtp<name>(move(new_value),new_angle1,new_angle2,init_value) \
 			{ \
 			} \
 \
-			name::name(unit&& new_value,math::angle_container new_angles, string init_value) : unit(move(new_value),init_value),vector_unit_crtp<name>(move(new_value),new_angles,init_value) \
+			name::name(unit&& new_value,math::angle_container new_angles, const string& init_value) : unit(move(new_value),init_value),vector_unit_crtp<name>(move(new_value),new_angles,init_value) \
 			{ \
 			} \
 \
-			name::name(string init_value,direction_symbol new_direction) : unit(init_value),vector_unit_crtp<name>(init_value,new_direction) \
+			name::name(const string& init_value,direction_symbol new_direction) : unit(init_value),vector_unit_crtp<name>(init_value,new_direction) \
 			{ \
 			} \
 \
-			name::name(string init_value,angle_type new_angle1) : unit(init_value),vector_unit_crtp<name>(init_value,new_angle1) \
+			name::name(const string& init_value,angle_type new_angle1) : unit(init_value),vector_unit_crtp<name>(init_value,new_angle1) \
 			{ \
 			} \
 \
-			name::name(string init_value,angle_type new_angle1,angle_type new_angle2) : unit(init_value),vector_unit_crtp<name>(init_value,new_angle1,new_angle2) \
+			name::name(const string& init_value,angle_type new_angle1,angle_type new_angle2) : unit(init_value),vector_unit_crtp<name>(init_value,new_angle1,new_angle2) \
 			{ \
 			} \
 \
-			name::name(string init_value,math::angle_container new_angles) : unit(init_value),vector_unit_crtp<name>(init_value,new_angles) \
+			name::name(const string& init_value,math::angle_container new_angles) : unit(init_value),vector_unit_crtp<name>(init_value,new_angles) \
 			{ \
 			} \
 \
@@ -254,7 +254,7 @@ namespace physics::units
 		public:
 			vector_unit(const vector_unit&);
 			vector_unit(vector_unit&&);
-			explicit vector_unit(math::space_type,string);
+			explicit vector_unit(math::space_type,const string&);
 			explicit vector_unit(const unit&,direction_symbol);
 			explicit vector_unit(const unit&,angle_type);
 			explicit vector_unit(const unit&,angle_type,angle_type);
@@ -263,18 +263,18 @@ namespace physics::units
 			explicit vector_unit(unit&&,angle_type);
 			explicit vector_unit(unit&&,angle_type,angle_type);
 			explicit vector_unit(unit&&,math::angle_container);
-			explicit vector_unit(const unit&,direction_symbol,string);
-			explicit vector_unit(const unit&,angle_type,string);
-			explicit vector_unit(const unit&,angle_type,angle_type,string);
-			explicit vector_unit(const unit&,math::angle_container,string);
-			explicit vector_unit(unit&&,direction_symbol,string);
-			explicit vector_unit(unit&&,angle_type,string);
-			explicit vector_unit(unit&&,angle_type,angle_type,string);
-			explicit vector_unit(unit&&,math::angle_container,string);
-			explicit vector_unit(string,direction_symbol);
-			explicit vector_unit(string,angle_type);
-			explicit vector_unit(string,angle_type,angle_type);
-			explicit vector_unit(string,math::angle_container);
+			explicit vector_unit(const unit&,direction_symbol,const string&);
+			explicit vector_unit(const unit&,angle_type,const string&);
+			explicit vector_unit(const unit&,angle_type,angle_type,const string&);
+			explicit vector_unit(const unit&,math::angle_container,const string&);
+			explicit vector_unit(unit&&,direction_symbol,const string&);
+			explicit vector_unit(unit&&,angle_type,const string&);
+			explicit vector_unit(unit&&,angle_type,angle_type,const string&);
+			explicit vector_unit(unit&&,math::angle_container,const string&);
+			explicit vector_unit(const string&,direction_symbol);
+			explicit vector_unit(const string&,angle_type);
+			explicit vector_unit(const string&,angle_type,angle_type);
+			explicit vector_unit(const string&,math::angle_container);
 
 			vector_unit& operator =(const vector_unit&);
 			vector_unit& operator =(vector_unit&&);
@@ -374,7 +374,7 @@ namespace physics::units
 			{
 			}
 
-			explicit vector_unit_crtp(math::space_type new_value,string init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,init_value)
+			explicit vector_unit_crtp(math::space_type new_value,const string& init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,init_value)
 			{
 			}
 
@@ -410,51 +410,51 @@ namespace physics::units
 			{
 			}
 
-			explicit vector_unit_crtp(const unit& new_value,direction_symbol new_direction, string init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,new_direction,init_value)
+			explicit vector_unit_crtp(const unit& new_value,direction_symbol new_direction, const string& init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,new_direction,init_value)
 			{
 			}
 
-			explicit vector_unit_crtp(const unit& new_value,angle_type new_angle1, string init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,new_angle1,init_value)
+			explicit vector_unit_crtp(const unit& new_value,angle_type new_angle1, const string& init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,new_angle1,init_value)
 			{
 			}
 
-			explicit vector_unit_crtp(const unit& new_value,angle_type new_angle1,angle_type new_angle2, string init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,new_angle1,new_angle2,init_value)
+			explicit vector_unit_crtp(const unit& new_value,angle_type new_angle1,angle_type new_angle2, const string& init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,new_angle1,new_angle2,init_value)
 			{
 			}
 
-			explicit vector_unit_crtp(const unit& new_value,math::angle_container new_angles, string init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,new_angles,init_value)
+			explicit vector_unit_crtp(const unit& new_value,math::angle_container new_angles, const string& init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,new_angles,init_value)
 			{
 			}
 
-			explicit vector_unit_crtp(unit&& new_value,direction_symbol new_direction, string init_value) : unit(move(new_value),init_value),unit_crtp<T>(move(new_value),init_value),vector_unit(move(new_value),new_direction,init_value)
+			explicit vector_unit_crtp(unit&& new_value,direction_symbol new_direction, const string& init_value) : unit(move(new_value),init_value),unit_crtp<T>(move(new_value),init_value),vector_unit(move(new_value),new_direction,init_value)
 			{
 			}
 
-			explicit vector_unit_crtp(unit&& new_value,angle_type new_angle1, string init_value) : unit(move(new_value),init_value),unit_crtp<T>(move(new_value),init_value),vector_unit(move(new_value),new_angle1,init_value)
+			explicit vector_unit_crtp(unit&& new_value,angle_type new_angle1, const string& init_value) : unit(move(new_value),init_value),unit_crtp<T>(move(new_value),init_value),vector_unit(move(new_value),new_angle1,init_value)
 			{
 			}
 
-			explicit vector_unit_crtp(unit&& new_value,angle_type new_angle1,angle_type new_angle2, string init_value) : unit(move(new_value),init_value),unit_crtp<T>(move(new_value),init_value),vector_unit(move(new_value),new_angle1,new_angle2,init_value)
+			explicit vector_unit_crtp(unit&& new_value,angle_type new_angle1,angle_type new_angle2, const string& init_value) : unit(move(new_value),init_value),unit_crtp<T>(move(new_value),init_value),vector_unit(move(new_value),new_angle1,new_angle2,init_value)
 			{
 			}
 
-			explicit vector_unit_crtp(unit&& new_value,math::angle_container new_angles, string init_value) : unit(move(new_value),init_value),unit_crtp<T>(move(new_value),init_value),vector_unit(move(new_value),new_angles,init_value)
+			explicit vector_unit_crtp(unit&& new_value,math::angle_container new_angles, const string& init_value) : unit(move(new_value),init_value),unit_crtp<T>(move(new_value),init_value),vector_unit(move(new_value),new_angles,init_value)
 			{
 			}
 
-			explicit vector_unit_crtp(string init_value,direction_symbol new_direction) : unit(init_value),unit_crtp<T>(init_value),vector_unit(init_value,new_direction)
+			explicit vector_unit_crtp(const string& init_value,direction_symbol new_direction) : unit(init_value),unit_crtp<T>(init_value),vector_unit(init_value,new_direction)
 			{
 			}
 
-			explicit vector_unit_crtp(string init_value,angle_type new_angle1) : unit(init_value),unit_crtp<T>(init_value),vector_unit(init_value,new_angle1)
+			explicit vector_unit_crtp(const string& init_value,angle_type new_angle1) : unit(init_value),unit_crtp<T>(init_value),vector_unit(init_value,new_angle1)
 			{
 			}
 
-			explicit vector_unit_crtp(string init_value,angle_type new_angle1,angle_type new_angle2) : unit(init_value),unit_crtp<T>(init_value),vector_unit(init_value,new_angle1,new_angle2)
+			explicit vector_unit_crtp(const string& init_value,angle_type new_angle1,angle_type new_angle2) : unit(init_value),unit_crtp<T>(init_value),vector_unit(init_value,new_angle1,new_angle2)
 			{
 			}
 
-			explicit vector_unit_crtp(string init_value,math::angle_container new_angles) : unit(init_value),unit_crtp<T>(init_value),vector_unit(init_value,new_angles)
+			explicit vector_unit_crtp(const string& init_value,math::angle_container new_angles) : unit(init_value),unit_crtp<T>(init_value),vector_unit(init_value,new_angles)
 			{
 			}
 

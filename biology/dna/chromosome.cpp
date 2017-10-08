@@ -10,7 +10,7 @@ namespace biology
 	{
 	}
 
-	chromosome::chromosome(string new_name,dna* new_dna,rapidxml::xml_node<>* new_chromosome_node) : genes(),dna_molecule(new_dna),chromosome_node(new_chromosome_node),name(new_name)
+	chromosome::chromosome(const string& new_name,dna* new_dna,rapidxml::xml_node<>* new_chromosome_node) : genes(),dna_molecule(new_dna),chromosome_node(new_chromosome_node),name(new_name)
 	{
 	}
 
@@ -18,12 +18,12 @@ namespace biology
     {
     }
 
-    bool chromosome::is_gene_loaded(string x) const
+    bool chromosome::is_gene_loaded(const string& x) const
     {
     	return (genes.count(x) > 0);
     }
 
-    void chromosome::load_gene(string new_gen) const
+    void chromosome::load_gene(const string& new_gen) const
     {
     	if (!is_gene_loaded(new_gen))
     	{
@@ -65,7 +65,7 @@ namespace biology
 		}
     }
 
-    gene& chromosome::operator[](string x)
+    gene& chromosome::operator[](const string& x)
     {
     	if (!is_gene_loaded(x))
 		{
@@ -74,7 +74,7 @@ namespace biology
 		return genes[x];
     }
 
-	const gene& chromosome::operator[](string x) const
+	const gene& chromosome::operator[](const string& x) const
 	{
 		if (!is_gene_loaded(x))
 		{
@@ -83,22 +83,22 @@ namespace biology
 		return genes[x];
 	}
 
-    void chromosome::switch_gene(string x,gene new_gene)
+    void chromosome::switch_gene(const string& x,gene new_gene)
 	{
 		genes[x] = new_gene;
 	}
 
-	void chromosome::insert_gene(string x,gene new_gene)
+	void chromosome::insert_gene(const string& x,gene new_gene)
 	{
 		//genes.insert(x - 1,new_gene);
 	}
 
-	void chromosome::insert_genes(string x,map<string,gene> new_genes)
+	void chromosome::insert_genes(const string& x,map<string,gene> new_genes)
 	{
 		//genes.insert(x - 1,new_genes,new_genes.size());
 	}
 
-	void chromosome::remove_gene(string x)
+	void chromosome::remove_gene(const string& x)
 	{
 		//genes.erase(x - 1);
 	}

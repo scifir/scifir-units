@@ -44,51 +44,51 @@ namespace physics::units
 	{
 	}
 
-	auto_vector::auto_vector(const unit& new_value,direction_symbol new_direction, string init_value) : unit(new_value,init_value),auto_unit(new_value,init_value),vector_unit(new_value,new_direction,init_value)
+	auto_vector::auto_vector(const unit& new_value,direction_symbol new_direction, const string& init_value) : unit(new_value,init_value),auto_unit(new_value,init_value),vector_unit(new_value,new_direction,init_value)
 	{
 	}
 
-	auto_vector::auto_vector(const unit& new_value,angle_type new_angle1, string init_value) : unit(new_value,init_value),auto_unit(new_value,init_value),vector_unit(new_value,new_angle1,init_value)
+	auto_vector::auto_vector(const unit& new_value,angle_type new_angle1, const string& init_value) : unit(new_value,init_value),auto_unit(new_value,init_value),vector_unit(new_value,new_angle1,init_value)
 	{
 	}
 
-	auto_vector::auto_vector(const unit& new_value,angle_type new_angle1,angle_type new_angle2, string init_value) : unit(new_value,init_value),auto_unit(new_value,init_value),vector_unit(new_value,new_angle1,new_angle2,init_value)
+	auto_vector::auto_vector(const unit& new_value,angle_type new_angle1,angle_type new_angle2, const string& init_value) : unit(new_value,init_value),auto_unit(new_value,init_value),vector_unit(new_value,new_angle1,new_angle2,init_value)
 	{
 	}
 
-	auto_vector::auto_vector(const unit& new_value,math::angle_container new_angles, string init_value) : unit(new_value,init_value),auto_unit(new_value,init_value),vector_unit(new_value,new_angles,init_value)
+	auto_vector::auto_vector(const unit& new_value,math::angle_container new_angles, const string& init_value) : unit(new_value,init_value),auto_unit(new_value,init_value),vector_unit(new_value,new_angles,init_value)
 	{
 	}
 
-	auto_vector::auto_vector(unit&& new_value,direction_symbol new_direction, string init_value) : unit(move(new_value),init_value),auto_unit(move(new_value),init_value),vector_unit(move(new_value),new_direction,init_value)
+	auto_vector::auto_vector(unit&& new_value,direction_symbol new_direction, const string& init_value) : unit(move(new_value),init_value),auto_unit(move(new_value),init_value),vector_unit(move(new_value),new_direction,init_value)
 	{
 	}
 
-	auto_vector::auto_vector(unit&& new_value,angle_type new_angle1, string init_value) : unit(move(new_value),init_value),auto_unit(move(new_value),init_value),vector_unit(move(new_value),new_angle1,init_value)
+	auto_vector::auto_vector(unit&& new_value,angle_type new_angle1, const string& init_value) : unit(move(new_value),init_value),auto_unit(move(new_value),init_value),vector_unit(move(new_value),new_angle1,init_value)
 	{
 	}
 
-	auto_vector::auto_vector(unit&& new_value,angle_type new_angle1,angle_type new_angle2, string init_value) : unit(move(new_value),init_value),auto_unit(move(new_value),init_value),vector_unit(move(new_value),new_angle1,new_angle2,init_value)
+	auto_vector::auto_vector(unit&& new_value,angle_type new_angle1,angle_type new_angle2, const string& init_value) : unit(move(new_value),init_value),auto_unit(move(new_value),init_value),vector_unit(move(new_value),new_angle1,new_angle2,init_value)
 	{
 	}
 
-	auto_vector::auto_vector(unit&& new_value,math::angle_container new_angles, string init_value) : unit(move(new_value),init_value),auto_unit(move(new_value),init_value),vector_unit(move(new_value),new_angles,init_value)
+	auto_vector::auto_vector(unit&& new_value,math::angle_container new_angles, const string& init_value) : unit(move(new_value),init_value),auto_unit(move(new_value),init_value),vector_unit(move(new_value),new_angles,init_value)
 	{
 	}
 
-	auto_vector::auto_vector(string init_value,direction_symbol new_direction) : unit(init_value),auto_unit(init_value),vector_unit(init_value,new_direction)
+	auto_vector::auto_vector(const string& init_value,direction_symbol new_direction) : unit(init_value),auto_unit(init_value),vector_unit(init_value,new_direction)
 	{
 	}
 
-	auto_vector::auto_vector(string init_value,angle_type new_angle1) : unit(init_value),auto_unit(init_value),vector_unit(init_value,new_angle1)
+	auto_vector::auto_vector(const string& init_value,angle_type new_angle1) : unit(init_value),auto_unit(init_value),vector_unit(init_value,new_angle1)
 	{
 	}
 
-	auto_vector::auto_vector(string init_value,angle_type new_angle1,angle_type new_angle2) : unit(init_value),auto_unit(init_value),vector_unit(init_value,new_angle1,new_angle2)
+	auto_vector::auto_vector(const string& init_value,angle_type new_angle1,angle_type new_angle2) : unit(init_value),auto_unit(init_value),vector_unit(init_value,new_angle1,new_angle2)
 	{
 	}
 
-	auto_vector::auto_vector(string init_value,math::angle_container new_angles) : unit(init_value),auto_unit(init_value),vector_unit(init_value,new_angles)
+	auto_vector::auto_vector(const string& init_value,math::angle_container new_angles) : unit(init_value),auto_unit(init_value),vector_unit(init_value,new_angles)
 	{
 	}
 

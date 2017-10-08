@@ -13,7 +13,7 @@ namespace biology
 	{
 	}
 
-	dna::dna(string new_file) : bit_molecule(),chromosomes(),type(natural_dna),file_name(new_file),xml_file()
+	dna::dna(const string& new_file) : bit_molecule(),chromosomes(),type(natural_dna),file_name(new_file),xml_file()
 	{
 		ifstream theFile (new_file);
 		stringstream buffer;
@@ -34,17 +34,17 @@ namespace biology
 		}
 	}
 
-	chromosome& dna::operator [](string i)
+	chromosome& dna::operator [](const string& i)
 	{
 		return chromosomes[i];
 	}
 
-	const chromosome& dna::operator [](string i) const
+	const chromosome& dna::operator [](const string& i) const
 	{
 		return chromosomes[i];
 	}
 
-	bool dna::is_chromosome_loaded(string x) const
+	bool dna::is_chromosome_loaded(const string& x) const
 	{
 		return (chromosomes.count(x) > 0);
 	}

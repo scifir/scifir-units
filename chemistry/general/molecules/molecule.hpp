@@ -57,8 +57,8 @@ namespace chemistry
             //dipole get_dipole() const;
 
             bool has_atom(atom_symbol) const;
-            bool has_bond(string) const;
-            bool has_bond_group(string) const;
+            bool has_bond(const string&) const;
+            bool has_bond_group(const string&) const;
             bool has_functional_group(functional_group) const;
 
             virtual void add_atom(const atom&) = 0;
@@ -95,7 +95,7 @@ namespace chemistry
             void print_image_2d() const;
             void print_image_3d() const;
 
-            virtual void save(string,string) const = 0;
+            virtual void save(const string&,const string&) const = 0;
 
 		private:
 			tuple<shared_ptr<atom>,math::point_3d> get_image_3d_calculate_atom_position(shared_ptr<atom>,tuple<shared_ptr<atom>,math::point_3d>,tuple<shared_ptr<atom>,math::point_3d>) const;

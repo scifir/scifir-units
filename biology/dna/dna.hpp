@@ -22,7 +22,7 @@ namespace biology
 	{
 		public:
 			explicit dna(dna_type,const map<string,chromosome>&);
-			explicit dna(string);
+			explicit dna(const string&);
 
 			inline map<string,chromosome> get_cromosomes() const
 			{
@@ -39,8 +39,8 @@ namespace biology
 				return file_name;
 			}
 
-			chromosome& operator [](string);
-			const chromosome& operator [](string) const;
+			chromosome& operator [](const string&);
+			const chromosome& operator [](const string&) const;
 
 			inline bool is_natural_dna() const
 			{
@@ -62,9 +62,9 @@ namespace biology
 				return (type == ultimate_dna);
 			}
 
-			bool is_chromosome_loaded(string) const;
+			bool is_chromosome_loaded(const string&) const;
 			void load_chromosome(vector<string>) const;
-			void unload_chromosome(string) const;
+			void unload_chromosome(const string&) const;
 			void load_all_chromosomes() const;
 			void load_chromosomes(vector<int>) const;
 			void unload_chromosomes(vector<int>) const;

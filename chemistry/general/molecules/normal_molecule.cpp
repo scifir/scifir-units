@@ -112,7 +112,7 @@ namespace chemistry
 
 	}
 
-	void normal_molecule::save(string file_path,string file_name) const
+	void normal_molecule::save(const string& file_path,const string& file_name) const
 	{
 		ostringstream file_content;
 		file_content << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";

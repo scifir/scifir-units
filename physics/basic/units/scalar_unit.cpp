@@ -17,7 +17,7 @@ namespace physics::units
 	{
 	}
 
-	scalar_unit::scalar_unit(math::space_type new_value, string init_value) : unit(new_value, init_value)
+	scalar_unit::scalar_unit(math::space_type new_value, const string& init_value) : unit(new_value, init_value)
 	{
 	}
 
@@ -25,15 +25,15 @@ namespace physics::units
 	{
 	}
 
-	scalar_unit::scalar_unit(string init_value) : unit(init_value)
+	scalar_unit::scalar_unit(const string& init_value) : unit(init_value)
 	{
 	}
 
-	scalar_unit::scalar_unit(const unit& new_value,string init_value) : unit(new_value, init_value)
+	scalar_unit::scalar_unit(const unit& new_value,const string& init_value) : unit(new_value, init_value)
 	{
 	}
 
-	scalar_unit::scalar_unit(unit&& new_value,string init_value) : unit(move(new_value), init_value)
+	scalar_unit::scalar_unit(unit&& new_value,const string& init_value) : unit(move(new_value), init_value)
 	{
 	}
 

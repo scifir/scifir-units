@@ -25,7 +25,7 @@ namespace chemistry
 		}
 	}
 
-	bool atomic_bond::is_bond(string x) const
+	bool atomic_bond::is_bond(const string& x) const
 	{
 		if (x.size() != 3)
 		{

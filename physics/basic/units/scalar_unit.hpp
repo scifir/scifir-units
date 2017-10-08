@@ -11,10 +11,10 @@
 		public: \
 			name(const name&); \
 			name(name&&); \
-			explicit name(math::space_type,string); \
-			explicit name(string); \
-			explicit name(const unit&,string); \
-			explicit name(unit&&,string); \
+			explicit name(math::space_type,const string&); \
+			explicit name(const string&); \
+			explicit name(const unit&,const string&); \
+			explicit name(unit&&,const string&); \
 			name(const unit&); \
 			name(unit&&); \
 \
@@ -36,10 +36,10 @@
 		public: \
 			name(const name&); \
 			name(name&&); \
-			explicit name(math::space_type,string); \
-			explicit name(string); \
-			explicit name(const unit&,string); \
-			explicit name(unit&&,string); \
+			explicit name(math::space_type,const string&); \
+			explicit name(const string&); \
+			explicit name(const unit&,const string&); \
+			explicit name(unit&&,const string&); \
 			name(const unit&); \
 			name(unit&&); \
 \
@@ -63,11 +63,11 @@
 			{ \
 			} \
 \
-	name::name(math::space_type new_value,string init_value) : unit(new_value,init_value),scalar_unit_crtp<name>(new_value,init_value) \
+	name::name(math::space_type new_value,const string& init_value) : unit(new_value,init_value),scalar_unit_crtp<name>(new_value,init_value) \
 			{ \
 			} \
 \
-	name::name(string init_value) : unit(init_value),scalar_unit_crtp<name>(init_value) \
+	name::name(const string& init_value) : unit(init_value),scalar_unit_crtp<name>(init_value) \
 			{ \
 			} \
 \
@@ -79,11 +79,11 @@
 			{ \
 			} \
 \
-	name::name(const unit& new_unit,string init_value) : unit(new_unit,init_value),scalar_unit_crtp<name>(new_unit,init_value) \
+	name::name(const unit& new_unit,const string& init_value) : unit(new_unit,init_value),scalar_unit_crtp<name>(new_unit,init_value) \
 			{ \
 			} \
 \
-	name::name(unit&& new_unit,string init_value) : unit(move(new_unit),init_value),scalar_unit_crtp<name>(move(new_unit),init_value) \
+	name::name(unit&& new_unit,const string& init_value) : unit(move(new_unit),init_value),scalar_unit_crtp<name>(move(new_unit),init_value) \
 			{ \
 			} \
 \
@@ -126,11 +126,11 @@ namespace physics::units
 			scalar_unit();
 			scalar_unit(const scalar_unit&);
 			scalar_unit(scalar_unit&&);
-			explicit scalar_unit(math::space_type,string);
+			explicit scalar_unit(math::space_type,const string&);
 			explicit scalar_unit(math::unit_number, const vector_actual_dimensions&);
-			explicit scalar_unit(string);
-			explicit scalar_unit(const unit&,string);
-			explicit scalar_unit(unit&&,string);
+			explicit scalar_unit(const string&);
+			explicit scalar_unit(const unit&,const string&);
+			explicit scalar_unit(unit&&,const string&);
 			scalar_unit(const unit&);
 			scalar_unit(unit&&);
 
@@ -208,19 +208,19 @@ namespace physics::units
 			{
 			}
 
-			explicit scalar_unit_crtp(math::space_type new_value,string init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),scalar_unit(new_value,init_value)
+			explicit scalar_unit_crtp(math::space_type new_value,const string& init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),scalar_unit(new_value,init_value)
 			{
 			}
 
-			explicit scalar_unit_crtp(string init_value) : unit(init_value),unit_crtp<T>(init_value),scalar_unit(init_value)
+			explicit scalar_unit_crtp(const string& init_value) : unit(init_value),unit_crtp<T>(init_value),scalar_unit(init_value)
 			{
 			}
 
-			explicit scalar_unit_crtp(const unit& new_unit,string init_value) : unit(new_unit,init_value),unit_crtp<T>(new_unit,init_value),scalar_unit(new_unit,init_value)
+			explicit scalar_unit_crtp(const unit& new_unit,const string& init_value) : unit(new_unit,init_value),unit_crtp<T>(new_unit,init_value),scalar_unit(new_unit,init_value)
 			{
 			}
 
-			explicit scalar_unit_crtp(unit&& new_unit,string init_value) : unit(move(new_unit),init_value),unit_crtp<T>(move(new_unit),init_value),scalar_unit(move(new_unit),init_value)
+			explicit scalar_unit_crtp(unit&& new_unit,const string& init_value) : unit(move(new_unit),init_value),unit_crtp<T>(move(new_unit),init_value),scalar_unit(move(new_unit),init_value)
 			{
 			}
 

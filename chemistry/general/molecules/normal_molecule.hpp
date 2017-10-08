@@ -23,7 +23,7 @@ namespace chemistry
 
 			virtual void add_atom(const atom&);
 
-			virtual void save(string,string) const;
+			virtual void save(const string&,const string&) const;
 
 		private:
 			vector<shared_ptr<atom>> atoms;

@@ -453,7 +453,7 @@ namespace physics::units
 		return nullptr;
 	}
 
-	abbreviation* create_abbreviation(string x)
+	abbreviation* create_abbreviation(const string& x)
 	{
 		prefix* new_prefix;
 		string abbreviation_name;

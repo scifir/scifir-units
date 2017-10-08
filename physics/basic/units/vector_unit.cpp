@@ -16,7 +16,7 @@ namespace physics::units
 		operator=(move(x));
 	}
 
-	vector_unit::vector_unit(math::space_type new_value,string init_value) : unit(new_value,init_value),hyper_spherical_coordinates(lambda_value(), direction_symbol::left)
+	vector_unit::vector_unit(math::space_type new_value,const string& init_value) : unit(new_value,init_value),hyper_spherical_coordinates(lambda_value(), direction_symbol::left)
 	{
 	}
 
@@ -52,51 +52,51 @@ namespace physics::units
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, direction_symbol new_direction, string init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_direction)
+	vector_unit::vector_unit(const unit& new_value, direction_symbol new_direction, const string& init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_direction)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1, string init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_angle1)
+	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1, const string& init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_angle1)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1, angle_type new_angle2, string init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_angle1, new_angle2)
+	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1, angle_type new_angle2, const string& init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_angle1, new_angle2)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, math::angle_container new_angles, string init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
+	vector_unit::vector_unit(const unit& new_value, math::angle_container new_angles, const string& init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, direction_symbol new_direction, string init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_direction)
+	vector_unit::vector_unit(unit&& new_value, direction_symbol new_direction, const string& init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_direction)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, string init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_angle1)
+	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, const string& init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_angle1)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, angle_type new_angle2, string init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_angle1, new_angle2)
+	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, angle_type new_angle2, const string& init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_angle1, new_angle2)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, math::angle_container new_angles, string init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
+	vector_unit::vector_unit(unit&& new_value, math::angle_container new_angles, const string& init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
 	{
 	}
 
-	vector_unit::vector_unit(string init_value, direction_symbol new_direction) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_direction)
+	vector_unit::vector_unit(const string& init_value, direction_symbol new_direction) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_direction)
 	{
 	}
 
-	vector_unit::vector_unit(string init_value, angle_type new_angle1) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_angle1)
+	vector_unit::vector_unit(const string& init_value, angle_type new_angle1) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_angle1)
 	{
 	}
 
-	vector_unit::vector_unit(string init_value, angle_type new_angle1, angle_type new_angle2) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_angle1, new_angle2)
+	vector_unit::vector_unit(const string& init_value, angle_type new_angle1, angle_type new_angle2) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_angle1, new_angle2)
 	{
 	}
 
-	vector_unit::vector_unit(string init_value, math::angle_container new_angles) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
+	vector_unit::vector_unit(const string& init_value, math::angle_container new_angles) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
 	{
 	}
 

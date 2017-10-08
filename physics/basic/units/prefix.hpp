@@ -329,7 +329,7 @@ namespace physics::units
 	};
 
 	prefix* create_prefix(prefix_symbol);
-	prefix* create_prefix(string);
+	prefix* create_prefix(const string&);
 }
 
 #endif

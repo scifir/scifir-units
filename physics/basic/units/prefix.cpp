@@ -251,7 +251,7 @@ namespace physics::units
 		return nullptr;
 	}
 
-	prefix* create_prefix(string x)
+	prefix* create_prefix(const string& x)
 	{
 		if(x == "Y")
 		{

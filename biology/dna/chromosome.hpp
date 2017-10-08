@@ -16,7 +16,7 @@ namespace biology
 	{
 		public:
 			chromosome();
-			explicit chromosome(string,dna*,rapidxml::xml_node<>*);
+			explicit chromosome(const string&,dna*,rapidxml::xml_node<>*);
 			explicit chromosome(map<string,gene>);
 
 			inline const string& get_name() const
@@ -39,25 +39,25 @@ namespace biology
 				return chromosome_node;
 			}
 
-			bool is_gene_loaded(string) const;
-			void load_gene(string) const;
-			void unload_gene(string) const;
+			bool is_gene_loaded(const string&) const;
+			void load_gene(const string&) const;
+			void unload_gene(const string&) const;
 			void load_all_genes() const;
 			void load_genes(vector<string>) const;
 			void unload_genes(vector<string>) const;
 
-			gene& operator[](string);
-			const gene& operator[](string) const;
+			gene& operator[](const string&);
+			const gene& operator[](const string&) const;
 
 			inline int number_of_genes() const
 			{
 				return genes.size();
 			}
 
-			void switch_gene(string,gene);
-			void insert_gene(string,gene);
-			void insert_genes(string,map<string,gene>);
-			void remove_gene(string);
+			void switch_gene(const string&,gene);
+			void insert_gene(const string&,gene);
+			void insert_genes(const string&,map<string,gene>);
+			void remove_gene(const string&);
 
 		private:
 			mutable map<string,gene> genes;

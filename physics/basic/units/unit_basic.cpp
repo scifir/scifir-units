@@ -41,11 +41,11 @@ namespace physics::units
 	SCALAR_UNIT_CPP(mass,"g");
 	SCALAR_UNIT_CPP(charge,"C");
 
-	temperature::temperature(math::space_type new_value,string init_value) : unit(new_value,init_value),scalar_unit_crtp<temperature>(new_value,init_value)
+	temperature::temperature(math::space_type new_value,const string& init_value) : unit(new_value,init_value),scalar_unit_crtp<temperature>(new_value,init_value)
 	{
 	}
 
-	temperature::temperature(string init_value) : unit(),scalar_unit_crtp<temperature>()
+	temperature::temperature(const string& init_value) : unit(),scalar_unit_crtp<temperature>()
 	{
 		if(!isdigit(init_value[0]))
 		{
@@ -121,11 +121,11 @@ namespace physics::units
 	{
 	}
 
-	temperature::temperature(const unit& new_unit,string init_value) : unit(new_unit,init_value),scalar_unit_crtp<temperature>(new_unit,init_value)
+	temperature::temperature(const unit& new_unit,const string& init_value) : unit(new_unit,init_value),scalar_unit_crtp<temperature>(new_unit,init_value)
 	{
 	}
 
-	temperature::temperature(unit&& new_unit,string init_value) : unit(move(new_unit),init_value),scalar_unit_crtp<temperature>(move(new_unit),init_value)
+	temperature::temperature(unit&& new_unit,const string& init_value) : unit(move(new_unit),init_value),scalar_unit_crtp<temperature>(move(new_unit),init_value)
 	{
 	}
 

@@ -524,7 +524,7 @@ namespace physics::units
 	};
 
 	abbreviation* create_abbreviation(abbreviation_symbol);
-	abbreviation* create_abbreviation(string);
+	abbreviation* create_abbreviation(const string&);
 }
 
 #endif // ABBREVIATION_HPP_INCLUDED

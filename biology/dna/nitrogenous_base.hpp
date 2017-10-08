@@ -15,7 +15,7 @@ namespace biology
 			public:
 				chemistry::normal_molecule molecule;
 
-				nitrogenous_base(string);
+				nitrogenous_base(const string&);
 		};
 	}
 }

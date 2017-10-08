@@ -14,7 +14,7 @@ namespace physics::units
 	{
 	}
 
-	auto_scalar::auto_scalar(math::space_type new_value, string dimension_structure) : unit(new_value,dimension_structure),auto_unit(new_value,dimension_structure),scalar_unit(new_value,dimension_structure)
+	auto_scalar::auto_scalar(math::space_type new_value, const string& dimension_structure) : unit(new_value,dimension_structure),auto_unit(new_value,dimension_structure),scalar_unit(new_value,dimension_structure)
 	{
 	}
 
@@ -22,15 +22,15 @@ namespace physics::units
 	{
 	}
 
-	auto_scalar::auto_scalar(const unit& new_value,string init_value) : unit(new_value,init_value),auto_unit(new_value,init_value),scalar_unit(new_value,init_value)
+	auto_scalar::auto_scalar(const unit& new_value,const string& init_value) : unit(new_value,init_value),auto_unit(new_value,init_value),scalar_unit(new_value,init_value)
 	{
 	}
 
-	auto_scalar::auto_scalar(unit&& new_value,string init_value) : unit(move(new_value),init_value),auto_unit(move(new_value),init_value),scalar_unit(move(new_value),init_value)
+	auto_scalar::auto_scalar(unit&& new_value,const string& init_value) : unit(move(new_value),init_value),auto_unit(move(new_value),init_value),scalar_unit(move(new_value),init_value)
 	{
 	}
 
-	auto_scalar::auto_scalar(string init_value) : unit(init_value),auto_unit(init_value),scalar_unit(init_value)
+	auto_scalar::auto_scalar(const string& init_value) : unit(init_value),auto_unit(init_value),scalar_unit(init_value)
 	{
 	}
 

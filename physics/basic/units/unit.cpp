@@ -27,15 +27,15 @@ namespace physics::units
 	{
 	}
 
-	unit::unit(const unit& new_value,string init_value) : value(new_value.get_value()),actual_dimensions(create_actual_dimensions(init_value))
+	unit::unit(const unit& new_value,const string& init_value) : value(new_value.get_value()),actual_dimensions(create_actual_dimensions(init_value))
 	{
 	}
 
-	unit::unit(unit&& new_value,string init_value) : value(move(new_value.get_value())),actual_dimensions(create_actual_dimensions(init_value))
+	unit::unit(unit&& new_value,const string& init_value) : value(move(new_value.get_value())),actual_dimensions(create_actual_dimensions(init_value))
 	{
 	}
 
-	unit::unit(math::space_type new_value, string dimension_structure) : value(new_value),actual_dimensions()
+	unit::unit(math::space_type new_value, const string& dimension_structure) : value(new_value),actual_dimensions()
 	{
 		initialize_dimensions(dimension_structure);
 	}
@@ -44,7 +44,7 @@ namespace physics::units
 	{
 	}
 
-	unit::unit(string init_value) : unit()
+	unit::unit(const string& init_value) : unit()
 	{
 		if(!isdigit(init_value[0]))
 		{
@@ -254,7 +254,7 @@ namespace physics::units
 	}
 
 	/// Sets the dimensions to the dimensions given string. It invalidates the object if the dimensions aren't compatible with the real dimensions
-	void unit::change_dimensions(string new_dimensions)
+	void unit::change_dimensions(const string& new_dimensions)
 	{
 		if(has_dimensions(new_dimensions))
 		{
@@ -307,7 +307,7 @@ namespace physics::units
 	}
 
 	/// Calculates if the dimensions are equal related to the given string
-	bool unit::has_dimensions(string dimension_structure) const
+	bool unit::has_dimensions(const string& dimension_structure) const
 	{
 		vector_real_dimensions structure_dimensions = create_real_dimensions(dimension_structure);
 		return has_dimensions(structure_dimensions);
@@ -579,7 +579,7 @@ namespace physics::units
 		}
 	}
 
-	string unit::initial_dimensions_get_structure(string init_value) const
+	string unit::initial_dimensions_get_structure(const string& init_value) const
 	{
 		if(!isdigit(init_value[0]))
 		{
@@ -707,67 +707,67 @@ bool operator >=(const physics::units::unit& x, const physics::units::unit& y)
 	return !(x < y);
 }
 
-bool operator ==(const physics::units::unit& x, string y_init)
+bool operator ==(const physics::units::unit& x, const string& y_init)
 {
 	physics::units::auto_unit y(y_init);
 	return (x == y);
 }
 
-bool operator !=(const physics::units::unit& x, string y_init)
+bool operator !=(const physics::units::unit& x, const string& y_init)
 {
 	return !(x == y_init);
 }
 
-bool operator <(const physics::units::unit& x, string y_init)
+bool operator <(const physics::units::unit& x, const string& y_init)
 {
 	physics::units::auto_unit y(y_init);
 	return (x < y);
 }
 
-bool operator >(const physics::units::unit& x, string y_init)
+bool operator >(const physics::units::unit& x, const string& y_init)
 {
 	physics::units::auto_unit y(y_init);
 	return (x > y);
 }
 
-bool operator <=(const physics::units::unit& x, string y_init)
+bool operator <=(const physics::units::unit& x, const string& y_init)
 {
 	return !(x > y_init);
 }
 
-bool operator >=(const physics::units::unit& x, string y_init)
+bool operator >=(const physics::units::unit& x, const string& y_init)
 {
 	return !(x < y_init);
 }
 
-bool operator ==(string x_init, const physics::units::unit& y)
+bool operator ==(const string& x_init, const physics::units::unit& y)
 {
 	return (y == x_init);
 }
 
-bool operator !=(string x_init, const physics::units::unit& y)
+bool operator !=(const string& x_init, const physics::units::unit& y)
 {
 	return (y != x_init);
 }
 
-bool operator <(string x_init, const physics::units::unit& y)
+bool operator <(const string& x_init, const physics::units::unit& y)
 {
 	physics::units::auto_unit x(x_init);
 	return (x < y);
 }
 
-bool operator >(string x_init, const physics::units::unit& y)
+bool operator >(const string& x_init, const physics::units::unit& y)
 {
 	physics::units::auto_unit x(x_init);
 	return (x > y);
 }
 
-bool operator <=(string x_init, const physics::units::unit& y)
+bool operator <=(const string& x_init, const physics::units::unit& y)
 {
 	return !(x_init > y);
 }
 
-bool operator >=(string x_init, const physics::units::unit& y)
+bool operator >=(const string& x_init, const physics::units::unit& y)
 {
 	return !(x_init < y);
 }

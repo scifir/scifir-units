@@ -11,7 +11,7 @@ namespace physics::units
 	{
 	}
 
-	conversion::conversion(string new_unit_to, float new_factor)
+	conversion::conversion(const string& new_unit_to, float new_factor)
 	{
 		unit_to = new_unit_to;
 		factor = new_factor;

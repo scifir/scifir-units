@@ -13,14 +13,14 @@ namespace physics::units
 	{
 		public:
 			conversion();
-			conversion(string, float);
+			conversion(const string&, float);
 
-			inline float get_factor() const
+			inline const float& get_factor() const
 			{
 				return factor;
 			}
 
-			inline string get_unit_to() const
+			inline const string& get_unit_to() const
 			{
 				return unit_to;
 			}
