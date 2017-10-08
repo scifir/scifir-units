@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace chemistry::laboratory
+namespace msci::laboratory
 {
 	class crystallograph
 	{

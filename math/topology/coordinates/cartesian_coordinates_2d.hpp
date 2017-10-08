@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	class cartesian_coordinates_2d : public coordinates_2d
 	{

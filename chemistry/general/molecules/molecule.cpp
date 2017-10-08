@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	molecule::molecule()
 	{
@@ -297,32 +297,32 @@ namespace chemistry
 
     }
 
-	tuple<shared_ptr<atom>,math::point_3d> molecule::get_image_3d_calculate_atom_position(shared_ptr<atom> new_atom,tuple<shared_ptr<atom>,math::point_3d> previous_atom,tuple<shared_ptr<atom>,math::point_3d> previous_atom2) const
+	tuple<shared_ptr<atom>,msci::point_3d> molecule::get_image_3d_calculate_atom_position(shared_ptr<atom> new_atom,tuple<shared_ptr<atom>,msci::point_3d> previous_atom,tuple<shared_ptr<atom>,msci::point_3d> previous_atom2) const
     {
 		// Calculate the position based on the geometry of the previous_atom, each geometry gives a different position to calculate of, based on the angle of the two bonds (the new and the previous one)
 		vector<weak_ptr<atomic_bond>> bonds = new_atom->get_bonds();
 		for (const auto& bond : bonds)
 		{
-			tuple<shared_ptr<atom>,math::point_3d> get_image_3d_calculate_atom_position();
+			tuple<shared_ptr<atom>,msci::point_3d> get_image_3d_calculate_atom_position();
 		}
     }
 
-    void molecule::get_atoms_image_3d(vector<tuple<shared_ptr<atom>,math::point_3d>> atom_positions) const
+    void molecule::get_atoms_image_3d(vector<tuple<shared_ptr<atom>,msci::point_3d>> atom_positions) const
 	{
 		vector<shared_ptr<atom>> atoms = get_atoms();
 		for (const auto& atom : atoms)
 		{
 			// get atom 3d image calling atom.get_image_3d() or similar
-			// use the vector<math::point_3d> to position the image related to the full image
+			// use the vector<msci::point_3d> to position the image related to the full image
 		}
 	}
 
-	/*void molecule::get_unpaired_electrons_image_3d(vector<tuple<math::point_3d,math_vector>> electron_positions) const
+	/*void molecule::get_unpaired_electrons_image_3d(vector<tuple<msci::point_3d,math_vector>> electron_positions) const
 	{
 		// the math_vector is for directions
 	}*/
 
-	void molecule::get_bonds_image_3d(vector<tuple<shared_ptr<atom>,math::point_3d>> atom_positions) const
+	void molecule::get_bonds_image_3d(vector<tuple<shared_ptr<atom>,msci::point_3d>> atom_positions) const
 	{
 		vector<shared_ptr<atomic_bond>> bonds = get_bonds();
 		for (const auto& bond: bonds)

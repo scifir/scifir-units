@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	cylindrical_coordinates::cylindrical_coordinates(space_type new_r,angle_type new_angle,space_type new_z) : coordinates_3d(),r(new_r),angle(new_angle),z(new_z)
 	{
@@ -15,7 +15,7 @@ namespace math
 		return r;
 	}
 
-	const math::angle_number& cylindrical_coordinates::get_angle() const
+	const msci::angle_number& cylindrical_coordinates::get_angle() const
 	{
 		return angle;
 	}

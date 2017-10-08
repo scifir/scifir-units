@@ -4,9 +4,9 @@
 #include "physics/basic/units/scalar_unit.hpp"
 
 using namespace std;
-using namespace physics::units;
+using namespace msci::units;
 
-namespace physics::units
+namespace msci::units
 {
 	SCALAR_UNIT_HPP(volumetric_flow);
 	SCALAR_UNIT_HPP(diffusion_coefficient);

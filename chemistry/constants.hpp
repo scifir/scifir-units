@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	const static long long int avogadro_constant = 602214078000000000000000L;
 }

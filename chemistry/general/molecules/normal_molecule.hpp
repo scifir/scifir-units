@@ -9,7 +9,7 @@
 
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	class normal_molecule : public molecule
 	{

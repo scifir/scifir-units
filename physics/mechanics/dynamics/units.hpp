@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	VECTOR_UNIT_HPP(impulse);
 	VECTOR_UNIT_HPP(force);

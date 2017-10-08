@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	datom::datom(const string& new_electronic_configuration)
 	{

@@ -13,7 +13,7 @@
 #include <utility>
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	dimension::dimension() : dimension_abstract(normal_prefix, 1)
 	{

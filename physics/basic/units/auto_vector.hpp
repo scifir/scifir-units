@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	class auto_vector : public auto_unit, public vector_unit
 	{
@@ -17,23 +17,23 @@ namespace physics::units
 			explicit auto_vector(const unit&,direction_symbol);
 			explicit auto_vector(const unit&,angle_type);
 			explicit auto_vector(const unit&,angle_type,angle_type);
-			explicit auto_vector(const unit&,math::angle_container);
+			explicit auto_vector(const unit&,msci::angle_container);
 			explicit auto_vector(unit&&,direction_symbol);
 			explicit auto_vector(unit&&,angle_type);
 			explicit auto_vector(unit&&,angle_type,angle_type);
-			explicit auto_vector(unit&&,math::angle_container);
+			explicit auto_vector(unit&&,msci::angle_container);
 			explicit auto_vector(const unit&,direction_symbol,const string&);
 			explicit auto_vector(const unit&,angle_type,const string&);
 			explicit auto_vector(const unit&,angle_type,angle_type,const string&);
-			explicit auto_vector(const unit&,math::angle_container,const string&);
+			explicit auto_vector(const unit&,msci::angle_container,const string&);
 			explicit auto_vector(unit&&,direction_symbol,const string&);
 			explicit auto_vector(unit&&,angle_type,const string&);
 			explicit auto_vector(unit&&,angle_type,angle_type,const string&);
-			explicit auto_vector(unit&&,math::angle_container,const string&);
+			explicit auto_vector(unit&&,msci::angle_container,const string&);
 			explicit auto_vector(const string&,direction_symbol);
 			explicit auto_vector(const string&,angle_type);
 			explicit auto_vector(const string&,angle_type,angle_type);
-			explicit auto_vector(const string&,math::angle_container);
+			explicit auto_vector(const string&,msci::angle_container);
 			auto_vector(const vector_unit&);
 			auto_vector(vector_unit&&);
 
@@ -156,7 +156,7 @@ namespace physics::units
 		}
 		else
 		{
-			math::angle_container new_angles = math::angle_container();
+			msci::angle_container new_angles = msci::angle_container();
 			new_angles.push_back(directions.angles[0]);
 			new_angles.push_back(directions.angles[1]);
 			return auto_vector(new_value, new_angles);
@@ -229,74 +229,74 @@ namespace physics::units
 	}
 }
 
-physics::units::auto_vector operator +(const physics::units::scalar_unit&,const physics::units::vector_unit&);
-physics::units::auto_vector operator -(const physics::units::scalar_unit&,const physics::units::vector_unit&);
-physics::units::auto_vector operator *(const physics::units::scalar_unit&,const physics::units::vector_unit&);
-physics::units::auto_vector operator +(const physics::units::scalar_unit&,const physics::units::auto_unit&);
-physics::units::auto_vector operator -(const physics::units::scalar_unit&,const physics::units::auto_unit&);
-physics::units::auto_vector operator *(const physics::units::scalar_unit&,const physics::units::auto_unit&);
+msci::units::auto_vector operator +(const msci::units::scalar_unit&,const msci::units::vector_unit&);
+msci::units::auto_vector operator -(const msci::units::scalar_unit&,const msci::units::vector_unit&);
+msci::units::auto_vector operator *(const msci::units::scalar_unit&,const msci::units::vector_unit&);
+msci::units::auto_vector operator +(const msci::units::scalar_unit&,const msci::units::auto_unit&);
+msci::units::auto_vector operator -(const msci::units::scalar_unit&,const msci::units::auto_unit&);
+msci::units::auto_vector operator *(const msci::units::scalar_unit&,const msci::units::auto_unit&);
 template<typename T>
-physics::units::auto_vector operator +(const physics::units::scalar_unit&,const physics::units::vector_unit_crtp<T>&);
+msci::units::auto_vector operator +(const msci::units::scalar_unit&,const msci::units::vector_unit_crtp<T>&);
 template<typename T>
-physics::units::auto_vector operator -(const physics::units::scalar_unit&,const physics::units::vector_unit_crtp<T>&);
+msci::units::auto_vector operator -(const msci::units::scalar_unit&,const msci::units::vector_unit_crtp<T>&);
 template<typename T>
-physics::units::auto_vector operator *(const physics::units::scalar_unit&,const physics::units::vector_unit_crtp<T>&);
+msci::units::auto_vector operator *(const msci::units::scalar_unit&,const msci::units::vector_unit_crtp<T>&);
 
 template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-physics::units::auto_vector operator +(U x,const physics::units::vector_unit& y)
+msci::units::auto_vector operator +(U x,const msci::units::vector_unit& y)
 {
-	return physics::units::auto_vector(y+x,y.get_angles());
+	return msci::units::auto_vector(y+x,y.get_angles());
 }
 
 template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-physics::units::auto_vector operator -(U x,const physics::units::vector_unit& y)
+msci::units::auto_vector operator -(U x,const msci::units::vector_unit& y)
 {
-	physics::units::auto_vector z = y;
+	msci::units::auto_vector z = y;
 	z.invert();
 	z = x;
-	return physics::units::auto_vector(z-y);
+	return msci::units::auto_vector(z-y);
 }
 
 template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-physics::units::auto_vector operator *(U x,const physics::units::vector_unit& y)
+msci::units::auto_vector operator *(U x,const msci::units::vector_unit& y)
 {
-	return physics::units::auto_vector(y*x,y.get_angles());
+	return msci::units::auto_vector(y*x,y.get_angles());
 }
 
 template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-physics::units::auto_vector operator +(U x,const physics::units::auto_vector& y)
+msci::units::auto_vector operator +(U x,const msci::units::auto_vector& y)
 {
-	return x + static_cast<const physics::units::vector_unit&>(y);
+	return x + static_cast<const msci::units::vector_unit&>(y);
 }
 
 template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-physics::units::auto_vector operator -(U x,const physics::units::auto_vector& y)
+msci::units::auto_vector operator -(U x,const msci::units::auto_vector& y)
 {
-	return x - static_cast<const physics::units::vector_unit&>(y);
+	return x - static_cast<const msci::units::vector_unit&>(y);
 }
 
 template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-physics::units::auto_vector operator *(U x,const physics::units::auto_vector& y)
+msci::units::auto_vector operator *(U x,const msci::units::auto_vector& y)
 {
-	return x * static_cast<const physics::units::vector_unit&>(y);
+	return x * static_cast<const msci::units::vector_unit&>(y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-physics::units::auto_vector operator +(U x,const physics::units::vector_unit_crtp<T>& y)
+msci::units::auto_vector operator +(U x,const msci::units::vector_unit_crtp<T>& y)
 {
-	return x + static_cast<const physics::units::vector_unit&>(y);
+	return x + static_cast<const msci::units::vector_unit&>(y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-physics::units::auto_vector operator -(U x,const physics::units::vector_unit_crtp<T>& y)
+msci::units::auto_vector operator -(U x,const msci::units::vector_unit_crtp<T>& y)
 {
-	return x - static_cast<const physics::units::vector_unit&>(y);
+	return x - static_cast<const msci::units::vector_unit&>(y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-physics::units::auto_vector operator *(U x,const physics::units::vector_unit_crtp<T>& y)
+msci::units::auto_vector operator *(U x,const msci::units::vector_unit_crtp<T>& y)
 {
-	return x * static_cast<const physics::units::vector_unit&>(y);
+	return x * static_cast<const msci::units::vector_unit&>(y);
 }
 
 #endif // PHYSICS_BASIC_UNITS_AUTO_VECTOR_HPP_INCLUDED

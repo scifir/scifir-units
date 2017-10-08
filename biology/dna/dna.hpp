@@ -12,13 +12,13 @@
 
 using namespace std;
 
-namespace biology
+namespace msci
 {
 	enum dna_type {natural_dna,extraterrestrial_dna,artificial_dna,ultimate_dna};
 
 	class chromosome;
 
-	class dna : public chemistry::bit_molecule
+	class dna : public msci::bit_molecule
 	{
 		public:
 			explicit dna(dna_type,const map<string,chromosome>&);

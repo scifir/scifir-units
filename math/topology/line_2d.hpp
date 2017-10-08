@@ -10,9 +10,9 @@
 #include "point_2d.hpp"
 
 using namespace std;
-using namespace physics::units;
+using namespace msci::units;
 
-namespace math
+namespace msci
 {
 	class line_2d
 	{
@@ -169,8 +169,8 @@ namespace math
 	};
 }
 
-bool operator ==(const math::line_2d&,const math::line_2d&);
-bool operator !=(const math::line_2d&,const math::line_2d&);
-wostream& operator <<(wostream&,const math::line_2d&);
+bool operator ==(const msci::line_2d&,const msci::line_2d&);
+bool operator !=(const msci::line_2d&,const msci::line_2d&);
+wostream& operator <<(wostream&,const msci::line_2d&);
 
 #endif // MATH_TOPOLOGY_LINE_2D_HPP_INCLUDED

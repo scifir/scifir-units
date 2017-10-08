@@ -5,15 +5,15 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	class auto_unit : public virtual unit
 	{
 		public:
 			auto_unit(const auto_unit&);
 			auto_unit(auto_unit&&);
-			explicit auto_unit(math::space_type, const string& = "");
-			explicit auto_unit(math::unit_number, const vector_real_dimensions&, const vector_actual_dimensions&);
+			explicit auto_unit(msci::space_type, const string& = "");
+			explicit auto_unit(msci::unit_number, const vector_real_dimensions&, const vector_actual_dimensions&);
 			explicit auto_unit(const unit&,const string&);
 			explicit auto_unit(unit&&,const string&);
 			explicit auto_unit(const string&);
@@ -139,7 +139,7 @@ namespace physics::units
 	template<typename T, typename>
 	auto_unit unit::operator ^(T y) const
 	{
-		math::unit_number new_value = value ^ y;
+		msci::unit_number new_value = value ^ y;
 		vector_real_dimensions new_real_dimensions = power_real_dimensions(get_real_dimensions(),y);
 		vector_actual_dimensions new_actual_dimensions = power_actual_dimensions(actual_dimensions,y);
 		return move(auto_unit(new_value, new_real_dimensions, new_actual_dimensions));
@@ -147,87 +147,87 @@ namespace physics::units
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_unit operator +(T x, const physics::units::unit& y)
+msci::units::auto_unit operator +(T x, const msci::units::unit& y)
 {
-	math::unit_number new_value = y.get_value();
-	physics::units::vector_real_dimensions new_real_dimensions = y.get_real_dimensions();
-	physics::units::vector_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
-	return physics::units::auto_unit(x + new_value, new_real_dimensions, new_actual_dimensions);
+	msci::unit_number new_value = y.get_value();
+	msci::units::vector_real_dimensions new_real_dimensions = y.get_real_dimensions();
+	msci::units::vector_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
+	return msci::units::auto_unit(x + new_value, new_real_dimensions, new_actual_dimensions);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_unit operator -(T x, const physics::units::unit& y)
+msci::units::auto_unit operator -(T x, const msci::units::unit& y)
 {
-	math::unit_number new_value = y.get_value();
-	physics::units::vector_real_dimensions new_real_dimensions = y.get_real_dimensions();
-	physics::units::vector_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
-	return physics::units::auto_unit(x - new_value, new_real_dimensions, new_actual_dimensions);
+	msci::unit_number new_value = y.get_value();
+	msci::units::vector_real_dimensions new_real_dimensions = y.get_real_dimensions();
+	msci::units::vector_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
+	return msci::units::auto_unit(x - new_value, new_real_dimensions, new_actual_dimensions);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_unit operator *(T x, const physics::units::unit& y)
+msci::units::auto_unit operator *(T x, const msci::units::unit& y)
 {
-	math::unit_number new_value = y.get_value();
-	physics::units::vector_real_dimensions new_real_dimensions = y.get_real_dimensions();
-	physics::units::vector_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
-	return physics::units::auto_unit(x * new_value, new_real_dimensions, new_actual_dimensions);
+	msci::unit_number new_value = y.get_value();
+	msci::units::vector_real_dimensions new_real_dimensions = y.get_real_dimensions();
+	msci::units::vector_actual_dimensions new_actual_dimensions = y.get_actual_dimensions();
+	return msci::units::auto_unit(x * new_value, new_real_dimensions, new_actual_dimensions);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_unit operator /(T x, const physics::units::unit& y)
+msci::units::auto_unit operator /(T x, const msci::units::unit& y)
 {
-	math::unit_number new_value = y.get_value();
-	physics::units::vector_real_dimensions new_real_dimensions = power_real_dimensions(y.get_real_dimensions(),-1);
-	physics::units::vector_actual_dimensions new_actual_dimensions = power_actual_dimensions(y.get_actual_dimensions(),-1);
-	return physics::units::auto_unit(x / new_value, new_real_dimensions, new_actual_dimensions);
+	msci::unit_number new_value = y.get_value();
+	msci::units::vector_real_dimensions new_real_dimensions = power_real_dimensions(y.get_real_dimensions(),-1);
+	msci::units::vector_actual_dimensions new_actual_dimensions = power_actual_dimensions(y.get_actual_dimensions(),-1);
+	return msci::units::auto_unit(x / new_value, new_real_dimensions, new_actual_dimensions);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_unit operator ^(T x, const physics::units::unit& y)
+msci::units::auto_unit operator ^(T x, const msci::units::unit& y)
 {
 	if (y.has_empty_dimensions())
 	{
-		math::unit_number new_value = y.get_value();
-		physics::units::vector_real_dimensions new_real_dimensions = power_real_dimensions(y.get_real_dimensions(),new_value);
-		physics::units::vector_actual_dimensions new_actual_dimensions = power_actual_dimensions(y.get_actual_dimensions(),new_value);
-		return physics::units::auto_unit(x ^ new_value, new_real_dimensions, new_actual_dimensions);
+		msci::unit_number new_value = y.get_value();
+		msci::units::vector_real_dimensions new_real_dimensions = power_real_dimensions(y.get_real_dimensions(),new_value);
+		msci::units::vector_actual_dimensions new_actual_dimensions = power_actual_dimensions(y.get_actual_dimensions(),new_value);
+		return msci::units::auto_unit(x ^ new_value, new_real_dimensions, new_actual_dimensions);
 	}
 	else
 	{
-		physics::units::auto_unit y = physics::units::auto_unit(0);
+		msci::units::auto_unit y = msci::units::auto_unit(0);
 		y.invalidate(10);
 		return move(y);
 	}
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_unit operator +(T x, const physics::units::auto_unit& y)
+msci::units::auto_unit operator +(T x, const msci::units::auto_unit& y)
 {
-	return x + static_cast<const physics::units::unit&>(y);
+	return x + static_cast<const msci::units::unit&>(y);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_unit operator -(T x, const physics::units::auto_unit& y)
+msci::units::auto_unit operator -(T x, const msci::units::auto_unit& y)
 {
-	return x - static_cast<const physics::units::unit&>(y);
+	return x - static_cast<const msci::units::unit&>(y);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_unit operator *(T x, const physics::units::auto_unit& y)
+msci::units::auto_unit operator *(T x, const msci::units::auto_unit& y)
 {
-	return x * static_cast<const physics::units::unit&>(y);
+	return x * static_cast<const msci::units::unit&>(y);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_unit operator /(T x, const physics::units::auto_unit& y)
+msci::units::auto_unit operator /(T x, const msci::units::auto_unit& y)
 {
-	return x / static_cast<const physics::units::unit&>(y);
+	return x / static_cast<const msci::units::unit&>(y);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_unit operator ^(T x, const physics::units::auto_unit& y)
+msci::units::auto_unit operator ^(T x, const msci::units::auto_unit& y)
 {
-	return x ^ static_cast<const physics::units::unit&>(y);
+	return x ^ static_cast<const msci::units::unit&>(y);
 }
 
 #endif // PHYSICS_BASIC_UNITS_AUTO_UNIT_HPP_INCLUDED

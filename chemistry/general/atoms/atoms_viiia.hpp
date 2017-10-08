@@ -5,7 +5,7 @@
 
 #include "units.hpp"
 
-namespace chemistry
+namespace msci
 {
 	class atom_He : public normal_atom<atom_He>
 	{

@@ -9,7 +9,7 @@
 #include <vector>
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	vector<vector<int>> electronic_configuration_order
 	{
@@ -86,30 +86,30 @@ namespace chemistry
 		return nullptr;
 	}
 
-	informatics::color atom::get_atomic_color() const
+	msci::color atom::get_atomic_color() const
     {
 		if (get_z() == 1)
 		{
-			return informatics::color(239,239,239);
+			return msci::color(239,239,239);
 		}
 		switch(get_atomic_group())
 		{
 		case IA:
-			return informatics::color(244,212,66);
+			return msci::color(244,212,66);
 		case IIA:
-			return informatics::color(244,128,66);
+			return msci::color(244,128,66);
 		case IIIA:
-			return informatics::color(66,197,244);
+			return msci::color(66,197,244);
 		case IVA:
-			return informatics::color(40,40,40);
+			return msci::color(40,40,40);
 		case VA:
-			return informatics::color(43,145,79);
+			return msci::color(43,145,79);
 		case VIA:
-			return informatics::color(244,66,66);
+			return msci::color(244,66,66);
 		case VIIA:
-			return informatics::color(244,66,220);
+			return msci::color(244,66,220);
 		}
-		return informatics::color(70,70,70);
+		return msci::color(70,70,70);
     }
 
 	atomic_pattern atom::get_atomic_pattern() const
@@ -261,98 +261,98 @@ namespace chemistry
 		return true;
 	}
 
-	math::angle_number get_molecular_geometry_angle(const atom& x,edge_position position1,edge_position position2)
+	msci::angle_number get_molecular_geometry_angle(const atom& x,edge_position position1,edge_position position2)
 	{
 		switch (x.get_molecular_geometry())
 		{
 		case molecular_geometry::linear:
-			return math::angle_number(180);
+			return msci::angle_number(180);
 		case molecular_geometry::bent:
 			if (x.get_lone_pairs() == 1)
 			{
-				return math::angle_number(120);
+				return msci::angle_number(120);
 			}
 			else if(x.get_lone_pairs() == 2)
 			{
-				return math::angle_number(109.5);
+				return msci::angle_number(109.5);
 			}
 		case molecular_geometry::trigonal_planar:
-			return math::angle_number(120);
+			return msci::angle_number(120);
 		case molecular_geometry::trigonal_pyramidal:
-			return math::angle_number(109.5);
+			return msci::angle_number(109.5);
 		case molecular_geometry::t_shaped:
 			if ((position1 == edge_position::t_shaped_ax and position2 == edge_position::t_shaped_eq) or (position1 == edge_position::t_shaped_eq and position2 == edge_position::t_shaped_ax))
 			{
-				return math::angle_number(90);
+				return msci::angle_number(90);
 			}
 			else if (position1 == edge_position::t_shaped_ax and position2 == edge_position::t_shaped_ax)
 			{
-				return math::angle_number(180);
+				return msci::angle_number(180);
 			}
 		case molecular_geometry::tetrahedral:
-			return math::angle_number(109.5);
+			return msci::angle_number(109.5);
 		case molecular_geometry::seesaw:
 			if (position1 == edge_position::seesaw_ax and position2 == edge_position::seesaw_ax)
 			{
-				return math::angle_number(173.1);
+				return msci::angle_number(173.1);
 			}
 			else if (position1 == edge_position::seesaw_eq and position2 == edge_position::seesaw_eq)
 			{
-				return math::angle_number(101.6);
+				return msci::angle_number(101.6);
 			}
 			else if ((position1 == edge_position::seesaw_ax and position2 == edge_position::seesaw_eq) or (position2 == edge_position::seesaw_ax and position1 == edge_position::seesaw_eq))
 			{
-				return math::angle_number(90);
+				return msci::angle_number(90);
 			}
 		case molecular_geometry::square_planar:
-			return math::angle_number(90);
+			return msci::angle_number(90);
 		case molecular_geometry::trigonal_bipyramidal:
 			if (position1 == edge_position::trigonal_bipyramidal_ax and position2 == edge_position::trigonal_bipyramidal_ax)
 			{
-				return math::angle_number(180);
+				return msci::angle_number(180);
 			}
 			else if ((position1 == edge_position::trigonal_bipyramidal_ax and position2 == edge_position::trigonal_bipyramidal_eq) or (position1 == edge_position::trigonal_bipyramidal_eq and position2 == edge_position::trigonal_bipyramidal_ax))
 			{
-				return math::angle_number(90);
+				return msci::angle_number(90);
 			}
 			else if (position1 == edge_position::trigonal_bipyramidal_eq and position2 == edge_position::trigonal_bipyramidal_eq)
 			{
-				return math::angle_number(120);
+				return msci::angle_number(120);
 			}
 		case molecular_geometry::square_pyramidal:
-			return math::angle_number(90);
+			return msci::angle_number(90);
 		case molecular_geometry::planar_pentagonal:
-			return math::angle_number(72);
+			return msci::angle_number(72);
 		case molecular_geometry::octahedral:
-			return math::angle_number(90);
+			return msci::angle_number(90);
 		case molecular_geometry::pentagonal_pyramidal:
 			if ((position1 == edge_position::pentagonal_pyramidal_ax and position2 == edge_position::pentagonal_pyramidal_eq) or (position1 == edge_position::pentagonal_pyramidal_eq and position2 == edge_position::pentagonal_pyramidal_ax))
 			{
-				return math::angle_number(90);
+				return msci::angle_number(90);
 			}
 			else if (position1 == edge_position::pentagonal_pyramidal_eq and position2 == edge_position::pentagonal_pyramidal_eq)
 			{
-				return math::angle_number(72);
+				return msci::angle_number(72);
 			}
 		case molecular_geometry::pentagonal_bipyramidal:
 			if (position1 == edge_position::pentagonal_bipyramidal_ax and position2 == edge_position::pentagonal_bipyramidal_ax)
 			{
-				return math::angle_number(180);
+				return msci::angle_number(180);
 			}
 			else if (position1 == edge_position::pentagonal_bipyramidal_eq and position2 == edge_position::pentagonal_bipyramidal_eq)
 			{
-				return math::angle_number(72);
+				return msci::angle_number(72);
 			}
 			else if ((position1 == edge_position::pentagonal_bipyramidal_ax and position2 == edge_position::pentagonal_bipyramidal_eq) or (position1 == edge_position::pentagonal_bipyramidal_eq and position2 == edge_position::pentagonal_bipyramidal_ax))
 			{
-				return math::angle_number(90);
+				return msci::angle_number(90);
 			}
 		case molecular_geometry::square_antipristamic:
-			return math::angle_number(50);
+			return msci::angle_number(50);
 		case molecular_geometry::tricapped_trigonal_prismatic:
-			return math::angle_number(50);
+			return msci::angle_number(50);
 		}
-		return math::angle_number(180);
+		return msci::angle_number(180);
 	}
 
 	bool are_isotopes(const atom& x,const atom& y)
@@ -381,17 +381,17 @@ namespace chemistry
 	}
 }
 
-bool operator ==(const chemistry::atom& x,const chemistry::atom& y)
+bool operator ==(const msci::atom& x,const msci::atom& y)
 {
-	return (x.get_z() == y.get_z() and x.get_mass_number() == y.get_mass_number() and chemistry::are_isoelectronics(x,y));
+	return (x.get_z() == y.get_z() and x.get_mass_number() == y.get_mass_number() and msci::are_isoelectronics(x,y));
 }
 
-bool operator !=(const chemistry::atom& x,const chemistry::atom& y)
+bool operator !=(const msci::atom& x,const msci::atom& y)
 {
 	return !(x == y);
 }
 
-wostream& operator <<(wostream& os,const chemistry::atom& x)
+wostream& operator <<(wostream& os,const msci::atom& x)
 {
 	wostringstream charge_text;
 	if (x.get_ionic_charge() < 0)

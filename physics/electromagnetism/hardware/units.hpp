@@ -5,9 +5,9 @@
 #include "physics/basic/units/vector_unit.hpp"
 
 using namespace std;
-using namespace physics::units;
+using namespace msci::units;
 
-namespace physics::units
+namespace msci::units
 {
 	SCALAR_UNIT_HPP(electrical_conductivity);
 	SCALAR_UNIT_HPP(electric_resistance);

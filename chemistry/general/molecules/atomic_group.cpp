@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	atomic_group::atomic_group()
 	{

@@ -13,7 +13,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	template<typename T>
 	class undefined_number
@@ -23,7 +23,7 @@ namespace math
 			{
 			}
 
-			undefined_number(math::space_type new_value)
+			undefined_number(msci::space_type new_value)
 			{
 				value = new_value;
 				error_code = 0;
@@ -61,7 +61,7 @@ namespace math
 				return error_code;
 			}
 
-			const math::space_type& get_value() const
+			const msci::space_type& get_value() const
 			{
 				return value;
 			}
@@ -336,11 +336,11 @@ namespace math
 
 		protected:
 			int error_code;
-			math::space_type value;
+			msci::space_type value;
 	};
 
 	template<typename T>
-	math::space_type abs(const undefined_number<T>& x)
+	msci::space_type abs(const undefined_number<T>& x)
 	{
 		return std::abs(x.get_value());
 	}
@@ -359,37 +359,37 @@ namespace math
 }
 
 template<typename U, typename V, typename = typename enable_if<is_number<V>::value>::type>
-U operator +(V x, const math::undefined_number<U>& y)
+U operator +(V x, const msci::undefined_number<U>& y)
 {
 	return U(x + y.get_value());
 }
 
 template<typename U, typename V, typename = typename enable_if<is_number<V>::value>::type>
-U operator -(V x, const math::undefined_number<U>& y)
+U operator -(V x, const msci::undefined_number<U>& y)
 {
 	return U(x - y.get_value());
 }
 
 template<typename U, typename V, typename = typename enable_if<is_number<V>::value>::type>
-U operator *(V x, const math::undefined_number<U>& y)
+U operator *(V x, const msci::undefined_number<U>& y)
 {
 	return U(x * y.get_value());
 }
 
 template<typename U, typename V, typename = typename enable_if<is_number<V>::value>::type>
-U operator /(V x, const math::undefined_number<U>& y)
+U operator /(V x, const msci::undefined_number<U>& y)
 {
 	return U(x / y.get_value());
 }
 
 template<typename U, typename V, typename = typename enable_if<is_number<V>::value>::type>
-U operator ^(V x, const math::undefined_number<U>& y)
+U operator ^(V x, const msci::undefined_number<U>& y)
 {
 	return U(pow(x, y.get_value()));
 }
 
 template<typename T, typename U>
-bool operator ==(math::undefined_number<T> x, math::undefined_number<U> y)
+bool operator ==(msci::undefined_number<T> x, msci::undefined_number<U> y)
 {
 	if(x.is_defined() and y.is_defined())
 	{
@@ -409,13 +409,13 @@ bool operator ==(math::undefined_number<T> x, math::undefined_number<U> y)
 }
 
 template<typename T, typename U>
-bool operator !=(math::undefined_number<T> x, math::undefined_number<U> y)
+bool operator !=(msci::undefined_number<T> x, msci::undefined_number<U> y)
 {
 	return !(x == y);
 }
 
 template<typename T, typename U>
-bool operator <(math::undefined_number<T> x, math::undefined_number<U> y)
+bool operator <(msci::undefined_number<T> x, msci::undefined_number<U> y)
 {
 	if(x.is_defined() and y.is_defined())
 	{
@@ -435,7 +435,7 @@ bool operator <(math::undefined_number<T> x, math::undefined_number<U> y)
 }
 
 template<typename T, typename U>
-bool operator >(math::undefined_number<T> x, math::undefined_number<U> y)
+bool operator >(msci::undefined_number<T> x, msci::undefined_number<U> y)
 {
 	if(x.is_defined() and y.is_defined())
 	{
@@ -455,19 +455,19 @@ bool operator >(math::undefined_number<T> x, math::undefined_number<U> y)
 }
 
 template<typename T, typename U>
-bool operator <=(math::undefined_number<T> x, math::undefined_number<U> y)
+bool operator <=(msci::undefined_number<T> x, msci::undefined_number<U> y)
 {
 	return !(x > y);
 }
 
 template<typename T, typename U>
-bool operator >=(math::undefined_number<T> x, math::undefined_number<U> y)
+bool operator >=(msci::undefined_number<T> x, msci::undefined_number<U> y)
 {
 	return !(x < y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-bool operator ==(const math::undefined_number<T>& x, U y)
+bool operator ==(const msci::undefined_number<T>& x, U y)
 {
 	if(x.is_defined())
 	{
@@ -487,13 +487,13 @@ bool operator ==(const math::undefined_number<T>& x, U y)
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-bool operator !=(const math::undefined_number<T>& x, U y)
+bool operator !=(const msci::undefined_number<T>& x, U y)
 {
 	return !(x == y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-bool operator <(const math::undefined_number<T>& x, U y)
+bool operator <(const msci::undefined_number<T>& x, U y)
 {
 	if(x.is_defined())
 	{
@@ -513,7 +513,7 @@ bool operator <(const math::undefined_number<T>& x, U y)
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-bool operator >(const math::undefined_number<T>& x, U y)
+bool operator >(const msci::undefined_number<T>& x, U y)
 {
 	if(x.is_defined())
 	{
@@ -533,19 +533,19 @@ bool operator >(const math::undefined_number<T>& x, U y)
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-bool operator <=(const math::undefined_number<T>& x, U y)
+bool operator <=(const msci::undefined_number<T>& x, U y)
 {
 	return !(x > y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-bool operator >=(const math::undefined_number<T>& x, U y)
+bool operator >=(const msci::undefined_number<T>& x, U y)
 {
 	return !(x < y);
 }
 
 template<typename T>
-void operator +=(wstring& x, const math::undefined_number<T>& y)
+void operator +=(wstring& x, const msci::undefined_number<T>& y)
 {
 	wostringstream output;
 	output << y;
@@ -553,7 +553,7 @@ void operator +=(wstring& x, const math::undefined_number<T>& y)
 }
 
 template<typename T>
-wstring operator +(const wstring& x, const math::undefined_number<T>& y)
+wstring operator +(const wstring& x, const msci::undefined_number<T>& y)
 {
 	wostringstream output;
 	output << x;
@@ -562,7 +562,7 @@ wstring operator +(const wstring& x, const math::undefined_number<T>& y)
 }
 
 template<typename T>
-wstring operator +(const math::undefined_number<T>& y, const wstring& x)
+wstring operator +(const msci::undefined_number<T>& y, const wstring& x)
 {
 	wostringstream output;
 	output << y;
@@ -571,7 +571,7 @@ wstring operator +(const math::undefined_number<T>& y, const wstring& x)
 }
 
 template<typename T>
-wostream & operator <<(wostream& os, const math::undefined_number<T>& x)
+wostream & operator <<(wostream& os, const msci::undefined_number<T>& x)
 {
 	return os << x.print();
 }

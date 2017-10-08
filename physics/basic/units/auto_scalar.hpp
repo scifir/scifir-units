@@ -6,15 +6,15 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	class auto_scalar : public auto_unit, public scalar_unit
 	{
 		public:
 			auto_scalar(const auto_scalar&);
 			auto_scalar(auto_scalar&&);
-			explicit auto_scalar(math::space_type, const string& = "");
-			explicit auto_scalar(math::unit_number, const vector_real_dimensions&, const vector_actual_dimensions&);
+			explicit auto_scalar(msci::space_type, const string& = "");
+			explicit auto_scalar(msci::unit_number, const vector_real_dimensions&, const vector_actual_dimensions&);
 			explicit auto_scalar(const unit&,const string&);
 			explicit auto_scalar(unit&&,const string&);
 			explicit auto_scalar(const string&);
@@ -204,93 +204,93 @@ namespace physics::units
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_scalar operator +(T x, const physics::units::scalar_unit& y)
+msci::units::auto_scalar operator +(T x, const msci::units::scalar_unit& y)
 {
-	return physics::units::auto_scalar(x + static_cast<const physics::units::unit&>(y));
+	return msci::units::auto_scalar(x + static_cast<const msci::units::unit&>(y));
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_scalar operator -(T x, const physics::units::scalar_unit& y)
+msci::units::auto_scalar operator -(T x, const msci::units::scalar_unit& y)
 {
-	return physics::units::auto_scalar(x - static_cast<const physics::units::unit&>(y));
+	return msci::units::auto_scalar(x - static_cast<const msci::units::unit&>(y));
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_scalar operator *(T x, const physics::units::scalar_unit& y)
+msci::units::auto_scalar operator *(T x, const msci::units::scalar_unit& y)
 {
-	return physics::units::auto_scalar(x * static_cast<const physics::units::unit&>(y));
+	return msci::units::auto_scalar(x * static_cast<const msci::units::unit&>(y));
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_scalar operator /(T x, const physics::units::scalar_unit& y)
+msci::units::auto_scalar operator /(T x, const msci::units::scalar_unit& y)
 {
-	return physics::units::auto_scalar(x / static_cast<const physics::units::unit&>(y));
+	return msci::units::auto_scalar(x / static_cast<const msci::units::unit&>(y));
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_scalar operator ^(T x, const physics::units::scalar_unit& y)
+msci::units::auto_scalar operator ^(T x, const msci::units::scalar_unit& y)
 {
-	return physics::units::auto_scalar(x ^ static_cast<const physics::units::unit&>(y));
+	return msci::units::auto_scalar(x ^ static_cast<const msci::units::unit&>(y));
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_scalar operator +(T x, const physics::units::auto_scalar& y)
+msci::units::auto_scalar operator +(T x, const msci::units::auto_scalar& y)
 {
-	return x + static_cast<const physics::units::scalar_unit&>(y);
+	return x + static_cast<const msci::units::scalar_unit&>(y);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_scalar operator -(T x, const physics::units::auto_scalar& y)
+msci::units::auto_scalar operator -(T x, const msci::units::auto_scalar& y)
 {
-	return x - static_cast<const physics::units::scalar_unit&>(y);
+	return x - static_cast<const msci::units::scalar_unit&>(y);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_scalar operator *(T x, const physics::units::auto_scalar& y)
+msci::units::auto_scalar operator *(T x, const msci::units::auto_scalar& y)
 {
-	return x * static_cast<const physics::units::scalar_unit&>(y);
+	return x * static_cast<const msci::units::scalar_unit&>(y);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_scalar operator /(T x, const physics::units::auto_scalar& y)
+msci::units::auto_scalar operator /(T x, const msci::units::auto_scalar& y)
 {
-	return x / static_cast<const physics::units::scalar_unit&>(y);
+	return x / static_cast<const msci::units::scalar_unit&>(y);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-physics::units::auto_scalar operator ^(T x, const physics::units::auto_scalar& y)
+msci::units::auto_scalar operator ^(T x, const msci::units::auto_scalar& y)
 {
-	return x ^ static_cast<const physics::units::scalar_unit&>(y);
+	return x ^ static_cast<const msci::units::scalar_unit&>(y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-physics::units::auto_scalar operator +(U x, const physics::units::scalar_unit_crtp<T>& y)
+msci::units::auto_scalar operator +(U x, const msci::units::scalar_unit_crtp<T>& y)
 {
-	return x + static_cast<const physics::units::scalar_unit&>(y);
+	return x + static_cast<const msci::units::scalar_unit&>(y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-physics::units::auto_scalar operator -(U x, const physics::units::scalar_unit_crtp<T>& y)
+msci::units::auto_scalar operator -(U x, const msci::units::scalar_unit_crtp<T>& y)
 {
-	return x - static_cast<const physics::units::scalar_unit&>(y);
+	return x - static_cast<const msci::units::scalar_unit&>(y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-physics::units::auto_scalar operator *(U x, const physics::units::scalar_unit_crtp<T>& y)
+msci::units::auto_scalar operator *(U x, const msci::units::scalar_unit_crtp<T>& y)
 {
-	return x * static_cast<const physics::units::scalar_unit&>(y);
+	return x * static_cast<const msci::units::scalar_unit&>(y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-physics::units::auto_scalar operator /(U x, const physics::units::scalar_unit_crtp<T>& y)
+msci::units::auto_scalar operator /(U x, const msci::units::scalar_unit_crtp<T>& y)
 {
-	return x / static_cast<const physics::units::scalar_unit&>(y);
+	return x / static_cast<const msci::units::scalar_unit&>(y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-physics::units::auto_scalar operator ^(U x, const physics::units::scalar_unit_crtp<T>& y)
+msci::units::auto_scalar operator ^(U x, const msci::units::scalar_unit_crtp<T>& y)
 {
-	return x ^ static_cast<const physics::units::scalar_unit&>(y);
+	return x ^ static_cast<const msci::units::scalar_unit&>(y);
 }
 
 #endif // AUTO_SCALAR_HPP_INCLUDED

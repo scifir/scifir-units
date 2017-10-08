@@ -9,7 +9,7 @@ using namespace std;
 #include <vector>
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	enum class orbital_symbol {s, p, d, f};
 
@@ -18,7 +18,7 @@ namespace chemistry
 		public:
 			orbital_symbol orbital_specie;
 			string name;
-			vector<physics::electron> electrons;
+			vector<msci::electron> electrons;
 			int period;
 
 			orbital(orbital_symbol, int, int);
@@ -70,7 +70,7 @@ namespace chemistry
 	};
 }
 
-ostream& operator <<(ostream&, const chemistry::orbital&);
-ostream& operator <<(ostream&, chemistry::orbital_group);
+ostream& operator <<(ostream&, const msci::orbital&);
+ostream& operator <<(ostream&, msci::orbital_group);
 
 #endif // ATOMIC_ORBITAL_HPP_INCLUDED

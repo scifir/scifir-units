@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	directional_coordinates::directional_coordinates(function<space_type()> new_r,direction_symbol new_direction) : coordinates_1d(),r(new_r),direction(new_direction)
 	{

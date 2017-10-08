@@ -3,9 +3,9 @@
 #include <sstream>
 
 using namespace std;
-using namespace physics::units;
+using namespace msci::units;
 
-namespace math
+namespace msci
 {
 	line_3d::line_3d() : vertex1(),vertex2()
 	{
@@ -34,17 +34,17 @@ namespace math
 	}
 }
 
-bool operator ==(const math::line_3d& x,const math::line_3d& y)
+bool operator ==(const msci::line_3d& x,const msci::line_3d& y)
 {
 	return (x.get_vertex1() == y.get_vertex1() and x.get_vertex2() == y.get_vertex2());
 }
 
-bool operator !=(const math::line_3d& x,const math::line_3d& y)
+bool operator !=(const msci::line_3d& x,const msci::line_3d& y)
 {
 	return !(x == y);
 }
 
-wostream& operator <<(wostream& os,const math::line_3d& x)
+wostream& operator <<(wostream& os,const msci::line_3d& x)
 {
 	return os << x.display();
 }

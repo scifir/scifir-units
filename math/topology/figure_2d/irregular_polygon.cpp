@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	irregular_polygon::irregular_polygon() : polygon(),inner_polygons()
 	{

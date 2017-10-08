@@ -11,7 +11,7 @@
 		public: \
 			name(const name&); \
 			name(name&&); \
-			explicit name(math::space_type,const string&); \
+			explicit name(msci::space_type,const string&); \
 			explicit name(const string&); \
 			explicit name(const unit&,const string&); \
 			explicit name(unit&&,const string&); \
@@ -36,7 +36,7 @@
 		public: \
 			name(const name&); \
 			name(name&&); \
-			explicit name(math::space_type,const string&); \
+			explicit name(msci::space_type,const string&); \
 			explicit name(const string&); \
 			explicit name(const unit&,const string&); \
 			explicit name(unit&&,const string&); \
@@ -63,7 +63,7 @@
 			{ \
 			} \
 \
-	name::name(math::space_type new_value,const string& init_value) : unit(new_value,init_value),scalar_unit_crtp<name>(new_value,init_value) \
+	name::name(msci::space_type new_value,const string& init_value) : unit(new_value,init_value),scalar_unit_crtp<name>(new_value,init_value) \
 			{ \
 			} \
 \
@@ -115,7 +115,7 @@ const vector_real_dimensions name::real_dimensions = create_real_dimensions(dime
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	class auto_scalar;
 	class auto_vector;
@@ -126,8 +126,8 @@ namespace physics::units
 			scalar_unit();
 			scalar_unit(const scalar_unit&);
 			scalar_unit(scalar_unit&&);
-			explicit scalar_unit(math::space_type,const string&);
-			explicit scalar_unit(math::unit_number, const vector_actual_dimensions&);
+			explicit scalar_unit(msci::space_type,const string&);
+			explicit scalar_unit(msci::unit_number, const vector_actual_dimensions&);
 			explicit scalar_unit(const string&);
 			explicit scalar_unit(const unit&,const string&);
 			explicit scalar_unit(unit&&,const string&);
@@ -208,7 +208,7 @@ namespace physics::units
 			{
 			}
 
-			explicit scalar_unit_crtp(math::space_type new_value,const string& init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),scalar_unit(new_value,init_value)
+			explicit scalar_unit_crtp(msci::space_type new_value,const string& init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),scalar_unit(new_value,init_value)
 			{
 			}
 

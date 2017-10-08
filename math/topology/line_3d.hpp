@@ -8,9 +8,9 @@
 #include <string>
 
 using namespace std;
-using namespace physics::units;
+using namespace msci::units;
 
-namespace math
+namespace msci
 {
 	class line_3d
 	{
@@ -49,8 +49,8 @@ namespace math
 	};
 }
 
-bool operator ==(const math::line_3d&,const math::line_3d&);
-bool operator !=(const math::line_3d&,const math::line_3d&);
-wostream& operator <<(wostream&,const math::line_3d&);
+bool operator ==(const msci::line_3d&,const msci::line_3d&);
+bool operator !=(const msci::line_3d&,const msci::line_3d&);
+wostream& operator <<(wostream&,const msci::line_3d&);
 
 #endif // MATH_TOPOLOGY_LINE_3D_HPP_INCLUDED

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	class bit_molecule : public molecule
 	{

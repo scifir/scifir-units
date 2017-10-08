@@ -8,9 +8,9 @@
 #include <tuple>
 
 using namespace std;
-using namespace math;
+using namespace msci;
 
-namespace math
+namespace msci
 {
 	class coordinates_3d
 	{
@@ -30,7 +30,7 @@ namespace math
 
 	inline angle_type cartesian_3d_to_cylindrical_angle(space_type x,space_type y,space_type z)
 	{
-		return math::atan_grade(y/x);
+		return msci::atan_grade(y/x);
 	}
 
 	inline angle_type cartesian_3d_to_cylindrical_z(space_type x,space_type y,space_type z)
@@ -45,32 +45,32 @@ namespace math
 
 	inline angle_type cartesian_3d_to_spherical_angle1(space_type x,space_type y,space_type z)
 	{
-		return math::atan_grade(y/x);
+		return msci::atan_grade(y/x);
 	}
 
 	inline angle_type cartesian_3d_to_spherical_angle2(space_type x,space_type y,space_type z)
 	{
-		return math::acos_grade(z/std::sqrt(pow(x,2) + pow(y,2) + pow(z,2)));
+		return msci::acos_grade(z/std::sqrt(pow(x,2) + pow(y,2) + pow(z,2)));
 	}
 
 	inline space_type spherical_to_cartesian_3d_x(space_type r,const angle_number& angle1, const angle_number& angle2)
 	{
-		return r * math::cos(angle1) * math::sin(angle2);
+		return r * msci::cos(angle1) * msci::sin(angle2);
 	}
 
 	inline space_type spherical_to_cartesian_3d_y(space_type r,const angle_number& angle1, const angle_number& angle2)
 	{
-		return r * math::sin(angle1) * math::sin(angle2);
+		return r * msci::sin(angle1) * msci::sin(angle2);
 	}
 
 	inline space_type spherical_to_cartesian_3d_z(space_type r,const angle_number& angle1, const angle_number& angle2)
 	{
-		return r * math::cos(angle2);
+		return r * msci::cos(angle2);
 	}
 
 	inline space_type spherical_to_cylindrical_r(space_type r,const angle_number& angle1, const angle_number& angle2)
 	{
-		return r * math::sin(angle2);
+		return r * msci::sin(angle2);
 	}
 
 	inline angle_type spherical_to_cylindrical_angle(space_type r,const angle_number& angle1, const angle_number& angle2)
@@ -80,17 +80,17 @@ namespace math
 
 	inline space_type spherical_to_cylindrical_z(space_type r,const angle_number& angle1, const angle_number& angle2)
 	{
-		return r * math::cos(angle2);
+		return r * msci::cos(angle2);
 	}
 
 	inline space_type cylindrical_to_cartesian_3d_x(space_type r,const angle_number& angle, space_type z)
 	{
-		return r * math::cos(angle);
+		return r * msci::cos(angle);
 	}
 
 	inline space_type cylindrical_to_cartesian_3d_y(space_type r,const angle_number& angle, space_type z)
 	{
-		return r * math::sin(angle);
+		return r * msci::sin(angle);
 	}
 
 	inline space_type cylindrical_to_cartesian_3d_z(space_type r,const angle_number& angle, space_type z)

@@ -7,9 +7,9 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
-	constexpr angle_type PI = boost::math::constants::pi<math::angle_type>();
+	constexpr angle_type PI = boost::math::constants::pi<msci::angle_type>();
 }
 
 #endif // CONSTANTS_HPP_INCLUDED

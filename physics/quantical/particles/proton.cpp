@@ -2,9 +2,9 @@
 
 #include "units.hpp"
 
-using namespace physics::units;
+using namespace msci::units;
 
-namespace physics
+namespace msci
 {
 	const mass proton::common_mass(1.672621898,"g");
 }

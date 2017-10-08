@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	class datom
 	{

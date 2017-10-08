@@ -14,7 +14,7 @@
 
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	enum class functional_group {carbonyl};
 
@@ -98,10 +98,10 @@ namespace chemistry
             virtual void save(const string&,const string&) const = 0;
 
 		private:
-			tuple<shared_ptr<atom>,math::point_3d> get_image_3d_calculate_atom_position(shared_ptr<atom>,tuple<shared_ptr<atom>,math::point_3d>,tuple<shared_ptr<atom>,math::point_3d>) const;
-			void get_atoms_image_3d(vector<tuple<shared_ptr<atom>,math::point_3d>>) const;
-			//void get_unpaired_electrons_image_3d(vector<tuple<math::point_3d,math_vector>>) const;
-			void get_bonds_image_3d(vector<tuple<shared_ptr<atom>,math::point_3d>>) const;
+			tuple<shared_ptr<atom>,msci::point_3d> get_image_3d_calculate_atom_position(shared_ptr<atom>,tuple<shared_ptr<atom>,msci::point_3d>,tuple<shared_ptr<atom>,msci::point_3d>) const;
+			void get_atoms_image_3d(vector<tuple<shared_ptr<atom>,msci::point_3d>>) const;
+			//void get_unpaired_electrons_image_3d(vector<tuple<msci::point_3d,math_vector>>) const;
+			void get_bonds_image_3d(vector<tuple<shared_ptr<atom>,msci::point_3d>>) const;
 	};
 
 	bool are_isomers(const molecule&,const molecule&);
@@ -111,8 +111,8 @@ namespace chemistry
 	bool are_inmiscible(const molecule&,const molecule&);
 }
 
-wostream& operator <<(wostream&,const chemistry::molecule&);
-bool operator ==(const chemistry::molecule&,const chemistry::molecule&);
-bool operator !=(const chemistry::molecule&,const chemistry::molecule&);
+wostream& operator <<(wostream&,const msci::molecule&);
+bool operator ==(const msci::molecule&,const msci::molecule&);
+bool operator !=(const msci::molecule&,const msci::molecule&);
 
 #endif // MOLECULE_HPP_INCLUDED

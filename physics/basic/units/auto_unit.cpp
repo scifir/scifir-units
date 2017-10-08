@@ -8,7 +8,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	auto_unit::auto_unit(const auto_unit& x) : unit(x),real_dimensions(x.get_real_dimensions())
 	{
@@ -18,11 +18,11 @@ namespace physics::units
 	{
 	}
 
-	auto_unit::auto_unit(math::space_type new_value, const string& dimension_structure) : unit(new_value,dimension_structure),real_dimensions(create_real_dimensions(dimension_structure))
+	auto_unit::auto_unit(msci::space_type new_value, const string& dimension_structure) : unit(new_value,dimension_structure),real_dimensions(create_real_dimensions(dimension_structure))
 	{
 	}
 
-	auto_unit::auto_unit(math::unit_number new_value, const vector_real_dimensions& new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : unit(new_value,new_actual_dimensions),real_dimensions(new_real_dimensions)
+	auto_unit::auto_unit(msci::unit_number new_value, const vector_real_dimensions& new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : unit(new_value,new_actual_dimensions),real_dimensions(new_real_dimensions)
 	{
 	}
 

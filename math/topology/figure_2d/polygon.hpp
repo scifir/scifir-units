@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	/// \class polygon
 	/// The polygon class represents normal polygons, formed by vertices and straight lines

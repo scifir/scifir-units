@@ -6,7 +6,7 @@
 #include <string>
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	enum prefix_symbol
 	{

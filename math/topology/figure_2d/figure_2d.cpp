@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	figure_2d::figure_2d() : center()
 	{
@@ -72,7 +72,7 @@ namespace math
 	}
 }
 
-wostream& operator <<(wostream& os,const math::figure_2d& x)
+wostream& operator <<(wostream& os,const msci::figure_2d& x)
 {
 	return os << x.display();
 }

@@ -11,9 +11,9 @@
 #include <vector>
 
 using namespace std;
-using namespace physics::units;
+using namespace msci::units;
 
-namespace math
+namespace msci
 {
 	class linear_figure_2d : public figure_2d
 	{
@@ -60,10 +60,10 @@ namespace math
 			virtual void translate_y(space_type);
 
 			virtual void rotate(angle_type);
-			virtual void rotate(const math::angle_number&);
+			virtual void rotate(const msci::angle_number&);
 
 			virtual void scale(space_type);
-			//virtual void scale(const math::percentage_number&);
+			//virtual void scale(const msci::percentage_number&);
 
 		protected:
 			vector<point_2d> vertices;
@@ -73,7 +73,7 @@ namespace math
 	};
 }
 
-bool operator ==(const math::linear_figure_2d&,const math::linear_figure_2d&);
-bool operator !=(const math::linear_figure_2d&,const math::linear_figure_2d&);
+bool operator ==(const msci::linear_figure_2d&,const msci::linear_figure_2d&);
+bool operator !=(const msci::linear_figure_2d&,const msci::linear_figure_2d&);
 
 #endif // LINEAR_FIGURE_2D_HPP_INCLUDED

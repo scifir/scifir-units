@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	scalar_unit::scalar_unit() : unit()
 	{
@@ -17,11 +17,11 @@ namespace physics::units
 	{
 	}
 
-	scalar_unit::scalar_unit(math::space_type new_value, const string& init_value) : unit(new_value, init_value)
+	scalar_unit::scalar_unit(msci::space_type new_value, const string& init_value) : unit(new_value, init_value)
 	{
 	}
 
-	scalar_unit::scalar_unit(math::unit_number new_value, const vector_actual_dimensions& new_actual_dimensions) : unit(new_value,new_actual_dimensions)
+	scalar_unit::scalar_unit(msci::unit_number new_value, const vector_actual_dimensions& new_actual_dimensions) : unit(new_value,new_actual_dimensions)
 	{
 	}
 

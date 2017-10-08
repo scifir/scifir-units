@@ -10,7 +10,7 @@
 
 using namespace std;
 
-namespace biology
+namespace msci
 {
 	typedef boost::variant<vector<uint8_t>,vector<uint16_t>,vector<uint32_t>> vector_nitrogenous_bases;
 	typedef int gen_index_type;

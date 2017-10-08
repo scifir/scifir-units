@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace informatics
+namespace msci
 {
 	class color
 	{
@@ -61,6 +61,6 @@ namespace informatics
 	};
 }
 
-wostream& operator <<(wostream&, const informatics::color&);
+wostream& operator <<(wostream&, const msci::color&);
 
 #endif // COLOR_HPP_INCLUDED

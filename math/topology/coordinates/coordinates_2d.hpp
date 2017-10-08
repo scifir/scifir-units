@@ -7,9 +7,9 @@
 #include <cmath>
 
 using namespace std;
-using namespace math;
+using namespace msci;
 
-namespace math
+namespace msci
 {
 	class coordinates_2d
 	{
@@ -28,17 +28,17 @@ namespace math
 
 	inline angle_type cartesian_2d_to_polar_angle(space_type x,space_type y)
 	{
-		return math::atan_grade(y/x);
+		return msci::atan_grade(y/x);
 	}
 
 	inline space_type polar_to_cartesian_2d_x(space_type r,const angle_number& angle)
 	{
-		return r*math::cos(angle);
+		return r*msci::cos(angle);
 	}
 
 	inline space_type polar_to_cartesian_2d_y(space_type r,const angle_number& angle)
 	{
-		return r*math::sin(angle);
+		return r*msci::sin(angle);
 	}
 }
 

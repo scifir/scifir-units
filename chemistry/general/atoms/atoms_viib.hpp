@@ -5,7 +5,7 @@
 
 #include "units.hpp"
 
-namespace chemistry
+namespace msci
 {
 	class atom_Mn : public normal_atom<atom_Mn>
 	{

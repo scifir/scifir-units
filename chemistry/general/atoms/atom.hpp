@@ -14,7 +14,7 @@
 #include "math/number/angle_number.hpp"
 
 using namespace std;
-using namespace physics::units;
+using namespace msci::units;
 
 #define ATOM_HPP(name) using normal_atom::normal_atom; \
 	name()
@@ -23,7 +23,7 @@ using namespace physics::units;
 	{ \
 	}
 
-namespace chemistry
+namespace msci
 {
 	enum class atom_symbol {H, He, Li, Be, B, C, N, O, F, Ne, Na, Mg, Al, Si, P, S, Cl, Ar, K, Ca, Sc, Ti, V, Cr, Mn, Fe, Co, Ni, Cu, Zn, Ga, Ge, As, Se, Br, Kr, Rb, Sr, Y, Zr, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Cd, In, Sn, Sb, Te, I, Xe, Cs, Ba, La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu, Hf, Ta, W, Re, Os, Ir, Pt, Au, Hg, Tl, Pb, Bi, Po, At, Rn, Fr, Ra, Ac, Th, Pa, U, Np, Pu, Am, Cm, Bk, Cf, Es, Fm, Md, No, Lr, Rf, Db, Sg, Bh, Hs, Mt, Ds, Rg, Cn, Nh, Fl, Mc, Lv, Ts, Og};
 	enum atomic_group {IA, IIA, IIIA, IVA, VA, VIA, VIIA, VIIIA, IB, IIB, IIIB, IVB, VB, VIB, VIIB, VIIIB, LA, AC};
@@ -253,7 +253,7 @@ namespace chemistry
 
             virtual bool is_exotic() const = 0;
 
-            informatics::color get_atomic_color() const;
+            msci::color get_atomic_color() const;
 
 			atomic_pattern get_atomic_pattern() const;
 
@@ -515,7 +515,7 @@ namespace chemistry
             }
 	};
 
-	math::angle_number get_molecular_geometry_angle(const atom&);
+	msci::angle_number get_molecular_geometry_angle(const atom&);
 
 	bool are_isotopes(const atom&,const atom&);
 	bool are_isobares(const atom&,const atom&);
@@ -524,8 +524,8 @@ namespace chemistry
 	bool same_specimen(const atom&,const atom&);
 }
 
-bool operator ==(const chemistry::atom&,const chemistry::atom&);
-bool operator !=(const chemistry::atom&,const chemistry::atom&);
-wostream& operator <<(wostream&,const chemistry::atom&);
+bool operator ==(const msci::atom&,const msci::atom&);
+bool operator !=(const msci::atom&,const msci::atom&);
+wostream& operator <<(wostream&,const msci::atom&);
 
 #endif // CHEMISTRY_GENERAL_ATOMS_ATOM_HPP_INCLUDED

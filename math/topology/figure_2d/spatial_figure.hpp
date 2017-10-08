@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	template<typename T>
 	class spatial_figure : public T,public cartesian_coordinates_2d

@@ -12,13 +12,13 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	angle_number::angle_number() : value(0)
 	{
 	}
 
-	angle_number::angle_number(math::angle_type x)
+	angle_number::angle_number(msci::angle_type x)
 	{
 		value = x;
 		normalize_value();
@@ -55,7 +55,7 @@ namespace math
 		normalize_value();
 	}
 
-	const math::angle_type& angle_number::get_value() const
+	const msci::angle_type& angle_number::get_value() const
 	{
 		return value;
 	}
@@ -66,7 +66,7 @@ namespace math
 		normalize_value();
 	}
 
-	math::angle_type angle_number::get_radian_value() const
+	msci::angle_type angle_number::get_radian_value() const
 	{
 		return grade_to_radian(value);
 	}
@@ -77,14 +77,14 @@ namespace math
 		{
 			if (value >= 360)
 			{
-				math::angle_type decimal_part;
-				math::angle_type value_remainder = modf(value / 360,&decimal_part);
+				msci::angle_type decimal_part;
+				msci::angle_type value_remainder = modf(value / 360,&decimal_part);
 				value = value_remainder * 360;
 			}
 			else if (value < 0)
 			{
-				math::angle_type decimal_part;
-				math::angle_type value_remainder = modf(value / 360,&decimal_part);
+				msci::angle_type decimal_part;
+				msci::angle_type value_remainder = modf(value / 360,&decimal_part);
 				value = 360 - std::abs(value_remainder * 360);
 			}
 			if (value > 359.99)
@@ -130,68 +130,68 @@ namespace math
 		return angle_number(pow(x.get_value(), 1 / y));
 	}
 
-	math::angle_type sin(const angle_number& x)
+	msci::angle_type sin(const angle_number& x)
 	{
 		return std::sin(x.get_radian_value());
 	}
 
-	math::angle_type cos(const angle_number& x)
+	msci::angle_type cos(const angle_number& x)
 	{
 		return std::cos(x.get_radian_value());
 	}
 
-	math::angle_type tan(const angle_number& x)
+	msci::angle_type tan(const angle_number& x)
 	{
 		return std::tan(x.get_radian_value());
 	}
 
-	angle_number asin(math::angle_type x)
+	angle_number asin(msci::angle_type x)
 	{
 		return angle_number(radian_to_grade(std::asin(x)));
 	}
 
-	angle_number acos(math::angle_type x)
+	angle_number acos(msci::angle_type x)
 	{
 		return angle_number(radian_to_grade(std::acos(x)));
 	}
 
-	angle_number atan(math::angle_type x)
+	angle_number atan(msci::angle_type x)
 	{
 		return angle_number(radian_to_grade(std::atan(x)));
 	}
 
-	math::angle_type sinh(const angle_number& x)
+	msci::angle_type sinh(const angle_number& x)
 	{
 		return std::sinh(x.get_radian_value());
 	}
 
-	math::angle_type cosh(const angle_number& x)
+	msci::angle_type cosh(const angle_number& x)
 	{
 		return std::cosh(x.get_radian_value());
 	}
 
-	math::angle_type tanh(const angle_number& x)
+	msci::angle_type tanh(const angle_number& x)
 	{
 		return std::tanh(x.get_radian_value());
 	}
 
-	angle_number asinh(math::angle_type x)
+	angle_number asinh(msci::angle_type x)
 	{
 		return angle_number(radian_to_grade(std::asinh(x)));
 	}
 
-	angle_number acosh(math::angle_type x)
+	angle_number acosh(msci::angle_type x)
 	{
 		return angle_number(radian_to_grade(std::acosh(x)));
 	}
 
-	angle_number atanh(math::angle_type x)
+	angle_number atanh(msci::angle_type x)
 	{
 		return angle_number(radian_to_grade(std::atanh(x)));
 	}
 }
 
-bool operator ==(const math::angle_number& x, const math::angle_number& y)
+bool operator ==(const msci::angle_number& x, const msci::angle_number& y)
 {
 	if(x.get_value() == y.get_value())
 	{
@@ -203,12 +203,12 @@ bool operator ==(const math::angle_number& x, const math::angle_number& y)
 	}
 }
 
-bool operator !=(const math::angle_number& x, const math::angle_number& y)
+bool operator !=(const msci::angle_number& x, const msci::angle_number& y)
 {
 	return !(x == y);
 }
 
-bool operator <(const math::angle_number& x, const math::angle_number& y)
+bool operator <(const msci::angle_number& x, const msci::angle_number& y)
 {
 	if(x.get_value() < y.get_value())
 	{
@@ -220,7 +220,7 @@ bool operator <(const math::angle_number& x, const math::angle_number& y)
 	}
 }
 
-bool operator >(const math::angle_number& x, const math::angle_number& y)
+bool operator >(const msci::angle_number& x, const msci::angle_number& y)
 {
 	if(x.get_value() > y.get_value())
 	{
@@ -232,24 +232,24 @@ bool operator >(const math::angle_number& x, const math::angle_number& y)
 	}
 }
 
-bool operator <=(const math::angle_number& x, const math::angle_number& y)
+bool operator <=(const msci::angle_number& x, const msci::angle_number& y)
 {
 	return !(x > y);
 }
 
-bool operator >=(const math::angle_number& x, const math::angle_number& y)
+bool operator >=(const msci::angle_number& x, const msci::angle_number& y)
 {
 	return !(x < y);
 }
 
-void operator +=(wstring& x, const math::angle_number& y)
+void operator +=(wstring& x, const msci::angle_number& y)
 {
 	wostringstream output;
 	output << y;
 	x += output.str();
 }
 
-wstring operator +(const wstring& x, const math::angle_number& y)
+wstring operator +(const wstring& x, const msci::angle_number& y)
 {
 	wostringstream output;
 	output << x;
@@ -257,7 +257,7 @@ wstring operator +(const wstring& x, const math::angle_number& y)
 	return output.str();
 }
 
-wstring operator +(const math::angle_number& y, const wstring& x)
+wstring operator +(const msci::angle_number& y, const wstring& x)
 {
 	wostringstream output;
 	output << y;
@@ -265,7 +265,7 @@ wstring operator +(const math::angle_number& y, const wstring& x)
 	return output.str();
 }
 
-wostream& operator <<(wostream& os, const math::angle_number& x)
+wostream& operator <<(wostream& os, const msci::angle_number& x)
 {
 	wostringstream output;
 	double integer_part;
@@ -284,13 +284,13 @@ wostream& operator <<(wostream& os, const math::angle_number& x)
 	return os << output.str();
 }
 
-istream& operator >>(istream& is, math::angle_number& x)
+istream& operator >>(istream& is, msci::angle_number& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	math::angle_number c(stof(b));
+	msci::angle_number c(stof(b));
 	x = c;
 	return is;
 }

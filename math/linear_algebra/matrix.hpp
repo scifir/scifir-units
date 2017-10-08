@@ -10,7 +10,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	template<typename T, int M, int N>
 	class matrix
@@ -258,7 +258,7 @@ namespace math
 }
 
 template<typename T, int M, int N>
-bool operator ==(const math::matrix<T, M, N>& x,const math::matrix<T, M, N>& y)
+bool operator ==(const msci::matrix<T, M, N>& x,const msci::matrix<T, M, N>& y)
 {
 	for(int i = 0; i < x.row_size(); i++)
 	{
@@ -274,13 +274,13 @@ bool operator ==(const math::matrix<T, M, N>& x,const math::matrix<T, M, N>& y)
 }
 
 template<typename T, int M, int N>
-bool operator !=(const math::matrix<T, M, N>& x,const math::matrix<T, M, N>& y)
+bool operator !=(const msci::matrix<T, M, N>& x,const msci::matrix<T, M, N>& y)
 {
 	return !(x == y);
 }
 
 template<typename T, int M, int N>
-wostream& operator <<(wostream& os, const math::matrix<T, M, N>& x)
+wostream& operator <<(wostream& os, const msci::matrix<T, M, N>& x)
 {
 	wostringstream output;
 	output << "[";

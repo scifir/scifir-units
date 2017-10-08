@@ -1,7 +1,7 @@
 #ifndef PERFECT_NUMBER_HPP_INCLUDED
 #define PERFECT_NUMBER_HPP_INCLUDED
 
-namespace math
+namespace msci
 {
 	namespace number
 	{

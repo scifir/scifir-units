@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	class parallelogram : public linear_figure_2d
 	{

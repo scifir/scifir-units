@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	parallelogram::parallelogram() : linear_figure_2d(),width(),height()
 	{

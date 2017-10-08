@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	SCALAR_UNIT_CPP(volumetric_flow,"m3/s");
 	SCALAR_UNIT_CPP(diffusion_coefficient,"m2/s");

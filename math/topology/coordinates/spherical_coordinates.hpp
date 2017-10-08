@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	class spherical_coordinates : public coordinates_3d
 	{
@@ -14,8 +14,8 @@ namespace math
 			spherical_coordinates(function<space_type()>, angle_type, angle_type);
 
 			space_type get_r() const;
-			const math::angle_number& get_angle1() const;
-			const math::angle_number& get_angle2() const;
+			const msci::angle_number& get_angle1() const;
+			const msci::angle_number& get_angle2() const;
 
 			virtual space_type get_value() const;
 			virtual const space_type x_projection() const;
@@ -24,8 +24,8 @@ namespace math
 
 		private:
 			function<space_type()> r;
-			math::angle_number angle1;
-			math::angle_number angle2;
+			msci::angle_number angle1;
+			msci::angle_number angle2;
 	};
 }
 

@@ -8,7 +8,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	class point_2d
 	{
@@ -49,8 +49,8 @@ namespace math
 	space_type distance(const point_2d&,const point_2d&);
 }
 
-bool operator ==(const math::point_2d&,const math::point_2d&);
-bool operator !=(const math::point_2d&,const math::point_2d&);
-wostream& operator <<(wostream&,const math::point_2d&);
+bool operator ==(const msci::point_2d&,const msci::point_2d&);
+bool operator !=(const msci::point_2d&,const msci::point_2d&);
+wostream& operator <<(wostream&,const msci::point_2d&);
 
 #endif // MATH_TOPOLOGY_POINT_2D_HPP_INCLUDED

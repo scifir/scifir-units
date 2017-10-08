@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	auto_scalar::auto_scalar(const auto_scalar& x) : unit(x),auto_unit(x),scalar_unit(x)
 	{
@@ -14,11 +14,11 @@ namespace physics::units
 	{
 	}
 
-	auto_scalar::auto_scalar(math::space_type new_value, const string& dimension_structure) : unit(new_value,dimension_structure),auto_unit(new_value,dimension_structure),scalar_unit(new_value,dimension_structure)
+	auto_scalar::auto_scalar(msci::space_type new_value, const string& dimension_structure) : unit(new_value,dimension_structure),auto_unit(new_value,dimension_structure),scalar_unit(new_value,dimension_structure)
 	{
 	}
 
-	auto_scalar::auto_scalar(math::unit_number new_value, const vector_real_dimensions& new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : unit(new_value,new_actual_dimensions),auto_unit(new_value,new_real_dimensions,new_actual_dimensions),scalar_unit(new_value,new_actual_dimensions)
+	auto_scalar::auto_scalar(msci::unit_number new_value, const vector_real_dimensions& new_real_dimensions, const vector_actual_dimensions& new_actual_dimensions) : unit(new_value,new_actual_dimensions),auto_unit(new_value,new_real_dimensions,new_actual_dimensions),scalar_unit(new_value,new_actual_dimensions)
 	{
 	}
 

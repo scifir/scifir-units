@@ -5,18 +5,18 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	lab_number::lab_number() : undefined_number<unit_number>(), unit_number(), error_value(0)
 	{
 	}
 
-	lab_number::lab_number(math::space_type new_value, math::space_type new_error_value) : undefined_number<unit_number>(new_value), unit_number(new_value)
+	lab_number::lab_number(msci::space_type new_value, msci::space_type new_error_value) : undefined_number<unit_number>(new_value), unit_number(new_value)
 	{
 		error_value = new_error_value;
 	}
 
-	const math::space_type& lab_number::get_error_value() const
+	const msci::space_type& lab_number::get_error_value() const
 	{
 		return error_value;
 	}
@@ -99,7 +99,7 @@ namespace math
 	}
 }
 
-wostream& operator <<(wostream& os, const math::lab_number& x)
+wostream& operator <<(wostream& os, const msci::lab_number& x)
 {
 	return os << x.print();
 }

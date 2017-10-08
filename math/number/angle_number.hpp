@@ -13,15 +13,15 @@
 #include <type_traits>
 
 using namespace std;
-using namespace physics::units;
+using namespace msci::units;
 
-namespace math
+namespace msci
 {
 	class angle_number
 	{
 		public:
 			angle_number();
-			angle_number(math::angle_type);
+			angle_number(msci::angle_type);
 			angle_number(const unit&);
 
 			virtual angle_number* clone() const
@@ -137,14 +137,14 @@ namespace math
 				return tmp;
 			}
 
-			const math::angle_type& get_value() const;
+			const msci::angle_type& get_value() const;
 
 			void invert();
 
-			math::angle_type get_radian_value() const;
+			msci::angle_type get_radian_value() const;
 
 		private:
-			math::angle_type value;
+			msci::angle_type value;
 
 			void normalize_value();
 	};
@@ -155,179 +155,179 @@ namespace math
 	angle_number sqrt(const angle_number&);
 	angle_number sqrt_nth(const angle_number&,int);
 
-	math::angle_type sin(const angle_number&);
-	math::angle_type cos(const angle_number&);
-	math::angle_type tan(const angle_number&);
-	angle_number asin(math::angle_type);
-	angle_number acos(math::angle_type);
-	angle_number atan(math::angle_type);
-	math::angle_type sinh(const angle_number&);
-	math::angle_type cosh(const angle_number&);
-	math::angle_type tanh(const angle_number&);
-	angle_number asinh(math::angle_type);
-	angle_number acosh(math::angle_type);
-	angle_number atanh(math::angle_type);
+	msci::angle_type sin(const angle_number&);
+	msci::angle_type cos(const angle_number&);
+	msci::angle_type tan(const angle_number&);
+	angle_number asin(msci::angle_type);
+	angle_number acos(msci::angle_type);
+	angle_number atan(msci::angle_type);
+	msci::angle_type sinh(const angle_number&);
+	msci::angle_type cosh(const angle_number&);
+	msci::angle_type tanh(const angle_number&);
+	angle_number asinh(msci::angle_type);
+	angle_number acosh(msci::angle_type);
+	angle_number atanh(msci::angle_type);
 
-	inline math::angle_type radian_to_grade(math::angle_type x)
+	inline msci::angle_type radian_to_grade(msci::angle_type x)
 	{
 		return x * 180 / PI;
 	}
 
-	inline math::angle_type grade_to_radian(math::angle_type x)
+	inline msci::angle_type grade_to_radian(msci::angle_type x)
 	{
 		return x * PI / 180;
 	}
 
-	inline math::angle_type asin_grade(math::space_type x)
+	inline msci::angle_type asin_grade(msci::space_type x)
 	{
 		return radian_to_grade(std::asin(x));
 	}
 
-	inline math::angle_type acos_grade(math::space_type x)
+	inline msci::angle_type acos_grade(msci::space_type x)
 	{
 		return radian_to_grade(std::acos(x));
 	}
 
-	inline math::angle_type atan_grade(math::space_type x)
+	inline msci::angle_type atan_grade(msci::space_type x)
 	{
 		return radian_to_grade(std::atan(x));
 	}
 
-	inline math::angle_type asinh_grade(math::space_type x)
+	inline msci::angle_type asinh_grade(msci::space_type x)
 	{
 		return radian_to_grade(std::asinh(x));
 	}
 
-	inline math::angle_type acosh_grade(math::space_type x)
+	inline msci::angle_type acosh_grade(msci::space_type x)
 	{
 		return radian_to_grade(std::acosh(x));
 	}
 
-	inline math::angle_type atanh_grade(math::space_type x)
+	inline msci::angle_type atanh_grade(msci::space_type x)
 	{
 		return radian_to_grade(std::atanh(x));
 	}
 }
 
-namespace math
+namespace msci
 {
-	typedef vector<math::angle_number> angle_container;
+	typedef vector<msci::angle_number> angle_container;
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-math::angle_number operator +(T x, const math::angle_number& y)
+msci::angle_number operator +(T x, const msci::angle_number& y)
 {
-	return math::angle_number(x + y.get_value());
+	return msci::angle_number(x + y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-math::angle_number operator -(T x, const math::angle_number& y)
+msci::angle_number operator -(T x, const msci::angle_number& y)
 {
-	return math::angle_number(x - y.get_value());
+	return msci::angle_number(x - y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-math::angle_number operator *(T x, const math::angle_number& y)
+msci::angle_number operator *(T x, const msci::angle_number& y)
 {
-	return math::angle_number(x * y.get_value());
+	return msci::angle_number(x * y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-math::angle_number operator /(T x, const math::angle_number& y)
+msci::angle_number operator /(T x, const msci::angle_number& y)
 {
-	return math::angle_number(x / y.get_value());
+	return msci::angle_number(x / y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-math::angle_number operator ^(T x, const math::angle_number& y)
+msci::angle_number operator ^(T x, const msci::angle_number& y)
 {
-	return math::angle_number(pow(x, y.get_value()));
+	return msci::angle_number(pow(x, y.get_value()));
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-bool operator ==(T x, const math::angle_number& y)
+bool operator ==(T x, const msci::angle_number& y)
 {
 	return (x == y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-bool operator !=(T x, const math::angle_number& y)
+bool operator !=(T x, const msci::angle_number& y)
 {
 	return (x != y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-bool operator <(T x, const math::angle_number& y)
+bool operator <(T x, const msci::angle_number& y)
 {
 	return (x < y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-bool operator >(T x, const math::angle_number& y)
+bool operator >(T x, const msci::angle_number& y)
 {
 	return (x > y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-bool operator <=(T x, const math::angle_number& y)
+bool operator <=(T x, const msci::angle_number& y)
 {
 	return (x <= y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-bool operator >=(T x, const math::angle_number& y)
+bool operator >=(T x, const msci::angle_number& y)
 {
 	return (x >= y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-bool operator ==(const math::angle_number& y, T x)
+bool operator ==(const msci::angle_number& y, T x)
 {
 	return (x == y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-bool operator !=(const math::angle_number& y, T x)
+bool operator !=(const msci::angle_number& y, T x)
 {
 	return (x != y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-bool operator <(const math::angle_number& y, T x)
+bool operator <(const msci::angle_number& y, T x)
 {
 	return (y.get_value() < x);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-bool operator >(const math::angle_number& y, T x)
+bool operator >(const msci::angle_number& y, T x)
 {
 	return (y.get_value() > x);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-bool operator <=(const math::angle_number& y, T x)
+bool operator <=(const msci::angle_number& y, T x)
 {
 	return (y.get_value() <= x);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-bool operator >=(const math::angle_number& y, T x)
+bool operator >=(const msci::angle_number& y, T x)
 {
 	return (y.get_value() >= x);
 }
 
-bool operator ==(const math::angle_number&, const math::angle_number&);
-bool operator !=(const math::angle_number&, const math::angle_number&);
-bool operator <(const math::angle_number&, const math::angle_number&);
-bool operator >(const math::angle_number&, const math::angle_number&);
-bool operator <=(const math::angle_number&, const math::angle_number&);
-bool operator >=(const math::angle_number&, const math::angle_number&);
+bool operator ==(const msci::angle_number&, const msci::angle_number&);
+bool operator !=(const msci::angle_number&, const msci::angle_number&);
+bool operator <(const msci::angle_number&, const msci::angle_number&);
+bool operator >(const msci::angle_number&, const msci::angle_number&);
+bool operator <=(const msci::angle_number&, const msci::angle_number&);
+bool operator >=(const msci::angle_number&, const msci::angle_number&);
 
-void operator +=(wstring&, const math::angle_number&);
-wstring operator +(const wstring&, const math::angle_number&);
-wstring operator +(const math::angle_number&, const wstring&);
+void operator +=(wstring&, const msci::angle_number&);
+wstring operator +(const wstring&, const msci::angle_number&);
+wstring operator +(const msci::angle_number&, const wstring&);
 
-wostream& operator <<(wostream&, const math::angle_number&);
-istream& operator >>(istream&, math::angle_number&);
+wostream& operator <<(wostream&, const msci::angle_number&);
+istream& operator >>(istream&, msci::angle_number&);
 
 #endif // ANGLE_NUMBER_HPP_INCLUDED

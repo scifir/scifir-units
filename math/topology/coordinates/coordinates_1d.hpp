@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	class coordinates_1d
 	{

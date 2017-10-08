@@ -1,7 +1,7 @@
 #include "unit_abbreviation.hpp"
 
 using namespace std;
-using namespace physics::units;
+using namespace msci::units;
 
 frequency operator"" _YHz(unsigned long long int x)
 {
@@ -2013,19 +2013,19 @@ volume operator"" _mL(unsigned long long int x)
 	return volume(x, "mL");
 }
 
-physics::units::time operator"" _min(unsigned long long int x)
+msci::units::time operator"" _min(unsigned long long int x)
 {
-	return physics::units::time(x, "min");
+	return msci::units::time(x, "min");
 }
 
-physics::units::time operator"" _hour(unsigned long long int x)
+msci::units::time operator"" _hour(unsigned long long int x)
 {
-	return physics::units::time(x, "hour");
+	return msci::units::time(x, "hour");
 }
 
-physics::units::time operator"" _day(unsigned long long int x)
+msci::units::time operator"" _day(unsigned long long int x)
 {
-	return physics::units::time(x, "day");
+	return msci::units::time(x, "day");
 }
 
 length operator"" _YAU(unsigned long long int x)
@@ -4588,19 +4588,19 @@ volume operator"" _mL(long double x)
 	return volume(x, "mL");
 }
 
-physics::units::time operator"" _min(long double x)
+msci::units::time operator"" _min(long double x)
 {
-	return physics::units::time(x, "min");
+	return msci::units::time(x, "min");
 }
 
-physics::units::time operator"" _hour(long double x)
+msci::units::time operator"" _hour(long double x)
 {
-	return physics::units::time(x, "hour");
+	return msci::units::time(x, "hour");
 }
 
-physics::units::time operator"" _day(long double x)
+msci::units::time operator"" _day(long double x)
 {
-	return physics::units::time(x, "day");
+	return msci::units::time(x, "day");
 }
 
 length operator"" _YAU(long double x)

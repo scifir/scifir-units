@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	class polar_coordinates : public coordinates_2d
 	{
@@ -14,7 +14,7 @@ namespace math
 			polar_coordinates(function<space_type()>,angle_type);
 
 			space_type get_r() const;
-			const math::angle_number& get_angle() const;
+			const msci::angle_number& get_angle() const;
 
 			virtual space_type get_value() const;
 			virtual const space_type x_projection() const;
@@ -22,7 +22,7 @@ namespace math
 
 		private:
 			function<space_type()> r;
-			math::angle_number angle;
+			msci::angle_number angle;
 	};
 }
 

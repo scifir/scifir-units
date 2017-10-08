@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	direction::direction(direction_symbol new_direction) : direction_value(new_direction)
 	{
@@ -172,7 +172,7 @@ namespace math
 	}
 }
 
-bool operator ==(const math::direction& x, const math::direction& y)
+bool operator ==(const msci::direction& x, const msci::direction& y)
 {
 	if(x.get_direction() == y.get_direction())
 	{
@@ -184,12 +184,12 @@ bool operator ==(const math::direction& x, const math::direction& y)
 	}
 }
 
-bool operator !=(const math::direction& x, const math::direction& y)
+bool operator !=(const msci::direction& x, const msci::direction& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const math::direction& x, math::direction_symbol y)
+bool operator ==(const msci::direction& x, msci::direction_symbol y)
 {
 	if(x.get_direction() == y)
 	{
@@ -201,22 +201,22 @@ bool operator ==(const math::direction& x, math::direction_symbol y)
 	}
 }
 
-bool operator !=(const math::direction& x, math::direction_symbol y)
+bool operator !=(const msci::direction& x, msci::direction_symbol y)
 {
 	return !(x == y);
 }
 
-bool operator ==(math::direction_symbol y, const math::direction& x)
+bool operator ==(msci::direction_symbol y, const msci::direction& x)
 {
 	return (x == y);
 }
 
-bool operator !=(math::direction_symbol y, const math::direction& x)
+bool operator !=(msci::direction_symbol y, const msci::direction& x)
 {
 	return !(x == y);
 }
 
-bool operator ==(const math::direction_lr& x, const math::direction_lr& y)
+bool operator ==(const msci::direction_lr& x, const msci::direction_lr& y)
 {
 	if(x.get_direction() == y.get_direction())
 	{
@@ -228,14 +228,14 @@ bool operator ==(const math::direction_lr& x, const math::direction_lr& y)
 	}
 }
 
-bool operator !=(const math::direction_lr& x, const math::direction_lr& y)
+bool operator !=(const msci::direction_lr& x, const msci::direction_lr& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const math::direction_lr& x, math::direction_symbol y)
+bool operator ==(const msci::direction_lr& x, msci::direction_symbol y)
 {
-	if (!(y == math::left or y == math::right))
+	if (!(y == msci::left or y == msci::right))
 	{
 		throw invalid_argument("direction_lr cannot be compared with a direction different than left or right");
 	}
@@ -249,17 +249,17 @@ bool operator ==(const math::direction_lr& x, math::direction_symbol y)
 	}
 }
 
-bool operator !=(const math::direction_lr& x, math::direction_symbol y)
+bool operator !=(const msci::direction_lr& x, msci::direction_symbol y)
 {
 	return !(x == y);
 }
 
-bool operator ==(math::direction_symbol y, const math::direction_lr& x)
+bool operator ==(msci::direction_symbol y, const msci::direction_lr& x)
 {
 	return (x == y);
 }
 
-bool operator !=(math::direction_symbol y, const math::direction_lr& x)
+bool operator !=(msci::direction_symbol y, const msci::direction_lr& x)
 {
 	return !(x == y);
 }

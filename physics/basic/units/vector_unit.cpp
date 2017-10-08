@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	vector_unit::vector_unit(const vector_unit& x) : unit(x),hyper_spherical_coordinates(lambda_value(),x.get_angles())
 	{
@@ -16,7 +16,7 @@ namespace physics::units
 		operator=(move(x));
 	}
 
-	vector_unit::vector_unit(math::space_type new_value,const string& init_value) : unit(new_value,init_value),hyper_spherical_coordinates(lambda_value(), direction_symbol::left)
+	vector_unit::vector_unit(msci::space_type new_value,const string& init_value) : unit(new_value,init_value),hyper_spherical_coordinates(lambda_value(), direction_symbol::left)
 	{
 	}
 
@@ -32,7 +32,7 @@ namespace physics::units
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, math::angle_container new_angles) : unit(new_value), hyper_spherical_coordinates(lambda_value(), new_angles)
+	vector_unit::vector_unit(const unit& new_value, msci::angle_container new_angles) : unit(new_value), hyper_spherical_coordinates(lambda_value(), new_angles)
 	{
 	}
 
@@ -48,7 +48,7 @@ namespace physics::units
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, math::angle_container new_angles) : unit(move(new_value)), hyper_spherical_coordinates(lambda_value(), new_angles)
+	vector_unit::vector_unit(unit&& new_value, msci::angle_container new_angles) : unit(move(new_value)), hyper_spherical_coordinates(lambda_value(), new_angles)
 	{
 	}
 
@@ -64,7 +64,7 @@ namespace physics::units
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, math::angle_container new_angles, const string& init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
+	vector_unit::vector_unit(const unit& new_value, msci::angle_container new_angles, const string& init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
 	{
 	}
 
@@ -80,7 +80,7 @@ namespace physics::units
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, math::angle_container new_angles, const string& init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
+	vector_unit::vector_unit(unit&& new_value, msci::angle_container new_angles, const string& init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
 	{
 	}
 
@@ -96,7 +96,7 @@ namespace physics::units
 	{
 	}
 
-	vector_unit::vector_unit(const string& init_value, math::angle_container new_angles) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
+	vector_unit::vector_unit(const string& init_value, msci::angle_container new_angles) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
 	{
 	}
 
@@ -371,7 +371,7 @@ namespace physics::units
 					if(unit::value < 0)
 					{
 						directions.direction.invert();
-						unit::value = math::abs(unit::value);
+						unit::value = msci::abs(unit::value);
 					}
 				}
 			}
@@ -488,19 +488,19 @@ namespace physics::units
 
 	auto_vector sqrt(const vector_unit& x)
 	{
-		auto_unit new_value = physics::units::sqrt(x);
+		auto_unit new_value = msci::units::sqrt(x);
 		return auto_vector(new_value, x.get_angles());
 	}
 
 	auto_vector sqrt_nth(const vector_unit& x, int y)
 	{
-		auto_unit new_value = physics::units::sqrt_nth(x, y);
+		auto_unit new_value = msci::units::sqrt_nth(x, y);
 		return auto_vector(new_value, x.get_angles());
 	}
 
 	auto_scalar dot_product(const vector_unit& x, const vector_unit& y)
 	{
-		math::unit_number new_value = x.x_projection()*y.x_projection() + x.y_projection()*y.y_projection() + x.z_projection()*y.z_projection();
+		msci::unit_number new_value = x.x_projection()*y.x_projection() + x.y_projection()*y.y_projection() + x.z_projection()*y.z_projection();
 		vector_real_dimensions new_real_dimensions = multiply_real_dimensions(x.get_real_dimensions(), y.get_real_dimensions());
 		vector_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(x.get_actual_dimensions(), y.get_actual_dimensions());
 		return auto_scalar(new_value,new_real_dimensions,new_actual_dimensions);
@@ -531,7 +531,7 @@ namespace physics::units
 			vector_real_dimensions new_real_dimensions = multiply_real_dimensions(x.get_real_dimensions(), y.get_real_dimensions());
 			vector_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(x.get_actual_dimensions(), y.get_actual_dimensions());
 			auto_unit new_unit = auto_unit(new_value, new_real_dimensions, new_actual_dimensions);
-			math::angle_container angles;
+			msci::angle_container angles;
 			angles.push_back(angle1);
 			angles.push_back(angle2);
 			return auto_vector(new_unit, angles);
@@ -544,9 +544,9 @@ namespace physics::units
 		}
 	}
 
-	math::angle_number angle_between_vectors(const vector_unit& x,const vector_unit& y)
+	msci::angle_number angle_between_vectors(const vector_unit& x,const vector_unit& y)
 	{
-		return math::acos(float(dot_product(x,y)/(norm(x)*norm(y))));
+		return msci::acos(float(dot_product(x,y)/(norm(x)*norm(y))));
 	}
 
 	bool same_nd(const vector_unit& x, const vector_unit& y)
@@ -563,8 +563,8 @@ namespace physics::units
 
 	bool same_direction(const vector_unit& x, const vector_unit& y)
 	{
-		math::angle_container compare_angles = x.get_angles();
-		math::angle_container other_angles = y.get_angles();
+		msci::angle_container compare_angles = x.get_angles();
+		msci::angle_container other_angles = y.get_angles();
 		for(unsigned int i = 0; i < compare_angles.size(); i++)
 		{
 			if(compare_angles[i] != other_angles[i])
@@ -577,11 +577,11 @@ namespace physics::units
 
 	bool parallel(const vector_unit& x, const vector_unit& y)
 	{
-		math::angle_container compare_angles = x.get_angles();
-		math::angle_container other_angles = y.get_angles();
+		msci::angle_container compare_angles = x.get_angles();
+		msci::angle_container other_angles = y.get_angles();
 		for(unsigned int i = 0; i < compare_angles.size(); i++)
 		{
-			if(!math::parallel(compare_angles[i], other_angles[i]))
+			if(!msci::parallel(compare_angles[i], other_angles[i]))
 			{
 				return false;
 			}
@@ -591,11 +591,11 @@ namespace physics::units
 
 	bool orthogonal(const vector_unit& x,const vector_unit& y)
 	{
-		math::angle_container compare_angles = x.get_angles();
-		math::angle_container other_angles = y.get_angles();
+		msci::angle_container compare_angles = x.get_angles();
+		msci::angle_container other_angles = y.get_angles();
 		for(unsigned int i = 0; i < compare_angles.size(); i++)
 		{
-			if(math::orthogonal(compare_angles[i], other_angles[i]))
+			if(msci::orthogonal(compare_angles[i], other_angles[i]))
 			{
 				return true;
 			}
@@ -604,11 +604,11 @@ namespace physics::units
 	}
 }
 
-bool operator ==(const physics::units::vector_unit& x, const physics::units::vector_unit& y)
+bool operator ==(const msci::units::vector_unit& x, const msci::units::vector_unit& y)
 {
-	if(physics::units::same_nd(x, y))
+	if(msci::units::same_nd(x, y))
 	{
-		if(x.unit::get_value() == y.unit::get_value() and physics::units::same_direction(x, y))
+		if(x.unit::get_value() == y.unit::get_value() and msci::units::same_direction(x, y))
 		{
 			return true;
 		}
@@ -623,19 +623,19 @@ bool operator ==(const physics::units::vector_unit& x, const physics::units::vec
 	}
 }
 
-bool operator !=(const physics::units::vector_unit& x, const physics::units::vector_unit& y)
+bool operator !=(const msci::units::vector_unit& x, const msci::units::vector_unit& y)
 {
 	return !(x == y);
 }
 
-void operator +=(wstring& x, const physics::units::vector_unit& y)
+void operator +=(wstring& x, const msci::units::vector_unit& y)
 {
 	wostringstream output;
 	output << y;
 	x += output.str();
 }
 
-wstring operator +(const wstring& x, const physics::units::vector_unit& y)
+wstring operator +(const wstring& x, const msci::units::vector_unit& y)
 {
 	wostringstream output;
 	output << x;
@@ -643,7 +643,7 @@ wstring operator +(const wstring& x, const physics::units::vector_unit& y)
 	return output.str();
 }
 
-wstring operator +(const physics::units::vector_unit& y, const wstring& x)
+wstring operator +(const msci::units::vector_unit& y, const wstring& x)
 {
 	wostringstream output;
 	output << y;
@@ -651,7 +651,7 @@ wstring operator +(const physics::units::vector_unit& y, const wstring& x)
 	return output.str();
 }
 
-wostream& operator <<(wostream& os, const physics::units::vector_unit& x)
+wostream& operator <<(wostream& os, const msci::units::vector_unit& x)
 {
 	wostringstream angles_text;
 	if (x.is_1d())
@@ -670,7 +670,7 @@ wostream& operator <<(wostream& os, const physics::units::vector_unit& x)
 		//wcout << "holaas" << endl; // TODO: this function doesn't work well because L strings block the execution when displayed with angles_text.str()
 		int i = 1;
 		wstring angle_symbol;
-		math::angle_container angles = x.get_angles();
+		msci::angle_container angles = x.get_angles();
 		for(const auto& angle : angles)
 		{
 			//wcout << "angle" << endl;
@@ -692,16 +692,16 @@ wostream& operator <<(wostream& os, const physics::units::vector_unit& x)
 	}
 	//wcout << "A" << endl;
 	//wcout << angles_text.str() << endl;
-	return os << x.physics::units::unit::get_value();// << " " << angles_text.str();
+	return os << x.msci::units::unit::get_value();// << " " << angles_text.str();
 }
 
-istream& operator >>(istream& is, physics::units::vector_unit& x)
+istream& operator >>(istream& is, msci::units::vector_unit& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	physics::units::auto_vector c(b,10,10);
+	msci::units::auto_vector c(b,10,10);
 	x = c;
 	return is;
 }

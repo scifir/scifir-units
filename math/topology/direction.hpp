@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	enum direction_symbol {left, right, top, bottom, front, back, left_top, left_bottom, right_top, right_bottom, left_front, left_back, right_front, right_back, top_front, top_back, bottom_front, bottom_back, left_top_front, left_top_back, left_bottom_front, left_bottom_back, right_top_front, right_top_back, right_bottom_front, right_bottom_back};
 
@@ -39,17 +39,17 @@ namespace math
 	direction_symbol opposite_direction(direction_symbol);
 }
 
-bool operator ==(const math::direction& x, const math::direction& y);
-bool operator !=(const math::direction& x, const math::direction& y);
-bool operator ==(const math::direction& x, math::direction_symbol y);
-bool operator !=(const math::direction& x, math::direction_symbol y);
-bool operator ==(math::direction_symbol y, const math::direction& x);
-bool operator !=(math::direction_symbol y, const math::direction& x);
-bool operator ==(const math::direction_lr& x, const math::direction_lr& y);
-bool operator !=(const math::direction_lr& x, const math::direction_lr& y);
-bool operator ==(const math::direction_lr& x, math::direction_symbol y);
-bool operator !=(const math::direction_lr& x, math::direction_symbol y);
-bool operator ==(math::direction_symbol y, const math::direction_lr& x);
-bool operator !=(math::direction_symbol y, const math::direction_lr& x);
+bool operator ==(const msci::direction& x, const msci::direction& y);
+bool operator !=(const msci::direction& x, const msci::direction& y);
+bool operator ==(const msci::direction& x, msci::direction_symbol y);
+bool operator !=(const msci::direction& x, msci::direction_symbol y);
+bool operator ==(msci::direction_symbol y, const msci::direction& x);
+bool operator !=(msci::direction_symbol y, const msci::direction& x);
+bool operator ==(const msci::direction_lr& x, const msci::direction_lr& y);
+bool operator !=(const msci::direction_lr& x, const msci::direction_lr& y);
+bool operator ==(const msci::direction_lr& x, msci::direction_symbol y);
+bool operator !=(const msci::direction_lr& x, msci::direction_symbol y);
+bool operator ==(msci::direction_symbol y, const msci::direction_lr& x);
+bool operator !=(msci::direction_symbol y, const msci::direction_lr& x);
 
 #endif // DIRECTION_HPP_INCLUDED

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	class irregular_polygon : public polygon
 	{

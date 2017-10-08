@@ -6,12 +6,13 @@
 #include "units.hpp"
 #include "physics/particles.hpp"
 
+#include <cmath>
 #include <cstdint>
 #include <sstream>
 
-using namespace chemistry;
+using namespace msci;
 
-namespace chemistry
+namespace msci
 {
 	template<typename T>
 	class normal_atom : public atom_crtp<T>
@@ -40,14 +41,14 @@ namespace chemistry
 				{
 					if (atom::is_atom_specimen(atom_symbol::H) or atom::is_atom_specimen(atom_symbol::He))
 					{
-						if ((get_ionic_charge() < 0) and (abs(get_ionic_charge()) > (2 - atom_crtp<T>::get_z())))
+						if ((get_ionic_charge() < 0) and (std::abs(get_ionic_charge()) > (2 - atom_crtp<T>::get_z())))
 						{
 							return false;
 						}
 					}
 					else
 					{
-						if ((get_ionic_charge() < 0) and (abs(get_ionic_charge()) > (8 - atom_crtp<T>::get_z())))
+						if ((get_ionic_charge() < 0) and (std::abs(get_ionic_charge()) > (8 - atom_crtp<T>::get_z())))
 						{
 							return false;
 						}
@@ -94,12 +95,12 @@ namespace chemistry
 
             virtual mass get_real_mass() const
             {
-            	return mass(atom_crtp<T>::get_z() * physics::proton::common_mass,"amu");
+            	return mass(atom_crtp<T>::get_z() * msci::proton::common_mass,"amu");
             }
 
             virtual mass get_electrons_mass() const
             {
-            	return mass(get_electrons_number() * physics::electron::common_mass,"amu");
+            	return mass(get_electrons_number() * msci::electron::common_mass,"amu");
             }
 
 			virtual void print_image_2d() const

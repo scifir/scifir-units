@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	prefix::prefix(): scale(1)
 	{

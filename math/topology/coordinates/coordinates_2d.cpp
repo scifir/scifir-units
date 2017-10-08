@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	coordinates_2d::coordinates_2d()
 	{

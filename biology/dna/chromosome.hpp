@@ -10,7 +10,7 @@
 
 using namespace std;
 
-namespace biology
+namespace msci
 {
 	class chromosome
 	{

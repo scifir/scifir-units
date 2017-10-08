@@ -15,7 +15,7 @@
 #include "informatics/types/is_number.hpp"
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	class auto_unit;
 
@@ -25,8 +25,8 @@ namespace physics::units
 			unit();
 			unit(const unit&);
 			unit(unit&&);
-			explicit unit(math::space_type, const string& = "");
-			explicit unit(math::unit_number, const vector_actual_dimensions&);
+			explicit unit(msci::space_type, const string& = "");
+			explicit unit(msci::unit_number, const vector_actual_dimensions&);
 			explicit unit(const unit&,const string&);
 			explicit unit(unit&&,const string&);
 			explicit unit(const string&);
@@ -102,7 +102,7 @@ namespace physics::units
 			virtual string get_dimensions_match() const = 0;
 			virtual vector_real_dimensions get_real_dimensions() const = 0;
 			const vector_actual_dimensions& get_actual_dimensions() const;
-			virtual const math::unit_number& get_value() const;
+			virtual const msci::unit_number& get_value() const;
 
 			/// Returns true if it's defined
 			inline bool is_defined() const
@@ -119,7 +119,7 @@ namespace physics::units
 			wstring display(int = 2) const;
 
 		protected:
-			math::unit_number value;
+			msci::unit_number value;
 			vector_actual_dimensions actual_dimensions;
 
 			string initial_dimensions_get_structure(const string&) const;
@@ -149,7 +149,7 @@ namespace physics::units
 			{
 			}
 
-			explicit unit_crtp(math::space_type new_value, const string& init_value) : unit(new_value,init_value)
+			explicit unit_crtp(msci::space_type new_value, const string& init_value) : unit(new_value,init_value)
 			{
 			}
 
@@ -205,18 +205,18 @@ namespace physics::units
 			}
 	};
 
-	math::space_type abs(const unit&);
+	msci::space_type abs(const unit&);
 	auto_unit sqrt(const unit&);
 	auto_unit sqrt_nth(const unit&, int);
 	bool equal_dimensions(const unit&,const unit&);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-math::unit_number operator ^(T x, const physics::units::unit& y)
+msci::unit_number operator ^(T x, const msci::units::unit& y)
 {
 	if(y.has_empty_dimensions())
 	{
-		return math::unit_number(pow(x, y.get_value().get_value()));
+		return msci::unit_number(pow(x, y.get_value().get_value()));
 	}
 	else
 	{
@@ -224,32 +224,32 @@ math::unit_number operator ^(T x, const physics::units::unit& y)
 	}
 }
 
-bool operator ==(const physics::units::unit&, const physics::units::unit&);
-bool operator !=(const physics::units::unit&, const physics::units::unit&);
-bool operator <(const physics::units::unit&, const physics::units::unit&);
-bool operator >(const physics::units::unit&, const physics::units::unit&);
-bool operator <=(const physics::units::unit&, const physics::units::unit&);
-bool operator >=(const physics::units::unit&, const physics::units::unit&);
+bool operator ==(const msci::units::unit&, const msci::units::unit&);
+bool operator !=(const msci::units::unit&, const msci::units::unit&);
+bool operator <(const msci::units::unit&, const msci::units::unit&);
+bool operator >(const msci::units::unit&, const msci::units::unit&);
+bool operator <=(const msci::units::unit&, const msci::units::unit&);
+bool operator >=(const msci::units::unit&, const msci::units::unit&);
 
-bool operator ==(const physics::units::unit&, const string&);
-bool operator !=(const physics::units::unit&, const string&);
-bool operator <(const physics::units::unit&, const string&);
-bool operator >(const physics::units::unit&, const string&);
-bool operator <=(const physics::units::unit&, const string&);
-bool operator >=(const physics::units::unit&, const string&);
+bool operator ==(const msci::units::unit&, const string&);
+bool operator !=(const msci::units::unit&, const string&);
+bool operator <(const msci::units::unit&, const string&);
+bool operator >(const msci::units::unit&, const string&);
+bool operator <=(const msci::units::unit&, const string&);
+bool operator >=(const msci::units::unit&, const string&);
 
-bool operator ==(const string&, const physics::units::unit&);
-bool operator !=(const string&, const physics::units::unit&);
-bool operator <(const string&, const physics::units::unit&);
-bool operator >(const string&, const physics::units::unit&);
-bool operator <=(const string&, const physics::units::unit&);
-bool operator >=(const string&, const physics::units::unit&);
+bool operator ==(const string&, const msci::units::unit&);
+bool operator !=(const string&, const msci::units::unit&);
+bool operator <(const string&, const msci::units::unit&);
+bool operator >(const string&, const msci::units::unit&);
+bool operator <=(const string&, const msci::units::unit&);
+bool operator >=(const string&, const msci::units::unit&);
 
-void operator +=(wstring&, const physics::units::unit&);
-wstring operator +(const wstring&, const physics::units::unit&);
-wstring operator +(const physics::units::unit&, const wstring&);
+void operator +=(wstring&, const msci::units::unit&);
+wstring operator +(const wstring&, const msci::units::unit&);
+wstring operator +(const msci::units::unit&, const wstring&);
 
-wostream& operator <<(wostream&, const physics::units::unit&);
-istream& operator >>(istream&, physics::units::unit&);
+wostream& operator <<(wostream&, const msci::units::unit&);
+istream& operator >>(istream&, msci::units::unit&);
 
 #endif

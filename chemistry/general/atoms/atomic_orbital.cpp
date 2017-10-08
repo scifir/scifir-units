@@ -7,20 +7,20 @@
 
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	orbital::orbital(orbital_symbol new_orbital_specie, int new_period, int electron_number)
 	{
 		orbital_specie = new_orbital_specie;
 		period = new_period;
-		electrons = vector<physics::electron>();
+		electrons = vector<msci::electron>();
 		if(electron_number >= 1)
 		{
-			physics::electron electron1 = physics::electron(-0.5);
+			msci::electron electron1 = msci::electron(-0.5);
 			electrons.push_back(electron1);
 			if(electron_number == 2)
 			{
-				physics::electron electron2 = physics::electron(0.5);
+				msci::electron electron2 = msci::electron(0.5);
 				electrons.push_back(electron2);
 			}
 		}
@@ -142,14 +142,14 @@ namespace chemistry
 	}
 }
 
-ostream& operator <<(ostream& os, const chemistry::orbital& orbital)
+ostream& operator <<(ostream& os, const msci::orbital& orbital)
 {
 	ostringstream output;
 	output << orbital.period << orbital.name << orbital.electrons.size();
 	return os << output.str();
 }
 
-ostream& operator <<(ostream& os, chemistry::orbital_group orbital_group)
+ostream& operator <<(ostream& os, msci::orbital_group orbital_group)
 {
 	ostringstream output;
 	output << orbital_group.period() << orbital_group.name() << orbital_group.total_electrons();

@@ -8,7 +8,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	class directional_coordinates : public coordinates_1d
 	{

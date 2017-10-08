@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	class circle : public figure_2d
 	{
@@ -46,10 +46,10 @@ namespace math
 			virtual bool is_inside(const point_2d&) const;
 
 			virtual void rotate(angle_type);
-			virtual void rotate(const math::angle_number&);
+			virtual void rotate(const msci::angle_number&);
 
 			virtual void scale(space_type);
-			//virtual void scale(const math::percentage_number&) = 0;
+			//virtual void scale(const msci::percentage_number&) = 0;
 
 			virtual wstring display() const;
 
@@ -58,7 +58,7 @@ namespace math
 	};
 }
 
-bool operator ==(const math::circle&,const math::circle&);
-bool operator !=(const math::circle&,const math::circle&);
+bool operator ==(const msci::circle&,const msci::circle&);
+bool operator !=(const msci::circle&,const msci::circle&);
 
 #endif // MATH_TOPOLOGY_FIGURE_2D_CIRCLE_HPP_INCLUDED

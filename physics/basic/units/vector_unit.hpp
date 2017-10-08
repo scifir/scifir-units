@@ -27,27 +27,27 @@
 		public: \
 			name(const name&); \
 			name(name&&); \
-			explicit name(math::space_type,const string&); \
+			explicit name(msci::space_type,const string&); \
 			explicit name(const unit&,direction_symbol); \
 			explicit name(const unit&,angle_type); \
 			explicit name(const unit&,angle_type,angle_type); \
-			explicit name(const unit&,math::angle_container); \
+			explicit name(const unit&,msci::angle_container); \
 			explicit name(unit&&,direction_symbol); \
 			explicit name(unit&&,angle_type); \
 			explicit name(unit&&,angle_type,angle_type); \
-			explicit name(unit&&,math::angle_container); \
+			explicit name(unit&&,msci::angle_container); \
 			explicit name(const unit&,direction_symbol,const string&); \
 			explicit name(const unit&,angle_type,const string&); \
 			explicit name(const unit&,angle_type,angle_type,const string&); \
-			explicit name(const unit&,math::angle_container,const string&); \
+			explicit name(const unit&,msci::angle_container,const string&); \
 			explicit name(unit&&,direction_symbol,const string&); \
 			explicit name(unit&&,angle_type,const string&); \
 			explicit name(unit&&,angle_type,angle_type,const string&); \
-			explicit name(unit&&,math::angle_container,const string&); \
+			explicit name(unit&&,msci::angle_container,const string&); \
 			explicit name(const string&,direction_symbol); \
 			explicit name(const string&,angle_type); \
 			explicit name(const string&,angle_type,angle_type); \
-			explicit name(const string&,math::angle_container); \
+			explicit name(const string&,msci::angle_container); \
 			name(const vector_unit&); \
 			name(vector_unit&&); \
 \
@@ -68,27 +68,27 @@
 		public: \
 			name(const name&); \
 			name(name&&); \
-			explicit name(math::space_type,const string&); \
+			explicit name(msci::space_type,const string&); \
 			explicit name(const unit&,direction_symbol); \
 			explicit name(const unit&,angle_type); \
 			explicit name(const unit&,angle_type,angle_type); \
-			explicit name(const unit&,math::angle_container); \
+			explicit name(const unit&,msci::angle_container); \
 			explicit name(unit&&,direction_symbol); \
 			explicit name(unit&&,angle_type); \
 			explicit name(unit&&,angle_type,angle_type); \
-			explicit name(unit&&,math::angle_container); \
+			explicit name(unit&&,msci::angle_container); \
 			explicit name(const unit&,direction_symbol,const string&); \
 			explicit name(const unit&,angle_type,const string&); \
 			explicit name(const unit&,angle_type,angle_type,const string&); \
-			explicit name(const unit&,math::angle_container,const string&); \
+			explicit name(const unit&,msci::angle_container,const string&); \
 			explicit name(unit&&,direction_symbol,const string&); \
 			explicit name(unit&&,angle_type,const string&); \
 			explicit name(unit&&,angle_type,angle_type,const string&); \
-			explicit name(unit&&,math::angle_container,const string&); \
+			explicit name(unit&&,msci::angle_container,const string&); \
 			explicit name(const string&,direction_symbol); \
 			explicit name(const string&,angle_type); \
 			explicit name(const string&,angle_type,angle_type); \
-			explicit name(const string&,math::angle_container); \
+			explicit name(const string&,msci::angle_container); \
 			name(const vector_unit&); \
 			name(vector_unit&&); \
 \
@@ -111,7 +111,7 @@
 			{ \
 			} \
 \
-			name::name(math::space_type new_value,const string& init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,init_value) \
+			name::name(msci::space_type new_value,const string& init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,init_value) \
 			{ \
 			} \
 \
@@ -127,7 +127,7 @@
 			{ \
 			} \
 \
-			name::name(const unit& new_value,math::angle_container new_angles) : unit(new_value),vector_unit_crtp<name>(new_value,new_angles) \
+			name::name(const unit& new_value,msci::angle_container new_angles) : unit(new_value),vector_unit_crtp<name>(new_value,new_angles) \
 			{ \
 			} \
 \
@@ -143,7 +143,7 @@
 			{ \
 			} \
 \
-			name::name(unit&& new_value,math::angle_container new_angles) : unit(move(new_value)),vector_unit_crtp<name>(move(new_value),new_angles) \
+			name::name(unit&& new_value,msci::angle_container new_angles) : unit(move(new_value)),vector_unit_crtp<name>(move(new_value),new_angles) \
 			{ \
 			} \
 \
@@ -159,7 +159,7 @@
 			{ \
 			} \
 \
-			name::name(const unit& new_value,math::angle_container new_angles, const string& init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,new_angles,init_value) \
+			name::name(const unit& new_value,msci::angle_container new_angles, const string& init_value) : unit(new_value,init_value),vector_unit_crtp<name>(new_value,new_angles,init_value) \
 			{ \
 			} \
 \
@@ -175,7 +175,7 @@
 			{ \
 			} \
 \
-			name::name(unit&& new_value,math::angle_container new_angles, const string& init_value) : unit(move(new_value),init_value),vector_unit_crtp<name>(move(new_value),new_angles,init_value) \
+			name::name(unit&& new_value,msci::angle_container new_angles, const string& init_value) : unit(move(new_value),init_value),vector_unit_crtp<name>(move(new_value),new_angles,init_value) \
 			{ \
 			} \
 \
@@ -191,7 +191,7 @@
 			{ \
 			} \
 \
-			name::name(const string& init_value,math::angle_container new_angles) : unit(init_value),vector_unit_crtp<name>(init_value,new_angles) \
+			name::name(const string& init_value,msci::angle_container new_angles) : unit(init_value),vector_unit_crtp<name>(init_value,new_angles) \
 			{ \
 			} \
 \
@@ -243,9 +243,9 @@ const string name::dimensions_match = dimensions; \
 const vector_real_dimensions name::real_dimensions = create_real_dimensions(dimensions)
 
 using namespace std;
-using namespace math;
+using namespace msci;
 
-namespace physics::units
+namespace msci::units
 {
 	class auto_vector;
 
@@ -254,27 +254,27 @@ namespace physics::units
 		public:
 			vector_unit(const vector_unit&);
 			vector_unit(vector_unit&&);
-			explicit vector_unit(math::space_type,const string&);
+			explicit vector_unit(msci::space_type,const string&);
 			explicit vector_unit(const unit&,direction_symbol);
 			explicit vector_unit(const unit&,angle_type);
 			explicit vector_unit(const unit&,angle_type,angle_type);
-			explicit vector_unit(const unit&,math::angle_container);
+			explicit vector_unit(const unit&,msci::angle_container);
 			explicit vector_unit(unit&&,direction_symbol);
 			explicit vector_unit(unit&&,angle_type);
 			explicit vector_unit(unit&&,angle_type,angle_type);
-			explicit vector_unit(unit&&,math::angle_container);
+			explicit vector_unit(unit&&,msci::angle_container);
 			explicit vector_unit(const unit&,direction_symbol,const string&);
 			explicit vector_unit(const unit&,angle_type,const string&);
 			explicit vector_unit(const unit&,angle_type,angle_type,const string&);
-			explicit vector_unit(const unit&,math::angle_container,const string&);
+			explicit vector_unit(const unit&,msci::angle_container,const string&);
 			explicit vector_unit(unit&&,direction_symbol,const string&);
 			explicit vector_unit(unit&&,angle_type,const string&);
 			explicit vector_unit(unit&&,angle_type,angle_type,const string&);
-			explicit vector_unit(unit&&,math::angle_container,const string&);
+			explicit vector_unit(unit&&,msci::angle_container,const string&);
 			explicit vector_unit(const string&,direction_symbol);
 			explicit vector_unit(const string&,angle_type);
 			explicit vector_unit(const string&,angle_type,angle_type);
-			explicit vector_unit(const string&,math::angle_container);
+			explicit vector_unit(const string&,msci::angle_container);
 
 			vector_unit& operator =(const vector_unit&);
 			vector_unit& operator =(vector_unit&&);
@@ -326,7 +326,7 @@ namespace physics::units
 				unit::value *= y;
 				if(y < 0)
 				{
-					for(math::angle_number& angle : directions.angles)
+					for(msci::angle_number& angle : directions.angles)
 					{
 						angle *= -1;
 					}
@@ -339,7 +339,7 @@ namespace physics::units
 				unit::value /= y;
 				if(y < 0)
 				{
-					for(math::angle_number& angle : directions.angles)
+					for(msci::angle_number& angle : directions.angles)
 					{
 						angle *= -1;
 					}
@@ -374,7 +374,7 @@ namespace physics::units
 			{
 			}
 
-			explicit vector_unit_crtp(math::space_type new_value,const string& init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,init_value)
+			explicit vector_unit_crtp(msci::space_type new_value,const string& init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,init_value)
 			{
 			}
 
@@ -390,7 +390,7 @@ namespace physics::units
 			{
 			}
 
-			explicit vector_unit_crtp(const unit& new_value,math::angle_container new_angles) : unit(new_value),unit_crtp<T>(new_value),vector_unit(new_value,new_angles)
+			explicit vector_unit_crtp(const unit& new_value,msci::angle_container new_angles) : unit(new_value),unit_crtp<T>(new_value),vector_unit(new_value,new_angles)
 			{
 			}
 
@@ -406,7 +406,7 @@ namespace physics::units
 			{
 			}
 
-			explicit vector_unit_crtp(unit&& new_value,math::angle_container new_angles) : unit(move(new_value)),unit_crtp<T>(move(new_value)),vector_unit(move(new_value),new_angles)
+			explicit vector_unit_crtp(unit&& new_value,msci::angle_container new_angles) : unit(move(new_value)),unit_crtp<T>(move(new_value)),vector_unit(move(new_value),new_angles)
 			{
 			}
 
@@ -422,7 +422,7 @@ namespace physics::units
 			{
 			}
 
-			explicit vector_unit_crtp(const unit& new_value,math::angle_container new_angles, const string& init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,new_angles,init_value)
+			explicit vector_unit_crtp(const unit& new_value,msci::angle_container new_angles, const string& init_value) : unit(new_value,init_value),unit_crtp<T>(new_value,init_value),vector_unit(new_value,new_angles,init_value)
 			{
 			}
 
@@ -438,7 +438,7 @@ namespace physics::units
 			{
 			}
 
-			explicit vector_unit_crtp(unit&& new_value,math::angle_container new_angles, const string& init_value) : unit(move(new_value),init_value),unit_crtp<T>(move(new_value),init_value),vector_unit(move(new_value),new_angles,init_value)
+			explicit vector_unit_crtp(unit&& new_value,msci::angle_container new_angles, const string& init_value) : unit(move(new_value),init_value),unit_crtp<T>(move(new_value),init_value),vector_unit(move(new_value),new_angles,init_value)
 			{
 			}
 
@@ -454,7 +454,7 @@ namespace physics::units
 			{
 			}
 
-			explicit vector_unit_crtp(const string& init_value,math::angle_container new_angles) : unit(init_value),unit_crtp<T>(init_value),vector_unit(init_value,new_angles)
+			explicit vector_unit_crtp(const string& init_value,msci::angle_container new_angles) : unit(init_value),unit_crtp<T>(init_value),vector_unit(init_value,new_angles)
 			{
 			}
 
@@ -566,19 +566,19 @@ namespace physics::units
 	auto_vector sqrt_nth(const vector_unit&,int);
 	auto_scalar dot_product(const vector_unit&,const vector_unit&);
 	auto_vector cross_product(const vector_unit&,const vector_unit&);
-	math::angle_number angle_between_vectors(const vector_unit&,const vector_unit&);
+	msci::angle_number angle_between_vectors(const vector_unit&,const vector_unit&);
 	bool same_nd(const vector_unit&,const vector_unit&);
 	bool same_direction(const vector_unit&,const vector_unit&);
 	bool parallel(const vector_unit&,const vector_unit&);
 	bool orthogonal(const vector_unit&,const vector_unit&);
 }
 
-bool operator ==(const physics::units::vector_unit&,const physics::units::vector_unit&);
-bool operator !=(const physics::units::vector_unit&,const physics::units::vector_unit&);
-void operator +=(wstring&,const physics::units::vector_unit&);
-wstring operator +(const wstring&,const physics::units::vector_unit&);
-wstring operator +(const physics::units::vector_unit&,const wstring&);
-wostream& operator <<(wostream&,const physics::units::vector_unit&);
-istream& operator >>(istream&,physics::units::vector_unit&);
+bool operator ==(const msci::units::vector_unit&,const msci::units::vector_unit&);
+bool operator !=(const msci::units::vector_unit&,const msci::units::vector_unit&);
+void operator +=(wstring&,const msci::units::vector_unit&);
+wstring operator +(const wstring&,const msci::units::vector_unit&);
+wstring operator +(const msci::units::vector_unit&,const wstring&);
+wostream& operator <<(wostream&,const msci::units::vector_unit&);
+istream& operator >>(istream&,msci::units::vector_unit&);
 
 #endif // VECTORIAL_UNIT_HPP_INCLUDED

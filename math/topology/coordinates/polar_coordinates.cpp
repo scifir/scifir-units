@@ -4,12 +4,12 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	polar_coordinates::polar_coordinates(function<space_type()> new_r,angle_type new_angle) : coordinates_2d()
 	{
 		r = new_r;
-		angle = math::angle_number(new_angle);
+		angle = msci::angle_number(new_angle);
 	}
 
 	space_type polar_coordinates::get_r() const
@@ -17,7 +17,7 @@ namespace math
 		return r();
 	}
 
-	const math::angle_number& polar_coordinates::get_angle() const
+	const msci::angle_number& polar_coordinates::get_angle() const
 	{
 		return angle;
 	}

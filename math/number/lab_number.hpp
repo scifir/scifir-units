@@ -11,15 +11,15 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	class lab_number : public unit_number
 	{
 		public:
 			lab_number();
-			lab_number(math::space_type,math::space_type);
+			lab_number(msci::space_type,msci::space_type);
 
-			const math::space_type& get_error_value() const;
+			const msci::space_type& get_error_value() const;
 
 			lab_number operator +(const lab_number&) const;
 			lab_number operator -(const lab_number&) const;
@@ -104,10 +104,10 @@ namespace math
 			virtual wstring print() const override;
 
 		private:
-			math::space_type error_value;
+			msci::space_type error_value;
 	};
 }
 
-wostream& operator <<(wostream&, const math::lab_number&);
+wostream& operator <<(wostream&, const msci::lab_number&);
 
 #endif // LAB_UNIT_HPP_INCLUDED

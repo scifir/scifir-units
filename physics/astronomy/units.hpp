@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	VECTOR_UNIT_HPP(specific_angular_momentum);
 }

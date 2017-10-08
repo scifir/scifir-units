@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	SCALAR_UNIT_CPP(electric_current,"A");
 	SCALAR_UNIT_CPP(voltage,"V");

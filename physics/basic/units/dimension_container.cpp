@@ -10,7 +10,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	vector_actual_dimensions::vector_actual_dimensions() : map<int,shared_ptr<dimension_abstract>>()
 	{
@@ -389,7 +389,7 @@ namespace physics::units
 	}
 }
 
-wostream& operator <<(wostream& os, const physics::units::vector_real_dimensions& x)
+wostream& operator <<(wostream& os, const msci::units::vector_real_dimensions& x)
 {
 	wostringstream dimension_text;
 	wostringstream dimension_up_text;
@@ -424,7 +424,7 @@ wostream& operator <<(wostream& os, const physics::units::vector_real_dimensions
 	return os << dimension_text.str();
 }
 
-wostream& operator <<(wostream& os, const physics::units::vector_actual_dimensions& x)
+wostream& operator <<(wostream& os, const msci::units::vector_actual_dimensions& x)
 {
 	wostringstream dimension_text;
 	wostringstream dimension_up_text;

@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	SCALAR_UNIT_HPP(wavenumber);
 	SCALAR_UNIT_HPP(frequency);

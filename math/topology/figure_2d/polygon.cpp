@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	polygon::polygon() : linear_figure_2d()
 	{

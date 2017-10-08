@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace biology
+namespace msci
 {
 	gene::gene() : name()
 	{

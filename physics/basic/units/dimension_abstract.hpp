@@ -15,7 +15,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	class dimension_prefixes : public map<prefix_symbol,shared_ptr<prefix>>
 	{
@@ -86,9 +86,9 @@ namespace physics::units
 	};
 }
 
-bool operator ==(const physics::units::dimension_abstract&,const physics::units::dimension_abstract&);
-bool operator !=(const physics::units::dimension_abstract&,const physics::units::dimension_abstract&);
+bool operator ==(const msci::units::dimension_abstract&,const msci::units::dimension_abstract&);
+bool operator !=(const msci::units::dimension_abstract&,const msci::units::dimension_abstract&);
 
-wostream& operator <<(wostream&, const physics::units::dimension_abstract&);
+wostream& operator <<(wostream&, const msci::units::dimension_abstract&);
 
 #endif // DIMENSION_ABSTRACT_HPP_INCLUDED

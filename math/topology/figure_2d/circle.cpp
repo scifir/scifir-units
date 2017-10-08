@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	circle::circle() : figure_2d(),r()
 	{
@@ -48,7 +48,7 @@ namespace math
 		return;
 	}
 
-	void circle::rotate(const math::angle_number& x)
+	void circle::rotate(const msci::angle_number& x)
 	{
 		return;
 	}
@@ -66,12 +66,12 @@ namespace math
 	}
 }
 
-bool operator ==(const math::circle& x,const math::circle& y)
+bool operator ==(const msci::circle& x,const msci::circle& y)
 {
 	return (x.get_r() == y.get_r());
 }
 
-bool operator !=(const math::circle& x,const math::circle& y)
+bool operator !=(const msci::circle& x,const msci::circle& y)
 {
 	return !(x == y);
 }

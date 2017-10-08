@@ -1,6 +1,6 @@
 #include "square.hpp"
 
-namespace math
+namespace msci
 {
 	square::square(space_type new_edge)
 	{

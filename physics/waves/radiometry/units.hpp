@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	SCALAR_UNIT_HPP(radioactivity);
 	VECTOR_UNIT_HPP(irradiance);

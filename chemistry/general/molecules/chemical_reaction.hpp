@@ -8,7 +8,7 @@
 
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	class chemical_reaction
 	{
@@ -25,8 +25,8 @@ namespace chemistry
 				return products;
 			}
 
-			physics::units::enthalpy get_enthalpy_change() const;
-			physics::units::entropy get_entropy_change() const;
+			msci::units::enthalpy get_enthalpy_change() const;
+			msci::units::entropy get_entropy_change() const;
 
 		private:
 			vector<boost::variant<shared_ptr<molecule>,shared_ptr<atom>>> reactants;

@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace biology
+namespace msci
 {
 	dna::dna(dna_type new_type,const map<string,chromosome>& new_chromosomes) : bit_molecule(),chromosomes(new_chromosomes),type(new_type)
 	{

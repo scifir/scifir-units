@@ -1,7 +1,7 @@
 #include "./units.hpp"
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	SCALAR_UNIT_CPP(area,"m2");
 	SCALAR_UNIT_CPP(volume,"m3");

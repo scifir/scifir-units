@@ -1,6 +1,6 @@
 #include "./atoms.hpp"
 
-namespace chemistry
+namespace msci
 {
 	atom* create_atom(const string& new_atom,int new_ionic_charge)
 	{

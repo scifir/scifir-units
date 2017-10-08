@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	hyper_spherical_coordinates::hyper_spherical_coordinates() : coordinates_nd(), r(NULL), directions(angle_container()),unidimensional(false)
 	{
@@ -27,26 +27,26 @@ namespace math
 	hyper_spherical_coordinates::hyper_spherical_coordinates(function<space_type()> new_value, angle_type new_angle1) : coordinates_nd(), directions(angle_container()), unidimensional(false)
 	{
 		r = new_value;
-		directions.angles.push_back(math::angle_number(new_angle1));
+		directions.angles.push_back(msci::angle_number(new_angle1));
 	}
 
 	hyper_spherical_coordinates::hyper_spherical_coordinates(function<space_type()> new_value, angle_type new_angle1, angle_type new_angle2) : coordinates_nd(), directions(angle_container()), unidimensional(false)
 	{
 		r = new_value;
-		directions.angles.push_back(math::angle_number(new_angle1));
-		directions.angles.push_back(math::angle_number(new_angle2));
+		directions.angles.push_back(msci::angle_number(new_angle1));
+		directions.angles.push_back(msci::angle_number(new_angle2));
 	}
 
-	hyper_spherical_coordinates::hyper_spherical_coordinates(function<space_type()> new_value, math::angle_container new_angles) : coordinates_nd(), directions(angle_container()), unidimensional(false)
+	hyper_spherical_coordinates::hyper_spherical_coordinates(function<space_type()> new_value, msci::angle_container new_angles) : coordinates_nd(), directions(angle_container()), unidimensional(false)
 	{
 		r = new_value;
 		for(auto& new_angle : new_angles)
 		{
-			directions.angles.push_back(math::angle_number(new_angle));
+			directions.angles.push_back(msci::angle_number(new_angle));
 		}
 	}
 
-	hyper_spherical_coordinates::hyper_spherical_coordinates(function<space_type()> new_value, boost::variant<math::angle_container,direction_symbol> new_direction) : coordinates_nd(), directions(angle_container()), unidimensional(false)
+	hyper_spherical_coordinates::hyper_spherical_coordinates(function<space_type()> new_value, boost::variant<msci::angle_container,direction_symbol> new_direction) : coordinates_nd(), directions(angle_container()), unidimensional(false)
 	{
 		r = new_value;
 		if (new_direction.type() == typeid(direction_symbol))
@@ -56,9 +56,9 @@ namespace math
 		}
 		else
 		{
-			for(auto& new_angle : boost::get<math::angle_container>(new_direction))
+			for(auto& new_angle : boost::get<msci::angle_container>(new_direction))
 			{
-				directions.angles.push_back(math::angle_number(new_angle));
+				directions.angles.push_back(msci::angle_number(new_angle));
 			}
 		}
 	}
@@ -68,7 +68,7 @@ namespace math
 		return r();
 	}
 
-	const math::angle_number& hyper_spherical_coordinates::get_angle1() const
+	const msci::angle_number& hyper_spherical_coordinates::get_angle1() const
 	{
 		if (is_1d())
 		{
@@ -77,7 +77,7 @@ namespace math
 		return directions.angles[0];
 	}
 
-	const math::angle_number& hyper_spherical_coordinates::get_angle2() const
+	const msci::angle_number& hyper_spherical_coordinates::get_angle2() const
 	{
 		if (is_1d())
 		{
@@ -86,7 +86,7 @@ namespace math
 		return directions.angles[1];
 	}
 
-	const math::angle_number& hyper_spherical_coordinates::get_angle(unsigned int i) const
+	const msci::angle_number& hyper_spherical_coordinates::get_angle(unsigned int i) const
 	{
 		if (is_1d())
 		{
@@ -351,7 +351,7 @@ namespace math
 		}
 		else
 		{
-			math::angle_number y = math::angle_number(x);
+			msci::angle_number y = msci::angle_number(x);
 			rotate2(x);
 		}
 	}
@@ -386,7 +386,7 @@ namespace math
 		}
 	}
 
-	void hyper_spherical_coordinates::convert_cylindrical(space_type x,const math::angle_number& y,space_type z)
+	void hyper_spherical_coordinates::convert_cylindrical(space_type x,const msci::angle_number& y,space_type z)
 	{
 		if (is_3d())
 		{

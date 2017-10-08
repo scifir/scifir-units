@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	class electron_cloud
 	{

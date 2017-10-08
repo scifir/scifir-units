@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	point_3d::point_3d() : x(),y(),z()
 	{
@@ -38,17 +38,17 @@ namespace math
 	}
 }
 
-bool operator ==(const math::point_3d& x,const math::point_3d& y)
+bool operator ==(const msci::point_3d& x,const msci::point_3d& y)
 {
 	return (x.get_x() == y.get_x() and x.get_y() == y.get_y() and x.get_z() == y.get_z());
 }
 
-bool operator !=(const math::point_3d& x,const math::point_3d& y)
+bool operator !=(const msci::point_3d& x,const msci::point_3d& y)
 {
 	return !(x == y);
 }
 
-wostream& operator <<(wostream& os,const math::point_3d& x)
+wostream& operator <<(wostream& os,const msci::point_3d& x)
 {
 	return os << x.display();
 }

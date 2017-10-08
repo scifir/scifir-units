@@ -23,7 +23,7 @@ using namespace std;
 #include "atoms_ac.hpp"
 #include "atoms_la.hpp"
 
-namespace chemistry
+namespace msci
 {
 	atom* create_atom(const string&,int = 0);
 	atom* create_atom(const string&,int,int);

@@ -4,9 +4,9 @@
 #include "physics/basic/units/scalar_unit.hpp"
 
 using namespace std;
-using namespace physics::units;
+using namespace msci::units;
 
-namespace physics::units
+namespace msci::units
 {
 	SCALAR_UNIT_HPP(density);
 	SCALAR_UNIT_HPP(viscosity);

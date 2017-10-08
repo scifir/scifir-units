@@ -6,14 +6,14 @@
 #include <string>
 using namespace std;
 
-namespace biology
+namespace msci
 {
 	namespace dna
 	{
 		class nitrogenous_base
 		{
 			public:
-				chemistry::normal_molecule molecule;
+				msci::normal_molecule molecule;
 
 				nitrogenous_base(const string&);
 		};

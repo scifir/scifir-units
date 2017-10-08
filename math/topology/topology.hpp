@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
 	typedef float angle_type;
 	typedef float space_type;

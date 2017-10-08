@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace math
+namespace msci
 {
     cartesian_coordinates_3d::cartesian_coordinates_3d(space_type new_x,space_type new_y,space_type new_z) : coordinates_3d(),x(new_x),y(new_y),z(new_z)
     {

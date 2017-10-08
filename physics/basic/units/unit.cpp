@@ -21,7 +21,7 @@
 #include <type_traits>
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	unit::unit() : value(0),actual_dimensions()
 	{
@@ -35,12 +35,12 @@ namespace physics::units
 	{
 	}
 
-	unit::unit(math::space_type new_value, const string& dimension_structure) : value(new_value),actual_dimensions()
+	unit::unit(msci::space_type new_value, const string& dimension_structure) : value(new_value),actual_dimensions()
 	{
 		initialize_dimensions(dimension_structure);
 	}
 
-	unit::unit(math::unit_number new_value, const vector_actual_dimensions& new_actual_dimensions) : value(move(new_value)),actual_dimensions(move(new_actual_dimensions))
+	unit::unit(msci::unit_number new_value, const vector_actual_dimensions& new_actual_dimensions) : value(move(new_value)),actual_dimensions(move(new_actual_dimensions))
 	{
 	}
 
@@ -67,7 +67,7 @@ namespace physics::units
 			}
 			string string_value = init_value.substr(0, i);
 			boost::algorithm::erase_all(string_value, " ");
-			value = math::unit_number(stof(string_value));
+			value = msci::unit_number(stof(string_value));
 			initialize_dimensions(init_value.substr(i));
 		}
 	}
@@ -84,7 +84,7 @@ namespace physics::units
 	{
 		if (x.is_defined())
 		{
-			if (physics::units::equal_dimensions(*this,x))
+			if (msci::units::equal_dimensions(*this,x))
 			{
 				actual_dimensions = x.get_actual_dimensions();
 				value = x.get_value();
@@ -105,7 +105,7 @@ namespace physics::units
 	{
 		if (x.is_defined())
 		{
-			if (physics::units::equal_dimensions(*this,x))
+			if (msci::units::equal_dimensions(*this,x))
 			{
 				actual_dimensions = move(x.get_actual_dimensions());
 				value = move(x.get_value());
@@ -165,7 +165,7 @@ namespace physics::units
 
 	auto_unit unit::operator *(const unit& x) const
 	{
-		math::unit_number new_value = value;
+		msci::unit_number new_value = value;
 		auto_unit y = x;
 		if(y.has_dimensions(get_real_dimensions()))
 		{
@@ -179,7 +179,7 @@ namespace physics::units
 
 	auto_unit unit::operator /(const unit& x) const
 	{
-		math::unit_number new_value = value;
+		msci::unit_number new_value = value;
 		auto_unit y = x;
 		if(y.has_dimensions(get_real_dimensions()))
 		{
@@ -389,7 +389,7 @@ namespace physics::units
 	}
 
 	/// Returns the unit_number that stores the value
-	const math::unit_number& unit::get_value() const
+	const msci::unit_number& unit::get_value() const
 	{
 		return value;
 	}
@@ -600,14 +600,14 @@ namespace physics::units
 		}
 	}
 
-	math::space_type abs(const unit& x)
+	msci::space_type abs(const unit& x)
 	{
-		return math::abs(x.get_value());
+		return msci::abs(x.get_value());
 	}
 
 	auto_unit sqrt(const unit& x)
 	{
-		math::unit_number new_value = math::sqrt(x.get_value());
+		msci::unit_number new_value = msci::sqrt(x.get_value());
 		vector_real_dimensions new_real_dimensions = x.get_real_dimensions();
 		for(auto& new_real_dimension : new_real_dimensions)
 		{
@@ -623,7 +623,7 @@ namespace physics::units
 
 	auto_unit sqrt_nth(const unit& x, int y)
 	{
-		math::unit_number new_value = math::sqrt_nth(x.get_value(), y);
+		msci::unit_number new_value = msci::sqrt_nth(x.get_value(), y);
 		vector_real_dimensions new_real_dimensions = x.get_real_dimensions();
 		for(auto& new_real_dimension : new_real_dimensions)
 		{
@@ -644,7 +644,7 @@ namespace physics::units
 	}
 }
 
-bool operator ==(const physics::units::unit& x, const physics::units::unit& y)
+bool operator ==(const msci::units::unit& x, const msci::units::unit& y)
 {
 	if(x.get_value() == y.get_value() and equal_dimensions(x, y))
 	{
@@ -656,18 +656,18 @@ bool operator ==(const physics::units::unit& x, const physics::units::unit& y)
 	}
 }
 
-bool operator !=(const physics::units::unit& x, const physics::units::unit& y)
+bool operator !=(const msci::units::unit& x, const msci::units::unit& y)
 {
 	return !(x == y);
 }
 
-bool operator <(const physics::units::unit& x, const physics::units::unit& y)
+bool operator <(const msci::units::unit& x, const msci::units::unit& y)
 {
 	if(!equal_dimensions(x, y))
 	{
 		throw invalid_argument("Units of different dimensions cannot be compared");
 	}
-	physics::units::auto_unit z = x;
+	msci::units::auto_unit z = x;
 	z.set_same_prefix(y.get_actual_dimensions());
 	if(z.get_value() < y.get_value())
 	{
@@ -679,13 +679,13 @@ bool operator <(const physics::units::unit& x, const physics::units::unit& y)
 	}
 }
 
-bool operator >(const physics::units::unit& x, const physics::units::unit& y)
+bool operator >(const msci::units::unit& x, const msci::units::unit& y)
 {
 	if(!equal_dimensions(x, y))
 	{
 		throw invalid_argument("Units of different dimensions cannot be compared");
 	}
-	physics::units::auto_unit z = x;
+	msci::units::auto_unit z = x;
 	z.set_same_prefix(y.get_actual_dimensions());
 	if(z.get_value() > y.get_value())
 	{
@@ -697,89 +697,89 @@ bool operator >(const physics::units::unit& x, const physics::units::unit& y)
 	}
 }
 
-bool operator <=(const physics::units::unit& x, const physics::units::unit& y)
+bool operator <=(const msci::units::unit& x, const msci::units::unit& y)
 {
 	return !(x > y);
 }
 
-bool operator >=(const physics::units::unit& x, const physics::units::unit& y)
+bool operator >=(const msci::units::unit& x, const msci::units::unit& y)
 {
 	return !(x < y);
 }
 
-bool operator ==(const physics::units::unit& x, const string& y_init)
+bool operator ==(const msci::units::unit& x, const string& y_init)
 {
-	physics::units::auto_unit y(y_init);
+	msci::units::auto_unit y(y_init);
 	return (x == y);
 }
 
-bool operator !=(const physics::units::unit& x, const string& y_init)
+bool operator !=(const msci::units::unit& x, const string& y_init)
 {
 	return !(x == y_init);
 }
 
-bool operator <(const physics::units::unit& x, const string& y_init)
+bool operator <(const msci::units::unit& x, const string& y_init)
 {
-	physics::units::auto_unit y(y_init);
+	msci::units::auto_unit y(y_init);
 	return (x < y);
 }
 
-bool operator >(const physics::units::unit& x, const string& y_init)
+bool operator >(const msci::units::unit& x, const string& y_init)
 {
-	physics::units::auto_unit y(y_init);
+	msci::units::auto_unit y(y_init);
 	return (x > y);
 }
 
-bool operator <=(const physics::units::unit& x, const string& y_init)
+bool operator <=(const msci::units::unit& x, const string& y_init)
 {
 	return !(x > y_init);
 }
 
-bool operator >=(const physics::units::unit& x, const string& y_init)
+bool operator >=(const msci::units::unit& x, const string& y_init)
 {
 	return !(x < y_init);
 }
 
-bool operator ==(const string& x_init, const physics::units::unit& y)
+bool operator ==(const string& x_init, const msci::units::unit& y)
 {
 	return (y == x_init);
 }
 
-bool operator !=(const string& x_init, const physics::units::unit& y)
+bool operator !=(const string& x_init, const msci::units::unit& y)
 {
 	return (y != x_init);
 }
 
-bool operator <(const string& x_init, const physics::units::unit& y)
+bool operator <(const string& x_init, const msci::units::unit& y)
 {
-	physics::units::auto_unit x(x_init);
+	msci::units::auto_unit x(x_init);
 	return (x < y);
 }
 
-bool operator >(const string& x_init, const physics::units::unit& y)
+bool operator >(const string& x_init, const msci::units::unit& y)
 {
-	physics::units::auto_unit x(x_init);
+	msci::units::auto_unit x(x_init);
 	return (x > y);
 }
 
-bool operator <=(const string& x_init, const physics::units::unit& y)
+bool operator <=(const string& x_init, const msci::units::unit& y)
 {
 	return !(x_init > y);
 }
 
-bool operator >=(const string& x_init, const physics::units::unit& y)
+bool operator >=(const string& x_init, const msci::units::unit& y)
 {
 	return !(x_init < y);
 }
 
-void operator +=(wstring& x, const physics::units::unit& y)
+void operator +=(wstring& x, const msci::units::unit& y)
 {
 	wostringstream output;
 	output << y;
 	x += output.str();
 }
 
-wstring operator +(const wstring& x, const physics::units::unit& y)
+wstring operator +(const wstring& x, const msci::units::unit& y)
 {
 	wostringstream output;
 	output << x;
@@ -787,7 +787,7 @@ wstring operator +(const wstring& x, const physics::units::unit& y)
 	return output.str();
 }
 
-wstring operator +(const physics::units::unit& y, const wstring& x)
+wstring operator +(const msci::units::unit& y, const wstring& x)
 {
 	wostringstream output;
 	output << y;
@@ -795,18 +795,18 @@ wstring operator +(const physics::units::unit& y, const wstring& x)
 	return output.str();
 }
 
-wostream& operator <<(wostream& os, const physics::units::unit& x)
+wostream& operator <<(wostream& os, const msci::units::unit& x)
 {
 	return os << x.display();
 }
 
-/*istream& operator >>(istream& is, physics::units::auto_unit& x)
+/*istream& operator >>(istream& is, msci::units::auto_unit& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	physics::units::auto_unit c(b);
+	msci::units::auto_unit c(b);
 	x = c;
 	return is;
 }*/

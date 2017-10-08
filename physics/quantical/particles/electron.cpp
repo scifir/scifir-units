@@ -2,9 +2,9 @@
 
 #include <iostream>
 using namespace std;
-using namespace physics::units;
+using namespace msci::units;
 
-namespace physics
+namespace msci
 {
     const mass electron::common_mass(12,"g");
 

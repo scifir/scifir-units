@@ -2,19 +2,19 @@
 
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	chemical_reaction::chemical_reaction()
 	{
 	}
 
-	physics::units::enthalpy chemical_reaction::get_enthalpy_change() const
+	msci::units::enthalpy chemical_reaction::get_enthalpy_change() const
 	{
-		return physics::units::enthalpy(0);
+		return msci::units::enthalpy(0);
 	}
 
-	physics::units::entropy chemical_reaction::get_entropy_change() const
+	msci::units::entropy chemical_reaction::get_entropy_change() const
 	{
-		return physics::units::entropy(0);
+		return msci::units::entropy(0);
 	}
 }

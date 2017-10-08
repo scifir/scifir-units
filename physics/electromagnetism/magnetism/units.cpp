@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	SCALAR_UNIT_CPP(polarization_density,"A*s/m2");
 	SCALAR_UNIT_CPP(magnetic_permeability,"A2*s2/kg*m");

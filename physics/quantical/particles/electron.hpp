@@ -3,9 +3,9 @@
 
 #include "units.hpp"
 
-using namespace physics::units;
+using namespace msci::units;
 
-namespace physics
+namespace msci
 {
 	class electron
 	{

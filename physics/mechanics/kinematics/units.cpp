@@ -1,6 +1,6 @@
 #include "./units.hpp"
 
-namespace physics::units
+namespace msci::units
 {
 	SCALAR_UNIT_CPP(distance,"m");
 	VECTOR_UNIT_CPP(velocity,"m/s");

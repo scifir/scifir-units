@@ -5,9 +5,9 @@
 #include "physics/basic/units/vector_unit.hpp"
 
 using namespace std;
-using namespace physics::units;
+using namespace msci::units;
 
-namespace physics::units
+namespace msci::units
 {
 	SCALAR_UNIT_HPP(polarization_density); // TODO: vector_field
 	SCALAR_UNIT_HPP(magnetic_permeability); // TODO: vector_field

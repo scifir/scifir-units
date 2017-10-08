@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace biology
+namespace msci
 {
 	chromosome::chromosome()
 	{

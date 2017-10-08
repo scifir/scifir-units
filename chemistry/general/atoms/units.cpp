@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	SCALAR_UNIT_CPP(density,"g/m3");
 	SCALAR_UNIT_CPP(viscosity,"m2/s");

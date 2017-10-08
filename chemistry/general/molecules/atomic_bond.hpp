@@ -7,9 +7,9 @@
 #include "units.hpp"
 
 using namespace std;
-using namespace physics::units;
+using namespace msci::units;
 
-namespace chemistry
+namespace msci
 {
 	class atomic_bond
 	{

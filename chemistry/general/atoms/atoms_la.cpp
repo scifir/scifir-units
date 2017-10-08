@@ -1,6 +1,6 @@
 #include "atoms_la.hpp"
 
-namespace chemistry
+namespace msci
 {
 	ATOM_CPP(atom_La)
 

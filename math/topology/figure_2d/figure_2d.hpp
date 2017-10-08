@@ -11,9 +11,9 @@
 #include <vector>
 
 using namespace std;
-using namespace physics::units;
+using namespace msci::units;
 
-namespace math
+namespace msci
 {
 	class figure_2d
 	{
@@ -59,10 +59,10 @@ namespace math
 			virtual void translate_y(space_type);
 
 			virtual void rotate(angle_type) = 0;
-			virtual void rotate(const math::angle_number&) = 0;
+			virtual void rotate(const msci::angle_number&) = 0;
 
 			virtual void scale(space_type) = 0;
-			//virtual void scale(const math::percentage_number&) = 0;
+			//virtual void scale(const msci::percentage_number&) = 0;
 
 			virtual wstring display() const = 0;
 			void print() const;
@@ -72,6 +72,6 @@ namespace math
 	};
 }
 
-wostream& operator <<(wostream&,const math::figure_2d&);
+wostream& operator <<(wostream&,const msci::figure_2d&);
 
 #endif // MATH_TOPOLOGY_FIGURE_2D_HPP_INCLUDED

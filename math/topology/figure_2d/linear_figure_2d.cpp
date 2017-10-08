@@ -1,9 +1,9 @@
 #include "linear_figure_2d.hpp"
 
 using namespace std;
-using namespace physics::units;
+using namespace msci::units;
 
-namespace math
+namespace msci
 {
 	linear_figure_2d::linear_figure_2d() : figure_2d(),vertices(),edges()
 	{
@@ -56,12 +56,12 @@ namespace math
 		rotate(angle_number(x));
 	}
 
-	void linear_figure_2d::rotate(const math::angle_number& x)
+	void linear_figure_2d::rotate(const msci::angle_number& x)
 	{
 		for (point_2d& vertex : vertices)
 		{
-			vertex.get_x() = vertex.get_x()*math::sin(x);
-			vertex.get_y() = vertex.get_y()*math::cos(x);
+			vertex.get_x() = vertex.get_x()*msci::sin(x);
+			vertex.get_y() = vertex.get_y()*msci::cos(x);
 		}
 	}
 
@@ -75,7 +75,7 @@ namespace math
 		}
 	}
 
-	/*void linear_figure_2d::scale(const math::percentage_number& x)
+	/*void linear_figure_2d::scale(const msci::percentage_number& x)
 	{
 		for (point_2d& vertex : vertices)
 		{
@@ -106,7 +106,7 @@ namespace math
 	}
 }
 
-bool operator ==(const math::linear_figure_2d& x,const math::linear_figure_2d& y)
+bool operator ==(const msci::linear_figure_2d& x,const msci::linear_figure_2d& y)
 {
 	const vector<line_2d>& x_edges = x.get_edges();
 	const vector<line_2d>& y_edges = y.get_edges();
@@ -135,7 +135,7 @@ bool operator ==(const math::linear_figure_2d& x,const math::linear_figure_2d& y
 	}
 }
 
-bool operator !=(const math::linear_figure_2d& x,const math::linear_figure_2d& y)
+bool operator !=(const msci::linear_figure_2d& x,const msci::linear_figure_2d& y)
 {
 	return !(x == y);
 }

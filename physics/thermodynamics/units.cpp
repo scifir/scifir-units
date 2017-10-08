@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	SCALAR_UNIT_CPP(energy,"kg*m2/s2");
 	SCALAR_UNIT_CPP(action,"kg*m2/s");

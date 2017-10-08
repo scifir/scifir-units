@@ -11,7 +11,7 @@
 
 using namespace std;
 
-namespace physics::units
+namespace msci::units
 {
 	abbreviation::abbreviation() : dimension_abstract(normal_prefix, 1)
 	{
@@ -351,7 +351,7 @@ namespace physics::units
 	}
 
 	const string abbreviation_particles::dimensions_match = "mol";
-	const float abbreviation_particles::factor = 1/chemistry::avogadro_constant;
+	const float abbreviation_particles::factor = 1/msci::avogadro_constant;
 	const string abbreviation_particles::name = "particles";
 	const string abbreviation_particles::symbol = "particles";
 

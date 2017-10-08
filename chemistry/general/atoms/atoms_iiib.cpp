@@ -1,6 +1,6 @@
 #include "atoms_iiib.hpp"
 
-namespace chemistry
+namespace msci
 {
 	ATOM_CPP(atom_Sc)
 

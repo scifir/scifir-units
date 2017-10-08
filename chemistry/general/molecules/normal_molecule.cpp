@@ -11,7 +11,7 @@
 using namespace rapidxml;
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	normal_molecule::normal_molecule(string new_file) : molecule(),atoms(),bonds()
 	{

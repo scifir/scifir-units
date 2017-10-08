@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace chemistry
+namespace msci
 {
 	bit_molecule::bit_molecule()
 	{
