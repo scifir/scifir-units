@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	SCALAR_UNIT_HPP(electric_current);
 	SCALAR_UNIT_HPP(voltage);

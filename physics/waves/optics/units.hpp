@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	SCALAR_UNIT_HPP(optical_power);
 	SCALAR_UNIT_HPP(luminance);

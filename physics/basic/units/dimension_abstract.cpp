@@ -12,7 +12,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	dimension_prefixes::dimension_prefixes() : map<prefix_symbol, shared_ptr<prefix>>()
 	{
@@ -207,7 +207,7 @@ namespace msci::units
 	}
 }
 
-bool operator ==(const msci::units::dimension_abstract& x,const msci::units::dimension_abstract& y)
+bool operator ==(const msci::dimension_abstract& x,const msci::dimension_abstract& y)
 {
 	if(x.get_scale() == y.get_scale() and x.get_symbol() == y.get_symbol())
 	{
@@ -219,12 +219,12 @@ bool operator ==(const msci::units::dimension_abstract& x,const msci::units::dim
 	}
 }
 
-bool operator !=(const msci::units::dimension_abstract& x,const msci::units::dimension_abstract& y)
+bool operator !=(const msci::dimension_abstract& x,const msci::dimension_abstract& y)
 {
 	return !(x == y);
 }
 
-wostream& operator <<(wostream& os, const msci::units::dimension_abstract& x)
+wostream& operator <<(wostream& os, const msci::dimension_abstract& x)
 {
 	wostringstream prefix_text;
 	if(x.get_dimension_prefixes().size() > 0)

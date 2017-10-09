@@ -8,7 +8,7 @@
 #include <string>
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	enum dimension_symbol
 	{

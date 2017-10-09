@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	conversion::conversion() : factor(0),unit_to("")
 	{

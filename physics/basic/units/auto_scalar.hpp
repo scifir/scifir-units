@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	class auto_scalar : public auto_unit, public scalar_unit
 	{
@@ -204,93 +204,93 @@ namespace msci::units
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-msci::units::auto_scalar operator +(T x, const msci::units::scalar_unit& y)
+msci::auto_scalar operator +(T x, const msci::scalar_unit& y)
 {
-	return msci::units::auto_scalar(x + static_cast<const msci::units::unit&>(y));
+	return msci::auto_scalar(x + static_cast<const msci::unit&>(y));
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-msci::units::auto_scalar operator -(T x, const msci::units::scalar_unit& y)
+msci::auto_scalar operator -(T x, const msci::scalar_unit& y)
 {
-	return msci::units::auto_scalar(x - static_cast<const msci::units::unit&>(y));
+	return msci::auto_scalar(x - static_cast<const msci::unit&>(y));
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-msci::units::auto_scalar operator *(T x, const msci::units::scalar_unit& y)
+msci::auto_scalar operator *(T x, const msci::scalar_unit& y)
 {
-	return msci::units::auto_scalar(x * static_cast<const msci::units::unit&>(y));
+	return msci::auto_scalar(x * static_cast<const msci::unit&>(y));
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-msci::units::auto_scalar operator /(T x, const msci::units::scalar_unit& y)
+msci::auto_scalar operator /(T x, const msci::scalar_unit& y)
 {
-	return msci::units::auto_scalar(x / static_cast<const msci::units::unit&>(y));
+	return msci::auto_scalar(x / static_cast<const msci::unit&>(y));
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-msci::units::auto_scalar operator ^(T x, const msci::units::scalar_unit& y)
+msci::auto_scalar operator ^(T x, const msci::scalar_unit& y)
 {
-	return msci::units::auto_scalar(x ^ static_cast<const msci::units::unit&>(y));
+	return msci::auto_scalar(x ^ static_cast<const msci::unit&>(y));
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-msci::units::auto_scalar operator +(T x, const msci::units::auto_scalar& y)
+msci::auto_scalar operator +(T x, const msci::auto_scalar& y)
 {
-	return x + static_cast<const msci::units::scalar_unit&>(y);
+	return x + static_cast<const msci::scalar_unit&>(y);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-msci::units::auto_scalar operator -(T x, const msci::units::auto_scalar& y)
+msci::auto_scalar operator -(T x, const msci::auto_scalar& y)
 {
-	return x - static_cast<const msci::units::scalar_unit&>(y);
+	return x - static_cast<const msci::scalar_unit&>(y);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-msci::units::auto_scalar operator *(T x, const msci::units::auto_scalar& y)
+msci::auto_scalar operator *(T x, const msci::auto_scalar& y)
 {
-	return x * static_cast<const msci::units::scalar_unit&>(y);
+	return x * static_cast<const msci::scalar_unit&>(y);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-msci::units::auto_scalar operator /(T x, const msci::units::auto_scalar& y)
+msci::auto_scalar operator /(T x, const msci::auto_scalar& y)
 {
-	return x / static_cast<const msci::units::scalar_unit&>(y);
+	return x / static_cast<const msci::scalar_unit&>(y);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-msci::units::auto_scalar operator ^(T x, const msci::units::auto_scalar& y)
+msci::auto_scalar operator ^(T x, const msci::auto_scalar& y)
 {
-	return x ^ static_cast<const msci::units::scalar_unit&>(y);
+	return x ^ static_cast<const msci::scalar_unit&>(y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-msci::units::auto_scalar operator +(U x, const msci::units::scalar_unit_crtp<T>& y)
+msci::auto_scalar operator +(U x, const msci::scalar_unit_crtp<T>& y)
 {
-	return x + static_cast<const msci::units::scalar_unit&>(y);
+	return x + static_cast<const msci::scalar_unit&>(y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-msci::units::auto_scalar operator -(U x, const msci::units::scalar_unit_crtp<T>& y)
+msci::auto_scalar operator -(U x, const msci::scalar_unit_crtp<T>& y)
 {
-	return x - static_cast<const msci::units::scalar_unit&>(y);
+	return x - static_cast<const msci::scalar_unit&>(y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-msci::units::auto_scalar operator *(U x, const msci::units::scalar_unit_crtp<T>& y)
+msci::auto_scalar operator *(U x, const msci::scalar_unit_crtp<T>& y)
 {
-	return x * static_cast<const msci::units::scalar_unit&>(y);
+	return x * static_cast<const msci::scalar_unit&>(y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-msci::units::auto_scalar operator /(U x, const msci::units::scalar_unit_crtp<T>& y)
+msci::auto_scalar operator /(U x, const msci::scalar_unit_crtp<T>& y)
 {
-	return x / static_cast<const msci::units::scalar_unit&>(y);
+	return x / static_cast<const msci::scalar_unit&>(y);
 }
 
 template<typename T, typename U, typename = typename enable_if<is_number<U>::value>::type>
-msci::units::auto_scalar operator ^(U x, const msci::units::scalar_unit_crtp<T>& y)
+msci::auto_scalar operator ^(U x, const msci::scalar_unit_crtp<T>& y)
 {
-	return x ^ static_cast<const msci::units::scalar_unit&>(y);
+	return x ^ static_cast<const msci::scalar_unit&>(y);
 }
 
 #endif // AUTO_SCALAR_HPP_INCLUDED

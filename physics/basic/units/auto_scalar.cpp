@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	auto_scalar::auto_scalar(const auto_scalar& x) : unit(x),auto_unit(x),scalar_unit(x)
 	{

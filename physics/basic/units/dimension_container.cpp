@@ -10,7 +10,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	vector_actual_dimensions::vector_actual_dimensions() : map<int,shared_ptr<dimension_abstract>>()
 	{
@@ -389,7 +389,7 @@ namespace msci::units
 	}
 }
 
-wostream& operator <<(wostream& os, const msci::units::vector_real_dimensions& x)
+wostream& operator <<(wostream& os, const msci::vector_real_dimensions& x)
 {
 	wostringstream dimension_text;
 	wostringstream dimension_up_text;
@@ -424,7 +424,7 @@ wostream& operator <<(wostream& os, const msci::units::vector_real_dimensions& x
 	return os << dimension_text.str();
 }
 
-wostream& operator <<(wostream& os, const msci::units::vector_actual_dimensions& x)
+wostream& operator <<(wostream& os, const msci::vector_actual_dimensions& x)
 {
 	wostringstream dimension_text;
 	wostringstream dimension_up_text;

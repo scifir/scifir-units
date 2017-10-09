@@ -13,7 +13,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	class vector_actual_dimensions : public map<int,shared_ptr<dimension_abstract>>
 	{
@@ -42,7 +42,7 @@ namespace msci::units
 	vector_real_dimensions power_real_dimensions(const vector_real_dimensions&,int);
 }
 
-wostream& operator <<(wostream&, const msci::units::vector_real_dimensions&);
-wostream& operator <<(wostream&, const msci::units::vector_actual_dimensions&);
+wostream& operator <<(wostream&, const msci::vector_real_dimensions&);
+wostream& operator <<(wostream&, const msci::vector_actual_dimensions&);
 
 #endif // DIMENSION_CONTAINER_HPP_INCLUDED

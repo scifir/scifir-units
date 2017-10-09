@@ -10,7 +10,6 @@
 #include "point_2d.hpp"
 
 using namespace std;
-using namespace msci::units;
 
 namespace msci
 {

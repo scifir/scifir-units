@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	VECTOR_UNIT_HPP(impulse);
 	VECTOR_UNIT_HPP(force);

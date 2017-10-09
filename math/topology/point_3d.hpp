@@ -42,7 +42,7 @@ namespace msci
 			space_type z;
 	};
 
-	space_type distance(const point_3d&,const point_3d&);
+	space_type distance_between_points(const point_3d&,const point_3d&);
 }
 
 bool operator ==(const msci::point_3d&,const msci::point_3d&);

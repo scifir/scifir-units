@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	vector_unit::vector_unit(const vector_unit& x) : unit(x),hyper_spherical_coordinates(lambda_value(),x.get_angles())
 	{
@@ -488,13 +488,13 @@ namespace msci::units
 
 	auto_vector sqrt(const vector_unit& x)
 	{
-		auto_unit new_value = msci::units::sqrt(x);
+		auto_unit new_value = msci::sqrt(x);
 		return auto_vector(new_value, x.get_angles());
 	}
 
 	auto_vector sqrt_nth(const vector_unit& x, int y)
 	{
-		auto_unit new_value = msci::units::sqrt_nth(x, y);
+		auto_unit new_value = msci::sqrt_nth(x, y);
 		return auto_vector(new_value, x.get_angles());
 	}
 
@@ -604,11 +604,11 @@ namespace msci::units
 	}
 }
 
-bool operator ==(const msci::units::vector_unit& x, const msci::units::vector_unit& y)
+bool operator ==(const msci::vector_unit& x, const msci::vector_unit& y)
 {
-	if(msci::units::same_nd(x, y))
+	if(msci::same_nd(x, y))
 	{
-		if(x.unit::get_value() == y.unit::get_value() and msci::units::same_direction(x, y))
+		if(x.unit::get_value() == y.unit::get_value() and msci::same_direction(x, y))
 		{
 			return true;
 		}
@@ -623,19 +623,19 @@ bool operator ==(const msci::units::vector_unit& x, const msci::units::vector_un
 	}
 }
 
-bool operator !=(const msci::units::vector_unit& x, const msci::units::vector_unit& y)
+bool operator !=(const msci::vector_unit& x, const msci::vector_unit& y)
 {
 	return !(x == y);
 }
 
-void operator +=(wstring& x, const msci::units::vector_unit& y)
+void operator +=(wstring& x, const msci::vector_unit& y)
 {
 	wostringstream output;
 	output << y;
 	x += output.str();
 }
 
-wstring operator +(const wstring& x, const msci::units::vector_unit& y)
+wstring operator +(const wstring& x, const msci::vector_unit& y)
 {
 	wostringstream output;
 	output << x;
@@ -643,7 +643,7 @@ wstring operator +(const wstring& x, const msci::units::vector_unit& y)
 	return output.str();
 }
 
-wstring operator +(const msci::units::vector_unit& y, const wstring& x)
+wstring operator +(const msci::vector_unit& y, const wstring& x)
 {
 	wostringstream output;
 	output << y;
@@ -651,7 +651,7 @@ wstring operator +(const msci::units::vector_unit& y, const wstring& x)
 	return output.str();
 }
 
-wostream& operator <<(wostream& os, const msci::units::vector_unit& x)
+wostream& operator <<(wostream& os, const msci::vector_unit& x)
 {
 	wostringstream angles_text;
 	if (x.is_1d())
@@ -692,16 +692,16 @@ wostream& operator <<(wostream& os, const msci::units::vector_unit& x)
 	}
 	//wcout << "A" << endl;
 	//wcout << angles_text.str() << endl;
-	return os << x.msci::units::unit::get_value();// << " " << angles_text.str();
+	return os << x.msci::unit::get_value();// << " " << angles_text.str();
 }
 
-istream& operator >>(istream& is, msci::units::vector_unit& x)
+istream& operator >>(istream& is, msci::vector_unit& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::units::auto_vector c(b,10,10);
+	msci::auto_vector c(b,10,10);
 	x = c;
 	return is;
 }

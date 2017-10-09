@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	SCALAR_UNIT_HPP(energy);
 	SCALAR_UNIT_HPP(action);

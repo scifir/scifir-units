@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	SCALAR_UNIT_HPP(distance);
 	VECTOR_UNIT_HPP(velocity);

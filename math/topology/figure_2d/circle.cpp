@@ -36,7 +36,7 @@ namespace msci
 
 	bool circle::is_inside(const point_2d& x1) const
 	{
-		if (distance(x1,figure_2d::center) <= r)
+		if (distance_between_points(x1,figure_2d::center) <= r)
 		{
 			return true;
 		}

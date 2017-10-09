@@ -115,7 +115,7 @@ const vector_real_dimensions name::real_dimensions = create_real_dimensions(dime
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	class auto_scalar;
 	class auto_vector;

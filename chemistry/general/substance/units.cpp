@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	SCALAR_UNIT_CPP(molarity,"mol/m3");
 	SCALAR_UNIT_CPP(molality,"mol/g");
@@ -16,15 +16,15 @@ namespace msci::units
 	SCALAR_UNIT_CPP(catalytic_activity,"kat");
 }
 
-wostream& operator <<(wostream& os, const msci::units::concentration& x)
+wostream& operator <<(wostream& os, const msci::concentration& x)
 {
-	string dimension_structure = msci::units::get_dimension_structure(x.get_actual_dimensions());
+	string dimension_structure = msci::get_dimension_structure(x.get_actual_dimensions());
 	if (dimension_structure != "ppm" and dimension_structure != "ppb")
 	{
 		return os << (x.get_value() * 100) << "%";
 	}
 	else
 	{
-		return os << static_cast<const msci::units::unit&>(x);
+		return os << static_cast<const msci::unit&>(x);
 	}
 }

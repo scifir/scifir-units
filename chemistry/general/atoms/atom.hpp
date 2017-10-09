@@ -14,7 +14,6 @@
 #include "math/number/angle_number.hpp"
 
 using namespace std;
-using namespace msci::units;
 
 #define ATOM_HPP(name) using normal_atom::normal_atom; \
 	name()

@@ -15,7 +15,7 @@
 #include "informatics/types/is_number.hpp"
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	class auto_unit;
 
@@ -212,7 +212,7 @@ namespace msci::units
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-msci::unit_number operator ^(T x, const msci::units::unit& y)
+msci::unit_number operator ^(T x, const msci::unit& y)
 {
 	if(y.has_empty_dimensions())
 	{
@@ -224,32 +224,32 @@ msci::unit_number operator ^(T x, const msci::units::unit& y)
 	}
 }
 
-bool operator ==(const msci::units::unit&, const msci::units::unit&);
-bool operator !=(const msci::units::unit&, const msci::units::unit&);
-bool operator <(const msci::units::unit&, const msci::units::unit&);
-bool operator >(const msci::units::unit&, const msci::units::unit&);
-bool operator <=(const msci::units::unit&, const msci::units::unit&);
-bool operator >=(const msci::units::unit&, const msci::units::unit&);
+bool operator ==(const msci::unit&, const msci::unit&);
+bool operator !=(const msci::unit&, const msci::unit&);
+bool operator <(const msci::unit&, const msci::unit&);
+bool operator >(const msci::unit&, const msci::unit&);
+bool operator <=(const msci::unit&, const msci::unit&);
+bool operator >=(const msci::unit&, const msci::unit&);
 
-bool operator ==(const msci::units::unit&, const string&);
-bool operator !=(const msci::units::unit&, const string&);
-bool operator <(const msci::units::unit&, const string&);
-bool operator >(const msci::units::unit&, const string&);
-bool operator <=(const msci::units::unit&, const string&);
-bool operator >=(const msci::units::unit&, const string&);
+bool operator ==(const msci::unit&, const string&);
+bool operator !=(const msci::unit&, const string&);
+bool operator <(const msci::unit&, const string&);
+bool operator >(const msci::unit&, const string&);
+bool operator <=(const msci::unit&, const string&);
+bool operator >=(const msci::unit&, const string&);
 
-bool operator ==(const string&, const msci::units::unit&);
-bool operator !=(const string&, const msci::units::unit&);
-bool operator <(const string&, const msci::units::unit&);
-bool operator >(const string&, const msci::units::unit&);
-bool operator <=(const string&, const msci::units::unit&);
-bool operator >=(const string&, const msci::units::unit&);
+bool operator ==(const string&, const msci::unit&);
+bool operator !=(const string&, const msci::unit&);
+bool operator <(const string&, const msci::unit&);
+bool operator >(const string&, const msci::unit&);
+bool operator <=(const string&, const msci::unit&);
+bool operator >=(const string&, const msci::unit&);
 
-void operator +=(wstring&, const msci::units::unit&);
-wstring operator +(const wstring&, const msci::units::unit&);
-wstring operator +(const msci::units::unit&, const wstring&);
+void operator +=(wstring&, const msci::unit&);
+wstring operator +(const wstring&, const msci::unit&);
+wstring operator +(const msci::unit&, const wstring&);
 
-wostream& operator <<(wostream&, const msci::units::unit&);
-istream& operator >>(istream&, msci::units::unit&);
+wostream& operator <<(wostream&, const msci::unit&);
+istream& operator >>(istream&, msci::unit&);
 
 #endif

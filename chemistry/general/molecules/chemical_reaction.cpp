@@ -8,13 +8,13 @@ namespace msci
 	{
 	}
 
-	msci::units::enthalpy chemical_reaction::get_enthalpy_change() const
+	msci::enthalpy chemical_reaction::get_enthalpy_change() const
 	{
-		return msci::units::enthalpy(0);
+		return msci::enthalpy(0);
 	}
 
-	msci::units::entropy chemical_reaction::get_entropy_change() const
+	msci::entropy chemical_reaction::get_entropy_change() const
 	{
-		return msci::units::entropy(0);
+		return msci::entropy(0);
 	}
 }

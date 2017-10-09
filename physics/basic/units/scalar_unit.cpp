@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	scalar_unit::scalar_unit() : unit()
 	{

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 
 }

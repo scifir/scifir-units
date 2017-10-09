@@ -34,7 +34,7 @@ namespace msci
 		create_edges();
 	}
 
-	parallelogram::parallelogram(const vector<point_2d>& new_vertices) : linear_figure_2d(new_vertices),width(distance(vertices[0],vertices[1])),height(distance(vertices[2],vertices[3]))
+	parallelogram::parallelogram(const vector<point_2d>& new_vertices) : linear_figure_2d(new_vertices),width(distance_between_points(vertices[0],vertices[1])),height(distance_between_points(vertices[2],vertices[3]))
 	{
 	}
 

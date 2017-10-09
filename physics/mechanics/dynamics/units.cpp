@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	VECTOR_UNIT_CPP(impulse,"m*kg/s");
 	VECTOR_UNIT_CPP(force,"kg*m/s2");

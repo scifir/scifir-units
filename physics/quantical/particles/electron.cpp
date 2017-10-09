@@ -2,7 +2,6 @@
 
 #include <iostream>
 using namespace std;
-using namespace msci::units;
 
 namespace msci
 {

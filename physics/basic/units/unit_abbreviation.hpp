@@ -6,8 +6,6 @@
 
 #include "units.hpp"
 
-using namespace msci::units;
-
 frequency operator"" _YHz(unsigned long long int);
 frequency operator"" _ZHz(unsigned long long int);
 frequency operator"" _EHz(unsigned long long int);
@@ -431,11 +429,11 @@ length operator"" _angstrom(unsigned long long int);
 volume operator"" _L(unsigned long long int);
 volume operator"" _mL(unsigned long long int);
 
-msci::units::time operator"" _min(unsigned long long int);
+msci::time operator"" _min(unsigned long long int);
 
-msci::units::time operator"" _hour(unsigned long long int);
+msci::time operator"" _hour(unsigned long long int);
 
-msci::units::time operator"" _day(unsigned long long int);
+msci::time operator"" _day(unsigned long long int);
 
 length operator"" _YAU(unsigned long long int);
 length operator"" _ZAU(unsigned long long int);
@@ -978,11 +976,11 @@ length operator"" _angstrom(long double);
 volume operator"" _L(long double);
 volume operator"" _mL(long double);
 
-msci::units::time operator"" _min(long double);
+msci::time operator"" _min(long double);
 
-msci::units::time operator"" _hour(long double);
+msci::time operator"" _hour(long double);
 
-msci::units::time operator"" _day(long double);
+msci::time operator"" _day(long double);
 
 length operator"" _YAU(long double);
 length operator"" _ZAU(long double);

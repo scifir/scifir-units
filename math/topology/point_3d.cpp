@@ -32,7 +32,7 @@ namespace msci
 		wcout << display() << endl;
 	}
 
-	space_type distance(const point_3d& x1,const point_3d& x2)
+	space_type distance_between_points(const point_3d& x1,const point_3d& x2)
 	{
 		return sqrt(pow(x1.get_x() - x2.get_x(),2) + pow(x1.get_y() - x2.get_y(),2) + pow(x1.get_z() - x2.get_z(),2));
 	}

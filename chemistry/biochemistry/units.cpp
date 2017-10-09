@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	SCALAR_UNIT_CPP(catalytic_efficiency,"m3/s*mol");
 }

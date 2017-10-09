@@ -7,7 +7,6 @@
 #include "units.hpp"
 
 using namespace std;
-using namespace msci::units;
 
 namespace msci
 {

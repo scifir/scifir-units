@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	auto_vector::auto_vector(const auto_vector& x) : unit(x),auto_unit(x),vector_unit(x)
 	{
@@ -172,52 +172,52 @@ namespace msci::units
 	}
 }
 
-msci::units::auto_vector operator +(const msci::units::scalar_unit& x,const msci::units::vector_unit& y)
+msci::auto_vector operator +(const msci::scalar_unit& x,const msci::vector_unit& y)
 {
-	msci::units::auto_vector z = msci::units::auto_vector(x,y.get_angles());
+	msci::auto_vector z = msci::auto_vector(x,y.get_angles());
 	return z + y;
 }
 
-msci::units::auto_vector operator -(const msci::units::scalar_unit& x,const msci::units::vector_unit& y)
+msci::auto_vector operator -(const msci::scalar_unit& x,const msci::vector_unit& y)
 {
-	msci::units::auto_vector z = msci::units::auto_vector(x,y.get_angles());
+	msci::auto_vector z = msci::auto_vector(x,y.get_angles());
 	return z - y;
 }
 
-msci::units::auto_vector operator *(const msci::units::scalar_unit& x,const msci::units::vector_unit& y)
+msci::auto_vector operator *(const msci::scalar_unit& x,const msci::vector_unit& y)
 {
 	return y * x;
 }
 
-msci::units::auto_vector operator +(const msci::units::scalar_unit& x,const msci::units::auto_unit& y)
+msci::auto_vector operator +(const msci::scalar_unit& x,const msci::auto_unit& y)
 {
-	return x + dynamic_cast<const msci::units::vector_unit&>(y);
+	return x + dynamic_cast<const msci::vector_unit&>(y);
 }
 
-msci::units::auto_vector operator -(const msci::units::scalar_unit& x,const msci::units::auto_unit& y)
+msci::auto_vector operator -(const msci::scalar_unit& x,const msci::auto_unit& y)
 {
-	return x - dynamic_cast<const msci::units::vector_unit&>(y);
+	return x - dynamic_cast<const msci::vector_unit&>(y);
 }
 
-msci::units::auto_vector operator *(const msci::units::scalar_unit& x,const msci::units::auto_unit& y)
+msci::auto_vector operator *(const msci::scalar_unit& x,const msci::auto_unit& y)
 {
-	return x * dynamic_cast<const msci::units::vector_unit&>(y);
-}
-
-template<typename T>
-msci::units::auto_vector operator +(const msci::units::scalar_unit& x,const msci::units::vector_unit_crtp<T>& y)
-{
-	return x + dynamic_cast<const msci::units::vector_unit&>(y);
+	return x * dynamic_cast<const msci::vector_unit&>(y);
 }
 
 template<typename T>
-msci::units::auto_vector operator -(const msci::units::scalar_unit& x,const msci::units::vector_unit_crtp<T>& y)
+msci::auto_vector operator +(const msci::scalar_unit& x,const msci::vector_unit_crtp<T>& y)
 {
-	return x - dynamic_cast<const msci::units::vector_unit&>(y);
+	return x + dynamic_cast<const msci::vector_unit&>(y);
 }
 
 template<typename T>
-msci::units::auto_vector operator *(const msci::units::scalar_unit& x,const msci::units::vector_unit_crtp<T>& y)
+msci::auto_vector operator -(const msci::scalar_unit& x,const msci::vector_unit_crtp<T>& y)
 {
-	return x * dynamic_cast<const msci::units::vector_unit&>(y);
+	return x - dynamic_cast<const msci::vector_unit&>(y);
+}
+
+template<typename T>
+msci::auto_vector operator *(const msci::scalar_unit& x,const msci::vector_unit_crtp<T>& y)
+{
+	return x * dynamic_cast<const msci::vector_unit&>(y);
 }

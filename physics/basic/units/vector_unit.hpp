@@ -245,7 +245,7 @@ const vector_real_dimensions name::real_dimensions = create_real_dimensions(dime
 using namespace std;
 using namespace msci;
 
-namespace msci::units
+namespace msci
 {
 	class auto_vector;
 
@@ -573,12 +573,12 @@ namespace msci::units
 	bool orthogonal(const vector_unit&,const vector_unit&);
 }
 
-bool operator ==(const msci::units::vector_unit&,const msci::units::vector_unit&);
-bool operator !=(const msci::units::vector_unit&,const msci::units::vector_unit&);
-void operator +=(wstring&,const msci::units::vector_unit&);
-wstring operator +(const wstring&,const msci::units::vector_unit&);
-wstring operator +(const msci::units::vector_unit&,const wstring&);
-wostream& operator <<(wostream&,const msci::units::vector_unit&);
-istream& operator >>(istream&,msci::units::vector_unit&);
+bool operator ==(const msci::vector_unit&,const msci::vector_unit&);
+bool operator !=(const msci::vector_unit&,const msci::vector_unit&);
+void operator +=(wstring&,const msci::vector_unit&);
+wstring operator +(const wstring&,const msci::vector_unit&);
+wstring operator +(const msci::vector_unit&,const wstring&);
+wostream& operator <<(wostream&,const msci::vector_unit&);
+istream& operator >>(istream&,msci::vector_unit&);
 
 #endif // VECTORIAL_UNIT_HPP_INCLUDED

@@ -3,8 +3,6 @@
 
 #include "units.hpp"
 
-using namespace msci::units;
-
 namespace msci
 {
 	class electron

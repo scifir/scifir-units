@@ -10,7 +10,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	enum abbreviation_symbol
 	{

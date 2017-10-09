@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	SCALAR_UNIT_HPP(molarity);
 	SCALAR_UNIT_HPP(molality);
@@ -19,6 +19,6 @@ namespace msci::units
 	SCALAR_UNIT_HPP(catalytic_activity);
 }
 
-wostream& operator <<(wostream&, const msci::units::concentration&);
+wostream& operator <<(wostream&, const msci::concentration&);
 
 #endif // CHEMISTRY_GENERAL_SUBSTANCE_UNITS_HPP_INCLUDED

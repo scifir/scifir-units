@@ -8,7 +8,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	auto_unit::auto_unit(const auto_unit& x) : unit(x),real_dimensions(x.get_real_dimensions())
 	{

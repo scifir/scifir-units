@@ -1,7 +1,6 @@
 #include "linear_figure_2d.hpp"
 
 using namespace std;
-using namespace msci::units;
 
 namespace msci
 {
@@ -79,7 +78,7 @@ namespace msci
 	{
 		for (point_2d& vertex : vertices)
 		{
-			space_type center_distance = distance(vertex,figure_2d::center);
+			space_type center_distance = distance_between_points(vertex,figure_2d::center);
 			line_2d new_line (vertex,figure_2d::center);
 			vertex.get_x() = vertex.get_x() + vertex.get_x() * new_line.get_x_slope() * x;
 			vertex.get_y() = vertex.get_y() + vertex.get_y() * new_line.get_y_slope() * x;

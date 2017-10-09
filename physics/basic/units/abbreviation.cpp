@@ -11,7 +11,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	abbreviation::abbreviation() : dimension_abstract(normal_prefix, 1)
 	{

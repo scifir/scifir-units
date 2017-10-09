@@ -3,7 +3,6 @@
 #include <sstream>
 
 using namespace std;
-using namespace msci::units;
 
 namespace msci
 {
@@ -17,7 +16,7 @@ namespace msci
 
 	length line_2d::get_length() const
 	{
-		space_type value = distance(vertex1,vertex2);
+		space_type value = distance_between_points(vertex1,vertex2);
 		return length(value,"m");
 	}
 

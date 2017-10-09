@@ -25,8 +25,8 @@ namespace msci
 				return products;
 			}
 
-			msci::units::enthalpy get_enthalpy_change() const;
-			msci::units::entropy get_entropy_change() const;
+			msci::enthalpy get_enthalpy_change() const;
+			msci::entropy get_entropy_change() const;
 
 		private:
 			vector<boost::variant<shared_ptr<molecule>,shared_ptr<atom>>> reactants;

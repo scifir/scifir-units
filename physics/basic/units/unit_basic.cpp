@@ -16,14 +16,14 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	SCALAR_UNIT_CPP(length,"m");
 	SCALAR_UNIT_CPP(time,"s");
 
 	time::operator std::chrono::seconds() const
 	{
-		msci::units::time a = *this;
+		msci::time a = *this;
 		a.change_dimensions("s");
 		return std::chrono::seconds(int(a.get_value()));
 	}
@@ -194,48 +194,48 @@ namespace msci::units
 	SCALAR_UNIT_CPP(data,"B");
 }
 
-wostream& operator <<(wostream& os, const msci::units::time& x)
+wostream& operator <<(wostream& os, const msci::time& x)
 {
-	if (x.get_display_mode() == msci::units::display_mode::time_display)
+	if (x.get_display_mode() == msci::display_mode::time_display)
 	{
 		wostringstream output;
-		msci::units::time remaining_time = x;
-		msci::units::time one_year ("365 d");
+		msci::time remaining_time = x;
+		msci::time one_year ("365 d");
 		if (x >= one_year)
 		{
 			int total_of_years = int(trunc((x / one_year).get_value()));
 			output << total_of_years << L"y ";
-			remaining_time -= msci::units::time(total_of_years * 365,"d");
+			remaining_time -= msci::time(total_of_years * 365,"d");
 		}
-		msci::units::time one_month("30 d");
+		msci::time one_month("30 d");
 		if (remaining_time >= one_month)
 		{
 			int total_of_months = int(trunc((remaining_time / one_month).get_value()));
 			output << total_of_months << L"m ";
-			remaining_time -= msci::units::time(total_of_months * 30,"d");
+			remaining_time -= msci::time(total_of_months * 30,"d");
 		}
-		msci::units::time one_day("1 d");
+		msci::time one_day("1 d");
 		if (remaining_time >= one_day)
 		{
 			int total_of_days = int(trunc((remaining_time / one_day).get_value()));
 			output << total_of_days << L"d ";
-			remaining_time -= msci::units::time(total_of_days,"d");
+			remaining_time -= msci::time(total_of_days,"d");
 		}
-		msci::units::time one_hour("1 h");
+		msci::time one_hour("1 h");
 		if (remaining_time >= one_hour)
 		{
 			int total_of_hours = int(trunc((remaining_time / one_hour).get_value()));
 			output << total_of_hours << L"h ";
-			remaining_time -= msci::units::time(total_of_hours,"h");
+			remaining_time -= msci::time(total_of_hours,"h");
 		}
-		msci::units::time one_minute("1 min");
+		msci::time one_minute("1 min");
 		if (remaining_time >= one_minute)
 		{
 			int total_of_minutes = int(trunc((remaining_time / one_minute).get_value()));
 			output << total_of_minutes << L"min ";
-			remaining_time -= msci::units::time(total_of_minutes,"min");
+			remaining_time -= msci::time(total_of_minutes,"min");
 		}
-		msci::units::time one_second("1 s");
+		msci::time one_second("1 s");
 		if (remaining_time >= one_second)
 		{
 			remaining_time.change_dimensions("s");
@@ -246,1446 +246,1446 @@ wostream& operator <<(wostream& os, const msci::units::time& x)
 	}
 	else
 	{
-		return os << static_cast<const msci::units::unit&>(x);
+		return os << static_cast<const msci::unit&>(x);
 	}
 }
 
-msci::units::length operator"" _Ym(unsigned long long int x)
+msci::length operator"" _Ym(unsigned long long int x)
 {
-	return msci::units::length(x, "Ym");
+	return msci::length(x, "Ym");
 }
 
-msci::units::length operator"" _Zm(unsigned long long int x)
+msci::length operator"" _Zm(unsigned long long int x)
 {
-	return msci::units::length(x, "Zm");
+	return msci::length(x, "Zm");
 }
 
-msci::units::length operator"" _Em(unsigned long long int x)
+msci::length operator"" _Em(unsigned long long int x)
 {
-	return msci::units::length(x, "Em");
+	return msci::length(x, "Em");
 }
 
-msci::units::length operator"" _Pm(unsigned long long int x)
+msci::length operator"" _Pm(unsigned long long int x)
 {
-	return msci::units::length(x, "Pm");
+	return msci::length(x, "Pm");
 }
 
-msci::units::length operator"" _Tm(unsigned long long int x)
+msci::length operator"" _Tm(unsigned long long int x)
 {
-	return msci::units::length(x, "Tm");
+	return msci::length(x, "Tm");
 }
 
-msci::units::length operator"" _Gm(unsigned long long int x)
+msci::length operator"" _Gm(unsigned long long int x)
 {
-	return msci::units::length(x, "Gm");
+	return msci::length(x, "Gm");
 }
 
-msci::units::length operator"" _Mm(unsigned long long int x)
+msci::length operator"" _Mm(unsigned long long int x)
 {
-	return msci::units::length(x, "Mm");
+	return msci::length(x, "Mm");
 }
 
-msci::units::length operator"" _km(unsigned long long int x)
+msci::length operator"" _km(unsigned long long int x)
 {
-	return msci::units::length(x, "km");
+	return msci::length(x, "km");
 }
 
-msci::units::length operator"" _hm(unsigned long long int x)
+msci::length operator"" _hm(unsigned long long int x)
 {
-	return msci::units::length(x, "hm");
+	return msci::length(x, "hm");
 }
 
-msci::units::length operator"" _dam(unsigned long long int x)
+msci::length operator"" _dam(unsigned long long int x)
 {
-	return msci::units::length(x, "dam");
+	return msci::length(x, "dam");
 }
 
-msci::units::length operator"" _m(unsigned long long int x)
+msci::length operator"" _m(unsigned long long int x)
 {
-	return msci::units::length(x, "m");
+	return msci::length(x, "m");
 }
 
-msci::units::length operator"" _dm(unsigned long long int x)
+msci::length operator"" _dm(unsigned long long int x)
 {
-	return msci::units::length(x, "dm");
+	return msci::length(x, "dm");
 }
 
-msci::units::length operator"" _cm(unsigned long long int x)
+msci::length operator"" _cm(unsigned long long int x)
 {
-	return msci::units::length(x, "cm");
+	return msci::length(x, "cm");
 }
 
-msci::units::length operator"" _mm(unsigned long long int x)
+msci::length operator"" _mm(unsigned long long int x)
 {
-	return msci::units::length(x, "mm");
+	return msci::length(x, "mm");
 }
 
-msci::units::length operator"" _um(unsigned long long int x)
+msci::length operator"" _um(unsigned long long int x)
 {
-	return msci::units::length(x, "um");
+	return msci::length(x, "um");
 }
 
-msci::units::length operator"" _nm(unsigned long long int x)
+msci::length operator"" _nm(unsigned long long int x)
 {
-	return msci::units::length(x, "nm");
+	return msci::length(x, "nm");
 }
 
-msci::units::length operator"" _pm(unsigned long long int x)
+msci::length operator"" _pm(unsigned long long int x)
 {
-	return msci::units::length(x, "pm");
+	return msci::length(x, "pm");
 }
 
-msci::units::length operator"" _fm(unsigned long long int x)
+msci::length operator"" _fm(unsigned long long int x)
 {
-	return msci::units::length(x, "fm");
+	return msci::length(x, "fm");
 }
 
-msci::units::length operator"" _am(unsigned long long int x)
+msci::length operator"" _am(unsigned long long int x)
 {
-	return msci::units::length(x, "am");
+	return msci::length(x, "am");
 }
 
-msci::units::length operator"" _zm(unsigned long long int x)
+msci::length operator"" _zm(unsigned long long int x)
 {
-	return msci::units::length(x, "zm");
+	return msci::length(x, "zm");
 }
 
-msci::units::length operator"" _ym(unsigned long long int x)
+msci::length operator"" _ym(unsigned long long int x)
 {
-	return msci::units::length(x, "ym");
+	return msci::length(x, "ym");
 }
 
-msci::units::time operator"" _s(unsigned long long int x)
+msci::time operator"" _s(unsigned long long int x)
 {
-	return msci::units::time(x, "s");
+	return msci::time(x, "s");
 }
 
-msci::units::time operator"" _ms(unsigned long long int x)
+msci::time operator"" _ms(unsigned long long int x)
 {
-	return msci::units::time(x, "ms");
+	return msci::time(x, "ms");
 }
 
-msci::units::time operator"" _us(unsigned long long int x)
+msci::time operator"" _us(unsigned long long int x)
 {
-	return msci::units::time(x, "us");
+	return msci::time(x, "us");
 }
 
-msci::units::time operator"" _ns(unsigned long long int x)
+msci::time operator"" _ns(unsigned long long int x)
 {
-	return msci::units::time(x, "ns");
+	return msci::time(x, "ns");
 }
 
-msci::units::time operator"" _ps(unsigned long long int x)
+msci::time operator"" _ps(unsigned long long int x)
 {
-	return msci::units::time(x, "ps");
+	return msci::time(x, "ps");
 }
 
-msci::units::time operator"" _fs(unsigned long long int x)
+msci::time operator"" _fs(unsigned long long int x)
 {
-	return msci::units::time(x, "fs");
+	return msci::time(x, "fs");
 }
 
-msci::units::time operator"" _as(unsigned long long int x)
+msci::time operator"" _as(unsigned long long int x)
 {
-	return msci::units::time(x, "as");
+	return msci::time(x, "as");
 }
 
-msci::units::time operator"" _zs(unsigned long long int x)
+msci::time operator"" _zs(unsigned long long int x)
 {
-	return msci::units::time(x, "zs");
+	return msci::time(x, "zs");
 }
 
-msci::units::time operator"" _ys(unsigned long long int x)
+msci::time operator"" _ys(unsigned long long int x)
 {
-	return msci::units::time(x, "ys");
+	return msci::time(x, "ys");
 }
 
-msci::units::mass operator"" _Yg(unsigned long long int x)
+msci::mass operator"" _Yg(unsigned long long int x)
 {
-	return msci::units::mass(x, "Yg");
+	return msci::mass(x, "Yg");
 }
 
-msci::units::mass operator"" _Zg(unsigned long long int x)
+msci::mass operator"" _Zg(unsigned long long int x)
 {
-	return msci::units::mass(x, "Zg");
+	return msci::mass(x, "Zg");
 }
 
-msci::units::mass operator"" _Eg(unsigned long long int x)
+msci::mass operator"" _Eg(unsigned long long int x)
 {
-	return msci::units::mass(x, "Eg");
+	return msci::mass(x, "Eg");
 }
 
-msci::units::mass operator"" _Pg(unsigned long long int x)
+msci::mass operator"" _Pg(unsigned long long int x)
 {
-	return msci::units::mass(x, "Pg");
+	return msci::mass(x, "Pg");
 }
 
-msci::units::mass operator"" _Tg(unsigned long long int x)
+msci::mass operator"" _Tg(unsigned long long int x)
 {
-	return msci::units::mass(x, "Tg");
+	return msci::mass(x, "Tg");
 }
 
-msci::units::mass operator"" _Gg(unsigned long long int x)
+msci::mass operator"" _Gg(unsigned long long int x)
 {
-	return msci::units::mass(x, "Gg");
+	return msci::mass(x, "Gg");
 }
 
-msci::units::mass operator"" _Mg(unsigned long long int x)
+msci::mass operator"" _Mg(unsigned long long int x)
 {
-	return msci::units::mass(x, "Mg");
+	return msci::mass(x, "Mg");
 }
 
-msci::units::mass operator"" _kg(unsigned long long int x)
+msci::mass operator"" _kg(unsigned long long int x)
 {
-	return msci::units::mass(x, "kg");
+	return msci::mass(x, "kg");
 }
 
-msci::units::mass operator"" _hg(unsigned long long int x)
+msci::mass operator"" _hg(unsigned long long int x)
 {
-	return msci::units::mass(x, "hg");
+	return msci::mass(x, "hg");
 }
 
-msci::units::mass operator"" _dag(unsigned long long int x)
+msci::mass operator"" _dag(unsigned long long int x)
 {
-	return msci::units::mass(x, "dag");
+	return msci::mass(x, "dag");
 }
 
-msci::units::mass operator"" _g(unsigned long long int x)
+msci::mass operator"" _g(unsigned long long int x)
 {
-	return msci::units::mass(x, "g");
+	return msci::mass(x, "g");
 }
 
-msci::units::mass operator"" _dg(unsigned long long int x)
+msci::mass operator"" _dg(unsigned long long int x)
 {
-	return msci::units::mass(x, "dg");
+	return msci::mass(x, "dg");
 }
 
-msci::units::mass operator"" _cg(unsigned long long int x)
+msci::mass operator"" _cg(unsigned long long int x)
 {
-	return msci::units::mass(x, "cg");
+	return msci::mass(x, "cg");
 }
 
-msci::units::mass operator"" _mg(unsigned long long int x)
+msci::mass operator"" _mg(unsigned long long int x)
 {
-	return msci::units::mass(x, "mg");
+	return msci::mass(x, "mg");
 }
 
-msci::units::mass operator"" _ug(unsigned long long int x)
+msci::mass operator"" _ug(unsigned long long int x)
 {
-	return msci::units::mass(x, "ug");
+	return msci::mass(x, "ug");
 }
 
-msci::units::mass operator"" _ng(unsigned long long int x)
+msci::mass operator"" _ng(unsigned long long int x)
 {
-	return msci::units::mass(x, "ng");
+	return msci::mass(x, "ng");
 }
 
-msci::units::mass operator"" _pg(unsigned long long int x)
+msci::mass operator"" _pg(unsigned long long int x)
 {
-	return msci::units::mass(x, "pg");
+	return msci::mass(x, "pg");
 }
 
-msci::units::mass operator"" _fg(unsigned long long int x)
+msci::mass operator"" _fg(unsigned long long int x)
 {
-	return msci::units::mass(x, "fg");
+	return msci::mass(x, "fg");
 }
 
-msci::units::mass operator"" _ag(unsigned long long int x)
+msci::mass operator"" _ag(unsigned long long int x)
 {
-	return msci::units::mass(x, "ag");
+	return msci::mass(x, "ag");
 }
 
-msci::units::mass operator"" _zg(unsigned long long int x)
+msci::mass operator"" _zg(unsigned long long int x)
 {
-	return msci::units::mass(x, "zg");
+	return msci::mass(x, "zg");
 }
 
-msci::units::mass operator"" _yg(unsigned long long int x)
+msci::mass operator"" _yg(unsigned long long int x)
 {
-	return msci::units::mass(x, "yg");
+	return msci::mass(x, "yg");
 }
 
-msci::units::charge operator"" _YC(unsigned long long int x)
+msci::charge operator"" _YC(unsigned long long int x)
 {
-	return msci::units::charge(x, "YC");
+	return msci::charge(x, "YC");
 }
 
-msci::units::charge operator"" _ZC(unsigned long long int x)
+msci::charge operator"" _ZC(unsigned long long int x)
 {
-	return msci::units::charge(x, "ZC");
+	return msci::charge(x, "ZC");
 }
 
-msci::units::charge operator"" _EC(unsigned long long int x)
+msci::charge operator"" _EC(unsigned long long int x)
 {
-	return msci::units::charge(x, "EC");
+	return msci::charge(x, "EC");
 }
 
-msci::units::charge operator"" _PC(unsigned long long int x)
+msci::charge operator"" _PC(unsigned long long int x)
 {
-	return msci::units::charge(x, "PC");
+	return msci::charge(x, "PC");
 }
 
-msci::units::charge operator"" _TC(unsigned long long int x)
+msci::charge operator"" _TC(unsigned long long int x)
 {
-	return msci::units::charge(x, "TC");
+	return msci::charge(x, "TC");
 }
 
-msci::units::charge operator"" _GC(unsigned long long int x)
+msci::charge operator"" _GC(unsigned long long int x)
 {
-	return msci::units::charge(x, "GC");
+	return msci::charge(x, "GC");
 }
 
-msci::units::charge operator"" _MC(unsigned long long int x)
+msci::charge operator"" _MC(unsigned long long int x)
 {
-	return msci::units::charge(x, "MC");
+	return msci::charge(x, "MC");
 }
 
-msci::units::charge operator"" _kC(unsigned long long int x)
+msci::charge operator"" _kC(unsigned long long int x)
 {
-	return msci::units::charge(x, "kC");
+	return msci::charge(x, "kC");
 }
 
-msci::units::charge operator"" _hC(unsigned long long int x)
+msci::charge operator"" _hC(unsigned long long int x)
 {
-	return msci::units::charge(x, "hC");
+	return msci::charge(x, "hC");
 }
 
-msci::units::charge operator"" _daC(unsigned long long int x)
+msci::charge operator"" _daC(unsigned long long int x)
 {
-	return msci::units::charge(x, "daC");
+	return msci::charge(x, "daC");
 }
 
-msci::units::charge operator"" _C(unsigned long long int x)
+msci::charge operator"" _C(unsigned long long int x)
 {
-	return msci::units::charge(x, "C");
+	return msci::charge(x, "C");
 }
 
-msci::units::charge operator"" _dC(unsigned long long int x)
+msci::charge operator"" _dC(unsigned long long int x)
 {
-	return msci::units::charge(x, "dC");
+	return msci::charge(x, "dC");
 }
 
-msci::units::charge operator"" _cC(unsigned long long int x)
+msci::charge operator"" _cC(unsigned long long int x)
 {
-	return msci::units::charge(x, "cC");
+	return msci::charge(x, "cC");
 }
 
-msci::units::charge operator"" _mC(unsigned long long int x)
+msci::charge operator"" _mC(unsigned long long int x)
 {
-	return msci::units::charge(x, "mC");
+	return msci::charge(x, "mC");
 }
 
-msci::units::charge operator"" _uC(unsigned long long int x)
+msci::charge operator"" _uC(unsigned long long int x)
 {
-	return msci::units::charge(x, "uC");
+	return msci::charge(x, "uC");
 }
 
-msci::units::charge operator"" _nC(unsigned long long int x)
+msci::charge operator"" _nC(unsigned long long int x)
 {
-	return msci::units::charge(x, "nC");
+	return msci::charge(x, "nC");
 }
 
-msci::units::charge operator"" _pC(unsigned long long int x)
+msci::charge operator"" _pC(unsigned long long int x)
 {
-	return msci::units::charge(x, "pC");
+	return msci::charge(x, "pC");
 }
 
-msci::units::charge operator"" _fC(unsigned long long int x)
+msci::charge operator"" _fC(unsigned long long int x)
 {
-	return msci::units::charge(x, "fC");
+	return msci::charge(x, "fC");
 }
 
-msci::units::charge operator"" _aC(unsigned long long int x)
+msci::charge operator"" _aC(unsigned long long int x)
 {
-	return msci::units::charge(x, "aC");
+	return msci::charge(x, "aC");
 }
 
-msci::units::charge operator"" _zC(unsigned long long int x)
+msci::charge operator"" _zC(unsigned long long int x)
 {
-	return msci::units::charge(x, "zC");
+	return msci::charge(x, "zC");
 }
 
-msci::units::charge operator"" _yC(unsigned long long int x)
+msci::charge operator"" _yC(unsigned long long int x)
 {
-	return msci::units::charge(x, "yC");
+	return msci::charge(x, "yC");
 }
 
-msci::units::temperature operator"" _YK(unsigned long long int x)
+msci::temperature operator"" _YK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "YK");
+	return msci::temperature(x, "YK");
 }
 
-msci::units::temperature operator"" _ZK(unsigned long long int x)
+msci::temperature operator"" _ZK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "ZK");
+	return msci::temperature(x, "ZK");
 }
 
-msci::units::temperature operator"" _EK(unsigned long long int x)
+msci::temperature operator"" _EK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "EK");
+	return msci::temperature(x, "EK");
 }
 
-msci::units::temperature operator"" _PK(unsigned long long int x)
+msci::temperature operator"" _PK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "PK");
+	return msci::temperature(x, "PK");
 }
 
-msci::units::temperature operator"" _TK(unsigned long long int x)
+msci::temperature operator"" _TK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "TK");
+	return msci::temperature(x, "TK");
 }
 
-msci::units::temperature operator"" _GK(unsigned long long int x)
+msci::temperature operator"" _GK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "GK");
+	return msci::temperature(x, "GK");
 }
 
-msci::units::temperature operator"" _MK(unsigned long long int x)
+msci::temperature operator"" _MK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "MK");
+	return msci::temperature(x, "MK");
 }
 
-msci::units::temperature operator"" _kK(unsigned long long int x)
+msci::temperature operator"" _kK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "kK");
+	return msci::temperature(x, "kK");
 }
 
-msci::units::temperature operator"" _hK(unsigned long long int x)
+msci::temperature operator"" _hK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "hK");
+	return msci::temperature(x, "hK");
 }
 
-msci::units::temperature operator"" _daK(unsigned long long int x)
+msci::temperature operator"" _daK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "daK");
+	return msci::temperature(x, "daK");
 }
 
-msci::units::temperature operator"" _K(unsigned long long int x)
+msci::temperature operator"" _K(unsigned long long int x)
 {
-	return msci::units::temperature(x, "K");
+	return msci::temperature(x, "K");
 }
 
-msci::units::temperature operator"" _dK(unsigned long long int x)
+msci::temperature operator"" _dK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "dK");
+	return msci::temperature(x, "dK");
 }
 
-msci::units::temperature operator"" _cK(unsigned long long int x)
+msci::temperature operator"" _cK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "cK");
+	return msci::temperature(x, "cK");
 }
 
-msci::units::temperature operator"" _mK(unsigned long long int x)
+msci::temperature operator"" _mK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "mK");
+	return msci::temperature(x, "mK");
 }
 
-msci::units::temperature operator"" _uK(unsigned long long int x)
+msci::temperature operator"" _uK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "uK");
+	return msci::temperature(x, "uK");
 }
 
-msci::units::temperature operator"" _nK(unsigned long long int x)
+msci::temperature operator"" _nK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "nK");
+	return msci::temperature(x, "nK");
 }
 
-msci::units::temperature operator"" _pK(unsigned long long int x)
+msci::temperature operator"" _pK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "pK");
+	return msci::temperature(x, "pK");
 }
 
-msci::units::temperature operator"" _fK(unsigned long long int x)
+msci::temperature operator"" _fK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "fK");
+	return msci::temperature(x, "fK");
 }
 
-msci::units::temperature operator"" _aK(unsigned long long int x)
+msci::temperature operator"" _aK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "aK");
+	return msci::temperature(x, "aK");
 }
 
-msci::units::temperature operator"" _zK(unsigned long long int x)
+msci::temperature operator"" _zK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "zK");
+	return msci::temperature(x, "zK");
 }
 
-msci::units::temperature operator"" _yK(unsigned long long int x)
+msci::temperature operator"" _yK(unsigned long long int x)
 {
-	return msci::units::temperature(x, "yK");
+	return msci::temperature(x, "yK");
 }
 
-msci::units::mole operator"" _Ymol(unsigned long long int x)
+msci::mole operator"" _Ymol(unsigned long long int x)
 {
-	return msci::units::mole(x, "Ymol");
+	return msci::mole(x, "Ymol");
 }
 
-msci::units::mole operator"" _Zmol(unsigned long long int x)
+msci::mole operator"" _Zmol(unsigned long long int x)
 {
-	return msci::units::mole(x, "Zmol");
+	return msci::mole(x, "Zmol");
 }
 
-msci::units::mole operator"" _Emol(unsigned long long int x)
+msci::mole operator"" _Emol(unsigned long long int x)
 {
-	return msci::units::mole(x, "Emol");
+	return msci::mole(x, "Emol");
 }
 
-msci::units::mole operator"" _Pmol(unsigned long long int x)
+msci::mole operator"" _Pmol(unsigned long long int x)
 {
-	return msci::units::mole(x, "Pmol");
+	return msci::mole(x, "Pmol");
 }
 
-msci::units::mole operator"" _Tmol(unsigned long long int x)
+msci::mole operator"" _Tmol(unsigned long long int x)
 {
-	return msci::units::mole(x, "Tmol");
+	return msci::mole(x, "Tmol");
 }
 
-msci::units::mole operator"" _Gmol(unsigned long long int x)
+msci::mole operator"" _Gmol(unsigned long long int x)
 {
-	return msci::units::mole(x, "Gmol");
+	return msci::mole(x, "Gmol");
 }
 
-msci::units::mole operator"" _Mmol(unsigned long long int x)
+msci::mole operator"" _Mmol(unsigned long long int x)
 {
-	return msci::units::mole(x, "Mmol");
+	return msci::mole(x, "Mmol");
 }
 
-msci::units::mole operator"" _kmol(unsigned long long int x)
+msci::mole operator"" _kmol(unsigned long long int x)
 {
-	return msci::units::mole(x, "kmol");
+	return msci::mole(x, "kmol");
 }
 
-msci::units::mole operator"" _hmol(unsigned long long int x)
+msci::mole operator"" _hmol(unsigned long long int x)
 {
-	return msci::units::mole(x, "hmol");
+	return msci::mole(x, "hmol");
 }
 
-msci::units::mole operator"" _damol(unsigned long long int x)
+msci::mole operator"" _damol(unsigned long long int x)
 {
-	return msci::units::mole(x, "damol");
+	return msci::mole(x, "damol");
 }
 
-msci::units::mole operator"" _mol(unsigned long long int x)
+msci::mole operator"" _mol(unsigned long long int x)
 {
-	return msci::units::mole(x, "mol");
+	return msci::mole(x, "mol");
 }
 
-msci::units::mole operator"" _dmol(unsigned long long int x)
+msci::mole operator"" _dmol(unsigned long long int x)
 {
-	return msci::units::mole(x, "dmol");
+	return msci::mole(x, "dmol");
 }
 
-msci::units::mole operator"" _cmol(unsigned long long int x)
+msci::mole operator"" _cmol(unsigned long long int x)
 {
-	return msci::units::mole(x, "cmol");
+	return msci::mole(x, "cmol");
 }
 
-msci::units::mole operator"" _mmol(unsigned long long int x)
+msci::mole operator"" _mmol(unsigned long long int x)
 {
-	return msci::units::mole(x, "mmol");
+	return msci::mole(x, "mmol");
 }
 
-msci::units::mole operator"" _umol(unsigned long long int x)
+msci::mole operator"" _umol(unsigned long long int x)
 {
-	return msci::units::mole(x, "umol");
+	return msci::mole(x, "umol");
 }
 
-msci::units::mole operator"" _nmol(unsigned long long int x)
+msci::mole operator"" _nmol(unsigned long long int x)
 {
-	return msci::units::mole(x, "nmol");
+	return msci::mole(x, "nmol");
 }
 
-msci::units::mole operator"" _pmol(unsigned long long int x)
+msci::mole operator"" _pmol(unsigned long long int x)
 {
-	return msci::units::mole(x, "pmol");
+	return msci::mole(x, "pmol");
 }
 
-msci::units::mole operator"" _fmol(unsigned long long int x)
+msci::mole operator"" _fmol(unsigned long long int x)
 {
-	return msci::units::mole(x, "fmol");
+	return msci::mole(x, "fmol");
 }
 
-msci::units::mole operator"" _amol(unsigned long long int x)
+msci::mole operator"" _amol(unsigned long long int x)
 {
-	return msci::units::mole(x, "amol");
+	return msci::mole(x, "amol");
 }
 
-msci::units::mole operator"" _zmol(unsigned long long int x)
+msci::mole operator"" _zmol(unsigned long long int x)
 {
-	return msci::units::mole(x, "zmol");
+	return msci::mole(x, "zmol");
 }
 
-msci::units::mole operator"" _ymol(unsigned long long int x)
+msci::mole operator"" _ymol(unsigned long long int x)
 {
-	return msci::units::mole(x, "ymol");
+	return msci::mole(x, "ymol");
 }
 
-msci::units::light operator"" _Ycd(unsigned long long int x)
+msci::light operator"" _Ycd(unsigned long long int x)
 {
-	return msci::units::light(x, "Ycd");
+	return msci::light(x, "Ycd");
 }
 
-msci::units::light operator"" _Zcd(unsigned long long int x)
+msci::light operator"" _Zcd(unsigned long long int x)
 {
-	return msci::units::light(x, "Zcd");
+	return msci::light(x, "Zcd");
 }
 
-msci::units::light operator"" _Ecd(unsigned long long int x)
+msci::light operator"" _Ecd(unsigned long long int x)
 {
-	return msci::units::light(x, "Ecd");
+	return msci::light(x, "Ecd");
 }
 
-msci::units::light operator"" _Pcd(unsigned long long int x)
+msci::light operator"" _Pcd(unsigned long long int x)
 {
-	return msci::units::light(x, "Pcd");
+	return msci::light(x, "Pcd");
 }
 
-msci::units::light operator"" _Tcd(unsigned long long int x)
+msci::light operator"" _Tcd(unsigned long long int x)
 {
-	return msci::units::light(x, "Tcd");
+	return msci::light(x, "Tcd");
 }
 
-msci::units::light operator"" _Gcd(unsigned long long int x)
+msci::light operator"" _Gcd(unsigned long long int x)
 {
-	return msci::units::light(x, "Gcd");
+	return msci::light(x, "Gcd");
 }
 
-msci::units::light operator"" _Mcd(unsigned long long int x)
+msci::light operator"" _Mcd(unsigned long long int x)
 {
-	return msci::units::light(x, "Mcd");
+	return msci::light(x, "Mcd");
 }
 
-msci::units::light operator"" _kcd(unsigned long long int x)
+msci::light operator"" _kcd(unsigned long long int x)
 {
-	return msci::units::light(x, "kcd");
+	return msci::light(x, "kcd");
 }
 
-msci::units::light operator"" _hcd(unsigned long long int x)
+msci::light operator"" _hcd(unsigned long long int x)
 {
-	return msci::units::light(x, "hcd");
+	return msci::light(x, "hcd");
 }
 
-msci::units::light operator"" _dacd(unsigned long long int x)
+msci::light operator"" _dacd(unsigned long long int x)
 {
-	return msci::units::light(x, "dacd");
+	return msci::light(x, "dacd");
 }
 
-msci::units::light operator"" _cd(unsigned long long int x)
+msci::light operator"" _cd(unsigned long long int x)
 {
-	return msci::units::light(x, "cd");
+	return msci::light(x, "cd");
 }
 
-msci::units::light operator"" _dcd(unsigned long long int x)
+msci::light operator"" _dcd(unsigned long long int x)
 {
-	return msci::units::light(x, "dcd");
+	return msci::light(x, "dcd");
 }
 
-msci::units::light operator"" _ccd(unsigned long long int x)
+msci::light operator"" _ccd(unsigned long long int x)
 {
-	return msci::units::light(x, "ccd");
+	return msci::light(x, "ccd");
 }
 
-msci::units::light operator"" _mcd(unsigned long long int x)
+msci::light operator"" _mcd(unsigned long long int x)
 {
-	return msci::units::light(x, "mcd");
+	return msci::light(x, "mcd");
 }
 
-msci::units::light operator"" _ucd(unsigned long long int x)
+msci::light operator"" _ucd(unsigned long long int x)
 {
-	return msci::units::light(x, "ucd");
+	return msci::light(x, "ucd");
 }
 
-msci::units::light operator"" _ncd(unsigned long long int x)
+msci::light operator"" _ncd(unsigned long long int x)
 {
-	return msci::units::light(x, "ncd");
+	return msci::light(x, "ncd");
 }
 
-msci::units::light operator"" _pcd(unsigned long long int x)
+msci::light operator"" _pcd(unsigned long long int x)
 {
-	return msci::units::light(x, "pcd");
+	return msci::light(x, "pcd");
 }
 
-msci::units::light operator"" _fcd(unsigned long long int x)
+msci::light operator"" _fcd(unsigned long long int x)
 {
-	return msci::units::light(x, "fcd");
+	return msci::light(x, "fcd");
 }
 
-msci::units::light operator"" _acd(unsigned long long int x)
+msci::light operator"" _acd(unsigned long long int x)
 {
-	return msci::units::light(x, "acd");
+	return msci::light(x, "acd");
 }
 
-msci::units::light operator"" _zcd(unsigned long long int x)
+msci::light operator"" _zcd(unsigned long long int x)
 {
-	return msci::units::light(x, "zcd");
+	return msci::light(x, "zcd");
 }
 
-msci::units::light operator"" _ycd(unsigned long long int x)
+msci::light operator"" _ycd(unsigned long long int x)
 {
-	return msci::units::light(x, "ycd");
+	return msci::light(x, "ycd");
 }
 
-msci::units::data operator"" _YB(unsigned long long int x)
+msci::data operator"" _YB(unsigned long long int x)
 {
-	return msci::units::data(x, "YB");
+	return msci::data(x, "YB");
 }
 
-msci::units::data operator"" _ZB(unsigned long long int x)
+msci::data operator"" _ZB(unsigned long long int x)
 {
-	return msci::units::data(x, "ZB");
+	return msci::data(x, "ZB");
 }
 
-msci::units::data operator"" _EB(unsigned long long int x)
+msci::data operator"" _EB(unsigned long long int x)
 {
-	return msci::units::data(x, "EB");
+	return msci::data(x, "EB");
 }
 
-msci::units::data operator"" _PB(unsigned long long int x)
+msci::data operator"" _PB(unsigned long long int x)
 {
-	return msci::units::data(x, "PB");
+	return msci::data(x, "PB");
 }
 
-msci::units::data operator"" _TB(unsigned long long int x)
+msci::data operator"" _TB(unsigned long long int x)
 {
-	return msci::units::data(x, "TB");
+	return msci::data(x, "TB");
 }
 
-msci::units::data operator"" _GB(unsigned long long int x)
+msci::data operator"" _GB(unsigned long long int x)
 {
-	return msci::units::data(x, "GB");
+	return msci::data(x, "GB");
 }
 
-msci::units::data operator"" _MB(unsigned long long int x)
+msci::data operator"" _MB(unsigned long long int x)
 {
-	return msci::units::data(x, "MB");
+	return msci::data(x, "MB");
 }
 
-msci::units::data operator"" _kB(unsigned long long int x)
+msci::data operator"" _kB(unsigned long long int x)
 {
-	return msci::units::data(x, "kB");
+	return msci::data(x, "kB");
 }
 
-msci::units::data operator"" _B(unsigned long long int x)
+msci::data operator"" _B(unsigned long long int x)
 {
-	return msci::units::data(x, "B");
+	return msci::data(x, "B");
 }
 
-msci::units::length operator"" _Ym(long double x)
+msci::length operator"" _Ym(long double x)
 {
-	return msci::units::length(x, "Ym");
+	return msci::length(x, "Ym");
 }
 
-msci::units::length operator"" _Zm(long double x)
+msci::length operator"" _Zm(long double x)
 {
-	return msci::units::length(x, "Zm");
+	return msci::length(x, "Zm");
 }
 
-msci::units::length operator"" _Em(long double x)
+msci::length operator"" _Em(long double x)
 {
-	return msci::units::length(x, "Em");
+	return msci::length(x, "Em");
 }
 
-msci::units::length operator"" _Pm(long double x)
+msci::length operator"" _Pm(long double x)
 {
-	return msci::units::length(x, "Pm");
+	return msci::length(x, "Pm");
 }
 
-msci::units::length operator"" _Tm(long double x)
+msci::length operator"" _Tm(long double x)
 {
-	return msci::units::length(x, "Tm");
+	return msci::length(x, "Tm");
 }
 
-msci::units::length operator"" _Gm(long double x)
+msci::length operator"" _Gm(long double x)
 {
-	return msci::units::length(x, "Gm");
+	return msci::length(x, "Gm");
 }
 
-msci::units::length operator"" _Mm(long double x)
+msci::length operator"" _Mm(long double x)
 {
-	return msci::units::length(x, "Mm");
+	return msci::length(x, "Mm");
 }
 
-msci::units::length operator"" _km(long double x)
+msci::length operator"" _km(long double x)
 {
-	return msci::units::length(x, "km");
+	return msci::length(x, "km");
 }
 
-msci::units::length operator"" _hm(long double x)
+msci::length operator"" _hm(long double x)
 {
-	return msci::units::length(x, "hm");
+	return msci::length(x, "hm");
 }
 
-msci::units::length operator"" _dam(long double x)
+msci::length operator"" _dam(long double x)
 {
-	return msci::units::length(x, "dam");
+	return msci::length(x, "dam");
 }
 
-msci::units::length operator"" _m(long double x)
+msci::length operator"" _m(long double x)
 {
-	return msci::units::length(x, "m");
+	return msci::length(x, "m");
 }
 
-msci::units::length operator"" _dm(long double x)
+msci::length operator"" _dm(long double x)
 {
-	return msci::units::length(x, "dm");
+	return msci::length(x, "dm");
 }
 
-msci::units::length operator"" _cm(long double x)
+msci::length operator"" _cm(long double x)
 {
-	return msci::units::length(x, "cm");
+	return msci::length(x, "cm");
 }
 
-msci::units::length operator"" _mm(long double x)
+msci::length operator"" _mm(long double x)
 {
-	return msci::units::length(x, "mm");
+	return msci::length(x, "mm");
 }
 
-msci::units::length operator"" _um(long double x)
+msci::length operator"" _um(long double x)
 {
-	return msci::units::length(x, "um");
+	return msci::length(x, "um");
 }
 
-msci::units::length operator"" _nm(long double x)
+msci::length operator"" _nm(long double x)
 {
-	return msci::units::length(x, "nm");
+	return msci::length(x, "nm");
 }
 
-msci::units::length operator"" _pm(long double x)
+msci::length operator"" _pm(long double x)
 {
-	return msci::units::length(x, "pm");
+	return msci::length(x, "pm");
 }
 
-msci::units::length operator"" _fm(long double x)
+msci::length operator"" _fm(long double x)
 {
-	return msci::units::length(x, "fm");
+	return msci::length(x, "fm");
 }
 
-msci::units::length operator"" _am(long double x)
+msci::length operator"" _am(long double x)
 {
-	return msci::units::length(x, "am");
+	return msci::length(x, "am");
 }
 
-msci::units::length operator"" _zm(long double x)
+msci::length operator"" _zm(long double x)
 {
-	return msci::units::length(x, "zm");
+	return msci::length(x, "zm");
 }
 
-msci::units::length operator"" _ym(long double x)
+msci::length operator"" _ym(long double x)
 {
-	return msci::units::length(x, "ym");
+	return msci::length(x, "ym");
 }
 
-msci::units::time operator"" _s(long double x)
+msci::time operator"" _s(long double x)
 {
-	return msci::units::time(x, "s");
+	return msci::time(x, "s");
 }
 
-msci::units::time operator"" _ms(long double x)
+msci::time operator"" _ms(long double x)
 {
-	return msci::units::time(x, "ms");
+	return msci::time(x, "ms");
 }
 
-msci::units::time operator"" _us(long double x)
+msci::time operator"" _us(long double x)
 {
-	return msci::units::time(x, "us");
+	return msci::time(x, "us");
 }
 
-msci::units::time operator"" _ns(long double x)
+msci::time operator"" _ns(long double x)
 {
-	return msci::units::time(x, "ns");
+	return msci::time(x, "ns");
 }
 
-msci::units::time operator"" _ps(long double x)
+msci::time operator"" _ps(long double x)
 {
-	return msci::units::time(x, "ps");
+	return msci::time(x, "ps");
 }
 
-msci::units::time operator"" _fs(long double x)
+msci::time operator"" _fs(long double x)
 {
-	return msci::units::time(x, "fs");
+	return msci::time(x, "fs");
 }
 
-msci::units::time operator"" _as(long double x)
+msci::time operator"" _as(long double x)
 {
-	return msci::units::time(x, "as");
+	return msci::time(x, "as");
 }
 
-msci::units::time operator"" _zs(long double x)
+msci::time operator"" _zs(long double x)
 {
-	return msci::units::time(x, "zs");
+	return msci::time(x, "zs");
 }
 
-msci::units::time operator"" _ys(long double x)
+msci::time operator"" _ys(long double x)
 {
-	return msci::units::time(x, "ys");
+	return msci::time(x, "ys");
 }
 
-msci::units::mass operator"" _Yg(long double x)
+msci::mass operator"" _Yg(long double x)
 {
-	return msci::units::mass(x, "Yg");
+	return msci::mass(x, "Yg");
 }
 
-msci::units::mass operator"" _Zg(long double x)
+msci::mass operator"" _Zg(long double x)
 {
-	return msci::units::mass(x, "Zg");
+	return msci::mass(x, "Zg");
 }
 
-msci::units::mass operator"" _Eg(long double x)
+msci::mass operator"" _Eg(long double x)
 {
-	return msci::units::mass(x, "Eg");
+	return msci::mass(x, "Eg");
 }
 
-msci::units::mass operator"" _Pg(long double x)
+msci::mass operator"" _Pg(long double x)
 {
-	return msci::units::mass(x, "Pg");
+	return msci::mass(x, "Pg");
 }
 
-msci::units::mass operator"" _Tg(long double x)
+msci::mass operator"" _Tg(long double x)
 {
-	return msci::units::mass(x, "Tg");
+	return msci::mass(x, "Tg");
 }
 
-msci::units::mass operator"" _Gg(long double x)
+msci::mass operator"" _Gg(long double x)
 {
-	return msci::units::mass(x, "Gg");
+	return msci::mass(x, "Gg");
 }
 
-msci::units::mass operator"" _Mg(long double x)
+msci::mass operator"" _Mg(long double x)
 {
-	return msci::units::mass(x, "Mg");
+	return msci::mass(x, "Mg");
 }
 
-msci::units::mass operator"" _kg(long double x)
+msci::mass operator"" _kg(long double x)
 {
-	return msci::units::mass(x, "kg");
+	return msci::mass(x, "kg");
 }
 
-msci::units::mass operator"" _hg(long double x)
+msci::mass operator"" _hg(long double x)
 {
-	return msci::units::mass(x, "hg");
+	return msci::mass(x, "hg");
 }
 
-msci::units::mass operator"" _dag(long double x)
+msci::mass operator"" _dag(long double x)
 {
-	return msci::units::mass(x, "dag");
+	return msci::mass(x, "dag");
 }
 
-msci::units::mass operator"" _g(long double x)
+msci::mass operator"" _g(long double x)
 {
-	return msci::units::mass(x, "g");
+	return msci::mass(x, "g");
 }
 
-msci::units::mass operator"" _dg(long double x)
+msci::mass operator"" _dg(long double x)
 {
-	return msci::units::mass(x, "dg");
+	return msci::mass(x, "dg");
 }
 
-msci::units::mass operator"" _cg(long double x)
+msci::mass operator"" _cg(long double x)
 {
-	return msci::units::mass(x, "cg");
+	return msci::mass(x, "cg");
 }
 
-msci::units::mass operator"" _mg(long double x)
+msci::mass operator"" _mg(long double x)
 {
-	return msci::units::mass(x, "mg");
+	return msci::mass(x, "mg");
 }
 
-msci::units::mass operator"" _ug(long double x)
+msci::mass operator"" _ug(long double x)
 {
-	return msci::units::mass(x, "ug");
+	return msci::mass(x, "ug");
 }
 
-msci::units::mass operator"" _ng(long double x)
+msci::mass operator"" _ng(long double x)
 {
-	return msci::units::mass(x, "ng");
+	return msci::mass(x, "ng");
 }
 
-msci::units::mass operator"" _pg(long double x)
+msci::mass operator"" _pg(long double x)
 {
-	return msci::units::mass(x, "pg");
+	return msci::mass(x, "pg");
 }
 
-msci::units::mass operator"" _fg(long double x)
+msci::mass operator"" _fg(long double x)
 {
-	return msci::units::mass(x, "fg");
+	return msci::mass(x, "fg");
 }
 
-msci::units::mass operator"" _ag(long double x)
+msci::mass operator"" _ag(long double x)
 {
-	return msci::units::mass(x, "ag");
+	return msci::mass(x, "ag");
 }
 
-msci::units::mass operator"" _zg(long double x)
+msci::mass operator"" _zg(long double x)
 {
-	return msci::units::mass(x, "zg");
+	return msci::mass(x, "zg");
 }
 
-msci::units::mass operator"" _yg(long double x)
+msci::mass operator"" _yg(long double x)
 {
-	return msci::units::mass(x, "yg");
+	return msci::mass(x, "yg");
 }
 
-msci::units::charge operator"" _YC(long double x)
+msci::charge operator"" _YC(long double x)
 {
-	return msci::units::charge(x, "YC");
+	return msci::charge(x, "YC");
 }
 
-msci::units::charge operator"" _ZC(long double x)
+msci::charge operator"" _ZC(long double x)
 {
-	return msci::units::charge(x, "ZC");
+	return msci::charge(x, "ZC");
 }
 
-msci::units::charge operator"" _EC(long double x)
+msci::charge operator"" _EC(long double x)
 {
-	return msci::units::charge(x, "EC");
+	return msci::charge(x, "EC");
 }
 
-msci::units::charge operator"" _PC(long double x)
+msci::charge operator"" _PC(long double x)
 {
-	return msci::units::charge(x, "PC");
+	return msci::charge(x, "PC");
 }
 
-msci::units::charge operator"" _TC(long double x)
+msci::charge operator"" _TC(long double x)
 {
-	return msci::units::charge(x, "TC");
+	return msci::charge(x, "TC");
 }
 
-msci::units::charge operator"" _GC(long double x)
+msci::charge operator"" _GC(long double x)
 {
-	return msci::units::charge(x, "GC");
+	return msci::charge(x, "GC");
 }
 
-msci::units::charge operator"" _MC(long double x)
+msci::charge operator"" _MC(long double x)
 {
-	return msci::units::charge(x, "MC");
+	return msci::charge(x, "MC");
 }
 
-msci::units::charge operator"" _kC(long double x)
+msci::charge operator"" _kC(long double x)
 {
-	return msci::units::charge(x, "kC");
+	return msci::charge(x, "kC");
 }
 
-msci::units::charge operator"" _hC(long double x)
+msci::charge operator"" _hC(long double x)
 {
-	return msci::units::charge(x, "hC");
+	return msci::charge(x, "hC");
 }
 
-msci::units::charge operator"" _daC(long double x)
+msci::charge operator"" _daC(long double x)
 {
-	return msci::units::charge(x, "daC");
+	return msci::charge(x, "daC");
 }
 
-msci::units::charge operator"" _C(long double x)
+msci::charge operator"" _C(long double x)
 {
-	return msci::units::charge(x, "C");
+	return msci::charge(x, "C");
 }
 
-msci::units::charge operator"" _dC(long double x)
+msci::charge operator"" _dC(long double x)
 {
-	return msci::units::charge(x, "dC");
+	return msci::charge(x, "dC");
 }
 
-msci::units::charge operator"" _cC(long double x)
+msci::charge operator"" _cC(long double x)
 {
-	return msci::units::charge(x, "cC");
+	return msci::charge(x, "cC");
 }
 
-msci::units::charge operator"" _mC(long double x)
+msci::charge operator"" _mC(long double x)
 {
-	return msci::units::charge(x, "mC");
+	return msci::charge(x, "mC");
 }
 
-msci::units::charge operator"" _uC(long double x)
+msci::charge operator"" _uC(long double x)
 {
-	return msci::units::charge(x, "uC");
+	return msci::charge(x, "uC");
 }
 
-msci::units::charge operator"" _nC(long double x)
+msci::charge operator"" _nC(long double x)
 {
-	return msci::units::charge(x, "nC");
+	return msci::charge(x, "nC");
 }
 
-msci::units::charge operator"" _pC(long double x)
+msci::charge operator"" _pC(long double x)
 {
-	return msci::units::charge(x, "pC");
+	return msci::charge(x, "pC");
 }
 
-msci::units::charge operator"" _fC(long double x)
+msci::charge operator"" _fC(long double x)
 {
-	return msci::units::charge(x, "fC");
+	return msci::charge(x, "fC");
 }
 
-msci::units::charge operator"" _aC(long double x)
+msci::charge operator"" _aC(long double x)
 {
-	return msci::units::charge(x, "aC");
+	return msci::charge(x, "aC");
 }
 
-msci::units::charge operator"" _zC(long double x)
+msci::charge operator"" _zC(long double x)
 {
-	return msci::units::charge(x, "zC");
+	return msci::charge(x, "zC");
 }
 
-msci::units::charge operator"" _yC(long double x)
+msci::charge operator"" _yC(long double x)
 {
-	return msci::units::charge(x, "yC");
+	return msci::charge(x, "yC");
 }
 
-msci::units::temperature operator"" _YK(long double x)
+msci::temperature operator"" _YK(long double x)
 {
-	return msci::units::temperature(x, "YK");
+	return msci::temperature(x, "YK");
 }
 
-msci::units::temperature operator"" _ZK(long double x)
+msci::temperature operator"" _ZK(long double x)
 {
-	return msci::units::temperature(x, "ZK");
+	return msci::temperature(x, "ZK");
 }
 
-msci::units::temperature operator"" _EK(long double x)
+msci::temperature operator"" _EK(long double x)
 {
-	return msci::units::temperature(x, "EK");
+	return msci::temperature(x, "EK");
 }
 
-msci::units::temperature operator"" _PK(long double x)
+msci::temperature operator"" _PK(long double x)
 {
-	return msci::units::temperature(x, "PK");
+	return msci::temperature(x, "PK");
 }
 
-msci::units::temperature operator"" _TK(long double x)
+msci::temperature operator"" _TK(long double x)
 {
-	return msci::units::temperature(x, "TK");
+	return msci::temperature(x, "TK");
 }
 
-msci::units::temperature operator"" _GK(long double x)
+msci::temperature operator"" _GK(long double x)
 {
-	return msci::units::temperature(x, "GK");
+	return msci::temperature(x, "GK");
 }
 
-msci::units::temperature operator"" _MK(long double x)
+msci::temperature operator"" _MK(long double x)
 {
-	return msci::units::temperature(x, "MK");
+	return msci::temperature(x, "MK");
 }
 
-msci::units::temperature operator"" _kK(long double x)
+msci::temperature operator"" _kK(long double x)
 {
-	return msci::units::temperature(x, "kK");
+	return msci::temperature(x, "kK");
 }
 
-msci::units::temperature operator"" _hK(long double x)
+msci::temperature operator"" _hK(long double x)
 {
-	return msci::units::temperature(x, "hK");
+	return msci::temperature(x, "hK");
 }
 
-msci::units::temperature operator"" _daK(long double x)
+msci::temperature operator"" _daK(long double x)
 {
-	return msci::units::temperature(x, "daK");
+	return msci::temperature(x, "daK");
 }
 
-msci::units::temperature operator"" _K(long double x)
+msci::temperature operator"" _K(long double x)
 {
-	return msci::units::temperature(x, "K");
+	return msci::temperature(x, "K");
 }
 
-msci::units::temperature operator"" _dK(long double x)
+msci::temperature operator"" _dK(long double x)
 {
-	return msci::units::temperature(x, "dK");
+	return msci::temperature(x, "dK");
 }
 
-msci::units::temperature operator"" _cK(long double x)
+msci::temperature operator"" _cK(long double x)
 {
-	return msci::units::temperature(x, "cK");
+	return msci::temperature(x, "cK");
 }
 
-msci::units::temperature operator"" _mK(long double x)
+msci::temperature operator"" _mK(long double x)
 {
-	return msci::units::temperature(x, "mK");
+	return msci::temperature(x, "mK");
 }
 
-msci::units::temperature operator"" _uK(long double x)
+msci::temperature operator"" _uK(long double x)
 {
-	return msci::units::temperature(x, "uK");
+	return msci::temperature(x, "uK");
 }
 
-msci::units::temperature operator"" _nK(long double x)
+msci::temperature operator"" _nK(long double x)
 {
-	return msci::units::temperature(x, "nK");
+	return msci::temperature(x, "nK");
 }
 
-msci::units::temperature operator"" _pK(long double x)
+msci::temperature operator"" _pK(long double x)
 {
-	return msci::units::temperature(x, "pK");
+	return msci::temperature(x, "pK");
 }
 
-msci::units::temperature operator"" _fK(long double x)
+msci::temperature operator"" _fK(long double x)
 {
-	return msci::units::temperature(x, "fK");
+	return msci::temperature(x, "fK");
 }
 
-msci::units::temperature operator"" _aK(long double x)
+msci::temperature operator"" _aK(long double x)
 {
-	return msci::units::temperature(x, "aK");
+	return msci::temperature(x, "aK");
 }
 
-msci::units::temperature operator"" _zK(long double x)
+msci::temperature operator"" _zK(long double x)
 {
-	return msci::units::temperature(x, "zK");
+	return msci::temperature(x, "zK");
 }
 
-msci::units::temperature operator"" _yK(long double x)
+msci::temperature operator"" _yK(long double x)
 {
-	return msci::units::temperature(x, "yK");
+	return msci::temperature(x, "yK");
 }
 
-msci::units::mole operator"" _Ymol(long double x)
+msci::mole operator"" _Ymol(long double x)
 {
-	return msci::units::mole(x, "Ymol");
+	return msci::mole(x, "Ymol");
 }
 
-msci::units::mole operator"" _Zmol(long double x)
+msci::mole operator"" _Zmol(long double x)
 {
-	return msci::units::mole(x, "Zmol");
+	return msci::mole(x, "Zmol");
 }
 
-msci::units::mole operator"" _Emol(long double x)
+msci::mole operator"" _Emol(long double x)
 {
-	return msci::units::mole(x, "Emol");
+	return msci::mole(x, "Emol");
 }
 
-msci::units::mole operator"" _Pmol(long double x)
+msci::mole operator"" _Pmol(long double x)
 {
-	return msci::units::mole(x, "Pmol");
+	return msci::mole(x, "Pmol");
 }
 
-msci::units::mole operator"" _Tmol(long double x)
+msci::mole operator"" _Tmol(long double x)
 {
-	return msci::units::mole(x, "Tmol");
+	return msci::mole(x, "Tmol");
 }
 
-msci::units::mole operator"" _Gmol(long double x)
+msci::mole operator"" _Gmol(long double x)
 {
-	return msci::units::mole(x, "Gmol");
+	return msci::mole(x, "Gmol");
 }
 
-msci::units::mole operator"" _Mmol(long double x)
+msci::mole operator"" _Mmol(long double x)
 {
-	return msci::units::mole(x, "Mmol");
+	return msci::mole(x, "Mmol");
 }
 
-msci::units::mole operator"" _kmol(long double x)
+msci::mole operator"" _kmol(long double x)
 {
-	return msci::units::mole(x, "kmol");
+	return msci::mole(x, "kmol");
 }
 
-msci::units::mole operator"" _hmol(long double x)
+msci::mole operator"" _hmol(long double x)
 {
-	return msci::units::mole(x, "hmol");
+	return msci::mole(x, "hmol");
 }
 
-msci::units::mole operator"" _damol(long double x)
+msci::mole operator"" _damol(long double x)
 {
-	return msci::units::mole(x, "damol");
+	return msci::mole(x, "damol");
 }
 
-msci::units::mole operator"" _mol(long double x)
+msci::mole operator"" _mol(long double x)
 {
-	return msci::units::mole(x, "mol");
+	return msci::mole(x, "mol");
 }
 
-msci::units::mole operator"" _dmol(long double x)
+msci::mole operator"" _dmol(long double x)
 {
-	return msci::units::mole(x, "dmol");
+	return msci::mole(x, "dmol");
 }
 
-msci::units::mole operator"" _cmol(long double x)
+msci::mole operator"" _cmol(long double x)
 {
-	return msci::units::mole(x, "cmol");
+	return msci::mole(x, "cmol");
 }
 
-msci::units::mole operator"" _mmol(long double x)
+msci::mole operator"" _mmol(long double x)
 {
-	return msci::units::mole(x, "mmol");
+	return msci::mole(x, "mmol");
 }
 
-msci::units::mole operator"" _umol(long double x)
+msci::mole operator"" _umol(long double x)
 {
-	return msci::units::mole(x, "umol");
+	return msci::mole(x, "umol");
 }
 
-msci::units::mole operator"" _nmol(long double x)
+msci::mole operator"" _nmol(long double x)
 {
-	return msci::units::mole(x, "nmol");
+	return msci::mole(x, "nmol");
 }
 
-msci::units::mole operator"" _pmol(long double x)
+msci::mole operator"" _pmol(long double x)
 {
-	return msci::units::mole(x, "pmol");
+	return msci::mole(x, "pmol");
 }
 
-msci::units::mole operator"" _fmol(long double x)
+msci::mole operator"" _fmol(long double x)
 {
-	return msci::units::mole(x, "fmol");
+	return msci::mole(x, "fmol");
 }
 
-msci::units::mole operator"" _amol(long double x)
+msci::mole operator"" _amol(long double x)
 {
-	return msci::units::mole(x, "amol");
+	return msci::mole(x, "amol");
 }
 
-msci::units::mole operator"" _zmol(long double x)
+msci::mole operator"" _zmol(long double x)
 {
-	return msci::units::mole(x, "zmol");
+	return msci::mole(x, "zmol");
 }
 
-msci::units::mole operator"" _ymol(long double x)
+msci::mole operator"" _ymol(long double x)
 {
-	return msci::units::mole(x, "ymol");
+	return msci::mole(x, "ymol");
 }
 
-msci::units::light operator"" _Ycd(long double x)
+msci::light operator"" _Ycd(long double x)
 {
-	return msci::units::light(x, "Ycd");
+	return msci::light(x, "Ycd");
 }
 
-msci::units::light operator"" _Zcd(long double x)
+msci::light operator"" _Zcd(long double x)
 {
-	return msci::units::light(x, "Zcd");
+	return msci::light(x, "Zcd");
 }
 
-msci::units::light operator"" _Ecd(long double x)
+msci::light operator"" _Ecd(long double x)
 {
-	return msci::units::light(x, "Ecd");
+	return msci::light(x, "Ecd");
 }
 
-msci::units::light operator"" _Pcd(long double x)
+msci::light operator"" _Pcd(long double x)
 {
-	return msci::units::light(x, "Pcd");
+	return msci::light(x, "Pcd");
 }
 
-msci::units::light operator"" _Tcd(long double x)
+msci::light operator"" _Tcd(long double x)
 {
-	return msci::units::light(x, "Tcd");
+	return msci::light(x, "Tcd");
 }
 
-msci::units::light operator"" _Gcd(long double x)
+msci::light operator"" _Gcd(long double x)
 {
-	return msci::units::light(x, "Gcd");
+	return msci::light(x, "Gcd");
 }
 
-msci::units::light operator"" _Mcd(long double x)
+msci::light operator"" _Mcd(long double x)
 {
-	return msci::units::light(x, "Mcd");
+	return msci::light(x, "Mcd");
 }
 
-msci::units::light operator"" _kcd(long double x)
+msci::light operator"" _kcd(long double x)
 {
-	return msci::units::light(x, "kcd");
+	return msci::light(x, "kcd");
 }
 
-msci::units::light operator"" _hcd(long double x)
+msci::light operator"" _hcd(long double x)
 {
-	return msci::units::light(x, "hcd");
+	return msci::light(x, "hcd");
 }
 
-msci::units::light operator"" _dacd(long double x)
+msci::light operator"" _dacd(long double x)
 {
-	return msci::units::light(x, "dacd");
+	return msci::light(x, "dacd");
 }
 
-msci::units::light operator"" _cd(long double x)
+msci::light operator"" _cd(long double x)
 {
-	return msci::units::light(x, "cd");
+	return msci::light(x, "cd");
 }
 
-msci::units::light operator"" _dcd(long double x)
+msci::light operator"" _dcd(long double x)
 {
-	return msci::units::light(x, "dcd");
+	return msci::light(x, "dcd");
 }
 
-msci::units::light operator"" _ccd(long double x)
+msci::light operator"" _ccd(long double x)
 {
-	return msci::units::light(x, "ccd");
+	return msci::light(x, "ccd");
 }
 
-msci::units::light operator"" _mcd(long double x)
+msci::light operator"" _mcd(long double x)
 {
-	return msci::units::light(x, "mcd");
+	return msci::light(x, "mcd");
 }
 
-msci::units::light operator"" _ucd(long double x)
+msci::light operator"" _ucd(long double x)
 {
-	return msci::units::light(x, "ucd");
+	return msci::light(x, "ucd");
 }
 
-msci::units::light operator"" _ncd(long double x)
+msci::light operator"" _ncd(long double x)
 {
-	return msci::units::light(x, "ncd");
+	return msci::light(x, "ncd");
 }
 
-msci::units::light operator"" _pcd(long double x)
+msci::light operator"" _pcd(long double x)
 {
-	return msci::units::light(x, "pcd");
+	return msci::light(x, "pcd");
 }
 
-msci::units::light operator"" _fcd(long double x)
+msci::light operator"" _fcd(long double x)
 {
-	return msci::units::light(x, "fcd");
+	return msci::light(x, "fcd");
 }
 
-msci::units::light operator"" _acd(long double x)
+msci::light operator"" _acd(long double x)
 {
-	return msci::units::light(x, "acd");
+	return msci::light(x, "acd");
 }
 
-msci::units::light operator"" _zcd(long double x)
+msci::light operator"" _zcd(long double x)
 {
-	return msci::units::light(x, "zcd");
+	return msci::light(x, "zcd");
 }
 
-msci::units::light operator"" _ycd(long double x)
+msci::light operator"" _ycd(long double x)
 {
-	return msci::units::light(x, "ycd");
+	return msci::light(x, "ycd");
 }
 
-msci::units::data operator"" _YB(long double x)
+msci::data operator"" _YB(long double x)
 {
-	return msci::units::data(x, "YB");
+	return msci::data(x, "YB");
 }
 
-msci::units::data operator"" _ZB(long double x)
+msci::data operator"" _ZB(long double x)
 {
-	return msci::units::data(x, "ZB");
+	return msci::data(x, "ZB");
 }
 
-msci::units::data operator"" _EB(long double x)
+msci::data operator"" _EB(long double x)
 {
-	return msci::units::data(x, "EB");
+	return msci::data(x, "EB");
 }
 
-msci::units::data operator"" _PB(long double x)
+msci::data operator"" _PB(long double x)
 {
-	return msci::units::data(x, "PB");
+	return msci::data(x, "PB");
 }
 
-msci::units::data operator"" _TB(long double x)
+msci::data operator"" _TB(long double x)
 {
-	return msci::units::data(x, "TB");
+	return msci::data(x, "TB");
 }
 
-msci::units::data operator"" _GB(long double x)
+msci::data operator"" _GB(long double x)
 {
-	return msci::units::data(x, "GB");
+	return msci::data(x, "GB");
 }
 
-msci::units::data operator"" _MB(long double x)
+msci::data operator"" _MB(long double x)
 {
-	return msci::units::data(x, "MB");
+	return msci::data(x, "MB");
 }
 
-msci::units::data operator"" _kB(long double x)
+msci::data operator"" _kB(long double x)
 {
-	return msci::units::data(x, "kB");
+	return msci::data(x, "kB");
 }
 
-msci::units::data operator"" _B(long double x)
+msci::data operator"" _B(long double x)
 {
-	return msci::units::data(x, "B");
+	return msci::data(x, "B");
 }

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	SCALAR_UNIT_CPP(electrical_conductivity,"A2*s3/kg*m3");
 	SCALAR_UNIT_CPP(electric_resistance,"kg*m2/A2*s3");

@@ -21,7 +21,7 @@
 #include <type_traits>
 using namespace std;
 
-namespace msci::units
+namespace msci
 {
 	unit::unit() : value(0),actual_dimensions()
 	{
@@ -84,7 +84,7 @@ namespace msci::units
 	{
 		if (x.is_defined())
 		{
-			if (msci::units::equal_dimensions(*this,x))
+			if (msci::equal_dimensions(*this,x))
 			{
 				actual_dimensions = x.get_actual_dimensions();
 				value = x.get_value();
@@ -105,7 +105,7 @@ namespace msci::units
 	{
 		if (x.is_defined())
 		{
-			if (msci::units::equal_dimensions(*this,x))
+			if (msci::equal_dimensions(*this,x))
 			{
 				actual_dimensions = move(x.get_actual_dimensions());
 				value = move(x.get_value());
@@ -644,7 +644,7 @@ namespace msci::units
 	}
 }
 
-bool operator ==(const msci::units::unit& x, const msci::units::unit& y)
+bool operator ==(const msci::unit& x, const msci::unit& y)
 {
 	if(x.get_value() == y.get_value() and equal_dimensions(x, y))
 	{
@@ -656,18 +656,18 @@ bool operator ==(const msci::units::unit& x, const msci::units::unit& y)
 	}
 }
 
-bool operator !=(const msci::units::unit& x, const msci::units::unit& y)
+bool operator !=(const msci::unit& x, const msci::unit& y)
 {
 	return !(x == y);
 }
 
-bool operator <(const msci::units::unit& x, const msci::units::unit& y)
+bool operator <(const msci::unit& x, const msci::unit& y)
 {
 	if(!equal_dimensions(x, y))
 	{
 		throw invalid_argument("Units of different dimensions cannot be compared");
 	}
-	msci::units::auto_unit z = x;
+	msci::auto_unit z = x;
 	z.set_same_prefix(y.get_actual_dimensions());
 	if(z.get_value() < y.get_value())
 	{
@@ -679,13 +679,13 @@ bool operator <(const msci::units::unit& x, const msci::units::unit& y)
 	}
 }
 
-bool operator >(const msci::units::unit& x, const msci::units::unit& y)
+bool operator >(const msci::unit& x, const msci::unit& y)
 {
 	if(!equal_dimensions(x, y))
 	{
 		throw invalid_argument("Units of different dimensions cannot be compared");
 	}
-	msci::units::auto_unit z = x;
+	msci::auto_unit z = x;
 	z.set_same_prefix(y.get_actual_dimensions());
 	if(z.get_value() > y.get_value())
 	{
@@ -697,89 +697,89 @@ bool operator >(const msci::units::unit& x, const msci::units::unit& y)
 	}
 }
 
-bool operator <=(const msci::units::unit& x, const msci::units::unit& y)
+bool operator <=(const msci::unit& x, const msci::unit& y)
 {
 	return !(x > y);
 }
 
-bool operator >=(const msci::units::unit& x, const msci::units::unit& y)
+bool operator >=(const msci::unit& x, const msci::unit& y)
 {
 	return !(x < y);
 }
 
-bool operator ==(const msci::units::unit& x, const string& y_init)
+bool operator ==(const msci::unit& x, const string& y_init)
 {
-	msci::units::auto_unit y(y_init);
+	msci::auto_unit y(y_init);
 	return (x == y);
 }
 
-bool operator !=(const msci::units::unit& x, const string& y_init)
+bool operator !=(const msci::unit& x, const string& y_init)
 {
 	return !(x == y_init);
 }
 
-bool operator <(const msci::units::unit& x, const string& y_init)
+bool operator <(const msci::unit& x, const string& y_init)
 {
-	msci::units::auto_unit y(y_init);
+	msci::auto_unit y(y_init);
 	return (x < y);
 }
 
-bool operator >(const msci::units::unit& x, const string& y_init)
+bool operator >(const msci::unit& x, const string& y_init)
 {
-	msci::units::auto_unit y(y_init);
+	msci::auto_unit y(y_init);
 	return (x > y);
 }
 
-bool operator <=(const msci::units::unit& x, const string& y_init)
+bool operator <=(const msci::unit& x, const string& y_init)
 {
 	return !(x > y_init);
 }
 
-bool operator >=(const msci::units::unit& x, const string& y_init)
+bool operator >=(const msci::unit& x, const string& y_init)
 {
 	return !(x < y_init);
 }
 
-bool operator ==(const string& x_init, const msci::units::unit& y)
+bool operator ==(const string& x_init, const msci::unit& y)
 {
 	return (y == x_init);
 }
 
-bool operator !=(const string& x_init, const msci::units::unit& y)
+bool operator !=(const string& x_init, const msci::unit& y)
 {
 	return (y != x_init);
 }
 
-bool operator <(const string& x_init, const msci::units::unit& y)
+bool operator <(const string& x_init, const msci::unit& y)
 {
-	msci::units::auto_unit x(x_init);
+	msci::auto_unit x(x_init);
 	return (x < y);
 }
 
-bool operator >(const string& x_init, const msci::units::unit& y)
+bool operator >(const string& x_init, const msci::unit& y)
 {
-	msci::units::auto_unit x(x_init);
+	msci::auto_unit x(x_init);
 	return (x > y);
 }
 
-bool operator <=(const string& x_init, const msci::units::unit& y)
+bool operator <=(const string& x_init, const msci::unit& y)
 {
 	return !(x_init > y);
 }
 
-bool operator >=(const string& x_init, const msci::units::unit& y)
+bool operator >=(const string& x_init, const msci::unit& y)
 {
 	return !(x_init < y);
 }
 
-void operator +=(wstring& x, const msci::units::unit& y)
+void operator +=(wstring& x, const msci::unit& y)
 {
 	wostringstream output;
 	output << y;
 	x += output.str();
 }
 
-wstring operator +(const wstring& x, const msci::units::unit& y)
+wstring operator +(const wstring& x, const msci::unit& y)
 {
 	wostringstream output;
 	output << x;
@@ -787,7 +787,7 @@ wstring operator +(const wstring& x, const msci::units::unit& y)
 	return output.str();
 }
 
-wstring operator +(const msci::units::unit& y, const wstring& x)
+wstring operator +(const msci::unit& y, const wstring& x)
 {
 	wostringstream output;
 	output << y;
@@ -795,18 +795,18 @@ wstring operator +(const msci::units::unit& y, const wstring& x)
 	return output.str();
 }
 
-wostream& operator <<(wostream& os, const msci::units::unit& x)
+wostream& operator <<(wostream& os, const msci::unit& x)
 {
 	return os << x.display();
 }
 
-/*istream& operator >>(istream& is, msci::units::auto_unit& x)
+/*istream& operator >>(istream& is, msci::auto_unit& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::units::auto_unit c(b);
+	msci::auto_unit c(b);
 	x = c;
 	return is;
 }*/
