@@ -8,16 +8,14 @@ using namespace std;
 
 namespace msci
 {
-	namespace dna
+	class nitrogenous_base
 	{
-		class nitrogenous_base
-		{
-			public:
-				msci::normal_molecule molecule;
+		public:
+			msci::normal_molecule molecule;
 
-				nitrogenous_base(const string&);
-		};
-	}
+			nitrogenous_base();
+			nitrogenous_base(const string&);
+	};
 }
 
 #endif // NITROGENOUS_BASE_HPP_INCLUDED

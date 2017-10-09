@@ -25,12 +25,20 @@ namespace msci
 			hyper_spherical_coordinates(function<space_type()>, msci::angle_container);
 			hyper_spherical_coordinates(function<space_type()>, boost::variant<msci::angle_container,direction_symbol>);
 
-			space_type get_r() const;
+			inline space_type get_r() const
+			{
+				return r();
+			}
+
 			const msci::angle_number& get_angle1() const;
 			const msci::angle_number& get_angle2() const;
 			const msci::angle_number& get_angle(unsigned int) const;
 			const angle_container& get_angles() const;
-			const direction_symbol& get_direction() const;
+
+			inline const direction_symbol& get_direction() const
+			{
+				return directions.direction.get_direction();
+			}
 
 			virtual space_type get_value() const;
 			virtual space_type n_projection(unsigned int) const;

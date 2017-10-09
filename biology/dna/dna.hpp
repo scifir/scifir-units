@@ -21,6 +21,7 @@ namespace msci
 	class dna : public msci::bit_molecule
 	{
 		public:
+			dna();
 			explicit dna(dna_type,const map<string,chromosome>&);
 			explicit dna(const string&);
 

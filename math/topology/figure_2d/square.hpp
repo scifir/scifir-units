@@ -10,6 +10,7 @@ namespace msci
 	class square : public figure_2d
 	{
 		public:
+			square();
 			square(space_type);
 	};
 }

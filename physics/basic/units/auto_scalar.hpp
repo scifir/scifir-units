@@ -11,6 +11,7 @@ namespace msci
 	class auto_scalar : public auto_unit, public scalar_unit
 	{
 		public:
+			auto_scalar();
 			auto_scalar(const auto_scalar&);
 			auto_scalar(auto_scalar&&);
 			explicit auto_scalar(msci::space_type, const string& = "");

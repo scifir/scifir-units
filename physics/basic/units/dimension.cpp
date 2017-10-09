@@ -15,7 +15,7 @@ using namespace std;
 
 namespace msci
 {
-	dimension::dimension() : dimension_abstract(normal_prefix, 1)
+	dimension::dimension() : dimension_abstract()
 	{
 	}
 

@@ -9,6 +9,10 @@ using namespace std;
 
 namespace msci
 {
+	dna::dna() : bit_molecule(),chromosomes(),type(),file_name(),xml_file()
+	{
+	}
+
 	dna::dna(dna_type new_type,const map<string,chromosome>& new_chromosomes) : bit_molecule(),chromosomes(new_chromosomes),type(new_type)
 	{
 	}

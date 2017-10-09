@@ -4,6 +4,10 @@ using namespace std;
 
 namespace msci
 {
+	auto_vector::auto_vector() : unit(),auto_unit(),vector_unit()
+	{
+	}
+
 	auto_vector::auto_vector(const auto_vector& x) : unit(x),auto_unit(x),vector_unit(x)
 	{
 	}

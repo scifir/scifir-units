@@ -7,14 +7,12 @@ using namespace std;
 
 namespace msci
 {
-	conversion::conversion() : factor(0),unit_to("")
+	conversion::conversion() : unit_to(),factor()
 	{
 	}
 
-	conversion::conversion(const string& new_unit_to, float new_factor)
+	conversion::conversion(const string& new_unit_to, float new_factor) : unit_to(new_unit_to),factor(new_factor)
 	{
-		unit_to = new_unit_to;
-		factor = new_factor;
 	}
 
 	map<string, conversion> get_conversion

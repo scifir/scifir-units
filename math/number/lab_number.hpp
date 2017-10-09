@@ -19,7 +19,10 @@ namespace msci
 			lab_number();
 			lab_number(msci::space_type,msci::space_type);
 
-			const msci::space_type& get_error_value() const;
+			inline const msci::space_type& get_error_value() const
+			{
+				return error_value;
+			}
 
 			lab_number operator +(const lab_number&) const;
 			lab_number operator -(const lab_number&) const;

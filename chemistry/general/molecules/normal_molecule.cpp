@@ -13,6 +13,10 @@ using namespace std;
 
 namespace msci
 {
+	normal_molecule::normal_molecule() : molecule(),atoms(),bonds()
+	{
+	}
+
 	normal_molecule::normal_molecule(string new_file) : molecule(),atoms(),bonds()
 	{
 		xml_document<> doc;

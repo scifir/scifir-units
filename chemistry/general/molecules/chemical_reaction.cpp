@@ -4,7 +4,7 @@ using namespace std;
 
 namespace msci
 {
-	chemical_reaction::chemical_reaction()
+	chemical_reaction::chemical_reaction() : reactants(),products()
 	{
 	}
 

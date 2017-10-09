@@ -39,7 +39,7 @@ namespace msci
 				return value;
 			}
 
-			void invalidate(int new_error_code)
+			inline void invalidate(int new_error_code)
 			{
 				error_code = new_error_code;
 			}
@@ -56,12 +56,12 @@ namespace msci
 				}
 			}
 
-			const int& get_error_code() const
+			inline const int& get_error_code() const
 			{
 				return error_code;
 			}
 
-			const msci::space_type& get_value() const
+			inline const msci::space_type& get_value() const
 			{
 				return value;
 			}

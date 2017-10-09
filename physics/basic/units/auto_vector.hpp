@@ -12,6 +12,7 @@ namespace msci
 	class auto_vector : public auto_unit, public vector_unit
 	{
 		public:
+			auto_vector();
 			auto_vector(const auto_vector&);
 			auto_vector(auto_vector&&);
 			explicit auto_vector(const unit&,direction_symbol);

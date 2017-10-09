@@ -10,6 +10,7 @@ namespace msci
 	class datom
 	{
 		public:
+			datom();
 			datom(const string&);
 	};
 }

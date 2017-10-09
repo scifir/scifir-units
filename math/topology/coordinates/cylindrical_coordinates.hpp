@@ -11,11 +11,23 @@ namespace msci
 	class cylindrical_coordinates : public coordinates_3d
 	{
 		public:
+			cylindrical_coordinates();
 			cylindrical_coordinates(space_type,angle_type,space_type);
 
-			space_type get_r() const;
-			const msci::angle_number& get_angle() const;
-			const space_type& get_z() const;
+			inline space_type get_r() const
+			{
+				return r;
+			}
+
+			inline const msci::angle_number& get_angle() const
+			{
+				return angle;
+			}
+
+			inline const space_type& get_z() const
+			{
+				return z;
+			}
 
 			virtual space_type get_value() const;
 			virtual const space_type x_projection() const;

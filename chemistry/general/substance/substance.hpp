@@ -10,6 +10,7 @@ namespace msci::laboratory
 	class substance
 	{
 		public:
+			substance();
 			substance(spectrometer_data, crystallographic_data);
 
 			const density& get_density() const;

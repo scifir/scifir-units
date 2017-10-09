@@ -8,6 +8,7 @@ namespace msci
 	class electron
 	{
 		public:
+			electron();
 			electron(float);
 
 			float spin;

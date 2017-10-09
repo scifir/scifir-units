@@ -16,6 +16,16 @@ using namespace std;
 
 namespace msci
 {
+	inline msci::angle_type radian_to_grade(msci::angle_type x)
+	{
+		return x * 180 / PI;
+	}
+
+	inline msci::angle_type grade_to_radian(msci::angle_type x)
+	{
+		return x * PI / 180;
+	}
+
 	class angle_number
 	{
 		public:
@@ -31,6 +41,11 @@ namespace msci
 			operator float() const
 			{
 				return float(value);
+			}
+
+			inline const msci::angle_type& get_value() const
+			{
+				return value;
 			}
 
 			angle_number operator +(const angle_number&) const;
@@ -136,11 +151,12 @@ namespace msci
 				return tmp;
 			}
 
-			const msci::angle_type& get_value() const;
-
 			void invert();
 
-			msci::angle_type get_radian_value() const;
+			inline msci::angle_type get_radian_value() const
+			{
+				return grade_to_radian(value);
+			}
 
 		private:
 			msci::angle_type value;
@@ -166,16 +182,6 @@ namespace msci
 	angle_number asinh(msci::angle_type);
 	angle_number acosh(msci::angle_type);
 	angle_number atanh(msci::angle_type);
-
-	inline msci::angle_type radian_to_grade(msci::angle_type x)
-	{
-		return x * 180 / PI;
-	}
-
-	inline msci::angle_type grade_to_radian(msci::angle_type x)
-	{
-		return x * PI / 180;
-	}
 
 	inline msci::angle_type asin_grade(msci::space_type x)
 	{

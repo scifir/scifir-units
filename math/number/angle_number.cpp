@@ -18,9 +18,8 @@ namespace msci
 	{
 	}
 
-	angle_number::angle_number(msci::angle_type x)
+	angle_number::angle_number(msci::angle_type x) : value(x)
 	{
-		value = x;
 		normalize_value();
 	}
 
@@ -55,20 +54,10 @@ namespace msci
 		normalize_value();
 	}
 
-	const msci::angle_type& angle_number::get_value() const
-	{
-		return value;
-	}
-
 	void angle_number::invert()
 	{
 		value += 180;
 		normalize_value();
-	}
-
-	msci::angle_type angle_number::get_radian_value() const
-	{
-		return grade_to_radian(value);
 	}
 
 	void angle_number::normalize_value()

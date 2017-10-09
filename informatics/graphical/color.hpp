@@ -11,6 +11,7 @@ namespace msci
 	class color
 	{
 		public:
+			color();
 			color(int,int,int,int = 255);
 
 			inline const int& get_red() const

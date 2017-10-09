@@ -9,6 +9,7 @@
 #define SCALAR_UNIT_HPP_BEGIN(name) class name : public scalar_unit_crtp<name> \
 	{	\
 		public: \
+			name(); \
 			name(const name&); \
 			name(name&&); \
 			explicit name(msci::space_type,const string&); \
@@ -34,6 +35,7 @@
 #define SCALAR_UNIT_HPP(name) class name : public scalar_unit_crtp<name> \
 	{	\
 		public: \
+			name(); \
 			name(const name&); \
 			name(name&&); \
 			explicit name(msci::space_type,const string&); \
@@ -55,7 +57,11 @@
 			static const vector_real_dimensions real_dimensions; \
 	}
 
-#define SCALAR_UNIT_CPP(name,dimensions) name::name(const name& x) : unit(x),scalar_unit_crtp<name>(x) \
+#define SCALAR_UNIT_CPP(name,dimensions) name::name() : unit(),scalar_unit_crtp<name>() \
+			{ \
+			} \
+\
+	name::name(const name& x) : unit(x),scalar_unit_crtp<name>(x) \
 			{ \
 			} \
 \

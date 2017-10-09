@@ -26,8 +26,8 @@ namespace msci
 			}
 
 		private:
-			float factor;
 			string unit_to;
+			float factor;
 	};
 
 	extern map<string, conversion> get_conversion;

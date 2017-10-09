@@ -63,11 +63,6 @@ namespace msci
 		}
 	}
 
-	space_type hyper_spherical_coordinates::get_r() const
-	{
-		return r();
-	}
-
 	const msci::angle_number& hyper_spherical_coordinates::get_angle1() const
 	{
 		if (is_1d())
@@ -109,11 +104,6 @@ namespace msci
 			throw invalid_argument("Cannot get angle of unidimensional coordinates");
 		}
 		return directions.angles;
-	}
-
-	const direction_symbol& hyper_spherical_coordinates::get_direction() const
-	{
-		return directions.direction.get_direction();
 	}
 
 	space_type hyper_spherical_coordinates::get_value() const

@@ -4,6 +4,10 @@ using namespace std;
 
 namespace msci
 {
+	directional_coordinates::directional_coordinates() : coordinates_1d(),r(),direction()
+	{
+	}
+
 	directional_coordinates::directional_coordinates(function<space_type()> new_r,direction_symbol new_direction) : coordinates_1d(),r(new_r),direction(new_direction)
 	{
 

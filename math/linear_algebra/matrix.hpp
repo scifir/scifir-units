@@ -49,12 +49,12 @@ namespace msci
 				return new matrix<T, M, N>(static_cast<const matrix<T, M, N>&>(*this));
 			}
 
-			int row_size() const
+			inline int row_size() const
 			{
 				return M;
 			}
 
-			int column_size() const
+			inline int column_size() const
 			{
 				return N;
 			}

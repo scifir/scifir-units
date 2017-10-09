@@ -6,6 +6,10 @@ using namespace std;
 
 namespace msci
 {
+	auto_scalar::auto_scalar() : unit(),auto_unit(),scalar_unit()
+	{
+	}
+
 	auto_scalar::auto_scalar(const auto_scalar& x) : unit(x),auto_unit(x),scalar_unit(x)
 	{
 	}

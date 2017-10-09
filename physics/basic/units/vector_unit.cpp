@@ -6,6 +6,10 @@ using namespace std;
 
 namespace msci
 {
+	vector_unit::vector_unit() : unit(),hyper_spherical_coordinates()
+	{
+	}
+
 	vector_unit::vector_unit(const vector_unit& x) : unit(x),hyper_spherical_coordinates(lambda_value(),x.get_angles())
 	{
 		operator=(x);

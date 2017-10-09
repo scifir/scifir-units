@@ -25,6 +25,7 @@
 #define VECTOR_UNIT_HPP_BEGIN(name) class name : public vector_unit_crtp<name> \
 	{	\
 		public: \
+			name(); \
 			name(const name&); \
 			name(name&&); \
 			explicit name(msci::space_type,const string&); \
@@ -66,6 +67,7 @@
 #define VECTOR_UNIT_HPP(name) class name : public vector_unit_crtp<name> \
 	{	\
 		public: \
+			name(); \
 			name(const name&); \
 			name(name&&); \
 			explicit name(msci::space_type,const string&); \
@@ -103,7 +105,11 @@
 			static const vector_real_dimensions real_dimensions; \
 	}
 
-#define VECTOR_UNIT_CPP(name,dimensions) name::name(const name& x) : unit(x),vector_unit_crtp<name>(x) \
+#define VECTOR_UNIT_CPP(name,dimensions) name::name() : unit(),vector_unit_crtp<name>() \
+			{ \
+			} \
+\
+			name::name(const name& x) : unit(x),vector_unit_crtp<name>(x) \
 			{ \
 			} \
 \
@@ -252,6 +258,7 @@ namespace msci
 	class vector_unit : public virtual unit, public hyper_spherical_coordinates
 	{
 		public:
+			vector_unit();
 			vector_unit(const vector_unit&);
 			vector_unit(vector_unit&&);
 			explicit vector_unit(msci::space_type,const string&);
@@ -366,6 +373,10 @@ namespace msci
 	class vector_unit_crtp : public unit_crtp<T>,public vector_unit
 	{
 		public:
+			vector_unit_crtp() : unit(),unit_crtp<T>(),vector_unit()
+			{
+			}
+
 			vector_unit_crtp(const vector_unit_crtp<T>& x) : unit(x),unit_crtp<T>(x),vector_unit(x)
 			{
 			}

@@ -13,6 +13,7 @@ namespace msci
 	class atomic_bond
 	{
 		public:
+			atomic_bond();
 			atomic_bond(const shared_ptr<atom>&,const shared_ptr<atom>&,atomic_bond_weight);
 
 			inline const weak_ptr<atom>& get_atom1() const

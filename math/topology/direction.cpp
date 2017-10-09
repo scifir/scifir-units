@@ -6,23 +6,21 @@ using namespace std;
 
 namespace msci
 {
+	direction::direction() : direction_value()
+	{
+	}
+
 	direction::direction(direction_symbol new_direction) : direction_value(new_direction)
 	{
-	}
-
-	const direction_symbol& direction::get_direction() const
-	{
-		return direction_value;
-	}
-
-	void direction::invert()
-	{
-		direction_value = opposite_direction(direction_value);
 	}
 
 	void direction::operator =(direction_symbol new_direction)
 	{
 		direction_value = new_direction;
+	}
+
+	direction_lr::direction_lr() : direction()
+	{
 	}
 
 	direction_lr::direction_lr(direction_symbol new_direction) : direction(new_direction)
@@ -40,26 +38,6 @@ namespace msci
 			throw invalid_argument("Invalid direction. Only left and right allowed");
 		}
 		direction_value = new_direction;
-	}
-
-	bool direction_lr::goes_left()
-	{
-		return (direction_value == left);
-	}
-
-	bool direction_lr::goes_right()
-	{
-		return (direction_value == right);
-	}
-
-	void direction_lr::go_left()
-	{
-		direction_value = left;
-	}
-
-	void direction_lr::go_right()
-	{
-		direction_value = right;
 	}
 
 	direction_symbol opposite_direction(direction_symbol x)

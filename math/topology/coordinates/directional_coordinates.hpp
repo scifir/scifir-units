@@ -13,6 +13,7 @@ namespace msci
 	class directional_coordinates : public coordinates_1d
 	{
 		public:
+			directional_coordinates();
 			directional_coordinates(function<space_type()>,direction_symbol = right);
 
 			virtual const space_type x_projection() const;

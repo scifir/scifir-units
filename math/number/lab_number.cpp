@@ -16,11 +16,6 @@ namespace msci
 		error_value = new_error_value;
 	}
 
-	const msci::space_type& lab_number::get_error_value() const
-	{
-		return error_value;
-	}
-
 	lab_number lab_number::operator +(const lab_number& x) const
 	{
 		return lab_number(value + x.get_value(), error_value + x.get_error_value());

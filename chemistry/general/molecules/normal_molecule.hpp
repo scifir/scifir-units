@@ -14,6 +14,7 @@ namespace msci
 	class normal_molecule : public molecule
 	{
 		public:
+			normal_molecule();
 			normal_molecule(string);
 			normal_molecule(vector<shared_ptr<atom>>,vector<shared_ptr<atomic_bond>>);
 

@@ -6,23 +6,12 @@ using namespace std;
 
 namespace msci
 {
+	cylindrical_coordinates::cylindrical_coordinates() : r(),angle(),z()
+	{
+	}
+
 	cylindrical_coordinates::cylindrical_coordinates(space_type new_r,angle_type new_angle,space_type new_z) : coordinates_3d(),r(new_r),angle(new_angle),z(new_z)
 	{
-	}
-
-	space_type cylindrical_coordinates::get_r() const
-	{
-		return r;
-	}
-
-	const msci::angle_number& cylindrical_coordinates::get_angle() const
-	{
-		return angle;
-	}
-
-	const space_type& cylindrical_coordinates::get_z() const
-	{
-		return z;
 	}
 
 	space_type cylindrical_coordinates::get_value() const

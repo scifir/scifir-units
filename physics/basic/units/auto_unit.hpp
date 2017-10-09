@@ -10,6 +10,7 @@ namespace msci
 	class auto_unit : public virtual unit
 	{
 		public:
+			auto_unit();
 			auto_unit(const auto_unit&);
 			auto_unit(auto_unit&&);
 			explicit auto_unit(msci::space_type, const string& = "");
