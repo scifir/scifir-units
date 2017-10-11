@@ -63,8 +63,8 @@ namespace msci
 
             virtual void add_atom(const atom&) = 0;
 
-            bool is_cyclical() const;
-            bool is_acyclical() const;
+            virtual bool is_cyclical() const;
+            virtual bool is_acyclical() const;
             bool is_polar() const;
             bool is_apolar() const;
             bool is_chiral() const;

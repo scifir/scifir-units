@@ -77,4 +77,14 @@ namespace msci
 			}
 		}
 	}
+
+	bool dna::is_cyclical() const
+    {
+		return true;
+    }
+
+    bool dna::is_acyclical() const
+    {
+		return false;
+    }
 }

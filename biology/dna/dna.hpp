@@ -79,6 +79,9 @@ namespace msci
 				return chromosomes.size();
 			}
 
+			virtual bool is_cyclical() const;
+			virtual bool is_acyclical() const;
+
 		private:
 			mutable map<string,chromosome> chromosomes;
 			dna_type type;
