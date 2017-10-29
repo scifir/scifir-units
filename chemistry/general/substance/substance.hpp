@@ -1,6 +1,9 @@
 #ifndef CHEMISTRY_LABORATORY_SUBSTANCE_SUBSTANCE_HPP_INCLUDED
 #define CHEMISTRY_LABORATORY_SUBSTANCE_SUBSTANCE_HPP_INCLUDED
 
+#include "chemistry/laboratory/analysis/crystallograph.hpp"
+#include "chemistry/laboratory/analysis/spectrometer.hpp"
+
 #include "units.hpp"
 
 using namespace std;
