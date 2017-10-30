@@ -13,7 +13,7 @@ namespace msci
 	}
 }
 
-wostream& operator <<(wostream& os, const msci::color& x)
+ostream& operator <<(ostream& os, const msci::color& x)
 {
 	return os << "color(" << x.get_red() << "," << x.get_green() << "," << x.get_blue() << "," << x.get_alpha() << ")";
 }

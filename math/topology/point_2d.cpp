@@ -20,16 +20,16 @@ namespace msci
 		return sqrt(pow(x,2) + pow(y,2));
 	}
 
-	wstring point_2d::display() const
+	string point_2d::display() const
 	{
-		wostringstream out;
+		ostringstream out;
 		out << "(" << x << "," << y << ")";
 		return out.str().c_str();
 	}
 
 	void point_2d::print() const
 	{
-		wcout << display() << endl;
+		cout << display() << endl;
 	}
 
 	space_type distance_between_points(const point_2d& x1,const point_2d& x2)
@@ -48,7 +48,7 @@ bool operator !=(const msci::point_2d& x,const msci::point_2d& y)
 	return !(x == y);
 }
 
-wostream& operator <<(wostream& os,const msci::point_2d& x)
+ostream& operator <<(ostream& os,const msci::point_2d& x)
 {
 	return os << x.display();
 }

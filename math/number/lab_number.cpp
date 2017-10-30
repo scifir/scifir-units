@@ -71,9 +71,9 @@ namespace msci
 		error_value = pow(error_value, x.get_error_value());
 	}
 
-	wstring lab_number::print() const
+	string lab_number::print() const
 	{
-		wostringstream output;
+		ostringstream output;
 		output << setprecision(numeric_limits<float>::max_exponent10 + 1);
 		if(is_defined())
 		{
@@ -94,7 +94,7 @@ namespace msci
 	}
 }
 
-wostream& operator <<(wostream& os, const msci::lab_number& x)
+ostream& operator <<(ostream& os, const msci::lab_number& x)
 {
 	return os << x.print();
 }

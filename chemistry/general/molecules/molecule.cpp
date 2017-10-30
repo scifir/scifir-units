@@ -65,23 +65,23 @@ namespace msci
 		return atoms_mass;
 	}
 
-	wstring molecule::get_name() const
+	string molecule::get_name() const
 	{
-		return L"unfinished";
+		return "unfinished";
 	}
 
-	wstring molecule::get_formula() const
+	string molecule::get_formula() const
 	{
 		vector<shared_ptr<atom>> atoms = get_atoms();
-		wostringstream formula_text;
+		ostringstream formula_text;
 		return formula_text.str();
 	}
 
-	wstring molecule::get_canonical_formula() const
+	string molecule::get_canonical_formula() const
 	{
 		vector<shared_ptr<atom>> atoms = get_atoms();
 		vector<shared_ptr<atom>> atoms_used = vector<shared_ptr<atom>>();
-		wostringstream formula_text;
+		ostringstream formula_text;
 		for (const shared_ptr<atom>& atom1 : atoms)
 		{
 			int atom_number = 0;

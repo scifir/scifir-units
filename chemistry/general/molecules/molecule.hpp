@@ -39,9 +39,9 @@ namespace msci
             	return get_real_mass() + get_electrons_mass();
             }
 
-            wstring get_name() const;
-			wstring get_formula() const;
-			wstring get_canonical_formula() const;
+            string get_name() const;
+			string get_formula() const;
+			string get_canonical_formula() const;
 
 			int get_ionic_charge() const;
             bool is_ion() const;
@@ -111,7 +111,7 @@ namespace msci
 	bool are_inmiscible(const molecule&,const molecule&);
 }
 
-wostream& operator <<(wostream&,const msci::molecule&);
+ostream& operator <<(ostream&,const msci::molecule&);
 bool operator ==(const msci::molecule&,const msci::molecule&);
 bool operator !=(const msci::molecule&,const msci::molecule&);
 

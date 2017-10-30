@@ -280,9 +280,9 @@ bool operator !=(const msci::matrix<T, M, N>& x,const msci::matrix<T, M, N>& y)
 }
 
 template<typename T, int M, int N>
-wostream& operator <<(wostream& os, const msci::matrix<T, M, N>& x)
+ostream& operator <<(ostream& os, const msci::matrix<T, M, N>& x)
 {
-	wostringstream output;
+	ostringstream output;
 	output << "[";
 	for(int i = 1; i <= x.row_size(); i++)
 	{

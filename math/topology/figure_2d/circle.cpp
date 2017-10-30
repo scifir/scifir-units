@@ -58,9 +58,9 @@ namespace msci
 		r += x;
 	}
 
-	wstring circle::display() const
+	string circle::display() const
 	{
-		wostringstream out;
+		ostringstream out;
 		out << "circle: " << "r " << r << " center" << figure_2d::center;
 		return out.str().c_str();
 	}

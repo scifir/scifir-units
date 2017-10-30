@@ -586,10 +586,10 @@ namespace msci
 
 bool operator ==(const msci::vector_unit&,const msci::vector_unit&);
 bool operator !=(const msci::vector_unit&,const msci::vector_unit&);
-void operator +=(wstring&,const msci::vector_unit&);
-wstring operator +(const wstring&,const msci::vector_unit&);
-wstring operator +(const msci::vector_unit&,const wstring&);
-wostream& operator <<(wostream&,const msci::vector_unit&);
+void operator +=(string&,const msci::vector_unit&);
+string operator +(const string&,const msci::vector_unit&);
+string operator +(const msci::vector_unit&,const string&);
+ostream& operator <<(ostream&,const msci::vector_unit&);
 istream& operator >>(istream&,msci::vector_unit&);
 
 #endif // VECTORIAL_UNIT_HPP_INCLUDED

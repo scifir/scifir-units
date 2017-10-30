@@ -19,6 +19,6 @@ namespace msci
 	SCALAR_UNIT_HPP(catalytic_activity);
 }
 
-wostream& operator <<(wostream&, const msci::concentration&);
+ostream& operator <<(ostream&, const msci::concentration&);
 
 #endif // CHEMISTRY_GENERAL_SUBSTANCE_UNITS_HPP_INCLUDED

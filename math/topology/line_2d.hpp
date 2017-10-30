@@ -159,7 +159,7 @@ namespace msci
 
 			length get_length() const;
 
-			wstring display() const;
+			string display() const;
 			void print() const;
 
 		private:
@@ -170,6 +170,6 @@ namespace msci
 
 bool operator ==(const msci::line_2d&,const msci::line_2d&);
 bool operator !=(const msci::line_2d&,const msci::line_2d&);
-wostream& operator <<(wostream&,const msci::line_2d&);
+ostream& operator <<(ostream&,const msci::line_2d&);
 
 #endif // MATH_TOPOLOGY_LINE_2D_HPP_INCLUDED

@@ -51,7 +51,7 @@ namespace msci
 			virtual void scale(space_type);
 			//virtual void scale(const msci::percentage_number&) = 0;
 
-			virtual wstring display() const;
+			virtual string display() const;
 
 		private:
 			space_type r;

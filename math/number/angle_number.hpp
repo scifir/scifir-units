@@ -328,11 +328,11 @@ bool operator >(const msci::angle_number&, const msci::angle_number&);
 bool operator <=(const msci::angle_number&, const msci::angle_number&);
 bool operator >=(const msci::angle_number&, const msci::angle_number&);
 
-void operator +=(wstring&, const msci::angle_number&);
-wstring operator +(const wstring&, const msci::angle_number&);
-wstring operator +(const msci::angle_number&, const wstring&);
+void operator +=(string&, const msci::angle_number&);
+string operator +(const string&, const msci::angle_number&);
+string operator +(const msci::angle_number&, const string&);
 
-wostream& operator <<(wostream&, const msci::angle_number&);
+ostream& operator <<(ostream&, const msci::angle_number&);
 istream& operator >>(istream&, msci::angle_number&);
 
 #endif // ANGLE_NUMBER_HPP_INCLUDED

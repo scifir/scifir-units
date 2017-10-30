@@ -104,13 +104,13 @@ namespace msci
 				error_value = pow(error_value,y);
 			}
 
-			virtual wstring print() const override;
+			virtual string print() const override;
 
 		private:
 			msci::space_type error_value;
 	};
 }
 
-wostream& operator <<(wostream&, const msci::lab_number&);
+ostream& operator <<(ostream&, const msci::lab_number&);
 
 #endif // LAB_UNIT_HPP_INCLUDED

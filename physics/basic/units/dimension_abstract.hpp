@@ -89,6 +89,6 @@ namespace msci
 bool operator ==(const msci::dimension_abstract&,const msci::dimension_abstract&);
 bool operator !=(const msci::dimension_abstract&,const msci::dimension_abstract&);
 
-wostream& operator <<(wostream&, const msci::dimension_abstract&);
+ostream& operator <<(ostream&, const msci::dimension_abstract&);
 
 #endif // DIMENSION_ABSTRACT_HPP_INCLUDED

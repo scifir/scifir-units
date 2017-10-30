@@ -224,15 +224,15 @@ bool operator !=(const msci::dimension_abstract& x,const msci::dimension_abstrac
 	return !(x == y);
 }
 
-wostream& operator <<(wostream& os, const msci::dimension_abstract& x)
+ostream& operator <<(ostream& os, const msci::dimension_abstract& x)
 {
-	wostringstream prefix_text;
+	ostringstream prefix_text;
 	if(x.get_dimension_prefixes().size() > 0)
 	{
 		for(auto& prefix : x.get_dimension_prefixes())
 		{
-			wstring prefix_symbol = wstring(prefix.second->get_symbol().begin(), prefix.second->get_symbol().end());
-			wstring dimension_symbol = wstring(x.get_symbol().begin(), x.get_symbol().end());
+			string prefix_symbol = string(prefix.second->get_symbol().begin(), prefix.second->get_symbol().end());
+			string dimension_symbol = string(x.get_symbol().begin(), x.get_symbol().end());
 			if(abs(prefix.second->scale) > 1)
 			{
 				prefix_text << prefix_symbol << dimension_symbol << abs(prefix.second->scale) << "*";
@@ -243,6 +243,6 @@ wostream& operator <<(wostream& os, const msci::dimension_abstract& x)
 			}
 		}
 	}
-	wstring final = prefix_text.str();
+	string final = prefix_text.str();
 	return os << final.substr(0,final.length() - 1);
 }

@@ -16,7 +16,7 @@ namespace msci
 	SCALAR_UNIT_CPP(catalytic_activity,"kat");
 }
 
-wostream& operator <<(wostream& os, const msci::concentration& x)
+ostream& operator <<(ostream& os, const msci::concentration& x)
 {
 	string dimension_structure = msci::get_dimension_structure(x.get_actual_dimensions());
 	if (dimension_structure != "ppm" and dimension_structure != "ppb")

@@ -42,7 +42,7 @@ namespace msci
 	vector_real_dimensions power_real_dimensions(const vector_real_dimensions&,int);
 }
 
-wostream& operator <<(wostream&, const msci::vector_real_dimensions&);
-wostream& operator <<(wostream&, const msci::vector_actual_dimensions&);
+ostream& operator <<(ostream&, const msci::vector_real_dimensions&);
+ostream& operator <<(ostream&, const msci::vector_actual_dimensions&);
 
 #endif // DIMENSION_CONTAINER_HPP_INCLUDED

@@ -86,9 +86,9 @@ namespace msci
 		return false;
 	}
 
-	wstring polygon::display() const
+	string polygon::display() const
 	{
-		wostringstream out;
+		ostringstream out;
 		out << "polygon: ";
 		for (unsigned int i = 0; i < (vertices.size() - 1); i++)
 		{

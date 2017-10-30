@@ -51,7 +51,7 @@ namespace msci
 
 			/*void print() const
 			{
-				wcout << *this;
+				cout << *this;
 			}*/
 
 		private:
@@ -62,6 +62,6 @@ namespace msci
 	};
 }
 
-wostream& operator <<(wostream&, const msci::color&);
+ostream& operator <<(ostream&, const msci::color&);
 
 #endif // COLOR_HPP_INCLUDED

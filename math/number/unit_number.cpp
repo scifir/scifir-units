@@ -33,9 +33,9 @@ namespace msci
 		}
 	}
 
-	wstring unit_number::print(int number_of_decimals) const
+	string unit_number::print(int number_of_decimals) const
 	{
-		wostringstream output;
+		ostringstream output;
 		double integer_part;
 		modf(get_value(),&integer_part);
 		output << setprecision(to_string(int(integer_part)).length() + number_of_decimals);
@@ -56,29 +56,29 @@ namespace msci
 			if(get_error_code() > 6)
 			{
 				output << "undefined";
-				wstring message;
+				string message;
 				switch(get_error_code())
 				{
 					case 7:
-						message = L"Cannot initialize to different dimensions";
+						message = "Cannot initialize to different dimensions";
 						break;
 					case 8:
-						message = L"Cannot sum different dimensions";
+						message = "Cannot sum different dimensions";
 						break;
 					case 9:
-						message = L"Cannot substract different dimensions";
+						message = "Cannot substract different dimensions";
 						break;
 					case 10:
-						message = L"Exponent of dimensions doesn't exist";
+						message = "Exponent of dimensions doesn't exist";
 						break;
 					case 11:
-						message = L"Cannot set dimensions to a different nd";
+						message = "Cannot set dimensions to a different nd";
 						break;
 					case 12:
-						message = L"Temperature prefixes cannot be negative";
+						message = "Temperature prefixes cannot be negative";
 						break;
 					case 13:
-						message = L"Cannot cross-product non-3D or undefined vectors";
+						message = "Cannot cross-product non-3D or undefined vectors";
 				}
 				output << " " << message;
 				return output.str();
@@ -92,7 +92,7 @@ namespace msci
 	}
 }
 
-wostream& operator <<(wostream& os, const msci::unit_number& x)
+ostream& operator <<(ostream& os, const msci::unit_number& x)
 {
 	return os << x.print();
 }

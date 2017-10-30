@@ -243,7 +243,7 @@ namespace msci
 	const string abbreviation_litre::dimensions_match = "dm3";
 	const float abbreviation_litre::factor = 1;
 	const string abbreviation_litre::name = "litre";
-	const string abbreviation_litre::symbol = "L";
+	const string abbreviation_litre::symbol = "";
 
 	int abbreviation_minute::get_enum_type() const
 	{
@@ -340,7 +340,7 @@ namespace msci
 		return abbreviation_symbol::M;
 	}
 
-	const string abbreviation_molarity::dimensions_match = "mol/L";
+	const string abbreviation_molarity::dimensions_match = "mol/";
 	const float abbreviation_molarity::factor = 1;
 	const string abbreviation_molarity::name = "molarity";
 	const string abbreviation_molarity::symbol = "M";
@@ -564,7 +564,7 @@ namespace msci
 		{
 			return new abbreviation_angstrom(*new_prefix);
 		}
-		else if(abbreviation_name == "L")
+		else if(abbreviation_name == "")
 		{
 			return new abbreviation_litre(*new_prefix);
 		}

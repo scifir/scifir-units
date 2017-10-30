@@ -280,7 +280,7 @@ namespace msci
 
 			inline void print() const
 			{
-				//wcout << *this;
+				//cout << *this;
 			}
 
             virtual void print_image_2d() const = 0;
@@ -525,6 +525,6 @@ namespace msci
 
 bool operator ==(const msci::atom&,const msci::atom&);
 bool operator !=(const msci::atom&,const msci::atom&);
-wostream& operator <<(wostream&,const msci::atom&);
+ostream& operator <<(ostream&,const msci::atom&);
 
 #endif // CHEMISTRY_GENERAL_ATOMS_ATOM_HPP_INCLUDED

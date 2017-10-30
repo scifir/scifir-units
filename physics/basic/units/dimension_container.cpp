@@ -389,11 +389,11 @@ namespace msci
 	}
 }
 
-wostream& operator <<(wostream& os, const msci::vector_real_dimensions& x)
+ostream& operator <<(ostream& os, const msci::vector_real_dimensions& x)
 {
-	wostringstream dimension_text;
-	wostringstream dimension_up_text;
-	wostringstream dimension_down_text;
+	ostringstream dimension_text;
+	ostringstream dimension_up_text;
+	ostringstream dimension_down_text;
 	for(const auto& real_dimension : x)
 	{
 		if(real_dimension.second->get_scale() > 0)
@@ -424,11 +424,11 @@ wostream& operator <<(wostream& os, const msci::vector_real_dimensions& x)
 	return os << dimension_text.str();
 }
 
-wostream& operator <<(wostream& os, const msci::vector_actual_dimensions& x)
+ostream& operator <<(ostream& os, const msci::vector_actual_dimensions& x)
 {
-	wostringstream dimension_text;
-	wostringstream dimension_up_text;
-	wostringstream dimension_down_text;
+	ostringstream dimension_text;
+	ostringstream dimension_up_text;
+	ostringstream dimension_down_text;
 	for(const auto& actual_dimension : x)
 	{
 		if(actual_dimension.second->get_scale() > 0)

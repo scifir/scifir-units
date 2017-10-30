@@ -296,9 +296,9 @@ namespace msci
 				return tmp;
 			}
 
-			virtual wstring print() const
+			virtual string print() const
 			{
-				wostringstream output;
+				ostringstream output;
 				output << setprecision(numeric_limits<float>::max_exponent10 + 1);
 				if(is_defined())
 				{
@@ -307,26 +307,26 @@ namespace msci
 				else
 				{
 					output << "undefined";
-					wstring message;
+					string message;
 					switch(get_error_code())
 					{
 						case 1:
-							message = L"Number initiated to an undefined number";
+							message = "Number initiated to an undefined number";
 							break;
 						case 2:
-							message = L"cannot sum undefined number";
+							message = "cannot sum undefined number";
 							break;
 						case 3:
-							message = L"cannot substract undefined number";
+							message = "cannot substract undefined number";
 							break;
 						case 4:
-							message = L"cannot multiply undefined number";
+							message = "cannot multiply undefined number";
 							break;
 						case 5:
-							message = L"cannot divide undefined number";
+							message = "cannot divide undefined number";
 							break;
 						case 6:
-							message = L"cannot power undefined number";
+							message = "cannot power undefined number";
 							break;
 					}
 					output << " " << message;
@@ -545,33 +545,33 @@ bool operator >=(const msci::undefined_number<T>& x, U y)
 }
 
 template<typename T>
-void operator +=(wstring& x, const msci::undefined_number<T>& y)
+void operator +=(string& x, const msci::undefined_number<T>& y)
 {
-	wostringstream output;
+	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
 template<typename T>
-wstring operator +(const wstring& x, const msci::undefined_number<T>& y)
+string operator +(const string& x, const msci::undefined_number<T>& y)
 {
-	wostringstream output;
+	ostringstream output;
 	output << x;
 	output << y;
 	return output.str();
 }
 
 template<typename T>
-wstring operator +(const msci::undefined_number<T>& y, const wstring& x)
+string operator +(const msci::undefined_number<T>& y, const string& x)
 {
-	wostringstream output;
+	ostringstream output;
 	output << y;
 	output << x;
 	return output.str();
 }
 
 template<typename T>
-wostream & operator <<(wostream& os, const msci::undefined_number<T>& x)
+ostream & operator <<(ostream& os, const msci::undefined_number<T>& x)
 {
 	return os << x.print();
 }

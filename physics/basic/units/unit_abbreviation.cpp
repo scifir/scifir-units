@@ -2004,12 +2004,12 @@ length operator"" _angstrom(unsigned long long int x)
 
 volume operator"" _L(unsigned long long int x)
 {
-	return volume(x, "L");
+	return volume(x, "");
 }
 
 volume operator"" _mL(unsigned long long int x)
 {
-	return volume(x, "mL");
+	return volume(x, "m");
 }
 
 msci::time operator"" _min(unsigned long long int x)
@@ -4579,12 +4579,12 @@ length operator"" _angstrom(long double x)
 
 volume operator"" _L(long double x)
 {
-	return volume(x, "L");
+	return volume(x, "");
 }
 
 volume operator"" _mL(long double x)
 {
-	return volume(x, "mL");
+	return volume(x, "m");
 }
 
 msci::time operator"" _min(long double x)

@@ -96,7 +96,7 @@ namespace msci
 			bool has_dimensions(const string&) const;
 			bool has_dimensions(const vector_real_dimensions&) const;
 			bool has_empty_dimensions() const;
-			wstring display_dimensions() const;
+			string display_dimensions() const;
 			void set_same_prefix(const vector_actual_dimensions&);
 
 			virtual string get_dimensions_match() const = 0;
@@ -116,7 +116,7 @@ namespace msci
 				value.invalidate(x);
 			}
 
-			wstring display(int = 2) const;
+			string display(int = 2) const;
 
 		protected:
 			msci::unit_number value;
@@ -245,11 +245,11 @@ bool operator >(const string&, const msci::unit&);
 bool operator <=(const string&, const msci::unit&);
 bool operator >=(const string&, const msci::unit&);
 
-void operator +=(wstring&, const msci::unit&);
-wstring operator +(const wstring&, const msci::unit&);
-wstring operator +(const msci::unit&, const wstring&);
+void operator +=(string&, const msci::unit&);
+string operator +(const string&, const msci::unit&);
+string operator +(const msci::unit&, const string&);
 
-wostream& operator <<(wostream&, const msci::unit&);
+ostream& operator <<(ostream&, const msci::unit&);
 istream& operator >>(istream&, msci::unit&);
 
 #endif

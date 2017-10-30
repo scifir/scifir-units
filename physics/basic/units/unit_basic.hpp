@@ -31,7 +31,7 @@ namespace msci
 				return display_mode;
 			}
 
-			wstring get_finish_date() const;
+			string get_finish_date() const;
 
 		private:
 			msci::display_mode display_mode;
@@ -54,7 +54,7 @@ namespace msci
 	SCALAR_UNIT_HPP(data);
 }
 
-wostream& operator <<(wostream&, const msci::time&);
+ostream& operator <<(ostream&, const msci::time&);
 
 msci::length operator"" _Ym(unsigned long long int);
 msci::length operator"" _Zm(unsigned long long int);

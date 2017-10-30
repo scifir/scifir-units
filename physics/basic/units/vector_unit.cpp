@@ -632,32 +632,32 @@ bool operator !=(const msci::vector_unit& x, const msci::vector_unit& y)
 	return !(x == y);
 }
 
-void operator +=(wstring& x, const msci::vector_unit& y)
+void operator +=(string& x, const msci::vector_unit& y)
 {
-	wostringstream output;
+	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-wstring operator +(const wstring& x, const msci::vector_unit& y)
+string operator +(const string& x, const msci::vector_unit& y)
 {
-	wostringstream output;
+	ostringstream output;
 	output << x;
 	output << y;
 	return output.str();
 }
 
-wstring operator +(const msci::vector_unit& y, const wstring& x)
+string operator +(const msci::vector_unit& y, const string& x)
 {
-	wostringstream output;
+	ostringstream output;
 	output << y;
 	output << x;
 	return output.str();
 }
 
-wostream& operator <<(wostream& os, const msci::vector_unit& x)
+ostream& operator <<(ostream& os, const msci::vector_unit& x)
 {
-	wostringstream angles_text;
+	ostringstream angles_text;
 	if (x.is_1d())
 	{
 		if (x.get_direction() == direction_symbol::left)
@@ -671,32 +671,25 @@ wostream& operator <<(wostream& os, const msci::vector_unit& x)
 	}
 	else
 	{
-		//wcout << "holaas" << endl; // TODO: this function doesn't work well because L strings block the execution when displayed with angles_text.str()
 		int i = 1;
-		wstring angle_symbol;
+		string angle_symbol;
 		msci::angle_container angles = x.get_angles();
 		for(const auto& angle : angles)
 		{
-			//wcout << "angle" << endl;
+			angles_text << angle;
 			if (i == 1)
 			{
-				//angle_symbol = L"θ";
-				os << L"θ";
+				angles_text << "\u03B8";
 			}
 			else if (i == 2)
 			{
-				//angle_symbol == L"φ";
-				os << L"φ";
+				angles_text << "\u03A6";
 			}
-			//wcout << "angle: " << angle << endl;
-			//wcout << angle_symbol << endl;
-			//angles_text << angle << L"θ" << L" ";
+			angles_text << " ";
 			i++;
 		}
 	}
-	//wcout << "A" << endl;
-	//wcout << angles_text.str() << endl;
-	return os << x.msci::unit::get_value();// << " " << angles_text.str();
+	return os << x.msci::unit::get_value() << " " << angles_text.str();
 }
 
 istream& operator >>(istream& is, msci::vector_unit& x)

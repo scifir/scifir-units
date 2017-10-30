@@ -347,11 +347,11 @@ namespace msci
 		}
 	}
 
-	wstring unit::display_dimensions() const
+	string unit::display_dimensions() const
 	{
-		wostringstream dimension_text;
-		wostringstream dimension_up_text;
-		wostringstream dimension_down_text;
+		ostringstream dimension_text;
+		ostringstream dimension_up_text;
+		ostringstream dimension_down_text;
 		for(const auto& actual_dimension : get_actual_dimensions())
 		{
 			if(actual_dimension.second->get_scale() > 0)
@@ -394,11 +394,11 @@ namespace msci
 		return value;
 	}
 
-	wstring unit::display(int number_of_decimals) const
+	string unit::display(int number_of_decimals) const
 	{
 		/*locale loc = locale("en_US.UTF8");
 		os.imbue(loc);*/
-		return value.print(number_of_decimals) + L" " + display_dimensions();
+		return value.print(number_of_decimals) + " " + display_dimensions();
 	}
 
 	/// Updates the value to the prefix added
@@ -772,30 +772,30 @@ bool operator >=(const string& x_init, const msci::unit& y)
 	return !(x_init < y);
 }
 
-void operator +=(wstring& x, const msci::unit& y)
+void operator +=(string& x, const msci::unit& y)
 {
-	wostringstream output;
+	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-wstring operator +(const wstring& x, const msci::unit& y)
+string operator +(const string& x, const msci::unit& y)
 {
-	wostringstream output;
+	ostringstream output;
 	output << x;
 	output << y;
 	return output.str();
 }
 
-wstring operator +(const msci::unit& y, const wstring& x)
+string operator +(const msci::unit& y, const string& x)
 {
-	wostringstream output;
+	ostringstream output;
 	output << y;
 	output << x;
 	return output.str();
 }
 
-wostream& operator <<(wostream& os, const msci::unit& x)
+ostream& operator <<(ostream& os, const msci::unit& x)
 {
 	return os << x.display();
 }

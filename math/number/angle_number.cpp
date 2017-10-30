@@ -231,37 +231,37 @@ bool operator >=(const msci::angle_number& x, const msci::angle_number& y)
 	return !(x < y);
 }
 
-void operator +=(wstring& x, const msci::angle_number& y)
+void operator +=(string& x, const msci::angle_number& y)
 {
-	wostringstream output;
+	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-wstring operator +(const wstring& x, const msci::angle_number& y)
+string operator +(const string& x, const msci::angle_number& y)
 {
-	wostringstream output;
+	ostringstream output;
 	output << x;
 	output << y;
 	return output.str();
 }
 
-wstring operator +(const msci::angle_number& y, const wstring& x)
+string operator +(const msci::angle_number& y, const string& x)
 {
-	wostringstream output;
+	ostringstream output;
 	output << y;
 	output << x;
 	return output.str();
 }
 
-wostream& operator <<(wostream& os, const msci::angle_number& x)
+ostream& operator <<(ostream& os, const msci::angle_number& x)
 {
-	wostringstream output;
+	ostringstream output;
 	double integer_part;
 	modf(x.get_value(), &integer_part);
 	output << setprecision(to_string(int(integer_part)).length() + 1);
 	//output << setprecision(numeric_limits<float>::max_exponent10 + 1);
-	//output << x.get_value() << L"°";
+	//output << x.get_value() << "°";
 	if (x.get_value() == -0)
 	{
 		output << 0;

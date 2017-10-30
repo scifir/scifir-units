@@ -63,7 +63,7 @@ namespace msci
 			virtual void scale(space_type) = 0;
 			//virtual void scale(const msci::percentage_number&) = 0;
 
-			virtual wstring display() const = 0;
+			virtual string display() const = 0;
 			void print() const;
 
 		protected:
@@ -71,6 +71,6 @@ namespace msci
 	};
 }
 
-wostream& operator <<(wostream&,const msci::figure_2d&);
+ostream& operator <<(ostream&,const msci::figure_2d&);
 
 #endif // MATH_TOPOLOGY_FIGURE_2D_HPP_INCLUDED

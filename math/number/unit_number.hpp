@@ -21,10 +21,10 @@ namespace msci
 
 			void operator =(const unit_number&);
 
-			virtual wstring print(int = 2) const;
+			virtual string print(int = 2) const;
 	};
 }
 
-wostream& operator <<(wostream&, const msci::unit_number&);
+ostream& operator <<(ostream&, const msci::unit_number&);
 
 #endif // UNIT_NUMBER_HPP_INCLUDED

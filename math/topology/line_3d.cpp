@@ -20,16 +20,16 @@ namespace msci
 		return length(value,"m");
 	}
 
-	wstring line_3d::display() const
+	string line_3d::display() const
 	{
-		wostringstream out;
+		ostringstream out;
 		out << "3d line: " << vertex1 << " " << vertex2;
 		return out.str().c_str();
 	}
 
 	void line_3d::print() const
 	{
-		wcout << display() << endl;
+		cout << display() << endl;
 	}
 }
 
@@ -43,7 +43,7 @@ bool operator !=(const msci::line_3d& x,const msci::line_3d& y)
 	return !(x == y);
 }
 
-wostream& operator <<(wostream& os,const msci::line_3d& x)
+ostream& operator <<(ostream& os,const msci::line_3d& x)
 {
 	return os << x.display();
 }

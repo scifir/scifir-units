@@ -68,11 +68,11 @@ namespace msci
 
 	void figure_2d::print() const
 	{
-		wcout << display() << endl;
+		cout << display() << endl;
 	}
 }
 
-wostream& operator <<(wostream& os,const msci::figure_2d& x)
+ostream& operator <<(ostream& os,const msci::figure_2d& x)
 {
 	return os << x.display();
 }

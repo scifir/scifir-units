@@ -33,7 +33,7 @@ namespace msci
 
 			space_type distance_to_origin() const;
 
-			wstring display() const;
+			string display() const;
 			void print() const;
 
 		private:
@@ -47,6 +47,6 @@ namespace msci
 
 bool operator ==(const msci::point_3d&,const msci::point_3d&);
 bool operator !=(const msci::point_3d&,const msci::point_3d&);
-wostream& operator <<(wostream&,const msci::point_3d&);
+ostream& operator <<(ostream&,const msci::point_3d&);
 
 #endif // MATH_TOPOLOGY_POINT_3D_HPP_INCLUDED

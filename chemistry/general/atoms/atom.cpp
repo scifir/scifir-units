@@ -391,9 +391,9 @@ bool operator !=(const msci::atom& x,const msci::atom& y)
 	return !(x == y);
 }
 
-wostream& operator <<(wostream& os,const msci::atom& x)
+ostream& operator <<(ostream& os,const msci::atom& x)
 {
-	wostringstream charge_text;
+	ostringstream charge_text;
 	if (x.get_ionic_charge() < 0)
 	{
 		charge_text << abs(x.get_ionic_charge()) << "-";

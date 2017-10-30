@@ -27,7 +27,7 @@ namespace msci
 			virtual bool is_regular() const;
 			virtual bool is_irregular() const;
 
-			virtual wstring display() const;
+			virtual string display() const;
 	};
 }
 

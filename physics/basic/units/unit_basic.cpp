@@ -28,12 +28,12 @@ namespace msci
 		return std::chrono::seconds(int(a.get_value()));
 	}
 
-	wstring time::get_finish_date() const
+	string time::get_finish_date() const
 	{
 		chrono::time_point<chrono::system_clock> start = chrono::system_clock::now();
 		start += chrono::seconds(*this);
 		std::time_t start_time = std::chrono::system_clock::to_time_t(start);
-		wstringstream output;
+		stringstream output;
 		output << ctime(&start_time);
 		return output.str();
 	}
@@ -194,45 +194,45 @@ namespace msci
 	SCALAR_UNIT_CPP(data,"B");
 }
 
-wostream& operator <<(wostream& os, const msci::time& x)
+ostream& operator <<(ostream& os, const msci::time& x)
 {
 	if (x.get_display_mode() == msci::display_mode::time_display)
 	{
-		wostringstream output;
+		ostringstream output;
 		msci::time remaining_time = x;
 		msci::time one_year ("365 d");
 		if (x >= one_year)
 		{
 			int total_of_years = int(trunc((x / one_year).get_value()));
-			output << total_of_years << L"y ";
+			output << total_of_years << "y ";
 			remaining_time -= msci::time(total_of_years * 365,"d");
 		}
 		msci::time one_month("30 d");
 		if (remaining_time >= one_month)
 		{
 			int total_of_months = int(trunc((remaining_time / one_month).get_value()));
-			output << total_of_months << L"m ";
+			output << total_of_months << "m ";
 			remaining_time -= msci::time(total_of_months * 30,"d");
 		}
 		msci::time one_day("1 d");
 		if (remaining_time >= one_day)
 		{
 			int total_of_days = int(trunc((remaining_time / one_day).get_value()));
-			output << total_of_days << L"d ";
+			output << total_of_days << "d ";
 			remaining_time -= msci::time(total_of_days,"d");
 		}
 		msci::time one_hour("1 h");
 		if (remaining_time >= one_hour)
 		{
 			int total_of_hours = int(trunc((remaining_time / one_hour).get_value()));
-			output << total_of_hours << L"h ";
+			output << total_of_hours << "h ";
 			remaining_time -= msci::time(total_of_hours,"h");
 		}
 		msci::time one_minute("1 min");
 		if (remaining_time >= one_minute)
 		{
 			int total_of_minutes = int(trunc((remaining_time / one_minute).get_value()));
-			output << total_of_minutes << L"min ";
+			output << total_of_minutes << "min ";
 			remaining_time -= msci::time(total_of_minutes,"min");
 		}
 		msci::time one_second("1 s");
@@ -240,7 +240,7 @@ wostream& operator <<(wostream& os, const msci::time& x)
 		{
 			remaining_time.change_dimensions("s");
 			float total_of_seconds = float(remaining_time.get_value());
-			output << total_of_seconds << L"s";
+			output << total_of_seconds << "s";
 		}
 		return os << output.str();
 	}
