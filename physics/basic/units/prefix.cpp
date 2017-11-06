@@ -140,7 +140,7 @@ namespace msci
 
 	const int prefix_micro::conversion_factor = -6;
 	const string prefix_micro::name = "micro";
-	const string prefix_micro::symbol = "μ";
+	const string prefix_micro::symbol = "\u00B5";
 
 	prefix_symbol prefix_micro::get_enum_type() const
 	{
