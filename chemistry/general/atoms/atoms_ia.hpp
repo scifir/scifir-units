@@ -12,25 +12,25 @@ namespace msci
 		public:
 			ATOM_HPP(atom_H);
 
-			static constexpr atom_symbol enum_type = atom_symbol::H;
+			static const atom_symbol enum_type;
 
 			static const string name;
 			static const string symbol;
 
-			static constexpr atomic_group group = IA;
-			static constexpr unsigned int period = 1;
-			static constexpr atomic_block block = atomic_block::s;
+			static const atomic_group group;
+			static const unsigned int period;
+			static const atomic_block block;
 
-			static constexpr unsigned int z = 1;
-			static constexpr unsigned int mass_number = 0;
+			static const unsigned int z;
+			static const unsigned int mass_number;
 
 			static const float electron_affinity;
 
 			static const length atomic_radius;
 			static const mass standard_atomic_mass;
 
-			static constexpr float electronegativity = 2.2;
-			static constexpr bool radioactive = false;
+			static const float electronegativity;
+			static const bool radioactive;
 
 			static const molar_energy ionization_energy;
 			static const length covalent_radius;
@@ -44,23 +44,23 @@ namespace msci
 		public:
 			ATOM_HPP(atom_Li);
 
-			static constexpr atom_symbol enum_type = atom_symbol::Li;
+			static const atom_symbol enum_type;
 
 			static const string name;
 			static const string symbol;
 
-			static constexpr atomic_group group = IA;
-			static constexpr unsigned int period = 2;
-			static constexpr atomic_block block = atomic_block::s;
+			static const atomic_group group;
+			static const unsigned int period;
+			static const atomic_block block;
 
-			static constexpr unsigned int z = 3;
-			static constexpr unsigned int mass_number = 4;
+			static const unsigned int z;
+			static const unsigned int mass_number;
 
 			static const length atomic_radius;
 			static const mass standard_atomic_mass;
 
-			static constexpr float electronegativity = 0.98;
-			static constexpr bool radioactive = false;
+			static const float electronegativity;
+			static const bool radioactive;
 
 			static const molar_energy ionization_energy;
 			static const length covalent_radius;
@@ -74,23 +74,23 @@ namespace msci
 		public:
 			ATOM_HPP(atom_Na);
 
-			static constexpr atom_symbol enum_type = atom_symbol::Na;
+			static const atom_symbol enum_type;
 
 			static const string name;
 			static const string symbol;
 
-			static constexpr atomic_group group = IA;
-			static constexpr unsigned int period = 3;
-			static constexpr atomic_block block = atomic_block::s;
+			static const atomic_group group;
+			static const unsigned int period;
+			static const atomic_block block;
 
-			static constexpr unsigned int z = 11;
-			static constexpr unsigned int mass_number = 12;
+			static const unsigned int z;
+			static const unsigned int mass_number;
 
 			static const length atomic_radius;
 			static const mass standard_atomic_mass;
 
-			static constexpr float electronegativity = 0.93;
-			static constexpr bool radioactive = false;
+			static const float electronegativity;
+			static const bool radioactive;
 
 			static const molar_energy ionization_energy;
 			static const length covalent_radius;
@@ -104,23 +104,23 @@ namespace msci
 		public:
 			ATOM_HPP(atom_K);
 
-			static constexpr atom_symbol enum_type = atom_symbol::K;
+			static const atom_symbol enum_type;
 
 			static const string name;
 			static const string symbol;
 
-			static constexpr atomic_group group = IA;
-			static constexpr unsigned int period = 4;
-			static constexpr atomic_block block = atomic_block::s;
+			static const atomic_group group;
+			static const unsigned int period;
+			static const atomic_block block;
 
-			static constexpr unsigned int z = 19;
-			static constexpr unsigned int mass_number = 20;
+			static const unsigned int z;
+			static const unsigned int mass_number;
 
 			static const length atomic_radius;
 			static const mass standard_atomic_mass;
 
-			static constexpr float electronegativity = 0.82;
-			static constexpr bool radioactive = false;
+			static const float electronegativity;
+			static const bool radioactive;
 
 			static const molar_energy ionization_energy;
 			static const length covalent_radius;
@@ -134,23 +134,23 @@ namespace msci
 		public:
 			ATOM_HPP(atom_Rb);
 
-			static constexpr atom_symbol enum_type = atom_symbol::Rb;
+			static const atom_symbol enum_type;
 
 			static const string name;
 			static const string symbol;
 
-			static constexpr atomic_group group = IA;
-			static constexpr unsigned int period = 5;
-			static constexpr atomic_block block = atomic_block::s;
+			static const atomic_group group;
+			static const unsigned int period;
+			static const atomic_block block;
 
-			static constexpr unsigned int z = 37;
-			static constexpr unsigned int mass_number = 47;
+			static const unsigned int z;
+			static const unsigned int mass_number;
 
 			static const length atomic_radius;
 			static const mass standard_atomic_mass;
 
-			static constexpr float electronegativity = 0.82;
-			static constexpr bool radioactive = false;
+			static const float electronegativity;
+			static const bool radioactive;
 
 			static const molar_energy ionization_energy;
 			static const length covalent_radius;
@@ -164,23 +164,23 @@ namespace msci
 		public:
 			ATOM_HPP(atom_Cs);
 
-			static constexpr atom_symbol enum_type = atom_symbol::Cs;
+			static const atom_symbol enum_type;
 
 			static const string name;
 			static const string symbol;
 
-			static constexpr atomic_group group = IA;
-			static constexpr unsigned int period = 6;
-			static constexpr atomic_block block = atomic_block::s;
+			static const atomic_group group;
+			static const unsigned int period;
+			static const atomic_block block;
 
-			static constexpr unsigned int z = 55;
-			static constexpr unsigned int mass_number = 78;
+			static const unsigned int z;
+			static const unsigned int mass_number;
 
 			static const length atomic_radius;
 			static const mass standard_atomic_mass;
 
-			static constexpr float electronegativity = 0.79;
-			static constexpr bool radioactive = false;
+			static const float electronegativity;
+			static const bool radioactive;
 
 			static const molar_energy ionization_energy;
 			static const length covalent_radius;
@@ -194,23 +194,23 @@ namespace msci
 		public:
 			ATOM_HPP(atom_Fr);
 
-			static constexpr atom_symbol enum_type = atom_symbol::Fr;
+			static const atom_symbol enum_type;
 
 			static const string name;
 			static const string symbol;
 
-			static constexpr atomic_group group = IA;
-			static constexpr unsigned int period = 7;
-			static constexpr atomic_block block = atomic_block::s;
+			static const atomic_group group;
+			static const unsigned int period;
+			static const atomic_block block;
 
-			static constexpr unsigned int z = 87;
-			static constexpr unsigned int mass_number = 136;
+			static const unsigned int z;
+			static const unsigned int mass_number;
 
 			static const length atomic_radius;
 			static const mass standard_atomic_mass;
 
-			static constexpr float electronegativity = 0.79;
-			static constexpr bool radioactive = false;
+			static const float electronegativity;
+			static const bool radioactive;
 
 			static const molar_energy ionization_energy;
 			static const length covalent_radius;
