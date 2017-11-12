@@ -32,6 +32,8 @@ namespace msci
 				return value;
 			}
 
+			string display() const;
+
 		private:
 			string value;
 	};

@@ -24,4 +24,9 @@ namespace msci
 	cas_number::cas_number(string new_value) : value(new_value)
 	{
 	}
+
+	string cas_number::display() const
+	{
+		return value;
+	}
 }
