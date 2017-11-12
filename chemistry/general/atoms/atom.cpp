@@ -233,7 +233,7 @@ namespace msci
 				return molecular_geometry::tricapped_trigonal_prismatic;
 			}
 		}
-		throw "No atomic geometry found. Bonds number: " + to_string(get_bonds_number()) + ", lone pairs: " + to_string(get_lone_pairs());
+		throw "No atomic geometry found. Bonds number: " + std::to_string(get_bonds_number()) + ", lone pairs: " + std::to_string(get_lone_pairs());
 	}
 
 	bool atom::is_valence_full() const
@@ -378,6 +378,307 @@ namespace msci
 	bool same_specimen(const atom& x,const atom& y)
 	{
 		return (x.get_enum_type() == y.get_enum_type());
+	}
+
+	string to_string(const atom_symbol& x)
+	{
+		switch (x)
+		{
+			case atom_symbol::H:
+				return "H";
+			case atom_symbol::He:
+				return "He";
+			case atom_symbol::Li:
+				return "Li";
+			case atom_symbol::Be:
+				return "Be";
+			case atom_symbol::B:
+				return "B";
+			case atom_symbol::C:
+				return "C";
+			case atom_symbol::N:
+				return "N";
+			case atom_symbol::O:
+				return "O";
+			case atom_symbol::F:
+				return "F";
+			case atom_symbol::Ne:
+				return "Ne";
+			case atom_symbol::Na:
+				return "Na";
+			case atom_symbol::Mg:
+				return "Mg";
+			case atom_symbol::Al:
+				return "Al";
+			case atom_symbol::Si:
+				return "Si";
+			case atom_symbol::P:
+				return "P";
+			case atom_symbol::S:
+				return "S";
+			case atom_symbol::Cl:
+				return "Cl";
+			case atom_symbol::Ar:
+				return "Ar";
+			case atom_symbol::K:
+				return "K";
+			case atom_symbol::Ca:
+				return "Ca";
+			case atom_symbol::Sc:
+				return "Sc";
+			case atom_symbol::Ti:
+				return "Ti";
+			case atom_symbol::V:
+				return "V";
+			case atom_symbol::Cr:
+				return "Cr";
+			case atom_symbol::Mn:
+				return "Mn";
+			case atom_symbol::Fe:
+				return "Fe";
+			case atom_symbol::Co:
+				return "Co";
+			case atom_symbol::Ni:
+				return "Ni";
+			case atom_symbol::Cu:
+				return "Cu";
+			case atom_symbol::Zn:
+				return "Zn";
+			case atom_symbol::Ga:
+				return "Ga";
+			case atom_symbol::Ge:
+				return "Ge";
+			case atom_symbol::As:
+				return "As";
+			case atom_symbol::Se:
+				return "Se";
+			case atom_symbol::Br:
+				return "Br";
+			case atom_symbol::Kr:
+				return "Kr";
+			case atom_symbol::Rb:
+				return "Rb";
+			case atom_symbol::Sr:
+				return "Sr";
+			case atom_symbol::Y:
+				return "Y";
+			case atom_symbol::Zr:
+				return "Zr";
+			case atom_symbol::Nb:
+				return "Nb";
+			case atom_symbol::Mo:
+				return "Mo";
+			case atom_symbol::Tc:
+				return "Tc";
+			case atom_symbol::Ru:
+				return "Ru";
+			case atom_symbol::Rh:
+				return "Rh";
+			case atom_symbol::Pd:
+				return "Pd";
+			case atom_symbol::Ag:
+				return "Ag";
+			case atom_symbol::Cd:
+				return "Cd";
+			case atom_symbol::In:
+				return "In";
+			case atom_symbol::Sn:
+				return "Sn";
+			case atom_symbol::Sb:
+				return "Sb";
+			case atom_symbol::Te:
+				return "Te";
+			case atom_symbol::I:
+				return "I";
+			case atom_symbol::Xe:
+				return "Xe";
+			case atom_symbol::Cs:
+				return "Cs";
+			case atom_symbol::Ba:
+				return "Ba";
+			case atom_symbol::La:
+				return "La";
+			case atom_symbol::Ce:
+				return "Ce";
+			case atom_symbol::Pr:
+				return "Pr";
+			case atom_symbol::Nd:
+				return "Nd";
+			case atom_symbol::Pm:
+				return "Pm";
+			case atom_symbol::Sm:
+				return "Sm";
+			case atom_symbol::Eu:
+				return "Eu";
+			case atom_symbol::Gd:
+				return "Gd";
+			case atom_symbol::Tb:
+				return "Tb";
+			case atom_symbol::Dy:
+				return "Dy";
+			case atom_symbol::Ho:
+				return "Ho";
+			case atom_symbol::Er:
+				return "Er";
+			case atom_symbol::Tm:
+				return "Tm";
+			case atom_symbol::Yb:
+				return "Yb";
+			case atom_symbol::Lu:
+				return "Lu";
+			case atom_symbol::Hf:
+				return "Hf";
+			case atom_symbol::Ta:
+				return "Ta";
+			case atom_symbol::W:
+				return "W";
+			case atom_symbol::Re:
+				return "Re";
+			case atom_symbol::Os:
+				return "Os";
+			case atom_symbol::Ir:
+				return "Ir";
+			case atom_symbol::Pt:
+				return "Pt";
+			case atom_symbol::Au:
+				return "Au";
+			case atom_symbol::Hg:
+				return "Hg";
+			case atom_symbol::Tl:
+				return "Tl";
+			case atom_symbol::Pb:
+				return "Pb";
+			case atom_symbol::Bi:
+				return "Bi";
+			case atom_symbol::Po:
+				return "Po";
+			case atom_symbol::At:
+				return "At";
+			case atom_symbol::Rn:
+				return "Rn";
+			case atom_symbol::Fr:
+				return "Fr";
+			case atom_symbol::Ra:
+				return "Ra";
+			case atom_symbol::Ac:
+				return "Ac";
+			case atom_symbol::Th:
+				return "Th";
+			case atom_symbol::Pa:
+				return "Pa";
+			case atom_symbol::U:
+				return "U";
+			case atom_symbol::Np:
+				return "Np";
+			case atom_symbol::Pu:
+				return "Pu";
+			case atom_symbol::Am:
+				return "Am";
+			case atom_symbol::Cm:
+				return "Cm";
+			case atom_symbol::Bk:
+				return "Bk";
+			case atom_symbol::Cf:
+				return "Cf";
+			case atom_symbol::Es:
+				return "Es";
+			case atom_symbol::Fm:
+				return "Fm";
+			case atom_symbol::Md:
+				return "Md";
+			case atom_symbol::No:
+				return "No";
+			case atom_symbol::Lr:
+				return "Lr";
+			case atom_symbol::Rf:
+				return "Rf";
+			case atom_symbol::Db:
+				return "Db";
+			case atom_symbol::Sg:
+				return "Sg";
+			case atom_symbol::Bh:
+				return "Bh";
+			case atom_symbol::Hs:
+				return "Hs";
+			case atom_symbol::Mt:
+				return "Mt";
+			case atom_symbol::Ds:
+				return "Ds";
+			case atom_symbol::Rg:
+				return "Rg";
+			case atom_symbol::Cn:
+				return "Cn";
+			case atom_symbol::Nh:
+				return "Nh";
+			case atom_symbol::Fl:
+				return "Fl";
+			case atom_symbol::Mc:
+				return "Mc";
+			case atom_symbol::Lv:
+				return "Lv";
+			case atom_symbol::Ts:
+				return "Ts";
+			case atom_symbol::Og:
+				return "Og";
+		}
+	}
+
+	string to_string(const atomic_group& x)
+	{
+		switch (x)
+		{
+			case IA:
+				return "IA";
+			case IIA:
+				return "IIA";
+			case IIIA:
+				return "IIIA";
+			case IVA:
+				return "IVA";
+			case VA:
+				return "VA";
+			case VIA:
+				return "VIA";
+			case VIIA:
+				return "VIIA";
+			case VIIIA:
+				return "VIIIA";
+			case IB:
+				return "IB";
+			case IIB:
+				return "IIB";
+			case IIIB:
+				return "IIIB";
+			case IVB:
+				return "IVB";
+			case VB:
+				return "VB";
+			case VIB:
+				return "VIB";
+			case VIIB:
+				return "VIIB";
+			case VIIIB:
+				return "VIIIB";
+			case AC:
+				return "AC";
+			case LA:
+				return "LA";
+		}
+	}
+
+	string to_string(const atomic_block& x)
+	{
+		switch (x)
+		{
+			case atomic_block::s:
+				return "s";
+			case atomic_block::p:
+				return "p";
+			case atomic_block::d:
+				return "d";
+			case atomic_block::f:
+				return "f";
+		}
 	}
 }
 

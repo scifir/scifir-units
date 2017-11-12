@@ -25,15 +25,25 @@ using namespace std;
 namespace msci
 {
 	enum class atom_symbol {H, He, Li, Be, B, C, N, O, F, Ne, Na, Mg, Al, Si, P, S, Cl, Ar, K, Ca, Sc, Ti, V, Cr, Mn, Fe, Co, Ni, Cu, Zn, Ga, Ge, As, Se, Br, Kr, Rb, Sr, Y, Zr, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Cd, In, Sn, Sb, Te, I, Xe, Cs, Ba, La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu, Hf, Ta, W, Re, Os, Ir, Pt, Au, Hg, Tl, Pb, Bi, Po, At, Rn, Fr, Ra, Ac, Th, Pa, U, Np, Pu, Am, Cm, Bk, Cf, Es, Fm, Md, No, Lr, Rf, Db, Sg, Bh, Hs, Mt, Ds, Rg, Cn, Nh, Fl, Mc, Lv, Ts, Og};
+
 	enum atomic_group {IA, IIA, IIIA, IVA, VA, VIA, VIIA, VIIIA, IB, IIB, IIIB, IVB, VB, VIB, VIIB, VIIIB, LA, AC};
+
 	enum class atomic_block {s,p,d,f};
+
 	enum class atomic_pattern {none,line,prepicated_line,wave_line,prepicated_wave_line,circles};
+
 	enum class molecular_geometry {linear,trigonal_planar,bent,tetrahedral,trigonal_pyramidal,trigonal_bipyramidal,seesaw,t_shaped,octahedral,square_pyramidal,square_planar,pentagonal_bipyramidal,pentagonal_pyramidal,planar_pentagonal,square_antipristamic,tricapped_trigonal_prismatic};
+
 	enum class edge_position {linear,bent,trigonal_planar,trigonal_pyramidal,t_shaped_ax,t_shaped_eq,tetrahedral,seesaw_ax,seesaw_eq,square_planar,trigonal_bipyramidal_ax,trigonal_bipyramidal_eq,square_pyramidal_ax,square_pyramidal_eq,planar_pentagonal,octahedral,pentagonal_pyramidal_ax,pentagonal_pyramidal_eq,pentagonal_bipyramidal_ax,pentagonal_bipyramidal_eq,square_antipristamic,tricapped_trigonal_prismatic};
+
 	enum atomic_orbital_type {atomic_orbital_s,atomic_orbital_p,atomic_orbital_d,atomic_orbital_f};
+
 	enum class atomic_bond_type {ionic,covalent,metallic};
+
 	enum class atomic_bond_weight {single,dual,triple};
+
 	enum class crystal_structure {bcc,hexagonal};
+
 	enum class magnetic_ordering {diamagnetic,paramagnetic};
 
 	extern vector<vector<int>> electronic_configuration_order;
@@ -45,23 +55,23 @@ namespace msci
 		public:
 			atom();
 
-			virtual const atom_symbol get_enum_type() const = 0;
+			virtual const atom_symbol& get_enum_type() const = 0;
 
 			virtual const string& get_name() const = 0;
 			virtual const string& get_symbol() const = 0;
 
-			virtual const atomic_group get_atomic_group() const = 0;
-			virtual const unsigned int get_period() const = 0;
-			virtual const atomic_block get_atomic_block() const = 0;
+			virtual const atomic_group& get_atomic_group() const = 0;
+			virtual const unsigned int& get_period() const = 0;
+			virtual const atomic_block& get_atomic_block() const = 0;
 
-			virtual const unsigned int get_z() const = 0;
+			virtual const unsigned int& get_z() const = 0;
 			virtual const int get_valence_number() const = 0;
 
 			virtual const length& get_atomic_radius() const = 0;
 			virtual const mass& get_standard_atomic_mass() const = 0;
 
-			virtual const float get_electronegativity() const = 0;
-			virtual const bool is_radioactive() const = 0;
+			virtual const float& get_electronegativity() const = 0;
+			virtual const bool& is_radioactive() const = 0;
 
 			/*virtual const temperature& get_melting_point() const = 0;
 			virtual const temperature& get_boiling_point() const = 0;
@@ -303,7 +313,7 @@ namespace msci
 			{
 			}
 
-			virtual const atom_symbol get_enum_type() const
+			virtual const atom_symbol& get_enum_type() const
 			{
 				return T::enum_type;
 			}
@@ -318,22 +328,22 @@ namespace msci
 				return T::symbol;
 			}
 
-			virtual const atomic_group get_atomic_group() const
+			virtual const atomic_group& get_atomic_group() const
 			{
 				return T::group;
 			}
 
-			virtual const unsigned int get_period() const
+			virtual const unsigned int& get_period() const
 			{
 				return T::period;
 			}
 
-			virtual const atomic_block get_atomic_block() const
+			virtual const atomic_block& get_atomic_block() const
 			{
 				return T::block;
 			}
 
-			virtual const unsigned int get_z() const
+			virtual const unsigned int& get_z() const
 			{
 				return T::z;
 			}
@@ -428,12 +438,12 @@ namespace msci
 				return T::standard_atomic_mass;
 			}
 
-			virtual const float get_electronegativity() const
+			virtual const float& get_electronegativity() const
 			{
 				return T::electronegativity;
 			}
 
-			virtual const bool is_radioactive() const
+			virtual const bool& is_radioactive() const
 			{
 				return T::radioactive;
 			}
@@ -521,6 +531,10 @@ namespace msci
 	bool are_isoelectronics(const atom&,const atom&);
 	bool same_element(const atom&,const atom&);
 	bool same_specimen(const atom&,const atom&);
+
+	string to_string(const atom_symbol&);
+	string to_string(const atomic_group&);
+	string to_string(const atomic_block&);
 }
 
 bool operator ==(const msci::atom&,const msci::atom&);
