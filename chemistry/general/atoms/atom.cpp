@@ -703,5 +703,5 @@ ostream& operator <<(ostream& os,const msci::atom& x)
 	{
 		charge_text << abs(x.get_ionic_charge()) << "+";
 	}
-	return os << "[" << x.get_symbol().c_str() << "]" << charge_text.str();
+	return os << x.get_symbol().c_str() << charge_text.str();
 }
