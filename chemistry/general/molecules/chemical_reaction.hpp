@@ -4,7 +4,7 @@
 #include "chemistry/general/atoms.hpp"
 #include "molecule.hpp"
 
-#include "../../../units.hpp"
+#include "units.hpp"
 
 using namespace std;
 
