@@ -1,4 +1,4 @@
-#include "./units.hpp"
+#include "magnetism_units.hpp"
 
 using namespace std;
 
