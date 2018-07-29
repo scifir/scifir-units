@@ -11,7 +11,7 @@
 
 #include "units.hpp"
 #include "informatics/graphical/color.hpp"
-#include "math/number/angle_number.hpp"
+#include "meca_number/angle_number.hpp"
 
 using namespace std;
 
