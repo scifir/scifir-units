@@ -1,7 +1,7 @@
 #ifndef DIMENSION_HPP_
 #define DIMENSION_HPP_
 
-#include "dimension_abstract.hpp"
+#include "abstract_dimension.hpp"
 #include "prefix.hpp"
 
 #include <map>
@@ -15,7 +15,7 @@ namespace msci
 		m = 0, angle_symbol, solid_angle_symbol, s, g, C, K, mol, cd, B
 	};
 
-	class dimension : public dimension_abstract
+	class dimension : public abstract_dimension
 	{
 		public:
 			dimension();

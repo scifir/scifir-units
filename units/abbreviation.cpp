@@ -13,15 +13,15 @@ using namespace std;
 
 namespace msci
 {
-	abbreviation::abbreviation() : dimension_abstract(normal_prefix, 1)
+	abbreviation::abbreviation() : abstract_dimension(normal_prefix, 1)
 	{
 	}
 
-	abbreviation::abbreviation(prefix_symbol new_prefix, int new_scale) : dimension_abstract(new_prefix, new_scale)
+	abbreviation::abbreviation(prefix_symbol new_prefix, int new_scale) : abstract_dimension(new_prefix, new_scale)
 	{
 	}
 
-	abbreviation::abbreviation(prefix& new_prefix, int new_scale) : dimension_abstract(new_prefix, new_scale)
+	abbreviation::abbreviation(prefix& new_prefix, int new_scale) : abstract_dimension(new_prefix, new_scale)
 	{
 	}
 

@@ -1,6 +1,6 @@
 #include "abbreviation.hpp"
 #include "conversion.hpp"
-#include "dimension_abstract.hpp"
+#include "abstract_dimension.hpp"
 #include "dimension_container.hpp"
 #include "dimension.hpp"
 
@@ -15,15 +15,15 @@ using namespace std;
 
 namespace msci
 {
-	dimension::dimension() : dimension_abstract()
+	dimension::dimension() : abstract_dimension()
 	{
 	}
 
-	dimension::dimension(prefix_symbol prefix_name, int new_scale) : dimension_abstract(prefix_name, new_scale)
+	dimension::dimension(prefix_symbol prefix_name, int new_scale) : abstract_dimension(prefix_name, new_scale)
 	{
 	}
 
-	dimension::dimension(prefix& prefix_name, int new_scale) : dimension_abstract(prefix_name, new_scale)
+	dimension::dimension(prefix& prefix_name, int new_scale) : abstract_dimension(prefix_name, new_scale)
 	{
 	}
 

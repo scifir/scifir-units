@@ -1,4 +1,4 @@
-#include "dimension_abstract.hpp"
+#include "abstract_dimension.hpp"
 #include "prefix.hpp"
 
 #include <cmath>
@@ -26,22 +26,22 @@ namespace msci
 		}
 	}
 
-	dimension_abstract::dimension_abstract(prefix_symbol prefix_name, int new_scale) : prefixes()
+	abstract_dimension::abstract_dimension(prefix_symbol prefix_name, int new_scale) : prefixes()
 	{
 		add_prefix(prefix_name);
 	}
 
-	dimension_abstract::dimension_abstract() : dimension_abstract(normal_prefix, 1)
+	abstract_dimension::abstract_dimension() : abstract_dimension(normal_prefix, 1)
 	{
 	}
 
-	dimension_abstract::dimension_abstract(prefix& new_prefix, int new_scale) : prefixes()
+	abstract_dimension::abstract_dimension(prefix& new_prefix, int new_scale) : prefixes()
 	{
 		shared_ptr<prefix> a = shared_ptr<prefix>(&new_prefix);
 		prefixes[a->get_enum_type()] = a;
 	}
 
-	const int dimension_abstract::get_scale() const
+	const int abstract_dimension::get_scale() const
 	{
 		int sum = 0;
 		for(const auto& prefix : prefixes)
@@ -51,12 +51,12 @@ namespace msci
 		return sum;
 	}
 
-	float dimension_abstract::get_prefix_base() const
+	float abstract_dimension::get_prefix_base() const
 	{
 		return 10;
 	}
 
-	void dimension_abstract::add_prefix(prefix_symbol prefix_name)
+	void abstract_dimension::add_prefix(prefix_symbol prefix_name)
 	{
 		if(prefixes.count(prefix_name) > 0)
 		{
@@ -68,7 +68,7 @@ namespace msci
 		}
 	}
 
-	void dimension_abstract::add_prefix(const prefix& new_prefix)
+	void abstract_dimension::add_prefix(const prefix& new_prefix)
 	{
 		prefix_symbol prefix_name = new_prefix.get_enum_type();
 		if(prefixes.count(prefix_name) > 0)
@@ -85,7 +85,7 @@ namespace msci
 		}
 	}
 
-	void dimension_abstract::add_prefix(const dimension_prefixes& new_prefixes)
+	void abstract_dimension::add_prefix(const dimension_prefixes& new_prefixes)
 	{
 		for(auto& new_prefix : new_prefixes)
 		{
@@ -93,7 +93,7 @@ namespace msci
 		}
 	}
 
-	void dimension_abstract::remove_prefix(prefix_symbol prefix_name)
+	void abstract_dimension::remove_prefix(prefix_symbol prefix_name)
 	{
 		for(const auto& prefix : prefixes)
 		{
@@ -105,7 +105,7 @@ namespace msci
 		}
 	}
 
-	void dimension_abstract::remove_prefix(const prefix& new_prefix)
+	void abstract_dimension::remove_prefix(const prefix& new_prefix)
 	{
 		prefix_symbol prefix_name = new_prefix.get_enum_type();
 		if(prefixes.count(prefix_name) > 0)
@@ -122,7 +122,7 @@ namespace msci
 		}
 	}
 
-	void dimension_abstract::remove_prefix(const dimension_prefixes& new_prefixes)
+	void abstract_dimension::remove_prefix(const dimension_prefixes& new_prefixes)
 	{
 		for(auto& new_prefix : new_prefixes)
 		{
@@ -130,13 +130,13 @@ namespace msci
 		}
 	}
 
-	void dimension_abstract::change_prefix(prefix_symbol new_prefix)
+	void abstract_dimension::change_prefix(prefix_symbol new_prefix)
 	{
 		prefixes.erase(prefixes.begin());
 		add_prefix(new_prefix);
 	}
 
-	int dimension_abstract::total_factor()
+	int abstract_dimension::total_factor()
 	{
 		int sum = 0;
 		for(auto& prefix : prefixes)
@@ -146,7 +146,7 @@ namespace msci
 		return sum;
 	}
 
-	void dimension_abstract::operator *=(const dimension_abstract& x)
+	void abstract_dimension::operator *=(const abstract_dimension& x)
 	{
 		for(auto& prefix : x.get_dimension_prefixes())
 		{
@@ -154,7 +154,7 @@ namespace msci
 		}
 	}
 
-	void dimension_abstract::operator /=(const dimension_abstract& x)
+	void abstract_dimension::operator /=(const abstract_dimension& x)
 	{
 		for(auto& prefix : x.get_dimension_prefixes())
 		{
@@ -162,7 +162,7 @@ namespace msci
 		}
 	}
 
-	void dimension_abstract::sqrt()
+	void abstract_dimension::sqrt()
 	{
 		if(remainder(get_scale(), 2) == 0)
 		{
@@ -184,7 +184,7 @@ namespace msci
 		}
 	}
 
-	void dimension_abstract::sqrt_nth(int x)
+	void abstract_dimension::sqrt_nth(int x)
 	{
 		if(remainder(get_scale(), x) == 0)
 		{
@@ -207,7 +207,7 @@ namespace msci
 	}
 }
 
-bool operator ==(const msci::dimension_abstract& x,const msci::dimension_abstract& y)
+bool operator ==(const msci::abstract_dimension& x,const msci::abstract_dimension& y)
 {
 	if(x.get_scale() == y.get_scale() and x.get_symbol() == y.get_symbol())
 	{
@@ -219,12 +219,12 @@ bool operator ==(const msci::dimension_abstract& x,const msci::dimension_abstrac
 	}
 }
 
-bool operator !=(const msci::dimension_abstract& x,const msci::dimension_abstract& y)
+bool operator !=(const msci::abstract_dimension& x,const msci::abstract_dimension& y)
 {
 	return !(x == y);
 }
 
-ostream& operator <<(ostream& os, const msci::dimension_abstract& x)
+ostream& operator <<(ostream& os, const msci::abstract_dimension& x)
 {
 	ostringstream prefix_text;
 	if(x.get_dimension_prefixes().size() > 0)

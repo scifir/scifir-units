@@ -12,7 +12,7 @@ using namespace std;
 
 namespace msci
 {
-	vector_actual_dimensions::vector_actual_dimensions() : map<int,shared_ptr<dimension_abstract>>()
+	vector_actual_dimensions::vector_actual_dimensions() : map<int,shared_ptr<abstract_dimension>>()
 	{
 	}
 
@@ -20,7 +20,7 @@ namespace msci
 	{
 		for (const auto& new_actual_dimension : actual_dimensions)
 		{
-			(*this)[new_actual_dimension.first] = shared_ptr<dimension_abstract>(new_actual_dimension.second->clone());
+			(*this)[new_actual_dimension.first] = shared_ptr<abstract_dimension>(new_actual_dimension.second->clone());
 		}
 	}
 

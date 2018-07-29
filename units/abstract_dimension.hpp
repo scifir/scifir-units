@@ -24,13 +24,13 @@ namespace msci
 			dimension_prefixes(const dimension_prefixes&);
 	};
 
-	class dimension_abstract
+	class abstract_dimension
 	{
 		public:
-			dimension_abstract();
-			dimension_abstract(prefix_symbol,int);
-			dimension_abstract(prefix&,int);
-			virtual dimension_abstract* clone() const = 0;
+			abstract_dimension();
+			abstract_dimension(prefix_symbol,int);
+			abstract_dimension(prefix&,int);
+			virtual abstract_dimension* clone() const = 0;
 
 			inline const dimension_prefixes& get_dimension_prefixes() const
 			{
@@ -52,8 +52,8 @@ namespace msci
 			void change_prefix(prefix_symbol);
 
 			int total_factor();
-			void operator *=(const dimension_abstract&);
-			void operator /=(const dimension_abstract&);
+			void operator *=(const abstract_dimension&);
+			void operator /=(const abstract_dimension&);
 
 			template <typename T,typename = typename enable_if<is_integer_number<T>::value>::type>
 			void operator ^=(T x)
@@ -86,9 +86,9 @@ namespace msci
 	};
 }
 
-bool operator ==(const msci::dimension_abstract&,const msci::dimension_abstract&);
-bool operator !=(const msci::dimension_abstract&,const msci::dimension_abstract&);
+bool operator ==(const msci::abstract_dimension&,const msci::abstract_dimension&);
+bool operator !=(const msci::abstract_dimension&,const msci::abstract_dimension&);
 
-ostream& operator <<(ostream&, const msci::dimension_abstract&);
+ostream& operator <<(ostream&, const msci::abstract_dimension&);
 
 #endif // DIMENSION_ABSTRACT_HPP_INCLUDED

@@ -84,24 +84,24 @@ namespace msci
 			vector_real_dimensions new_real_dimensions = vector_real_dimensions();
 			vector_actual_dimensions new_actual_dimensions = vector_actual_dimensions();
 			dimension* new_real_dimension = new dimension_temperature(*new_prefix);
-			dimension_abstract* new_actual_dimension = new dimension_temperature(*new_prefix);
+			abstract_dimension* new_actual_dimension = new dimension_temperature(*new_prefix);
 			if (final_string == "°C")
 			{
 				new_value = stold(init_value.substr(0,i)) + 273.15;
 				new_real_dimensions[K] = shared_ptr<dimension>(new_real_dimension);
-				new_actual_dimensions[K] = shared_ptr<dimension_abstract>(new_actual_dimension);
+				new_actual_dimensions[K] = shared_ptr<abstract_dimension>(new_actual_dimension);
 			}
 			else if (final_string == "°F")
 			{
 				new_value = (stold(init_value.substr(0,i)) - 32)*5/9 + 273.15;
 				new_real_dimensions[K] = shared_ptr<dimension>(new_real_dimension);
-				new_actual_dimensions[K] = shared_ptr<dimension_abstract>(new_actual_dimension);
+				new_actual_dimensions[K] = shared_ptr<abstract_dimension>(new_actual_dimension);
 			}
 			else if (final_string == "K")
 			{
 				new_value = stold(init_value.substr(0,i));
 				new_real_dimensions[K] = shared_ptr<dimension>(new_real_dimension);
-				new_actual_dimensions[K] = shared_ptr<dimension_abstract>(new_actual_dimension);
+				new_actual_dimensions[K] = shared_ptr<abstract_dimension>(new_actual_dimension);
 			}
 			else
 			{

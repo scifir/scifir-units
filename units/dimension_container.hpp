@@ -3,7 +3,7 @@
 
 #include "abbreviation.hpp"
 #include "dimension.hpp"
-#include "dimension_abstract.hpp"
+#include "abstract_dimension.hpp"
 #include "prefix.hpp"
 
 #include <map>
@@ -15,7 +15,7 @@ using namespace std;
 
 namespace msci
 {
-	class vector_actual_dimensions : public map<int,shared_ptr<dimension_abstract>>
+	class vector_actual_dimensions : public map<int,shared_ptr<abstract_dimension>>
 	{
 		public:
 			vector_actual_dimensions();

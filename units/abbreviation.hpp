@@ -1,7 +1,7 @@
 #ifndef ABBREVIATION_HPP_INCLUDED
 #define ABBREVIATION_HPP_INCLUDED
 
-#include "dimension_abstract.hpp"
+#include "abstract_dimension.hpp"
 #include "dimension.hpp"
 #include "prefix.hpp"
 
@@ -17,7 +17,7 @@ namespace msci
 		Hz = 9, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, normal_abbreviation, L, minute, h, d, AU, pc, eV, Da, amu, barn, M, particles, ppm, ppb
 	};
 
-	class abbreviation : public dimension_abstract
+	class abbreviation : public abstract_dimension
 	{
 		public:
 			abbreviation();
