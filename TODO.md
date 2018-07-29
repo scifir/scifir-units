@@ -19,8 +19,13 @@
 // TODO: Implement real_dimensions with a UTF8 string (use an order to print each dimension, then it's done) if it's faster than actual_dimensions container and only in that case
 // TODO: Check if the clone() function of undefined_number (and some others also) are causing a memory leak
 
+// MAGICKSCIENCE
+// TODO: delete some extra folders of physics
+// TODO: divide between msci and msci_genetics
+// TODO: maybe divide each msci discipline as one different msci library. Check first how if then it's mandatory to have different namespaces (see how to integrate that to GitHub). The libraries are msci_units, msci_geometry, msci_chemistry, msci_genetics, msci_plot
+// TODO: document in a .odt file all the class and function names
+
 // C++
-// TODO: units.hpp should be loaded without ../../../units.hpp if possible
 // TODO: See if to send reference in some cases and const-reference when const is a practice, and add those two functions everywhere. Maybe change some member-variables to be public instead of using both functions
 // TODO: use references and const-references instead of copies inside the body of functions that can be changed
 // TODO: use explicit with angle_number and other classes
@@ -54,11 +59,7 @@
 // TODO: check the better code scan tools for C++
 // TODO: if the optimization of the compiler gives code optimized in order to see the code by layers
 
-// MAGICKSCIENCE
-// TODO: delete some extra folders of physics
-
 // BUILDING
-// TODO: ask if it's a good idea to use cmake instead of autotools
 // TODO: see file formats for autotools files NEWS, INSTALL, README, etc
 // TODO: see how to delete doxygen comments when building with autotools (see best practices for doxygen first)
 // TODO: see if to create a .pc file
@@ -110,7 +111,7 @@
 // TODO: add custom dimensions and currency_dimension (see what to do with custom dimensions first)
 
 // MAYBE
-// TODO: The constructor of dimension_abstract with more than one as prefix (it has to create more prefixes)
+// TODO: The constructor of abstract_dimension with more than one as prefix (it has to create more prefixes)
 // TODO: unit::dimensions_equals(vector_real_dimensions) should not copy the real_dimensions to make the comparison
 // TODO: A function from unit to change a specific dimension to be displayed with a set of prefixes
 

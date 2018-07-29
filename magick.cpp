@@ -115,14 +115,14 @@ int main()
 	cout << molecule_a.get_real_mass() << endl;*/
 
 	// READY FOR A TASK, ASK IRC
-	/*map<int,unique_ptr<dimension_abstract>> a_map = map<int,unique_ptr<dimension_abstract>>();
+	/*map<int,unique_ptr<abstract_dimension>> a_map = map<int,unique_ptr<abstract_dimension>>();
 	a_map[0] = unique_ptr<dimension>(create_dimension("m"));
 	a_map[1] = unique_ptr<abbreviation>(create_abbreviation("N"));
 	for (const auto& new_dimension : a_map)
 	{
 		cout << *new_dimension.second << endl;
 	}
-	map<int,unique_ptr<dimension_abstract>> b_map = map<int,unique_ptr<dimension_abstract>>();
+	map<int,unique_ptr<abstract_dimension>> b_map = map<int,unique_ptr<abstract_dimension>>();
 	for (auto& new_dimension : a_map)
 	{
 		unique_ptr<abbreviation> new_abbreviation_ptr (dynamic_cast<abbreviation*>(new_dimension.second.release()));
