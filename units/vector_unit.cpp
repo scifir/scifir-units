@@ -680,16 +680,16 @@ ostream& operator <<(ostream& os, const msci::vector_unit& x)
 			if (i == 1)
 			{
 				angles_text << "\u03B8";
+				angles_text << " ";
 			}
 			else if (i == 2)
 			{
 				angles_text << "\u03A6";
 			}
-			angles_text << " ";
 			i++;
 		}
 	}
-	return os << x.msci::unit::get_value() << " " << angles_text.str();
+	return os << x.msci::unit::get_value() << " " << x.msci::unit::display_dimensions() << " " << angles_text.str();
 }
 
 istream& operator >>(istream& is, msci::vector_unit& x)
