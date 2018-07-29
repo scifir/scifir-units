@@ -40,12 +40,12 @@ namespace msci
 
 	chromosome& dna::operator [](const string& i)
 	{
-		return chromosomes[i];
+		return chromosomes.at(i);
 	}
 
 	const chromosome& dna::operator [](const string& i) const
 	{
-		return chromosomes[i];
+		return chromosomes.at(i);
 	}
 
 	bool dna::is_chromosome_loaded(const string& x) const

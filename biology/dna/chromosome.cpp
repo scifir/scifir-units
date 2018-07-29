@@ -71,7 +71,7 @@ namespace msci
 		{
 			load_gene(x);
 		}
-		return genes[x];
+		return genes.at(x);
     }
 
 	const gene& chromosome::operator[](const string& x) const
@@ -80,7 +80,7 @@ namespace msci
 		{
 			load_gene(x);
 		}
-		return genes[x];
+		return genes.at(x);
 	}
 
     void chromosome::switch_gene(const string& x,gene new_gene)
