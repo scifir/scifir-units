@@ -1,6 +1,6 @@
 #include "hyper_spherical_coordinates.hpp"
 
-#include "math/topology/coordinates/coordinates_2d.hpp"
+#include "coordinates/coordinates_2d.hpp"
 
 #include <iostream>
 #include <stdexcept>

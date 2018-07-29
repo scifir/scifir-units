@@ -1,7 +1,7 @@
 #ifndef UNDEFINED_NUMBER_HPP_INCLUDED
 #define UNDEFINED_NUMBER_HPP_INCLUDED
 
-#include "math/topology/topology.hpp"
+#include "topology/topology.hpp"
 #include "informatics/types/is_number.hpp"
 
 #include <cmath>

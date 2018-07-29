@@ -2,8 +2,8 @@
 #include "unit.hpp"
 #include "dimension.hpp"
 #include "prefix.hpp"
-#include "math/number/unit_number.hpp"
-#include "chemistry/constants.hpp"
+#include "meca_number/unit_number.hpp"
+#include "topology/constants.hpp"
 
 #include <cassert>
 #include <cctype>

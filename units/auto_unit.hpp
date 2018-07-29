@@ -1,7 +1,7 @@
 #ifndef PHYSICS_BASIC_UNITS_AUTO_UNIT_HPP_INCLUDED
 #define PHYSICS_BASIC_UNITS_AUTO_UNIT_HPP_INCLUDED
 
-#include "physics/basic/units/unit.hpp"
+#include "units/unit.hpp"
 
 using namespace std;
 

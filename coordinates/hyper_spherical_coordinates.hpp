@@ -1,10 +1,10 @@
 #ifndef HYPER_SPHERICAL_COORDINATES_HPP_INCLUDED
 #define HYPER_SPHERICAL_COORDINATES_HPP_INCLUDED
 
-#include "math/number/angle_number.hpp"
+#include "meca_number/angle_number.hpp"
 #include "coordinates_nd.hpp"
 #include "coordinates_3d.hpp"
-#include "math/topology/direction.hpp"
+#include "topology/direction.hpp"
 
 #include "boost/variant.hpp"
 

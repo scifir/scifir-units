@@ -1,10 +1,10 @@
 #ifndef ANGLE_NUMBER_HPP_INCLUDED
 #define ANGLE_NUMBER_HPP_INCLUDED
 
-#include "math/constants.hpp"
-#include "math/topology/topology.hpp"
+#include "topology/constants.hpp"
+#include "topology/topology.hpp"
 #include "informatics/types/is_number.hpp"
-#include "physics/basic/units/unit.hpp"
+#include "units/unit.hpp"
 
 #include "boost/math/constants/constants.hpp"
 

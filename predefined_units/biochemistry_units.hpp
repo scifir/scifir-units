@@ -1,7 +1,7 @@
 #ifndef CHEMISTRY_BIOCHEMISTRY_UNITS_HPP_INCLUDED
 #define CHEMISTRY_BIOCHEMISTRY_UNITS_HPP_INCLUDED
 
-#include "physics/basic/units/scalar_unit.hpp"
+#include "units/scalar_unit.hpp"
 
 using namespace std;
 

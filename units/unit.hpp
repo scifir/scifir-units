@@ -11,7 +11,7 @@
 #include "dimension.hpp"
 #include "dimension_container.hpp"
 #include "prefix.hpp"
-#include "math/number/unit_number.hpp"
+#include "meca_number/unit_number.hpp"
 #include "informatics/types/is_number.hpp"
 using namespace std;
 

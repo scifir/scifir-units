@@ -1,7 +1,7 @@
 #ifndef COORDINATES_ND_HPP_INCLUDED
 #define COORDINATES_ND_HPP_INCLUDED
 
-#include "math/topology/topology.hpp"
+#include "topology/topology.hpp"
 
 using namespace std;
 

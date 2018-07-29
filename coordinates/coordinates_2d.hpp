@@ -1,8 +1,8 @@
 #ifndef COORDINATES_2D_HPP_INCLUDED
 #define COORDINATES_2D_HPP_INCLUDED
 
-#include "math/topology/topology.hpp"
-#include "math/number/angle_number.hpp"
+#include "topology/topology.hpp"
+#include "meca_number/angle_number.hpp"
 
 #include <cmath>
 

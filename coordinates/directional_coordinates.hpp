@@ -2,7 +2,7 @@
 #define DIRECTIONAL_COORDINATES_HPP_INCLUDED
 
 #include "coordinates_1d.hpp"
-#include "math/topology/direction.hpp"
+#include "topology/direction.hpp"
 
 #include <functional>
 

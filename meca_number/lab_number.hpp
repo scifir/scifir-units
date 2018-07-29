@@ -3,7 +3,7 @@
 
 #include "unit_number.hpp"
 
-#include "math/topology/topology.hpp"
+#include "topology/topology.hpp"
 #include "informatics/types/is_number.hpp"
 
 #include <cmath>

@@ -2,7 +2,7 @@
 #define CARTESIAN_HPP_INCLUDED
 
 #include "coordinates_2d.hpp"
-#include "math/topology/topology.hpp"
+#include "topology/topology.hpp"
 
 using namespace std;
 
