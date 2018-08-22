@@ -1,4 +1,4 @@
-#include "kinematics_units.hpp"
+#include "msci/units/predefined_units/kinematics_units.hpp"
 
 namespace msci
 {

@@ -1,10 +1,10 @@
 #ifndef UNIT_NUMBER_HPP_INCLUDED
 #define UNIT_NUMBER_HPP_INCLUDED
 
-#include "undefined_number.hpp"
+#include "msci/units/meca_number/undefined_number.hpp"
 
-#include "topology/topology.hpp"
-#include "informatics/types/is_number.hpp"
+#include "msci/units/topology/topology.hpp"
+#include "msci/units/util/is_number.hpp"
 
 #include <cmath>
 #include <iostream>

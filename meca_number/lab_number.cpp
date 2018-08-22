@@ -1,4 +1,4 @@
-#include "lab_number.hpp"
+#include "msci/units/meca_number/lab_number.hpp"
 
 #include <cmath>
 #include <sstream>

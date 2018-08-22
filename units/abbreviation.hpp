@@ -1,9 +1,9 @@
 #ifndef ABBREVIATION_HPP_INCLUDED
 #define ABBREVIATION_HPP_INCLUDED
 
-#include "abstract_dimension.hpp"
-#include "dimension.hpp"
-#include "prefix.hpp"
+#include "msci/units/units/abstract_dimension.hpp"
+#include "msci/units/units/dimension.hpp"
+#include "msci/units/units/prefix.hpp"
 
 #include <map>
 #include <string>

@@ -1,9 +1,9 @@
 #ifndef PHYSICS_BASIC_UNITS_AUTO_VECTOR_HPP_INCLUDED
 #define PHYSICS_BASIC_UNITS_AUTO_VECTOR_HPP_INCLUDED
 
-#include "auto_unit.hpp"
-#include "vector_unit.hpp"
-#include "meca_number/angle_number.hpp"
+#include "msci/units/units/auto_unit.hpp"
+#include "msci/units/units/vector_unit.hpp"
+#include "msci/units/meca_number/angle_number.hpp"
 
 using namespace std;
 

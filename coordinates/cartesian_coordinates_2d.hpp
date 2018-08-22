@@ -1,8 +1,8 @@
 #ifndef CARTESIAN_HPP_INCLUDED
 #define CARTESIAN_HPP_INCLUDED
 
-#include "coordinates_2d.hpp"
-#include "topology/topology.hpp"
+#include "msci/units/coordinates/coordinates_2d.hpp"
+#include "msci/units/topology/topology.hpp"
 
 using namespace std;
 

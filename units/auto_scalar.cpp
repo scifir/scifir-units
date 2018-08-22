@@ -1,4 +1,4 @@
-#include "auto_scalar.hpp"
+#include "msci/units/units/auto_scalar.hpp"
 
 #include <iostream>
 

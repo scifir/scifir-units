@@ -1,8 +1,8 @@
 #ifndef AUTO_SCALAR_HPP_INCLUDED
 #define AUTO_SCALAR_HPP_INCLUDED
 
-#include "auto_unit.hpp"
-#include "scalar_unit.hpp"
+#include "msci/units/units/auto_unit.hpp"
+#include "msci/units/units/scalar_unit.hpp"
 
 using namespace std;
 

@@ -1,8 +1,8 @@
 #ifndef DIMENSION_HPP_
 #define DIMENSION_HPP_
 
-#include "abstract_dimension.hpp"
-#include "prefix.hpp"
+#include "msci/units/units/abstract_dimension.hpp"
+#include "msci/units/units/prefix.hpp"
 
 #include <map>
 #include <string>

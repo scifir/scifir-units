@@ -1,5 +1,5 @@
-#ifndef PREFIX_HPP_
-#define PREFIX_HPP_
+#ifndef MSCI_UNITS_UNITS_PREFIX_HPP
+#define MSCI_UNITS_UNITS_PREFIX_HPP
 
 #include <map>
 #include <memory>

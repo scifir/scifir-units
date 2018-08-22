@@ -1,5 +1,5 @@
-#include "auto_unit.hpp"
-#include "conversion.hpp"
+#include "msci/units/units/auto_unit.hpp"
+#include "msci/units/units/conversion.hpp"
 
 #include "boost/algorithm/string/erase.hpp"
 

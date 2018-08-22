@@ -1,10 +1,10 @@
 #ifndef PHYSICS_BASIC_UNITS_UNIT_BASIC_HPP
 #define PHYSICS_BASIC_UNITS_UNIT_BASIC_HPP
 
-#include "prefix.hpp"
-#include "scalar_unit.hpp"
-#include "auto_scalar.hpp"
-#include "unit.hpp"
+#include "msci/units/units/prefix.hpp"
+#include "msci/units/units/scalar_unit.hpp"
+#include "msci/units/units/auto_scalar.hpp"
+#include "msci/units/units/unit.hpp"
 
 #include <chrono>
 #include <iostream>

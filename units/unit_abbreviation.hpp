@@ -1,10 +1,10 @@
 #ifndef UNIT_ABBREVIATION_HPP_INCLUDED
 #define UNIT_ABBREVIATION_HPP_INCLUDED
 
-#include "unit.hpp"
-#include "auto_unit.hpp"
+#include "msci/units/units/unit.hpp"
+#include "msci/units/units/auto_unit.hpp"
 
-#include "units.hpp"
+#include "msci/units.hpp"
 
 frequency operator"" _YHz(unsigned long long int);
 frequency operator"" _ZHz(unsigned long long int);

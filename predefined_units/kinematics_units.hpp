@@ -1,8 +1,8 @@
 #ifndef PHYSICS_MECHANICS_MOVEMENT_UNITS_HPP_INCLUDED
 #define PHYSICS_MECHANICS_MOVEMENT_UNITS_HPP_INCLUDED
 
-#include "units/scalar_unit.hpp"
-#include "units/vector_unit.hpp"
+#include "msci/units/units/scalar_unit.hpp"
+#include "msci/units/units/vector_unit.hpp"
 
 using namespace std;
 

@@ -1,5 +1,12 @@
-#ifndef UNIT_BASE_HPP_
-#define UNIT_BASE_HPP_
+#ifndef MSCI_UNITS_UNITS_UNIT_HPP
+#define MSCI_UNITS_UNITS_UNIT_HPP
+
+#include "msci/units/units/abbreviation.hpp"
+#include "msci/units/units/dimension.hpp"
+#include "msci/units/units/dimension_container.hpp"
+#include "msci/units/units/prefix.hpp"
+#include "msci/units/meca_number/unit_number.hpp"
+#include "msci/units/util/is_number.hpp"
 
 #include <map>
 #include <string>
@@ -7,12 +14,6 @@
 #include <sstream>
 #include <vector>
 
-#include "abbreviation.hpp"
-#include "dimension.hpp"
-#include "dimension_container.hpp"
-#include "prefix.hpp"
-#include "meca_number/unit_number.hpp"
-#include "informatics/types/is_number.hpp"
 using namespace std;
 
 namespace msci

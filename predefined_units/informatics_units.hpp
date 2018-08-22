@@ -1,7 +1,7 @@
 #ifndef INFORMATIC_UNITS_HPP_INCLUDED
 #define INFORMATIC_UNITS_HPP_INCLUDED
 
-#include "units/scalar_unit.hpp"
+#include "msci/units/units/scalar_unit.hpp"
 
 using namespace std;
 

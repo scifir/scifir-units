@@ -1,8 +1,8 @@
 #ifndef CYLINDRICAL_COORDINATES_HPP_INCLUDED
 #define CYLINDRICAL_COORDINATES_HPP_INCLUDED
 
-#include "coordinates_3d.hpp"
-#include "meca_number/angle_number.hpp"
+#include "msci/units/coordinates/coordinates_3d.hpp"
+#include "msci/units/meca_number/angle_number.hpp"
 
 using namespace std;
 

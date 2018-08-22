@@ -1,7 +1,7 @@
 #ifndef CONVERSION_HPP_INCLUDED
 #define CONVERSION_HPP_INCLUDED
 
-#include "dimension.hpp"
+#include "msci/units/units/dimension.hpp"
 
 #include <string>
 

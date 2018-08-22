@@ -1,7 +1,7 @@
 #ifndef CHEMISTRY_GENERAL_MATTER_UNITS_HPP_INCLUDED
 #define CHEMISTRY_GENERAL_MATTER_UNITS_HPP_INCLUDED
 
-#include "units/unit.hpp"
+#include "msci/units/units/unit.hpp"
 
 using namespace std;
 

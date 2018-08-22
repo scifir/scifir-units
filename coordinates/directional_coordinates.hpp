@@ -1,8 +1,8 @@
 #ifndef DIRECTIONAL_COORDINATES_HPP_INCLUDED
 #define DIRECTIONAL_COORDINATES_HPP_INCLUDED
 
-#include "coordinates_1d.hpp"
-#include "topology/direction.hpp"
+#include "msci/units/coordinates/coordinates_1d.hpp"
+#include "msci/units/topology/direction.hpp"
 
 #include <functional>
 

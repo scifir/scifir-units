@@ -1,4 +1,4 @@
-#include "magnetism_units.hpp"
+#include "msci/units/predefined_units/magnetism_units.hpp"
 
 using namespace std;
 

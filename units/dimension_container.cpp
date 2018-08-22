@@ -1,7 +1,7 @@
-#include "abbreviation.hpp"
-#include "dimension.hpp"
-#include "dimension_container.hpp"
-#include "conversion.hpp"
+#include "msci/units/units/abbreviation.hpp"
+#include "msci/units/units/dimension.hpp"
+#include "msci/units/units/dimension_container.hpp"
+#include "msci/units/units/conversion.hpp"
 
 #include "boost/algorithm/string/erase.hpp"
 

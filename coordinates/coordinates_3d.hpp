@@ -1,8 +1,8 @@
 #ifndef COORDINATES_3D_HPP_INCLUDED
 #define COORDINATES_3D_HPP_INCLUDED
 
-#include "meca_number/angle_number.hpp"
-#include "topology/topology.hpp"
+#include "msci/units/meca_number/angle_number.hpp"
+#include "msci/units/topology/topology.hpp"
 
 #include <cmath>
 #include <tuple>

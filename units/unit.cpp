@@ -1,9 +1,10 @@
-#include "abbreviation.hpp"
-#include "conversion.hpp"
-#include "dimension_container.hpp"
-#include "unit.hpp"
-#include "unit_basic.hpp"
-#include "prefix.hpp"
+#include "msci/units/units/unit.hpp"
+
+#include "msci/units/units/abbreviation.hpp"
+#include "msci/units/units/conversion.hpp"
+#include "msci/units/units/dimension_container.hpp"
+#include "msci/units/units/unit_basic.hpp"
+#include "msci/units/units/prefix.hpp"
 
 #include "boost/algorithm/string/erase.hpp"
 #include <boost/algorithm/string.hpp>

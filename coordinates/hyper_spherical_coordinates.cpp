@@ -1,6 +1,6 @@
-#include "hyper_spherical_coordinates.hpp"
+#include "msci/units/coordinates/hyper_spherical_coordinates.hpp"
 
-#include "coordinates/coordinates_2d.hpp"
+#include "msci/units/coordinates/coordinates_2d.hpp"
 
 #include <iostream>
 #include <stdexcept>

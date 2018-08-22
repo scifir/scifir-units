@@ -1,7 +1,7 @@
 #ifndef TEST_UNITS_HPP_INCLUDED
 #define TEST_UNITS_HPP_INCLUDED
 
-#include "units.hpp"
+#include "msci/units.hpp"
 
 #include <iostream>
 #include <sstream>

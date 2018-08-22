@@ -1,8 +1,8 @@
-#include "abbreviation.hpp"
-#include "conversion.hpp"
-#include "abstract_dimension.hpp"
-#include "dimension_container.hpp"
-#include "dimension.hpp"
+#include "msci/units/units/abbreviation.hpp"
+#include "msci/units/units/conversion.hpp"
+#include "msci/units/units/abstract_dimension.hpp"
+#include "msci/units/units/dimension_container.hpp"
+#include "msci/units/units/dimension.hpp"
 
 #include <cmath>
 #include <iostream>

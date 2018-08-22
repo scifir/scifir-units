@@ -1,7 +1,7 @@
 #ifndef PHYSICS_MECHANICS_FLUIDDYNAMICS_UNITS_HPP_INCLUDED
 #define PHYSICS_MECHANICS_FLUIDDYNAMICS_UNITS_HPP_INCLUDED
 
-#include "units/scalar_unit.hpp"
+#include "msci/units/units/scalar_unit.hpp"
 
 using namespace std;
 

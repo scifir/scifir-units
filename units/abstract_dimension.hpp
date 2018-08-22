@@ -1,8 +1,8 @@
 #ifndef DIMENSION_ABSTRACT_HPP_INCLUDED
 #define DIMENSION_ABSTRACT_HPP_INCLUDED
 
-#include "prefix.hpp"
-#include "informatics/types/is_number.hpp"
+#include "msci/units/units/prefix.hpp"
+#include "msci/units/util/is_number.hpp"
 
 #include "boost/variant.hpp"
 

@@ -1,7 +1,7 @@
 #ifndef CARTESIAN_3D_HPP_INCLUDED
 #define CARTESIAN_3D_HPP_INCLUDED
 
-#include "coordinates_3d.hpp"
+#include "msci/units/coordinates/coordinates_3d.hpp"
 
 using namespace std;
 

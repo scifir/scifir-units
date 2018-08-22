@@ -1,8 +1,8 @@
 #ifndef SPHERICAL_HPP_INCLUDED
 #define SPHERICAL_HPP_INCLUDED
 
-#include "meca_number/angle_number.hpp"
-#include "coordinates_3d.hpp"
+#include "msci/units/meca_number/angle_number.hpp"
+#include "msci/units/coordinates/coordinates_3d.hpp"
 
 using namespace std;
 

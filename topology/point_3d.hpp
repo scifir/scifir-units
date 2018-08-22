@@ -1,7 +1,7 @@
 #ifndef MATH_TOPOLOGY_POINT_3D_HPP_INCLUDED
 #define MATH_TOPOLOGY_POINT_3D_HPP_INCLUDED
 
-#include "topology.hpp"
+#include "msci/units/topology/topology.hpp"
 
 #include <iostream>
 #include <string>

@@ -1,4 +1,4 @@
 #define CATCH_CONFIG_MAIN
 #include "catch/catch.hpp"
-//#include "test_dimensions.hpp"
-#include "test_units.hpp"
+//#include "msci/units/tests/test_dimensions.hpp"
+#include "msci/units/tests/test_units.hpp"

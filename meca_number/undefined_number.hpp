@@ -1,8 +1,8 @@
 #ifndef UNDEFINED_NUMBER_HPP_INCLUDED
 #define UNDEFINED_NUMBER_HPP_INCLUDED
 
-#include "topology/topology.hpp"
-#include "informatics/types/is_number.hpp"
+#include "msci/units/topology/topology.hpp"
+#include "msci/units/util/is_number.hpp"
 
 #include <cmath>
 #include <iomanip>

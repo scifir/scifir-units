@@ -1,5 +1,5 @@
-#include "scalar_unit.hpp"
-#include "auto_scalar.hpp"
+#include "msci/units/units/scalar_unit.hpp"
+#include "msci/units/units/auto_scalar.hpp"
 
 using namespace std;
 

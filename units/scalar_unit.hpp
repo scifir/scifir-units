@@ -1,8 +1,8 @@
 #ifndef SCALAR_UNIT_HPP_INCLUDED
 #define SCALAR_UNIT_HPP_INCLUDED
 
-#include "unit.hpp"
-#include "auto_unit.hpp"
+#include "msci/units/units/unit.hpp"
+#include "msci/units/units/auto_unit.hpp"
 
 #include <type_traits>
 

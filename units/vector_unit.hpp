@@ -1,15 +1,15 @@
 #ifndef VECTORIAL_UNIT_HPP_INCLUDED
 #define VECTORIAL_UNIT_HPP_INCLUDED
 
-#include "dimension_container.hpp"
-#include "unit.hpp"
-#include "auto_unit.hpp"
-#include "scalar_unit.hpp"
-#include "meca_number/angle_number.hpp"
-#include "topology/topology.hpp"
-#include "coordinates/hyper_spherical_coordinates.hpp"
-#include "coordinates/coordinates_2d.hpp"
-#include "informatics/types/is_number.hpp"
+#include "msci/units/units/dimension_container.hpp"
+#include "msci/units/units/unit.hpp"
+#include "msci/units/units/auto_unit.hpp"
+#include "msci/units/units/scalar_unit.hpp"
+#include "msci/units/meca_number/angle_number.hpp"
+#include "msci/units/topology/topology.hpp"
+#include "msci/units/coordinates/hyper_spherical_coordinates.hpp"
+#include "msci/units/coordinates/coordinates_2d.hpp"
+#include "msci/units/util/is_number.hpp"
 
 #include "boost/algorithm/string.hpp"
 #include "boost/variant.hpp"

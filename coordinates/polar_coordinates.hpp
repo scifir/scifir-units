@@ -1,8 +1,8 @@
 #ifndef POLAR_COORDINATES_HPP_INCLUDED
 #define POLAR_COORDINATES_HPP_INCLUDED
 
-#include "coordinates_2d.hpp"
-#include "meca_number/angle_number.hpp"
+#include "msci/units/coordinates/coordinates_2d.hpp"
+#include "msci/units/meca_number/angle_number.hpp"
 
 using namespace std;
 

@@ -1,10 +1,10 @@
 #ifndef LAB_UNIT_HPP_INCLUDED
 #define LAB_UNIT_HPP_INCLUDED
 
-#include "unit_number.hpp"
+#include "msci/units/meca_number/unit_number.hpp"
 
-#include "topology/topology.hpp"
-#include "informatics/types/is_number.hpp"
+#include "msci/units/topology/topology.hpp"
+#include "msci/units/util/is_number.hpp"
 
 #include <cmath>
 #include <string>

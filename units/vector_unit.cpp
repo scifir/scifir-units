@@ -1,6 +1,7 @@
-#include "vector_unit.hpp"
-#include "auto_scalar.hpp"
-#include "auto_vector.hpp"
+#include "msci/units/units/vector_unit.hpp"
+
+#include "msci/units/units/auto_scalar.hpp"
+#include "msci/units/units/auto_vector.hpp"
 
 using namespace std;
 

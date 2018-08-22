@@ -102,3 +102,11 @@
 
 // TESTS
 // TODO: test of sizeof
+
+// MATRIX
+// TODO: See if it's best to use template arguments for row and column or if to store those values as member-variables
+// TODO: Multiplication of matrices of different but compatible types
+// TODO: typecast to other matrix-classes of important libraries
+// TODO: Iterator with range to use only one range-for
+// TODO: Check limits of matrices for all operators
+// TODO: Use the GSL to implement the reverse matrix

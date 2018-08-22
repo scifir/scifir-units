@@ -1,6 +1,6 @@
-#include "coordinates_3d.hpp"
+#include "msci/units/coordinates/coordinates_3d.hpp"
 
-#include "meca_number/angle_number.hpp"
+#include "msci/units/meca_number/angle_number.hpp"
 
 #include <cmath>
 

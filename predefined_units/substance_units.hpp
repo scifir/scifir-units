@@ -1,7 +1,7 @@
 #ifndef CHEMISTRY_GENERAL_SUBSTANCE_UNITS_HPP_INCLUDED
 #define CHEMISTRY_GENERAL_SUBSTANCE_UNITS_HPP_INCLUDED
 
-#include "units/scalar_unit.hpp"
+#include "msci/units/units/scalar_unit.hpp"
 
 #include <iostream>
 
