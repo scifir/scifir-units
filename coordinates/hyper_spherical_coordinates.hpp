@@ -17,27 +17,77 @@ namespace msci
 	class hyper_spherical_coordinates : public coordinates_nd
 	{
 		public:
-			hyper_spherical_coordinates();
-			hyper_spherical_coordinates(function<space_type()>);
-			hyper_spherical_coordinates(function<space_type()>, direction_symbol);
-			hyper_spherical_coordinates(function<space_type()>, angle_type);
-			hyper_spherical_coordinates(function<space_type()>, angle_type, angle_type);
-			hyper_spherical_coordinates(function<space_type()>, msci::angle_container);
-			hyper_spherical_coordinates(function<space_type()>, boost::variant<msci::angle_container,direction_symbol>);
-
-			inline space_type get_r() const
+			union directions_union
 			{
-				return r();
+				angle_container angles;
+				direction_lr direction;
+				directions_union(const angle_container& x) : angles(x) {}
+				~directions_union() {}
+			};
+
+			hyper_spherical_coordinates();
+			hyper_spherical_coordinates(space_type);
+			hyper_spherical_coordinates(space_type, direction_symbol);
+			hyper_spherical_coordinates(space_type, angle_type);
+			hyper_spherical_coordinates(space_type, angle_type, angle_type);
+			hyper_spherical_coordinates(space_type, msci::angle_container);
+			hyper_spherical_coordinates(space_type, boost::variant<msci::angle_container,direction_symbol>);
+
+			inline space_type& get_r()
+			{
+				return r;
+			}
+
+			inline const space_type& get_r() const
+			{
+				return r;
+			}
+
+			inline msci::angle_number& get_angle1()
+			{
+				return directions.angles[0];
+			}
+
+			inline msci::angle_number& get_angle2()
+			{
+				return directions.angles[1];
 			}
 
 			const msci::angle_number& get_angle1() const;
 			const msci::angle_number& get_angle2() const;
+
+			inline msci::angle_number& get_angle(unsigned int i)
+			{
+				return directions.angles[i];
+			}
+
 			const msci::angle_number& get_angle(unsigned int) const;
+
+			inline angle_container& get_angles()
+			{
+				return directions.angles;
+			}
+
 			const angle_container& get_angles() const;
 
-			inline const direction_symbol& get_direction() const
+			inline direction_lr& get_direction()
 			{
-				return directions.direction.get_direction();
+				return directions.direction;
+			}
+
+			inline const direction_lr& get_direction() const
+			{
+				return directions.direction;
+			}
+
+			inline hyper_spherical_coordinates::directions_union& get_directions()
+			{
+				return directions;
+			}
+
+			inline bool& get_unidimensional()
+			{
+				return unidimensional;
 			}
 
 			virtual space_type get_value() const;
@@ -64,14 +114,8 @@ namespace msci
 			void convert_cylindrical(space_type, const msci::angle_number&, space_type);
 
 		protected:
-			function<space_type()> r;
-			union directions_union
-			{
-				angle_container angles;
-				direction_lr direction;
-				directions_union(const angle_container& x) : angles(x) {}
-				~directions_union() {}
-			} directions;
+			space_type r;
+			directions_union directions;
 			bool unidimensional;
 	};
 }

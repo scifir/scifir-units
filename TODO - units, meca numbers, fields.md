@@ -27,6 +27,14 @@
 
 // C++
 // TODO: print() shouldn't be a function, delete it and move his functionality somewhere else (check that inside the IRC first)
+// TODO: add enum inside classes were it's used
+// TODO: maybe hyper_spherical_coordinates can be used as trait (as in PHP), search if there's something like that
+
+// COORDINATES
+// TODO: light coordinates should have const cast to full coordinates
+// TODO: 2dr and 3dr coordinates maybe should inherit from the others, check if override is a good solution for those cases
+// TODO: all coordinates classes should have ostream << with (x,y), (p,theta), etc
+// TODO: change coordinates classes to allow write access
 
 // MECA NUMBERS
 // TODO: Add the operators += -= *= etc to the number classes, and change the get_value().get_value() to get_value()
@@ -56,6 +64,12 @@
 // TODO: create_abbreviation() should forbid some constructions
 
 // UNITS
+// TODO: create the light_scalars
+// TODO: create the light_vectors
+// TODO: Add value to scalar_unit and unit should have get_value() abstract
+// TODO: finish auto_unit::initialize_real_dimensions()
+// TODO: add const to the enum of light_unit
+// TODO: it's not needed to have dimensions inside units, they can be static
 // TODO: mass of standard_atomic_mass() is displayed [empty], fix it
 // TODO: delete the exceptions from constructors and other parts where it's unneeded
 // TODO: see what to do for units with the same dimensions at the numerator and at the denominator
@@ -64,29 +78,35 @@
 // TODO: initialization of 1/g and similar
 // TODO: support scientific notation on constructors and display(int,bool) (check if there's a function to get the order of the number)
 // TODO: units updated with a clock (not automatically, by doing += and similar operations)
-// TODO: 2d display of scalar_units and of vector_units
-// TODO: 3d display of scalar_units and of vector_units
-// TODO: unit time class should be initialized by multiple abbreviations as 100 min 40 s for example
-// TODO: unit time class should display with an string "d s" specifying the dimensions to calculate on
+// TODO: 2d display of scalar_units and of vector_units (create a msci_units_2d library for it)
+// TODO: 3d display of scalar_units and of vector_units (create a msci_units_3d library for it)
 // TODO: volume should be constructed with an string of the form 2cm * 1cm * 3cm and separate the three dimensions as different units. Also, the display should be, for that case, automatically configured to be 2cm * 1cm * 3cm than to be the total amount (with a member-variable)
 // TODO: units should allow to sum strings
 // TODO: vector<scalar_unit> initialized from a list of units (separated by a selectable string)
 // TODO: is_dimension(const string&,const string&) which gives true if the given string is of the asked dimensions
+// TODO: light_length which uses only an enum of prefixes and a value, maybe it should be called length, and length should be called full_length
 
 // VECTOR_UNIT
 // TODO: vector_unit(float,const string&,angle...) constructor for vector_unit class and subclasses
 // TODO: constructor of vector_unit which receives const string& including angles
 // TODO: operator >> should allow to create vectors giving angles
+// TODO: string initialization of vector_unit has to work with coord
+// TODO: finish to map the functions of hyper_spherical_coordinates inside vector_unit
+// TODO: maybe auto_vector and auto_scalar can be independent of auto_unit, in order to avoid the virtual inheritance
+
+// MATERIAL_VECTOR_UNIT
+// TODO: decide how it'll be, in order to include real space to the vector_unit
 
 // UNITS EXTRA
 // TODO: pixel dimension, pixel unit and pixels_distance classes
 // TODO: the pH should be an special unit
+// TODO: unit time class should be initialized by multiple abbreviations as 100 min 40 s for example
+// TODO: unit time class should display with an string "d s" specifying the dimensions to calculate on
 
-// OPTIMIZATION
+// CODE OPTIMIZATION
 // TODO: divide single dimensions unit of multiple-dimensions unit in order to save a lot of space by not using vectors of prefixes, dimensions and abbreviations
 // TODO: maybe prefix class shouldn't have the power. Instead, use different prefixes
 // TODO: check the object code resulting by testing different functions of the unit classes
-// TODO: light_length which uses only an enum of prefixes and a value, maybe it should be called length, and length should be called full_length
 
 // ELECTRONICS
 // TODO: check sensor libraries and decide which ones to support inside msci_units (maybe in a new msci library if needed)

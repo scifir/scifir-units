@@ -13,31 +13,31 @@ namespace msci
 	{
 	}
 
-	hyper_spherical_coordinates::hyper_spherical_coordinates(function<space_type()> new_value) : coordinates_nd(),  directions(angle_container()), unidimensional(false)
+	hyper_spherical_coordinates::hyper_spherical_coordinates(space_type new_value) : coordinates_nd(),  directions(angle_container()), unidimensional(false)
 	{
 		r = new_value;
 	}
 
-	hyper_spherical_coordinates::hyper_spherical_coordinates(function<space_type()> new_value, direction_symbol new_direction) : coordinates_nd(), directions(angle_container()), unidimensional(false)
+	hyper_spherical_coordinates::hyper_spherical_coordinates(space_type new_value, direction_symbol new_direction) : coordinates_nd(), directions(angle_container()), unidimensional(false)
 	{
 		r = new_value;
 		directions.direction = direction_lr(new_direction);
 	}
 
-	hyper_spherical_coordinates::hyper_spherical_coordinates(function<space_type()> new_value, angle_type new_angle1) : coordinates_nd(), directions(angle_container()), unidimensional(false)
+	hyper_spherical_coordinates::hyper_spherical_coordinates(space_type new_value, angle_type new_angle1) : coordinates_nd(), directions(angle_container()), unidimensional(false)
 	{
 		r = new_value;
 		directions.angles.push_back(msci::angle_number(new_angle1));
 	}
 
-	hyper_spherical_coordinates::hyper_spherical_coordinates(function<space_type()> new_value, angle_type new_angle1, angle_type new_angle2) : coordinates_nd(), directions(angle_container()), unidimensional(false)
+	hyper_spherical_coordinates::hyper_spherical_coordinates(space_type new_value, angle_type new_angle1, angle_type new_angle2) : coordinates_nd(), directions(angle_container()), unidimensional(false)
 	{
 		r = new_value;
 		directions.angles.push_back(msci::angle_number(new_angle1));
 		directions.angles.push_back(msci::angle_number(new_angle2));
 	}
 
-	hyper_spherical_coordinates::hyper_spherical_coordinates(function<space_type()> new_value, msci::angle_container new_angles) : coordinates_nd(), directions(angle_container()), unidimensional(false)
+	hyper_spherical_coordinates::hyper_spherical_coordinates(space_type new_value, msci::angle_container new_angles) : coordinates_nd(), directions(angle_container()), unidimensional(false)
 	{
 		r = new_value;
 		for(auto& new_angle : new_angles)
@@ -46,7 +46,7 @@ namespace msci
 		}
 	}
 
-	hyper_spherical_coordinates::hyper_spherical_coordinates(function<space_type()> new_value, boost::variant<msci::angle_container,direction_symbol> new_direction) : coordinates_nd(), directions(angle_container()), unidimensional(false)
+	hyper_spherical_coordinates::hyper_spherical_coordinates(space_type new_value, boost::variant<msci::angle_container,direction_symbol> new_direction) : coordinates_nd(), directions(angle_container()), unidimensional(false)
 	{
 		r = new_value;
 		if (new_direction.type() == typeid(direction_symbol))
@@ -108,7 +108,7 @@ namespace msci
 
 	space_type hyper_spherical_coordinates::get_value() const
 	{
-		return r();
+		return r;
 	}
 
 	space_type hyper_spherical_coordinates::n_projection(unsigned int i) const
@@ -192,20 +192,20 @@ namespace msci
 		{
 			if (directions.direction == right)
 			{
-				result = r();
+				result = r;
 			}
 			else
 			{
-				result = -r();
+				result = -r;
 			}
 		}
 		else if(is_2d())
 		{
-			result = polar_to_cartesian_2d_x(r(),directions.angles[0]);
+			result = polar_to_cartesian_2d_x(r,directions.angles[0]);
 		}
 		else if(is_3d())
 		{
-			result = spherical_to_cartesian_3d_x(r(),directions.angles[0],directions.angles[1]);
+			result = spherical_to_cartesian_3d_x(r,directions.angles[0],directions.angles[1]);
 		}
 		else
 		{
@@ -230,11 +230,11 @@ namespace msci
 		}
 		else if(is_2d())
 		{
-			result = polar_to_cartesian_2d_y(r(),directions.angles[0]);
+			result = polar_to_cartesian_2d_y(r,directions.angles[0]);
 		}
 		else if(is_3d())
 		{
-			result = spherical_to_cartesian_3d_y(r(),directions.angles[0],directions.angles[1]);
+			result = spherical_to_cartesian_3d_y(r,directions.angles[0],directions.angles[1]);
 		}
 		else
 		{
@@ -263,7 +263,7 @@ namespace msci
 		}
 		else if(is_3d())
 		{
-			result = spherical_to_cartesian_3d_z(r(),directions.angles[0],directions.angles[1]);
+			result = spherical_to_cartesian_3d_z(r,directions.angles[0],directions.angles[1]);
 		}
 		else
 		{

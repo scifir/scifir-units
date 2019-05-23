@@ -178,13 +178,13 @@ namespace msci
 
 msci::auto_vector operator +(const msci::scalar_unit& x,const msci::vector_unit& y)
 {
-	msci::auto_vector z = msci::auto_vector(x,y.get_angles());
+	msci::auto_vector z = msci::auto_vector(x,y.get_coordinates().get_angles());
 	return z + y;
 }
 
 msci::auto_vector operator -(const msci::scalar_unit& x,const msci::vector_unit& y)
 {
-	msci::auto_vector z = msci::auto_vector(x,y.get_angles());
+	msci::auto_vector z = msci::auto_vector(x,y.get_coordinates().get_angles());
 	return z - y;
 }
 

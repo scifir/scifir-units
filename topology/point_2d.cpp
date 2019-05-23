@@ -24,7 +24,7 @@ namespace msci
 	{
 		ostringstream out;
 		out << "(" << x << "," << y << ")";
-		return out.str().c_str();
+		return out.str();
 	}
 
 	void point_2d::print() const

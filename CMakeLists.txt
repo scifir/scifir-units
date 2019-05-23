@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.8.2)
+cmake_minimum_required(VERSION 3.7.1)
 
 include_directories(../../ "${CMAKE_INSTALL_PREFIX}/include")
 link_directories("${CMAKE_INSTALL_PREFIX}/lib")
 
-set(CMAKE_CXX_COMPILER C:/Programas/MSYS2/mingw64/bin/g++.exe)
+#set(CMAKE_CXX_COMPILER C:/Programas/MSYS2/mingw64/bin/g++.exe)
 
 set(TARGET_LOCAL_H
 meca_numbers.hpp)

@@ -7,101 +7,101 @@ using namespace std;
 
 namespace msci
 {
-	vector_unit::vector_unit() : unit(),hyper_spherical_coordinates()
+	vector_unit::vector_unit() : unit(),coord()
 	{
 	}
 
-	vector_unit::vector_unit(const vector_unit& x) : unit(x),hyper_spherical_coordinates(lambda_value(),x.get_angles())
+	vector_unit::vector_unit(const vector_unit& x) : unit(x),coord(x.get_value(),x.get_angles())
 	{
 		operator=(x);
 	}
 
-	vector_unit::vector_unit(vector_unit&& x) : unit(move(x)),hyper_spherical_coordinates(lambda_value(),move(x.get_angles()))
+	vector_unit::vector_unit(vector_unit&& x) : unit(move(x)),coord(x.get_value(),move(x.get_angles()))
 	{
 		operator=(move(x));
 	}
 
-	vector_unit::vector_unit(msci::space_type new_value,const string& init_value) : unit(new_value,init_value),hyper_spherical_coordinates(lambda_value(), direction_symbol::left)
+	vector_unit::vector_unit(msci::space_type new_value,const string& init_value) : unit(new_value,init_value),coord(new_value, direction_symbol::left)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, direction_symbol new_direction) : unit(new_value), hyper_spherical_coordinates(lambda_value(), new_direction)
+	vector_unit::vector_unit(const unit& new_value, direction_symbol new_direction) : unit(new_value), coord(new_value.get_value(), new_direction)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1) : unit(new_value), hyper_spherical_coordinates(lambda_value(), new_angle1)
+	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1) : unit(new_value), coord(new_value.get_value(), new_angle1)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1, angle_type new_angle2) : unit(new_value), hyper_spherical_coordinates(lambda_value(), new_angle1, new_angle2)
+	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1, angle_type new_angle2) : unit(new_value), coord(new_value.get_value(), new_angle1, new_angle2)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, msci::angle_container new_angles) : unit(new_value), hyper_spherical_coordinates(lambda_value(), new_angles)
+	vector_unit::vector_unit(const unit& new_value, msci::angle_container new_angles) : unit(new_value), coord(new_value.get_value(), new_angles)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, direction_symbol new_direction) : unit(move(new_value)), hyper_spherical_coordinates(lambda_value(), new_direction)
+	vector_unit::vector_unit(unit&& new_value, direction_symbol new_direction) : unit(move(new_value)), coord(new_value.get_value(), new_direction)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1) : unit(move(new_value)), hyper_spherical_coordinates(lambda_value(), new_angle1)
+	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1) : unit(move(new_value)), coord(new_value.get_value(), new_angle1)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, angle_type new_angle2) : unit(move(new_value)), hyper_spherical_coordinates(lambda_value(), new_angle1, new_angle2)
+	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, angle_type new_angle2) : unit(move(new_value)), coord(new_value.get_value(), new_angle1, new_angle2)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, msci::angle_container new_angles) : unit(move(new_value)), hyper_spherical_coordinates(lambda_value(), new_angles)
+	vector_unit::vector_unit(unit&& new_value, msci::angle_container new_angles) : unit(move(new_value)), coord(new_value.get_value(), new_angles)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, direction_symbol new_direction, const string& init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_direction)
+	vector_unit::vector_unit(const unit& new_value, direction_symbol new_direction, const string& init_value) : unit(new_value,init_value), coord(new_value.get_value(), new_direction)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1, const string& init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_angle1)
+	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1, const string& init_value) : unit(new_value,init_value), coord(new_value.get_value(), new_angle1)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1, angle_type new_angle2, const string& init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_angle1, new_angle2)
+	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1, angle_type new_angle2, const string& init_value) : unit(new_value,init_value), coord(new_value.get_value(), new_angle1, new_angle2)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, msci::angle_container new_angles, const string& init_value) : unit(new_value,init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
+	vector_unit::vector_unit(const unit& new_value, msci::angle_container new_angles, const string& init_value) : unit(new_value,init_value), coord(new_value.get_value(), new_angles)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, direction_symbol new_direction, const string& init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_direction)
+	vector_unit::vector_unit(unit&& new_value, direction_symbol new_direction, const string& init_value) : unit(move(new_value),init_value), coord(new_value.get_value(), new_direction)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, const string& init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_angle1)
+	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, const string& init_value) : unit(move(new_value),init_value), coord(new_value.get_value(), new_angle1)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, angle_type new_angle2, const string& init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_angle1, new_angle2)
+	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, angle_type new_angle2, const string& init_value) : unit(move(new_value),init_value), coord(new_value.get_value(), new_angle1, new_angle2)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, msci::angle_container new_angles, const string& init_value) : unit(move(new_value),init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
+	vector_unit::vector_unit(unit&& new_value, msci::angle_container new_angles, const string& init_value) : unit(move(new_value),init_value), coord(new_value.get_value(), new_angles)
 	{
 	}
 
-	vector_unit::vector_unit(const string& init_value, direction_symbol new_direction) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_direction)
+	vector_unit::vector_unit(const string& init_value, direction_symbol new_direction) : unit(init_value), coord(0.0f, new_direction)
 	{
 	}
 
-	vector_unit::vector_unit(const string& init_value, angle_type new_angle1) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_angle1)
+	vector_unit::vector_unit(const string& init_value, angle_type new_angle1) : unit(init_value), coord(0.0f, new_angle1)
 	{
 	}
 
-	vector_unit::vector_unit(const string& init_value, angle_type new_angle1, angle_type new_angle2) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_angle1, new_angle2)
+	vector_unit::vector_unit(const string& init_value, angle_type new_angle1, angle_type new_angle2) : unit(init_value), coord(0.0f, new_angle1, new_angle2)
 	{
 	}
 
-	vector_unit::vector_unit(const string& init_value, msci::angle_container new_angles) : unit(init_value), hyper_spherical_coordinates(lambda_value(), new_angles)
+	vector_unit::vector_unit(const string& init_value, msci::angle_container new_angles) : unit(init_value), coord(0.0f, new_angles)
 	{
 	}
 
@@ -110,15 +110,15 @@ namespace msci
 		if (same_nd(*this,x))
 		{
 			unit::operator=(x);
-			r = lambda_value();
+			coord.get_r() = x.get_value();
 			if (x.is_1d())
 			{
-				directions.direction = x.get_direction();
-				unidimensional = true;
+				coord.get_direction() = x.get_direction();
+				coord.get_unidimensional() = true;
 			}
 			else
 			{
-				directions.angles = x.get_angles();
+				coord.get_angles() = x.get_angles();
 			}
 		}
 		else
@@ -133,15 +133,15 @@ namespace msci
 		if (same_nd(*this,x))
 		{
 			unit::operator=(move(x));
-			r = lambda_value();
+			coord.get_r() = x.get_value();
 			if (x.is_1d())
 			{
-				directions.direction = move(x.get_direction());
-				unidimensional = true;
+				coord.get_direction() = move(x.get_direction());
+				coord.get_unidimensional() = true;
 			}
 			else
 			{
-				directions.angles = move(x.get_angles());
+				coord.get_angles() = move(x.get_angles());
 			}
 		}
 		else
@@ -169,179 +169,179 @@ namespace msci
 		{
 			if (x == direction_symbol::left)
 			{
-				directions.direction.go_left();
+				coord.get_direction().go_left();
 			}
 			else if(x == direction_symbol::right)
 			{
-				directions.direction.go_right();
+				coord.get_direction().go_right();
 			}
 		}
 		else if (is_2d())
 		{
 			if (x == direction_symbol::left)
 			{
-				directions.angles[0] = 180;
+				coord.get_angle1() = 180;
 			}
 			else if(x == direction_symbol::right)
 			{
-				directions.angles[0] = 0;
+				coord.get_angle1() = 0;
 			}
 			else if(x == top)
 			{
-				directions.angles[0] = 90;
+				coord.get_angle1() = 90;
 			}
 			else if(x == bottom)
 			{
-				directions.angles[0] = 270;
+				coord.get_angle1() = 270;
 			}
 			else if(x == left_top)
 			{
-				directions.angles[0] = 135;
+				coord.get_angle1() = 135;
 			}
 			else if(x == right_top)
 			{
-				directions.angles[0] = 45;
+				coord.get_angle1() = 45;
 			}
 			else if(x == right_bottom)
 			{
-				directions.angles[0] = 315;
+				coord.get_angle1() = 315;
 			}
 			else if(x == left_bottom)
 			{
-				directions.angles[0] = 225;
+				coord.get_angle1() = 225;
 			}
 		}
 		else if (is_3d())
 		{
 			if (x == direction_symbol::left)
 			{
-				directions.angles[0] = 270;
-				directions.angles[1] = 90;
+				coord.get_angle1() = 270;
+				coord.get_angle2() = 90;
 			}
 			else if(x == direction_symbol::right)
 			{
-				directions.angles[0] = 90;
-				directions.angles[1] = 90;
+				coord.get_angle1() = 90;
+				coord.get_angle2() = 90;
 			}
 			else if(x == top)
 			{
-				directions.angles[0] = 0;
-				directions.angles[1] = 0;
+				coord.get_angle1() = 0;
+				coord.get_angle2() = 0;
 			}
 			else if(x == bottom)
 			{
-				directions.angles[0] = 0;
-				directions.angles[1] = 180;
+				coord.get_angle1() = 0;
+				coord.get_angle2() = 180;
 			}
 			else if(x == left_top)
 			{
-				directions.angles[0] = 270;
-				directions.angles[1] = 45;
+				coord.get_angle1() = 270;
+				coord.get_angle2() = 45;
 			}
 			else if(x == right_top)
 			{
-				directions.angles[0] = 90;
-				directions.angles[1] = 45;
+				coord.get_angle1() = 90;
+				coord.get_angle2() = 45;
 			}
 			else if(x == right_bottom)
 			{
-				directions.angles[0] = 90;
-				directions.angles[1] = 135;
+				coord.get_angle1() = 90;
+				coord.get_angle2() = 135;
 			}
 			else if(x == left_bottom)
 			{
-				directions.angles[0] = 270;
-				directions.angles[1] = 135;
+				coord.get_angle1() = 270;
+				coord.get_angle2() = 135;
 			}
 			else if(x == front)
 			{
-				directions.angles[0] = 0;
-				directions.angles[1] = 90;
+				coord.get_angle1() = 0;
+				coord.get_angle2() = 90;
 			}
 			else if(x == back)
 			{
-				directions.angles[0] = 180;
-				directions.angles[1] = 90;
+				coord.get_angle1() = 180;
+				coord.get_angle2() = 90;
 			}
 			else if(x == left_front)
 			{
-				directions.angles[0] = 315;
-				directions.angles[1] = 90;
+				coord.get_angle1() = 315;
+				coord.get_angle2() = 90;
 			}
 			else if(x == right_front)
 			{
-				directions.angles[0] = 45;
-				directions.angles[1] = 90;
+				coord.get_angle1() = 45;
+				coord.get_angle2() = 90;
 			}
 			else if(x == top_front)
 			{
-				directions.angles[0] = 0;
-				directions.angles[1] = 45;
+				coord.get_angle1() = 0;
+				coord.get_angle2() = 45;
 			}
 			else if(x == bottom_front)
 			{
-				directions.angles[0] = 0;
-				directions.angles[1] = 135;
+				coord.get_angle1() = 0;
+				coord.get_angle2() = 135;
 			}
 			else if(x == left_back)
 			{
-				directions.angles[0] = 225;
-				directions.angles[1] = 90;
+				coord.get_angle1() = 225;
+				coord.get_angle2() = 90;
 			}
 			else if(x == right_back)
 			{
-				directions.angles[0] = 135;
-				directions.angles[1] = 90;
+				coord.get_angle1() = 135;
+				coord.get_angle2() = 90;
 			}
 			else if(x == top_back)
 			{
-				directions.angles[0] = 180;
-				directions.angles[1] = 45;
+				coord.get_angle1() = 180;
+				coord.get_angle2() = 45;
 			}
 			else if(x == bottom_back)
 			{
-				directions.angles[0] = 180;
-				directions.angles[1] = 135;
+				coord.get_angle1() = 180;
+				coord.get_angle2() = 135;
 			}
 			else if(x == left_top_front)
 			{
-				directions.angles[0] = 315;
-				directions.angles[1] = 45;
+				coord.get_angle1() = 315;
+				coord.get_angle2() = 45;
 			}
 			else if(x == right_top_front)
 			{
-				directions.angles[0] = 45;
-				directions.angles[1] = 45;
+				coord.get_angle1() = 45;
+				coord.get_angle2() = 45;
 			}
 			else if(x == left_bottom_front)
 			{
-				directions.angles[0] = 315;
-				directions.angles[1] = 135;
+				coord.get_angle1() = 315;
+				coord.get_angle2() = 135;
 			}
 			else if(x == right_bottom_front)
 			{
-				directions.angles[0] = 45;
-				directions.angles[1] = 135;
+				coord.get_angle1() = 45;
+				coord.get_angle2() = 135;
 			}
 			else if(x == left_top_back)
 			{
-				directions.angles[0] = 225;
-				directions.angles[1] = 45;
+				coord.get_angle1() = 225;
+				coord.get_angle2() = 45;
 			}
 			else if(x == right_top_back)
 			{
-				directions.angles[0] = 135;
-				directions.angles[1] = 45;
+				coord.get_angle1() = 135;
+				coord.get_angle2() = 45;
 			}
 			else if(x == left_bottom_back)
 			{
-				directions.angles[0] = 225;
-				directions.angles[1] = 135;
+				coord.get_angle1() = 225;
+				coord.get_angle2() = 135;
 			}
 			else if(x == right_bottom_back)
 			{
-				directions.angles[0] = 135;
-				directions.angles[1] = 135;
+				coord.get_angle1() = 135;
+				coord.get_angle2() = 135;
 			}
 		}
 	}
@@ -375,7 +375,7 @@ namespace msci
 					unit::value -= y.unit::get_value();
 					if(unit::value < 0)
 					{
-						directions.direction.invert();
+						coord.invert();
 						unit::value = msci::abs(unit::value);
 					}
 				}
@@ -385,7 +385,7 @@ namespace msci
 				space_type new_x = x_projection() + y.x_projection();
 				space_type new_y = y_projection() + y.y_projection();
 				unit::value = cartesian_2d_to_polar_r(new_x, new_y);
-				directions.angles[0] = cartesian_2d_to_polar_angle(new_x, new_y);
+				coord.get_angle1() = cartesian_2d_to_polar_angle(new_x, new_y);
 			}
 			else if(is_3d())
 			{
@@ -393,8 +393,8 @@ namespace msci
 				space_type new_y = y_projection() + y.y_projection();
 				space_type new_z = z_projection() + y.z_projection();
 				unit::value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
-				directions.angles[0] = cartesian_3d_to_spherical_angle1(new_x, new_y, new_z);
-				directions.angles[1] = cartesian_3d_to_spherical_angle2(new_x, new_y, new_z);
+				coord.get_angle1() = cartesian_3d_to_spherical_angle1(new_x, new_y, new_z);
+				coord.get_angle2() = cartesian_3d_to_spherical_angle2(new_x, new_y, new_z);
 			}
 		}
 		else
@@ -425,19 +425,19 @@ namespace msci
 		auto_unit new_unit = auto_unit(new_value, new_real_dimensions, new_actual_dimensions);
 		if(is_1d())
 		{
-			return auto_vector(new_unit, directions.direction.get_direction());
+			return auto_vector(new_unit, coord.get_direction().get_direction());
 		}
 		else if(is_2d())
 		{
-			return auto_vector(new_unit, directions.angles[0]);
+			return auto_vector(new_unit, coord.get_angle1());
 		}
 		else if(is_3d())
 		{
-			return auto_vector(new_unit, directions.angles[0], directions.angles[1]);
+			return auto_vector(new_unit, coord.get_angle1(), coord.get_angle2());
 		}
 		else
 		{
-			return auto_vector(new_unit, directions.angles);
+			return auto_vector(new_unit, coord.get_angles());
 		}
 	}
 
@@ -449,19 +449,19 @@ namespace msci
 		auto_unit new_unit = auto_unit(new_value, new_real_dimensions, new_actual_dimensions);
 		if(is_1d())
 		{
-			return auto_vector(new_unit, directions.direction.get_direction());
+			return auto_vector(new_unit, coord.get_direction().get_direction());
 		}
 		else if(is_2d())
 		{
-			return auto_vector(new_unit, directions.angles[0]);
+			return auto_vector(new_unit, coord.get_angle1());
 		}
 		else if(is_3d())
 		{
-			return auto_vector(new_unit, directions.angles[0], directions.angles[1]);
+			return auto_vector(new_unit, coord.get_angle1(), coord.get_angle2());
 		}
 		else
 		{
-			return auto_vector(new_unit, directions.angles);
+			return auto_vector(new_unit, coord.get_angles());
 		}
 	}
 
@@ -472,15 +472,15 @@ namespace msci
 			auto_unit new_unit = *this ^ x;
 			if(is_1d())
 			{
-				return auto_vector(new_unit, directions.direction.get_direction());
+				return auto_vector(new_unit, coord.get_direction().get_direction());
 			}
 			else if(is_2d())
 			{
-				return auto_vector(new_unit, directions.angles[0]);
+				return auto_vector(new_unit, coord.get_angle1());
 			}
 			else if(is_3d())
 			{
-				return auto_vector(new_unit, directions.angles[0], directions.angles[1]);
+				return auto_vector(new_unit, coord.get_angle1(), coord.get_angle2());
 			}
 		}
 		return auto_vector("0 m", direction_symbol::left);

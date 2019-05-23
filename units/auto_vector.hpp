@@ -151,15 +151,15 @@ namespace msci
 	auto_vector vector_unit::operator ^(U y) const
 	{
 		auto_unit new_value = auto_unit(unit::operator^(*this,y));
-		if (is_1d())
+		if (coord.is_1d())
 		{
-			return auto_vector(new_value, get_direction());
+			return auto_vector(new_value, coord.get_direction());
 		}
 		else
 		{
 			msci::angle_container new_angles = msci::angle_container();
-			new_angles.push_back(directions.angles[0]);
-			new_angles.push_back(directions.angles[1]);
+			new_angles.push_back(coord.get_angle1());
+			new_angles.push_back(coord.get_angle2());
 			return auto_vector(new_value, new_angles);
 		}
 	}
@@ -246,14 +246,14 @@ msci::auto_vector operator *(const msci::scalar_unit&,const msci::vector_unit_cr
 template<typename U, typename = typename enable_if<is_number<U>::value>::type>
 msci::auto_vector operator +(U x,const msci::vector_unit& y)
 {
-	return msci::auto_vector(y+x,y.get_angles());
+	return msci::auto_vector(y+x,y.get_coordinates().get_angles());
 }
 
 template<typename U, typename = typename enable_if<is_number<U>::value>::type>
 msci::auto_vector operator -(U x,const msci::vector_unit& y)
 {
 	msci::auto_vector z = y;
-	z.invert();
+	z.get_coordinates().invert();
 	z = x;
 	return msci::auto_vector(z-y);
 }
@@ -261,7 +261,7 @@ msci::auto_vector operator -(U x,const msci::vector_unit& y)
 template<typename U, typename = typename enable_if<is_number<U>::value>::type>
 msci::auto_vector operator *(U x,const msci::vector_unit& y)
 {
-	return msci::auto_vector(y*x,y.get_angles());
+	return msci::auto_vector(y*x,y.get_coordinates().get_angles());
 }
 
 template<typename U, typename = typename enable_if<is_number<U>::value>::type>

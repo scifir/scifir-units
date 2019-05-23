@@ -255,7 +255,7 @@ namespace msci
 {
 	class auto_vector;
 
-	class vector_unit : public virtual unit, public hyper_spherical_coordinates
+	class vector_unit : public virtual unit
 	{
 		public:
 			vector_unit();
@@ -333,7 +333,7 @@ namespace msci
 				unit::value *= y;
 				if(y < 0)
 				{
-					for(msci::angle_number& angle : directions.angles)
+					for(msci::angle_number& angle : coord.get_directions().angles)
 					{
 						angle *= -1;
 					}
@@ -346,7 +346,7 @@ namespace msci
 				unit::value /= y;
 				if(y < 0)
 				{
-					for(msci::angle_number& angle : directions.angles)
+					for(msci::angle_number& angle : coord.get_directions().angles)
 					{
 						angle *= -1;
 					}
@@ -359,6 +359,76 @@ namespace msci
 				unit::value ^= y;
 			}
 
+			inline hyper_spherical_coordinates& get_coordinates()
+			{
+				return coord;
+			}
+
+			inline const hyper_spherical_coordinates& get_coordinates() const
+			{
+				return coord;
+			}
+
+			inline const msci::angle_number& get_angle1() const
+			{
+				return coord.get_angle1();
+			}
+
+			inline const msci::angle_number& get_angle2() const
+			{
+				return coord.get_angle2();
+			}
+
+			inline const msci::angle_number& get_angle(unsigned int i) const
+			{
+				return coord.get_angle(i);
+			}
+
+			inline const angle_container& get_angles() const
+			{
+				return coord.get_angles();
+			}
+
+			inline const direction_lr& get_direction() const
+			{
+				return coord.get_direction();
+			}
+
+			inline const bool& is_1d() const
+			{
+				return coord.is_1d();
+			}
+
+			inline bool is_2d() const
+			{
+				return coord.is_2d();
+			}
+
+			inline bool is_3d() const
+			{
+				return coord.is_3d();
+			}
+
+			inline space_type x_projection() const
+			{
+				return coord.x_projection();
+			}
+
+			inline space_type y_projection() const
+			{
+				return coord.y_projection();
+			}
+
+			inline space_type z_projection() const
+			{
+				return coord.z_projection();
+			}
+
+			inline void invert()
+			{
+				coord.invert();
+			}
+
 		private:
 			inline function<space_type()> lambda_value()
 			{
@@ -367,6 +437,8 @@ namespace msci
 					return unit::value.get_value();
 				};
 			}
+
+			hyper_spherical_coordinates coord;
 	};
 
 	template<typename T>
