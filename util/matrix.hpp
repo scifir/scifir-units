@@ -1,7 +1,7 @@
 #ifndef MATH_LINEAR_ALGEBRA_MATRIX_HPP_INCLUDED
 #define MATH_LINEAR_ALGEBRA_MATRIX_HPP_INCLUDED
 
-#include "msci/units/units/unit.hpp"
+#include "msci/units/units/scalar_unit.hpp"
 
 #include <iostream>
 #include <sstream>

@@ -1,7 +1,6 @@
 #ifndef UNITS_HPP_INCLUDED
 #define UNITS_HPP_INCLUDED
 
-#include "msci/units/units/auto_unit.hpp"
 #include "msci/units/units/auto_scalar.hpp"
 #include "msci/units/units/auto_vector.hpp"
 #include "msci/units/units/unit_basic.hpp"

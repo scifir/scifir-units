@@ -38,7 +38,10 @@ namespace msci
 		ostringstream output;
 		double integer_part;
 		modf(get_value(),&integer_part);
-		output << setprecision(to_string(int(integer_part)).length() + number_of_decimals);
+		if (number_of_decimals != 0)
+		{
+			output << setprecision(to_string(int(integer_part)).length() + number_of_decimals);
+		}
 		if(is_defined())
 		{
 			if(get_value() >= 0)

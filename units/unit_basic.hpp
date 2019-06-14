@@ -2,9 +2,8 @@
 #define PHYSICS_BASIC_UNITS_UNIT_BASIC_HPP
 
 #include "msci/units/units/prefix.hpp"
-#include "msci/units/units/scalar_unit.hpp"
 #include "msci/units/units/auto_scalar.hpp"
-#include "msci/units/units/unit.hpp"
+#include "msci/units/units/scalar_unit.hpp"
 
 #include <chrono>
 #include <iostream>

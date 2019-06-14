@@ -2,8 +2,8 @@
 #define MATH_TOPOLOGY_POINT_2D_HPP_INCLUDED
 
 #include "msci/units/topology/topology.hpp"
+#include "msci/units.hpp"
 
-#include <iostream>
 #include <string>
 
 using namespace std;
@@ -14,39 +14,40 @@ namespace msci
 	{
 		public:
 			point_2d();
-			point_2d(space_type,space_type);
+			point_2d(const length&,const length&);
 
-			inline space_type& get_x()
+			inline length& get_x()
 			{
 				return x;
 			}
 
-			inline space_type get_x() const
+			inline length get_x() const
 			{
 				return x;
 			}
 
-			inline space_type& get_y()
+			inline length& get_y()
 			{
 				return y;
 			}
 
-			inline space_type get_y() const
+			inline length get_y() const
 			{
 				return y;
 			}
 
-			space_type distance_to_origin() const;
+			void move_in_direction(const length&,const angle_number&);
+
+			length distance_to_origin() const;
 
 			string display() const;
-			void print() const;
 
 		private:
-			space_type x;
-			space_type y;
+			length x;
+			length y;
 	};
 
-	space_type distance_between_points(const point_2d&,const point_2d&);
+	length distance_between_points(const point_2d&,const point_2d&);
 }
 
 bool operator ==(const msci::point_2d&,const msci::point_2d&);

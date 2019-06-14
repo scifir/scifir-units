@@ -21,6 +21,8 @@ namespace msci
 			virtual const space_type y_projection() const = 0;
 			virtual const space_type z_projection() const = 0;
 			virtual space_type get_value() const = 0;
+			virtual string display_parameters() const = 0;
+			virtual string display_position() const = 0;
 	};
 
 	inline space_type cartesian_3d_to_cylindrical_r(space_type x,space_type y,space_type z)

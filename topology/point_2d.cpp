@@ -11,13 +11,20 @@ namespace msci
 	{
 	}
 
-	point_2d::point_2d(space_type new_x,space_type new_y) : x(new_x),y(new_y)
+	point_2d::point_2d(const length& new_x,const length& new_y) : x(new_x),y(new_y)
 	{
 	}
 
-	space_type point_2d::distance_to_origin() const
+	void point_2d::move_in_direction(const length& x_value,const angle_number& x_angle)
 	{
-		return sqrt(pow(x,2) + pow(y,2));
+		x = x + x_value*cos(x_angle);
+		y = y + x_value*sin(x_angle);
+	}
+
+	length point_2d::distance_to_origin() const
+	{
+		return length("1 m");
+		//return sqrt(pow(x,2) + pow(y,2));
 	}
 
 	string point_2d::display() const
@@ -27,14 +34,10 @@ namespace msci
 		return out.str();
 	}
 
-	void point_2d::print() const
+	length distance_between_points(const point_2d& x1,const point_2d& x2)
 	{
-		cout << display() << endl;
-	}
-
-	space_type distance_between_points(const point_2d& x1,const point_2d& x2)
-	{
-		return sqrt(pow(x1.get_x() - x2.get_x(),2) + pow(x1.get_y() - x2.get_y(),2));
+		return length("1 m");
+		//return length(sqrt(pow(x1.get_x() - x2.get_x(),2) + pow(x1.get_y() - x2.get_y(),2)));
 	}
 }
 

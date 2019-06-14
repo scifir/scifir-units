@@ -23,7 +23,7 @@ namespace msci
 		normalize_value();
 	}
 
-	angle_number::angle_number(const unit& x)
+	angle_number::angle_number(const scalar_unit& x)
 	{
 		if (x.has_empty_dimensions())
 		{

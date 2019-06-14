@@ -1,4 +1,4 @@
-#include "msci/units/units/unit.hpp"
+#include "msci/units/units/scalar_unit.hpp"
 
 #include "msci/units/units/abbreviation.hpp"
 #include "msci/units/units/conversion.hpp"
@@ -20,36 +20,45 @@
 #include <stdexcept>
 #include <string>
 #include <type_traits>
+
 using namespace std;
 
 namespace msci
 {
-	unit::unit() : value(0),actual_dimensions()
+	scalar_unit::scalar_unit() : actual_dimensions(),value(0)
 	{
 	}
 
-	unit::unit(const unit& new_value,const string& init_value) : value(new_value.get_value()),actual_dimensions(create_actual_dimensions(init_value))
+	scalar_unit::scalar_unit(const scalar_unit& x) : actual_dimensions(x.get_actual_dimensions()),value(x.get_value())
 	{
 	}
 
-	unit::unit(unit&& new_value,const string& init_value) : value(move(new_value.get_value())),actual_dimensions(create_actual_dimensions(init_value))
+	scalar_unit::scalar_unit(scalar_unit&& x) : actual_dimensions(move(x.get_actual_dimensions())),value(move(x.get_value()))
 	{
 	}
 
-	unit::unit(msci::space_type new_value, const string& dimension_structure) : value(new_value),actual_dimensions()
+	scalar_unit::scalar_unit(const unit_number& new_value, const string& dimension_structure) : actual_dimensions(),value(new_value)
 	{
 		initialize_dimensions(dimension_structure);
 	}
 
-	unit::unit(msci::unit_number new_value, const vector_actual_dimensions& new_actual_dimensions) : value(move(new_value)),actual_dimensions(move(new_actual_dimensions))
+	scalar_unit::scalar_unit(const unit_number& new_value, const vector_actual_dimensions& new_actual_dimensions) : actual_dimensions(move(new_actual_dimensions)),value(new_value)
 	{
 	}
 
-	unit::unit(const string& init_value) : unit()
+	scalar_unit::scalar_unit(const scalar_unit& new_value,const string& init_value) : actual_dimensions(create_actual_dimensions(init_value)),value(new_value.get_value())
+	{
+	}
+
+	scalar_unit::scalar_unit(scalar_unit&& new_value,const string& init_value) : actual_dimensions(create_actual_dimensions(init_value)),value(new_value.get_value())
+	{
+	}
+
+	scalar_unit::scalar_unit(const string& init_value) : scalar_unit()
 	{
 		if(!isdigit(init_value[0]))
 		{
-			throw invalid_argument("Unit string bad defined: '" + init_value + "'");
+			throw invalid_argument("scalar_unit string bad defined: '" + init_value + "'");
 		}
 		else
 		{
@@ -64,7 +73,7 @@ namespace msci
 			}
 			if(init_value[i] != ' ')
 			{
-				throw invalid_argument("Unit string must have the value separated from units with a single space");
+				throw invalid_argument("scalar_unit string must have the value separated from scalar_units with a single space");
 			}
 			string string_value = init_value.substr(0, i);
 			boost::algorithm::erase_all(string_value, " ");
@@ -73,15 +82,7 @@ namespace msci
 		}
 	}
 
-	unit::unit(const unit& x) : value(x.get_value()),actual_dimensions(x.get_actual_dimensions())
-	{
-	}
-
-	unit::unit(unit&& x) : value(move(x.get_value())),actual_dimensions(move(x.get_actual_dimensions()))
-	{
-	}
-
-	unit& unit::operator =(const unit& x)
+	scalar_unit& scalar_unit::operator =(const scalar_unit& x)
 	{
 		if (x.is_defined())
 		{
@@ -102,7 +103,7 @@ namespace msci
 		return *this;
 	}
 
-	unit& unit::operator =(unit&& x)
+	scalar_unit& scalar_unit::operator =(scalar_unit&& x)
 	{
 		if (x.is_defined())
 		{
@@ -123,51 +124,51 @@ namespace msci
 		return *this;
 	}
 
-	unit::operator float() const
+	scalar_unit::operator float() const
 	{
 		return value.get_value();
 	}
 
-	auto_unit unit::operator +(const unit& x) const
+	auto_scalar scalar_unit::operator +(const scalar_unit& x) const
 	{
 		if(x.has_dimensions(get_real_dimensions()))
 		{
-			auto_unit a = *this;
-			auto_unit y = x;
-			y.set_same_prefix(unit::get_actual_dimensions());
+			auto_scalar a = *this;
+			auto_scalar y = x;
+			y.set_same_prefix(scalar_unit::get_actual_dimensions());
 			a += y.get_value().get_value();
 			return move(a);
 		}
 		else
 		{
-			auto_unit y = auto_unit(0);
+			auto_scalar y = auto_scalar(0);
 			y.invalidate(8);
 			return move(y);
 		}
 	}
 
-	auto_unit unit::operator -(const unit& x) const
+	auto_scalar scalar_unit::operator -(const scalar_unit& x) const
 	{
 		if(x.has_dimensions(get_real_dimensions()))
 		{
-			auto_unit a = *this;
-			auto_unit y = x;
-			y.set_same_prefix(unit::get_actual_dimensions());
+			auto_scalar a = *this;
+			auto_scalar y = x;
+			y.set_same_prefix(scalar_unit::get_actual_dimensions());
 			a -= y.get_value().get_value();
 			return move(a);
 		}
 		else
 		{
-			auto_unit y = auto_unit(0);
+			auto_scalar y = auto_scalar(0);
 			y.invalidate(9);
 			return move(y);
 		}
 	}
 
-	auto_unit unit::operator *(const unit& x) const
+	auto_scalar scalar_unit::operator *(const scalar_unit& x) const
 	{
 		msci::unit_number new_value = value;
-		auto_unit y = x;
+		auto_scalar y = x;
 		if(y.has_dimensions(get_real_dimensions()))
 		{
 			y.set_same_prefix(get_actual_dimensions());
@@ -175,24 +176,24 @@ namespace msci
 		new_value *= y.get_value().get_value();
 		vector_real_dimensions new_real_dimensions = multiply_real_dimensions(get_real_dimensions(),y.get_real_dimensions());
 		vector_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(get_actual_dimensions(),y.get_actual_dimensions());
-		return move(auto_unit(new_value, new_real_dimensions, new_actual_dimensions));
+		return move(auto_scalar(new_value, new_real_dimensions, new_actual_dimensions));
 	}
 
-	auto_unit unit::operator /(const unit& x) const
+	auto_scalar scalar_unit::operator /(const scalar_unit& x) const
 	{
 		msci::unit_number new_value = value;
-		auto_unit y = x;
+		auto_scalar y = x;
 		if(y.has_dimensions(get_real_dimensions()))
 		{
-			y.set_same_prefix(unit::get_actual_dimensions());
+			y.set_same_prefix(scalar_unit::get_actual_dimensions());
 		}
 		new_value /= y.get_value().get_value();
 		vector_real_dimensions new_real_dimensions = divide_real_dimensions(get_real_dimensions(),y.get_real_dimensions());
 		vector_actual_dimensions new_actual_dimensions = divide_actual_dimensions(get_actual_dimensions(),y.get_actual_dimensions());
-		return move(auto_unit(new_value, new_real_dimensions, new_actual_dimensions));
+		return move(auto_scalar(new_value, new_real_dimensions, new_actual_dimensions));
 	}
 
-	auto_unit unit::operator ^(const unit& x) const
+	auto_scalar scalar_unit::operator ^(const scalar_unit& x) const
 	{
 		if(x.has_empty_dimensions())
 		{
@@ -200,62 +201,61 @@ namespace msci
 		}
 		else
 		{
-			auto_unit y = auto_unit(0);
+			auto_scalar y = auto_scalar(0);
 			y.invalidate(10);
 			return move(y);
 		}
 	}
 
-	void unit::operator +=(const unit& x)
+	void scalar_unit::operator +=(const scalar_unit& x)
 	{
-		auto_unit z = x;
+		auto_scalar z = x;
 		z.set_same_prefix(get_actual_dimensions());
 		if(!x.has_dimensions(get_real_dimensions()))
 		{
 			invalidate(8);
 		}
-		unit::value += z.get_value();
+		value += z.get_value();
 	}
 
-	void unit::operator -=(const unit& x)
+	void scalar_unit::operator -=(const scalar_unit& x)
 	{
-		auto_unit z = x;
+		auto_scalar z = x;
 		z.set_same_prefix(get_actual_dimensions());
 		if(!x.has_dimensions(get_real_dimensions()))
 		{
 			invalidate(9);
 		}
-		unit::value -= z.get_value();
+		value -= z.get_value();
 	}
 
-	unit& unit::operator++()
+	scalar_unit& scalar_unit::operator++()
 	{
 		value++;
 		return *this;
 	}
 
-	unit& unit::operator++(int)
+	scalar_unit& scalar_unit::operator++(int)
 	{
-		unit& tmp(*this);
+		scalar_unit& tmp(*this);
 		operator++();
 		return tmp;
 	}
 
-	unit& unit::operator--()
+	scalar_unit& scalar_unit::operator--()
 	{
 		value--;
 		return *this;
 	}
 
-	unit& unit::operator--(int)
+	scalar_unit& scalar_unit::operator--(int)
 	{
-		unit& tmp(*this);
+		scalar_unit& tmp(*this);
 		operator--();
 		return tmp;
 	}
 
-	/// Sets the dimensions to the dimensions given string. It invalidates the object if the dimensions aren't compatible with the real dimensions
-	void unit::change_dimensions(const string& new_dimensions)
+	void scalar_unit::change_dimensions(const string& new_dimensions)
 	{
 		if(has_dimensions(new_dimensions))
 		{
@@ -266,8 +266,8 @@ namespace msci
 				if(new_actual_abbreviation != nullptr)
 				{
 					shared_ptr<abbreviation> actual_abbreviation (new_actual_abbreviation);
-					auto_unit abbreviation_unit("1 " + actual_abbreviation->get_dimensions_match());
-					for(auto& actual_dimension2 : abbreviation_unit.get_actual_dimensions())
+					auto_scalar abbreviation_scalar_unit("1 " + actual_abbreviation->get_dimensions_match());
+					for(auto& actual_dimension2 : abbreviation_scalar_unit.get_actual_dimensions())
 					{
 						remove_prefix(actual_dimension2.second->get_dimension_prefixes(),actual_dimension2.second->get_prefix_base());
 					}
@@ -287,8 +287,8 @@ namespace msci
 				if(new_actual_abbreviation != nullptr)
 				{
 					shared_ptr<abbreviation> actual_abbreviation (new_actual_abbreviation);
-					auto_unit abbreviation_unit("1 " + actual_abbreviation->get_dimensions_match());
-					for(auto& actual_dimension2 : abbreviation_unit.get_actual_dimensions())
+					auto_scalar abbreviation_scalar_unit("1 " + actual_abbreviation->get_dimensions_match());
+					for(auto& actual_dimension2 : abbreviation_scalar_unit.get_actual_dimensions())
 					{
 						add_prefix(actual_dimension2.second->get_dimension_prefixes(),actual_dimension2.second->get_prefix_base());
 					}
@@ -307,15 +307,13 @@ namespace msci
 		}
 	}
 
-	/// Calculates if the dimensions are equal related to the given string
-	bool unit::has_dimensions(const string& dimension_structure) const
+	bool scalar_unit::has_dimensions(const string& dimension_structure) const
 	{
 		vector_real_dimensions structure_dimensions = create_real_dimensions(dimension_structure);
 		return has_dimensions(structure_dimensions);
 	}
 
-	/// Calculates if the dimensions are equal related to the real dimensions map
-	bool unit::has_dimensions(const vector_real_dimensions& second_dimensions) const
+	bool scalar_unit::has_dimensions(const vector_real_dimensions& second_dimensions) const
 	{
 		vector_real_dimensions real_dimensions_tmp = get_real_dimensions();
 		if(real_dimensions_tmp.size() == second_dimensions.size())
@@ -335,8 +333,7 @@ namespace msci
 		}
 	}
 
-	/// Returns true if the dimensions are empty
-	bool unit::has_empty_dimensions() const
+	bool scalar_unit::has_empty_dimensions() const
 	{
 		if(get_real_dimensions().size() == 0)
 		{
@@ -348,7 +345,7 @@ namespace msci
 		}
 	}
 
-	string unit::display_dimensions() const
+	string scalar_unit::display_dimensions() const
 	{
 		ostringstream dimension_text;
 		ostringstream dimension_up_text;
@@ -383,33 +380,24 @@ namespace msci
 		return dimension_text.str();
 	}
 
-	/// Returns the actual dimensions map
-	const vector_actual_dimensions& unit::get_actual_dimensions() const
+	const vector_actual_dimensions& scalar_unit::get_actual_dimensions() const
 	{
 		return actual_dimensions;
 	}
 
-	/// Returns the unit_number that stores the value
-	const msci::unit_number& unit::get_value() const
-	{
-		return value;
-	}
-
-	string unit::display(int number_of_decimals) const
+	string scalar_unit::display(int number_of_decimals) const
 	{
 		/*locale loc = locale("en_US.UTF8");
 		os.imbue(loc);*/
 		return value.print(number_of_decimals) + " " + display_dimensions();
 	}
 
-	/// Updates the value to the prefix added
-	void unit::add_prefix(shared_ptr<prefix> new_prefix,float prefix_base)
+	void scalar_unit::add_prefix(shared_ptr<prefix> new_prefix,float prefix_base)
 	{
 		value /= pow(prefix_base, new_prefix->get_conversion_factor() * new_prefix->scale);
 	}
 
-	/// Updates the value to the set of prefixes added
-	void unit::add_prefix(dimension_prefixes new_prefixes,float prefix_base)
+	void scalar_unit::add_prefix(dimension_prefixes new_prefixes,float prefix_base)
 	{
 		for(auto& map_value : new_prefixes)
 		{
@@ -417,14 +405,12 @@ namespace msci
 		}
 	}
 
-	/// Updates the value to the prefix removed
-	void unit::remove_prefix(shared_ptr<prefix> old_prefix,float prefix_base)
+	void scalar_unit::remove_prefix(shared_ptr<prefix> old_prefix,float prefix_base)
 	{
 		value *= pow(prefix_base, old_prefix->get_conversion_factor() * old_prefix->scale);
 	}
 
-	/// Updates the value to the set of prefixes removed
-	void unit::remove_prefix(dimension_prefixes new_prefixes,float prefix_base)
+	void scalar_unit::remove_prefix(dimension_prefixes new_prefixes,float prefix_base)
 	{
 		for(auto& map_value : new_prefixes)
 		{
@@ -432,8 +418,7 @@ namespace msci
 		}
 	}
 
-	/// Updates the prefixes of the unit to the actual dimensions given
-	void unit::set_same_prefix(const vector_actual_dimensions& new_dimensions)
+	void scalar_unit::set_same_prefix(const vector_actual_dimensions& new_dimensions)
 	{
 		for(const auto& map_value : actual_dimensions)
 		{
@@ -457,8 +442,7 @@ namespace msci
 		}
 	}
 
-	/// Creates the real dimensions and the actual dimensions that the function gives
-	void unit::initialize_dimensions(string init_value)
+	void scalar_unit::initialize_dimensions(string init_value)
 	{
 		int new_start = 0;
 		int j = new_start;
@@ -580,11 +564,11 @@ namespace msci
 		}
 	}
 
-	string unit::initial_dimensions_get_structure(const string& init_value) const
+	string scalar_unit::initial_dimensions_get_structure(const string& init_value) const
 	{
 		if(!isdigit(init_value[0]))
 		{
-			throw invalid_argument("Unit string bad defined: '" + init_value + "'");
+			throw invalid_argument("scalar_unit string bad defined: '" + init_value + "'");
 		}
 		else
 		{
@@ -595,18 +579,18 @@ namespace msci
 			}
 			if(init_value[i] != ' ')
 			{
-				throw invalid_argument("Unit string must have the value separated from units with a single space");
+				throw invalid_argument("scalar_unit string must have the value separated from scalar_units with a single space");
 			}
 			return init_value.substr(i);
 		}
 	}
 
-	msci::space_type abs(const unit& x)
+	msci::space_type abs(const scalar_unit& x)
 	{
 		return msci::abs(x.get_value());
 	}
 
-	auto_unit sqrt(const unit& x)
+	auto_scalar sqrt(const scalar_unit& x)
 	{
 		msci::unit_number new_value = msci::sqrt(x.get_value());
 		vector_real_dimensions new_real_dimensions = x.get_real_dimensions();
@@ -619,10 +603,10 @@ namespace msci
 		{
 			new_actual_dimension.second->sqrt();
 		}
-		return auto_unit(new_value, new_real_dimensions, new_actual_dimensions);
+		return auto_scalar(new_value, new_real_dimensions, new_actual_dimensions);
 	}
 
-	auto_unit sqrt_nth(const unit& x, int y)
+	auto_scalar sqrt_nth(const scalar_unit& x, int y)
 	{
 		msci::unit_number new_value = msci::sqrt_nth(x.get_value(), y);
 		vector_real_dimensions new_real_dimensions = x.get_real_dimensions();
@@ -635,17 +619,16 @@ namespace msci
 		{
 			new_actual_dimension.second->sqrt_nth(y);
 		}
-		return auto_unit(new_value, new_real_dimensions, new_actual_dimensions);
+		return auto_scalar(new_value, new_real_dimensions, new_actual_dimensions);
 	}
 
-	/// Calculates if the dimensions are equal related to the unit
-	bool equal_dimensions(const unit& x, const unit& y)
+	bool equal_dimensions(const scalar_unit& x, const scalar_unit& y)
 	{
 		return x.has_dimensions(y.get_real_dimensions());
 	}
 }
 
-bool operator ==(const msci::unit& x, const msci::unit& y)
+bool operator ==(const msci::scalar_unit& x, const msci::scalar_unit& y)
 {
 	if(x.get_value() == y.get_value() and equal_dimensions(x, y))
 	{
@@ -657,18 +640,18 @@ bool operator ==(const msci::unit& x, const msci::unit& y)
 	}
 }
 
-bool operator !=(const msci::unit& x, const msci::unit& y)
+bool operator !=(const msci::scalar_unit& x, const msci::scalar_unit& y)
 {
 	return !(x == y);
 }
 
-bool operator <(const msci::unit& x, const msci::unit& y)
+bool operator <(const msci::scalar_unit& x, const msci::scalar_unit& y)
 {
 	if(!equal_dimensions(x, y))
 	{
-		throw invalid_argument("Units of different dimensions cannot be compared");
+		throw invalid_argument("scalar_units of different dimensions cannot be compared");
 	}
-	msci::auto_unit z = x;
+	msci::auto_scalar z = x;
 	z.set_same_prefix(y.get_actual_dimensions());
 	if(z.get_value() < y.get_value())
 	{
@@ -680,13 +663,13 @@ bool operator <(const msci::unit& x, const msci::unit& y)
 	}
 }
 
-bool operator >(const msci::unit& x, const msci::unit& y)
+bool operator >(const msci::scalar_unit& x, const msci::scalar_unit& y)
 {
 	if(!equal_dimensions(x, y))
 	{
-		throw invalid_argument("Units of different dimensions cannot be compared");
+		throw invalid_argument("scalar_units of different dimensions cannot be compared");
 	}
-	msci::auto_unit z = x;
+	msci::auto_scalar z = x;
 	z.set_same_prefix(y.get_actual_dimensions());
 	if(z.get_value() > y.get_value())
 	{
@@ -698,89 +681,89 @@ bool operator >(const msci::unit& x, const msci::unit& y)
 	}
 }
 
-bool operator <=(const msci::unit& x, const msci::unit& y)
+bool operator <=(const msci::scalar_unit& x, const msci::scalar_unit& y)
 {
 	return !(x > y);
 }
 
-bool operator >=(const msci::unit& x, const msci::unit& y)
+bool operator >=(const msci::scalar_unit& x, const msci::scalar_unit& y)
 {
 	return !(x < y);
 }
 
-bool operator ==(const msci::unit& x, const string& y_init)
+bool operator ==(const msci::scalar_unit& x, const string& y_init)
 {
-	msci::auto_unit y(y_init);
+	msci::auto_scalar y(y_init);
 	return (x == y);
 }
 
-bool operator !=(const msci::unit& x, const string& y_init)
+bool operator !=(const msci::scalar_unit& x, const string& y_init)
 {
 	return !(x == y_init);
 }
 
-bool operator <(const msci::unit& x, const string& y_init)
+bool operator <(const msci::scalar_unit& x, const string& y_init)
 {
-	msci::auto_unit y(y_init);
+	msci::auto_scalar y(y_init);
 	return (x < y);
 }
 
-bool operator >(const msci::unit& x, const string& y_init)
+bool operator >(const msci::scalar_unit& x, const string& y_init)
 {
-	msci::auto_unit y(y_init);
+	msci::auto_scalar y(y_init);
 	return (x > y);
 }
 
-bool operator <=(const msci::unit& x, const string& y_init)
+bool operator <=(const msci::scalar_unit& x, const string& y_init)
 {
 	return !(x > y_init);
 }
 
-bool operator >=(const msci::unit& x, const string& y_init)
+bool operator >=(const msci::scalar_unit& x, const string& y_init)
 {
 	return !(x < y_init);
 }
 
-bool operator ==(const string& x_init, const msci::unit& y)
+bool operator ==(const string& x_init, const msci::scalar_unit& y)
 {
 	return (y == x_init);
 }
 
-bool operator !=(const string& x_init, const msci::unit& y)
+bool operator !=(const string& x_init, const msci::scalar_unit& y)
 {
 	return (y != x_init);
 }
 
-bool operator <(const string& x_init, const msci::unit& y)
+bool operator <(const string& x_init, const msci::scalar_unit& y)
 {
-	msci::auto_unit x(x_init);
+	msci::auto_scalar x(x_init);
 	return (x < y);
 }
 
-bool operator >(const string& x_init, const msci::unit& y)
+bool operator >(const string& x_init, const msci::scalar_unit& y)
 {
-	msci::auto_unit x(x_init);
+	msci::auto_scalar x(x_init);
 	return (x > y);
 }
 
-bool operator <=(const string& x_init, const msci::unit& y)
+bool operator <=(const string& x_init, const msci::scalar_unit& y)
 {
 	return !(x_init > y);
 }
 
-bool operator >=(const string& x_init, const msci::unit& y)
+bool operator >=(const string& x_init, const msci::scalar_unit& y)
 {
 	return !(x_init < y);
 }
 
-void operator +=(string& x, const msci::unit& y)
+void operator +=(string& x, const msci::scalar_unit& y)
 {
 	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-string operator +(const string& x, const msci::unit& y)
+string operator +(const string& x, const msci::scalar_unit& y)
 {
 	ostringstream output;
 	output << x;
@@ -788,7 +771,7 @@ string operator +(const string& x, const msci::unit& y)
 	return output.str();
 }
 
-string operator +(const msci::unit& y, const string& x)
+string operator +(const msci::scalar_unit& y, const string& x)
 {
 	ostringstream output;
 	output << y;
@@ -796,18 +779,18 @@ string operator +(const msci::unit& y, const string& x)
 	return output.str();
 }
 
-ostream& operator <<(ostream& os, const msci::unit& x)
+ostream& operator <<(ostream& os, const msci::scalar_unit& x)
 {
 	return os << x.display();
 }
 
-/*istream& operator >>(istream& is, msci::auto_unit& x)
+/*istream& operator >>(istream& is, msci::auto_scalar& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::auto_unit c(b);
+	msci::auto_scalar c(b);
 	x = c;
 	return is;
 }*/

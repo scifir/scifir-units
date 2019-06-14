@@ -1,133 +1,139 @@
-// Number of todos: 190
+MSCI UNITS - VERSION 2
 
-// PROPERLY USE OF TESTS
-// TODO: test of create_abbreviation()
-// TODO: test of create_dimension()
-// TODO: test of create_prefix()
-// TODO: test of undefined_number
-// TODO: test of unit_number
-// TODO: test of angle_number
-// TODO: test of lab_number
-// TODO: test of coordinates (is easy)
-// TODO: test of unit constructors
-// TODO: test of auto_unit
-// TODO: test of scalar_unit (check temperature special initialization)
-// TODO: test of vector_unit
+// FINISH ACTUAL UNITS
+// TODO: Correct the operator - of vector_unit
 
-// MEMORY OPTIMIZATION
-// TODO: Use a memory profiler to analize the size of each object
-// TODO: Implement real_dimensions with a UTF8 string (use an order to print each dimension, then it's done) if it's faster than actual_dimensions container and only in that case
-// TODO: Check if the clone() function of undefined_number (and some others also) are causing a memory leak
+// NEARLY-FINISHED TASKS
+// TODO: initialize_real_dimensions() of class auto_unit and check initialization of dimensions
+// TODO: check if dynamic_cast is the only solution for left-hand operators. If so, change it inside auto_scalar.hpp too if needed. Find out the performance of dynamic_cast related to the performance of static_cast
+// TODO: abbreviation_electron_volt should have the factor E-19 enabled
 
-// MAGICKSCIENCE
-// TODO: delete some extra folders of physics
-// TODO: divide between msci and msci_genetics
-// TODO: maybe divide each msci discipline as one different msci library. Check first how if then it's mandatory to have different namespaces (see how to integrate that to GitHub). The libraries are msci_units, msci_geometry, msci_chemistry, msci_genetics, msci_plot
-// TODO: document in a .odt file all the class and function names
+// FINISH ACTUAL MECA NUMBERS
+// TODO: Try that class lab_number doesn't use print, instead it should use operator << always
+// TODO: Use print() inside unit to print the unit for vector_units too
+// TODO: operator << and maybe print() for direction
+// TODO: Bidirectional operators of meca_numbers for numbers
+// TODO: meca_number class for angle_number class
+// TODO: undefined_number should be called meca_number
+// TODO: angle_number should invalidate when the unit given is not empty
+// TODO: angle_number class doesn't has their functions finished
+
+// PROPERLY DISPLAY OF UNITS
+// TODO: display vector_unit with the proper angles for each nd case
+// TODO: unit_number should display with the proper locale
+// TODO: Reduce linker libraries needed for boost::locale (see if the libraries aren't needed and delete them)
+// TODO: auto display in the units that closely match the value (100 or less is the unit selected, if it's more than 1000 it's the prefix 10^3 bigger, and if it's less than 0.1 it has to display in the previous 10^-3 prefix)
+
+// ARCHITECTURE OF UNITS
+// TODO: Change the shared_ptr of both dimension containers to a unique_ptr
 
 // C++
-// TODO: See if to send reference in some cases and const-reference when const is a practice, and add those two functions everywhere. Maybe change some member-variables to be public instead of using both functions
-// TODO: use references and const-references instead of copies inside the body of functions that can be changed
-// TODO: use explicit with angle_number and other classes
-// TODO: delete c_str() where it's unneeded
+// TODO: correct the names of the headers
+// TODO: print() shouldn't be a function, delete it and move his functionality somewhere else (check that inside the IRC first)
+// TODO: add enum inside classes were it's used
+// TODO: maybe hyper_spherical_coordinates can be used as trait (as in PHP), search if there's something like that
 
-// TODO: convert any enum that needs string representation with a to_string function (maybe it already exists something)
-// TODO: what to do with exceptions of rapidxml (if to document, to add a catch, etc)
-// TODO: include the build configuration of CodeBlocks inside GitHub with a file
-// TODO: Debug target maybe can have configuration options that improve performance by avoiding some optimizations
-// TODO: check how are inline constructors and constexpr constructors
-// TODO: when it's necessary to use destructors and implement them if necessary
-// TODO: if to add exceptions or error_codes, when to use each one
-// TODO: See if to change any name using the full namespace to avoid name collisions inside classes (check which names should be changed to get that)
-// TODO: Apply GNU Coding Standards
-// TODO: Log system for the errors, including, if possible, the variable name
-// TODO: Check best way to use print() related to GNU standards
-// TODO: Use static functions for get_enum_type() among maybe others
-// TODO: Use abstract everywhere. See if __ is used for proto classes and use it inside scalar_unit_crtp and vector_unit_crtp
-// TODO: See if auto_unit and similar have a simpler option for copy and move constructors and assignments
-// TODO: check if vectors can have a const size and add it to hyper_spherical_coordinates and the other coordinates classes
-// TODO: if size_t and other similar constants are intended to be used inside normal code
-// TODO: see when it's useful to create a custom buffer
-// TODO: use of #pragma?
+// COORDINATES
+// TODO: light coordinates should have const cast to full coordinates
+// TODO: 2dr and 3dr coordinates maybe should inherit from the others, check if override is a good solution for those cases
+// TODO: all coordinates classes should have ostream << with (x,y), (p,theta), etc
+// TODO: change coordinates classes to allow write access
 
-// TODO: See how static_assert works and use it for the next two TODOS
-// TODO: Regex that checks all the invalid dimensions initialization (create a static function of valid_dimensions_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr
-// TODO: Detect when there's the same dimension at the numerator and at the denominator of the string initialization
+// MECA NUMBERS
+// TODO: Add the operators += -= *= etc to the number classes, and change the get_value().get_value() to get_value()
+// TODO: undefined_number_union containing all the undefined_number derived classes. It shouldn't contain angle_number. Try first with a union of smart pointers, after with a undefined_number and a dynamic_cast inside unit.hpp, if it doesn't work a pointer, and if it doesn't work a union.
+// TODO: Add names to the meca numbers (angler, laber, etc)
+// TODO: The meca number class and it's kernel derived classes
+// TODO: The interval number class
+// TODO: The interval number subclasses of other numbers
+// TODO: The bounce number class
+// TODO: The percentage number class (it has to have the calculate function in order to receive a value to be the percentage of)
+// TODO: Implement the bounce number in the spherical coordinates and the hyperspherical coordinates
+// TODO: Solve the problem with left and right repeated (it's not exclusive for direction_symbol)
+// TODO: solid_angle class (maybe it isn't a meca number)
+// TODO: maybe _angle for angle_number in order to use cos(x),sin(x),etc with degrees
 
-// TOOLS
-// TODO: tool for TODO (or create one if it doesn't exist)
-// TODO: check the better code scan tools for C++
-// TODO: if the optimization of the compiler gives code optimized in order to see the code by layers
+// VECTOR FIELDS
+// TODO: vector_field (it should operate with vector_units and maybe with scalar_units. With (x,y,z) it gives the respective vector). +, - and ^ with vector_field, + - * with vector_unit
+// TODO: Typecasting of vector_unit to math_vector, boost_Ublas_vector, etc. Same for math_vector to vector_unit
+// TODO: rotational coordinates
 
-// BUILDING
-// TODO: see file formats for autotools files NEWS, INSTALL, README, etc
-// TODO: see how to delete doxygen comments when building with autotools (see best practices for doxygen first)
-// TODO: see if to create a .pc file
-// TODO: try to integrate the library to MSYS2
-// TODO: try to integrate the library to linux install system
-// TODO: see other toolchains where magickscience can be added
+// COORDINATES
+// TODO: macro that maps coordinates
 
-// DOCUMENTATION
-// TODO: Maybe document common variables: https://en.wikipedia.org/wiki/List_of_common_physics_notations
-// TODO: Units: why to use units? section providing a complete example of the advantage
-// TODO: Divide the documentation of units in different pages in order to reduce the total size
-// TODO: Units: The problem with commas and dots to write numbers (maybe use english notation)
-// TODO: Units: Formulas with * up and down appear bad
-// TODO: Units: unit classes should appear in their informatic form (and say classname as the title of the column)
-// TODO: Units: abbreviations should be ordered by topic and priority, maybe add categories
-// TODO: Units: Maybe add categories for units reference, instead of the column science
-// TODO: Units: literals should appear with unit classes
-// TODO: Change the index of the wiki
-// TODO: Units: Document the functions of vector_unit
-// TODO: Units: check if inside the example of the wiki density is well initialized
-// TODO: Units: vector units constructors should be documented
-// TODO: Units: assignment operators should be documented inside arithmetic operations
-// TODO: Document with doxygen all the classes and functions
+// DIMENSIONS
+// TODO: custom_dimension in order to have custom dimensions
+// TODO: maybe create_dimension(), create_abbreviation() and create_prefix() should have parameters to pass to constructors
+// TODO: create_abbreviation() should forbid some constructions
 
-// GITHUB
-// TODO: see of the habit of adding the author of a file inside the header
-// TODO: See every program for developing that GitHub has for open source projects
-// TODO: Maybe change the name to lowercase to have a more C++ friendly project (do the same with smartText)
-// TODO: Follow all GitHub rules for the repository
-// TODO: See the guide to find users for the library
-// TODO: See the best build automation tool to add to the project, and the INSTALL.md file
-// TODO: see the best way to versioning the project
-// TODO: Create a donations system
-// TODO: Add stars to every important project I know of
-// TODO: See how to distribute MagickScience along the open-source community
-// TODO: Add MagickScience to the list of https://www.contributor-covenant.org/
-// TODO: Think if to create a website for MagickScience
+// UNITS
+// TODO: finish creating the new class inheritance
+// TODO: add angle1 and angle2 to vector_unit_3d (change the name too)
+// TODO: create vector_unit_1d and vector_unit_2d
+// TODO: create the macros VECTOR_UNIT_ALL_HPP and VECTOR_UNIT_ALL_CPP
+// TODO: finish auto_unit::initialize_real_dimensions(). It's also present inside auto_scalar and auto_vector
+// TODO: add const to the enum of light_unit
+// TODO: mass of standard_atomic_mass() is displayed [empty], fix it
+// TODO: delete the exceptions from constructors and other parts where it's unneeded
+// TODO: see what to do for units with the same dimensions at the numerator and at the denominator
+// TODO: default zero units for the cases of errors with operators (unit, scalar and vector). see first if to use exceptions instead
+// TODO: operator == should care about dimensions and the value related to dimensions (cast operator == of unit,unit there)
+// TODO: initialization of 1/g and similar
+// TODO: support scientific notation on constructors and display(int,bool) (check if there's a function to get the order of the number)
+// TODO: display all the numbers of the unit in the case 0
+// TODO: display all the numbers of the unit in the cases of a very big number
+// TODO: configure option to display the units with scientific notation (inside display())
 
-// PROMOTION
-// TODO: promote the library inside the #chemistry channel
-// TODO: promote the library with friends
+// TODO: units updated with a clock (not automatically, by doing += and similar operations)
+// TODO: 2d display of scalar_units and of vector_units (create a msci_units_2d library for it)
+// TODO: 3d display of scalar_units and of vector_units (create a msci_units_3d library for it)
+// TODO: volume should be constructed with an string of the form 2cm * 1cm * 3cm and separate the three dimensions as different units. Also, the display should be, for that case, automatically configured to be 2cm * 1cm * 3cm than to be the total amount (with a member-variable)
+// TODO: units should allow to sum strings
+// TODO: vector<scalar_unit> initialized from a list of units (separated by a selectable string)
+// TODO: is_dimension(const string&,const string&) which gives true if the given string is of the asked dimensions
+// TODO: light_length which uses only an enum of prefixes and a value, maybe it should be called length, and length should be called full_length
 
-// UNINMPORTANT BUGS AND DETAILS
-// TODO: See what causes the error with the literal operator _MT
-// TODO: Find in which cases angle_number becomes -0
-// TODO: a limit of initialization of mole related to the maximum number that can be given there without having mid particles
-// TODO: a way to initialize concentration without the ' ' at last (maybe to use % as an special abbreviation of empty dimensions)
-// TODO: time_display of unit time class should display months related to the actual day
-// TODO: add custom dimensions and currency_dimension (see what to do with custom dimensions first)
+// VECTOR_UNIT
+// TODO: vector_unit(float,const string&,angle...) constructor for vector_unit class and subclasses
+// TODO: constructor of vector_unit which receives const string& including angles
+// TODO: operator >> should allow to create vectors giving angles
+// TODO: string initialization of vector_unit has to work with coord
+// TODO: finish to map the functions of hyper_spherical_coordinates inside vector_unit
+// TODO: maybe auto_vector and auto_scalar can be independent of auto_unit, in order to avoid the virtual inheritance
 
-// MAYBE
-// TODO: The constructor of abstract_dimension with more than one as prefix (it has to create more prefixes)
-// TODO: unit::dimensions_equals(vector_real_dimensions) should not copy the real_dimensions to make the comparison
-// TODO: A function from unit to change a specific dimension to be displayed with a set of prefixes
+// MATERIAL_VECTOR_UNIT
+// TODO: decide how it'll be, in order to include real space to the vector_unit
 
-// FIND OUT
-// TODO: when I have to use entire namespace scope to access a variable (what has happened with templates)
-// TODO: see if there exists different dimensions on different edges for some vectors
-// TODO: See what to do with the sr (stereoradian) that's used for luminous_energy and luminous_exposure)
-// TODO: Difference between the real and the abstraction layer for each physic topic
-// TODO: tensor_unit, as vector_unit and scalar_unit. Moment of inertia maybe needs it. vector_field
-// TODO: A path vector
-// TODO: Find out if the dimensions can be elevated at a decimal number
-// TODO: Topology: See what to do with point
-// TODO: If the temperature_gradient is a vector_unit or other thing
-// TODO: Implement hyper_spherical_coordinates for n >= 4
-// TODO: See what to do with the different coordinates system that exist (like toroid coordinates), which implement and which don't
-// TODO: See the official ISOs and similar standards of units and check if to add something
+// UNITS EXTRA
+// TODO: pixel dimension, pixel unit and pixels_distance classes
+// TODO: the pH should be an special unit
+// TODO: unit time class should be initialized by multiple abbreviations as 100 min 40 s for example
+// TODO: unit time class should display with an string "d s" specifying the dimensions to calculate on
 
-// POSTPOSED
-// TODO: use of noexcept
+// CODE OPTIMIZATION
+// TODO: divide single dimensions unit of multiple-dimensions unit in order to save a lot of space by not using vectors of prefixes, dimensions and abbreviations
+// TODO: maybe prefix class shouldn't have the power. Instead, use different prefixes
+// TODO: check the object code resulting by testing different functions of the unit classes
+
+// ELECTRONICS
+// TODO: check sensor libraries and decide which ones to support inside msci_units (maybe in a new msci library if needed)
+
+// MECA_UNIONS
+// TODO: create the meca_union class que puede contener cualquier cantidad de meca_number o scalar_unit
+
+// UNITS - ADVANCED
+// TODO: support currency dimension
+
+// PATTERNS
+// TODO: implement a pattern class using a regular expressions library
+
+// TESTS
+// TODO: test of sizeof
+
+// MATRIX
+// TODO: See if it's best to use template arguments for row and column or if to store those values as member-variables
+// TODO: Multiplication of matrices of different but compatible types
+// TODO: typecast to other matrix-classes of important libraries
+// TODO: Iterator with range to use only one range-for
+// TODO: Check limits of matrices for all operators
+// TODO: Use the GSL to implement the reverse matrix

@@ -7,101 +7,101 @@ using namespace std;
 
 namespace msci
 {
-	vector_unit::vector_unit() : unit(),coord()
+	vector_unit::vector_unit() : scalar_unit(),coord()
 	{
 	}
 
-	vector_unit::vector_unit(const vector_unit& x) : unit(x),coord(x.get_value(),x.get_angles())
+	vector_unit::vector_unit(const vector_unit& x) : scalar_unit(x),coord(x.get_value(),x.get_angles())
 	{
 		operator=(x);
 	}
 
-	vector_unit::vector_unit(vector_unit&& x) : unit(move(x)),coord(x.get_value(),move(x.get_angles()))
+	vector_unit::vector_unit(vector_unit&& x) : scalar_unit(move(x)),coord(x.get_value(),move(x.get_angles()))
 	{
 		operator=(move(x));
 	}
 
-	vector_unit::vector_unit(msci::space_type new_value,const string& init_value) : unit(new_value,init_value),coord(new_value, direction_symbol::left)
+	vector_unit::vector_unit(msci::space_type new_value,const string& init_value) : scalar_unit(new_value,init_value),coord(new_value, direction_symbol::left)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, direction_symbol new_direction) : unit(new_value), coord(new_value.get_value(), new_direction)
+	vector_unit::vector_unit(const scalar_unit& new_value, direction_symbol new_direction) : scalar_unit(new_value), coord(new_value.get_value(), new_direction)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1) : unit(new_value), coord(new_value.get_value(), new_angle1)
+	vector_unit::vector_unit(const scalar_unit& new_value, angle_type new_angle1) : scalar_unit(new_value), coord(new_value.get_value(), new_angle1)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1, angle_type new_angle2) : unit(new_value), coord(new_value.get_value(), new_angle1, new_angle2)
+	vector_unit::vector_unit(const scalar_unit& new_value, angle_type new_angle1, angle_type new_angle2) : scalar_unit(new_value), coord(new_value.get_value(), new_angle1, new_angle2)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, msci::angle_container new_angles) : unit(new_value), coord(new_value.get_value(), new_angles)
+	vector_unit::vector_unit(const scalar_unit& new_value, msci::angle_container new_angles) : scalar_unit(new_value), coord(new_value.get_value(), new_angles)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, direction_symbol new_direction) : unit(move(new_value)), coord(new_value.get_value(), new_direction)
+	vector_unit::vector_unit(scalar_unit&& new_value, direction_symbol new_direction) : scalar_unit(move(new_value)), coord(new_value.get_value(), new_direction)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1) : unit(move(new_value)), coord(new_value.get_value(), new_angle1)
+	vector_unit::vector_unit(scalar_unit&& new_value, angle_type new_angle1) : scalar_unit(move(new_value)), coord(new_value.get_value(), new_angle1)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, angle_type new_angle2) : unit(move(new_value)), coord(new_value.get_value(), new_angle1, new_angle2)
+	vector_unit::vector_unit(scalar_unit&& new_value, angle_type new_angle1, angle_type new_angle2) : scalar_unit(move(new_value)), coord(new_value.get_value(), new_angle1, new_angle2)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, msci::angle_container new_angles) : unit(move(new_value)), coord(new_value.get_value(), new_angles)
+	vector_unit::vector_unit(scalar_unit&& new_value, msci::angle_container new_angles) : scalar_unit(move(new_value)), coord(new_value.get_value(), new_angles)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, direction_symbol new_direction, const string& init_value) : unit(new_value,init_value), coord(new_value.get_value(), new_direction)
+	vector_unit::vector_unit(const scalar_unit& new_value, direction_symbol new_direction, const string& init_value) : scalar_unit(new_value,init_value), coord(new_value.get_value(), new_direction)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1, const string& init_value) : unit(new_value,init_value), coord(new_value.get_value(), new_angle1)
+	vector_unit::vector_unit(const scalar_unit& new_value, angle_type new_angle1, const string& init_value) : scalar_unit(new_value,init_value), coord(new_value.get_value(), new_angle1)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, angle_type new_angle1, angle_type new_angle2, const string& init_value) : unit(new_value,init_value), coord(new_value.get_value(), new_angle1, new_angle2)
+	vector_unit::vector_unit(const scalar_unit& new_value, angle_type new_angle1, angle_type new_angle2, const string& init_value) : scalar_unit(new_value,init_value), coord(new_value.get_value(), new_angle1, new_angle2)
 	{
 	}
 
-	vector_unit::vector_unit(const unit& new_value, msci::angle_container new_angles, const string& init_value) : unit(new_value,init_value), coord(new_value.get_value(), new_angles)
+	vector_unit::vector_unit(const scalar_unit& new_value, msci::angle_container new_angles, const string& init_value) : scalar_unit(new_value,init_value), coord(new_value.get_value(), new_angles)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, direction_symbol new_direction, const string& init_value) : unit(move(new_value),init_value), coord(new_value.get_value(), new_direction)
+	vector_unit::vector_unit(scalar_unit&& new_value, direction_symbol new_direction, const string& init_value) : scalar_unit(move(new_value),init_value), coord(new_value.get_value(), new_direction)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, const string& init_value) : unit(move(new_value),init_value), coord(new_value.get_value(), new_angle1)
+	vector_unit::vector_unit(scalar_unit&& new_value, angle_type new_angle1, const string& init_value) : scalar_unit(move(new_value),init_value), coord(new_value.get_value(), new_angle1)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, angle_type new_angle1, angle_type new_angle2, const string& init_value) : unit(move(new_value),init_value), coord(new_value.get_value(), new_angle1, new_angle2)
+	vector_unit::vector_unit(scalar_unit&& new_value, angle_type new_angle1, angle_type new_angle2, const string& init_value) : scalar_unit(move(new_value),init_value), coord(new_value.get_value(), new_angle1, new_angle2)
 	{
 	}
 
-	vector_unit::vector_unit(unit&& new_value, msci::angle_container new_angles, const string& init_value) : unit(move(new_value),init_value), coord(new_value.get_value(), new_angles)
+	vector_unit::vector_unit(scalar_unit&& new_value, msci::angle_container new_angles, const string& init_value) : scalar_unit(move(new_value),init_value), coord(new_value.get_value(), new_angles)
 	{
 	}
 
-	vector_unit::vector_unit(const string& init_value, direction_symbol new_direction) : unit(init_value), coord(0.0f, new_direction)
+	vector_unit::vector_unit(const string& init_value, direction_symbol new_direction) : scalar_unit(init_value), coord(0.0f, new_direction)
 	{
 	}
 
-	vector_unit::vector_unit(const string& init_value, angle_type new_angle1) : unit(init_value), coord(0.0f, new_angle1)
+	vector_unit::vector_unit(const string& init_value, angle_type new_angle1) : scalar_unit(init_value), coord(0.0f, new_angle1)
 	{
 	}
 
-	vector_unit::vector_unit(const string& init_value, angle_type new_angle1, angle_type new_angle2) : unit(init_value), coord(0.0f, new_angle1, new_angle2)
+	vector_unit::vector_unit(const string& init_value, angle_type new_angle1, angle_type new_angle2) : scalar_unit(init_value), coord(0.0f, new_angle1, new_angle2)
 	{
 	}
 
-	vector_unit::vector_unit(const string& init_value, msci::angle_container new_angles) : unit(init_value), coord(0.0f, new_angles)
+	vector_unit::vector_unit(const string& init_value, msci::angle_container new_angles) : scalar_unit(init_value), coord(0.0f, new_angles)
 	{
 	}
 
@@ -109,7 +109,7 @@ namespace msci
 	{
 		if (same_nd(*this,x))
 		{
-			unit::operator=(x);
+			scalar_unit::operator=(x);
 			coord.get_r() = x.get_value();
 			if (x.is_1d())
 			{
@@ -132,7 +132,7 @@ namespace msci
 	{
 		if (same_nd(*this,x))
 		{
-			unit::operator=(move(x));
+			scalar_unit::operator=(move(x));
 			coord.get_r() = x.get_value();
 			if (x.is_1d())
 			{
@@ -151,15 +151,15 @@ namespace msci
 		return *this;
 	}
 
-	vector_unit& vector_unit::operator =(const unit& x)
+	vector_unit& vector_unit::operator =(const scalar_unit& x)
 	{
-		unit::operator=(x);
+		scalar_unit::operator=(x);
 		return *this;
 	}
 
-	vector_unit& vector_unit::operator =(unit&& x)
+	vector_unit& vector_unit::operator =(scalar_unit&& x)
 	{
-		unit::operator=(move(x));
+		scalar_unit::operator=(move(x));
 		return *this;
 	}
 
@@ -362,21 +362,21 @@ namespace msci
 
 	void vector_unit::operator +=(const vector_unit& y)
 	{
-		if(has_dimensions(y.get_real_dimensions()) and unit::is_defined() and y.is_defined())
+		if(has_dimensions(y.get_real_dimensions()) and scalar_unit::is_defined() and y.is_defined())
 		{
 			if(is_1d())
 			{
 				if(get_direction() == y.get_direction())
 				{
-					unit::value += y.unit::get_value();
+					scalar_unit::value += y.get_value();
 				}
 				else
 				{
-					unit::value -= y.unit::get_value();
-					if(unit::value < 0)
+					scalar_unit::value -= y.get_value();
+					if(scalar_unit::value < 0)
 					{
 						coord.invert();
-						unit::value = msci::abs(unit::value);
+						scalar_unit::value = msci::abs(scalar_unit::value);
 					}
 				}
 			}
@@ -384,7 +384,7 @@ namespace msci
 			{
 				space_type new_x = x_projection() + y.x_projection();
 				space_type new_y = y_projection() + y.y_projection();
-				unit::value = cartesian_2d_to_polar_r(new_x, new_y);
+				scalar_unit::value = cartesian_2d_to_polar_r(new_x, new_y);
 				coord.get_angle1() = cartesian_2d_to_polar_angle(new_x, new_y);
 			}
 			else if(is_3d())
@@ -392,20 +392,20 @@ namespace msci
 				space_type new_x = x_projection() + y.x_projection();
 				space_type new_y = y_projection() + y.y_projection();
 				space_type new_z = z_projection() + y.z_projection();
-				unit::value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
+				scalar_unit::value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
 				coord.get_angle1() = cartesian_3d_to_spherical_angle1(new_x, new_y, new_z);
 				coord.get_angle2() = cartesian_3d_to_spherical_angle2(new_x, new_y, new_z);
 			}
 		}
 		else
 		{
-			unit::invalidate(8);
+			scalar_unit::invalidate(8);
 		}
 	}
 
 	void vector_unit::operator -=(const vector_unit& y)
 	{
-		if(has_dimensions(y.get_real_dimensions()) and unit::is_defined() and y.is_defined())
+		if(has_dimensions(y.get_real_dimensions()) and scalar_unit::is_defined() and y.is_defined())
 		{
 			auto_vector z = auto_vector(y);
 			z.invert();
@@ -413,16 +413,16 @@ namespace msci
 		}
 		else
 		{
-			unit::invalidate(9);
+			scalar_unit::invalidate(9);
 		}
 	}
 
 	auto_vector vector_unit::operator *(const scalar_unit& x) const
 	{
-		space_type new_value = unit::value.get_value() * x.get_value().get_value();
+		space_type new_value = scalar_unit::value.get_value() * x.get_value().get_value();
 		vector_real_dimensions new_real_dimensions = multiply_real_dimensions(get_real_dimensions(), x.get_real_dimensions());
-		vector_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(unit::get_actual_dimensions(), x.get_actual_dimensions());
-		auto_unit new_unit = auto_unit(new_value, new_real_dimensions, new_actual_dimensions);
+		vector_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(scalar_unit::get_actual_dimensions(), x.get_actual_dimensions());
+		auto_scalar new_unit = auto_scalar(new_value, new_real_dimensions, new_actual_dimensions);
 		if(is_1d())
 		{
 			return auto_vector(new_unit, coord.get_direction().get_direction());
@@ -443,10 +443,10 @@ namespace msci
 
 	auto_vector vector_unit::operator /(const scalar_unit& x) const
 	{
-		space_type new_value = unit::value.get_value() / x.get_value().get_value();
+		space_type new_value = scalar_unit::value.get_value() / x.get_value().get_value();
 		vector_real_dimensions new_real_dimensions = divide_real_dimensions(get_real_dimensions(), x.get_real_dimensions());
-		vector_actual_dimensions new_actual_dimensions = divide_actual_dimensions(unit::get_actual_dimensions(), x.get_actual_dimensions());
-		auto_unit new_unit = auto_unit(new_value, new_real_dimensions, new_actual_dimensions);
+		vector_actual_dimensions new_actual_dimensions = divide_actual_dimensions(scalar_unit::get_actual_dimensions(), x.get_actual_dimensions());
+		auto_scalar new_unit = auto_scalar(new_value, new_real_dimensions, new_actual_dimensions);
 		if(is_1d())
 		{
 			return auto_vector(new_unit, coord.get_direction().get_direction());
@@ -469,7 +469,7 @@ namespace msci
 	{
 		if(x.has_empty_dimensions())
 		{
-			auto_unit new_unit = *this ^ x;
+			auto_scalar new_unit = *this ^ x;
 			if(is_1d())
 			{
 				return auto_vector(new_unit, coord.get_direction().get_direction());
@@ -488,18 +488,18 @@ namespace msci
 
 	auto_scalar norm(const vector_unit& x)
 	{
-		return auto_scalar(x.unit::get_value(),x.get_real_dimensions(),x.get_actual_dimensions());
+		return auto_scalar(x.get_value(),x.get_real_dimensions(),x.get_actual_dimensions());
 	}
 
 	auto_vector sqrt(const vector_unit& x)
 	{
-		auto_unit new_value = msci::sqrt(x);
+		auto_scalar new_value = msci::sqrt(x);
 		return auto_vector(new_value, x.get_angles());
 	}
 
 	auto_vector sqrt_nth(const vector_unit& x, int y)
 	{
-		auto_unit new_value = msci::sqrt_nth(x, y);
+		auto_scalar new_value = msci::sqrt_nth(x, y);
 		return auto_vector(new_value, x.get_angles());
 	}
 
@@ -535,7 +535,7 @@ namespace msci
 			}
 			vector_real_dimensions new_real_dimensions = multiply_real_dimensions(x.get_real_dimensions(), y.get_real_dimensions());
 			vector_actual_dimensions new_actual_dimensions = multiply_actual_dimensions(x.get_actual_dimensions(), y.get_actual_dimensions());
-			auto_unit new_unit = auto_unit(new_value, new_real_dimensions, new_actual_dimensions);
+			auto_scalar new_unit = auto_scalar(new_value, new_real_dimensions, new_actual_dimensions);
 			msci::angle_container angles;
 			angles.push_back(angle1);
 			angles.push_back(angle2);
@@ -543,7 +543,7 @@ namespace msci
 		}
 		else
 		{
-			auto_unit z = auto_unit(0);
+			auto_scalar z = auto_scalar(0);
 			z.invalidate(13);
 			return auto_vector(z,direction_symbol::left);
 		}
@@ -613,7 +613,7 @@ bool operator ==(const msci::vector_unit& x, const msci::vector_unit& y)
 {
 	if(msci::same_nd(x, y))
 	{
-		if(x.unit::get_value() == y.unit::get_value() and msci::same_direction(x, y))
+		if(x.get_value() == y.get_value() and msci::same_direction(x, y))
 		{
 			return true;
 		}
@@ -690,7 +690,7 @@ ostream& operator <<(ostream& os, const msci::vector_unit& x)
 			i++;
 		}
 	}
-	return os << x.msci::unit::get_value() << " " << x.msci::unit::display_dimensions() << " " << angles_text.str();
+	return os << x.get_value() << " " << x.display_dimensions() << " " << angles_text.str();
 }
 
 istream& operator >>(istream& is, msci::vector_unit& x)

@@ -25,6 +25,6 @@ ostream& operator <<(ostream& os, const msci::concentration& x)
 	}
 	else
 	{
-		return os << static_cast<const msci::unit&>(x);
+		return os << static_cast<const msci::scalar_unit&>(x);
 	}
 }

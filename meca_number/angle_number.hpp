@@ -4,7 +4,7 @@
 #include "msci/units/topology/constants.hpp"
 #include "msci/units/topology/topology.hpp"
 #include "msci/units/util/is_number.hpp"
-#include "msci/units/units/unit.hpp"
+#include "msci/units/units/scalar_unit.hpp"
 
 #include "boost/math/constants/constants.hpp"
 
@@ -31,7 +31,7 @@ namespace msci
 		public:
 			angle_number();
 			angle_number(msci::angle_type);
-			angle_number(const unit&);
+			angle_number(const scalar_unit&);
 
 			virtual angle_number* clone() const
 			{

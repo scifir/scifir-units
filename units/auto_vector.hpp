@@ -1,7 +1,6 @@
 #ifndef PHYSICS_BASIC_UNITS_AUTO_VECTOR_HPP_INCLUDED
 #define PHYSICS_BASIC_UNITS_AUTO_VECTOR_HPP_INCLUDED
 
-#include "msci/units/units/auto_unit.hpp"
 #include "msci/units/units/vector_unit.hpp"
 #include "msci/units/meca_number/angle_number.hpp"
 
@@ -9,28 +8,28 @@ using namespace std;
 
 namespace msci
 {
-	class auto_vector : public auto_unit, public vector_unit
+	class auto_vector: public vector_unit
 	{
 		public:
 			auto_vector();
 			auto_vector(const auto_vector&);
 			auto_vector(auto_vector&&);
-			explicit auto_vector(const unit&,direction_symbol);
-			explicit auto_vector(const unit&,angle_type);
-			explicit auto_vector(const unit&,angle_type,angle_type);
-			explicit auto_vector(const unit&,msci::angle_container);
-			explicit auto_vector(unit&&,direction_symbol);
-			explicit auto_vector(unit&&,angle_type);
-			explicit auto_vector(unit&&,angle_type,angle_type);
-			explicit auto_vector(unit&&,msci::angle_container);
-			explicit auto_vector(const unit&,direction_symbol,const string&);
-			explicit auto_vector(const unit&,angle_type,const string&);
-			explicit auto_vector(const unit&,angle_type,angle_type,const string&);
-			explicit auto_vector(const unit&,msci::angle_container,const string&);
-			explicit auto_vector(unit&&,direction_symbol,const string&);
-			explicit auto_vector(unit&&,angle_type,const string&);
-			explicit auto_vector(unit&&,angle_type,angle_type,const string&);
-			explicit auto_vector(unit&&,msci::angle_container,const string&);
+			explicit auto_vector(const scalar_unit&,direction_symbol);
+			explicit auto_vector(const scalar_unit&,angle_type);
+			explicit auto_vector(const scalar_unit&,angle_type,angle_type);
+			explicit auto_vector(const scalar_unit&,msci::angle_container);
+			explicit auto_vector(scalar_unit&&,direction_symbol);
+			explicit auto_vector(scalar_unit&&,angle_type);
+			explicit auto_vector(scalar_unit&&,angle_type,angle_type);
+			explicit auto_vector(scalar_unit&&,msci::angle_container);
+			explicit auto_vector(const scalar_unit&,direction_symbol,const string&);
+			explicit auto_vector(const scalar_unit&,angle_type,const string&);
+			explicit auto_vector(const scalar_unit&,angle_type,angle_type,const string&);
+			explicit auto_vector(const scalar_unit&,msci::angle_container,const string&);
+			explicit auto_vector(scalar_unit&&,direction_symbol,const string&);
+			explicit auto_vector(scalar_unit&&,angle_type,const string&);
+			explicit auto_vector(scalar_unit&&,angle_type,angle_type,const string&);
+			explicit auto_vector(scalar_unit&&,msci::angle_container,const string&);
 			explicit auto_vector(const string&,direction_symbol);
 			explicit auto_vector(const string&,angle_type);
 			explicit auto_vector(const string&,angle_type,angle_type);
@@ -38,7 +37,7 @@ namespace msci
 			auto_vector(const vector_unit&);
 			auto_vector(vector_unit&&);
 
-			auto_vector& operator =(const auto_vector&);
+			/*auto_vector& operator =(const auto_vector&);
 			auto_vector& operator =(auto_vector&&);
 			auto_vector& operator =(const vector_unit&);
 			auto_vector& operator =(vector_unit&&);
@@ -112,10 +111,20 @@ namespace msci
 			void operator ^=(U y)
 			{
 				vector_unit::operator^=(y);
-			}
+			}*/
+
+			virtual scalar_unit* clone() const;
+
+			void initialize_real_dimensions(string);
+
+			virtual string get_dimensions_match() const;
+			virtual vector_real_dimensions get_real_dimensions() const;
+
+		private:
+			const vector_real_dimensions real_dimensions;
 	};
 
-	template<typename U,typename>
+	/*template<typename U,typename>
 	auto_vector vector_unit::operator +(U y) const
 	{
 		auto_vector z = *this;
@@ -227,10 +236,10 @@ namespace msci
 	auto_vector vector_unit_crtp<T>::operator ^(U y) const
 	{
 		return vector_unit::operator^(y);
-	}
+	}*/
 }
 
-msci::auto_vector operator +(const msci::scalar_unit&,const msci::vector_unit&);
+/*msci::auto_vector operator +(const msci::scalar_unit&,const msci::vector_unit&);
 msci::auto_vector operator -(const msci::scalar_unit&,const msci::vector_unit&);
 msci::auto_vector operator *(const msci::scalar_unit&,const msci::vector_unit&);
 msci::auto_vector operator +(const msci::scalar_unit&,const msci::auto_unit&);
@@ -298,6 +307,6 @@ template<typename T, typename U, typename = typename enable_if<is_number<U>::val
 msci::auto_vector operator *(U x,const msci::vector_unit_crtp<T>& y)
 {
 	return x * static_cast<const msci::vector_unit&>(y);
-}
+}*/
 
 #endif // PHYSICS_BASIC_UNITS_AUTO_VECTOR_HPP_INCLUDED

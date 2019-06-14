@@ -1,6 +1,6 @@
 #include "msci/units/units/unit_basic.hpp"
 
-#include "msci/units/units/unit.hpp"
+#include "msci/units/units/scalar_unit.hpp"
 #include "msci/units/units/dimension.hpp"
 #include "msci/units/units/prefix.hpp"
 #include "msci/units/meca_number/unit_number.hpp"
@@ -42,11 +42,11 @@ namespace msci
 	SCALAR_UNIT_CPP(mass,"g");
 	SCALAR_UNIT_CPP(charge,"C");
 
-	temperature::temperature(msci::space_type new_value,const string& init_value) : unit(new_value,init_value),scalar_unit_crtp<temperature>(new_value,init_value)
+	temperature::temperature(msci::space_type new_value,const string& init_value) : scalar_unit_crtp<temperature>(new_value,init_value)
 	{
 	}
 
-	temperature::temperature(const string& init_value) : unit(),scalar_unit_crtp<temperature>()
+	temperature::temperature(const string& init_value) : scalar_unit_crtp<temperature>()
 	{
 		if(!isdigit(init_value[0]))
 		{
@@ -114,27 +114,27 @@ namespace msci
 		}
 	}
 
-	temperature::temperature(const unit& x) : unit(x),scalar_unit_crtp<temperature>(x)
+	temperature::temperature(const scalar_unit& x) : scalar_unit_crtp<temperature>(x)
 	{
 	}
 
-	temperature::temperature(unit&& x) : unit(move(x)),scalar_unit_crtp<temperature>(move(x))
+	temperature::temperature(scalar_unit&& x) : scalar_unit_crtp<temperature>(move(x))
 	{
 	}
 
-	temperature::temperature(const unit& new_unit,const string& init_value) : unit(new_unit,init_value),scalar_unit_crtp<temperature>(new_unit,init_value)
+	temperature::temperature(const scalar_unit& new_unit,const string& init_value) : scalar_unit_crtp<temperature>(new_unit,init_value)
 	{
 	}
 
-	temperature::temperature(unit&& new_unit,const string& init_value) : unit(move(new_unit),init_value),scalar_unit_crtp<temperature>(move(new_unit),init_value)
+	temperature::temperature(scalar_unit&& new_unit,const string& init_value) : scalar_unit_crtp<temperature>(move(new_unit),init_value)
 	{
 	}
 
-	temperature::temperature(const temperature& x) : unit(x),scalar_unit_crtp<temperature>(x)
+	temperature::temperature(const temperature& x) : scalar_unit_crtp<temperature>(x)
 	{
 	}
 
-	temperature::temperature(temperature&& x) : unit(move(x)),scalar_unit_crtp<temperature>(move(x))
+	temperature::temperature(temperature&& x) : scalar_unit_crtp<temperature>(move(x))
 	{
 	}
 
@@ -150,15 +150,15 @@ namespace msci
 		return *this;
 	}
 
-	temperature& temperature::operator =(const unit& x)
+	temperature& temperature::operator =(const scalar_unit& x)
 	{
-		unit::operator=(x);
+		scalar_unit::operator=(x);
 		return *this;
 	}
 
-	temperature& temperature::operator =(unit&& x)
+	temperature& temperature::operator =(scalar_unit&& x)
 	{
-		unit::operator=(move(x));
+		scalar_unit::operator=(move(x));
 		return *this;
 	}
 
@@ -181,13 +181,13 @@ namespace msci
 
 	int mole::number_of_particles() const
 	{
-		if (unit::actual_dimensions.count(particles))
+		if (scalar_unit::actual_dimensions.count(particles))
 		{
-			return unit::value;
+			return scalar_unit::value;
 		}
 		else
 		{
-			return unit::value*msci::avogadro_constant;
+			return scalar_unit::value * msci::avogadro_constant;
 		}
 	}
 
@@ -247,7 +247,7 @@ ostream& operator <<(ostream& os, const msci::time& x)
 	}
 	else
 	{
-		return os << static_cast<const msci::unit&>(x);
+		return os << static_cast<const msci::scalar_unit&>(x);
 	}
 }
 
