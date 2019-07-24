@@ -1,7 +1,6 @@
 #ifndef UNDEFINED_NUMBER_HPP_INCLUDED
 #define UNDEFINED_NUMBER_HPP_INCLUDED
 
-#include "msci/units/topology/topology.hpp"
 #include "msci/units/util/is_number.hpp"
 
 #include <cmath>
@@ -23,7 +22,7 @@ namespace msci
 			{
 			}
 
-			undefined_number(msci::space_type new_value)
+			undefined_number(float new_value)
 			{
 				value = new_value;
 				error_code = 0;
@@ -61,7 +60,7 @@ namespace msci
 				return error_code;
 			}
 
-			inline const msci::space_type& get_value() const
+			inline const float& get_value() const
 			{
 				return value;
 			}
@@ -336,11 +335,11 @@ namespace msci
 
 		protected:
 			int error_code;
-			msci::space_type value;
+			float value;
 	};
 
 	template<typename T>
-	msci::space_type abs(const undefined_number<T>& x)
+	float abs(const undefined_number<T>& x)
 	{
 		return std::abs(x.get_value());
 	}

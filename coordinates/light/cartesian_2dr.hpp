@@ -2,7 +2,7 @@
 #define MSCI_UNITS_COORDINATES_LIGHT_CARTESIAN_2DR_HPP_INCLUDED
 
 #include "msci/units/topology/point_2d.hpp"
-#include "msci/units/meca_number/angle_number.hpp"
+#include "msci/units/meca_number/angle.hpp"
 #include "msci/units/coordinates/light/cartesian_2d.hpp"
 
 #include <iostream>
@@ -39,12 +39,12 @@ namespace msci
 				return y;
 			}
 
-			inline angle_number& get_angle()
+			inline msci::angle& get_angle()
 			{
 				return angle;
 			}
 
-			inline const angle_number& get_angle() const
+			inline const msci::angle& get_angle() const
 			{
 				return angle;
 			}
@@ -54,7 +54,7 @@ namespace msci
 		private:
 			float x;
 			float y;
-			angle_number angle;
+			msci::angle angle;
 	};
 
 	float coordinates_distance(const cartesian_2dr&,const cartesian_2dr&);

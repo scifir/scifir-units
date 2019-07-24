@@ -1,172 +1,62 @@
 #ifndef DIMENSION_HPP_
 #define DIMENSION_HPP_
 
-#include "msci/units/units/abstract_dimension.hpp"
 #include "msci/units/units/prefix.hpp"
 
 #include <map>
+#include <sstream>
 #include <string>
+#include <vector>
+
 using namespace std;
 
 namespace msci
 {
-	enum dimension_symbol
-	{
-		m = 0, angle_symbol, solid_angle_symbol, s, g, C, K, mol, cd, B
-	};
-
-	class dimension : public abstract_dimension
+	class dimension
 	{
 		public:
+			enum type
+			{
+				m, angle, solid_angle, s, g, C, K, mol, cd, B, Hz, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, L, minute, h, d, AU, pc, eV, Da, amu, barn, M, particles, ppm, ppb
+			};
+
+			enum sign {positive,negative};
+
 			dimension();
-			dimension(prefix_symbol, int = 1);
-			dimension(prefix&, int = 1);
-			virtual dimension* clone() const = 0;
+			dimension(msci::dimension::type,msci::prefix::type,msci::dimension::sign);
+			dimension(msci::dimension::type,const msci::prefix&,msci::dimension::sign);
 
-			virtual int get_enum_type() const = 0;
+			dimension operator = (const dimension&);
+
+			string get_name() const;
+			string get_symbol() const;
+
+			int get_scale() const;
+			int get_absolute_scale() const;
+
+			bool is_basic_dimension() const;
+			bool is_derived_dimension() const;
+
+			vector<dimension> get_basic_dimensions() const;
+
+			msci::prefix prefix;
+			const dimension::type dimension_type;
+			msci::dimension::sign dimension_sign;
 	};
 
-	template<typename T>
-	class dimension_crtp : public dimension
-	{
-		public:
-			dimension_crtp(prefix_symbol new_prefix = normal_prefix, int new_scale = 1) : dimension(new_prefix, new_scale)
-			{
-			}
+	dimension create_dimension(dimension::type);
+	dimension create_dimension(const string&);
 
-			dimension_crtp(prefix& new_prefix, int new_scale = 1) : dimension(new_prefix, new_scale)
-			{
-			}
+	string get_dimension_structure(const vector<dimension>&);
 
-			virtual dimension* clone() const
-			{
-				return new T(static_cast<const T&>(*this));
-			}
+	vector<dimension> create_dimensions(string);
+	vector<dimension> create_derived_dimensions(string);
 
-			virtual const string& get_name() const
-			{
-				return T::name;
-			}
-
-			virtual const string& get_symbol() const
-			{
-				return T::symbol;
-			}
-	};
-
-	class dimension_length: public dimension_crtp<dimension_length>
-	{
-		public:
-			using dimension_crtp::dimension_crtp;
-
-			virtual int get_enum_type() const;
-
-			static const string name;
-			static const string symbol;
-	};
-
-	class dimension_angle: public dimension_crtp<dimension_angle>
-	{
-		public:
-			using dimension_crtp::dimension_crtp;
-
-			virtual int get_enum_type() const;
-
-			static const string name;
-			static const string symbol;
-	};
-
-	class dimension_solid_angle: public dimension_crtp<dimension_solid_angle>
-	{
-		public:
-			using dimension_crtp::dimension_crtp;
-
-			virtual int get_enum_type() const;
-
-			static const string name;
-			static const string symbol;
-	};
-
-	class dimension_time: public dimension_crtp<dimension_time>
-	{
-		public:
-			using dimension_crtp::dimension_crtp;
-
-			virtual int get_enum_type() const;
-
-			static const string name;
-			static const string symbol;
-	};
-
-	class dimension_mass: public dimension_crtp<dimension_mass>
-	{
-		public:
-			using dimension_crtp::dimension_crtp;
-
-			virtual int get_enum_type() const;
-
-			static const string name;
-			static const string symbol;
-	};
-
-	class dimension_charge: public dimension_crtp<dimension_charge>
-	{
-		public:
-			using dimension_crtp::dimension_crtp;
-
-			virtual int get_enum_type() const;
-
-			static const string name;
-			static const string symbol;
-	};
-
-	class dimension_temperature: public dimension_crtp<dimension_temperature>
-	{
-		public:
-			using dimension_crtp::dimension_crtp;
-
-			virtual int get_enum_type() const;
-
-			static const string name;
-			static const string symbol;
-	};
-
-	class dimension_mole: public dimension_crtp<dimension_mole>
-	{
-		public:
-			using dimension_crtp::dimension_crtp;
-
-			virtual int get_enum_type() const;
-
-			static const string name;
-			static const string symbol;
-	};
-
-	class dimension_light: public dimension_crtp<dimension_light>
-	{
-		public:
-			using dimension_crtp::dimension_crtp;
-
-			virtual int get_enum_type() const;
-
-			static const string name;
-			static const string symbol;
-	};
-
-	class dimension_byte: public dimension_crtp<dimension_byte>
-	{
-		public:
-			using dimension_crtp::dimension_crtp;
-
-			virtual int get_enum_type() const;
-			virtual float get_prefix_base() const;
-
-			static const string name;
-			static const string symbol;
-	};
-
-	dimension* create_dimension(dimension_symbol);
-	dimension* create_dimension(const string&);
+	vector<dimension> multiply_dimensions(const vector<dimension>&,const vector<dimension>&);
+	vector<dimension> divide_dimensions(const vector<dimension>&,const vector<dimension>&);
+	vector<dimension> power_dimensions(const vector<dimension>&,int);
 }
+
+ostream& operator <<(ostream&, const msci::dimension&);
 
 #endif

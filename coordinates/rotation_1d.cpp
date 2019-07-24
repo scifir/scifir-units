@@ -8,7 +8,7 @@ namespace msci
 	{
 	}
 
-	void rotation_1d::move_angle(const angle_number& new_angle)
+	void rotation_1d::move_angle(const angle& new_angle)
 	{
 		x_angle += new_angle;
 	}

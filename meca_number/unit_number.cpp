@@ -16,7 +16,7 @@ namespace msci
 	{
 	}
 
-	unit_number::unit_number(msci::space_type new_value) : undefined_number<unit_number>(new_value)
+	unit_number::unit_number(float new_value) : undefined_number<unit_number>(new_value)
 	{
 	}
 

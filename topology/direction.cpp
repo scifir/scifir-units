@@ -27,7 +27,7 @@ namespace msci
 	{
 		if (!(new_direction == left or new_direction == right))
 		{
-			throw invalid_argument("Invalid direction. Only left and right allowed");
+			return;
 		}
 	}
 
@@ -35,7 +35,7 @@ namespace msci
 	{
 		if (!(new_direction == left or new_direction == right))
 		{
-			throw invalid_argument("Invalid direction. Only left and right allowed");
+			return;
 		}
 		direction_value = new_direction;
 	}
@@ -215,7 +215,7 @@ bool operator ==(const msci::direction_lr& x, msci::direction_symbol y)
 {
 	if (!(y == msci::left or y == msci::right))
 	{
-		throw invalid_argument("direction_lr cannot be compared with a direction different than left or right");
+		return false;
 	}
 	if(x.get_direction() == y)
 	{

@@ -42,12 +42,12 @@ namespace msci
 			}
 
 			length get_p() const;
-			angle_number get_angle() const;
+			angle get_angle() const;
 
 			void set_x(const length&);
 			void set_y(const length&);
-			void move_angle(const angle_number&);
-			void move_in_direction(const length&,const angle_number&);
+			void move_angle(const angle&);
+			void move_in_direction(const length&,const angle&);
 
 			string display() const;
 

@@ -4,6 +4,7 @@
 
 #include <cmath>
 #include <sstream>
+#include <vector>
 
 #include "boost/algorithm/string.hpp"
 

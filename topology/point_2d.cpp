@@ -15,7 +15,7 @@ namespace msci
 	{
 	}
 
-	void point_2d::move_in_direction(const length& x_value,const angle_number& x_angle)
+	void point_2d::move_in_direction(const length& x_value,const angle& x_angle)
 	{
 		x = x + x_value*cos(x_angle);
 		y = y + x_value*sin(x_angle);

@@ -3,7 +3,6 @@
 
 #include "msci/units/meca_number/undefined_number.hpp"
 
-#include "msci/units/topology/topology.hpp"
 #include "msci/units/util/is_number.hpp"
 
 #include <cmath>
@@ -17,7 +16,7 @@ namespace msci
 	{
 		public:
 			unit_number();
-			unit_number(msci::space_type);
+			unit_number(float);
 
 			void operator =(const unit_number&);
 

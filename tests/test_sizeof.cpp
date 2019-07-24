@@ -44,13 +44,13 @@ int main()
 	cout << "dimension: " << sizeof(msci::dimension) << endl;
 	cout << "abbreviation: " << sizeof(msci::abbreviation) << endl;
 	cout << endl;
-	cout << "angle_number: " << sizeof(msci::angle_number) << endl;
+	cout << "angle: " << sizeof(msci::angle) << endl;
 	cout << "lab_number: " << sizeof(msci::lab_number) << endl;
 	cout << "unit_number: " << sizeof(msci::unit_number) << endl;
 	cout << endl;
 	cout << "unit: " << sizeof(msci::unit) << endl;
 	cout << "scalar_unit: " << sizeof(msci::scalar_unit) << endl;
-	cout << "vector_unit: " << sizeof(msci::vector_unit) << endl;
+	cout << "vector_unit_3d: " << sizeof(msci::vector_unit_3d) << endl;
 	cout << "auto_unit: " << sizeof(msci::auto_unit) << endl;
 	cout << "auto_scalar: " << sizeof(msci::auto_scalar) << endl;
 	cout << "auto_vector: " << sizeof(msci::auto_vector) << endl;

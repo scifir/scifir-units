@@ -3,7 +3,6 @@
 
 #include "msci/units/meca_number/unit_number.hpp"
 
-#include "msci/units/topology/topology.hpp"
 #include "msci/units/util/is_number.hpp"
 
 #include <cmath>
@@ -17,9 +16,9 @@ namespace msci
 	{
 		public:
 			lab_number();
-			lab_number(msci::space_type,msci::space_type);
+			lab_number(float,float);
 
-			inline const msci::space_type& get_error_value() const
+			inline const float& get_error_value() const
 			{
 				return error_value;
 			}
@@ -107,7 +106,7 @@ namespace msci
 			virtual string print() const override;
 
 		private:
-			msci::space_type error_value;
+			float error_value;
 	};
 }
 

@@ -25,7 +25,7 @@ namespace msci
 		boost::split(values,init,boost::is_any_of(","));
 		x = parse_float(values[0]);
 		y = parse_float(values[1]);
-		angle = angle_number(values[2].size() - 1);
+		angle = msci::angle(values[2].size() - 1);
 	}
 
 	string cartesian_2dr::display() const

@@ -11,11 +11,11 @@ namespace msci
 	{
 	}
 
-	point_3d::point_3d(space_type new_x,space_type new_y,space_type new_z) : x(new_x),y(new_y),z(new_z)
+	point_3d::point_3d(float new_x,float new_y,float new_z) : x(new_x),y(new_y),z(new_z)
 	{
 	}
 
-	space_type point_3d::distance_to_origin() const
+	float point_3d::distance_to_origin() const
 	{
 		return sqrt(pow(x,2) + pow(y,2) + pow(z,2));
 	}
@@ -32,7 +32,7 @@ namespace msci
 		cout << display() << endl;
 	}
 
-	space_type distance_between_points(const point_3d& x1,const point_3d& x2)
+	float distance_between_points(const point_3d& x1,const point_3d& x2)
 	{
 		return sqrt(pow(x1.get_x() - x2.get_x(),2) + pow(x1.get_y() - x2.get_y(),2) + pow(x1.get_z() - x2.get_z(),2));
 	}

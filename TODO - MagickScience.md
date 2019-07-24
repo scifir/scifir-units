@@ -6,13 +6,13 @@
 // TODO: test of create_prefix()
 // TODO: test of undefined_number
 // TODO: test of unit_number
-// TODO: test of angle_number
+// TODO: test of angle
 // TODO: test of lab_number
 // TODO: test of coordinates (is easy)
 // TODO: test of unit constructors
 // TODO: test of auto_unit
 // TODO: test of scalar_unit (check temperature special initialization)
-// TODO: test of vector_unit
+// TODO: test of vector_unit_3d
 
 // MEMORY OPTIMIZATION
 // TODO: Use a memory profiler to analize the size of each object
@@ -28,7 +28,7 @@
 // C++
 // TODO: See if to send reference in some cases and const-reference when const is a practice, and add those two functions everywhere. Maybe change some member-variables to be public instead of using both functions
 // TODO: use references and const-references instead of copies inside the body of functions that can be changed
-// TODO: use explicit with angle_number and other classes
+// TODO: use explicit with angle and other classes
 // TODO: delete c_str() where it's unneeded
 
 // TODO: convert any enum that needs string representation with a to_string function (maybe it already exists something)
@@ -43,7 +43,7 @@
 // TODO: Log system for the errors, including, if possible, the variable name
 // TODO: Check best way to use print() related to GNU standards
 // TODO: Use static functions for get_enum_type() among maybe others
-// TODO: Use abstract everywhere. See if __ is used for proto classes and use it inside scalar_unit_crtp and vector_unit_crtp
+// TODO: Use abstract everywhere. See if __ is used for proto classes and use it inside scalar_unit_crtp and vector_unit_3d_crtp
 // TODO: See if auto_unit and similar have a simpler option for copy and move constructors and assignments
 // TODO: check if vectors can have a const size and add it to hyper_spherical_coordinates and the other coordinates classes
 // TODO: if size_t and other similar constants are intended to be used inside normal code
@@ -78,7 +78,7 @@
 // TODO: Units: Maybe add categories for units reference, instead of the column science
 // TODO: Units: literals should appear with unit classes
 // TODO: Change the index of the wiki
-// TODO: Units: Document the functions of vector_unit
+// TODO: Units: Document the functions of vector_unit_3d
 // TODO: Units: check if inside the example of the wiki density is well initialized
 // TODO: Units: vector units constructors should be documented
 // TODO: Units: assignment operators should be documented inside arithmetic operations
@@ -104,7 +104,7 @@
 
 // UNINMPORTANT BUGS AND DETAILS
 // TODO: See what causes the error with the literal operator _MT
-// TODO: Find in which cases angle_number becomes -0
+// TODO: Find in which cases angle becomes -0
 // TODO: a limit of initialization of mole related to the maximum number that can be given there without having mid particles
 // TODO: a way to initialize concentration without the ' ' at last (maybe to use % as an special abbreviation of empty dimensions)
 // TODO: time_display of unit time class should display months related to the actual day
@@ -120,11 +120,11 @@
 // TODO: see if there exists different dimensions on different edges for some vectors
 // TODO: See what to do with the sr (stereoradian) that's used for luminous_energy and luminous_exposure)
 // TODO: Difference between the real and the abstraction layer for each physic topic
-// TODO: tensor_unit, as vector_unit and scalar_unit. Moment of inertia maybe needs it. vector_field
+// TODO: tensor_unit, as vector_unit_3d and scalar_unit. Moment of inertia maybe needs it. vector_field
 // TODO: A path vector
 // TODO: Find out if the dimensions can be elevated at a decimal number
 // TODO: Topology: See what to do with point
-// TODO: If the temperature_gradient is a vector_unit or other thing
+// TODO: If the temperature_gradient is a vector_unit_3d or other thing
 // TODO: Implement hyper_spherical_coordinates for n >= 4
 // TODO: See what to do with the different coordinates system that exist (like toroid coordinates), which implement and which don't
 // TODO: See the official ISOs and similar standards of units and check if to add something

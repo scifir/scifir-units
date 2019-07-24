@@ -1,8 +1,7 @@
 #ifndef COORDINATES_2D_HPP_INCLUDED
 #define COORDINATES_2D_HPP_INCLUDED
 
-#include "msci/units/topology/topology.hpp"
-#include "msci/units/meca_number/angle_number.hpp"
+#include "msci/units/meca_number/angle.hpp"
 
 #include <cmath>
 
@@ -16,27 +15,27 @@ namespace msci
 		public:
 			coordinates_2d();
 
-			virtual const space_type x_projection() const = 0;
-			virtual const space_type y_projection() const = 0;
-			virtual space_type get_value() const = 0;
+			virtual const float x_projection() const = 0;
+			virtual const float y_projection() const = 0;
+			virtual float get_value() const = 0;
 	};
 
-	inline space_type cartesian_2d_to_polar_r(space_type x,space_type y)
+	inline float cartesian_2d_to_polar_r(float x,float y)
 	{
 		return std::sqrt(pow(x,2) + pow(y,2));
 	}
 
-	inline angle_type cartesian_2d_to_polar_angle(space_type x,space_type y)
+	inline float cartesian_2d_to_polar_angle(float x,float y)
 	{
 		return msci::atan_grade(y/x);
 	}
 
-	inline space_type polar_to_cartesian_2d_x(space_type r,const angle_number& angle)
+	inline float polar_to_cartesian_2d_x(float r,const angle& angle)
 	{
 		return r*msci::cos(angle);
 	}
 
-	inline space_type polar_to_cartesian_2d_y(space_type r,const angle_number& angle)
+	inline float polar_to_cartesian_2d_y(float r,const angle& angle)
 	{
 		return r*msci::sin(angle);
 	}

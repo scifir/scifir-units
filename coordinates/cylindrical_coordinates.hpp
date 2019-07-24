@@ -2,7 +2,7 @@
 #define CYLINDRICAL_COORDINATES_HPP_INCLUDED
 
 #include "msci/units/coordinates/coordinates_3d.hpp"
-#include "msci/units/meca_number/angle_number.hpp"
+#include "msci/units/meca_number/angle.hpp"
 
 using namespace std;
 
@@ -12,32 +12,32 @@ namespace msci
 	{
 		public:
 			cylindrical_coordinates();
-			cylindrical_coordinates(space_type,angle_type,space_type);
+			cylindrical_coordinates(float,float,float);
 
-			inline space_type get_r() const
+			inline float get_r() const
 			{
 				return r;
 			}
 
-			inline const msci::angle_number& get_angle() const
+			inline const msci::angle& get_angle() const
 			{
 				return angle;
 			}
 
-			inline const space_type& get_z() const
+			inline const float& get_z() const
 			{
 				return z;
 			}
 
-			virtual space_type get_value() const;
-			virtual const space_type x_projection() const;
-			virtual const space_type y_projection() const;
-			virtual const space_type z_projection() const;
+			virtual float get_value() const;
+			virtual const float x_projection() const;
+			virtual const float y_projection() const;
+			virtual const float z_projection() const;
 
 		private:
-			space_type r;
-			msci::angle_number angle;
-			space_type z;
+			float r;
+			msci::angle angle;
+			float z;
 	};
 }
 

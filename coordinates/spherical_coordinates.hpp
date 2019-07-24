@@ -1,7 +1,7 @@
 #ifndef SPHERICAL_HPP_INCLUDED
 #define SPHERICAL_HPP_INCLUDED
 
-#include "msci/units/meca_number/angle_number.hpp"
+#include "msci/units/meca_number/angle.hpp"
 #include "msci/units/coordinates/coordinates_3d.hpp"
 
 using namespace std;
@@ -12,32 +12,32 @@ namespace msci
 	{
 		public:
 			spherical_coordinates();
-			spherical_coordinates(function<space_type()>, angle_type, angle_type);
+			spherical_coordinates(function<float()>, float, float);
 
-			inline space_type get_r() const
+			inline float get_r() const
 			{
 				return r();
 			}
 
-			inline const msci::angle_number& get_angle1() const
+			inline const msci::angle& get_angle1() const
 			{
 				return angle1;
 			}
 
-			inline const msci::angle_number& get_angle2() const
+			inline const msci::angle& get_angle2() const
 			{
 				return angle2;
 			}
 
-			virtual space_type get_value() const;
-			virtual const space_type x_projection() const;
-			virtual const space_type y_projection() const;
-			virtual const space_type z_projection() const;
+			virtual float get_value() const;
+			virtual const float x_projection() const;
+			virtual const float y_projection() const;
+			virtual const float z_projection() const;
 
 		private:
-			function<space_type()> r;
-			msci::angle_number angle1;
-			msci::angle_number angle2;
+			function<float()> r;
+			msci::angle angle1;
+			msci::angle angle2;
 	};
 }
 

@@ -16,13 +16,12 @@
 #include <iomanip>
 #include <memory>
 #include <string>
-#include <type_traits>
 
 using namespace std;
 using namespace msci;
 
 /*void memory_consumption();
-void test_angle_number();
+void test_angle();
 void test_atom();
 void test_basic_unit();
 void test_lab_number();
@@ -33,8 +32,8 @@ void test_unit();
 void test_unit_number();
 void test_auto_unit();
 void test_scalar_unit();
-void test_vector_unit();
-void test_vector_unit_1d();*/
+void test_vector_unit_3d();
+void test_vector_unit_3d_1d();*/
 
 int main()
 {
@@ -162,7 +161,7 @@ int main()
 	//test_scalar_unit();
 	//test_basic_unit();
 	cout << endl << endl;
-	//test_vector_unit();
+	//test_vector_unit_3d();
 
 	/*msci::hyper_spherical_coordinates a (10,90,0);
 	cout << a.get_r() << endl;
@@ -178,58 +177,58 @@ int main()
 {
 	cout << "msci::unit_number: " << sizeof(msci::unit_number) << endl;
 	cout << "msci::undefined_number: " << sizeof(msci::undefined_number<unit_number>) << endl;
-	cout << "msci::space_type (float): " << sizeof(msci::space_type) << endl;
+	cout << "float (float): " << sizeof(float) << endl;
 	cout << "msci::unit: " << sizeof(msci::unit) << endl;
 }
 
-void test_angle_number()
+void test_angle()
 {
-	msci::angle_number a = 40;
+	msci::angle a = 40;
 	cout << a << endl;
 	cout << (a + 50) << endl;
 	cout << (a - 50) << endl;
 	cout << (a * 50) << endl;
 	cout << (a / 50) << endl;
 	cout << (a ^ 50) << endl;
-	msci::angle_number b = 50;
+	msci::angle b = 50;
 	b = a;
 	b += 50;
 	cout << b << endl;
-	msci::angle_number c = 50;
+	msci::angle c = 50;
 	c -= 234;
 	cout << c << endl;
-	msci::angle_number d = 50;
+	msci::angle d = 50;
 	d *= 10;
 	cout << d << endl;
-	msci::angle_number e = 50;
+	msci::angle e = 50;
 	e /= 10;
 	cout << e << endl;
-	msci::angle_number f = 50;
+	msci::angle f = 50;
 	f ^= 2;
 	cout << f << endl;
 	cout << (e + f) << endl;
 	cout << (e - f) << endl;
-	msci::angle_number g = 50;
-	msci::angle_number h = 120;
+	msci::angle g = 50;
+	msci::angle h = 120;
 	g += h;
 	cout << g << endl;
-	msci::angle_number i = 50;
-	msci::angle_number j = 120;
+	msci::angle i = 50;
+	msci::angle j = 120;
 	i -= j;
 	cout << i << endl;
 	cout << "type-cast to float: " << float(i) << endl;
-	cout << "sin(angle_number): " << msci::sin(msci::angle_number(0)) << endl;
-	cout << "cos(angle_number): " << msci::cos(msci::angle_number(90)) << endl;
-	cout << "tan(angle_number): " << msci::tan(msci::angle_number(0)) << endl;
-	cout << "asin(angle_number): " << msci::asin(msci::angle_number(0)) << endl;
-	cout << "acos(angle_number): " << msci::acos(msci::angle_number(1)) << endl;
-	cout << "atan(angle_number): " << msci::atan(msci::angle_number(0)) << endl;
-	cout << "sinh(angle_number): " << msci::sinh(msci::angle_number(0)) << endl;
-	cout << "cosh(angle_number): " << msci::cosh(msci::angle_number(90)) << endl;
-	cout << "tanh(angle_number): " << msci::tanh(msci::angle_number(0)) << endl;
-	cout << "asinh(angle_number): " << msci::asinh(msci::angle_number(0)) << endl;
-	cout << "acosh(angle_number): " << msci::acosh(msci::angle_number(1)) << endl;
-	cout << "atanh(angle_number): " << msci::atanh(msci::angle_number(0)) << endl;
+	cout << "sin(angle): " << msci::sin(msci::angle(0)) << endl;
+	cout << "cos(angle): " << msci::cos(msci::angle(90)) << endl;
+	cout << "tan(angle): " << msci::tan(msci::angle(0)) << endl;
+	cout << "asin(angle): " << msci::asin(msci::angle(0)) << endl;
+	cout << "acos(angle): " << msci::acos(msci::angle(1)) << endl;
+	cout << "atan(angle): " << msci::atan(msci::angle(0)) << endl;
+	cout << "sinh(angle): " << msci::sinh(msci::angle(0)) << endl;
+	cout << "cosh(angle): " << msci::cosh(msci::angle(90)) << endl;
+	cout << "tanh(angle): " << msci::tanh(msci::angle(0)) << endl;
+	cout << "asinh(angle): " << msci::asinh(msci::angle(0)) << endl;
+	cout << "acosh(angle): " << msci::acosh(msci::angle(1)) << endl;
+	cout << "atanh(angle): " << msci::atanh(msci::angle(0)) << endl;
 }
 
 void test_atom()
@@ -398,10 +397,10 @@ void test_auto_unit()
 
 }
 
-void test_vector_unit()
+void test_vector_unit_3d()
 {
 	cout << "Testing vectors: " << endl;
-	test_vector_unit_1d();
+	test_vector_unit_3d_1d();
 
 	force c (50_N,50,30);
 	cout << "vector" << endl;
@@ -416,7 +415,7 @@ void test_vector_unit()
 	cout << force(d * c) << endl;
 }
 
-void test_vector_unit_1d()
+void test_vector_unit_3d_1d()
 {
 	cout << "Testing vectors 1D: " << endl;
 	force a (50_N,direction_symbol::left);

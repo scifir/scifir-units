@@ -13,7 +13,7 @@
 #include <map>
 #include <stdexcept>
 #include <string>
-#include <type_traits>
+#include <vector>
 
 using namespace std;
 
@@ -42,128 +42,8 @@ namespace msci
 	SCALAR_UNIT_CPP(mass,"g");
 	SCALAR_UNIT_CPP(charge,"C");
 
-	temperature::temperature(msci::space_type new_value,const string& init_value) : scalar_unit_crtp<temperature>(new_value,init_value)
-	{
-	}
-
-	temperature::temperature(const string& init_value) : scalar_unit_crtp<temperature>()
-	{
-		if(!isdigit(init_value[0]))
-		{
-			throw invalid_argument("Temperature string doesn't start with a digit");
-		}
-		else
-		{
-			int i = 0;
-			while(isdigit(init_value[i]) || init_value[i] == '.')
-			{
-				i++;
-			}
-			if(init_value[i] != ' ')
-			{
-				throw invalid_argument("Temperature string must have the value separated from units with a single space");
-			}
-			string unit_string = init_value.substr(i+1);
-			int j = 0;
-			prefix* new_prefix;
-			string final_string;
-			if (unit_string.size() > 2)
-			{
-				while(unit_string.substr(j).size() != 2)
-				{
-					j++;
-				}
-				new_prefix = create_prefix(unit_string.substr(0,j));
-				final_string = unit_string.substr(j);
-			}
-			else
-			{
-				new_prefix = new prefix_normal();
-				final_string = unit_string;
-			}
-			msci::unit_number new_value = 0;
-			vector_real_dimensions new_real_dimensions = vector_real_dimensions();
-			vector_actual_dimensions new_actual_dimensions = vector_actual_dimensions();
-			dimension* new_real_dimension = new dimension_temperature(*new_prefix);
-			abstract_dimension* new_actual_dimension = new dimension_temperature(*new_prefix);
-			if (final_string == "°C")
-			{
-				new_value = stold(init_value.substr(0,i)) + 273.15;
-				new_real_dimensions[K] = shared_ptr<dimension>(new_real_dimension);
-				new_actual_dimensions[K] = shared_ptr<abstract_dimension>(new_actual_dimension);
-			}
-			else if (final_string == "°F")
-			{
-				new_value = (stold(init_value.substr(0,i)) - 32)*5/9 + 273.15;
-				new_real_dimensions[K] = shared_ptr<dimension>(new_real_dimension);
-				new_actual_dimensions[K] = shared_ptr<abstract_dimension>(new_actual_dimension);
-			}
-			else if (final_string == "K")
-			{
-				new_value = stold(init_value.substr(0,i));
-				new_real_dimensions[K] = shared_ptr<dimension>(new_real_dimension);
-				new_actual_dimensions[K] = shared_ptr<abstract_dimension>(new_actual_dimension);
-			}
-			else
-			{
-				throw invalid_argument("Temperature string does not contains °C or °F");
-			}
-			//value = new_value;
-			//actual_dimensions = new_actual_dimensions;
-			*this = auto_scalar(new_value,new_real_dimensions,new_actual_dimensions);
-		}
-	}
-
-	temperature::temperature(const scalar_unit& x) : scalar_unit_crtp<temperature>(x)
-	{
-	}
-
-	temperature::temperature(scalar_unit&& x) : scalar_unit_crtp<temperature>(move(x))
-	{
-	}
-
-	temperature::temperature(const scalar_unit& new_unit,const string& init_value) : scalar_unit_crtp<temperature>(new_unit,init_value)
-	{
-	}
-
-	temperature::temperature(scalar_unit&& new_unit,const string& init_value) : scalar_unit_crtp<temperature>(move(new_unit),init_value)
-	{
-	}
-
-	temperature::temperature(const temperature& x) : scalar_unit_crtp<temperature>(x)
-	{
-	}
-
-	temperature::temperature(temperature&& x) : scalar_unit_crtp<temperature>(move(x))
-	{
-	}
-
-	temperature& temperature::operator =(const temperature& x)
-	{
-		scalar_unit_crtp<temperature>::operator=(x);
-		return *this;
-	}
-
-	temperature& temperature::operator =(temperature&& x)
-	{
-		scalar_unit_crtp<temperature>::operator=(move(x));
-		return *this;
-	}
-
-	temperature& temperature::operator =(const scalar_unit& x)
-	{
-		scalar_unit::operator=(x);
-		return *this;
-	}
-
-	temperature& temperature::operator =(scalar_unit&& x)
-	{
-		scalar_unit::operator=(move(x));
-		return *this;
-	}
-
 	const string temperature::dimensions_match = "K";
-	const vector_real_dimensions temperature::real_dimensions = create_real_dimensions("K");
+	const vector<dimension> temperature::real_dimensions = create_derived_dimensions("K");
 
 	void temperature::add_prefix(shared_ptr<prefix> prefix)
 	{
@@ -181,14 +61,15 @@ namespace msci
 
 	int mole::number_of_particles() const
 	{
-		if (scalar_unit::actual_dimensions.count(particles))
+		return 1;
+		/*if (scalar_unit::actual_dimensions.count(particles))
 		{
 			return scalar_unit::value;
 		}
 		else
 		{
 			return scalar_unit::value * msci::avogadro_constant;
-		}
+		}*/
 	}
 
 	SCALAR_UNIT_CPP(light,"cd");

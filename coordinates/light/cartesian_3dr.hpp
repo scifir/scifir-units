@@ -2,7 +2,7 @@
 #define MSCI_UNITS_COORDINATES_LIGHT_CARTESIAN_3DR_HPP_INCLUDED
 
 #include "msci/units/topology/point_3d.hpp"
-#include "msci/units/meca_number/angle_number.hpp"
+#include "msci/units/meca_number/angle.hpp"
 #include "msci/units/coordinates/light/cartesian_3d.hpp"
 
 #include <iostream>
@@ -50,22 +50,22 @@ namespace msci
 				return z;
 			}
 
-			inline angle_number& get_angle()
+			inline msci::angle& get_angle()
 			{
 				return angle;
 			}
 
-			inline const angle_number& get_angle() const
+			inline const msci::angle& get_angle() const
 			{
 				return angle;
 			}
 
-			inline angle_number& get_angle2()
+			inline msci::angle& get_angle2()
 			{
 				return angle2;
 			}
 
-			inline const angle_number& get_angle2() const
+			inline const msci::angle& get_angle2() const
 			{
 				return angle2;
 			}
@@ -76,8 +76,8 @@ namespace msci
 			float x;
 			float y;
 			float z;
-			angle_number angle;
-			angle_number angle2;
+			msci::angle angle;
+			msci::angle angle2;
 	};
 
 	float coordinates_distance(const cartesian_3dr&,const cartesian_3dr&);

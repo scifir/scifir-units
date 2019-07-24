@@ -8,12 +8,12 @@ namespace msci
 	{
 	}
 
-	directional_coordinates::directional_coordinates(function<space_type()> new_r,direction_symbol new_direction) : coordinates_1d(),r(new_r),direction(new_direction)
+	directional_coordinates::directional_coordinates(function<float()> new_r,direction_symbol new_direction) : coordinates_1d(),r(new_r),direction(new_direction)
 	{
 
 	}
 
-	const space_type directional_coordinates::x_projection() const
+	const float directional_coordinates::x_projection() const
 	{
 		if (direction == right)
 		{
@@ -25,7 +25,7 @@ namespace msci
 		}
 	}
 
-	space_type directional_coordinates::get_value() const
+	float directional_coordinates::get_value() const
 	{
 		return r();
 	}

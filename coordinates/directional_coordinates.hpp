@@ -14,13 +14,13 @@ namespace msci
 	{
 		public:
 			directional_coordinates();
-			directional_coordinates(function<space_type()>,direction_symbol = right);
+			directional_coordinates(function<float()>,direction_symbol = right);
 
-			virtual const space_type x_projection() const;
-			virtual space_type get_value() const;
+			virtual const float x_projection() const;
+			virtual float get_value() const;
 
 		private:
-			function<space_type()> r;
+			function<float()> r;
 			direction_lr direction;
 	};
 }

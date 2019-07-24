@@ -24,13 +24,13 @@ namespace msci
 			{
 				if(x.size() != M)
 				{
-					throw invalid_argument("Matrix has a different number of rows than specified");
+					return;
 				}
 				for(const auto& column : x)
 				{
 					if(column.size() != N)
 					{
-						throw invalid_argument("Matrix has a different number of columns than specified");
+						return;
 					}
 				}
 				int i = 0;
@@ -63,7 +63,7 @@ namespace msci
 			{
 				if (outside_row_limits(i))
 				{
-					throw invalid_argument("Requested row doesn't exist");
+					return;
 				}
 				matrix<T,1,N> x = matrix<T,1,N>();
 				for (int j = 0; j < N; j++)
@@ -77,7 +77,7 @@ namespace msci
 			{
 				if (outside_column_limits(j))
 				{
-					throw invalid_argument("Requested column doesn't exist");
+					return;
 				}
 				matrix<T,M,1> x = matrix<T,M,1>();
 				for (int i = 0; i < M; i++)
@@ -91,7 +91,7 @@ namespace msci
 			{
 				if (outside_limits(i,j))
 				{
-					throw invalid_argument("Requested data position outside matrix dimensions");
+					return;
 				}
 				return data[i - 1][j - 1];
 			}
@@ -100,7 +100,7 @@ namespace msci
 			{
 				if (outside_limits(i,j))
 				{
-					throw invalid_argument("Requested data position outside matrix dimensions");
+					return;
 				}
 				return data[i - 1][j - 1];
 			}

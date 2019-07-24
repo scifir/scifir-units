@@ -47,9 +47,9 @@ namespace msci
 		//return length(sqrt(x ^ 2 + y ^ 2));
 	}
 
-	angle_number cartesian_2d::get_angle() const
+	angle cartesian_2d::get_angle() const
 	{
-		return angle_number(atan2(y.get_value().get_value(),x.get_value().get_value()));
+		return angle(atan2(y.get_value().get_value(),x.get_value().get_value()));
 	}
 
 	void cartesian_2d::set_x(const length& x_length)
@@ -62,13 +62,13 @@ namespace msci
 		y = y_length;
 	}
 
-	void cartesian_2d::move_angle(const angle_number& x_angle)
+	void cartesian_2d::move_angle(const angle& x_angle)
 	{
 		x = x*cos(x_angle);
 		y = y*sin(x_angle);
 	}
 
-	void cartesian_2d::move_in_direction(const length& x_value,const angle_number& x_angle)
+	void cartesian_2d::move_in_direction(const length& x_value,const angle& x_angle)
 	{
 		x = x + x_value*cos(x_angle);
 		y = y + x_value*sin(x_angle);

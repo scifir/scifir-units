@@ -1,7 +1,6 @@
 #ifndef MATH_TOPOLOGY_POINT_2D_HPP_INCLUDED
 #define MATH_TOPOLOGY_POINT_2D_HPP_INCLUDED
 
-#include "msci/units/topology/topology.hpp"
 #include "msci/units.hpp"
 
 #include <string>
@@ -36,7 +35,7 @@ namespace msci
 				return y;
 			}
 
-			void move_in_direction(const length&,const angle_number&);
+			void move_in_direction(const length&,const angle&);
 
 			length distance_to_origin() const;
 

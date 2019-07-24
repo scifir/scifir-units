@@ -1,8 +1,6 @@
 #ifndef MATH_TOPOLOGY_POINT_3D_HPP_INCLUDED
 #define MATH_TOPOLOGY_POINT_3D_HPP_INCLUDED
 
-#include "msci/units/topology/topology.hpp"
-
 #include <iostream>
 #include <string>
 
@@ -14,35 +12,35 @@ namespace msci
 	{
 		public:
 			point_3d();
-			point_3d(space_type,space_type,space_type);
+			point_3d(float,float,float);
 
-			inline space_type get_x() const
+			inline float get_x() const
 			{
 				return x;
 			}
 
-			inline space_type get_y() const
+			inline float get_y() const
 			{
 				return y;
 			}
 
-			inline space_type get_z() const
+			inline float get_z() const
 			{
 				return z;
 			}
 
-			space_type distance_to_origin() const;
+			float distance_to_origin() const;
 
 			string display() const;
 			void print() const;
 
 		private:
-			space_type x;
-			space_type y;
-			space_type z;
+			float x;
+			float y;
+			float z;
 	};
 
-	space_type distance_between_points(const point_3d&,const point_3d&);
+	float distance_between_points(const point_3d&,const point_3d&);
 }
 
 bool operator ==(const msci::point_3d&,const msci::point_3d&);

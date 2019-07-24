@@ -11,7 +11,7 @@ namespace msci
 	{
 	}
 
-	lab_number::lab_number(msci::space_type new_value, msci::space_type new_error_value) : undefined_number<unit_number>(new_value), unit_number(new_value)
+	lab_number::lab_number(float new_value, float new_error_value) : undefined_number<unit_number>(new_value), unit_number(new_value)
 	{
 		error_value = new_error_value;
 	}

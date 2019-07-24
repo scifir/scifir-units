@@ -26,8 +26,8 @@ namespace msci
 		x = parse_float(values[0]);
 		y = parse_float(values[1]);
 		z = parse_float(values[2]);
-		angle = angle_number(values[3].size() - 1);
-		angle2 = angle_number(values[4].size() - 1);
+		angle = msci::angle(values[3].size() - 1);
+		angle2 = msci::angle(values[4].size() - 1);
 	}
 
 	string cartesian_3dr::display() const

@@ -24,8 +24,6 @@
 #include "msci/units/predefined_units/matter_units.hpp"
 #include "msci/units/predefined_units/substance_units.hpp"
 
-#include "msci/units/units/unit_abbreviation.hpp"
-
 #include "msci/units/special_units/color.hpp"
 
 using namespace std;

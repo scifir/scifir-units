@@ -1,7 +1,7 @@
 #ifndef HYPER_SPHERICAL_COORDINATES_HPP_INCLUDED
 #define HYPER_SPHERICAL_COORDINATES_HPP_INCLUDED
 
-#include "msci/units/meca_number/angle_number.hpp"
+#include "msci/units/meca_number/angle.hpp"
 #include "msci/units/coordinates/coordinates_nd.hpp"
 #include "msci/units/coordinates/coordinates_3d.hpp"
 #include "msci/units/topology/direction.hpp"
@@ -26,42 +26,42 @@ namespace msci
 			};
 
 			hyper_spherical_coordinates();
-			hyper_spherical_coordinates(space_type);
-			hyper_spherical_coordinates(space_type, direction_symbol);
-			hyper_spherical_coordinates(space_type, angle_type);
-			hyper_spherical_coordinates(space_type, angle_type, angle_type);
-			hyper_spherical_coordinates(space_type, msci::angle_container);
-			hyper_spherical_coordinates(space_type, boost::variant<msci::angle_container,direction_symbol>);
+			hyper_spherical_coordinates(float);
+			hyper_spherical_coordinates(float, direction_symbol);
+			hyper_spherical_coordinates(float, float);
+			hyper_spherical_coordinates(float, float, float);
+			hyper_spherical_coordinates(float, msci::angle_container);
+			hyper_spherical_coordinates(float, boost::variant<msci::angle_container,direction_symbol>);
 
-			inline space_type& get_r()
+			inline float& get_r()
 			{
 				return r;
 			}
 
-			inline const space_type& get_r() const
+			inline const float& get_r() const
 			{
 				return r;
 			}
 
-			inline msci::angle_number& get_angle1()
+			inline msci::angle& get_angle1()
 			{
 				return directions.angles[0];
 			}
 
-			inline msci::angle_number& get_angle2()
+			inline msci::angle& get_angle2()
 			{
 				return directions.angles[1];
 			}
 
-			const msci::angle_number& get_angle1() const;
-			const msci::angle_number& get_angle2() const;
+			const msci::angle& get_angle1() const;
+			const msci::angle& get_angle2() const;
 
-			inline msci::angle_number& get_angle(unsigned int i)
+			inline msci::angle& get_angle(unsigned int i)
 			{
 				return directions.angles[i];
 			}
 
-			const msci::angle_number& get_angle(unsigned int) const;
+			const msci::angle& get_angle(unsigned int) const;
 
 			inline angle_container& get_angles()
 			{
@@ -90,8 +90,8 @@ namespace msci
 				return unidimensional;
 			}
 
-			virtual space_type get_value() const;
-			virtual space_type n_projection(unsigned int) const;
+			virtual float get_value() const;
+			virtual float n_projection(unsigned int) const;
 			virtual bool is_nd(unsigned int) const;
 			virtual int get_nd() const;
 
@@ -99,22 +99,22 @@ namespace msci
 			bool is_2d() const;
 			bool is_3d() const;
 
-			space_type x_projection() const;
-			space_type y_projection() const;
-			space_type z_projection() const;
+			float x_projection() const;
+			float y_projection() const;
+			float z_projection() const;
 
 			void invert();
-			void rotate1(angle_type);
-			void rotate2(angle_type);
-			void rotate(int, angle_type);
+			void rotate1(float);
+			void rotate2(float);
+			void rotate(int, float);
 
-			void convert_cartesian_2d(space_type, space_type);
-			void convert_polar(space_type, const msci::angle_number&);
-			void convert_cartesian_3d(space_type, space_type, space_type);
-			void convert_cylindrical(space_type, const msci::angle_number&, space_type);
+			void convert_cartesian_2d(float, float);
+			void convert_polar(float, const msci::angle&);
+			void convert_cartesian_3d(float, float, float);
+			void convert_cylindrical(float, const msci::angle&, float);
 
 		protected:
-			space_type r;
+			float r;
 			directions_union directions;
 			bool unidimensional;
 	};

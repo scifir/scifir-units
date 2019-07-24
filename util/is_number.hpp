@@ -1,6 +1,8 @@
 #ifndef IS_NUMBER_HPP_INCLUDED
 #define IS_NUMBER_HPP_INCLUDED
 
+#include <type_traits>
+
 using namespace std;
 
 namespace std
