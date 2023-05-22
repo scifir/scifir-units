@@ -42,18 +42,15 @@ namespace msci
 	SCALAR_UNIT_CPP(mass,"g");
 	SCALAR_UNIT_CPP(charge,"C");
 
-	const string temperature::dimensions_match = "K";
-	const vector<dimension> temperature::real_dimensions = create_derived_dimensions("K");
-
-	void temperature::add_prefix(shared_ptr<prefix> prefix)
+	void temperature::add_prefix(const prefix& prefix)
 	{
-		if(prefix->get_conversion_factor() > 0)
+		if(prefix.get_conversion_factor() > 0)
 		{
-			add_prefix(prefix);
+			scalar_unit::add_prefix(prefix);
 		}
 		else
 		{
-			invalidate(12);
+			cerr << "Temperature can't have negative prefixes";
 		}
 	}
 

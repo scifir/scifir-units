@@ -1,5 +1,5 @@
-#ifndef PHYSICS_WAVES_UNITS_HPP_INCLUDED
-#define PHYSICS_WAVES_UNITS_HPP_INCLUDED
+#ifndef MSCI_UNITS_PREDEFINED_UNITS_WAVES_UNITS_HPP_INCLUDED
+#define MSCI_UNITS_PREDEFINED_UNITS_WAVES_UNITS_HPP_INCLUDED
 
 #include "msci/units/units/scalar_unit.hpp"
 #include "msci/units/units/vector_unit_3d.hpp"
@@ -12,4 +12,4 @@ namespace msci
 	SCALAR_UNIT_HPP(frequency);
 }
 
-#endif // PHYSICS_WAVES_UNITS_HPP_INCLUDED
+#endif // MSCI_UNITS_PREDEFINED_UNITS_WAVES_UNITS_HPP_INCLUDED

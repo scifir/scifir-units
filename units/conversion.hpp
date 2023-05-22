@@ -1,5 +1,5 @@
-#ifndef CONVERSION_HPP_INCLUDED
-#define CONVERSION_HPP_INCLUDED
+#ifndef MSCI_UNITS_UNITS_CONVERSION_HPP_INCLUDED
+#define MSCI_UNITS_UNITS_CONVERSION_HPP_INCLUDED
 
 #include "msci/units/units/dimension.hpp"
 
@@ -33,4 +33,4 @@ namespace msci
 	extern map<string, conversion> get_conversion;
 }
 
-#endif // CONVERSION_HPP_INCLUDED
+#endif // MSCI_UNITS_UNITS_CONVERSION_HPP_INCLUDED

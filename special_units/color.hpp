@@ -1,5 +1,5 @@
-#ifndef COLOR_HPP_INCLUDED
-#define COLOR_HPP_INCLUDED
+#ifndef MSCI_UNITS_SPECIAL_UNITS_COLOR_HPP_INCLUDED
+#define MSCI_UNITS_SPECIAL_UNITS_COLOR_HPP_INCLUDED
 
 #include <iostream>
 #include <sstream>
@@ -64,4 +64,4 @@ namespace msci
 
 ostream& operator <<(ostream&, const msci::color&);
 
-#endif // COLOR_HPP_INCLUDED
+#endif // MSCI_UNITS_SPECIAL_UNITS_COLOR_HPP_INCLUDED

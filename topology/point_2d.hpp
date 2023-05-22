@@ -1,5 +1,5 @@
-#ifndef MATH_TOPOLOGY_POINT_2D_HPP_INCLUDED
-#define MATH_TOPOLOGY_POINT_2D_HPP_INCLUDED
+#ifndef MSCI_UNITS_TOPOLOGY_POINT_2D_HPP_INCLUDED
+#define MSCI_UNITS_TOPOLOGY_POINT_2D_HPP_INCLUDED
 
 #include "msci/units.hpp"
 
@@ -53,4 +53,4 @@ bool operator ==(const msci::point_2d&,const msci::point_2d&);
 bool operator !=(const msci::point_2d&,const msci::point_2d&);
 ostream& operator <<(ostream&,const msci::point_2d&);
 
-#endif // MATH_TOPOLOGY_POINT_2D_HPP_INCLUDED
+#endif // MSCI_UNITS_TOPOLOGY_POINT_2D_HPP_INCLUDED

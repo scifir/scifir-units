@@ -1,9 +1,11 @@
-#ifndef MSCI_UNITS_UNITS_PREFIX_HPP
-#define MSCI_UNITS_UNITS_PREFIX_HPP
+#ifndef MSCI_UNITS_UNITS_PREFIX_HPP_INCLUDED
+#define MSCI_UNITS_UNITS_PREFIX_HPP_INCLUDED
 
+#include <iostream>
 #include <map>
 #include <memory>
 #include <string>
+
 using namespace std;
 
 namespace msci
@@ -11,7 +13,7 @@ namespace msci
 	class prefix
 	{
 		public:
-			enum type {Y,Z,E,P,T,G,M,k,h,da,normal,d,c,m,u,n,p,f,a,z,y};
+			enum type {no_prefix,Y,Z,E,P,T,G,M,k,h,da,d,c,m,u,n,p,f,a,z,y};
 
 			prefix();
 			prefix(prefix::type);
@@ -20,10 +22,8 @@ namespace msci
 			prefix(const prefix&);
 			prefix(prefix&&);
 
-			prefix& operator=(const prefix&);
-			prefix& operator=(prefix&&);
-
 			int get_conversion_factor() const;
+			float get_prefix_base() const;
 			string get_name() const;
 			string get_symbol() const;
 
@@ -36,4 +36,6 @@ namespace msci
 	prefix create_prefix(const string&);
 }
 
-#endif
+ostream& operator <<(ostream&, const msci::prefix&);
+
+#endif // MSCI_UNITS_UNITS_PREFIX_HPP_INCLUDED

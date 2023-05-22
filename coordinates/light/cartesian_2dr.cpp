@@ -12,19 +12,17 @@ using namespace std;
 namespace msci
 {
 	cartesian_2dr::cartesian_2dr() : x(),y(),angle()
-	{
-	}
+	{}
 
-	cartesian_2dr::cartesian_2dr(float new_x,float new_y,float new_angle) : x(new_x),y(new_y),angle(new_angle)
-	{
-	}
+	cartesian_2dr::cartesian_2dr(const length& new_x,const length& new_y,float new_angle) : x(new_x),y(new_y),angle(msci::angle(new_angle))
+	{}
 
 	cartesian_2dr::cartesian_2dr(const string& init) : cartesian_2dr()
 	{
 		vector<string> values;
 		boost::split(values,init,boost::is_any_of(","));
-		x = parse_float(values[0]);
-		y = parse_float(values[1]);
+		x = length(values[0]);
+		y = length(values[1]);
 		angle = msci::angle(values[2].size() - 1);
 	}
 
@@ -35,9 +33,9 @@ namespace msci
 		return out.str();
 	}
 
-	float coordinates_distance(const cartesian_2dr& x,const cartesian_2dr& y)
+	length coordinates_distance(const cartesian_2dr& x,const cartesian_2dr& y)
 	{
-		return sqrt(pow(x.get_x() - y.get_x(),2) + pow(x.get_y() - y.get_y(),2));
+		return msci::sqrt(msci::pow(x.get_x() - y.get_x(),2) + msci::pow(x.get_y() - y.get_y(),2));
 	}
 }
 

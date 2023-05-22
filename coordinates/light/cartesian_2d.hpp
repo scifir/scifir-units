@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_COORDINATES_LIGHT_CARTESIAN_2D_HPP_INCLUDED
-#define MSCI_UNITS_COORDINATES_LIGHT_CARTESIAN_2D_HPP_INCLUDED
+#ifndef MSCI_UNITS_COORDINATES_CARTESIAN_2D_HPP_INCLUDED
+#define MSCI_UNITS_COORDINATES_CARTESIAN_2D_HPP_INCLUDED
 
 #include "msci/units/topology/point_2d.hpp"
 #include "msci/units/units/unit_basic.hpp"
@@ -72,4 +72,4 @@ bool operator !=(const msci::point_2d&,const msci::cartesian_2d&);
 
 ostream& operator << (ostream&, const msci::cartesian_2d&);
 
-#endif // MSCI_UNITS_COORDINATES_LIGHT_CARTESIAN_2D_HPP_INCLUDED
+#endif // MSCI_UNITS_COORDINATES_CARTESIAN_2D_HPP_INCLUDED

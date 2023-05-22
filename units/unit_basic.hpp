@@ -1,5 +1,5 @@
-#ifndef PHYSICS_BASIC_UNITS_UNIT_BASIC_HPP
-#define PHYSICS_BASIC_UNITS_UNIT_BASIC_HPP
+#ifndef MSCI_UNITS_UNITS_UNIT_BASIC_HPP_INCLUDED
+#define MSCI_UNITS_UNITS_UNIT_BASIC_HPP_INCLUDED
 
 #include "msci/units/units/prefix.hpp"
 #include "msci/units/units/scalar_unit.hpp"
@@ -40,7 +40,7 @@ namespace msci
 
 	SCALAR_UNIT_HPP_BEGIN(temperature);
 		private:
-			void add_prefix(shared_ptr<prefix>);
+			void add_prefix(const prefix&);
 	SCALAR_UNIT_HPP_END();
 
 	SCALAR_UNIT_HPP_BEGIN(mole);
@@ -358,4 +358,4 @@ msci::data operator"" _MB(long double);
 msci::data operator"" _kB(long double);
 msci::data operator"" _B(long double);
 
-#endif
+#endif // MSCI_UNITS_UNITS_UNIT_BASIC_HPP_INCLUDED

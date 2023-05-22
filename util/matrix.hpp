@@ -1,5 +1,5 @@
-#ifndef MATH_LINEAR_ALGEBRA_MATRIX_HPP_INCLUDED
-#define MATH_LINEAR_ALGEBRA_MATRIX_HPP_INCLUDED
+#ifndef MSCI_UNITS_UTIL_MATRIX_HPP_INCLUDED
+#define MSCI_UNITS_UTIL_MATRIX_HPP_INCLUDED
 
 #include "msci/units/units/scalar_unit.hpp"
 
@@ -303,4 +303,4 @@ ostream& operator <<(ostream& os, const msci::matrix<T, M, N>& x)
 	return os << output.str();
 }
 
-#endif // MATH_LINEAR_ALGEBRA_MATRIX_HPP_INCLUDED
+#endif // MSCI_UNITS_UTIL_MATRIX_HPP_INCLUDED

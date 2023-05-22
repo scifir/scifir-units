@@ -49,7 +49,7 @@ namespace msci
 
 	angle cartesian_2d::get_angle() const
 	{
-		return angle(atan2(y.get_value().get_value(),x.get_value().get_value()));
+		return angle(atan2(y.get_value(),x.get_value()));
 	}
 
 	void cartesian_2d::set_x(const length& x_length)
@@ -64,14 +64,14 @@ namespace msci
 
 	void cartesian_2d::move_angle(const angle& x_angle)
 	{
-		x = x*cos(x_angle);
-		y = y*sin(x_angle);
+		x = x*msci::cos(x_angle);
+		y = y*msci::sin(x_angle);
 	}
 
 	void cartesian_2d::move_in_direction(const length& x_value,const angle& x_angle)
 	{
-		x = x + x_value*cos(x_angle);
-		y = y + x_value*sin(x_angle);
+		x = x + x_value*msci::cos(x_angle);
+		y = y + x_value*msci::sin(x_angle);
 	}
 
 	string cartesian_2d::display() const
@@ -83,7 +83,7 @@ namespace msci
 
 	float coordinates_distance(const cartesian_2d& x,const cartesian_2d& y)
 	{
-		return sqrt(pow(x.get_x().get_value().get_value() - y.get_x().get_value().get_value(),2) + pow(x.get_y().get_value().get_value() - y.get_y().get_value().get_value(),2));
+		return std::sqrt(std::pow(x.get_x().get_value() - y.get_x().get_value(),2) + std::pow(x.get_y().get_value() - y.get_y().get_value(),2));
 	}
 }
 

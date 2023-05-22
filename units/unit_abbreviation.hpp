@@ -1,5 +1,5 @@
-#ifndef UNIT_ABBREVIATION_HPP_INCLUDED
-#define UNIT_ABBREVIATION_HPP_INCLUDED
+#ifndef MSCI_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
+#define MSCI_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
 
 #include "msci/units/units/scalar_unit.hpp"
 
@@ -1098,4 +1098,4 @@ molarity operator"" _yM(long double);
 concentration operator"" _ppm(long double);
 concentration operator"" _ppb(long double);
 
-#endif // UNIT_ABBREVIATION_HPP_INCLUDED
+#endif // MSCI_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED

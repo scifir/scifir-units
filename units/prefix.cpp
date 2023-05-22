@@ -28,16 +28,6 @@ namespace msci
 	{
 	}
 
-	prefix& prefix::operator=(const prefix& x)
-	{
-		return *this;
-	}
-
-	prefix& prefix::operator=(prefix&& x)
-	{
-		return *this;
-	}
-
 	int prefix::get_conversion_factor() const
 	{
 		switch (prefix_type)
@@ -62,7 +52,7 @@ namespace msci
 				return 2;
 			case prefix::da:
 				return 1;
-			case prefix::normal:
+			case prefix::no_prefix:
 				return 0;
 			case prefix::d:
 				return -1;
@@ -85,6 +75,11 @@ namespace msci
 			case prefix::y:
 				return -24;
 		}
+	}
+
+	float prefix::get_prefix_base() const
+	{
+		return 10;
 	}
 
 	string prefix::get_name() const
@@ -111,8 +106,8 @@ namespace msci
 				return "hecto";
 			case prefix::da:
 				return "deca";
-			case prefix::normal:
-				return "normal";
+			case prefix::no_prefix:
+				return "";
 			case prefix::d:
 				return "deci";
 			case prefix::c:
@@ -160,8 +155,8 @@ namespace msci
 				return "h";
 			case prefix::da:
 				return "da";
-			case prefix::normal:
-				return "normal";
+			case prefix::no_prefix:
+				return "";
 			case prefix::d:
 				return "d";
 			case prefix::c:
@@ -207,6 +202,70 @@ namespace msci
 		{
 			return prefix::T;
 		}
+		else if(x == "M")
+		{
+			return prefix::M;
+		}
+		else if(x == "k")
+		{
+			return prefix::k;
+		}
+		else if(x == "h")
+		{
+			return prefix::h;
+		}
+		else if(x == "da")
+		{
+			return prefix::da;
+		}
+		else if(x == "d")
+		{
+			return prefix::d;
+		}
+		else if(x == "c")
+		{
+			return prefix::c;
+		}
+		else if(x == "m")
+		{
+			return prefix::m;
+		}
+		else if(x == "u")
+		{
+			return prefix::u;
+		}
+		else if(x == "n")
+		{
+			return prefix::n;
+		}
+		else if(x == "p")
+		{
+			return prefix::p;
+		}
+		else if(x == "f")
+		{
+			return prefix::f;
+		}
+		else if(x == "a")
+		{
+			return prefix::a;
+		}
+		else if(x == "z")
+		{
+			return prefix::z;
+		}
+		else if(x == "y")
+		{
+			return prefix::y;
+		}
+		else if (x == "")
+		{
+			return prefix::no_prefix;
+		}
+		else
+		{
+			return prefix::no_prefix;
+		}
 	}
 
 	prefix create_prefix(prefix::type x)
@@ -216,7 +275,11 @@ namespace msci
 
 	prefix create_prefix(const string& x)
 	{
-		if(x == "Y")
+		if (x == "")
+		{
+			return prefix(prefix::no_prefix);
+		}
+		else if(x == "Y")
 		{
 			return prefix(prefix::Y);
 		}
@@ -292,5 +355,14 @@ namespace msci
 		{
 			return prefix(prefix::y);
 		}
+		else
+		{
+			return prefix();
+		}
 	}
+}
+
+ostream& operator <<(ostream& os, const msci::prefix& x)
+{
+	return os << x.get_symbol();
 }

@@ -26,12 +26,12 @@ namespace msci
 
 	inline float cartesian_3d_to_cylindrical_r(float x,float y,float z)
 	{
-		return std::sqrt(pow(x,2) + pow(y,2));
+		return std::sqrt(std::pow(x,2) + std::pow(y,2));
 	}
 
 	inline float cartesian_3d_to_cylindrical_angle(float x,float y,float z)
 	{
-		return msci::atan_grade(y/x);
+		return std::atan(y/x);
 	}
 
 	inline float cartesian_3d_to_cylindrical_z(float x,float y,float z)
@@ -41,17 +41,17 @@ namespace msci
 
 	inline float cartesian_3d_to_spherical_r(float x,float y,float z)
 	{
-		return std::sqrt(pow(x,2) + pow(y,2) + pow(z,2));
+		return std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2));
 	}
 
 	inline float cartesian_3d_to_spherical_angle1(float x,float y,float z)
 	{
-		return msci::atan_grade(y/x);
+		return std::atan(y/x);
 	}
 
 	inline float cartesian_3d_to_spherical_angle2(float x,float y,float z)
 	{
-		return msci::acos_grade(z/std::sqrt(pow(x,2) + pow(y,2) + pow(z,2)));
+		return std::acos(z/std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)));
 	}
 
 	inline float spherical_to_cartesian_3d_x(float r,const angle& angle1, const angle& angle2)
@@ -101,7 +101,7 @@ namespace msci
 
 	inline float cylindrical_to_spherical_r(float r,const angle& angle, float z)
 	{
-		return std::sqrt(pow(r,2) + pow(z,2));
+		return std::sqrt(std::pow(r,2) + std::pow(z,2));
 	}
 
 	inline float cylindrical_to_spherical_angle1(float r,const angle& angle, float z)

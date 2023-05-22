@@ -288,13 +288,25 @@ namespace msci
 		switch (dimension_type)
 		{
 			case dimension::N:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::normal,dimension::positive));
-				basic_dimensions.push_back(dimension(dimension::g,prefix::normal,dimension::positive));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::normal,dimension::negative));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::normal,dimension::negative));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::positive));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::no_prefix,dimension::positive));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::negative));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::negative));
 				break;
 		}
 		return basic_dimensions;
+	}
+
+	void dimension::invert()
+	{
+		if (dimension_sign == dimension::positive)
+		{
+			dimension_sign = dimension::negative;
+		}
+		else
+		{
+			dimension_sign = dimension::positive;
+		}
 	}
 
 	/*float dimension_byte::get_prefix_base() const
@@ -307,31 +319,30 @@ namespace msci
 		switch(x)
 		{
 			case dimension::m:
-				return dimension(dimension::m,prefix::normal,dimension::positive);
+				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
 			case dimension::angle:
-				return dimension(dimension::m,prefix::normal,dimension::positive);
+				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
 			case dimension::solid_angle:
-				return dimension(dimension::m,prefix::normal,dimension::positive);
+				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
 			case dimension::g:
-				return dimension(dimension::m,prefix::normal,dimension::positive);
+				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
 			case dimension::s:
-				return dimension(dimension::m,prefix::normal,dimension::positive);
+				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
 			case dimension::C:
-				return dimension(dimension::m,prefix::normal,dimension::positive);
+				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
 			case dimension::K:
-				return dimension(dimension::m,prefix::normal,dimension::positive);
+				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
 			case dimension::mol:
-				return dimension(dimension::m,prefix::normal,dimension::positive);
+				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
 			case dimension::cd:
-				return dimension(dimension::m,prefix::normal,dimension::positive);
+				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
 			case dimension::B:
-				return dimension(dimension::m,prefix::normal,dimension::positive);
+				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
 		}
 	}
 
 	dimension create_dimension(const string& x)
 	{
-		prefix new_prefix;
 		string dimension_name;
 		string prefix_name;
 		set<string> prefixes_options {"Y", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "u", "n", "p", "f", "a", "z", "y"};
@@ -339,19 +350,18 @@ namespace msci
 		{
 			prefix_name = x.substr(0,1);
 			dimension_name = x.substr(1);
-			new_prefix = create_prefix(prefix_name);
 		}
 		else if(x.substr(0,2) == "da")
 		{
 			prefix_name = "da";
 			dimension_name = x.substr(2);
-			new_prefix = create_prefix(prefix_name);
 		}
 		else
 		{
-			new_prefix = prefix(prefix::normal);
+			prefix_name = "";
 			dimension_name = x;
 		}
+		prefix new_prefix = create_prefix(prefix_name);
 		if(dimension_name == "m")
 		{
 			return dimension(dimension::m,new_prefix,dimension::positive);
@@ -437,19 +447,23 @@ namespace msci
 	vector<dimension> create_dimensions(string init_value)
 	{
 		int new_start = 0;
-		int j = new_start;
+		int i = new_start;
 		boost::algorithm::erase_all(init_value, " ");
-		int total_of_dimensions = 0;
-		while(isalnum(init_value[j]) or init_value[j] == '*' or init_value[j] == '/')
+		int total_of_dimensions = 1;
+		while(isalnum(init_value[i]) or init_value[i] == '*' or init_value[i] == '/')
 		{
-			total_of_dimensions++;
+			if (init_value[i] == '*' or init_value[i] == '/')
+			{
+				total_of_dimensions++;
+			}
+			i++;
 		}
 		bool numerator = true;
 		int new_scale = 1;
 		int new_size = 1;
 		string new_dimension_str;
 		vector<dimension> dimensions = vector<dimension>();
-		for(int j = 0; j < total_of_dimensions; j++)
+		for(int j = 0; j <= i; j++)
 		{
 			if(isdigit(init_value[j]))
 			{
@@ -463,13 +477,13 @@ namespace msci
 			if(init_value[j] == '*')
 			{
 				new_start = j + 1;
-				new_size = 0;
+				new_size = 1;
 			}
 			else if(init_value[j] == '/')
 			{
 				numerator = false;
 				new_start = j + 1;
-				new_size = 0;
+				new_size = 1;
 			}
 			if(!new_dimension_str.empty())
 			{
@@ -548,6 +562,27 @@ namespace msci
 		return dimensions;
 	}
 
+	vector<dimension> create_derived_dimensions(const vector<dimension>& x)
+	{
+		vector<dimension> new_x = vector<dimension>();
+		for(int i = 0; i < x.size(); i++)
+		{
+			if (x[i].is_derived_dimension())
+			{
+				vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
+				for (const dimension& x_subdimension : x_subdimensions)
+				{
+					new_x.push_back(x_subdimension);
+				}
+			}
+			else
+			{
+				new_x.push_back(x[i]);
+			}
+		}
+		return new_x;
+	}
+
 	vector<dimension> multiply_dimensions(const vector<dimension>& x,const vector<dimension>& y)
 	{
 		vector<dimension> new_dimensions = vector<dimension>();
@@ -569,11 +604,12 @@ namespace msci
 		{
 			new_dimensions.push_back(x_dimension);
 		}
-		for(const dimension& y_dimension : y)
+		for(dimension y_dimension : y)
 		{
+			y_dimension.invert();
 			new_dimensions.push_back(y_dimension);
 		}
-		return new_dimensions;
+		return normalize_dimensions(new_dimensions);
 	}
 
 	vector<dimension> power_dimensions(const vector<dimension>& x,int scale)
@@ -588,6 +624,96 @@ namespace msci
 		}
 		return new_dimensions;
 	}
+
+	vector<dimension> normalize_dimensions(const vector<dimension>& x)
+	{
+		vector<int> skip_dimensions = vector<int>();
+		vector<dimension> new_x = create_derived_dimensions(x);
+		for(int i = 0; i < new_x.size(); i++)
+		{
+			dimension x_dimension = new_x[i];
+			for(int j = i; j < new_x.size(); j++)
+			{
+				dimension y_dimension = new_x[j];
+				if (x_dimension.dimension_type == y_dimension.dimension_type and x_dimension.dimension_sign != y_dimension.dimension_sign)
+				{
+					skip_dimensions.push_back(i);
+					skip_dimensions.push_back(j);
+				}
+			}
+		}
+		vector<dimension> new_dimensions = vector<dimension>();
+		for(int i = 0; i < new_x.size(); i++)
+		{
+			bool skip = false;
+			for(int j = 0; j < skip_dimensions.size(); j++)
+			{
+				if (i == skip_dimensions[j])
+				{
+					skip = true;
+				}
+			}
+			if (!skip)
+			{
+				new_dimensions.push_back(new_x[i]);
+			}
+		}
+		return new_dimensions;
+	}
+
+	bool equal_dimensions(const vector<dimension>& x,const vector<dimension>& y)
+	{
+		vector<int> skip = vector<int>();
+		for (const dimension& x_dimension: x)
+		{
+			bool is_equal = false;
+			for (int j = 0; j < y.size(); j++)
+			{
+				bool skip_j = false;
+				if (skip.size() > 0)
+				{
+					for (int k = 0; k < skip.size(); k++)
+					{
+						if (j == skip[k])
+						{
+							skip_j = true;
+						}
+					}
+				}
+				if (skip_j)
+				{
+					continue;
+				}
+				if (x_dimension == y[j])
+				{
+					skip.push_back(j);
+					is_equal = true;
+				}
+			}
+			if (!is_equal)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+}
+
+bool operator==(const msci::dimension& x,const msci::dimension& y)
+{
+	if (x.dimension_type == y.dimension_type and x.dimension_sign == y.dimension_sign)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool operator!=(const msci::dimension& x,const msci::dimension& y)
+{
+	return !(x == y);
 }
 
 ostream& operator <<(ostream& os, const msci::dimension& x)

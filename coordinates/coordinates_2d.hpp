@@ -22,7 +22,7 @@ namespace msci
 
 	inline float cartesian_2d_to_polar_r(float x,float y)
 	{
-		return std::sqrt(pow(x,2) + pow(y,2));
+		return std::sqrt(std::pow(x,2) + std::pow(y,2));
 	}
 
 	inline float cartesian_2d_to_polar_angle(float x,float y)

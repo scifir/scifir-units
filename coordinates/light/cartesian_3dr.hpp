@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_COORDINATES_LIGHT_CARTESIAN_3DR_HPP_INCLUDED
-#define MSCI_UNITS_COORDINATES_LIGHT_CARTESIAN_3DR_HPP_INCLUDED
+#ifndef MSCI_UNITS_COORDINATES_CARTESIAN_3DR_HPP_INCLUDED
+#define MSCI_UNITS_COORDINATES_CARTESIAN_3DR_HPP_INCLUDED
 
 #include "msci/units/topology/point_3d.hpp"
 #include "msci/units/meca_number/angle.hpp"
@@ -98,4 +98,4 @@ bool operator !=(const msci::point_3d&,const msci::cartesian_3dr&);
 
 ostream& operator << (ostream&, const msci::cartesian_3dr&);
 
-#endif // MSCI_UNITS_COORDINATES_LIGHT_CARTESIAN_3DR_HPP_INCLUDED
+#endif // MSCI_UNITS_COORDINATES_CARTESIAN_3DR_HPP_INCLUDED

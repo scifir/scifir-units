@@ -1,5 +1,8 @@
-#ifndef DIRECTION_HPP_INCLUDED
-#define DIRECTION_HPP_INCLUDED
+#ifndef MSCI_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED
+#define MSCI_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED
+
+#include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -26,6 +29,8 @@ namespace msci
 			}
 
 			void operator =(direction_symbol);
+
+			string display() const;
 
 		protected:
 			direction_symbol direction_value;
@@ -58,7 +63,11 @@ namespace msci
 			{
 				direction_value = right;
 			}
+
+			string display() const;
 	};
+
+	string direction_string(direction_symbol);
 }
 
 bool operator ==(const msci::direction& x, const msci::direction& y);
@@ -67,6 +76,7 @@ bool operator ==(const msci::direction& x, msci::direction_symbol y);
 bool operator !=(const msci::direction& x, msci::direction_symbol y);
 bool operator ==(msci::direction_symbol y, const msci::direction& x);
 bool operator !=(msci::direction_symbol y, const msci::direction& x);
+
 bool operator ==(const msci::direction_lr& x, const msci::direction_lr& y);
 bool operator !=(const msci::direction_lr& x, const msci::direction_lr& y);
 bool operator ==(const msci::direction_lr& x, msci::direction_symbol y);
@@ -74,4 +84,7 @@ bool operator !=(const msci::direction_lr& x, msci::direction_symbol y);
 bool operator ==(msci::direction_symbol y, const msci::direction_lr& x);
 bool operator !=(msci::direction_symbol y, const msci::direction_lr& x);
 
-#endif // DIRECTION_HPP_INCLUDED
+ostream& operator <<(ostream& os, const msci::direction& x);
+ostream& operator <<(ostream& os, const msci::direction_lr& x);
+
+#endif // MSCI_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED

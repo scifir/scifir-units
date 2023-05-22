@@ -1,5 +1,5 @@
-#ifndef angle_HPP_INCLUDED
-#define angle_HPP_INCLUDED
+#ifndef MSCI_UNITS_MECA_NUMBER_ANGLE_HPP_INCLUDED
+#define MSCI_UNITS_MECA_NUMBER_ANGLE_HPP_INCLUDED
 
 #include "msci/units/topology/constants.hpp"
 #include "msci/units/util/is_number.hpp"
@@ -28,15 +28,21 @@ namespace msci
 	{
 		public:
 			angle();
-			angle(float);
-			angle(const scalar_unit&);
+			angle(const angle&);
+			angle(angle&&);
+			
+			explicit angle(float);
+			explicit angle(const scalar_unit&);
+			
+			angle& operator=(const angle&);
+			angle& operator=(const scalar_unit&);
 
-			virtual angle* clone() const
+			angle* clone() const
 			{
 				return new angle(static_cast<angle const &>(*this));
 			}
 
-			operator float() const
+			explicit operator float() const
 			{
 				return float(value);
 			}
@@ -48,8 +54,14 @@ namespace msci
 
 			angle operator +(const angle&) const;
 			angle operator -(const angle&) const;
+			angle operator *(const angle&) const;
+			angle operator /(const angle&) const;
+			angle operator ^(const angle&) const;
 			void operator +=(const angle&);
 			void operator -=(const angle&);
+			void operator *=(const angle&);
+			void operator /=(const angle&);
+			void operator ^=(const angle&);
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 			void operator =(T y)
@@ -126,7 +138,7 @@ namespace msci
 			angle& operator++()
 			{
 				value++;
-				return *clone();
+				return *this;
 			}
 
 			angle operator++(int)
@@ -139,7 +151,7 @@ namespace msci
 			angle& operator--()
 			{
 				value--;
-				return *clone();
+				return *this;
 			}
 
 			angle operator--(int)
@@ -151,7 +163,12 @@ namespace msci
 
 			void invert();
 
-			inline float get_radian_value() const
+			inline float get_grade() const
+			{
+				return value;
+			}
+
+			inline float get_radian() const
 			{
 				return grade_to_radian(value);
 			}
@@ -162,6 +179,7 @@ namespace msci
 			void normalize_value();
 	};
 
+	string to_string(const angle&);
 	bool parallel(const angle&, const angle&);
 	bool orthogonal(const angle&, const angle&);
 
@@ -210,11 +228,6 @@ namespace msci
 	{
 		return radian_to_grade(std::atanh(x));
 	}
-}
-
-namespace msci
-{
-	typedef vector<msci::angle> angle_container;
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
@@ -333,4 +346,4 @@ string operator +(const msci::angle&, const string&);
 ostream& operator <<(ostream&, const msci::angle&);
 istream& operator >>(istream&, msci::angle&);
 
-#endif // angle_HPP_INCLUDED
+#endif // MSCI_UNITS_MECA_NUMBER_ANGLE_HPP_INCLUDED

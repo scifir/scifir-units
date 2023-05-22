@@ -1,5 +1,5 @@
-#ifndef MATH_TOPOLOGY_POINT_3D_HPP_INCLUDED
-#define MATH_TOPOLOGY_POINT_3D_HPP_INCLUDED
+#ifndef MSCI_UNITS_TOPOLOGY_POINT_3D_HPP_INCLUDED
+#define MSCI_UNITS_TOPOLOGY_POINT_3D_HPP_INCLUDED
 
 #include <iostream>
 #include <string>
@@ -32,7 +32,6 @@ namespace msci
 			float distance_to_origin() const;
 
 			string display() const;
-			void print() const;
 
 		private:
 			float x;
@@ -47,4 +46,4 @@ bool operator ==(const msci::point_3d&,const msci::point_3d&);
 bool operator !=(const msci::point_3d&,const msci::point_3d&);
 ostream& operator <<(ostream&,const msci::point_3d&);
 
-#endif // MATH_TOPOLOGY_POINT_3D_HPP_INCLUDED
+#endif // MSCI_UNITS_TOPOLOGY_POINT_3D_HPP_INCLUDED

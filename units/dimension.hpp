@@ -1,5 +1,5 @@
-#ifndef DIMENSION_HPP_
-#define DIMENSION_HPP_
+#ifndef MSCI_UNITS_UNITS_DIMENSION_HPP_INCLUDED
+#define MSCI_UNITS_UNITS_DIMENSION_HPP_INCLUDED
 
 #include "msci/units/units/prefix.hpp"
 
@@ -39,6 +39,8 @@ namespace msci
 
 			vector<dimension> get_basic_dimensions() const;
 
+			void invert();
+
 			msci::prefix prefix;
 			const dimension::type dimension_type;
 			msci::dimension::sign dimension_sign;
@@ -51,12 +53,18 @@ namespace msci
 
 	vector<dimension> create_dimensions(string);
 	vector<dimension> create_derived_dimensions(string);
+	vector<dimension> create_derived_dimensions(const vector<dimension>&);
 
 	vector<dimension> multiply_dimensions(const vector<dimension>&,const vector<dimension>&);
 	vector<dimension> divide_dimensions(const vector<dimension>&,const vector<dimension>&);
 	vector<dimension> power_dimensions(const vector<dimension>&,int);
+	vector<dimension> normalize_dimensions(const vector<dimension>&);
+	bool equal_dimensions(const vector<dimension>&,const vector<dimension>&);
 }
+
+bool operator==(const msci::dimension&,const msci::dimension&);
+bool operator!=(const msci::dimension&,const msci::dimension&);
 
 ostream& operator <<(ostream&, const msci::dimension&);
 
-#endif
+#endif // MSCI_UNITS_UNITS_DIMENSION_HPP_INCLUDED

@@ -1,5 +1,5 @@
-#ifndef PHYSICS_OPTICS_UNITS_HPP_INCLUDED
-#define PHYSICS_OPTICS_UNITS_HPP_INCLUDED
+#ifndef MSCI_UNITS_PREDEFINED_UNITS_OPTICS_UNITS_HPP_INCLUDED
+#define MSCI_UNITS_PREDEFINED_UNITS_OPTICS_UNITS_HPP_INCLUDED
 
 #include "msci/units/units/scalar_unit.hpp"
 #include "msci/units/units/vector_unit_3d.hpp"
@@ -19,4 +19,4 @@ namespace msci
 	SCALAR_UNIT_HPP(absorbed_dose);
 }
 
-#endif // PHYSICS_OPTICS_UNITS_HPP_INCLUDED
+#endif // MSCI_UNITS_PREDEFINED_UNITS_OPTICS_UNITS_HPP_INCLUDED

@@ -15,8 +15,13 @@ using namespace std;
 namespace msci
 {
 	angle::angle() : value(0)
-	{
-	}
+	{}
+	
+	angle::angle(const angle& x) : value(x.get_value())
+	{}
+	
+	angle::angle(angle&& x) : value(move(x.get_value()))
+	{}
 
 	angle::angle(float x) : value(x)
 	{
@@ -30,6 +35,23 @@ namespace msci
 			value = float(x);
 			normalize_value();
 		}
+		else
+		{
+			cerr << "An angle cannot be initialized with dimensions";
+			value = 0;
+		}
+	}
+	
+	angle& angle::operator=(const angle& x)
+	{
+		value = x.get_value();
+		return *this;
+	}
+	
+	angle& angle::operator=(const scalar_unit& x)
+	{
+		value = x.get_value();
+		return *this;
 	}
 
 	angle angle::operator +(const angle& x) const
@@ -41,6 +63,21 @@ namespace msci
 	{
 		return angle(value - x.get_value());
 	}
+	
+	angle angle::operator *(const angle& x) const
+	{
+		return angle(value * x.get_value());
+	}
+	
+	angle angle::operator /(const angle& x) const
+	{
+		return angle(value / x.get_value());
+	}
+	
+	angle angle::operator ^(const angle& x) const
+	{
+		return angle(std::pow(value,x.get_value()));
+	}
 
 	void angle::operator +=(const angle& x)
 	{
@@ -51,6 +88,24 @@ namespace msci
 	void angle::operator -=(const angle& x)
 	{
 		value -= x.get_value();
+		normalize_value();
+	}
+	
+	void angle::operator *=(const angle& x)
+	{
+		value *= x.get_value();
+		normalize_value();
+	}
+	
+	void angle::operator /=(const angle& x)
+	{
+		value /= x.get_value();
+		normalize_value();
+	}
+	
+	void angle::operator ^=(const angle& x)
+	{
+		value = std::pow(value,x.get_value());
 		normalize_value();
 	}
 
@@ -86,6 +141,25 @@ namespace msci
 			return;
 		}
 	}
+	
+	string to_string(const angle& x)
+	{
+		ostringstream output;
+		double integer_part;
+		modf(x.get_value(), &integer_part);
+		output << setprecision(std::to_string(int(integer_part)).length() + 1);
+		//output << setprecision(numeric_limits<float>::max_exponent10 + 1);
+		//output << x.get_value() << "°";
+		if (x.get_value() == -0)
+		{
+			output << 0;
+		}
+		else
+		{
+			output << x.get_value();
+		}
+		return output.str();
+	}
 
 	bool parallel(const angle& x, const angle& y)
 	{
@@ -111,27 +185,27 @@ namespace msci
 
 	angle sqrt(const angle& x)
 	{
-		return angle(sqrt(x.get_value()));
+		return angle(std::sqrt(x.get_value()));
 	}
 
 	angle sqrt_nth(const angle& x, int y)
 	{
-		return angle(pow(x.get_value(), 1 / y));
+		return angle(std::pow(x.get_value(), 1 / y));
 	}
 
 	float sin(const angle& x)
 	{
-		return std::sin(x.get_radian_value());
+		return std::sin(x.get_radian());
 	}
 
 	float cos(const angle& x)
 	{
-		return std::cos(x.get_radian_value());
+		return std::cos(x.get_radian());
 	}
 
 	float tan(const angle& x)
 	{
-		return std::tan(x.get_radian_value());
+		return std::tan(x.get_radian());
 	}
 
 	angle asin(float x)
@@ -151,17 +225,17 @@ namespace msci
 
 	float sinh(const angle& x)
 	{
-		return std::sinh(x.get_radian_value());
+		return std::sinh(x.get_radian());
 	}
 
 	float cosh(const angle& x)
 	{
-		return std::cosh(x.get_radian_value());
+		return std::cosh(x.get_radian());
 	}
 
 	float tanh(const angle& x)
 	{
-		return std::tanh(x.get_radian_value());
+		return std::tanh(x.get_radian());
 	}
 
 	angle asinh(float x)
@@ -256,21 +330,7 @@ string operator +(const msci::angle& y, const string& x)
 
 ostream& operator <<(ostream& os, const msci::angle& x)
 {
-	ostringstream output;
-	double integer_part;
-	modf(x.get_value(), &integer_part);
-	output << setprecision(to_string(int(integer_part)).length() + 1);
-	//output << setprecision(numeric_limits<float>::max_exponent10 + 1);
-	//output << x.get_value() << "°";
-	if (x.get_value() == -0)
-	{
-		output << 0;
-	}
-	else
-	{
-		output << x.get_value();
-	}
-	return os << output.str();
+	return os << to_string(x);
 }
 
 istream& operator >>(istream& is, msci::angle& x)

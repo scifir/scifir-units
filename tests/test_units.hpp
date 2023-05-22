@@ -1,5 +1,5 @@
-#ifndef TEST_UNITS_HPP_INCLUDED
-#define TEST_UNITS_HPP_INCLUDED
+#ifndef MSCI_UNITS_TESTS_TEST_UNITS_HPP_INCLUDED
+#define MSCI_UNITS_TESTS_TEST_UNITS_HPP_INCLUDED
 
 #include "msci/units.hpp"
 
@@ -110,4 +110,4 @@ TEST_CASE("class unit","Test of abstract class unit using class auto_unit")
 	cout << endl;*/
 }
 
-#endif // TEST_UNITS_HPP_INCLUDED
+#endif // MSCI_UNITS_TESTS_TEST_UNITS_HPP_INCLUDED

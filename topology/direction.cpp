@@ -19,6 +19,11 @@ namespace msci
 		direction_value = new_direction;
 	}
 
+	string direction::display() const
+	{
+		return direction_string(direction_value);
+	}
+
 	direction_lr::direction_lr() : direction()
 	{
 	}
@@ -38,6 +43,11 @@ namespace msci
 			return;
 		}
 		direction_value = new_direction;
+	}
+
+	string direction_lr::display() const
+	{
+		return direction_string(direction_value);
 	}
 
 	direction_symbol opposite_direction(direction_symbol x)
@@ -148,6 +158,65 @@ namespace msci
 		}
 		return left;
 	}
+
+	string direction_string(direction_symbol x)
+	{
+		switch (x)
+		{
+			case left:
+				return "left";
+			case right:
+				return "right";
+			case top:
+				return "top";
+			case bottom:
+				return "bottom";
+			case front:
+				return "front";
+			case back:
+				return "back";
+			case left_top:
+				return "left-top";
+			case left_bottom:
+				return "left-bottom";
+			case right_top:
+				return "right-top";
+			case right_bottom:
+				return "right-bottom";
+			case left_front:
+				return "left-front";
+			case left_back:
+				return "left-back";
+			case right_front:
+				return "right-front";
+			case right_back:
+				return "right-back";
+			case top_front:
+				return "top-front";
+			case top_back:
+				return "top-back";
+			case bottom_front:
+				return "bottom-front";
+			case bottom_back:
+				return "bottom-back";
+			case left_top_front:
+				return "left-top-front";
+			case left_top_back:
+				return "left-top-back";
+			case left_bottom_front:
+				return "left-bottom-front";
+			case left_bottom_back:
+				return "left-bottom-back";
+			case right_top_front:
+				return "right-top-front";
+			case right_top_back:
+				return "right-top-back";
+			case right_bottom_front:
+				return "right-bottom-front";
+			case right_bottom_back:
+				return "right-bottom-back";
+		}
+	}
 }
 
 bool operator ==(const msci::direction& x, const msci::direction& y)
@@ -240,4 +309,14 @@ bool operator ==(msci::direction_symbol y, const msci::direction_lr& x)
 bool operator !=(msci::direction_symbol y, const msci::direction_lr& x)
 {
 	return !(x == y);
+}
+
+ostream& operator <<(ostream& os, const msci::direction& x)
+{
+	return os << x.display();
+}
+
+ostream& operator <<(ostream& os, const msci::direction_lr& x)
+{
+	return os << x.display();
 }

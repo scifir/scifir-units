@@ -1,5 +1,5 @@
-#ifndef CONSTANTS_HPP_INCLUDED
-#define CONSTANTS_HPP_INCLUDED
+#ifndef MSCI_UNITS_TOPOLOGY_CONSTANTS_HPP_INCLUDED
+#define MSCI_UNITS_TOPOLOGY_CONSTANTS_HPP_INCLUDED
 
 #include "boost/math/constants/constants.hpp"
 
@@ -11,4 +11,4 @@ namespace msci
 	const static float avogadro_constant = 602214078000000000000000.0f;
 }
 
-#endif // CONSTANTS_HPP_INCLUDED
+#endif // MSCI_UNITS_TOPOLOGY_CONSTANTS_HPP_INCLUDED

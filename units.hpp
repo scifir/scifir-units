@@ -1,8 +1,6 @@
-#ifndef UNITS_HPP_INCLUDED
-#define UNITS_HPP_INCLUDED
+#ifndef MSCI_UNITS_UNITS_HPP_INCLUDED
+#define MSCI_UNITS_UNITS_HPP_INCLUDED
 
-#include "msci/units/units/auto_scalar.hpp"
-#include "msci/units/units/auto_vector.hpp"
 #include "msci/units/units/unit_basic.hpp"
 
 #include "msci/units/predefined_units/astronomy_units.hpp"
@@ -28,4 +26,4 @@
 
 using namespace std;
 
-#endif // UNITS_HPP_INCLUDED
+#endif // MSCI_UNITS_UNITS_HPP_INCLUDED

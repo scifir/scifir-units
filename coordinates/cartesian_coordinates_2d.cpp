@@ -12,7 +12,7 @@ namespace msci
 
 	float cartesian_coordinates_2d::get_value() const
 	{
-		return sqrt(pow(x,2) + pow(y,2));
+		return std::sqrt(std::pow(x,2) + std::pow(y,2));
 	}
 
 	const float cartesian_coordinates_2d::x_projection() const

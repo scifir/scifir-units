@@ -16,7 +16,7 @@ namespace msci
 
 	float cylindrical_coordinates::get_value() const
 	{
-		return sqrt(pow(r,2) + pow(z,2));
+		return std::sqrt(std::pow(r,2) + std::pow(z,2));
 	}
 
 	const float cylindrical_coordinates::x_projection() const

@@ -1,11 +1,11 @@
-#ifndef MSCI_scalar_unitS_scalar_unitS_scalar_unit_HPP
-#define MSCI_scalar_unitS_scalar_unitS_scalar_unit_HPP
+#ifndef MSCI_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED
+#define MSCI_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED
 
 #include "msci/units/units/dimension.hpp"
 #include "msci/units/units/prefix.hpp"
-#include "msci/units/meca_number/unit_number.hpp"
 #include "msci/units/util/is_number.hpp"
 
+#include <cmath>
 #include <map>
 #include <string>
 #include <iostream>
@@ -15,109 +15,47 @@
 #define SCALAR_UNIT_HPP_BEGIN(name) class name : public scalar_unit \
 	{	\
 		public: \
-			name(); \
-			name(const name&); \
-			name(name&&); \
-			explicit name(float,const string&); \
-			explicit name(const string&); \
-			explicit name(const scalar_unit&,const string&); \
-			explicit name(scalar_unit&&,const string&); \
+			using scalar_unit::scalar_unit; \
 			name(const scalar_unit&); \
-			name(scalar_unit&&); \
-\
-			name& operator =(const name&); \
-			name& operator =(name&&); \
-			name& operator =(const scalar_unit&); \
-			name& operator =(scalar_unit&&); \
+			name(scalar_unit&&);
 
-#define SCALAR_UNIT_HPP_END() public: \
+#define SCALAR_UNIT_HPP_END() \
+\
 			static const string dimensions_match; \
-			static const vector<dimension> real_dimensions; \
+			static const vector<msci::dimension> real_dimensions; \
 	}
 
 #define SCALAR_UNIT_HPP(name) class name : public scalar_unit \
 	{	\
 		public: \
-			name(); \
-			name(const name&); \
-			name(name&&); \
-			explicit name(float,const string&); \
-			explicit name(const string&); \
-			explicit name(const scalar_unit&,const string&); \
-			explicit name(scalar_unit&&,const string&); \
+			using scalar_unit::scalar_unit; \
 			name(const scalar_unit&); \
 			name(scalar_unit&&); \
 \
-			name& operator =(const name&); \
-			name& operator =(name&&); \
-			name& operator =(const scalar_unit&); \
-			name& operator =(scalar_unit&&); \
-\
 			static const string dimensions_match; \
-			static const vector<dimension> real_dimensions; \
+			static const vector<msci::dimension> real_dimensions; \
 	}
 
-#define SCALAR_UNIT_CPP(name,dimensions) name::name() : scalar_unit() \
-			{ \
-			} \
-\
-	name::name(const name& x) : scalar_unit(x) \
-			{ \
-			} \
-\
-	name::name(name&& x) : scalar_unit(move(x)) \
-			{ \
-			} \
-\
-	name::name(float new_value,const string& init_value) : scalar_unit(new_value,init_value) \
-			{ \
-			} \
-\
-	name::name(const string& init_value) : scalar_unit(init_value) \
-			{ \
-			} \
-\
-	name::name(const scalar_unit& new_unit) : scalar_unit(new_unit) \
-			{ \
-			} \
-\
-	name::name(scalar_unit&& new_unit) : scalar_unit(move(new_unit)) \
-			{ \
-			} \
-\
-	name::name(const scalar_unit& new_unit,const string& init_value) : scalar_unit(new_unit,init_value) \
-			{ \
-			} \
-\
-	name::name(scalar_unit&& new_unit,const string& init_value) : scalar_unit(move(new_unit),init_value) \
-			{ \
-			} \
-\
-	name& name::operator =(const name& x) \
+#define SCALAR_UNIT_CPP(name,init_dimensions) name::name(const scalar_unit& x) \
 	{ \
-		scalar_unit::operator=(x); \
-		return *this; \
+		if (x.has_dimensions(name::real_dimensions)) \
+		{ \
+			value = x.get_value(); \
+			dimensions = x.get_dimensions(); \
+		} \
 	} \
 \
-	name& name::operator =(name&& x) \
+	name::name(scalar_unit&& x) \
 	{ \
-		scalar_unit::operator=(move(x)); \
-		return *this; \
+		if (x.has_dimensions(name::real_dimensions)) \
+		{ \
+			value = move(x.get_value()); \
+			dimensions = move(x.get_dimensions()); \
+		} \
 	} \
 \
-	name& name::operator =(const scalar_unit& x) \
-	{ \
-		scalar_unit::operator=(x); \
-		return *this; \
-	} \
-\
-	name& name::operator =(scalar_unit&& x) \
-	{ \
-		scalar_unit::operator=(move(x)); \
-		return *this; \
-	} \
-const string name::dimensions_match = dimensions; \
-const vector<dimension> name::real_dimensions = create_derived_dimensions(dimensions)
+const string name::dimensions_match = init_dimensions; \
+const vector<msci::dimension> name::real_dimensions = create_derived_dimensions(init_dimensions)
 
 using namespace std;
 
@@ -129,10 +67,8 @@ namespace msci
 			scalar_unit();
 			scalar_unit(const scalar_unit&);
 			scalar_unit(scalar_unit&&);
-			explicit scalar_unit(const unit_number&, const string& = "");
-			explicit scalar_unit(const unit_number&, const vector<dimension>&);
-			explicit scalar_unit(const scalar_unit&,const string&);
-			explicit scalar_unit(scalar_unit&&,const string&);
+			explicit scalar_unit(float, const string&);
+			explicit scalar_unit(float, const vector<dimension>&);
 			explicit scalar_unit(const string&);
 
 			scalar_unit& operator =(const scalar_unit&);
@@ -149,15 +85,44 @@ namespace msci
 			void operator -=(const scalar_unit&);
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			scalar_unit operator +(T y) const;
+			scalar_unit operator +(T y) const
+			{
+				scalar_unit x = *this;
+				x += y;
+				return x;
+			}
+
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			scalar_unit operator -(T y) const;
+			scalar_unit operator -(T y) const
+			{
+				scalar_unit x = *this;
+				x -= y;
+				return x;
+			}
+
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			scalar_unit operator *(T y) const;
+			scalar_unit operator *(T y) const
+			{
+				scalar_unit x = *this;
+				x *= y;
+				return x;
+			}
+
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			scalar_unit operator /(T y) const;
+			scalar_unit operator /(T y) const
+			{
+				scalar_unit x = *this;
+				x /= y;
+				return x;
+			}
+
 			template<typename T, typename = typename enable_if<is_integer_number<T>::value>::type>
-			scalar_unit operator ^(T y) const;
+			scalar_unit operator ^(T y) const
+			{
+				scalar_unit x = *this;
+				x ^= y;
+				return x;
+			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 			void operator +=(T y)
@@ -186,7 +151,8 @@ namespace msci
 			template<typename T, typename = typename enable_if<is_integer_number<T>::value>::type>
 			void operator ^=(T y)
 			{
-				value = value ^ y;
+				value = std::pow(value,y);
+				dimensions = power_dimensions(dimensions,y);
 			}
 
 			scalar_unit& operator++();
@@ -203,57 +169,40 @@ namespace msci
 
 			string get_dimensions_match() const;
 			vector<dimension> get_derived_dimensions() const;
-			const vector<dimension>& get_dimensions() const;
+			
+			inline const vector<dimension>& get_dimensions() const
+			{
+				return dimensions;
+			}
 
-			inline msci::unit_number& get_value()
+			inline const float& get_value() const
 			{
 				return value;
 			}
-
-			inline const msci::unit_number& get_value() const
-			{
-				return value;
-			}
-
-			inline bool is_defined() const
-			{
-				return value.is_defined();
-			}
-
-			inline void invalidate(int x)
-			{
-				value.invalidate(x);
-			}
-
-			string display(int = 2) const;
 
 		protected:
 			vector<dimension> dimensions;
-			msci::unit_number value;
+			float value;
 
 			string initial_dimensions_get_structure(const string&) const;
-
-		private:
-			void add_prefix(const prefix&,float);
-			//void add_prefix(const prefix[],float);
-			void remove_prefix(const prefix&,float);
-			//void remove_prefix(const prefix[],float);
-
-			void initialize_dimensions(string);
+			void add_prefix(const prefix&);
+			void remove_prefix(const prefix&);
 	};
 
+	string to_string(const scalar_unit&,int = 2);
 	float abs(const scalar_unit&);
+	scalar_unit pow(const scalar_unit&,int);
 	scalar_unit sqrt(const scalar_unit&);
 	scalar_unit sqrt_nth(const scalar_unit&, int);
 	bool equal_dimensions(const scalar_unit&,const scalar_unit&);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-msci::unit_number operator ^(T x, const msci::scalar_unit& y)
+float operator ^(T x, const msci::scalar_unit& y)
 {
 	if(y.has_empty_dimensions())
 	{
-		return msci::unit_number(pow(x, y.get_value().get_value()));
+		return std::pow(x, y.get_value());
 	}
 	else
 	{
@@ -289,4 +238,4 @@ string operator +(const msci::scalar_unit&, const string&);
 ostream& operator <<(ostream&, const msci::scalar_unit&);
 istream& operator >>(istream&, msci::scalar_unit&);
 
-#endif
+#endif // MSCI_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED

@@ -39,7 +39,7 @@ namespace msci
 
 	float coordinates_distance(const cartesian_3dr& x,const cartesian_3dr& y)
 	{
-		return sqrt(pow(x.get_x() - y.get_x(),2) + pow(x.get_y() - y.get_y(),2) + pow(x.get_z() - y.get_z(),2));
+		return std::sqrt(std::pow(x.get_x() - y.get_x(),2) + std::pow(x.get_y() - y.get_y(),2) + std::pow(x.get_z() - y.get_z(),2));
 	}
 }
 

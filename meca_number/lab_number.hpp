@@ -1,5 +1,5 @@
-#ifndef LAB_UNIT_HPP_INCLUDED
-#define LAB_UNIT_HPP_INCLUDED
+#ifndef MSCI_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED
+#define MSCI_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED
 
 #include "msci/units/meca_number/unit_number.hpp"
 
@@ -12,104 +12,159 @@ using namespace std;
 
 namespace msci
 {
-	class lab_number : public unit_number
+	template<typename T>
+	class lab_number
 	{
 		public:
-			lab_number();
-			lab_number(float,float);
-
-			inline const float& get_error_value() const
+			lab_number() : value(),error_value()
+			{}
+			
+			lab_number(const lab_number<T>& x) : value(x.value),error_value(x.error_value)
+			{}
+			
+			lab_number(lab_number<T>&& x) : value(move(x.value)),error_value(move(x.error_value))
+			{}
+			
+			explicit lab_number(T x,T y) : value(x),error_value(y)
+			{}
+			
+			lab_number<T>& operator =(const lab_number<T>& x)
 			{
-				return error_value;
+				value = x.value;
+				error_value = x.error_value;
+				return *this;
+			}
+			
+			lab_number<T>& operator =(lab_number<T>&& x)
+			{
+				value = move(x.value);
+				error_value = move(x.error_value);
+				return *this;
 			}
 
-			lab_number operator +(const lab_number&) const;
-			lab_number operator -(const lab_number&) const;
-			lab_number operator *(const lab_number&) const;
-			lab_number operator /(const lab_number&) const;
-			lab_number operator ^(const lab_number&) const;
-			void operator +=(const lab_number&);
-			void operator -=(const lab_number&);
-			void operator *=(const lab_number&);
-			void operator /=(const lab_number&);
-			void operator ^=(const lab_number&);
-
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			void operator =(T y)
+			lab_number<T> operator +(const lab_number<T>& x) const
 			{
-				value = y;
+				return lab_number<T>(value + x.value,error_value + x.error_value);
+			}
+			
+			lab_number<T> operator -(const lab_number<T>& x) const
+			{
+				return lab_number<T>(value - x.value,error_value - x.error_value);
+			}
+			
+			lab_number<T> operator *(const lab_number<T>& x) const
+			{
+				return lab_number<T>(value * x.value,error_value * x.error_value);
+			}
+			
+			lab_number<T> operator /(const lab_number<T>& x) const
+			{
+				return lab_number<T>(value / x.value,error_value / x.error_value);
+			}
+			
+			lab_number<T> operator ^(const lab_number<T>& x) const
+			{
+				return lab_number<T>(value ^ x.value,error_value ^ x.error_value);
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			lab_number operator +(T y) const
+			void operator +=(const lab_number<T>& x)
 			{
-				return lab_number(value + y,error_value);
+				value += x.value;
+				error_value += x.error_value;
+			}
+			
+			void operator -=(const lab_number<T>& x)
+			{
+				value -= x.value;
+				error_value -= x.error_value;
+			}
+			
+			void operator *=(const lab_number<T>& x)
+			{
+				value *= x.value;
+				error_value *= x.error_value;
+			}
+			
+			void operator /=(const lab_number<T>& x)
+			{
+				value /= x.value;
+				error_value /= x.error_value;
+			}
+			
+			void operator ^=(const lab_number<T>& x)
+			{
+				value ^= x.value;
+				error_value ^= x.error_value;
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			lab_number operator -(T y) const
-			{
-				return lab_number(value - y,error_value);
-			}
-
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			lab_number operator *(T y) const
-			{
-				return lab_number(value * y,error_value * y);
-			}
-
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			lab_number operator /(T y) const
-			{
-				return lab_number(value / y,error_value / y);
-			}
-
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			lab_number operator ^(T y) const
-			{
-				return lab_number(std::pow(value, y),pow(error_value,y));
-			}
-
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			void operator +=(T y)
-			{
-				value += y;
-			}
-
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			void operator -=(T y)
-			{
-				value -= y;
-			}
-
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			void operator *=(T y)
-			{
-				value *= y;
-				error_value *= y;
-			}
-
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			void operator /=(T y)
-			{
-				value /= y;
-				error_value /= y;
-			}
-
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			void operator ^=(T y)
-			{
-				value = std::pow(value, y);
-				error_value = pow(error_value,y);
-			}
-
-			virtual string print() const override;
-
-		private:
-			float error_value;
+			T value;
+			T error_value;
 	};
+	
+	template<typename T>
+	string to_string(const lab_number<T>& x)
+	{
+		ostringstream output;
+		output << setprecision(numeric_limits<float>::max_exponent10 + 1);
+		if(std::abs(x.error_value) > std::abs(x.value))
+		{
+			output << "Error: error greater than value" << endl;
+		}
+		else
+		{
+			output << x.value << " +- " << x.error_value;
+		}
+		return output.str();
+	}
 }
 
-ostream& operator <<(ostream&, const msci::lab_number&);
+template<typename T>
+bool operator ==(const msci::lab_number<T>& x, const msci::lab_number<T>& y)
+{
+	if (x.value == y.value and x.error_value == y.error_value)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 
-#endif // LAB_UNIT_HPP_INCLUDED
+template<typename T>
+bool operator !=(const msci::lab_number<T>& x, const msci::lab_number<T>& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+void operator +=(string& x, const msci::lab_number<T>& y)
+{
+	x += to_string(y);
+}
+
+template<typename T>
+string operator +(const string& x, const msci::lab_number<T>& y)
+{
+	return x + to_string(y);
+}
+
+template<typename T>
+string operator +(const msci::lab_number<T>& x, const string& y)
+{
+	return to_string(x) + y;
+}
+
+template<typename T>
+ostream& operator <<(ostream& os, const msci::lab_number<T>& x)
+{
+	return os << to_string(x);
+}
+
+template<typename T>
+istream& operator >>(istream&, msci::lab_number<T>&)
+{
+	
+}
+
+#endif // MSCI_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED

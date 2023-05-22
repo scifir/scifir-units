@@ -1,5 +1,5 @@
-#ifndef IS_NUMBER_HPP_INCLUDED
-#define IS_NUMBER_HPP_INCLUDED
+#ifndef MSCI_UNITS_UTIL_IS_NUMBER_HPP_INCLUDED
+#define MSCI_UNITS_UTIL_IS_NUMBER_HPP_INCLUDED
 
 #include <type_traits>
 
@@ -14,4 +14,4 @@ struct is_number : std::integral_constant < bool, is_same<short,T>::value || is_
 struct is_integer_number : std::integral_constant < bool, is_same<short,T>::value || is_same<int,T>::value || is_same<long,T>::value || is_same<long long,T>::value || is_same<unsigned short,T>::value || is_same<unsigned int,T>::value || is_same<unsigned long,T>::value || is_same<unsigned long long,T>::value> {};
 }
 
-#endif // IS_NUMBER_HPP_INCLUDED
+#endif // MSCI_UNITS_UTIL_IS_NUMBER_HPP_INCLUDED

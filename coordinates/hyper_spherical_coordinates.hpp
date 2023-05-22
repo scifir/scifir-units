@@ -19,9 +19,9 @@ namespace msci
 		public:
 			union directions_union
 			{
-				angle_container angles;
+				vector<msci::angle> angles;
 				direction_lr direction;
-				directions_union(const angle_container& x) : angles(x) {}
+				directions_union(const vector<msci::angle>& x) : angles(x) {}
 				~directions_union() {}
 			};
 
@@ -30,8 +30,8 @@ namespace msci
 			hyper_spherical_coordinates(float, direction_symbol);
 			hyper_spherical_coordinates(float, float);
 			hyper_spherical_coordinates(float, float, float);
-			hyper_spherical_coordinates(float, msci::angle_container);
-			hyper_spherical_coordinates(float, boost::variant<msci::angle_container,direction_symbol>);
+			hyper_spherical_coordinates(float, vector<msci::angle>);
+			hyper_spherical_coordinates(float, boost::variant<vector<msci::angle>,direction_symbol>);
 
 			inline float& get_r()
 			{
@@ -63,12 +63,12 @@ namespace msci
 
 			const msci::angle& get_angle(unsigned int) const;
 
-			inline angle_container& get_angles()
+			inline vector<msci::angle>& get_angles()
 			{
 				return directions.angles;
 			}
 
-			const angle_container& get_angles() const;
+			const vector<msci::angle>& get_angles() const;
 
 			inline direction_lr& get_direction()
 			{
@@ -111,7 +111,7 @@ namespace msci
 			void convert_cartesian_2d(float, float);
 			void convert_polar(float, const msci::angle&);
 			void convert_cartesian_3d(float, float, float);
-			void convert_cylindrical(float, const msci::angle&, float);
+			void convert_cylindrical(float, float, float);
 
 		protected:
 			float r;

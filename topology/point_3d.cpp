@@ -27,11 +27,6 @@ namespace msci
 		return out.str().c_str();
 	}
 
-	void point_3d::print() const
-	{
-		cout << display() << endl;
-	}
-
 	float distance_between_points(const point_3d& x1,const point_3d& x2)
 	{
 		return sqrt(pow(x1.get_x() - x2.get_x(),2) + pow(x1.get_y() - x2.get_y(),2) + pow(x1.get_z() - x2.get_z(),2));
