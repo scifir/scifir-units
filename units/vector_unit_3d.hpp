@@ -1,12 +1,10 @@
 #ifndef MSCI_UNITS_UNITS_VECTOR_UNIT_3D_HPP_INCLUDED
 #define MSCI_UNITS_UNITS_VECTOR_UNIT_3D_HPP_INCLUDED
 
-#include "msci/units/units/scalar_unit.hpp"
-#include "msci/units/meca_number/angle.hpp"
-#include "msci/units/coordinates/coordinates_2d.hpp"
-#include "msci/units/util/is_number.hpp"
-#include "msci/units/topology/direction.hpp"
-#include "msci/units/units/vector_unit_nd.hpp"
+#include "units/scalar_unit.hpp"
+#include "meca_number/angle.hpp"
+#include "util/is_number.hpp"
+#include "topology/direction.hpp"
 
 #include "boost/algorithm/string.hpp"
 #include "boost/variant.hpp"
@@ -22,7 +20,10 @@
 #define VECTOR_UNIT_3D_HPP_BEGIN(name) class name##_3d : public vector_unit_3d \
 	{	\
 		public: \
-			using vector_unit_3d::vector_unit_3d
+			using vector_unit_3d::vector_unit_3d; \
+			name##_3d(); \
+			name##_3d(const name##_3d&); \
+			name##_3d(name##_3d&&)
 
 #define	VECTOR_UNIT_3D_HPP_END() public: \
 		static const string dimensions_match; \
@@ -33,22 +34,25 @@
 	{	\
 		public: \
 			using vector_unit_3d::vector_unit_3d; \
+			name##_3d(); \
+			name##_3d(const name##_3d&); \
+			name##_3d(name##_3d&&); \
 \
 			static const string dimensions_match; \
 			static const vector<msci::dimension> real_dimensions; \
 	}
 
-#define VECTOR_UNIT_3D_CPP(name,init_dimensions) const string name##_3d::dimensions_match = init_dimensions; \
+#define VECTOR_UNIT_3D_CPP(name,init_dimensions) name##_3d::name##_3d() : vector_unit_3d() {} \
+	name##_3d::name##_3d(const name##_3d& x) : vector_unit_3d(x) {} \
+	name##_3d::name##_3d(name##_3d&& x) : vector_unit_3d(move(x)) {} \
+const string name##_3d::dimensions_match = init_dimensions; \
 const vector<msci::dimension> name##_3d::real_dimensions = create_derived_dimensions(init_dimensions)
 
 #define VECTOR_UNIT_HPP(name) SCALAR_UNIT_HPP(name); \
-\
-	VECTOR_UNIT_3D_HPP(name); \
+VECTOR_UNIT_3D_HPP(name)
 
 #define VECTOR_UNIT_CPP(name,init_dimensions) SCALAR_UNIT_CPP(name,init_dimensions); \
-\
-	VECTOR_UNIT_3D_CPP(name,init_dimensions); \
-
+VECTOR_UNIT_3D_CPP(name,init_dimensions)
 
 using namespace std;
 using namespace msci;
@@ -94,7 +98,7 @@ namespace msci
 			vector_unit_3d& operator =(const scalar_unit&);
 			vector_unit_3d& operator =(scalar_unit&&);
 
-			void point_to(direction_symbol);
+			void point_to(direction::value);
 
 			void operator +=(const vector_unit_3d&);
 			void operator -=(const vector_unit_3d&);

@@ -1,9 +1,9 @@
 #ifndef MSCI_UNITS_MECA_NUMBER_ANGLE_HPP_INCLUDED
 #define MSCI_UNITS_MECA_NUMBER_ANGLE_HPP_INCLUDED
 
-#include "msci/units/topology/constants.hpp"
-#include "msci/units/util/is_number.hpp"
-#include "msci/units/units/scalar_unit.hpp"
+#include "topology/constants.hpp"
+#include "util/is_number.hpp"
+#include "units/scalar_unit.hpp"
 
 #include "boost/math/constants/constants.hpp"
 
@@ -32,6 +32,7 @@ namespace msci
 			angle(angle&&);
 			
 			explicit angle(float);
+			explicit angle(string&);
 			explicit angle(const scalar_unit&);
 			
 			angle& operator=(const angle&);

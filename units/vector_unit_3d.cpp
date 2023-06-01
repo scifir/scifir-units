@@ -1,5 +1,5 @@
-#include "msci/units/units/vector_unit_3d.hpp"
-#include "msci/units/coordinates/coordinates_3d.hpp"
+#include "units/vector_unit_3d.hpp"
+#include "coordinates/coordinates_3d.hpp"
 
 using namespace std;
 
@@ -122,134 +122,134 @@ namespace msci
 		return *this;
 	}
 
-	void vector_unit_3d::point_to(direction_symbol x)
+	void vector_unit_3d::point_to(direction::value x)
 	{
-		if (x == direction_symbol::left)
+		if (x == direction::left)
 		{
 			theta = 270;
 			phi = 90;
 		}
-		else if(x == direction_symbol::right)
+		else if(x == direction::right)
 		{
 			theta = 90;
 			phi = 90;
 		}
-		else if(x == top)
+		else if(x == direction::top)
 		{
 			theta = 0;
 			phi = 0;
 		}
-		else if(x == bottom)
+		else if(x == direction::bottom)
 		{
 			theta = 0;
 			phi = 180;
 		}
-		else if(x == left_top)
+		else if(x == direction::left_top)
 		{
 			theta = 270;
 			phi = 45;
 		}
-		else if(x == right_top)
+		else if(x == direction::right_top)
 		{
 			theta = 90;
 			phi = 45;
 		}
-		else if(x == right_bottom)
+		else if(x == direction::right_bottom)
 		{
 			theta = 90;
 			phi = 135;
 		}
-		else if(x == left_bottom)
+		else if(x == direction::left_bottom)
 		{
 			theta = 270;
 			phi = 135;
 		}
-		else if(x == front)
+		else if(x == direction::front)
 		{
 			theta = 0;
 			phi = 90;
 		}
-		else if(x == back)
+		else if(x == direction::back)
 		{
 			theta = 180;
 			phi = 90;
 		}
-		else if(x == left_front)
+		else if(x == direction::left_front)
 		{
 			theta = 315;
 			phi = 90;
 		}
-		else if(x == right_front)
+		else if(x == direction::right_front)
 		{
 			theta = 45;
 			phi = 90;
 		}
-		else if(x == top_front)
+		else if(x == direction::top_front)
 		{
 			theta = 0;
 			phi = 45;
 		}
-		else if(x == bottom_front)
+		else if(x == direction::bottom_front)
 		{
 			theta = 0;
 			phi = 135;
 		}
-		else if(x == left_back)
+		else if(x == direction::left_back)
 		{
 			theta = 225;
 			phi = 90;
 		}
-		else if(x == right_back)
+		else if(x == direction::right_back)
 		{
 			theta = 135;
 			phi = 90;
 		}
-		else if(x == top_back)
+		else if(x == direction::top_back)
 		{
 			theta = 180;
 			phi = 45;
 		}
-		else if(x == bottom_back)
+		else if(x == direction::bottom_back)
 		{
 			theta = 180;
 			phi = 135;
 		}
-		else if(x == left_top_front)
+		else if(x == direction::left_top_front)
 		{
 			theta = 315;
 			phi = 45;
 		}
-		else if(x == right_top_front)
+		else if(x == direction::right_top_front)
 		{
 			theta = 45;
 			phi = 45;
 		}
-		else if(x == left_bottom_front)
+		else if(x == direction::left_bottom_front)
 		{
 			theta = 315;
 			phi = 135;
 		}
-		else if(x == right_bottom_front)
+		else if(x == direction::right_bottom_front)
 		{
 			theta = 45;
 			phi = 135;
 		}
-		else if(x == left_top_back)
+		else if(x == direction::left_top_back)
 		{
 			theta = 225;
 			phi = 45;
 		}
-		else if(x == right_top_back)
+		else if(x == direction::right_top_back)
 		{
 			theta = 135;
 			phi = 45;
 		}
-		else if(x == left_bottom_back)
+		else if(x == direction::left_bottom_back)
 		{
 			theta = 225;
 			phi = 135;
 		}
-		else if(x == right_bottom_back)
+		else if(x == direction::right_bottom_back)
 		{
 			theta = 135;
 			phi = 135;

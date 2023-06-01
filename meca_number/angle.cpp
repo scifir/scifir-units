@@ -1,4 +1,4 @@
-#include "msci/units/meca_number/angle.hpp"
+#include "meca_number/angle.hpp"
 
 #include "boost/algorithm/string.hpp"
 
@@ -25,6 +25,16 @@ namespace msci
 
 	angle::angle(float x) : value(x)
 	{
+		normalize_value();
+	}
+	
+	angle::angle(string& init_angle) : value()
+	{
+		if (init_angle.back() == 'º')
+		{
+			init_angle = init_angle.substr(0,-1);
+		}
+		value = stof(init_angle);
 		normalize_value();
 	}
 

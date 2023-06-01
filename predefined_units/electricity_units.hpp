@@ -1,8 +1,8 @@
 #ifndef MSCI_UNITS_PREDEFINED_UNITS_ELECTRICITY_UNITS_HPP_INCLUDED
 #define MSCI_UNITS_PREDEFINED_UNITS_ELECTRICITY_UNITS_HPP_INCLUDED
 
-#include "msci/units/units/scalar_unit.hpp"
-#include "msci/units/units/vector_unit_3d.hpp"
+#include "units/scalar_unit.hpp"
+#include "units/vector_unit_3d.hpp"
 
 using namespace std;
 

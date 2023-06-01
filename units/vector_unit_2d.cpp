@@ -1,4 +1,8 @@
-#include "msci/units/units/vector_unit_2d.hpp"
+#include "units/vector_unit_2d.hpp"
+
+#include "coordinates/coordinates_2d.hpp"
+
+#include "boost/algorithm/string.hpp"
 
 using namespace std;
 
@@ -37,14 +41,19 @@ namespace msci
 	vector_unit_2d::vector_unit_2d(scalar_unit&& x,const msci::angle& new_angle) : scalar_unit(x),theta(new_angle)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(const string& x,float new_angle) : scalar_unit(x),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(const string& init_scalar,float new_angle) : scalar_unit(init_scalar),theta(new_angle)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(const string& x,const msci::angle& new_angle) : scalar_unit(x),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(const string& init_scalar,const msci::angle& new_angle) : scalar_unit(init_scalar),theta(new_angle)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(const string& x)
-	{}
+	vector_unit_2d::vector_unit_2d(const string& init_vector)
+	{
+		vector<string> values;
+		boost::split(values,init_vector,boost::is_any_of(" "));
+		set_from_string(values[0]);
+		theta = msci::angle(stof(values[1]));
+	}
 	
 	vector_unit_2d& vector_unit_2d::operator =(const vector_unit_2d& x)
 	{
@@ -78,8 +87,8 @@ namespace msci
 		{
 				float new_x = x_projection() + y.x_projection();
 				float new_y = y_projection() + y.y_projection();
-				scalar_unit::value = cartesian_2d_to_polar_r(new_x, new_y);
-				theta = cartesian_2d_to_polar_angle(new_x, new_y);
+				scalar_unit::value = coordinates_2d_to_polar_r(new_x, new_y);
+				theta = coordinates_2d_to_polar_angle(new_x, new_y);
 		}
 		else
 		{

@@ -1,8 +1,8 @@
-#include "msci/units/units/scalar_unit.hpp"
+#include "units/scalar_unit.hpp"
 
-#include "msci/units/units/conversion.hpp"
-#include "msci/units/units/unit_basic.hpp"
-#include "msci/units/units/prefix.hpp"
+#include "units/conversion.hpp"
+#include "units/unit_basic.hpp"
+#include "units/prefix.hpp"
 
 #include "boost/algorithm/string/erase.hpp"
 #include "boost/algorithm/string.hpp"
@@ -40,30 +40,7 @@ namespace msci
 
 	scalar_unit::scalar_unit(const string& init_scalar) : scalar_unit()
 	{
-		if(!isdigit(init_scalar[0]))
-		{
-			return;
-		}
-		else
-		{
-			int i = 0;
-			while(isdigit(init_scalar[i]) || init_scalar[i] == '.' || init_scalar[i] == ' ')
-			{
-				if (init_scalar[i] == ' ' and !isdigit(init_scalar[i + 1]))
-				{
-					break;
-				}
-				i++;
-			}
-			if(init_scalar[i] != ' ')
-			{
-				return;
-			}
-			string string_value = init_scalar.substr(0, i);
-			boost::algorithm::erase_all(string_value, " ");
-			value = stof(string_value);
-			dimensions = create_dimensions(init_scalar.substr(i));
-		}
+		set_from_string(init_scalar);
 	}
 
 	scalar_unit& scalar_unit::operator =(const scalar_unit& x)
@@ -378,6 +355,34 @@ namespace msci
 			}
 			return init_value.substr(i);
 		}*/
+	}
+	
+	void scalar_unit::set_from_string(const string& init_scalar)
+	{
+		if(!isdigit(init_scalar[0]))
+		{
+			return;
+		}
+		else
+		{
+			int i = 0;
+			while(isdigit(init_scalar[i]) || init_scalar[i] == '.' || init_scalar[i] == ' ')
+			{
+				if (init_scalar[i] == ' ' and !isdigit(init_scalar[i + 1]))
+				{
+					break;
+				}
+				i++;
+			}
+			if(init_scalar[i] != ' ')
+			{
+				return;
+			}
+			string string_value = init_scalar.substr(0, i);
+			boost::algorithm::erase_all(string_value, " ");
+			value = stof(string_value);
+			dimensions = create_dimensions(init_scalar.substr(i));
+		}
 	}
 	
 	string to_string(const scalar_unit& x,int number_of_decimals)

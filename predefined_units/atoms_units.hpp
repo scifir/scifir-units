@@ -1,7 +1,7 @@
 #ifndef MSCI_UNITS_PREDEFINED_UNITS_ATOMS_UNITS_HPP_INCLUDED
 #define MSCI_UNITS_PREDEFINED_UNITS_ATOMS_UNITS_HPP_INCLUDED
 
-#include "msci/units/units/scalar_unit.hpp"
+#include "units/scalar_unit.hpp"
 
 using namespace std;
 

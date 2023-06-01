@@ -1,7 +1,7 @@
 #ifndef MSCI_UNITS_TESTS_TEST_DIMENSIONS_HPP_INCLUDED
 #define MSCI_UNITS_TESTS_TEST_DIMENSIONS_HPP_INCLUDED
 
-#include "msci/units.hpp"
+#include "units.hpp"
 
 #include <sstream>
 

@@ -1,7 +1,7 @@
 #ifndef MSCI_UNITS_UTIL_MATRIX_HPP_INCLUDED
 #define MSCI_UNITS_UTIL_MATRIX_HPP_INCLUDED
 
-#include "msci/units/units/scalar_unit.hpp"
+#include "units/scalar_unit.hpp"
 
 #include <iostream>
 #include <sstream>

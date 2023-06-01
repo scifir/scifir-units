@@ -3,7 +3,7 @@
 
 #define CATCH_CONFIG_MAIN
 #include "catch/catch.hpp"
-#include "msci/units.hpp"
+#include "units.hpp"
 
 using namespace std;
 

@@ -1,4 +1,4 @@
-#include "msci/units/predefined_units/informatics_units.hpp"
+#include "predefined_units/informatics_units.hpp"
 
 using namespace std;
 

@@ -1,11 +1,10 @@
-#ifndef MSCI_UNITS_UNITS_VECTOR_UNIT_3D_HPP_INCLUDED
-#define MSCI_UNITS_UNITS_VECTOR_UNIT_3D_HPP_INCLUDED
+#ifndef MSCI_UNITS_UNITS_VECTOR_UNIT_ND_HPP_INCLUDED
+#define MSCI_UNITS_UNITS_VECTOR_UNIT_ND_HPP_INCLUDED
 
-#include "msci/units/units/scalar_unit.hpp"
-#include "msci/units/meca_number/angle.hpp"
-#include "msci/units/coordinates/coordinates_2d.hpp"
-#include "msci/units/util/is_number.hpp"
-#include "msci/units/topology/direction.hpp"
+#include "units/scalar_unit.hpp"
+#include "meca_number/angle.hpp"
+#include "util/is_number.hpp"
+#include "topology/direction.hpp"
 
 #include "boost/algorithm/string.hpp"
 #include "boost/variant.hpp"
@@ -21,7 +20,10 @@
 #define VECTOR_UNIT_ND_HPP_BEGIN(name) class name##_nd : public vector_unit_nd \
 	{	\
 		public: \
-			using vector_unit_nd::vector_unit_nd
+			using vector_unit_nd::vector_unit_nd; \
+			name##_nd(); \
+			name##_nd(const name##_nd&); \
+			name##_nd(name##_nd&&)
 
 #define	VECTOR_UNIT_ND_HPP_END() public: \
 		static const string dimensions_match; \
@@ -32,12 +34,18 @@
 	{	\
 		public: \
 			using vector_unit_nd::vector_unit_nd; \
+			name##_nd(); \
+			name##_nd(const name##_nd&); \
+			name##_nd(name##_nd&&); \
 \
 			static const string dimensions_match; \
 			static const vector<msci::dimension> real_dimensions; \
 	}
 
-#define VECTOR_UNIT_ND_CPP(name,init_dimensions) const string name##_nd::dimensions_match = init_dimensions; \
+#define VECTOR_UNIT_ND_CPP(name,init_dimensions) name##_nd::name##_nd() : scalar_unit(),angles() {} \
+	name##_nd::name##_nd(const name##_nd& x) : scalar_unit(x),angles(x.angles) {} \
+	name##_nd::name##_nd(name##_nd&& x) : scalar_unit(move(x)),angles(move(x.angles)) {} \
+const string name##_nd::dimensions_match = init_dimensions; \
 const vector<dimension> name##_nd::real_dimensions = create_derived_dimensions(init_dimensions)
 
 using namespace std;
@@ -72,7 +80,7 @@ namespace msci
 			vector_unit_nd& operator =(const scalar_unit&);
 			vector_unit_nd& operator =(scalar_unit&&);
 
-			void point_to(direction_symbol);
+			void point_to(direction::value);
 			
 			void operator +=(const vector_unit_nd&);
 			void operator -=(const vector_unit_nd&);
@@ -133,81 +141,16 @@ namespace msci
 				scalar_unit::value ^= y;
 			}
 
-			inline const bool& is_1d() const
-			{
-				return angles.size() == 0;
-			}
-
-			inline bool is_2d() const
-			{
-				return angles.size() == 1;
-			}
-
-			inline bool is_3d() const
-			{
-				return angles.size() == 2;
-			}
-			
 			inline bool is_nd(int i) const
 			{
 				return angles.size() == (i - 1);
 			}
 
-			inline float x_projection() const
-			{
-				if (is_1d())
-				{
-					return get_value();
-				}
-				else if (is_2d())
-				{
-					return scalar_unit::value * msci::cos(angles[0]);
-				}
-				else if (is_3d())
-				{
-					return scalar_unit::value * msci::cos(angles[0]) * msci::sin(angles[1]);
-				}
-			}
+			float x_projection() const;
+			float y_projection() const;
+			float z_projection() const;
 
-			inline float y_projection() const
-			{
-				if (is_1d())
-				{
-					return 0;
-				}
-				else if (is_2d())
-				{
-					return scalar_unit::value * msci::sin(angles[0]);
-				}
-				else if (is_3d())
-				{
-					return scalar_unit::value * msci::sin(angles[0]) * msci::sin(angles[1]);
-				}
-			}
-
-			inline float z_projection() const
-			{
-				if (is_1d())
-				{
-					return 0;
-				}
-				else if (is_2d())
-				{
-					return 0;
-				}
-				else if (is_3d())
-				{
-					return scalar_unit::value * msci::cos(angles[1]);
-				}
-			}
-
-			inline void invert()
-			{
-				for(msci::angle& x_angle : angles)
-				{
-					x_angle.invert();
-				}
-			}
+			void invert();
 
 			vector<msci::angle> angles;
 	};
@@ -232,5 +175,5 @@ string operator +(const msci::vector_unit_nd&,const string&);
 ostream& operator <<(ostream&,const msci::vector_unit_nd&);
 istream& operator >>(istream&,msci::vector_unit_nd&);
 
-#endif // MSCI_UNITS_UNITS_VECTOR_UNIT_3D_HPP_INCLUDED
+#endif // MSCI_UNITS_UNITS_VECTOR_UNIT_ND_HPP_INCLUDED
  

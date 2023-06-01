@@ -8,83 +8,42 @@ using namespace std;
 
 namespace msci
 {
-	enum direction_symbol {left, right, top, bottom, front, back, left_top, left_bottom, right_top, right_bottom, left_front, left_back, right_front, right_back, top_front, top_back, bottom_front, bottom_back, left_top_front, left_top_back, left_bottom_front, left_bottom_back, right_top_front, right_top_back, right_bottom_front, right_bottom_back};
-
-	direction_symbol opposite_direction(direction_symbol);
-
+	class direction;
+	
 	class direction
 	{
 		public:
+			enum value {left, right, top, bottom, front, back, left_top, left_bottom, right_top, right_bottom, left_front, left_back, right_front, right_back, top_front, top_back, bottom_front, bottom_back, left_top_front, left_top_back, left_bottom_front, left_bottom_back, right_top_front, right_top_back, right_bottom_front, right_bottom_back};
+			
 			direction();
-			direction(direction_symbol);
+			direction(direction::value);
 
-			inline const direction_symbol& get_direction() const
+			inline const direction::value& get_direction() const
 			{
 				return direction_value;
 			}
 
-			inline void invert()
-			{
-				direction_value = opposite_direction(direction_value);
-			}
+			void invert();
 
-			void operator =(direction_symbol);
+			void operator =(direction::value);
 
 			string display() const;
 
-		protected:
-			direction_symbol direction_value;
+		private:
+			direction::value direction_value;
 	};
-
-	class direction_lr : public direction
-	{
-		public:
-			direction_lr();
-			direction_lr(direction_symbol);
-
-			void operator =(direction_symbol);
-
-			inline bool goes_left()
-			{
-				return (direction_value == left);
-			}
-
-			inline bool goes_right()
-			{
-				return (direction_value == right);
-			}
-
-			inline void go_left()
-			{
-				direction_value = left;
-			}
-
-			inline void go_right()
-			{
-				direction_value = right;
-			}
-
-			string display() const;
-	};
-
-	string direction_string(direction_symbol);
+	
+	string direction_string(direction::value);
+	direction::value opposite_direction(direction::value);
 }
 
 bool operator ==(const msci::direction& x, const msci::direction& y);
 bool operator !=(const msci::direction& x, const msci::direction& y);
-bool operator ==(const msci::direction& x, msci::direction_symbol y);
-bool operator !=(const msci::direction& x, msci::direction_symbol y);
-bool operator ==(msci::direction_symbol y, const msci::direction& x);
-bool operator !=(msci::direction_symbol y, const msci::direction& x);
-
-bool operator ==(const msci::direction_lr& x, const msci::direction_lr& y);
-bool operator !=(const msci::direction_lr& x, const msci::direction_lr& y);
-bool operator ==(const msci::direction_lr& x, msci::direction_symbol y);
-bool operator !=(const msci::direction_lr& x, msci::direction_symbol y);
-bool operator ==(msci::direction_symbol y, const msci::direction_lr& x);
-bool operator !=(msci::direction_symbol y, const msci::direction_lr& x);
+bool operator ==(const msci::direction& x, msci::direction::value y);
+bool operator !=(const msci::direction& x, msci::direction::value y);
+bool operator ==(msci::direction::value y, const msci::direction& x);
+bool operator !=(msci::direction::value y, const msci::direction& x);
 
 ostream& operator <<(ostream& os, const msci::direction& x);
-ostream& operator <<(ostream& os, const msci::direction_lr& x);
 
 #endif // MSCI_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED

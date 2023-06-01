@@ -1,7 +1,7 @@
 #ifndef MSCI_UNITS_TOPOLOGY_POINT_2D_HPP_INCLUDED
 #define MSCI_UNITS_TOPOLOGY_POINT_2D_HPP_INCLUDED
 
-#include "msci/units.hpp"
+#include "units.hpp"
 
 #include <string>
 
@@ -15,38 +15,16 @@ namespace msci
 			point_2d();
 			point_2d(const length&,const length&);
 
-			inline length& get_x()
-			{
-				return x;
-			}
-
-			inline length get_x() const
-			{
-				return x;
-			}
-
-			inline length& get_y()
-			{
-				return y;
-			}
-
-			inline length get_y() const
-			{
-				return y;
-			}
-
 			void move_in_direction(const length&,const angle&);
 
 			length distance_to_origin() const;
 
-			string display() const;
-
-		private:
 			length x;
 			length y;
 	};
 
-	length distance_between_points(const point_2d&,const point_2d&);
+	string to_string(const point_2d&);
+	length distance(const point_2d&,const point_2d&);
 }
 
 bool operator ==(const msci::point_2d&,const msci::point_2d&);

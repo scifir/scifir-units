@@ -10,10 +10,9 @@ MSCI UNITS - VERSION 2
 
 // C++
 // TODO: add enum inside classes were it's used
+// TODO: Refactorize direction to be only an enum with some external functions, nothing more
 
 // COORDINATES
-// TODO: light coordinates should have const cast to full coordinates
-// TODO: 2dr and 3dr coordinates maybe should inherit from the others, check if override is a good solution for those cases
 // TODO: all coordinates classes should have ostream << with (x,y), (p,theta), etc
 // TODO: change coordinates classes to allow write access
 // TODO: macro that maps coordinates
@@ -26,19 +25,14 @@ MSCI UNITS - VERSION 2
 // DIMENSIONS
 // TODO: custom_dimension in order to have custom dimensions
 // TODO: maybe create_dimension() and create_prefix() should have parameters to pass to constructors
+// TODO: add the omega symbol when displaying the resistance
 
 // UNITS - Finish creating the new class inheritance
-// TODO: finish divide_dimensions() OK!
-// TODO: finish has_dimensions() adding real_dimensions OK!
-// TODO: finish has_empty_dimensions() OK!
-// TODO: finish set_same_prefix() OK!
-
 // TODO: add the omega greek symbol to the text of solid angle
 // TODO: support the conversions natively
 // TODO: function to_SI_convention(vector<scalar_unit>&)
 
 // UNITS
-// TODO: create vector_unit_1d and vector_unit_2d
 // TODO: create the macros VECTOR_UNIT_ALL_HPP and VECTOR_UNIT_ALL_CPP
 
 // TODO: add const to the enum of light_unit
@@ -65,26 +59,20 @@ MSCI UNITS - VERSION 2
 // TODO: sqrt() and pow() maybe should be direct for created units, instead of passing by scalar_unit again to initialize after that the other unit
 
 // VECTOR_UNIT
-// TODO: Implement the coordinates inside vector_unit_3d without any coordinates class inherited or composed
-// TODO: Implement vector_unit_2d
-// TODO: vector_unit(float,const string&,angle...) constructor for vector_unit class and subclasses
 // TODO: constructor of vector_unit which receives const string& including angles
 // TODO: operator >> should allow to create vectors giving angles
-// TODO: string initialization of vector_unit has to work with coord
-// TODO: finish to map the functions of hyper_spherical_coordinates inside vector_unit
-// TODO: maybe auto_vector and auto_scalar can be independent of auto_unit, in order to avoid the virtual inheritance
-// TODO: Constructor with a init string
-// TODO: input stream has to create vectors
 
 // MATERIAL_VECTOR_UNIT
 // TODO: decide how it'll be, in order to include real space to the vector_unit
 
-// UNITS EXTRA
+// SPECIAL UNITS
 // TODO: pixel dimension, pixel unit and pixels_distance classes
 // TODO: the pH should be an special unit
 // TODO: unit time class should be initialized by multiple abbreviations as 100 min 40 s for example
 // TODO: unit time class should display with an string "d s" specifying the dimensions to calculate on
+// TODO: complete color class like coordinate classes, with all the getters of all the different color versions
 // TODO: support currency dimension
+// TODO: document a little how to handle currency
 
 // MECA NUMBERS
 // TODO: add the allowed typenames to lab_number, and don't accept any other type
@@ -111,9 +99,13 @@ MSCI UNITS - VERSION 2
 // TODO: Check limits of matrices for all operators
 // TODO: Use the GSL to implement the reverse matrix
 
+// CONSTANTS
+// TODO: make a list of all important constants of science, with their respective unit
+
 // FUTURE
 // TODO: support the case of n dimensions fixed
 // TODO: support the case of n dimensions dynamical, by allowing to change the number of dimensions for the same instance. It can be useful for some sci-fi applications
+// TODO: add the theta and phi characters to C++ variable names, and add them then to the member-variables of vector_unit classes, and any other case of similar use
 
 // FUTURE - MECA NUMBERS (POSSIBLE, THINK)
 // TODO: Add names to the meca numbers (angler, laber, etc)

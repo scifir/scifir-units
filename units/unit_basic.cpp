@@ -1,10 +1,9 @@
-#include "msci/units/units/unit_basic.hpp"
+#include "units/unit_basic.hpp"
 
-#include "msci/units/units/scalar_unit.hpp"
-#include "msci/units/units/dimension.hpp"
-#include "msci/units/units/prefix.hpp"
-#include "msci/units/meca_number/unit_number.hpp"
-#include "msci/units/topology/constants.hpp"
+#include "units/scalar_unit.hpp"
+#include "units/dimension.hpp"
+#include "units/prefix.hpp"
+#include "topology/constants.hpp"
 
 #include <cassert>
 #include <cctype>

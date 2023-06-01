@@ -1,4 +1,4 @@
-#include "msci/units/units/dimension.hpp"
+#include "units/dimension.hpp"
 
 #include "boost/algorithm/string.hpp"
 
@@ -55,6 +55,7 @@ namespace msci
 			case dimension::B:
 				return "byte";
 		}
+		return "";
 	}
 
 	string dimension::get_symbol() const
@@ -82,6 +83,7 @@ namespace msci
 			case dimension::B:
 				return "B";
 		}
+		return "";
 	}
 
 	int dimension::get_scale() const
@@ -163,6 +165,7 @@ namespace msci
 				case dimension::ppb:
 					return 2;
 			}
+			return 0;
 		}
 	}
 
@@ -245,6 +248,7 @@ namespace msci
 				case dimension::ppb:
 					return 2;
 			}
+			return 0;
 		}
 	}
 
@@ -339,6 +343,7 @@ namespace msci
 			case dimension::B:
 				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
 		}
+		return dimension();
 	}
 
 	dimension create_dimension(const string& x)
@@ -402,8 +407,12 @@ namespace msci
 		{
 			return dimension(dimension::m,new_prefix,dimension::positive);
 		}
+		else
+		{
+			return dimension();
+		}
 	}
-
+	
 	string get_dimension_structure(const vector<dimension>& actual_dimensions)
 	{
 		return "";

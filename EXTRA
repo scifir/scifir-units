@@ -1,0 +1,39 @@
+
+#define VECTOR_UNIT_HPP(name) SCALAR_UNIT_HPP(name); \
+\
+	VECTOR_UNIT_3D_HPP(name) \
+
+#define VECTOR_UNIT_CPP(name,init_dimensions) SCALAR_UNIT_CPP(name,init_dimensions); \
+\
+	VECTOR_UNIT_3D_CPP(name,init_dimensions) \
+	
+	
+	
+	
+	#define VECTOR_UNIT_CPP(name,init_dimensions) name::name() : scalar_unit() {} \
+\
+	name::name(const scalar_unit& x) \
+	{ \
+		if (x.has_dimensions(name::real_dimensions)) \
+		{ \
+			value = x.get_value(); \
+			dimensions = x.get_dimensions(); \
+		} \
+	} \
+\
+	name::name(scalar_unit&& x) \
+	{ \
+		if (x.has_dimensions(name::real_dimensions)) \
+		{ \
+			value = move(x.get_value()); \
+			dimensions = move(x.get_dimensions()); \
+		} \
+	} \
+\
+const string name::dimensions_match = init_dimensions; \
+const vector<msci::dimension> name::real_dimensions = create_derived_dimensions(init_dimensions); \
+	name##_3d::name##_3d() : vector_unit_3d() {} \
+	name##_3d::name##_3d(const name##_3d& x) : vector_unit_3d(x) {} \
+	name##_3d::name##_3d(name##_3d&& x) : vector_unit_3d(move(x)) {} \
+const string name##_3d::dimensions_match = init_dimensions; \
+const vector<msci::dimension> name##_3d::real_dimensions = create_derived_dimensions(init_dimensions)

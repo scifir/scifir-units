@@ -1,5 +1,7 @@
-#include "msci/units/units/vector_unit_nd.hpp"
-#include "msci/units/coordinates/coordinates_3d.hpp"
+#include "units/vector_unit_nd.hpp"
+
+#include "coordinates/coordinates_2d.hpp"
+#include "coordinates/coordinates_3d.hpp"
 
 using namespace std;
 
@@ -110,18 +112,18 @@ namespace msci
 		return *this;
 	}
 
-	void vector_unit_nd::point_to(direction_symbol x)
+	void vector_unit_nd::point_to(direction::value x)
 	{
-		if (is_1d())
+		if (is_nd(1))
 		{
-			if (x == direction_symbol::left)
+			if (x == direction::left)
 			{
 				if (value > 0)
 				{
 					value *= -1;
 				}
 			}
-			else if(x == direction_symbol::right)
+			else if(x == direction::right)
 			{
 				if (value < 0)
 				{
@@ -129,169 +131,169 @@ namespace msci
 				}
 			}
 		}
-		else if (is_2d())
+		else if (is_nd(2))
 		{
-			if (x == direction_symbol::left)
+			if (x == direction::left)
 			{
 				angles[0] = 180;
 			}
-			else if(x == direction_symbol::right)
+			else if(x == direction::right)
 			{
 				angles[0] = 0;
 			}
-			else if(x == top)
+			else if(x == direction::top)
 			{
 				angles[0] = 90;
 			}
-			else if(x == bottom)
+			else if(x == direction::bottom)
 			{
 				angles[0] = 270;
 			}
-			else if(x == left_top)
+			else if(x == direction::left_top)
 			{
 				angles[0] = 135;
 			}
-			else if(x == right_top)
+			else if(x == direction::right_top)
 			{
 				angles[0] = 45;
 			}
-			else if(x == right_bottom)
+			else if(x == direction::right_bottom)
 			{
 				angles[0] = 315;
 			}
-			else if(x == left_bottom)
+			else if(x == direction::left_bottom)
 			{
 				angles[0] = 225;
 			}
 		}
-		else if (is_3d())
+		else if (is_nd(3))
 		{
-			if (x == direction_symbol::left)
+			if (x == direction::left)
 			{
 				angles[0] = 270;
 				angles[1] = 90;
 			}
-			else if(x == direction_symbol::right)
+			else if(x == direction::right)
 			{
 				angles[0] = 90;
 				angles[1] = 90;
 			}
-			else if(x == top)
+			else if(x == direction::top)
 			{
 				angles[0] = 0;
 				angles[1] = 0;
 			}
-			else if(x == bottom)
+			else if(x == direction::bottom)
 			{
 				angles[0] = 0;
 				angles[1] = 180;
 			}
-			else if(x == left_top)
+			else if(x == direction::left_top)
 			{
 				angles[0] = 270;
 				angles[1] = 45;
 			}
-			else if(x == right_top)
+			else if(x == direction::right_top)
 			{
 				angles[0] = 90;
 				angles[1] = 45;
 			}
-			else if(x == right_bottom)
+			else if(x == direction::right_bottom)
 			{
 				angles[0] = 90;
 				angles[1] = 135;
 			}
-			else if(x == left_bottom)
+			else if(x == direction::left_bottom)
 			{
 				angles[0] = 270;
 				angles[1] = 135;
 			}
-			else if(x == front)
+			else if(x == direction::front)
 			{
 				angles[0] = 0;
 				angles[1] = 90;
 			}
-			else if(x == back)
+			else if(x == direction::back)
 			{
 				angles[0] = 180;
 				angles[1] = 90;
 			}
-			else if(x == left_front)
+			else if(x == direction::left_front)
 			{
 				angles[0] = 315;
 				angles[1] = 90;
 			}
-			else if(x == right_front)
+			else if(x == direction::right_front)
 			{
 				angles[0] = 45;
 				angles[1] = 90;
 			}
-			else if(x == top_front)
+			else if(x == direction::top_front)
 			{
 				angles[0] = 0;
 				angles[1] = 45;
 			}
-			else if(x == bottom_front)
+			else if(x == direction::bottom_front)
 			{
 				angles[0] = 0;
 				angles[1] = 135;
 			}
-			else if(x == left_back)
+			else if(x == direction::left_back)
 			{
 				angles[0] = 225;
 				angles[1] = 90;
 			}
-			else if(x == right_back)
+			else if(x == direction::right_back)
 			{
 				angles[0] = 135;
 				angles[1] = 90;
 			}
-			else if(x == top_back)
+			else if(x == direction::top_back)
 			{
 				angles[0] = 180;
 				angles[1] = 45;
 			}
-			else if(x == bottom_back)
+			else if(x == direction::bottom_back)
 			{
 				angles[0] = 180;
 				angles[1] = 135;
 			}
-			else if(x == left_top_front)
+			else if(x == direction::left_top_front)
 			{
 				angles[0] = 315;
 				angles[1] = 45;
 			}
-			else if(x == right_top_front)
+			else if(x == direction::right_top_front)
 			{
 				angles[0] = 45;
 				angles[1] = 45;
 			}
-			else if(x == left_bottom_front)
+			else if(x == direction::left_bottom_front)
 			{
 				angles[0] = 315;
 				angles[1] = 135;
 			}
-			else if(x == right_bottom_front)
+			else if(x == direction::right_bottom_front)
 			{
 				angles[0] = 45;
 				angles[1] = 135;
 			}
-			else if(x == left_top_back)
+			else if(x == direction::left_top_back)
 			{
 				angles[0] = 225;
 				angles[1] = 45;
 			}
-			else if(x == right_top_back)
+			else if(x == direction::right_top_back)
 			{
 				angles[0] = 135;
 				angles[1] = 45;
 			}
-			else if(x == left_bottom_back)
+			else if(x == direction::left_bottom_back)
 			{
 				angles[0] = 225;
 				angles[1] = 135;
 			}
-			else if(x == right_bottom_back)
+			else if(x == direction::right_bottom_back)
 			{
 				angles[0] = 135;
 				angles[1] = 135;
@@ -303,18 +305,18 @@ namespace msci
 	{
 		if(has_dimensions(y.get_derived_dimensions()))
 		{
-			if(is_1d())
+			if(is_nd(1))
 			{
 				scalar_unit::value += y.get_value();
 			}
-			else if(is_2d())
+			else if(is_nd(2))
 			{
 				float new_x = x_projection() + y.x_projection();
 				float new_y = y_projection() + y.y_projection();
-				scalar_unit::value = cartesian_2d_to_polar_r(new_x, new_y);
-				angles[0] = cartesian_2d_to_polar_angle(new_x, new_y);
+				scalar_unit::value = coordinates_2d_to_polar_r(new_x, new_y);
+				angles[0] = coordinates_2d_to_polar_angle(new_x, new_y);
 			}
-			else if(is_3d())
+			else if(is_nd(3))
 			{
 				float new_x = x_projection() + y.x_projection();
 				float new_y = y_projection() + y.y_projection();
@@ -363,15 +365,15 @@ namespace msci
 		float new_value = scalar_unit::value * x.get_value();
 		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(), x.get_dimensions());
 		scalar_unit new_unit = scalar_unit(new_value, new_dimensions);
-		if(is_1d())
+		if(is_nd(1))
 		{
 			return vector_unit_nd(new_unit);
 		}
-		else if(is_2d())
+		else if(is_nd(2))
 		{
 			return vector_unit_nd(new_unit, {angles[0]});
 		}
-		else if(is_3d())
+		else if(is_nd(3))
 		{
 			return vector_unit_nd(new_unit, {angles[0], angles[1]});
 		}
@@ -386,15 +388,15 @@ namespace msci
 		float new_value = scalar_unit::value / x.get_value();
 		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(), x.get_dimensions());
 		scalar_unit new_unit = scalar_unit(new_value, new_dimensions);
-		if(is_1d())
+		if(is_nd(1))
 		{
 			return vector_unit_nd(new_unit);
 		}
-		else if(is_2d())
+		else if(is_nd(2))
 		{
 			return vector_unit_nd(new_unit, {angles[0]});
 		}
-		else if(is_3d())
+		else if(is_nd(3))
 		{
 			return vector_unit_nd(new_unit, {angles[0], angles[1]});
 		}
@@ -409,22 +411,94 @@ namespace msci
 		if(x.has_empty_dimensions())
 		{
 			scalar_unit new_unit = *this ^ x;
-			if(is_1d())
+			if(is_nd(1))
 			{
 				return vector_unit_nd(new_unit);
 			}
-			else if(is_2d())
+			else if(is_nd(2))
 			{
 				return vector_unit_nd(new_unit, {angles[0]});
 			}
-			else if(is_3d())
+			else if(is_nd(3))
 			{
 				return vector_unit_nd(new_unit, {angles[0], angles[1]});
+			}
+			else
+			{
+				return vector_unit_nd();
 			}
 		}
 		else
 		{
 			return vector_unit_nd();
+		}
+	}
+	
+	float vector_unit_nd::x_projection() const
+	{
+		if (is_nd(1))
+		{
+			return get_value();
+		}
+		else if (is_nd(2))
+		{
+			return scalar_unit::value * msci::cos(angles[0]);
+		}
+		else if (is_nd(3))
+		{
+			return scalar_unit::value * msci::cos(angles[0]) * msci::sin(angles[1]);
+		}
+		else
+		{
+			return 0;
+		}
+	}
+
+	float vector_unit_nd::y_projection() const
+	{
+		if (is_nd(1))
+		{
+			return 0;
+		}
+		else if (is_nd(2))
+		{
+			return scalar_unit::value * msci::sin(angles[0]);
+		}
+		else if (is_nd(3))
+		{
+			return scalar_unit::value * msci::sin(angles[0]) * msci::sin(angles[1]);
+		}
+		else
+		{
+			return 0;
+		}
+	}
+
+	float vector_unit_nd::z_projection() const
+	{
+		if (is_nd(1))
+		{
+			return 0;
+		}
+		else if (is_nd(2))
+		{
+			return 0;
+		}
+		else if (is_nd(3))
+		{
+			return scalar_unit::value * msci::cos(angles[1]);
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	
+	void vector_unit_nd::invert()
+	{
+		for(msci::angle& x_angle : angles)
+		{
+			x_angle.invert();
 		}
 	}
 
@@ -454,7 +528,7 @@ namespace msci
 
 	vector_unit_nd cross_product(const vector_unit_nd& x,const vector_unit_nd& y)
 	{
-		if(x.is_3d() and y.is_3d())
+		if(x.is_nd(3) and y.is_nd(3))
 		{
 			float new_value;
 			float angle1;
@@ -591,7 +665,7 @@ string operator +(const msci::vector_unit_nd& y, const string& x)
 ostream& operator <<(ostream& os, const msci::vector_unit_nd& x)
 {
 	ostringstream angles_text;
-	if (!x.is_1d())
+	if (!x.is_nd(1))
 	{
 		for(const auto& x_angle : x.angles)
 		{

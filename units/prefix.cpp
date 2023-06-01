@@ -1,4 +1,4 @@
-#include "msci/units/units/prefix.hpp"
+#include "units/prefix.hpp"
 
 #include <iostream>
 #include <memory>
@@ -75,6 +75,7 @@ namespace msci
 			case prefix::y:
 				return -24;
 		}
+		return 0;
 	}
 
 	float prefix::get_prefix_base() const
@@ -129,6 +130,7 @@ namespace msci
 			case prefix::y:
 				return "yocto";
 		}
+		return "";
 	}
 
 	string prefix::get_symbol() const
@@ -178,6 +180,7 @@ namespace msci
 			case prefix::y:
 				return "y";
 		}
+		return "";
 	}
 
 	prefix::type prefix_string(const string& x)

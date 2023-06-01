@@ -1,6 +1,8 @@
 #ifndef MSCI_UNITS_TOPOLOGY_POINT_3D_HPP_INCLUDED
 #define MSCI_UNITS_TOPOLOGY_POINT_3D_HPP_INCLUDED
 
+#include "units.hpp"
+
 #include <iostream>
 #include <string>
 
@@ -12,34 +14,17 @@ namespace msci
 	{
 		public:
 			point_3d();
-			point_3d(float,float,float);
+			point_3d(const length&,const length&,const length&);
 
-			inline float get_x() const
-			{
-				return x;
-			}
+			length distance_to_origin() const;
 
-			inline float get_y() const
-			{
-				return y;
-			}
-
-			inline float get_z() const
-			{
-				return z;
-			}
-
-			float distance_to_origin() const;
-
-			string display() const;
-
-		private:
-			float x;
-			float y;
-			float z;
+			length x;
+			length y;
+			length z;
 	};
 
-	float distance_between_points(const point_3d&,const point_3d&);
+	string to_string(const point_3d&);
+	length distance(const point_3d&,const point_3d&);
 }
 
 bool operator ==(const msci::point_3d&,const msci::point_3d&);

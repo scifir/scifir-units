@@ -1,7 +1,7 @@
 #ifndef MSCI_UNITS_UNITS_DIMENSION_HPP_INCLUDED
 #define MSCI_UNITS_UNITS_DIMENSION_HPP_INCLUDED
 
-#include "msci/units/units/prefix.hpp"
+#include "units/prefix.hpp"
 
 #include <map>
 #include <sstream>

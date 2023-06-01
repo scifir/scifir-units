@@ -1,4 +1,4 @@
-#include "msci/units/topology/direction.hpp"
+#include "topology/direction.hpp"
 
 #include <stdexcept>
 
@@ -10,11 +10,16 @@ namespace msci
 	{
 	}
 
-	direction::direction(direction_symbol new_direction) : direction_value(new_direction)
+	direction::direction(direction::value new_direction) : direction_value(new_direction)
 	{
 	}
+	
+	void direction::invert()
+	{
+		direction_value = opposite_direction(direction_value);
+	}
 
-	void direction::operator =(direction_symbol new_direction)
+	void direction::operator =(direction::value new_direction)
 	{
 		direction_value = new_direction;
 	}
@@ -24,198 +29,176 @@ namespace msci
 		return direction_string(direction_value);
 	}
 
-	direction_lr::direction_lr() : direction()
+	direction::value opposite_direction(direction::value x)
 	{
+		if (x == direction::left)
+		{
+			return direction::right;
+		}
+		else if (x == direction::right)
+		{
+			return direction::left;
+		}
+		else if (x == direction::top)
+		{
+			return direction::bottom;
+		}
+		else if (x == direction::bottom)
+		{
+			return direction::top;
+		}
+		else if (x == direction::front)
+		{
+			return direction::back;
+		}
+		else if (x == direction::back)
+		{
+			return direction::front;
+		}
+		else if (x == direction::left_top)
+		{
+			return direction::right_bottom;
+		}
+		else if (x == direction::left_bottom)
+		{
+			return direction::right_top;
+		}
+		else if (x == direction::right_top)
+		{
+			return direction::left_bottom;
+		}
+		else if (x == direction::right_bottom)
+		{
+			return direction::left_top;
+		}
+		else if (x == direction::left_front)
+		{
+			return direction::right_back;
+		}
+		else if (x == direction::left_back)
+		{
+			return direction::right_front;
+		}
+		else if (x == direction::right_front)
+		{
+			return direction::left_back;
+		}
+		else if (x == direction::right_back)
+		{
+			return direction::left_front;
+		}
+		else if (x == direction::top_front)
+		{
+			return direction::bottom_back;
+		}
+		else if (x == direction::top_back)
+		{
+			return direction::bottom_front;
+		}
+		else if (x == direction::bottom_front)
+		{
+			return direction::top_back;
+		}
+		else if (x == direction::bottom_back)
+		{
+			return direction::top_front;
+		}
+		else if (x == direction::left_top_front)
+		{
+			return direction::right_bottom_back;
+		}
+		else if (x == direction::left_top_back)
+		{
+			return direction::right_bottom_front;
+		}
+		else if (x == direction::left_bottom_front)
+		{
+			return direction::right_top_back;
+		}
+		else if (x == direction::left_bottom_back)
+		{
+			return direction::right_top_front;
+		}
+		else if (x == direction::right_top_front)
+		{
+			return direction::left_bottom_back;
+		}
+		else if (x == direction::right_top_back)
+		{
+			return direction::left_bottom_front;
+		}
+		else if (x == direction::right_bottom_front)
+		{
+			return direction::left_top_back;
+		}
+		else if (x == direction::right_bottom_back)
+		{
+			return direction::left_top_front;
+		}
+		else
+		{
+			return direction::left;
+		}
 	}
 
-	direction_lr::direction_lr(direction_symbol new_direction) : direction(new_direction)
-	{
-		if (!(new_direction == left or new_direction == right))
-		{
-			return;
-		}
-	}
-
-	void direction_lr::operator =(direction_symbol new_direction)
-	{
-		if (!(new_direction == left or new_direction == right))
-		{
-			return;
-		}
-		direction_value = new_direction;
-	}
-
-	string direction_lr::display() const
-	{
-		return direction_string(direction_value);
-	}
-
-	direction_symbol opposite_direction(direction_symbol x)
-	{
-		if (x == left)
-		{
-			return right;
-		}
-		else if (x == right)
-		{
-			return left;
-		}
-		else if (x == top)
-		{
-			return bottom;
-		}
-		else if (x == bottom)
-		{
-			return top;
-		}
-		else if (x == front)
-		{
-			return back;
-		}
-		else if (x == back)
-		{
-			return front;
-		}
-		else if (x == left_top)
-		{
-			return right_bottom;
-		}
-		else if (x == left_bottom)
-		{
-			return right_top;
-		}
-		else if (x == right_top)
-		{
-			return left_bottom;
-		}
-		else if (x == right_bottom)
-		{
-			return left_top;
-		}
-		else if (x == left_front)
-		{
-			return right_back;
-		}
-		else if (x == left_back)
-		{
-			return right_front;
-		}
-		else if (x == right_front)
-		{
-			return left_back;
-		}
-		else if (x == right_back)
-		{
-			return left_front;
-		}
-		else if (x == top_front)
-		{
-			return bottom_back;
-		}
-		else if (x == top_back)
-		{
-			return bottom_front;
-		}
-		else if (x == bottom_front)
-		{
-			return top_back;
-		}
-		else if (x == bottom_back)
-		{
-			return top_front;
-		}
-		else if (x == left_top_front)
-		{
-			return right_bottom_back;
-		}
-		else if (x == left_top_back)
-		{
-			return right_bottom_front;
-		}
-		else if (x == left_bottom_front)
-		{
-			return right_top_back;
-		}
-		else if (x == left_bottom_back)
-		{
-			return right_top_front;
-		}
-		else if (x == right_top_front)
-		{
-			return left_bottom_back;
-		}
-		else if (x == right_top_back)
-		{
-			return left_bottom_front;
-		}
-		else if (x == right_bottom_front)
-		{
-			return left_top_back;
-		}
-		else if (x == right_bottom_back)
-		{
-			return left_top_front;
-		}
-		return left;
-	}
-
-	string direction_string(direction_symbol x)
+	string direction_string(direction::value x)
 	{
 		switch (x)
 		{
-			case left:
+			case direction::left:
 				return "left";
-			case right:
+			case direction::right:
 				return "right";
-			case top:
+			case direction::top:
 				return "top";
-			case bottom:
+			case direction::bottom:
 				return "bottom";
-			case front:
+			case direction::front:
 				return "front";
-			case back:
+			case direction::back:
 				return "back";
-			case left_top:
+			case direction::left_top:
 				return "left-top";
-			case left_bottom:
+			case direction::left_bottom:
 				return "left-bottom";
-			case right_top:
+			case direction::right_top:
 				return "right-top";
-			case right_bottom:
+			case direction::right_bottom:
 				return "right-bottom";
-			case left_front:
+			case direction::left_front:
 				return "left-front";
-			case left_back:
+			case direction::left_back:
 				return "left-back";
-			case right_front:
+			case direction::right_front:
 				return "right-front";
-			case right_back:
+			case direction::right_back:
 				return "right-back";
-			case top_front:
+			case direction::top_front:
 				return "top-front";
-			case top_back:
+			case direction::top_back:
 				return "top-back";
-			case bottom_front:
+			case direction::bottom_front:
 				return "bottom-front";
-			case bottom_back:
+			case direction::bottom_back:
 				return "bottom-back";
-			case left_top_front:
+			case direction::left_top_front:
 				return "left-top-front";
-			case left_top_back:
+			case direction::left_top_back:
 				return "left-top-back";
-			case left_bottom_front:
+			case direction::left_bottom_front:
 				return "left-bottom-front";
-			case left_bottom_back:
+			case direction::left_bottom_back:
 				return "left-bottom-back";
-			case right_top_front:
+			case direction::right_top_front:
 				return "right-top-front";
-			case right_top_back:
+			case direction::right_top_back:
 				return "right-top-back";
-			case right_bottom_front:
+			case direction::right_bottom_front:
 				return "right-bottom-front";
-			case right_bottom_back:
+			case direction::right_bottom_back:
 				return "right-bottom-back";
 		}
+		return "";
 	}
 }
 
@@ -236,7 +219,7 @@ bool operator !=(const msci::direction& x, const msci::direction& y)
 	return !(x == y);
 }
 
-bool operator ==(const msci::direction& x, msci::direction_symbol y)
+bool operator ==(const msci::direction& x, msci::direction::value y)
 {
 	if(x.get_direction() == y)
 	{
@@ -248,75 +231,22 @@ bool operator ==(const msci::direction& x, msci::direction_symbol y)
 	}
 }
 
-bool operator !=(const msci::direction& x, msci::direction_symbol y)
+bool operator !=(const msci::direction& x, msci::direction::value y)
 {
 	return !(x == y);
 }
 
-bool operator ==(msci::direction_symbol y, const msci::direction& x)
+bool operator ==(msci::direction::value y, const msci::direction& x)
 {
 	return (x == y);
 }
 
-bool operator !=(msci::direction_symbol y, const msci::direction& x)
-{
-	return !(x == y);
-}
-
-bool operator ==(const msci::direction_lr& x, const msci::direction_lr& y)
-{
-	if(x.get_direction() == y.get_direction())
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-bool operator !=(const msci::direction_lr& x, const msci::direction_lr& y)
-{
-	return !(x == y);
-}
-
-bool operator ==(const msci::direction_lr& x, msci::direction_symbol y)
-{
-	if (!(y == msci::left or y == msci::right))
-	{
-		return false;
-	}
-	if(x.get_direction() == y)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-bool operator !=(const msci::direction_lr& x, msci::direction_symbol y)
-{
-	return !(x == y);
-}
-
-bool operator ==(msci::direction_symbol y, const msci::direction_lr& x)
-{
-	return (x == y);
-}
-
-bool operator !=(msci::direction_symbol y, const msci::direction_lr& x)
+bool operator !=(msci::direction::value y, const msci::direction& x)
 {
 	return !(x == y);
 }
 
 ostream& operator <<(ostream& os, const msci::direction& x)
-{
-	return os << x.display();
-}
-
-ostream& operator <<(ostream& os, const msci::direction_lr& x)
 {
 	return os << x.display();
 }

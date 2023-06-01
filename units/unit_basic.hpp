@@ -1,8 +1,8 @@
 #ifndef MSCI_UNITS_UNITS_UNIT_BASIC_HPP_INCLUDED
 #define MSCI_UNITS_UNITS_UNIT_BASIC_HPP_INCLUDED
 
-#include "msci/units/units/prefix.hpp"
-#include "msci/units/units/scalar_unit.hpp"
+#include "units/prefix.hpp"
+#include "units/scalar_unit.hpp"
 
 #include <chrono>
 #include <iostream>

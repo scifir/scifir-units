@@ -1,29 +1,64 @@
-#ifndef COORDINATES_3D_HPP_INCLUDED
-#define COORDINATES_3D_HPP_INCLUDED
+#ifndef MSCI_UNITS_COORDINATES_COORDINATES_3D_HPP_INCLUDED
+#define MSCI_UNITS_COORDINATES_COORDINATES_3D_HPP_INCLUDED
 
-#include "msci/units/meca_number/angle.hpp"
+#include "topology/point_3d.hpp"
+#include "meca_number/angle.hpp"
 
+#include <iostream>
+#include <string>
 #include <cmath>
-#include <tuple>
 
 using namespace std;
-using namespace msci;
 
 namespace msci
 {
+	enum coordinates_system {CARTESIAN, CYLINDRICAL, SPHERICAL, GEOGRAPHICAL, POLAR};
+
 	class coordinates_3d
 	{
 		public:
 			coordinates_3d();
+			coordinates_3d(coordinates_system,float,float,float);
+			coordinates_3d(const length&,const length&,const length&);
+			coordinates_3d(const length&,const msci::angle&,const length&);
+			coordinates_3d(const length&,const msci::angle&,const msci::angle&);
+			coordinates_3d(const msci::angle&,const msci::angle&,const length&);
+			coordinates_3d(const string);
 
-			virtual const float x_projection() const = 0;
-			virtual const float y_projection() const = 0;
-			virtual const float z_projection() const = 0;
-			virtual float get_value() const = 0;
-			virtual string display_parameters() const = 0;
-			virtual string display_position() const = 0;
+			inline length get_p() const
+			{
+				return msci::sqrt(msci::pow(x,2) + msci::pow(y,2));
+			}
+
+			inline msci::angle get_theta() const
+			{
+				return msci::angle(msci::atan_grade(float(y/x)));
+			}
+
+			inline length get_r() const
+			{
+				return msci::sqrt(msci::pow(x,2) + msci::pow(y,2) + msci::pow(z,2));
+			}
+
+			inline msci::angle get_phi() const
+			{
+				return msci::angle(msci::acos_grade(float(z/msci::sqrt(msci::pow(x,2) + msci::pow(y,2) + msci::pow(z,2)))));
+			}
+
+			void set_position(coordinates_system,float,float,float);
+			void set_position(const length&,const length&,const length&);
+			void set_position(const length&,const msci::angle&,const length&);
+			void set_position(const length&,const msci::angle&,const msci::angle&);
+			void set_position(const msci::angle&,const msci::angle&,const length&);
+
+			length x;
+			length y;
+			length z;
 	};
 
+	string to_string(const coordinates_3d&);
+	length distance(const coordinates_3d&,const coordinates_3d&);
+	
 	inline float cartesian_3d_to_cylindrical_r(float x,float y,float z)
 	{
 		return std::sqrt(std::pow(x,2) + std::pow(y,2));
@@ -113,9 +148,16 @@ namespace msci
 	{
 		return std::atan(r/z);
 	}
-
-	tuple<float,float,float> cartesian_to_spherical(float,float,float);
-	tuple<float,float,float> spherical_to_cartesian(float,float,float);
 }
 
-#endif // COORDINATES_3D_HPP_INCLUDED
+bool operator ==(const msci::coordinates_3d&,const msci::coordinates_3d&);
+bool operator !=(const msci::coordinates_3d&,const msci::coordinates_3d&);
+
+bool operator ==(const msci::coordinates_3d&,const msci::point_3d&);
+bool operator !=(const msci::coordinates_3d&,const msci::point_3d&);
+bool operator ==(const msci::point_3d&,const msci::coordinates_3d&);
+bool operator !=(const msci::point_3d&,const msci::coordinates_3d&);
+
+ostream& operator << (ostream&, const msci::coordinates_3d&);
+
+#endif // MSCI_UNITS_COORDINATES_COORDINATES_3D_HPP_INCLUDED

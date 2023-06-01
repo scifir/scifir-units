@@ -1,9 +1,9 @@
 #ifndef MSCI_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED
 #define MSCI_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED
 
-#include "msci/units/units/dimension.hpp"
-#include "msci/units/units/prefix.hpp"
-#include "msci/units/util/is_number.hpp"
+#include "units/dimension.hpp"
+#include "units/prefix.hpp"
+#include "util/is_number.hpp"
 
 #include <cmath>
 #include <map>
@@ -16,11 +16,13 @@
 	{	\
 		public: \
 			using scalar_unit::scalar_unit; \
+			name(); \
 			name(const scalar_unit&); \
 			name(scalar_unit&&);
 
 #define SCALAR_UNIT_HPP_END() \
 \
+		public: \
 			static const string dimensions_match; \
 			static const vector<msci::dimension> real_dimensions; \
 	}
@@ -29,6 +31,7 @@
 	{	\
 		public: \
 			using scalar_unit::scalar_unit; \
+			name(); \
 			name(const scalar_unit&); \
 			name(scalar_unit&&); \
 \
@@ -36,7 +39,9 @@
 			static const vector<msci::dimension> real_dimensions; \
 	}
 
-#define SCALAR_UNIT_CPP(name,init_dimensions) name::name(const scalar_unit& x) \
+#define SCALAR_UNIT_CPP(name,init_dimensions) name::name() : scalar_unit() {} \
+\
+	name::name(const scalar_unit& x) \
 	{ \
 		if (x.has_dimensions(name::real_dimensions)) \
 		{ \
@@ -85,7 +90,7 @@ namespace msci
 			void operator -=(const scalar_unit&);
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			scalar_unit operator +(T y) const
+			scalar_unit operator +(const T y) const
 			{
 				scalar_unit x = *this;
 				x += y;
@@ -93,7 +98,7 @@ namespace msci
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			scalar_unit operator -(T y) const
+			scalar_unit operator -(const T y) const
 			{
 				scalar_unit x = *this;
 				x -= y;
@@ -101,7 +106,7 @@ namespace msci
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			scalar_unit operator *(T y) const
+			scalar_unit operator *(const T y) const
 			{
 				scalar_unit x = *this;
 				x *= y;
@@ -109,7 +114,7 @@ namespace msci
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			scalar_unit operator /(T y) const
+			scalar_unit operator /(const T y) const
 			{
 				scalar_unit x = *this;
 				x /= y;
@@ -117,7 +122,7 @@ namespace msci
 			}
 
 			template<typename T, typename = typename enable_if<is_integer_number<T>::value>::type>
-			scalar_unit operator ^(T y) const
+			scalar_unit operator ^(const T y) const
 			{
 				scalar_unit x = *this;
 				x ^= y;
@@ -125,31 +130,31 @@ namespace msci
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			void operator +=(T y)
+			void operator +=(const T y)
 			{
 				value += y;
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			void operator -=(T y)
+			void operator -=(const T y)
 			{
 				value -= y;
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			void operator *=(T y)
+			void operator *=(const T y)
 			{
 				value *= y;
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-			void operator /=(T y)
+			void operator /=(const T y)
 			{
 				value /= y;
 			}
 
 			template<typename T, typename = typename enable_if<is_integer_number<T>::value>::type>
-			void operator ^=(T y)
+			void operator ^=(const T y)
 			{
 				value = std::pow(value,y);
 				dimensions = power_dimensions(dimensions,y);
@@ -187,6 +192,7 @@ namespace msci
 			string initial_dimensions_get_structure(const string&) const;
 			void add_prefix(const prefix&);
 			void remove_prefix(const prefix&);
+			void set_from_string(const string&);
 	};
 
 	string to_string(const scalar_unit&,int = 2);
@@ -198,7 +204,7 @@ namespace msci
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
-float operator ^(T x, const msci::scalar_unit& y)
+float operator ^(const T x, const msci::scalar_unit& y)
 {
 	if(y.has_empty_dimensions())
 	{
@@ -230,6 +236,66 @@ bool operator <(const string&, const msci::scalar_unit&);
 bool operator >(const string&, const msci::scalar_unit&);
 bool operator <=(const string&, const msci::scalar_unit&);
 bool operator >=(const string&, const msci::scalar_unit&);
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+bool operator ==(const T x, const msci::scalar_unit& y)
+{
+	return (x == y.get_value());
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+bool operator !=(const T x, const msci::scalar_unit& y)
+{
+	return !(x == y);
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+bool operator <(const T x, const msci::scalar_unit& y)
+{
+	return (x < y.get_value());
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+bool operator >(const T x, const msci::scalar_unit& y)
+{
+	return (x > y.get_value());
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+bool operator <=(const T x, const msci::scalar_unit& y)
+{
+	return (x <= y.get_value());
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+bool operator >=(const T x, const msci::scalar_unit& y)
+{
+	return (x >= y.get_value());
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+bool operator <(const msci::scalar_unit& x,const T y)
+{
+	return (x.get_value() < y);
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+bool operator >(const msci::scalar_unit& x,const T y)
+{
+	return (x.get_value() > y);
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+bool operator <=(const msci::scalar_unit& x,const T y)
+{
+	return (x.get_value() <= y);
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+bool operator >=(const msci::scalar_unit& x,const T y)
+{
+	return (x.get_value() >= y);
+}
 
 void operator +=(string&, const msci::scalar_unit&);
 string operator +(const string&, const msci::scalar_unit&);

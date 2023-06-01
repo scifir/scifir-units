@@ -1,9 +1,8 @@
 #ifndef MSCI_UNITS_UNITS_VECTOR_UNIT_2D_HPP_INCLUDED
 #define MSCI_UNITS_UNITS_VECTOR_UNIT_2D_HPP_INCLUDED
 
-#include "msci/units/units/scalar_unit.hpp"
-#include "msci/units/meca_number/angle.hpp"
-#include "msci/units/coordinates/coordinates_2d.hpp"
+#include "units/scalar_unit.hpp"
+#include "meca_number/angle.hpp"
 
 #include "boost/algorithm/string.hpp"
 

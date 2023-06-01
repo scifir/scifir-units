@@ -1,7 +1,7 @@
 #ifndef MSCI_UNITS_UNITS_CONVERSION_HPP_INCLUDED
 #define MSCI_UNITS_UNITS_CONVERSION_HPP_INCLUDED
 
-#include "msci/units/units/dimension.hpp"
+#include "units/dimension.hpp"
 
 #include <string>
 

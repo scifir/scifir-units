@@ -1,4 +1,4 @@
-#include "msci/units/units/unit_abbreviation.hpp"
+#include "units/unit_abbreviation.hpp"
 
 using namespace std;
 
@@ -842,109 +842,109 @@ capacitance operator"" _yF(unsigned long long int x)
 	return capacitance(float(x), "yF");
 }
 
-electric_resistance operator"" _YOhm(unsigned long long int x)
+resistance operator"" _YOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "YOhm");
+	return resistance(float(x), "YOhm");
 }
 
-electric_resistance operator"" _ZOhm(unsigned long long int x)
+resistance operator"" _ZOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "ZOhm");
+	return resistance(float(x), "ZOhm");
 }
 
-electric_resistance operator"" _EOhm(unsigned long long int x)
+resistance operator"" _EOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "EOhm");
+	return resistance(float(x), "EOhm");
 }
 
-electric_resistance operator"" _POhm(unsigned long long int x)
+resistance operator"" _POhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "POhm");
+	return resistance(float(x), "POhm");
 }
 
-electric_resistance operator"" _TOhm(unsigned long long int x)
+resistance operator"" _TOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "TOhm");
+	return resistance(float(x), "TOhm");
 }
 
-electric_resistance operator"" _GOhm(unsigned long long int x)
+resistance operator"" _GOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "GOhm");
+	return resistance(float(x), "GOhm");
 }
 
-electric_resistance operator"" _MOhm(unsigned long long int x)
+resistance operator"" _MOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "MOhm");
+	return resistance(float(x), "MOhm");
 }
 
-electric_resistance operator"" _kOhm(unsigned long long int x)
+resistance operator"" _kOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "kOhm");
+	return resistance(float(x), "kOhm");
 }
 
-electric_resistance operator"" _hOhm(unsigned long long int x)
+resistance operator"" _hOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "hOhm");
+	return resistance(float(x), "hOhm");
 }
 
-electric_resistance operator"" _daOhm(unsigned long long int x)
+resistance operator"" _daOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "daOhm");
+	return resistance(float(x), "daOhm");
 }
 
-electric_resistance operator"" _Ohm(unsigned long long int x)
+resistance operator"" _Ohm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "Ohm");
+	return resistance(float(x), "Ohm");
 }
 
-electric_resistance operator"" _dOhm(unsigned long long int x)
+resistance operator"" _dOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "dOhm");
+	return resistance(float(x), "dOhm");
 }
 
-electric_resistance operator"" _cOhm(unsigned long long int x)
+resistance operator"" _cOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "cOhm");
+	return resistance(float(x), "cOhm");
 }
 
-electric_resistance operator"" _mOhm(unsigned long long int x)
+resistance operator"" _mOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "mOhm");
+	return resistance(float(x), "mOhm");
 }
 
-electric_resistance operator"" _uOhm(unsigned long long int x)
+resistance operator"" _uOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "uOhm");
+	return resistance(float(x), "uOhm");
 }
 
-electric_resistance operator"" _nOhm(unsigned long long int x)
+resistance operator"" _nOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "nOhm");
+	return resistance(float(x), "nOhm");
 }
 
-electric_resistance operator"" _pOhm(unsigned long long int x)
+resistance operator"" _pOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "pOhm");
+	return resistance(float(x), "pOhm");
 }
 
-electric_resistance operator"" _fOhm(unsigned long long int x)
+resistance operator"" _fOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "fOhm");
+	return resistance(float(x), "fOhm");
 }
 
-electric_resistance operator"" _aOhm(unsigned long long int x)
+resistance operator"" _aOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "aOhm");
+	return resistance(float(x), "aOhm");
 }
 
-electric_resistance operator"" _zOhm(unsigned long long int x)
+resistance operator"" _zOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "zOhm");
+	return resistance(float(x), "zOhm");
 }
 
-electric_resistance operator"" _yOhm(unsigned long long int x)
+resistance operator"" _yOhm(unsigned long long int x)
 {
-	return electric_resistance(float(x), "yOhm");
+	return resistance(float(x), "yOhm");
 }
 
 electric_conductance operator"" _YS(unsigned long long int x)
@@ -3417,109 +3417,109 @@ capacitance operator"" _yF(long double x)
 	return capacitance(float(x), "yF");
 }
 
-electric_resistance operator"" _YOhm(long double x)
+resistance operator"" _YOhm(long double x)
 {
-	return electric_resistance(float(x), "YOhm");
+	return resistance(float(x), "YOhm");
 }
 
-electric_resistance operator"" _ZOhm(long double x)
+resistance operator"" _ZOhm(long double x)
 {
-	return electric_resistance(float(x), "ZOhm");
+	return resistance(float(x), "ZOhm");
 }
 
-electric_resistance operator"" _EOhm(long double x)
+resistance operator"" _EOhm(long double x)
 {
-	return electric_resistance(float(x), "EOhm");
+	return resistance(float(x), "EOhm");
 }
 
-electric_resistance operator"" _POhm(long double x)
+resistance operator"" _POhm(long double x)
 {
-	return electric_resistance(float(x), "POhm");
+	return resistance(float(x), "POhm");
 }
 
-electric_resistance operator"" _TOhm(long double x)
+resistance operator"" _TOhm(long double x)
 {
-	return electric_resistance(float(x), "TOhm");
+	return resistance(float(x), "TOhm");
 }
 
-electric_resistance operator"" _GOhm(long double x)
+resistance operator"" _GOhm(long double x)
 {
-	return electric_resistance(float(x), "GOhm");
+	return resistance(float(x), "GOhm");
 }
 
-electric_resistance operator"" _MOhm(long double x)
+resistance operator"" _MOhm(long double x)
 {
-	return electric_resistance(float(x), "MOhm");
+	return resistance(float(x), "MOhm");
 }
 
-electric_resistance operator"" _kOhm(long double x)
+resistance operator"" _kOhm(long double x)
 {
-	return electric_resistance(float(x), "kOhm");
+	return resistance(float(x), "kOhm");
 }
 
-electric_resistance operator"" _hOhm(long double x)
+resistance operator"" _hOhm(long double x)
 {
-	return electric_resistance(float(x), "hOhm");
+	return resistance(float(x), "hOhm");
 }
 
-electric_resistance operator"" _daOhm(long double x)
+resistance operator"" _daOhm(long double x)
 {
-	return electric_resistance(float(x), "daOhm");
+	return resistance(float(x), "daOhm");
 }
 
-electric_resistance operator"" _Ohm(long double x)
+resistance operator"" _Ohm(long double x)
 {
-	return electric_resistance(float(x), "Ohm");
+	return resistance(float(x), "Ohm");
 }
 
-electric_resistance operator"" _dOhm(long double x)
+resistance operator"" _dOhm(long double x)
 {
-	return electric_resistance(float(x), "dOhm");
+	return resistance(float(x), "dOhm");
 }
 
-electric_resistance operator"" _cOhm(long double x)
+resistance operator"" _cOhm(long double x)
 {
-	return electric_resistance(float(x), "cOhm");
+	return resistance(float(x), "cOhm");
 }
 
-electric_resistance operator"" _mOhm(long double x)
+resistance operator"" _mOhm(long double x)
 {
-	return electric_resistance(float(x), "mOhm");
+	return resistance(float(x), "mOhm");
 }
 
-electric_resistance operator"" _uOhm(long double x)
+resistance operator"" _uOhm(long double x)
 {
-	return electric_resistance(float(x), "uOhm");
+	return resistance(float(x), "uOhm");
 }
 
-electric_resistance operator"" _nOhm(long double x)
+resistance operator"" _nOhm(long double x)
 {
-	return electric_resistance(float(x), "nOhm");
+	return resistance(float(x), "nOhm");
 }
 
-electric_resistance operator"" _pOhm(long double x)
+resistance operator"" _pOhm(long double x)
 {
-	return electric_resistance(float(x), "pOhm");
+	return resistance(float(x), "pOhm");
 }
 
-electric_resistance operator"" _fOhm(long double x)
+resistance operator"" _fOhm(long double x)
 {
-	return electric_resistance(float(x), "fOhm");
+	return resistance(float(x), "fOhm");
 }
 
-electric_resistance operator"" _aOhm(long double x)
+resistance operator"" _aOhm(long double x)
 {
-	return electric_resistance(float(x), "aOhm");
+	return resistance(float(x), "aOhm");
 }
 
-electric_resistance operator"" _zOhm(long double x)
+resistance operator"" _zOhm(long double x)
 {
-	return electric_resistance(float(x), "zOhm");
+	return resistance(float(x), "zOhm");
 }
 
-electric_resistance operator"" _yOhm(long double x)
+resistance operator"" _yOhm(long double x)
 {
-	return electric_resistance(float(x), "yOhm");
+	return resistance(float(x), "yOhm");
 }
 
 electric_conductance operator"" _YS(long double x)

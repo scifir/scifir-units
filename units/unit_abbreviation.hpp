@@ -1,9 +1,13 @@
 #ifndef MSCI_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
 #define MSCI_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
 
-#include "msci/units/units/scalar_unit.hpp"
+#include "units/scalar_unit.hpp"
+#include "units/unit_basic.hpp"
 
-#include "msci/units.hpp"
+#include "predefined_units/dynamics_units.hpp"
+#include "predefined_units/magnetism_units.hpp"
+
+#include "units.hpp"
 
 frequency operator"" _YHz(unsigned long long int);
 frequency operator"" _ZHz(unsigned long long int);
@@ -181,27 +185,27 @@ capacitance operator"" _aF(unsigned long long int);
 capacitance operator"" _zF(unsigned long long int);
 capacitance operator"" _yF(unsigned long long int);
 
-electric_resistance operator"" _YOhm(unsigned long long int);
-electric_resistance operator"" _ZOhm(unsigned long long int);
-electric_resistance operator"" _EOhm(unsigned long long int);
-electric_resistance operator"" _POhm(unsigned long long int);
-electric_resistance operator"" _TOhm(unsigned long long int);
-electric_resistance operator"" _GOhm(unsigned long long int);
-electric_resistance operator"" _MOhm(unsigned long long int);
-electric_resistance operator"" _kOhm(unsigned long long int);
-electric_resistance operator"" _hOhm(unsigned long long int);
-electric_resistance operator"" _daOhm(unsigned long long int);
-electric_resistance operator"" _Ohm(unsigned long long int);
-electric_resistance operator"" _dOhm(unsigned long long int);
-electric_resistance operator"" _cOhm(unsigned long long int);
-electric_resistance operator"" _mOhm(unsigned long long int);
-electric_resistance operator"" _uOhm(unsigned long long int);
-electric_resistance operator"" _nOhm(unsigned long long int);
-electric_resistance operator"" _pOhm(unsigned long long int);
-electric_resistance operator"" _fOhm(unsigned long long int);
-electric_resistance operator"" _aOhm(unsigned long long int);
-electric_resistance operator"" _zOhm(unsigned long long int);
-electric_resistance operator"" _yOhm(unsigned long long int);
+resistance operator"" _YOhm(unsigned long long int);
+resistance operator"" _ZOhm(unsigned long long int);
+resistance operator"" _EOhm(unsigned long long int);
+resistance operator"" _POhm(unsigned long long int);
+resistance operator"" _TOhm(unsigned long long int);
+resistance operator"" _GOhm(unsigned long long int);
+resistance operator"" _MOhm(unsigned long long int);
+resistance operator"" _kOhm(unsigned long long int);
+resistance operator"" _hOhm(unsigned long long int);
+resistance operator"" _daOhm(unsigned long long int);
+resistance operator"" _Ohm(unsigned long long int);
+resistance operator"" _dOhm(unsigned long long int);
+resistance operator"" _cOhm(unsigned long long int);
+resistance operator"" _mOhm(unsigned long long int);
+resistance operator"" _uOhm(unsigned long long int);
+resistance operator"" _nOhm(unsigned long long int);
+resistance operator"" _pOhm(unsigned long long int);
+resistance operator"" _fOhm(unsigned long long int);
+resistance operator"" _aOhm(unsigned long long int);
+resistance operator"" _zOhm(unsigned long long int);
+resistance operator"" _yOhm(unsigned long long int);
 
 electric_conductance operator"" _YS(unsigned long long int);
 electric_conductance operator"" _ZS(unsigned long long int);
@@ -728,27 +732,27 @@ capacitance operator"" _aF(long double);
 capacitance operator"" _zF(long double);
 capacitance operator"" _yF(long double);
 
-electric_resistance operator"" _YOhm(long double);
-electric_resistance operator"" _ZOhm(long double);
-electric_resistance operator"" _EOhm(long double);
-electric_resistance operator"" _POhm(long double);
-electric_resistance operator"" _TOhm(long double);
-electric_resistance operator"" _GOhm(long double);
-electric_resistance operator"" _MOhm(long double);
-electric_resistance operator"" _kOhm(long double);
-electric_resistance operator"" _hOhm(long double);
-electric_resistance operator"" _daOhm(long double);
-electric_resistance operator"" _Ohm(long double);
-electric_resistance operator"" _dOhm(long double);
-electric_resistance operator"" _cOhm(long double);
-electric_resistance operator"" _mOhm(long double);
-electric_resistance operator"" _uOhm(long double);
-electric_resistance operator"" _nOhm(long double);
-electric_resistance operator"" _pOhm(long double);
-electric_resistance operator"" _fOhm(long double);
-electric_resistance operator"" _aOhm(long double);
-electric_resistance operator"" _zOhm(long double);
-electric_resistance operator"" _yOhm(long double);
+resistance operator"" _YOhm(long double);
+resistance operator"" _ZOhm(long double);
+resistance operator"" _EOhm(long double);
+resistance operator"" _POhm(long double);
+resistance operator"" _TOhm(long double);
+resistance operator"" _GOhm(long double);
+resistance operator"" _MOhm(long double);
+resistance operator"" _kOhm(long double);
+resistance operator"" _hOhm(long double);
+resistance operator"" _daOhm(long double);
+resistance operator"" _Ohm(long double);
+resistance operator"" _dOhm(long double);
+resistance operator"" _cOhm(long double);
+resistance operator"" _mOhm(long double);
+resistance operator"" _uOhm(long double);
+resistance operator"" _nOhm(long double);
+resistance operator"" _pOhm(long double);
+resistance operator"" _fOhm(long double);
+resistance operator"" _aOhm(long double);
+resistance operator"" _zOhm(long double);
+resistance operator"" _yOhm(long double);
 
 electric_conductance operator"" _YS(long double);
 electric_conductance operator"" _ZS(long double);

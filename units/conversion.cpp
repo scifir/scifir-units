@@ -1,5 +1,5 @@
-#include "msci/units/units/conversion.hpp"
-#include "msci/units/units/dimension.hpp"
+#include "units/conversion.hpp"
+#include "units/dimension.hpp"
 
 #include <string>
 
@@ -87,8 +87,8 @@ namespace msci
 		{"kWh", conversion("J", 3600000)},
 		{"HP", conversion("kW", 0.7355)},
 		{"hp", conversion("kW", 0.7457)},
-		{"°C", conversion("K", 1)},
-		{"°F", conversion("K", 5 / 9)},
+		{"ï¿½C", conversion("K", 1)},
+		{"ï¿½F", conversion("K", 5 / 9)},
 		{"bit", conversion("B", 1 / 8)},
 		{"kbit", conversion("B", 125)},
 		{"Mbit", conversion("kB", 125)},

@@ -418,8 +418,8 @@ void test_vector_unit_3d()
 void test_vector_unit_3d_1d()
 {
 	cout << "Testing vectors 1D: " << endl;
-	force a (50_N,direction_symbol::left);
-	force b (20_N,direction_symbol::right);
+	force a (50_N,direction::value::left);
+	force b (20_N,direction::value::right);
 	cout << "a: " << a << endl;
 	cout << "b: " << b << endl;
 	cout << "a.x: " << a.x_projection() << endl;
@@ -437,23 +437,23 @@ void test_vector_unit_3d_1d()
 	cout << "a * 3: " << (a * 3) << endl;
 	cout << "a / 5: " << (a / 5) << endl;
 	cout << "a ^ 2: " << force(a ^ 2) << endl;
-	force c (10_N,direction_symbol::left);
+	force c (10_N,direction::value::left);
 	cout << "c: " << c << endl;
 	c += 25;
 	cout << "c += 25: " << c << endl;
-	force d (20_N,direction_symbol::left);
+	force d (20_N,direction::value::left);
 	cout << "d: " << d << endl;
 	d -= 5;
 	cout << "d -= 5: " << d << endl;
-	force e (15_N,direction_symbol::left);
+	force e (15_N,direction::value::left);
 	cout << "e: " << e << endl;
 	e *= 10;
 	cout << "e *= 10: " << e << endl;
-	force f (30_N,direction_symbol::left);
+	force f (30_N,direction::value::left);
 	cout << "f: " << f << endl;
 	f /= 5;
 	cout << "f /= 5: " << f << endl;
-	force g (5_N,direction_symbol::left);
+	force g (5_N,direction::value::left);
 	cout << "g: " << g << endl;
 	g ^= 2;
 	cout << "g ^= 2: " << g << endl;

@@ -1,4 +1,4 @@
-#include "msci/units/special_units/color.hpp"
+#include "special_units/color.hpp"
 
 using namespace std;
 

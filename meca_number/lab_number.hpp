@@ -1,9 +1,9 @@
 #ifndef MSCI_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED
 #define MSCI_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED
 
-#include "msci/units/meca_number/unit_number.hpp"
+#include "meca_number/unit_number.hpp"
 
-#include "msci/units/util/is_number.hpp"
+#include "util/is_number.hpp"
 
 #include <cmath>
 #include <string>
