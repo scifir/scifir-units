@@ -23,6 +23,7 @@ An angle object manages angles. It stores angles in grades, rather than in radia
 
 An example of use of angle is the following:
 
+```cpp
 // Constructors and instantiation
 angle y = 54; // Better constructor! Preferred method
 angle a = 367; // Gets converted to the value 7, because 7 is the equivalent of 367 inside 0 and 360
@@ -61,3 +62,4 @@ float a_grade = x.get_grade();
 float a_radians = x.get_radian();
 x.invert(); // Inverts the angle, the orientation described by this angle points now in the opposite direction
 float y = float(x); // Angles can be converted to float
+```
