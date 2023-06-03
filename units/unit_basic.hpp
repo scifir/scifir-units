@@ -11,20 +11,20 @@
 
 namespace msci
 {
-	enum display_mode {unit_display,time_display};
-
 	SCALAR_UNIT_HPP(length);
 
 	SCALAR_UNIT_HPP_BEGIN(time);
 		public:
+			enum class display {UNIT,TIME};
+			
 			explicit operator std::chrono::seconds() const;
 
-			inline void change_display(msci::display_mode new_display_mode)
+			inline void change_display(msci::time::display new_display_mode)
 			{
 				display_mode = new_display_mode;
 			}
 
-			inline const msci::display_mode& get_display_mode() const
+			inline const msci::time::display& get_display_mode() const
 			{
 				return display_mode;
 			}
@@ -32,7 +32,7 @@ namespace msci
 			string get_finish_date() const;
 
 		private:
-			msci::display_mode display_mode;
+			msci::time::display display_mode;
 	SCALAR_UNIT_HPP_END();
 
 	SCALAR_UNIT_HPP(mass);

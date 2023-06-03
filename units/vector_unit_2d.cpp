@@ -47,12 +47,12 @@ namespace msci
 	vector_unit_2d::vector_unit_2d(const string& init_scalar,const msci::angle& new_angle) : scalar_unit(init_scalar),theta(new_angle)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(const string& init_vector)
+	vector_unit_2d::vector_unit_2d(const string& init_vector_2d)
 	{
 		vector<string> values;
-		boost::split(values,init_vector,boost::is_any_of(" "));
+		boost::split(values,init_vector_2d,boost::is_any_of(" "));
 		set_from_string(values[0]);
-		theta = msci::angle(stof(values[1]));
+		theta = msci::angle(values[1]);
 	}
 	
 	vector_unit_2d& vector_unit_2d::operator =(const vector_unit_2d& x)

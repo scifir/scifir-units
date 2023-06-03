@@ -1,18 +1,150 @@
 #include "topology/point_3d.hpp"
 
+#include "coordinates/coordinates_3d.hpp"
+
 #include <cmath>
 #include <sstream>
+#include <vector>
 
 using namespace std;
 
 namespace msci
 {
 	point_3d::point_3d() : x(),y(),z()
-	{
-	}
+	{}
+	
+	point_3d::point_3d(const point_3d& x_point) : x(x_point.x),y(x_point.y),z(x_point.z)
+	{}
+	
+	point_3d::point_3d(point_3d&& x_point) : x(move(x_point.x)),y(move(x_point.y)),z(move(x_point.z))
+	{}
 
 	point_3d::point_3d(const length& new_x,const length& new_y,const length& new_z) : x(new_x),y(new_y),z(new_z)
+	{}
+	
+	point_3d::point_3d(const length& new_p,const msci::angle& new_theta,length new_z)
 	{
+		set_position(new_p,new_theta,new_z);
+	}
+	
+	point_3d::point_3d(const length& new_r,const msci::angle& new_theta,const msci::angle& new_phi)
+	{
+		set_position(new_r,new_theta,new_phi);
+	}
+	
+	point_3d::point_3d(const msci::angle& new_latitude,const msci::angle& new_longitude,const length& new_altitude)
+	{
+		set_position(new_latitude,new_longitude,new_altitude);
+	}
+	
+	point_3d::point_3d(const coordinates_3d& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z)
+	{}
+	
+	point_3d::point_3d(string init_point_3d) : point_3d()
+	{
+		vector<string> values;
+		if (init_point_3d.front() == '(')
+		{
+			init_point_3d.erase(0,1);
+		}
+		if (init_point_3d.back() == ')')
+		{
+			init_point_3d.erase(init_point_3d.size()-1,1);
+		}
+		boost::split(values,init_point_3d,boost::is_any_of(","));
+		x = length(values[0]);
+		y = length(values[1]);
+		z = length(values[2]);
+	}
+	
+	point_3d& point_3d::operator=(const point_3d& x_point)
+	{
+		x = x_point.x;
+		y = x_point.y;
+		z = x_point.z;
+		return *this;
+	}
+	
+	point_3d& point_3d::operator=(point_3d&& x_point)
+	{
+		x = move(x_point.x);
+		y = move(x_point.y);
+		z = move(x_point.z);
+		return *this;
+	}
+	
+	point_3d& point_3d::operator=(const coordinates_3d& x_coordinates)
+	{
+		x = x_coordinates.x;
+		y = x_coordinates.y;
+		z = x_coordinates.z;
+		return *this;
+	}
+	
+	void point_3d::set_position(const length& new_x,const length& new_y,const length& new_z)
+	{
+		x = new_x;
+		y = new_y;
+		z = new_z;
+	}
+	
+	void point_3d::set_position(const length& new_p,const msci::angle& new_theta,length new_z)
+	{
+		new_z.set_same_prefix(new_p);
+		x = length(new_p * msci::cos(new_theta));
+		y = length(new_p * msci::sin(new_theta));
+		z = new_z;
+	}
+	
+	void point_3d::set_position(const length& new_r,const msci::angle& new_theta,const msci::angle& new_phi)
+	{
+		x = length(new_r * msci::cos(new_theta) * msci::sin(new_phi));
+		y = length(new_r * msci::sin(new_theta) * msci::sin(new_phi));
+		z = length(new_r * msci::cos(new_phi));
+	}
+	
+	void point_3d::set_position(const msci::angle& new_latitude,const msci::angle& new_longitude,const length& new_altitude)
+	{
+		x = length(new_altitude * msci::cos(new_latitude) * msci::cos(new_longitude));
+		y = length(new_altitude * msci::cos(new_latitude) * msci::sin(new_longitude));
+		z = length(new_altitude * msci::sin(new_latitude));
+	}
+	
+	void point_3d::rotate_in_x(const angle& x_angle)
+	{
+		length y_coord = y;
+		length z_coord = z;
+		y = y_coord * msci::cos(x_angle) - z_coord * msci::sin(x_angle);
+		z = y_coord * msci::sin(x_angle) + z_coord * msci::cos(x_angle);
+	}
+	
+	void point_3d::rotate_in_y(const angle& x_angle)
+	{
+		length x_coord = x;
+		length z_coord = z;
+		x = x_coord * msci::cos(x_angle) - z_coord * msci::sin(x_angle);
+		z = x_coord * msci::sin(x_angle) + z_coord * msci::cos(x_angle);
+	}
+	
+	void point_3d::rotate_in_z(const angle& x_angle)
+	{
+		length x_coord = x;
+		length y_coord = y;
+		x = x_coord * msci::cos(x_angle) - y_coord * msci::sin(x_angle);
+		y = x_coord * msci::sin(x_angle) + y_coord * msci::cos(x_angle);
+	}
+	
+	void point_3d::move_in_direction(const displacement_3d& x_displacement)
+	{
+		x += x_displacement.x_projection();
+		y += x_displacement.y_projection();
+		z += x_displacement.z_projection();
+	}
+	
+	void point_3d::move_in_direction(const length& x_length,const msci::angle& x_theta,const msci::angle& x_phi)
+	{
+		displacement_3d x_displacement = displacement_3d(x_length,x_theta,x_phi);
+		move_in_direction(x_displacement);
 	}
 
 	length point_3d::distance_to_origin() const
@@ -46,4 +178,15 @@ bool operator !=(const msci::point_3d& x,const msci::point_3d& y)
 ostream& operator <<(ostream& os,const msci::point_3d& x)
 {
 	return os << to_string(x);
+}
+
+istream& operator >>(istream& is, msci::point_3d& x)
+{
+	char a[256];
+	is.getline(a, 256);
+	string b(a);
+	boost::trim(b);
+	msci::point_3d c(b);
+	x = c;
+	return is;
 }

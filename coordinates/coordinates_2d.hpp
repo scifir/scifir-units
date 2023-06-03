@@ -4,6 +4,8 @@
 #include "topology/point_2d.hpp"
 #include "units/unit_basic.hpp"
 
+#include "predefined_units/kinematics_units.hpp"
+
 #include <iostream>
 #include <string>
 
@@ -11,24 +13,33 @@ using namespace std;
 
 namespace msci
 {
-	class point_2d;
-	
 	class coordinates_2d
 	{
 		public:
 			coordinates_2d();
+			coordinates_2d(const coordinates_2d&);
+			coordinates_2d(coordinates_2d&&);
 			coordinates_2d(const length&,const length&);
 			coordinates_2d(const length&,const msci::angle&);
 			coordinates_2d(const point_2d&);
-			coordinates_2d(const string&);
+			coordinates_2d(string);
 
-			void operator= (const point_2d&);
+			coordinates_2d& operator=(const coordinates_2d&);
+			coordinates_2d& operator=(coordinates_2d&&);
+			coordinates_2d& operator=(const point_2d&);
 
 			length get_p() const;
 			angle get_angle() const;
+			
+			void set_position(const length&,const length&);
+			void set_position(const length&,const angle&);
 
-			void move_angle(const angle&);
-			void move_in_direction(const length&,const angle&);
+			void rotate(const angle&);
+			void move_in_direction(const displacement_2d&);
+			void move_in_direction(const length&,const msci::angle&);
+			void move_in_direction(const length&,float);
+			
+			length distance_to_origin() const;
 
 			length x;
 			length y;
@@ -36,6 +47,8 @@ namespace msci
 
 	string to_string(const coordinates_2d&);
 	length distance(const coordinates_2d&,const coordinates_2d&);
+	length distance(const coordinates_2d&,const point_2d&);
+	length distance(const point_2d&,const coordinates_2d&);
 	
 	inline float coordinates_2d_to_polar_r(float x,float y)
 	{
@@ -70,5 +83,6 @@ bool operator ==(const msci::point_2d&,const msci::coordinates_2d&);
 bool operator !=(const msci::point_2d&,const msci::coordinates_2d&);
 
 ostream& operator << (ostream&, const msci::coordinates_2d&);
+istream& operator >>(istream&, msci::coordinates_2d&);
 
 #endif // MSCI_UNITS_COORDINATES_COORDINATES_2D_HPP_INCLUDED

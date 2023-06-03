@@ -4,13 +4,9 @@ MSCI UNITS - VERSION 2
 // TODO: abbreviation_electron_volt should have the factor E-19 enabled
 
 // PROPERLY DISPLAY OF UNITS
-// TODO: scalar_unit should display with the proper locale
+// TODO: scalar_unit should display with the configured locale of the execution of the program
 // TODO: Reduce linker libraries needed for boost::locale (see if the libraries aren't needed and delete them)
 // TODO: auto display in the units that closely match the value (100 or less is the unit selected, if it's more than 1000 it's the prefix 10^3 bigger, and if it's less than 0.1 it has to display in the previous 10^-3 prefix)
-
-// C++
-// TODO: add enum inside classes were it's used
-// TODO: Refactorize direction to be only an enum with some external functions, nothing more
 
 // COORDINATES
 // TODO: all coordinates classes should have ostream << with (x,y), (p,theta), etc
@@ -28,7 +24,6 @@ MSCI UNITS - VERSION 2
 // TODO: add the omega symbol when displaying the resistance
 
 // UNITS - Finish creating the new class inheritance
-// TODO: add the omega greek symbol to the text of solid angle
 // TODO: support the conversions natively
 // TODO: function to_SI_convention(vector<scalar_unit>&)
 
@@ -66,10 +61,12 @@ MSCI UNITS - VERSION 2
 // TODO: decide how it'll be, in order to include real space to the vector_unit
 
 // SPECIAL UNITS
+// TODO: add the omega greek symbol to the text of solid angle
 // TODO: pixel dimension, pixel unit and pixels_distance classes
 // TODO: the pH should be an special unit
 // TODO: unit time class should be initialized by multiple abbreviations as 100 min 40 s for example
 // TODO: unit time class should display with an string "d s" specifying the dimensions to calculate on
+// TODO: unit time class shouldn't have display_mode as variable
 // TODO: complete color class like coordinate classes, with all the getters of all the different color versions
 // TODO: support currency dimension
 // TODO: document a little how to handle currency

@@ -49,11 +49,6 @@ namespace msci
 				return (alpha == 0);
 			}
 
-			/*void print() const
-			{
-				cout << *this;
-			}*/
-
 		private:
 			int red;
 			int blue;

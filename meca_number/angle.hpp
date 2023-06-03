@@ -36,6 +36,8 @@ namespace msci
 			explicit angle(const scalar_unit&);
 			
 			angle& operator=(const angle&);
+			angle& operator=(float);
+			angle& operator=(string&);
 			angle& operator=(const scalar_unit&);
 
 			angle* clone() const

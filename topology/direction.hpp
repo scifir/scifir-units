@@ -13,36 +13,33 @@ namespace msci
 	class direction
 	{
 		public:
-			enum value {left, right, top, bottom, front, back, left_top, left_bottom, right_top, right_bottom, left_front, left_back, right_front, right_back, top_front, top_back, bottom_front, bottom_back, left_top_front, left_top_back, left_bottom_front, left_bottom_back, right_top_front, right_top_back, right_bottom_front, right_bottom_back};
+			enum name {LEFT, RIGHT, TOP, BOTTOM, FRONT, BACK, LEFT_TOP, LEFT_BOTTOM, RIGHT_TOP, RIGHT_BOTTOM, LEFT_FRONT, LEFT_BACK, RIGHT_FRONT, RIGHT_BACK, TOP_FRONT, TOP_BACK, BOTTOM_FRONT, BOTTOM_BACK, LEFT_TOP_FRONT, LEFT_TOP_BACK, LEFT_BOTTOM_FRONT, LEFT_BOTTOM_BACK, RIGHT_TOP_FRONT, RIGHT_TOP_BACK, RIGHT_BOTTOM_FRONT, RIGHT_BOTTOM_BACK};
 			
 			direction();
-			direction(direction::value);
-
-			inline const direction::value& get_direction() const
-			{
-				return direction_value;
-			}
+			direction(const direction&);
+			direction(direction&&);
+			direction(direction::name);
+			
+			void operator=(const direction&);
+			void operator=(direction&&);
+			void operator=(direction::name);
 
 			void invert();
 
-			void operator =(direction::value);
-
-			string display() const;
-
-		private:
-			direction::value direction_value;
+			direction::name value;
 	};
 	
-	string direction_string(direction::value);
-	direction::value opposite_direction(direction::value);
+	string to_string(direction::name);
+	string to_string(const direction&);
+	direction::name invert(direction::name);
 }
 
 bool operator ==(const msci::direction& x, const msci::direction& y);
 bool operator !=(const msci::direction& x, const msci::direction& y);
-bool operator ==(const msci::direction& x, msci::direction::value y);
-bool operator !=(const msci::direction& x, msci::direction::value y);
-bool operator ==(msci::direction::value y, const msci::direction& x);
-bool operator !=(msci::direction::value y, const msci::direction& x);
+bool operator ==(const msci::direction& x, msci::direction::name y);
+bool operator !=(const msci::direction& x, msci::direction::name y);
+bool operator ==(msci::direction::name y, const msci::direction& x);
+bool operator !=(msci::direction::name y, const msci::direction& x);
 
 ostream& operator <<(ostream& os, const msci::direction& x);
 

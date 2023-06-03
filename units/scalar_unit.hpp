@@ -171,6 +171,7 @@ namespace msci
 			bool has_empty_dimensions() const;
 			string display_dimensions() const;
 			void set_same_prefix(const vector<dimension>&);
+			void set_same_prefix(const scalar_unit&);
 
 			string get_dimensions_match() const;
 			vector<dimension> get_derived_dimensions() const;

@@ -4,6 +4,9 @@
 #include "topology/point_3d.hpp"
 #include "meca_number/angle.hpp"
 
+#include "units/unit_basic.hpp"
+#include "predefined_units/kinematics_units.hpp"
+
 #include <iostream>
 #include <string>
 #include <cmath>
@@ -12,44 +15,43 @@ using namespace std;
 
 namespace msci
 {
-	enum coordinates_system {CARTESIAN, CYLINDRICAL, SPHERICAL, GEOGRAPHICAL, POLAR};
-
+	enum class coordinates {CARTESIAN, CYLINDRICAL, SPHERICAL, GEOGRAPHICAL, POLAR};
+	
 	class coordinates_3d
 	{
 		public:
 			coordinates_3d();
-			coordinates_3d(coordinates_system,float,float,float);
+			coordinates_3d(const coordinates_3d&);
+			coordinates_3d(coordinates_3d&&);
 			coordinates_3d(const length&,const length&,const length&);
-			coordinates_3d(const length&,const msci::angle&,const length&);
+			coordinates_3d(const length&,const msci::angle&,length);
 			coordinates_3d(const length&,const msci::angle&,const msci::angle&);
 			coordinates_3d(const msci::angle&,const msci::angle&,const length&);
-			coordinates_3d(const string);
+			coordinates_3d(const point_3d&);
+			coordinates_3d(string);
 
-			inline length get_p() const
-			{
-				return msci::sqrt(msci::pow(x,2) + msci::pow(y,2));
-			}
+			coordinates_3d& operator=(const coordinates_3d&);
+			coordinates_3d& operator=(coordinates_3d&&);
+			coordinates_3d& operator=(const point_3d&);
 
-			inline msci::angle get_theta() const
-			{
-				return msci::angle(msci::atan_grade(float(y/x)));
-			}
+			length get_p() const;
+			angle get_theta() const;
+			length get_r() const;
+			angle get_phi() const;
 
-			inline length get_r() const
-			{
-				return msci::sqrt(msci::pow(x,2) + msci::pow(y,2) + msci::pow(z,2));
-			}
-
-			inline msci::angle get_phi() const
-			{
-				return msci::angle(msci::acos_grade(float(z/msci::sqrt(msci::pow(x,2) + msci::pow(y,2) + msci::pow(z,2)))));
-			}
-
-			void set_position(coordinates_system,float,float,float);
 			void set_position(const length&,const length&,const length&);
-			void set_position(const length&,const msci::angle&,const length&);
+			void set_position(const length&,const msci::angle&,length);
 			void set_position(const length&,const msci::angle&,const msci::angle&);
 			void set_position(const msci::angle&,const msci::angle&,const length&);
+			
+			void rotate_in_x(const angle&);
+			void rotate_in_y(const angle&);
+			void rotate_in_z(const angle&);
+			void move_in_direction(const displacement_3d&);
+			void move_in_direction(const length&,const msci::angle&,const msci::angle&);
+			void move_in_direction(const length&,float,float);
+			
+			length distance_to_origin() const;
 
 			length x;
 			length y;
@@ -58,6 +60,8 @@ namespace msci
 
 	string to_string(const coordinates_3d&);
 	length distance(const coordinates_3d&,const coordinates_3d&);
+	length distance(const coordinates_3d&,const point_3d&);
+	length distance(const point_3d&,const coordinates_3d&);
 	
 	inline float cartesian_3d_to_cylindrical_r(float x,float y,float z)
 	{
@@ -159,5 +163,6 @@ bool operator ==(const msci::point_3d&,const msci::coordinates_3d&);
 bool operator !=(const msci::point_3d&,const msci::coordinates_3d&);
 
 ostream& operator << (ostream&, const msci::coordinates_3d&);
+istream& operator >>(istream&, msci::coordinates_3d&);
 
 #endif // MSCI_UNITS_COORDINATES_COORDINATES_3D_HPP_INCLUDED

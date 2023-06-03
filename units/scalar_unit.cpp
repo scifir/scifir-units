@@ -334,6 +334,11 @@ namespace msci
 		}
 		dimensions = new_dimensions;
 	}
+	
+	void scalar_unit::set_same_prefix(const scalar_unit& x)
+	{
+		set_same_prefix(x.get_dimensions());
+	}
 
 	string scalar_unit::initial_dimensions_get_structure(const string& init_value) const
 	{
@@ -589,7 +594,7 @@ ostream& operator <<(ostream& os, const msci::scalar_unit& x)
 	return os << to_string(x);
 }
 
-/*istream& operator >>(istream& is, msci::scalar_unit& x)
+istream& operator >>(istream& is, msci::scalar_unit& x)
 {
 	char a[256];
 	is.getline(a, 256);
@@ -598,4 +603,4 @@ ostream& operator <<(ostream& os, const msci::scalar_unit& x)
 	msci::scalar_unit c(b);
 	x = c;
 	return is;
-}*/
+}

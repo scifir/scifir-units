@@ -74,7 +74,7 @@ namespace msci
 
 ostream& operator <<(ostream& os, const msci::time& x)
 {
-	if (x.get_display_mode() == msci::display_mode::time_display)
+	if (x.get_display_mode() == msci::time::display::TIME)
 	{
 		ostringstream output;
 		msci::time remaining_time = x;

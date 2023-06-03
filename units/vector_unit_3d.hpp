@@ -98,7 +98,7 @@ namespace msci
 			vector_unit_3d& operator =(const scalar_unit&);
 			vector_unit_3d& operator =(scalar_unit&&);
 
-			void point_to(direction::value);
+			void point_to(direction::name);
 
 			void operator +=(const vector_unit_3d&);
 			void operator -=(const vector_unit_3d&);

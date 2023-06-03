@@ -112,18 +112,18 @@ namespace msci
 		return *this;
 	}
 
-	void vector_unit_nd::point_to(direction::value x)
+	void vector_unit_nd::point_to(direction::name x)
 	{
 		if (is_nd(1))
 		{
-			if (x == direction::left)
+			if (x == direction::LEFT)
 			{
 				if (value > 0)
 				{
 					value *= -1;
 				}
 			}
-			else if(x == direction::right)
+			else if(x == direction::RIGHT)
 			{
 				if (value < 0)
 				{
@@ -133,167 +133,167 @@ namespace msci
 		}
 		else if (is_nd(2))
 		{
-			if (x == direction::left)
+			if (x == direction::LEFT)
 			{
 				angles[0] = 180;
 			}
-			else if(x == direction::right)
+			else if(x == direction::RIGHT)
 			{
 				angles[0] = 0;
 			}
-			else if(x == direction::top)
+			else if(x == direction::TOP)
 			{
 				angles[0] = 90;
 			}
-			else if(x == direction::bottom)
+			else if(x == direction::BOTTOM)
 			{
 				angles[0] = 270;
 			}
-			else if(x == direction::left_top)
+			else if(x == direction::LEFT_TOP)
 			{
 				angles[0] = 135;
 			}
-			else if(x == direction::right_top)
+			else if(x == direction::RIGHT_TOP)
 			{
 				angles[0] = 45;
 			}
-			else if(x == direction::right_bottom)
+			else if(x == direction::RIGHT_BOTTOM)
 			{
 				angles[0] = 315;
 			}
-			else if(x == direction::left_bottom)
+			else if(x == direction::LEFT_BOTTOM)
 			{
 				angles[0] = 225;
 			}
 		}
 		else if (is_nd(3))
 		{
-			if (x == direction::left)
+			if (x == direction::LEFT)
 			{
 				angles[0] = 270;
 				angles[1] = 90;
 			}
-			else if(x == direction::right)
+			else if(x == direction::RIGHT)
 			{
 				angles[0] = 90;
 				angles[1] = 90;
 			}
-			else if(x == direction::top)
+			else if(x == direction::TOP)
 			{
 				angles[0] = 0;
 				angles[1] = 0;
 			}
-			else if(x == direction::bottom)
+			else if(x == direction::BOTTOM)
 			{
 				angles[0] = 0;
 				angles[1] = 180;
 			}
-			else if(x == direction::left_top)
+			else if(x == direction::LEFT_TOP)
 			{
 				angles[0] = 270;
 				angles[1] = 45;
 			}
-			else if(x == direction::right_top)
+			else if(x == direction::RIGHT_TOP)
 			{
 				angles[0] = 90;
 				angles[1] = 45;
 			}
-			else if(x == direction::right_bottom)
+			else if(x == direction::RIGHT_BOTTOM)
 			{
 				angles[0] = 90;
 				angles[1] = 135;
 			}
-			else if(x == direction::left_bottom)
+			else if(x == direction::LEFT_BOTTOM)
 			{
 				angles[0] = 270;
 				angles[1] = 135;
 			}
-			else if(x == direction::front)
+			else if(x == direction::FRONT)
 			{
 				angles[0] = 0;
 				angles[1] = 90;
 			}
-			else if(x == direction::back)
+			else if(x == direction::BACK)
 			{
 				angles[0] = 180;
 				angles[1] = 90;
 			}
-			else if(x == direction::left_front)
+			else if(x == direction::LEFT_FRONT)
 			{
 				angles[0] = 315;
 				angles[1] = 90;
 			}
-			else if(x == direction::right_front)
+			else if(x == direction::RIGHT_FRONT)
 			{
 				angles[0] = 45;
 				angles[1] = 90;
 			}
-			else if(x == direction::top_front)
+			else if(x == direction::TOP_FRONT)
 			{
 				angles[0] = 0;
 				angles[1] = 45;
 			}
-			else if(x == direction::bottom_front)
+			else if(x == direction::BOTTOM_FRONT)
 			{
 				angles[0] = 0;
 				angles[1] = 135;
 			}
-			else if(x == direction::left_back)
+			else if(x == direction::LEFT_BACK)
 			{
 				angles[0] = 225;
 				angles[1] = 90;
 			}
-			else if(x == direction::right_back)
+			else if(x == direction::RIGHT_BACK)
 			{
 				angles[0] = 135;
 				angles[1] = 90;
 			}
-			else if(x == direction::top_back)
+			else if(x == direction::TOP_BACK)
 			{
 				angles[0] = 180;
 				angles[1] = 45;
 			}
-			else if(x == direction::bottom_back)
+			else if(x == direction::BOTTOM_BACK)
 			{
 				angles[0] = 180;
 				angles[1] = 135;
 			}
-			else if(x == direction::left_top_front)
+			else if(x == direction::LEFT_TOP_FRONT)
 			{
 				angles[0] = 315;
 				angles[1] = 45;
 			}
-			else if(x == direction::right_top_front)
+			else if(x == direction::RIGHT_TOP_FRONT)
 			{
 				angles[0] = 45;
 				angles[1] = 45;
 			}
-			else if(x == direction::left_bottom_front)
+			else if(x == direction::LEFT_BOTTOM_FRONT)
 			{
 				angles[0] = 315;
 				angles[1] = 135;
 			}
-			else if(x == direction::right_bottom_front)
+			else if(x == direction::RIGHT_BOTTOM_FRONT)
 			{
 				angles[0] = 45;
 				angles[1] = 135;
 			}
-			else if(x == direction::left_top_back)
+			else if(x == direction::LEFT_TOP_BACK)
 			{
 				angles[0] = 225;
 				angles[1] = 45;
 			}
-			else if(x == direction::right_top_back)
+			else if(x == direction::RIGHT_TOP_BACK)
 			{
 				angles[0] = 135;
 				angles[1] = 45;
 			}
-			else if(x == direction::left_bottom_back)
+			else if(x == direction::LEFT_BOTTOM_BACK)
 			{
 				angles[0] = 225;
 				angles[1] = 135;
 			}
-			else if(x == direction::right_bottom_back)
+			else if(x == direction::RIGHT_BOTTOM_BACK)
 			{
 				angles[0] = 135;
 				angles[1] = 135;

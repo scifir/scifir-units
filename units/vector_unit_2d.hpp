@@ -9,6 +9,37 @@
 #include <iostream>
 #include <string>
 
+#define VECTOR_UNIT_2D_HPP_BEGIN(name) class name##_2d : public vector_unit_2d \
+	{	\
+		public: \
+			using vector_unit_2d::vector_unit_2d; \
+			name##_2d(); \
+			name##_2d(const name##_2d&); \
+			name##_2d(name##_2d&&)
+
+#define	VECTOR_UNIT_2D_HPP_END() public: \
+		static const string dimensions_match; \
+		static const vector<msci::dimension> real_dimensions; \
+	}
+
+#define VECTOR_UNIT_2D_HPP(name) class name##_2d : public vector_unit_2d \
+	{	\
+		public: \
+			using vector_unit_2d::vector_unit_2d; \
+			name##_2d(); \
+			name##_2d(const name##_2d&); \
+			name##_2d(name##_2d&&); \
+\
+			static const string dimensions_match; \
+			static const vector<msci::dimension> real_dimensions; \
+	}
+
+#define VECTOR_UNIT_2D_CPP(name,init_dimensions) name##_2d::name##_2d() : vector_unit_2d() {} \
+	name##_2d::name##_2d(const name##_2d& x) : vector_unit_2d(x) {} \
+	name##_2d::name##_2d(name##_2d&& x) : vector_unit_2d(move(x)) {} \
+const string name##_2d::dimensions_match = init_dimensions; \
+const vector<msci::dimension> name##_2d::real_dimensions = create_derived_dimensions(init_dimensions)
+
 using namespace std;
 using namespace msci;
 
