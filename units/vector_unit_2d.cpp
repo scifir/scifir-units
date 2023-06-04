@@ -20,31 +20,31 @@ namespace msci
 	vector_unit_2d::vector_unit_2d(float new_value,const string& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(float new_value,const string& new_dimensions,const msci::angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(float new_value,const string& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
 	{}
 	
 	vector_unit_2d::vector_unit_2d(float new_value,const vector<dimension>& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(float new_value,const vector<dimension>& new_dimensions,const msci::angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(float new_value,const vector<dimension>& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
 	{}
 	
 	vector_unit_2d::vector_unit_2d(const scalar_unit& x,float new_angle) : scalar_unit(x),theta(new_angle)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(const scalar_unit& x,const msci::angle& new_angle) : scalar_unit(x),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(const scalar_unit& x,const angle& new_angle) : scalar_unit(x),theta(new_angle)
 	{}
 	
 	vector_unit_2d::vector_unit_2d(scalar_unit&& x,float new_angle) : scalar_unit(x),theta(new_angle)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(scalar_unit&& x,const msci::angle& new_angle) : scalar_unit(x),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(scalar_unit&& x,const angle& new_angle) : scalar_unit(x),theta(new_angle)
 	{}
 	
 	vector_unit_2d::vector_unit_2d(const string& init_scalar,float new_angle) : scalar_unit(init_scalar),theta(new_angle)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(const string& init_scalar,const msci::angle& new_angle) : scalar_unit(init_scalar),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(const string& init_scalar,const angle& new_angle) : scalar_unit(init_scalar),theta(new_angle)
 	{}
 	
 	vector_unit_2d::vector_unit_2d(const string& init_vector_2d)
@@ -52,7 +52,7 @@ namespace msci
 		vector<string> values;
 		boost::split(values,init_vector_2d,boost::is_any_of(" "));
 		set_from_string(values[0]);
-		theta = msci::angle(values[1]);
+		theta = angle(values[1]);
 	}
 	
 	vector_unit_2d& vector_unit_2d::operator =(const vector_unit_2d& x)
@@ -183,9 +183,9 @@ namespace msci
 		return scalar_unit(new_value,new_dimensions);
 	}
 
-	msci::angle angle_between(const vector_unit_2d& x,const vector_unit_2d& y)
+	angle angle_between(const vector_unit_2d& x,const vector_unit_2d& y)
 	{
-		return msci::angle(std::atan2(y.y_projection() * x.x_projection() - y.x_projection() * x.y_projection(),y.x_projection() * x.x_projection() + y.y_projection() * x.y_projection()));
+		return angle(std::atan2(y.y_projection() * x.x_projection() - y.x_projection() * x.y_projection(),y.x_projection() * x.x_projection() + y.y_projection() * x.y_projection()));
 	}
 
 	bool same_direction(const vector_unit_2d& x, const vector_unit_2d& y)

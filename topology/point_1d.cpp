@@ -15,7 +15,7 @@ namespace msci
 	point_1d::point_1d(const point_1d& x_point) : x(x_point.x)
 	{}
 	
-	point_1d::point_1d(point_1d&& x_point) : x(move(x_point.x))
+	point_1d::point_1d(point_1d&& x_point) : x(std::move(x_point.x))
 	{}
 
 	point_1d::point_1d(const length& new_x) : x(new_x)
@@ -45,7 +45,7 @@ namespace msci
 	
 	point_1d& point_1d::operator=(point_1d&& x_point)
 	{
-		x = move(x_point.x);
+		x = std::move(x_point.x);
 		return *this;
 	}
 	
@@ -60,7 +60,7 @@ namespace msci
 		x = new_x;
 	}
 
-	void point_1d::move_in_direction(const length& x_value)
+	void point_1d::move(const length& x_value)
 	{
 		x += x_value;
 	}

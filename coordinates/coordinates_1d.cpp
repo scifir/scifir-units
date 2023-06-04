@@ -15,7 +15,7 @@ namespace msci
 	coordinates_1d::coordinates_1d(const coordinates_1d& x_coordinates) : x(x_coordinates.x)
 	{}
 
-	coordinates_1d::coordinates_1d(coordinates_1d&& x_coordinates) : x(move(x_coordinates.x))
+	coordinates_1d::coordinates_1d(coordinates_1d&& x_coordinates) : x(std::move(x_coordinates.x))
 	{}
 
 	coordinates_1d::coordinates_1d(const length& new_x) : x(new_x)
@@ -45,7 +45,7 @@ namespace msci
 	
 	coordinates_1d& coordinates_1d::operator=(coordinates_1d&& x_coordinates)
 	{
-		x = x_coordinates.x;
+		x = std::move(x_coordinates.x);
 		return *this;
 	}
 
@@ -61,7 +61,7 @@ namespace msci
 		x = new_x;
 	}
 
-	void coordinates_1d::move_in_direction(const length& x_value)
+	void coordinates_1d::move(const length& x_value)
 	{
 		x += x_value;
 	}

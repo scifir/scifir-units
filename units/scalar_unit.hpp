@@ -24,7 +24,7 @@
 \
 		public: \
 			static const string dimensions_match; \
-			static const vector<msci::dimension> real_dimensions; \
+			static const vector<dimension> real_dimensions; \
 	}
 
 #define SCALAR_UNIT_HPP(name) class name : public scalar_unit \
@@ -36,7 +36,7 @@
 			name(scalar_unit&&); \
 \
 			static const string dimensions_match; \
-			static const vector<msci::dimension> real_dimensions; \
+			static const vector<dimension> real_dimensions; \
 	}
 
 #define SCALAR_UNIT_CPP(name,init_dimensions) name::name() : scalar_unit() {} \
@@ -60,7 +60,7 @@
 	} \
 \
 const string name::dimensions_match = init_dimensions; \
-const vector<msci::dimension> name::real_dimensions = create_derived_dimensions(init_dimensions)
+const vector<dimension> name::real_dimensions = create_derived_dimensions(init_dimensions)
 
 using namespace std;
 

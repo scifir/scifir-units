@@ -24,9 +24,9 @@ namespace msci
 			coordinates_3d(const coordinates_3d&);
 			coordinates_3d(coordinates_3d&&);
 			coordinates_3d(const length&,const length&,const length&);
-			coordinates_3d(const length&,const msci::angle&,length);
-			coordinates_3d(const length&,const msci::angle&,const msci::angle&);
-			coordinates_3d(const msci::angle&,const msci::angle&,const length&);
+			coordinates_3d(const length&,const angle&,length);
+			coordinates_3d(const length&,const angle&,const angle&);
+			coordinates_3d(const angle&,const angle&,const length&);
 			coordinates_3d(const point_3d&);
 			coordinates_3d(string);
 
@@ -40,16 +40,17 @@ namespace msci
 			angle get_phi() const;
 
 			void set_position(const length&,const length&,const length&);
-			void set_position(const length&,const msci::angle&,length);
-			void set_position(const length&,const msci::angle&,const msci::angle&);
-			void set_position(const msci::angle&,const msci::angle&,const length&);
+			void set_position(const length&,const angle&,length);
+			void set_position(const length&,const angle&,const angle&);
+			void set_position(const angle&,const angle&,const length&);
 			
 			void rotate_in_x(const angle&);
 			void rotate_in_y(const angle&);
 			void rotate_in_z(const angle&);
-			void move_in_direction(const displacement_3d&);
-			void move_in_direction(const length&,const msci::angle&,const msci::angle&);
-			void move_in_direction(const length&,float,float);
+			void move(const displacement_3d&);
+			void move(const length&,const length&,const length&);
+			void move(const length&,const angle&,length);
+			void move(const length&,const angle&,const angle&);
 			
 			length distance_to_origin() const;
 

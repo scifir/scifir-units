@@ -24,8 +24,8 @@ namespace msci
 		x = length(values[0]);
 		y = length(values[1]);
 		z = length(values[2]);
-		theta = msci::angle(values[3].size() - 1);
-		phi = msci::angle(values[4].size() - 1);
+		theta = angle(values[3].size() - 1);
+		phi = angle(values[4].size() - 1);
 	}
 
 	string to_string(const coordinates_3dr& x)

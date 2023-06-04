@@ -20,7 +20,7 @@ namespace msci
 			coordinates_2d(const coordinates_2d&);
 			coordinates_2d(coordinates_2d&&);
 			coordinates_2d(const length&,const length&);
-			coordinates_2d(const length&,const msci::angle&);
+			coordinates_2d(const length&,const angle&);
 			coordinates_2d(const point_2d&);
 			coordinates_2d(string);
 
@@ -35,9 +35,9 @@ namespace msci
 			void set_position(const length&,const angle&);
 
 			void rotate(const angle&);
-			void move_in_direction(const displacement_2d&);
-			void move_in_direction(const length&,const msci::angle&);
-			void move_in_direction(const length&,float);
+			void move(const displacement_2d&);
+			void move(const length&,const length&);
+			void move(const length&,const angle&);
 			
 			length distance_to_origin() const;
 

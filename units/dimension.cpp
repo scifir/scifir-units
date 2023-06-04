@@ -17,11 +17,11 @@ namespace msci
 	{
 	}
 
-	dimension::dimension(msci::dimension::type new_dimension_type,msci::prefix::type new_prefix,msci::dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign)
+	dimension::dimension(dimension::type new_dimension_type,msci::prefix::type new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign)
 	{
 	}
 
-	dimension::dimension(msci::dimension::type new_dimension_type,const msci::prefix& new_prefix,msci::dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign)
+	dimension::dimension(dimension::type new_dimension_type,const msci::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign)
 	{
 	}
 
@@ -318,7 +318,7 @@ namespace msci
 		return 10.0793684;
 	}*/
 
-	dimension create_dimension(::msci::dimension::type x)
+	dimension create_dimension(dimension::type x)
 	{
 		switch(x)
 		{

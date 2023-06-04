@@ -15,13 +15,13 @@ namespace msci
 	coordinates_2d::coordinates_2d(const coordinates_2d& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y)
 	{}
 
-	coordinates_2d::coordinates_2d(coordinates_2d&& x_coordinates) : x(move(x_coordinates.x)),y(move(x_coordinates.y))
+	coordinates_2d::coordinates_2d(coordinates_2d&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y))
 	{}
 
 	coordinates_2d::coordinates_2d(const length& new_x,const length& new_y) : x(new_x),y(new_y)
 	{}
 	
-	coordinates_2d::coordinates_2d(const length& new_p,const msci::angle& new_theta)
+	coordinates_2d::coordinates_2d(const length& new_p,const angle& new_theta)
 	{
 		set_position(new_p,new_theta);
 	}
@@ -54,8 +54,8 @@ namespace msci
 	
 	coordinates_2d& coordinates_2d::operator=(coordinates_2d&& x_coordinates)
 	{
-		x = x_coordinates.x;
-		y = x_coordinates.y;
+		x = std::move(x_coordinates.x);
+		y = std::move(x_coordinates.y);
 		return *this;
 	}
 
@@ -84,8 +84,8 @@ namespace msci
 	
 	void coordinates_2d::set_position(const length& new_p,const angle& new_theta)
 	{
-		x = length(float(new_p * msci::cos(new_theta)),new_p.get_dimensions());
-		y = length(float(new_p * msci::sin(new_theta)),new_p.get_dimensions());
+		x = length(new_p * msci::cos(new_theta));
+		y = length(new_p * msci::sin(new_theta));
 	}
 
 	void coordinates_2d::rotate(const angle& x_angle)
@@ -96,21 +96,22 @@ namespace msci
 		y = x_coord * msci::sin(x_angle) + y_coord * msci::cos(x_angle);
 	}
 	
-	void coordinates_2d::move_in_direction(const displacement_2d& x_displacement)
+	void coordinates_2d::move(const displacement_2d& x_displacement)
 	{
 		x += x_displacement.x_projection();
 		y += x_displacement.y_projection();
 	}
-
-	void coordinates_2d::move_in_direction(const length& x_value,const angle& x_angle)
-	{
-		x = x + x_value * msci::cos(x_angle);
-		y = y + x_value * msci::sin(x_angle);
-	}
 	
-	void coordinates_2d::move_in_direction(const length& x_value,float x_angle)
+	void coordinates_2d::move(const length& new_x,const length& new_y)
 	{
-		move_in_direction(x_value,angle(x_angle));
+		x += new_x;
+		y += new_y;
+	}
+
+	void coordinates_2d::move(const length& new_p,const angle& new_theta)
+	{
+		x += new_p * msci::cos(new_theta);
+		y += new_p * msci::sin(new_theta);
 	}
 	
 	length coordinates_2d::distance_to_origin() const

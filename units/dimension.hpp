@@ -23,8 +23,8 @@ namespace msci
 			enum sign {positive,negative};
 
 			dimension();
-			dimension(msci::dimension::type,msci::prefix::type,msci::dimension::sign);
-			dimension(msci::dimension::type,const msci::prefix&,msci::dimension::sign);
+			dimension(dimension::type,msci::prefix::type,dimension::sign);
+			dimension(dimension::type,const msci::prefix&,dimension::sign);
 
 			dimension operator = (const dimension&);
 
@@ -43,7 +43,7 @@ namespace msci
 
 			msci::prefix prefix;
 			const dimension::type dimension_type;
-			msci::dimension::sign dimension_sign;
+			dimension::sign dimension_sign;
 	};
 
 	dimension create_dimension(dimension::type);

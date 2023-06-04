@@ -16,12 +16,12 @@ namespace msci
 	{
 		public:
 			coordinates_2dr();
-			coordinates_2dr(const length&,const length&,const msci::angle&);
+			coordinates_2dr(const length&,const length&,const angle&);
 			coordinates_2dr(const string&);
 
 			length x;
 			length y;
-			msci::angle theta;
+			angle theta;
 	};
 
 	string to_string(const coordinates_2dr&);

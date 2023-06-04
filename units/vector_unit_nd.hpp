@@ -7,7 +7,6 @@
 #include "topology/direction.hpp"
 
 #include "boost/algorithm/string.hpp"
-#include "boost/variant.hpp"
 
 #include <cmath>
 #include <functional>
@@ -39,12 +38,12 @@
 			name##_nd(name##_nd&&); \
 \
 			static const string dimensions_match; \
-			static const vector<msci::dimension> real_dimensions; \
+			static const vector<dimension> real_dimensions; \
 	}
 
-#define VECTOR_UNIT_ND_CPP(name,init_dimensions) name##_nd::name##_nd() : scalar_unit(),angles() {} \
-	name##_nd::name##_nd(const name##_nd& x) : scalar_unit(x),angles(x.angles) {} \
-	name##_nd::name##_nd(name##_nd&& x) : scalar_unit(move(x)),angles(move(x.angles)) {} \
+#define VECTOR_UNIT_ND_CPP(name,init_dimensions) name##_nd::name##_nd() : vector_unit_nd() {} \
+	name##_nd::name##_nd(const name##_nd& x) : vector_unit_nd(x) {} \
+	name##_nd::name##_nd(name##_nd&& x) : vector_unit_nd(move(x)) {} \
 const string name##_nd::dimensions_match = init_dimensions; \
 const vector<dimension> name##_nd::real_dimensions = create_derived_dimensions(init_dimensions)
 
@@ -61,18 +60,18 @@ namespace msci
 			vector_unit_nd(vector_unit_nd&&);
 			explicit vector_unit_nd(float,const string&);
 			explicit vector_unit_nd(float,const string&,const vector<float>&);
-			explicit vector_unit_nd(float,const string&,const vector<msci::angle>&);
+			explicit vector_unit_nd(float,const string&,const vector<angle>&);
 			explicit vector_unit_nd(float,const vector<dimension>&);
 			explicit vector_unit_nd(float,const vector<dimension>&,const vector<float>&);
-			explicit vector_unit_nd(float,const vector<dimension>&,const vector<msci::angle>&);
+			explicit vector_unit_nd(float,const vector<dimension>&,const vector<angle>&);
 			explicit vector_unit_nd(const scalar_unit&);
 			explicit vector_unit_nd(const scalar_unit&,const vector<float>&);
-			explicit vector_unit_nd(const scalar_unit&,const vector<msci::angle>&);
+			explicit vector_unit_nd(const scalar_unit&,const vector<angle>&);
 			explicit vector_unit_nd(scalar_unit&&);
 			explicit vector_unit_nd(scalar_unit&&,const vector<float>&);
-			explicit vector_unit_nd(scalar_unit&&,const vector<msci::angle>&);
+			explicit vector_unit_nd(scalar_unit&&,const vector<angle>&);
 			explicit vector_unit_nd(const string&,const vector<float>&);
-			explicit vector_unit_nd(const string&,const vector<msci::angle>&);
+			explicit vector_unit_nd(const string&,const vector<angle>&);
 			explicit vector_unit_nd(const string&);
 
 			vector_unit_nd& operator =(const vector_unit_nd&);
@@ -145,14 +144,20 @@ namespace msci
 			{
 				return angles.size() == (i - 1);
 			}
+			
+			inline int get_nd() const
+			{
+				return (angles.size() + 1);
+			}
 
+			float n_projection(int) const;
 			float x_projection() const;
 			float y_projection() const;
 			float z_projection() const;
 
 			void invert();
 
-			vector<msci::angle> angles;
+			vector<angle> angles;
 	};
 
 	scalar_unit norm(const vector_unit_nd&);
@@ -160,7 +165,7 @@ namespace msci
 	vector_unit_nd sqrt_nth(const vector_unit_nd&,int);
 	scalar_unit dot_product(const vector_unit_nd&,const vector_unit_nd&);
 	vector_unit_nd cross_product(const vector_unit_nd&,const vector_unit_nd&);
-	msci::angle angle_between(const vector_unit_nd&,const vector_unit_nd&);
+	angle angle_between(const vector_unit_nd&,const vector_unit_nd&);
 	bool same_nd(const vector_unit_nd&,const vector_unit_nd&);
 	bool same_direction(const vector_unit_nd&,const vector_unit_nd&);
 	bool parallel(const vector_unit_nd&,const vector_unit_nd&);

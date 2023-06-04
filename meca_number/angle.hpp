@@ -236,31 +236,31 @@ namespace msci
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 msci::angle operator +(T x, const msci::angle& y)
 {
-	return msci::angle(x + y.get_value());
+	return angle(x + y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 msci::angle operator -(T x, const msci::angle& y)
 {
-	return msci::angle(x - y.get_value());
+	return angle(x - y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 msci::angle operator *(T x, const msci::angle& y)
 {
-	return msci::angle(x * y.get_value());
+	return angle(x * y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 msci::angle operator /(T x, const msci::angle& y)
 {
-	return msci::angle(x / y.get_value());
+	return angle(x / y.get_value());
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 msci::angle operator ^(T x, const msci::angle& y)
 {
-	return msci::angle(pow(x, y.get_value()));
+	return angle(pow(x, y.get_value()));
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>

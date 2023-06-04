@@ -19,7 +19,7 @@
 
 #define	VECTOR_UNIT_2D_HPP_END() public: \
 		static const string dimensions_match; \
-		static const vector<msci::dimension> real_dimensions; \
+		static const vector<dimension> real_dimensions; \
 	}
 
 #define VECTOR_UNIT_2D_HPP(name) class name##_2d : public vector_unit_2d \
@@ -31,14 +31,14 @@
 			name##_2d(name##_2d&&); \
 \
 			static const string dimensions_match; \
-			static const vector<msci::dimension> real_dimensions; \
+			static const vector<dimension> real_dimensions; \
 	}
 
 #define VECTOR_UNIT_2D_CPP(name,init_dimensions) name##_2d::name##_2d() : vector_unit_2d() {} \
 	name##_2d::name##_2d(const name##_2d& x) : vector_unit_2d(x) {} \
 	name##_2d::name##_2d(name##_2d&& x) : vector_unit_2d(move(x)) {} \
 const string name##_2d::dimensions_match = init_dimensions; \
-const vector<msci::dimension> name##_2d::real_dimensions = create_derived_dimensions(init_dimensions)
+const vector<dimension> name##_2d::real_dimensions = create_derived_dimensions(init_dimensions)
 
 using namespace std;
 using namespace msci;
@@ -52,15 +52,15 @@ namespace msci
 			vector_unit_2d(const vector_unit_2d&);
 			vector_unit_2d(vector_unit_2d&&);
 			explicit vector_unit_2d(float,const string&,float); // Example of initialization (10,"N",50)
-			explicit vector_unit_2d(float,const string&,const msci::angle&); // Example of initialization (10,"N",50ª)
+			explicit vector_unit_2d(float,const string&,const angle&); // Example of initialization (10,"N",50ª)
 			explicit vector_unit_2d(float,const vector<dimension>&,float);
-			explicit vector_unit_2d(float,const vector<dimension>&,const msci::angle&);
+			explicit vector_unit_2d(float,const vector<dimension>&,const angle&);
 			explicit vector_unit_2d(const scalar_unit&,float);
-			explicit vector_unit_2d(const scalar_unit&,const msci::angle&);
+			explicit vector_unit_2d(const scalar_unit&,const angle&);
 			explicit vector_unit_2d(scalar_unit&&,float);
-			explicit vector_unit_2d(scalar_unit&&,const msci::angle&);
+			explicit vector_unit_2d(scalar_unit&&,const angle&);
 			explicit vector_unit_2d(const string&,float);
-			explicit vector_unit_2d(const string&,const msci::angle&);
+			explicit vector_unit_2d(const string&,const angle&);
 			explicit vector_unit_2d(const string&); // Example of initialization string "1N 50º"
 			
 			vector_unit_2d& operator =(const vector_unit_2d&);
@@ -143,7 +143,7 @@ namespace msci
 				theta.invert();
 			}
 			
-			msci::angle theta;
+			angle theta;
 	};
 	
 	string to_string(const vector_unit_2d&);
@@ -151,7 +151,7 @@ namespace msci
 	vector_unit_2d sqrt(const vector_unit_2d&);
 	vector_unit_2d sqrt_nth(const vector_unit_2d&,int);
 	scalar_unit dot_product(const vector_unit_2d&,const vector_unit_2d&);
-	msci::angle angle_between(const vector_unit_2d&,const vector_unit_2d&);
+	angle angle_between(const vector_unit_2d&,const vector_unit_2d&);
 	bool same_direction(const vector_unit_2d&,const vector_unit_2d&);
 	bool parallel(const vector_unit_2d&,const vector_unit_2d&);
 	bool orthogonal(const vector_unit_2d&,const vector_unit_2d&);

@@ -12,6 +12,7 @@ namespace msci
 	SCALAR_UNIT_HPP(distance);
 	VECTOR_UNIT_2D_HPP(displacement);
 	VECTOR_UNIT_3D_HPP(displacement);
+	VECTOR_UNIT_ND_HPP(displacement);
 	VECTOR_UNIT_HPP(velocity);
 	VECTOR_UNIT_HPP(acceleration);
 	VECTOR_UNIT_HPP(jerk);

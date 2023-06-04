@@ -41,10 +41,10 @@ int main()
 	cout << endl;
 	cout << "prefix: " << sizeof(msci::prefix) << endl;
 	cout << "abstract_dimension: " << sizeof(msci::abstract_dimension) << endl;
-	cout << "dimension: " << sizeof(msci::dimension) << endl;
+	cout << "dimension: " << sizeof(dimension) << endl;
 	cout << "abbreviation: " << sizeof(msci::abbreviation) << endl;
 	cout << endl;
-	cout << "angle: " << sizeof(msci::angle) << endl;
+	cout << "angle: " << sizeof(angle) << endl;
 	cout << "lab_number: " << sizeof(msci::lab_number) << endl;
 	cout << "unit_number: " << sizeof(msci::unit_number) << endl;
 	cout << endl;

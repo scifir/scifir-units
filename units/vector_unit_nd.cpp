@@ -23,11 +23,11 @@ namespace msci
 	{
 		for(const float& x_angle : new_angles)
 		{
-			angles.push_back(msci::angle(x_angle));
+			angles.push_back(angle(x_angle));
 		}
 	}
 	
-	vector_unit_nd::vector_unit_nd(float new_value,const string& init_dimensions,const vector<msci::angle>& new_angles) : scalar_unit(new_value,init_dimensions),angles(new_angles)
+	vector_unit_nd::vector_unit_nd(float new_value,const string& init_dimensions,const vector<angle>& new_angles) : scalar_unit(new_value,init_dimensions),angles(new_angles)
 	{}
 	
 	vector_unit_nd::vector_unit_nd(float new_value,const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions),angles()
@@ -37,11 +37,11 @@ namespace msci
 	{
 		for(const float& x_angle : new_angles)
 		{
-			angles.push_back(msci::angle(x_angle));
+			angles.push_back(angle(x_angle));
 		}
 	}
 	
-	vector_unit_nd::vector_unit_nd(float new_value,const vector<dimension>& new_dimensions,const vector<msci::angle>& new_angles) : scalar_unit(new_value,new_dimensions),angles(new_angles)
+	vector_unit_nd::vector_unit_nd(float new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles) : scalar_unit(new_value,new_dimensions),angles(new_angles)
 	{}
 	
 	vector_unit_nd::vector_unit_nd(const scalar_unit& x) : scalar_unit(x),angles()
@@ -51,11 +51,11 @@ namespace msci
 	{
 		for(const float& x_angle : new_angles)
 		{
-			angles.push_back(msci::angle(x_angle));
+			angles.push_back(angle(x_angle));
 		}
 	}
 	
-	vector_unit_nd::vector_unit_nd(const scalar_unit& x,const vector<msci::angle>& new_angles) : scalar_unit(x),angles(new_angles)
+	vector_unit_nd::vector_unit_nd(const scalar_unit& x,const vector<angle>& new_angles) : scalar_unit(x),angles(new_angles)
 	{}
 	
 	vector_unit_nd::vector_unit_nd(scalar_unit&& x)
@@ -65,22 +65,22 @@ namespace msci
 	{
 		for(const float& x_angle : new_angles)
 		{
-			angles.push_back(msci::angle(x_angle));
+			angles.push_back(angle(x_angle));
 		}
 	}
 	
-	vector_unit_nd::vector_unit_nd(scalar_unit&& x,const vector<msci::angle>& new_angles) : scalar_unit(x),angles(new_angles)
+	vector_unit_nd::vector_unit_nd(scalar_unit&& x,const vector<angle>& new_angles) : scalar_unit(x),angles(new_angles)
 	{}
 	
 	vector_unit_nd::vector_unit_nd(const string& init_scalar,const vector<float>& new_angles) : scalar_unit(init_scalar),angles()
 	{
 		for(const float& x_angle : new_angles)
 		{
-			angles.push_back(msci::angle(x_angle));
+			angles.push_back(angle(x_angle));
 		}
 	}
 	
-	vector_unit_nd::vector_unit_nd(const string& init_scalar,const vector<msci::angle>& new_angles) : scalar_unit(init_scalar),angles(new_angles)
+	vector_unit_nd::vector_unit_nd(const string& init_scalar,const vector<angle>& new_angles) : scalar_unit(init_scalar),angles(new_angles)
 	{}
 	
 	vector_unit_nd::vector_unit_nd(const string& init_vector_nd)
@@ -434,6 +434,26 @@ namespace msci
 		}
 	}
 	
+	float vector_unit_nd::n_projection(int i) const
+	{
+		if (i == 1)
+		{
+			return x_projection();
+		}
+		else if (i == 2)
+		{
+			return y_projection();
+		}
+		else if (i == 3)
+		{
+			return z_projection();
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	
 	float vector_unit_nd::x_projection() const
 	{
 		if (is_nd(1))
@@ -496,7 +516,7 @@ namespace msci
 	
 	void vector_unit_nd::invert()
 	{
-		for(msci::angle& x_angle : angles)
+		for(angle& x_angle : angles)
 		{
 			x_angle.invert();
 		}
@@ -550,9 +570,9 @@ namespace msci
 			}
 			vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions());
 			scalar_unit new_unit = scalar_unit(new_value, new_dimensions);
-			vector<msci::angle> angles;
-			angles.push_back(msci::angle(angle1));
-			angles.push_back(msci::angle(angle2));
+			vector<angle> angles;
+			angles.push_back(angle(angle1));
+			angles.push_back(angle(angle2));
 			return vector_unit_nd(new_unit, angles);
 		}
 		else
@@ -561,7 +581,7 @@ namespace msci
 		}
 	}
 
-	msci::angle angle_between(const vector_unit_nd& x,const vector_unit_nd& y)
+	angle angle_between(const vector_unit_nd& x,const vector_unit_nd& y)
 	{
 		return msci::acos(float(dot_product(x,y)/(norm(x) * norm(y))));
 	}

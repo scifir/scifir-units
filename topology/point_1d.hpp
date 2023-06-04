@@ -27,7 +27,7 @@ namespace msci
 
 			void set_position(const length&);
 
-			void move_in_direction(const length&);
+			void move(const length&);
 
 			length distance_to_origin() const;
 

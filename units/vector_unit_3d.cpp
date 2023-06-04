@@ -17,76 +17,76 @@ namespace msci
 	vector_unit_3d::vector_unit_3d(float new_value,const string& init_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(float new_value,const string& init_dimensions,const msci::angle& new_theta,float new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(float new_value,const string& init_dimensions,const angle& new_theta,float new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(float new_value,const string& init_dimensions,float new_theta,const msci::angle& new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(float new_value,const string& init_dimensions,float new_theta,const angle& new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(float new_value,const string& init_dimensions,const msci::angle& new_theta,const msci::angle& new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(float new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(float new_value,const string& init_dimensions,const vector<msci::angle>& new_angles) : scalar_unit(new_value,init_dimensions),theta(new_angles[0]),phi(new_angles[1])
+	vector_unit_3d::vector_unit_3d(float new_value,const string& init_dimensions,const vector<angle>& new_angles) : scalar_unit(new_value,init_dimensions),theta(new_angles[0]),phi(new_angles[1])
 	{}
 	
-	vector_unit_3d::vector_unit_3d(float new_value,const vector<msci::dimension>& new_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(float new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(float new_value,const vector<msci::dimension>& new_dimensions,const msci::angle& new_theta,float new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(float new_value,const vector<dimension>& new_dimensions,const angle& new_theta,float new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(float new_value,const vector<msci::dimension>& new_dimensions,float new_theta,const msci::angle& new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(float new_value,const vector<dimension>& new_dimensions,float new_theta,const angle& new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(float new_value,const vector<msci::dimension>& new_dimensions,const msci::angle& new_theta,const msci::angle& new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(float new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(float new_value,const vector<msci::dimension>& new_dimensions,const vector<msci::angle>& new_angles) : scalar_unit(new_value,new_dimensions),theta(new_angles[0]),phi(new_angles[1])
+	vector_unit_3d::vector_unit_3d(float new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles) : scalar_unit(new_value,new_dimensions),theta(new_angles[0]),phi(new_angles[1])
 	{}
 	
 	vector_unit_3d::vector_unit_3d(const scalar_unit& x,float new_theta,float new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(const scalar_unit& x,const msci::angle& new_theta,float new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(const scalar_unit& x,const angle& new_theta,float new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(const scalar_unit& x,float new_theta,const msci::angle& new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(const scalar_unit& x,float new_theta,const angle& new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(const scalar_unit& x,const msci::angle& new_theta,const msci::angle& new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(const scalar_unit& x,const angle& new_theta,const angle& new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(const scalar_unit& x,const vector<msci::angle>& new_angles) : scalar_unit(x),theta(new_angles[0]),phi(new_angles[1])
+	vector_unit_3d::vector_unit_3d(const scalar_unit& x,const vector<angle>& new_angles) : scalar_unit(x),theta(new_angles[0]),phi(new_angles[1])
 	{}
 	
 	vector_unit_3d::vector_unit_3d(scalar_unit&& x,float new_theta,float new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(scalar_unit&& x,const msci::angle& new_theta,float new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(scalar_unit&& x,const angle& new_theta,float new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(scalar_unit&& x,float new_theta,const msci::angle& new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(scalar_unit&& x,float new_theta,const angle& new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(scalar_unit&& x,const msci::angle& new_theta,const msci::angle& new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(scalar_unit&& x,const angle& new_theta,const angle& new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(scalar_unit&& x,const vector<msci::angle>& new_angles) : scalar_unit(x),theta(new_angles[0]),phi(new_angles[1])
+	vector_unit_3d::vector_unit_3d(scalar_unit&& x,const vector<angle>& new_angles) : scalar_unit(x),theta(new_angles[0]),phi(new_angles[1])
 	{}
 	
 	vector_unit_3d::vector_unit_3d(const string& init,float new_theta,float new_phi) : scalar_unit(init),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(const string& init,const msci::angle& new_theta,float new_phi) : scalar_unit(init),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(const string& init,const angle& new_theta,float new_phi) : scalar_unit(init),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(const string& init,float new_theta,const msci::angle& new_phi) : scalar_unit(init),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(const string& init,float new_theta,const angle& new_phi) : scalar_unit(init),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(const string& init,const msci::angle& new_theta,const msci::angle& new_phi) : scalar_unit(init),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(const string& init,const angle& new_theta,const angle& new_phi) : scalar_unit(init),theta(new_theta),phi(new_phi)
 	{}
 	
-	vector_unit_3d::vector_unit_3d(const string& init,const vector<msci::angle>& new_angles) : scalar_unit(init),theta(new_angles[0]),phi(new_angles[1])
+	vector_unit_3d::vector_unit_3d(const string& init,const vector<angle>& new_angles) : scalar_unit(init),theta(new_angles[0]),phi(new_angles[1])
 	{}
 	
 	vector_unit_3d::vector_unit_3d(const string& init_vector_3d) : scalar_unit()
@@ -94,8 +94,8 @@ namespace msci
 		vector<string> values;
 		boost::split(values,init_vector_3d,boost::is_any_of(" "));
 		set_from_string(values[0]);
-		theta = msci::angle(values[1]);
-		phi = msci::angle(values[2]);
+		theta = angle(values[1]);
+		phi = angle(values[2]);
 	}
 	
 
@@ -265,9 +265,9 @@ namespace msci
 	{
 		if(has_dimensions(y.get_derived_dimensions()))
 		{
-			float new_x = x_projection() + y.x_projection();
-			float new_y = y_projection() + y.y_projection();
-			float new_z = z_projection() + y.z_projection();
+			float new_x = float(x_projection() + y.x_projection());
+			float new_y = float(y_projection() + y.y_projection());
+			float new_z = float(z_projection() + y.z_projection());
 			scalar_unit::value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
 			theta = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
 			phi = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
@@ -359,7 +359,7 @@ namespace msci
 
 	scalar_unit dot_product(const vector_unit_3d& x, const vector_unit_3d& y)
 	{
-		float new_value = x.x_projection()*y.x_projection() + x.y_projection()*y.y_projection() + x.z_projection()*y.z_projection();
+		float new_value = float(x.x_projection()*y.x_projection() + x.y_projection()*y.y_projection() + x.z_projection()*y.z_projection());
 		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions());
 		return scalar_unit(new_value,new_dimensions);
 	}
@@ -377,9 +377,9 @@ namespace msci
 		}
 		else
 		{
-			float new_x = x.y_projection() * y.z_projection() - x.z_projection() * y.y_projection();
-			float new_y = x.z_projection() * y.x_projection() - x.x_projection() * y.z_projection();
-			float new_z = x.x_projection() * y.y_projection() - x.y_projection() * y.x_projection();
+			float new_x = float(x.y_projection() * y.z_projection() - x.z_projection() * y.y_projection());
+			float new_y = float(x.z_projection() * y.x_projection() - x.x_projection() * y.z_projection());
+			float new_z = float(x.x_projection() * y.y_projection() - x.y_projection() * y.x_projection());
 			new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
 			theta = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
 			phi = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
@@ -388,7 +388,7 @@ namespace msci
 		return vector_unit_3d(new_value, new_dimensions, theta, phi);
 	}
 
-	msci::angle angle_between(const vector_unit_3d& x,const vector_unit_3d& y)
+	angle angle_between(const vector_unit_3d& x,const vector_unit_3d& y)
 	{
 		return msci::acos(float(dot_product(x,y)/(norm(x)*norm(y))));
 	}

@@ -12,7 +12,7 @@ int main()
 	cout << "prefix a: " << prefix_a << endl;
 	cout << "prefix b: " << prefix_b << endl;
 
-	msci::dimension dimension_a = create_dimension("cm");
+	dimension dimension_a = create_dimension("cm");
 
 	cout << "dimension a: " << dimension_a << endl;
 

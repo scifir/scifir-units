@@ -2,12 +2,13 @@
 #define MSCI_UNITS_UNITS_VECTOR_UNIT_3D_HPP_INCLUDED
 
 #include "units/scalar_unit.hpp"
+#include "units/vector_unit_2d.hpp"
+#include "units/vector_unit_nd.hpp"
 #include "meca_number/angle.hpp"
 #include "util/is_number.hpp"
 #include "topology/direction.hpp"
 
 #include "boost/algorithm/string.hpp"
-#include "boost/variant.hpp"
 
 #include <cmath>
 #include <functional>
@@ -27,7 +28,7 @@
 
 #define	VECTOR_UNIT_3D_HPP_END() public: \
 		static const string dimensions_match; \
-		static const vector<msci::dimension> real_dimensions; \
+		static const vector<dimension> real_dimensions; \
 	}
 
 #define VECTOR_UNIT_3D_HPP(name) class name##_3d : public vector_unit_3d \
@@ -39,20 +40,24 @@
 			name##_3d(name##_3d&&); \
 \
 			static const string dimensions_match; \
-			static const vector<msci::dimension> real_dimensions; \
+			static const vector<dimension> real_dimensions; \
 	}
 
 #define VECTOR_UNIT_3D_CPP(name,init_dimensions) name##_3d::name##_3d() : vector_unit_3d() {} \
 	name##_3d::name##_3d(const name##_3d& x) : vector_unit_3d(x) {} \
 	name##_3d::name##_3d(name##_3d&& x) : vector_unit_3d(move(x)) {} \
 const string name##_3d::dimensions_match = init_dimensions; \
-const vector<msci::dimension> name##_3d::real_dimensions = create_derived_dimensions(init_dimensions)
+const vector<dimension> name##_3d::real_dimensions = create_derived_dimensions(init_dimensions)
 
 #define VECTOR_UNIT_HPP(name) SCALAR_UNIT_HPP(name); \
-VECTOR_UNIT_3D_HPP(name)
+VECTOR_UNIT_2D_HPP(name); \
+VECTOR_UNIT_3D_HPP(name); \
+VECTOR_UNIT_ND_HPP(name)
 
 #define VECTOR_UNIT_CPP(name,init_dimensions) SCALAR_UNIT_CPP(name,init_dimensions); \
-VECTOR_UNIT_3D_CPP(name,init_dimensions)
+VECTOR_UNIT_2D_CPP(name,init_dimensions); \
+VECTOR_UNIT_3D_CPP(name,init_dimensions); \
+VECTOR_UNIT_ND_CPP(name,init_dimensions)
 
 using namespace std;
 using namespace msci;
@@ -66,30 +71,30 @@ namespace msci
 			vector_unit_3d(const vector_unit_3d&);
 			vector_unit_3d(vector_unit_3d&&);
 			explicit vector_unit_3d(float,const string&,float,float);
-			explicit vector_unit_3d(float,const string&,const msci::angle&,float);
-			explicit vector_unit_3d(float,const string&,float,const msci::angle&);
-			explicit vector_unit_3d(float,const string&,const msci::angle&,const msci::angle&);
-			explicit vector_unit_3d(float,const string&,const vector<msci::angle>&);
-			explicit vector_unit_3d(float,const vector<msci::dimension>&,float,float);
-			explicit vector_unit_3d(float,const vector<msci::dimension>&,const msci::angle&,float);
-			explicit vector_unit_3d(float,const vector<msci::dimension>&,float,const msci::angle&);
-			explicit vector_unit_3d(float,const vector<msci::dimension>&,const msci::angle&,const msci::angle&);
-			explicit vector_unit_3d(float,const vector<msci::dimension>&,const vector<msci::angle>&);
+			explicit vector_unit_3d(float,const string&,const angle&,float);
+			explicit vector_unit_3d(float,const string&,float,const angle&);
+			explicit vector_unit_3d(float,const string&,const angle&,const angle&);
+			explicit vector_unit_3d(float,const string&,const vector<angle>&);
+			explicit vector_unit_3d(float,const vector<dimension>&,float,float);
+			explicit vector_unit_3d(float,const vector<dimension>&,const angle&,float);
+			explicit vector_unit_3d(float,const vector<dimension>&,float,const angle&);
+			explicit vector_unit_3d(float,const vector<dimension>&,const angle&,const angle&);
+			explicit vector_unit_3d(float,const vector<dimension>&,const vector<angle>&);
 			explicit vector_unit_3d(const scalar_unit&,float,float);
-			explicit vector_unit_3d(const scalar_unit&,const msci::angle&,float);
-			explicit vector_unit_3d(const scalar_unit&,float,const msci::angle&);
-			explicit vector_unit_3d(const scalar_unit&,const msci::angle&,const msci::angle&);
-			explicit vector_unit_3d(const scalar_unit&,const vector<msci::angle>&);
+			explicit vector_unit_3d(const scalar_unit&,const angle&,float);
+			explicit vector_unit_3d(const scalar_unit&,float,const angle&);
+			explicit vector_unit_3d(const scalar_unit&,const angle&,const angle&);
+			explicit vector_unit_3d(const scalar_unit&,const vector<angle>&);
 			explicit vector_unit_3d(scalar_unit&&,float,float);
-			explicit vector_unit_3d(scalar_unit&&,const msci::angle&,float);
-			explicit vector_unit_3d(scalar_unit&&,float,const msci::angle&);
-			explicit vector_unit_3d(scalar_unit&&,const msci::angle&,const msci::angle&);
-			explicit vector_unit_3d(scalar_unit&&,const vector<msci::angle>&);
+			explicit vector_unit_3d(scalar_unit&&,const angle&,float);
+			explicit vector_unit_3d(scalar_unit&&,float,const angle&);
+			explicit vector_unit_3d(scalar_unit&&,const angle&,const angle&);
+			explicit vector_unit_3d(scalar_unit&&,const vector<angle>&);
 			explicit vector_unit_3d(const string&,float,float);
-			explicit vector_unit_3d(const string&,const msci::angle&,float);
-			explicit vector_unit_3d(const string&,float,const msci::angle&);
-			explicit vector_unit_3d(const string&,const msci::angle&,const msci::angle&);
-			explicit vector_unit_3d(const string&,const vector<msci::angle>&);
+			explicit vector_unit_3d(const string&,const angle&,float);
+			explicit vector_unit_3d(const string&,float,const angle&);
+			explicit vector_unit_3d(const string&,const angle&,const angle&);
+			explicit vector_unit_3d(const string&,const vector<angle>&);
 			explicit vector_unit_3d(const string&); // Initialize "8N 30ª 50ª"
 
 			vector_unit_3d& operator =(const vector_unit_3d&);
@@ -159,19 +164,19 @@ namespace msci
 				scalar_unit::value ^= y;
 			}
 
-			inline float x_projection() const
+			inline vector_unit_3d x_projection() const
 			{
-				return scalar_unit::value * msci::cos(theta) * msci::sin(phi);
+				return vector_unit_3d(scalar_unit::value * msci::cos(theta) * msci::sin(phi),get_dimensions(),theta,phi);
 			}
 
-			inline float y_projection() const
+			inline vector_unit_3d y_projection() const
 			{
-				return scalar_unit::value * msci::sin(theta) * msci::sin(phi);
+				return vector_unit_3d(scalar_unit::value * msci::sin(theta) * msci::sin(phi),get_dimensions(),theta,phi);
 			}
 
-			inline float z_projection() const
+			inline vector_unit_3d z_projection() const
 			{
-				return scalar_unit::value * msci::cos(phi);
+				return vector_unit_3d(scalar_unit::value * msci::cos(phi),get_dimensions(),theta,phi);
 			}
 
 			inline void invert()
@@ -180,8 +185,8 @@ namespace msci
 				phi.invert();
 			}
 
-			msci::angle theta;
-			msci::angle phi;
+			angle theta;
+			angle phi;
 	};
 
 	string to_string(const vector_unit_3d&);
@@ -190,7 +195,7 @@ namespace msci
 	vector_unit_3d sqrt_nth(const vector_unit_3d&,int);
 	scalar_unit dot_product(const vector_unit_3d&,const vector_unit_3d&);
 	vector_unit_3d cross_product(const vector_unit_3d&,const vector_unit_3d&);
-	msci::angle angle_between(const vector_unit_3d&,const vector_unit_3d&);
+	angle angle_between(const vector_unit_3d&,const vector_unit_3d&);
 	bool same_direction(const vector_unit_3d&,const vector_unit_3d&);
 	bool parallel(const vector_unit_3d&,const vector_unit_3d&);
 	bool orthogonal(const vector_unit_3d&,const vector_unit_3d&);

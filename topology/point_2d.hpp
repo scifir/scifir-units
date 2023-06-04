@@ -18,7 +18,7 @@ namespace msci
 			point_2d(const point_2d&);
 			point_2d(point_2d&&);
 			point_2d(const length&,const length&);
-			point_2d(const length&,const msci::angle&);
+			point_2d(const length&,const angle&);
 			point_2d(const coordinates_2d&);
 			point_2d(string);
 
@@ -30,8 +30,9 @@ namespace msci
 			void set_position(const length&,const angle&);
 
 			void rotate(const angle&);
-			void move_in_direction(const displacement_2d&);
-			void move_in_direction(const length&,const msci::angle&);
+			void move(const displacement_2d&);
+			void move(const length&,const length&);
+			void move(const length&,const angle&);
 
 			length distance_to_origin() const;
 

@@ -14,7 +14,7 @@ namespace msci
 	coordinates_2dr::coordinates_2dr() : x(),y(),theta()
 	{}
 
-	coordinates_2dr::coordinates_2dr(const length& new_x,const length& new_y,const msci::angle& new_angle) : x(new_x),y(new_y),theta(msci::angle(new_angle))
+	coordinates_2dr::coordinates_2dr(const length& new_x,const length& new_y,const angle& new_angle) : x(new_x),y(new_y),theta(angle(new_angle))
 	{}
 
 	coordinates_2dr::coordinates_2dr(const string& init) : coordinates_2dr()
@@ -23,7 +23,7 @@ namespace msci
 		boost::split(values,init,boost::is_any_of(","));
 		x = length(values[0]);
 		y = length(values[1]);
-		theta = msci::angle(values[2].size() - 1);
+		theta = angle(values[2].size() - 1);
 	}
 
 	string to_string(const coordinates_2dr& x)

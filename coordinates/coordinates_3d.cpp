@@ -15,23 +15,23 @@ namespace msci
 	coordinates_3d::coordinates_3d(const coordinates_3d& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z)
 	{}
 	
-	coordinates_3d::coordinates_3d(coordinates_3d&& x_coordinates) : x(move(x_coordinates.x)),y(move(x_coordinates.y)),z(move(x_coordinates.z))
+	coordinates_3d::coordinates_3d(coordinates_3d&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z))
 	{}
 	
 	coordinates_3d::coordinates_3d(const length& new_x,const length& new_y,const length& new_z) : x(new_x),y(new_y),z(new_z)
 	{}
 	
-	coordinates_3d::coordinates_3d(const length& new_p,const msci::angle& new_theta,length new_z)
+	coordinates_3d::coordinates_3d(const length& new_p,const angle& new_theta,length new_z)
 	{
 		set_position(new_p,new_theta,new_z);
 	}
 	
-	coordinates_3d::coordinates_3d(const length& new_r,const msci::angle& new_theta,const msci::angle& new_phi)
+	coordinates_3d::coordinates_3d(const length& new_r,const angle& new_theta,const angle& new_phi)
 	{
 		set_position(new_r,new_theta,new_phi);
 	}
 	
-	coordinates_3d::coordinates_3d(const msci::angle& new_latitude,const msci::angle& new_longitude,const length& new_altitude)
+	coordinates_3d::coordinates_3d(const angle& new_latitude,const angle& new_longitude,const length& new_altitude)
 	{
 		set_position(new_latitude,new_longitude,new_altitude);
 	}
@@ -66,9 +66,9 @@ namespace msci
 	
 	coordinates_3d& coordinates_3d::operator=(coordinates_3d&& x_coordinates)
 	{
-		x = move(x_coordinates.x);
-		y = move(x_coordinates.y);
-		z = move(x_coordinates.z);
+		x = std::move(x_coordinates.x);
+		y = std::move(x_coordinates.y);
+		z = std::move(x_coordinates.z);
 		return *this;
 	}
 	
@@ -87,7 +87,7 @@ namespace msci
 
 	angle coordinates_3d::get_theta() const
 	{
-		return msci::angle(msci::atan_grade(float(y/x)));
+		return angle(msci::atan_grade(float(y/x)));
 	}
 
 	length coordinates_3d::get_r() const
@@ -97,7 +97,7 @@ namespace msci
 
 	angle coordinates_3d::get_phi() const
 	{
-		return msci::angle(msci::acos_grade(float(z/msci::sqrt(msci::pow(x,2) + msci::pow(y,2) + msci::pow(z,2)))));
+		return angle(msci::acos_grade(float(z/msci::sqrt(msci::pow(x,2) + msci::pow(y,2) + msci::pow(z,2)))));
 	}
 	
 	void coordinates_3d::set_position(const length& new_x,const length& new_y,const length& new_z)
@@ -107,7 +107,7 @@ namespace msci
 		z = new_z;
 	}
 	
-	void coordinates_3d::set_position(const length& new_p,const msci::angle& new_theta,length new_z)
+	void coordinates_3d::set_position(const length& new_p,const angle& new_theta,length new_z)
 	{
 		new_z.set_same_prefix(new_p);
 		x = length(new_p * msci::cos(new_theta));
@@ -115,14 +115,14 @@ namespace msci
 		z = new_z;
 	}
 	
-	void coordinates_3d::set_position(const length& new_r,const msci::angle& new_theta,const msci::angle& new_phi)
+	void coordinates_3d::set_position(const length& new_r,const angle& new_theta,const angle& new_phi)
 	{
 		x = length(new_r * msci::cos(new_theta) * msci::sin(new_phi));
 		y = length(new_r * msci::sin(new_theta) * msci::sin(new_phi));
 		z = length(new_r * msci::cos(new_phi));
 	}
 	
-	void coordinates_3d::set_position(const msci::angle& new_latitude,const msci::angle& new_longitude,const length& new_altitude)
+	void coordinates_3d::set_position(const angle& new_latitude,const angle& new_longitude,const length& new_altitude)
 	{
 		x = length(new_altitude * msci::cos(new_latitude) * msci::cos(new_longitude));
 		y = length(new_altitude * msci::cos(new_latitude) * msci::sin(new_longitude));
@@ -153,23 +153,33 @@ namespace msci
 		y = x_coord * msci::sin(x_angle) + y_coord * msci::cos(x_angle);
 	}
 	
-	void coordinates_3d::move_in_direction(const displacement_3d& x_displacement)
+	void coordinates_3d::move(const displacement_3d& x_displacement)
 	{
 		x += x_displacement.x_projection();
 		y += x_displacement.y_projection();
 		z += x_displacement.z_projection();
 	}
 	
-	void coordinates_3d::move_in_direction(const length& x_length,const msci::angle& x_theta,const msci::angle& x_phi)
+	void coordinates_3d::move(const length& new_x,const length& new_y,const length& new_z)
 	{
-		displacement_3d x_displacement = displacement_3d(x_length,x_theta,x_phi);
-		move_in_direction(x_displacement);
+		x += new_x;
+		y += new_y;
+		z += new_z;
 	}
 	
-	void coordinates_3d::move_in_direction(const length& x_length,float x_theta,float x_phi)
+	void coordinates_3d::move(const length& new_p,const angle& new_theta,length new_z)
 	{
-		displacement_3d x_displacement = displacement_3d(x_length,x_theta,x_phi);
-		move_in_direction(x_displacement);
+		new_z.set_same_prefix(new_p);
+		x += length(new_p * msci::cos(new_theta));
+		y += length(new_p * msci::sin(new_theta));
+		z += new_z;
+	}
+	
+	void coordinates_3d::move(const length& new_r,const angle& new_theta,const angle& new_phi)
+	{
+		x += length(new_r * msci::cos(new_theta) * msci::sin(new_phi));
+		y += length(new_r * msci::sin(new_theta) * msci::sin(new_phi));
+		z += length(new_r * msci::cos(new_phi));
 	}
 	
 	length coordinates_3d::distance_to_origin() const

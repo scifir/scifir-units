@@ -183,52 +183,52 @@ int main()
 
 void test_angle()
 {
-	msci::angle a = 40;
+	angle a = 40;
 	cout << a << endl;
 	cout << (a + 50) << endl;
 	cout << (a - 50) << endl;
 	cout << (a * 50) << endl;
 	cout << (a / 50) << endl;
 	cout << (a ^ 50) << endl;
-	msci::angle b = 50;
+	angle b = 50;
 	b = a;
 	b += 50;
 	cout << b << endl;
-	msci::angle c = 50;
+	angle c = 50;
 	c -= 234;
 	cout << c << endl;
-	msci::angle d = 50;
+	angle d = 50;
 	d *= 10;
 	cout << d << endl;
-	msci::angle e = 50;
+	angle e = 50;
 	e /= 10;
 	cout << e << endl;
-	msci::angle f = 50;
+	angle f = 50;
 	f ^= 2;
 	cout << f << endl;
 	cout << (e + f) << endl;
 	cout << (e - f) << endl;
-	msci::angle g = 50;
-	msci::angle h = 120;
+	angle g = 50;
+	angle h = 120;
 	g += h;
 	cout << g << endl;
-	msci::angle i = 50;
-	msci::angle j = 120;
+	angle i = 50;
+	angle j = 120;
 	i -= j;
 	cout << i << endl;
 	cout << "type-cast to float: " << float(i) << endl;
-	cout << "sin(angle): " << msci::sin(msci::angle(0)) << endl;
-	cout << "cos(angle): " << msci::cos(msci::angle(90)) << endl;
-	cout << "tan(angle): " << msci::tan(msci::angle(0)) << endl;
-	cout << "asin(angle): " << msci::asin(msci::angle(0)) << endl;
-	cout << "acos(angle): " << msci::acos(msci::angle(1)) << endl;
-	cout << "atan(angle): " << msci::atan(msci::angle(0)) << endl;
-	cout << "sinh(angle): " << msci::sinh(msci::angle(0)) << endl;
-	cout << "cosh(angle): " << msci::cosh(msci::angle(90)) << endl;
-	cout << "tanh(angle): " << msci::tanh(msci::angle(0)) << endl;
-	cout << "asinh(angle): " << msci::asinh(msci::angle(0)) << endl;
-	cout << "acosh(angle): " << msci::acosh(msci::angle(1)) << endl;
-	cout << "atanh(angle): " << msci::atanh(msci::angle(0)) << endl;
+	cout << "sin(angle): " << msci::sin(angle(0)) << endl;
+	cout << "cos(angle): " << msci::cos(angle(90)) << endl;
+	cout << "tan(angle): " << msci::tan(angle(0)) << endl;
+	cout << "asin(angle): " << msci::asin(angle(0)) << endl;
+	cout << "acos(angle): " << msci::acos(angle(1)) << endl;
+	cout << "atan(angle): " << msci::atan(angle(0)) << endl;
+	cout << "sinh(angle): " << msci::sinh(angle(0)) << endl;
+	cout << "cosh(angle): " << msci::cosh(angle(90)) << endl;
+	cout << "tanh(angle): " << msci::tanh(angle(0)) << endl;
+	cout << "asinh(angle): " << msci::asinh(angle(0)) << endl;
+	cout << "acosh(angle): " << msci::acosh(angle(1)) << endl;
+	cout << "atanh(angle): " << msci::atanh(angle(0)) << endl;
 }
 
 void test_atom()

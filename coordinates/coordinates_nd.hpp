@@ -1,14 +1,14 @@
 #ifndef MSCI_UNITS_COORDINATES_COORDINATES_ND_HPP_INCLUDED
 #define MSCI_UNITS_COORDINATES_COORDINATES_ND_HPP_INCLUDED
 
-#include "meca_number/angle.hpp"
-#include "coordinates/coordinates_3d.hpp"
-#include "topology/direction.hpp"
+#include "topology/point_nd.hpp"
+
+#include "predefined_units/kinematics_units.hpp"
 #include "units.hpp"
 
-#include "boost/variant.hpp"
-
-#include <list>
+#include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
@@ -20,37 +20,58 @@ namespace msci
 			coordinates_nd();
 			coordinates_nd(const coordinates_nd&);
 			coordinates_nd(coordinates_nd&&);
-			coordinates_nd(float,const string&);
-			coordinates_nd(float,const string&,const vector<float>&);
-			coordinates_nd(float,const string&,const vector<msci::angle>&);
+			coordinates_nd(const vector<length>&);
 			coordinates_nd(const length&);
-			coordinates_nd(const length&,const vector<float>&);
-			coordinates_nd(const length&,const vector<msci::angle>&);
-			coordinates_nd(length&&);
-			coordinates_nd(length&&,const vector<float>&);
-			coordinates_nd(length&&,const vector<msci::angle>&);
-			coordinates_nd(const string&,const vector<float>&);
-			coordinates_nd(const string&,const vector<msci::angle>&);
-			coordinates_nd(const string&);
+			coordinates_nd(const length&,const length&);
+			coordinates_nd(const length&,const angle&);
+			coordinates_nd(const length&,const length&,const length&);
+			coordinates_nd(const length&,const angle&,length);
+			coordinates_nd(const length&,const angle&,const angle&);
+			coordinates_nd(const angle&,const angle&,const length&);
+			coordinates_nd(const point_nd&);
+			coordinates_nd(string);
 
-			length n_projection(int) const;
-			bool is_nd(int) const;
+			coordinates_nd& operator=(const coordinates_nd&);
+			coordinates_nd& operator=(coordinates_nd&&);
+			coordinates_nd& operator=(const point_nd&);
+			
+			bool is_nd(int i) const;
 			int get_nd() const;
 
-			length x_projection() const;
-			length y_projection() const;
-			length z_projection() const;
+			void set_position(const length&);
+			void set_position(const length&,const length&);
+			void set_position(const length&,const angle&);
+			void set_position(const length&,const length&,const length&);
+			void set_position(const length&,const angle&,length);
+			void set_position(const length&,const angle&,const angle&);
+			void set_position(const angle&,const angle&,const length&);
+			void set_position(const vector<length>&);
 
-			void invert();
+			void rotate(int,int,const angle&);
+			void move(const length&);
+			void move(const displacement_2d&);
+			void move(const length&,const length&);
+			void move(const length&,const angle&);
+			void move(const displacement_3d&);
+			void move(const length&,const length&,const length&);
+			void move(const length&,const angle&,length);
+			void move(const length&,const angle&,const angle&);
+			void move(const displacement_nd&);
+			void move(const length&,const vector<angle>&);
 
-			void convert_cartesian_2d(float, float);
-			void convert_polar(float, const msci::angle&);
-			void convert_cartesian_3d(const length&, const length&, const length&);
-			void convert_cylindrical(const length&, const msci::angle&, const length&);
+			length distance_to_origin() const;
 
-			length r;
-			vector<msci::angle> angles;
+			vector<length> values;
 	};
+
+	string to_string(const coordinates_nd&);
+	length distance(const coordinates_nd&,const coordinates_nd&);
 }
+
+bool operator ==(const msci::coordinates_nd&,const msci::coordinates_nd&);
+bool operator !=(const msci::coordinates_nd&,const msci::coordinates_nd&);
+
+ostream& operator <<(ostream&,const msci::coordinates_nd&);
+istream& operator >>(istream&, msci::coordinates_nd&);
 
 #endif // MSCI_UNITS_COORDINATES_COORDINATES_ND_HPP_INCLUDED
