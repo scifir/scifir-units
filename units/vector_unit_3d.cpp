@@ -269,8 +269,8 @@ namespace msci
 			float new_y = y_projection() + y.y_projection();
 			float new_z = z_projection() + y.z_projection();
 			scalar_unit::value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
-			theta = cartesian_3d_to_spherical_angle1(new_x, new_y, new_z);
-			phi = cartesian_3d_to_spherical_angle2(new_x, new_y, new_z);
+			theta = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
+			phi = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
 		}
 		else
 		{
@@ -342,7 +342,7 @@ namespace msci
 
 	scalar_unit norm(const vector_unit_3d& x)
 	{
-		return scalar_unit(x.get_value(),x.get_dimensions());
+		return scalar_unit(std::abs(x.get_value()),x.get_dimensions());
 	}
 
 	vector_unit_3d sqrt(const vector_unit_3d& x)
@@ -381,8 +381,8 @@ namespace msci
 			float new_y = x.z_projection() * y.x_projection() - x.x_projection() * y.z_projection();
 			float new_z = x.x_projection() * y.y_projection() - x.y_projection() * y.x_projection();
 			new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
-			theta = cartesian_3d_to_spherical_angle1(new_x, new_y, new_z);
-			phi = cartesian_3d_to_spherical_angle2(new_x, new_y, new_z);
+			theta = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
+			phi = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
 		}
 		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions());
 		return vector_unit_3d(new_value, new_dimensions, theta, phi);

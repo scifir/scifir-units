@@ -171,15 +171,15 @@ namespace msci
 	{
 		r = msci::sqrt(msci::pow(x,2) + msci::pow(y,2) + msci::pow(z,2));
 		angles.empty();
-		angles[0] = cartesian_3d_to_spherical_angle1(float(x),float(y),float(z));
-		angles[1] = cartesian_3d_to_spherical_angle2(float(x),float(y),float(z));
+		angles[0] = cartesian_3d_to_spherical_theta(float(x),float(y),float(z));
+		angles[1] = cartesian_3d_to_spherical_phi(float(x),float(y),float(z));
 	}
 
 	void coordinates_nd::convert_cylindrical(const length& x,const msci::angle& y,const length& z)
 	{
 		r = length(cylindrical_to_spherical_r(float(x),y,float(z)),"m");
 		angles.empty();
-		angles[0] = cylindrical_to_spherical_angle1(float(x),y,float(z));
-		angles[1] = cylindrical_to_spherical_angle2(float(x),y,float(z));
+		angles[0] = cylindrical_to_spherical_theta(float(x),y,float(z));
+		angles[1] = cylindrical_to_spherical_phi(float(x),y,float(z));
 	}
 }

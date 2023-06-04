@@ -68,7 +68,7 @@ namespace msci
 		return std::sqrt(std::pow(x,2) + std::pow(y,2));
 	}
 
-	inline float cartesian_3d_to_cylindrical_angle(float x,float y,float z)
+	inline float cartesian_3d_to_cylindrical_theta(float x,float y,float z)
 	{
 		return std::atan(y/x);
 	}
@@ -83,12 +83,12 @@ namespace msci
 		return std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2));
 	}
 
-	inline float cartesian_3d_to_spherical_angle1(float x,float y,float z)
+	inline float cartesian_3d_to_spherical_theta(float x,float y,float z)
 	{
 		return std::atan(y/x);
 	}
 
-	inline float cartesian_3d_to_spherical_angle2(float x,float y,float z)
+	inline float cartesian_3d_to_spherical_phi(float x,float y,float z)
 	{
 		return std::acos(z/std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)));
 	}
@@ -113,7 +113,7 @@ namespace msci
 		return r * msci::sin(angle2);
 	}
 
-	inline float spherical_to_cylindrical_angle(float r,const angle& angle1, const angle& angle2)
+	inline float spherical_to_cylindrical_theta(float r,const angle& angle1, const angle& angle2)
 	{
 		return angle1.get_value();
 	}
@@ -143,16 +143,19 @@ namespace msci
 		return std::sqrt(std::pow(r,2) + std::pow(z,2));
 	}
 
-	inline float cylindrical_to_spherical_angle1(float r,const angle& angle, float z)
+	inline float cylindrical_to_spherical_theta(float r,const angle& angle, float z)
 	{
 		return angle.get_value();
 	}
 
-	inline float cylindrical_to_spherical_angle2(float r,const angle& angle, float z)
+	inline float cylindrical_to_spherical_phi(float r,const angle& angle, float z)
 	{
 		return std::atan(r/z);
 	}
 }
+
+string operator +(const string&,const msci::coordinates_3d&);
+string operator +(const msci::coordinates_3d&,const string&);
 
 bool operator ==(const msci::coordinates_3d&,const msci::coordinates_3d&);
 bool operator !=(const msci::coordinates_3d&,const msci::coordinates_3d&);

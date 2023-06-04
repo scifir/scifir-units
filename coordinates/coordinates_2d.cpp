@@ -1,7 +1,5 @@
 #include "coordinates/coordinates_2d.hpp"
 
-#include "util/types.hpp"
-
 #include <cmath>
 #include <sstream>
 
@@ -204,12 +202,12 @@ bool operator !=(const msci::point_2d& x,const msci::coordinates_2d& y)
 	return !(x == y);
 }
 
-ostream& operator << (ostream& os, const msci::coordinates_2d& x)
+ostream& operator << (ostream& os,const msci::coordinates_2d& x)
 {
 	return os << to_string(x);
 }
 
-istream& operator >>(istream& is, msci::coordinates_2d& x)
+istream& operator >>(istream& is,msci::coordinates_2d& x)
 {
 	char a[256];
 	is.getline(a, 256);

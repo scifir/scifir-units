@@ -313,8 +313,8 @@ namespace msci
 			{
 				float new_x = x_projection() + y.x_projection();
 				float new_y = y_projection() + y.y_projection();
-				scalar_unit::value = coordinates_2d_to_polar_r(new_x, new_y);
-				angles[0] = coordinates_2d_to_polar_angle(new_x, new_y);
+				scalar_unit::value = cartesian_2d_to_polar_r(new_x, new_y);
+				angles[0] = cartesian_2d_to_polar_theta(new_x, new_y);
 			}
 			else if(is_nd(3))
 			{
@@ -322,8 +322,8 @@ namespace msci
 				float new_y = y_projection() + y.y_projection();
 				float new_z = z_projection() + y.z_projection();
 				scalar_unit::value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
-				angles[0] = cartesian_3d_to_spherical_angle1(new_x, new_y, new_z);
-				angles[1] = cartesian_3d_to_spherical_angle2(new_x, new_y, new_z);
+				angles[0] = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
+				angles[1] = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
 			}
 		}
 		else
@@ -504,7 +504,7 @@ namespace msci
 
 	scalar_unit norm(const vector_unit_nd& x)
 	{
-		return scalar_unit(x.get_value(),x.get_dimensions());
+		return scalar_unit(std::abs(x.get_value()),x.get_dimensions());
 	}
 
 	vector_unit_nd sqrt(const vector_unit_nd& x)
@@ -545,8 +545,8 @@ namespace msci
 				float new_y = x.z_projection() * y.x_projection() - x.x_projection() * y.z_projection();
 				float new_z = x.x_projection() * y.y_projection() - x.y_projection() * y.x_projection();
 				new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
-				angle1 = cartesian_3d_to_spherical_angle1(new_x, new_y, new_z);
-				angle2 = cartesian_3d_to_spherical_angle2(new_x, new_y, new_z);
+				angle1 = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
+				angle2 = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
 			}
 			vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions());
 			scalar_unit new_unit = scalar_unit(new_value, new_dimensions);

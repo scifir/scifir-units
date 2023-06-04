@@ -11,7 +11,7 @@ using namespace std;
 namespace msci
 {
 	class coordinates_3d;
-	
+
 	class point_3d
 	{
 		public:
@@ -24,16 +24,16 @@ namespace msci
 			point_3d(const msci::angle&,const msci::angle&,const length&);
 			point_3d(const coordinates_3d&);
 			point_3d(string);
-			
+
 			point_3d& operator=(const point_3d&);
 			point_3d& operator=(point_3d&&);
 			point_3d& operator=(const coordinates_3d&);
-			
+
 			void set_position(const length&,const length&,const length&);
 			void set_position(const length&,const msci::angle&,length);
 			void set_position(const length&,const msci::angle&,const msci::angle&);
 			void set_position(const msci::angle&,const msci::angle&,const length&);
-			
+
 			void rotate_in_x(const angle&);
 			void rotate_in_y(const angle&);
 			void rotate_in_z(const angle&);

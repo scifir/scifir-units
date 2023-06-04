@@ -10,7 +10,7 @@ using namespace std;
 namespace msci
 {
 	class coordinates_2d;
-	
+
 	class point_2d
 	{
 		public:
@@ -32,7 +32,6 @@ namespace msci
 			void rotate(const angle&);
 			void move_in_direction(const displacement_2d&);
 			void move_in_direction(const length&,const msci::angle&);
-			void move_in_direction(const length&,float);
 
 			length distance_to_origin() const;
 

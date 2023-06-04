@@ -97,11 +97,6 @@ namespace msci
 		x = x + x_value * msci::cos(x_angle);
 		y = y + x_value * msci::sin(x_angle);
 	}
-	
-	void point_2d::move_in_direction(const length& x_value,float x_angle)
-	{
-		move_in_direction(x_value,angle(x_angle));
-	}
 
 	length point_2d::distance_to_origin() const
 	{

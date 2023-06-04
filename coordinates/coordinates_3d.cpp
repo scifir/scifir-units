@@ -1,7 +1,5 @@
 #include "coordinates/coordinates_3d.hpp"
 
-#include "util/types.hpp"
-
 #include <sstream>
 #include <vector>
 
@@ -200,6 +198,16 @@ namespace msci
 	{
 		return msci::sqrt(msci::pow(x.x - y.x,2) + msci::pow(x.y - y.y,2) + msci::pow(x.z - y.z,2));
 	}
+}
+
+string operator +(const string& x,const msci::coordinates_3d& y)
+{
+	return x + to_string(y);
+}
+
+string operator +(const msci::coordinates_3d& x,const string& y)
+{
+	return to_string(x) + y;
 }
 
 bool operator ==(const msci::coordinates_3d& x,const msci::coordinates_3d& y)
