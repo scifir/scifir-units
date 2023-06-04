@@ -71,7 +71,7 @@ namespace msci
 		return msci::sqrt(msci::pow(x,2) + msci::pow(y,2));
 	}
 
-	angle coordinates_2d::get_angle() const
+	angle coordinates_2d::get_theta() const
 	{
 		return angle(std::atan2(y.get_value(),x.get_value()));
 	}

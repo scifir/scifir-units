@@ -29,7 +29,7 @@ namespace msci
 			coordinates_2d& operator=(const point_2d&);
 
 			length get_p() const;
-			angle get_angle() const;
+			angle get_theta() const;
 			
 			void set_position(const length&,const length&);
 			void set_position(const length&,const angle&);

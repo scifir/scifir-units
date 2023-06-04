@@ -37,6 +37,11 @@ namespace msci
 			
 			bool is_nd(int i) const;
 			int get_nd() const;
+			
+			length get_p() const;
+			angle get_theta() const;
+			length get_r() const;
+			angle get_phi() const;
 
 			void set_position(const length&);
 			void set_position(const length&,const length&);

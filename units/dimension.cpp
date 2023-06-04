@@ -14,20 +14,34 @@ using namespace std;
 namespace msci
 {
 	dimension::dimension() : prefix(),dimension_type(),dimension_sign()
-	{
-	}
+	{}
+	
+	dimension::dimension(const dimension& x) : prefix(x.prefix),dimension_type(x.dimension_type),dimension_sign(x.dimension_sign)
+	{}
+	
+	dimension::dimension(dimension&& x) : prefix(move(x.prefix)),dimension_type(move(x.dimension_type)),dimension_sign(move(x.dimension_sign))
+	{}
 
 	dimension::dimension(dimension::type new_dimension_type,msci::prefix::type new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign)
-	{
-	}
+	{}
 
 	dimension::dimension(dimension::type new_dimension_type,const msci::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign)
-	{
-	}
+	{}
 
-	dimension dimension::operator= (const dimension& x)
+	dimension& dimension::operator=(const dimension& x)
 	{
-		return dimension(x.dimension_type,x.prefix,x.dimension_sign);
+		prefix = x.prefix;
+		dimension_type = x.dimension_type;
+		dimension_sign = x.dimension_sign;
+		return *this;
+	}
+	
+	dimension& dimension::operator=(dimension&& x)
+	{
+		prefix = move(x.prefix);
+		dimension_type = move(x.dimension_type);
+		dimension_sign = move(x.dimension_sign);
+		return *this;
 	}
 
 	string dimension::get_name() const

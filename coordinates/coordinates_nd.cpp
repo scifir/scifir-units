@@ -103,6 +103,54 @@ namespace msci
 		return (values.size() + 1);
 	}
 	
+	length coordinates_nd::get_p() const
+	{
+		if (get_nd() == 2 or get_nd() == 3)
+		{
+			return msci::sqrt(msci::pow(values[0],2) + msci::pow(values[1],2));
+		}
+		else
+		{
+			return length();
+		}
+	}
+	
+	angle coordinates_nd::get_theta() const
+	{
+		if (get_nd() == 2 or get_nd() == 3)
+		{
+			return angle(msci::atan_grade(float(values[1]/values[0])));
+		}
+		else
+		{
+			return angle();
+		}
+	}
+	
+	length coordinates_nd::get_r() const
+	{
+		if (get_nd() == 2 or get_nd() == 3)
+		{
+			return msci::sqrt(msci::pow(values[0],2) + msci::pow(values[1],2) + msci::pow(values[2],2));
+		}
+		else
+		{
+			return length();
+		}
+	}
+	
+	angle coordinates_nd::get_phi() const
+	{
+		if (get_nd() == 3)
+		{
+			return angle(msci::acos_grade(float(values[2]/msci::sqrt(msci::pow(values[0],2) + msci::pow(values[1],2) + msci::pow(values[2],2)))));
+		}
+		else
+		{
+			return angle();
+		}
+	}
+	
 	void coordinates_nd::set_position(const length& new_x)
 	{
 		values.empty();

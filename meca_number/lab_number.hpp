@@ -28,14 +28,14 @@ namespace msci
 			explicit lab_number(T x,T y) : value(x),error_value(y)
 			{}
 			
-			lab_number<T>& operator =(const lab_number<T>& x)
+			lab_number<T>& operator=(const lab_number<T>& x)
 			{
 				value = x.value;
 				error_value = x.error_value;
 				return *this;
 			}
 			
-			lab_number<T>& operator =(lab_number<T>&& x)
+			lab_number<T>& operator=(lab_number<T>&& x)
 			{
 				value = move(x.value);
 				error_value = move(x.error_value);

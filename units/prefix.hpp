@@ -16,18 +16,20 @@ namespace msci
 			enum type {no_prefix,Y,Z,E,P,T,G,M,k,h,da,d,c,m,u,n,p,f,a,z,y};
 
 			prefix();
-			prefix(prefix::type);
-			prefix(const string&);
-
 			prefix(const prefix&);
 			prefix(prefix&&);
+			prefix(prefix::type);
+			prefix(const string&);
+			
+			prefix& operator=(const prefix&);
+			prefix& operator=(prefix&&);
 
 			int get_conversion_factor() const;
 			float get_prefix_base() const;
 			string get_name() const;
 			string get_symbol() const;
 
-			const prefix::type prefix_type;
+			prefix::type prefix_type;
 	};
 
 	prefix::type prefix_string(const string&);

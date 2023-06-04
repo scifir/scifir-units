@@ -23,10 +23,13 @@ namespace msci
 			enum sign {positive,negative};
 
 			dimension();
+			dimension(const dimension&);
+			dimension(dimension&&);
 			dimension(dimension::type,msci::prefix::type,dimension::sign);
 			dimension(dimension::type,const msci::prefix&,dimension::sign);
 
-			dimension operator = (const dimension&);
+			dimension& operator=(const dimension&);
+			dimension& operator=(dimension&&);
 
 			string get_name() const;
 			string get_symbol() const;
@@ -42,7 +45,7 @@ namespace msci
 			void invert();
 
 			msci::prefix prefix;
-			const dimension::type dimension_type;
+			dimension::type dimension_type;
 			dimension::sign dimension_sign;
 	};
 

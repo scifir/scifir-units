@@ -9,23 +9,30 @@ using namespace std;
 namespace msci
 {
 	prefix::prefix(): prefix_type()
-	{
-	}
-
-	prefix::prefix(prefix::type new_type) : prefix_type(new_type)
-	{
-	}
-
-	prefix::prefix(const string& new_type) : prefix_type(prefix_string(new_type))
-	{
-	}
-
+	{}
+	
 	prefix::prefix(const prefix& x) : prefix_type(x.prefix_type)
-	{
-	}
+	{}
 
 	prefix::prefix(prefix&& x) : prefix_type(move(x.prefix_type))
+	{}
+
+	prefix::prefix(prefix::type new_type) : prefix_type(new_type)
+	{}
+
+	prefix::prefix(const string& new_type) : prefix_type(prefix_string(new_type))
+	{}
+	
+	prefix& prefix::operator=(const prefix& x)
 	{
+		prefix_type = x.prefix_type;
+		return *this;
+	}
+	
+	prefix& prefix::operator=(prefix&& x)
+	{
+		prefix_type = move(x.prefix_type);
+		return *this;
 	}
 
 	int prefix::get_conversion_factor() const
