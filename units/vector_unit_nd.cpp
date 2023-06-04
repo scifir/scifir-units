@@ -83,8 +83,16 @@ namespace msci
 	vector_unit_nd::vector_unit_nd(const string& init_scalar,const vector<angle>& new_angles) : scalar_unit(init_scalar),angles(new_angles)
 	{}
 	
-	vector_unit_nd::vector_unit_nd(const string& init_vector_nd)
-	{}
+	vector_unit_nd::vector_unit_nd(const string& init_vector_nd) : scalar_unit(),angles()
+	{
+		vector<string> values;
+		boost::split(values,init_vector_nd,boost::is_any_of(" "));
+		set_from_string(values[0]);
+		for (int i = 1; i < values.size(); i++)
+		{
+			angles.push_back(angle(values[i]));
+		}
+	}
 
 	vector_unit_nd& vector_unit_nd::operator =(const vector_unit_nd& x)
 	{
@@ -635,18 +643,12 @@ namespace msci
 	}
 }
 
-bool operator ==(const msci::vector_unit_nd& x, const msci::vector_unit_nd& y)
+bool operator ==(const vector_unit_nd& x, vector_unit_nd y)
 {
-	if(msci::same_nd(x, y))
+	y.set_same_prefix(x);
+	if(x.get_value() == y.get_value() and msci::same_direction(x,y))
 	{
-		if(x.get_value() == y.get_value() and msci::same_direction(x, y))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return true;
 	}
 	else
 	{
@@ -654,19 +656,41 @@ bool operator ==(const msci::vector_unit_nd& x, const msci::vector_unit_nd& y)
 	}
 }
 
-bool operator !=(const msci::vector_unit_nd& x, const msci::vector_unit_nd& y)
+bool operator !=(const vector_unit_nd& x, const vector_unit_nd& y)
 {
 	return !(x == y);
 }
 
-void operator +=(string& x, const msci::vector_unit_nd& y)
+bool operator ==(const vector_unit_nd& x, const string& y)
+{
+	vector_unit_nd y_vector = vector_unit_nd(y);
+	return (x == y_vector);
+}
+
+bool operator !=(const vector_unit_nd& x, const string& y)
+{
+	return !(x == y);
+}
+
+bool operator ==(const string& x, const vector_unit_nd& y)
+{
+	vector_unit_nd x_vector = vector_unit_nd(x);
+	return (x_vector == y);
+}
+
+bool operator !=(const string& x, const vector_unit_nd& y)
+{
+	return !(x == y);
+}
+
+void operator +=(string& x, const vector_unit_nd& y)
 {
 	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-string operator +(const string& x, const msci::vector_unit_nd& y)
+string operator +(const string& x, const vector_unit_nd& y)
 {
 	ostringstream output;
 	output << x;
@@ -674,7 +698,7 @@ string operator +(const string& x, const msci::vector_unit_nd& y)
 	return output.str();
 }
 
-string operator +(const msci::vector_unit_nd& y, const string& x)
+string operator +(const vector_unit_nd& y, const string& x)
 {
 	ostringstream output;
 	output << y;
@@ -682,7 +706,7 @@ string operator +(const msci::vector_unit_nd& y, const string& x)
 	return output.str();
 }
 
-ostream& operator <<(ostream& os, const msci::vector_unit_nd& x)
+ostream& operator <<(ostream& os, const vector_unit_nd& x)
 {
 	ostringstream angles_text;
 	if (!x.is_nd(1))
@@ -696,7 +720,7 @@ ostream& operator <<(ostream& os, const msci::vector_unit_nd& x)
 	return os << x.get_value() << " " << x.display_dimensions() << " " << angles_text.str().substr(0,-1);
 }
 
-istream& operator >>(istream& is, msci::vector_unit_nd& x)
+istream& operator >>(istream& is, vector_unit_nd& x)
 {
 	char a[256];
 	is.getline(a, 256);

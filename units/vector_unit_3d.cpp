@@ -430,9 +430,10 @@ namespace msci
 	}
 }
 
-bool operator ==(const vector_unit_3d& x, const vector_unit_3d& y)
+bool operator ==(const vector_unit_3d& x, vector_unit_3d y)
 {
-	if(x.get_value() == y.get_value() and msci::same_direction(x, y))
+	y.set_same_prefix(x);
+	if(x.get_value() == y.get_value() and msci::same_direction(x,y))
 	{
 		return true;
 	}
@@ -443,6 +444,28 @@ bool operator ==(const vector_unit_3d& x, const vector_unit_3d& y)
 }
 
 bool operator !=(const vector_unit_3d& x, const vector_unit_3d& y)
+{
+	return !(x == y);
+}
+
+bool operator ==(const vector_unit_3d& x, const string& y)
+{
+	vector_unit_3d y_vector = vector_unit_3d(y);
+	return (x == y_vector);
+}
+
+bool operator !=(const vector_unit_3d& x, const string& y)
+{
+	return !(x == y);
+}
+
+bool operator ==(const string& x, const vector_unit_3d& y)
+{
+	vector_unit_3d x_vector = vector_unit_3d(x);
+	return (x_vector == y);
+}
+
+bool operator !=(const string& x, const vector_unit_3d& y)
 {
 	return !(x == y);
 }

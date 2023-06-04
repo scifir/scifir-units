@@ -70,6 +70,9 @@ MSCI UNITS - VERSION 2
 // TODO: complete color class like coordinate classes, with all the getters of all the different color versions
 // TODO: support currency dimension
 // TODO: document a little how to handle currency
+// TODO: document the ISOs important to use with this library
+// TODO: object geographic location, using my ISO of geographic location
+// TODO: study the geographic coordinates deeply, and see if to add something more related to them
 
 // MECA NUMBERS
 // TODO: add the allowed typenames to lab_number, and don't accept any other type
@@ -101,8 +104,9 @@ MSCI UNITS - VERSION 2
 
 // FUTURE
 // TODO: support the case of n dimensions fixed
-// TODO: support the case of n dimensions dynamical, by allowing to change the number of dimensions for the same instance. It can be useful for some sci-fi applications
 // TODO: add the theta and phi characters to C++ variable names, and add them then to the member-variables of vector_unit classes, and any other case of similar use
+// TODO: add the astronomy coordinates
+// TODO: add the other orthogonal coordinates, like paraboloidal
 
 // FUTURE - MECA NUMBERS (POSSIBLE, THINK)
 // TODO: Add names to the meca numbers (angler, laber, etc)

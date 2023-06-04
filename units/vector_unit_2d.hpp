@@ -157,26 +157,14 @@ namespace msci
 	bool orthogonal(const vector_unit_2d&,const vector_unit_2d&);
 }
 
-bool operator ==(const vector_unit_2d&, const vector_unit_2d&);
+bool operator ==(const vector_unit_2d&, vector_unit_2d);
 bool operator !=(const vector_unit_2d&, const vector_unit_2d&);
-bool operator <(const vector_unit_2d&, const vector_unit_2d&);
-bool operator >(const vector_unit_2d&, const vector_unit_2d&);
-bool operator <=(const vector_unit_2d&, const vector_unit_2d&);
-bool operator >=(const vector_unit_2d&, const vector_unit_2d&);
 
 bool operator ==(const vector_unit_2d&, const string&);
 bool operator !=(const vector_unit_2d&, const string&);
-bool operator <(const vector_unit_2d&, const string&);
-bool operator >(const vector_unit_2d&, const string&);
-bool operator <=(const vector_unit_2d&, const string&);
-bool operator >=(const vector_unit_2d&, const string&);
 
 bool operator ==(const string&, const vector_unit_2d&);
 bool operator !=(const string&, const vector_unit_2d&);
-bool operator <(const string&, const vector_unit_2d&);
-bool operator >(const string&, const vector_unit_2d&);
-bool operator <=(const string&, const vector_unit_2d&);
-bool operator >=(const string&, const vector_unit_2d&);
 
 void operator +=(string&, const vector_unit_2d&);
 string operator +(const string&, const vector_unit_2d&);

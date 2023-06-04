@@ -204,19 +204,42 @@ namespace msci
 	}
 }
 
-bool operator ==(const vector_unit_2d& x, const vector_unit_2d& y)
+bool operator ==(const vector_unit_2d& x, vector_unit_2d y)
 {
-		if(x.get_value() == y.get_value() and msci::same_direction(x, y))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+	y.set_same_prefix(x);
+	if(x.get_value() == y.get_value() and msci::same_direction(x,y))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 bool operator !=(const vector_unit_2d& x, const vector_unit_2d& y)
+{
+	return !(x == y);
+}
+
+bool operator ==(const vector_unit_2d& x, const string& y)
+{
+	vector_unit_2d y_vector = vector_unit_2d(y);
+	return (x == y_vector);
+}
+
+bool operator !=(const vector_unit_2d& x, const string& y)
+{
+	return !(x == y);
+}
+
+bool operator ==(const string& x, const vector_unit_2d& y)
+{
+	vector_unit_2d x_vector = vector_unit_2d(x);
+	return (x_vector == y);
+}
+
+bool operator !=(const string& x, const vector_unit_2d& y)
 {
 	return !(x == y);
 }

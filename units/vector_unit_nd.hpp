@@ -172,13 +172,21 @@ namespace msci
 	bool orthogonal(const vector_unit_nd&,const vector_unit_nd&);
 }
 
-bool operator ==(const msci::vector_unit_nd&,const msci::vector_unit_nd&);
-bool operator !=(const msci::vector_unit_nd&,const msci::vector_unit_nd&);
-void operator +=(string&,const msci::vector_unit_nd&);
-string operator +(const string&,const msci::vector_unit_nd&);
-string operator +(const msci::vector_unit_nd&,const string&);
-ostream& operator <<(ostream&,const msci::vector_unit_nd&);
-istream& operator >>(istream&,msci::vector_unit_nd&);
+bool operator ==(const vector_unit_nd&, vector_unit_nd);
+bool operator !=(const vector_unit_nd&, const vector_unit_nd&);
+
+bool operator ==(const vector_unit_nd&, const string&);
+bool operator !=(const vector_unit_nd&, const string&);
+
+bool operator ==(const string&, const vector_unit_nd&);
+bool operator !=(const string&, const vector_unit_nd&);
+
+void operator +=(string&, const vector_unit_nd&);
+string operator +(const string&, const vector_unit_nd&);
+string operator +(const vector_unit_nd&, const string&);
+
+ostream& operator <<(ostream&, const vector_unit_nd&);
+istream& operator >>(istream&, vector_unit_nd&);
 
 #endif // MSCI_UNITS_UNITS_VECTOR_UNIT_ND_HPP_INCLUDED
  

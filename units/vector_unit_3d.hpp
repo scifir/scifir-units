@@ -201,12 +201,20 @@ namespace msci
 	bool orthogonal(const vector_unit_3d&,const vector_unit_3d&);
 }
 
-bool operator ==(const vector_unit_3d&,const vector_unit_3d&);
-bool operator !=(const vector_unit_3d&,const vector_unit_3d&);
-void operator +=(string&,const vector_unit_3d&);
-string operator +(const string&,const vector_unit_3d&);
-string operator +(const vector_unit_3d&,const string&);
-ostream& operator <<(ostream&,const vector_unit_3d&);
-istream& operator >>(istream&,vector_unit_3d&);
+bool operator ==(const vector_unit_3d&, vector_unit_3d);
+bool operator !=(const vector_unit_3d&, const vector_unit_3d&);
+
+bool operator ==(const vector_unit_3d&, const string&);
+bool operator !=(const vector_unit_3d&, const string&);
+
+bool operator ==(const string&, const vector_unit_3d&);
+bool operator !=(const string&, const vector_unit_3d&);
+
+void operator +=(string&, const vector_unit_3d&);
+string operator +(const string&, const vector_unit_3d&);
+string operator +(const vector_unit_3d&, const string&);
+
+ostream& operator <<(ostream&, const vector_unit_3d&);
+istream& operator >>(istream&, vector_unit_3d&);
 
 #endif // MSCI_UNITS_UNITS_VECTOR_UNIT_3D_HPP_INCLUDED
