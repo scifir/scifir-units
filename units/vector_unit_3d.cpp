@@ -456,7 +456,7 @@ namespace msci
 bool operator ==(const vector_unit_3d& x, vector_unit_3d y)
 {
 	y.set_same_prefix(x);
-	if(x.get_value() == y.get_value() and msci::same_direction(x,y))
+	if(x.get_value() == y.get_value() and msci::same_direction(x,y) and equal_dimensions(x, y))
 	{
 		return true;
 	}

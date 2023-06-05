@@ -35,6 +35,7 @@ namespace msci
 			explicit angle(const scalar_unit&);
 			
 			angle& operator=(const angle&);
+			angle& operator=(angle&&);
 			angle& operator=(float);
 			angle& operator=(string&);
 			angle& operator=(const scalar_unit&);
@@ -132,31 +133,10 @@ namespace msci
 				normalize_value();
 			}
 
-			angle& operator++()
-			{
-				value++;
-				return *this;
-			}
-
-			angle& operator++(int)
-			{
-				angle& tmp = angle(*this);
-				operator++();
-				return tmp;
-			}
-
-			angle& operator--()
-			{
-				value--;
-				return *this;
-			}
-
-			angle& operator--(int)
-			{
-				angle& tmp = angle(*this);
-				operator--();
-				return tmp;
-			}
+			angle& operator++();
+			angle operator++(int);
+			angle& operator--();
+			angle operator--(int);
 
 			void invert();
 

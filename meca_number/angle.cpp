@@ -57,6 +57,12 @@ namespace msci
 		return *this;
 	}
 	
+	angle& angle::operator=(angle&& x)
+	{
+		value = move(x.get_value());
+		return *this;
+	}
+	
 	angle& angle::operator=(const scalar_unit& x)
 	{
 		value = x.get_value();
@@ -116,6 +122,32 @@ namespace msci
 	{
 		value = std::pow(value,x.get_value());
 		normalize_value();
+	}
+	
+	angle& angle::operator++()
+	{
+		value++;
+		return *this;
+	}
+
+	angle angle::operator++(int)
+	{
+		angle tmp = angle(*this);
+		operator++();
+		return tmp;
+	}
+
+	angle& angle::operator--()
+	{
+		value--;
+		return *this;
+	}
+
+	angle angle::operator--(int)
+	{
+		angle tmp = angle(*this);
+		operator--();
+		return tmp;
 	}
 
 	void angle::invert()

@@ -32,7 +32,6 @@ MSCI UNITS - VERSION 2
 
 // UNITS
 // TODO: see what to do for units with the same dimensions at the numerator and at the denominator
-// TODO: default zero units for the cases of errors with operators (scalar and vector)
 // TODO: x_projection() and related functions should send scalar_units, no float types
 // TODO: operator == should care about dimensions and the value related to dimensions (cast operator == of unit,unit there)
 // TODO: initialization of 1/g and similar
