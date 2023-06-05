@@ -462,9 +462,7 @@ volume operator"" _L(unsigned long long int);
 volume operator"" _mL(unsigned long long int);
 
 msci::time operator"" _min(unsigned long long int);
-
 msci::time operator"" _hour(unsigned long long int);
-
 msci::time operator"" _day(unsigned long long int);
 
 length operator"" _YAU(unsigned long long int);

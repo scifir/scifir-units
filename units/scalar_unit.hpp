@@ -124,9 +124,7 @@ namespace msci
 			template<typename T, typename = typename enable_if<is_integer_number<T>::value>::type>
 			scalar_unit operator ^(const T y) const
 			{
-				scalar_unit x = *this;
-				x ^= y;
-				return x;
+				return scalar_unit(std::pow(get_value(),y),power_dimensions(get_dimensions(),y));
 			}
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
@@ -151,13 +149,6 @@ namespace msci
 			void operator /=(const T y)
 			{
 				value /= y;
-			}
-
-			template<typename T, typename = typename enable_if<is_integer_number<T>::value>::type>
-			void operator ^=(const T y)
-			{
-				value = std::pow(value,y);
-				dimensions = power_dimensions(dimensions,y);
 			}
 
 			scalar_unit& operator++();
@@ -272,6 +263,18 @@ template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 bool operator >=(const T x, const msci::scalar_unit& y)
 {
 	return (x >= y.get_value());
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+bool operator ==(const msci::scalar_unit& x, const T y)
+{
+	return (x.get_value() == y);
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+bool operator !=(const msci::scalar_unit& x, const T y)
+{
+	return !(x == y);
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
