@@ -16,9 +16,20 @@ MagickScience has atoms and molecules to use inside scientific software! It's un
 
 MagickScience is developed by [Ismael Correa](https://github.com/Iarfen/), a software developer of 27 years old. You can email if you find bugs, request new features, or have any other need, at ismael.correa.castro@gmail.com.
 
+## Installation
+
+To install MagickScience you have to use CMake and Make. The library is called msci_units, the other msci libraries aren't yet published in the web. The commands to install it are the following:
+
+```
+cmake .
+make
+make install
+```
+
 ## Example of use
 
 ### Angle
+
 An angle object manages angles. It stores angles in grades, rather than in radians. It can be initialized to any grade between 0 and 360 (without including 360, cause this is identical to 0 in meaning), and any initialization that's not inside this range of values gets automatically converted inside it, to his equivalent value between the range.
 
 An example of use of angle is the following:
@@ -65,6 +76,7 @@ float y = float(x); // Angles can be converted to float
 ```
 
 ### Scalar units
+
 Scalar units and vector units are the central objects of MagickScience Units. They store a value and a set of dimensions, as units on science do. Scalar units are just normal values, while vector units have a value and a direction to which the vector points to.
 
 Scalar units can operate with other scalar units, as well as with numeric primitive types. Functions like abs(), sqrt() and to_string() are supported. They have functions to operate with strings, and functions to operate with streams.

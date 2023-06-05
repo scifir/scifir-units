@@ -3,8 +3,6 @@ cmake_minimum_required(VERSION 3.7.1)
 include_directories(.)
 link_directories("${CMAKE_INSTALL_PREFIX}/lib")
 
-#set(CMAKE_CXX_COMPILER C:/Programas/MSYS2/mingw64/bin/g++.exe)
-
 set(TARGET_LOCAL_H
 meca_numbers.hpp)
 
