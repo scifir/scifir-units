@@ -106,10 +106,10 @@ namespace msci
 			void point_to(direction::name);
 
 			void operator +=(const vector_unit_3d&);
-			void operator -=(const vector_unit_3d&);
+			void operator -=(vector_unit_3d);
 
 			vector_unit_3d operator +(const vector_unit_3d&) const;
-			vector_unit_3d operator -(const vector_unit_3d&) const;
+			vector_unit_3d operator -(vector_unit_3d) const;
 
 			vector_unit_3d operator *(const scalar_unit&) const;
 			vector_unit_3d operator /(const scalar_unit&) const;

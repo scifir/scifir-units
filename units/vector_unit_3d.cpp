@@ -263,7 +263,7 @@ namespace msci
 	
 	void vector_unit_3d::operator +=(const vector_unit_3d& y)
 	{
-		if(has_dimensions(y.get_derived_dimensions()))
+		if(equal_dimensions(*this,y))
 		{
 			float new_x = float(x_projection() + y.x_projection());
 			float new_y = float(y_projection() + y.y_projection());
@@ -278,13 +278,12 @@ namespace msci
 		}
 	}
 
-	void vector_unit_3d::operator -=(const vector_unit_3d& y)
+	void vector_unit_3d::operator -=(vector_unit_3d y)
 	{
-		if(has_dimensions(y.get_derived_dimensions()))
+		if(equal_dimensions(*this,y))
 		{
-			vector_unit_3d z = vector_unit_3d(y);
-			z.invert();
-			*this += z;
+			y.invert();
+			*this += y;
 		}
 		else
 		{
@@ -294,16 +293,39 @@ namespace msci
 
 	vector_unit_3d vector_unit_3d::operator +(const vector_unit_3d& y) const
 	{
-		vector_unit_3d z = *this;
-		z += y;
-		return z;
+		if (equal_dimensions(*this,y))
+		{
+			float new_x = float(x_projection() + y.x_projection());
+			float new_y = float(y_projection() + y.y_projection());
+			float new_z = float(z_projection() + y.z_projection());
+			float new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
+			angle new_theta = angle(cartesian_3d_to_spherical_theta(new_x, new_y, new_z));
+			angle new_phi = angle(cartesian_3d_to_spherical_phi(new_x, new_y, new_z));
+			return vector_unit_3d(new_value,get_dimensions(),new_theta,new_phi);
+		}
+		else
+		{
+			return vector_unit_3d();
+		}
 	}
 
-	vector_unit_3d vector_unit_3d::operator -(const vector_unit_3d& y) const
+	vector_unit_3d vector_unit_3d::operator -(vector_unit_3d y) const
 	{
-		vector_unit_3d z = *this;
-		z -= y;
-		return z;
+		if (equal_dimensions(*this,y))
+		{
+			y.invert();
+			float new_x = float(x_projection() + y.x_projection());
+			float new_y = float(y_projection() + y.y_projection());
+			float new_z = float(z_projection() + y.z_projection());
+			float new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
+			angle new_theta = angle(cartesian_3d_to_spherical_theta(new_x, new_y, new_z));
+			angle new_phi = angle(cartesian_3d_to_spherical_phi(new_x, new_y, new_z));
+			return vector_unit_3d(new_value,get_dimensions(),new_theta,new_phi);
+		}
+		else
+		{
+			return vector_unit_3d();
+		}
 	}
 
 	vector_unit_3d vector_unit_3d::operator *(const scalar_unit& x) const
@@ -329,6 +351,7 @@ namespace msci
 		}
 		else
 		{
+			cerr << "Cannot power with as exponent a unit with dimensions";
 			return vector_unit_3d();
 		}
 	}

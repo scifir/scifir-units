@@ -1,5 +1,7 @@
 #include "units/dimension.hpp"
 
+#include "units/custom_dimension.hpp"
+
 #include "boost/algorithm/string.hpp"
 
 #include <cmath>
@@ -67,6 +69,10 @@ namespace msci
 				return "candela";
 			case dimension::B:
 				return "byte";
+			case dimension::custom:
+				return static_cast<msci::custom_dimension&>(const_cast<dimension&>(*this)).symbol;
+			case dimension::custom_basic:
+				return "custom-basic";
 		}
 		return "";
 	}
@@ -95,6 +101,10 @@ namespace msci
 				return "cd";
 			case dimension::B:
 				return "B";
+			case dimension::custom:
+				return static_cast<msci::custom_dimension&>(const_cast<dimension&>(*this)).symbol;
+			case dimension::custom_basic:
+				return "custom-basic";
 		}
 		return "";
 	}
@@ -361,6 +371,10 @@ namespace msci
 
 	dimension create_dimension(const string& x)
 	{
+		if (x == "")
+		{
+			return dimension();
+		}
 		string dimension_name;
 		string prefix_name;
 		set<string> prefixes_options {"Y", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "u", "n", "p", "f", "a", "z", "y"};
@@ -422,7 +436,7 @@ namespace msci
 		}
 		else
 		{
-			return dimension();
+			return custom_dimension(dimension_name);
 		}
 	}
 	
@@ -469,23 +483,13 @@ namespace msci
 	vector<dimension> create_dimensions(string init_value)
 	{
 		int new_start = 0;
-		int i = new_start;
 		boost::algorithm::erase_all(init_value, " ");
-		int total_of_dimensions = 1;
-		while(isalnum(init_value[i]) or init_value[i] == '*' or init_value[i] == '/')
-		{
-			if (init_value[i] == '*' or init_value[i] == '/')
-			{
-				total_of_dimensions++;
-			}
-			i++;
-		}
 		bool numerator = true;
 		int new_scale = 1;
 		int new_size = 1;
 		string new_dimension_str;
 		vector<dimension> dimensions = vector<dimension>();
-		for(int j = 0; j <= i; j++)
+		for(int j = 0; j <= new_start; j++)
 		{
 			if(isdigit(init_value[j]))
 			{
@@ -510,13 +514,10 @@ namespace msci
 			if(!new_dimension_str.empty())
 			{
 				dimension new_dimension = create_dimension(new_dimension_str);
-				//if(new_dimension != nullptr)
-				//{
-					for (int k = 0; k < new_scale; k++)
-					{
-						dimensions.push_back(new_dimension);
-					}
-				//}
+				for (int k = 0; k < new_scale; k++)
+				{
+					dimensions.push_back(new_dimension);
+				}
 				new_dimension_str.clear();
 				new_scale = 1;
 				new_size = 0;
@@ -567,13 +568,10 @@ namespace msci
 			if(!new_dimension_str.empty())
 			{
 				dimension new_dimension = create_dimension(new_dimension_str);
-				//if(new_dimension != nullptr)
-				//{
-					for (int k = 0; k < new_scale; k++)
-					{
-						dimensions.push_back(new_dimension);
-					}
-				//}
+				for (int k = 0; k < new_scale; k++)
+				{
+					dimensions.push_back(new_dimension);
+				}
 				new_dimension_str.clear();
 				new_scale = 1;
 				new_size = 0;

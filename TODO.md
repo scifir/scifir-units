@@ -1,15 +1,11 @@
 MSCI UNITS - VERSION 2
 
-// NEARLY-FINISHED TASKS
-// TODO: abbreviation_electron_volt should have the factor E-19 enabled
-
 // PROPERLY DISPLAY OF UNITS
 // TODO: scalar_unit should display with the configured locale of the execution of the program
 // TODO: Reduce linker libraries needed for boost::locale (see if the libraries aren't needed and delete them)
 // TODO: auto display in the units that closely match the value (100 or less is the unit selected, if it's more than 1000 it's the prefix 10^3 bigger, and if it's less than 0.1 it has to display in the previous 10^-3 prefix)
 
 // COORDINATES
-// TODO: all coordinates classes should have ostream << with (x,y), (p,theta), etc
 // TODO: rotational coordinates
 // TODO: initialization with string using coordinate systems different than cartesian
 // TODO: finish get_altitude(). Read about geographic coordinates
@@ -18,22 +14,26 @@ MSCI UNITS - VERSION 2
 // TODO: vector_field (it should operate with vector_units and maybe with scalar_units. With (x,y,z) it gives the respective vector). +, - and ^ with vector_field, + - * with vector_unit
 // TODO: Typecasting of vector_unit to math_vector, boost_Ublas_vector, etc. Same for math_vector to vector_unit
 
+// C++
+// TODO: maybe dimension::type should handle empty cases with a value empty
+
 // DIMENSIONS
 // TODO: custom_dimension in order to have custom dimensions
 // TODO: maybe create_dimension() and create_prefix() should have parameters to pass to constructors
 // TODO: add the omega symbol when displaying the resistance
+// TODO: finish the migration of dimensions. Abbreviations should be allowed to change to equivalent dimensions of another abbreviation or of base dimensions
+// TODO: angle and solid_angle dimensions should be allowed to be created with their symbols also, not only by their name
+// TODO: sqrt() and sqrt_nth() should delete square dimensions
+// TODO: support basic dimension of currency
 
 // UNITS - Finish creating the new class inheritance
 // TODO: support the conversions natively
 // TODO: function to_SI_convention(vector<scalar_unit>&)
 
 // UNITS
-// TODO: maybe delete the dimensions member-variable of scalar_unit, and use instead another system for prefixes
-// TODO: add const to the enum of light_unit
-// TODO: mass of standard_atomic_mass() is displayed [empty], fix it
-
 // TODO: see what to do for units with the same dimensions at the numerator and at the denominator
-// TODO: default zero units for the cases of errors with operators (unit, scalar and vector)
+// TODO: default zero units for the cases of errors with operators (scalar and vector)
+// TODO: x_projection() and related functions should send scalar_units, no float types
 // TODO: operator == should care about dimensions and the value related to dimensions (cast operator == of unit,unit there)
 // TODO: initialization of 1/g and similar
 // TODO: support scientific notation on constructors and display(int,bool) (check if there's a function to get the order of the number)
@@ -68,6 +68,10 @@ MSCI UNITS - VERSION 2
 // TODO: document the ISOs important to use with this library
 // TODO: object geographic location, using my ISO of geographic location
 // TODO: study the geographic coordinates deeply, and see if to add something more related to them
+
+// UNITS - ADVANCED
+// TODO: maybe delete the dimensions member-variable of scalar_unit, and use instead another system for handling prefixes. The dimensions can be automatic based on their class
+// TODO: add const to the enum of light_unit
 
 // MECA NUMBERS
 // TODO: add the allowed typenames to lab_number, and don't accept any other type

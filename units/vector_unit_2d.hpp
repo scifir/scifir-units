@@ -70,10 +70,10 @@ namespace msci
 			vector_unit_2d& operator =(scalar_unit&&);
 			
 			void operator +=(const vector_unit_2d&);
-			void operator -=(const vector_unit_2d&);
+			void operator -=(vector_unit_2d);
 			
 			vector_unit_2d operator +(const vector_unit_2d&) const;
-			vector_unit_2d operator -(const vector_unit_2d&) const;
+			vector_unit_2d operator -(vector_unit_2d) const;
 
 			vector_unit_2d operator *(const scalar_unit&) const;
 			vector_unit_2d operator /(const scalar_unit&) const;

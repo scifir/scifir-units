@@ -118,7 +118,7 @@ namespace msci
 		}
 		new_value *= y.get_value();
 		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(),y.get_dimensions());
-		return move(scalar_unit(new_value, new_dimensions));
+		return scalar_unit(new_value, new_dimensions);
 	}
 
 	scalar_unit scalar_unit::operator /(const scalar_unit& x) const
@@ -131,14 +131,14 @@ namespace msci
 		}
 		new_value /= y.get_value();
 		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(),y.get_dimensions());
-		return move(scalar_unit(new_value, new_dimensions));
+		return scalar_unit(new_value, new_dimensions);
 	}
 
 	scalar_unit scalar_unit::operator ^(const scalar_unit& x) const
 	{
 		if(x.has_empty_dimensions())
 		{
-			return move(*this ^ int(x.get_value()));
+			return (*this ^ int(x.get_value()));
 		}
 		else
 		{
@@ -149,23 +149,25 @@ namespace msci
 
 	void scalar_unit::operator +=(const scalar_unit& x)
 	{
-		scalar_unit z = x;
-		z.set_same_prefix(get_dimensions());
 		if(!x.has_dimensions(get_derived_dimensions()))
 		{
 			cerr << "Cannot sum different dimensions";
+			return;
 		}
+		scalar_unit z = x;
+		z.set_same_prefix(get_dimensions());
 		value += z.get_value();
 	}
 
 	void scalar_unit::operator -=(const scalar_unit& x)
 	{
-		scalar_unit z = x;
-		z.set_same_prefix(get_dimensions());
 		if(!x.has_dimensions(get_derived_dimensions()))
 		{
 			cerr << "Cannot substract different dimensions";
+			return;
 		}
+		scalar_unit z = x;
+		z.set_same_prefix(get_dimensions());
 		value -= z.get_value();
 	}
 

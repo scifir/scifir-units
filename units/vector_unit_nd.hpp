@@ -82,10 +82,10 @@ namespace msci
 			void point_to(direction::name);
 			
 			void operator +=(const vector_unit_nd&);
-			void operator -=(const vector_unit_nd&);
+			void operator -=(vector_unit_nd);
 
 			vector_unit_nd operator +(const vector_unit_nd&) const;
-			vector_unit_nd operator -(const vector_unit_nd&) const;
+			vector_unit_nd operator -(vector_unit_nd) const;
 
 			vector_unit_nd operator *(const scalar_unit&) const;
 			vector_unit_nd operator /(const scalar_unit&) const;

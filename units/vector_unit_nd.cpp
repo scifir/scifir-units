@@ -311,7 +311,7 @@ namespace msci
 	
 	void vector_unit_nd::operator +=(const vector_unit_nd& y)
 	{
-		if(has_dimensions(y.get_derived_dimensions()))
+		if(equal_dimensions(*this,y))
 		{
 			if(is_nd(1))
 			{
@@ -340,13 +340,12 @@ namespace msci
 		}
 	}
 
-	void vector_unit_nd::operator -=(const vector_unit_nd& y)
+	void vector_unit_nd::operator -=(vector_unit_nd y)
 	{
-		if(has_dimensions(y.get_derived_dimensions()))
+		if(equal_dimensions(*this,y))
 		{
-			vector_unit_nd z = vector_unit_nd(y);
-			z.invert();
-			*this += z;
+			y.invert();
+			*this += y;
 		}
 		else
 		{
@@ -356,16 +355,87 @@ namespace msci
 
 	vector_unit_nd vector_unit_nd::operator +(const vector_unit_nd& y) const
 	{
-		vector_unit_nd z = *this;
-		z += y;
-		return z;
+		if(equal_dimensions(*this,y))
+		{
+			if(is_nd(1))
+			{
+				float new_value = scalar_unit::value + y.get_value();
+				return vector_unit_nd(new_value,get_dimensions());
+			}
+			else if(is_nd(2))
+			{
+				angles.empty();
+				float new_x = x_projection() + y.x_projection();
+				float new_y = y_projection() + y.y_projection();
+				float new_value = cartesian_2d_to_polar_r(new_x, new_y);
+				vector<angle> new_angles = vector<angle>();
+				new_angles[0] = cartesian_2d_to_polar_theta(new_x, new_y);
+				return vector_unit_nd(new_value,get_dimensions(),new_angles);
+			}
+			else if(is_nd(3))
+			{
+				float new_x = x_projection() + y.x_projection();
+				float new_y = y_projection() + y.y_projection();
+				float new_z = z_projection() + y.z_projection();
+				float new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
+				vector<angle> new_angles = vector<angle>();
+				new_angles[0] = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
+				new_angles[1] = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
+				return vector_unit_nd(new_value,get_dimensions(),new_angles);
+			}
+			else
+			{
+				return vector_unit_nd();
+			}
+		}
+		else
+		{
+			cerr << "Cannot sum vectors of different dimensions";
+			return vector_unit_nd();
+		}
 	}
 
-	vector_unit_nd vector_unit_nd::operator -(const vector_unit_nd& y) const
+	vector_unit_nd vector_unit_nd::operator -(vector_unit_nd y) const
 	{
-		vector_unit_nd z = *this;
-		z -= y;
-		return z;
+		if(equal_dimensions(*this,y))
+		{
+			y.invert();
+			if(is_nd(1))
+			{
+				float new_value = scalar_unit::value + y.get_value();
+				return vector_unit_nd(new_value,get_dimensions());
+			}
+			else if(is_nd(2))
+			{
+				angles.empty();
+				float new_x = x_projection() + y.x_projection();
+				float new_y = y_projection() + y.y_projection();
+				float new_value = cartesian_2d_to_polar_r(new_x, new_y);
+				vector<angle> new_angles = vector<angle>();
+				new_angles[0] = cartesian_2d_to_polar_theta(new_x, new_y);
+				return vector_unit_nd(new_value,get_dimensions(),new_angles);
+			}
+			else if(is_nd(3))
+			{
+				float new_x = x_projection() + y.x_projection();
+				float new_y = y_projection() + y.y_projection();
+				float new_z = z_projection() + y.z_projection();
+				float new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
+				vector<angle> new_angles = vector<angle>();
+				new_angles[0] = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
+				new_angles[1] = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
+				return vector_unit_nd(new_value,get_dimensions(),new_angles);
+			}
+			else
+			{
+				return vector_unit_nd();
+			}
+		}
+		else
+		{
+			cerr << "Cannot sum vectors of different dimensions";
+			return vector_unit_nd();
+		}
 	}
 
 	vector_unit_nd vector_unit_nd::operator *(const scalar_unit& x) const
