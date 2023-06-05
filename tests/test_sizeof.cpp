@@ -40,18 +40,13 @@ int main()
 	cout << "empty-class: " << sizeof(test_empty_class) << endl;
 	cout << endl;
 	cout << "prefix: " << sizeof(msci::prefix) << endl;
-	cout << "abstract_dimension: " << sizeof(msci::abstract_dimension) << endl;
 	cout << "dimension: " << sizeof(dimension) << endl;
-	cout << "abbreviation: " << sizeof(msci::abbreviation) << endl;
 	cout << endl;
 	cout << "angle: " << sizeof(angle) << endl;
-	cout << "lab_number: " << sizeof(msci::lab_number) << endl;
-	cout << "unit_number: " << sizeof(msci::unit_number) << endl;
+	cout << "lab_number: " << sizeof(msci::lab_number<length>) << endl;
 	cout << endl;
-	cout << "unit: " << sizeof(msci::unit) << endl;
 	cout << "scalar_unit: " << sizeof(msci::scalar_unit) << endl;
+	cout << "vector_unit_2d: " << sizeof(vector_unit_2d) << endl;
 	cout << "vector_unit_3d: " << sizeof(vector_unit_3d) << endl;
-	cout << "auto_unit: " << sizeof(msci::auto_unit) << endl;
-	cout << "auto_scalar: " << sizeof(msci::auto_scalar) << endl;
-	cout << "auto_vector: " << sizeof(msci::auto_vector) << endl;
+	cout << "vector_unit_nd: " << sizeof(vector_unit_nd) << endl;
 }

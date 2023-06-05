@@ -2,6 +2,7 @@
 #define MSCI_UNITS_UNITS_HPP_INCLUDED
 
 #include "units/unit_basic.hpp"
+#include "units/unit_abbreviation.hpp"
 
 #include "predefined_units/astronomy_units.hpp"
 #include "predefined_units/electricity_units.hpp"
