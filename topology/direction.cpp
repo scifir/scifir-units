@@ -1,6 +1,8 @@
 #include "topology/direction.hpp"
 
-#include <stdexcept>
+#include "boost/algorithm/string.hpp"
+
+#include <sstream>
 
 using namespace std;
 
@@ -16,6 +18,9 @@ namespace msci
 	{}
 
 	direction::direction(direction::name new_direction) : value(new_direction)
+	{}
+	
+	direction::direction(const string& new_direction) : value(create_direction(new_direction))
 	{}
 	
 	void direction::operator=(const direction& x)
@@ -36,6 +41,118 @@ namespace msci
 	void direction::invert()
 	{
 		value = msci::invert(value);
+	}
+	
+	direction::name create_direction(const string& x)
+	{
+		if (x == "left")
+		{
+			return direction::LEFT;
+		}
+		else if (x == "right")
+		{
+			return direction::RIGHT;
+		}
+		else if (x == "top")
+		{
+			return direction::TOP;
+		}
+		else if (x == "bottom")
+		{
+			return direction::BOTTOM;
+		}
+		else if (x == "front")
+		{
+			return direction::FRONT;
+		}
+		else if (x == "back")
+		{
+			return direction::BACK;
+		}
+		else if (x == "left-top")
+		{
+			return direction::LEFT_TOP;
+		}
+		else if (x == "left-bottom")
+		{
+			return direction::LEFT_BOTTOM;
+		}
+		else if (x == "right-top")
+		{
+			return direction::RIGHT_TOP;
+		}
+		else if (x == "right-bottom")
+		{
+			return direction::RIGHT_BOTTOM;
+		}
+		else if (x == "left-front")
+		{
+			return direction::LEFT_FRONT;
+		}
+		else if (x == "left-back")
+		{
+			return direction::LEFT_BACK;
+		}
+		else if (x == "right-front")
+		{
+			return direction::RIGHT_FRONT;
+		}
+		else if (x == "right-back")
+		{
+			return direction::RIGHT_BACK;
+		}
+		else if (x == "top-front")
+		{
+			return direction::TOP_FRONT;
+		}
+		else if (x == "top-back")
+		{
+			return direction::TOP_BACK;
+		}
+		else if (x == "bottom-front")
+		{
+			return direction::BOTTOM_FRONT;
+		}
+		else if (x == "bottom-back")
+		{
+			return direction::BOTTOM_BACK;
+		}
+		else if (x == "left-top-front")
+		{
+			return direction::LEFT_TOP_FRONT;
+		}
+		else if (x == "left-top-back")
+		{
+			return direction::LEFT_TOP_BACK;
+		}
+		else if (x == "left-bottom-front")
+		{
+			return direction::LEFT_BOTTOM_FRONT;
+		}
+		else if (x == "left-bottom-back")
+		{
+			return direction::LEFT_BOTTOM_BACK;
+		}
+		else if (x == "right-top-front")
+		{
+			return direction::RIGHT_TOP_FRONT;
+		}
+		else if (x == "right-top-back")
+		{
+			return direction::RIGHT_TOP_BACK;
+		}
+		else if (x == "right-bottom-front")
+		{
+			return direction::RIGHT_BOTTOM_FRONT;
+		}
+		else if (x == "right-bottom-back")
+		{
+			return direction::RIGHT_BOTTOM_BACK;
+		}
+		else
+		{
+			return direction::LEFT;
+		}
 	}
 
 	direction::name invert(direction::name x)
@@ -260,7 +377,63 @@ bool operator !=(msci::direction::name y, const msci::direction& x)
 	return !(x == y);
 }
 
+bool operator ==(const msci::direction& x, const string& y)
+{
+	msci::direction y_direction = msci::direction(y);
+	return (x == y_direction);
+}
+
+bool operator !=(const msci::direction& x, const string& y)
+{
+	return !(x == y);
+}
+
+bool operator ==(const string& x, const msci::direction& y)
+{
+	msci::direction x_direction = msci::direction(x);
+	return (x_direction == y);
+}
+
+bool operator !=(const string& x, const msci::direction& y)
+{
+	return !(x == y);
+}
+
+void operator +=(string& x, const msci::direction& y)
+{
+	ostringstream output;
+	output << y;
+	x += output.str();
+}
+
+string operator +(const string& x, const msci::direction& y)
+{
+	ostringstream output;
+	output << x;
+	output << y;
+	return output.str();
+}
+
+string operator +(const msci::direction& y, const string& x)
+{
+	ostringstream output;
+	output << y;
+	output << x;
+	return output.str();
+}
+
 ostream& operator <<(ostream& os, const msci::direction& x)
 {
 	return os << to_string(x);
+}
+
+istream& operator >>(istream& is, msci::direction& x)
+{
+	char a[256];
+	is.getline(a, 256);
+	string b(a);
+	boost::trim(b);
+	msci::direction c(b);
+	x = c;
+	return is;
 }

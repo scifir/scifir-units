@@ -20,16 +20,16 @@ namespace msci
 			point_nd();
 			point_nd(const point_nd&);
 			point_nd(point_nd&&);
-			point_nd(const vector<length>&);
-			point_nd(const length&);
-			point_nd(const length&,const length&);
-			point_nd(const length&,const angle&);
-			point_nd(const length&,const length&,const length&);
-			point_nd(const length&,const angle&,length);
-			point_nd(const length&,const angle&,const angle&);
-			point_nd(const angle&,const angle&,const length&);
-			point_nd(const coordinates_nd&);
-			point_nd(string);
+			explicit point_nd(const vector<length>&);
+			explicit point_nd(const length&);
+			explicit point_nd(const length&,const length&);
+			explicit point_nd(const length&,const angle&);
+			explicit point_nd(const length&,const length&,const length&);
+			explicit point_nd(const length&,const angle&,length);
+			explicit point_nd(const length&,const angle&,const angle&);
+			explicit point_nd(const angle&,const angle&,const length&);
+			explicit point_nd(const coordinates_nd&);
+			explicit point_nd(string);
 
 			point_nd& operator=(const point_nd&);
 			point_nd& operator=(point_nd&&);
@@ -70,6 +70,16 @@ namespace msci
 
 bool operator ==(const msci::point_nd&,const msci::point_nd&);
 bool operator !=(const msci::point_nd&,const msci::point_nd&);
+
+bool operator ==(const msci::point_nd&, const string&);
+bool operator !=(const msci::point_nd&, const string&);
+
+bool operator ==(const string&, const msci::point_nd&);
+bool operator !=(const string&, const msci::point_nd&);
+
+void operator +=(string&, const msci::point_nd&);
+string operator +(const string&,const msci::point_nd&);
+string operator +(const msci::point_nd&,const string&);
 
 ostream& operator <<(ostream&,const msci::point_nd&);
 istream& operator >>(istream&, msci::point_nd&);

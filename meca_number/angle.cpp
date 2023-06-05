@@ -7,7 +7,6 @@
 #include <iostream>
 #include <limits>
 #include <sstream>
-#include <stdexcept>
 #include <string>
 
 using namespace std;
@@ -28,7 +27,7 @@ namespace msci
 		normalize_value();
 	}
 	
-	angle::angle(string& init_angle) : value()
+	angle::angle(string init_angle) : value()
 	{
 		if (init_angle.back() == 'º')
 		{
@@ -315,6 +314,28 @@ bool operator >=(const msci::angle& x, const msci::angle& y)
 	return !(x < y);
 }
 
+bool operator ==(const msci::angle& x, const string& y)
+{
+	msci::angle y_angle = msci::angle(y);
+	return (x == y_angle);
+}
+
+bool operator !=(const msci::angle& x, const string& y)
+{
+	return !(x == y);
+}
+
+bool operator ==(const string& x, const msci::angle& y)
+{
+	msci::angle x_angle = msci::angle(x);
+	return (x_angle == y);
+}
+
+bool operator !=(const string& x, const msci::angle& y)
+{
+	return !(x == y);
+}
+
 void operator +=(string& x, const msci::angle& y)
 {
 	ostringstream output;
@@ -349,7 +370,7 @@ istream& operator >>(istream& is, msci::angle& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::angle c(stof(b));
+	msci::angle c(b);
 	x = c;
 	return is;
 }

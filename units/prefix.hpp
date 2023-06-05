@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <map>
-#include <memory>
 #include <string>
 
 using namespace std;
@@ -18,8 +17,8 @@ namespace msci
 			prefix();
 			prefix(const prefix&);
 			prefix(prefix&&);
-			prefix(prefix::type);
-			prefix(const string&);
+			explicit prefix(prefix::type);
+			explicit prefix(const string&);
 			
 			prefix& operator=(const prefix&);
 			prefix& operator=(prefix&&);

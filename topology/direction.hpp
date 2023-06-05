@@ -18,7 +18,8 @@ namespace msci
 			direction();
 			direction(const direction&);
 			direction(direction&&);
-			direction(direction::name);
+			explicit direction(direction::name);
+			explicit direction(const string&);
 			
 			void operator=(const direction&);
 			void operator=(direction&&);
@@ -31,6 +32,7 @@ namespace msci
 	
 	string to_string(direction::name);
 	string to_string(const direction&);
+	direction::name create_direction(const string&);
 	direction::name invert(direction::name);
 }
 
@@ -41,6 +43,17 @@ bool operator !=(const msci::direction& x, msci::direction::name y);
 bool operator ==(msci::direction::name y, const msci::direction& x);
 bool operator !=(msci::direction::name y, const msci::direction& x);
 
+bool operator ==(const msci::direction&, const string&);
+bool operator !=(const msci::direction&, const string&);
+
+bool operator ==(const string&, const msci::direction&);
+bool operator !=(const string&, const msci::direction&);
+
+void operator +=(string&, const msci::direction&);
+string operator +(const string&, const msci::direction&);
+string operator +(const msci::direction&, const string&);
+
 ostream& operator <<(ostream& os, const msci::direction& x);
+istream& operator >>(istream&, msci::direction&);
 
 #endif // MSCI_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED

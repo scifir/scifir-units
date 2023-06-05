@@ -10,13 +10,13 @@ MSCI UNITS - VERSION 2
 
 // COORDINATES
 // TODO: all coordinates classes should have ostream << with (x,y), (p,theta), etc
-// TODO: change coordinates classes to allow write access
-// TODO: macro that maps coordinates
+// TODO: rotational coordinates
+// TODO: initialization with string using coordinate systems different than cartesian
+// TODO: finish get_altitude(). Read about geographic coordinates
 
 // VECTOR FIELDS
 // TODO: vector_field (it should operate with vector_units and maybe with scalar_units. With (x,y,z) it gives the respective vector). +, - and ^ with vector_field, + - * with vector_unit
 // TODO: Typecasting of vector_unit to math_vector, boost_Ublas_vector, etc. Same for math_vector to vector_unit
-// TODO: rotational coordinates
 
 // DIMENSIONS
 // TODO: custom_dimension in order to have custom dimensions
@@ -28,8 +28,7 @@ MSCI UNITS - VERSION 2
 // TODO: function to_SI_convention(vector<scalar_unit>&)
 
 // UNITS
-// TODO: create the macros VECTOR_UNIT_ALL_HPP and VECTOR_UNIT_ALL_CPP
-
+// TODO: maybe delete the dimensions member-variable of scalar_unit, and use instead another system for prefixes
 // TODO: add const to the enum of light_unit
 // TODO: mass of standard_atomic_mass() is displayed [empty], fix it
 
@@ -52,10 +51,6 @@ MSCI UNITS - VERSION 2
 // TODO: light_length which uses only an enum of prefixes and a value, maybe it should be called length, and length should be called full_length
 
 // TODO: sqrt() and pow() maybe should be direct for created units, instead of passing by scalar_unit again to initialize after that the other unit
-
-// VECTOR_UNIT
-// TODO: constructor of vector_unit which receives const string& including angles
-// TODO: operator >> should allow to create vectors giving angles
 
 // MATERIAL_VECTOR_UNIT
 // TODO: decide how it'll be, in order to include real space to the vector_unit

@@ -19,9 +19,9 @@ namespace msci
 			coordinates_1d();
 			coordinates_1d(const coordinates_1d&);
 			coordinates_1d(coordinates_1d&&);
-			coordinates_1d(const length&);
-			coordinates_1d(const point_1d&);
-			coordinates_1d(string);
+			explicit coordinates_1d(const length&);
+			explicit coordinates_1d(const point_1d&);
+			explicit coordinates_1d(string);
 
 			coordinates_1d& operator=(const coordinates_1d&);
 			coordinates_1d& operator=(coordinates_1d&&);
@@ -42,9 +42,6 @@ namespace msci
 	length distance(const point_1d&,const coordinates_1d&);
 }
 
-string operator +(const string&,const msci::coordinates_1d&);
-string operator +(const msci::coordinates_1d&,const string&);
-
 bool operator ==(const msci::coordinates_1d&,const msci::coordinates_1d&);
 bool operator !=(const msci::coordinates_1d&,const msci::coordinates_1d&);
 
@@ -52,6 +49,16 @@ bool operator ==(const msci::coordinates_1d&,const msci::point_1d&);
 bool operator !=(const msci::coordinates_1d&,const msci::point_1d&);
 bool operator ==(const msci::point_1d&,const msci::coordinates_1d&);
 bool operator !=(const msci::point_1d&,const msci::coordinates_1d&);
+
+bool operator ==(const msci::coordinates_1d&, const string&);
+bool operator !=(const msci::coordinates_1d&, const string&);
+
+bool operator ==(const string&, const msci::coordinates_1d&);
+bool operator !=(const string&, const msci::coordinates_1d&);
+
+void operator +=(string&, const msci::coordinates_1d&);
+string operator +(const string&,const msci::coordinates_1d&);
+string operator +(const msci::coordinates_1d&,const string&);
 
 ostream& operator << (ostream&,const msci::coordinates_1d&);
 istream& operator >>(istream&,msci::coordinates_1d&);

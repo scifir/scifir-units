@@ -30,9 +30,8 @@ namespace msci
 			angle();
 			angle(const angle&);
 			angle(angle&&);
-			
 			explicit angle(float);
-			explicit angle(string&);
+			explicit angle(string);
 			explicit angle(const scalar_unit&);
 			
 			angle& operator=(const angle&);
@@ -341,6 +340,12 @@ bool operator <(const msci::angle&, const msci::angle&);
 bool operator >(const msci::angle&, const msci::angle&);
 bool operator <=(const msci::angle&, const msci::angle&);
 bool operator >=(const msci::angle&, const msci::angle&);
+
+bool operator ==(const msci::angle&, const string&);
+bool operator !=(const msci::angle&, const string&);
+
+bool operator ==(const string&, const msci::angle&);
+bool operator !=(const string&, const msci::angle&);
 
 void operator +=(string&, const msci::angle&);
 string operator +(const string&, const msci::angle&);

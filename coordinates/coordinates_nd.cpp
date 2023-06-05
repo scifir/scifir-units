@@ -151,6 +151,21 @@ namespace msci
 		}
 	}
 	
+	angle coordinates_nd::get_latitude() const
+	{
+		return msci::asin(float(values[2]/length(6317,"km")));
+	}
+	
+	angle coordinates_nd::get_longitude() const
+	{
+		return msci::atan(float(values[1]/values[0]));
+	}
+	
+	length coordinates_nd::get_altitude() const
+	{
+		return length();
+	}
+	
 	void coordinates_nd::set_position(const length& new_x)
 	{
 		values.empty();
@@ -307,6 +322,34 @@ namespace msci
 		return msci::sqrt(x_length);
 	}
 	
+	string coordinates_nd::display_polar() const
+	{
+		ostringstream out;
+		out << "(" << get_p() << "," << get_theta() << ")";
+		return out.str();
+	}
+	
+	string coordinates_nd::display_cylindrical() const
+	{
+		ostringstream out;
+		out << "(" << get_p() << "," << get_theta() << "," << values[2] << ")";
+		return out.str();
+	}
+	
+	string coordinates_nd::display_spherical() const
+	{
+		ostringstream out;
+		out << "(" << get_r() << "," << get_theta() << "," << get_phi() << ")";
+		return out.str();
+	}
+	
+	string coordinates_nd::display_geographical() const
+	{
+		ostringstream out;
+		out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ")";
+		return out.str();
+	}
+	
 	string to_string(const coordinates_nd& x)
 	{
 		ostringstream out;
@@ -339,6 +382,40 @@ namespace msci
 			return length();
 		}
 	}
+	
+	length distance(const coordinates_nd& x1,const point_nd& x2)
+	{
+		if (x1.get_nd() == x2.get_nd())
+		{
+			scalar_unit x_length = scalar_unit(0,"m2");
+			for (int i = 0; i < x1.values.size(); i++)
+			{
+				x_length += msci::pow(x1.values[i] - x2.values[i],2);
+			}
+			return msci::sqrt(x_length);
+		}
+		else
+		{
+			return length();
+		}
+	}
+	
+	length distance(const point_nd& x1,const coordinates_nd& x2)
+	{
+		if (x1.get_nd() == x2.get_nd())
+		{
+			scalar_unit x_length = scalar_unit(0,"m2");
+			for (int i = 0; i < x1.values.size(); i++)
+			{
+				x_length += msci::pow(x1.values[i] - x2.values[i],2);
+			}
+			return msci::sqrt(x_length);
+		}
+		else
+		{
+			return length();
+		}
+	}
 }
 
 bool operator ==(const msci::coordinates_nd& x,const msci::coordinates_nd& y)
@@ -356,6 +433,77 @@ bool operator ==(const msci::coordinates_nd& x,const msci::coordinates_nd& y)
 bool operator !=(const msci::coordinates_nd& x,const msci::coordinates_nd& y)
 {
 	return !(x == y);
+}
+
+bool operator ==(const msci::coordinates_nd& x,const msci::point_nd& y)
+{
+	for (int i = 0 ; i < x.values.size(); i++)
+	{
+		if (x.values[i] == y.values[i])
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+bool operator !=(const msci::coordinates_nd& x,const msci::point_nd& y)
+{
+	return !(x == y);
+}
+
+bool operator ==(const msci::point_nd& x,const msci::coordinates_nd& y)
+{
+	for (int i = 0 ; i < x.values.size(); i++)
+	{
+		if (x.values[i] == y.values[i])
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+bool operator !=(const msci::point_nd& x,const msci::coordinates_nd& y)
+{
+	return !(x == y);
+}
+
+bool operator ==(const msci::coordinates_nd& x, const string& y)
+{
+	coordinates_nd y_coordinates = coordinates_nd(y);
+	return (x == y_coordinates);
+}
+
+bool operator !=(const msci::coordinates_nd& x, const string& y)
+{
+	return !(x == y);
+}
+
+bool operator ==(const string& x, const msci::coordinates_nd& y)
+{
+	coordinates_nd x_coordinates = coordinates_nd(x);
+	return (x_coordinates == y);
+}
+
+bool operator !=(const string& x, const msci::coordinates_nd& y)
+{
+	return !(x == y);
+}
+
+void operator +=(string& x, const msci::coordinates_nd& y)
+{
+	x += to_string(y);
+}
+
+string operator +(const string& x,const msci::coordinates_nd& y)
+{
+	return x + to_string(y);
+}
+
+string operator +(const msci::coordinates_nd& x,const string& y)
+{
+	return to_string(x) + y;
 }
 
 ostream& operator <<(ostream& os,const msci::coordinates_nd& x)

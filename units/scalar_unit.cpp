@@ -14,9 +14,7 @@
 #include <iostream>
 #include <locale>
 #include <map>
-#include <memory>
 #include <sstream>
-#include <stdexcept>
 #include <string>
 
 using namespace std;

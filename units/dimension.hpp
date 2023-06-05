@@ -25,8 +25,8 @@ namespace msci
 			dimension();
 			dimension(const dimension&);
 			dimension(dimension&&);
-			dimension(dimension::type,msci::prefix::type,dimension::sign);
-			dimension(dimension::type,const msci::prefix&,dimension::sign);
+			explicit dimension(dimension::type,msci::prefix::type,dimension::sign);
+			explicit dimension(dimension::type,const msci::prefix&,dimension::sign);
 
 			dimension& operator=(const dimension&);
 			dimension& operator=(dimension&&);

@@ -6,7 +6,6 @@
 
 #include <chrono>
 #include <iostream>
-#include <memory>
 #include <sstream>
 
 namespace msci

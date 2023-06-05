@@ -94,16 +94,6 @@ namespace msci
 	}
 }
 
-string operator +(const string& x,const msci::coordinates_1d& y)
-{
-	return x + to_string(y);
-}
-
-string operator +(const msci::coordinates_1d& x,const string& y)
-{
-	return to_string(x) + y;
-}
-
 bool operator ==(const msci::coordinates_1d& x,const msci::coordinates_1d& y)
 {
 	if (x.x == y.x)
@@ -153,6 +143,43 @@ bool operator ==(const msci::point_1d& x,const msci::coordinates_1d& y)
 bool operator !=(const msci::point_1d& x,const msci::coordinates_1d& y)
 {
 	return !(x == y);
+}
+
+bool operator ==(const msci::coordinates_1d& x, const string& y)
+{
+	coordinates_1d y_coordinates = coordinates_1d(y);
+	return (x == y_coordinates);
+}
+
+bool operator !=(const msci::coordinates_1d& x, const string& y)
+{
+	return !(x == y);
+}
+
+bool operator ==(const string& x, const msci::coordinates_1d& y)
+{
+	coordinates_1d x_coordinates = coordinates_1d(x);
+	return (x_coordinates == y);
+}
+
+bool operator !=(const string& x, const msci::coordinates_1d& y)
+{
+	return !(x == y);
+}
+
+void operator +=(string& x, const msci::coordinates_1d& y)
+{
+	x += to_string(y);
+}
+
+string operator +(const string& x,const msci::coordinates_1d& y)
+{
+	return x + to_string(y);
+}
+
+string operator +(const msci::coordinates_1d& x,const string& y)
+{
+	return to_string(x) + y;
 }
 
 ostream& operator << (ostream& os,const msci::coordinates_1d& x)

@@ -13,7 +13,7 @@ namespace msci
 	{
 		public:
 			conversion();
-			conversion(const string&, float);
+			explicit conversion(const string&, float);
 
 			inline const float& get_factor() const
 			{

@@ -118,6 +118,13 @@ namespace msci
 	{
 		return msci::sqrt(msci::pow(x,2) + msci::pow(y,2));
 	}
+	
+	string coordinates_2d::display_polar() const
+	{
+		ostringstream out;
+		out << "(" << get_p() << "," << get_theta() << ")";
+		return out.str();
+	}
 
 	string to_string(const coordinates_2d& x)
 	{
@@ -140,16 +147,6 @@ namespace msci
 	{
 		return msci::sqrt(msci::pow(x.x - y.x,2) + msci::pow(x.y - y.y,2));
 	}
-}
-
-string operator +(const string& x,const msci::coordinates_2d& y)
-{
-	return x + to_string(y);
-}
-
-string operator +(const msci::coordinates_2d& x,const string& y)
-{
-	return to_string(x) + y;
 }
 
 bool operator ==(const msci::coordinates_2d& x,const msci::coordinates_2d& y)
@@ -201,6 +198,43 @@ bool operator ==(const msci::point_2d& x,const msci::coordinates_2d& y)
 bool operator !=(const msci::point_2d& x,const msci::coordinates_2d& y)
 {
 	return !(x == y);
+}
+
+bool operator ==(const msci::coordinates_2d& x, const string& y)
+{
+	coordinates_2d y_coordinates = coordinates_2d(y);
+	return (x == y_coordinates);
+}
+
+bool operator !=(const msci::coordinates_2d& x, const string& y)
+{
+	return !(x == y);
+}
+
+bool operator ==(const string& x, const msci::coordinates_2d& y)
+{
+	coordinates_2d x_coordinates = coordinates_2d(x);
+	return (x_coordinates == y);
+}
+
+bool operator !=(const string& x, const msci::coordinates_2d& y)
+{
+	return !(x == y);
+}
+
+void operator +=(string& x, const msci::coordinates_2d& y)
+{
+	x += to_string(y);
+}
+
+string operator +(const string& x,const msci::coordinates_2d& y)
+{
+	return x + to_string(y);
+}
+
+string operator +(const msci::coordinates_2d& x,const string& y)
+{
+	return to_string(x) + y;
 }
 
 ostream& operator << (ostream& os,const msci::coordinates_2d& x)

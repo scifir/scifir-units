@@ -138,6 +138,30 @@ bool operator !=(const msci::lab_number<T>& x, const msci::lab_number<T>& y)
 }
 
 template<typename T>
+bool operator ==(const msci::angle& x, const string& y)
+{
+	return (to_string(x) == y);
+}
+
+template<typename T>
+bool operator !=(const msci::angle& x, const string& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+bool operator ==(const string& x, const msci::angle& y)
+{
+	return (x == to_string(y));
+}
+
+template<typename T>
+bool operator !=(const string& x, const msci::angle& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
 void operator +=(string& x, const msci::lab_number<T>& y)
 {
 	x += to_string(y);

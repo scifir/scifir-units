@@ -313,6 +313,43 @@ bool operator !=(const msci::point_nd& x,const msci::point_nd& y)
 	return !(x == y);
 }
 
+bool operator ==(const msci::point_nd& x, const string& y)
+{
+	point_nd y_point = point_nd(y);
+	return (x == y_point);
+}
+
+bool operator !=(const msci::point_nd& x, const string& y)
+{
+	return !(x == y);
+}
+
+bool operator ==(const string& x, const msci::point_nd& y)
+{
+	point_nd x_point = point_nd(x);
+	return (x_point == y);
+}
+
+bool operator !=(const string& x, const msci::point_nd& y)
+{
+	return !(x == y);
+}
+
+void operator +=(string& x, const msci::point_nd& y)
+{
+	x += to_string(y);
+}
+
+string operator +(const string& x,const msci::point_nd& y)
+{
+	return x + to_string(y);
+}
+
+string operator +(const msci::point_nd& x,const string& y)
+{
+	return to_string(x) + y;
+}
+
 ostream& operator <<(ostream& os,const msci::point_nd& x)
 {
 	return os << to_string(x);

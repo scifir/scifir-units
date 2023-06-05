@@ -23,12 +23,12 @@ namespace msci
 			coordinates_3d();
 			coordinates_3d(const coordinates_3d&);
 			coordinates_3d(coordinates_3d&&);
-			coordinates_3d(const length&,const length&,const length&);
-			coordinates_3d(const length&,const angle&,length);
-			coordinates_3d(const length&,const angle&,const angle&);
-			coordinates_3d(const angle&,const angle&,const length&);
-			coordinates_3d(const point_3d&);
-			coordinates_3d(string);
+			explicit coordinates_3d(const length&,const length&,const length&);
+			explicit coordinates_3d(const length&,const angle&,length);
+			explicit coordinates_3d(const length&,const angle&,const angle&);
+			explicit coordinates_3d(const angle&,const angle&,const length&);
+			explicit coordinates_3d(const point_3d&);
+			explicit coordinates_3d(string);
 
 			coordinates_3d& operator=(const coordinates_3d&);
 			coordinates_3d& operator=(coordinates_3d&&);
@@ -38,6 +38,9 @@ namespace msci
 			angle get_theta() const;
 			length get_r() const;
 			angle get_phi() const;
+			angle get_latitude() const;
+			angle get_longitude() const;
+			length get_altitude() const;
 
 			void set_position(const length&,const length&,const length&);
 			void set_position(const length&,const angle&,length);
@@ -53,6 +56,10 @@ namespace msci
 			void move(const length&,const angle&,const angle&);
 			
 			length distance_to_origin() const;
+			
+			string display_cylindrical() const;
+			string display_spherical() const;
+			string display_geographical() const;
 
 			length x;
 			length y;
@@ -155,9 +162,6 @@ namespace msci
 	}
 }
 
-string operator +(const string&,const msci::coordinates_3d&);
-string operator +(const msci::coordinates_3d&,const string&);
-
 bool operator ==(const msci::coordinates_3d&,const msci::coordinates_3d&);
 bool operator !=(const msci::coordinates_3d&,const msci::coordinates_3d&);
 
@@ -165,6 +169,16 @@ bool operator ==(const msci::coordinates_3d&,const msci::point_3d&);
 bool operator !=(const msci::coordinates_3d&,const msci::point_3d&);
 bool operator ==(const msci::point_3d&,const msci::coordinates_3d&);
 bool operator !=(const msci::point_3d&,const msci::coordinates_3d&);
+
+bool operator ==(const msci::coordinates_3d&, const string&);
+bool operator !=(const msci::coordinates_3d&, const string&);
+
+bool operator ==(const string&, const msci::coordinates_3d&);
+bool operator !=(const string&, const msci::coordinates_3d&);
+
+void operator +=(string&, const msci::coordinates_3d&);
+string operator +(const string&,const msci::coordinates_3d&);
+string operator +(const msci::coordinates_3d&,const string&);
 
 ostream& operator << (ostream&, const msci::coordinates_3d&);
 istream& operator >>(istream&, msci::coordinates_3d&);

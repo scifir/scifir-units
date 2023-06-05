@@ -17,10 +17,10 @@ namespace msci
 			point_2d();
 			point_2d(const point_2d&);
 			point_2d(point_2d&&);
-			point_2d(const length&,const length&);
-			point_2d(const length&,const angle&);
-			point_2d(const coordinates_2d&);
-			point_2d(string);
+			explicit point_2d(const length&,const length&);
+			explicit point_2d(const length&,const angle&);
+			explicit point_2d(const coordinates_2d&);
+			explicit point_2d(string);
 
 			point_2d& operator=(const point_2d&);
 			point_2d& operator=(point_2d&&);
@@ -46,6 +46,16 @@ namespace msci
 
 bool operator ==(const msci::point_2d&,const msci::point_2d&);
 bool operator !=(const msci::point_2d&,const msci::point_2d&);
+
+bool operator ==(const msci::point_2d&, const string&);
+bool operator !=(const msci::point_2d&, const string&);
+
+bool operator ==(const string&, const msci::point_2d&);
+bool operator !=(const string&, const msci::point_2d&);
+
+void operator +=(string&, const msci::point_2d&);
+string operator +(const string&,const msci::point_2d&);
+string operator +(const msci::point_2d&,const string&);
 
 ostream& operator <<(ostream&,const msci::point_2d&);
 istream& operator >>(istream&, msci::point_2d&);

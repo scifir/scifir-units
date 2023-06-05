@@ -18,12 +18,12 @@ namespace msci
 			point_3d();
 			point_3d(const point_3d&);
 			point_3d(point_3d&&);
-			point_3d(const length&,const length&,const length&);
-			point_3d(const length&,const angle&,length);
-			point_3d(const length&,const angle&,const angle&);
-			point_3d(const angle&,const angle&,const length&);
-			point_3d(const coordinates_3d&);
-			point_3d(string);
+			explicit point_3d(const length&,const length&,const length&);
+			explicit point_3d(const length&,const angle&,length);
+			explicit point_3d(const length&,const angle&,const angle&);
+			explicit point_3d(const angle&,const angle&,const length&);
+			explicit point_3d(const coordinates_3d&);
+			explicit point_3d(string);
 
 			point_3d& operator=(const point_3d&);
 			point_3d& operator=(point_3d&&);
@@ -55,6 +55,16 @@ namespace msci
 
 bool operator ==(const msci::point_3d&,const msci::point_3d&);
 bool operator !=(const msci::point_3d&,const msci::point_3d&);
+
+bool operator ==(const msci::point_3d&, const string&);
+bool operator !=(const msci::point_3d&, const string&);
+
+bool operator ==(const string&, const msci::point_3d&);
+bool operator !=(const string&, const msci::point_3d&);
+
+void operator +=(string&, const msci::point_3d&);
+string operator +(const string&,const msci::point_3d&);
+string operator +(const msci::point_3d&,const string&);
 
 ostream& operator <<(ostream&,const msci::point_3d&);
 istream& operator >>(istream&, msci::point_3d&);

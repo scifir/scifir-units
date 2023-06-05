@@ -87,7 +87,7 @@ namespace msci
 
 	angle coordinates_3d::get_theta() const
 	{
-		return angle(msci::atan_grade(float(y/x)));
+		return msci::atan(float(y/x));
 	}
 
 	length coordinates_3d::get_r() const
@@ -98,6 +98,21 @@ namespace msci
 	angle coordinates_3d::get_phi() const
 	{
 		return angle(msci::acos_grade(float(z/msci::sqrt(msci::pow(x,2) + msci::pow(y,2) + msci::pow(z,2)))));
+	}
+	
+	angle coordinates_3d::get_latitude() const
+	{
+		return msci::asin(float(z/length(6317,"km")));
+	}
+	
+	angle coordinates_3d::get_longitude() const
+	{
+		return msci::atan(float(y/x));
+	}
+	
+	length coordinates_3d::get_altitude() const
+	{
+		return length();
 	}
 	
 	void coordinates_3d::set_position(const length& new_x,const length& new_y,const length& new_z)
@@ -187,6 +202,27 @@ namespace msci
 		return msci::sqrt(msci::pow(x,2) + msci::pow(y,2) + msci::pow(z,2));
 	}
 	
+	string coordinates_3d::display_cylindrical() const
+	{
+		ostringstream out;
+		out << "(" << get_p() << "," << get_theta() << "," << z << ")";
+		return out.str();
+	}
+	
+	string coordinates_3d::display_spherical() const
+	{
+		ostringstream out;
+		out << "(" << get_r() << "," << get_theta() << "," << get_phi() << ")";
+		return out.str();
+	}
+	
+	string coordinates_3d::display_geographical() const
+	{
+		ostringstream out;
+		out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ")";
+		return out.str();
+	}
+	
 	string to_string(const coordinates_3d& x)
 	{
 		ostringstream out;
@@ -208,16 +244,6 @@ namespace msci
 	{
 		return msci::sqrt(msci::pow(x.x - y.x,2) + msci::pow(x.y - y.y,2) + msci::pow(x.z - y.z,2));
 	}
-}
-
-string operator +(const string& x,const msci::coordinates_3d& y)
-{
-	return x + to_string(y);
-}
-
-string operator +(const msci::coordinates_3d& x,const string& y)
-{
-	return to_string(x) + y;
 }
 
 bool operator ==(const msci::coordinates_3d& x,const msci::coordinates_3d& y)
@@ -269,6 +295,43 @@ bool operator ==(const msci::point_3d& x,const msci::coordinates_3d& y)
 bool operator !=(const msci::point_3d& x,const msci::coordinates_3d& y)
 {
 	return !(x == y);
+}
+
+bool operator ==(const msci::coordinates_3d& x, const string& y)
+{
+	coordinates_3d y_coordinates = coordinates_3d(y);
+	return (x == y_coordinates);
+}
+
+bool operator !=(const msci::coordinates_3d& x, const string& y)
+{
+	return !(x == y);
+}
+
+bool operator ==(const string& x, const msci::coordinates_3d& y)
+{
+	coordinates_3d x_coordinates = coordinates_3d(x);
+	return (x_coordinates == y);
+}
+
+bool operator !=(const string& x, const msci::coordinates_3d& y)
+{
+	return !(x == y);
+}
+
+void operator +=(string& x, const msci::coordinates_3d& y)
+{
+	x += to_string(y);
+}
+
+string operator +(const string& x,const msci::coordinates_3d& y)
+{
+	return x + to_string(y);
+}
+
+string operator +(const msci::coordinates_3d& x,const string& y)
+{
+	return to_string(x) + y;
 }
 
 ostream& operator << (ostream& os, const msci::coordinates_3d& x)

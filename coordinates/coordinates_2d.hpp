@@ -19,10 +19,10 @@ namespace msci
 			coordinates_2d();
 			coordinates_2d(const coordinates_2d&);
 			coordinates_2d(coordinates_2d&&);
-			coordinates_2d(const length&,const length&);
-			coordinates_2d(const length&,const angle&);
-			coordinates_2d(const point_2d&);
-			coordinates_2d(string);
+			explicit coordinates_2d(const length&,const length&);
+			explicit coordinates_2d(const length&,const angle&);
+			explicit coordinates_2d(const point_2d&);
+			explicit coordinates_2d(string);
 
 			coordinates_2d& operator=(const coordinates_2d&);
 			coordinates_2d& operator=(coordinates_2d&&);
@@ -40,6 +40,8 @@ namespace msci
 			void move(const length&,const angle&);
 			
 			length distance_to_origin() const;
+			
+			string display_polar() const;
 
 			length x;
 			length y;
@@ -71,9 +73,6 @@ namespace msci
 	}
 }
 
-string operator +(const string&,const msci::coordinates_2d&);
-string operator +(const msci::coordinates_2d&,const string&);
-
 bool operator ==(const msci::coordinates_2d&,const msci::coordinates_2d&);
 bool operator !=(const msci::coordinates_2d&,const msci::coordinates_2d&);
 
@@ -81,6 +80,16 @@ bool operator ==(const msci::coordinates_2d&,const msci::point_2d&);
 bool operator !=(const msci::coordinates_2d&,const msci::point_2d&);
 bool operator ==(const msci::point_2d&,const msci::coordinates_2d&);
 bool operator !=(const msci::point_2d&,const msci::coordinates_2d&);
+
+bool operator ==(const msci::coordinates_2d&, const string&);
+bool operator !=(const msci::coordinates_2d&, const string&);
+
+bool operator ==(const string&, const msci::coordinates_2d&);
+bool operator !=(const string&, const msci::coordinates_2d&);
+
+void operator +=(string&, const msci::coordinates_2d&);
+string operator +(const string&,const msci::coordinates_2d&);
+string operator +(const msci::coordinates_2d&,const string&);
 
 ostream& operator << (ostream&,const msci::coordinates_2d&);
 istream& operator >>(istream&,msci::coordinates_2d&);
