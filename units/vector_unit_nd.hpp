@@ -160,6 +160,7 @@ namespace msci
 			vector<angle> angles;
 	};
 
+	string to_string(const vector_unit_nd&);
 	scalar_unit norm(const vector_unit_nd&);
 	vector_unit_nd sqrt(const vector_unit_nd&);
 	vector_unit_nd sqrt_nth(const vector_unit_nd&,int);

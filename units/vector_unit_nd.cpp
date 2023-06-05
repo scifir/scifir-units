@@ -529,6 +529,17 @@ namespace msci
 			x_angle.invert();
 		}
 	}
+	
+	string to_string(const vector_unit_nd& x)
+	{
+		ostringstream out;
+		out << x.get_value() << " " << x.display_dimensions();
+		for (const angle& x_angle : x.angles)
+		{
+			out << " " << x_angle;
+		}
+		return out.str();
+	}
 
 	scalar_unit norm(const vector_unit_nd& x)
 	{
