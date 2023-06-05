@@ -40,8 +40,6 @@ namespace msci
 	SCALAR_UNIT_HPP(data);
 }
 
-ostream& operator <<(ostream&, const msci::time&);
-
 msci::length operator"" _Ym(unsigned long long int);
 msci::length operator"" _Zm(unsigned long long int);
 msci::length operator"" _Em(unsigned long long int);
