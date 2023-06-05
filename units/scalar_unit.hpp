@@ -81,8 +81,8 @@ namespace msci
 
 			explicit operator float() const;
 
-			scalar_unit operator +(const scalar_unit&) const;
-			scalar_unit operator -(const scalar_unit&) const;
+			scalar_unit operator +(scalar_unit) const;
+			scalar_unit operator -(scalar_unit) const;
 			scalar_unit operator *(const scalar_unit&) const;
 			scalar_unit operator /(const scalar_unit&) const;
 			scalar_unit operator ^(const scalar_unit&) const;

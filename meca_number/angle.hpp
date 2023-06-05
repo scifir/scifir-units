@@ -39,11 +39,6 @@ namespace msci
 			angle& operator=(string&);
 			angle& operator=(const scalar_unit&);
 
-			angle* clone() const
-			{
-				return new angle(static_cast<angle const &>(*this));
-			}
-
 			explicit operator float() const
 			{
 				return float(value);
@@ -143,9 +138,9 @@ namespace msci
 				return *this;
 			}
 
-			angle operator++(int)
+			angle& operator++(int)
 			{
-				angle tmp = *clone();
+				angle& tmp = angle(*this);
 				operator++();
 				return tmp;
 			}
@@ -156,9 +151,9 @@ namespace msci
 				return *this;
 			}
 
-			angle operator--(int)
+			angle& operator--(int)
 			{
-				angle tmp = *clone();
+				angle& tmp = angle(*this);
 				operator--();
 				return tmp;
 			}

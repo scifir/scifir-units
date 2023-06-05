@@ -43,7 +43,7 @@ namespace msci
 
 	scalar_unit& scalar_unit::operator =(const scalar_unit& x)
 	{
-		if (msci::equal_dimensions(*this,x))
+		if (equal_dimensions(*this,x))
 		{
 			dimensions = x.get_dimensions();
 			value = x.get_value();
@@ -57,7 +57,7 @@ namespace msci
 
 	scalar_unit& scalar_unit::operator =(scalar_unit&& x)
 	{
-		if (msci::equal_dimensions(*this,x))
+		if (equal_dimensions(*this,x))
 		{
 			dimensions = move(x.get_dimensions());
 			value = move(x.get_value());
@@ -74,14 +74,13 @@ namespace msci
 		return value;
 	}
 
-	scalar_unit scalar_unit::operator +(const scalar_unit& x) const
+	scalar_unit scalar_unit::operator +(scalar_unit x) const
 	{
-		if(x.has_dimensions(get_derived_dimensions()))
+		if(equal_dimensions(*this,x))
 		{
+			x.set_same_prefix(get_dimensions());
 			scalar_unit a = *this;
-			scalar_unit y = x;
-			y.set_same_prefix(scalar_unit::get_dimensions());
-			a += y.get_value();
+			a += x.get_value();
 			return a;
 		}
 		else
@@ -91,14 +90,13 @@ namespace msci
 		}
 	}
 
-	scalar_unit scalar_unit::operator -(const scalar_unit& x) const
+	scalar_unit scalar_unit::operator -(scalar_unit x) const
 	{
-		if(x.has_dimensions(get_derived_dimensions()))
+		if(equal_dimensions(*this,x))
 		{
+			x.set_same_prefix(get_dimensions());
 			scalar_unit a = *this;
-			scalar_unit y = x;
-			y.set_same_prefix(scalar_unit::get_dimensions());
-			a -= y.get_value();
+			a -= x.get_value();
 			return a;
 		}
 		else
@@ -112,7 +110,7 @@ namespace msci
 	{
 		float new_value = value;
 		scalar_unit y = x;
-		if(y.has_dimensions(get_derived_dimensions()))
+		if(equal_dimensions(*this,y))
 		{
 			y.set_same_prefix(get_dimensions());
 		}
@@ -125,9 +123,9 @@ namespace msci
 	{
 		float new_value = value;
 		scalar_unit y = x;
-		if(y.has_dimensions(get_derived_dimensions()))
+		if(equal_dimensions(*this,y))
 		{
-			y.set_same_prefix(scalar_unit::get_dimensions());
+			y.set_same_prefix(get_dimensions());
 		}
 		new_value /= y.get_value();
 		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(),y.get_dimensions());
@@ -149,7 +147,7 @@ namespace msci
 
 	void scalar_unit::operator +=(const scalar_unit& x)
 	{
-		if(!x.has_dimensions(get_derived_dimensions()))
+		if(!equal_dimensions(*this,x))
 		{
 			cerr << "Cannot sum different dimensions";
 			return;
@@ -161,7 +159,7 @@ namespace msci
 
 	void scalar_unit::operator -=(const scalar_unit& x)
 	{
-		if(!x.has_dimensions(get_derived_dimensions()))
+		if(!equal_dimensions(*this,x))
 		{
 			cerr << "Cannot substract different dimensions";
 			return;
