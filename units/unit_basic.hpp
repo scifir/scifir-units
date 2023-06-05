@@ -18,20 +18,9 @@ namespace msci
 			
 			explicit operator std::chrono::seconds() const;
 
-			inline void change_display(msci::time::display new_display_mode)
-			{
-				display_mode = new_display_mode;
-			}
-
-			inline const msci::time::display& get_display_mode() const
-			{
-				return display_mode;
-			}
-
 			string get_finish_date() const;
+			string display_as_time() const;
 
-		private:
-			msci::time::display display_mode;
 	SCALAR_UNIT_HPP_END();
 
 	SCALAR_UNIT_HPP(mass);

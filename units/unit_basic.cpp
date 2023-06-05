@@ -36,51 +36,15 @@ namespace msci
 		output << ctime(&start_time);
 		return output.str();
 	}
-
-	SCALAR_UNIT_CPP(mass,"g");
-	SCALAR_UNIT_CPP(charge,"C");
-
-	void temperature::add_prefix(const prefix& prefix)
-	{
-		if(prefix.get_conversion_factor() > 0)
-		{
-			scalar_unit::add_prefix(prefix);
-		}
-		else
-		{
-			cerr << "Temperature can't have negative prefixes";
-		}
-	}
-
-	SCALAR_UNIT_CPP(mole,"mol");
-
-	int mole::number_of_particles() const
-	{
-		return 1;
-		/*if (scalar_unit::actual_dimensions.count(particles))
-		{
-			return scalar_unit::value;
-		}
-		else
-		{
-			return scalar_unit::value * msci::avogadro_constant;
-		}*/
-	}
-
-	SCALAR_UNIT_CPP(light,"cd");
-	SCALAR_UNIT_CPP(data,"B");
-}
-
-ostream& operator <<(ostream& os, const msci::time& x)
-{
-	if (x.get_display_mode() == msci::time::display::TIME)
+	
+	string time::display_as_time() const
 	{
 		ostringstream output;
-		msci::time remaining_time = x;
+		msci::time remaining_time = *this;
 		msci::time one_year ("365 d");
-		if (x >= one_year)
+		if (*this >= one_year)
 		{
-			int total_of_years = int(trunc((x / one_year).get_value()));
+			int total_of_years = int(trunc((*this / one_year).get_value()));
 			output << total_of_years << "y ";
 			remaining_time -= msci::time(total_of_years * 365,"d");
 		}
@@ -119,12 +83,41 @@ ostream& operator <<(ostream& os, const msci::time& x)
 			float total_of_seconds = float(remaining_time.get_value());
 			output << total_of_seconds << "s";
 		}
-		return os << output.str();
+		return output.str();
 	}
-	else
+
+	SCALAR_UNIT_CPP(mass,"g");
+	SCALAR_UNIT_CPP(charge,"C");
+
+	void temperature::add_prefix(const prefix& prefix)
 	{
-		return os << static_cast<const msci::scalar_unit&>(x);
+		if(prefix.get_conversion_factor() > 0)
+		{
+			scalar_unit::add_prefix(prefix);
+		}
+		else
+		{
+			cerr << "Temperature can't have negative prefixes";
+		}
 	}
+
+	SCALAR_UNIT_CPP(mole,"mol");
+
+	int mole::number_of_particles() const
+	{
+		return 1;
+		/*if (scalar_unit::actual_dimensions.count(particles))
+		{
+			return scalar_unit::value;
+		}
+		else
+		{
+			return scalar_unit::value * msci::avogadro_constant;
+		}*/
+	}
+
+	SCALAR_UNIT_CPP(light,"cd");
+	SCALAR_UNIT_CPP(data,"B");
 }
 
 msci::length operator"" _Ym(unsigned long long int x)

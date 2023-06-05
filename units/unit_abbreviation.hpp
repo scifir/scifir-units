@@ -16,28 +16,6 @@
 #include "predefined_units/thermodynamics_units.hpp"
 #include "predefined_units/waves_units.hpp"
 
-length operator"" _Ym(unsigned long long int);
-length operator"" _Zm(unsigned long long int);
-length operator"" _Em(unsigned long long int);
-length operator"" _Pm(unsigned long long int);
-length operator"" _Tm(unsigned long long int);
-length operator"" _Gm(unsigned long long int);
-length operator"" _Mm(unsigned long long int);
-length operator"" _km(unsigned long long int);
-length operator"" _hm(unsigned long long int);
-length operator"" _dam(unsigned long long int);
-length operator"" _m(unsigned long long int);
-length operator"" _dm(unsigned long long int);
-length operator"" _cm(unsigned long long int);
-length operator"" _mm(unsigned long long int);
-length operator"" _um(unsigned long long int);
-length operator"" _nm(unsigned long long int);
-length operator"" _pm(unsigned long long int);
-length operator"" _fm(unsigned long long int);
-length operator"" _am(unsigned long long int);
-length operator"" _zm(unsigned long long int);
-length operator"" _ym(unsigned long long int);
-
 frequency operator"" _YHz(unsigned long long int);
 frequency operator"" _ZHz(unsigned long long int);
 frequency operator"" _EHz(unsigned long long int);
@@ -582,28 +560,6 @@ molarity operator"" _yM(unsigned long long int);
 mole operator"" _particles(unsigned long long int);
 concentration operator"" _ppm(unsigned long long int);
 concentration operator"" _ppb(unsigned long long int);
-
-length operator"" _Ym(long double);
-length operator"" _Zm(long double);
-length operator"" _Em(long double);
-length operator"" _Pm(long double);
-length operator"" _Tm(long double);
-length operator"" _Gm(long double);
-length operator"" _Mm(long double);
-length operator"" _km(long double);
-length operator"" _hm(long double);
-length operator"" _dam(long double);
-length operator"" _m(long double);
-length operator"" _dm(long double);
-length operator"" _cm(long double);
-length operator"" _mm(long double);
-length operator"" _um(long double);
-length operator"" _nm(long double);
-length operator"" _pm(long double);
-length operator"" _fm(long double);
-length operator"" _am(long double);
-length operator"" _zm(long double);
-length operator"" _ym(long double);
 
 frequency operator"" _YHz(long double);
 frequency operator"" _ZHz(long double);

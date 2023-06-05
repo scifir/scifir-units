@@ -33,7 +33,6 @@ MSCI UNITS - VERSION 2
 // UNITS
 // TODO: see what to do for units with the same dimensions at the numerator and at the denominator
 // TODO: x_projection() and related functions should send scalar_units, no float types
-// TODO: operator == should care about dimensions and the value related to dimensions (cast operator == of unit,unit there)
 // TODO: initialization of 1/g and similar
 // TODO: support scientific notation on constructors and display(int,bool) (check if there's a function to get the order of the number)
 // TODO: display all the numbers of the unit in the case 0
@@ -60,7 +59,6 @@ MSCI UNITS - VERSION 2
 // TODO: the pH should be an special unit
 // TODO: unit time class should be initialized by multiple abbreviations as 100 min 40 s for example
 // TODO: unit time class should display with an string "d s" specifying the dimensions to calculate on
-// TODO: unit time class shouldn't have display_mode as variable
 // TODO: complete color class like coordinate classes, with all the getters of all the different color versions
 // TODO: support currency dimension
 // TODO: document a little how to handle currency
@@ -105,6 +103,7 @@ MSCI UNITS - VERSION 2
 // TODO: add the theta and phi characters to C++ variable names, and add them then to the member-variables of vector_unit classes, and any other case of similar use
 // TODO: add the astronomy coordinates
 // TODO: add the other orthogonal coordinates, like paraboloidal
+// TODO: add to the ISO of the keyboards some system to write pi, theta, phi, among other symbols, with the keyboard in an easy way, without having to memorize any numeric code
 
 // FUTURE - MECA NUMBERS (POSSIBLE, THINK)
 // TODO: Add names to the meca numbers (angler, laber, etc)
