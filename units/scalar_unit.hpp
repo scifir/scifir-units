@@ -83,11 +83,11 @@ namespace msci
 
 			scalar_unit operator +(scalar_unit) const;
 			scalar_unit operator -(scalar_unit) const;
-			scalar_unit operator *(const scalar_unit&) const;
-			scalar_unit operator /(const scalar_unit&) const;
+			scalar_unit operator *(scalar_unit) const;
+			scalar_unit operator /(scalar_unit) const;
 			scalar_unit operator ^(const scalar_unit&) const;
-			void operator +=(const scalar_unit&);
-			void operator -=(const scalar_unit&);
+			void operator +=(scalar_unit);
+			void operator -=(scalar_unit);
 
 			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 			scalar_unit operator +(const T y) const

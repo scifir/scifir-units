@@ -106,29 +106,27 @@ namespace msci
 		}
 	}
 
-	scalar_unit scalar_unit::operator *(const scalar_unit& x) const
+	scalar_unit scalar_unit::operator *(scalar_unit x) const
 	{
 		float new_value = value;
-		scalar_unit y = x;
-		if(equal_dimensions(*this,y))
+		if(equal_dimensions(*this,x))
 		{
-			y.set_same_prefix(get_dimensions());
+			x.set_same_prefix(get_dimensions());
 		}
-		new_value *= y.get_value();
-		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(),y.get_dimensions());
+		new_value *= x.get_value();
+		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(),x.get_dimensions());
 		return scalar_unit(new_value, new_dimensions);
 	}
 
-	scalar_unit scalar_unit::operator /(const scalar_unit& x) const
+	scalar_unit scalar_unit::operator /(scalar_unit x) const
 	{
 		float new_value = value;
-		scalar_unit y = x;
-		if(equal_dimensions(*this,y))
+		if(equal_dimensions(*this,x))
 		{
-			y.set_same_prefix(get_dimensions());
+			x.set_same_prefix(get_dimensions());
 		}
-		new_value /= y.get_value();
-		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(),y.get_dimensions());
+		new_value /= x.get_value();
+		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(),x.get_dimensions());
 		return scalar_unit(new_value, new_dimensions);
 	}
 
@@ -145,28 +143,26 @@ namespace msci
 		}
 	}
 
-	void scalar_unit::operator +=(const scalar_unit& x)
+	void scalar_unit::operator +=(scalar_unit x)
 	{
 		if(!equal_dimensions(*this,x))
 		{
 			cerr << "Cannot sum different dimensions";
 			return;
 		}
-		scalar_unit z = x;
-		z.set_same_prefix(get_dimensions());
-		value += z.get_value();
+		x.set_same_prefix(get_dimensions());
+		value += x.get_value();
 	}
 
-	void scalar_unit::operator -=(const scalar_unit& x)
+	void scalar_unit::operator -=(scalar_unit x)
 	{
 		if(!equal_dimensions(*this,x))
 		{
 			cerr << "Cannot substract different dimensions";
 			return;
 		}
-		scalar_unit z = x;
-		z.set_same_prefix(get_dimensions());
-		value -= z.get_value();
+		x.set_same_prefix(get_dimensions());
+		value -= x.get_value();
 	}
 
 	scalar_unit& scalar_unit::operator++()
