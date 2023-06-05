@@ -1,9 +1,9 @@
 #ifndef MSCI_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED
 #define MSCI_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED
 
-#include "meca_number/unit_number.hpp"
-
 #include "util/is_number.hpp"
+
+#include "boost/algorithm/string.hpp"
 
 #include <cmath>
 #include <string>
@@ -186,9 +186,18 @@ ostream& operator <<(ostream& os, const msci::lab_number<T>& x)
 }
 
 template<typename T>
-istream& operator >>(istream&, msci::lab_number<T>&)
+istream& operator >>(istream& is, msci::lab_number<T>& x)
 {
-	
+	char a[256];
+	is.getline(a, 256);
+	string b(a);
+	vector<string> values;
+	boost::split(values,b,boost::is_any_of(" "));
+	T x1 = T(values[0]);
+	T x2 = T(values[1]);
+	msci::lab_number<T> c(x1,x2);
+	x = c;
+	return is;
 }
 
 #endif // MSCI_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED
