@@ -62,6 +62,7 @@ namespace msci
 	vector<dimension> divide_dimensions(const vector<dimension>&,const vector<dimension>&);
 	vector<dimension> power_dimensions(const vector<dimension>&,int);
 	vector<dimension> normalize_dimensions(const vector<dimension>&);
+	bool equal_dimensions(const string&,const string&);
 	bool equal_dimensions(const vector<dimension>&,const vector<dimension>&);
 }
 

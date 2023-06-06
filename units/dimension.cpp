@@ -680,6 +680,13 @@ namespace msci
 		}
 		return new_dimensions;
 	}
+	
+	bool equal_dimensions(const string& x,const string& y)
+	{
+		vector<dimension> x_dimensions = create_dimensions(x);
+		vector<dimension> y_dimensions = create_dimensions(y);
+		return equal_dimensions(x_dimensions,y_dimensions);
+	}
 
 	bool equal_dimensions(const vector<dimension>& x,const vector<dimension>& y)
 	{
