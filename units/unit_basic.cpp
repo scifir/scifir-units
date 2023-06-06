@@ -46,35 +46,35 @@ namespace msci
 		{
 			int total_of_years = int(trunc((*this / one_year).get_value()));
 			output << total_of_years << "y ";
-			remaining_time -= msci::time(total_of_years * 365,"d");
+			remaining_time.scalar_unit::operator-=(msci::time(total_of_years * 365,"d"));
 		}
 		msci::time one_month("30 d");
 		if (remaining_time >= one_month)
 		{
 			int total_of_months = int(trunc((remaining_time / one_month).get_value()));
 			output << total_of_months << "m ";
-			remaining_time -= msci::time(total_of_months * 30,"d");
+			remaining_time.scalar_unit::operator-=(msci::time(total_of_months * 30,"d"));
 		}
 		msci::time one_day("1 d");
 		if (remaining_time >= one_day)
 		{
 			int total_of_days = int(trunc((remaining_time / one_day).get_value()));
 			output << total_of_days << "d ";
-			remaining_time -= msci::time(total_of_days,"d");
+			remaining_time.scalar_unit::operator-=(msci::time(total_of_days,"d"));
 		}
 		msci::time one_hour("1 h");
 		if (remaining_time >= one_hour)
 		{
 			int total_of_hours = int(trunc((remaining_time / one_hour).get_value()));
 			output << total_of_hours << "h ";
-			remaining_time -= msci::time(total_of_hours,"h");
+			remaining_time.scalar_unit::operator-=(msci::time(total_of_hours,"h"));
 		}
 		msci::time one_minute("1 min");
 		if (remaining_time >= one_minute)
 		{
 			int total_of_minutes = int(trunc((remaining_time / one_minute).get_value()));
 			output << total_of_minutes << "min ";
-			remaining_time -= msci::time(total_of_minutes,"min");
+			remaining_time.scalar_unit::operator-=(msci::time(total_of_minutes,"min"));
 		}
 		msci::time one_second("1 s");
 		if (remaining_time >= one_second)

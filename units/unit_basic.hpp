@@ -8,6 +8,8 @@
 #include <iostream>
 #include <sstream>
 
+using namespace std;
+
 namespace msci
 {
 	SCALAR_UNIT_HPP(length);
@@ -18,6 +20,24 @@ namespace msci
 
 			string get_finish_date() const;
 			string display_as_time() const;
+
+			template<typename T1,typename T2>
+			msci::time& operator+=(chrono::duration<T1,T2> x)
+			{
+				 chrono::seconds d = chrono::duration_cast<chrono::seconds>(x);
+				 msci::time x_second = msci::time(d.count(),"s");
+				 scalar_unit::operator+=(x_second);
+				 return *this;
+			}
+			
+			template<typename T1,typename T2>
+			msci::time& operator-=(chrono::duration<T1,T2> x)
+			{
+				 chrono::seconds d = chrono::duration_cast<chrono::seconds>(x);
+				 msci::time x_second = msci::time(d.count(),"s");
+				 scalar_unit::operator-=(x_second);
+				 return *this;
+			}
 
 	SCALAR_UNIT_HPP_END();
 
