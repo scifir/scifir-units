@@ -608,88 +608,136 @@ namespace msci
 		}
 		else if(dimension_name == "angle")
 		{
-			return dimension(dimension::m,new_prefix,dimension::positive);
+			return dimension(dimension::angle,new_prefix,dimension::positive);
 		}
 		else if(dimension_name == "solid_angle")
 		{
-			return dimension(dimension::m,new_prefix,dimension::positive);
+			return dimension(dimension::solid_angle,new_prefix,dimension::positive);
 		}
 		else if(dimension_name == "g")
 		{
-			return dimension(dimension::m,new_prefix,dimension::positive);
+			return dimension(dimension::g,new_prefix,dimension::positive);
 		}
 		else if(dimension_name == "s")
 		{
-			return dimension(dimension::m,new_prefix,dimension::positive);
+			return dimension(dimension::s,new_prefix,dimension::positive);
 		}
 		else if(dimension_name == "C")
 		{
-			return dimension(dimension::m,new_prefix,dimension::positive);
+			return dimension(dimension::C,new_prefix,dimension::positive);
 		}
 		else if(dimension_name == "K")
 		{
-			return dimension(dimension::m,new_prefix,dimension::positive);
+			return dimension(dimension::K,new_prefix,dimension::positive);
 		}
 		else if(dimension_name == "mol")
 		{
-			return dimension(dimension::m,new_prefix,dimension::positive);
+			return dimension(dimension::mol,new_prefix,dimension::positive);
 		}
 		else if(dimension_name == "cd")
 		{
-			return dimension(dimension::m,new_prefix,dimension::positive);
+			return dimension(dimension::cd,new_prefix,dimension::positive);
 		}
 		else if(dimension_name == "B")
 		{
-			return dimension(dimension::m,new_prefix,dimension::positive);
+			return dimension(dimension::B,new_prefix,dimension::positive);
 		}
 		else
 		{
 			return custom_dimension(dimension_name);
 		}
 	}
-	
+
 	string to_string(const vector<dimension>& x_dimensions)
 	{
 		ostringstream out;
 		vector<dimension::type> printed_dimensions = vector<dimension::type>();
+		map<prefix,int> counted_prefixes = map<prefix,int>();
 		for (const dimension& x_dimension : x_dimensions)
 		{
 			if (x_dimension.dimension_sign == dimension::positive)
 			{
-				if (printed_dimensions.size() != 0)
+				bool printed = false;
+				for (const dimension::type& print_dimension : printed_dimensions)
 				{
-					out << "*";
+					if (print_dimension == x_dimension.dimension_type)
+					{
+						printed = true;
+					}
 				}
-				int i = 1;
+				if (printed == true)
+				{
+					continue;
+				}
+				counted_prefixes = map<prefix,int>();
 				for (const dimension& y_dimension : x_dimensions)
 				{
 					if (x_dimension.dimension_type == y_dimension.dimension_type)
 					{
-						i++;
+						counted_prefixes[y_dimension.prefix]++;
 					}
 				}
-				out << x_dimension.get_symbol() << i;
+				for (const auto& x_prefix : counted_prefixes)
+				{
+					if (out.str() != "")
+					{
+						out << "*";
+					}
+					out << x_prefix.first << x_dimension.get_symbol();
+					if (x_prefix.second > 1)
+					{
+						out << x_prefix.second;
+					}
+				}
+				printed_dimensions.push_back(x_dimension.dimension_type);
 			}
 		}
-		out << "/";
 		printed_dimensions.empty();
+		bool first_negative_iteration = true;
+		bool first_negative_prefix = true;
 		for (const dimension& x_dimension : x_dimensions)
 		{
 			if (x_dimension.dimension_sign == dimension::negative)
 			{
-				if (printed_dimensions.size() != 0)
+				if (first_negative_iteration == true)
 				{
-					out << "*";
+					out << "/";
+					first_negative_iteration = false;
 				}
-				int i = 1;
+				bool printed = false;
+				for (const dimension::type& print_dimension : printed_dimensions)
+				{
+					if (print_dimension == x_dimension.dimension_type)
+					{
+						printed = true;
+					}
+				}
+				if (printed == true)
+				{
+					continue;
+				}
+				counted_prefixes = map<prefix,int>();
 				for (const dimension& y_dimension : x_dimensions)
 				{
 					if (x_dimension.dimension_type == y_dimension.dimension_type)
 					{
-						i++;
+						counted_prefixes[y_dimension.prefix]++;
 					}
 				}
-				out << x_dimension.get_symbol() << i;
+				for (const auto& x_prefix : counted_prefixes)
+				{
+					if (first_negative_prefix == false)
+					{
+						out << "*";
+					}
+					out << x_prefix.first << x_dimension.get_symbol();
+					if (x_prefix.second > 1)
+					{
+						out << x_prefix.second;
+					}
+					first_negative_prefix = false;
+				}
+				printed_dimensions.push_back(x_dimension.dimension_type);
 			}
 		}
 		return out.str();
@@ -845,6 +893,42 @@ namespace msci
 			new_dimensions.push_back(y_dimension);
 		}
 		return normalize_dimensions(new_dimensions);
+	}
+	
+	vector<dimension> square_dimensions(const vector<dimension>& x,int scale)
+	{
+		vector<dimension> new_dimensions = vector<dimension>();
+		vector<dimension::type> counted_dimensions = vector<dimension::type>();
+		for (const dimension& x_dimension : x)
+		{
+			bool counted = false;
+			for (const dimension::type& counted_dimension : counted_dimensions)
+			{
+				if (counted_dimension == x_dimension.dimension_type)
+				{
+					counted = true;
+				}
+			}
+			if (counted == true)
+			{
+				continue;
+			}
+			int i = 1;
+			for (const dimension& y_dimension : x)
+			{
+				if (x_dimension.dimension_type == y_dimension.dimension_type)
+				{
+					i++;
+				}
+			}
+			int total_dimensions = std::sqrt(i);
+			for (int j = 0; j < total_dimensions; j++)
+			{
+				new_dimensions.push_back(dimension(x_dimension.dimension_type,x_dimension.prefix,x_dimension.dimension_sign));
+			}
+			counted_dimensions.push_back(x_dimension.dimension_type);
+		}
+		return new_dimensions;
 	}
 
 	vector<dimension> power_dimensions(const vector<dimension>& x,int scale)

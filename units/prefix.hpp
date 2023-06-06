@@ -27,6 +27,8 @@ namespace msci
 			float get_prefix_base() const;
 			string get_name() const;
 			string get_symbol() const;
+			
+			bool operator<(const msci::prefix&) const;
 
 			prefix::type prefix_type;
 	};
@@ -36,6 +38,12 @@ namespace msci
 	prefix create_prefix(prefix::type);
 	prefix create_prefix(const string&);
 }
+
+bool operator ==(const msci::prefix&,const msci::prefix&);
+bool operator !=(const msci::prefix&,const msci::prefix&);
+bool operator <=(const msci::prefix&,const msci::prefix&);
+bool operator >(const msci::prefix&,const msci::prefix&);
+bool operator >=(const msci::prefix&,const msci::prefix&);
 
 ostream& operator <<(ostream&, const msci::prefix&);
 

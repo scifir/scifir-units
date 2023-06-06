@@ -187,6 +187,11 @@ namespace msci
 		}
 		return "";
 	}
+	
+	bool prefix::operator<(const msci::prefix& y) const
+	{
+		return (get_conversion_factor() < y.get_conversion_factor());
+	}
 
 	prefix::type prefix_string(const string& x)
 	{
@@ -368,6 +373,31 @@ namespace msci
 			return prefix();
 		}
 	}
+}
+
+bool operator ==(const msci::prefix& x,const msci::prefix& y)
+{
+	return (x.get_conversion_factor() == y.get_conversion_factor());
+}
+
+bool operator !=(const msci::prefix& x,const msci::prefix& y)
+{
+	return !(x == y);
+}
+
+bool operator <=(const msci::prefix& x,const msci::prefix& y)
+{
+	return (x.get_conversion_factor() <= y.get_conversion_factor());
+}
+
+bool operator >(const msci::prefix& x,const msci::prefix& y)
+{
+	return (x.get_conversion_factor() > y.get_conversion_factor());
+}
+
+bool operator >=(const msci::prefix& x,const msci::prefix& y)
+{
+	return (x.get_conversion_factor() >= y.get_conversion_factor());
 }
 
 ostream& operator <<(ostream& os, const msci::prefix& x)
