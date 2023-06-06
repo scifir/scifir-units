@@ -158,12 +158,6 @@ namespace msci
 				}
 			}
 
-			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			void operator ^=(U y)
-			{
-				scalar_unit::value ^= y;
-			}
-
 			inline vector_unit_3d x_projection() const
 			{
 				return vector_unit_3d(scalar_unit::value * msci::cos(theta) * msci::sin(phi),get_dimensions(),theta,phi);

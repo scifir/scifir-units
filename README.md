@@ -143,3 +143,74 @@ a += x; // Adds the scalar_unit to the string
 string b = "x: " + x;
 string c = x + " value";
 ```
+### Vector units in 2D
+
+Vector units in 2D allow to do calculations for lab machines and simulations of physics and other areas of science in 2 dimensions. They inherit scalar_unit, and additional to his member-variables they include the member-variable theta, of class angle (described above).
+
+An example of use of it is the following:
+
+```cpp
+force_2d x = force(21_N,56_angle); // Creates a force_2d with a value of 21 N and an inclination angle of 56º
+force_2d y = force(32,"mN",11); // vector_unid_2d of force with values "32 mN 11º"
+vector_unit_2d z = vector_unid_2d(10,"kPa",48); // vector_unit_2d with values "10 kPa 48º"
+
+x.theta += 21_angle; // theta of x can be accessed directed and used as any other angle, it's the better way to use it
+
+x += y; // Sum a vector of the same dimensions
+y -= z; // Substraction supported. Can't substract vectors of different dimensions
+
+force_2d a = x + y; // Sum of vector_unid_2d
+force_2d b = x - y; // Substraction of vector_unid_2d
+
+velocity_2d acc = acceleration_2d("5 m/s") * 100_s; // vector_unid_2d can multiply with scalar_unit
+vector_unid_2d p = x / area("10 m2"); // vector_unid_2d can divide with scalar_unit
+
+vector_unid_2d ab = x + 4; // vector_unid_2d can sum with numeric primitive types
+vector_unid_2d ac = y - 7; // vector_unid_2d can substract with numeric primitive types
+vector_unid_2d ad = x * 3; // vector_unid_2d can multiply with numeric primitive types
+vector_unid_2d ae = y / 5; // vector_unid_2d can divide with numeric primitive types
+vector_unid_2d xy = x ^ 2; // vector_unid_2d can power with numeric primitive types
+
+x += 3; // vector_unid_2d with operator+= for numeric primitive types
+y -= 9; // vector_unid_2d with operator-= for numeric primitive types
+x *= 2; // vector_unid_2d with operator*= for numeric primitive types
+y /= 6; // vector_unid_2d with operator/= for numeric primitive types
+
+force e = x.x_projection(); // vector_unid_2d projection on the x axis
+force f = x.y_projection(); // vector_unid_2d projection on the y axis
+
+x.invert(); // Now x points to the opposite direction
+
+string x_display = to_string(x); // Prints "21N 56º"
+energy c = norm(x) * 2_m; // Use of norm() for vector_unit_2d
+vector_unid_2d xy = sqrt(x^4); // Gives x ^ 2
+vector_unid_2d xy = sqrt_nth(x^4,4); // Gives x
+scalar_unit a = dot_product(x,y); // Gives the dot product of x and y, which is an scalar_unit
+angle b = angle_between(x,y); // Gives the angle between the two vectors
+
+if (same_direction(x,y)) // Gives true if the vectors point to the same direction
+{}
+
+if (parallel(x,y)) // Gives true if the vectors are parallel (point to the same or to the opposite direction)
+{}
+
+if (orthogonal(x,y)) // Gives true if the vectors are orthogonal (have 90º of difference in the direction they point to)
+{}
+
+if (x == y) // Gives true if the two vector_unit_2d are equal. There's the operator != too
+{}
+
+if (x == "21N 56º") // Gives true if the vector is the specified by the string. There's the operator != too
+{}
+
+string b;
+b =+ x; // Appends x to the string b
+string c = "x: " + x; // Creates a new string by inserting x as with to_string(x)
+string d = x + " is a vector"; // Both directions are supported for creating strings with vector_unit_2d
+
+cout << x; // Prints x in the output stream, any ostream can be used, not only cout. x is printed with to_string
+
+vector_unit_2d a;
+cin >> a; // Initializes a with the string given to cin
+
+```

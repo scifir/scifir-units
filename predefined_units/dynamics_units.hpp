@@ -9,7 +9,7 @@ using namespace std;
 namespace msci
 {
 	VECTOR_UNIT_HPP(impulse);
-	SCALAR_UNIT_HPP(force);
+	VECTOR_UNIT_HPP(force);
 	VECTOR_UNIT_HPP(torque);
 	VECTOR_UNIT_HPP(pressure);
 	VECTOR_UNIT_HPP(surface_tension);

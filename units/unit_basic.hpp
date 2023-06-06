@@ -14,8 +14,6 @@ namespace msci
 
 	SCALAR_UNIT_HPP_BEGIN(time);
 		public:
-			enum class display {UNIT,TIME};
-			
 			explicit operator std::chrono::seconds() const;
 
 			string get_finish_date() const;

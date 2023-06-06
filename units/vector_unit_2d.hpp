@@ -121,12 +121,6 @@ namespace msci
 					theta.invert();
 				}
 			}
-
-			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			void operator ^=(U y)
-			{
-				scalar_unit::value ^= y;
-			}
 			
 			inline float x_projection() const
 			{

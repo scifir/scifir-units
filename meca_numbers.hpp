@@ -3,8 +3,6 @@
 
 #include "util/matrix.hpp"
 
-#include "meca_number/undefined_number.hpp"
-#include "meca_number/unit_number.hpp"
 #include "meca_number/angle.hpp"
 #include "meca_number/lab_number.hpp"
 

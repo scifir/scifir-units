@@ -30,7 +30,14 @@ namespace msci
 			bool is_custom_abbreviation() const;
 
 			string symbol;
-			static void create_custom_dimension(const string&,const string&);
+
+			static void create_custom_dimension(const string& symbol,const string& init_dimensions)
+			{
+				if (custom_dimension::base_dimensions.count(symbol) == 0)
+				{
+					custom_dimension::base_dimensions[symbol] = create_dimensions(init_dimensions);
+				}
+			}
 
 		private:
 			static map<string,vector<dimension>> base_dimensions;

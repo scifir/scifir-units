@@ -5,7 +5,7 @@ using namespace std;
 namespace msci
 {
 	VECTOR_UNIT_CPP(impulse,"m*kg/s");
-	SCALAR_UNIT_CPP(force,"kg*m/s2");
+	VECTOR_UNIT_CPP(force,"kg*m/s2");
 	VECTOR_UNIT_CPP(torque,"kg*m2/s2");
 	VECTOR_UNIT_CPP(pressure,"kg/m*s2");
 	VECTOR_UNIT_CPP(surface_tension,"kg/s2");

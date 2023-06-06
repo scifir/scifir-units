@@ -16,8 +16,7 @@ namespace msci
 	{
 		public:
 			matrix() : data(vector<vector<T>>(M, vector<T>(N)))
-			{
-			}
+			{}
 
 			matrix(initializer_list<vector<T>> x) : matrix()
 			{
@@ -62,7 +61,7 @@ namespace msci
 			{
 				if (outside_row_limits(i))
 				{
-					return;
+					return matrix<T,1,N>();
 				}
 				matrix<T,1,N> x = matrix<T,1,N>();
 				for (int j = 0; j < N; j++)
@@ -76,7 +75,7 @@ namespace msci
 			{
 				if (outside_column_limits(j))
 				{
-					return;
+					return matrix<T,M,1>();
 				}
 				matrix<T,M,1> x = matrix<T,M,1>();
 				for (int i = 0; i < M; i++)
@@ -90,7 +89,7 @@ namespace msci
 			{
 				if (outside_limits(i,j))
 				{
-					return;
+					return T();
 				}
 				return data[i - 1][j - 1];
 			}
@@ -99,7 +98,7 @@ namespace msci
 			{
 				if (outside_limits(i,j))
 				{
-					return;
+					return T();
 				}
 				return data[i - 1][j - 1];
 			}

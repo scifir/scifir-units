@@ -134,12 +134,6 @@ namespace msci
 				}
 			}
 
-			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
-			void operator ^=(U y)
-			{
-				scalar_unit::value ^= y;
-			}
-
 			inline bool is_nd(int i) const
 			{
 				return angles.size() == (i - 1);

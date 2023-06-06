@@ -4,6 +4,8 @@ using namespace std;
 
 namespace msci
 {
+	map<string,vector<dimension>> custom_dimension::base_dimensions = map<string,vector<dimension>>();
+
 	custom_dimension::custom_dimension() : symbol()
 	{}
 
@@ -28,9 +30,9 @@ namespace msci
 
 	bool custom_dimension::is_custom_basic_dimension() const
 	{
-		if (base_dimensions.size() == 1)
+		if (custom_dimension::base_dimensions.size() == 1)
 		{
-			return (base_dimensions[symbol][0].dimension_type == dimension::custom_basic);
+			return (custom_dimension::base_dimensions[symbol][0].dimension_type == dimension::custom_basic);
 		}
 		else
 		{
@@ -40,9 +42,9 @@ namespace msci
 
 	bool custom_dimension::is_custom_conversion() const
 	{
-		if (base_dimensions[symbol].size() == 1)
+		if (custom_dimension::base_dimensions[symbol].size() == 1)
 		{
-			return (base_dimensions[symbol][0].dimension_type != dimension::custom_basic and base_dimensions[symbol][0].dimension_type != dimension::custom);
+			return (custom_dimension::base_dimensions[symbol][0].dimension_type != dimension::custom_basic and custom_dimension::base_dimensions[symbol][0].dimension_type != dimension::custom);
 		}
 		else
 		{
@@ -52,25 +54,17 @@ namespace msci
 
 	bool custom_dimension::is_custom_abbreviation() const
 	{
-		if (base_dimensions[symbol].size() == 1)
+		if (custom_dimension::base_dimensions[symbol].size() == 1)
 		{
-			return (base_dimensions[symbol][0].dimension_type != dimension::custom_basic and base_dimensions[symbol][0].dimension_type != dimension::custom);
+			return (custom_dimension::base_dimensions[symbol][0].dimension_type != dimension::custom_basic and custom_dimension::base_dimensions[symbol][0].dimension_type != dimension::custom);
 		}
-		else if (base_dimensions[symbol].size() > 1)
+		else if (custom_dimension::base_dimensions[symbol].size() > 1)
 		{
 			return true;
 		}
 		else
 		{
 			return false;
-		}
-	}
-	
-	void custom_dimension::create_custom_dimension(const string& symbol,const string& init_dimensions)
-	{
-		if (base_dimensions.count(symbol) == 0)
-		{
-			base_dimensions[symbol] = create_dimensions(init_dimensions);
 		}
 	}
 }

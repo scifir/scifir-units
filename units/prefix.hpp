@@ -12,7 +12,7 @@ namespace msci
 	class prefix
 	{
 		public:
-			enum type {no_prefix,Y,Z,E,P,T,G,M,k,h,da,d,c,m,u,n,p,f,a,z,y};
+			enum type : char {no_prefix,Y,Z,E,P,T,G,M,k,h,da,d,c,m,u,n,p,f,a,z,y};
 
 			prefix();
 			prefix(const prefix&);

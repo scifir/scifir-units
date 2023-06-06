@@ -40,10 +40,7 @@ MSCI UNITS - VERSION 2
 // TODO: configure option to display the units with scientific notation (inside display())
 
 // TODO: units updated with a clock (not automatically, by doing += and similar operations)
-// TODO: 2d display of scalar_units and of vector_units (create a msci_units_2d library for it)
-// TODO: 3d display of scalar_units and of vector_units (create a msci_units_3d library for it)
 // TODO: volume should be constructed with an string of the form 2cm * 1cm * 3cm and separate the three dimensions as different units. Also, the display should be, for that case, automatically configured to be 2cm * 1cm * 3cm than to be the total amount (with a member-variable)
-// TODO: units should allow to sum strings
 // TODO: vector<scalar_unit> initialized from a list of units (separated by a selectable string)
 // TODO: is_dimension(const string&,const string&) which gives true if the given string is of the asked dimensions
 // TODO: light_length which uses only an enum of prefixes and a value, maybe it should be called length, and length should be called full_length
@@ -67,16 +64,15 @@ MSCI UNITS - VERSION 2
 // TODO: study the geographic coordinates deeply, and see if to add something more related to them
 
 // UNITS - ADVANCED
-// TODO: maybe delete the dimensions member-variable of scalar_unit, and use instead another system for handling prefixes. The dimensions can be automatic based on their class
+// TODO: maybe delete the dimensions member-variable of scalar_unit, and use instead another system for handling prefixes. The dimensions can be automatic based on their class. One possibility is to use an empty array and, when it's empty, to send the fixed dimensions of the class instead, and only when changing something to add the dimensions there
 // TODO: add const to the enum of light_unit
+// TODO: 2d display of scalar_units and of vector_units (create a msci_units_2d library for it)
+// TODO: 3d display of scalar_units and of vector_units (create a msci_units_3d library for it)
+// TODO: divide single dimensions unit of multiple-dimensions unit in order to save a lot of space by not using vectors of prefixes, dimensions and abbreviations
+// TODO: check the object code resulting by testing different functions of the unit classes
 
 // MECA NUMBERS
 // TODO: add the allowed typenames to lab_number, and don't accept any other type
-
-// CODE OPTIMIZATION
-// TODO: divide single dimensions unit of multiple-dimensions unit in order to save a lot of space by not using vectors of prefixes, dimensions and abbreviations
-// TODO: maybe prefix class shouldn't have the power. Instead, use different prefixes
-// TODO: check the object code resulting by testing different functions of the unit classes
 
 // ELECTRONICS
 // TODO: check sensor libraries and decide which ones to support inside msci_units (maybe in a new msci library if needed)
