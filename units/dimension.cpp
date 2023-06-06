@@ -69,6 +69,74 @@ namespace msci
 				return "candela";
 			case dimension::B:
 				return "byte";
+			case dimension::Hz:
+				return "hertz";
+			case dimension::N:
+				return "newton";
+			case dimension::Pa:
+				return "pascal";
+			case dimension::J:
+				return "joule";
+			case dimension::W:
+				return "watt";
+			case dimension::A:
+				return "ampere";
+			case dimension::V:
+				return "volt";
+			case dimension::F:
+				return "faraday";
+			case dimension::Ohm:
+				return "ohm";
+			case dimension::S:
+				return "siemens";
+			case dimension::Wb:
+				return "weber";
+			case dimension::T:
+				return "tesla";
+			case dimension::H:
+				return "henry";
+			case dimension::lm:
+				return "lumen";
+			case dimension::lx:
+				return "lux";
+			case dimension::Bq:
+				return "becquerel";
+			case dimension::Gy:
+				return "gray";
+			case dimension::Sv:
+				return "sievert";
+			case dimension::kat:
+				return "katal";
+			case dimension::angstrom:
+				return "angstrom";
+			case dimension::L:
+				return "liter";
+			case dimension::minute:
+				return "minute";
+			case dimension::h:
+				return "hour";
+			case dimension::d:
+				return "day";
+			case dimension::AU:
+				return "astronomical unit";
+			case dimension::pc:
+				return "parsec";
+			case dimension::eV:
+				return "electronvolt";
+			case dimension::Da:
+				return "dalton";
+			case dimension::amu:
+				return "atomic mass unit";
+			case dimension::barn:
+				return "barn";
+			case dimension::M:
+				return "molarity";
+			case dimension::particles:
+				return "particles";
+			case dimension::ppm:
+				return "parts per million";
+			case dimension::ppb:
+				return "parts per billion";
 			case dimension::custom:
 				return static_cast<msci::custom_dimension&>(const_cast<dimension&>(*this)).symbol;
 			case dimension::custom_basic:
@@ -101,8 +169,74 @@ namespace msci
 				return "cd";
 			case dimension::B:
 				return "B";
+			case dimension::Hz:
+				return "";
+			case dimension::N:
+				return "";
+			case dimension::Pa:
+				return "";
+			case dimension::J:
+				return "";
+			case dimension::W:
+				return "";
+			case dimension::A:
+				return "";
+			case dimension::V:
+				return "";
+			case dimension::F:
+				return "";
 			case dimension::Ohm:
 				return "\u03A9";
+			case dimension::S:
+				return "S";
+			case dimension::Wb:
+				return "Wb";
+			case dimension::T:
+				return "T";
+			case dimension::H:
+				return "H";
+			case dimension::lm:
+				return "lm";
+			case dimension::lx:
+				return "lx";
+			case dimension::Bq:
+				return "Bq";
+			case dimension::Gy:
+				return "Gy";
+			case dimension::Sv:
+				return "Sv";
+			case dimension::kat:
+				return "kat";
+			case dimension::angstrom:
+				return "\u212B";
+			case dimension::L:
+				return "L";
+			case dimension::minute:
+				return "min";
+			case dimension::h:
+				return "h";
+			case dimension::d:
+				return "d";
+			case dimension::AU:
+				return "AU";
+			case dimension::pc:
+				return "pc";
+			case dimension::eV:
+				return "eV";
+			case dimension::Da:
+				return "Da";
+			case dimension::amu:
+				return "amu";
+			case dimension::barn:
+				return "barn";
+			case dimension::M:
+				return "M";
+			case dimension::particles:
+				return "particles";
+			case dimension::ppm:
+				return "ppm";
+			case dimension::ppb:
+				return "ppb";
 			case dimension::custom:
 				return static_cast<msci::custom_dimension&>(const_cast<dimension&>(*this)).symbol;
 			case dimension::custom_basic:
@@ -301,6 +435,78 @@ namespace msci
 				return true;
 			case dimension::B:
 				return true;
+			case dimension::Hz:
+				return true;
+			case dimension::N:
+				return false;
+			case dimension::Pa:
+				return false;
+			case dimension::J:
+				return false;
+			case dimension::W:
+				return false;
+			case dimension::A:
+				return true;
+			case dimension::V:
+				return false;
+			case dimension::F:
+				return false;
+			case dimension::Ohm:
+				return false;
+			case dimension::S:
+				return false;
+			case dimension::Wb:
+				return false;
+			case dimension::T:
+				return false;
+			case dimension::H:
+				return false;
+			case dimension::lm:
+				return false;
+			case dimension::lx:
+				return false;
+			case dimension::Bq:
+				return true;
+			case dimension::Gy:
+				return false;
+			case dimension::Sv:
+				return false;
+			case dimension::kat:
+				return false;
+			case dimension::angstrom:
+				return true;
+			case dimension::L:
+				return false;
+			case dimension::minute:
+				return true;
+			case dimension::h:
+				return true;
+			case dimension::d:
+				return true;
+			case dimension::AU:
+				return true;
+			case dimension::pc:
+				return true;
+			case dimension::eV:
+				return false;
+			case dimension::Da:
+				return true;
+			case dimension::amu:
+				return true;
+			case dimension::barn:
+				return false;
+			case dimension::M:
+				return false;
+			case dimension::particles:
+				return true;
+			case dimension::ppm:
+				return true;
+			case dimension::ppb:
+				return true;
+			case dimension::custom:
+				return static_cast<msci::custom_dimension&>(const_cast<dimension&>(*this)).is_basic_dimension();
+			case dimension::custom_basic:
+				return true;
 		}
 		return false;
 	}
@@ -442,44 +648,51 @@ namespace msci
 		}
 	}
 	
-	string get_dimension_structure(const vector<dimension>& actual_dimensions)
+	string to_string(const vector<dimension>& x_dimensions)
 	{
-		return "";
-		/*string value;
-		int dimensions_number = sizeof(actual_dimensions) / sizeof(dimension);
-		for (int i = 0; i < dimensions_number; i++)
+		ostringstream out;
+		vector<dimension::type> printed_dimensions = vector<dimension::type>();
+		for (const dimension& x_dimension : x_dimensions)
 		{
-			dimension actual_dimension = actual_dimensions[i];
-			if (actual_dimension.second->get_scale() > 0)
+			if (x_dimension.dimension_sign == dimension::positive)
 			{
-				if (actual_dimension.second->get_scale() > 1)
+				if (printed_dimensions.size() != 0)
 				{
-					value += actual_dimension.second->get_symbol() + to_string(actual_dimension.second->get_scale()) + "*";
+					out << "*";
 				}
-				else
+				int i = 1;
+				for (const dimension& y_dimension : x_dimensions)
 				{
-					value += actual_dimension.second->get_symbol() + "*";
+					if (x_dimension.dimension_type == y_dimension.dimension_type)
+					{
+						i++;
+					}
 				}
+				out << x_dimension.get_symbol() << i;
 			}
 		}
-		value = value.substr(0,value.length() - 1) + "/";
-		for (int i = 0; i < dimensions_number; i++)
+		out << "/";
+		printed_dimensions.empty();
+		for (const dimension& x_dimension : x_dimensions)
 		{
-			dimension actual_dimension = actual_dimensions[i];
-			if (actual_dimension.second->get_scale() < 0)
+			if (x_dimension.dimension_sign == dimension::negative)
 			{
-				if (actual_dimension.second->get_scale() < -1)
+				if (printed_dimensions.size() != 0)
 				{
-					value += actual_dimension.second->get_symbol() + "*";
+					out << "*";
 				}
-				else
+				int i = 1;
+				for (const dimension& y_dimension : x_dimensions)
 				{
-					value += actual_dimension.second->get_symbol() + to_string(actual_dimension.second->get_scale()) + "*";
+					if (x_dimension.dimension_type == y_dimension.dimension_type)
+					{
+						i++;
+					}
 				}
+				out << x_dimension.get_symbol() << i;
 			}
 		}
-		value = value.substr(0,value.length() - 1);
-		return value;*/
+		return out.str();
 	}
 
 	vector<dimension> create_dimensions(string init_value)

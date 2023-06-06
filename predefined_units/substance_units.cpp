@@ -18,8 +18,8 @@ namespace msci
 
 ostream& operator <<(ostream& os, const msci::concentration& x)
 {
-	string dimension_structure = msci::get_dimension_structure(x.get_dimensions());
-	if (dimension_structure != "ppm" and dimension_structure != "ppb")
+	string dimension_string = msci::to_string(x.get_dimensions());
+	if (dimension_string != "ppm" and dimension_string != "ppb")
 	{
 		return os << (x.get_value() * 100) << "%";
 	}

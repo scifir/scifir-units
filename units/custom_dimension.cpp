@@ -27,6 +27,18 @@ namespace msci
 	{
 		return symbol;
 	}
+	
+	bool custom_dimension::is_basic_dimension() const
+	{
+		if (custom_dimension::base_dimensions.size() == 1)
+		{
+			return custom_dimension::base_dimensions[symbol][0].is_basic_dimension();
+		}
+		else
+		{
+			return false;
+		}
+	}
 
 	bool custom_dimension::is_custom_basic_dimension() const
 	{

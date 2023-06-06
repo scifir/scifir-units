@@ -25,6 +25,7 @@ namespace msci
 			string get_custom_name() const;
 			string get_custom_symbol() const;
 			
+			bool is_basic_dimension() const;
 			bool is_custom_basic_dimension() const;
 			bool is_custom_conversion() const;
 			bool is_custom_abbreviation() const;

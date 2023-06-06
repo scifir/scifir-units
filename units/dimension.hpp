@@ -52,7 +52,7 @@ namespace msci
 	dimension create_dimension(dimension::type);
 	dimension create_dimension(const string&);
 
-	string get_dimension_structure(const vector<dimension>&);
+	string to_string(const vector<dimension>&);
 
 	vector<dimension> create_dimensions(string);
 	vector<dimension> create_derived_dimensions(string);
@@ -60,6 +60,7 @@ namespace msci
 
 	vector<dimension> multiply_dimensions(const vector<dimension>&,const vector<dimension>&);
 	vector<dimension> divide_dimensions(const vector<dimension>&,const vector<dimension>&);
+	vector<dimension> square_dimensions(const vector<dimension>&,int);
 	vector<dimension> power_dimensions(const vector<dimension>&,int);
 	vector<dimension> normalize_dimensions(const vector<dimension>&);
 	bool equal_dimensions(const string&,const string&);
