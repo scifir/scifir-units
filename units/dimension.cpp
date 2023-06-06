@@ -101,6 +101,8 @@ namespace msci
 				return "cd";
 			case dimension::B:
 				return "B";
+			case dimension::Ohm:
+				return "\u03A9";
 			case dimension::custom:
 				return static_cast<msci::custom_dimension&>(const_cast<dimension&>(*this)).symbol;
 			case dimension::custom_basic:
