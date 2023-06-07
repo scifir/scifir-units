@@ -367,15 +367,11 @@ namespace msci
 			int i = 0;
 			while(isdigit(init_scalar[i]) || init_scalar[i] == '.' || init_scalar[i] == ' ')
 			{
-				if (init_scalar[i] == ' ' and !isdigit(init_scalar[i + 1]))
+				if (init_scalar[i] == ' ')
 				{
 					break;
 				}
 				i++;
-			}
-			if(init_scalar[i] != ' ')
-			{
-				return;
 			}
 			string string_value = init_scalar.substr(0, i);
 			boost::algorithm::erase_all(string_value, " ");
