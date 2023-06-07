@@ -33,6 +33,8 @@ namespace msci
 			explicit dimension(dimension::type,const msci::prefix&,dimension::sign);
 			explicit dimension(const string&,const msci::prefix&,dimension::sign);
 
+			~dimension();
+
 			dimension& operator=(const dimension&);
 			dimension& operator=(dimension&&);
 

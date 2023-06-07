@@ -30,6 +30,11 @@ namespace msci
 	dimension::dimension(const string& new_symbol,const msci::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(dimension::custom),dimension_sign(new_sign),symbol(new string(new_symbol))
 	{}
 
+	dimension::~dimension()
+	{
+		delete symbol;
+	}
+
 	dimension& dimension::operator=(const dimension& x)
 	{
 		prefix = x.prefix;
