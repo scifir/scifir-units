@@ -12,6 +12,10 @@ using namespace std;
 
 namespace msci
 {
+	class dimension;
+
+	vector<dimension> create_dimensions(string);
+
 	class dimension
 	{
 		public:
@@ -27,6 +31,7 @@ namespace msci
 			dimension(dimension&&);
 			explicit dimension(dimension::type,msci::prefix::type,dimension::sign);
 			explicit dimension(dimension::type,const msci::prefix&,dimension::sign);
+			explicit dimension(const string&,const msci::prefix&,dimension::sign);
 
 			dimension& operator=(const dimension&);
 			dimension& operator=(dimension&&);
@@ -47,13 +52,24 @@ namespace msci
 			msci::prefix prefix;
 			dimension::type dimension_type;
 			dimension::sign dimension_sign;
+			string* symbol;
+
+			static void create_custom_dimension(const string& symbol,const string& init_dimensions)
+			{
+				if (dimension::base_dimensions.count(symbol) == 0)
+				{
+					dimension::base_dimensions[symbol] = create_dimensions(init_dimensions);
+				}
+			}
+
+		private:
+			static map<string,vector<dimension>> base_dimensions;
 	};
 
 	dimension create_dimension(const string&,dimension::sign);
 
 	string to_string(const vector<dimension>&);
 
-	vector<dimension> create_dimensions(string);
 	vector<dimension> create_derived_dimensions(string);
 	vector<dimension> create_derived_dimensions(const vector<dimension>&);
 

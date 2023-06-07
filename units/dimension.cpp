@@ -16,17 +16,20 @@ namespace msci
 {
 	dimension::dimension() : prefix(),dimension_type(),dimension_sign()
 	{}
-	
-	dimension::dimension(const dimension& x) : prefix(x.prefix),dimension_type(x.dimension_type),dimension_sign(x.dimension_sign)
-	{}
-	
-	dimension::dimension(dimension&& x) : prefix(move(x.prefix)),dimension_type(move(x.dimension_type)),dimension_sign(move(x.dimension_sign))
+
+	dimension::dimension(const dimension& x) : prefix(x.prefix),dimension_type(x.dimension_type),dimension_sign(x.dimension_sign),symbol(x.symbol)
 	{}
 
-	dimension::dimension(dimension::type new_dimension_type,msci::prefix::type new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign)
+	dimension::dimension(dimension&& x) : prefix(move(x.prefix)),dimension_type(move(x.dimension_type)),dimension_sign(move(x.dimension_sign)),symbol(move(x.symbol))
 	{}
 
-	dimension::dimension(dimension::type new_dimension_type,const msci::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign)
+	dimension::dimension(dimension::type new_dimension_type,msci::prefix::type new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol(nullptr)
+	{}
+
+	dimension::dimension(dimension::type new_dimension_type,const msci::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol(nullptr)
+	{}
+
+	dimension::dimension(const string& new_symbol,const msci::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(dimension::custom),dimension_sign(new_sign),symbol(new string(new_symbol))
 	{}
 
 	dimension& dimension::operator=(const dimension& x)
@@ -138,7 +141,8 @@ namespace msci
 			case dimension::ppb:
 				return "parts per billion";
 			case dimension::custom:
-				return static_cast<msci::custom_dimension&>(const_cast<dimension&>(*this)).symbol;
+				return "custom-dimension";
+//				return static_cast<msci::custom_dimension&>(const_cast<dimension&>(*this)).symbol;
 			case dimension::custom_basic:
 				return "custom-basic";
 		}
@@ -238,7 +242,7 @@ namespace msci
 			case dimension::ppb:
 				return "ppb";
 			case dimension::custom:
-				return static_cast<msci::custom_dimension&>(const_cast<dimension&>(*this)).symbol;
+				return symbol->c_str();
 			case dimension::custom_basic:
 				return "custom-basic";
 		}
@@ -504,7 +508,8 @@ namespace msci
 			case dimension::ppb:
 				return true;
 			case dimension::custom:
-				return static_cast<msci::custom_dimension&>(const_cast<dimension&>(*this)).is_basic_dimension();
+				return false;
+				//return static_cast<msci::custom_dimension&>(const_cast<dimension&>(*this)).is_basic_dimension();
 			case dimension::custom_basic:
 				return true;
 		}
@@ -706,11 +711,11 @@ namespace msci
 		{
 			return dimension(dimension::h,new_prefix,new_sign);
 		}
-		else if(dimension_name == "AU")
+		else if(dimension_name == "d")
 		{
 			return dimension(dimension::d,new_prefix,new_sign);
 		}
-		else if(dimension_name == "")
+		else if(dimension_name == "AU")
 		{
 			return dimension(dimension::AU,new_prefix,new_sign);
 		}
@@ -752,7 +757,8 @@ namespace msci
 		}
 		else
 		{
-			return custom_dimension(dimension_name);
+			cout << "custom_dimension_name: " << dimension_name << endl;
+			return dimension(dimension_name,new_prefix,new_sign);
 		}
 	}
 
