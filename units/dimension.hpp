@@ -17,7 +17,7 @@ namespace msci
 		public:
 			enum type : char
 			{
-				m, angle, solid_angle, s, g, C, K, mol, cd, B, Hz, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, L, minute, h, d, AU, pc, eV, Da, amu, barn, M, particles, ppm, ppb, custom, custom_basic
+				m, radian, steradian, s, g, C, K, mol, cd, B, Hz, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, L, minute, h, d, AU, pc, eV, Da, amu, barn, M, particles, ppm, ppb, custom, custom_basic
 			};
 
 			enum sign : char {positive,negative};
@@ -49,8 +49,7 @@ namespace msci
 			dimension::sign dimension_sign;
 	};
 
-	dimension create_dimension(dimension::type);
-	dimension create_dimension(const string&);
+	dimension create_dimension(const string&,dimension::sign);
 
 	string to_string(const vector<dimension>&);
 

@@ -63,4 +63,10 @@ int main()
 	cout << "coordinates_2d: " << sizeof(coordinates_2d) << endl;
 	cout << "coordinates_3d: " << sizeof(coordinates_3d) << endl;
 	cout << "coordinates_nd: " << sizeof(coordinates_nd) << endl;
+	cout << endl;
+	dimension a = dimension(dimension::Ohm,prefix::no_prefix,dimension::positive);
+	cout << "resistance dimension: " << a << endl;
+	vector<dimension> new_dimensions {create_dimension("km",dimension::positive),create_dimension("m",dimension::positive),create_dimension("s",dimension::positive),dimension(dimension::Ohm,prefix::no_prefix,dimension::negative),dimension(dimension::B,prefix::Y,dimension::negative)};
+	cout << to_string(new_dimensions) << endl;
+	cout << scalar_unit("10 m*s/ohm") << endl;
 }

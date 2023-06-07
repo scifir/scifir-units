@@ -51,10 +51,10 @@ namespace msci
 		{
 			case dimension::m:
 				return "meter";
-			case dimension::angle:
-				return "angle";
-			case dimension::solid_angle:
-				return "solid angle";
+			case dimension::radian:
+				return "radian";
+			case dimension::steradian:
+				return "steradian";
 			case dimension::g:
 				return "gram";
 			case dimension::s:
@@ -151,10 +151,10 @@ namespace msci
 		{
 			case dimension::m:
 				return "m";
-			case dimension::angle:
-				return "angle";
-			case dimension::solid_angle:
-				return "solid_angle";
+			case dimension::radian:
+				return "rad";
+			case dimension::steradian:
+				return "sr";
 			case dimension::g:
 				return "g";
 			case dimension::s:
@@ -417,9 +417,9 @@ namespace msci
 		{
 			case dimension::m:
 				return true;
-			case dimension::angle:
+			case dimension::radian:
 				return true;
-			case dimension::solid_angle:
+			case dimension::steradian:
 				return true;
 			case dimension::g:
 				return true;
@@ -549,35 +549,7 @@ namespace msci
 		return 10.0793684;
 	}*/
 
-	dimension create_dimension(dimension::type x)
-	{
-		switch(x)
-		{
-			case dimension::m:
-				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
-			case dimension::angle:
-				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
-			case dimension::solid_angle:
-				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
-			case dimension::g:
-				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
-			case dimension::s:
-				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
-			case dimension::C:
-				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
-			case dimension::K:
-				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
-			case dimension::mol:
-				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
-			case dimension::cd:
-				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
-			case dimension::B:
-				return dimension(dimension::m,prefix::no_prefix,dimension::positive);
-		}
-		return dimension();
-	}
-
-	dimension create_dimension(const string& x)
+	dimension create_dimension(const string& x,dimension::sign new_sign)
 	{
 		if (x == "")
 		{
@@ -586,7 +558,7 @@ namespace msci
 		string dimension_name;
 		string prefix_name;
 		set<string> prefixes_options {"Y", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "u", "n", "p", "f", "a", "z", "y"};
-		if(prefixes_options.count(x.substr(0,1)) and x != "angle" and x != "solid_angle" and x != "m" and x.substr(0,2) != "da" and x.substr(0,3) != "mol")
+		if(prefixes_options.count(x.substr(0,1)) and x != "rad" and x != "sr" and x != "m" and x.substr(0,2) != "da" and x.substr(0,3) != "mol")
 		{
 			prefix_name = x.substr(0,1);
 			dimension_name = x.substr(1);
@@ -604,43 +576,179 @@ namespace msci
 		prefix new_prefix = create_prefix(prefix_name);
 		if(dimension_name == "m")
 		{
-			return dimension(dimension::m,new_prefix,dimension::positive);
+			return dimension(dimension::m,new_prefix,new_sign);
 		}
-		else if(dimension_name == "angle")
+		else if(dimension_name == "rad")
 		{
-			return dimension(dimension::angle,new_prefix,dimension::positive);
+			return dimension(dimension::radian,new_prefix,new_sign);
 		}
-		else if(dimension_name == "solid_angle")
+		else if(dimension_name == "sr")
 		{
-			return dimension(dimension::solid_angle,new_prefix,dimension::positive);
-		}
-		else if(dimension_name == "g")
-		{
-			return dimension(dimension::g,new_prefix,dimension::positive);
+			return dimension(dimension::steradian,new_prefix,new_sign);
 		}
 		else if(dimension_name == "s")
 		{
-			return dimension(dimension::s,new_prefix,dimension::positive);
+			return dimension(dimension::s,new_prefix,new_sign);
+		}
+		else if(dimension_name == "g")
+		{
+			return dimension(dimension::g,new_prefix,new_sign);
 		}
 		else if(dimension_name == "C")
 		{
-			return dimension(dimension::C,new_prefix,dimension::positive);
+			return dimension(dimension::C,new_prefix,new_sign);
 		}
 		else if(dimension_name == "K")
 		{
-			return dimension(dimension::K,new_prefix,dimension::positive);
+			return dimension(dimension::K,new_prefix,new_sign);
 		}
 		else if(dimension_name == "mol")
 		{
-			return dimension(dimension::mol,new_prefix,dimension::positive);
+			return dimension(dimension::mol,new_prefix,new_sign);
 		}
 		else if(dimension_name == "cd")
 		{
-			return dimension(dimension::cd,new_prefix,dimension::positive);
+			return dimension(dimension::cd,new_prefix,new_sign);
 		}
 		else if(dimension_name == "B")
 		{
-			return dimension(dimension::B,new_prefix,dimension::positive);
+			return dimension(dimension::B,new_prefix,new_sign);
+		}
+		else if(dimension_name == "Hz")
+		{
+			return dimension(dimension::Hz,new_prefix,new_sign);
+		}
+		else if(dimension_name == "N")
+		{
+			return dimension(dimension::N,new_prefix,new_sign);
+		}
+		else if(dimension_name == "Pa")
+		{
+			return dimension(dimension::Pa,new_prefix,new_sign);
+		}
+		else if(dimension_name == "J")
+		{
+			return dimension(dimension::J,new_prefix,new_sign);
+		}
+		else if(dimension_name == "W")
+		{
+			return dimension(dimension::W,new_prefix,new_sign);
+		}
+		else if(dimension_name == "A")
+		{
+			return dimension(dimension::A,new_prefix,new_sign);
+		}
+		else if(dimension_name == "V")
+		{
+			return dimension(dimension::V,new_prefix,new_sign);
+		}
+		else if(dimension_name == "F")
+		{
+			return dimension(dimension::F,new_prefix,new_sign);
+		}
+		else if(dimension_name == "ohm" or dimension_name == "Ohm" or dimension_name == "\u03A9")
+		{
+			return dimension(dimension::Ohm,new_prefix,new_sign);
+		}
+		else if(dimension_name == "S")
+		{
+			return dimension(dimension::S,new_prefix,new_sign);
+		}
+		else if(dimension_name == "Wb")
+		{
+			return dimension(dimension::Wb,new_prefix,new_sign);
+		}
+		else if(dimension_name == "T")
+		{
+			return dimension(dimension::T,new_prefix,new_sign);
+		}
+		else if(dimension_name == "H")
+		{
+			return dimension(dimension::H,new_prefix,new_sign);
+		}
+		else if(dimension_name == "lm")
+		{
+			return dimension(dimension::lm,new_prefix,new_sign);
+		}
+		else if(dimension_name == "lx")
+		{
+			return dimension(dimension::lx,new_prefix,new_sign);
+		}
+		else if(dimension_name == "Bq")
+		{
+			return dimension(dimension::Bq,new_prefix,new_sign);
+		}
+		else if(dimension_name == "Gy")
+		{
+			return dimension(dimension::Gy,new_prefix,new_sign);
+		}
+		else if(dimension_name == "Sv")
+		{
+			return dimension(dimension::Sv,new_prefix,new_sign);
+		}
+		else if(dimension_name == "kat")
+		{
+			return dimension(dimension::kat,new_prefix,new_sign);
+		}
+		else if(dimension_name == "angstrom" or dimension_name == "\u212B")
+		{
+			return dimension(dimension::angstrom,new_prefix,new_sign);
+		}
+		else if(dimension_name == "L")
+		{
+			return dimension(dimension::L,new_prefix,new_sign);
+		}
+		else if(dimension_name == "min")
+		{
+			return dimension(dimension::minute,new_prefix,new_sign);
+		}
+		else if(dimension_name == "h")
+		{
+			return dimension(dimension::h,new_prefix,new_sign);
+		}
+		else if(dimension_name == "AU")
+		{
+			return dimension(dimension::d,new_prefix,new_sign);
+		}
+		else if(dimension_name == "")
+		{
+			return dimension(dimension::AU,new_prefix,new_sign);
+		}
+		else if(dimension_name == "pc")
+		{
+			return dimension(dimension::pc,new_prefix,new_sign);
+		}
+		else if(dimension_name == "eV")
+		{
+			return dimension(dimension::eV,new_prefix,new_sign);
+		}
+		else if(dimension_name == "Da")
+		{
+			return dimension(dimension::Da,new_prefix,new_sign);
+		}
+		else if(dimension_name == "amu")
+		{
+			return dimension(dimension::amu,new_prefix,new_sign);
+		}
+		else if(dimension_name == "barn")
+		{
+			return dimension(dimension::barn,new_prefix,new_sign);
+		}
+		else if(dimension_name == "M")
+		{
+			return dimension(dimension::M,new_prefix,new_sign);
+		}
+		else if(dimension_name == "particles")
+		{
+			return dimension(dimension::particles,new_prefix,new_sign);
+		}
+		else if(dimension_name == "ppm")
+		{
+			return dimension(dimension::ppm,new_prefix,new_sign);
+		}
+		else if(dimension_name == "ppb")
+		{
+			return dimension(dimension::ppb,new_prefix,new_sign);
 		}
 		else
 		{
@@ -745,38 +853,38 @@ namespace msci
 
 	vector<dimension> create_dimensions(string init_value)
 	{
-		int new_start = 0;
 		boost::algorithm::erase_all(init_value, " ");
-		bool numerator = true;
+		dimension::sign new_sign = dimension::positive;
 		int new_scale = 1;
 		int new_size = 1;
+		int new_start = 0;
 		string new_dimension_str;
 		vector<dimension> dimensions = vector<dimension>();
-		for(int j = 0; j <= new_start; j++)
+		for(int j = 0; j < init_value.size(); j++)
 		{
 			if(isdigit(init_value[j]))
 			{
 				new_dimension_str = init_value.substr(new_start, new_size - 1);
-				new_scale = stoi(init_value.substr(j, 1));
+				new_scale = stoi(init_value.substr(new_start, 1));
 			}
-			else if(!isalnum(init_value[j + 1]))
+			else if(isalpha(init_value[j]) and (!isalpha(init_value[j + 1]) or (j + 1) == init_value.size()))
 			{
 				new_dimension_str = init_value.substr(new_start, new_size);
 			}
 			if(init_value[j] == '*')
 			{
+				new_size = 0;
 				new_start = j + 1;
-				new_size = 1;
 			}
 			else if(init_value[j] == '/')
 			{
-				numerator = false;
+				new_sign = dimension::negative;
+				new_size = 0;
 				new_start = j + 1;
-				new_size = 1;
 			}
 			if(!new_dimension_str.empty())
 			{
-				dimension new_dimension = create_dimension(new_dimension_str);
+				dimension new_dimension = create_dimension(new_dimension_str,new_sign);
 				for (int k = 0; k < new_scale; k++)
 				{
 					dimensions.push_back(new_dimension);
@@ -785,7 +893,6 @@ namespace msci
 				new_scale = 1;
 				new_size = 0;
 			}
-			j++;
 			new_size++;
 		}
 		return dimensions;
@@ -793,44 +900,38 @@ namespace msci
 
 	vector<dimension> create_derived_dimensions(string init_value)
 	{
-		int new_start = 0;
-		int j = new_start;
 		boost::algorithm::erase_all(init_value, " ");
-		int total_of_dimensions = 0;
-		while(isalnum(init_value[j]) or init_value[j] == '*' or init_value[j] == '/')
-		{
-			total_of_dimensions++;
-		}
-		bool numerator = true;
+		dimension::sign new_sign = dimension::positive;
 		int new_scale = 1;
 		int new_size = 1;
+		int new_start = 0;
 		string new_dimension_str;
 		vector<dimension> dimensions = vector<dimension>();
-		for(int j = 0; j < total_of_dimensions; j++)
+		for(int j = 0; j < init_value.size(); j++)
 		{
 			if(isdigit(init_value[j]))
 			{
 				new_dimension_str = init_value.substr(new_start, new_size - 1);
-				new_scale = stoi(init_value.substr(j, 1));
+				new_scale = stoi(init_value.substr(new_start, 1));
 			}
-			else if(!isalnum(init_value[j + 1]))
+			else if(isalpha(init_value[j]) and (!isalpha(init_value[j + 1]) or (j + 1) == init_value.size()))
 			{
 				new_dimension_str = init_value.substr(new_start, new_size);
 			}
 			if(init_value[j] == '*')
 			{
-				new_start = j + 1;
 				new_size = 0;
+				new_start = j + 1;
 			}
 			else if(init_value[j] == '/')
 			{
-				numerator = false;
-				new_start = j + 1;
+				new_sign = dimension::negative;
 				new_size = 0;
+				new_start = j + 1;
 			}
 			if(!new_dimension_str.empty())
 			{
-				dimension new_dimension = create_dimension(new_dimension_str);
+				dimension new_dimension = create_dimension(new_dimension_str,new_sign);
 				for (int k = 0; k < new_scale; k++)
 				{
 					dimensions.push_back(new_dimension);
@@ -839,7 +940,6 @@ namespace msci
 				new_scale = 1;
 				new_size = 0;
 			}
-			j++;
 			new_size++;
 		}
 		return dimensions;
