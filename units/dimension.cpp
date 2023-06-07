@@ -1,7 +1,5 @@
 #include "units/dimension.hpp"
 
-#include "units/custom_dimension.hpp"
-
 #include "boost/algorithm/string.hpp"
 
 #include <cmath>

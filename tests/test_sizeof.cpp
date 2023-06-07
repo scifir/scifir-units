@@ -7,8 +7,6 @@
 
 using namespace std;
 
-enum test_enum {a,b,c};
-
 class test_empty_class
 {
 	public:
@@ -36,8 +34,8 @@ int main()
 	cout << "double: " << sizeof(double) << endl;
 	cout << "long double: " << sizeof(long double) << endl;
 	cout << "string: " << sizeof(string) << endl;
+	cout << "string*: " << sizeof(string*) << endl;
 	cout << endl;
-	cout << "enum: " << sizeof(test_enum) << endl;
 	cout << "empty-class: " << sizeof(test_empty_class) << endl;
 	cout << endl;
 	cout << "prefix: " << sizeof(prefix) << endl;
@@ -68,5 +66,13 @@ int main()
 	cout << "resistance dimension: " << a << endl;
 	vector<dimension> new_dimensions {create_dimension("km",dimension::positive),create_dimension("m",dimension::positive),create_dimension("s",dimension::positive),dimension(dimension::Ohm,prefix::no_prefix,dimension::negative),dimension(dimension::B,prefix::Y,dimension::negative)};
 	cout << to_string(new_dimensions) << endl;
-	cout << scalar_unit("10 m*s/ohm") << endl;
+	cout << scalar_unit("10 usd") << endl;
+	scalar_unit c = scalar_unit("10 usd");
+	//cout << "custom symbol: " << reinterpret_cast<const msci::custom_dimension&>(c.get_dimensions()[0]).get_symbol() << endl;
+	if (c.get_dimensions()[0].dimension_type == dimension::custom)
+	{
+		cout << "custom dimension type" << endl;
+	}
+	//msci::custom_dimension b = msci::custom_dimension("asdf",prefix(),dimension::positive);
+	//cout << b.get_symbol() << endl;
 }
