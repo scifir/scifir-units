@@ -144,10 +144,10 @@ namespace msci
 				return (angles.size() + 1);
 			}
 
-			float n_projection(int) const;
-			float x_projection() const;
-			float y_projection() const;
-			float z_projection() const;
+			scalar_unit n_projection(int) const;
+			scalar_unit x_projection() const;
+			scalar_unit y_projection() const;
+			scalar_unit z_projection() const;
 
 			void invert();
 

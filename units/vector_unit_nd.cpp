@@ -319,16 +319,16 @@ namespace msci
 			}
 			else if(is_nd(2))
 			{
-				float new_x = x_projection() + y.x_projection();
-				float new_y = y_projection() + y.y_projection();
+				float new_x = float(x_projection() + y.x_projection());
+				float new_y = float(y_projection() + y.y_projection());
 				scalar_unit::value = cartesian_2d_to_polar_r(new_x, new_y);
 				angles[0] = cartesian_2d_to_polar_theta(new_x, new_y);
 			}
 			else if(is_nd(3))
 			{
-				float new_x = x_projection() + y.x_projection();
-				float new_y = y_projection() + y.y_projection();
-				float new_z = z_projection() + y.z_projection();
+				float new_x = float(x_projection() + y.x_projection());
+				float new_y = float(y_projection() + y.y_projection());
+				float new_z = float(z_projection() + y.z_projection());
 				scalar_unit::value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
 				angles[0] = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
 				angles[1] = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
@@ -365,8 +365,8 @@ namespace msci
 			else if(is_nd(2))
 			{
 				angles.empty();
-				float new_x = x_projection() + y.x_projection();
-				float new_y = y_projection() + y.y_projection();
+				float new_x = float(x_projection() + y.x_projection());
+				float new_y = float(y_projection() + y.y_projection());
 				float new_value = cartesian_2d_to_polar_r(new_x, new_y);
 				vector<angle> new_angles = vector<angle>();
 				new_angles[0] = cartesian_2d_to_polar_theta(new_x, new_y);
@@ -374,9 +374,9 @@ namespace msci
 			}
 			else if(is_nd(3))
 			{
-				float new_x = x_projection() + y.x_projection();
-				float new_y = y_projection() + y.y_projection();
-				float new_z = z_projection() + y.z_projection();
+				float new_x = float(x_projection() + y.x_projection());
+				float new_y = float(y_projection() + y.y_projection());
+				float new_z = float(z_projection() + y.z_projection());
 				float new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
 				vector<angle> new_angles = vector<angle>();
 				new_angles[0] = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
@@ -408,8 +408,8 @@ namespace msci
 			else if(is_nd(2))
 			{
 				angles.empty();
-				float new_x = x_projection() + y.x_projection();
-				float new_y = y_projection() + y.y_projection();
+				float new_x = float(x_projection() + y.x_projection());
+				float new_y = float(y_projection() + y.y_projection());
 				float new_value = cartesian_2d_to_polar_r(new_x, new_y);
 				vector<angle> new_angles = vector<angle>();
 				new_angles[0] = cartesian_2d_to_polar_theta(new_x, new_y);
@@ -417,9 +417,9 @@ namespace msci
 			}
 			else if(is_nd(3))
 			{
-				float new_x = x_projection() + y.x_projection();
-				float new_y = y_projection() + y.y_projection();
-				float new_z = z_projection() + y.z_projection();
+				float new_x = float(x_projection() + y.x_projection());
+				float new_y = float(y_projection() + y.y_projection());
+				float new_z = float(z_projection() + y.z_projection());
 				float new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
 				vector<angle> new_angles = vector<angle>();
 				new_angles[0] = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
@@ -512,7 +512,7 @@ namespace msci
 		}
 	}
 	
-	float vector_unit_nd::n_projection(int i) const
+	scalar_unit vector_unit_nd::n_projection(int i) const
 	{
 		if (i == 1)
 		{
@@ -528,67 +528,67 @@ namespace msci
 		}
 		else
 		{
-			return 0;
+			return scalar_unit();
 		}
 	}
 	
-	float vector_unit_nd::x_projection() const
+	scalar_unit vector_unit_nd::x_projection() const
 	{
 		if (is_nd(1))
 		{
-			return get_value();
+			return scalar_unit(scalar_unit::value,get_dimensions());
 		}
 		else if (is_nd(2))
 		{
-			return scalar_unit::value * msci::cos(angles[0]);
+			return scalar_unit(scalar_unit::value * msci::cos(angles[0]),get_dimensions());
 		}
 		else if (is_nd(3))
 		{
-			return scalar_unit::value * msci::cos(angles[0]) * msci::sin(angles[1]);
+			return scalar_unit(scalar_unit::value * msci::cos(angles[0]) * msci::sin(angles[1]),get_dimensions());
 		}
 		else
 		{
-			return 0;
+			return scalar_unit();
 		}
 	}
 
-	float vector_unit_nd::y_projection() const
+	scalar_unit vector_unit_nd::y_projection() const
 	{
 		if (is_nd(1))
 		{
-			return 0;
+			return scalar_unit();
 		}
 		else if (is_nd(2))
 		{
-			return scalar_unit::value * msci::sin(angles[0]);
+			return scalar_unit(scalar_unit::value * msci::sin(angles[0]),get_dimensions());
 		}
 		else if (is_nd(3))
 		{
-			return scalar_unit::value * msci::sin(angles[0]) * msci::sin(angles[1]);
+			return scalar_unit(scalar_unit::value * msci::sin(angles[0]) * msci::sin(angles[1]),get_dimensions());
 		}
 		else
 		{
-			return 0;
+			return scalar_unit();
 		}
 	}
 
-	float vector_unit_nd::z_projection() const
+	scalar_unit vector_unit_nd::z_projection() const
 	{
 		if (is_nd(1))
 		{
-			return 0;
+			return scalar_unit();
 		}
 		else if (is_nd(2))
 		{
-			return 0;
+			return scalar_unit();
 		}
 		else if (is_nd(3))
 		{
-			return scalar_unit::value * msci::cos(angles[1]);
+			return scalar_unit(scalar_unit::value * msci::cos(angles[1]),get_dimensions());
 		}
 		else
 		{
-			return 0;
+			return scalar_unit();
 		}
 	}
 	
@@ -630,7 +630,7 @@ namespace msci
 
 	scalar_unit dot_product(const vector_unit_nd& x, const vector_unit_nd& y)
 	{
-		float new_value = x.x_projection()*y.x_projection() + x.y_projection()*y.y_projection() + x.z_projection()*y.z_projection();
+		float new_value = float(x.x_projection()*y.x_projection() + x.y_projection()*y.y_projection() + x.z_projection()*y.z_projection());
 		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions());
 		return scalar_unit(new_value,new_dimensions);
 	}
@@ -650,9 +650,9 @@ namespace msci
 			}
 			else
 			{
-				float new_x = x.y_projection() * y.z_projection() - x.z_projection() * y.y_projection();
-				float new_y = x.z_projection() * y.x_projection() - x.x_projection() * y.z_projection();
-				float new_z = x.x_projection() * y.y_projection() - x.y_projection() * y.x_projection();
+				float new_x = float(x.y_projection() * y.z_projection() - x.z_projection() * y.y_projection());
+				float new_y = float(x.z_projection() * y.x_projection() - x.x_projection() * y.z_projection());
+				float new_z = float(x.x_projection() * y.y_projection() - x.y_projection() * y.x_projection());
 				new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
 				angle1 = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
 				angle2 = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);

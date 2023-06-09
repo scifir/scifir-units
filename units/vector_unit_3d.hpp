@@ -158,19 +158,19 @@ namespace msci
 				}
 			}
 
-			inline vector_unit_3d x_projection() const
+			inline scalar_unit x_projection() const
 			{
-				return vector_unit_3d(scalar_unit::value * msci::cos(theta) * msci::sin(phi),get_dimensions(),theta,phi);
+				return scalar_unit(scalar_unit::value * msci::cos(theta) * msci::sin(phi),get_dimensions());
 			}
 
-			inline vector_unit_3d y_projection() const
+			inline scalar_unit y_projection() const
 			{
-				return vector_unit_3d(scalar_unit::value * msci::sin(theta) * msci::sin(phi),get_dimensions(),theta,phi);
+				return scalar_unit(scalar_unit::value * msci::sin(theta) * msci::sin(phi),get_dimensions());
 			}
 
-			inline vector_unit_3d z_projection() const
+			inline scalar_unit z_projection() const
 			{
-				return vector_unit_3d(scalar_unit::value * msci::cos(phi),get_dimensions(),theta,phi);
+				return scalar_unit(scalar_unit::value * msci::cos(phi),get_dimensions());
 			}
 
 			inline void invert()

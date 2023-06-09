@@ -122,14 +122,14 @@ namespace msci
 				}
 			}
 			
-			inline float x_projection() const
+			inline scalar_unit x_projection() const
 			{
-				return scalar_unit::value * msci::cos(theta);
+				return scalar_unit(scalar_unit::value * msci::cos(theta),get_dimensions());
 			}
 
-			inline float y_projection() const
+			inline scalar_unit y_projection() const
 			{
-				return scalar_unit::value * msci::sin(theta);
+				return scalar_unit(scalar_unit::value * msci::sin(theta),get_dimensions());
 			}
 
 			inline void invert()

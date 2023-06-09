@@ -85,8 +85,8 @@ namespace msci
 	{
 		if(equal_dimensions(*this,y))
 		{
-				float new_x = x_projection() + y.x_projection();
-				float new_y = y_projection() + y.y_projection();
+				float new_x = float(x_projection() + y.x_projection());
+				float new_y = float(y_projection() + y.y_projection());
 				scalar_unit::value = cartesian_2d_to_polar_r(new_x, new_y);
 				theta = cartesian_2d_to_polar_theta(new_x, new_y);
 		}
@@ -113,8 +113,8 @@ namespace msci
 	{
 		if (equal_dimensions(*this,y))
 		{
-			float new_x = x_projection() + y.x_projection();
-			float new_y = y_projection() + y.y_projection();
+			float new_x = float(x_projection() + y.x_projection());
+			float new_y = float(y_projection() + y.y_projection());
 			float value = cartesian_2d_to_polar_r(new_x, new_y);
 			angle theta = angle(cartesian_2d_to_polar_theta(new_x, new_y));
 			return vector_unit_2d(value,get_dimensions(),theta);
@@ -130,8 +130,8 @@ namespace msci
 		if (equal_dimensions(*this,y))
 		{
 			y.invert();
-			float new_x = x_projection() + y.x_projection();
-			float new_y = y_projection() + y.y_projection();
+			float new_x = float(x_projection() + y.x_projection());
+			float new_y = float(y_projection() + y.y_projection());
 			float value = cartesian_2d_to_polar_r(new_x, new_y);
 			angle theta = angle(cartesian_2d_to_polar_theta(new_x, new_y));
 			return vector_unit_2d(value,get_dimensions(),theta);
@@ -196,14 +196,14 @@ namespace msci
 
 	scalar_unit dot_product(const vector_unit_2d& x, const vector_unit_2d& y)
 	{
-		float new_value = x.x_projection() * y.x_projection() + x.y_projection() * y.y_projection();
+		float new_value = float(x.x_projection() * y.x_projection() + x.y_projection() * y.y_projection());
 		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions());
 		return scalar_unit(new_value,new_dimensions);
 	}
 
 	angle angle_between(const vector_unit_2d& x,const vector_unit_2d& y)
 	{
-		return angle(std::atan2(y.y_projection() * x.x_projection() - y.x_projection() * x.y_projection(),y.x_projection() * x.x_projection() + y.y_projection() * x.y_projection()));
+		return angle(std::atan2(float(y.y_projection() * x.x_projection() - y.x_projection() * x.y_projection()),float(y.x_projection() * x.x_projection() + y.y_projection() * x.y_projection())));
 	}
 
 	bool same_direction(const vector_unit_2d& x, const vector_unit_2d& y)
