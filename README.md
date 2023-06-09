@@ -150,11 +150,11 @@ Vector units in 2D allow to do calculations for lab machines and simulations of 
 An example of use of it is the following:
 
 ```cpp
-force_2d x = force(21_N,56_angle); // Creates a force_2d with a value of 21 N and an inclination angle of 56º
-force_2d y = force(32,"mN",11); // vector_unid_2d of force with values "32 mN 11º"
+force_2d x = force_2d(21_N,56_angle); // Creates a force_2d with a value of 21 N and an inclination angle of 56º
+force_2d y = force_2d(32,"mN",11); // vector_unid_2d of force with values "32 mN 11º"
 vector_unit_2d z = vector_unid_2d(10,"kPa",48); // vector_unit_2d with values "10 kPa 48º"
 
-x.theta += 21_angle; // theta of x can be accessed directed and used as any other angle, it's the better way to use it
+x.theta += 21_angle; // theta of x can be accessed directed and used as any angle, it's the better way to use it
 
 x += y; // Sum a vector of the same dimensions
 y -= z; // Substraction supported. Can't substract vectors of different dimensions
@@ -222,11 +222,11 @@ Vector units in 3D are the most useful vectorial units. They allow to do all the
 An example of use is the following:
 
 ```cpp
-force_3d x = force(45_N,12_angle); // Creates a force_3d with a value of 45 N and an inclination angle of 12º
-force_3d y = force(78,"kN",67); // vector_unid_3d of force with values "78 mN 67º"
+force_3d x = force_3d(45_N,12_angle); // Creates a force_3d with a value of 45 N and an inclination angle of 12º
+force_3d y = force_3d(78,"kN",67); // vector_unid_3d of force with values "78 mN 67º"
 vector_unit_3d z = vector_unid_3d(100,"MPa",60); // vector_unit_3d with values "100 MPa 60º"
 
-x.theta += 16; // theta of x can be accessed directed and used as any other angle, it's the better way to use it
+x.theta += 16; // theta of x can be accessed directed and used as any angle, it's the better way to use it
 x.phi = 90; // phi of x can be accessed directly too
 
 x += y; // Sum a vector of the same dimensions
@@ -286,6 +286,87 @@ string d = x + " is a vector"; // Both directions are supported for creating str
 cout << x; // Prints x in the output stream, any ostream can be used, not only cout. x is printed with to_string
 
 vector_unit_3d a;
+cin >> a; // Initializes a with the string given to cin
+
+```
+
+### Vector units in ND
+
+Vector units in ND are very interesting vector units. They allow to operate in ND, which means, inside MagickScience, that the dimensions can be changed. ND allows to operate in 1D, 2D, 3D and more dimensions at the same time. The way they allow that is with a vector<angle> member-variable, which allows to control the angles of the n dimensions were the vector operates. For 2D it has one angle, as vector_unit_2d, and for 3D it has two angles, as vector_unit_3d. For 1D it doesn't has any angle.
+
+An example of use is the following:
+
+```cpp
+force_nd x = force_nd(29_N,{8_angle,16_angle,32_angle}); // Creates a force_nd with a value of 29 N and an inclination angle of 8º, another of 16º and another of 32º
+force_nd y = force_nd(44,"dN",{55,13,42}); // vector_unid_nd of force with values "44 dN 55º 13º 42º"
+vector_unit_nd z = vector_unit_nd(81,"MPa",{32,44,67}); // vector_unit_nd with values "81 MPa 32º 44º 67º"
+
+x.angles[0] += 7; // theta of x can be accessed directed and used as any angle, it's the better way to use it
+x.angles[1] = 71; // phi of x can be accessed directly too
+x.angles[2] -= 4;
+
+x += y; // Sum a vector of the same dimensions
+y -= z; // Substraction supported. Can't substract vectors of different dimensions
+
+force_nd a = x + y; // Sum of vector_unit_nd
+force_nd b = x - y; // Substraction of vector_unit_nd
+
+velocity_nd acc = acceleration_nd("19 m/s",{14,52,33}) * 80_s; // vector_unit_nd can multiply with scalar_unit
+vector_unit_nd p = x / area("100 m2"); // vector_unit_nd can divide with scalar_unit
+
+vector_unit_nd ab = x + 9; // vector_unit_nd can sum with numeric primitive types
+vector_unit_nd ac = y - 78; // vector_unit_nd can substract with numeric primitive types
+vector_unit_nd ad = x * 3; // vector_unit_nd can multiply with numeric primitive types
+vector_unit_nd ae = y / 5; // vector_unit_nd can divide with numeric primitive types
+vector_unit_nd xy = x ^ 3; // vector_unit_nd can power with numeric primitive types
+
+x += 45; // vector_unit_nd with operator+= for numeric primitive types
+y -= 15; // vector_unit_nd with operator-= for numeric primitive types
+x *= 3; // vector_unit_nd with operator*= for numeric primitive types
+y /= 7; // vector_unit_nd with operator/= for numeric primitive types
+
+force e = x.x_projection(); // vector_unit_nd projection on the x axis
+force f = x.y_projection(); // vector_unit_nd projection on the y axis
+force f = x.z_projection(); // vector_unit_nd projection on the z axis
+
+force f = x.n_projection(2); // vector_unit_nd projection on the y axis, any axis can be specified. x is 1, y is 2, z is 3
+
+x.invert(); // Now x points to the opposite direction
+
+string x_display = to_string(x); // Prints "29N 8º 16º 32º"
+energy c = norm(x) * 2_m; // Use of norm() for vector_unit_nd
+vector_unid_nd xy = sqrt(x^4); // Gives x ^ 2
+vector_unid_nd xy = sqrt_nth(x^4,4); // Gives x
+scalar_unit a = dot_product(x,y); // Gives the dot product of x and y, which is an scalar_unit
+vector_unit_nd b = cross_product(x,y); // Gives the cross product of x and y, which is a vector_unit_nd
+angle b = angle_between(x,y); // Gives the angle between the two vectors
+
+if (same_nd(x,y)) // Gives true if the vector have the same ND, if both are 2D, both are 3D, or both are 1D
+{}
+
+if (same_direction(x,y)) // Gives true if the vectors point to the same direction
+{}
+
+if (parallel(x,y)) // Gives true if the vectors are parallel (point to the same or to the opposite direction)
+{}
+
+if (orthogonal(x,y)) // Gives true if the vectors are orthogonal (have 90º of difference in the direction they point to)
+{}
+
+if (x == y) // Gives true if the two vector_unit_nd are equal. There's the operator != too
+{}
+
+if (x == "29N 8º 16º 32º") // Gives true if the vector is the specified by the string. There's the operator != too
+{}
+
+string b;
+b =+ x; // Appends x to the string b
+string c = "x: " + x; // Creates a new string by inserting x as with to_string(x)
+string d = x + " is a vector"; // Both directions are supported for creating strings with vector_unit_nd
+
+cout << x; // Prints x in the output stream, any ostream can be used, not only cout. x is printed with to_string
+
+vector_unit_nd a;
 cin >> a; // Initializes a with the string given to cin
 
 ```
