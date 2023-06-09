@@ -63,9 +63,35 @@ namespace msci
 		return *this;
 	}
 	
+	angle& angle::operator=(float x)
+	{
+		value = x;
+		normalize_value();
+		return *this;
+	}
+	
+	angle& angle::operator=(string& init_angle)
+	{
+		if (init_angle.back() == 'º')
+		{
+			init_angle = init_angle.substr(0,-1);
+		}
+		value = stof(init_angle);
+		normalize_value();
+		return *this;
+	}
+	
 	angle& angle::operator=(const scalar_unit& x)
 	{
-		value = x.get_value();
+		if (x.has_empty_dimensions())
+		{
+			value = x.get_value();
+			normalize_value();
+		}
+		else
+		{
+			cerr << "An angle cannot be initialized with dimensions";
+		}
 		return *this;
 	}
 
