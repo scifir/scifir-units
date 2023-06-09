@@ -168,6 +168,8 @@ namespace msci
 	vector<dimension> square_dimensions(const vector<dimension>&,int);
 	vector<dimension> power_dimensions(const vector<dimension>&,int);
 	vector<dimension> normalize_dimensions(const vector<dimension>&);
+	int prefix_square_difference(const vector<dimension>&);
+	bool common_dimmension(const dimension&,const dimension&);
 	bool equal_dimensions(const string&,const string&);
 	bool equal_dimensions(const vector<dimension>&,const vector<dimension>&);
 }

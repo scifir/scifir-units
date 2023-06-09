@@ -1131,6 +1131,66 @@ namespace msci
 		return new_dimensions;
 	}
 	
+	int prefix_square_difference(const vector<dimension>& x)
+	{
+		int prefix_scale = 0;
+		vector<int> checked_dimensions = vector<int>();
+		for(int i = 0; i < x.size(); i++)
+		{
+			dimension x_dimension = x[i];
+			bool skip = false;
+			for (const int& j_checked_dimension : checked_dimensions)
+			{
+				if (i == j_checked_dimension)
+				{
+					skip = true;
+					break;
+				}
+			}
+			if (skip == true)
+			{
+				continue;
+			}
+			if ((i + 1) != x.size())
+			{
+				for(int j = i + 1; j < x.size(); j++)
+				{
+					dimension y_dimension = x[j];
+					if (common_dimmension(x_dimension,y_dimension) and x_dimension.prefix.get_conversion_factor() != y_dimension.prefix.get_conversion_factor())
+					{
+						if (x_dimension.dimension_sign == dimension::positive)
+						{
+							prefix_scale += x_dimension.prefix.get_conversion_factor() - y_dimension.prefix.get_conversion_factor();
+						}
+						else
+						{
+							prefix_scale -= x_dimension.prefix.get_conversion_factor() - y_dimension.prefix.get_conversion_factor();
+						}
+						checked_dimensions.push_back(i);
+						checked_dimensions.push_back(j);
+						break;
+					}
+				}
+			}
+		}
+		return prefix_scale;
+	}
+	
+	bool common_dimmension(const dimension& x,const dimension& y)
+	{
+		for (const dimension& x_dimension : x.get_basic_dimensions())
+		{
+			for (const dimension& y_dimension : y.get_basic_dimensions())
+			{
+				if (x.dimension_type == y.dimension_type)
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 	bool equal_dimensions(const string& x,const string& y)
 	{
 		vector<dimension> x_dimensions = create_dimensions(x);

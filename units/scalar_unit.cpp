@@ -402,23 +402,26 @@ namespace msci
 
 	scalar_unit sqrt(const scalar_unit& x)
 	{
-		float new_value = std::sqrt(x.get_value());
-		vector<dimension> new_dimensions = x.get_dimensions();
-		/*for(auto& new_actual_dimension : new_dimensions)
+		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(),2);
+		int prefix_scale = prefix_square_difference(x.get_dimensions());
+		cout << "prefix_scale: " << prefix_scale << endl;
+		float new_value;
+		if (prefix_scale != 0)
 		{
-			new_actual_dimension.second->sqrt();
-		}*/
+			new_value = std::sqrt(std::pow(x.get_value(),prefix_scale));
+		}
+		else
+		{
+			new_value = std::sqrt(x.get_value());
+		}
 		return scalar_unit(new_value, new_dimensions);
 	}
 
 	scalar_unit sqrt_nth(const scalar_unit& x, int y)
 	{
-		float new_value = std::pow(x.get_value(), 1 / y);
-		vector<dimension> new_dimensions = x.get_dimensions();
-		/*for(auto& new_actual_dimension : new_dimensions)
-		{
-			new_actual_dimension.second->sqrt_nth(y);
-		}*/
+		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(),y);
+		int prefix_scale = prefix_square_difference(x.get_dimensions());
+		float new_value = std::pow(std::pow(x.get_value(),prefix_scale), 1 / y);
 		return scalar_unit(new_value, new_dimensions);
 	}
 
