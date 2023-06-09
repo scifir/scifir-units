@@ -169,6 +169,8 @@ namespace msci
 				return "custom-basic";
 			case dimension::custom_full_symbol:
 				return "custom-full-symbol";
+			case dimension::money:
+				return "money";
 		}
 		return "";
 	}
@@ -271,6 +273,8 @@ namespace msci
 				return "custom-basic";
 			case dimension::custom_full_symbol:
 				return dimension::get_full_symbol(symbol);
+			case dimension::money:
+				return "money";
 		}
 		return "";
 	}
@@ -540,6 +544,8 @@ namespace msci
 				return true;
 			case dimension::custom_full_symbol:
 				return false;
+			case dimension::money:
+				return true;
 		}
 		return false;
 	}
@@ -782,6 +788,10 @@ namespace msci
 		else if(dimension_name == "ppb")
 		{
 			return dimension(dimension::ppb,new_prefix,new_sign);
+		}
+		else if(dimension_name == "money")
+		{
+			return dimension(dimension::money,new_prefix,new_sign);
 		}
 		else
 		{
