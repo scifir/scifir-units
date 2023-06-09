@@ -8,31 +8,50 @@
 #include <sstream>
 #include <string>
 #include <utility>
+
 using namespace std;
 
 namespace msci
 {
-	dimension::dimension() : prefix(),dimension_type(),dimension_sign()
+	map<int,string> dimension::full_symbols = map<int,string>();
+	int dimension::total_full_symbols = 0;
+	
+	dimension::dimension() : prefix(),dimension_type(),dimension_sign(),symbol()
 	{}
 
-	dimension::dimension(const dimension& x) : prefix(x.prefix),dimension_type(x.dimension_type),dimension_sign(x.dimension_sign),symbol(x.symbol)
+	dimension::dimension(const dimension& x) : prefix(x.prefix),dimension_type(x.dimension_type),dimension_sign(x.dimension_sign)
+	{
+		std::strcpy(symbol, x.symbol);
+	}
+
+	dimension::dimension(dimension&& x) : prefix(move(x.prefix)),dimension_type(move(x.dimension_type)),dimension_sign(move(x.dimension_sign))
+	{
+		std::strcpy(symbol, move(x.symbol));
+	}
+
+	dimension::dimension(dimension::type new_dimension_type,msci::prefix::type new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
 	{}
 
-	dimension::dimension(dimension&& x) : prefix(move(x.prefix)),dimension_type(move(x.dimension_type)),dimension_sign(move(x.dimension_sign)),symbol(move(x.symbol))
+	dimension::dimension(dimension::type new_dimension_type,const msci::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
 	{}
 
-	dimension::dimension(dimension::type new_dimension_type,msci::prefix::type new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol(nullptr)
-	{}
-
-	dimension::dimension(dimension::type new_dimension_type,const msci::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol(nullptr)
-	{}
-
-	dimension::dimension(const string& new_symbol,const msci::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(dimension::custom),dimension_sign(new_sign),symbol(new string(new_symbol))
-	{}
+	dimension::dimension(const string& new_symbol,const msci::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(dimension::custom),dimension_sign(new_sign)//,symbol{char[new_symbol.size()]}
+	{
+		if (new_symbol.size() > 3)
+		{
+			string symbol_abreviation = dimension::create_full_symbol(new_symbol);
+			symbol_abreviation.copy(symbol, new_symbol.length());
+			dimension_type = dimension::custom_full_symbol;
+		}
+		else
+		{
+			new_symbol.copy(symbol, new_symbol.length());
+		}
+	}
 
 	dimension::~dimension()
 	{
-		delete symbol;
+		//free(symbol);
 	}
 
 	dimension& dimension::operator=(const dimension& x)
@@ -148,6 +167,8 @@ namespace msci
 //				return static_cast<msci::custom_dimension&>(const_cast<dimension&>(*this)).symbol;
 			case dimension::custom_basic:
 				return "custom-basic";
+			case dimension::custom_full_symbol:
+				return "custom-full-symbol";
 		}
 		return "";
 	}
@@ -245,9 +266,11 @@ namespace msci
 			case dimension::ppb:
 				return "ppb";
 			case dimension::custom:
-				return symbol->c_str();
+				return symbol;
 			case dimension::custom_basic:
 				return "custom-basic";
+			case dimension::custom_full_symbol:
+				return dimension::get_full_symbol(symbol);
 		}
 		return "";
 	}
@@ -515,6 +538,8 @@ namespace msci
 				//return static_cast<msci::custom_dimension&>(const_cast<dimension&>(*this)).is_basic_dimension();
 			case dimension::custom_basic:
 				return true;
+			case dimension::custom_full_symbol:
+				return false;
 		}
 		return false;
 	}
@@ -760,7 +785,6 @@ namespace msci
 		}
 		else
 		{
-			cout << "custom_dimension_name: " << dimension_name << endl;
 			return dimension(dimension_name,new_prefix,new_sign);
 		}
 	}
@@ -871,14 +895,22 @@ namespace msci
 		vector<dimension> dimensions = vector<dimension>();
 		for(int j = 0; j < init_value.size(); j++)
 		{
-			if(isdigit(init_value[j]))
-			{
-				new_dimension_str = init_value.substr(new_start, new_size - 1);
-				new_scale = stoi(init_value.substr(new_start, 1));
-			}
-			else if(isalpha(init_value[j]) and (!isalpha(init_value[j + 1]) or (j + 1) == init_value.size()))
+			/*if(isdigit(init_value[j]))
 			{
 				new_dimension_str = init_value.substr(new_start, new_size);
+				new_scale = stoi(init_value.substr(j, 1));
+				cout << "new_dimension_str: " << new_dimension_str << endl;
+				cout << "new_scale: " << new_scale << endl;
+				cout << "j: " << j << endl;
+				cout << "new_size: " << new_size << endl;
+			}
+			else */if(isalpha(init_value[j]) and (!isalpha(init_value[j + 1]) or (j + 1) == init_value.size()))
+			{
+				new_dimension_str = init_value.substr(new_start, new_size);
+				if(isdigit(init_value[j + 1]))
+				{
+					new_scale = stoi(init_value.substr(j + 1, 1));
+				}
 			}
 			if(init_value[j] == '*')
 			{

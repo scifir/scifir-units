@@ -3,6 +3,11 @@
 
 #include "units/prefix.hpp"
 
+#include <algorithm>
+#include <cstring>
+#include <cstddef>
+#include <cmath>
+#include <iostream>
 #include <map>
 #include <sstream>
 #include <string>
@@ -13,7 +18,7 @@ using namespace std;
 namespace msci
 {
 	class dimension;
-
+	
 	vector<dimension> create_dimensions(string);
 
 	class dimension
@@ -21,7 +26,7 @@ namespace msci
 		public:
 			enum type : char
 			{
-				m, radian, steradian, s, g, C, K, mol, cd, B, Hz, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, L, minute, h, d, AU, pc, eV, Da, amu, barn, M, particles, ppm, ppb, custom, custom_basic
+				m, radian, steradian, s, g, C, K, mol, cd, B, Hz, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, L, minute, h, d, AU, pc, eV, Da, amu, barn, M, particles, ppm, ppb, custom, custom_basic, custom_full_symbol
 			};
 
 			enum sign : char {positive,negative};
@@ -31,7 +36,7 @@ namespace msci
 			dimension(dimension&&);
 			explicit dimension(dimension::type,msci::prefix::type,dimension::sign);
 			explicit dimension(dimension::type,const msci::prefix&,dimension::sign);
-			explicit dimension(const string&,const msci::prefix&,dimension::sign);
+			explicit dimension(const string&,const msci::prefix& new_prefix,dimension::sign new_sign);
 
 			~dimension();
 
@@ -54,18 +59,101 @@ namespace msci
 			msci::prefix prefix;
 			dimension::type dimension_type;
 			dimension::sign dimension_sign;
-			string* symbol;
+			char symbol[3];
 
-			static void create_custom_dimension(const string& symbol,const string& init_dimensions)
+			static void create_custom_dimension(const string& new_symbol,const string& init_dimensions)
 			{
-				if (dimension::base_dimensions.count(symbol) == 0)
+				if (dimension::base_dimensions.count(new_symbol) == 0)
 				{
-					dimension::base_dimensions[symbol] = create_dimensions(init_dimensions);
+					dimension::base_dimensions[new_symbol] = create_dimensions(init_dimensions);
 				}
+			}
+			
+			static char* create_full_symbol(const string& full_symbol)
+			{
+				int symbol_code;
+				char symbol_abbreviation[3];
+				total_full_symbols++;
+				if (total_full_symbols <= 255)
+				{
+					if (total_full_symbols <= 32)
+					{
+						total_full_symbols = 33;
+					}
+					symbol_abbreviation[0] = char(total_full_symbols);
+					symbol_abbreviation[1] = '\n';
+					symbol_abbreviation[2] = '\n';
+					symbol_code = total_full_symbols;
+				}
+				else if (total_full_symbols <= 65535)
+				{
+					int char_code1 = (total_full_symbols / 256);
+					if (char_code1 <= 32)
+					{
+						char_code1 = 33;
+					}
+					symbol_abbreviation[0] += char(char_code1);
+					int closest_number = floor(total_full_symbols / 256.0) * 256;
+					int char_code2 = total_full_symbols - closest_number;
+					if (char_code2 <= 32)
+					{
+						char_code2 = 33;
+					}
+					symbol_abbreviation[1] += char(char_code2);
+					symbol_abbreviation[2] = '\n';
+				}
+				else
+				{
+					int char_code1 = (total_full_symbols / 65536);
+					if (char_code1 <= 32)
+					{
+						char_code1 = 33;
+					}
+					symbol_abbreviation[0] += char(char_code1);
+					int closest_number = floor(total_full_symbols / 65536.0) * 65536;
+					int char_code2 = total_full_symbols - closest_number;
+					if (char_code2 <= 32)
+					{
+						char_code2 = 33;
+					}
+					symbol_abbreviation[1] += char(char_code2);
+					int closest_number2 = floor(total_full_symbols / 256.0) * 256;
+					int char_code3 = total_full_symbols - closest_number2;
+					if (char_code3 <= 32)
+					{
+						char_code3 = 33;
+					}
+					symbol_abbreviation[2] += char(char_code3);
+				}
+				full_symbols[total_full_symbols] = full_symbol;
+				return new char[3]{symbol_abbreviation[0],symbol_abbreviation[1],symbol_abbreviation[2]};
+			}
+			
+			static string get_full_symbol(const char* x_symbol)
+			{
+				int symbol_code;
+				if (x_symbol[1] == '\n')
+				{
+					symbol_code = int(x_symbol[0]);
+				}
+				else if (x_symbol[2] == '\n')
+				{
+					symbol_code = int(x_symbol[0]) * 256;
+					symbol_code += int(x_symbol[1]);
+				}
+				else
+				{
+					symbol_code = int(x_symbol[0]) * 65536;
+					symbol_code += int(x_symbol[1]) * 256;
+					symbol_code += int(x_symbol[2]);
+				}
+				return full_symbols[symbol_code];
 			}
 
 		private:
 			static map<string,vector<dimension>> base_dimensions;
+			static map<int,string> full_symbols;
+			static int total_full_symbols;
 	};
 
 	dimension create_dimension(const string&,dimension::sign);
