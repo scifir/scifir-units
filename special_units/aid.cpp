@@ -319,30 +319,34 @@ namespace msci
 	{
 		vector<string> values;
 		boost::split(values,init_aid,boost::is_any_of(":"));
-		if (values.size() == 4)
+		string aid_type;
+		if (values[0].front() == '(' and isalpha(values[0][1]))
 		{
-			universe = values[0];
-			galaxy = values[1];
-			solar_system = values[2];
-			astronomical_body = values[3];
-		}
-		else if (values.size() == 3)
-		{
-			universe = values[0];
-			galaxy = values[1];
-			solar_system = values[2];
-			astronomical_type = aid::SOLAR_SYSTEM;
-		}
-		else if (values.size() == 2)
-		{
-			universe = values[0];
-			galaxy = values[1];
-			astronomical_type = aid::GALAXY;
-		}
-		else if (values.size() == 1)
-		{
-			universe = values[0];
-			astronomical_type = aid::UNIVERSE;
+			if (isalpha(values[0][2]))
+			{
+				astronomical_type = create_astronomical_type(values[0].substr(1,2));
+				universe = values[0].substr(4);
+			}
+			else
+			{
+				astronomical_type = create_astronomical_type(values[0].substr(1,1));
+				universe = values[0].substr(3);
+			}
+			if (values.size() == 4)
+			{
+				galaxy = values[1];
+				solar_system = values[2];
+				astronomical_body = values[3];
+			}
+			else if (values.size() == 3)
+			{
+				galaxy = values[1];
+				solar_system = values[2];
+			}
+			else if (values.size() == 2)
+			{
+				galaxy = values[1];
+			}
 		}
 	}
 	
@@ -367,11 +371,27 @@ namespace msci
 	string to_string(const aid& x)
 	{
 		ostringstream out;
-		if (x.universe != "")
+		out << "(" << to_string(x.astronomical_type) << ")";
+		if (x.astronomical_type == aid::UNIVERSE)
 		{
-			out << x.universe << ":";
+			out << x.universe;
 		}
-		out << x.galaxy << ":" << x.solar_system << ":" << x.astronomical_body;
+		else if (x.astronomical_type == aid::GALAXY)
+		{
+			out << x.universe << ":" << x.galaxy;
+		}
+		else if (x.astronomical_type == aid::SOLAR_SYSTEM)
+		{
+			out << x.universe << ":" << x.galaxy << ":" << x.solar_system;
+		}
+		else
+		{
+			if (x.universe != "")
+			{
+				out << x.universe << ":";
+			}
+			out << x.galaxy << ":" << x.solar_system << ":" << x.astronomical_body;
+		}
 		return out.str();
 	}
 	
