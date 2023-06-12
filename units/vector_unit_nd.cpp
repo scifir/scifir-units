@@ -364,7 +364,6 @@ namespace msci
 			}
 			else if(is_nd(2))
 			{
-				angles.empty();
 				float new_x = float(x_projection() + y.x_projection());
 				float new_y = float(y_projection() + y.y_projection());
 				float new_value = cartesian_2d_to_polar_r(new_x, new_y);
@@ -407,7 +406,6 @@ namespace msci
 			}
 			else if(is_nd(2))
 			{
-				angles.empty();
 				float new_x = float(x_projection() + y.x_projection());
 				float new_y = float(y_projection() + y.y_projection());
 				float new_value = cartesian_2d_to_polar_r(new_x, new_y);

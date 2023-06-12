@@ -843,7 +843,7 @@ namespace msci
 				printed_dimensions.push_back(x_dimension.dimension_type);
 			}
 		}
-		printed_dimensions.empty();
+		printed_dimensions.clear();
 		bool first_negative_iteration = true;
 		bool first_negative_prefix = true;
 		for (const dimension& x_dimension : x_dimensions)

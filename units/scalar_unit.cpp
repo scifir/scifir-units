@@ -208,7 +208,7 @@ namespace msci
 					}
 				}
 			}
-			dimensions.empty();
+			dimensions.clear();
 			for(const dimension& new_dimension : new_dimensions)
 			{
 				add_prefix(new_dimension.prefix);
