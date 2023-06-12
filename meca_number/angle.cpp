@@ -1,6 +1,8 @@
 #include "meca_number/angle.hpp"
 
 #include "boost/algorithm/string.hpp"
+#include "unicode/unistr.h"
+#include "unicode/uchar.h"
 
 #include <cmath>
 #include <iomanip>
@@ -29,10 +31,12 @@ namespace msci
 	
 	angle::angle(string init_angle) : value()
 	{
-		if (init_angle.back() == 'º')
+		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
+		if (init_angle_unicode.endsWith(u'º'))
 		{
-			init_angle = init_angle.substr(0,-1);
+			init_angle_unicode = init_angle_unicode.tempSubString(0,-1);
 		}
+		init_angle = init_angle_unicode.toUTF8String(init_angle);
 		value = stof(init_angle);
 		normalize_value();
 	}
@@ -72,10 +76,12 @@ namespace msci
 	
 	angle& angle::operator=(string& init_angle)
 	{
-		if (init_angle.back() == 'º')
+		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
+		if (init_angle_unicode.endsWith(u'º'))
 		{
-			init_angle = init_angle.substr(0,-1);
+			init_angle_unicode = init_angle_unicode.tempSubString(0,-1);
 		}
+		init_angle = init_angle_unicode.toUTF8String(init_angle);
 		value = stof(init_angle);
 		normalize_value();
 		return *this;
@@ -226,6 +232,35 @@ namespace msci
 			output << x.get_value();
 		}
 		return output.str();
+	}
+	
+	bool is_angle(const string& x)
+	{
+		icu::UnicodeString x_unicode = icu::UnicodeString(x.c_str());
+		int total_chars = x_unicode.countChar32();
+		int i = 0;
+		for (int i = 0; i < total_chars; i++)
+		{
+			if ((i + 1) == total_chars)
+			{
+				if (u_isdigit(x_unicode[i]) or x_unicode[i] == U'º')
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+			else
+			{
+				if (!u_isdigit(x_unicode[i]))
+				{
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 	bool parallel(const angle& x, const angle& y)

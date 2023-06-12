@@ -157,6 +157,7 @@ namespace msci
 	};
 
 	string to_string(const angle&);
+	bool is_angle(const string&);
 	bool parallel(const angle&, const angle&);
 	bool orthogonal(const angle&, const angle&);
 
