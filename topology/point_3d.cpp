@@ -52,9 +52,37 @@ namespace msci
 			init_point_3d.erase(init_point_3d.size()-1,1);
 		}
 		boost::split(values,init_point_3d,boost::is_any_of(","));
-		x = length(values[0]);
-		y = length(values[1]);
-		z = length(values[2]);
+		if (is_angle(values[0]))
+		{
+			if (is_angle(values[1]))
+			{
+				if (!is_angle(values[2]))
+				{
+					set_position(angle(values[0]),angle(values[1]),length(values[2]));
+				}
+			}
+		}
+		else
+		{
+			if (is_angle(values[1]))
+			{
+				if (is_angle(values[2]))
+				{
+					set_position(length(values[0]),angle(values[1]),angle(values[2]));
+				}
+				else
+				{
+					set_position(length(values[0]),angle(values[1]),length(values[2]));
+				}
+			}
+			else
+			{
+				if (!is_angle(values[2]))
+				{
+					set_position(length(values[0]),length(values[1]),length(values[2]));
+				}
+			}
+		}
 	}
 	
 	point_3d& point_3d::operator=(const point_3d& x_point)

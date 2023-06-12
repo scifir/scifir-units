@@ -11,31 +11,31 @@ namespace msci
 {
 	coordinates_3d::coordinates_3d() : x(),y(),z()
 	{}
-	
+
 	coordinates_3d::coordinates_3d(const coordinates_3d& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z)
 	{}
-	
+
 	coordinates_3d::coordinates_3d(coordinates_3d&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z))
 	{}
-	
+
 	coordinates_3d::coordinates_3d(const length& new_x,const length& new_y,const length& new_z) : x(new_x),y(new_y),z(new_z)
 	{}
-	
+
 	coordinates_3d::coordinates_3d(const length& new_p,const angle& new_theta,length new_z)
 	{
 		set_position(new_p,new_theta,new_z);
 	}
-	
+
 	coordinates_3d::coordinates_3d(const length& new_r,const angle& new_theta,const angle& new_phi)
 	{
 		set_position(new_r,new_theta,new_phi);
 	}
-	
-	coordinates_3d::coordinates_3d(const angle& new_latitude,const angle& new_longitude,const length& new_altitude)
+
+	coordinates_3d::coordinates_3d(const angle& new_latitude,const angle& new_longitude,const length& new_altitude) : coordinates_3d()
 	{
 		set_position(new_latitude,new_longitude,new_altitude);
 	}
-	
+
 	coordinates_3d::coordinates_3d(const point_3d& x_point) : x(x_point.x),y(x_point.y),z(x_point.z)
 	{}
 
@@ -51,11 +51,39 @@ namespace msci
 			init_coordinates_3d.erase(init_coordinates_3d.size()-1,1);
 		}
 		boost::split(values,init_coordinates_3d,boost::is_any_of(","));
-		x = length(values[0]);
-		y = length(values[1]);
-		z = length(values[2]);
+		if (is_angle(values[0]))
+		{
+			if (is_angle(values[1]))
+			{
+				if (!is_angle(values[2]))
+				{
+					set_position(angle(values[0]),angle(values[1]),length(values[2]));
+				}
+			}
+		}
+		else
+		{
+			if (is_angle(values[1]))
+			{
+				if (is_angle(values[2]))
+				{
+					set_position(length(values[0]),angle(values[1]),angle(values[2]));
+				}
+				else
+				{
+					set_position(length(values[0]),angle(values[1]),length(values[2]));
+				}
+			}
+			else
+			{
+				if (!is_angle(values[2]))
+				{
+					set_position(length(values[0]),length(values[1]),length(values[2]));
+				}
+			}
+		}
 	}
-	
+
 	coordinates_3d& coordinates_3d::operator=(const coordinates_3d& x_coordinates)
 	{
 		x = x_coordinates.x;
@@ -63,7 +91,7 @@ namespace msci
 		z = x_coordinates.z;
 		return *this;
 	}
-	
+
 	coordinates_3d& coordinates_3d::operator=(coordinates_3d&& x_coordinates)
 	{
 		x = std::move(x_coordinates.x);
@@ -71,7 +99,7 @@ namespace msci
 		z = std::move(x_coordinates.z);
 		return *this;
 	}
-	
+
 	coordinates_3d& coordinates_3d::operator=(const point_3d& x_point)
 	{
 		x = x_point.x;
@@ -79,7 +107,7 @@ namespace msci
 		z = x_point.z;
 		return *this;
 	}
-	
+
 	length coordinates_3d::get_p() const
 	{
 		return msci::sqrt(msci::pow(x,2) + msci::pow(y,2));

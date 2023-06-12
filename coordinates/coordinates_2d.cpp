@@ -41,8 +41,14 @@ namespace msci
 			init_coordinates_2d.erase(init_coordinates_2d.size()-1,1);
 		}
 		boost::split(values,init_coordinates_2d,boost::is_any_of(","));
-		x = length(values[0]);
-		y = length(values[1]);
+		if (is_angle(values[1]))
+		{
+			set_position(length(values[0]),angle(values[1]));
+		}
+		else
+		{
+			set_position(length(values[0]),length(values[1]));
+		}
 	}
 	
 	coordinates_2d& coordinates_2d::operator=(const coordinates_2d& x_coordinates)

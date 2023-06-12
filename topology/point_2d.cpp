@@ -41,8 +41,14 @@ namespace msci
 			init_point_2d.erase(init_point_2d.size()-1,1);
 		}
 		boost::split(values,init_point_2d,boost::is_any_of(","));
-		x = length(values[0]);
-		y = length(values[1]);
+		if (is_angle(values[1]))
+		{
+			set_position(length(values[0]),angle(values[1]));
+		}
+		else
+		{
+			set_position(length(values[0]),length(values[1]));
+		}
 	}
 	
 	point_2d& point_2d::operator=(const point_2d& x_point)

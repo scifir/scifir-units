@@ -69,9 +69,57 @@ namespace msci
 			init_coordinates_nd.erase(init_coordinates_nd.size()-1,1);
 		}
 		boost::split(init_values,init_coordinates_nd,boost::is_any_of(","));
-		for (const string& x_value : init_values)
+		if (init_values.size() == 2)
 		{
-			values.push_back(length(x_value));
+			if (is_angle(init_values[1]))
+			{
+				set_position(length(init_values[0]),angle(init_values[1]));
+			}
+			else
+			{
+				set_position(length(init_values[0]),length(init_values[1]));
+			}
+		}
+		else if (init_values.size() == 3)
+		{
+			if (is_angle(init_values[0]))
+			{
+				if (is_angle(init_values[1]))
+				{
+					if (!is_angle(init_values[2]))
+					{
+						set_position(angle(init_values[0]),angle(init_values[1]),length(init_values[2]));
+					}
+				}
+			}
+			else
+			{
+				if (is_angle(init_values[1]))
+				{
+					if (is_angle(init_values[2]))
+					{
+						set_position(length(init_values[0]),angle(init_values[1]),angle(init_values[2]));
+					}
+					else
+					{
+						set_position(length(init_values[0]),angle(init_values[1]),length(init_values[2]));
+					}
+				}
+				else
+				{
+					if (!is_angle(init_values[2]))
+					{
+						set_position(length(init_values[0]),length(init_values[1]),length(init_values[2]));
+					}
+				}
+			}
+		}
+		else
+		{
+			for (const string& x_value : init_values)
+			{
+				values.push_back(length(x_value));
+			}
 		}
 	}
 
@@ -168,60 +216,60 @@ namespace msci
 	
 	void coordinates_nd::set_position(const length& new_x)
 	{
-		values.empty();
-		values[0] = new_x;
+		values.clear();
+		values.push_back(new_x);
 	}
 	
 	void coordinates_nd::set_position(const length& new_x,const length& new_y)
 	{
-		values.empty();
-		values[0] = new_x;
-		values[1] = new_y;
+		values.clear();
+		values.push_back(new_x);
+		values.push_back(new_y);
 	}
 	
 	void coordinates_nd::set_position(const length& new_p,const angle& new_theta)
 	{
-		values.empty();
-		values[0] = length(new_p * msci::cos(new_theta));
-		values[1] = length(new_p * msci::sin(new_theta));
+		values.clear();
+		values.push_back(length(new_p * msci::cos(new_theta)));
+		values.push_back(length(new_p * msci::sin(new_theta)));
 	}
 	
 	void coordinates_nd::set_position(const length& new_x,const length& new_y,const length& new_z)
 	{
-		values.empty();
-		values[0] = new_x;
-		values[1] = new_y;
-		values[2] = new_z;
+		values.clear();
+		values.push_back(new_x);
+		values.push_back(new_y);
+		values.push_back(new_z);
 	}
 	
 	void coordinates_nd::set_position(const length& new_p,const angle& new_theta,length new_z)
 	{
-		values.empty();
+		values.clear();
 		new_z.set_same_prefix(new_p);
-		values[0] = length(new_p * msci::cos(new_theta));
-		values[1] = length(new_p * msci::sin(new_theta));
-		values[2] = new_z;
+		values.push_back(length(new_p * msci::cos(new_theta)));
+		values.push_back(length(new_p * msci::sin(new_theta)));
+		values.push_back(new_z);
 	}
 	
 	void coordinates_nd::set_position(const length& new_r,const angle& new_theta,const angle& new_phi)
 	{
-		values.empty();
-		values[0] = length(new_r * msci::cos(new_theta) * msci::sin(new_phi));
-		values[1] = length(new_r * msci::sin(new_theta) * msci::sin(new_phi));
-		values[2] = length(new_r * msci::cos(new_phi));
+		values.clear();
+		values.push_back(length(new_r * msci::cos(new_theta) * msci::sin(new_phi)));
+		values.push_back(length(new_r * msci::sin(new_theta) * msci::sin(new_phi)));
+		values.push_back(length(new_r * msci::cos(new_phi)));
 	}
 	
 	void coordinates_nd::set_position(const angle& new_latitude,const angle& new_longitude,const length& new_altitude)
 	{
-		values.empty();
-		values[0] = length(new_altitude * msci::cos(new_latitude) * msci::cos(new_longitude));
-		values[1] = length(new_altitude * msci::cos(new_latitude) * msci::sin(new_longitude));
-		values[2] = length(new_altitude * msci::sin(new_latitude));
+		values.clear();
+		values.push_back(length(new_altitude * msci::cos(new_latitude) * msci::cos(new_longitude)));
+		values.push_back(length(new_altitude * msci::cos(new_latitude) * msci::sin(new_longitude)));
+		values.push_back(length(new_altitude * msci::sin(new_latitude)));
 	}
 	
 	void coordinates_nd::set_position(const vector<length>& new_values)
 	{
-		values.empty();
+		values.clear();
 		values = new_values;
 	}
 
