@@ -10,6 +10,10 @@ MagickScience includes special units to use, then it's unneeded to care about ha
 
 MagickScience is developed by [Ismael Correa](https://github.com/Iarfen/), a software developer of 32 years old. You can email if you find bugs, request new features, or have any other need, at ismael.correa.castro@gmail.com.
 
+## Funding
+
+MagickScience is looking for **funding**, in order to do some digital marketing and pay some other needs of the project. If you want to support this library, and **science will thank you** for that, you can donate in this [sponsors page](https://github.com/sponsors/Iarfen).
+
 ## Installation
 
 To install MagickScience you have to use CMake and Make. The library is called msci_units, the other msci libraries aren't yet published in the web. The commands to install it are the following:
@@ -19,6 +23,27 @@ cmake .
 make
 make install
 ```
+
+## Introduction
+
+MagickScience is a set of libraries that allows to create the software of scientific inventions, being them scientific machines or just scientific software. This library, MagickScience Units, allows to handle scalar and vectorial units inside the code. They are very lightweight, they size similar to a float, and can be used extensively to do any math calculation necessary for the invention. The prefixes can be changed, in order to display the units in the more proper dimensions. Also, all the conversions known are supported. Then, instead of the meter, a length can be described by a light-year, an astronomical unit (AU), among other units of measure.
+
+The unit classes that MagickScience provides are the following:
+
+- **scalar_unit:** Handles scalar units. It covers vectors in 1D too.
+- **vector_unit_2d:** Handles vector units in 2D dimensions. It inherits scalar_unit.
+- **vector_unit_3d:** Handles vector units in 3D dimensions. It inherits scalar_unit.
+- **vector_unit_nd:** Handles vector units in ND dimensions. It inherits scalar_unit.
+
+scalar_unit classes can be used both for scalar units and vector units in 1D. In the case of vector units in 1D, a negative value indicates, as on math, that it points to the left on the x axis. Otherwise, if the value is positive, it points to the right.
+
+All the unit classes have fixed dimensions. Once instanciated, they can't change to a different set of dimensions. Besides that, prefixes and abbreviations can be used freely, every unit can change to any other prefix and use any abbreviation that matches the original dimensions (and no other set of dimensions).
+
+### Consumption of memory
+
+The scalar_unit and vector unit classes, vector_unid_2d, vector_unid_3d and vector_unit_nd size more than a single float, which uses 4 bytes, but don't size a big amount and so, they can be used in great quantities for any purpose, cause they are very lightweight.
+
+The angle class uses only 4 bytes, and works perfectly fine, very similar to a normal float. Then, you can use it freely every time you need to do calculations that need angles.
 
 ## Example of use
 
@@ -370,3 +395,9 @@ vector_unit_nd a;
 cin >> a; // Initializes a with the string given to cin
 
 ```
+
+## MagickScience Units Internals
+
+Internally, the library has some important mechanisms important to be known by a serious developer. Those important mechanisms are described here, in order to avoid the developer to read the code of the library and learn every detail.
+
+The first important mechanism to describe is the static storage of custom dimensions. This storage is static, meaning that every time a unit of a dimension not registered is created, this storage is the one used, instead of the name being stored inside the instance. With that behavior, when instantiating a big amount of dimensions, a big amount of memory is saved. To refer to the static storage it's used the char symbol[3] of the dimension class, which uses only 3 bytes instead of the bytes the full dimension name would use. Then, each instance of a dimension class, given that static storage, uses only 6 bytes of memory.
