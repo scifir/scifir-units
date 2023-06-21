@@ -89,13 +89,16 @@ namespace msci
 	vector_unit_3d::vector_unit_3d(const string& init,const vector<angle>& new_angles) : scalar_unit(init),theta(new_angles[0]),phi(new_angles[1])
 	{}
 	
-	vector_unit_3d::vector_unit_3d(const string& init_vector_3d) : scalar_unit()
+	vector_unit_3d::vector_unit_3d(const string& init_vector_3d) : vector_unit_3d()
 	{
 		vector<string> values;
 		boost::split(values,init_vector_3d,boost::is_any_of(" "));
-		set_from_string(values[0]);
-		theta = angle(values[1]);
-		phi = angle(values[2]);
+		if (values.size() == 3)
+		{
+			set_from_string(values[0]);
+			theta = angle(values[1]);
+			phi = angle(values[2]);
+		}
 	}
 	
 
@@ -269,8 +272,8 @@ namespace msci
 			float new_y = float(y_projection() + y.y_projection());
 			float new_z = float(z_projection() + y.z_projection());
 			scalar_unit::value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
-			theta = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
-			phi = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
+			theta = angle(cartesian_3d_to_spherical_theta(new_x, new_y, new_z));
+			phi = angle(cartesian_3d_to_spherical_phi(new_x, new_y, new_z));
 		}
 		else
 		{
@@ -390,13 +393,13 @@ namespace msci
 	vector_unit_3d cross_product(const vector_unit_3d& x,const vector_unit_3d& y)
 	{
 		float new_value;
-		float theta;
-		float phi;
+		float new_theta;
+		float new_phi;
 		if(y.theta == x.theta and y.phi == x.phi)
 		{
 			new_value = 0;
-			theta = 0;
-			phi = 0;
+			new_theta = 0;
+			new_phi = 0;
 		}
 		else
 		{
@@ -404,11 +407,11 @@ namespace msci
 			float new_y = float(x.z_projection() * y.x_projection() - x.x_projection() * y.z_projection());
 			float new_z = float(x.x_projection() * y.y_projection() - x.y_projection() * y.x_projection());
 			new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
-			theta = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
-			phi = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
+			new_theta = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
+			new_phi = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
 		}
 		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions());
-		return vector_unit_3d(new_value, new_dimensions, theta, phi);
+		return vector_unit_3d(new_value, new_dimensions, new_theta, new_phi);
 	}
 
 	angle angle_between(const vector_unit_3d& x,const vector_unit_3d& y)

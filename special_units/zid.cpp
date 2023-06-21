@@ -22,12 +22,18 @@ namespace msci
 		vector<string> values;
 		boost::split(values,init_zid,boost::is_any_of(":"));
 		country = values[0];
-		int total_for_values = (values.size() - 1);
-		for (int i = 1; i < total_for_values; i++)
+		if (values.size() > 2)
 		{
-			regions.push_back(values[i]);
+			int total_for_values = (values.size() - 1);
+			for (int i = 1; i < total_for_values; i++)
+			{
+				regions.push_back(values[i]);
+			}
 		}
-		zone = values.back();
+		if (values.size() >= 2)
+		{
+			zone = values.back();
+		}
 	}
 
 	zid& zid::operator=(const zid& x)

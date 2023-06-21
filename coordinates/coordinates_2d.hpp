@@ -37,7 +37,7 @@ namespace msci
 			explicit coordinates_2d<T>(const msci::point_2d<T>& new_point) : x(new_point.x),y(new_point.y)
 			{}
 
-			explicit coordinates_2d<T>(string init_coordinates_2d) : coordinates_2d()
+			explicit coordinates_2d<T>(string init_coordinates_2d) : coordinates_2d<T>()
 			{
 				vector<string> values;
 				if (init_coordinates_2d.front() == '(')
@@ -49,13 +49,16 @@ namespace msci
 					init_coordinates_2d.erase(init_coordinates_2d.size()-1,1);
 				}
 				boost::split(values,init_coordinates_2d,boost::is_any_of(","));
-				if (is_angle(values[1]))
+				if (values.size() == 2)
 				{
-					set_position(T(values[0]),angle(values[1]));
-				}
-				else
-				{
-					set_position(T(values[0]),T(values[1]));
+					if (is_angle(values[1]))
+					{
+						set_position(T(values[0]),angle(values[1]));
+					}
+					else
+					{
+						set_position(T(values[0]),T(values[1]));
+					}
 				}
 			}
 
@@ -168,7 +171,7 @@ namespace msci
 			explicit coordinates_2d<float>(const msci::point_2d<float>& new_point) : x(new_point.x),y(new_point.y)
 			{}
 
-			explicit coordinates_2d<float>(string init_coordinates_2d) : coordinates_2d()
+			explicit coordinates_2d<float>(string init_coordinates_2d) : coordinates_2d<float>()
 			{
 				vector<string> values;
 				if (init_coordinates_2d.front() == '(')
@@ -180,13 +183,16 @@ namespace msci
 					init_coordinates_2d.erase(init_coordinates_2d.size()-1,1);
 				}
 				boost::split(values,init_coordinates_2d,boost::is_any_of(","));
-				if (is_angle(values[1]))
+				if (values.size() == 2)
 				{
-					set_position(stof(values[0]),angle(values[1]));
-				}
-				else
-				{
-					set_position(stof(values[0]),stof(values[1]));
+					if (is_angle(values[1]))
+					{
+						set_position(stof(values[0]),angle(values[1]));
+					}
+					else
+					{
+						set_position(stof(values[0]),stof(values[1]));
+					}
 				}
 			}
 

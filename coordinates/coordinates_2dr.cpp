@@ -21,9 +21,12 @@ namespace msci
 	{
 		vector<string> values;
 		boost::split(values,init,boost::is_any_of(","));
-		x = length(values[0]);
-		y = length(values[1]);
-		theta = angle(values[2].size() - 1);
+		if (values.size() == 3)
+		{
+			x = length(values[0]);
+			y = length(values[1]);
+			theta = angle(values[2]);
+		}
 	}
 
 	string to_string(const coordinates_2dr& x)

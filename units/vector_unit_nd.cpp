@@ -9,16 +9,16 @@ namespace msci
 {
 	vector_unit_nd::vector_unit_nd() : scalar_unit(),angles()
 	{}
-	
+
 	vector_unit_nd::vector_unit_nd(const vector_unit_nd& x) : scalar_unit(x),angles(x.angles)
 	{}
-	
+
 	vector_unit_nd::vector_unit_nd(vector_unit_nd&& x) : scalar_unit(move(x)),angles(move(x.angles))
 	{}
-	
+
 	vector_unit_nd::vector_unit_nd(float new_value,const string& init_dimensions) : scalar_unit(new_value,init_dimensions),angles()
 	{}
-	
+
 	vector_unit_nd::vector_unit_nd(float new_value,const string& init_dimensions,const vector<float>& new_angles) : scalar_unit(new_value,init_dimensions),angles()
 	{
 		for(const float& x_angle : new_angles)
@@ -26,13 +26,13 @@ namespace msci
 			angles.push_back(angle(x_angle));
 		}
 	}
-	
+
 	vector_unit_nd::vector_unit_nd(float new_value,const string& init_dimensions,const vector<angle>& new_angles) : scalar_unit(new_value,init_dimensions),angles(new_angles)
 	{}
-	
+
 	vector_unit_nd::vector_unit_nd(float new_value,const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions),angles()
 	{}
-	
+
 	vector_unit_nd::vector_unit_nd(float new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles) : scalar_unit(new_value,new_dimensions),angles()
 	{
 		for(const float& x_angle : new_angles)
@@ -40,13 +40,13 @@ namespace msci
 			angles.push_back(angle(x_angle));
 		}
 	}
-	
+
 	vector_unit_nd::vector_unit_nd(float new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles) : scalar_unit(new_value,new_dimensions),angles(new_angles)
 	{}
-	
+
 	vector_unit_nd::vector_unit_nd(const scalar_unit& x) : scalar_unit(x),angles()
 	{}
-	
+
 	vector_unit_nd::vector_unit_nd(const scalar_unit& x,const vector<float>& new_angles)
 	{
 		for(const float& x_angle : new_angles)
@@ -54,13 +54,13 @@ namespace msci
 			angles.push_back(angle(x_angle));
 		}
 	}
-	
+
 	vector_unit_nd::vector_unit_nd(const scalar_unit& x,const vector<angle>& new_angles) : scalar_unit(x),angles(new_angles)
 	{}
-	
+
 	vector_unit_nd::vector_unit_nd(scalar_unit&& x)
 	{}
-	
+
 	vector_unit_nd::vector_unit_nd(scalar_unit&& x,const vector<float>& new_angles) : scalar_unit(x),angles()
 	{
 		for(const float& x_angle : new_angles)
@@ -68,10 +68,10 @@ namespace msci
 			angles.push_back(angle(x_angle));
 		}
 	}
-	
+
 	vector_unit_nd::vector_unit_nd(scalar_unit&& x,const vector<angle>& new_angles) : scalar_unit(x),angles(new_angles)
 	{}
-	
+
 	vector_unit_nd::vector_unit_nd(const string& init_scalar,const vector<float>& new_angles) : scalar_unit(init_scalar),angles()
 	{
 		for(const float& x_angle : new_angles)
@@ -79,18 +79,21 @@ namespace msci
 			angles.push_back(angle(x_angle));
 		}
 	}
-	
+
 	vector_unit_nd::vector_unit_nd(const string& init_scalar,const vector<angle>& new_angles) : scalar_unit(init_scalar),angles(new_angles)
 	{}
-	
-	vector_unit_nd::vector_unit_nd(const string& init_vector_nd) : scalar_unit(),angles()
+
+	vector_unit_nd::vector_unit_nd(const string& init_vector_nd) : vector_unit_nd()
 	{
 		vector<string> values;
 		boost::split(values,init_vector_nd,boost::is_any_of(" "));
 		set_from_string(values[0]);
-		for (int i = 1; i < values.size(); i++)
+		if (values.size() > 1)
 		{
-			angles.push_back(angle(values[i]));
+			for (int i = 1; i < values.size(); i++)
+			{
+				angles.push_back(angle(values[i]));
+			}
 		}
 	}
 

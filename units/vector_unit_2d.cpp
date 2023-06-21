@@ -47,12 +47,15 @@ namespace msci
 	vector_unit_2d::vector_unit_2d(const string& init_scalar,const angle& new_angle) : scalar_unit(init_scalar),theta(new_angle)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(const string& init_vector_2d)
+	vector_unit_2d::vector_unit_2d(const string& init_vector_2d) : vector_unit_2d()
 	{
 		vector<string> values;
 		boost::split(values,init_vector_2d,boost::is_any_of(" "));
-		set_from_string(values[0]);
-		theta = angle(values[1]);
+		if (values.size() == 2)
+		{
+			set_from_string(values[0]);
+			theta = angle(values[1]);
+		}
 	}
 	
 	vector_unit_2d& vector_unit_2d::operator =(const vector_unit_2d& x)
@@ -88,7 +91,7 @@ namespace msci
 				float new_x = float(x_projection() + y.x_projection());
 				float new_y = float(y_projection() + y.y_projection());
 				scalar_unit::value = cartesian_2d_to_polar_r(new_x, new_y);
-				theta = cartesian_2d_to_polar_theta(new_x, new_y);
+				theta = angle(cartesian_2d_to_polar_theta(new_x, new_y));
 		}
 		else
 		{

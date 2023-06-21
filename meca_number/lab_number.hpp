@@ -18,23 +18,23 @@ namespace msci
 		public:
 			lab_number() : value(),error_value()
 			{}
-			
+
 			lab_number(const lab_number<T>& x) : value(x.value),error_value(x.error_value)
 			{}
-			
+
 			lab_number(lab_number<T>&& x) : value(move(x.value)),error_value(move(x.error_value))
 			{}
-			
+
 			explicit lab_number(T x,T y) : value(x),error_value(y)
 			{}
-			
+
 			lab_number<T>& operator=(const lab_number<T>& x)
 			{
 				value = x.value;
 				error_value = x.error_value;
 				return *this;
 			}
-			
+
 			lab_number<T>& operator=(lab_number<T>&& x)
 			{
 				value = move(x.value);
@@ -46,22 +46,22 @@ namespace msci
 			{
 				return lab_number<T>(value + x.value,error_value + x.error_value);
 			}
-			
+
 			lab_number<T> operator -(const lab_number<T>& x) const
 			{
 				return lab_number<T>(value - x.value,error_value - x.error_value);
 			}
-			
+
 			lab_number<T> operator *(const lab_number<T>& x) const
 			{
 				return lab_number<T>(value * x.value,error_value * x.error_value);
 			}
-			
+
 			lab_number<T> operator /(const lab_number<T>& x) const
 			{
 				return lab_number<T>(value / x.value,error_value / x.error_value);
 			}
-			
+
 			lab_number<T> operator ^(const lab_number<T>& x) const
 			{
 				return lab_number<T>(value ^ x.value,error_value ^ x.error_value);
@@ -72,25 +72,25 @@ namespace msci
 				value += x.value;
 				error_value += x.error_value;
 			}
-			
+
 			void operator -=(const lab_number<T>& x)
 			{
 				value -= x.value;
 				error_value -= x.error_value;
 			}
-			
+
 			void operator *=(const lab_number<T>& x)
 			{
 				value *= x.value;
 				error_value *= x.error_value;
 			}
-			
+
 			void operator /=(const lab_number<T>& x)
 			{
 				value /= x.value;
 				error_value /= x.error_value;
 			}
-			
+
 			void operator ^=(const lab_number<T>& x)
 			{
 				value ^= x.value;
@@ -192,10 +192,18 @@ istream& operator >>(istream& is, msci::lab_number<T>& x)
 	is.getline(a, 256);
 	string b(a);
 	vector<string> values;
-	boost::split(values,b,boost::is_any_of(" "));
-	T x1 = T(values[0]);
-	T x2 = T(values[1]);
-	msci::lab_number<T> c(x1,x2);
+	boost::split(values,b,boost::is_any_of(" +- "));
+	msci::lab_number<T> c;
+	if (values.size() == 2)
+	{
+		T x1 = T(values[0]);
+		T x2 = T(values[1]);
+		c = msci::lab_number<T>(x1,x2);
+	}
+	else
+	{
+		c = msci::lab_number<T>();
+	}
 	x = c;
 	return is;
 }
