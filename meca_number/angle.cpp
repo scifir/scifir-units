@@ -17,10 +17,10 @@ namespace msci
 {
 	angle::angle() : value(0)
 	{}
-	
+
 	angle::angle(const angle& x) : value(x.get_value())
 	{}
-	
+
 	angle::angle(angle&& x) : value(move(x.get_value()))
 	{}
 
@@ -28,7 +28,7 @@ namespace msci
 	{
 		normalize_value();
 	}
-	
+
 	angle::angle(string init_angle) : value()
 	{
 		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
@@ -54,26 +54,26 @@ namespace msci
 			value = 0;
 		}
 	}
-	
+
 	angle& angle::operator=(const angle& x)
 	{
 		value = x.get_value();
 		return *this;
 	}
-	
+
 	angle& angle::operator=(angle&& x)
 	{
 		value = move(x.get_value());
 		return *this;
 	}
-	
+
 	angle& angle::operator=(float x)
 	{
 		value = x;
 		normalize_value();
 		return *this;
 	}
-	
+
 	angle& angle::operator=(string& init_angle)
 	{
 		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
@@ -86,7 +86,7 @@ namespace msci
 		normalize_value();
 		return *this;
 	}
-	
+
 	angle& angle::operator=(const scalar_unit& x)
 	{
 		if (x.has_empty_dimensions())
@@ -110,17 +110,17 @@ namespace msci
 	{
 		return angle(value - x.get_value());
 	}
-	
+
 	angle angle::operator *(const angle& x) const
 	{
 		return angle(value * x.get_value());
 	}
-	
+
 	angle angle::operator /(const angle& x) const
 	{
 		return angle(value / x.get_value());
 	}
-	
+
 	angle angle::operator ^(const angle& x) const
 	{
 		return angle(std::pow(value,x.get_value()));
@@ -137,25 +137,25 @@ namespace msci
 		value -= x.get_value();
 		normalize_value();
 	}
-	
+
 	void angle::operator *=(const angle& x)
 	{
 		value *= x.get_value();
 		normalize_value();
 	}
-	
+
 	void angle::operator /=(const angle& x)
 	{
 		value /= x.get_value();
 		normalize_value();
 	}
-	
+
 	void angle::operator ^=(const angle& x)
 	{
 		value = std::pow(value,x.get_value());
 		normalize_value();
 	}
-	
+
 	angle& angle::operator++()
 	{
 		value++;
@@ -214,15 +214,10 @@ namespace msci
 			return;
 		}
 	}
-	
+
 	string to_string(const angle& x)
 	{
 		ostringstream output;
-		double integer_part;
-		modf(x.get_value(), &integer_part);
-		output << setprecision(std::to_string(int(integer_part)).length() + 1);
-		//output << setprecision(numeric_limits<float>::max_exponent10 + 1);
-		//output << x.get_value() << "°";
 		if (x.get_value() == -0)
 		{
 			output << 0;
@@ -231,19 +226,19 @@ namespace msci
 		{
 			output << x.get_value();
 		}
+		output << "°";
 		return output.str();
 	}
-	
+
 	bool is_angle(const string& x)
 	{
 		icu::UnicodeString x_unicode = icu::UnicodeString(x.c_str());
 		int total_chars = x_unicode.countChar32();
-		int i = 0;
 		for (int i = 0; i < total_chars; i++)
 		{
 			if ((i + 1) == total_chars)
 			{
-				if (u_isdigit(x_unicode[i]) or x_unicode[i] == U'º')
+				if (x_unicode[i] == U'º')
 				{
 					return true;
 				}
