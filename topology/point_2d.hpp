@@ -77,6 +77,16 @@ namespace msci
 
 			point_2d<T>& operator=(const coordinates_2d<T>&);
 
+			T get_p() const
+			{
+				return msci::sqrt(msci::pow(x,2) + msci::pow(y,2));
+			}
+
+			angle get_theta() const
+			{
+				return angle(std::atan2(y.get_value(),x.get_value()));
+			}
+
 			void set_position(const T& new_x,const T& new_y)
 			{
 				x = new_x;
@@ -118,6 +128,13 @@ namespace msci
 			T distance_to_origin() const
 			{
 				return msci::sqrt(msci::pow(x,2) + msci::pow(y,2));
+			}
+
+			string display_polar() const
+			{
+				ostringstream out;
+				out << "(" << get_p() << "," << get_theta() << ")";
+				return out.str();
 			}
 
 			T x;
@@ -188,6 +205,16 @@ namespace msci
 
 			point_2d<float>& operator=(const coordinates_2d<float>&);
 
+			float get_p() const
+			{
+				return std::sqrt(std::pow(x,2) + std::pow(y,2));
+			}
+
+			angle get_theta() const
+			{
+				return angle(std::atan2(y,x));
+			}
+
 			void set_position(const float& new_x,const float& new_y)
 			{
 				x = new_x;
@@ -229,6 +256,13 @@ namespace msci
 			float distance_to_origin() const
 			{
 				return std::sqrt(std::pow(x,2) + std::pow(y,2));
+			}
+
+			string display_polar() const
+			{
+				ostringstream out;
+				out << "(" << get_p() << "," << get_theta() << ")";
+				return out.str();
 			}
 
 			float x;

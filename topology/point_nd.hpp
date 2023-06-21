@@ -406,6 +406,34 @@ namespace msci
 				return msci::sqrt(x_T);
 			}
 
+			string display_polar() const
+			{
+				ostringstream out;
+				out << "(" << get_p() << "," << get_theta() << ")";
+				return out.str();
+			}
+
+			string display_cylindrical() const
+			{
+				ostringstream out;
+				out << "(" << get_p() << "," << get_theta() << "," << values[2] << ")";
+				return out.str();
+			}
+
+			string display_spherical() const
+			{
+				ostringstream out;
+				out << "(" << get_r() << "," << get_theta() << "," << get_phi() << ")";
+				return out.str();
+			}
+
+			string display_geographical() const
+			{
+				ostringstream out;
+				out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ")";
+				return out.str();
+			}
+
 			vector<T> values;
 	};
 
@@ -794,6 +822,34 @@ namespace msci
 					x_T += std::pow(values[i],2);
 				}
 				return std::sqrt(x_T);
+			}
+
+			string display_polar() const
+			{
+				ostringstream out;
+				out << "(" << get_p() << "," << get_theta() << ")";
+				return out.str();
+			}
+
+			string display_cylindrical() const
+			{
+				ostringstream out;
+				out << "(" << get_p() << "," << get_theta() << "," << values[2] << ")";
+				return out.str();
+			}
+
+			string display_spherical() const
+			{
+				ostringstream out;
+				out << "(" << get_r() << "," << get_theta() << "," << get_phi() << ")";
+				return out.str();
+			}
+
+			string display_geographical() const
+			{
+				ostringstream out;
+				out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ")";
+				return out.str();
 			}
 
 			vector<float> values;
