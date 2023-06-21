@@ -35,7 +35,7 @@ namespace msci
 bool operator ==(const msci::coordinates_3dr&,const msci::coordinates_3dr&);
 bool operator !=(const msci::coordinates_3dr&,const msci::coordinates_3dr&);
 
-bool operator ==(const msci::coordinates_3dr&,const msci::coordinates_3d&);
+/*bool operator ==(const msci::coordinates_3dr&,const msci::coordinates_3d&);
 bool operator !=(const msci::coordinates_3dr&,const msci::coordinates_3d&);
 bool operator ==(const msci::coordinates_3d&,const msci::coordinates_3dr&);
 bool operator !=(const msci::coordinates_3d&,const msci::coordinates_3dr&);
@@ -43,7 +43,7 @@ bool operator !=(const msci::coordinates_3d&,const msci::coordinates_3dr&);
 bool operator ==(const msci::coordinates_3dr&,const msci::point_3d&);
 bool operator !=(const msci::coordinates_3dr&,const msci::point_3d&);
 bool operator ==(const msci::point_3d&,const msci::coordinates_3dr&);
-bool operator !=(const msci::point_3d&,const msci::coordinates_3dr&);
+bool operator !=(const msci::point_3d&,const msci::coordinates_3dr&);*/
 
 ostream& operator << (ostream&, const msci::coordinates_3dr&);
 

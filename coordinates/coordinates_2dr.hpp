@@ -31,15 +31,81 @@ namespace msci
 bool operator ==(const msci::coordinates_2dr&,const msci::coordinates_2dr&);
 bool operator !=(const msci::coordinates_2dr&,const msci::coordinates_2dr&);
 
-bool operator ==(const msci::coordinates_2dr&,const msci::coordinates_2d&);
-bool operator !=(const msci::coordinates_2dr&,const msci::coordinates_2d&);
-bool operator ==(const msci::coordinates_2d&,const msci::coordinates_2dr&);
-bool operator !=(const msci::coordinates_2d&,const msci::coordinates_2dr&);
+template<typename T>
+bool operator ==(const msci::coordinates_2dr& x,const msci::coordinates_2d<T>& y)
+{
+	if (x.x == y.x and x.y == y.y)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 
-bool operator ==(const msci::coordinates_2dr&,const msci::point_2d&);
-bool operator !=(const msci::coordinates_2dr&,const msci::point_2d&);
-bool operator ==(const msci::point_2d&,const msci::coordinates_2dr&);
-bool operator !=(const msci::point_2d&,const msci::coordinates_2dr&);
+template<typename T>
+bool operator !=(const msci::coordinates_2dr& x,const msci::coordinates_2d<T>& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+bool operator ==(const msci::coordinates_2d<T>& x,const msci::coordinates_2dr& y)
+{
+	if (x.x == y.x and x.y == y.y)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+template<typename T>
+bool operator !=(const msci::coordinates_2d<T>& x,const msci::coordinates_2dr& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+bool operator ==(const msci::coordinates_2dr& x,const msci::point_2d<T>& y)
+{
+	if (x.x == y.x and x.y == y.y)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+template<typename T>
+bool operator !=(const msci::coordinates_2dr& x,const msci::point_2d<T>& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+bool operator ==(const msci::point_2d<T>& x,const msci::coordinates_2dr& y)
+{
+	if (x.x == y.x and x.y == y.y)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+template<typename T>
+bool operator !=(const msci::point_2d<T>& x,const msci::coordinates_2dr& y)
+{
+	return !(x == y);
+}
 
 ostream& operator << (ostream&, const msci::coordinates_2dr&);
 

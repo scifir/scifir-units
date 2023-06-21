@@ -4,55 +4,235 @@
 #include "predefined_units/kinematics_units.hpp"
 #include "units/unit_basic.hpp"
 
+#include <cmath>
 #include <string>
 
 using namespace std;
 
 namespace msci
 {
+	template<typename T>
 	class coordinates_1d;
 
+	template<typename T>
 	class point_1d
 	{
 		public:
-			point_1d();
-			point_1d(const point_1d&);
-			point_1d(point_1d&&);
-			explicit point_1d(const length&);
-			explicit point_1d(const coordinates_1d&);
-			explicit point_1d(string);
+			point_1d<T>() : x()
+			{}
 
-			point_1d& operator=(const point_1d&);
-			point_1d& operator=(point_1d&&);
-			point_1d& operator=(const coordinates_1d&);
+			point_1d<T>(const point_1d<T>& x_point) : x(x_point.x)
+			{}
 
-			void set_position(const length&);
+			point_1d<T>(point_1d<T>&& x_point) : x(std::move(x_point.x))
+			{}
 
-			void move(const length&);
+			explicit point_1d<T>(const T& new_x) : x(new_x)
+			{}
 
-			length distance_to_origin() const;
+			explicit point_1d<T>(const coordinates_1d<T>&);
 
-			length x;
+			explicit point_1d<T>(string init_point_1d) : point_1d<T>()
+			{
+				if (init_point_1d.front() == '(')
+				{
+					init_point_1d.erase(0,1);
+				}
+				if (init_point_1d.back() == ')')
+				{
+					init_point_1d.erase(init_point_1d.size()-1,1);
+				}
+				x = T(init_point_1d);
+			}
+
+			point_1d<T>& operator=(const point_1d<T>& x_point)
+			{
+				x = x_point.x;
+				return *this;
+			}
+
+			point_1d<T>& operator=(point_1d<T>&& x_point)
+			{
+				x = std::move(x_point.x);
+				return *this;
+			}
+
+			point_1d<T>& operator=(const coordinates_1d<T>&);
+
+			void set_position(const T& new_x)
+			{
+				x = new_x;
+			}
+
+			void move(const T& x_value)
+			{
+				x += x_value;
+			}
+
+			T distance_to_origin() const
+			{
+				return T(std::abs(x.get_value()),x.get_dimensions());
+			}
+
+			T x;
 	};
 
-	string to_string(const point_1d&);
-	length distance(const point_1d&,const point_1d&);
+	template<>
+	class point_1d<float>
+	{
+		public:
+			point_1d<float>() : x()
+			{}
+
+			point_1d<float>(const point_1d<float>& x_point) : x(x_point.x)
+			{}
+
+			point_1d<float>(point_1d<float>&& x_point) : x(std::move(x_point.x))
+			{}
+
+			explicit point_1d<float>(const float& new_x) : x(new_x)
+			{}
+
+			explicit point_1d<float>(const coordinates_1d<float>&);
+
+			explicit point_1d<float>(string init_point_1d) : point_1d<float>()
+			{
+				if (init_point_1d.front() == '(')
+				{
+					init_point_1d.erase(0,1);
+				}
+				if (init_point_1d.back() == ')')
+				{
+					init_point_1d.erase(init_point_1d.size()-1,1);
+				}
+				x = stof(init_point_1d);
+			}
+
+			point_1d<float>& operator=(const point_1d<float>& x_point)
+			{
+				x = x_point.x;
+				return *this;
+			}
+
+			point_1d<float>& operator=(point_1d<float>&& x_point)
+			{
+				x = std::move(x_point.x);
+				return *this;
+			}
+
+			point_1d<float>& operator=(const coordinates_1d<float>&);
+
+			void set_position(const float& new_x)
+			{
+				x = new_x;
+			}
+
+			void move(const float& x_value)
+			{
+				x += x_value;
+			}
+
+			float distance_to_origin() const
+			{
+				return float(std::abs(x));
+			}
+
+			float x;
+	};
+
+	template<typename T>
+	string to_string(const point_1d<T>& x)
+	{
+		ostringstream out;
+		out << "(" << x.x << ")";
+		return out.str();
+	}
+
+	template<typename T>
+	T distance(const point_1d<T>& x1,const point_1d<T>& x2)
+	{
+		return msci::sqrt(msci::pow(x1.x - x2.x,2));
+	}
+	
+	template<>
+	float distance(const point_1d<float>& x1,const point_1d<float>& x2)
+	{
+		return std::sqrt(std::pow(x1.x - x2.x,2));
+	}
 }
 
-bool operator ==(const msci::point_1d&,const msci::point_1d&);
-bool operator !=(const msci::point_1d&,const msci::point_1d&);
+template<typename T>
+bool operator ==(const msci::point_1d<T>& x,const msci::point_1d<T>& y)
+{
+	return (x.x == y.x);
+}
 
-bool operator ==(const msci::point_1d&, const string&);
-bool operator !=(const msci::point_1d&, const string&);
+template<typename T>
+bool operator !=(const msci::point_1d<T>& x,const msci::point_1d<T>& y)
+{
+	return !(x == y);
+}
 
-bool operator ==(const string&, const msci::point_1d&);
-bool operator !=(const string&, const msci::point_1d&);
+template<typename T>
+bool operator ==(const msci::point_1d<T>& x, const string& y)
+{
+	point_1d<T> y_point = point_1d<T>(y);
+	return (x == y_point);
+}
 
-void operator +=(string&, const msci::point_1d&);
-string operator +(const string&,const msci::point_1d&);
-string operator +(const msci::point_1d&,const string&);
+template<typename T>
+bool operator !=(const msci::point_1d<T>& x, const string& y)
+{
+	return !(x == y);
+}
 
-ostream& operator <<(ostream&,const msci::point_1d&);
-istream& operator >>(istream&,msci::point_1d&);
+template<typename T>
+bool operator ==(const string& x, const msci::point_1d<T>& y)
+{
+	point_1d<T> x_point = point_1d<T>(x);
+	return (x_point == y);
+}
+
+template<typename T>
+bool operator !=(const string& x, const msci::point_1d<T>& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+void operator +=(string& x, const msci::point_1d<T>& y)
+{
+	x += to_string(y);
+}
+
+template<typename T>
+string operator +(const string& x,const msci::point_1d<T>& y)
+{
+	return x + to_string(y);
+}
+
+template<typename T>
+string operator +(const msci::point_1d<T>& x,const string& y)
+{
+	return to_string(x) + y;
+}
+
+template<typename T>
+ostream& operator <<(ostream& os,const msci::point_1d<T>& x)
+{
+	return os << to_string(x);
+}
+
+template<typename T>
+istream& operator >>(istream& is, msci::point_1d<T>& x)
+{
+	char a[256];
+	is.getline(a, 256);
+	string b(a);
+	boost::trim(b);
+	msci::point_1d<T> c(b);
+	x = c;
+	return is;
+}
 
 #endif // MSCI_UNITS_TOPOLOGY_POINT_1D_HPP_INCLUDED

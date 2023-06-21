@@ -58,7 +58,7 @@ bool operator !=(const msci::coordinates_3dr& x,const msci::coordinates_3dr& y)
 	return !(x == y);
 }
 
-bool operator ==(const msci::coordinates_3dr& x,const msci::coordinates_3d& y)
+/*bool operator ==(const msci::coordinates_3dr& x,const msci::coordinates_3d& y)
 {
 	if (x.x == y.x and x.y == y.y and x.z == y.z)
 	{
@@ -124,7 +124,7 @@ bool operator ==(const msci::point_3d& x,const msci::coordinates_3dr& y)
 bool operator !=(const msci::point_3d& x,const msci::coordinates_3dr& y)
 {
 	return !(x == y);
-}
+}*/
 
 ostream& operator << (ostream& os, const msci::coordinates_3dr& x)
 {

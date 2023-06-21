@@ -13,45 +13,312 @@ using namespace std;
 
 namespace msci
 {
+	template<typename T>
 	class coordinates_2d
 	{
 		public:
-			coordinates_2d();
-			coordinates_2d(const coordinates_2d&);
-			coordinates_2d(coordinates_2d&&);
-			explicit coordinates_2d(const length&,const length&);
-			explicit coordinates_2d(const length&,const angle&);
-			explicit coordinates_2d(const point_2d&);
-			explicit coordinates_2d(string);
+			coordinates_2d<T>() : x(),y()
+			{}
 
-			coordinates_2d& operator=(const coordinates_2d&);
-			coordinates_2d& operator=(coordinates_2d&&);
-			coordinates_2d& operator=(const point_2d&);
+			coordinates_2d<T>(const coordinates_2d<T>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y)
+			{}
 
-			length get_p() const;
-			angle get_theta() const;
-			
-			void set_position(const length&,const length&);
-			void set_position(const length&,const angle&);
+			coordinates_2d<T>(coordinates_2d<T>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y))
+			{}
 
-			void rotate(const angle&);
-			void move(const displacement_2d&);
-			void move(const length&,const length&);
-			void move(const length&,const angle&);
-			
-			length distance_to_origin() const;
-			
-			string display_polar() const;
+			explicit coordinates_2d<T>(const T& new_x,const T& new_y) : x(new_x),y(new_y)
+			{}
 
-			length x;
-			length y;
+			explicit coordinates_2d<T>(const T& new_p,const angle& new_theta)
+			{
+				set_position(new_p,new_theta);
+			}
+
+			explicit coordinates_2d<T>(const msci::point_2d<T>& new_point) : x(new_point.x),y(new_point.y)
+			{}
+
+			explicit coordinates_2d<T>(string init_coordinates_2d) : coordinates_2d()
+			{
+				vector<string> values;
+				if (init_coordinates_2d.front() == '(')
+				{
+					init_coordinates_2d.erase(0,1);
+				}
+				if (init_coordinates_2d.back() == ')')
+				{
+					init_coordinates_2d.erase(init_coordinates_2d.size()-1,1);
+				}
+				boost::split(values,init_coordinates_2d,boost::is_any_of(","));
+				if (is_angle(values[1]))
+				{
+					set_position(T(values[0]),angle(values[1]));
+				}
+				else
+				{
+					set_position(T(values[0]),T(values[1]));
+				}
+			}
+
+			coordinates_2d<T>& operator=(const coordinates_2d<T>& x_coordinates)
+			{
+				x = x_coordinates.x;
+				y = x_coordinates.y;
+				return *this;
+			}
+
+			coordinates_2d<T>& operator=(coordinates_2d<T>&& x_coordinates)
+			{
+				x = std::move(x_coordinates.x);
+				y = std::move(x_coordinates.y);
+				return *this;
+			}
+
+			coordinates_2d<T>& operator=(const point_2d<T>& x_point)
+			{
+				x = x_point.x;
+				y = x_point.y;
+				return *this;
+			}
+
+			T get_p() const
+			{
+				return msci::sqrt(msci::pow(x,2) + msci::pow(y,2));
+			}
+
+			angle get_theta() const
+			{
+				return angle(std::atan2(y.get_value(),x.get_value()));
+			}
+
+			void set_position(const T& new_x,const T& new_y)
+			{
+				x = new_x;
+				y = new_y;
+			}
+
+			void set_position(const T& new_p,const angle& new_theta)
+			{
+				x = T(new_p * msci::cos(new_theta));
+				y = T(new_p * msci::sin(new_theta));
+			}
+
+			void rotate(const angle& x_angle)
+			{
+				T x_coord = x;
+				T y_coord = y;
+				x = x_coord * msci::cos(x_angle) - y_coord * msci::sin(x_angle);
+				y = x_coord * msci::sin(x_angle) + y_coord * msci::cos(x_angle);
+			}
+
+			void move(const displacement_2d& x_displacement)
+			{
+				x += x_displacement.x_projection();
+				y += x_displacement.y_projection();
+			}
+
+			void move(const T& new_x,const T& new_y)
+			{
+				x += new_x;
+				y += new_y;
+			}
+
+			void move(const T& new_p,const angle& new_theta)
+			{
+				x += new_p * msci::cos(new_theta);
+				y += new_p * msci::sin(new_theta);
+			}
+
+			T distance_to_origin() const
+			{
+				return msci::sqrt(msci::pow(x,2) + msci::pow(y,2));
+			}
+
+			string display_polar() const
+			{
+				ostringstream out;
+				out << "(" << get_p() << "," << get_theta() << ")";
+				return out.str();
+			}
+
+			T x;
+			T y;
 	};
 
-	string to_string(const coordinates_2d&);
-	length distance(const coordinates_2d&,const coordinates_2d&);
-	length distance(const coordinates_2d&,const point_2d&);
-	length distance(const point_2d&,const coordinates_2d&);
-	
+	template<>
+	class coordinates_2d<float>
+	{
+		public:
+			coordinates_2d<float>() : x(),y()
+			{}
+
+			coordinates_2d<float>(const coordinates_2d<float>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y)
+			{}
+
+			coordinates_2d<float>(coordinates_2d<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y))
+			{}
+
+			explicit coordinates_2d<float>(const float& new_x,const float& new_y) : x(new_x),y(new_y)
+			{}
+
+			explicit coordinates_2d<float>(const float& new_p,const angle& new_theta)
+			{
+				set_position(new_p,new_theta);
+			}
+
+			explicit coordinates_2d<float>(const msci::point_2d<float>& new_point) : x(new_point.x),y(new_point.y)
+			{}
+
+			explicit coordinates_2d<float>(string init_coordinates_2d) : coordinates_2d()
+			{
+				vector<string> values;
+				if (init_coordinates_2d.front() == '(')
+				{
+					init_coordinates_2d.erase(0,1);
+				}
+				if (init_coordinates_2d.back() == ')')
+				{
+					init_coordinates_2d.erase(init_coordinates_2d.size()-1,1);
+				}
+				boost::split(values,init_coordinates_2d,boost::is_any_of(","));
+				if (is_angle(values[1]))
+				{
+					set_position(stof(values[0]),angle(values[1]));
+				}
+				else
+				{
+					set_position(stof(values[0]),stof(values[1]));
+				}
+			}
+
+			coordinates_2d<float>& operator=(const coordinates_2d<float>& x_coordinates)
+			{
+				x = x_coordinates.x;
+				y = x_coordinates.y;
+				return *this;
+			}
+
+			coordinates_2d<float>& operator=(coordinates_2d<float>&& x_coordinates)
+			{
+				x = std::move(x_coordinates.x);
+				y = std::move(x_coordinates.y);
+				return *this;
+			}
+
+			coordinates_2d<float>& operator=(const point_2d<float>& x_point)
+			{
+				x = x_point.x;
+				y = x_point.y;
+				return *this;
+			}
+
+			float get_p() const
+			{
+				return std::sqrt(std::pow(x,2) + std::pow(y,2));
+			}
+
+			angle get_theta() const
+			{
+				return angle(std::atan2(y,x));
+			}
+
+			void set_position(const float& new_x,const float& new_y)
+			{
+				x = new_x;
+				y = new_y;
+			}
+
+			void set_position(const float& new_p,const angle& new_theta)
+			{
+				x = new_p * msci::cos(new_theta);
+				y = new_p * msci::sin(new_theta);
+			}
+
+			void rotate(const angle& x_angle)
+			{
+				float x_coord = x;
+				float y_coord = y;
+				x = x_coord * msci::cos(x_angle) - y_coord * msci::sin(x_angle);
+				y = x_coord * msci::sin(x_angle) + y_coord * msci::cos(x_angle);
+			}
+
+			void move(const displacement_2d& x_displacement)
+			{
+				x += float(x_displacement.x_projection());
+				y += float(x_displacement.y_projection());
+			}
+
+			void move(const float& new_x,const float& new_y)
+			{
+				x += new_x;
+				y += new_y;
+			}
+
+			void move(const float& new_p,const angle& new_theta)
+			{
+				x += new_p * msci::cos(new_theta);
+				y += new_p * msci::sin(new_theta);
+			}
+
+			float distance_to_origin() const
+			{
+				return std::sqrt(std::pow(x,2) + std::pow(y,2));
+			}
+
+			string display_polar() const
+			{
+				ostringstream out;
+				out << "(" << get_p() << "," << get_theta() << ")";
+				return out.str();
+			}
+
+			float x;
+			float y;
+	};
+
+	template<typename T>
+	string to_string(const coordinates_2d<T>& x)
+	{
+		ostringstream out;
+		out << "(" << x.x << "," << x.y << ")";
+		return out.str();
+	}
+
+	template<typename T>
+	T distance(const coordinates_2d<T>& x,const coordinates_2d<T>& y)
+	{
+		return msci::sqrt(msci::pow(x.x - y.x,2) + msci::pow(x.y - y.y,2));
+	}
+
+	template<>
+	float distance(const coordinates_2d<float>& x,const coordinates_2d<float>& y)
+	{
+		return std::sqrt(std::pow(x.x - y.x,2) + std::pow(x.y - y.y,2));
+	}
+
+	template<typename T>
+	T distance(const coordinates_2d<T>& x,const point_2d<T>& y)
+	{
+		return msci::sqrt(msci::pow(x.x - y.x,2) + msci::pow(x.y - y.y,2));
+	}
+
+	template<>
+	float distance(const coordinates_2d<float>& x,const point_2d<float>& y)
+	{
+		return std::sqrt(std::pow(x.x - y.x,2) + std::pow(x.y - y.y,2));
+	}
+
+	template<typename T>
+	T distance(const point_2d<T>& x,const coordinates_2d<T>& y)
+	{
+		return msci::sqrt(msci::pow(x.x - y.x,2) + msci::pow(x.y - y.y,2));
+	}
+
+	template<>
+	float distance(const point_2d<float>& x,const coordinates_2d<float>& y)
+	{
+		return std::sqrt(std::pow(x.x - y.x,2) + std::pow(x.y - y.y,2));
+	}
+
 	inline float cartesian_2d_to_polar_r(float x,float y)
 	{
 		return std::sqrt(std::pow(x,2) + std::pow(y,2));
@@ -73,25 +340,123 @@ namespace msci
 	}
 }
 
-bool operator ==(const msci::coordinates_2d&,const msci::coordinates_2d&);
-bool operator !=(const msci::coordinates_2d&,const msci::coordinates_2d&);
+template<typename T>
+bool operator ==(const msci::coordinates_2d<T>& x,const msci::coordinates_2d<T>& y)
+{
+	if (x.x == y.x and x.y == y.y)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 
-bool operator ==(const msci::coordinates_2d&,const msci::point_2d&);
-bool operator !=(const msci::coordinates_2d&,const msci::point_2d&);
-bool operator ==(const msci::point_2d&,const msci::coordinates_2d&);
-bool operator !=(const msci::point_2d&,const msci::coordinates_2d&);
+template<typename T>
+bool operator !=(const msci::coordinates_2d<T>& x,const msci::coordinates_2d<T>& y)
+{
+	return !(x == y);
+}
 
-bool operator ==(const msci::coordinates_2d&, const string&);
-bool operator !=(const msci::coordinates_2d&, const string&);
+template<typename T>
+bool operator ==(const msci::coordinates_2d<T>& x,const msci::point_2d<T>& y)
+{
+	if (x.x == y.x and x.y == y.y)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 
-bool operator ==(const string&, const msci::coordinates_2d&);
-bool operator !=(const string&, const msci::coordinates_2d&);
+template<typename T>
+bool operator !=(const msci::coordinates_2d<T>& x,const msci::point_2d<T>& y)
+{
+	return !(x == y);
+}
 
-void operator +=(string&, const msci::coordinates_2d&);
-string operator +(const string&,const msci::coordinates_2d&);
-string operator +(const msci::coordinates_2d&,const string&);
+template<typename T>
+bool operator ==(const msci::point_2d<T>& x,const msci::coordinates_2d<T>& y)
+{
+	if (x.x == y.x and x.y == y.y)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 
-ostream& operator << (ostream&,const msci::coordinates_2d&);
-istream& operator >>(istream&,msci::coordinates_2d&);
+template<typename T>
+bool operator !=(const msci::point_2d<T>& x,const msci::coordinates_2d<T>& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+bool operator ==(const msci::coordinates_2d<T>& x, const string& y)
+{
+	coordinates_2d<T> y_coordinates = coordinates_2d<T>(y);
+	return (x == y_coordinates);
+}
+
+template<typename T>
+bool operator !=(const msci::coordinates_2d<T>& x, const string& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+bool operator ==(const string& x, const msci::coordinates_2d<T>& y)
+{
+	coordinates_2d<T> x_coordinates = coordinates_2d<T>(x);
+	return (x_coordinates == y);
+}
+
+template<typename T>
+bool operator !=(const string& x, const msci::coordinates_2d<T>& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+void operator +=(string& x, const msci::coordinates_2d<T>& y)
+{
+	x += to_string(y);
+}
+
+template<typename T>
+string operator +(const string& x,const msci::coordinates_2d<T>& y)
+{
+	return x + to_string(y);
+}
+
+template<typename T>
+string operator +(const msci::coordinates_2d<T>& x,const string& y)
+{
+	return to_string(x) + y;
+}
+
+template<typename T>
+ostream& operator << (ostream& os,const msci::coordinates_2d<T>& x)
+{
+	return os << to_string(x);
+}
+
+template<typename T>
+istream& operator >>(istream& is,msci::coordinates_2d<T>& x)
+{
+	char a[256];
+	is.getline(a, 256);
+	string b(a);
+	boost::trim(b);
+	msci::coordinates_2d<T> c(b);
+	x = c;
+	return is;
+}
 
 #endif // MSCI_UNITS_COORDINATES_COORDINATES_2D_HPP_INCLUDED

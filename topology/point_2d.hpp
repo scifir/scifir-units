@@ -10,55 +10,324 @@ using namespace std;
 
 namespace msci
 {
+	template<typename T>
 	class coordinates_2d;
 
+	template<typename T>
 	class point_2d
 	{
 		public:
-			point_2d();
-			point_2d(const point_2d&);
-			point_2d(point_2d&&);
-			explicit point_2d(const length&,const length&);
-			explicit point_2d(const length&,const angle&);
-			explicit point_2d(const coordinates_2d&);
-			explicit point_2d(string);
+			point_2d<T>() : x(),y()
+			{}
 
-			point_2d& operator=(const point_2d&);
-			point_2d& operator=(point_2d&&);
-			point_2d& operator=(const coordinates_2d&);
+			point_2d<T>(const point_2d<T>& x_point) : x(x_point.x),y(x_point.y)
+			{}
 
-			void set_position(const length&,const length&);
-			void set_position(const length&,const angle&);
+			point_2d<T>(point_2d<T>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y))
+			{}
 
-			void rotate(const angle&);
-			void move(const displacement_2d&);
-			void move(const length&,const length&);
-			void move(const length&,const angle&);
+			explicit point_2d<T>(const T& new_x,const T& new_y) : x(new_x),y(new_y)
+			{}
+	
+			explicit point_2d<T>(const T& new_p,const angle& new_theta)
+			{
+				set_position(new_p,new_theta);
+			}
 
-			length distance_to_origin() const;
+			explicit point_2d<T>(const coordinates_2d<T>&);
 
-			length x;
-			length y;
+			explicit point_2d<T>(string init_point_2d) : point_2d<T>()
+			{
+				vector<string> values;
+				if (init_point_2d.front() == '(')
+				{
+					init_point_2d.erase(0,1);
+				}
+				if (init_point_2d.back() == ')')
+				{
+					init_point_2d.erase(init_point_2d.size()-1,1);
+				}
+				boost::split(values,init_point_2d,boost::is_any_of(","));
+				if (values.size() == 2)
+				{
+					if (is_angle(values[1]))
+					{
+						set_position(length(values[0]),angle(values[1]));
+					}
+					else
+					{
+						set_position(length(values[0]),length(values[1]));
+					}
+				}
+			}
+
+			point_2d<T>& operator=(const point_2d<T>& x_point)
+			{
+				x = x_point.x;
+				y = x_point.y;
+				return *this;
+			}
+
+			point_2d<T>& operator=(point_2d<T>&& x_point)
+			{
+				x = std::move(x_point.x);
+				y = std::move(x_point.y);
+				return *this;
+			}
+
+			point_2d<T>& operator=(const coordinates_2d<T>&);
+
+			void set_position(const T& new_x,const T& new_y)
+			{
+				x = new_x;
+				y = new_y;
+			}
+
+			void set_position(const T& new_p,const angle& new_theta)
+			{
+				x = T(new_p * msci::cos(new_theta));
+				y = T(new_p * msci::sin(new_theta));
+			}
+
+			void rotate(const angle& x_angle)
+			{
+				T x_coord = x;
+				T y_coord = y;
+				x = x_coord * msci::cos(x_angle) - y_coord * msci::sin(x_angle);
+				y = x_coord * msci::sin(x_angle) + y_coord * msci::cos(x_angle);
+			}
+
+			void move(const displacement_2d& x_displacement)
+			{
+				x += x_displacement.x_projection();
+				y += x_displacement.y_projection();
+			}
+
+			void move(const T& new_x,const T& new_y)
+			{
+				x += new_x;
+				y += new_y;
+			}
+
+			void move(const T& new_p,const angle& new_theta)
+			{
+				x += new_p * msci::cos(new_theta);
+				y += new_p * msci::sin(new_theta);
+			}
+
+			T distance_to_origin() const
+			{
+				return msci::sqrt(msci::pow(x,2) + msci::pow(y,2));
+			}
+
+			T x;
+			T y;
 	};
 
-	string to_string(const point_2d&);
-	length distance(const point_2d&,const point_2d&);
+	template<>
+	class point_2d<float>
+	{
+		public:
+			point_2d<float>() : x(),y()
+			{}
+
+			point_2d<float>(const point_2d<float>& x_point) : x(x_point.x),y(x_point.y)
+			{}
+
+			point_2d<float>(point_2d<float>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y))
+			{}
+
+			explicit point_2d<float>(const float& new_x,const float& new_y) : x(new_x),y(new_y)
+			{}
+	
+			explicit point_2d<float>(const float& new_p,const angle& new_theta)
+			{
+				set_position(new_p,new_theta);
+			}
+
+			explicit point_2d<float>(const coordinates_2d<float>&);
+
+			explicit point_2d<float>(string init_point_2d) : point_2d<float>()
+			{
+				vector<string> values;
+				if (init_point_2d.front() == '(')
+				{
+					init_point_2d.erase(0,1);
+				}
+				if (init_point_2d.back() == ')')
+				{
+					init_point_2d.erase(init_point_2d.size()-1,1);
+				}
+				boost::split(values,init_point_2d,boost::is_any_of(","));
+				if (values.size() == 2)
+				{
+					if (is_angle(values[1]))
+					{
+						set_position(stof(values[0]),angle(values[1]));
+					}
+					else
+					{
+						set_position(stof(values[0]),stof(values[1]));
+					}
+				}
+			}
+
+			point_2d<float>& operator=(const point_2d<float>& x_point)
+			{
+				x = x_point.x;
+				y = x_point.y;
+				return *this;
+			}
+
+			point_2d<float>& operator=(point_2d<float>&& x_point)
+			{
+				x = std::move(x_point.x);
+				y = std::move(x_point.y);
+				return *this;
+			}
+
+			point_2d<float>& operator=(const coordinates_2d<float>&);
+
+			void set_position(const float& new_x,const float& new_y)
+			{
+				x = new_x;
+				y = new_y;
+			}
+
+			void set_position(const float& new_p,const angle& new_theta)
+			{
+				x = new_p * msci::cos(new_theta);
+				y = new_p * msci::sin(new_theta);
+			}
+
+			void rotate(const angle& x_angle)
+			{
+				float x_coord = x;
+				float y_coord = y;
+				x = x_coord * msci::cos(x_angle) - y_coord * msci::sin(x_angle);
+				y = x_coord * msci::sin(x_angle) + y_coord * msci::cos(x_angle);
+			}
+
+			void move(const displacement_2d& x_displacement)
+			{
+				x += float(x_displacement.x_projection());
+				y += float(x_displacement.y_projection());
+			}
+
+			void move(const float& new_x,const float& new_y)
+			{
+				x += new_x;
+				y += new_y;
+			}
+
+			void move(const float& new_p,const angle& new_theta)
+			{
+				x += new_p * msci::cos(new_theta);
+				y += new_p * msci::sin(new_theta);
+			}
+
+			float distance_to_origin() const
+			{
+				return std::sqrt(std::pow(x,2) + std::pow(y,2));
+			}
+
+			float x;
+			float y;
+	};
+
+	template<typename T>
+	string to_string(const point_2d<T>& x)
+	{
+		ostringstream out;
+		out << "(" << x.x << "," << x.y << ")";
+		return out.str();
+	}
+
+	template<typename T>
+	T distance(const point_2d<T>& x1,const point_2d<T>& x2)
+	{
+		return msci::sqrt(msci::pow(x1.x - x2.x,2) + msci::pow(x1.y - x2.y,2));
+	}
+
+	template<>
+	float distance(const point_2d<float>& x1,const point_2d<float>& x2)
+	{
+		return std::sqrt(std::pow(x1.x - x2.x,2) + std::pow(x1.y - x2.y,2));
+	}
 }
 
-bool operator ==(const msci::point_2d&,const msci::point_2d&);
-bool operator !=(const msci::point_2d&,const msci::point_2d&);
+template<typename T>
+bool operator ==(const msci::point_2d<T>& x,const msci::point_2d<T>& y)
+{
+	return (x.x == y.x and x.y == y.y);
+}
 
-bool operator ==(const msci::point_2d&, const string&);
-bool operator !=(const msci::point_2d&, const string&);
+template<typename T>
+bool operator !=(const msci::point_2d<T>& x,const msci::point_2d<T>& y)
+{
+	return !(x == y);
+}
 
-bool operator ==(const string&, const msci::point_2d&);
-bool operator !=(const string&, const msci::point_2d&);
+template<typename T>
+bool operator ==(const msci::point_2d<T>& x, const string& y)
+{
+	point_2d<T> y_point = point_2d<T>(y);
+	return (x == y_point);
+}
 
-void operator +=(string&, const msci::point_2d&);
-string operator +(const string&,const msci::point_2d&);
-string operator +(const msci::point_2d&,const string&);
+template<typename T>
+bool operator !=(const msci::point_2d<T>& x, const string& y)
+{
+	return !(x == y);
+}
 
-ostream& operator <<(ostream&,const msci::point_2d&);
-istream& operator >>(istream&, msci::point_2d&);
+template<typename T>
+bool operator ==(const string& x, const msci::point_2d<T>& y)
+{
+	point_2d<T> x_point = point_2d<T>(x);
+	return (x_point == y);
+}
+
+template<typename T>
+bool operator !=(const string& x, const msci::point_2d<T>& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+void operator +=(string& x, const msci::point_2d<T>& y)
+{
+	x += to_string(y);
+}
+
+template<typename T>
+string operator +(const string& x,const msci::point_2d<T>& y)
+{
+	return x + to_string(y);
+}
+
+template<typename T>
+string operator +(const msci::point_2d<T>& x,const string& y)
+{
+	return to_string(x) + y;
+}
+
+template<typename T>
+ostream& operator <<(ostream& os,const msci::point_2d<T>& x)
+{
+	return os << to_string(x);
+}
+
+template<typename T>
+istream& operator >>(istream& is, msci::point_2d<T>& x)
+{
+	char a[256];
+	is.getline(a, 256);
+	string b(a);
+	boost::trim(b);
+	msci::point_2d<T> c(b);
+	x = c;
+	return is;
+}
 
 #endif // MSCI_UNITS_TOPOLOGY_POINT_2D_HPP_INCLUDED
