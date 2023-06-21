@@ -311,7 +311,7 @@ namespace msci
 	
 	void vector_unit_nd::operator +=(const vector_unit_nd& y)
 	{
-		if(equal_dimensions(*this,y))
+		if(equal_dimensions(*this,y) and get_nd() == y.get_nd())
 		{
 			if(is_nd(1))
 			{
@@ -368,7 +368,7 @@ namespace msci
 				float new_y = float(y_projection() + y.y_projection());
 				float new_value = cartesian_2d_to_polar_r(new_x, new_y);
 				vector<angle> new_angles = vector<angle>();
-				new_angles[0] = cartesian_2d_to_polar_theta(new_x, new_y);
+				new_angles.push_back(angle(cartesian_2d_to_polar_theta(new_x, new_y)));
 				return vector_unit_nd(new_value,get_dimensions(),new_angles);
 			}
 			else if(is_nd(3))
@@ -378,8 +378,8 @@ namespace msci
 				float new_z = float(z_projection() + y.z_projection());
 				float new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
 				vector<angle> new_angles = vector<angle>();
-				new_angles[0] = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
-				new_angles[1] = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
+				new_angles.push_back(angle(cartesian_3d_to_spherical_theta(new_x, new_y, new_z)));
+				new_angles.push_back(angle(cartesian_3d_to_spherical_phi(new_x, new_y, new_z)));
 				return vector_unit_nd(new_value,get_dimensions(),new_angles);
 			}
 			else
@@ -410,7 +410,7 @@ namespace msci
 				float new_y = float(y_projection() + y.y_projection());
 				float new_value = cartesian_2d_to_polar_r(new_x, new_y);
 				vector<angle> new_angles = vector<angle>();
-				new_angles[0] = cartesian_2d_to_polar_theta(new_x, new_y);
+				new_angles.push_back(angle(cartesian_2d_to_polar_theta(new_x, new_y)));
 				return vector_unit_nd(new_value,get_dimensions(),new_angles);
 			}
 			else if(is_nd(3))
@@ -420,8 +420,8 @@ namespace msci
 				float new_z = float(z_projection() + y.z_projection());
 				float new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
 				vector<angle> new_angles = vector<angle>();
-				new_angles[0] = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
-				new_angles[1] = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
+				new_angles.push_back(angle(cartesian_3d_to_spherical_theta(new_x, new_y, new_z)));
+				new_angles.push_back(angle(cartesian_3d_to_spherical_phi(new_x, new_y, new_z)));
 				return vector_unit_nd(new_value,get_dimensions(),new_angles);
 			}
 			else
