@@ -171,6 +171,8 @@ namespace msci
 				return "custom-full-symbol";
 			case dimension::money:
 				return "money";
+			case dimension::pixel:
+				return "pixel";
 		}
 		return "";
 	}
@@ -200,21 +202,21 @@ namespace msci
 			case dimension::B:
 				return "B";
 			case dimension::Hz:
-				return "";
+				return "Hz";
 			case dimension::N:
-				return "";
+				return "N";
 			case dimension::Pa:
-				return "";
+				return "Pa";
 			case dimension::J:
-				return "";
+				return "J";
 			case dimension::W:
-				return "";
+				return "W";
 			case dimension::A:
-				return "";
+				return "A";
 			case dimension::V:
-				return "";
+				return "V";
 			case dimension::F:
-				return "";
+				return "F";
 			case dimension::Ohm:
 				return "\u03A9";
 			case dimension::S:
@@ -275,6 +277,8 @@ namespace msci
 				return dimension::get_full_symbol(symbol);
 			case dimension::money:
 				return "money";
+			case dimension::pixel:
+				return "px";
 		}
 		return "";
 	}
@@ -546,6 +550,8 @@ namespace msci
 				return false;
 			case dimension::money:
 				return true;
+			case dimension::pixel:
+				return true;
 		}
 		return false;
 	}
@@ -792,6 +798,10 @@ namespace msci
 		else if(dimension_name == "money")
 		{
 			return dimension(dimension::money,new_prefix,new_sign);
+		}
+		else if(dimension_name == "px")
+		{
+			return dimension(dimension::pixel,new_prefix,new_sign);
 		}
 		else
 		{
