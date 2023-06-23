@@ -166,23 +166,15 @@ namespace msci
 		return msci::sqrt(msci::pow(x.x - y.x,2));
 	}
 	
-	template<>
-	float distance(const coordinates_1d<float>& x,const coordinates_1d<float>& y)
-	{
-		return std::sqrt(std::pow(x.x - y.x,2));
-	}
+	float distance(const coordinates_1d<float>&,const coordinates_1d<float>&);
 
 	template<typename T>
 	T distance(const coordinates_1d<T>& x,const point_1d<T>& y)
 	{
 		return msci::sqrt(msci::pow(x.x - y.x,2));
 	}
-	
-	template<>
-	float distance(const coordinates_1d<float>& x,const point_1d<float>& y)
-	{
-		return std::sqrt(std::pow(x.x - y.x,2));
-	}
+
+	float distance(const coordinates_1d<float>&,const point_1d<float>&);
 
 	template<typename T>
 	T distance(const point_1d<T>& x,const coordinates_1d<T>& y)
@@ -190,11 +182,7 @@ namespace msci
 		return msci::sqrt(msci::pow(x.x - y.x,2));
 	}
 
-	template<>
-	float distance(const point_1d<float>& x,const coordinates_1d<float>& y)
-	{
-		return std::sqrt(std::pow(x.x - y.x,2));
-	}
+	float distance(const point_1d<float>&,const coordinates_1d<float>&);
 }
 
 template<typename T>

@@ -1,3 +1,6 @@
+#ifndef MSCI_UNITS_TOPOLOGY_POINT_2D_IMPL_HPP_INCLUDED
+#define MSCI_UNITS_TOPOLOGY_POINT_2D_IMPL_HPP_INCLUDED
+
 #include "topology/point_2d.hpp"
 
 #include "coordinates/coordinates_2d.hpp"
@@ -17,16 +20,6 @@ namespace msci
 		y = x_coordinates.y;
 		return *this;
 	}
-
-	template<>
-	point_2d<float>::point_2d(const coordinates_2d<float>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y)
-	{}
-
-	template<>
-	point_2d<float>& point_2d<float>::operator=(const coordinates_2d<float>& x_coordinates)
-	{
-		x = x_coordinates.x;
-		y = x_coordinates.y;
-		return *this;
-	}
 }
+
+#endif // MSCI_UNITS_TOPOLOGY_POINT_2D_IMPL_HPP_INCLUDED

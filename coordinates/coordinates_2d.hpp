@@ -295,11 +295,7 @@ namespace msci
 		return msci::sqrt(msci::pow(x.x - y.x,2) + msci::pow(x.y - y.y,2));
 	}
 
-	template<>
-	float distance(const coordinates_2d<float>& x,const coordinates_2d<float>& y)
-	{
-		return std::sqrt(std::pow(x.x - y.x,2) + std::pow(x.y - y.y,2));
-	}
+	float distance(const coordinates_2d<float>&,const coordinates_2d<float>&);
 
 	template<typename T>
 	T distance(const coordinates_2d<T>& x,const point_2d<T>& y)
@@ -307,11 +303,7 @@ namespace msci
 		return msci::sqrt(msci::pow(x.x - y.x,2) + msci::pow(x.y - y.y,2));
 	}
 
-	template<>
-	float distance(const coordinates_2d<float>& x,const point_2d<float>& y)
-	{
-		return std::sqrt(std::pow(x.x - y.x,2) + std::pow(x.y - y.y,2));
-	}
+	float distance(const coordinates_2d<float>&,const point_2d<float>&);
 
 	template<typename T>
 	T distance(const point_2d<T>& x,const coordinates_2d<T>& y)
@@ -319,11 +311,7 @@ namespace msci
 		return msci::sqrt(msci::pow(x.x - y.x,2) + msci::pow(x.y - y.y,2));
 	}
 
-	template<>
-	float distance(const point_2d<float>& x,const coordinates_2d<float>& y)
-	{
-		return std::sqrt(std::pow(x.x - y.x,2) + std::pow(x.y - y.y,2));
-	}
+	float distance(const point_2d<float>&,const coordinates_2d<float>&);
 
 	inline float cartesian_2d_to_polar_r(float x,float y)
 	{

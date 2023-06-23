@@ -537,17 +537,23 @@ namespace msci
 		return msci::sqrt(msci::pow(x.x - y.x,2) + msci::pow(x.y - y.y,2) + msci::pow(x.z - y.z,2));
 	}
 
+	float distance(const coordinates_3d<float>&,const coordinates_3d<float>&);
+
 	template<typename T>
 	T distance(const coordinates_3d<T>& x,const point_3d<T>& y)
 	{
 		return msci::sqrt(msci::pow(x.x - y.x,2) + msci::pow(x.y - y.y,2) + msci::pow(x.z - y.z,2));
 	}
 
+	float distance(const coordinates_3d<float>&,const point_3d<float>&);
+
 	template<typename T>
 	T distance(const point_3d<T>& x,const coordinates_3d<T>& y)
 	{
 		return msci::sqrt(msci::pow(x.x - y.x,2) + msci::pow(x.y - y.y,2) + msci::pow(x.z - y.z,2));
 	}
+
+	float distance(const point_3d<float>&,const coordinates_3d<float>&);
 
 	inline float cartesian_3d_to_cylindrical_r(float x,float y,float z)
 	{

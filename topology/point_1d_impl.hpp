@@ -1,3 +1,6 @@
+#ifndef MSCI_UNITS_TOPOLOGY_POINT_1D_IMPL_HPP_INCLUDED
+#define MSCI_UNITS_TOPOLOGY_POINT_1D_IMPL_HPP_INCLUDED
+
 #include "topology/point_1d.hpp"
 
 #include "coordinates/coordinates_1d.hpp"
@@ -16,15 +19,6 @@ namespace msci
 		x = x_coordinates.x;
 		return *this;
 	}
-
-	template<>
-	point_1d<float>::point_1d(const coordinates_1d<float>& x_coordinates) : x(x_coordinates.x)
-	{}
-
-	template<>
-	point_1d<float>& point_1d<float>::operator=(const coordinates_1d<float>& x_coordinates)
-	{
-		x = x_coordinates.x;
-		return *this;
-	}
 }
+
+#endif // MSCI_UNITS_TOPOLOGY_POINT_1D_IMPL_HPP_INCLUDED

@@ -1,3 +1,6 @@
+#ifndef MSCI_UNITS_TOPOLOGY_POINT_ND_IMPL_HPP_INCLUDED
+#define MSCI_UNITS_TOPOLOGY_POINT_ND_IMPL_HPP_INCLUDED
+
 #include "topology/point_nd.hpp"
 
 #include "coordinates/coordinates_nd.hpp"
@@ -16,15 +19,6 @@ namespace msci
 		values = x_coordinates.values;
 		return *this;
 	}
-
-	template<>
-	point_nd<float>::point_nd(const coordinates_nd<float>& new_coordinates) : values(new_coordinates.values)
-	{}
-
-	template<>
-	point_nd<float>& point_nd<float>::operator=(const coordinates_nd<float>& x_coordinates)
-	{
-		values = x_coordinates.values;
-		return *this;
-	}
 }
+
+#endif // MSCI_UNITS_TOPOLOGY_POINT_ND_IMPL_HPP_INCLUDED

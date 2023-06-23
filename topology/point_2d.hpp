@@ -283,11 +283,7 @@ namespace msci
 		return msci::sqrt(msci::pow(x1.x - x2.x,2) + msci::pow(x1.y - x2.y,2));
 	}
 
-	template<>
-	float distance(const point_2d<float>& x1,const point_2d<float>& x2)
-	{
-		return std::sqrt(std::pow(x1.x - x2.x,2) + std::pow(x1.y - x2.y,2));
-	}
+	float distance(const point_2d<float>&,const point_2d<float>&);
 }
 
 template<typename T>

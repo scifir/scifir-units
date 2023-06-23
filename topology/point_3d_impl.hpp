@@ -1,3 +1,6 @@
+#ifndef MSCI_UNITS_TOPOLOGY_POINT_3D_IMPL_HPP_INCLUDED
+#define MSCI_UNITS_TOPOLOGY_POINT_3D_IMPL_HPP_INCLUDED
+
 #include "topology/point_3d.hpp"
 
 #include "coordinates/coordinates_3d.hpp"
@@ -18,15 +21,6 @@ namespace msci
 		z = x_coordinates.z;
 		return *this;
 	}
-
-	point_3d<float>::point_3d(const coordinates_3d<float>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z)
-	{}
-
-	point_3d<float>& point_3d<float>::operator=(const coordinates_3d<float>& x_coordinates)
-	{
-		x = x_coordinates.x;
-		y = x_coordinates.y;
-		z = x_coordinates.z;
-		return *this;
-	}
 }
+
+#endif // MSCI_UNITS_TOPOLOGY_POINT_3D_IMPL_HPP_INCLUDED
