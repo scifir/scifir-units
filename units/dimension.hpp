@@ -18,7 +18,7 @@ using namespace std;
 namespace msci
 {
 	class dimension;
-	
+
 	vector<dimension> create_dimensions(string);
 
 	class dimension
@@ -68,7 +68,7 @@ namespace msci
 					dimension::base_dimensions[new_symbol] = create_dimensions(init_dimensions);
 				}
 			}
-			
+
 			static char* create_full_symbol(const string& full_symbol)
 			{
 				int symbol_code;
@@ -128,7 +128,7 @@ namespace msci
 				full_symbols[total_full_symbols] = full_symbol;
 				return new char[3]{symbol_abbreviation[0],symbol_abbreviation[1],symbol_abbreviation[2]};
 			}
-			
+
 			static string get_full_symbol(const char* x_symbol)
 			{
 				int symbol_code;

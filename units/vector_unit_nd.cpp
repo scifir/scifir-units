@@ -311,7 +311,7 @@ namespace msci
 			}
 		}
 	}
-	
+
 	void vector_unit_nd::operator +=(const vector_unit_nd& y)
 	{
 		if(equal_dimensions(*this,y) and get_nd() == y.get_nd())
@@ -512,7 +512,7 @@ namespace msci
 			return vector_unit_nd();
 		}
 	}
-	
+
 	scalar_unit vector_unit_nd::n_projection(int i) const
 	{
 		if (i == 1)
@@ -532,7 +532,7 @@ namespace msci
 			return scalar_unit();
 		}
 	}
-	
+
 	scalar_unit vector_unit_nd::x_projection() const
 	{
 		if (is_nd(1))
@@ -592,7 +592,7 @@ namespace msci
 			return scalar_unit();
 		}
 	}
-	
+
 	void vector_unit_nd::invert()
 	{
 		for(angle& x_angle : angles)
@@ -600,7 +600,7 @@ namespace msci
 			x_angle.invert();
 		}
 	}
-	
+
 	string to_string(const vector_unit_nd& x)
 	{
 		ostringstream out;
