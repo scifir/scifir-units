@@ -74,7 +74,7 @@ namespace msci
 		return *this;
 	}
 
-	angle& angle::operator=(string& init_angle)
+	angle& angle::operator=(string init_angle)
 	{
 		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
 		if (init_angle_unicode.endsWith(u'º'))

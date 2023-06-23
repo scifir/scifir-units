@@ -37,7 +37,7 @@ namespace msci
 			angle& operator=(const angle&);
 			angle& operator=(angle&&);
 			angle& operator=(float);
-			angle& operator=(string&);
+			angle& operator=(string);
 			angle& operator=(const scalar_unit&);
 
 			explicit operator float() const
