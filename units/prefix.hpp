@@ -19,7 +19,7 @@ namespace msci
 			prefix(prefix&&);
 			explicit prefix(prefix::type);
 			explicit prefix(const string&);
-			
+
 			prefix& operator=(const prefix&);
 			prefix& operator=(prefix&&);
 
@@ -27,7 +27,7 @@ namespace msci
 			float get_prefix_base() const;
 			string get_name() const;
 			string get_symbol() const;
-			
+
 			bool operator<(const msci::prefix&) const;
 
 			prefix::type prefix_type;
@@ -37,6 +37,8 @@ namespace msci
 
 	prefix create_prefix(prefix::type);
 	prefix create_prefix(const string&);
+
+	prefix closest_prefix(const prefix&,int);
 }
 
 bool operator ==(const msci::prefix&,const msci::prefix&);

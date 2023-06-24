@@ -307,7 +307,20 @@ namespace msci
 	string scalar_unit::display(int number_of_decimals) const
 	{
 		ostringstream output;
-		output << display_float(get_value(),number_of_decimals) << " " << display_dimensions();
+		if (dimensions.size() == 1)
+		{
+			int value_scale = int(log10(get_value()));
+			prefix display_prefix = closest_prefix(dimensions[0].prefix,value_scale);
+			float x_value = get_value();
+			x_value /= std::pow(display_prefix.get_prefix_base(), display_prefix.get_conversion_factor());
+			vector<dimension> x_dimensions = dimensions;
+			x_dimensions[0].prefix = display_prefix;
+			output << display_float(x_value,number_of_decimals) << " " << to_string(x_dimensions);
+		}
+		else
+		{
+			output << display_float(get_value(),number_of_decimals) << " " << to_string(dimensions);
+		}
 		return output.str();
 	}
 

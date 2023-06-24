@@ -373,6 +373,97 @@ namespace msci
 			return prefix();
 		}
 	}
+
+	prefix closest_prefix(const prefix& actual_prefix,int actual_scale)
+	{
+		int actual_factor = actual_prefix.get_conversion_factor();
+		int factor_difference = actual_scale + actual_factor;
+		if (factor_difference == 0)
+		{
+			return prefix(prefix::no_prefix);
+		}
+		else if (factor_difference == 1)
+		{
+			return prefix(prefix::da);
+		}
+		else if (factor_difference == 2)
+		{
+			return prefix(prefix::h);
+		}
+		else if (factor_difference == -1)
+		{
+			return prefix(prefix::d);
+		}
+		else if (factor_difference == -2)
+		{
+			return prefix(prefix::c);
+		}
+		else if (factor_difference >= 3 and factor_difference < 6)
+		{
+			return prefix(prefix::k);
+		}
+		else if (factor_difference >= 6 and factor_difference < 9)
+		{
+			return prefix(prefix::M);
+		}
+		else if (factor_difference >= 9 and factor_difference < 12)
+		{
+			return prefix(prefix::G);
+		}
+		else if (factor_difference >= 12 and factor_difference < 15)
+		{
+			return prefix(prefix::T);
+		}
+		else if (factor_difference >= 15 and factor_difference < 18)
+		{
+			return prefix(prefix::P);
+		}
+		else if (factor_difference >= 18 and factor_difference < 21)
+		{
+			return prefix(prefix::E);
+		}
+		else if (factor_difference >= 21 and factor_difference < 24)
+		{
+			return prefix(prefix::Z);
+		}
+		else if (factor_difference >= 24)
+		{
+			return prefix(prefix::Y);
+		}
+		else if (factor_difference <= -3 and factor_difference > -6)
+		{
+			return prefix(prefix::m);
+		}
+		else if (factor_difference <= -6 and factor_difference > -9)
+		{
+			return prefix(prefix::u);
+		}
+		else if (factor_difference <= -9 and factor_difference > -12)
+		{
+			return prefix(prefix::n);
+		}
+		else if (factor_difference <= -12 and factor_difference > -15)
+		{
+			return prefix(prefix::p);
+		}
+		else if (factor_difference <= -15 and factor_difference > -18)
+		{
+			return prefix(prefix::f);
+		}
+		else if (factor_difference <= -18 and factor_difference > -21)
+		{
+			return prefix(prefix::a);
+		}
+		else if (factor_difference <= -21 and factor_difference > -24)
+		{
+			return prefix(prefix::z);
+		}
+		else if (factor_difference < -24)
+		{
+			return prefix(prefix::y);
+		}
+		return prefix();
+	}
 }
 
 bool operator ==(const msci::prefix& x,const msci::prefix& y)
