@@ -24,10 +24,10 @@ file(GLOB_RECURSE TARGET_SRC coordinates/*.cpp coordinates/light/*.cpp fields/*.
 project(msci_units)
 
 add_library(msci_units ${TARGET_SRC})
-target_link_libraries(msci_units boost_locale boost_system icuuc)
+target_link_libraries(msci_units boost_system icuuc)
 
 add_executable(test_sizeof tests/test_sizeof.cpp)
-target_link_libraries(test_sizeof msci_units boost_locale boost_system icuuc)
+target_link_libraries(test_sizeof msci_units boost_system icuuc)
 
 #add_executable(test_units tests/test_units.cpp)
 #target_link_libraries(test_units msci_units boost_locale boost_system)
