@@ -101,13 +101,13 @@ namespace msci
 			string display(int number_of_decimals = 2) const
 			{
 				ostringstream output;
-				if(std::abs(x.error_value) > std::abs(x.value))
+				if(std::abs(error_value) > std::abs(value))
 				{
 					output << "Error: error greater than value" << endl;
 				}
 				else
 				{
-					output << display_float(float(x.value),number_of_decimals) << " +- " << display_float(float(x.error_value),number_of_decimals);
+					output << display_float(float(value),number_of_decimals) << " +- " << display_float(float(error_value),number_of_decimals);
 				}
 				return output.str();
 			}
