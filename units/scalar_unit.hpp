@@ -198,6 +198,37 @@ namespace msci
 }
 
 template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+msci::scalar_unit operator +(const T y,const msci::scalar_unit& x)
+{
+	msci::scalar_unit z = x;
+	z += y;
+	return z;
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+msci::scalar_unit operator -(const T y,const msci::scalar_unit& x)
+{
+	msci::scalar_unit z = msci::scalar_unit(y,x.get_dimensions());
+	z -= x;
+	return z;
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+msci::scalar_unit operator *(const T y,const msci::scalar_unit& x)
+{
+	msci::scalar_unit z = x;
+	z *= y;
+	return z;
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+msci::scalar_unit operator /(const T y,const msci::scalar_unit& x)
+{
+	msci::scalar_unit z = msci::scalar_unit(y,vector<msci::dimension>());
+	return z / x;
+}
+
+template<typename T, typename = typename enable_if<is_number<T>::value>::type>
 float operator ^(const T x, const msci::scalar_unit& y)
 {
 	if(y.has_empty_dimensions())
