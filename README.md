@@ -6,11 +6,11 @@ MagickScience is under development, but the units are already released. Molecule
 
 MagickScience includes special units to use, then it's unneeded to care about having the proper dimensions and prefixes when developing scientific software, you can instantiate any value you have on the machine, without performing operations with a calculator first to convert the units to a common prefix. Learn how to use them at the [Wiki](https://github.com/Iarfen/MagickScience/wiki/).
 
-## Team
+### Team
 
 MagickScience is developed by [Ismael Correa](https://github.com/Iarfen/), a software developer of 32 years old. You can email if you find bugs, request new features, or have any other need, at ismael.correa.castro@gmail.com.
 
-## Funding
+### Funding
 
 MagickScience is looking for **funding**, in order to do some digital marketing and pay some other needs of the project. If you want to support this library, and **science will thank you** for that, you can donate in this [sponsors page](https://github.com/sponsors/Iarfen).
 
@@ -45,7 +45,29 @@ The scalar_unit and vector unit classes, vector_unid_2d, vector_unid_3d and vect
 
 The angle class uses only 4 bytes, and works perfectly fine, very similar to a normal float. Then, you can use it freely every time you need to do calculations that need angles.
 
-## Example of use
+## Core functionalities
+
+### Initialization strings
+
+All the unit classes, and also the other related classes of this library, can be constructed with what is called here an **initialization string**. An initialization string is an string used to instantiate the class, and it's also used when converting the class to an string for any purpose (like printing it on the screen).
+
+The initialization strings are the following:
+
+- **angle**: "1º"
+- **scalar_unit**: "1 km"
+- **vector_unit_2d**: "5 km 10º"
+- **vector_unit_3d**: "3 km 10º 20º"
+- **vector_unit_nd**: "3 km 10º 20º 35º"
+- **coordinates_1d**: "1 m" or "(1 m)"
+- **coordinates_2d**: "1 m,2 m" or "(1 m,2 m)"
+- **coordinates_3d**: "1 m,7 m,5 m" or "(1 m,7 m,5 m)"
+- **coordinates_nd**: "1 m,7 m,5 m,8 m" or "(1 m,7 m,5 m,8 m)"
+- **point_1d**: "3 m" or "(3 m)"
+- **point_2d**: "2 m,4 m" or "(2 m,4 m)"
+- **point_3d**: "1 m,9 m,3 m" or "(1 m,9 m,3 m)"
+- **point_nd**: "3 m,2 m,4 m,1 m" or "(3 m,2 m,4 m,1 m)"
+
+In order to store units inside a file an initialization string should be used. For any purpose, when converting some of those classes to an string, the string initialization has to be always used.
 
 ### Angle
 
@@ -396,7 +418,96 @@ cin >> a; // Initializes a with the string given to cin
 
 ```
 
-## MagickScience Units Internals
+### Coordinates in 1D
+
+Coordinates in 1D allow to move any object, particle, solid or immaterial, through a 1D space. The coordinates_1d class has been implemented as a template class, allowing to use any scalar_unit, or, also, a single float. Any scalar_unit can be used, because then coordinates_1d allows to move in dimensions different than length, as dimensions on some science-fiction speculations are (because on some science-fiction ideas, a dimension can be anything).
+
+An example of use of coordinates_1d is the following:
+
+```cpp
+coordinates_1d<length> x = coordinates_1d<length>(1_m);
+coordinates_1d<length> y = coordinates_1d<length>(length(3,"km"));
+coordinates_1d<length> z = coordinates_1d<length>("4 dam");
+coordinates_1d<float> z = coordinates_1d<float>(12); // coordinates_1d can be used with a float in order to save memory, or if any other unit is useful for the use case
+
+point_1d a = point_1d(1_dm);
+x = a; // A coordinates_1d can be assigned a point_1d to get his same position
+
+x.set_position(1_km); // the position is now 1 km
+x.move(1_m); // move 1 m to the right
+length x_distance = x.distance_to_origin(); // gives the absolute distance to the origin
+
+string x_display = to_string(x); // prints the coordinates_1d
+length xy_distance = distance(x,y); // calculates the distance between the two positions
+length xa_distance = distance(x,a); // calculates the distance between a coordinates_1d and a point_1d
+
+if (x == y) // gives true if both coordinates_1d are equal
+{}
+
+if (x == a) // gives true if coordinates_1d is equal to point_1d
+{}
+
+if (x == "1m") // gives true if the coordinates_1d are equal to the specified coordinates in the string
+{}
+
+string b;
+b += x; // coordinates_1d can be added to an string
+string c = "x: " + x; // coordinates_1d has an operator + with string to give another string
+
+cout << x; // coordinates_1d can be printed to cout
+cin >> x; // coordinates_1d can be initialized through cin
+```
+
+### Coordinates in 2D
+
+coordinates_2d class allows to create software with positions in 2D. It has a very similar interface to coordinates_1d, it's initialized with an string of the form "1 m,2 m" or "(1 m,2 m)" because the character '(' can be present or not. It's, as coordinates_1d, a template class, and can then specify coordinates of any scalar_unit (usually, length), or with a float, if there's no unit that represents adequately the coordinates, or if it's needed to save some memory (because the float is lighter than a unit in his consumption of memory).
+
+coordinates_2d can be used as cartesian and as polar coordinates at the same time. It has x and y as member-variables, which can be of the type of any scalar_unit or a float. When working with polar coordinates, they calculations are stored as x and y, that's, as cartesian coordinates, but when accessing it, with functions like get_p() and get_theta(), they give the values in polar coordinates. Then, at the same time, coordinates_2d behave as cartesian and as polar coordinates, by storing the values only once, not two times. Then, coordinates_2d is like a dual object, it contains cartesian_2d and polar_coordinates inside.
+
+```cpp
+coordinates_2d<length> x = coordinates_2d<length>(1_m,2_m);
+coordinates_2d<length> y = coordinates_2d<length>(length(3,"km"),length(5,"dam"));
+coordinates_2d<length> z = coordinates_2d<length>("4 dam,2 m"); // initialization string
+coordinates_2d<float> z = coordinates_2d<float>(12,20); // coordinates_2d can be used with a float in order to save memory, or if any other unit is useful for the use case
+
+point_2d a = point_2d(1_dm,5_cm);
+x = a; // A coordinates_2d can be assigned a point_2d to get his same position
+
+length x_p = x.get_p(); // coordinates_2d give the value of p of polar coordinates
+angle x_theta = x.get_theta(); // coordinates_2d give the angle theta of polar coordinates
+
+x.set_position(1_km,2_hm); // the position is now "1 km,2 hm"
+x.set_position(1_m,angle(10)); // the position has been specified using polar coordinates
+x.rotate(angle(10)); // rotate the position in the angle specified related to the origin
+x.move(1_m,5_cm); // move 1 m to the right and 5 cm up
+x.move(3_m,angle(20)); // move 3_m and 20º specified in polar coordinates
+displacement_2d c_displacement = displacement_2d("2 km",10); // create a displacement_2d to specify a movement
+x.move(c_displacement); // move in the specified displacement
+length x_distance = x.distance_to_origin(); // gives the absolute distance to the origin
+
+string x_display = to_string(x); // prints the coordinates_2d
+string x_polar_display = x.display_polar(); // prints the coordinates_2d in polar coordinates
+length xy_distance = distance(x,y); // calculates the distance between the two positions
+length xa_distance = distance(x,a); // calculates the distance between a coordinates_2d and a point_2d
+
+if (x == y) // gives true if both coordinates_2d are equal
+{}
+
+if (x == a) // gives true if coordinates_2d is equal to point_2d
+{}
+
+if (x == "1m") // gives true if the coordinates_2d are equal to the specified coordinates in the string
+{}
+
+string b;
+b += x; // coordinates_2d can be added to an string
+string c = "x: " + x; // coordinates_2d has an operator + with string to give another string
+
+cout << x; // coordinates_2d can be printed to cout
+cin >> x; // coordinates_2d can be initialized through cin
+```
+
+## Internals
 
 Internally, the library has some important mechanisms important to be known by a serious developer. Those important mechanisms are described here, in order to avoid the developer to read the code of the library and learn every detail.
 
