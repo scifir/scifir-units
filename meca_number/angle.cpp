@@ -1,13 +1,13 @@
 #include "meca_number/angle.hpp"
 
+#include "util/types.hpp"
+
 #include "boost/algorithm/string.hpp"
 #include "unicode/unistr.h"
 #include "unicode/uchar.h"
 
 #include <cmath>
-#include <iomanip>
 #include <iostream>
-#include <limits>
 #include <sstream>
 #include <string>
 
@@ -188,6 +188,21 @@ namespace msci
 		normalize_value();
 	}
 
+	string angle::display(int number_of_decimals) const
+	{
+		ostringstream output;
+		if (get_value() == -0)
+		{
+			output << 0;
+		}
+		else
+		{
+			output << display_float(get_value(),number_of_decimals);
+		}
+		output << "°";
+		return output.str();
+	}
+
 	void angle::normalize_value()
 	{
 		if(isfinite(value))
@@ -218,15 +233,7 @@ namespace msci
 	string to_string(const angle& x)
 	{
 		ostringstream output;
-		if (x.get_value() == -0)
-		{
-			output << 0;
-		}
-		else
-		{
-			output << x.get_value();
-		}
-		output << "°";
+		output << x.display(2);
 		return output.str();
 	}
 

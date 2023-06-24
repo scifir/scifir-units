@@ -3,6 +3,7 @@
 #include "units/conversion.hpp"
 #include "units/unit_basic.hpp"
 #include "units/prefix.hpp"
+#include "util/types.hpp"
 
 #include "boost/algorithm/string/erase.hpp"
 #include "boost/algorithm/string.hpp"
@@ -10,9 +11,7 @@
 #include <algorithm>
 #include <cctype>
 #include <cmath>
-#include <iomanip>
 #include <iostream>
-#include <locale>
 #include <map>
 #include <sstream>
 #include <string>
@@ -305,6 +304,13 @@ namespace msci
 		return dimensions;
 	}
 
+	string scalar_unit::display(int number_of_decimals) const
+	{
+		ostringstream output;
+		output << display_float(get_value(),number_of_decimals) << " " << display_dimensions();
+		return output.str();
+	}
+
 	void scalar_unit::add_prefix(const prefix& new_prefix)
 	{
 		value /= std::pow(new_prefix.get_prefix_base(), new_prefix.get_conversion_factor());
@@ -380,13 +386,10 @@ namespace msci
 		}
 	}
 	
-	string to_string(const scalar_unit& x,int number_of_decimals)
+	string to_string(const scalar_unit& x)
 	{
-		/*locale loc = locale("en_US.UTF8");
-		os.imbue(loc);*/
 		ostringstream output;
-		output << setprecision(numeric_limits<float>::max_exponent10 + number_of_decimals);
-		output << x.get_value() << " " << x.display_dimensions();
+		output << x.display(2);
 		return output.str();
 	}
 

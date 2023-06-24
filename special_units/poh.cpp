@@ -1,11 +1,11 @@
 #include "special_units/poh.hpp"
 
+#include "util/types.hpp"
+
 #include "boost/algorithm/string.hpp"
 
 #include <cmath>
-#include <iomanip>
 #include <iostream>
-#include <limits>
 #include <sstream>
 #include <string>
 
@@ -15,10 +15,10 @@ namespace msci
 {
 	pOH::pOH() : value(0)
 	{}
-	
+
 	pOH::pOH(const pOH& x) : value(x.get_value())
 	{}
-	
+
 	pOH::pOH(pOH&& x) : value(move(x.get_value()))
 	{}
 
@@ -166,6 +166,20 @@ namespace msci
 		return (value == 7);
 	}
 
+	string pOH::display(int number_of_decimals) const
+	{
+		ostringstream output;
+		if (get_value() == -0)
+		{
+			output << 0;
+		}
+		else
+		{
+			output << display_float(get_value(),number_of_decimals);
+		}
+		return output.str();
+	}
+
 	void pOH::normalize_value()
 	{
 		if(isfinite(value))
@@ -184,23 +198,11 @@ namespace msci
 			return;
 		}
 	}
-	
+
 	string to_string(const pOH& x)
 	{
 		ostringstream output;
-		double integer_part;
-		modf(x.get_value(), &integer_part);
-		output << setprecision(std::to_string(int(integer_part)).length() + 1);
-		//output << setprecision(numeric_limits<float>::max_exponent10 + 1);
-		//output << x.get_value() << "°";
-		if (x.get_value() == -0)
-		{
-			output << 0;
-		}
-		else
-		{
-			output << x.get_value();
-		}
+		output << x.display(2);
 		return output.str();
 	}
 }

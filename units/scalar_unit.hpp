@@ -177,6 +177,8 @@ namespace msci
 				return value;
 			}
 
+			string display(int = 2) const;
+
 		protected:
 			vector<dimension> dimensions;
 			float value;
@@ -187,7 +189,7 @@ namespace msci
 			void set_from_string(const string&);
 	};
 
-	string to_string(const scalar_unit&,int = 2);
+	string to_string(const scalar_unit&);
 	float abs(const scalar_unit&);
 	scalar_unit pow(const scalar_unit&,int);
 	scalar_unit sqrt(const scalar_unit&);

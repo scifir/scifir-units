@@ -1,5 +1,8 @@
 #include "util/types.hpp"
 
+#include <cmath>
+#include <sstream>
+
 using namespace std;
 
 namespace msci
@@ -28,5 +31,19 @@ namespace msci
 		{
 			return 0;
 		}
+	}
+
+	string display_float(const float& value,int number_of_decimals)
+	{
+		ostringstream output;
+		float fract_value,int_value;
+		fract_value = modf(value,&int_value);
+		output << (int)int_value;
+		if (fract_value != 0)
+		{
+			output << ".";
+			output << int(fract_value*std::pow(10,number_of_decimals));
+		}
+		return output.str();
 	}
 }

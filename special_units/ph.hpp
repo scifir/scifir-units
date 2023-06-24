@@ -77,14 +77,16 @@ namespace msci
 			pH operator++(int);
 			pH& operator--();
 			pH operator--(int);
-			
+
 			concentration get_H() const;
 			concentration get_OH() const;
 			pOH get_pOH() const;
-			
+
 			bool is_acidic() const;
 			bool is_basic() const;
 			bool is_neutral() const;
+
+			string display(int = 2) const;
 
 		private:
 			float value;

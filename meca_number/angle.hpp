@@ -140,6 +140,8 @@ namespace msci
 
 			void invert();
 
+			string display(int = 2) const;
+
 			inline float get_grade() const
 			{
 				return value;

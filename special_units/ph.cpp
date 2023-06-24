@@ -1,12 +1,12 @@
 #include "special_units/ph.hpp"
 #include "special_units/poh.hpp"
 
+#include "util/types.hpp"
+
 #include "boost/algorithm/string.hpp"
 
 #include <cmath>
-#include <iomanip>
 #include <iostream>
-#include <limits>
 #include <sstream>
 #include <string>
 
@@ -16,10 +16,10 @@ namespace msci
 {
 	pH::pH() : value(0)
 	{}
-	
+
 	pH::pH(const pH& x) : value(x.get_value())
 	{}
-	
+
 	pH::pH(pH&& x) : value(move(x.get_value()))
 	{}
 
@@ -27,7 +27,7 @@ namespace msci
 	{
 		normalize_value();
 	}
-	
+
 	pH::pH(const string& init_pH) : value()
 	{
 		value = stof(init_pH);
@@ -47,13 +47,13 @@ namespace msci
 			value = 0;
 		}
 	}
-	
+
 	pH& pH::operator=(const pH& x)
 	{
 		value = x.get_value();
 		return *this;
 	}
-	
+
 	pH& pH::operator=(pH&& x)
 	{
 		value = move(x.get_value());
@@ -135,12 +135,12 @@ namespace msci
 		operator--();
 		return tmp;
 	}
-	
+
 	concentration pH::get_H() const
 	{
 		return concentration(std::pow(10,-value),"M");
 	}
-	
+
 	concentration pH::get_OH() const
 	{
 		return concentration(std::pow(10,-float(14 - value)),"M");
@@ -167,6 +167,20 @@ namespace msci
 		return (value == 7);
 	}
 
+	string pH::display(int number_of_decimals) const
+	{
+		ostringstream output;
+		if (get_value() == -0)
+		{
+			output << 0;
+		}
+		else
+		{
+			output << display_float(get_value(),number_of_decimals);
+		}
+		return output.str();
+	}
+
 	void pH::normalize_value()
 	{
 		if(isfinite(value))
@@ -189,19 +203,7 @@ namespace msci
 	string to_string(const pH& x)
 	{
 		ostringstream output;
-		double integer_part;
-		modf(x.get_value(), &integer_part);
-		output << setprecision(std::to_string(int(integer_part)).length() + 1);
-		//output << setprecision(numeric_limits<float>::max_exponent10 + 1);
-		//output << x.get_value() << "°";
-		if (x.get_value() == -0)
-		{
-			output << 0;
-		}
-		else
-		{
-			output << x.get_value();
-		}
+		output << x.display(2);
 		return output.str();
 	}
 }

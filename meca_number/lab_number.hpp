@@ -2,6 +2,7 @@
 #define MSCI_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED
 
 #include "util/is_number.hpp"
+#include "util/types.hpp"
 
 #include "boost/algorithm/string.hpp"
 
@@ -97,6 +98,20 @@ namespace msci
 				error_value ^= x.error_value;
 			}
 
+			string display(int number_of_decimals = 2) const
+			{
+				ostringstream output;
+				if(std::abs(x.error_value) > std::abs(x.value))
+				{
+					output << "Error: error greater than value" << endl;
+				}
+				else
+				{
+					output << display_float(float(x.value),number_of_decimals) << " +- " << display_float(float(x.error_value),number_of_decimals);
+				}
+				return output.str();
+			}
+
 			T value;
 			T error_value;
 	};
@@ -105,15 +120,7 @@ namespace msci
 	string to_string(const lab_number<T>& x)
 	{
 		ostringstream output;
-		output << setprecision(numeric_limits<float>::max_exponent10 + 1);
-		if(std::abs(x.error_value) > std::abs(x.value))
-		{
-			output << "Error: error greater than value" << endl;
-		}
-		else
-		{
-			output << x.value << " +- " << x.error_value;
-		}
+		output << x.display(2);
 		return output.str();
 	}
 }
