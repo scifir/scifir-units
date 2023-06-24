@@ -43,7 +43,7 @@ namespace msci
 				{
 					init_coordinates_1d.erase(init_coordinates_1d.size()-1,1);
 				}
-				x = length(init_coordinates_1d);
+				x = T(init_coordinates_1d);
 			}
 
 			coordinates_1d<T>& operator=(const coordinates_1d<T>& x_coordinates)
@@ -64,7 +64,6 @@ namespace msci
 				return *this;
 			}
 
-			
 			void set_position(const T& new_x)
 			{
 				x = new_x;
