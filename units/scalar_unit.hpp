@@ -178,6 +178,7 @@ namespace msci
 			}
 
 			string display(int = 2) const;
+			string custom_display(const string&,int = 2) const;
 
 		protected:
 			vector<dimension> dimensions;

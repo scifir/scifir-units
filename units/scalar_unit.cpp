@@ -219,11 +219,6 @@ namespace msci
 						add_prefix(new_derived_dimension.prefix);
 					}
 				}
-				/*shared_ptr<abbreviation> new_actual_dimension_ptr = dynamic_pointer_cast<abbreviation>(new_actual_dimension.second);
-				if (new_actual_dimension_ptr)
-				{
-					value /= new_actual_dimension_ptr->get_factor();
-				}*/
 			}
 			dimensions = new_dimensions;
 		}
@@ -312,6 +307,7 @@ namespace msci
 			int value_scale = int(log10(get_value()));
 			prefix display_prefix = closest_prefix(dimensions[0].prefix,value_scale);
 			float x_value = get_value();
+			x_value *= std::pow(dimensions[0].prefix.get_prefix_base(), dimensions[0].prefix.get_conversion_factor());
 			x_value /= std::pow(display_prefix.get_prefix_base(), display_prefix.get_conversion_factor());
 			vector<dimension> x_dimensions = dimensions;
 			x_dimensions[0].prefix = display_prefix;
@@ -321,6 +317,23 @@ namespace msci
 		{
 			output << display_float(get_value(),number_of_decimals) << " " << to_string(dimensions);
 		}
+		return output.str();
+	}
+
+	string scalar_unit::custom_display(const string& new_dimensions_str,int number_of_decimals) const
+	{
+		ostringstream output;
+		float new_value = get_value();
+		vector<dimension> new_dimensions = create_dimensions(new_dimensions_str);
+		for(const dimension& x_dimension : dimensions)
+		{
+			new_value *= std::pow(x_dimension.prefix.get_prefix_base(), x_dimension.prefix.get_conversion_factor());
+		}
+		for(const dimension& x_new_dimension : new_dimensions)
+		{
+			new_value /= std::pow(x_new_dimension.prefix.get_prefix_base(), x_new_dimension.prefix.get_conversion_factor());
+		}
+		output << display_float(new_value,number_of_decimals) << " " << new_dimensions_str;
 		return output.str();
 	}
 
