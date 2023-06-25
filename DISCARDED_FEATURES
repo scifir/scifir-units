@@ -1,2 +1,3 @@
 DISCARDED FEATURES
 1. Macro that allows to embed coordinates inside classes by adding all his member-variables and functions inside it. It has been preferred the use of composition or inheritance over it
+2. Units are displayed on the english locale, not on any other locale in order to avoid confusion with any other use of the ',' symbol used near the displaying of the number, cause if the number is displayed with a ',' the meaning of each ',' becomes more ambiguous, and can be interpreted as two different numbers.
