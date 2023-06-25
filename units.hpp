@@ -4,6 +4,7 @@
 #include "units/prefix.hpp"
 #include "units/dimension.hpp"
 #include "units/scalar_unit.hpp"
+#include "meca_number/angle.hpp"
 #include "units/vector_unit_2d.hpp"
 #include "units/vector_unit_3d.hpp"
 #include "units/vector_unit_nd.hpp"
@@ -30,7 +31,29 @@
 #include "predefined_units/matter_units.hpp"
 #include "predefined_units/substance_units.hpp"
 
+#include "topology/direction.hpp"
+#include "topology/point_1d.hpp"
+#include "topology/point_2d.hpp"
+#include "topology/point_3d.hpp"
+#include "topology/point_nd.hpp"
+
+#include "coordinates/coordinates_1d.hpp"
+#include "coordinates/coordinates_2d.hpp"
+#include "coordinates/coordinates_2dr.hpp"
+#include "coordinates/coordinates_3d.hpp"
+#include "coordinates/coordinates_3dr.hpp"
+#include "coordinates/coordinates_nd.hpp"
+#include "coordinates/coordinates_ndr.hpp"
+
+#include "topology/point_1d_impl.hpp"
+#include "topology/point_2d_impl.hpp"
+#include "topology/point_3d_impl.hpp"
+#include "topology/point_nd_impl.hpp"
+
 #include "special_units/color.hpp"
+#include "meca_number/lab_number.hpp"
+
+#include "util/matrix.hpp"
 
 using namespace std;
 
