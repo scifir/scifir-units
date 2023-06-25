@@ -1166,7 +1166,7 @@ namespace msci
 				for(int j = i + 1; j < x.size(); j++)
 				{
 					dimension y_dimension = x[j];
-					if (common_dimmension(x_dimension,y_dimension) and x_dimension.prefix.get_conversion_factor() != y_dimension.prefix.get_conversion_factor())
+					if (common_dimension(x_dimension,y_dimension) and x_dimension.prefix.get_conversion_factor() != y_dimension.prefix.get_conversion_factor())
 					{
 						if (x_dimension.dimension_sign == dimension::positive)
 						{
@@ -1186,7 +1186,7 @@ namespace msci
 		return prefix_scale;
 	}
 	
-	bool common_dimmension(const dimension& x,const dimension& y)
+	bool common_dimension(const dimension& x,const dimension& y)
 	{
 		for (const dimension& x_dimension : x.get_basic_dimensions())
 		{
@@ -1235,6 +1235,7 @@ namespace msci
 				{
 					skip.push_back(j);
 					is_equal = true;
+					break;
 				}
 			}
 			if (!is_equal)
