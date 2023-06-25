@@ -1,0 +1,5 @@
+if(EXISTS "/home/iarfen/Proyectos/Cientificos/Laboratorio/msci/units/test_units_tests-b12d07c.cmake")
+  include("/home/iarfen/Proyectos/Cientificos/Laboratorio/msci/units/test_units_tests-b12d07c.cmake")
+else()
+  add_test(test_units_NOT_BUILT-b12d07c test_units_NOT_BUILT-b12d07c)
+endif()

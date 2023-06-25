@@ -812,94 +812,101 @@ namespace msci
 	string to_string(const vector<dimension>& x_dimensions)
 	{
 		ostringstream out;
-		vector<dimension::type> printed_dimensions = vector<dimension::type>();
-		map<prefix,int> counted_prefixes = map<prefix,int>();
-		for (const dimension& x_dimension : x_dimensions)
+		if (x_dimensions.size() > 0)
 		{
-			if (x_dimension.dimension_sign == dimension::positive)
+			vector<dimension::type> printed_dimensions = vector<dimension::type>();
+			map<prefix,int> counted_prefixes = map<prefix,int>();
+			for (const dimension& x_dimension : x_dimensions)
 			{
-				bool printed = false;
-				for (const dimension::type& print_dimension : printed_dimensions)
+				if (x_dimension.dimension_sign == dimension::positive)
 				{
-					if (print_dimension == x_dimension.dimension_type)
+					bool printed = false;
+					for (const dimension::type& print_dimension : printed_dimensions)
 					{
-						printed = true;
+						if (print_dimension == x_dimension.dimension_type)
+						{
+							printed = true;
+						}
 					}
+					if (printed == true)
+					{
+						continue;
+					}
+					counted_prefixes = map<prefix,int>();
+					for (const dimension& y_dimension : x_dimensions)
+					{
+						if (x_dimension.dimension_type == y_dimension.dimension_type)
+						{
+							counted_prefixes[y_dimension.prefix]++;
+						}
+					}
+					for (const auto& x_prefix : counted_prefixes)
+					{
+						if (out.str() != "")
+						{
+							out << "*";
+						}
+						out << x_prefix.first << x_dimension.get_symbol();
+						if (x_prefix.second > 1)
+						{
+							out << x_prefix.second;
+						}
+					}
+					printed_dimensions.push_back(x_dimension.dimension_type);
 				}
-				if (printed == true)
+			}
+			printed_dimensions.clear();
+			bool first_negative_iteration = true;
+			bool first_negative_prefix = true;
+			for (const dimension& x_dimension : x_dimensions)
+			{
+				if (x_dimension.dimension_sign == dimension::negative)
 				{
-					continue;
-				}
-				counted_prefixes = map<prefix,int>();
-				for (const dimension& y_dimension : x_dimensions)
-				{
-					if (x_dimension.dimension_type == y_dimension.dimension_type)
+					if (first_negative_iteration == true)
 					{
-						counted_prefixes[y_dimension.prefix]++;
+						out << "/";
+						first_negative_iteration = false;
 					}
-				}
-				for (const auto& x_prefix : counted_prefixes)
-				{
-					if (out.str() != "")
+					bool printed = false;
+					for (const dimension::type& print_dimension : printed_dimensions)
 					{
-						out << "*";
+						if (print_dimension == x_dimension.dimension_type)
+						{
+							printed = true;
+						}
 					}
-					out << x_prefix.first << x_dimension.get_symbol();
-					if (x_prefix.second > 1)
+					if (printed == true)
 					{
-						out << x_prefix.second;
+						continue;
 					}
+					counted_prefixes = map<prefix,int>();
+					for (const dimension& y_dimension : x_dimensions)
+					{
+						if (x_dimension.dimension_type == y_dimension.dimension_type)
+						{
+							counted_prefixes[y_dimension.prefix]++;
+						}
+					}
+					for (const auto& x_prefix : counted_prefixes)
+					{
+						if (first_negative_prefix == false)
+						{
+							out << "*";
+						}
+						out << x_prefix.first << x_dimension.get_symbol();
+						if (x_prefix.second > 1)
+						{
+							out << x_prefix.second;
+						}
+						first_negative_prefix = false;
+					}
+					printed_dimensions.push_back(x_dimension.dimension_type);
 				}
-				printed_dimensions.push_back(x_dimension.dimension_type);
 			}
 		}
-		printed_dimensions.clear();
-		bool first_negative_iteration = true;
-		bool first_negative_prefix = true;
-		for (const dimension& x_dimension : x_dimensions)
+		else
 		{
-			if (x_dimension.dimension_sign == dimension::negative)
-			{
-				if (first_negative_iteration == true)
-				{
-					out << "/";
-					first_negative_iteration = false;
-				}
-				bool printed = false;
-				for (const dimension::type& print_dimension : printed_dimensions)
-				{
-					if (print_dimension == x_dimension.dimension_type)
-					{
-						printed = true;
-					}
-				}
-				if (printed == true)
-				{
-					continue;
-				}
-				counted_prefixes = map<prefix,int>();
-				for (const dimension& y_dimension : x_dimensions)
-				{
-					if (x_dimension.dimension_type == y_dimension.dimension_type)
-					{
-						counted_prefixes[y_dimension.prefix]++;
-					}
-				}
-				for (const auto& x_prefix : counted_prefixes)
-				{
-					if (first_negative_prefix == false)
-					{
-						out << "*";
-					}
-					out << x_prefix.first << x_dimension.get_symbol();
-					if (x_prefix.second > 1)
-					{
-						out << x_prefix.second;
-					}
-					first_negative_prefix = false;
-				}
-				printed_dimensions.push_back(x_dimension.dimension_type);
-			}
+			out << "[empty]";
 		}
 		return out.str();
 	}
