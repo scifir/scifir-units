@@ -1,6 +1,13 @@
 #ifndef MSCI_UNITS_UNITS_HPP_INCLUDED
 #define MSCI_UNITS_UNITS_HPP_INCLUDED
 
+#include "units/prefix.hpp"
+#include "units/dimension.hpp"
+#include "units/scalar_unit.hpp"
+#include "units/vector_unit_2d.hpp"
+#include "units/vector_unit_3d.hpp"
+#include "units/vector_unit_nd.hpp"
+
 #include "units/unit_basic.hpp"
 #include "units/unit_abbreviation.hpp"
 
