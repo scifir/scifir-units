@@ -113,7 +113,7 @@ int main()
 	coordinates_2d<float> y_coordinates_2d = coordinates_2d<float>("30,5");
 	cout << "y_coordinates_2d: " << y_coordinates_2d << endl;
 
-	point_3d<length> x_point = point_3d<length>("10 m,30 m,20 m");
+	point_3d<length> x_point = point_3d<length>("10000000 m,30 m,20 m");
 	cout << "x_point_3d: " << x_point << endl;
 	point_3d<float> y_point = point_3d<float>("30 m,20º");
 	cout << "y_point_3d: " << y_point << endl;
@@ -131,6 +131,21 @@ int main()
 	coordinates_nd<float> y_coordinates_nd = coordinates_nd<float>("30,5,10");
 	cout << "y_coordinates_nd: " << y_coordinates_nd << endl;
 
+	coordinates_2dr<length> x_coordinates_2dr = coordinates_2dr<length>("30.532 m,5.123 m,10º");
+	cout << "x_coordinates_2dr: " << x_coordinates_2dr << endl;
+	coordinates_2dr<float> y_coordinates_2dr = coordinates_2dr<float>("30,5,10º");
+	cout << "y_coordinates_2dr: " << y_coordinates_2dr << endl;
+
+	coordinates_3dr<length> x_coordinates_3dr = coordinates_3dr<length>("30 m,5 m,10 m,10º,20º");
+	cout << "x_coordinates_3dr: " << x_coordinates_3dr << endl;
+	coordinates_3dr<float> y_coordinates_3dr = coordinates_3dr<float>("30,5,10,10º,15º");
+	cout << "y_coordinates_3dr: " << y_coordinates_3dr << endl;
+
+	coordinates_ndr<length> x_coordinates_ndr = coordinates_ndr<length>("30 m,5 m,10 m,20 m;10º,20º,30º");
+	cout << "x_coordinates_ndr: " << x_coordinates_ndr << endl;
+	coordinates_ndr<float> y_coordinates_ndr = coordinates_ndr<float>("30,5,10,20;10º,15º,20º");
+	cout << "y_coordinates_ndr: " << y_coordinates_ndr << endl;
+
 	angle x_angle = angle(34);
 	cout << "x_angle: " << to_string(x_angle) << endl;
 	/*point_nd x_coordinates = point_nd("10º,20º,30 m");
@@ -143,4 +158,11 @@ int main()
 	cout << "a_coordinates: " << a_coordinates << endl;*/
 	aid aidA = aid(astronomical_body::EARTH);
 	cout << "aidA: " << aidA << endl;
+	
+	mass a(100,"g");
+	mass b(50,"g");
+	if ((a + b) == 150_g)
+	{
+		cout << "match!" << endl;
+	}
 }
