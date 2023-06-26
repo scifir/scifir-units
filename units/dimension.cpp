@@ -164,7 +164,6 @@ namespace msci
 				return "parts per billion";
 			case dimension::custom:
 				return "custom-dimension";
-//				return static_cast<msci::custom_dimension&>(const_cast<dimension&>(*this)).symbol;
 			case dimension::custom_basic:
 				return "custom-basic";
 			case dimension::custom_full_symbol:
