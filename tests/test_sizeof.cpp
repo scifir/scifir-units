@@ -129,7 +129,7 @@ int main()
 	coordinates_nd<float> y_coordinates_nd = coordinates_nd<float>("30,5,10");
 	cout << "y_coordinates_nd: " << y_coordinates_nd << endl;
 
-	coordinates_2dr<length> x_coordinates_2dr = coordinates_2dr<length>("30.532 m,5.123 m,10º");
+	coordinates_2dr<length> x_coordinates_2dr = coordinates_2dr<length>("30.532 m,5.123 m,10.5º");
 	cout << "x_coordinates_2dr: " << x_coordinates_2dr << endl;
 	coordinates_2dr<float> y_coordinates_2dr = coordinates_2dr<float>("30,5,10º");
 	cout << "y_coordinates_2dr: " << y_coordinates_2dr << endl;

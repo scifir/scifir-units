@@ -3,13 +3,30 @@
 
 #include "units/scalar_unit.hpp"
 #include "units/vector_unit_3d.hpp"
+#include "units/unit_basic.hpp"
 
 using namespace std;
 
 namespace msci
 {
-	SCALAR_UNIT_HPP(area);
-	SCALAR_UNIT_HPP(volume);
+	template<typename T>
+	class size_2d;
+
+	template<typename T>
+	class size_3d;
+
+	SCALAR_UNIT_HPP_BEGIN(area);
+		public:
+			explicit area(const size_2d<length>&);
+
+	SCALAR_UNIT_HPP_END();
+
+	SCALAR_UNIT_HPP_BEGIN(volume);
+		public:
+			explicit volume(const size_3d<length>&);
+
+	SCALAR_UNIT_HPP_END();
+
 	SCALAR_UNIT_HPP(curvature);
 }
 
