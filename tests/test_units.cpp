@@ -18,6 +18,11 @@ TEST_CASE("scalar_unit class","Full test of scalar_units") {
 	ostringstream b_out;
 	b_out << b;
 	REQUIRE (b_out.str() == "5 dag");
+	mass c("5.2*10^3 m");
+	ostringstream c_out;
+	c_out << c;
+	REQUIRE (c_out.str() == "5.19 km");
+	REQUIRE (c.custom_display("sci") == "5.19e3 m");
 	REQUIRE (bool((a + b) == 150_g));
 	REQUIRE (bool((a - b) == 50_g));
 	REQUIRE (bool((a * b) == "5000 g2"));

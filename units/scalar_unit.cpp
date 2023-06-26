@@ -324,16 +324,33 @@ namespace msci
 	{
 		ostringstream output;
 		float new_value = get_value();
-		vector<dimension> new_dimensions = create_dimensions(new_dimensions_str);
-		for(const dimension& x_dimension : dimensions)
+		if (new_dimensions_str != "sci")
 		{
-			new_value *= std::pow(x_dimension.prefix.get_prefix_base(), x_dimension.prefix.get_conversion_factor());
+			vector<dimension> new_dimensions = create_dimensions(new_dimensions_str);
+			for(const dimension& x_dimension : dimensions)
+			{
+				new_value *= std::pow(x_dimension.prefix.get_prefix_base(), x_dimension.prefix.get_conversion_factor());
+			}
+			for(const dimension& x_new_dimension : new_dimensions)
+			{
+				new_value /= std::pow(x_new_dimension.prefix.get_prefix_base(), x_new_dimension.prefix.get_conversion_factor());
+			}
+			output << display_float(new_value,number_of_decimals) << " " << new_dimensions_str;
 		}
-		for(const dimension& x_new_dimension : new_dimensions)
+		else
 		{
-			new_value /= std::pow(x_new_dimension.prefix.get_prefix_base(), x_new_dimension.prefix.get_conversion_factor());
+			for (const dimension& x_dimension : dimensions)
+			{
+				new_value *= std::pow(x_dimension.prefix.get_prefix_base(), x_dimension.prefix.get_conversion_factor());
+			}
+			vector<dimension> new_dimensions = dimensions;
+			for (dimension& x_new_dimension : new_dimensions)
+			{
+				x_new_dimension.prefix.prefix_type = prefix::no_prefix;
+			}
+			int value_scale = int(log10(get_value()));
+			output << display_float(new_value / std::pow(10,value_scale),number_of_decimals) << "e" << value_scale << " " << to_string(new_dimensions);
 		}
-		output << display_float(new_value,number_of_decimals) << " " << new_dimensions_str;
 		return output.str();
 	}
 
@@ -387,7 +404,7 @@ namespace msci
 			return init_value.substr(i);
 		}*/
 	}
-	
+
 	void scalar_unit::set_from_string(const string& init_scalar)
 	{
 		if(!isdigit(init_scalar[0]))
@@ -397,7 +414,7 @@ namespace msci
 		else
 		{
 			int i = 0;
-			while(isdigit(init_scalar[i]) || init_scalar[i] == '.' || init_scalar[i] == ' ')
+			while(isdigit(init_scalar[i]) || init_scalar[i] == '.' || init_scalar[i] == ' ' || init_scalar[i] == '*' || init_scalar[i] == '^' || init_scalar[i] == 'e')
 			{
 				if (init_scalar[i] == ' ')
 				{
@@ -407,7 +424,18 @@ namespace msci
 			}
 			string string_value = init_scalar.substr(0, i);
 			boost::algorithm::erase_all(string_value, " ");
-			value = stof(string_value);
+			size_t search_e = string_value.find("E");
+			if (search_e != string::npos)
+			{
+				string_value.replace(search_e,1,"e");
+			}
+			size_t search_10 = string_value.find("*10^");
+			if (search_10 != string::npos)
+			{
+				string_value.replace(search_10,4,"e");
+			}
+			stringstream ss(string_value);
+			ss >> value;
 			dimensions = create_dimensions(init_scalar.substr(i));
 		}
 	}
