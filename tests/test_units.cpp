@@ -87,4 +87,6 @@ TEST_CASE("scalar_unit class","Full test of scalar_units") {
 	REQUIRE_FALSE (bool(a <= 90_g));
 	REQUIRE (bool(a >= 100_g));
 	REQUIRE_FALSE (bool(a >= 110_g));
+	mass d = 1.676853_g;
+	REQUIRE (bool(d.display(0) == "1.67685 g"));
 }
