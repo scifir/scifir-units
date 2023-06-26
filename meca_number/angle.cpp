@@ -240,29 +240,34 @@ namespace msci
 	bool is_angle(const string& x)
 	{
 		icu::UnicodeString x_unicode = icu::UnicodeString(x.c_str());
-		int total_chars = x_unicode.countChar32();
-		for (int i = 0; i < total_chars; i++)
+		int total_chars = x_unicode.countChar32() - 1;
+		if (x_unicode[total_chars - 1] == U'º')
 		{
-			if ((i + 1) == total_chars)
+			bool dot_present = false;
+			for (int i = 0; i < total_chars; i++)
 			{
-				if (x_unicode[i] == U'º')
+				if (x_unicode[i] == '.')
 				{
-					return true;
+					if (dot_present)
+					{
+						return false;
+					}
+					else
+					{
+						dot_present = true;
+					}
 				}
-				else
+				else if (!u_isdigit(x_unicode[i]))
 				{
 					return false;
 				}
 			}
-			else
-			{
-				if (!u_isdigit(x_unicode[i]))
-				{
-					return false;
-				}
-			}
+			return true;
 		}
-		return true;
+		else
+		{
+			return false;
+		}
 	}
 
 	bool parallel(const angle& x, const angle& y)
