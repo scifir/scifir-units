@@ -1,22 +1,22 @@
-# MagickScience
+# scifir-units
 
-Hello! MagickScience is a scientific library for developing lab machines and scientific inventions. It provides units, molecules, among other features, to allow developers of scientific software to develop their software easily. Enjoy!
+Hello! The **Scifir Collection** is a set of scientific libraries for developing **laboratory machines** and **scientific inventions**. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
 
-MagickScience is under development, but the units are already released. Molecules aren't, but they will by ready soon!
+The Scifir Collection is under development, but the units are already released. Molecules aren't, but they will by ready soon!
 
-MagickScience includes special units to use, then it's unneeded to care about having the proper dimensions and prefixes when developing scientific software, you can instantiate any value you have on the machine, without performing operations with a calculator first to convert the units to a common prefix. Learn how to use them at the [Wiki](https://github.com/Iarfen/MagickScience/wiki/).
+**scifir-units** includes special units to use, then it's unneeded to care about having the proper dimensions and prefixes when developing scientific software, you can instantiate any value you have on the machine, without performing operations with a calculator first to convert the units to a common prefix. Learn how to use them at the [Wiki](https://github.com/scifir/scifir-units/wiki/).
 
 ### Team
 
-MagickScience is developed by [Ismael Correa](https://github.com/Iarfen/), a software developer of 32 years old. You can email if you find bugs, request new features, or have any other need, at ismael.correa.castro@gmail.com.
+The **Scifir Collection** is developed by [Ismael Correa](https://github.com/Iarfen/), a software developer of 32 years old. You can email him if you find bugs, you want to request new features, or have any other need, at ismael.correa.castro@gmail.com.
 
 ### Funding
 
-MagickScience is looking for **funding**, in order to do some digital marketing and pay some other needs of the project. If you want to support this library, and **science will thank you** for that, you can donate in this [sponsors page](https://github.com/sponsors/Iarfen).
+The **Scifir Foundation** is looking for **funding**, in order to do some digital marketing and pay some other needs of the project. If you want to support this libraries, **science will thank you** for that, you can donate in this [sponsors page](https://github.com/sponsors/Iarfen).
 
 ## Installation
 
-To install MagickScience you have to use CMake and Make. The library is called msci_units, the other msci libraries aren't yet published in the web. The commands to install it are the following:
+To install scifir-units you have to use CMake and Make. The library is called scifir_units, the other scifir libraries aren't yet published in the web. The commands to install it are the following:
 
 ```
 cmake .
@@ -26,9 +26,9 @@ make install
 
 ## Introduction
 
-MagickScience is a set of libraries that allows to create the software of scientific inventions, being them scientific machines or just scientific software. This library, MagickScience Units, allows to handle scalar and vectorial units inside the code. They are very lightweight, they size similar to a float, and can be used extensively to do any math calculation necessary for the invention. The prefixes can be changed, in order to display the units in the more proper dimensions. Also, all the conversions known are supported. Then, instead of the meter, a length can be described by a light-year, an astronomical unit (AU), among other units of measure.
+The Scifir Collection is a set of libraries that allows to create the software of scientific inventions, being them scientific machines or just scientific software. This library, scifir-units, allows to handle scalar and vectorial units inside the code. They are very lightweight, they size similar to a float, and can be used extensively to do any math calculation necessary for the invention. The prefixes can be changed, in order to display the units in the more proper dimensions. Also, all the conversions known are supported. Then, instead of the meter, a length can be described by a light-year, an astronomical unit (AU), among other units of measure.
 
-The unit classes that MagickScience provides are the following:
+The unit classes that scifir-units provides are the following:
 
 - **scalar_unit:** Handles scalar units. It covers vectors in 1D too.
 - **vector_unit_2d:** Handles vector units in 2D dimensions. It inherits scalar_unit.
@@ -53,19 +53,22 @@ All the unit classes, and also the other related classes of this library, can be
 
 The initialization strings are the following:
 
-- **angle**: "1º"
+- **angle**: "37º"
 - **scalar_unit**: "1 km"
 - **vector_unit_2d**: "5 km 10º"
 - **vector_unit_3d**: "3 km 10º 20º"
 - **vector_unit_nd**: "3 km 10º 20º 35º"
-- **coordinates_1d**: "1 m" or "(1 m)"
-- **coordinates_2d**: "1 m,2 m" or "(1 m,2 m)"
-- **coordinates_3d**: "1 m,7 m,5 m" or "(1 m,7 m,5 m)"
-- **coordinates_nd**: "1 m,7 m,5 m,8 m" or "(1 m,7 m,5 m,8 m)"
 - **point_1d**: "3 m" or "(3 m)"
 - **point_2d**: "2 m,4 m" or "(2 m,4 m)"
 - **point_3d**: "1 m,9 m,3 m" or "(1 m,9 m,3 m)"
 - **point_nd**: "3 m,2 m,4 m,1 m" or "(3 m,2 m,4 m,1 m)"
+- **coordinates_1d**: "1 m" or "(1 m)"
+- **coordinates_2d**: "1 m,2 m" or "(1 m,2 m)"
+- **coordinates_3d**: "1 m,7 m,5 m" or "(1 m,7 m,5 m)"
+- **coordinates_nd**: "1 m,7 m,5 m,8 m" or "(1 m,7 m,5 m,8 m)"
+- **coordinates_2dr**: "1 m,2 m;45º" or "(1 m,2 m;45º)"
+- **coordinates_3dr**: "1 m,7 m,5 m;17º 25º" or "(1 m,7 m,5 m;17º 25º)"
+- **coordinates_ndr**: "1 m,7 m,5 m,8 m;32º 56º 78º" or "(1 m,7 m,5 m,8 m;32º 56º 78º)"
 
 In order to store units inside a file an initialization string should be used. For any purpose, when converting some of those classes to an string, the string initialization has to be always used.
 
@@ -118,7 +121,7 @@ float y = float(x); // Angles can be converted to float
 
 ### Scalar units
 
-Scalar units and vector units are the central objects of MagickScience Units. They store a value and a set of dimensions, as units on science do. Scalar units are just normal values, while vector units have a value and a direction to which the vector points to.
+Scalar units and vector units are the central objects of scifir-units. They store a value and a set of dimensions, as units on science do. Scalar units are just normal values, while vector units have a value and a direction to which the vector points to.
 
 Scalar units can operate with other scalar units, as well as with numeric primitive types. Functions like abs(), sqrt() and to_string() are supported. They have functions to operate with strings, and functions to operate with streams.
 
@@ -339,7 +342,7 @@ cin >> a; // Initializes a with the string given to cin
 
 ### Vector units in ND
 
-Vector units in ND are very interesting vector units. They allow to operate in ND, which means, inside MagickScience, that the dimensions can be changed. ND allows to operate in 1D, 2D, 3D and more dimensions at the same time. The way they allow that is with a vector<angle> member-variable, which allows to control the angles of the n dimensions were the vector operates. For 2D it has one angle, as vector_unit_2d, and for 3D it has two angles, as vector_unit_3d. For 1D it doesn't has any angle.
+Vector units in ND are very interesting vector units. They allow to operate in ND, which means, inside scifir-units, that the dimensions can be changed. ND allows to operate in 1D, 2D, 3D and more dimensions at the same time. The way they allow that is with a vector<angle> member-variable, which allows to control the angles of the n dimensions were the vector operates. For 2D it has one angle, as vector_unit_2d, and for 3D it has two angles, as vector_unit_3d. For 1D it doesn't has any angle.
 
 An example of use is the following:
 
@@ -422,6 +425,8 @@ cin >> a; // Initializes a with the string given to cin
 
 Coordinates in 1D allow to move any object, particle, solid or immaterial, through a 1D space. The coordinates_1d class has been implemented as a template class, allowing to use any scalar_unit, or, also, a single float. Any scalar_unit can be used, because then coordinates_1d allows to move in dimensions different than length, as dimensions on some science-fiction speculations are (because on some science-fiction ideas, a dimension can be anything).
 
+point_1d is equivalent in functionality as coordinates_1d, it has the same member-variables and functions, its intended use is to be an abstract point in 1D, rather than a position in 1D (as coordinates_1d are).
+
 An example of use of coordinates_1d is the following:
 
 ```cpp
@@ -462,7 +467,9 @@ cin >> x; // coordinates_1d can be initialized through cin
 
 coordinates_2d class allows to create software with positions in 2D. It has a very similar interface to coordinates_1d, it's initialized with an string of the form "1 m,2 m" or "(1 m,2 m)" because the character '(' can be present or not. It's, as coordinates_1d, a template class, and can then specify coordinates of any scalar_unit (usually, length), or with a float, if there's no unit that represents adequately the coordinates, or if it's needed to save some memory (because the float is lighter than a unit in his consumption of memory).
 
-coordinates_2d can be used as cartesian and as polar coordinates at the same time. It has x and y as member-variables, which can be of the type of any scalar_unit or a float. When working with polar coordinates, they calculations are stored as x and y, that's, as cartesian coordinates, but when accessing it, with functions like get_p() and get_theta(), they give the values in polar coordinates. Then, at the same time, coordinates_2d behave as cartesian and as polar coordinates, by storing the values only once, not two times. Then, coordinates_2d is like a dual object, it contains cartesian_2d and polar_coordinates inside.
+coordinates_2d can be used as cartesian and as polar coordinates at the same time. It has x and y as member-variables, which can be of the type of any scalar_unit or a float. When working with polar coordinates, the calculations are stored as x and y, that's, as cartesian coordinates, but when accessing it, with functions like get_p() and get_theta(), they give the values in polar coordinates. Then, at the same time, coordinates_2d behave as cartesian and as polar coordinates, by storing the values only once, not two times. Then, coordinates_2d is like a dual object, it contains cartesian_2d and polar_coordinates inside.
+
+point_2d is equivalent to coordinates_2d, it's intended to be used as a point in 2D instead of as a position in 2D (as coordinates_2d). point_2d has the same functionalities as coordinates_2d, that's, the same functions and member-variables, but its use is intended to be semantic, it provides clarity as when in the program the data represents a position (as coordinates_2d) or an abstract point in 2D (as point_2d).
 
 ```cpp
 coordinates_2d<length> x = coordinates_2d<length>(1_m,2_m);
@@ -480,7 +487,7 @@ x.set_position(1_km,2_hm); // the position is now "1 km,2 hm"
 x.set_position(1_m,angle(10)); // the position has been specified using polar coordinates
 x.rotate(angle(10)); // rotate the position in the angle specified related to the origin
 x.move(1_m,5_cm); // move 1 m to the right and 5 cm up
-x.move(3_m,angle(20)); // move 3_m and 20º specified in polar coordinates
+x.move(3_m,angle(20)); // move 3 m and 20º specified in polar coordinates
 displacement_2d c_displacement = displacement_2d("2 km",10); // create a displacement_2d to specify a movement
 x.move(c_displacement); // move in the specified displacement
 length x_distance = x.distance_to_origin(); // gives the absolute distance to the origin
@@ -496,7 +503,7 @@ if (x == y) // gives true if both coordinates_2d are equal
 if (x == a) // gives true if coordinates_2d is equal to point_2d
 {}
 
-if (x == "1m") // gives true if the coordinates_2d are equal to the specified coordinates in the string
+if (x == "1 m,2 m") // gives true if the coordinates_2d are equal to the specified coordinates in the string
 {}
 
 string b;
@@ -505,6 +512,69 @@ string c = "x: " + x; // coordinates_2d has an operator + with string to give an
 
 cout << x; // coordinates_2d can be printed to cout
 cin >> x; // coordinates_2d can be initialized through cin
+```
+
+### Coordinates in 3D
+
+coordinates_3d class allows to work with positions in 3D. Its initialization string is of the form "10 m,5 m,3 m", or of the form "(10 m,5 m,3 m)".
+
+coordinates_3d can be used as cartesian coordinates, as cylindrical coordinates, as spherical coordinates and as geographical coordinates at the same time. It has x, y and z as member-variables, which can be of the type of any scalar_unit or a float. When working with coordinates different than cartesian coordinates, the calculations are stored as x, y and z, that's, as cartesian coordinates, but when accessing it, with functions like get_p(), get_theta() and get_r(), they give the values in the other coordinates systems. Then, at the same time, coordinates_3d behave as cartesian, cylindrical, spherical and geographical coordinates, by storing the values only once, not various times. Then, coordinates_3d is like a multiple object, it contains cartesian_3d_coordinates, cylindrical_coordinates, spherical_coordinates and geographical_coordinates inside.
+
+point_3d is equivalent to coordinates_3d, it change of name but not on functionality related to coordinates_3d. coordinates_3d is intended to represent positions in 3D, and point_3d is intended to be used as a point in 3D for any purpose (like graphical computing, as part of the matter of a physics body, an abstract point in space, etc).
+
+```cpp
+coordinates_3d<length> x = coordinates_3d<length>(1_m,2_m,3_m);
+coordinates_3d<length> y = coordinates_3d<length>(length(3,"km"),length(5,"dam"),length(7,"hm"));
+coordinates_3d<length> z = coordinates_3d<length>("4 dam,2 m,1 km"); // initialization string
+coordinates_3d<float> z = coordinates_3d<float>(12,20,15); // coordinates_3d can be used with a float in order to save memory, or if any other unit is useful for the use case
+
+point_3d a = point_3d(1_dm,5_cm,10_mm);
+x = a; // A coordinates_3d can be assigned a point_3d to get his same position
+
+length x_p = x.get_p(); // coordinates_3d give the value of p of cylindrical coordinates
+angle x_theta = x.get_theta(); // coordinates_3d give the angle theta of cylindrical coordinates
+length x_r = x.get_r(); // coordinates_3d give the value of r of spherical coordinates
+angle x_phi = x.get_phi(); // coordinates_3d give the angle phi of spherical coordinates
+angle x_latitude = x.get_latitude(); // coordinates_3d give the latitude of geographical coordinates
+angle x_longitude = x.get_longitude(); // coordinates_3d give the longitude of geographical coordinates
+length x_altitude = x.get_altitude(); // coordinates_3d give the altitude of geographical coordinates
+
+x.set_position(1_km,2_hm,5_hm); // the position is now "1 km,2 hm,5 hm"
+x.set_position(5_m,angle(46),3_m); // the position has been specified using cylindrical coordinates
+x.set_position(1_m,angle(10),angle(15)); // the position has been specified using spherical coordinates
+x.set_position(angle(20),angle(15),3_m); // the position has been specified using geographical coordinates
+x.rotate_in_x(angle(10)); // rotate the position in the angle specified related to the x axis
+x.rotate_in_y(angle(20)); // rotate the position in the angle specified related to the y axis
+x.rotate_in_z(angle(35)); // rotate the position in the angle specified related to the z axis
+x.move(1_m,5_cm,3_cm); // move 1 m to the right, 5 cm up and 3 cm depth
+x.move(3_m,angle(20),2_m); // move 3 m, 20º and 2 m specified in cylindrical coordinates
+x.move(5_m,angle(15),angle(10)); // move 5 m, 15º and 10º specified in spherical coordinates
+displacement_3d c_displacement = displacement_3d("2 km",10,15); // create a displacement_3d to specify a movement
+x.move(c_displacement); // move in the specified displacement
+length x_distance = x.distance_to_origin(); // gives the absolute distance to the origin
+
+string x_display = to_string(x); // prints the coordinates_3d
+string x_cylindrical_display = x.display_cylindrical(); // prints the coordinates_3d in cylindrical coordinates
+string x_spherical_display = x.display_spherical(); // prints the coordinates_3d in spherical coordinates
+string x_geographical_display = x.display_geographical(); // prints the coordinates_3d in geographical coordinates
+length xy_distance = distance(x,y); // calculates the distance between the two positions
+length xa_distance = distance(x,a); // calculates the distance between a coordinates_3d and a point_3d
+
+if (x == y) // gives true if both coordinates_3d are equal
+{}
+
+if (x == a) // gives true if coordinates_3d is equal to point_2d
+{}
+
+if (x == "1 m,4 m,7 m") // gives true if the coordinates_3d are equal to the specified coordinates in the string
+{}
+
+string b;
+b += x; // coordinates_3d can be added to an string
+string c = "x: " + x; // coordinates_3d has an operator + with string to give another string
+
+cout << x; // coordinates_3d can be printed to cout
+cin >> x; // coordinates_3d can be initialized through cin
 ```
 
 ## Internals
