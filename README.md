@@ -1,6 +1,6 @@
 # scifir-units
 
-Hello! The **Scifir Collection** is a set of scientific libraries for developing **laboratory machines** and **scientific inventions**. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
+Welcome! The **Scifir Collection** is a set of scientific libraries for developing **laboratory machines** and **scientific inventions**. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
 
 The Scifir Collection is under development, but the units are already released. Molecules aren't, but they will by ready soon!
 
