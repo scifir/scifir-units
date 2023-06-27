@@ -42,7 +42,9 @@ namespace msci
 
 			explicit coordinates_2dr<T>(string init_coordinates_2dr) : coordinates_2dr<T>()
 			{
-				vector<string> values;
+				vector<string> init_coordinates;
+				vector<string> init_values;
+				vector<string> init_angles;
 				if (init_coordinates_2dr.front() == '(')
 				{
 					init_coordinates_2dr.erase(0,1);
@@ -51,18 +53,26 @@ namespace msci
 				{
 					init_coordinates_2dr.erase(init_coordinates_2dr.size()-1,1);
 				}
-				boost::split(values,init_coordinates_2dr,boost::is_any_of(","));
-				if (values.size() == 3)
+				boost::split(init_coordinates,init_coordinates_2dr,boost::is_any_of(";"));
+				if (init_coordinates.size() > 0)
 				{
-					if (is_angle(values[1]))
+					boost::split(init_values,init_coordinates[0],boost::is_any_of(","));
+				}
+				if (init_coordinates.size() > 1)
+				{
+					boost::split(init_angles,init_coordinates[1],boost::is_any_of(","));
+				}
+				if (init_values.size() == 2 and init_angles.size() == 1)
+				{
+					if (is_angle(init_values[1]))
 					{
-						set_position(T(values[0]),angle(values[1]));
+						set_position(T(init_values[0]),angle(init_values[1]));
 					}
 					else
 					{
-						set_position(T(values[0]),T(values[1]));
+						set_position(T(init_values[0]),T(init_values[1]));
 					}
-					theta = angle(values[2]);
+					theta = angle(init_angles[0]);
 				}
 			}
 
@@ -226,7 +236,9 @@ namespace msci
 
 			explicit coordinates_2dr<float>(string init_coordinates_2dr) : coordinates_2dr<float>()
 			{
-				vector<string> values;
+				vector<string> init_coordinates;
+				vector<string> init_values;
+				vector<string> init_angles;
 				if (init_coordinates_2dr.front() == '(')
 				{
 					init_coordinates_2dr.erase(0,1);
@@ -235,18 +247,26 @@ namespace msci
 				{
 					init_coordinates_2dr.erase(init_coordinates_2dr.size()-1,1);
 				}
-				boost::split(values,init_coordinates_2dr,boost::is_any_of(","));
-				if (values.size() == 3)
+				boost::split(init_coordinates,init_coordinates_2dr,boost::is_any_of(";"));
+				if (init_coordinates.size() > 0)
 				{
-					if (is_angle(values[1]))
+					boost::split(init_values,init_coordinates[0],boost::is_any_of(","));
+				}
+				if (init_coordinates.size() > 1)
+				{
+					boost::split(init_angles,init_coordinates[1],boost::is_any_of(","));
+				}
+				if (init_values.size() == 2 and init_angles.size() == 1)
+				{
+					if (is_angle(init_values[1]))
 					{
-						set_position(stof(values[0]),angle(values[1]));
+						set_position(stof(init_values[0]),angle(init_values[1]));
 					}
 					else
 					{
-						set_position(stof(values[0]),stof(values[1]));
+						set_position(stof(init_values[0]),stof(init_values[1]));
 					}
-					theta = angle(values[2]);
+					theta = angle(init_angles[0]);
 				}
 			}
 
@@ -385,7 +405,7 @@ namespace msci
 	string to_string(const coordinates_2dr<T>& x)
 	{
 		ostringstream out;
-		out << "(" << x.x << "," << x.y << "," << x.theta << ")";
+		out << "(" << x.x << "," << x.y << ";" << x.theta << ")";
 		return out.str();
 	}
 
