@@ -22,7 +22,10 @@
 			using vector_unit_nd::vector_unit_nd; \
 			name##_nd(); \
 			name##_nd(const name##_nd&); \
-			name##_nd(name##_nd&&)
+			name##_nd(name##_nd&&); \
+			using vector_unit_nd::operator=; \
+			using vector_unit_nd::operator+=; \
+			using vector_unit_nd::operator-=
 
 #define	VECTOR_UNIT_ND_HPP_END() public: \
 		static const string dimensions_match; \
@@ -36,6 +39,9 @@
 			name##_nd(); \
 			name##_nd(const name##_nd&); \
 			name##_nd(name##_nd&&); \
+			using vector_unit_nd::operator=; \
+			using vector_unit_nd::operator+=; \
+			using vector_unit_nd::operator-=; \
 \
 			static const string dimensions_match; \
 			static const vector<dimension> real_dimensions; \

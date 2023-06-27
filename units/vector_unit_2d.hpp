@@ -15,7 +15,10 @@
 			using vector_unit_2d::vector_unit_2d; \
 			name##_2d(); \
 			name##_2d(const name##_2d&); \
-			name##_2d(name##_2d&&)
+			name##_2d(name##_2d&&); \
+			using vector_unit_2d::operator=; \
+			using vector_unit_2d::operator+=; \
+			using vector_unit_2d::operator-=
 
 #define	VECTOR_UNIT_2D_HPP_END() public: \
 		static const string dimensions_match; \
@@ -29,6 +32,9 @@
 			name##_2d(); \
 			name##_2d(const name##_2d&); \
 			name##_2d(name##_2d&&); \
+			using vector_unit_2d::operator=; \
+			using vector_unit_2d::operator+=; \
+			using vector_unit_2d::operator-=; \
 \
 			static const string dimensions_match; \
 			static const vector<dimension> real_dimensions; \

@@ -18,7 +18,10 @@
 			using scalar_unit::scalar_unit; \
 			name(); \
 			name(const scalar_unit&); \
-			name(scalar_unit&&);
+			name(scalar_unit&&); \
+			using scalar_unit::operator=; \
+			using scalar_unit::operator+=; \
+			using scalar_unit::operator-=
 
 #define SCALAR_UNIT_HPP_END() \
 \
@@ -34,6 +37,9 @@
 			name(); \
 			name(const scalar_unit&); \
 			name(scalar_unit&&); \
+			using scalar_unit::operator=; \
+			using scalar_unit::operator+=; \
+			using scalar_unit::operator-=; \
 \
 			static const string dimensions_match; \
 			static const vector<dimension> real_dimensions; \

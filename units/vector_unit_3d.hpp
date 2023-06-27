@@ -24,7 +24,10 @@
 			using vector_unit_3d::vector_unit_3d; \
 			name##_3d(); \
 			name##_3d(const name##_3d&); \
-			name##_3d(name##_3d&&)
+			name##_3d(name##_3d&&); \
+			using vector_unit_3d::operator=; \
+			using vector_unit_3d::operator+=; \
+			using vector_unit_3d::operator-=
 
 #define	VECTOR_UNIT_3D_HPP_END() public: \
 		static const string dimensions_match; \
@@ -38,6 +41,9 @@
 			name##_3d(); \
 			name##_3d(const name##_3d&); \
 			name##_3d(name##_3d&&); \
+			using vector_unit_3d::operator=; \
+			using vector_unit_3d::operator+=; \
+			using vector_unit_3d::operator-=; \
 \
 			static const string dimensions_match; \
 			static const vector<dimension> real_dimensions; \
