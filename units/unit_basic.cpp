@@ -104,42 +104,42 @@ namespace msci
 	{
 		ostringstream output;
 		msci::time remaining_time = *this;
-		msci::time one_year ("365 d");
+		msci::time one_year ("365d");
 		if (*this >= one_year)
 		{
 			int total_of_years = int(trunc((*this / one_year).get_value()));
 			output << total_of_years << "y ";
 			remaining_time -= msci::time(total_of_years * 365,"d");
 		}
-		msci::time one_month("30 d");
+		msci::time one_month("30d");
 		if (remaining_time >= one_month)
 		{
 			int total_of_months = int(trunc((remaining_time / one_month).get_value()));
 			output << total_of_months << "m ";
 			remaining_time -= msci::time(total_of_months * 30,"d");
 		}
-		msci::time one_day("1 d");
+		msci::time one_day("1d");
 		if (remaining_time >= one_day)
 		{
 			int total_of_days = int(trunc((remaining_time / one_day).get_value()));
 			output << total_of_days << "d ";
 			remaining_time -= msci::time(total_of_days,"d");
 		}
-		msci::time one_hour("1 h");
+		msci::time one_hour("1h");
 		if (remaining_time >= one_hour)
 		{
 			int total_of_hours = int(trunc((remaining_time / one_hour).get_value()));
 			output << total_of_hours << "h ";
 			remaining_time -= msci::time(total_of_hours,"h");
 		}
-		msci::time one_minute("1 min");
+		msci::time one_minute("1min");
 		if (remaining_time >= one_minute)
 		{
 			int total_of_minutes = int(trunc((remaining_time / one_minute).get_value()));
 			output << total_of_minutes << "min ";
 			remaining_time -= msci::time(total_of_minutes,"min");
 		}
-		msci::time one_second("1 s");
+		msci::time one_second("1s");
 		if (remaining_time >= one_second)
 		{
 			remaining_time.change_dimensions("s");
@@ -175,7 +175,7 @@ namespace msci
 		}
 		else
 		{
-			return scalar_unit::value * msci::avogadro_constant;
+			return scalar_unit::value * msci::AVOGADRO_CONSTANT;
 		}*/
 	}
 

@@ -296,7 +296,7 @@ namespace msci
 
 	vector<dimension> scalar_unit::get_derived_dimensions() const
 	{
-		return dimensions;
+		return create_derived_dimensions(dimensions);
 	}
 
 	string scalar_unit::display(int number_of_decimals) const
@@ -364,23 +364,35 @@ namespace msci
 		value *= std::pow(old_prefix.get_prefix_base(), old_prefix.get_conversion_factor());
 	}
 
+	void scalar_unit::add_dimension(const dimension& new_dimension)
+	{
+		value /= new_dimension.get_conversion_factor();
+		add_prefix(new_dimension.prefix);
+	}
+
+	void scalar_unit::remove_dimension(const dimension& old_dimension)
+	{
+		value *= old_dimension.get_conversion_factor();
+		remove_prefix(old_dimension.prefix);
+	}
+
 	void scalar_unit::set_same_prefix(const vector<dimension>& new_dimensions)
 	{
 		for(const dimension& x_dimension : dimensions)
 		{
-			remove_prefix(x_dimension.prefix);
+			remove_dimension(x_dimension);
 		}
 		dimensions.clear();
 		for(const dimension& x_new_dimension : new_dimensions)
 		{
-			add_prefix(x_new_dimension.prefix);
+			add_dimension(x_new_dimension);
 		}
 		dimensions = new_dimensions;
 	}
 	
 	void scalar_unit::set_same_prefix(const scalar_unit& x)
 	{
-		set_same_prefix(x.get_dimensions());
+		set_same_prefix(x.get_derived_dimensions());
 	}
 
 	string scalar_unit::initial_dimensions_get_structure(const string& init_value) const
