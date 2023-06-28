@@ -5,6 +5,8 @@
 #include "units/prefix.hpp"
 #include "topology/constants.hpp"
 
+#include "boost/algorithm/string.hpp"
+
 #include <cassert>
 #include <cctype>
 #include <cmath>
@@ -19,6 +21,67 @@ namespace msci
 {
 	SCALAR_UNIT_CPP(length,"m");
 	SCALAR_UNIT_CPP(time,"s");
+
+	time::time(const string& init_time) : scalar_unit()
+	{
+		if(!isdigit(init_time[0]))
+		{
+			return;
+		}
+		else
+		{
+			vector<string> init_values;
+			boost::split(init_values,init_time,boost::is_any_of(" "));
+			value = 0;
+			for (int i = 0; i < init_values.size(); i++)
+			{
+				int j = 0;
+				while(isdigit(init_values[i][j]) || init_values[i][j] == '.' || init_values[i][j] == ' ' || init_values[i][j] == '*' || init_values[i][j] == '^' || init_values[i][j] == 'e' || init_values[i][j] == 'E')
+				{
+					if (init_values[i][j] == ' ')
+					{
+						break;
+					}
+					j++;
+				}
+				string string_value = init_values[i].substr(0, j);
+				boost::algorithm::erase_all(string_value, " ");
+				size_t search_e = string_value.find("E");
+				if (search_e != string::npos)
+				{
+					string_value.replace(search_e,1,"e");
+				}
+				size_t search_10 = string_value.find("*10^");
+				if (search_10 != string::npos)
+				{
+					string_value.replace(search_10,4,"e");
+				}
+				stringstream ss(string_value);
+				float init_value_float;
+				ss >> init_value_float;
+				string init_value_dimension = init_values[i].substr(j);
+				float init_value_dimension_quantity;
+				if (init_value_dimension == "d")
+				{
+					init_value_dimension_quantity = 86400;
+				}
+				else if(init_value_dimension == "h")
+				{
+					init_value_dimension_quantity = 3600;
+				}
+				else if(init_value_dimension == "min")
+				{
+					init_value_dimension_quantity = 60;
+				}
+				else if(init_value_dimension == "min")
+				{
+					init_value_dimension_quantity = 1;
+				}
+				value += init_value_float * init_value_dimension_quantity;
+			}
+			dimensions = create_dimensions("s");
+		}
+	}
 
 	time::operator std::chrono::seconds() const
 	{

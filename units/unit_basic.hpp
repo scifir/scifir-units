@@ -16,6 +16,8 @@ namespace msci
 
 	SCALAR_UNIT_HPP_BEGIN(time);
 		public:
+			time(const string&);
+
 			explicit operator std::chrono::seconds() const;
 
 			string get_finish_date() const;
