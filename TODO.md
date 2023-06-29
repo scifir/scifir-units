@@ -1,67 +1,50 @@
 MSCI UNITS - VERSION 2
 
-// PROPERLY DISPLAY OF UNITS
-// TODO: scalar_unit should display with the configured locale of the execution of the program
-// TODO: Reduce linker libraries needed for boost::locale (see if the libraries aren't needed and delete them)
-// TODO: auto display in the units that closely match the value (100 or less is the unit selected, if it's more than 1000 it's the prefix 10^3 bigger, and if it's less than 0.1 it has to display in the previous 10^-3 prefix)
-
-// COORDINATES
-// TODO: rotational coordinates
-// TODO: initialization with string using coordinate systems different than cartesian
-// TODO: finish get_altitude(). Read about geographic coordinates
+// COORDINATES AND POINTS
+// TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd
+// TODO: displacement_nd in point_nd class should be initialized with zero dimensions instead of m?
+// TODO: add as default template argument length for all coordinates classes
 
 // VECTOR FIELDS
 // TODO: vector_field (it should operate with vector_units and maybe with scalar_units. With (x,y,z) it gives the respective vector). +, - and ^ with vector_field, + - * with vector_unit
 // TODO: Typecasting of vector_unit to math_vector, boost_Ublas_vector, etc. Same for math_vector to vector_unit
 
 // C++
-// TODO: maybe dimension::type should handle empty cases with a value empty
+// TODO: delete the use of namespace std from is_number
+// TODO: use of constexpr
 
 // DIMENSIONS
-// TODO: custom_dimension in order to have custom dimensions
-// TODO: maybe create_dimension() and create_prefix() should have parameters to pass to constructors
-// TODO: add the omega symbol when displaying the resistance
-// TODO: finish the migration of dimensions. Abbreviations should be allowed to change to equivalent dimensions of another abbreviation or of base dimensions
-// TODO: angle and solid_angle dimensions should be allowed to be created with their symbols also, not only by their name
-// TODO: sqrt() and sqrt_nth() should delete square dimensions
-// TODO: support basic dimension of currency
-
-// UNITS - Finish creating the new class inheritance
-// TODO: support the conversions natively
-// TODO: function to_SI_convention(vector<scalar_unit>&)
+// TODO: sqrt() and sqrt_nth() should cover the case of abbreviations in both the numerator and the denominator. sqrt_nth() should be handled more
+// TODO: add display_derived() to scalar_unit by finishing first the derived dimensions of the dimension class
 
 // UNITS
-// TODO: see what to do for units with the same dimensions at the numerator and at the denominator
-// TODO: x_projection() and related functions should send scalar_units, no float types
-// TODO: initialization of 1/g and similar
-// TODO: support scientific notation on constructors and display(int,bool) (check if there's a function to get the order of the number)
-// TODO: display all the numbers of the unit in the case 0
-// TODO: display all the numbers of the unit in the cases of a very big number
-// TODO: configure option to display the units with scientific notation (inside display())
+// TODO: vector_unit classes can have constructors specifying the axis instead of the length and angles, and inside the constructor the value and angles get calculated
 
-// TODO: units updated with a clock (not automatically, by doing += and similar operations)
-// TODO: volume should be constructed with an string of the form 2cm * 1cm * 3cm and separate the three dimensions as different units. Also, the display should be, for that case, automatically configured to be 2cm * 1cm * 3cm than to be the total amount (with a member-variable)
-// TODO: vector<scalar_unit> initialized from a list of units (separated by a selectable string)
-// TODO: is_dimension(const string&,const string&) which gives true if the given string is of the asked dimensions
-// TODO: light_length which uses only an enum of prefixes and a value, maybe it should be called length, and length should be called full_length
+// TODO: see what to do with the imprecision when converting the string to a float, it's needed to have perfect precision, not an approximated conversion instead
 
-// TODO: sqrt() and pow() maybe should be direct for created units, instead of passing by scalar_unit again to initialize after that the other unit
-
-// MATERIAL_VECTOR_UNIT
-// TODO: decide how it'll be, in order to include real space to the vector_unit
+// TODO: allow to display in any conversion. By default it should always display in SI units, only if a conversion is expressly specified in the display functions the conversion is the dimension that gets displayed
 
 // SPECIAL UNITS
-// TODO: add the omega greek symbol to the text of solid angle
-// TODO: pixel dimension, pixel unit and pixels_distance classes
-// TODO: the pH should be an special unit
-// TODO: unit time class should be initialized by multiple abbreviations as 100 min 40 s for example
-// TODO: unit time class should display with an string "d s" specifying the dimensions to calculate on
-// TODO: complete color class like coordinate classes, with all the getters of all the different color versions
-// TODO: support currency dimension
-// TODO: document a little how to handle currency
-// TODO: document the ISOs important to use with this library
-// TODO: object geographic location, using my ISO of geographic location
+// TODO: pixel_color<>. Use monochrome_pixel, truecolor_pixel, etc, as typedefs of pixel_color<>
+// TODO: add the conversion of pixel to mm as another conversion, apart from the special unit of pixels and from the pixel dimension. It should work only for length classes
+
+// TODO: time class should have functions display_years(), display_months(), display_days(), display_hours(), display_minutes(), display_seconds()
+// TODO: time class function to_duration() which gives a std::duration object with the time specified
+// TODO: another name for time class, maybe time_lapse
+
+// TODO: mole class should have initialization with ppm and ppb. They should be deleted as dimensions
+
+// TODO: complete color class like coordinate classes, with all the getters of all the different color versions, like get_h(), get_s(), get_v()
+
+// TODO: complex_number<> should have trigonometric functions for complex numbers
+
+// TODO: size_nd and volume_nd classes
+// TODO: maybe create a mesh_point class, or vector<point_3d>
+
 // TODO: study the geographic coordinates deeply, and see if to add something more related to them
+
+// TODO: implement the parts per million and the parts per billion
+// TODO: percentage class should be allowed to be initialized with ppm and ppb
 
 // UNITS - ADVANCED
 // TODO: maybe delete the dimensions member-variable of scalar_unit, and use instead another system for handling prefixes. The dimensions can be automatic based on their class. One possibility is to use an empty array and, when it's empty, to send the fixed dimensions of the class instead, and only when changing something to add the dimensions there
@@ -70,9 +53,32 @@ MSCI UNITS - VERSION 2
 // TODO: 3d display of scalar_units and of vector_units (create a msci_units_3d library for it)
 // TODO: divide single dimensions unit of multiple-dimensions unit in order to save a lot of space by not using vectors of prefixes, dimensions and abbreviations
 // TODO: check the object code resulting by testing different functions of the unit classes
+// TODO: light_length which uses only an enum of prefixes and a value, maybe it should be called length, and length should be called full_length
+// TODO: sqrt() and pow() maybe should be direct for created units, instead of passing by scalar_unit again to initialize after that the other unit
+// TODO: check if it's needed to add a function that gives whether the dimension is basic or not in the sense of the SI system of units
+// TODO: support and UTF32 string constructor for scalar_unit in order to allow to create dimensions directly with some Unicode characters that are not present in UTF8
+// TODO: scalar_unit should have is_valid() with some system
+// TODO: maybe the prefix and the dimension can be removed as member-variables if displaying automatically in some way or another, as it's expressly specified. That is maybe the biggest optimization possible
+// TODO: think if to change the float for a double, or if to make scalar_unit a template class converting the default type of the value to float type
+// TODO: support the conversions natively
+// TODO: function to_SI_convention(vector<scalar_unit>&)
+
+// SPECIAL UNIS - EXTRA
+// ip class? check networking libraries of C++ and decide if to add it here
+// isbn class
+// issn class
+
+// ISOs
+// TODO: Publish the ISO of geographic location based on aid and zid classes
+// TODO: See if to make an ISO of an official symbol for money (not a concrete money of a country, but a universal one)
+// TODO: Add "depth" to an ISO of names for the lengths of objects (width, height and depth are the names). It's needed to have a name in spanish for the depth too
+
+// MATERIAL_VECTOR_UNIT
+// TODO: decide how it'll be, in order to include real space to the vector_unit?
 
 // MECA NUMBERS
 // TODO: add the allowed typenames to lab_number, and don't accept any other type
+// TODO: lab_number should have another symbol in place of +-
 
 // ELECTRONICS
 // TODO: check sensor libraries and decide which ones to support inside msci_units (maybe in a new msci library if needed)
@@ -82,6 +88,19 @@ MSCI UNITS - VERSION 2
 
 // TESTS
 // TODO: test of sizeof for all unit classes
+// TODO: benchmark test for scalar_unit, comparing them to a float
+
+// DOCUMENTATION
+// TODO: document the point of view of the library of when a dimension is considered "basic"
+// TODO: document the ISOs important to use with this library
+// TODO: document a little how to handle currency
+// TODO: document that the pixel in dimension is only as length, not as a pixel on the screen as is in the pixel class
+// TODO: document how ppm and ppb work, also in the theorical sense
+// TODO: document an example of converting all currencies to money dimension, with different values. Use the currency abreviations of the ISO of currencies
+
+// RELEASE
+// TODO: configure CMake with cpack
+// TODO: see what to do with msci.pc
 
 // MATRIX
 // TODO: See if it's best to use template arguments for row and column or if to store those values as member-variables
@@ -92,14 +111,16 @@ MSCI UNITS - VERSION 2
 // TODO: Use the GSL to implement the reverse matrix
 
 // CONSTANTS
-// TODO: make a list of all important constants of science, with their respective unit
+// TODO: make a list of all important constants of science, with their respective unit. The constants of physics, chemistry and biology should be inside. Also, add the constants of astronomy
 
 // FUTURE
 // TODO: support the case of n dimensions fixed
-// TODO: add the theta and phi characters to C++ variable names, and add them then to the member-variables of vector_unit classes, and any other case of similar use
+// TODO: add the theta and phi characters to C++ variable names, and add them then to the member-variables of vector_unit classes, and any other case of similar use. Add the symbol º to string literals
 // TODO: add the astronomy coordinates
 // TODO: add the other orthogonal coordinates, like paraboloidal
 // TODO: add to the ISO of the keyboards some system to write pi, theta, phi, among other symbols, with the keyboard in an easy way, without having to memorize any numeric code
+// TODO: propose an ISO symbol for money in general?
+// TODO: finish the empty array implementation for dimension, in order to have normal dimensions, no custom dimensions, of size 3 instead of size 6
 
 // FUTURE - MECA NUMBERS (POSSIBLE, THINK)
 // TODO: Add names to the meca numbers (angler, laber, etc)
@@ -110,3 +131,12 @@ MSCI UNITS - VERSION 2
 // TODO: Solve the problem with left and right repeated (it's not exclusive for direction_symbol)
 // TODO: solid_angle class (maybe it isn't a meca number)
 // TODO: maybe _angle for angle in order to use cos(x),sin(x),etc with degrees
+
+// READINGS
+// Unit of measurement: https://en.wikipedia.org/wiki/Unit_of_measurement
+// International system of units: https://en.wikipedia.org/wiki/International_System_of_Units
+// Angle: https://en.wikipedia.org/wiki/Angle
+// Metrology: https://en.wikipedia.org/wiki/Metrology
+// Color: https://en.wikipedia.org/wiki/Color
+// RGB color model: https://en.wikipedia.org/wiki/RGB_color_model
+// Color model: https://en.wikipedia.org/wiki/Color_model
