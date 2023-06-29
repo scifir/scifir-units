@@ -237,7 +237,7 @@ namespace msci
 	bool scalar_unit::has_dimensions(const vector<dimension>& x_dimensions) const
 	{
 		vector<dimension> basic_dimensions = create_derived_dimensions(dimensions);
-		vector<dimension> basic_x_dimensions = create_derived_dimensions(dimensions);
+		vector<dimension> basic_x_dimensions = create_derived_dimensions(x_dimensions);
 		return equal_dimensions(basic_dimensions,basic_x_dimensions);
 	}
 

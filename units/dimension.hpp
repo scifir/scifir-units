@@ -48,9 +48,6 @@ namespace msci
 			long double get_conversion_factor() const;
 			long double prefix_math() const;
 
-			int get_scale() const;
-			int get_absolute_scale() const;
-
 			bool is_basic_dimension() const;
 			bool is_derived_dimension() const;
 

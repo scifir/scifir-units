@@ -408,172 +408,6 @@ namespace msci
 		}
 	}
 
-	int dimension::get_scale() const
-	{
-		if (is_basic_dimension())
-		{
-			return 1;
-		}
-		else
-		{
-			switch(dimension_type)
-			{
-				case dimension::Hz:
-					return 1;
-				case dimension::N:
-					return 2;
-				case dimension::Pa:
-					return 2;
-				case dimension::J:
-					return 2;
-				case dimension::W:
-					return 2;
-				case dimension::A:
-					return 2;
-				case dimension::V:
-					return 2;
-				case dimension::F:
-					return 2;
-				case dimension::Ohm:
-					return 2;
-				case dimension::S:
-					return 2;
-				case dimension::Wb:
-					return 2;
-				case dimension::T:
-					return 2;
-				case dimension::H:
-					return 2;
-				case dimension::lm:
-					return 2;
-				case dimension::lx:
-					return 2;
-				case dimension::Bq:
-					return 2;
-				case dimension::Gy:
-					return 2;
-				case dimension::Sv:
-					return 2;
-				case dimension::kat:
-					return 2;
-				case dimension::angstrom:
-					return 2;
-				case dimension::L:
-					return 2;
-				case dimension::minute:
-					return 2;
-				case dimension::h:
-					return 2;
-				case dimension::d:
-					return 2;
-				case dimension::AU:
-					return 2;
-				case dimension::pc:
-					return 2;
-				case dimension::eV:
-					return 2;
-				case dimension::Da:
-					return 2;
-				case dimension::amu:
-					return 2;
-				case dimension::barn:
-					return 2;
-				case dimension::M:
-					return 2;
-				case dimension::particles:
-					return 2;
-				case dimension::ppm:
-					return 2;
-				case dimension::ppb:
-					return 2;
-			}
-			return 0;
-		}
-	}
-
-	int dimension::get_absolute_scale() const
-	{
-		if (is_basic_dimension())
-		{
-			return 1;
-		}
-		else
-		{
-			switch(dimension_type)
-			{
-				case dimension::Hz:
-					return 1;
-				case dimension::N:
-					return 4;
-				case dimension::Pa:
-					return 2;
-				case dimension::J:
-					return 2;
-				case dimension::W:
-					return 2;
-				case dimension::A:
-					return 2;
-				case dimension::V:
-					return 2;
-				case dimension::F:
-					return 2;
-				case dimension::Ohm:
-					return 2;
-				case dimension::S:
-					return 2;
-				case dimension::Wb:
-					return 2;
-				case dimension::T:
-					return 2;
-				case dimension::H:
-					return 2;
-				case dimension::lm:
-					return 2;
-				case dimension::lx:
-					return 2;
-				case dimension::Bq:
-					return 2;
-				case dimension::Gy:
-					return 2;
-				case dimension::Sv:
-					return 2;
-				case dimension::kat:
-					return 2;
-				case dimension::angstrom:
-					return 2;
-				case dimension::L:
-					return 2;
-				case dimension::minute:
-					return 2;
-				case dimension::h:
-					return 2;
-				case dimension::d:
-					return 2;
-				case dimension::AU:
-					return 2;
-				case dimension::pc:
-					return 2;
-				case dimension::eV:
-					return 2;
-				case dimension::Da:
-					return 2;
-				case dimension::amu:
-					return 2;
-				case dimension::barn:
-					return 2;
-				case dimension::M:
-					return 2;
-				case dimension::particles:
-					return 2;
-				case dimension::ppm:
-					return 2;
-				case dimension::ppb:
-					return 2;
-			}
-			return 0;
-		}
-	}
-
 	bool dimension::is_basic_dimension() const
 	{
 		switch(dimension_type)
@@ -690,7 +524,6 @@ namespace msci
 
 	vector<dimension> dimension::get_basic_dimensions() const
 	{
-		int basic_dimensions_count = get_absolute_scale();
 		vector<dimension> basic_dimensions = vector<dimension>();
 		switch (dimension_type)
 		{
@@ -1360,17 +1193,11 @@ namespace msci
 		vector<dimension> new_x = vector<dimension>();
 		for(int i = 0; i < x.size(); i++)
 		{
-			if (x[i].is_derived_dimension())
+			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
+			for (dimension& x_subdimension : x_subdimensions)
 			{
-				vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
-				for (const dimension& x_subdimension : x_subdimensions)
-				{
-					new_x.push_back(x_subdimension);
-				}
-			}
-			else
-			{
-				new_x.push_back(x[i]);
+				x_subdimension.dimension_sign = x[i].dimension_sign;
+				new_x.push_back(x_subdimension);
 			}
 		}
 		return new_x;
@@ -1378,11 +1205,7 @@ namespace msci
 
 	vector<dimension> multiply_dimensions(const vector<dimension>& x,const vector<dimension>& y)
 	{
-		vector<dimension> new_dimensions = vector<dimension>();
-		for(const dimension& x_dimension: x)
-		{
-			new_dimensions.push_back(x_dimension);
-		}
+		vector<dimension> new_dimensions = x;
 		for(const dimension& y_dimension : y)
 		{
 			new_dimensions.push_back(y_dimension);
@@ -1392,11 +1215,7 @@ namespace msci
 
 	vector<dimension> divide_dimensions(const vector<dimension>& x,const vector<dimension>& y)
 	{
-		vector<dimension> new_dimensions = vector<dimension>();
-		for(const dimension& x_dimension: x)
-		{
-			new_dimensions.push_back(x_dimension);
-		}
+		vector<dimension> new_dimensions = x;
 		for(dimension y_dimension : y)
 		{
 			y_dimension.invert();
@@ -1460,11 +1279,9 @@ namespace msci
 		vector<dimension> new_x = create_derived_dimensions(x);
 		for(int i = 0; i < new_x.size(); i++)
 		{
-			dimension x_dimension = new_x[i];
 			for(int j = i; j < new_x.size(); j++)
 			{
-				dimension y_dimension = new_x[j];
-				if (x_dimension.dimension_type == y_dimension.dimension_type and x_dimension.dimension_sign != y_dimension.dimension_sign)
+				if (new_x[i].dimension_type == new_x[j].dimension_type and new_x[i].dimension_sign != new_x[j].dimension_sign)
 				{
 					skip_dimensions.push_back(i);
 					skip_dimensions.push_back(j);
