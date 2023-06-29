@@ -152,11 +152,11 @@ namespace msci
 	SCALAR_UNIT_CPP(mass,"g");
 	SCALAR_UNIT_CPP(charge,"C");
 
-	void temperature::add_prefix(const prefix& prefix)
+	void temperature::add_dimension(const dimension& new_dimension)
 	{
-		if(prefix.get_conversion_factor() > 0)
+		if(new_dimension.prefix.get_conversion_factor() > 0)
 		{
-			scalar_unit::add_prefix(prefix);
+			scalar_unit::add_dimension(new_dimension);
 		}
 		else
 		{

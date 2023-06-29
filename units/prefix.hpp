@@ -24,7 +24,6 @@ namespace msci
 			prefix& operator=(prefix&&);
 
 			int get_conversion_factor() const;
-			float get_prefix_base() const;
 			string get_name() const;
 			string get_symbol() const;
 

@@ -293,107 +293,119 @@ namespace msci
 		switch(dimension_type)
 		{
 			case dimension::m:
-				return 1;
+				return 1l;
 			case dimension::radian:
-				return 1;
+				return 1l;
 			case dimension::steradian:
-				return 1;
+				return 1l;
 			case dimension::g:
-				return 1;
+				return 1l;
 			case dimension::s:
-				return 1;
+				return 1l;
 			case dimension::C:
-				return 1;
+				return 1l;
 			case dimension::K:
-				return 1;
+				return 1l;
 			case dimension::mol:
-				return 1;
+				return 1l;
 			case dimension::cd:
-				return 1;
+				return 1l;
 			case dimension::B:
-				return 1;
+				return 1l;
 			case dimension::Hz:
-				return 1;
+				return 1l;
 			case dimension::N:
-				return 1;
+				return 1l;
 			case dimension::Pa:
-				return 1;
+				return 1l;
 			case dimension::J:
-				return 1;
+				return 1l;
 			case dimension::W:
-				return 1;
+				return 1l;
 			case dimension::A:
-				return 1;
+				return 1l;
 			case dimension::V:
-				return 1;
+				return 1l;
 			case dimension::F:
 				return 1;
 			case dimension::Ohm:
-				return 1;
+				return 1l;
 			case dimension::S:
-				return 1;
+				return 1l;
 			case dimension::Wb:
-				return 1;
+				return 1l;
 			case dimension::T:
-				return 1;
+				return 1l;
 			case dimension::H:
-				return 1;
+				return 1l;
 			case dimension::lm:
-				return 1;
+				return 1l;
 			case dimension::lx:
-				return 1;
+				return 1l;
 			case dimension::Bq:
-				return 1;
+				return 1l;
 			case dimension::Gy:
-				return 1;
+				return 1l;
 			case dimension::Sv:
-				return 1;
+				return 1l;
 			case dimension::kat:
-				return 1;
+				return 1l;
 			case dimension::angstrom:
-				return 1;
+				return 1l;
 			case dimension::L:
-				return 1;
+				return 1l;
 			case dimension::minute:
-				return 60;
+				return 60l;
 			case dimension::h:
-				return 3600;
+				return 3600l;
 			case dimension::d:
-				return 86400;
+				return 86400l;
 			case dimension::AU:
-				return 149597870700;
+				return 149597870700.0l;
 			case dimension::pc:
-				return 30856775814913673;
+				return 30856775814913673.0l;
 			case dimension::eV:
-				return 0.0000000000000000001602176634;
+				return 0.0000000000000000001602176634l;
 			case dimension::Da:
-				return 0.00000000000000000000000000166053886;
+				return 0.00000000000000000000000000166053886l;
 			case dimension::amu:
-				return 0.00000000000000000000000000166053886;
+				return 0.00000000000000000000000000166053886l;
 			case dimension::barn:
-				return 0.0000000000000000000000000001;
+				return 0.0000000000000000000000000001l;
 			case dimension::M:
-				return 1;
+				return 1l;
 			case dimension::particles:
-				return 1/AVOGADRO_CONSTANT;
+				return 1l/AVOGADRO_CONSTANT;
 			case dimension::ppm:
-				return 1;
+				return 1l;
 			case dimension::ppb:
-				return 1;
+				return 1l;
 			case dimension::custom:
-				return 1;
+				return 1l;
 			case dimension::custom_basic:
-				return 1;
+				return 1l;
 			case dimension::custom_full_symbol:
-				return 1;
+				return 1l;
 			case dimension::money:
-				return 1;
+				return 1l;
 			case dimension::pixel:
-				return 0.00026;
+				return 0.00026l;
 			case dimension::none:
-				return 1;
+				return 1l;
 		}
-		return 1;
+		return 1l;
+	}
+
+	long double dimension::prefix_math() const
+	{
+		if (dimension_type == dimension::B)
+		{
+			return std::pow(1024, prefix.get_conversion_factor() / 3);
+		}
+		else
+		{
+			return std::pow(10, prefix.get_conversion_factor());
+		}
 	}
 
 	int dimension::get_scale() const
@@ -923,11 +935,6 @@ namespace msci
 			dimension_sign = dimension::positive;
 		}
 	}
-
-	/*float dimension_byte::get_prefix_base() const
-	{
-		return 10.0793684;
-	}*/
 
 	dimension create_dimension(const string& x,dimension::sign new_sign)
 	{

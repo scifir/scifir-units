@@ -191,8 +191,6 @@ namespace msci
 			float value;
 
 			string initial_dimensions_get_structure(const string&) const;
-			void add_prefix(const prefix&);
-			void remove_prefix(const prefix&);
 			void add_dimension(const dimension&);
 			void remove_dimension(const dimension&);
 			void set_from_string(const string&);

@@ -83,11 +83,6 @@ namespace msci
 		return 0;
 	}
 
-	float prefix::get_prefix_base() const
-	{
-		return 10;
-	}
-
 	string prefix::get_name() const
 	{
 		switch (prefix_type)

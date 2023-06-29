@@ -46,6 +46,7 @@ namespace msci
 			string get_name() const;
 			string get_symbol() const;
 			long double get_conversion_factor() const;
+			long double prefix_math() const;
 
 			int get_scale() const;
 			int get_absolute_scale() const;

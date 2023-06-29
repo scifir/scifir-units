@@ -48,7 +48,7 @@ namespace msci
 
 	SCALAR_UNIT_HPP_BEGIN(temperature);
 		private:
-			void add_prefix(const prefix&);
+			void add_dimension(const dimension&);
 	SCALAR_UNIT_HPP_END();
 
 	SCALAR_UNIT_HPP_BEGIN(mole);

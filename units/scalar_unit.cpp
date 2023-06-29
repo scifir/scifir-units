@@ -197,26 +197,26 @@ namespace msci
 		{
 			for(const dimension& actual_dimension : dimensions)
 			{
-				remove_prefix(actual_dimension.prefix);
+				remove_dimension(actual_dimension);
 				if(actual_dimension.is_derived_dimension())
 				{
 					vector<dimension> derived_dimensions = actual_dimension.get_basic_dimensions();
 					for(const dimension& derived_dimension : derived_dimensions)
 					{
-						remove_prefix(derived_dimension.prefix);
+						remove_dimension(derived_dimension);
 					}
 				}
 			}
 			dimensions.clear();
 			for(const dimension& new_dimension : new_dimensions)
 			{
-				add_prefix(new_dimension.prefix);
+				add_dimension(new_dimension);
 				if(new_dimension.is_derived_dimension())
 				{
 					vector<dimension> new_derived_dimensions = new_dimension.get_basic_dimensions();
 					for(const dimension& new_derived_dimension : new_derived_dimensions)
 					{
-						add_prefix(new_derived_dimension.prefix);
+						add_dimension(new_derived_dimension);
 					}
 				}
 			}
@@ -307,8 +307,15 @@ namespace msci
 			int value_scale = int(log10(get_value()));
 			prefix display_prefix = closest_prefix(dimensions[0].prefix,value_scale);
 			float x_value = get_value();
-			x_value *= std::pow(dimensions[0].prefix.get_prefix_base(), dimensions[0].prefix.get_conversion_factor());
-			x_value /= std::pow(display_prefix.get_prefix_base(), display_prefix.get_conversion_factor());
+			x_value *= dimensions[0].prefix_math();
+			if (dimensions[0].dimension_type == dimension::B)
+			{
+				x_value /= std::pow(1024, display_prefix.get_conversion_factor() / 3);
+			}
+			else
+			{
+				x_value /= std::pow(10, display_prefix.get_conversion_factor());
+			}
 			vector<dimension> x_dimensions = dimensions;
 			x_dimensions[0].prefix = display_prefix;
 			output << display_float(x_value,number_of_decimals) << " " << to_string(x_dimensions);
@@ -329,11 +336,13 @@ namespace msci
 			vector<dimension> new_dimensions = create_dimensions(new_dimensions_str);
 			for(const dimension& x_dimension : dimensions)
 			{
-				new_value *= std::pow(x_dimension.prefix.get_prefix_base(), x_dimension.prefix.get_conversion_factor());
+				new_value *= x_dimension.get_conversion_factor();
+				new_value *= x_dimension.prefix_math();
 			}
 			for(const dimension& x_new_dimension : new_dimensions)
 			{
-				new_value /= std::pow(x_new_dimension.prefix.get_prefix_base(), x_new_dimension.prefix.get_conversion_factor());
+				new_value /= x_new_dimension.get_conversion_factor();
+				new_value /= x_new_dimension.prefix_math();
 			}
 			output << display_float(new_value,number_of_decimals) << " " << new_dimensions_str;
 		}
@@ -341,7 +350,7 @@ namespace msci
 		{
 			for (const dimension& x_dimension : dimensions)
 			{
-				new_value *= std::pow(x_dimension.prefix.get_prefix_base(), x_dimension.prefix.get_conversion_factor());
+				new_value *= x_dimension.prefix_math();
 			}
 			vector<dimension> new_dimensions = dimensions;
 			for (dimension& x_new_dimension : new_dimensions)
@@ -354,26 +363,16 @@ namespace msci
 		return output.str();
 	}
 
-	void scalar_unit::add_prefix(const prefix& new_prefix)
-	{
-		value /= std::pow(new_prefix.get_prefix_base(), new_prefix.get_conversion_factor());
-	}
-
-	void scalar_unit::remove_prefix(const prefix& old_prefix)
-	{
-		value *= std::pow(old_prefix.get_prefix_base(), old_prefix.get_conversion_factor());
-	}
-
 	void scalar_unit::add_dimension(const dimension& new_dimension)
 	{
 		value /= new_dimension.get_conversion_factor();
-		add_prefix(new_dimension.prefix);
+		value /= new_dimension.prefix_math();
 	}
 
 	void scalar_unit::remove_dimension(const dimension& old_dimension)
 	{
 		value *= old_dimension.get_conversion_factor();
-		remove_prefix(old_dimension.prefix);
+		value *= old_dimension.prefix_math();
 	}
 
 	void scalar_unit::set_same_prefix(const vector<dimension>& new_dimensions)
