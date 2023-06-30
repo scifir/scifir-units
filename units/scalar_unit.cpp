@@ -470,26 +470,15 @@ namespace msci
 
 	scalar_unit sqrt(const scalar_unit& x)
 	{
-		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(),2);
-		int prefix_scale = prefix_square_difference(x.get_dimensions());
-		cout << "prefix_scale: " << prefix_scale << endl;
-		float new_value;
-		if (prefix_scale != 0)
-		{
-			new_value = std::sqrt(std::pow(x.get_value(),prefix_scale));
-		}
-		else
-		{
-			new_value = std::sqrt(x.get_value());
-		}
+		long double new_value = x.get_value();
+		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(),new_value,2);
 		return scalar_unit(new_value, new_dimensions);
 	}
 
 	scalar_unit sqrt_nth(const scalar_unit& x, int y)
 	{
-		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(),y);
-		int prefix_scale = prefix_square_difference(x.get_dimensions());
-		float new_value = std::pow(std::pow(x.get_value(),prefix_scale), 1 / y);
+		long double new_value = x.get_value();
+		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(),new_value,y);
 		return scalar_unit(new_value, new_dimensions);
 	}
 
@@ -499,8 +488,9 @@ namespace msci
 	}
 }
 
-bool operator ==(const msci::scalar_unit& x, const msci::scalar_unit& y)
+bool operator ==(const msci::scalar_unit& x, msci::scalar_unit y)
 {
+	y.set_same_prefix(x);
 	if(x.get_value() == y.get_value() and equal_dimensions(x, y))
 	{
 		return true;
@@ -511,7 +501,7 @@ bool operator ==(const msci::scalar_unit& x, const msci::scalar_unit& y)
 	}
 }
 
-bool operator !=(const msci::scalar_unit& x, const msci::scalar_unit& y)
+bool operator !=(const msci::scalar_unit& x, msci::scalar_unit y)
 {
 	return !(x == y);
 }

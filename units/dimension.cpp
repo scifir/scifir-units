@@ -1194,6 +1194,7 @@ namespace msci
 		for(int i = 0; i < x.size(); i++)
 		{
 			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
+			x_subdimensions[0].prefix = x[i].prefix;
 			for (dimension& x_subdimension : x_subdimensions)
 			{
 				x_subdimension.dimension_sign = x[i].dimension_sign;
@@ -1223,39 +1224,65 @@ namespace msci
 		}
 		return normalize_dimensions(new_dimensions);
 	}
-	
-	vector<dimension> square_dimensions(const vector<dimension>& x,int scale)
+
+	vector<dimension> square_dimensions(vector<dimension> x,long double& value,int scale)
 	{
-		vector<dimension> new_dimensions = vector<dimension>();
-		vector<dimension::type> counted_dimensions = vector<dimension::type>();
+		x = normalize_dimensions(x);
+		prefix_square_difference(x,value);
+		map<dimension::type,int> dimensions_count = map<dimension::type,int>();
 		for (const dimension& x_dimension : x)
 		{
-			bool counted = false;
-			for (const dimension::type& counted_dimension : counted_dimensions)
+			dimensions_count[x_dimension.dimension_type]++;
+		}
+		for (const auto& x_count : dimensions_count)
+		{
+			if ((x_count.second % scale) != 0)
 			{
-				if (counted_dimension == x_dimension.dimension_type)
-				{
-					counted = true;
-				}
+				return vector<dimension>();
 			}
-			if (counted == true)
-			{
-				continue;
-			}
-			int i = 1;
-			for (const dimension& y_dimension : x)
-			{
-				if (x_dimension.dimension_type == y_dimension.dimension_type)
-				{
-					i++;
-				}
-			}
-			int total_dimensions = std::sqrt(i);
+		}
+		vector<dimension> new_dimensions = vector<dimension>();
+		if (dimensions_count.size() == 1) // If there's only one type of dimension, square it and conserve its type
+		{
+			int total_dimensions = std::pow(dimensions_count[x[0].dimension_type], 1 / scale);
 			for (int j = 0; j < total_dimensions; j++)
 			{
-				new_dimensions.push_back(dimension(x_dimension.dimension_type,x_dimension.prefix,x_dimension.dimension_sign));
+				new_dimensions.push_back(x[0]);
 			}
-			counted_dimensions.push_back(x_dimension.dimension_type);
+			return new_dimensions;
+		}
+		else // If there's more than one type of dimension, creates the derived dimensions of them, and squares the total. If there are abbreviations, they are losed
+		{
+			deleted_derived_dimension_conversion_factor_math(x,value);
+			vector<dimension> x_derived = create_derived_dimensions(x);
+			prefix_square_difference(x_derived,value);
+			vector<dimension::type> counted_dimensions = vector<dimension::type>();
+			dimensions_count.clear();
+			for (const dimension& x_dimension : x_derived)
+			{
+				dimensions_count[x_dimension.dimension_type]++;
+			}
+			for (const dimension& x_dimension : x_derived)
+			{
+				bool counted = false;
+				for (const dimension::type& counted_dimension : counted_dimensions)
+				{
+					if (counted_dimension == x_dimension.dimension_type)
+					{
+						counted = true;
+					}
+				}
+				if (counted == true)
+				{
+					continue;
+				}
+				int total_dimensions = std::pow(dimensions_count[x_dimension.dimension_type], 1 / scale);
+				for (int j = 0; j < total_dimensions; j++)
+				{
+					new_dimensions.push_back(x_dimension);
+				}
+				counted_dimensions.push_back(x_dimension.dimension_type);
+			}
 		}
 		return new_dimensions;
 	}
@@ -1279,7 +1306,7 @@ namespace msci
 		vector<dimension> new_x = create_derived_dimensions(x);
 		for(int i = 0; i < new_x.size(); i++)
 		{
-			for(int j = i; j < new_x.size(); j++)
+			for(int j = i + 1; j < new_x.size(); j++)
 			{
 				if (new_x[i].dimension_type == new_x[j].dimension_type and new_x[i].dimension_sign != new_x[j].dimension_sign)
 				{
@@ -1306,14 +1333,13 @@ namespace msci
 		}
 		return new_dimensions;
 	}
-	
-	int prefix_square_difference(const vector<dimension>& x)
+
+	void prefix_square_difference(const vector<dimension>& x,long double& value)
 	{
 		int prefix_scale = 0;
 		vector<int> checked_dimensions = vector<int>();
 		for(int i = 0; i < x.size(); i++)
 		{
-			dimension x_dimension = x[i];
 			bool skip = false;
 			for (const int& j_checked_dimension : checked_dimensions)
 			{
@@ -1331,16 +1357,31 @@ namespace msci
 			{
 				for(int j = i + 1; j < x.size(); j++)
 				{
-					dimension y_dimension = x[j];
-					if (common_dimension(x_dimension,y_dimension) and x_dimension.prefix.get_conversion_factor() != y_dimension.prefix.get_conversion_factor())
+					if (common_dimension(x[i],x[j]) and x[i].prefix != x[j].prefix)
 					{
-						if (x_dimension.dimension_sign == dimension::positive)
+						if (x[i].dimension_sign == dimension::positive)
 						{
-							prefix_scale += x_dimension.prefix.get_conversion_factor() - y_dimension.prefix.get_conversion_factor();
+							prefix_scale = x[i].prefix.get_conversion_factor() - x[j].prefix.get_conversion_factor();
+							if (x[i].dimension_type == dimension::B)
+							{
+								value = std::sqrt(std::pow(1024,prefix_scale / 3) * value);
+							}
+							else
+							{
+								value = std::sqrt(std::pow(10,prefix_scale) * value);
+							}
 						}
 						else
 						{
-							prefix_scale -= x_dimension.prefix.get_conversion_factor() - y_dimension.prefix.get_conversion_factor();
+							prefix_scale = x[i].prefix.get_conversion_factor() - x[j].prefix.get_conversion_factor();
+							if (x[i].dimension_type == dimension::B)
+							{
+								value = std::sqrt(std::pow(1024,prefix_scale / 3) * value);
+							}
+							else
+							{
+								value = std::sqrt(std::pow(10,prefix_scale) * value);
+							}
 						}
 						checked_dimensions.push_back(i);
 						checked_dimensions.push_back(j);
@@ -1349,9 +1390,16 @@ namespace msci
 				}
 			}
 		}
-		return prefix_scale;
 	}
-	
+
+	void deleted_derived_dimension_conversion_factor_math(const vector<dimension>& x,long double& value)
+	{
+		for (const dimension& x_dimension : x)
+		{
+			value *= x_dimension.get_conversion_factor();
+		}
+	}
+
 	bool common_dimension(const dimension& x,const dimension& y)
 	{
 		for (const dimension& x_dimension : x.get_basic_dimensions())
@@ -1366,7 +1414,7 @@ namespace msci
 		}
 		return false;
 	}
-	
+
 	bool equal_dimensions(const string& x,const string& y)
 	{
 		vector<dimension> x_dimensions = create_dimensions(x);

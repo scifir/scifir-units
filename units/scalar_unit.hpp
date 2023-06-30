@@ -248,8 +248,8 @@ float operator ^(const T x, const msci::scalar_unit& y)
 	}
 }
 
-bool operator ==(const msci::scalar_unit&, const msci::scalar_unit&);
-bool operator !=(const msci::scalar_unit&, const msci::scalar_unit&);
+bool operator ==(const msci::scalar_unit&, msci::scalar_unit);
+bool operator !=(const msci::scalar_unit&, msci::scalar_unit);
 bool operator <(const msci::scalar_unit&, const msci::scalar_unit&);
 bool operator >(const msci::scalar_unit&, const msci::scalar_unit&);
 bool operator <=(const msci::scalar_unit&, const msci::scalar_unit&);
