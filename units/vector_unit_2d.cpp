@@ -147,15 +147,15 @@ namespace msci
 
 	vector_unit_2d vector_unit_2d::operator *(const scalar_unit& x) const
 	{
-		float new_value = scalar_unit::value * x.get_value();
-		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(), x.get_dimensions());
+		long double new_value = scalar_unit::value * x.get_value();
+		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(), x.get_dimensions(),new_value);
 		return vector_unit_2d(new_value, new_dimensions, theta);
 	}
 
 	vector_unit_2d vector_unit_2d::operator /(const scalar_unit& x) const
 	{
-		float new_value = scalar_unit::value / x.get_value();
-		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(), x.get_dimensions());
+		long double new_value = scalar_unit::value / x.get_value();
+		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(), x.get_dimensions(),new_value);
 		return vector_unit_2d(new_value, new_dimensions, theta);
 	}
 
@@ -199,8 +199,8 @@ namespace msci
 
 	scalar_unit dot_product(const vector_unit_2d& x, const vector_unit_2d& y)
 	{
-		float new_value = float(x.x_projection() * y.x_projection() + x.y_projection() * y.y_projection());
-		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions());
+		long double new_value = float(x.x_projection() * y.x_projection() + x.y_projection() * y.y_projection());
+		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
 		return scalar_unit(new_value,new_dimensions);
 	}
 

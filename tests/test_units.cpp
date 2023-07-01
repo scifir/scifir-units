@@ -92,7 +92,9 @@ TEST_CASE("scalar_unit class","Full test of scalar_units") {
 	msci::time e = msci::time("10d 10h");
 	REQUIRE (bool(e.display_as_time() >= "10d 10h"));
 	scalar_unit f = scalar_unit("10 km*m");
-	REQUIRE (bool(sqrt(f) == "100 km"));
+	REQUIRE (bool(sqrt(f) == scalar_unit("100 m")));
 	scalar_unit g = scalar_unit("1000 km*m*m");
-	REQUIRE (bool(sqrt_nth(f,3) == "100 m"));
+	REQUIRE (bool(sqrt_nth(g,3) == "100 m"));
+	scalar_unit h = 10_N;
+	REQUIRE (bool(h.display_derived() == "10 kg*m/s2"));
 }

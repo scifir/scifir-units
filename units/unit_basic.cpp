@@ -151,19 +151,7 @@ namespace msci
 
 	SCALAR_UNIT_CPP(mass,"g");
 	SCALAR_UNIT_CPP(charge,"C");
-
-	void temperature::add_dimension(const dimension& new_dimension)
-	{
-		if(new_dimension.prefix.get_conversion_factor() > 0)
-		{
-			scalar_unit::add_dimension(new_dimension);
-		}
-		else
-		{
-			cerr << "Temperature can't have negative prefixes";
-		}
-	}
-
+	SCALAR_UNIT_CPP(temperature,"K");
 	SCALAR_UNIT_CPP(mole,"mol");
 
 	int mole::number_of_particles() const

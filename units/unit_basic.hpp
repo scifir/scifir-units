@@ -46,10 +46,7 @@ namespace msci
 	SCALAR_UNIT_HPP(mass);
 	SCALAR_UNIT_HPP(charge);
 
-	SCALAR_UNIT_HPP_BEGIN(temperature);
-		private:
-			void add_dimension(const dimension&);
-	SCALAR_UNIT_HPP_END();
+	SCALAR_UNIT_HPP(temperature);
 
 	SCALAR_UNIT_HPP_BEGIN(mole);
 		public:

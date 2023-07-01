@@ -441,8 +441,8 @@ namespace msci
 
 	vector_unit_nd vector_unit_nd::operator *(const scalar_unit& x) const
 	{
-		float new_value = scalar_unit::value * x.get_value();
-		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(), x.get_dimensions());
+		long double new_value = scalar_unit::value * x.get_value();
+		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(), x.get_dimensions(),new_value);
 		scalar_unit new_unit = scalar_unit(new_value, new_dimensions);
 		if(is_nd(1))
 		{
@@ -464,8 +464,8 @@ namespace msci
 
 	vector_unit_nd vector_unit_nd::operator /(const scalar_unit& x) const
 	{
-		float new_value = scalar_unit::value / x.get_value();
-		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(), x.get_dimensions());
+		long double new_value = scalar_unit::value / x.get_value();
+		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(), x.get_dimensions(),new_value);
 		scalar_unit new_unit = scalar_unit(new_value, new_dimensions);
 		if(is_nd(1))
 		{
@@ -631,8 +631,8 @@ namespace msci
 
 	scalar_unit dot_product(const vector_unit_nd& x, const vector_unit_nd& y)
 	{
-		float new_value = float(x.x_projection()*y.x_projection() + x.y_projection()*y.y_projection() + x.z_projection()*y.z_projection());
-		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions());
+		long double new_value = float(x.x_projection()*y.x_projection() + x.y_projection()*y.y_projection() + x.z_projection()*y.z_projection());
+		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
 		return scalar_unit(new_value,new_dimensions);
 	}
 
@@ -640,7 +640,7 @@ namespace msci
 	{
 		if(x.is_nd(3) and y.is_nd(3))
 		{
-			float new_value;
+			long double new_value;
 			float angle1;
 			float angle2;
 			if(y.angles[0] == x.angles[0] and y.angles[1] == x.angles[1])
@@ -658,7 +658,7 @@ namespace msci
 				angle1 = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
 				angle2 = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
 			}
-			vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions());
+			vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
 			scalar_unit new_unit = scalar_unit(new_value, new_dimensions);
 			vector<angle> angles;
 			angles.push_back(angle(angle1));

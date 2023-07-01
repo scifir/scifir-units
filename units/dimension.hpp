@@ -48,6 +48,7 @@ namespace msci
 			long double get_conversion_factor() const;
 			long double prefix_math() const;
 
+			bool is_simple_dimension() const;
 			bool is_basic_dimension() const;
 			bool is_derived_dimension() const;
 
@@ -161,12 +162,14 @@ namespace msci
 
 	vector<dimension> create_derived_dimensions(string);
 	vector<dimension> create_derived_dimensions(const vector<dimension>&);
+	vector<dimension> create_derived_dimensions(const vector<dimension>&,long double&);
 
 	vector<dimension> multiply_dimensions(const vector<dimension>&,const vector<dimension>&);
-	vector<dimension> divide_dimensions(const vector<dimension>&,const vector<dimension>&);
+	vector<dimension> multiply_dimensions(vector<dimension>,const vector<dimension>&,long double&);
+	vector<dimension> divide_dimensions(vector<dimension>,const vector<dimension>&,long double&);
 	vector<dimension> square_dimensions(vector<dimension>,long double&,int);
 	vector<dimension> power_dimensions(const vector<dimension>&,int);
-	vector<dimension> normalize_dimensions(const vector<dimension>&);
+	vector<dimension> normalize_dimensions(const vector<dimension>&,long double&);
 	void prefix_square_difference(const vector<dimension>&,long double&);
 	void deleted_derived_dimension_conversion_factor_math(const vector<dimension>&,long double&);
 	bool common_dimension(const dimension&,const dimension&);

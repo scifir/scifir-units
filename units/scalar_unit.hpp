@@ -163,6 +163,7 @@ namespace msci
 			scalar_unit& operator--(int);
 
 			void change_dimensions(const string&);
+			void change_dimensions(const scalar_unit&);
 			bool has_dimensions(const string&) const;
 			bool has_dimensions(const vector<dimension>&) const;
 			bool has_empty_dimensions() const;
@@ -184,6 +185,7 @@ namespace msci
 			}
 
 			string display(int = 2) const;
+			string display_derived(int = 2) const;
 			string custom_display(const string&,int = 2) const;
 
 		protected:

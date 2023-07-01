@@ -371,89 +371,94 @@ namespace msci
 
 	prefix closest_prefix(const prefix& actual_prefix,int actual_scale)
 	{
-		int actual_factor = actual_prefix.get_conversion_factor();
-		int factor_difference = actual_scale + actual_factor;
-		if (factor_difference == 0)
+		int factor_difference = actual_scale + actual_prefix.get_conversion_factor();
+		return create_prefix_by_factor(factor_difference);
+		
+	}
+
+	prefix create_prefix_by_factor(int factor)
+	{
+		if (factor == 0)
 		{
 			return prefix(prefix::no_prefix);
 		}
-		else if (factor_difference == 1)
+		else if (factor == 1)
 		{
 			return prefix(prefix::da);
 		}
-		else if (factor_difference == 2)
+		else if (factor == 2)
 		{
 			return prefix(prefix::h);
 		}
-		else if (factor_difference == -1)
+		else if (factor == -1)
 		{
 			return prefix(prefix::d);
 		}
-		else if (factor_difference == -2)
+		else if (factor == -2)
 		{
 			return prefix(prefix::c);
 		}
-		else if (factor_difference >= 3 and factor_difference < 6)
+		else if (factor >= 3 and factor < 6)
 		{
 			return prefix(prefix::k);
 		}
-		else if (factor_difference >= 6 and factor_difference < 9)
+		else if (factor >= 6 and factor < 9)
 		{
 			return prefix(prefix::M);
 		}
-		else if (factor_difference >= 9 and factor_difference < 12)
+		else if (factor >= 9 and factor < 12)
 		{
 			return prefix(prefix::G);
 		}
-		else if (factor_difference >= 12 and factor_difference < 15)
+		else if (factor >= 12 and factor < 15)
 		{
 			return prefix(prefix::T);
 		}
-		else if (factor_difference >= 15 and factor_difference < 18)
+		else if (factor >= 15 and factor < 18)
 		{
 			return prefix(prefix::P);
 		}
-		else if (factor_difference >= 18 and factor_difference < 21)
+		else if (factor >= 18 and factor < 21)
 		{
 			return prefix(prefix::E);
 		}
-		else if (factor_difference >= 21 and factor_difference < 24)
+		else if (factor >= 21 and factor < 24)
 		{
 			return prefix(prefix::Z);
 		}
-		else if (factor_difference >= 24)
+		else if (factor >= 24)
 		{
 			return prefix(prefix::Y);
 		}
-		else if (factor_difference <= -3 and factor_difference > -6)
+		else if (factor <= -3 and factor > -6)
 		{
 			return prefix(prefix::m);
 		}
-		else if (factor_difference <= -6 and factor_difference > -9)
+		else if (factor <= -6 and factor > -9)
 		{
 			return prefix(prefix::u);
 		}
-		else if (factor_difference <= -9 and factor_difference > -12)
+		else if (factor <= -9 and factor > -12)
 		{
 			return prefix(prefix::n);
 		}
-		else if (factor_difference <= -12 and factor_difference > -15)
+		else if (factor <= -12 and factor > -15)
 		{
 			return prefix(prefix::p);
 		}
-		else if (factor_difference <= -15 and factor_difference > -18)
+		else if (factor <= -15 and factor > -18)
 		{
 			return prefix(prefix::f);
 		}
-		else if (factor_difference <= -18 and factor_difference > -21)
+		else if (factor <= -18 and factor > -21)
 		{
 			return prefix(prefix::a);
 		}
-		else if (factor_difference <= -21 and factor_difference > -24)
+		else if (factor <= -21 and factor > -24)
 		{
 			return prefix(prefix::z);
 		}
-		else if (factor_difference < -24)
+		else if (factor < -24)
 		{
 			return prefix(prefix::y);
 		}

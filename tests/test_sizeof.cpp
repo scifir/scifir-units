@@ -163,4 +163,7 @@ int main()
 	{
 		cout << "match!" << endl;
 	}
+	
+	msci::time x_time = msci::time(100.5,"d");
+	cout << "time: " << x_time.display_as_time() << endl;
 }

@@ -408,7 +408,7 @@ namespace msci
 		}
 	}
 
-	bool dimension::is_basic_dimension() const
+	bool dimension::is_simple_dimension() const
 	{
 		switch(dimension_type)
 		{
@@ -502,7 +502,6 @@ namespace msci
 				return true;
 			case dimension::custom:
 				return false;
-				//return static_cast<msci::custom_dimension&>(const_cast<dimension&>(*this)).is_basic_dimension();
 			case dimension::custom_basic:
 				return true;
 			case dimension::custom_full_symbol:
@@ -515,6 +514,114 @@ namespace msci
 				return true;
 		}
 		return false;
+	}
+
+	bool dimension::is_basic_dimension() const
+	{
+		switch(dimension_type)
+		{
+			case dimension::m:
+				return true;
+			case dimension::radian:
+				return true;
+			case dimension::steradian:
+				return true;
+			case dimension::g:
+				return true;
+			case dimension::s:
+				return true;
+			case dimension::C:
+				return true;
+			case dimension::K:
+				return true;
+			case dimension::mol:
+				return true;
+			case dimension::cd:
+				return true;
+			case dimension::B:
+				return true;
+			case dimension::Hz:
+				return false;
+			case dimension::N:
+				return false;
+			case dimension::Pa:
+				return false;
+			case dimension::J:
+				return false;
+			case dimension::W:
+				return false;
+			case dimension::A:
+				return false;
+			case dimension::V:
+				return false;
+			case dimension::F:
+				return false;
+			case dimension::Ohm:
+				return false;
+			case dimension::S:
+				return false;
+			case dimension::Wb:
+				return false;
+			case dimension::T:
+				return false;
+			case dimension::H:
+				return false;
+			case dimension::lm:
+				return false;
+			case dimension::lx:
+				return false;
+			case dimension::Bq:
+				return false;
+			case dimension::Gy:
+				return false;
+			case dimension::Sv:
+				return false;
+			case dimension::kat:
+				return false;
+			case dimension::angstrom:
+				return false;
+			case dimension::L:
+				return false;
+			case dimension::minute:
+				return false;
+			case dimension::h:
+				return false;
+			case dimension::d:
+				return false;
+			case dimension::AU:
+				return false;
+			case dimension::pc:
+				return false;
+			case dimension::eV:
+				return false;
+			case dimension::Da:
+				return false;
+			case dimension::amu:
+				return false;
+			case dimension::barn:
+				return false;
+			case dimension::M:
+				return false;
+			case dimension::particles:
+				return false;
+			case dimension::ppm:
+				return false;
+			case dimension::ppb:
+				return false;
+			case dimension::custom:
+				return false;
+			case dimension::custom_basic:
+				return true;
+			case dimension::custom_full_symbol:
+				return false;
+			case dimension::money:
+				return true;
+			case dimension::pixel:
+				return false;
+			case dimension::none:
+				return true;
+		}
+		return true;
 	}
 
 	bool dimension::is_derived_dimension() const
@@ -561,8 +668,8 @@ namespace msci
 				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::negative));
 				break;
 			case dimension::N:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::positive));
 				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::positive));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::positive));
 				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::negative));
 				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::negative));
 				break;
@@ -573,16 +680,16 @@ namespace msci
 				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::negative));
 				break;
 			case dimension::J:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::positive));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::positive));
 				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::positive));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::positive));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::positive));
 				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::negative));
 				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::negative));
 				break;
 			case dimension::W:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::positive));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::positive));
 				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::positive));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::positive));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::positive));
 				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::negative));
 				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::negative));
 				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::negative));
@@ -617,12 +724,12 @@ namespace msci
 				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::negative));
 				break;
 			case dimension::S:
+				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::positive));
+				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::positive));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::positive));
 				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::negative));
 				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::negative));
 				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::negative));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::positive));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::positive));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::positive));
 				break;
 			case dimension::Wb:
 				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::positive));
@@ -1039,6 +1146,10 @@ namespace msci
 				{
 					if (first_negative_iteration == true)
 					{
+						if (out.tellp() == std::streampos(0))
+						{
+							out << "1";
+						}
 						out << "/";
 						first_negative_iteration = false;
 					}
@@ -1097,16 +1208,11 @@ namespace msci
 		vector<dimension> dimensions = vector<dimension>();
 		for(int j = 0; j < init_value.size(); j++)
 		{
-			/*if(isdigit(init_value[j]))
+			if(init_value[j] == '1' and init_value[j + 1] == '/')
 			{
-				new_dimension_str = init_value.substr(new_start, new_size);
-				new_scale = stoi(init_value.substr(j, 1));
-				cout << "new_dimension_str: " << new_dimension_str << endl;
-				cout << "new_scale: " << new_scale << endl;
-				cout << "j: " << j << endl;
-				cout << "new_size: " << new_size << endl;
+				new_sign = dimension::negative;
 			}
-			else */if(isalpha(init_value[j]) and (!isalpha(init_value[j + 1]) or (j + 1) == init_value.size()))
+			if(isalpha(init_value[j]) and (!isalpha(init_value[j + 1]) or (j + 1) == init_value.size()))
 			{
 				new_dimension_str = init_value.substr(new_start, new_size);
 				if(isdigit(init_value[j + 1]))
@@ -1194,10 +1300,44 @@ namespace msci
 		for(int i = 0; i < x.size(); i++)
 		{
 			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
-			x_subdimensions[0].prefix = x[i].prefix;
 			for (dimension& x_subdimension : x_subdimensions)
 			{
 				x_subdimension.dimension_sign = x[i].dimension_sign;
+				new_x.push_back(x_subdimension);
+			}
+		}
+		return new_x;
+	}
+
+	vector<dimension> create_derived_dimensions(const vector<dimension>& x,long double& value)
+	{
+		vector<dimension> new_x = vector<dimension>();
+		for(int i = 0; i < x.size(); i++)
+		{
+			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
+			if (x[i].prefix.prefix_type != prefix::no_prefix)
+			{
+				int prefix_scale = x[i].prefix.get_conversion_factor() - x_subdimensions[0].prefix.get_conversion_factor();
+				x_subdimensions[0].prefix = create_prefix_by_factor(prefix_scale);
+				int prefix_conversion_factor = x_subdimensions[0].prefix.get_conversion_factor();
+				if (x_subdimensions[0].prefix.get_conversion_factor() != prefix_scale)
+				{
+					if (x_subdimensions[0].dimension_type == dimension::B)
+					{
+						value *= std::pow(1024,(prefix_scale - prefix_conversion_factor) / 3);
+					}
+					else
+					{
+						value *= std::pow(10,(prefix_scale - prefix_conversion_factor));
+					}
+				}
+			}
+			for (dimension& x_subdimension : x_subdimensions)
+			{
+				if (x[i].dimension_sign == dimension::negative)
+				{
+					x_subdimension.invert();
+				}
 				new_x.push_back(x_subdimension);
 			}
 		}
@@ -1214,21 +1354,27 @@ namespace msci
 		return new_dimensions;
 	}
 
-	vector<dimension> divide_dimensions(const vector<dimension>& x,const vector<dimension>& y)
+	vector<dimension> multiply_dimensions(vector<dimension> new_dimensions,const vector<dimension>& y,long double& value)
 	{
-		vector<dimension> new_dimensions = x;
+		for(const dimension& y_dimension : y)
+		{
+			new_dimensions.push_back(y_dimension);
+		}
+		return normalize_dimensions(new_dimensions,value);
+	}
+
+	vector<dimension> divide_dimensions(vector<dimension> new_dimensions,const vector<dimension>& y,long double& value)
+	{
 		for(dimension y_dimension : y)
 		{
 			y_dimension.invert();
 			new_dimensions.push_back(y_dimension);
 		}
-		return normalize_dimensions(new_dimensions);
+		return normalize_dimensions(new_dimensions,value);
 	}
 
 	vector<dimension> square_dimensions(vector<dimension> x,long double& value,int scale)
 	{
-		x = normalize_dimensions(x);
-		prefix_square_difference(x,value);
 		map<dimension::type,int> dimensions_count = map<dimension::type,int>();
 		for (const dimension& x_dimension : x)
 		{
@@ -1244,7 +1390,9 @@ namespace msci
 		vector<dimension> new_dimensions = vector<dimension>();
 		if (dimensions_count.size() == 1) // If there's only one type of dimension, square it and conserve its type
 		{
-			int total_dimensions = std::pow(dimensions_count[x[0].dimension_type], 1 / scale);
+			prefix_square_difference(x,value);
+			int total_dimensions = std::pow(dimensions_count[x[0].dimension_type], 1.0 / scale);
+			x[0].prefix.prefix_type = prefix::no_prefix;
 			for (int j = 0; j < total_dimensions; j++)
 			{
 				new_dimensions.push_back(x[0]);
@@ -1253,16 +1401,17 @@ namespace msci
 		}
 		else // If there's more than one type of dimension, creates the derived dimensions of them, and squares the total. If there are abbreviations, they are losed
 		{
+			x = normalize_dimensions(x,value);
 			deleted_derived_dimension_conversion_factor_math(x,value);
-			vector<dimension> x_derived = create_derived_dimensions(x);
-			prefix_square_difference(x_derived,value);
+			//vector<dimension> x_derived = create_derived_dimensions(x,value);
+			//prefix_square_difference(x_derived,value);
 			vector<dimension::type> counted_dimensions = vector<dimension::type>();
 			dimensions_count.clear();
-			for (const dimension& x_dimension : x_derived)
+			for (const dimension& x_dimension : x)
 			{
 				dimensions_count[x_dimension.dimension_type]++;
 			}
-			for (const dimension& x_dimension : x_derived)
+			for (const dimension& x_dimension : x)
 			{
 				bool counted = false;
 				for (const dimension::type& counted_dimension : counted_dimensions)
@@ -1300,10 +1449,10 @@ namespace msci
 		return new_dimensions;
 	}
 
-	vector<dimension> normalize_dimensions(const vector<dimension>& x)
+	vector<dimension> normalize_dimensions(const vector<dimension>& x,long double& value)
 	{
 		vector<int> skip_dimensions = vector<int>();
-		vector<dimension> new_x = create_derived_dimensions(x);
+		vector<dimension> new_x = create_derived_dimensions(x,value);
 		for(int i = 0; i < new_x.size(); i++)
 		{
 			for(int j = i + 1; j < new_x.size(); j++)
@@ -1336,58 +1485,15 @@ namespace msci
 
 	void prefix_square_difference(const vector<dimension>& x,long double& value)
 	{
-		int prefix_scale = 0;
-		vector<int> checked_dimensions = vector<int>();
-		for(int i = 0; i < x.size(); i++)
+		for(const dimension& x_dimension : x)
 		{
-			bool skip = false;
-			for (const int& j_checked_dimension : checked_dimensions)
+			if (x_dimension.dimension_type == dimension::B)
 			{
-				if (i == j_checked_dimension)
-				{
-					skip = true;
-					break;
-				}
+				value *= std::pow(1024, x_dimension.prefix.get_conversion_factor() / 3);
 			}
-			if (skip == true)
+			else
 			{
-				continue;
-			}
-			if ((i + 1) != x.size())
-			{
-				for(int j = i + 1; j < x.size(); j++)
-				{
-					if (common_dimension(x[i],x[j]) and x[i].prefix != x[j].prefix)
-					{
-						if (x[i].dimension_sign == dimension::positive)
-						{
-							prefix_scale = x[i].prefix.get_conversion_factor() - x[j].prefix.get_conversion_factor();
-							if (x[i].dimension_type == dimension::B)
-							{
-								value = std::sqrt(std::pow(1024,prefix_scale / 3) * value);
-							}
-							else
-							{
-								value = std::sqrt(std::pow(10,prefix_scale) * value);
-							}
-						}
-						else
-						{
-							prefix_scale = x[i].prefix.get_conversion_factor() - x[j].prefix.get_conversion_factor();
-							if (x[i].dimension_type == dimension::B)
-							{
-								value = std::sqrt(std::pow(1024,prefix_scale / 3) * value);
-							}
-							else
-							{
-								value = std::sqrt(std::pow(10,prefix_scale) * value);
-							}
-						}
-						checked_dimensions.push_back(i);
-						checked_dimensions.push_back(j);
-						break;
-					}
-				}
+				value *= std::pow(10, x_dimension.prefix.get_conversion_factor());
 			}
 		}
 	}

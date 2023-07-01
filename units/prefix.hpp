@@ -38,6 +38,7 @@ namespace msci
 	prefix create_prefix(const string&);
 
 	prefix closest_prefix(const prefix&,int);
+	prefix create_prefix_by_factor(int);
 }
 
 bool operator ==(const msci::prefix&,const msci::prefix&);

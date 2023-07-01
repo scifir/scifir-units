@@ -333,15 +333,15 @@ namespace msci
 
 	vector_unit_3d vector_unit_3d::operator *(const scalar_unit& x) const
 	{
-		float new_value = scalar_unit::value * x.get_value();
-		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(), x.get_dimensions());
+		long double new_value = scalar_unit::value * x.get_value();
+		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(), x.get_dimensions(),new_value);
 		return vector_unit_3d(new_value, new_dimensions, theta, phi);
 	}
 
 	vector_unit_3d vector_unit_3d::operator /(const scalar_unit& x) const
 	{
-		float new_value = scalar_unit::value / x.get_value();
-		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(), x.get_dimensions());
+		long double new_value = scalar_unit::value / x.get_value();
+		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(), x.get_dimensions(),new_value);
 		return vector_unit_3d(new_value, new_dimensions, theta, phi);
 	}
 
@@ -385,14 +385,14 @@ namespace msci
 
 	scalar_unit dot_product(const vector_unit_3d& x, const vector_unit_3d& y)
 	{
-		float new_value = float(x.x_projection()*y.x_projection() + x.y_projection()*y.y_projection() + x.z_projection()*y.z_projection());
-		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions());
+		long double new_value = float(x.x_projection()*y.x_projection() + x.y_projection()*y.y_projection() + x.z_projection()*y.z_projection());
+		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
 		return scalar_unit(new_value,new_dimensions);
 	}
 
 	vector_unit_3d cross_product(const vector_unit_3d& x,const vector_unit_3d& y)
 	{
-		float new_value;
+		long double new_value;
 		float new_theta;
 		float new_phi;
 		if(y.theta == x.theta and y.phi == x.phi)
@@ -410,7 +410,7 @@ namespace msci
 			new_theta = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
 			new_phi = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
 		}
-		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions());
+		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
 		return vector_unit_3d(new_value, new_dimensions, new_theta, new_phi);
 	}
 

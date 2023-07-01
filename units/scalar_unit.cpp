@@ -77,7 +77,7 @@ namespace msci
 	{
 		if(equal_dimensions(*this,x))
 		{
-			x.set_same_prefix(get_dimensions());
+			x.change_dimensions(*this);
 			scalar_unit a = *this;
 			a += x.get_value();
 			return a;
@@ -93,7 +93,7 @@ namespace msci
 	{
 		if(equal_dimensions(*this,x))
 		{
-			x.set_same_prefix(get_dimensions());
+			x.change_dimensions(*this);
 			scalar_unit a = *this;
 			a -= x.get_value();
 			return a;
@@ -107,25 +107,17 @@ namespace msci
 
 	scalar_unit scalar_unit::operator *(scalar_unit x) const
 	{
-		float new_value = value;
-		if(equal_dimensions(*this,x))
-		{
-			x.set_same_prefix(get_dimensions());
-		}
+		long double new_value = value;
 		new_value *= x.get_value();
-		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(),x.get_dimensions());
+		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(),x.get_dimensions(),new_value);
 		return scalar_unit(new_value, new_dimensions);
 	}
 
 	scalar_unit scalar_unit::operator /(scalar_unit x) const
 	{
-		float new_value = value;
-		if(equal_dimensions(*this,x))
-		{
-			x.set_same_prefix(get_dimensions());
-		}
+		long double new_value = value;
 		new_value /= x.get_value();
-		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(),x.get_dimensions());
+		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(),x.get_dimensions(),new_value);
 		return scalar_unit(new_value, new_dimensions);
 	}
 
@@ -224,7 +216,44 @@ namespace msci
 		}
 		else
 		{
-			cerr << "Cannot change to different base dimensions";
+			cerr << "Cannot change to different base dimensions" << endl;
+		}
+	}
+
+	void scalar_unit::change_dimensions(const scalar_unit& x)
+	{
+		if(has_dimensions(x.get_dimensions()))
+		{
+			for(const dimension& actual_dimension : dimensions)
+			{
+				remove_dimension(actual_dimension);
+				if(actual_dimension.is_derived_dimension())
+				{
+					vector<dimension> derived_dimensions = actual_dimension.get_basic_dimensions();
+					for(const dimension& derived_dimension : derived_dimensions)
+					{
+						remove_dimension(derived_dimension);
+					}
+				}
+			}
+			dimensions.clear();
+			for(const dimension& new_dimension : x.get_dimensions())
+			{
+				add_dimension(new_dimension);
+				if(new_dimension.is_derived_dimension())
+				{
+					vector<dimension> new_derived_dimensions = new_dimension.get_basic_dimensions();
+					for(const dimension& new_derived_dimension : new_derived_dimensions)
+					{
+						add_dimension(new_derived_dimension);
+					}
+				}
+			}
+			dimensions = x.get_dimensions();
+		}
+		else
+		{
+			cerr << "Cannot change to different base dimensions" << endl;
 		}
 	}
 
@@ -327,6 +356,35 @@ namespace msci
 		return output.str();
 	}
 
+	string scalar_unit::display_derived(int number_of_decimals) const
+	{
+		ostringstream output;
+		long double x_value = get_value();
+		vector<dimension> derived_dimensions = create_derived_dimensions(dimensions,x_value);
+		if (derived_dimensions.size() == 1)
+		{
+			int value_scale = int(log10(get_value()));
+			prefix display_prefix = closest_prefix(derived_dimensions[0].prefix,value_scale);
+			x_value *= derived_dimensions[0].prefix_math();
+			if (derived_dimensions[0].dimension_type == dimension::B)
+			{
+				x_value /= std::pow(1024, display_prefix.get_conversion_factor() / 3);
+			}
+			else
+			{
+				x_value /= std::pow(10, display_prefix.get_conversion_factor());
+			}
+			vector<dimension> x_dimensions = derived_dimensions;
+			x_dimensions[0].prefix = display_prefix;
+			output << display_float(x_value,number_of_decimals) << " " << to_string(derived_dimensions);
+		}
+		else
+		{
+			output << display_float(x_value,number_of_decimals) << " " << to_string(derived_dimensions);
+		}
+		return output.str();
+	}
+
 	string scalar_unit::custom_display(const string& new_dimensions_str,int number_of_decimals) const
 	{
 		ostringstream output;
@@ -388,10 +446,10 @@ namespace msci
 		}
 		dimensions = new_dimensions;
 	}
-	
+
 	void scalar_unit::set_same_prefix(const scalar_unit& x)
 	{
-		set_same_prefix(x.get_derived_dimensions());
+		set_same_prefix(x.get_dimensions());
 	}
 
 	string scalar_unit::initial_dimensions_get_structure(const string& init_value) const
@@ -450,7 +508,7 @@ namespace msci
 			dimensions = create_dimensions(init_scalar.substr(i));
 		}
 	}
-	
+
 	string to_string(const scalar_unit& x)
 	{
 		ostringstream output;
@@ -462,7 +520,7 @@ namespace msci
 	{
 		return std::abs(x.get_value());
 	}
-	
+
 	scalar_unit pow(const scalar_unit& x,int y)
 	{
 		return x ^ y;
@@ -471,14 +529,16 @@ namespace msci
 	scalar_unit sqrt(const scalar_unit& x)
 	{
 		long double new_value = x.get_value();
-		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(),new_value,2);
+		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(), new_value, 2);
+		new_value = std::sqrt(new_value);
 		return scalar_unit(new_value, new_dimensions);
 	}
 
 	scalar_unit sqrt_nth(const scalar_unit& x, int y)
 	{
 		long double new_value = x.get_value();
-		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(),new_value,y);
+		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(), new_value, y);
+		new_value = std::pow(new_value, 1.0 / y);
 		return scalar_unit(new_value, new_dimensions);
 	}
 
@@ -490,7 +550,7 @@ namespace msci
 
 bool operator ==(const msci::scalar_unit& x, msci::scalar_unit y)
 {
-	y.set_same_prefix(x);
+	y.change_dimensions(x);
 	if(x.get_value() == y.get_value() and equal_dimensions(x, y))
 	{
 		return true;
