@@ -1261,7 +1261,10 @@ namespace msci
 			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
 			{
-				x_subdimension.dimension_sign = x[i].dimension_sign;
+				if (x[i].dimension_sign == dimension::negative)
+				{
+					x_subdimension.invert();
+				}
 				new_x.push_back(x_subdimension);
 			}
 		}
