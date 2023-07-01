@@ -17,7 +17,7 @@ namespace msci
 {
 	enum class coordinates : char {CARTESIAN, CYLINDRICAL, SPHERICAL, GEOGRAPHICAL, POLAR};
 
-	template<typename T>
+	template<typename T = length>
 	class coordinates_3d
 	{
 		public:

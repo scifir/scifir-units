@@ -17,7 +17,7 @@ namespace msci
 {
 	extern angle coordinates_ndr_no_angle;
 
-	template<typename T>
+	template<typename T = length>
 	class coordinates_ndr
 	{
 		public:

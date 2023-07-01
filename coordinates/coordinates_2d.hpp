@@ -13,7 +13,7 @@ using namespace std;
 
 namespace msci
 {
-	template<typename T>
+	template<typename T = length>
 	class coordinates_2d
 	{
 		public:

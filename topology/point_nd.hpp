@@ -17,7 +17,7 @@ namespace msci
 
 	class displacement_nd;
 
-	template<typename T>
+	template<typename T = length>
 	class point_nd
 	{
 		public:

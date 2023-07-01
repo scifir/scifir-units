@@ -14,7 +14,7 @@ using namespace std;
 
 namespace msci
 {
-	template<typename T>
+	template<typename T = length>
 	class coordinates_3dr
 	{
 		public:

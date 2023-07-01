@@ -14,7 +14,7 @@ namespace msci
 	template<typename T>
 	class coordinates_3d;
 
-	template<typename T>
+	template<typename T = length>
 	class point_3d
 	{
 		public:
