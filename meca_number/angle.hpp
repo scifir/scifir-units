@@ -61,72 +61,72 @@ namespace msci
 			void operator /=(const angle&);
 			void operator ^=(const angle&);
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator =(T y)
 			{
 				value = y;
 				normalize_value();
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			angle operator +(T y) const
 			{
 				return angle(value + y);
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			angle operator -(T y) const
 			{
 				return angle(value - y);
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			angle operator *(T y) const
 			{
 				return angle(value * y);
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			angle operator /(T y) const
 			{
 				return angle(value / y);
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			angle operator ^(T y) const
 			{
 				return angle(std::pow(value, y));
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator +=(T y)
 			{
 				value += y;
 				normalize_value();
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator -=(T y)
 			{
 				value -= y;
 				normalize_value();
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator *=(T y)
 			{
 				value *= y;
 				normalize_value();
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator /=(T y)
 			{
 				value /= y;
 				normalize_value();
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator ^=(T y)
 			{
 				value = std::pow(value, y);
@@ -210,103 +210,103 @@ namespace msci
 	}
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 msci::angle operator +(T x, const msci::angle& y)
 {
 	return angle(x + y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 msci::angle operator -(T x, const msci::angle& y)
 {
 	return angle(x - y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 msci::angle operator *(T x, const msci::angle& y)
 {
 	return angle(x * y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 msci::angle operator /(T x, const msci::angle& y)
 {
 	return angle(x / y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 msci::angle operator ^(T x, const msci::angle& y)
 {
 	return angle(pow(x, y.get_value()));
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator ==(T x, const msci::angle& y)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator !=(T x, const msci::angle& y)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <(T x, const msci::angle& y)
 {
 	return (x < y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >(T x, const msci::angle& y)
 {
 	return (x > y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <=(T x, const msci::angle& y)
 {
 	return (x <= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >=(T x, const msci::angle& y)
 {
 	return (x >= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator ==(const msci::angle& y, T x)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator !=(const msci::angle& y, T x)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <(const msci::angle& y, T x)
 {
 	return (y.get_value() < x);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >(const msci::angle& y, T x)
 {
 	return (y.get_value() > x);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <=(const msci::angle& y, T x)
 {
 	return (y.get_value() <= x);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >=(const msci::angle& y, T x)
 {
 	return (y.get_value() >= x);

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace std
+namespace msci
 {
 		template<class T>
 struct is_number : std::integral_constant < bool, is_same<short,T>::value || is_same<int,T>::value || is_same<long,T>::value || is_same<long long,T>::value || is_same<unsigned short,T>::value || is_same<unsigned int,T>::value || is_same<unsigned long,T>::value || is_same<unsigned long long,T>::value || is_floating_point<T>::value> {};

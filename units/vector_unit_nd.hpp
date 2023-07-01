@@ -97,30 +97,30 @@ namespace msci
 			vector_unit_nd operator /(const scalar_unit&) const;
 			vector_unit_nd operator ^(const scalar_unit&) const;
 
-			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
 			vector_unit_nd operator +(U) const;
-			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
 			vector_unit_nd operator -(U) const;
-			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
 			vector_unit_nd operator *(U) const;
-			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
 			vector_unit_nd operator /(U) const;
 			template<typename U, typename = typename enable_if<is_integer_number<U>::value>::type>
 			vector_unit_nd operator ^(U) const;
 
-			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
 			void operator +=(U y)
 			{
 				scalar_unit::value += y;
 			}
 
-			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
 			void operator -=(U y)
 			{
 				scalar_unit::value -= y;
 			}
 
-			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
 			void operator *=(U y)
 			{
 				scalar_unit::value *= y;
@@ -130,7 +130,7 @@ namespace msci
 				}
 			}
 
-			template<typename U, typename = typename enable_if<is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
 			void operator /=(U y)
 			{
 				scalar_unit::value /= y;

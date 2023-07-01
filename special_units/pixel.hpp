@@ -51,67 +51,67 @@ namespace msci
 			void operator /=(const pixel&);
 			void operator ^=(const pixel&);
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator =(T y)
 			{
 				value = y;
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			pixel operator +(T y) const
 			{
 				return pixel(value + y);
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			pixel operator -(T y) const
 			{
 				return pixel(value - y);
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			pixel operator *(T y) const
 			{
 				return pixel(value * y);
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			pixel operator /(T y) const
 			{
 				return pixel(value / y);
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			pixel operator ^(T y) const
 			{
 				return pixel(std::pow(value, y));
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator +=(T y)
 			{
 				value += y;
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator -=(T y)
 			{
 				value -= y;
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator *=(T y)
 			{
 				value *= y;
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator /=(T y)
 			{
 				value /= y;
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator ^=(T y)
 			{
 				value = std::pow(value, y);
@@ -134,103 +134,103 @@ namespace msci
 	pixel sqrt_nth(const pixel&,int);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 msci::pixel operator +(T x, const msci::pixel& y)
 {
 	return pixel(x + y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 msci::pixel operator -(T x, const msci::pixel& y)
 {
 	return pixel(x - y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 msci::pixel operator *(T x, const msci::pixel& y)
 {
 	return pixel(x * y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 msci::pixel operator /(T x, const msci::pixel& y)
 {
 	return pixel(x / y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 msci::pixel operator ^(T x, const msci::pixel& y)
 {
 	return pixel(pow(x, y.get_value()));
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator ==(T x, const msci::pixel& y)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator !=(T x, const msci::pixel& y)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <(T x, const msci::pixel& y)
 {
 	return (x < y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >(T x, const msci::pixel& y)
 {
 	return (x > y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <=(T x, const msci::pixel& y)
 {
 	return (x <= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >=(T x, const msci::pixel& y)
 {
 	return (x >= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator ==(const msci::pixel& y, T x)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator !=(const msci::pixel& y, T x)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <(const msci::pixel& y, T x)
 {
 	return (y.get_value() < x);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >(const msci::pixel& y, T x)
 {
 	return (y.get_value() > x);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <=(const msci::pixel& y, T x)
 {
 	return (y.get_value() <= x);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >=(const msci::pixel& y, T x)
 {
 	return (y.get_value() >= x);

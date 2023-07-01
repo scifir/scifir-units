@@ -49,55 +49,55 @@ namespace msci
 			void operator *=(const percentage&);
 			void operator /=(const percentage&);
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator =(T y)
 			{
 				value = y;
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			percentage operator +(T y) const
 			{
 				return percentage(value + y);
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			percentage operator -(T y) const
 			{
 				return percentage(value - y);
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			T operator *(T y) const
 			{
 				return T(value * y / 100);
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			T operator /(T y) const
 			{
 				return percentage(100 * value / y);
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator +=(T y)
 			{
 				value += y;
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator -=(T y)
 			{
 				value -= y;
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator *=(T y)
 			{
 				value *= y;
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator /=(T y)
 			{
 				value /= y;
@@ -122,97 +122,97 @@ namespace msci
 	bool is_percentage(const string&);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 msci::percentage operator +(T x, const msci::percentage& y)
 {
 	return percentage(x + y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 msci::percentage operator -(T x, const msci::percentage& y)
 {
 	return percentage(x - y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 T operator *(T x, const msci::percentage& y)
 {
 	return percentage(x * y.get_value() / 100);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 T operator /(T x, const msci::percentage& y)
 {
 	return percentage(100 * x / y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator ==(T x, const msci::percentage& y)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator !=(T x, const msci::percentage& y)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <(T x, const msci::percentage& y)
 {
 	return (x < y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >(T x, const msci::percentage& y)
 {
 	return (x > y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <=(T x, const msci::percentage& y)
 {
 	return (x <= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >=(T x, const msci::percentage& y)
 {
 	return (x >= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator ==(const msci::percentage& y, T x)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator !=(const msci::percentage& y, T x)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <(const msci::percentage& y, T x)
 {
 	return (y.get_value() < x);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >(const msci::percentage& y, T x)
 {
 	return (y.get_value() > x);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <=(const msci::percentage& y, T x)
 {
 	return (y.get_value() <= x);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >=(const msci::percentage& y, T x)
 {
 	return (y.get_value() >= x);

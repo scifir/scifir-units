@@ -46,26 +46,26 @@ namespace msci
 			void operator +=(const pOH&);
 			void operator -=(const pOH&);
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			pOH operator +(T y) const
 			{
 				return pOH(value + y);
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			pOH operator -(T y) const
 			{
 				return pOH(value - y);
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator +=(T y)
 			{
 				value += y;
 				normalize_value();
 			}
 
-			template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 			void operator -=(T y)
 			{
 				value -= y;
@@ -96,85 +96,85 @@ namespace msci
 	string to_string(const pOH&);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 msci::pOH operator +(T x, const msci::pOH& y)
 {
 	return pOH(x + y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 msci::pOH operator -(T x, const msci::pOH& y)
 {
 	return pOH(x - y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator ==(T x, const msci::pOH& y)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator !=(T x, const msci::pOH& y)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <(T x, const msci::pOH& y)
 {
 	return (x < y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >(T x, const msci::pOH& y)
 {
 	return (x > y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <=(T x, const msci::pOH& y)
 {
 	return (x <= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >=(T x, const msci::pOH& y)
 {
 	return (x >= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator ==(const msci::pOH& y, T x)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator !=(const msci::pOH& y, T x)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <(const msci::pOH& y, T x)
 {
 	return (y.get_value() < x);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >(const msci::pOH& y, T x)
 {
 	return (y.get_value() > x);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator <=(const msci::pOH& y, T x)
 {
 	return (y.get_value() <= x);
 }
 
-template<typename T, typename = typename enable_if<is_number<T>::value>::type>
+template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
 bool operator >=(const msci::pOH& y, T x)
 {
 	return (y.get_value() >= x);
