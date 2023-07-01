@@ -885,9 +885,9 @@ namespace msci
 		string dimension_name;
 		string prefix_name;
 		set<string> prefixes_options {"Y", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "u", "n", "p", "f", "a", "z", "y"};
-		if(prefixes_options.count(x.substr(0,1)) and x != "rad" and x != "sr" and x != "m" and x.substr(0,2) != "da" and x.substr(0,3) != "mol" and x != "h" and x != "d")
+		if(prefixes_options.count(x.substr(0,1)) and x != "rad" and x != "sr" and x != "m" and x.substr(0,2) != "da" and x.substr(0,3) != "mol" and x != "h" and x != "d" and x != "cd" and x != "money")
 		{
-			prefix_name = x.substr(0,1);	
+			prefix_name = x.substr(0,1);
 			dimension_name = x.substr(1);
 		}
 		else if(x.substr(0,2) == "da")
