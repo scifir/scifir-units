@@ -1247,51 +1247,10 @@ namespace msci
 		return dimensions;
 	}
 
-	vector<dimension> create_derived_dimensions(string init_value)
+	vector<dimension> create_derived_dimensions(const string& init_value)
 	{
-		boost::algorithm::erase_all(init_value, " ");
-		dimension::sign new_sign = dimension::positive;
-		int new_scale = 1;
-		int new_size = 1;
-		int new_start = 0;
-		string new_dimension_str;
-		vector<dimension> dimensions = vector<dimension>();
-		for(int j = 0; j < init_value.size(); j++)
-		{
-			if(isdigit(init_value[j]))
-			{
-				new_dimension_str = init_value.substr(new_start, new_size - 1);
-				new_scale = stoi(init_value.substr(new_start, 1));
-			}
-			else if(isalpha(init_value[j]) and (!isalpha(init_value[j + 1]) or (j + 1) == init_value.size()))
-			{
-				new_dimension_str = init_value.substr(new_start, new_size);
-			}
-			if(init_value[j] == '*')
-			{
-				new_size = 0;
-				new_start = j + 1;
-			}
-			else if(init_value[j] == '/')
-			{
-				new_sign = dimension::negative;
-				new_size = 0;
-				new_start = j + 1;
-			}
-			if(!new_dimension_str.empty())
-			{
-				dimension new_dimension = create_dimension(new_dimension_str,new_sign);
-				for (int k = 0; k < new_scale; k++)
-				{
-					dimensions.push_back(new_dimension);
-				}
-				new_dimension_str.clear();
-				new_scale = 1;
-				new_size = 0;
-			}
-			new_size++;
-		}
-		return dimensions;
+		vector<dimension> new_dimensions = create_dimensions(init_value);
+		return create_derived_dimensions(new_dimensions);
 	}
 
 	vector<dimension> create_derived_dimensions(const vector<dimension>& x)
@@ -1425,7 +1384,7 @@ namespace msci
 				{
 					continue;
 				}
-				int total_dimensions = std::pow(dimensions_count[x_dimension.dimension_type], 1 / scale);
+				int total_dimensions = std::pow(dimensions_count[x_dimension.dimension_type], 1.0 / scale);
 				for (int j = 0; j < total_dimensions; j++)
 				{
 					new_dimensions.push_back(x_dimension);
@@ -1512,7 +1471,7 @@ namespace msci
 		{
 			for (const dimension& y_dimension : y.get_basic_dimensions())
 			{
-				if (x.dimension_type == y.dimension_type)
+				if (x_dimension == y_dimension)
 				{
 					return true;
 				}
@@ -1523,8 +1482,8 @@ namespace msci
 
 	bool equal_dimensions(const string& x,const string& y)
 	{
-		vector<dimension> x_dimensions = create_dimensions(x);
-		vector<dimension> y_dimensions = create_dimensions(y);
+		vector<dimension> x_dimensions = create_derived_dimensions(x);
+		vector<dimension> y_dimensions = create_derived_dimensions(y);
 		return equal_dimensions(x_dimensions,y_dimensions);
 	}
 
