@@ -1414,18 +1414,86 @@ namespace msci
 		return new_dimensions;
 	}
 
-	vector<dimension> normalize_dimensions(const vector<dimension>& x,long double& value)
+	vector<dimension> normalize_dimensions(const vector<dimension>& x)
 	{
+		vector<dimension> new_x = create_derived_dimensions(x);
 		vector<int> skip_dimensions = vector<int>();
-		vector<dimension> new_x = create_derived_dimensions(x,value);
 		for(int i = 0; i < new_x.size(); i++)
 		{
 			for(int j = i + 1; j < new_x.size(); j++)
 			{
+				if (skip_dimensions.size() > 0)
+				{
+					bool skip = false;
+					for(int k = 0; k < skip_dimensions.size(); k++)
+					{
+						if (j == skip_dimensions[k])
+						{
+							skip = true;
+							break;
+						}
+					}
+					if (skip)
+					{
+						break;
+					}
+				}
 				if (new_x[i].dimension_type == new_x[j].dimension_type and new_x[i].dimension_sign != new_x[j].dimension_sign)
 				{
 					skip_dimensions.push_back(i);
 					skip_dimensions.push_back(j);
+					break;
+				}
+			}
+		}
+		vector<dimension> new_dimensions = vector<dimension>();
+		for(int i = 0; i < new_x.size(); i++)
+		{
+			bool skip = false;
+			for(int j = 0; j < skip_dimensions.size(); j++)
+			{
+				if (i == skip_dimensions[j])
+				{
+					skip = true;
+				}
+			}
+			if (!skip)
+			{
+				new_dimensions.push_back(new_x[i]);
+			}
+		}
+		return new_dimensions;
+	}
+
+	vector<dimension> normalize_dimensions(const vector<dimension>& x,long double& value)
+	{
+		vector<dimension> new_x = create_derived_dimensions(x,value);
+		vector<int> skip_dimensions = vector<int>();
+		for(int i = 0; i < new_x.size(); i++)
+		{
+			for(int j = i + 1; j < new_x.size(); j++)
+			{
+				if (skip_dimensions.size() > 0)
+				{
+					bool skip = false;
+					for(int k = 0; k < skip_dimensions.size(); k++)
+					{
+						if (j == skip_dimensions[k])
+						{
+							skip = true;
+							break;
+						}
+					}
+					if (skip)
+					{
+						break;
+					}
+				}
+				if (new_x[i].dimension_type == new_x[j].dimension_type and new_x[i].dimension_sign != new_x[j].dimension_sign)
+				{
+					skip_dimensions.push_back(i);
+					skip_dimensions.push_back(j);
+					break;
 				}
 			}
 		}
@@ -1488,18 +1556,20 @@ namespace msci
 
 	bool equal_dimensions(const string& x,const string& y)
 	{
-		vector<dimension> x_dimensions = create_derived_dimensions(x);
-		vector<dimension> y_dimensions = create_derived_dimensions(y);
+		vector<dimension> x_dimensions = create_dimensions(x);
+		vector<dimension> y_dimensions = create_dimensions(y);
 		return equal_dimensions(x_dimensions,y_dimensions);
 	}
 
 	bool equal_dimensions(const vector<dimension>& x,const vector<dimension>& y)
 	{
+		vector<dimension> x_derived_dimensions = create_derived_dimensions(x);
+		vector<dimension> y_derived_dimensions = create_derived_dimensions(y);
 		vector<int> skip = vector<int>();
-		for (const dimension& x_dimension: x)
+		for (const dimension& x_dimension: x_derived_dimensions)
 		{
 			bool is_equal = false;
-			for (int j = 0; j < y.size(); j++)
+			for (int j = 0; j < y_derived_dimensions.size(); j++)
 			{
 				bool skip_j = false;
 				if (skip.size() > 0)
@@ -1516,7 +1586,7 @@ namespace msci
 				{
 					continue;
 				}
-				if (x_dimension == y[j])
+				if (x_dimension == y_derived_dimensions[j])
 				{
 					skip.push_back(j);
 					is_equal = true;

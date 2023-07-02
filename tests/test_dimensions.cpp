@@ -12,13 +12,15 @@
 using namespace std;
 
 TEST_CASE("dimension class","Full test of dimension class") {
-	dimension a = dimension("m",dimension::positive);
-	REQUIRE (bool(a.dimension_type == dimension::m));
-	REQUIRE (bool(a.dimension_sign == dimension::positive));
-	REQUIRE (bool(a.prefix.prefix_type == prefix::no_prefix));
-	REQUIRE (bool(a.get_symbol() == "m"));
-	dimension b = dimension("m",dimension::negative);
-	REQUIRE (bool(b.dimension_sign == dimension::negative));
+	SECTION("Base functionalities of dimension class") {
+		dimension a = dimension("m",dimension::positive);
+		REQUIRE (bool(a.dimension_type == dimension::m));
+		REQUIRE (bool(a.dimension_sign == dimension::positive));
+		REQUIRE (bool(a.prefix.prefix_type == prefix::no_prefix));
+		REQUIRE (bool(a.get_symbol() == "m"));
+		dimension b = dimension("m",dimension::negative);
+		REQUIRE (bool(b.dimension_sign == dimension::negative));
+	}
 	
 	SECTION("Creation of basic dimension classes") {
 		dimension a = dimension("m",dimension::positive);
@@ -93,9 +95,39 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		REQUIRE (bool(to_string(t) == "ym"));
 	}
 	
-	vector<dimension> c = create_dimensions("m*s2/C4");
-	REQUIRE (bool(to_string(c) == "m*s2/C4"));
-	vector<dimension> d = create_derived_dimensions("N2");
-	REQUIRE (bool(to_string(d) == "kg2*m2/s4"));
+	SECTION ("Functionalities of dimension class") {
+		vector<dimension> a = create_dimensions("m*s2/C4");
+		REQUIRE (bool(to_string(a) == "m*s2/C4"));
+		REQUIRE (bool(equal_dimensions(to_string(a),"s2*m/C4")));
+		REQUIRE (bool(equal_dimensions(to_string(a),"s2*m/C3*C")));
+		vector<dimension> b = create_dimensions("1/C2");
+		REQUIRE (bool(to_string(b) == "1/C2"));
+		vector<dimension> c = create_dimensions("m");
+		REQUIRE (bool(to_string(c) == "m"));
+		vector<dimension> d = create_dimensions("m3");
+		REQUIRE (bool(to_string(d) == "m3"));
+		vector<dimension> e = create_derived_dimensions("N");
+		REQUIRE (bool(to_string(e) == "kg*m/s2"));
+		vector<dimension> f = create_derived_dimensions("N2");
+		REQUIRE (bool(to_string(f) == "kg2*m2/s4"));
+		vector<dimension> g = create_dimensions("N");
+		vector<dimension> h = create_derived_dimensions(g);
+		REQUIRE (bool(to_string(h) == "kg*m/s2"));
+		vector<dimension> i = create_dimensions("1/N");
+		vector<dimension> j = create_derived_dimensions(i);
+		REQUIRE (bool(to_string(j) == "s2/kg*m"));
+		vector<dimension> k = create_dimensions("h");
+		long double k2 = 10;
+		vector<dimension> l = create_derived_dimensions(k,k2);
+		REQUIRE (bool(equal_dimensions(k,l)));
+		REQUIRE (bool(k2 = 36000));
+		vector<dimension> m = create_dimensions("m*s2/m2*C4");
+		vector<dimension> n = normalize_dimensions(m);
+		cout << "n: " << to_string(n) << endl;
+	}
+	
+	SECTION ("Testing of custom dimensions") {
+		
+	}
 }
 
