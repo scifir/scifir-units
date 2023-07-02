@@ -36,6 +36,7 @@ namespace msci
 			dimension(dimension&&);
 			explicit dimension(dimension::type,msci::prefix::type,dimension::sign);
 			explicit dimension(dimension::type,const msci::prefix&,dimension::sign);
+			explicit dimension(const string&,dimension::sign new_sign);
 			explicit dimension(const string&,const msci::prefix& new_prefix,dimension::sign new_sign);
 
 			~dimension();
@@ -155,8 +156,6 @@ namespace msci
 			static map<int,string> full_symbols;
 			static int total_full_symbols;
 	};
-
-	dimension create_dimension(const string&,dimension::sign);
 
 	string to_string(const dimension&);
 	string to_string(const vector<dimension>&);

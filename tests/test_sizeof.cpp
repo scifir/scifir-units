@@ -82,14 +82,14 @@ int main()
 	//cout << "c: " << c.get_symbol() << endl;
 	//cout << "d: " << d.get_symbol() << endl;
 	//cout << "e: " << e.get_symbol() << endl;
-	//cout << "custom dimension: " << create_dimension("hello_here1",dimension::positive) << endl;
+	//cout << "custom dimension: " << dimension("hello_here1",dimension::positive) << endl;
 	//scalar_unit f = scalar_unit("20 hellohere1");
 	//cout << "f: " << f << endl;
 	//cout << "f dimensions: " << f.get_dimensions()[0].get_symbol() << endl;
 	//cout << "g: " << sqrt(scalar_unit("10000 m4")) << endl;
 	//dimension a = dimension(dimension::Ohm,prefix::no_prefix,dimension::positive);
 	//cout << "resistance dimension: " << a << endl;
-	//vector<dimension> new_dimensions {create_dimension("km",dimension::positive),create_dimension("m",dimension::positive),create_dimension("s",dimension::positive),dimension(dimension::Ohm,prefix::no_prefix,dimension::negative),dimension(dimension::B,prefix::Y,dimension::negative)};
+	//vector<dimension> new_dimensions {dimension("km",dimension::positive),dimension("m",dimension::positive),dimension("s",dimension::positive),dimension(dimension::Ohm,prefix::no_prefix,dimension::negative),dimension(dimension::B,prefix::Y,dimension::negative)};
 	//cout << to_string(new_dimensions) << endl;
 	//cout << scalar_unit("10 usd") << endl;
 	//scalar_unit c = scalar_unit("10 usd");

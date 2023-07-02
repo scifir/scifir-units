@@ -12,7 +12,7 @@ int main()
 	cout << "prefix a: " << prefix_a << endl;
 	cout << "prefix b: " << prefix_b << endl;
 
-	dimension dimension_a = create_dimension("cm");
+	dimension dimension_a = dimension("cm",dimension::positive);
 
 	cout << "dimension a: " << dimension_a << endl;
 

@@ -37,6 +37,217 @@ namespace msci
 	dimension::dimension(dimension::type new_dimension_type,const msci::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
 	{}
 
+	dimension::dimension(const string& init_dimension,dimension::sign new_sign) : prefix(),dimension_type(dimension::none),dimension_sign(new_sign),symbol()
+	{
+		string dimension_name;
+		string prefix_name;
+		set<string> prefixes_options {"Y", "Z", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "\u00B5", "u", "n", "p", "f", "a", "z", "y"};
+		if(prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "h" and init_dimension != "d" and init_dimension != "cd" and init_dimension != "money")
+		{
+			prefix_name = init_dimension.substr(0,1);
+			dimension_name = init_dimension.substr(1);
+		}
+		else if(init_dimension.substr(0,2) == "da")
+		{
+			prefix_name = "da";
+			dimension_name = init_dimension.substr(2);
+		}
+		else
+		{
+			prefix_name = "";
+			dimension_name = init_dimension;
+		}
+		prefix = msci::prefix(prefix_name);
+		if(dimension_name == "m")
+		{
+			dimension_type = dimension::m;
+		}
+		else if(dimension_name == "rad")
+		{
+			dimension_type = dimension::radian;
+		}
+		else if(dimension_name == "sr")
+		{
+			dimension_type = dimension::steradian;
+		}
+		else if(dimension_name == "s")
+		{
+			dimension_type = dimension::s;
+		}
+		else if(dimension_name == "g")
+		{
+			dimension_type = dimension::g;
+		}
+		else if(dimension_name == "C")
+		{
+			dimension_type = dimension::C;
+		}
+		else if(dimension_name == "K")
+		{
+			dimension_type = dimension::K;
+		}
+		else if(dimension_name == "mol")
+		{
+			dimension_type = dimension::mol;
+		}
+		else if(dimension_name == "cd")
+		{
+			dimension_type = dimension::cd;
+		}
+		else if(dimension_name == "B")
+		{
+			dimension_type = dimension::B;
+		}
+		else if(dimension_name == "Hz")
+		{
+			dimension_type = dimension::Hz;
+		}
+		else if(dimension_name == "N")
+		{
+			dimension_type = dimension::N;
+		}
+		else if(dimension_name == "Pa")
+		{
+			dimension_type = dimension::Pa;
+		}
+		else if(dimension_name == "J")
+		{
+			dimension_type = dimension::J;
+		}
+		else if(dimension_name == "W")
+		{
+			dimension_type = dimension::W;
+		}
+		else if(dimension_name == "A")
+		{
+			dimension_type = dimension::A;
+		}
+		else if(dimension_name == "V")
+		{
+			dimension_type = dimension::V;
+		}
+		else if(dimension_name == "F")
+		{
+			dimension_type = dimension::F;
+		}
+		else if(dimension_name == "ohm" or dimension_name == "Ohm" or dimension_name == "\u03A9")
+		{
+			dimension_type = dimension::Ohm;
+		}
+		else if(dimension_name == "S")
+		{
+			dimension_type = dimension::S;
+		}
+		else if(dimension_name == "Wb")
+		{
+			dimension_type = dimension::Wb;
+		}
+		else if(dimension_name == "T")
+		{
+			dimension_type = dimension::T;
+		}
+		else if(dimension_name == "H")
+		{
+			dimension_type = dimension::H;
+		}
+		else if(dimension_name == "lm")
+		{
+			dimension_type = dimension::lm;
+		}
+		else if(dimension_name == "lx")
+		{
+			dimension_type = dimension::lx;
+		}
+		else if(dimension_name == "Bq")
+		{
+			dimension_type = dimension::Bq;
+		}
+		else if(dimension_name == "Gy")
+		{
+			dimension_type = dimension::Gy;
+		}
+		else if(dimension_name == "Sv")
+		{
+			dimension_type = dimension::Sv;
+		}
+		else if(dimension_name == "kat")
+		{
+			dimension_type = dimension::kat;
+		}
+		else if(dimension_name == "angstrom" or dimension_name == "\u212B")
+		{
+			dimension_type = dimension::angstrom;
+		}
+		else if(dimension_name == "L")
+		{
+			dimension_type = dimension::L;
+		}
+		else if(dimension_name == "min")
+		{
+			dimension_type = dimension::minute;
+		}
+		else if(dimension_name == "h")
+		{
+			dimension_type = dimension::h;
+		}
+		else if(dimension_name == "d")
+		{
+			dimension_type = dimension::d;
+		}
+		else if(dimension_name == "AU")
+		{
+			dimension_type = dimension::AU;
+		}
+		else if(dimension_name == "pc")
+		{
+			dimension_type = dimension::pc;
+		}
+		else if(dimension_name == "eV")
+		{
+			dimension_type = dimension::eV;
+		}
+		else if(dimension_name == "Da")
+		{
+			dimension_type = dimension::Da;
+		}
+		else if(dimension_name == "amu")
+		{
+			dimension_type = dimension::amu;
+		}
+		else if(dimension_name == "barn")
+		{
+			dimension_type = dimension::barn;
+		}
+		else if(dimension_name == "M")
+		{
+			dimension_type = dimension::M;
+		}
+		else if(dimension_name == "particles")
+		{
+			dimension_type = dimension::particles;
+		}
+		else if(dimension_name == "ppm")
+		{
+			dimension_type = dimension::ppm;
+		}
+		else if(dimension_name == "ppb")
+		{
+			dimension_type = dimension::ppb;
+		}
+		else if(dimension_name == "money")
+		{
+			dimension_type = dimension::money;
+		}
+		else if(dimension_name == "px")
+		{
+			dimension_type = dimension::pixel;
+		}
+		else
+		{
+			dimension_type = dimension::none;
+		}
+	}
+
 	dimension::dimension(const string& new_symbol,const msci::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(dimension::custom),dimension_sign(new_sign)//,symbol{char[new_symbol.size()]}
 	{
 		if (new_symbol.size() > 3)
@@ -876,221 +1087,6 @@ namespace msci
 		}
 	}
 
-	dimension create_dimension(const string& x,dimension::sign new_sign)
-	{
-		if (x == "")
-		{
-			return dimension();
-		}
-		string dimension_name;
-		string prefix_name;
-		set<string> prefixes_options {"Y", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "\u00B5", "u", "n", "p", "f", "a", "z", "y"};
-		if(prefixes_options.count(x.substr(0,1)) and x != "rad" and x != "sr" and x != "m" and x.substr(0,2) != "da" and x.substr(0,3) != "mol" and x != "h" and x != "d" and x != "cd" and x != "money")
-		{
-			prefix_name = x.substr(0,1);
-			dimension_name = x.substr(1);
-		}
-		else if(x.substr(0,2) == "da")
-		{
-			prefix_name = "da";
-			dimension_name = x.substr(2);
-		}
-		else
-		{
-			prefix_name = "";
-			dimension_name = x;
-		}
-		prefix new_prefix = prefix(prefix_name);
-		if(dimension_name == "m")
-		{
-			return dimension(dimension::m,new_prefix,new_sign);
-		}
-		else if(dimension_name == "rad")
-		{
-			return dimension(dimension::radian,new_prefix,new_sign);
-		}
-		else if(dimension_name == "sr")
-		{
-			return dimension(dimension::steradian,new_prefix,new_sign);
-		}
-		else if(dimension_name == "s")
-		{
-			return dimension(dimension::s,new_prefix,new_sign);
-		}
-		else if(dimension_name == "g")
-		{
-			return dimension(dimension::g,new_prefix,new_sign);
-		}
-		else if(dimension_name == "C")
-		{
-			return dimension(dimension::C,new_prefix,new_sign);
-		}
-		else if(dimension_name == "K")
-		{
-			return dimension(dimension::K,new_prefix,new_sign);
-		}
-		else if(dimension_name == "mol")
-		{
-			return dimension(dimension::mol,new_prefix,new_sign);
-		}
-		else if(dimension_name == "cd")
-		{
-			return dimension(dimension::cd,new_prefix,new_sign);
-		}
-		else if(dimension_name == "B")
-		{
-			return dimension(dimension::B,new_prefix,new_sign);
-		}
-		else if(dimension_name == "Hz")
-		{
-			return dimension(dimension::Hz,new_prefix,new_sign);
-		}
-		else if(dimension_name == "N")
-		{
-			return dimension(dimension::N,new_prefix,new_sign);
-		}
-		else if(dimension_name == "Pa")
-		{
-			return dimension(dimension::Pa,new_prefix,new_sign);
-		}
-		else if(dimension_name == "J")
-		{
-			return dimension(dimension::J,new_prefix,new_sign);
-		}
-		else if(dimension_name == "W")
-		{
-			return dimension(dimension::W,new_prefix,new_sign);
-		}
-		else if(dimension_name == "A")
-		{
-			return dimension(dimension::A,new_prefix,new_sign);
-		}
-		else if(dimension_name == "V")
-		{
-			return dimension(dimension::V,new_prefix,new_sign);
-		}
-		else if(dimension_name == "F")
-		{
-			return dimension(dimension::F,new_prefix,new_sign);
-		}
-		else if(dimension_name == "ohm" or dimension_name == "Ohm" or dimension_name == "\u03A9")
-		{
-			return dimension(dimension::Ohm,new_prefix,new_sign);
-		}
-		else if(dimension_name == "S")
-		{
-			return dimension(dimension::S,new_prefix,new_sign);
-		}
-		else if(dimension_name == "Wb")
-		{
-			return dimension(dimension::Wb,new_prefix,new_sign);
-		}
-		else if(dimension_name == "T")
-		{
-			return dimension(dimension::T,new_prefix,new_sign);
-		}
-		else if(dimension_name == "H")
-		{
-			return dimension(dimension::H,new_prefix,new_sign);
-		}
-		else if(dimension_name == "lm")
-		{
-			return dimension(dimension::lm,new_prefix,new_sign);
-		}
-		else if(dimension_name == "lx")
-		{
-			return dimension(dimension::lx,new_prefix,new_sign);
-		}
-		else if(dimension_name == "Bq")
-		{
-			return dimension(dimension::Bq,new_prefix,new_sign);
-		}
-		else if(dimension_name == "Gy")
-		{
-			return dimension(dimension::Gy,new_prefix,new_sign);
-		}
-		else if(dimension_name == "Sv")
-		{
-			return dimension(dimension::Sv,new_prefix,new_sign);
-		}
-		else if(dimension_name == "kat")
-		{
-			return dimension(dimension::kat,new_prefix,new_sign);
-		}
-		else if(dimension_name == "angstrom" or dimension_name == "\u212B")
-		{
-			return dimension(dimension::angstrom,new_prefix,new_sign);
-		}
-		else if(dimension_name == "L")
-		{
-			return dimension(dimension::L,new_prefix,new_sign);
-		}
-		else if(dimension_name == "min")
-		{
-			return dimension(dimension::minute,new_prefix,new_sign);
-		}
-		else if(dimension_name == "h")
-		{
-			return dimension(dimension::h,new_prefix,new_sign);
-		}
-		else if(dimension_name == "d")
-		{
-			return dimension(dimension::d,new_prefix,new_sign);
-		}
-		else if(dimension_name == "AU")
-		{
-			return dimension(dimension::AU,new_prefix,new_sign);
-		}
-		else if(dimension_name == "pc")
-		{
-			return dimension(dimension::pc,new_prefix,new_sign);
-		}
-		else if(dimension_name == "eV")
-		{
-			return dimension(dimension::eV,new_prefix,new_sign);
-		}
-		else if(dimension_name == "Da")
-		{
-			return dimension(dimension::Da,new_prefix,new_sign);
-		}
-		else if(dimension_name == "amu")
-		{
-			return dimension(dimension::amu,new_prefix,new_sign);
-		}
-		else if(dimension_name == "barn")
-		{
-			return dimension(dimension::barn,new_prefix,new_sign);
-		}
-		else if(dimension_name == "M")
-		{
-			return dimension(dimension::M,new_prefix,new_sign);
-		}
-		else if(dimension_name == "particles")
-		{
-			return dimension(dimension::particles,new_prefix,new_sign);
-		}
-		else if(dimension_name == "ppm")
-		{
-			return dimension(dimension::ppm,new_prefix,new_sign);
-		}
-		else if(dimension_name == "ppb")
-		{
-			return dimension(dimension::ppb,new_prefix,new_sign);
-		}
-		else if(dimension_name == "money")
-		{
-			return dimension(dimension::money,new_prefix,new_sign);
-		}
-		else if(dimension_name == "px")
-		{
-			return dimension(dimension::pixel,new_prefix,new_sign);
-		}
-		else
-		{
-			return dimension(dimension_name,new_prefix,new_sign);
-		}
-	}
-
 	string to_string(const dimension& x)
 	{
 		ostringstream out;
@@ -1240,7 +1236,7 @@ namespace msci
 			}
 			if(!new_dimension_str.empty())
 			{
-				dimension new_dimension = create_dimension(new_dimension_str,new_sign);
+				dimension new_dimension = dimension(new_dimension_str,new_sign);
 				for (int k = 0; k < new_scale; k++)
 				{
 					dimensions.push_back(new_dimension);
