@@ -884,7 +884,7 @@ namespace msci
 		}
 		string dimension_name;
 		string prefix_name;
-		set<string> prefixes_options {"Y", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "u", "n", "p", "f", "a", "z", "y"};
+		set<string> prefixes_options {"Y", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "\u00B5", "u", "n", "p", "f", "a", "z", "y"};
 		if(prefixes_options.count(x.substr(0,1)) and x != "rad" and x != "sr" and x != "m" and x.substr(0,2) != "da" and x.substr(0,3) != "mol" and x != "h" and x != "d" and x != "cd" and x != "money")
 		{
 			prefix_name = x.substr(0,1);
@@ -900,7 +900,7 @@ namespace msci
 			prefix_name = "";
 			dimension_name = x;
 		}
-		prefix new_prefix = create_prefix(prefix_name);
+		prefix new_prefix = prefix(prefix_name);
 		if(dimension_name == "m")
 		{
 			return dimension(dimension::m,new_prefix,new_sign);
@@ -1089,6 +1089,13 @@ namespace msci
 		{
 			return dimension(dimension_name,new_prefix,new_sign);
 		}
+	}
+
+	string to_string(const dimension& x)
+	{
+		ostringstream out;
+		out << x.prefix << x.get_symbol();
+		return out.str();
 	}
 
 	string to_string(const vector<dimension>& x_dimensions)

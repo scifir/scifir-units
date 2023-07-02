@@ -38,6 +38,11 @@ target_link_libraries(scifir_units boost_system icuuc)
 add_executable(test_sizeof tests/test_sizeof.cpp)
 target_link_libraries(test_sizeof scifir_units boost_system icuuc)
 
+add_executable(test_prefixes tests/test_prefixes.cpp)
+target_link_libraries(test_prefixes PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
+add_test(NAME test_prefixes COMMAND test_prefixes)
+set_tests_properties(test_prefixes PROPERTIES LABELS test)
+
 add_executable(test_dimensions tests/test_dimensions.cpp)
 target_link_libraries(test_dimensions PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
 add_test(NAME test_dimensions COMMAND test_dimensions)

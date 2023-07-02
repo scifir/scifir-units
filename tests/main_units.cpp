@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
 	msci::prefix prefix_a("m");
-	msci::prefix prefix_b = create_prefix("m");
+	msci::prefix prefix_b = prefix("m");
 
 	cout << "prefix a: " << prefix_a << endl;
 	cout << "prefix b: " << prefix_b << endl;

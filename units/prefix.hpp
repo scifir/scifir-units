@@ -34,9 +34,6 @@ namespace msci
 
 	prefix::type prefix_string(const string&);
 
-	prefix create_prefix(prefix::type);
-	prefix create_prefix(const string&);
-
 	prefix closest_prefix(const prefix&,int);
 	prefix create_prefix_by_factor(int);
 }

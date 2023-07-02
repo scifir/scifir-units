@@ -6,9 +6,9 @@ using namespace std;
 
 namespace msci
 {
-	prefix::prefix(): prefix_type()
+	prefix::prefix(): prefix_type(prefix::no_prefix)
 	{}
-	
+
 	prefix::prefix(const prefix& x) : prefix_type(x.prefix_type)
 	{}
 
@@ -20,13 +20,13 @@ namespace msci
 
 	prefix::prefix(const string& new_type) : prefix_type(prefix_string(new_type))
 	{}
-	
+
 	prefix& prefix::operator=(const prefix& x)
 	{
 		prefix_type = x.prefix_type;
 		return *this;
 	}
-	
+
 	prefix& prefix::operator=(prefix&& x)
 	{
 		prefix_type = move(x.prefix_type);
@@ -210,6 +210,10 @@ namespace msci
 		{
 			return prefix::T;
 		}
+		else if(x == "G")
+		{
+			return prefix::G;
+		}
 		else if(x == "M")
 		{
 			return prefix::M;
@@ -238,7 +242,7 @@ namespace msci
 		{
 			return prefix::m;
 		}
-		else if(x == "u")
+		else if(x == "u" or x == "\u00B5")
 		{
 			return prefix::u;
 		}
@@ -273,99 +277,6 @@ namespace msci
 		else
 		{
 			return prefix::no_prefix;
-		}
-	}
-
-	prefix create_prefix(prefix::type x)
-	{
-		return prefix(x);
-	}
-
-	prefix create_prefix(const string& x)
-	{
-		if (x == "")
-		{
-			return prefix(prefix::no_prefix);
-		}
-		else if(x == "Y")
-		{
-			return prefix(prefix::Y);
-		}
-		else if(x == "Z")
-		{
-			return prefix(prefix::Z);
-		}
-		else if(x == "E")
-		{
-			return prefix(prefix::E);
-		}
-		else if(x == "P")
-		{
-			return prefix(prefix::P);
-		}
-		else if(x == "T")
-		{
-			return prefix(prefix::T);
-		}
-		else if(x == "M")
-		{
-			return prefix(prefix::M);
-		}
-		else if(x == "k")
-		{
-			return prefix(prefix::k);
-		}
-		else if(x == "h")
-		{
-			return prefix(prefix::h);
-		}
-		else if(x == "da")
-		{
-			return prefix(prefix::da);
-		}
-		else if(x == "d")
-		{
-			return prefix(prefix::d);
-		}
-		else if(x == "c")
-		{
-			return prefix(prefix::c);
-		}
-		else if(x == "m")
-		{
-			return prefix(prefix::m);
-		}
-		else if(x == "u")
-		{
-			return prefix(prefix::u);
-		}
-		else if(x == "n")
-		{
-			return prefix(prefix::n);
-		}
-		else if(x == "p")
-		{
-			return prefix(prefix::p);
-		}
-		else if(x == "f")
-		{
-			return prefix(prefix::f);
-		}
-		else if(x == "a")
-		{
-			return prefix(prefix::a);
-		}
-		else if(x == "z")
-		{
-			return prefix(prefix::z);
-		}
-		else if(x == "y")
-		{
-			return prefix(prefix::y);
-		}
-		else
-		{
-			return prefix();
 		}
 	}
 

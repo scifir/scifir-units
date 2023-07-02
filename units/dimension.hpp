@@ -158,6 +158,7 @@ namespace msci
 
 	dimension create_dimension(const string&,dimension::sign);
 
+	string to_string(const dimension&);
 	string to_string(const vector<dimension>&);
 
 	vector<dimension> create_derived_dimensions(const string&);
