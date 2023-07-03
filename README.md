@@ -435,7 +435,7 @@ coordinates_1d<length> y = coordinates_1d<length>(length(3,"km"));
 coordinates_1d<length> z = coordinates_1d<length>("4 dam");
 coordinates_1d<float> z = coordinates_1d<float>(12); // coordinates_1d can be used with a float in order to save memory, or if any other unit is useful for the use case
 
-point_1d a = point_1d(1_dm);
+point_1d<length> a = point_1d<length>(1_dm);
 x = a; // A coordinates_1d can be assigned a point_1d to get his same position
 
 x.set_position(1_km); // the position is now 1 km
@@ -477,7 +477,7 @@ coordinates_2d<length> y = coordinates_2d<length>(length(3,"km"),length(5,"dam")
 coordinates_2d<length> z = coordinates_2d<length>("4 dam,2 m"); // initialization string
 coordinates_2d<float> z = coordinates_2d<float>(12,20); // coordinates_2d can be used with a float in order to save memory, or if any other unit is useful for the use case
 
-point_2d a = point_2d(1_dm,5_cm);
+point_2d<length> a = point_2d<length>(1_dm,5_cm);
 x = a; // A coordinates_2d can be assigned a point_2d to get his same position
 
 length x_p = x.get_p(); // coordinates_2d give the value of p of polar coordinates
@@ -528,7 +528,7 @@ coordinates_3d<length> y = coordinates_3d<length>(length(3,"km"),length(5,"dam")
 coordinates_3d<length> z = coordinates_3d<length>("4 dam,2 m,1 km"); // initialization string
 coordinates_3d<float> z = coordinates_3d<float>(12,20,15); // coordinates_3d can be used with a float in order to save memory, or if any other unit is useful for the use case
 
-point_3d a = point_3d(1_dm,5_cm,10_mm);
+point_3d<length> a = point_3d<length>(1_dm,5_cm,10_mm);
 x = a; // A coordinates_3d can be assigned a point_3d to get his same position
 
 length x_p = x.get_p(); // coordinates_3d give the value of p of cylindrical coordinates
