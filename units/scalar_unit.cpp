@@ -141,7 +141,7 @@ namespace msci
 			cerr << "Cannot sum different dimensions";
 			return;
 		}
-		x.set_same_prefix(get_dimensions());
+		x.change_dimensions(x);
 		value += x.get_value();
 	}
 
@@ -152,7 +152,7 @@ namespace msci
 			cerr << "Cannot substract different dimensions";
 			return;
 		}
-		x.set_same_prefix(get_dimensions());
+		x.change_dimensions(x);
 		value -= x.get_value();
 	}
 
@@ -436,25 +436,6 @@ namespace msci
 		value *= old_dimension.prefix_math();
 	}
 
-	void scalar_unit::set_same_prefix(const vector<dimension>& new_dimensions)
-	{
-		for(const dimension& x_dimension : dimensions)
-		{
-			remove_dimension(x_dimension);
-		}
-		dimensions.clear();
-		for(const dimension& x_new_dimension : new_dimensions)
-		{
-			add_dimension(x_new_dimension);
-		}
-		dimensions = new_dimensions;
-	}
-
-	void scalar_unit::set_same_prefix(const scalar_unit& x)
-	{
-		set_same_prefix(x.get_dimensions());
-	}
-
 	string scalar_unit::initial_dimensions_get_structure(const string& init_value) const
 	{
 		return "";
@@ -571,7 +552,7 @@ bool operator <(const msci::scalar_unit& x, const msci::scalar_unit& y)
 		return false;
 	}
 	msci::scalar_unit z = x;
-	z.set_same_prefix(y.get_dimensions());
+	z.change_dimensions(y);
 	if(z.get_value() < y.get_value())
 	{
 		return true;
@@ -589,7 +570,7 @@ bool operator >(const msci::scalar_unit& x, const msci::scalar_unit& y)
 		return false;
 	}
 	msci::scalar_unit z = x;
-	z.set_same_prefix(y.get_dimensions());
+	z.change_dimensions(y);
 	if(z.get_value() > y.get_value())
 	{
 		return true;

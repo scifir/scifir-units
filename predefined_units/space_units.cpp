@@ -13,7 +13,7 @@ namespace msci
 	area::area(const size_2d<length>& x) : scalar_unit()
 	{
 		length x_height = x.height;
-		x_height.set_same_prefix(x.width);
+		x_height.change_dimensions(x.width);
 		*this = x.width * x_height;
 	}
 
@@ -23,8 +23,8 @@ namespace msci
 	{
 		length x_height = x.height;
 		length x_depth = x.depth;
-		x_height.set_same_prefix(x.width);
-		x_depth.set_same_prefix(x.width);
+		x_height.change_dimensions(x.width);
+		x_depth.change_dimensions(x.width);
 		*this = x.width * x_height * x_depth;
 	}
 

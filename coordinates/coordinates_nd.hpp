@@ -259,7 +259,7 @@ namespace msci
 			void set_position(const T& new_p,const angle& new_theta,T new_z)
 			{
 				values.clear();
-				new_z.set_same_prefix(new_p);
+				new_z.change_dimensions(new_p);
 				values.push_back(T(new_p * msci::cos(new_theta)));
 				values.push_back(T(new_p * msci::sin(new_theta)));
 				values.push_back(new_z);
@@ -364,7 +364,7 @@ namespace msci
 			{
 				if (values.size() == 3)
 				{
-					new_z.set_same_prefix(new_p);
+					new_z.change_dimensions(new_p);
 					values[0] += T(new_p * msci::cos(new_theta));
 					values[1] += T(new_p * msci::sin(new_theta));
 					values[2] += new_z;
