@@ -1340,10 +1340,10 @@ namespace msci
 		vector<dimension> new_dimensions = vector<dimension>();
 		if (dimensions_count.size() == 1) // If there's only one type of dimension, square it and conserve its type
 		{
-			prefix_square_difference(x,value);
 			for (int i = 0; i < dimensions_count[x[0].dimension_type]; i++)
 			{
-				value *= x[0].get_conversion_factor();
+				value *= x[i].get_conversion_factor();
+				value *= x[i].prefix_math();
 			}
 			int total_dimensions = std::pow(dimensions_count[x[0].dimension_type], 1.0 / scale);
 			x[0].prefix.prefix_type = prefix::no_prefix;
@@ -1356,9 +1356,6 @@ namespace msci
 		else // If there's more than one type of dimension, creates the derived dimensions of them, and squares the total. If there are abbreviations, they are losed
 		{
 			x = normalize_dimensions(x,value);
-			//deleted_derived_dimension_conversion_factor_math(x,value);
-			//vector<dimension> x_derived = create_derived_dimensions(x,value);
-			//prefix_square_difference(x_derived,value);
 			vector<dimension::type> counted_dimensions = vector<dimension::type>();
 			dimensions_count.clear();
 			for (const dimension& x_dimension : x)
@@ -1503,29 +1500,6 @@ namespace msci
 			}
 		}
 		return new_dimensions;
-	}
-
-	void prefix_square_difference(const vector<dimension>& x,long double& value)
-	{
-		for(const dimension& x_dimension : x)
-		{
-			if (x_dimension.dimension_type == dimension::B)
-			{
-				value *= std::pow(1024, x_dimension.prefix.get_conversion_factor() / 3);
-			}
-			else
-			{
-				value *= std::pow(10, x_dimension.prefix.get_conversion_factor());
-			}
-		}
-	}
-
-	void deleted_derived_dimension_conversion_factor_math(const vector<dimension>& x,long double& value)
-	{
-		for (const dimension& x_dimension : x)
-		{
-			value *= x_dimension.get_conversion_factor();
-		}
 	}
 
 	bool common_dimension(const dimension& x,const dimension& y)

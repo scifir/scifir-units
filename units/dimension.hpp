@@ -169,10 +169,10 @@ namespace msci
 	vector<dimension> divide_dimensions(vector<dimension>,const vector<dimension>&,long double&);
 	vector<dimension> square_dimensions(vector<dimension>,long double&,int);
 	vector<dimension> power_dimensions(const vector<dimension>&,int);
+
 	vector<dimension> normalize_dimensions(const vector<dimension>&);
 	vector<dimension> normalize_dimensions(const vector<dimension>&,long double&);
-	void prefix_square_difference(const vector<dimension>&,long double&);
-	void deleted_derived_dimension_conversion_factor_math(const vector<dimension>&,long double&);
+
 	bool common_dimension(const dimension&,const dimension&);
 	bool equal_dimensions(const string&,const string&);
 	bool equal_dimensions(const vector<dimension>&,const vector<dimension>&);
