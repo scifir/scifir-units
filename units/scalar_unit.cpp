@@ -42,7 +42,7 @@ namespace msci
 
 	scalar_unit& scalar_unit::operator =(const scalar_unit& x)
 	{
-		if (equal_dimensions(*this,x))
+		if (has_dimensions(x))
 		{
 			dimensions = x.get_dimensions();
 			value = x.get_value();
@@ -56,7 +56,7 @@ namespace msci
 
 	scalar_unit& scalar_unit::operator =(scalar_unit&& x)
 	{
-		if (equal_dimensions(*this,x))
+		if (has_dimensions(x))
 		{
 			dimensions = move(x.get_dimensions());
 			value = move(x.get_value());
@@ -75,7 +75,7 @@ namespace msci
 
 	scalar_unit scalar_unit::operator +(scalar_unit x) const
 	{
-		if(equal_dimensions(*this,x))
+		if(has_dimensions(x))
 		{
 			x.change_dimensions(*this);
 			scalar_unit a = *this;
@@ -91,7 +91,7 @@ namespace msci
 
 	scalar_unit scalar_unit::operator -(scalar_unit x) const
 	{
-		if(equal_dimensions(*this,x))
+		if(has_dimensions(x))
 		{
 			x.change_dimensions(*this);
 			scalar_unit a = *this;
@@ -136,7 +136,7 @@ namespace msci
 
 	void scalar_unit::operator +=(scalar_unit x)
 	{
-		if(!equal_dimensions(*this,x))
+		if(!has_dimensions(x))
 		{
 			cerr << "Cannot sum different dimensions";
 			return;
@@ -147,7 +147,7 @@ namespace msci
 
 	void scalar_unit::operator -=(scalar_unit x)
 	{
-		if(!equal_dimensions(*this,x))
+		if(!has_dimensions(x))
 		{
 			cerr << "Cannot substract different dimensions";
 			return;
@@ -266,6 +266,11 @@ namespace msci
 	bool scalar_unit::has_dimensions(const vector<dimension>& x_dimensions) const
 	{
 		return equal_dimensions(dimensions,x_dimensions);
+	}
+
+	bool scalar_unit::has_dimensions(const scalar_unit& x) const
+	{
+		return equal_dimensions(dimensions,x.get_dimensions());
 	}
 
 	bool scalar_unit::has_empty_dimensions() const
@@ -539,17 +544,12 @@ namespace msci
 		new_value = std::pow(new_value, 1.0 / y);
 		return scalar_unit(new_value, new_dimensions);
 	}
-
-	bool equal_dimensions(const scalar_unit& x, const scalar_unit& y)
-	{
-		return x.has_dimensions(y.get_dimensions());
-	}
 }
 
 bool operator ==(const msci::scalar_unit& x, msci::scalar_unit y)
 {
 	y.change_dimensions(x);
-	if(x.get_value() == y.get_value() and equal_dimensions(x, y))
+	if(x.get_value() == y.get_value() and x.has_dimensions(y))
 	{
 		return true;
 	}
@@ -566,7 +566,7 @@ bool operator !=(const msci::scalar_unit& x, msci::scalar_unit y)
 
 bool operator <(const msci::scalar_unit& x, const msci::scalar_unit& y)
 {
-	if(!equal_dimensions(x, y))
+	if(!x.has_dimensions(y))
 	{
 		return false;
 	}
@@ -584,7 +584,7 @@ bool operator <(const msci::scalar_unit& x, const msci::scalar_unit& y)
 
 bool operator >(const msci::scalar_unit& x, const msci::scalar_unit& y)
 {
-	if(!equal_dimensions(x, y))
+	if(!x.has_dimensions(y))
 	{
 		return false;
 	}

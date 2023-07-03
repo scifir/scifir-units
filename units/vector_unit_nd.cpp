@@ -314,7 +314,7 @@ namespace msci
 
 	void vector_unit_nd::operator +=(const vector_unit_nd& y)
 	{
-		if(equal_dimensions(*this,y) and get_nd() == y.get_nd())
+		if(has_dimensions(y) and get_nd() == y.get_nd())
 		{
 			if(is_nd(1))
 			{
@@ -345,7 +345,7 @@ namespace msci
 
 	void vector_unit_nd::operator -=(vector_unit_nd y)
 	{
-		if(equal_dimensions(*this,y))
+		if(has_dimensions(y))
 		{
 			y.invert();
 			*this += y;
@@ -358,7 +358,7 @@ namespace msci
 
 	vector_unit_nd vector_unit_nd::operator +(const vector_unit_nd& y) const
 	{
-		if(equal_dimensions(*this,y))
+		if(has_dimensions(y))
 		{
 			if(is_nd(1))
 			{
@@ -399,7 +399,7 @@ namespace msci
 
 	vector_unit_nd vector_unit_nd::operator -(vector_unit_nd y) const
 	{
-		if(equal_dimensions(*this,y))
+		if(has_dimensions(y))
 		{
 			y.invert();
 			if(is_nd(1))
@@ -728,7 +728,7 @@ namespace msci
 bool operator ==(const vector_unit_nd& x, vector_unit_nd y)
 {
 	y.set_same_prefix(x);
-	if(x.get_value() == y.get_value() and msci::same_direction(x,y) and equal_dimensions(x, y))
+	if(x.get_value() == y.get_value() and msci::same_direction(x,y) and x.has_dimensions(y))
 	{
 		return true;
 	}

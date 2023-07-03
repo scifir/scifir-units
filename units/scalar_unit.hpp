@@ -166,6 +166,7 @@ namespace msci
 			void change_dimensions(const scalar_unit&);
 			bool has_dimensions(const string&) const;
 			bool has_dimensions(const vector<dimension>&) const;
+			bool has_dimensions(const scalar_unit& x) const;
 			bool has_empty_dimensions() const;
 			string display_dimensions() const;
 			void set_same_prefix(const vector<dimension>&);
@@ -203,7 +204,6 @@ namespace msci
 	scalar_unit pow(const scalar_unit&,int);
 	scalar_unit sqrt(const scalar_unit&);
 	scalar_unit sqrt_nth(const scalar_unit&, int);
-	bool equal_dimensions(const scalar_unit&,const scalar_unit&);
 }
 
 template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>

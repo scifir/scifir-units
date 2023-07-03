@@ -86,7 +86,7 @@ namespace msci
 	
 	void vector_unit_2d::operator +=(const vector_unit_2d& y)
 	{
-		if(equal_dimensions(*this,y))
+		if(has_dimensions(y))
 		{
 				float new_x = float(x_projection() + y.x_projection());
 				float new_y = float(y_projection() + y.y_projection());
@@ -101,7 +101,7 @@ namespace msci
 
 	void vector_unit_2d::operator -=(vector_unit_2d y)
 	{
-		if(equal_dimensions(*this,y))
+		if(has_dimensions(y))
 		{
 			y.invert();
 			*this += y;
@@ -114,7 +114,7 @@ namespace msci
 
 	vector_unit_2d vector_unit_2d::operator +(const vector_unit_2d& y) const
 	{
-		if (equal_dimensions(*this,y))
+		if (has_dimensions(y))
 		{
 			float new_x = float(x_projection() + y.x_projection());
 			float new_y = float(y_projection() + y.y_projection());
@@ -130,7 +130,7 @@ namespace msci
 
 	vector_unit_2d vector_unit_2d::operator -(vector_unit_2d y) const
 	{
-		if (equal_dimensions(*this,y))
+		if (has_dimensions(y))
 		{
 			y.invert();
 			float new_x = float(x_projection() + y.x_projection());
@@ -228,7 +228,7 @@ namespace msci
 bool operator ==(const vector_unit_2d& x, vector_unit_2d y)
 {
 	y.set_same_prefix(x);
-	if(x.get_value() == y.get_value() and msci::same_direction(x,y) and equal_dimensions(x, y))
+	if(x.get_value() == y.get_value() and msci::same_direction(x,y) and x.has_dimensions(y))
 	{
 		return true;
 	}
