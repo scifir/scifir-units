@@ -123,7 +123,12 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		REQUIRE (bool(k2 = 36000));
 		vector<dimension> m = create_dimensions("m*s2/m2*C4");
 		vector<dimension> n = normalize_dimensions(m);
-		cout << "n: " << to_string(n) << endl;
+		REQUIRE (bool(to_string(n) == "s2/m*C4"));
+		vector<dimension> o = create_dimensions("kN");
+		long double o2 = 1.0;
+		vector<dimension> p = normalize_dimensions(o,o2);
+		REQUIRE (bool(o2 == 1000.0));
+		REQUIRE (bool(to_string(p) == "kg*m/s2"));
 	}
 	
 	SECTION ("Testing of custom dimensions") {

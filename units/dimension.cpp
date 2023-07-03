@@ -1279,24 +1279,9 @@ namespace msci
 		vector<dimension> new_x = vector<dimension>();
 		for(int i = 0; i < x.size(); i++)
 		{
+			value *= x[i].get_conversion_factor();
+			value *= x[i].prefix_math();
 			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
-			if (x[i].prefix.prefix_type != prefix::no_prefix)
-			{
-				int prefix_scale = x[i].prefix.get_conversion_factor() - x_subdimensions[0].prefix.get_conversion_factor();
-				x_subdimensions[0].prefix = create_prefix_by_factor(prefix_scale);
-				int prefix_conversion_factor = x_subdimensions[0].prefix.get_conversion_factor();
-				if (x_subdimensions[0].prefix.get_conversion_factor() != prefix_scale)
-				{
-					if (x_subdimensions[0].dimension_type == dimension::B)
-					{
-						value *= std::pow(1024,(prefix_scale - prefix_conversion_factor) / 3);
-					}
-					else
-					{
-						value *= std::pow(10,(prefix_scale - prefix_conversion_factor));
-					}
-				}
-			}
 			for (dimension& x_subdimension : x_subdimensions)
 			{
 				if (x[i].dimension_sign == dimension::negative)
@@ -1367,7 +1352,7 @@ namespace msci
 		else // If there's more than one type of dimension, creates the derived dimensions of them, and squares the total. If there are abbreviations, they are losed
 		{
 			x = normalize_dimensions(x,value);
-			deleted_derived_dimension_conversion_factor_math(x,value);
+			//deleted_derived_dimension_conversion_factor_math(x,value);
 			//vector<dimension> x_derived = create_derived_dimensions(x,value);
 			//prefix_square_difference(x_derived,value);
 			vector<dimension::type> counted_dimensions = vector<dimension::type>();
