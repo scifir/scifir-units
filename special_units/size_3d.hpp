@@ -85,9 +85,9 @@ namespace msci
 				depth -= x.depth;
 			}
 
-			volume get_volume() const
+			scalar_unit get_volume() const
 			{
-				return volume(width * height * depth);
+				return scalar_unit(width * height * depth);
 			}
 
 			T width;

@@ -79,9 +79,9 @@ namespace msci
 				height -= x.height;
 			}
 
-			area get_area() const
+			scalar_unit get_area() const
 			{
-				return area(width * height);
+				return scalar_unit(width * height);
 			}
 
 			T width;
