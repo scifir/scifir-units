@@ -1341,6 +1341,10 @@ namespace msci
 		if (dimensions_count.size() == 1) // If there's only one type of dimension, square it and conserve its type
 		{
 			prefix_square_difference(x,value);
+			for (int i = 0; i < dimensions_count[x[0].dimension_type]; i++)
+			{
+				value *= x[0].get_conversion_factor();
+			}
 			int total_dimensions = std::pow(dimensions_count[x[0].dimension_type], 1.0 / scale);
 			x[0].prefix.prefix_type = prefix::no_prefix;
 			for (int j = 0; j < total_dimensions; j++)

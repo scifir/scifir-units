@@ -131,6 +131,71 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		REQUIRE (bool(to_string(p) == "kg*m/s2"));
 	}
 	
+	SECTION ("Operations with dimensions") {
+		
+		vector<dimension> a = create_dimensions("m");
+		vector<dimension> b = create_dimensions("N");
+		long double a2 = 1.0;
+		vector<dimension> c = multiply_dimensions(a,b,a2);
+		vector<dimension> d = create_dimensions("kg*m2/s2");
+		REQUIRE (bool(equal_dimensions(c,d) == true));
+		REQUIRE (bool(a2 == 1));
+		vector<dimension> e = create_dimensions("g");
+		vector<dimension> f = create_dimensions("h");
+		long double e2 = 1.0;
+		vector<dimension> g = multiply_dimensions(e,f,e2);
+		vector<dimension> h = create_dimensions("g*s");
+		REQUIRE (bool(equal_dimensions(g,h) == true));
+		REQUIRE (bool(e2 == 3600));
+		vector<dimension> i = create_dimensions("g/s");
+		vector<dimension> j = create_dimensions("h");
+		long double i2 = 1.0;
+		vector<dimension> k = multiply_dimensions(i,j,i2);
+		vector<dimension> l = create_dimensions("g");
+		REQUIRE (bool(equal_dimensions(k,l) == true));
+		REQUIRE (bool(i2 == 3600));
+		vector<dimension> m = create_dimensions("g*h");
+		vector<dimension> n = create_dimensions("s");
+		long double m2 = 1.0;
+		vector<dimension> o = divide_dimensions(m,n,m2);
+		vector<dimension> p = create_dimensions("g");
+		REQUIRE (bool(equal_dimensions(o,p) == true));
+		REQUIRE (bool(m2 == 3600));
+		vector<dimension> q = create_dimensions("g*kh");
+		vector<dimension> r = create_dimensions("s");
+		long double q2 = 1.0;
+		vector<dimension> s = divide_dimensions(q,r,q2);
+		vector<dimension> t = create_dimensions("g");
+		REQUIRE (bool(equal_dimensions(s,t) == true));
+		REQUIRE (bool(q2 == 3600000));
+		vector<dimension> u = create_dimensions("kg*m");
+		vector<dimension> v = power_dimensions(u,2);
+		vector<dimension> w = create_dimensions("kg2*m2");
+		REQUIRE (bool(equal_dimensions(v,w) == true));
+		vector<dimension> x = create_dimensions("C/mol");
+		vector<dimension> y = power_dimensions(x,5);
+		vector<dimension> z = create_dimensions("C5/mol5");
+		REQUIRE (bool(equal_dimensions(y,z) == true));
+		vector<dimension> aa = create_dimensions("m2/s2");
+		long double aa2 = 1.0;
+		vector<dimension> ab = square_dimensions(aa,aa2,2);
+		vector<dimension> ac = create_dimensions("m/s");
+		REQUIRE (bool(equal_dimensions(ab,ac) == true));
+		REQUIRE (bool(aa2 == 1));
+		vector<dimension> ad = create_dimensions("h2/m2");
+		long double ad2 = 1.0;
+		vector<dimension> ae = square_dimensions(ad,ad2,2);
+		vector<dimension> af = create_dimensions("s/m");
+		REQUIRE (bool(equal_dimensions(ae,af) == true));
+		REQUIRE (bool(ad2 == 12960000.0));
+		vector<dimension> ag = create_dimensions("h4");
+		long double ag2 = 1.0;
+		vector<dimension> ah = square_dimensions(ag,ag2,4);
+		vector<dimension> ai = create_dimensions("s");
+		REQUIRE (bool(equal_dimensions(ah,ai) == true));
+		REQUIRE (bool(ag2 == 167961600000000.0));
+	}
+	
 	SECTION ("Testing of custom dimensions") {
 		
 	}
