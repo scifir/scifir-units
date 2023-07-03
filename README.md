@@ -1,4 +1,4 @@
-# scifir-units
+# scifir-units library
 
 Welcome! The **Scifir Collection** is a set of scientific libraries for developing **laboratory machines** and **scientific inventions**. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
 
@@ -421,7 +421,7 @@ cin >> a; // Initializes a with the string given to cin
 
 ```
 
-### Coordinates in 1D
+### Coordinates and points in 1D
 
 Coordinates in 1D allow to move any object, particle, solid or immaterial, through a 1D space. The coordinates_1d class has been implemented as a template class, allowing to use any scalar_unit, or, also, a single float. Any scalar_unit can be used, because then coordinates_1d allows to move in dimensions different than length, as dimensions on some science-fiction speculations are (because on some science-fiction ideas, a dimension can be anything).
 
@@ -463,7 +463,7 @@ cout << x; // coordinates_1d can be printed to cout
 cin >> x; // coordinates_1d can be initialized through cin
 ```
 
-### Coordinates in 2D
+### Coordinates and points in 2D
 
 coordinates_2d class allows to create software with positions in 2D. It has a very similar interface to coordinates_1d, it's initialized with an string of the form "1 m,2 m" or "(1 m,2 m)" because the character '(' can be present or not. It's, as coordinates_1d, a template class, and can then specify coordinates of any scalar_unit (usually, length), or with a float, if there's no unit that represents adequately the coordinates, or if it's needed to save some memory (because the float is lighter than a unit in his consumption of memory).
 
@@ -514,7 +514,7 @@ cout << x; // coordinates_2d can be printed to cout
 cin >> x; // coordinates_2d can be initialized through cin
 ```
 
-### Coordinates in 3D
+### Coordinates and points in 3D
 
 coordinates_3d class allows to work with positions in 3D. Its initialization string is of the form "10 m,5 m,3 m", or of the form "(10 m,5 m,3 m)".
 
@@ -582,3 +582,5 @@ cin >> x; // coordinates_3d can be initialized through cin
 Internally, the library has some important mechanisms important to be known by a serious developer. Those important mechanisms are described here, in order to avoid the developer to read the code of the library and learn every detail.
 
 The first important mechanism to describe is the static storage of custom dimensions. This storage is static, meaning that every time a unit of a dimension not registered is created, this storage is the one used, instead of the name being stored inside the instance. With that behavior, when instantiating a big amount of dimensions, a big amount of memory is saved. To refer to the static storage it's used the char symbol[3] of the dimension class, which uses only 3 bytes instead of the bytes the full dimension name would use. Then, each instance of a dimension class, given that static storage, uses only 6 bytes of memory.
+
+The square of dimensions work in the following way: If the dimension consist only of one type of dimension, independently as if the dimension is a basic dimension or an abbreviation, the dimensions get squared. If the dimension is of more than one type, all the abbreviations are then converted to their derived types, and the total result gets squared. If the dimensions can't be squared because there's an odd number of them, the dimensions are then initialized empty.
