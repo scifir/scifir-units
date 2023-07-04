@@ -37,7 +37,7 @@ namespace msci
 			dimension(dimension&&);
 			explicit dimension(dimension::type,msci::prefix::type,dimension::sign);
 			explicit dimension(dimension::type,const msci::prefix&,dimension::sign);
-			explicit dimension(const string&,dimension::sign new_sign);
+			explicit dimension(const string&,dimension::sign);
 
 			~dimension();
 
