@@ -293,7 +293,7 @@ namespace msci
 		ostringstream dimension_down_text;
 		for(const dimension& x_dimension : dimensions)
 		{
-			if(x_dimension.dimension_sign == dimension::positive)
+			if(x_dimension.dimension_sign == dimension::POSITIVE)
 			{
 				dimension_up_text << x_dimension;
 			}

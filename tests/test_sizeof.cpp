@@ -72,24 +72,24 @@ int main()
 	cout << "coordinates_3d<float>: " << sizeof(coordinates_3d<float>) << endl;
 	cout << "coordinates_nd<float>: " << sizeof(coordinates_nd<float>) << endl;
 	cout << endl;
-	//dimension a = dimension("hello_dimension",prefix(prefix::no_prefix),dimension::positive);
-	//dimension b = dimension("hello_dimension2",prefix(prefix::no_prefix),dimension::positive);
-	//dimension c = dimension("hello_dimension3",prefix(prefix::no_prefix),dimension::positive);
-	//dimension d = dimension("hello_dimension4",prefix(prefix::no_prefix),dimension::positive);
-	//dimension e = dimension("hello_dimension5",prefix(prefix::no_prefix),dimension::positive);
+	//dimension a = dimension("hello_dimension",prefix(prefix::no_prefix),dimension::POSITIVE);
+	//dimension b = dimension("hello_dimension2",prefix(prefix::no_prefix),dimension::POSITIVE);
+	//dimension c = dimension("hello_dimension3",prefix(prefix::no_prefix),dimension::POSITIVE);
+	//dimension d = dimension("hello_dimension4",prefix(prefix::no_prefix),dimension::POSITIVE);
+	//dimension e = dimension("hello_dimension5",prefix(prefix::no_prefix),dimension::POSITIVE);
 	//cout << "a: " << a.get_symbol() << endl;
 	//cout << "b: " << b.get_symbol() << endl;
 	//cout << "c: " << c.get_symbol() << endl;
 	//cout << "d: " << d.get_symbol() << endl;
 	//cout << "e: " << e.get_symbol() << endl;
-	//cout << "custom dimension: " << dimension("hello_here1",dimension::positive) << endl;
+	//cout << "custom dimension: " << dimension("hello_here1",dimension::POSITIVE) << endl;
 	//scalar_unit f = scalar_unit("20 hellohere1");
 	//cout << "f: " << f << endl;
 	//cout << "f dimensions: " << f.get_dimensions()[0].get_symbol() << endl;
 	//cout << "g: " << sqrt(scalar_unit("10000 m4")) << endl;
-	//dimension a = dimension(dimension::Ohm,prefix::no_prefix,dimension::positive);
+	//dimension a = dimension(dimension::Ohm,prefix::no_prefix,dimension::POSITIVE);
 	//cout << "resistance dimension: " << a << endl;
-	//vector<dimension> new_dimensions {dimension("km",dimension::positive),dimension("m",dimension::positive),dimension("s",dimension::positive),dimension(dimension::Ohm,prefix::no_prefix,dimension::negative),dimension(dimension::B,prefix::Y,dimension::negative)};
+	//vector<dimension> new_dimensions {dimension("km",dimension::POSITIVE),dimension("m",dimension::POSITIVE),dimension("s",dimension::POSITIVE),dimension(dimension::Ohm,prefix::no_prefix,dimension::NEGATIVE),dimension(dimension::B,prefix::Y,dimension::NEGATIVE)};
 	//cout << to_string(new_dimensions) << endl;
 	//cout << scalar_unit("10 usd") << endl;
 	//scalar_unit c = scalar_unit("10 usd");
@@ -98,7 +98,7 @@ int main()
 	//{
 	//	cout << "custom dimension type" << endl;
 	//}
-	//msci::custom_dimension b = msci::custom_dimension("asdf",prefix(),dimension::positive);
+	//msci::custom_dimension b = msci::custom_dimension("asdf",prefix(),dimension::POSITIVE);
 	//cout << b.get_symbol() << endl;
 	pH phA = pH(6);
 	cout << "pH" << phA << endl;
