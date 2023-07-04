@@ -8,7 +8,7 @@ using namespace std;
 
 namespace msci
 {
-	direction::direction() : value()
+	direction::direction() : value(direction::NONE)
 	{}
 	
 	direction::direction(const direction& x) : direction(x.value)
@@ -151,7 +151,7 @@ namespace msci
 		}
 		else
 		{
-			return direction::LEFT;
+			return direction::NONE;
 		}
 	}
 
@@ -263,7 +263,7 @@ namespace msci
 		}
 		else
 		{
-			return direction::LEFT;
+			return direction::NONE;
 		}
 	}
 
@@ -323,6 +323,8 @@ namespace msci
 				return "right-bottom-front";
 			case direction::RIGHT_BOTTOM_BACK:
 				return "right-bottom-back";
+			case direction::NONE:
+				return "";
 		}
 		return "";
 	}

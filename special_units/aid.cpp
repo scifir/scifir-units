@@ -10,7 +10,7 @@ using namespace std;
 
 namespace msci
 {
-	aid::aid() : universe(),galaxy(),solar_system(),astronomical_body(),astronomical_type()
+	aid::aid() : universe(),galaxy(),solar_system(),astronomical_body(),astronomical_type(aid::NONE)
 	{}
 
 	aid::aid(const aid& x) : universe(x.universe),galaxy(x.galaxy),solar_system(x.solar_system),astronomical_body(x.astronomical_body),astronomical_type(x.astronomical_type)
@@ -356,6 +356,7 @@ namespace msci
 		galaxy = x.galaxy;
 		solar_system = x.solar_system;
 		astronomical_body = x.astronomical_body;
+		astronomical_type = x.astronomical_type;
 		return *this;
 	}
 	
@@ -365,6 +366,7 @@ namespace msci
 		galaxy = move(x.galaxy);
 		solar_system = move(x.solar_system);
 		astronomical_body = move(x.astronomical_body);
+		astronomical_type = move(x.astronomical_type);
 		return *this;
 	}
 
@@ -415,6 +417,8 @@ namespace msci
 				return "MN";
 			case aid::METEOR:
 				return "MT";
+			case aid::NONE:
+				return "";
 		}
 		return "U";
 	}
@@ -455,7 +459,7 @@ namespace msci
 		}
 		else
 		{
-			return aid::UNIVERSE;
+			return aid::NONE;
 		}
 	}
 }

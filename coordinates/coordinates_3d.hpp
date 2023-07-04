@@ -15,8 +15,6 @@ using namespace std;
 
 namespace msci
 {
-	enum class coordinates : char {CARTESIAN, CYLINDRICAL, SPHERICAL, GEOGRAPHICAL, POLAR};
-
 	template<typename T = length>
 	class coordinates_3d
 	{

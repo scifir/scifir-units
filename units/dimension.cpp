@@ -18,7 +18,7 @@ namespace msci
 	map<int,string> dimension::full_symbols = map<int,string>();
 	int dimension::total_full_symbols = 0;
 
-	dimension::dimension() : prefix(),dimension_type(dimension::none),dimension_sign(),symbol()
+	dimension::dimension() : prefix(),dimension_type(dimension::none),dimension_sign(dimension::no_sign),symbol()
 	{}
 
 	dimension::dimension(const dimension& x) : prefix(x.prefix),dimension_type(x.dimension_type),dimension_sign(x.dimension_sign)
