@@ -17,6 +17,7 @@ namespace msci
 {
 	map<int,string> dimension::full_symbols = map<int,string>();
 	int dimension::total_full_symbols = 0;
+	set<string> dimension::prefixes_options {"Y", "Z", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "\u00B5", "u", "n", "p", "f", "a", "z", "y"};
 
 	dimension::dimension() : prefix(),dimension_type(dimension::none),dimension_sign(dimension::NO_SIGN),symbol()
 	{}
@@ -41,8 +42,7 @@ namespace msci
 	{
 		string dimension_name;
 		string prefix_name;
-		set<string> prefixes_options {"Y", "Z", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "\u00B5", "u", "n", "p", "f", "a", "z", "y"};
-		if(prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "h" and init_dimension != "d" and init_dimension != "cd" and init_dimension != "money")
+		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "h" and init_dimension != "d" and init_dimension != "cd" and init_dimension != "money")
 		{
 			prefix_name = init_dimension.substr(0,1);
 			dimension_name = init_dimension.substr(1);
@@ -242,23 +242,24 @@ namespace msci
 		{
 			dimension_type = dimension::pixel;
 		}
-		else
+		else if(dimension_name == "")
 		{
 			dimension_type = dimension::none;
 		}
-	}
-
-	dimension::dimension(const string& new_symbol,const msci::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(dimension::custom),dimension_sign(new_sign)//,symbol{char[new_symbol.size()]}
-	{
-		if (new_symbol.size() > 3)
-		{
-			string symbol_abreviation = dimension::create_full_symbol(new_symbol);
-			symbol_abreviation.copy(symbol, new_symbol.length());
-			dimension_type = dimension::custom_full_symbol;
-		}
 		else
 		{
-			new_symbol.copy(symbol, new_symbol.length());
+			prefix = msci::prefix(prefix::no_prefix);
+			if (init_dimension.size() > 3)
+			{
+				string symbol_abreviation = dimension::create_full_symbol(init_dimension);
+				symbol_abreviation.copy(symbol, init_dimension.length());
+				dimension_type = dimension::custom_full_symbol;
+			}
+			else
+			{
+				init_dimension.copy(symbol, init_dimension.length());
+				dimension_type = dimension::custom;
+			}
 		}
 	}
 

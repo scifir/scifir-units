@@ -197,7 +197,8 @@ TEST_CASE("dimension class","Full test of dimension class") {
 	}
 	
 	SECTION ("Testing of custom dimensions") {
-		
+		dimension a = dimension("custom_dimension",dimension::POSITIVE);
+		REQUIRE (bool(a.get_symbol() == "custom_dimension"));
 	}
 }
 
