@@ -610,14 +610,7 @@ namespace msci
 
 	long double dimension::prefix_math() const
 	{
-		if (dimension_type == dimension::B)
-		{
-			return std::pow(1024, prefix.get_conversion_factor() / 3);
-		}
-		else
-		{
-			return std::pow(10, prefix.get_conversion_factor());
-		}
+		return msci::prefix_math(*this, prefix);
 	}
 
 	bool dimension::is_simple_dimension() const
@@ -1301,6 +1294,18 @@ namespace msci
 			}
 		}
 		return new_x;
+	}
+
+	long double prefix_math(const dimension& x_dimension,const prefix& x_prefix)
+	{
+		if (x_dimension.dimension_type == dimension::B)
+		{
+			return std::pow(1024, x_prefix.get_conversion_factor() / 3);
+		}
+		else
+		{
+			return std::pow(10, x_prefix.get_conversion_factor());
+		}
 	}
 
 	vector<dimension> multiply_dimensions(const vector<dimension>& x,const vector<dimension>& y)

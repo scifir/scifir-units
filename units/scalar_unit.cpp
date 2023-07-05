@@ -340,14 +340,7 @@ namespace msci
 			prefix display_prefix = closest_prefix(dimensions[0].prefix,value_scale);
 			float x_value = get_value();
 			x_value *= dimensions[0].prefix_math();
-			if (dimensions[0].dimension_type == dimension::B)
-			{
-				x_value /= std::pow(1024, display_prefix.get_conversion_factor() / 3);
-			}
-			else
-			{
-				x_value /= std::pow(10, display_prefix.get_conversion_factor());
-			}
+			x_value /= prefix_math(dimensions[0],display_prefix);
 			vector<dimension> x_dimensions = dimensions;
 			x_dimensions[0].prefix = display_prefix;
 			output << display_float(x_value,number_of_decimals) << " " << to_string(x_dimensions);
@@ -369,14 +362,7 @@ namespace msci
 			int value_scale = int(log10(get_value()));
 			prefix display_prefix = closest_prefix(derived_dimensions[0].prefix,value_scale);
 			x_value *= derived_dimensions[0].prefix_math();
-			if (derived_dimensions[0].dimension_type == dimension::B)
-			{
-				x_value /= std::pow(1024, display_prefix.get_conversion_factor() / 3);
-			}
-			else
-			{
-				x_value /= std::pow(10, display_prefix.get_conversion_factor());
-			}
+			x_value /= prefix_math(derived_dimensions[0],display_prefix);
 			vector<dimension> x_dimensions = derived_dimensions;
 			x_dimensions[0].prefix = display_prefix;
 			output << display_float(x_value,number_of_decimals) << " " << to_string(derived_dimensions);

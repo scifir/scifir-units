@@ -165,6 +165,7 @@ namespace msci
 	vector<dimension> create_derived_dimensions(const vector<dimension>&);
 	vector<dimension> create_derived_dimensions(const vector<dimension>&,long double&);
 
+	long double prefix_math(const dimension&,const prefix&);
 	vector<dimension> multiply_dimensions(const vector<dimension>&,const vector<dimension>&);
 	vector<dimension> multiply_dimensions(vector<dimension>,const vector<dimension>&,long double&);
 	vector<dimension> divide_dimensions(vector<dimension>,const vector<dimension>&,long double&);
