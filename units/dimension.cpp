@@ -15,6 +15,7 @@ using namespace std;
 
 namespace msci
 {
+	map<string,vector<dimension>> dimension::base_dimensions = map<string,vector<dimension>>();
 	map<int,string> dimension::full_symbols = map<int,string>();
 	int dimension::total_full_symbols = 0;
 	set<string> dimension::prefixes_options {"Y", "Z", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "\u00B5", "u", "n", "p", "f", "a", "z", "y"};
@@ -485,7 +486,7 @@ namespace msci
 			case dimension::ppb:
 				return "ppb";
 			case dimension::custom:
-				return symbol;
+				return string("").assign(symbol, symbol + 3);
 			case dimension::custom_basic:
 				return "custom-basic";
 			case dimension::custom_full_symbol:
@@ -1041,9 +1042,7 @@ namespace msci
 				break;
 			case dimension::custom:
 			{
-				//vector<dimension> x_base_dimensions = dimension::base_dimensions[dimension::get_full_symbol(symbol)];
-				//basic_dimensions.insert(basic_dimensions.end(),x_base_dimensions.begin(),x_base_dimensions.end());
-				break;
+				return dimension::base_dimensions[symbol];
 			}
 			case dimension::custom_basic:
 			{
@@ -1052,9 +1051,7 @@ namespace msci
 			}
 			case dimension::custom_full_symbol:
 			{
-				//vector<dimension> x_base_dimensions = dimension::base_dimensions[dimension::get_full_symbol(symbol)];
-				//basic_dimensions.insert(basic_dimensions.end(),x_base_dimensions.begin(),x_base_dimensions.end());
-				break;
+				return dimension::base_dimensions[dimension::get_full_symbol(symbol)];
 			}
 			case dimension::money:
 				basic_dimensions.push_back(dimension(dimension::money,prefix::no_prefix,dimension::POSITIVE));

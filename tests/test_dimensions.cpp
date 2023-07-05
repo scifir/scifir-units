@@ -202,8 +202,16 @@ TEST_CASE("dimension class","Full test of dimension class") {
 	}
 	
 	SECTION ("Testing of custom dimensions") {
+		dimension::create_custom_dimension("custom_dimension","m*s");
 		dimension a = dimension("custom_dimension",dimension::POSITIVE);
+		vector<dimension> b = create_dimensions("m*s");
 		REQUIRE (bool(a.get_symbol() == "custom_dimension"));
+		REQUIRE (bool(equal_dimensions(a.get_basic_dimensions(),b)));
+		dimension::create_custom_dimension("uUu","g*m*s");
+		dimension c = dimension("uUu",dimension::POSITIVE);
+		vector<dimension> d = create_dimensions("g*m*s");
+		REQUIRE (bool(c.get_symbol() == "uUu"));
+		REQUIRE (bool(equal_dimensions(c.get_basic_dimensions(),d)));
 	}
 }
 

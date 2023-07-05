@@ -21,6 +21,7 @@ namespace msci
 	class dimension;
 
 	vector<dimension> create_dimensions(string);
+	vector<dimension> create_derived_dimensions(const string&);
 
 	class dimension
 	{
@@ -66,7 +67,7 @@ namespace msci
 			{
 				if (dimension::base_dimensions.count(new_symbol) == 0)
 				{
-					dimension::base_dimensions[new_symbol] = create_dimensions(init_dimensions);
+					dimension::base_dimensions[new_symbol] = create_derived_dimensions(init_dimensions);
 				}
 			}
 
