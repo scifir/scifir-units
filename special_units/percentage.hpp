@@ -21,13 +21,13 @@ namespace msci
 			percentage(const percentage&);
 			percentage(percentage&&);
 			explicit percentage(float);
-			explicit percentage(string);
+			explicit percentage(const string&);
 			explicit percentage(const scalar_unit&);
 
 			percentage& operator=(const percentage&);
 			percentage& operator=(percentage&&);
 			percentage& operator=(float);
-			percentage& operator=(string&);
+			percentage& operator=(const string&);
 			percentage& operator=(const scalar_unit&);
 
 			explicit operator float() const

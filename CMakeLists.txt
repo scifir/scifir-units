@@ -53,6 +53,11 @@ target_link_libraries(test_units PRIVATE Catch2::Catch2 scifir_units boost_syste
 add_test(NAME test_units COMMAND test_units)
 set_tests_properties(test_units PROPERTIES LABELS tests)
 
+add_executable(test_percentage tests/test_percentage.cpp)
+target_link_libraries(test_percentage PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
+add_test(NAME test_percentage COMMAND test_percentage)
+set_tests_properties(test_percentage PROPERTIES LABELS tests)
+
 add_executable(benchmark_units tests/benchmark_units.cpp)
 target_link_libraries(benchmark_units PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
 add_test(NAME benchmark_units COMMAND benchmark_units)

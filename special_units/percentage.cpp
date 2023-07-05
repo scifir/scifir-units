@@ -22,16 +22,56 @@ namespace msci
 
 	percentage::percentage(float x) : value(x)
 	{}
-	
-	percentage::percentage(string init_percentage) : value()
+
+	percentage::percentage(const string& init_percentage) : value()
 	{
 		if (init_percentage[init_percentage.length() - 1] == '%')
 		{
 			value = stof(init_percentage.substr(0,init_percentage.length() - 1));
 		}
-		else
+		else if (init_percentage.length() >= 4)
 		{
-			value = 0;
+			string percentage_unit = init_percentage.substr(init_percentage.length() - 4,4);
+			if (percentage_unit == " ppm")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000.0f;
+			}
+			else if (percentage_unit == " ppb")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000.0f;
+			}
+			else if (percentage_unit == " ppt")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000000.0f;
+			}
+			else if (percentage_unit == " ppq")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000000000.0f;
+			}
+		}
+		else if (init_percentage.length() >= 3)
+		{
+			string percentage_unit = init_percentage.substr(init_percentage.length() - 3,3);
+			if (percentage_unit == "ppm")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000.0f;
+			}
+			else if (percentage_unit == "ppb")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000.0f;
+			}
+			else if (percentage_unit == "ppt")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000000.0f;
+			}
+			else if (percentage_unit == "ppq")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000000000.0f;
+			}
+			else
+			{
+				value = 0;
+			}
 		}
 	}
 
@@ -66,15 +106,55 @@ namespace msci
 		return *this;
 	}
 
-	percentage& percentage::operator=(string& init_percentage)
+	percentage& percentage::operator=(const string& init_percentage)
 	{
 		if (init_percentage[init_percentage.length() - 1] == '%')
 		{
 			value = stof(init_percentage.substr(0,init_percentage.length() - 1));
 		}
-		else
+		else if (init_percentage.length() >= 4)
 		{
-			value = 0;
+			string percentage_unit = init_percentage.substr(init_percentage.length() - 4,4);
+			if (percentage_unit == " ppm")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000.0f;
+			}
+			else if (percentage_unit == " ppb")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000.0f;
+			}
+			else if (percentage_unit == " ppt")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000000.0f;
+			}
+			else if (percentage_unit == " ppq")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000000000.0f;
+			}
+		}
+		else if (init_percentage.length() >= 3)
+		{
+			string percentage_unit = init_percentage.substr(init_percentage.length() - 3,3);
+			if (percentage_unit == "ppm")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000.0f;
+			}
+			else if (percentage_unit == "ppb")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000.0f;
+			}
+			else if (percentage_unit == "ppt")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000000.0f;
+			}
+			else if (percentage_unit == "ppq")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000000000.0f;
+			}
+			else
+			{
+				value = 0;
+			}
 		}
 		return *this;
 	}
@@ -182,33 +262,40 @@ namespace msci
 
 	bool is_percentage(const string& x)
 	{
-		if (x[x.length() - 1] == '%')
+		int iteration_limit;
+		string percentage_unit = x.substr(x.length() - 4,4);
+		if (percentage_unit == " ppm" or percentage_unit == " ppb" or percentage_unit == " ppt" or percentage_unit == " ppq")
 		{
-			bool dot_present = false;
-			for (int i = 0; i < (x.length() - 1); i++)
-			{
-				if (x[i] == '.')
-				{
-					if (dot_present)
-					{
-						return false;
-					}
-					else
-					{
-						dot_present = true;
-					}
-				}
-				else if (!std::isdigit(x[i]))
-				{
-					return false;
-				}
-			}
-			return true;
+			iteration_limit = x.length() - 4;
+		}
+		else if (x[x.length() - 1] == '%')
+		{
+			iteration_limit = x.length() - 1;
 		}
 		else
 		{
 			return false;
 		}
+		bool dot_present = false;
+		for (int i = 0; i < iteration_limit; i++)
+		{
+			if (x[i] == '.')
+			{
+				if (dot_present)
+				{
+					return false;
+				}
+				else
+				{
+					dot_present = true;
+				}
+			}
+			else if (!std::isdigit(x[i]))
+			{
+				return false;
+			}
+		}
+		return true;
 	}
 }
 

@@ -50,7 +50,16 @@
 #include "topology/point_3d_impl.hpp"
 #include "topology/point_nd_impl.hpp"
 
+#include "special_units/aid.hpp"
 #include "special_units/color.hpp"
+#include "special_units/percentage.hpp"
+#include "special_units/ph.hpp"
+#include "special_units/pixel.hpp"
+#include "special_units/poh.hpp"
+#include "special_units/size_2d.hpp"
+#include "special_units/size_3d.hpp"
+#include "special_units/zid.hpp"
+
 #include "meca_number/lab_number.hpp"
 
 #include "util/matrix.hpp"
