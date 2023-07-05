@@ -1280,8 +1280,16 @@ namespace msci
 		vector<dimension> new_x = vector<dimension>();
 		for(int i = 0; i < x.size(); i++)
 		{
-			value *= x[i].get_conversion_factor();
-			value *= x[i].prefix_math();
+			if (x[i].dimension_sign == dimension::POSITIVE)
+			{
+				value *= x[i].get_conversion_factor();
+				value *= x[i].prefix_math();
+			}
+			else if (x[i].dimension_sign == dimension::NEGATIVE)
+			{
+				value /= x[i].get_conversion_factor();
+				value /= x[i].prefix_math();
+			}
 			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
 			{
@@ -1343,8 +1351,16 @@ namespace msci
 		{
 			for (int i = 0; i < dimensions_count[x[0].dimension_type]; i++)
 			{
-				value *= x[i].get_conversion_factor();
-				value *= x[i].prefix_math();
+				if (x[i].dimension_sign == dimension::POSITIVE)
+				{
+					value *= x[i].get_conversion_factor();
+					value *= x[i].prefix_math();
+				}
+				else if (x[i].dimension_sign == dimension::NEGATIVE)
+				{
+					value /= x[i].get_conversion_factor();
+					value /= x[i].prefix_math();
+				}
 			}
 			int total_dimensions = std::pow(dimensions_count[x[0].dimension_type], 1.0 / scale);
 			x[0].prefix.prefix_type = prefix::no_prefix;

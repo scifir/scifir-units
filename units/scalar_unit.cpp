@@ -397,13 +397,29 @@ namespace msci
 			vector<dimension> new_dimensions = create_dimensions(new_dimensions_str);
 			for(const dimension& x_dimension : dimensions)
 			{
-				new_value *= x_dimension.get_conversion_factor();
-				new_value *= x_dimension.prefix_math();
+				if (x_dimension.dimension_sign == dimension::POSITIVE)
+				{
+					new_value *= x_dimension.get_conversion_factor();
+					new_value *= x_dimension.prefix_math();
+				}
+				else if (x_dimension.dimension_sign == dimension::NEGATIVE)
+				{
+					new_value /= x_dimension.get_conversion_factor();
+					new_value /= x_dimension.prefix_math();
+				}
 			}
 			for(const dimension& x_new_dimension : new_dimensions)
 			{
-				new_value /= x_new_dimension.get_conversion_factor();
-				new_value /= x_new_dimension.prefix_math();
+				if (x_new_dimension.dimension_sign == dimension::POSITIVE)
+				{
+					new_value /= x_new_dimension.get_conversion_factor();
+					new_value /= x_new_dimension.prefix_math();
+				}
+				else if (x_new_dimension.dimension_sign == dimension::NEGATIVE)
+				{
+					new_value *= x_new_dimension.get_conversion_factor();
+					new_value *= x_new_dimension.prefix_math();
+				}
 			}
 			output << display_float(new_value,number_of_decimals) << " " << new_dimensions_str;
 		}
@@ -426,14 +442,30 @@ namespace msci
 
 	void scalar_unit::add_dimension(const dimension& new_dimension)
 	{
-		value /= new_dimension.get_conversion_factor();
-		value /= new_dimension.prefix_math();
+		if (new_dimension.dimension_sign == dimension::POSITIVE)
+		{
+			value /= new_dimension.get_conversion_factor();
+			value /= new_dimension.prefix_math();
+		}
+		else if (new_dimension.dimension_sign == dimension::NEGATIVE)
+		{
+			value *= new_dimension.get_conversion_factor();
+			value *= new_dimension.prefix_math();
+		}
 	}
 
 	void scalar_unit::remove_dimension(const dimension& old_dimension)
 	{
-		value *= old_dimension.get_conversion_factor();
-		value *= old_dimension.prefix_math();
+		if (old_dimension.dimension_sign == dimension::POSITIVE)
+		{
+			value *= old_dimension.get_conversion_factor();
+			value *= old_dimension.prefix_math();
+		}
+		else if (old_dimension.dimension_sign == dimension::NEGATIVE)
+		{
+			value /= old_dimension.get_conversion_factor();
+			value /= old_dimension.prefix_math();
+		}
 	}
 
 	string scalar_unit::initial_dimensions_get_structure(const string& init_value) const
