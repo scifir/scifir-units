@@ -2567,14 +2567,24 @@ mole operator"" _particles(unsigned long long int x)
 	return mole(float(x), "particles");
 }
 
-concentration operator"" _ppm(unsigned long long int x)
+percentage operator"" _ppm(unsigned long long int x)
 {
-	return concentration(float(x), "ppm");
+	return percentage(float(x), "ppm");
 }
 
-concentration operator"" _ppb(unsigned long long int x)
+percentage operator"" _ppb(unsigned long long int x)
 {
-	return concentration(float(x), "ppb");
+	return percentage(float(x), "ppb");
+}
+
+percentage operator"" _ppt(unsigned long long int x)
+{
+	return percentage(float(x), "ppt");
+}
+
+percentage operator"" _ppq(unsigned long long int x)
+{
+	return percentage(float(x), "ppq");
 }
 
 frequency operator"" _YHz(long double x)
@@ -5137,12 +5147,22 @@ molarity operator"" _yM(long double x)
 	return molarity(float(x), "yM");
 }
 
-concentration operator"" _ppm(long double x)
+percentage operator"" _ppm(long double x)
 {
-	return concentration(float(x), "ppm");
+	return percentage(float(x), "ppm");
 }
 
-concentration operator"" _ppb(long double x)
+percentage operator"" _ppb(long double x)
 {
-	return concentration(float(x), "ppb");
+	return percentage(float(x), "ppb");
+}
+
+percentage operator"" _ppt(long double x)
+{
+	return percentage(float(x), "ppt");
+}
+
+percentage operator"" _ppq(long double x)
+{
+	return percentage(float(x), "ppq");
 }

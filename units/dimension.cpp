@@ -227,14 +227,6 @@ namespace msci
 		{
 			dimension_type = dimension::particles;
 		}
-		else if(dimension_name == "ppm")
-		{
-			dimension_type = dimension::ppm;
-		}
-		else if(dimension_name == "ppb")
-		{
-			dimension_type = dimension::ppb;
-		}
 		else if(dimension_name == "money")
 		{
 			dimension_type = dimension::money;
@@ -274,6 +266,7 @@ namespace msci
 		prefix = x.prefix;
 		dimension_type = x.dimension_type;
 		dimension_sign = x.dimension_sign;
+		strcpy(symbol,x.symbol);
 		return *this;
 	}
 	
@@ -282,6 +275,7 @@ namespace msci
 		prefix = move(x.prefix);
 		dimension_type = move(x.dimension_type);
 		dimension_sign = move(x.dimension_sign);
+		strcpy(symbol,move(x.symbol));
 		return *this;
 	}
 
@@ -373,10 +367,6 @@ namespace msci
 				return "molarity";
 			case dimension::particles:
 				return "particles";
-			case dimension::ppm:
-				return "parts per million";
-			case dimension::ppb:
-				return "parts per billion";
 			case dimension::custom:
 				return "custom-dimension";
 			case dimension::custom_basic:
@@ -481,10 +471,6 @@ namespace msci
 				return "M";
 			case dimension::particles:
 				return "particles";
-			case dimension::ppm:
-				return "ppm";
-			case dimension::ppb:
-				return "ppb";
 			case dimension::custom:
 				return string("").assign(symbol, symbol + 3);
 			case dimension::custom_basic:
@@ -589,10 +575,6 @@ namespace msci
 				return 1l;
 			case dimension::particles:
 				return 1l/AVOGADRO_CONSTANT;
-			case dimension::ppm:
-				return 1l;
-			case dimension::ppb:
-				return 1l;
 			case dimension::custom:
 				return 1l;
 			case dimension::custom_basic:
@@ -702,10 +684,6 @@ namespace msci
 				return false;
 			case dimension::particles:
 				return true;
-			case dimension::ppm:
-				return true;
-			case dimension::ppb:
-				return true;
 			case dimension::custom:
 				return false;
 			case dimension::custom_basic:
@@ -809,10 +787,6 @@ namespace msci
 			case dimension::M:
 				return false;
 			case dimension::particles:
-				return false;
-			case dimension::ppm:
-				return false;
-			case dimension::ppb:
 				return false;
 			case dimension::custom:
 				return false;
@@ -1032,12 +1006,6 @@ namespace msci
 				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE));
 				break;
 			case dimension::particles:
-				basic_dimensions.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::POSITIVE));
-				break;
-			case dimension::ppm:
-				basic_dimensions.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::POSITIVE));
-				break;
-			case dimension::ppb:
 				basic_dimensions.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::POSITIVE));
 				break;
 			case dimension::custom:

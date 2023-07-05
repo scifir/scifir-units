@@ -16,6 +16,8 @@
 #include "predefined_units/thermodynamics_units.hpp"
 #include "predefined_units/waves_units.hpp"
 
+#include "special_units/percentage.hpp"
+
 frequency operator"" _YHz(unsigned long long int);
 frequency operator"" _ZHz(unsigned long long int);
 frequency operator"" _EHz(unsigned long long int);
@@ -558,8 +560,8 @@ molarity operator"" _zM(unsigned long long int);
 molarity operator"" _yM(unsigned long long int);
 
 mole operator"" _particles(unsigned long long int);
-concentration operator"" _ppm(unsigned long long int);
-concentration operator"" _ppb(unsigned long long int);
+percentage operator"" _ppm(unsigned long long int);
+percentage operator"" _ppb(unsigned long long int);
 
 frequency operator"" _YHz(long double);
 frequency operator"" _ZHz(long double);
@@ -1104,7 +1106,9 @@ molarity operator"" _aM(long double);
 molarity operator"" _zM(long double);
 molarity operator"" _yM(long double);
 
-concentration operator"" _ppm(long double);
-concentration operator"" _ppb(long double);
+percentage operator"" _ppm(long double);
+percentage operator"" _ppb(long double);
+percentage operator"" _ppt(long double);
+percentage operator"" _ppq(long double);
 
 #endif // MSCI_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED

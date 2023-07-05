@@ -78,8 +78,8 @@ namespace msci
 			pH& operator--();
 			pH operator--(int);
 
-			concentration get_H() const;
-			concentration get_OH() const;
+			molarity get_H() const;
+			molarity get_OH() const;
 			pOH get_pOH() const;
 
 			bool is_acidic() const;

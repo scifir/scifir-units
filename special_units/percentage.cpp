@@ -23,6 +23,26 @@ namespace msci
 	percentage::percentage(float x) : value(x)
 	{}
 
+	percentage::percentage(float x,const string& init_dimensions)
+	{
+		if (init_dimensions == "ppm")
+		{
+			value = x / 10000.0f;
+		}
+		else if (init_dimensions == "ppb")
+		{
+			value = x / 10000000.0f;
+		}
+		else if (init_dimensions == "ppt")
+		{
+			value = x / 10000000000.0f;
+		}
+		else if (init_dimensions == "ppq")
+		{
+			value = x / 10000000000000.0f;
+		}
+	}
+
 	percentage::percentage(const string& init_percentage) : value()
 	{
 		if (init_percentage[init_percentage.length() - 1] == '%')

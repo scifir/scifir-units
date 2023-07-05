@@ -21,6 +21,7 @@ namespace msci
 			percentage(const percentage&);
 			percentage(percentage&&);
 			explicit percentage(float);
+			explicit percentage(float,const string&);
 			explicit percentage(const string&);
 			explicit percentage(const scalar_unit&);
 

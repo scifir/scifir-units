@@ -136,14 +136,14 @@ namespace msci
 		return tmp;
 	}
 
-	concentration pH::get_H() const
+	molarity pH::get_H() const
 	{
-		return concentration(std::pow(10,-value),"M");
+		return molarity(std::pow(10,-value),"M");
 	}
 
-	concentration pH::get_OH() const
+	molarity pH::get_OH() const
 	{
-		return concentration(std::pow(10,-float(14 - value)),"M");
+		return molarity(std::pow(10,-float(14 - value)),"M");
 	}
 
 	pOH pH::get_pOH() const
