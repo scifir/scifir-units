@@ -150,6 +150,20 @@ namespace msci
 	}
 
 	SCALAR_UNIT_CPP(mass,"g");
+
+	mass::mass(const percentage& new_percentage,const mass& new_mass) : scalar_unit()
+	{
+		dimensions = new_mass.get_dimensions();
+		value = new_percentage * new_mass.get_value();
+	}
+
+	mass::mass(const string& init_percentage,const string& init_mass) : scalar_unit()
+	{
+		set_from_string(init_mass);
+		percentage new_percentage = percentage(init_percentage);
+		value = new_percentage * value;
+	}
+
 	SCALAR_UNIT_CPP(charge,"C");
 	SCALAR_UNIT_CPP(temperature,"K");
 	SCALAR_UNIT_CPP(mole,"mol");

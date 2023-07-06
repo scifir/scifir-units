@@ -44,9 +44,14 @@ namespace msci
 
 	SCALAR_UNIT_HPP_END();
 
-	SCALAR_UNIT_HPP(mass);
+	SCALAR_UNIT_HPP_BEGIN(mass);
+		public:
+			mass(const percentage&,const mass&);
+			mass(const string&,const string&);
+	
+	SCALAR_UNIT_HPP_END();
+	
 	SCALAR_UNIT_HPP(charge);
-
 	SCALAR_UNIT_HPP(temperature);
 
 	SCALAR_UNIT_HPP_BEGIN(mole);
