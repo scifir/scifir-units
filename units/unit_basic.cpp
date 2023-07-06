@@ -154,6 +154,19 @@ namespace msci
 	SCALAR_UNIT_CPP(temperature,"K");
 	SCALAR_UNIT_CPP(mole,"mol");
 
+	mole::mole(const percentage& new_percentage,const mole& new_mole) : scalar_unit()
+	{
+		dimensions = new_mole.get_dimensions();
+		value = new_percentage * new_mole.get_value();
+	}
+
+	mole::mole(const string& init_percentage,const string& init_mole) : scalar_unit()
+	{
+		set_from_string(init_mole);
+		percentage new_percentage = percentage(init_percentage);
+		value = new_percentage * value;
+	}
+
 	int mole::number_of_particles() const
 	{
 		return 1;

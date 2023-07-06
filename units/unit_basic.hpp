@@ -3,6 +3,7 @@
 
 #include "units/prefix.hpp"
 #include "units/scalar_unit.hpp"
+#include "special_units/percentage.hpp"
 
 #include <chrono>
 #include <iostream>
@@ -50,6 +51,9 @@ namespace msci
 
 	SCALAR_UNIT_HPP_BEGIN(mole);
 		public:
+			mole(const percentage&,const mole&);
+			mole(const string&,const string&);
+
 			int number_of_particles() const;
 	SCALAR_UNIT_HPP_END();
 
