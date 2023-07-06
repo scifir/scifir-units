@@ -22,6 +22,8 @@ namespace msci
 			explicit operator std::chrono::seconds() const;
 
 			float get_years() const;
+			float get_months() const;
+			float get_weeks() const;
 			float get_days() const;
 			float get_hours() const;
 			float get_minutes() const;
@@ -31,6 +33,8 @@ namespace msci
 			string display_as_time() const;
 
 			string display_years() const;
+			string display_months() const;
+			string display_weeks() const;
 			string display_days() const;
 			string display_hours() const;
 			string display_minutes() const;

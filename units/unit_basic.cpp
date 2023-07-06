@@ -103,6 +103,32 @@ namespace msci
 		}
 	}
 
+	float time::get_months() const
+	{
+		msci::time one_month("30d");
+		if (*this >= one_month)
+		{
+			return int(trunc((*this / one_month).get_value()));
+		}
+		else
+		{
+			return 0.0f;
+		}
+	}
+
+	float time::get_weeks() const
+	{
+		msci::time one_week("7d");
+		if (*this >= one_week)
+		{
+			return int(trunc((*this / one_week).get_value()));
+		}
+		else
+		{
+			return 0.0f;
+		}
+	}
+
 	float time::get_days() const
 	{
 		msci::time one_day("1d");
@@ -218,6 +244,20 @@ namespace msci
 	{
 		ostringstream out;
 		out << get_years() << " y";
+		return out.str();
+	}
+
+	string time::display_months() const
+	{
+		ostringstream out;
+		out << get_months() << " months";
+		return out.str();
+	}
+
+	string time::display_weeks() const
+	{
+		ostringstream out;
+		out << get_weeks() << " weeks";
 		return out.str();
 	}
 
