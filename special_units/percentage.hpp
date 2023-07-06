@@ -114,6 +114,16 @@ namespace msci
 
 			float get_factor() const;
 
+			float get_ppm() const;
+			float get_ppb() const;
+			float get_ppt() const;
+			float get_ppq() const;
+
+			string display_ppm() const;
+			string display_ppb() const;
+			string display_ppt() const;
+			string display_ppq() const;
+
 		private:
 			float value;
 

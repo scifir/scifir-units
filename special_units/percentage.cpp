@@ -25,7 +25,11 @@ namespace msci
 
 	percentage::percentage(float x,const string& init_dimensions)
 	{
-		if (init_dimensions == "ppm")
+		if (init_dimensions == "%")
+		{
+			value = x;
+		}
+		else if (init_dimensions == "ppm")
 		{
 			value = x / 10000.0f;
 		}
@@ -229,7 +233,7 @@ namespace msci
 	
 	void percentage::operator /=(const percentage& x)
 	{
-		value /= (x.get_value() * 100);
+		value *= 100 / x.get_value();
 	}
 	
 	percentage& percentage::operator++()
@@ -271,6 +275,54 @@ namespace msci
 	float percentage::get_factor() const
 	{
 		return value / 100;
+	}
+
+	float percentage::get_ppm() const
+	{
+		return value * 10000.0f;
+	}
+
+	float percentage::get_ppb() const
+	{
+		return value * 10000000.0f;
+	}
+
+	float percentage::get_ppt() const
+	{
+		return value * 10000000000.0f;
+	}
+
+	float percentage::get_ppq() const
+	{
+		return value * 10000000000000.0f;
+	}
+
+	string percentage::display_ppm() const
+	{
+		ostringstream out;
+		out << get_ppm() << " ppm";
+		return out.str();
+	}
+
+	string percentage::display_ppb() const
+	{
+		ostringstream out;
+		out << get_ppb() << " ppb";
+		return out.str();
+	}
+
+	string percentage::display_ppt() const
+	{
+		ostringstream out;
+		out << get_ppt() << " ppt";
+		return out.str();
+	}
+
+	string percentage::display_ppq() const
+	{
+		ostringstream out;
+		out << get_ppq() << " ppq";
+		return out.str();
 	}
 
 	string to_string(const percentage& x)
