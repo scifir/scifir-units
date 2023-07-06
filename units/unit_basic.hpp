@@ -21,8 +21,20 @@ namespace msci
 
 			explicit operator std::chrono::seconds() const;
 
+			float get_years() const;
+			float get_days() const;
+			float get_hours() const;
+			float get_minutes() const;
+			float get_seconds() const;
+
 			string get_finish_date() const;
 			string display_as_time() const;
+
+			string display_years() const;
+			string display_days() const;
+			string display_hours() const;
+			string display_minutes() const;
+			string display_seconds() const;
 
 			template<typename T1,typename T2>
 			msci::time& operator+=(chrono::duration<T1,T2> x)

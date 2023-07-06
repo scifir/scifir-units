@@ -73,7 +73,7 @@ namespace msci
 				{
 					init_value_dimension_quantity = 60;
 				}
-				else if(init_value_dimension == "min")
+				else if(init_value_dimension == "s")
 				{
 					init_value_dimension_quantity = 1;
 				}
@@ -90,6 +90,71 @@ namespace msci
 		return std::chrono::seconds(int(a.get_value()));
 	}
 
+	float time::get_years() const
+	{
+		msci::time one_year ("365d");
+		if (*this >= one_year)
+		{
+			return int(trunc((*this / one_year).get_value()));
+		}
+		else
+		{
+			return 0.0f;
+		}
+	}
+
+	float time::get_days() const
+	{
+		msci::time one_day("1d");
+		if (*this >= one_day)
+		{
+			return int(trunc((*this / one_day).get_value()));
+		}
+		else
+		{
+			return 0.0f;
+		}
+	}
+
+	float time::get_hours() const
+	{
+		msci::time one_hour("1h");
+		if (*this >= one_hour)
+		{
+			return int(trunc((*this / one_hour).get_value()));
+		}
+		else
+		{
+			return 0.0f;
+		}
+	}
+
+	float time::get_minutes() const
+	{
+		msci::time one_minute = msci::time("1min");
+		if (*this >= one_minute)
+		{
+			return int(trunc((*this / one_minute).get_value()));
+		}
+		else
+		{
+			return 0.0f;
+		}
+	}
+
+	float time::get_seconds() const
+	{
+		msci::time one_second("1s");
+		if (*this >= one_second)
+		{
+			return int(trunc((*this / one_second).get_value()));
+		}
+		else
+		{
+			return 0.0f;
+		}
+	}
+
 	string time::get_finish_date() const
 	{
 		chrono::time_point<chrono::system_clock> start = chrono::system_clock::now();
@@ -99,7 +164,7 @@ namespace msci
 		output << ctime(&start_time);
 		return output.str();
 	}
-	
+
 	string time::display_as_time() const
 	{
 		ostringstream output;
@@ -147,6 +212,41 @@ namespace msci
 			output << total_of_seconds << "s";
 		}
 		return output.str();
+	}
+
+	string time::display_years() const
+	{
+		ostringstream out;
+		out << get_years() << " y";
+		return out.str();
+	}
+
+	string time::display_days() const
+	{
+		ostringstream out;
+		out << get_days() << " d";
+		return out.str();
+	}
+
+	string time::display_hours() const
+	{
+		ostringstream out;
+		out << get_hours() << " h";
+		return out.str();
+	}
+
+	string time::display_minutes() const
+	{
+		ostringstream out;
+		out << get_minutes() << " min";
+		return out.str();
+	}
+
+	string time::display_seconds() const
+	{
+		ostringstream out;
+		out << get_seconds() << " s";
+		return out.str();
 	}
 
 	SCALAR_UNIT_CPP(mass,"g");
