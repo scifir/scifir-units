@@ -20,9 +20,9 @@ using namespace std;
 namespace msci
 {
 	SCALAR_UNIT_CPP(length,"m");
-	SCALAR_UNIT_CPP(time,"s");
+	SCALAR_UNIT_CPP(time_duration,"s");
 
-	time::time(const string& init_time) : scalar_unit()
+	time_duration::time_duration(const string& init_time) : scalar_unit()
 	{
 		if(!isdigit(init_time[0]))
 		{
@@ -83,16 +83,16 @@ namespace msci
 		}
 	}
 
-	time::operator std::chrono::seconds() const
+	time_duration::operator std::chrono::seconds() const
 	{
-		msci::time a = *this;
+		msci::time_duration a = *this;
 		a.change_dimensions("s");
 		return std::chrono::seconds(int(a.get_value()));
 	}
 
-	float time::get_years() const
+	float time_duration::get_years() const
 	{
-		msci::time one_year ("365d");
+		msci::time_duration one_year ("365d");
 		if (*this >= one_year)
 		{
 			return int(trunc((*this / one_year).get_value()));
@@ -103,9 +103,9 @@ namespace msci
 		}
 	}
 
-	float time::get_months() const
+	float time_duration::get_months() const
 	{
-		msci::time one_month("30d");
+		msci::time_duration one_month("30d");
 		if (*this >= one_month)
 		{
 			return int(trunc((*this / one_month).get_value()));
@@ -116,9 +116,9 @@ namespace msci
 		}
 	}
 
-	float time::get_weeks() const
+	float time_duration::get_weeks() const
 	{
-		msci::time one_week("7d");
+		msci::time_duration one_week("7d");
 		if (*this >= one_week)
 		{
 			return int(trunc((*this / one_week).get_value()));
@@ -129,9 +129,9 @@ namespace msci
 		}
 	}
 
-	float time::get_days() const
+	float time_duration::get_days() const
 	{
-		msci::time one_day("1d");
+		msci::time_duration one_day("1d");
 		if (*this >= one_day)
 		{
 			return int(trunc((*this / one_day).get_value()));
@@ -142,9 +142,9 @@ namespace msci
 		}
 	}
 
-	float time::get_hours() const
+	float time_duration::get_hours() const
 	{
-		msci::time one_hour("1h");
+		msci::time_duration one_hour("1h");
 		if (*this >= one_hour)
 		{
 			return int(trunc((*this / one_hour).get_value()));
@@ -155,9 +155,9 @@ namespace msci
 		}
 	}
 
-	float time::get_minutes() const
+	float time_duration::get_minutes() const
 	{
-		msci::time one_minute = msci::time("1min");
+		msci::time_duration one_minute = msci::time_duration("1min");
 		if (*this >= one_minute)
 		{
 			return int(trunc((*this / one_minute).get_value()));
@@ -168,9 +168,9 @@ namespace msci
 		}
 	}
 
-	float time::get_seconds() const
+	float time_duration::get_seconds() const
 	{
-		msci::time one_second("1s");
+		msci::time_duration one_second("1s");
 		if (*this >= one_second)
 		{
 			return int(trunc((*this / one_second).get_value()));
@@ -181,7 +181,7 @@ namespace msci
 		}
 	}
 
-	string time::get_finish_date() const
+	string time_duration::get_finish_date() const
 	{
 		chrono::time_point<chrono::system_clock> start = chrono::system_clock::now();
 		start += chrono::seconds(*this);
@@ -191,46 +191,46 @@ namespace msci
 		return output.str();
 	}
 
-	string time::display_as_time() const
+	string time_duration::display_as_time() const
 	{
 		ostringstream output;
-		msci::time remaining_time = *this;
-		msci::time one_year ("365d");
+		msci::time_duration remaining_time = *this;
+		msci::time_duration one_year ("365d");
 		if (*this >= one_year)
 		{
 			int total_of_years = int(trunc((*this / one_year).get_value()));
 			output << total_of_years << "y ";
-			remaining_time -= msci::time(total_of_years * 365,"d");
+			remaining_time -= msci::time_duration(total_of_years * 365,"d");
 		}
-		msci::time one_month("30d");
+		msci::time_duration one_month("30d");
 		if (remaining_time >= one_month)
 		{
 			int total_of_months = int(trunc((remaining_time / one_month).get_value()));
 			output << total_of_months << "m ";
-			remaining_time -= msci::time(total_of_months * 30,"d");
+			remaining_time -= msci::time_duration(total_of_months * 30,"d");
 		}
-		msci::time one_day("1d");
+		msci::time_duration one_day("1d");
 		if (remaining_time >= one_day)
 		{
 			int total_of_days = int(trunc((remaining_time / one_day).get_value()));
 			output << total_of_days << "d ";
-			remaining_time -= msci::time(total_of_days,"d");
+			remaining_time -= msci::time_duration(total_of_days,"d");
 		}
-		msci::time one_hour("1h");
+		msci::time_duration one_hour("1h");
 		if (remaining_time >= one_hour)
 		{
 			int total_of_hours = int(trunc((remaining_time / one_hour).get_value()));
 			output << total_of_hours << "h ";
-			remaining_time -= msci::time(total_of_hours,"h");
+			remaining_time -= msci::time_duration(total_of_hours,"h");
 		}
-		msci::time one_minute("1min");
+		msci::time_duration one_minute("1min");
 		if (remaining_time >= one_minute)
 		{
 			int total_of_minutes = int(trunc((remaining_time / one_minute).get_value()));
 			output << total_of_minutes << "min ";
-			remaining_time -= msci::time(total_of_minutes,"min");
+			remaining_time -= msci::time_duration(total_of_minutes,"min");
 		}
-		msci::time one_second("1s");
+		msci::time_duration one_second("1s");
 		if (remaining_time >= one_second)
 		{
 			remaining_time.change_dimensions("s");
@@ -240,49 +240,49 @@ namespace msci
 		return output.str();
 	}
 
-	string time::display_years() const
+	string time_duration::display_years() const
 	{
 		ostringstream out;
 		out << get_years() << " y";
 		return out.str();
 	}
 
-	string time::display_months() const
+	string time_duration::display_months() const
 	{
 		ostringstream out;
 		out << get_months() << " months";
 		return out.str();
 	}
 
-	string time::display_weeks() const
+	string time_duration::display_weeks() const
 	{
 		ostringstream out;
 		out << get_weeks() << " weeks";
 		return out.str();
 	}
 
-	string time::display_days() const
+	string time_duration::display_days() const
 	{
 		ostringstream out;
 		out << get_days() << " d";
 		return out.str();
 	}
 
-	string time::display_hours() const
+	string time_duration::display_hours() const
 	{
 		ostringstream out;
 		out << get_hours() << " h";
 		return out.str();
 	}
 
-	string time::display_minutes() const
+	string time_duration::display_minutes() const
 	{
 		ostringstream out;
 		out << get_minutes() << " min";
 		return out.str();
 	}
 
-	string time::display_seconds() const
+	string time_duration::display_seconds() const
 	{
 		ostringstream out;
 		out << get_seconds() << " s";
@@ -443,49 +443,49 @@ msci::length operator"" _ym(unsigned long long int x)
 	return msci::length(x, "ym");
 }
 
-msci::time operator"" _s(unsigned long long int x)
+msci::time_duration operator"" _s(unsigned long long int x)
 {
-	return msci::time(x, "s");
+	return msci::time_duration(x, "s");
 }
 
-msci::time operator"" _ms(unsigned long long int x)
+msci::time_duration operator"" _ms(unsigned long long int x)
 {
-	return msci::time(x, "ms");
+	return msci::time_duration(x, "ms");
 }
 
-msci::time operator"" _us(unsigned long long int x)
+msci::time_duration operator"" _us(unsigned long long int x)
 {
-	return msci::time(x, "us");
+	return msci::time_duration(x, "us");
 }
 
-msci::time operator"" _ns(unsigned long long int x)
+msci::time_duration operator"" _ns(unsigned long long int x)
 {
-	return msci::time(x, "ns");
+	return msci::time_duration(x, "ns");
 }
 
-msci::time operator"" _ps(unsigned long long int x)
+msci::time_duration operator"" _ps(unsigned long long int x)
 {
-	return msci::time(x, "ps");
+	return msci::time_duration(x, "ps");
 }
 
-msci::time operator"" _fs(unsigned long long int x)
+msci::time_duration operator"" _fs(unsigned long long int x)
 {
-	return msci::time(x, "fs");
+	return msci::time_duration(x, "fs");
 }
 
-msci::time operator"" _as(unsigned long long int x)
+msci::time_duration operator"" _as(unsigned long long int x)
 {
-	return msci::time(x, "as");
+	return msci::time_duration(x, "as");
 }
 
-msci::time operator"" _zs(unsigned long long int x)
+msci::time_duration operator"" _zs(unsigned long long int x)
 {
-	return msci::time(x, "zs");
+	return msci::time_duration(x, "zs");
 }
 
-msci::time operator"" _ys(unsigned long long int x)
+msci::time_duration operator"" _ys(unsigned long long int x)
 {
-	return msci::time(x, "ys");
+	return msci::time_duration(x, "ys");
 }
 
 msci::mass operator"" _Yg(unsigned long long int x)
@@ -1163,49 +1163,49 @@ msci::length operator"" _ym(long double x)
 	return msci::length(x, "ym");
 }
 
-msci::time operator"" _s(long double x)
+msci::time_duration operator"" _s(long double x)
 {
-	return msci::time(x, "s");
+	return msci::time_duration(x, "s");
 }
 
-msci::time operator"" _ms(long double x)
+msci::time_duration operator"" _ms(long double x)
 {
-	return msci::time(x, "ms");
+	return msci::time_duration(x, "ms");
 }
 
-msci::time operator"" _us(long double x)
+msci::time_duration operator"" _us(long double x)
 {
-	return msci::time(x, "us");
+	return msci::time_duration(x, "us");
 }
 
-msci::time operator"" _ns(long double x)
+msci::time_duration operator"" _ns(long double x)
 {
-	return msci::time(x, "ns");
+	return msci::time_duration(x, "ns");
 }
 
-msci::time operator"" _ps(long double x)
+msci::time_duration operator"" _ps(long double x)
 {
-	return msci::time(x, "ps");
+	return msci::time_duration(x, "ps");
 }
 
-msci::time operator"" _fs(long double x)
+msci::time_duration operator"" _fs(long double x)
 {
-	return msci::time(x, "fs");
+	return msci::time_duration(x, "fs");
 }
 
-msci::time operator"" _as(long double x)
+msci::time_duration operator"" _as(long double x)
 {
-	return msci::time(x, "as");
+	return msci::time_duration(x, "as");
 }
 
-msci::time operator"" _zs(long double x)
+msci::time_duration operator"" _zs(long double x)
 {
-	return msci::time(x, "zs");
+	return msci::time_duration(x, "zs");
 }
 
-msci::time operator"" _ys(long double x)
+msci::time_duration operator"" _ys(long double x)
 {
-	return msci::time(x, "ys");
+	return msci::time_duration(x, "ys");
 }
 
 msci::mass operator"" _Yg(long double x)

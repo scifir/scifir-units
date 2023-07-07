@@ -2012,19 +2012,19 @@ volume operator"" _mL(unsigned long long int x)
 	return volume(float(x), "m");
 }
 
-msci::time operator"" _min(unsigned long long int x)
+msci::time_duration operator"" _min(unsigned long long int x)
 {
-	return msci::time(float(x), "min");
+	return msci::time_duration(float(x), "min");
 }
 
-msci::time operator"" _hour(unsigned long long int x)
+msci::time_duration operator"" _hour(unsigned long long int x)
 {
-	return msci::time(float(x), "hour");
+	return msci::time_duration(float(x), "hour");
 }
 
-msci::time operator"" _day(unsigned long long int x)
+msci::time_duration operator"" _day(unsigned long long int x)
 {
-	return msci::time(float(x), "day");
+	return msci::time_duration(float(x), "day");
 }
 
 length operator"" _YAU(unsigned long long int x)
@@ -4597,19 +4597,19 @@ volume operator"" _mL(long double x)
 	return volume(float(x), "m");
 }
 
-msci::time operator"" _min(long double x)
+msci::time_duration operator"" _min(long double x)
 {
-	return msci::time(float(x), "min");
+	return msci::time_duration(float(x), "min");
 }
 
-msci::time operator"" _hour(long double x)
+msci::time_duration operator"" _hour(long double x)
 {
-	return msci::time(float(x), "hour");
+	return msci::time_duration(float(x), "hour");
 }
 
-msci::time operator"" _day(long double x)
+msci::time_duration operator"" _day(long double x)
 {
-	return msci::time(float(x), "day");
+	return msci::time_duration(float(x), "day");
 }
 
 length operator"" _YAU(long double x)

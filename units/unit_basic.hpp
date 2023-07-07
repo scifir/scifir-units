@@ -15,9 +15,9 @@ namespace msci
 {
 	SCALAR_UNIT_HPP(length);
 
-	SCALAR_UNIT_HPP_BEGIN(time);
+	SCALAR_UNIT_HPP_BEGIN(time_duration);
 		public:
-			time(const string&);
+			time_duration(const string&);
 
 			explicit operator std::chrono::seconds() const;
 
@@ -41,19 +41,19 @@ namespace msci
 			string display_seconds() const;
 
 			template<typename T1,typename T2>
-			msci::time& operator+=(chrono::duration<T1,T2> x)
+			msci::time_duration& operator+=(chrono::duration<T1,T2> x)
 			{
 				 chrono::seconds d = chrono::duration_cast<chrono::seconds>(x);
-				 msci::time x_second = msci::time(d.count(),"s");
+				 msci::time_duration x_second = msci::time_duration(d.count(),"s");
 				 scalar_unit::operator+=(x_second);
 				 return *this;
 			}
-			
+
 			template<typename T1,typename T2>
-			msci::time& operator-=(chrono::duration<T1,T2> x)
+			msci::time_duration& operator-=(chrono::duration<T1,T2> x)
 			{
 				 chrono::seconds d = chrono::duration_cast<chrono::seconds>(x);
-				 msci::time x_second = msci::time(d.count(),"s");
+				 msci::time_duration x_second = msci::time_duration(d.count(),"s");
 				 scalar_unit::operator-=(x_second);
 				 return *this;
 			}
@@ -104,15 +104,15 @@ msci::length operator"" _am(unsigned long long int);
 msci::length operator"" _zm(unsigned long long int);
 msci::length operator"" _ym(unsigned long long int);
 
-msci::time operator"" _s(unsigned long long int);
-msci::time operator"" _ms(unsigned long long int);
-msci::time operator"" _us(unsigned long long int);
-msci::time operator"" _ns(unsigned long long int);
-msci::time operator"" _ps(unsigned long long int);
-msci::time operator"" _fs(unsigned long long int);
-msci::time operator"" _as(unsigned long long int);
-msci::time operator"" _zs(unsigned long long int);
-msci::time operator"" _ys(unsigned long long int);
+msci::time_duration operator"" _s(unsigned long long int);
+msci::time_duration operator"" _ms(unsigned long long int);
+msci::time_duration operator"" _us(unsigned long long int);
+msci::time_duration operator"" _ns(unsigned long long int);
+msci::time_duration operator"" _ps(unsigned long long int);
+msci::time_duration operator"" _fs(unsigned long long int);
+msci::time_duration operator"" _as(unsigned long long int);
+msci::time_duration operator"" _zs(unsigned long long int);
+msci::time_duration operator"" _ys(unsigned long long int);
 
 msci::mass operator"" _Yg(unsigned long long int);
 msci::mass operator"" _Zg(unsigned long long int);
@@ -256,15 +256,15 @@ msci::length operator"" _am(long double);
 msci::length operator"" _zm(long double);
 msci::length operator"" _ym(long double);
 
-msci::time operator"" _s(long double);
-msci::time operator"" _ms(long double);
-msci::time operator"" _us(long double);
-msci::time operator"" _ns(long double);
-msci::time operator"" _ps(long double);
-msci::time operator"" _fs(long double);
-msci::time operator"" _as(long double);
-msci::time operator"" _zs(long double);
-msci::time operator"" _ys(long double);
+msci::time_duration operator"" _s(long double);
+msci::time_duration operator"" _ms(long double);
+msci::time_duration operator"" _us(long double);
+msci::time_duration operator"" _ns(long double);
+msci::time_duration operator"" _ps(long double);
+msci::time_duration operator"" _fs(long double);
+msci::time_duration operator"" _as(long double);
+msci::time_duration operator"" _zs(long double);
+msci::time_duration operator"" _ys(long double);
 
 msci::mass operator"" _Yg(long double);
 msci::mass operator"" _Zg(long double);
