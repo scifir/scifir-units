@@ -89,7 +89,7 @@ TEST_CASE("scalar_unit class","Full test of scalar_units") {
 	REQUIRE_FALSE (bool(a >= 110_g));
 	mass d = 1.676853_g;
 	REQUIRE (bool(d.display(0) == "1.67685 g"));
-	msci::time e = msci::time("10d 10h");
+	msci::time_duration e = msci::time_duration("10d 10h");
 	REQUIRE (bool(e.display_as_time() >= "10d 10h"));
 	scalar_unit f = scalar_unit("10 km*m");
 	REQUIRE (bool(sqrt(f) == scalar_unit("100 m")));
