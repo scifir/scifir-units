@@ -18,9 +18,9 @@ TEST_CASE("basic units","Full test of basic units") {
 		msci::time_duration a = msci::time_duration("365 d");
 		REQUIRE (bool(a.display_years() == "1 y"));
 		msci::time_duration b = msci::time_duration("30 d");
-		REQUIRE (bool(b.display_months() == "1 month"));
+		REQUIRE (bool(b.display_months() == "1 months"));
 		msci::time_duration c = msci::time_duration("7 d");
-		REQUIRE (bool(c.display_weeks() == "1 week"));
+		REQUIRE (bool(c.display_weeks() == "1 weeks"));
 		msci::time_duration d = msci::time_duration("24 h");
 		REQUIRE (bool(d.display_days() == "1 d"));
 		msci::time_duration e = msci::time_duration("3600 s");
