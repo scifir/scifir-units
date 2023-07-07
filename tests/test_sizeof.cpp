@@ -174,6 +174,6 @@ int main()
 		cout << "match!" << endl;
 	}
 	
-	msci::time x_time = msci::time(100.5,"d");
+	msci::time_duration x_time = msci::time_duration(100.5,"d");
 	cout << "time: " << x_time.display_as_time() << endl;
 }
