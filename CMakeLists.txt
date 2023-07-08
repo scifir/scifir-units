@@ -73,9 +73,9 @@ include(Catch)
 catch_discover_tests(test_units)
 
 install(TARGETS scifir_units ARCHIVE DESTINATION lib)
-install(FILES units.hpp DESTINATION include/msci)
-install(FILES ${TARGET_LOCAL_H} DESTINATION include/msci/units)
-install(DIRECTORY ${TARGET_H} DESTINATION include/msci/units
+install(FILES units.hpp DESTINATION include/scifir)
+install(FILES ${TARGET_LOCAL_H} DESTINATION include/scifir/units)
+install(DIRECTORY ${TARGET_H} DESTINATION include/scifir/units
 	FILES_MATCHING PATTERN "*.hpp")
 	
 set(CPACK_PACKAGE_NAME "scifir-units")
