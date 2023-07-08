@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	point_nd<float>::point_nd(const coordinates_nd<float>& new_coordinates) : values(new_coordinates.values)
 	{}

@@ -12,7 +12,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	pH::pH() : value(0)
 	{}
@@ -208,7 +208,7 @@ namespace msci
 	}
 }
 
-bool operator ==(const msci::pH& x, const msci::pH& y)
+bool operator ==(const scifir::pH& x, const scifir::pH& y)
 {
 	if(x.get_value() == y.get_value())
 	{
@@ -220,12 +220,12 @@ bool operator ==(const msci::pH& x, const msci::pH& y)
 	}
 }
 
-bool operator !=(const msci::pH& x, const msci::pH& y)
+bool operator !=(const scifir::pH& x, const scifir::pH& y)
 {
 	return !(x == y);
 }
 
-bool operator <(const msci::pH& x, const msci::pH& y)
+bool operator <(const scifir::pH& x, const scifir::pH& y)
 {
 	if(x.get_value() < y.get_value())
 	{
@@ -237,7 +237,7 @@ bool operator <(const msci::pH& x, const msci::pH& y)
 	}
 }
 
-bool operator >(const msci::pH& x, const msci::pH& y)
+bool operator >(const scifir::pH& x, const scifir::pH& y)
 {
 	if(x.get_value() > y.get_value())
 	{
@@ -249,46 +249,46 @@ bool operator >(const msci::pH& x, const msci::pH& y)
 	}
 }
 
-bool operator <=(const msci::pH& x, const msci::pH& y)
+bool operator <=(const scifir::pH& x, const scifir::pH& y)
 {
 	return !(x > y);
 }
 
-bool operator >=(const msci::pH& x, const msci::pH& y)
+bool operator >=(const scifir::pH& x, const scifir::pH& y)
 {
 	return !(x < y);
 }
 
-bool operator ==(const msci::pH& x, const string& y)
+bool operator ==(const scifir::pH& x, const string& y)
 {
-	msci::pH y_pH = msci::pH(y);
+	scifir::pH y_pH = scifir::pH(y);
 	return (x == y_pH);
 }
 
-bool operator !=(const msci::pH& x, const string& y)
+bool operator !=(const scifir::pH& x, const string& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const string& x, const msci::pH& y)
+bool operator ==(const string& x, const scifir::pH& y)
 {
-	msci::pH x_pH = msci::pH(x);
+	scifir::pH x_pH = scifir::pH(x);
 	return (x_pH == y);
 }
 
-bool operator !=(const string& x, const msci::pH& y)
+bool operator !=(const string& x, const scifir::pH& y)
 {
 	return !(x == y);
 }
 
-void operator +=(string& x, const msci::pH& y)
+void operator +=(string& x, const scifir::pH& y)
 {
 	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-string operator +(const string& x, const msci::pH& y)
+string operator +(const string& x, const scifir::pH& y)
 {
 	ostringstream output;
 	output << x;
@@ -296,7 +296,7 @@ string operator +(const string& x, const msci::pH& y)
 	return output.str();
 }
 
-string operator +(const msci::pH& y, const string& x)
+string operator +(const scifir::pH& y, const string& x)
 {
 	ostringstream output;
 	output << y;
@@ -304,18 +304,18 @@ string operator +(const msci::pH& y, const string& x)
 	return output.str();
 }
 
-ostream& operator <<(ostream& os, const msci::pH& x)
+ostream& operator <<(ostream& os, const scifir::pH& x)
 {
 	return os << to_string(x);
 }
 
-istream& operator >>(istream& is, msci::pH& x)
+istream& operator >>(istream& is, scifir::pH& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::pH c(b);
+	scifir::pH c(b);
 	x = c;
 	return is;
 }

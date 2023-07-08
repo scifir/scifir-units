@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_COORDINATES_COORDINATES_2D_HPP_INCLUDED
-#define MSCI_UNITS_COORDINATES_COORDINATES_2D_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_COORDINATES_COORDINATES_2D_HPP_INCLUDED
+#define SCIFIR_UNITS_COORDINATES_COORDINATES_2D_HPP_INCLUDED
 
 #include "topology/point_2d.hpp"
 #include "units/unit_basic.hpp"
@@ -11,7 +11,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	template<typename T = length>
 	class coordinates_2d
@@ -34,7 +34,7 @@ namespace msci
 				set_position(new_p,new_theta);
 			}
 
-			explicit coordinates_2d<T>(const msci::point_2d<T>& new_point) : x(new_point.x),y(new_point.y)
+			explicit coordinates_2d<T>(const scifir::point_2d<T>& new_point) : x(new_point.x),y(new_point.y)
 			{}
 
 			explicit coordinates_2d<T>(string init_coordinates_2d) : coordinates_2d<T>()
@@ -85,7 +85,7 @@ namespace msci
 
 			T get_p() const
 			{
-				return msci::sqrt(msci::pow(x,2) + msci::pow(y,2));
+				return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2));
 			}
 
 			angle get_theta() const
@@ -101,16 +101,16 @@ namespace msci
 
 			void set_position(const T& new_p,const angle& new_theta)
 			{
-				x = T(new_p * msci::cos(new_theta));
-				y = T(new_p * msci::sin(new_theta));
+				x = T(new_p * scifir::cos(new_theta));
+				y = T(new_p * scifir::sin(new_theta));
 			}
 
 			void rotate(const angle& x_angle)
 			{
 				T x_coord = x;
 				T y_coord = y;
-				x = x_coord * msci::cos(x_angle) - y_coord * msci::sin(x_angle);
-				y = x_coord * msci::sin(x_angle) + y_coord * msci::cos(x_angle);
+				x = x_coord * scifir::cos(x_angle) - y_coord * scifir::sin(x_angle);
+				y = x_coord * scifir::sin(x_angle) + y_coord * scifir::cos(x_angle);
 			}
 
 			void move(const displacement_2d& x_displacement)
@@ -127,13 +127,13 @@ namespace msci
 
 			void move(const T& new_p,const angle& new_theta)
 			{
-				x += new_p * msci::cos(new_theta);
-				y += new_p * msci::sin(new_theta);
+				x += new_p * scifir::cos(new_theta);
+				y += new_p * scifir::sin(new_theta);
 			}
 
 			T distance_to_origin() const
 			{
-				return msci::sqrt(msci::pow(x,2) + msci::pow(y,2));
+				return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2));
 			}
 
 			string display_polar() const
@@ -168,7 +168,7 @@ namespace msci
 				set_position(new_p,new_theta);
 			}
 
-			explicit coordinates_2d<float>(const msci::point_2d<float>& new_point) : x(new_point.x),y(new_point.y)
+			explicit coordinates_2d<float>(const scifir::point_2d<float>& new_point) : x(new_point.x),y(new_point.y)
 			{}
 
 			explicit coordinates_2d<float>(string init_coordinates_2d) : coordinates_2d<float>()
@@ -235,16 +235,16 @@ namespace msci
 
 			void set_position(const float& new_p,const angle& new_theta)
 			{
-				x = new_p * msci::cos(new_theta);
-				y = new_p * msci::sin(new_theta);
+				x = new_p * scifir::cos(new_theta);
+				y = new_p * scifir::sin(new_theta);
 			}
 
 			void rotate(const angle& x_angle)
 			{
 				float x_coord = x;
 				float y_coord = y;
-				x = x_coord * msci::cos(x_angle) - y_coord * msci::sin(x_angle);
-				y = x_coord * msci::sin(x_angle) + y_coord * msci::cos(x_angle);
+				x = x_coord * scifir::cos(x_angle) - y_coord * scifir::sin(x_angle);
+				y = x_coord * scifir::sin(x_angle) + y_coord * scifir::cos(x_angle);
 			}
 
 			void move(const displacement_2d& x_displacement)
@@ -261,8 +261,8 @@ namespace msci
 
 			void move(const float& new_p,const angle& new_theta)
 			{
-				x += new_p * msci::cos(new_theta);
-				y += new_p * msci::sin(new_theta);
+				x += new_p * scifir::cos(new_theta);
+				y += new_p * scifir::sin(new_theta);
 			}
 
 			float distance_to_origin() const
@@ -292,7 +292,7 @@ namespace msci
 	template<typename T>
 	T distance(const coordinates_2d<T>& x,const coordinates_2d<T>& y)
 	{
-		return msci::sqrt(msci::pow(x.x - y.x,2) + msci::pow(x.y - y.y,2));
+		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2));
 	}
 
 	float distance(const coordinates_2d<float>&,const coordinates_2d<float>&);
@@ -300,7 +300,7 @@ namespace msci
 	template<typename T>
 	T distance(const coordinates_2d<T>& x,const point_2d<T>& y)
 	{
-		return msci::sqrt(msci::pow(x.x - y.x,2) + msci::pow(x.y - y.y,2));
+		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2));
 	}
 
 	float distance(const coordinates_2d<float>&,const point_2d<float>&);
@@ -308,7 +308,7 @@ namespace msci
 	template<typename T>
 	T distance(const point_2d<T>& x,const coordinates_2d<T>& y)
 	{
-		return msci::sqrt(msci::pow(x.x - y.x,2) + msci::pow(x.y - y.y,2));
+		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2));
 	}
 
 	float distance(const point_2d<float>&,const coordinates_2d<float>&);
@@ -320,22 +320,22 @@ namespace msci
 
 	inline float cartesian_2d_to_polar_theta(float x,float y)
 	{
-		return msci::atan_grade(y/x);
+		return scifir::atan_grade(y/x);
 	}
 
 	inline float polar_to_cartesian_2d_x(float r,const angle& angle)
 	{
-		return r*msci::cos(angle);
+		return r*scifir::cos(angle);
 	}
 
 	inline float polar_to_cartesian_2d_y(float r,const angle& angle)
 	{
-		return r*msci::sin(angle);
+		return r*scifir::sin(angle);
 	}
 }
 
 template<typename T>
-bool operator ==(const msci::coordinates_2d<T>& x,const msci::coordinates_2d<T>& y)
+bool operator ==(const scifir::coordinates_2d<T>& x,const scifir::coordinates_2d<T>& y)
 {
 	if (x.x == y.x and x.y == y.y)
 	{
@@ -348,13 +348,13 @@ bool operator ==(const msci::coordinates_2d<T>& x,const msci::coordinates_2d<T>&
 }
 
 template<typename T>
-bool operator !=(const msci::coordinates_2d<T>& x,const msci::coordinates_2d<T>& y)
+bool operator !=(const scifir::coordinates_2d<T>& x,const scifir::coordinates_2d<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const msci::coordinates_2d<T>& x,const msci::point_2d<T>& y)
+bool operator ==(const scifir::coordinates_2d<T>& x,const scifir::point_2d<T>& y)
 {
 	if (x.x == y.x and x.y == y.y)
 	{
@@ -367,13 +367,13 @@ bool operator ==(const msci::coordinates_2d<T>& x,const msci::point_2d<T>& y)
 }
 
 template<typename T>
-bool operator !=(const msci::coordinates_2d<T>& x,const msci::point_2d<T>& y)
+bool operator !=(const scifir::coordinates_2d<T>& x,const scifir::point_2d<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const msci::point_2d<T>& x,const msci::coordinates_2d<T>& y)
+bool operator ==(const scifir::point_2d<T>& x,const scifir::coordinates_2d<T>& y)
 {
 	if (x.x == y.x and x.y == y.y)
 	{
@@ -386,71 +386,71 @@ bool operator ==(const msci::point_2d<T>& x,const msci::coordinates_2d<T>& y)
 }
 
 template<typename T>
-bool operator !=(const msci::point_2d<T>& x,const msci::coordinates_2d<T>& y)
+bool operator !=(const scifir::point_2d<T>& x,const scifir::coordinates_2d<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const msci::coordinates_2d<T>& x, const string& y)
+bool operator ==(const scifir::coordinates_2d<T>& x, const string& y)
 {
 	coordinates_2d<T> y_coordinates = coordinates_2d<T>(y);
 	return (x == y_coordinates);
 }
 
 template<typename T>
-bool operator !=(const msci::coordinates_2d<T>& x, const string& y)
+bool operator !=(const scifir::coordinates_2d<T>& x, const string& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const string& x, const msci::coordinates_2d<T>& y)
+bool operator ==(const string& x, const scifir::coordinates_2d<T>& y)
 {
 	coordinates_2d<T> x_coordinates = coordinates_2d<T>(x);
 	return (x_coordinates == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const msci::coordinates_2d<T>& y)
+bool operator !=(const string& x, const scifir::coordinates_2d<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-void operator +=(string& x, const msci::coordinates_2d<T>& y)
+void operator +=(string& x, const scifir::coordinates_2d<T>& y)
 {
 	x += to_string(y);
 }
 
 template<typename T>
-string operator +(const string& x,const msci::coordinates_2d<T>& y)
+string operator +(const string& x,const scifir::coordinates_2d<T>& y)
 {
 	return x + to_string(y);
 }
 
 template<typename T>
-string operator +(const msci::coordinates_2d<T>& x,const string& y)
+string operator +(const scifir::coordinates_2d<T>& x,const string& y)
 {
 	return to_string(x) + y;
 }
 
 template<typename T>
-ostream& operator << (ostream& os,const msci::coordinates_2d<T>& x)
+ostream& operator << (ostream& os,const scifir::coordinates_2d<T>& x)
 {
 	return os << to_string(x);
 }
 
 template<typename T>
-istream& operator >>(istream& is,msci::coordinates_2d<T>& x)
+istream& operator >>(istream& is,scifir::coordinates_2d<T>& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::coordinates_2d<T> c(b);
+	scifir::coordinates_2d<T> c(b);
 	x = c;
 	return is;
 }
 
-#endif // MSCI_UNITS_COORDINATES_COORDINATES_2D_HPP_INCLUDED
+#endif // SCIFIR_UNITS_COORDINATES_COORDINATES_2D_HPP_INCLUDED

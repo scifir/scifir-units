@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_SPECIAL_UNITS_PH_HPP_INCLUDED
-#define MSCI_UNITS_SPECIAL_UNITS_PH_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_SPECIAL_UNITS_PH_HPP_INCLUDED
+#define SCIFIR_UNITS_SPECIAL_UNITS_PH_HPP_INCLUDED
 
 #include "util/is_number.hpp"
 #include "units/scalar_unit.hpp"
@@ -12,7 +12,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	class pOH;
 
@@ -47,26 +47,26 @@ namespace msci
 			void operator +=(const pH&);
 			void operator -=(const pH&);
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			pH operator +(T y) const
 			{
 				return pH(value + y);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			pH operator -(T y) const
 			{
 				return pH(value - y);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator +=(T y)
 			{
 				value += y;
 				normalize_value();
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator -=(T y)
 			{
 				value -= y;
@@ -97,109 +97,109 @@ namespace msci
 	string to_string(const pH&);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::pH operator +(T x, const msci::pH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::pH operator +(T x, const scifir::pH& y)
 {
 	return pH(x + y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::pH operator -(T x, const msci::pH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::pH operator -(T x, const scifir::pH& y)
 {
 	return pH(x - y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator ==(T x, const msci::pH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator ==(T x, const scifir::pH& y)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator !=(T x, const msci::pH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator !=(T x, const scifir::pH& y)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <(T x, const msci::pH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <(T x, const scifir::pH& y)
 {
 	return (x < y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >(T x, const msci::pH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >(T x, const scifir::pH& y)
 {
 	return (x > y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <=(T x, const msci::pH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <=(T x, const scifir::pH& y)
 {
 	return (x <= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >=(T x, const msci::pH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >=(T x, const scifir::pH& y)
 {
 	return (x >= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator ==(const msci::pH& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator ==(const scifir::pH& y, T x)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator !=(const msci::pH& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator !=(const scifir::pH& y, T x)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <(const msci::pH& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <(const scifir::pH& y, T x)
 {
 	return (y.get_value() < x);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >(const msci::pH& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >(const scifir::pH& y, T x)
 {
 	return (y.get_value() > x);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <=(const msci::pH& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <=(const scifir::pH& y, T x)
 {
 	return (y.get_value() <= x);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >=(const msci::pH& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >=(const scifir::pH& y, T x)
 {
 	return (y.get_value() >= x);
 }
 
-bool operator ==(const msci::pH&, const msci::pH&);
-bool operator !=(const msci::pH&, const msci::pH&);
-bool operator <(const msci::pH&, const msci::pH&);
-bool operator >(const msci::pH&, const msci::pH&);
-bool operator <=(const msci::pH&, const msci::pH&);
-bool operator >=(const msci::pH&, const msci::pH&);
+bool operator ==(const scifir::pH&, const scifir::pH&);
+bool operator !=(const scifir::pH&, const scifir::pH&);
+bool operator <(const scifir::pH&, const scifir::pH&);
+bool operator >(const scifir::pH&, const scifir::pH&);
+bool operator <=(const scifir::pH&, const scifir::pH&);
+bool operator >=(const scifir::pH&, const scifir::pH&);
 
-bool operator ==(const msci::pH&, const string&);
-bool operator !=(const msci::pH&, const string&);
+bool operator ==(const scifir::pH&, const string&);
+bool operator !=(const scifir::pH&, const string&);
 
-bool operator ==(const string&, const msci::pH&);
-bool operator !=(const string&, const msci::pH&);
+bool operator ==(const string&, const scifir::pH&);
+bool operator !=(const string&, const scifir::pH&);
 
-void operator +=(string&, const msci::pH&);
-string operator +(const string&, const msci::pH&);
-string operator +(const msci::pH&, const string&);
+void operator +=(string&, const scifir::pH&);
+string operator +(const string&, const scifir::pH&);
+string operator +(const scifir::pH&, const string&);
 
-ostream& operator <<(ostream&, const msci::pH&);
-istream& operator >>(istream&, msci::pH&);
+ostream& operator <<(ostream&, const scifir::pH&);
+istream& operator >>(istream&, scifir::pH&);
 
-#endif // MSCI_UNITS_SPECIAL_UNITS_PH_HPP_INCLUDED
+#endif // SCIFIR_UNITS_SPECIAL_UNITS_PH_HPP_INCLUDED
 

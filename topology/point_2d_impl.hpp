@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_TOPOLOGY_POINT_2D_IMPL_HPP_INCLUDED
-#define MSCI_UNITS_TOPOLOGY_POINT_2D_IMPL_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_TOPOLOGY_POINT_2D_IMPL_HPP_INCLUDED
+#define SCIFIR_UNITS_TOPOLOGY_POINT_2D_IMPL_HPP_INCLUDED
 
 #include "topology/point_2d.hpp"
 
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	template<typename T>
 	point_2d<T>::point_2d(const coordinates_2d<T>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y)
@@ -22,4 +22,4 @@ namespace msci
 	}
 }
 
-#endif // MSCI_UNITS_TOPOLOGY_POINT_2D_IMPL_HPP_INCLUDED
+#endif // SCIFIR_UNITS_TOPOLOGY_POINT_2D_IMPL_HPP_INCLUDED

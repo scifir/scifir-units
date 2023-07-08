@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED
-#define MSCI_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED
+#define SCIFIR_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED
 
 #include "units/dimension.hpp"
 #include "units/prefix.hpp"
@@ -70,7 +70,7 @@ const vector<dimension> name::real_dimensions = create_derived_dimensions(init_d
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	class scalar_unit
 	{
@@ -95,7 +95,7 @@ namespace msci
 			void operator +=(scalar_unit);
 			void operator -=(scalar_unit);
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			scalar_unit operator +(const T y) const
 			{
 				scalar_unit x = *this;
@@ -103,7 +103,7 @@ namespace msci
 				return x;
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			scalar_unit operator -(const T y) const
 			{
 				scalar_unit x = *this;
@@ -111,7 +111,7 @@ namespace msci
 				return x;
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			scalar_unit operator *(const T y) const
 			{
 				scalar_unit x = *this;
@@ -119,7 +119,7 @@ namespace msci
 				return x;
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			scalar_unit operator /(const T y) const
 			{
 				scalar_unit x = *this;
@@ -133,25 +133,25 @@ namespace msci
 				return scalar_unit(std::pow(get_value(),y),power_dimensions(get_dimensions(),y));
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator +=(const T y)
 			{
 				value += y;
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator -=(const T y)
 			{
 				value -= y;
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator *=(const T y)
 			{
 				value *= y;
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator /=(const T y)
 			{
 				value /= y;
@@ -204,39 +204,39 @@ namespace msci
 	scalar_unit sqrt_nth(const scalar_unit&, int);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::scalar_unit operator +(const T y,const msci::scalar_unit& x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::scalar_unit operator +(const T y,const scifir::scalar_unit& x)
 {
-	msci::scalar_unit z = x;
+	scifir::scalar_unit z = x;
 	z += y;
 	return z;
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::scalar_unit operator -(const T y,const msci::scalar_unit& x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::scalar_unit operator -(const T y,const scifir::scalar_unit& x)
 {
-	msci::scalar_unit z = msci::scalar_unit(y,x.get_dimensions());
+	scifir::scalar_unit z = scifir::scalar_unit(y,x.get_dimensions());
 	z -= x;
 	return z;
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::scalar_unit operator *(const T y,const msci::scalar_unit& x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::scalar_unit operator *(const T y,const scifir::scalar_unit& x)
 {
-	msci::scalar_unit z = x;
+	scifir::scalar_unit z = x;
 	z *= y;
 	return z;
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::scalar_unit operator /(const T y,const msci::scalar_unit& x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::scalar_unit operator /(const T y,const scifir::scalar_unit& x)
 {
-	msci::scalar_unit z = msci::scalar_unit(y,vector<msci::dimension>());
+	scifir::scalar_unit z = scifir::scalar_unit(y,vector<scifir::dimension>());
 	return z / x;
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-float operator ^(const T x, const msci::scalar_unit& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+float operator ^(const T x, const scifir::scalar_unit& y)
 {
 	if(y.has_empty_dimensions())
 	{
@@ -248,104 +248,104 @@ float operator ^(const T x, const msci::scalar_unit& y)
 	}
 }
 
-bool operator ==(const msci::scalar_unit&, msci::scalar_unit);
-bool operator !=(const msci::scalar_unit&, msci::scalar_unit);
-bool operator <(const msci::scalar_unit&, const msci::scalar_unit&);
-bool operator >(const msci::scalar_unit&, const msci::scalar_unit&);
-bool operator <=(const msci::scalar_unit&, const msci::scalar_unit&);
-bool operator >=(const msci::scalar_unit&, const msci::scalar_unit&);
+bool operator ==(const scifir::scalar_unit&, scifir::scalar_unit);
+bool operator !=(const scifir::scalar_unit&, scifir::scalar_unit);
+bool operator <(const scifir::scalar_unit&, const scifir::scalar_unit&);
+bool operator >(const scifir::scalar_unit&, const scifir::scalar_unit&);
+bool operator <=(const scifir::scalar_unit&, const scifir::scalar_unit&);
+bool operator >=(const scifir::scalar_unit&, const scifir::scalar_unit&);
 
-bool operator ==(const msci::scalar_unit&, const string&);
-bool operator !=(const msci::scalar_unit&, const string&);
-bool operator <(const msci::scalar_unit&, const string&);
-bool operator >(const msci::scalar_unit&, const string&);
-bool operator <=(const msci::scalar_unit&, const string&);
-bool operator >=(const msci::scalar_unit&, const string&);
+bool operator ==(const scifir::scalar_unit&, const string&);
+bool operator !=(const scifir::scalar_unit&, const string&);
+bool operator <(const scifir::scalar_unit&, const string&);
+bool operator >(const scifir::scalar_unit&, const string&);
+bool operator <=(const scifir::scalar_unit&, const string&);
+bool operator >=(const scifir::scalar_unit&, const string&);
 
-bool operator ==(const string&, const msci::scalar_unit&);
-bool operator !=(const string&, const msci::scalar_unit&);
-bool operator <(const string&, const msci::scalar_unit&);
-bool operator >(const string&, const msci::scalar_unit&);
-bool operator <=(const string&, const msci::scalar_unit&);
-bool operator >=(const string&, const msci::scalar_unit&);
+bool operator ==(const string&, const scifir::scalar_unit&);
+bool operator !=(const string&, const scifir::scalar_unit&);
+bool operator <(const string&, const scifir::scalar_unit&);
+bool operator >(const string&, const scifir::scalar_unit&);
+bool operator <=(const string&, const scifir::scalar_unit&);
+bool operator >=(const string&, const scifir::scalar_unit&);
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator ==(const T x, const msci::scalar_unit& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator ==(const T x, const scifir::scalar_unit& y)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator !=(const T x, const msci::scalar_unit& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator !=(const T x, const scifir::scalar_unit& y)
 {
 	return !(x == y);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <(const T x, const msci::scalar_unit& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <(const T x, const scifir::scalar_unit& y)
 {
 	return (x < y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >(const T x, const msci::scalar_unit& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >(const T x, const scifir::scalar_unit& y)
 {
 	return (x > y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <=(const T x, const msci::scalar_unit& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <=(const T x, const scifir::scalar_unit& y)
 {
 	return (x <= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >=(const T x, const msci::scalar_unit& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >=(const T x, const scifir::scalar_unit& y)
 {
 	return (x >= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator ==(const msci::scalar_unit& x, const T y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator ==(const scifir::scalar_unit& x, const T y)
 {
 	return (x.get_value() == y);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator !=(const msci::scalar_unit& x, const T y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator !=(const scifir::scalar_unit& x, const T y)
 {
 	return !(x == y);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <(const msci::scalar_unit& x,const T y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <(const scifir::scalar_unit& x,const T y)
 {
 	return (x.get_value() < y);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >(const msci::scalar_unit& x,const T y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >(const scifir::scalar_unit& x,const T y)
 {
 	return (x.get_value() > y);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <=(const msci::scalar_unit& x,const T y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <=(const scifir::scalar_unit& x,const T y)
 {
 	return (x.get_value() <= y);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >=(const msci::scalar_unit& x,const T y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >=(const scifir::scalar_unit& x,const T y)
 {
 	return (x.get_value() >= y);
 }
 
-void operator +=(string&, const msci::scalar_unit&);
-string operator +(const string&, const msci::scalar_unit&);
-string operator +(const msci::scalar_unit&, const string&);
+void operator +=(string&, const scifir::scalar_unit&);
+string operator +(const string&, const scifir::scalar_unit&);
+string operator +(const scifir::scalar_unit&, const string&);
 
-ostream& operator <<(ostream&, const msci::scalar_unit&);
-istream& operator >>(istream&, msci::scalar_unit&);
+ostream& operator <<(ostream&, const scifir::scalar_unit&);
+istream& operator >>(istream&, scifir::scalar_unit&);
 
-#endif // MSCI_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED
+#endif // SCIFIR_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED

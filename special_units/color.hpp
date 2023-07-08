@@ -1,12 +1,12 @@
-#ifndef MSCI_UNITS_SPECIAL_UNITS_COLOR_HPP_INCLUDED
-#define MSCI_UNITS_SPECIAL_UNITS_COLOR_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_SPECIAL_UNITS_COLOR_HPP_INCLUDED
+#define SCIFIR_UNITS_SPECIAL_UNITS_COLOR_HPP_INCLUDED
 
 #include <iostream>
 #include <sstream>
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	class color
 	{
@@ -57,6 +57,6 @@ namespace msci
 	};
 }
 
-ostream& operator <<(ostream&, const msci::color&);
+ostream& operator <<(ostream&, const scifir::color&);
 
-#endif // MSCI_UNITS_SPECIAL_UNITS_COLOR_HPP_INCLUDED
+#endif // SCIFIR_UNITS_SPECIAL_UNITS_COLOR_HPP_INCLUDED

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	color::color() : red(),blue(),green(),alpha()
 	{
@@ -13,7 +13,7 @@ namespace msci
 	}
 }
 
-ostream& operator <<(ostream& os, const msci::color& x)
+ostream& operator <<(ostream& os, const scifir::color& x)
 {
 	return os << "color(" << x.get_red() << "," << x.get_green() << "," << x.get_blue() << "," << x.get_alpha() << ")";
 }

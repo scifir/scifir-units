@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_UTIL_MATRIX_HPP_INCLUDED
-#define MSCI_UNITS_UTIL_MATRIX_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_UTIL_MATRIX_HPP_INCLUDED
+#define SCIFIR_UNITS_UTIL_MATRIX_HPP_INCLUDED
 
 #include "units/scalar_unit.hpp"
 
@@ -9,7 +9,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	template<typename T, int M, int N>
 	class matrix
@@ -256,7 +256,7 @@ namespace msci
 }
 
 template<typename T, int M, int N>
-bool operator ==(const msci::matrix<T, M, N>& x,const msci::matrix<T, M, N>& y)
+bool operator ==(const scifir::matrix<T, M, N>& x,const scifir::matrix<T, M, N>& y)
 {
 	for(int i = 0; i < x.row_size(); i++)
 	{
@@ -272,13 +272,13 @@ bool operator ==(const msci::matrix<T, M, N>& x,const msci::matrix<T, M, N>& y)
 }
 
 template<typename T, int M, int N>
-bool operator !=(const msci::matrix<T, M, N>& x,const msci::matrix<T, M, N>& y)
+bool operator !=(const scifir::matrix<T, M, N>& x,const scifir::matrix<T, M, N>& y)
 {
 	return !(x == y);
 }
 
 template<typename T, int M, int N>
-ostream& operator <<(ostream& os, const msci::matrix<T, M, N>& x)
+ostream& operator <<(ostream& os, const scifir::matrix<T, M, N>& x)
 {
 	ostringstream output;
 	output << "[";
@@ -301,4 +301,4 @@ ostream& operator <<(ostream& os, const msci::matrix<T, M, N>& x)
 	return os << output.str();
 }
 
-#endif // MSCI_UNITS_UTIL_MATRIX_HPP_INCLUDED
+#endif // SCIFIR_UNITS_UTIL_MATRIX_HPP_INCLUDED

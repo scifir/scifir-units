@@ -1,15 +1,15 @@
-#ifndef MSCI_UNITS_UTIL_TYPES_HPP_INCLUDED
-#define MSCI_UNITS_UTIL_TYPES_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_UTIL_TYPES_HPP_INCLUDED
+#define SCIFIR_UNITS_UTIL_TYPES_HPP_INCLUDED
 
 #include <string>
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	float parse_float(const string&);
 	int parse_int(const string&);
 	string display_float(const float&,int = 2);
 }
 
-#endif // MSCI_UNITS_UTIL_TYPES_HPP_INCLUDED
+#endif // SCIFIR_UNITS_UTIL_TYPES_HPP_INCLUDED

@@ -8,7 +8,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	aid::aid() : universe(),galaxy(),solar_system(),astronomical_body(),astronomical_type(aid::NONE)
 	{}
@@ -464,7 +464,7 @@ namespace msci
 	}
 }
 
-bool operator ==(const msci::aid& x, const msci::aid& y)
+bool operator ==(const scifir::aid& x, const scifir::aid& y)
 {
 	if(x.universe == y.universe and x.galaxy == y.galaxy and x.solar_system == y.solar_system and x.astronomical_body == y.astronomical_body)
 	{
@@ -476,41 +476,41 @@ bool operator ==(const msci::aid& x, const msci::aid& y)
 	}
 }
 
-bool operator !=(const msci::aid& x, const msci::aid& y)
+bool operator !=(const scifir::aid& x, const scifir::aid& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const msci::aid& x, const string& y)
+bool operator ==(const scifir::aid& x, const string& y)
 {
-	msci::aid y_aid = msci::aid(y);
+	scifir::aid y_aid = scifir::aid(y);
 	return (x == y_aid);
 }
 
-bool operator !=(const msci::aid& x, const string& y)
+bool operator !=(const scifir::aid& x, const string& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const string& x, const msci::aid& y)
+bool operator ==(const string& x, const scifir::aid& y)
 {
-	msci::aid x_aid = msci::aid(x);
+	scifir::aid x_aid = scifir::aid(x);
 	return (x_aid == y);
 }
 
-bool operator !=(const string& x, const msci::aid& y)
+bool operator !=(const string& x, const scifir::aid& y)
 {
 	return !(x == y);
 }
 
-void operator +=(string& x, const msci::aid& y)
+void operator +=(string& x, const scifir::aid& y)
 {
 	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-string operator +(const string& x, const msci::aid& y)
+string operator +(const string& x, const scifir::aid& y)
 {
 	ostringstream output;
 	output << x;
@@ -518,7 +518,7 @@ string operator +(const string& x, const msci::aid& y)
 	return output.str();
 }
 
-string operator +(const msci::aid& y, const string& x)
+string operator +(const scifir::aid& y, const string& x)
 {
 	ostringstream output;
 	output << y;
@@ -526,18 +526,18 @@ string operator +(const msci::aid& y, const string& x)
 	return output.str();
 }
 
-ostream& operator <<(ostream& os, const msci::aid& x)
+ostream& operator <<(ostream& os, const scifir::aid& x)
 {
 	return os << to_string(x);
 }
 
-istream& operator >>(istream& is, msci::aid& x)
+istream& operator >>(istream& is, scifir::aid& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::aid c(b);
+	scifir::aid c(b);
 	x = c;
 	return is;
 }

@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_UNITS_HPP_INCLUDED
-#define MSCI_UNITS_UNITS_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_UNITS_HPP_INCLUDED
+#define SCIFIR_UNITS_UNITS_HPP_INCLUDED
 
 #include "units/prefix.hpp"
 #include "units/dimension.hpp"
@@ -66,4 +66,4 @@
 
 using namespace std;
 
-#endif // MSCI_UNITS_UNITS_HPP_INCLUDED
+#endif // SCIFIR_UNITS_UNITS_HPP_INCLUDED

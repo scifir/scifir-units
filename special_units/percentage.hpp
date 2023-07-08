@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_SPECIAL_UNITS_PERCENTAGE_HPP_INCLUDED
-#define MSCI_UNITS_SPECIAL_UNITS_PERCENTAGE_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_SPECIAL_UNITS_PERCENTAGE_HPP_INCLUDED
+#define SCIFIR_UNITS_SPECIAL_UNITS_PERCENTAGE_HPP_INCLUDED
 
 #include "topology/constants.hpp"
 #include "util/is_number.hpp"
@@ -12,7 +12,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	class percentage
 	{
@@ -50,55 +50,55 @@ namespace msci
 			void operator *=(const percentage&);
 			void operator /=(const percentage&);
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator =(T y)
 			{
 				value = y;
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			percentage operator +(T y) const
 			{
 				return percentage(value + y);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			percentage operator -(T y) const
 			{
 				return percentage(value - y);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			T operator *(T y) const
 			{
 				return T(value * y / 100);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			T operator /(T y) const
 			{
 				return percentage(100 * value / y);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator +=(T y)
 			{
 				value += y;
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator -=(T y)
 			{
 				value -= y;
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator *=(T y)
 			{
 				value *= y;
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator /=(T y)
 			{
 				value /= y;
@@ -133,123 +133,123 @@ namespace msci
 	bool is_percentage(const string&);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::percentage operator +(T x, const msci::percentage& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::percentage operator +(T x, const scifir::percentage& y)
 {
 	return percentage(x + y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::percentage operator -(T x, const msci::percentage& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::percentage operator -(T x, const scifir::percentage& y)
 {
 	return percentage(x - y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-T operator *(T x, const msci::percentage& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+T operator *(T x, const scifir::percentage& y)
 {
 	return percentage(x * y.get_value() / 100);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-T operator /(T x, const msci::percentage& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+T operator /(T x, const scifir::percentage& y)
 {
 	return percentage(100 * x / y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator ==(T x, const msci::percentage& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator ==(T x, const scifir::percentage& y)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator !=(T x, const msci::percentage& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator !=(T x, const scifir::percentage& y)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <(T x, const msci::percentage& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <(T x, const scifir::percentage& y)
 {
 	return (x < y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >(T x, const msci::percentage& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >(T x, const scifir::percentage& y)
 {
 	return (x > y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <=(T x, const msci::percentage& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <=(T x, const scifir::percentage& y)
 {
 	return (x <= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >=(T x, const msci::percentage& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >=(T x, const scifir::percentage& y)
 {
 	return (x >= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator ==(const msci::percentage& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator ==(const scifir::percentage& y, T x)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator !=(const msci::percentage& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator !=(const scifir::percentage& y, T x)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <(const msci::percentage& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <(const scifir::percentage& y, T x)
 {
 	return (y.get_value() < x);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >(const msci::percentage& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >(const scifir::percentage& y, T x)
 {
 	return (y.get_value() > x);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <=(const msci::percentage& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <=(const scifir::percentage& y, T x)
 {
 	return (y.get_value() <= x);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >=(const msci::percentage& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >=(const scifir::percentage& y, T x)
 {
 	return (y.get_value() >= x);
 }
 
-msci::scalar_unit operator *(const msci::scalar_unit&, const msci::percentage&);
-msci::scalar_unit operator /(const msci::scalar_unit&, const msci::percentage&);
+scifir::scalar_unit operator *(const scifir::scalar_unit&, const scifir::percentage&);
+scifir::scalar_unit operator /(const scifir::scalar_unit&, const scifir::percentage&);
 
-bool operator ==(const msci::percentage&, const msci::percentage&);
-bool operator !=(const msci::percentage&, const msci::percentage&);
-bool operator <(const msci::percentage&, const msci::percentage&);
-bool operator >(const msci::percentage&, const msci::percentage&);
-bool operator <=(const msci::percentage&, const msci::percentage&);
-bool operator >=(const msci::percentage&, const msci::percentage&);
+bool operator ==(const scifir::percentage&, const scifir::percentage&);
+bool operator !=(const scifir::percentage&, const scifir::percentage&);
+bool operator <(const scifir::percentage&, const scifir::percentage&);
+bool operator >(const scifir::percentage&, const scifir::percentage&);
+bool operator <=(const scifir::percentage&, const scifir::percentage&);
+bool operator >=(const scifir::percentage&, const scifir::percentage&);
 
-bool operator ==(const msci::percentage&, const string&);
-bool operator !=(const msci::percentage&, const string&);
+bool operator ==(const scifir::percentage&, const string&);
+bool operator !=(const scifir::percentage&, const string&);
 
-bool operator ==(const string&, const msci::percentage&);
-bool operator !=(const string&, const msci::percentage&);
+bool operator ==(const string&, const scifir::percentage&);
+bool operator !=(const string&, const scifir::percentage&);
 
-void operator +=(string&, const msci::percentage&);
-string operator +(const string&, const msci::percentage&);
-string operator +(const msci::percentage&, const string&);
+void operator +=(string&, const scifir::percentage&);
+string operator +(const string&, const scifir::percentage&);
+string operator +(const scifir::percentage&, const string&);
 
-ostream& operator <<(ostream&, const msci::percentage&);
-istream& operator >>(istream&, msci::percentage&);
+ostream& operator <<(ostream&, const scifir::percentage&);
+istream& operator >>(istream&, scifir::percentage&);
 
-#endif // MSCI_UNITS_SPECIAL_UNITS_PERCENTAGE_HPP_INCLUDED
+#endif // SCIFIR_UNITS_SPECIAL_UNITS_PERCENTAGE_HPP_INCLUDED

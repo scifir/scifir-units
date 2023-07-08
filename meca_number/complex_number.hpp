@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_MECA_NUMBER_COMPLEX_NUMBER_HPP_INCLUDED
-#define MSCI_UNITS_MECA_NUMBER_COMPLEX_NUMBER_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_MECA_NUMBER_COMPLEX_NUMBER_HPP_INCLUDED
+#define SCIFIR_UNITS_MECA_NUMBER_COMPLEX_NUMBER_HPP_INCLUDED
 
 #include "meca_number/angle.hpp"
 
@@ -12,7 +12,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	template<typename T>
 	class complex_number
@@ -126,14 +126,14 @@ namespace msci
 
 			T get_r() const
 			{
-				return msci::sqrt(real^2 + imaginary^2);
+				return scifir::sqrt(real^2 + imaginary^2);
 			}
 
 			angle get_argument() const
 			{
 				if (imaginary != 0 and real > 0)
 				{
-					return angle(2 * msci::atan(imaginary / (real + (msci::sqrt(real^2 + imaginary^2)))));
+					return angle(2 * scifir::atan(imaginary / (real + (scifir::sqrt(real^2 + imaginary^2)))));
 				}
 				else if (real < 0 and imaginary == 0)
 				{
@@ -169,7 +169,7 @@ namespace msci
 	template<typename T>
 	T abs(const complex_number<T>& x)
 	{
-		return msci::sqrt(x.real ^ 2 + x.imaginary ^ 2);
+		return scifir::sqrt(x.real ^ 2 + x.imaginary ^ 2);
 	}
 
 	template<typename T>
@@ -188,8 +188,8 @@ namespace msci
 		{
 			sgn_value = 0;
 		}
-		T new_real = msci::sqrt(x.real + msci::sqrt(x.real ^ 2 + x.imaginary ^ 2));
-		T new_imaginary = sgn_value * msci::sqrt(((-1) * x.real + msci::sqrt(x.real ^ 2 + x.imaginary ^ 2)) / 2);
+		T new_real = scifir::sqrt(x.real + scifir::sqrt(x.real ^ 2 + x.imaginary ^ 2));
+		T new_imaginary = sgn_value * scifir::sqrt(((-1) * x.real + scifir::sqrt(x.real ^ 2 + x.imaginary ^ 2)) / 2);
 		return complex_number<T>(new_real,new_imaginary);
 	}
 
@@ -201,7 +201,7 @@ namespace msci
 }
 
 template<typename T>
-bool operator ==(const msci::complex_number<T>& x, const msci::complex_number<T>& y)
+bool operator ==(const scifir::complex_number<T>& x, const scifir::complex_number<T>& y)
 {
 	if (x.real == y.real and x.imaginary == y.imaginary)
 	{
@@ -214,44 +214,44 @@ bool operator ==(const msci::complex_number<T>& x, const msci::complex_number<T>
 }
 
 template<typename T>
-bool operator !=(const msci::complex_number<T>& x, const msci::complex_number<T>& y)
+bool operator !=(const scifir::complex_number<T>& x, const scifir::complex_number<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-void operator +=(string& x, const msci::complex_number<T>& y)
+void operator +=(string& x, const scifir::complex_number<T>& y)
 {
 	x += to_string(y);
 }
 
 template<typename T>
-string operator +(const string& x, const msci::complex_number<T>& y)
+string operator +(const string& x, const scifir::complex_number<T>& y)
 {
 	return x + to_string(y);
 }
 
 template<typename T>
-string operator +(const msci::complex_number<T>& x, const string& y)
+string operator +(const scifir::complex_number<T>& x, const string& y)
 {
 	return to_string(x) + y;
 }
 
 template<typename T>
-ostream& operator <<(ostream& os, const msci::complex_number<T>& x)
+ostream& operator <<(ostream& os, const scifir::complex_number<T>& x)
 {
 	return os << to_string(x);
 }
 
 template<typename T>
-istream& operator >>(istream& is, msci::complex_number<T>& x)
+istream& operator >>(istream& is, scifir::complex_number<T>& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
-	msci::complex_number<T> c(b);
+	scifir::complex_number<T> c(b);
 	x = c;
 	return is;
 }
 
-#endif // MSCI_UNITS_MECA_NUMBER_COMPLEX_NUMBER_HPP_INCLUDED
+#endif // SCIFIR_UNITS_MECA_NUMBER_COMPLEX_NUMBER_HPP_INCLUDED

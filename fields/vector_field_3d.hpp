@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_FIELDS_VECTOR_FIELD_3D_HPP_INCLUDED
-#define MSCI_UNITS_FIELDS_VECTOR_FIELD_3D_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_FIELDS_VECTOR_FIELD_3D_HPP_INCLUDED
+#define SCIFIR_UNITS_FIELDS_VECTOR_FIELD_3D_HPP_INCLUDED
 
 #include "units/scalar_unit.hpp"
 
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	template<typename T>
 	class vector_field_3d
@@ -46,4 +46,4 @@ namespace msci
 	};
 }
 
-#endif // MSCI_UNITS_FIELDS_VECTOR_FIELD_3D_HPP_INCLUDED
+#endif // SCIFIR_UNITS_FIELDS_VECTOR_FIELD_3D_HPP_INCLUDED

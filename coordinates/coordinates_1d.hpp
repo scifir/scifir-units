@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_COORDINATES_COORDINATES_1D_HPP_INCLUDED
-#define MSCI_UNITS_COORDINATES_COORDINATES_1D_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_COORDINATES_COORDINATES_1D_HPP_INCLUDED
+#define SCIFIR_UNITS_COORDINATES_COORDINATES_1D_HPP_INCLUDED
 
 #include "topology/point_1d.hpp"
 #include "units/unit_basic.hpp"
@@ -12,7 +12,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	template<typename T = length>
 	class coordinates_1d
@@ -162,7 +162,7 @@ namespace msci
 	template<typename T>
 	T distance(const coordinates_1d<T>& x,const coordinates_1d<T>& y)
 	{
-		return msci::sqrt(msci::pow(x.x - y.x,2));
+		return scifir::sqrt(scifir::pow(x.x - y.x,2));
 	}
 	
 	float distance(const coordinates_1d<float>&,const coordinates_1d<float>&);
@@ -170,7 +170,7 @@ namespace msci
 	template<typename T>
 	T distance(const coordinates_1d<T>& x,const point_1d<T>& y)
 	{
-		return msci::sqrt(msci::pow(x.x - y.x,2));
+		return scifir::sqrt(scifir::pow(x.x - y.x,2));
 	}
 
 	float distance(const coordinates_1d<float>&,const point_1d<float>&);
@@ -178,14 +178,14 @@ namespace msci
 	template<typename T>
 	T distance(const point_1d<T>& x,const coordinates_1d<T>& y)
 	{
-		return msci::sqrt(msci::pow(x.x - y.x,2));
+		return scifir::sqrt(scifir::pow(x.x - y.x,2));
 	}
 
 	float distance(const point_1d<float>&,const coordinates_1d<float>&);
 }
 
 template<typename T>
-bool operator ==(const msci::coordinates_1d<T>& x,const msci::coordinates_1d<T>& y)
+bool operator ==(const scifir::coordinates_1d<T>& x,const scifir::coordinates_1d<T>& y)
 {
 	if (x.x == y.x)
 	{
@@ -198,13 +198,13 @@ bool operator ==(const msci::coordinates_1d<T>& x,const msci::coordinates_1d<T>&
 }
 
 template<typename T>
-bool operator !=(const msci::coordinates_1d<T>& x,const msci::coordinates_1d<T>& y)
+bool operator !=(const scifir::coordinates_1d<T>& x,const scifir::coordinates_1d<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const msci::coordinates_1d<T>& x,const msci::point_1d<T>& y)
+bool operator ==(const scifir::coordinates_1d<T>& x,const scifir::point_1d<T>& y)
 {
 	if (x.x == y.x)
 	{
@@ -217,13 +217,13 @@ bool operator ==(const msci::coordinates_1d<T>& x,const msci::point_1d<T>& y)
 }
 
 template<typename T>
-bool operator !=(const msci::coordinates_1d<T>& x,const msci::point_1d<T>& y)
+bool operator !=(const scifir::coordinates_1d<T>& x,const scifir::point_1d<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const msci::point_1d<T>& x,const msci::coordinates_1d<T>& y)
+bool operator ==(const scifir::point_1d<T>& x,const scifir::coordinates_1d<T>& y)
 {
 	if (x.x == y.x)
 	{
@@ -236,71 +236,71 @@ bool operator ==(const msci::point_1d<T>& x,const msci::coordinates_1d<T>& y)
 }
 
 template<typename T>
-bool operator !=(const msci::point_1d<T>& x,const msci::coordinates_1d<T>& y)
+bool operator !=(const scifir::point_1d<T>& x,const scifir::coordinates_1d<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const msci::coordinates_1d<T>& x, const string& y)
+bool operator ==(const scifir::coordinates_1d<T>& x, const string& y)
 {
 	coordinates_1d<T> y_coordinates = coordinates_1d<T>(y);
 	return (x == y_coordinates);
 }
 
 template<typename T>
-bool operator !=(const msci::coordinates_1d<T>& x, const string& y)
+bool operator !=(const scifir::coordinates_1d<T>& x, const string& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const string& x, const msci::coordinates_1d<T>& y)
+bool operator ==(const string& x, const scifir::coordinates_1d<T>& y)
 {
 	coordinates_1d<T> x_coordinates = coordinates_1d<T>(x);
 	return (x_coordinates == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const msci::coordinates_1d<T>& y)
+bool operator !=(const string& x, const scifir::coordinates_1d<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-void operator +=(string& x, const msci::coordinates_1d<T>& y)
+void operator +=(string& x, const scifir::coordinates_1d<T>& y)
 {
 	x += to_string(y);
 }
 
 template<typename T>
-string operator +(const string& x,const msci::coordinates_1d<T>& y)
+string operator +(const string& x,const scifir::coordinates_1d<T>& y)
 {
 	return x + to_string(y);
 }
 
 template<typename T>
-string operator +(const msci::coordinates_1d<T>& x,const string& y)
+string operator +(const scifir::coordinates_1d<T>& x,const string& y)
 {
 	return to_string(x) + y;
 }
 
 template<typename T>
-ostream& operator << (ostream& os,const msci::coordinates_1d<T>& x)
+ostream& operator << (ostream& os,const scifir::coordinates_1d<T>& x)
 {
 	return os << to_string(x);
 }
 
 template<typename T>
-istream& operator >>(istream& is,msci::coordinates_1d<T>& x)
+istream& operator >>(istream& is,scifir::coordinates_1d<T>& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::coordinates_1d<T> c(b);
+	scifir::coordinates_1d<T> c(b);
 	x = c;
 	return is;
 }
 
-#endif // MSCI_UNITS_COORDINATES_COORDINATES_1D_HPP_INCLUDED
+#endif // SCIFIR_UNITS_COORDINATES_COORDINATES_1D_HPP_INCLUDED

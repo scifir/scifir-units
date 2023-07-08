@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	float parse_float(const string& x)
 	{

@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_UNITS_VECTOR_UNIT_ND_HPP_INCLUDED
-#define MSCI_UNITS_UNITS_VECTOR_UNIT_ND_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_UNITS_VECTOR_UNIT_ND_HPP_INCLUDED
+#define SCIFIR_UNITS_UNITS_VECTOR_UNIT_ND_HPP_INCLUDED
 
 #include "units/scalar_unit.hpp"
 #include "meca_number/angle.hpp"
@@ -54,9 +54,9 @@ const string name##_nd::dimensions_match = init_dimensions; \
 const vector<dimension> name##_nd::real_dimensions = create_derived_dimensions(init_dimensions)
 
 using namespace std;
-using namespace msci;
+using namespace scifir;
 
-namespace msci
+namespace scifir
 {
 	class vector_unit_nd : public scalar_unit
 	{
@@ -97,30 +97,30 @@ namespace msci
 			vector_unit_nd operator /(const scalar_unit&) const;
 			vector_unit_nd operator ^(const scalar_unit&) const;
 
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			vector_unit_nd operator +(U) const;
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			vector_unit_nd operator -(U) const;
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			vector_unit_nd operator *(U) const;
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			vector_unit_nd operator /(U) const;
 			template<typename U, typename = typename enable_if<is_integer_number<U>::value>::type>
 			vector_unit_nd operator ^(U) const;
 
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			void operator +=(U y)
 			{
 				scalar_unit::value += y;
 			}
 
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			void operator -=(U y)
 			{
 				scalar_unit::value -= y;
 			}
 
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			void operator *=(U y)
 			{
 				scalar_unit::value *= y;
@@ -130,7 +130,7 @@ namespace msci
 				}
 			}
 
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			void operator /=(U y)
 			{
 				scalar_unit::value /= y;
@@ -189,5 +189,5 @@ string operator +(const vector_unit_nd&, const string&);
 ostream& operator <<(ostream&, const vector_unit_nd&);
 istream& operator >>(istream&, vector_unit_nd&);
 
-#endif // MSCI_UNITS_UNITS_VECTOR_UNIT_ND_HPP_INCLUDED
+#endif // SCIFIR_UNITS_UNITS_VECTOR_UNIT_ND_HPP_INCLUDED
  

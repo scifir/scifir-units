@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_TOPOLOGY_POINT_3D_HPP_INCLUDED
-#define MSCI_UNITS_TOPOLOGY_POINT_3D_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_TOPOLOGY_POINT_3D_HPP_INCLUDED
+#define SCIFIR_UNITS_TOPOLOGY_POINT_3D_HPP_INCLUDED
 
 #include "predefined_units/kinematics_units.hpp"
 #include "units/unit_basic.hpp"
@@ -9,7 +9,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	template<typename T>
 	class coordinates_3d;
@@ -115,32 +115,32 @@ namespace msci
 
 			T get_p() const
 			{
-				return msci::sqrt(msci::pow(x,2) + msci::pow(y,2));
+				return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2));
 			}
 
 			angle get_theta() const
 			{
-				return msci::atan(float(y/x));
+				return scifir::atan(float(y/x));
 			}
 
 			T get_r() const
 			{
-				return msci::sqrt(msci::pow(x,2) + msci::pow(y,2) + msci::pow(z,2));
+				return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2));
 			}
 
 			angle get_phi() const
 			{
-				return angle(msci::acos_grade(float(z/msci::sqrt(msci::pow(x,2) + msci::pow(y,2) + msci::pow(z,2)))));
+				return angle(scifir::acos_grade(float(z/scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)))));
 			}
 
 			angle get_latitude() const
 			{
-				return msci::asin(float(z/T(6317,"km")));
+				return scifir::asin(float(z/T(6317,"km")));
 			}
 
 			angle get_longitude() const
 			{
-				return msci::atan(float(y/x));
+				return scifir::atan(float(y/x));
 			}
 
 			T get_altitude() const
@@ -158,47 +158,47 @@ namespace msci
 			void set_position(const T& new_p,const angle& new_theta,T new_z)
 			{
 				new_z.change_dimensions(new_p);
-				x = T(new_p * msci::cos(new_theta));
-				y = T(new_p * msci::sin(new_theta));
+				x = T(new_p * scifir::cos(new_theta));
+				y = T(new_p * scifir::sin(new_theta));
 				z = new_z;
 			}
 
 			void set_position(const T& new_r,const angle& new_theta,const angle& new_phi)
 			{
-				x = T(new_r * msci::cos(new_theta) * msci::sin(new_phi));
-				y = T(new_r * msci::sin(new_theta) * msci::sin(new_phi));
-				z = T(new_r * msci::cos(new_phi));
+				x = T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
+				y = T(new_r * scifir::sin(new_theta) * scifir::sin(new_phi));
+				z = T(new_r * scifir::cos(new_phi));
 			}
 
 			void set_position(const angle& new_latitude,const angle& new_longitude,const T& new_altitude)
 			{
-				x = T(new_altitude * msci::cos(new_latitude) * msci::cos(new_longitude));
-				y = T(new_altitude * msci::cos(new_latitude) * msci::sin(new_longitude));
-				z = T(new_altitude * msci::sin(new_latitude));
+				x = T(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude));
+				y = T(new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude));
+				z = T(new_altitude * scifir::sin(new_latitude));
 			}
 
 			void rotate_in_x(const angle& x_angle)
 			{
 				T y_coord = y;
 				T z_coord = z;
-				y = y_coord * msci::cos(x_angle) - z_coord * msci::sin(x_angle);
-				z = y_coord * msci::sin(x_angle) + z_coord * msci::cos(x_angle);
+				y = y_coord * scifir::cos(x_angle) - z_coord * scifir::sin(x_angle);
+				z = y_coord * scifir::sin(x_angle) + z_coord * scifir::cos(x_angle);
 			}
 
 			void rotate_in_y(const angle& x_angle)
 			{
 				T x_coord = x;
 				T z_coord = z;
-				x = x_coord * msci::cos(x_angle) - z_coord * msci::sin(x_angle);
-				z = x_coord * msci::sin(x_angle) + z_coord * msci::cos(x_angle);
+				x = x_coord * scifir::cos(x_angle) - z_coord * scifir::sin(x_angle);
+				z = x_coord * scifir::sin(x_angle) + z_coord * scifir::cos(x_angle);
 			}
 
 			void rotate_in_z(const angle& x_angle)
 			{
 				T x_coord = x;
 				T y_coord = y;
-				x = x_coord * msci::cos(x_angle) - y_coord * msci::sin(x_angle);
-				y = x_coord * msci::sin(x_angle) + y_coord * msci::cos(x_angle);
+				x = x_coord * scifir::cos(x_angle) - y_coord * scifir::sin(x_angle);
+				y = x_coord * scifir::sin(x_angle) + y_coord * scifir::cos(x_angle);
 			}
 
 			void move(const displacement_3d& x_displacement)
@@ -218,21 +218,21 @@ namespace msci
 			void move(const T& new_p,const angle& new_theta,T new_z)
 			{
 				new_z.change_dimensions(new_p);
-				x += T(new_p * msci::cos(new_theta));
-				y += T(new_p * msci::sin(new_theta));
+				x += T(new_p * scifir::cos(new_theta));
+				y += T(new_p * scifir::sin(new_theta));
 				z += new_z;
 			}
 
 			void move(const T& new_r,const angle& new_theta,const angle& new_phi)
 			{
-				x += T(new_r * msci::cos(new_theta) * msci::sin(new_phi));
-				y += T(new_r * msci::sin(new_theta) * msci::sin(new_phi));
-				z += T(new_r * msci::cos(new_phi));
+				x += T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
+				y += T(new_r * scifir::sin(new_theta) * scifir::sin(new_phi));
+				z += T(new_r * scifir::cos(new_phi));
 			}
 
 			T distance_to_origin() const
 			{
-				return msci::sqrt(msci::pow(x,2) + msci::pow(y,2) + msci::pow(z,2));
+				return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2));
 			}
 
 			string display_cylindrical() const
@@ -367,7 +367,7 @@ namespace msci
 
 			angle get_theta() const
 			{
-				return msci::atan(float(y/x));
+				return scifir::atan(float(y/x));
 			}
 
 			float get_r() const
@@ -377,17 +377,17 @@ namespace msci
 
 			angle get_phi() const
 			{
-				return angle(msci::acos_grade(float(z/std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)))));
+				return angle(scifir::acos_grade(float(z/std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)))));
 			}
 
 			angle get_latitude() const
 			{
-				return msci::asin(z/6317);
+				return scifir::asin(z/6317);
 			}
 
 			angle get_longitude() const
 			{
-				return msci::atan(float(y/x));
+				return scifir::atan(float(y/x));
 			}
 
 			float get_altitude() const
@@ -404,47 +404,47 @@ namespace msci
 
 			void set_position(const float& new_p,const angle& new_theta,const float& new_z)
 			{
-				x = new_p * msci::cos(new_theta);
-				y = new_p * msci::sin(new_theta);
+				x = new_p * scifir::cos(new_theta);
+				y = new_p * scifir::sin(new_theta);
 				z = new_z;
 			}
 
 			void set_position(const float& new_r,const angle& new_theta,const angle& new_phi)
 			{
-				x = new_r * msci::cos(new_theta) * msci::sin(new_phi);
-				y = new_r * msci::sin(new_theta) * msci::sin(new_phi);
-				z = new_r * msci::cos(new_phi);
+				x = new_r * scifir::cos(new_theta) * scifir::sin(new_phi);
+				y = new_r * scifir::sin(new_theta) * scifir::sin(new_phi);
+				z = new_r * scifir::cos(new_phi);
 			}
 
 			void set_position(const angle& new_latitude,const angle& new_longitude,const float& new_altitude)
 			{
-				x = new_altitude * msci::cos(new_latitude) * msci::cos(new_longitude);
-				y = new_altitude * msci::cos(new_latitude) * msci::sin(new_longitude);
-				z = new_altitude * msci::sin(new_latitude);
+				x = new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude);
+				y = new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude);
+				z = new_altitude * scifir::sin(new_latitude);
 			}
 			
 			void rotate_in_x(const angle& x_angle)
 			{
 				float y_coord = y;
 				float z_coord = z;
-				y = y_coord * msci::cos(x_angle) - z_coord * msci::sin(x_angle);
-				z = y_coord * msci::sin(x_angle) + z_coord * msci::cos(x_angle);
+				y = y_coord * scifir::cos(x_angle) - z_coord * scifir::sin(x_angle);
+				z = y_coord * scifir::sin(x_angle) + z_coord * scifir::cos(x_angle);
 			}
 
 			void rotate_in_y(const angle& x_angle)
 			{
 				float x_coord = x;
 				float z_coord = z;
-				x = x_coord * msci::cos(x_angle) - z_coord * msci::sin(x_angle);
-				z = x_coord * msci::sin(x_angle) + z_coord * msci::cos(x_angle);
+				x = x_coord * scifir::cos(x_angle) - z_coord * scifir::sin(x_angle);
+				z = x_coord * scifir::sin(x_angle) + z_coord * scifir::cos(x_angle);
 			}
 
 			void rotate_in_z(const angle& x_angle)
 			{
 				float x_coord = x;
 				float y_coord = y;
-				x = x_coord * msci::cos(x_angle) - y_coord * msci::sin(x_angle);
-				y = x_coord * msci::sin(x_angle) + y_coord * msci::cos(x_angle);
+				x = x_coord * scifir::cos(x_angle) - y_coord * scifir::sin(x_angle);
+				y = x_coord * scifir::sin(x_angle) + y_coord * scifir::cos(x_angle);
 			}
 			
 			void move(const displacement_3d& x_displacement)
@@ -463,16 +463,16 @@ namespace msci
 
 			void move(const float& new_p,const angle& new_theta,const float& new_z)
 			{
-				x += new_p * msci::cos(new_theta);
-				y += new_p * msci::sin(new_theta);
+				x += new_p * scifir::cos(new_theta);
+				y += new_p * scifir::sin(new_theta);
 				z += new_z;
 			}
 
 			void move(const float& new_r,const angle& new_theta,const angle& new_phi)
 			{
-				x += new_r * msci::cos(new_theta) * msci::sin(new_phi);
-				y += new_r * msci::sin(new_theta) * msci::sin(new_phi);
-				z += new_r * msci::cos(new_phi);
+				x += new_r * scifir::cos(new_theta) * scifir::sin(new_phi);
+				y += new_r * scifir::sin(new_theta) * scifir::sin(new_phi);
+				z += new_r * scifir::cos(new_phi);
 			}
 
 			float distance_to_origin() const
@@ -517,84 +517,84 @@ namespace msci
 	template<typename T>
 	T distance(const point_3d<T>& x1,const point_3d<T>& x2)
 	{
-		return msci::sqrt(msci::pow(x1.x - x2.x,2) + msci::pow(x1.y - x2.y,2) + msci::pow(x1.z - x2.z,2));
+		return scifir::sqrt(scifir::pow(x1.x - x2.x,2) + scifir::pow(x1.y - x2.y,2) + scifir::pow(x1.z - x2.z,2));
 	}
 
 	float distance(const point_3d<float>&,const point_3d<float>&);
 }
 
 template<typename T>
-bool operator ==(const msci::point_3d<T>& x,const msci::point_3d<T>& y)
+bool operator ==(const scifir::point_3d<T>& x,const scifir::point_3d<T>& y)
 {
 	return (x.x == y.x and x.y == y.y and x.z == y.z);
 }
 
 template<typename T>
-bool operator !=(const msci::point_3d<T>& x,const msci::point_3d<T>& y)
+bool operator !=(const scifir::point_3d<T>& x,const scifir::point_3d<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const msci::point_3d<T>& x, const string& y)
+bool operator ==(const scifir::point_3d<T>& x, const string& y)
 {
 	point_3d y_point = point_3d(y);
 	return (x == y_point);
 }
 
 template<typename T>
-bool operator !=(const msci::point_3d<T>& x, const string& y)
+bool operator !=(const scifir::point_3d<T>& x, const string& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const string& x, const msci::point_3d<T>& y)
+bool operator ==(const string& x, const scifir::point_3d<T>& y)
 {
 	point_3d x_point = point_3d(x);
 	return (x_point == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const msci::point_3d<T>& y)
+bool operator !=(const string& x, const scifir::point_3d<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-void operator +=(string& x, const msci::point_3d<T>& y)
+void operator +=(string& x, const scifir::point_3d<T>& y)
 {
 	x += to_string(y);
 }
 
 template<typename T>
-string operator +(const string& x,const msci::point_3d<T>& y)
+string operator +(const string& x,const scifir::point_3d<T>& y)
 {
 	return x + to_string(y);
 }
 
 template<typename T>
-string operator +(const msci::point_3d<T>& x,const string& y)
+string operator +(const scifir::point_3d<T>& x,const string& y)
 {
 	return to_string(x) + y;
 }
 
 template<typename T>
-ostream& operator <<(ostream& os,const msci::point_3d<T>& x)
+ostream& operator <<(ostream& os,const scifir::point_3d<T>& x)
 {
 	return os << to_string(x);
 }
 
 template<typename T>
-istream& operator >>(istream& is, msci::point_3d<T>& x)
+istream& operator >>(istream& is, scifir::point_3d<T>& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::point_3d c(b);
+	scifir::point_3d c(b);
 	x = c;
 	return is;
 }
 
-#endif // MSCI_UNITS_TOPOLOGY_POINT_3D_HPP_INCLUDED
+#endif // SCIFIR_UNITS_TOPOLOGY_POINT_3D_HPP_INCLUDED

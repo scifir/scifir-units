@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_UNITS_CONVERSION_HPP_INCLUDED
-#define MSCI_UNITS_UNITS_CONVERSION_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_UNITS_CONVERSION_HPP_INCLUDED
+#define SCIFIR_UNITS_UNITS_CONVERSION_HPP_INCLUDED
 
 #include "units/dimension.hpp"
 
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	class conversion
 	{
@@ -33,4 +33,4 @@ namespace msci
 	extern map<string, conversion> get_conversion;
 }
 
-#endif // MSCI_UNITS_UNITS_CONVERSION_HPP_INCLUDED
+#endif // SCIFIR_UNITS_UNITS_CONVERSION_HPP_INCLUDED

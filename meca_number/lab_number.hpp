@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED
-#define MSCI_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED
+#define SCIFIR_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED
 
 #include "util/is_number.hpp"
 #include "util/types.hpp"
@@ -11,7 +11,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	template<typename T>
 	class lab_number
@@ -126,7 +126,7 @@ namespace msci
 }
 
 template<typename T>
-bool operator ==(const msci::lab_number<T>& x, const msci::lab_number<T>& y)
+bool operator ==(const scifir::lab_number<T>& x, const scifir::lab_number<T>& y)
 {
 	if (x.value == y.value and x.error_value == y.error_value)
 	{
@@ -139,80 +139,80 @@ bool operator ==(const msci::lab_number<T>& x, const msci::lab_number<T>& y)
 }
 
 template<typename T>
-bool operator !=(const msci::lab_number<T>& x, const msci::lab_number<T>& y)
+bool operator !=(const scifir::lab_number<T>& x, const scifir::lab_number<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const msci::angle& x, const string& y)
+bool operator ==(const scifir::angle& x, const string& y)
 {
 	return (to_string(x) == y);
 }
 
 template<typename T>
-bool operator !=(const msci::angle& x, const string& y)
+bool operator !=(const scifir::angle& x, const string& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const string& x, const msci::angle& y)
+bool operator ==(const string& x, const scifir::angle& y)
 {
 	return (x == to_string(y));
 }
 
 template<typename T>
-bool operator !=(const string& x, const msci::angle& y)
+bool operator !=(const string& x, const scifir::angle& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-void operator +=(string& x, const msci::lab_number<T>& y)
+void operator +=(string& x, const scifir::lab_number<T>& y)
 {
 	x += to_string(y);
 }
 
 template<typename T>
-string operator +(const string& x, const msci::lab_number<T>& y)
+string operator +(const string& x, const scifir::lab_number<T>& y)
 {
 	return x + to_string(y);
 }
 
 template<typename T>
-string operator +(const msci::lab_number<T>& x, const string& y)
+string operator +(const scifir::lab_number<T>& x, const string& y)
 {
 	return to_string(x) + y;
 }
 
 template<typename T>
-ostream& operator <<(ostream& os, const msci::lab_number<T>& x)
+ostream& operator <<(ostream& os, const scifir::lab_number<T>& x)
 {
 	return os << to_string(x);
 }
 
 template<typename T>
-istream& operator >>(istream& is, msci::lab_number<T>& x)
+istream& operator >>(istream& is, scifir::lab_number<T>& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	vector<string> values;
 	boost::split(values,b,boost::is_any_of(" +- "));
-	msci::lab_number<T> c;
+	scifir::lab_number<T> c;
 	if (values.size() == 2)
 	{
 		T x1 = T(values[0]);
 		T x2 = T(values[1]);
-		c = msci::lab_number<T>(x1,x2);
+		c = scifir::lab_number<T>(x1,x2);
 	}
 	else
 	{
-		c = msci::lab_number<T>();
+		c = scifir::lab_number<T>();
 	}
 	x = c;
 	return is;
 }
 
-#endif // MSCI_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED
+#endif // SCIFIR_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED

@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_TOPOLOGY_POINT_ND_IMPL_HPP_INCLUDED
-#define MSCI_UNITS_TOPOLOGY_POINT_ND_IMPL_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_TOPOLOGY_POINT_ND_IMPL_HPP_INCLUDED
+#define SCIFIR_UNITS_TOPOLOGY_POINT_ND_IMPL_HPP_INCLUDED
 
 #include "topology/point_nd.hpp"
 
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	template<typename T>
 	point_nd<T>::point_nd(const coordinates_nd<T>& new_coordinates) : values(new_coordinates.values)
@@ -21,4 +21,4 @@ namespace msci
 	}
 }
 
-#endif // MSCI_UNITS_TOPOLOGY_POINT_ND_IMPL_HPP_INCLUDED
+#endif // SCIFIR_UNITS_TOPOLOGY_POINT_ND_IMPL_HPP_INCLUDED

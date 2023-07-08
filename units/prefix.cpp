@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	prefix::prefix(): prefix_type(prefix::no_prefix)
 	{}
@@ -183,7 +183,7 @@ namespace msci
 		return "";
 	}
 	
-	bool prefix::operator<(const msci::prefix& y) const
+	bool prefix::operator<(const scifir::prefix& y) const
 	{
 		return (get_conversion_factor() < y.get_conversion_factor());
 	}
@@ -377,32 +377,32 @@ namespace msci
 	}
 }
 
-bool operator ==(const msci::prefix& x,const msci::prefix& y)
+bool operator ==(const scifir::prefix& x,const scifir::prefix& y)
 {
 	return (x.get_conversion_factor() == y.get_conversion_factor());
 }
 
-bool operator !=(const msci::prefix& x,const msci::prefix& y)
+bool operator !=(const scifir::prefix& x,const scifir::prefix& y)
 {
 	return !(x == y);
 }
 
-bool operator <=(const msci::prefix& x,const msci::prefix& y)
+bool operator <=(const scifir::prefix& x,const scifir::prefix& y)
 {
 	return (x.get_conversion_factor() <= y.get_conversion_factor());
 }
 
-bool operator >(const msci::prefix& x,const msci::prefix& y)
+bool operator >(const scifir::prefix& x,const scifir::prefix& y)
 {
 	return (x.get_conversion_factor() > y.get_conversion_factor());
 }
 
-bool operator >=(const msci::prefix& x,const msci::prefix& y)
+bool operator >=(const scifir::prefix& x,const scifir::prefix& y)
 {
 	return (x.get_conversion_factor() >= y.get_conversion_factor());
 }
 
-ostream& operator <<(ostream& os, const msci::prefix& x)
+ostream& operator <<(ostream& os, const scifir::prefix& x)
 {
 	return os << x.get_symbol();
 }

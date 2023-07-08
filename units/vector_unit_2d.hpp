@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_UNITS_VECTOR_UNIT_2D_HPP_INCLUDED
-#define MSCI_UNITS_UNITS_VECTOR_UNIT_2D_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_UNITS_VECTOR_UNIT_2D_HPP_INCLUDED
+#define SCIFIR_UNITS_UNITS_VECTOR_UNIT_2D_HPP_INCLUDED
 
 #include "units/scalar_unit.hpp"
 #include "meca_number/angle.hpp"
@@ -48,9 +48,9 @@ const string name##_2d::dimensions_match = init_dimensions; \
 const vector<dimension> name##_2d::real_dimensions = create_derived_dimensions(init_dimensions)
 
 using namespace std;
-using namespace msci;
+using namespace scifir;
 
-namespace msci
+namespace scifir
 {
 	class vector_unit_2d : public scalar_unit
 	{
@@ -86,30 +86,30 @@ namespace msci
 			vector_unit_2d operator /(const scalar_unit&) const;
 			vector_unit_2d operator ^(const scalar_unit&) const;
 
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			vector_unit_2d operator +(U) const;
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			vector_unit_2d operator -(U) const;
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			vector_unit_2d operator *(U) const;
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			vector_unit_2d operator /(U) const;
 			template<typename U, typename = typename enable_if<is_integer_number<U>::value>::type>
 			vector_unit_2d operator ^(U) const;
 
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			void operator +=(U y)
 			{
 				scalar_unit::value += y;
 			}
 
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			void operator -=(U y)
 			{
 				scalar_unit::value -= y;
 			}
 
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			void operator *=(U y)
 			{
 				scalar_unit::value *= y;
@@ -119,7 +119,7 @@ namespace msci
 				}
 			}
 
-			template<typename U, typename = typename enable_if<msci::is_number<U>::value>::type>
+			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			void operator /=(U y)
 			{
 				scalar_unit::value /= y;
@@ -131,12 +131,12 @@ namespace msci
 			
 			inline scalar_unit x_projection() const
 			{
-				return scalar_unit(scalar_unit::value * msci::cos(theta),get_dimensions());
+				return scalar_unit(scalar_unit::value * scifir::cos(theta),get_dimensions());
 			}
 
 			inline scalar_unit y_projection() const
 			{
-				return scalar_unit(scalar_unit::value * msci::sin(theta),get_dimensions());
+				return scalar_unit(scalar_unit::value * scifir::sin(theta),get_dimensions());
 			}
 
 			inline void invert()
@@ -174,4 +174,4 @@ string operator +(const vector_unit_2d&, const string&);
 ostream& operator <<(ostream&, const vector_unit_2d&);
 istream& operator >>(istream&, vector_unit_2d&);
 
-#endif // MSCI_UNITS_UNITS_VECTOR_UNIT_2D_HPP_INCLUDED
+#endif // SCIFIR_UNITS_UNITS_VECTOR_UNIT_2D_HPP_INCLUDED

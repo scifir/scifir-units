@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_SPECIAL_UNITS_POH_HPP_INCLUDED
-#define MSCI_UNITS_SPECIAL_UNITS_POH_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_SPECIAL_UNITS_POH_HPP_INCLUDED
+#define SCIFIR_UNITS_SPECIAL_UNITS_POH_HPP_INCLUDED
 
 #include "util/is_number.hpp"
 #include "units/scalar_unit.hpp"
@@ -13,7 +13,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	class pOH
 	{
@@ -46,26 +46,26 @@ namespace msci
 			void operator +=(const pOH&);
 			void operator -=(const pOH&);
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			pOH operator +(T y) const
 			{
 				return pOH(value + y);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			pOH operator -(T y) const
 			{
 				return pOH(value - y);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator +=(T y)
 			{
 				value += y;
 				normalize_value();
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator -=(T y)
 			{
 				value -= y;
@@ -96,110 +96,110 @@ namespace msci
 	string to_string(const pOH&);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::pOH operator +(T x, const msci::pOH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::pOH operator +(T x, const scifir::pOH& y)
 {
 	return pOH(x + y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::pOH operator -(T x, const msci::pOH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::pOH operator -(T x, const scifir::pOH& y)
 {
 	return pOH(x - y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator ==(T x, const msci::pOH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator ==(T x, const scifir::pOH& y)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator !=(T x, const msci::pOH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator !=(T x, const scifir::pOH& y)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <(T x, const msci::pOH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <(T x, const scifir::pOH& y)
 {
 	return (x < y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >(T x, const msci::pOH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >(T x, const scifir::pOH& y)
 {
 	return (x > y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <=(T x, const msci::pOH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <=(T x, const scifir::pOH& y)
 {
 	return (x <= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >=(T x, const msci::pOH& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >=(T x, const scifir::pOH& y)
 {
 	return (x >= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator ==(const msci::pOH& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator ==(const scifir::pOH& y, T x)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator !=(const msci::pOH& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator !=(const scifir::pOH& y, T x)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <(const msci::pOH& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <(const scifir::pOH& y, T x)
 {
 	return (y.get_value() < x);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >(const msci::pOH& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >(const scifir::pOH& y, T x)
 {
 	return (y.get_value() > x);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <=(const msci::pOH& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <=(const scifir::pOH& y, T x)
 {
 	return (y.get_value() <= x);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >=(const msci::pOH& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >=(const scifir::pOH& y, T x)
 {
 	return (y.get_value() >= x);
 }
 
-bool operator ==(const msci::pOH&, const msci::pOH&);
-bool operator !=(const msci::pOH&, const msci::pOH&);
-bool operator <(const msci::pOH&, const msci::pOH&);
-bool operator >(const msci::pOH&, const msci::pOH&);
-bool operator <=(const msci::pOH&, const msci::pOH&);
-bool operator >=(const msci::pOH&, const msci::pOH&);
+bool operator ==(const scifir::pOH&, const scifir::pOH&);
+bool operator !=(const scifir::pOH&, const scifir::pOH&);
+bool operator <(const scifir::pOH&, const scifir::pOH&);
+bool operator >(const scifir::pOH&, const scifir::pOH&);
+bool operator <=(const scifir::pOH&, const scifir::pOH&);
+bool operator >=(const scifir::pOH&, const scifir::pOH&);
 
-bool operator ==(const msci::pOH&, const string&);
-bool operator !=(const msci::pOH&, const string&);
+bool operator ==(const scifir::pOH&, const string&);
+bool operator !=(const scifir::pOH&, const string&);
 
-bool operator ==(const string&, const msci::pOH&);
-bool operator !=(const string&, const msci::pOH&);
+bool operator ==(const string&, const scifir::pOH&);
+bool operator !=(const string&, const scifir::pOH&);
 
-void operator +=(string&, const msci::pOH&);
-string operator +(const string&, const msci::pOH&);
-string operator +(const msci::pOH&, const string&);
+void operator +=(string&, const scifir::pOH&);
+string operator +(const string&, const scifir::pOH&);
+string operator +(const scifir::pOH&, const string&);
 
-ostream& operator <<(ostream&, const msci::pOH&);
-istream& operator >>(istream&, msci::pOH&);
+ostream& operator <<(ostream&, const scifir::pOH&);
+istream& operator >>(istream&, scifir::pOH&);
 
-#endif // MSCI_UNITS_SPECIAL_UNITS_POH_HPP_INCLUDED
+#endif // SCIFIR_UNITS_SPECIAL_UNITS_POH_HPP_INCLUDED
 
 

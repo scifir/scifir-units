@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_COORDINATES_COORDINATES_NDR_HPP_INCLUDED
-#define MSCI_UNITS_COORDINATES_COORDINATES_NDR_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_COORDINATES_COORDINATES_NDR_HPP_INCLUDED
+#define SCIFIR_UNITS_COORDINATES_COORDINATES_NDR_HPP_INCLUDED
 
 #include "coordinates/coordinates_nd.hpp"
 #include "topology/point_nd.hpp"
@@ -13,7 +13,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	extern angle coordinates_ndr_no_angle;
 
@@ -398,7 +398,7 @@ namespace msci
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return msci::sqrt(msci::pow(values[0],2) + msci::pow(values[1],2));
+					return scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2));
 				}
 				else
 				{
@@ -410,7 +410,7 @@ namespace msci
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return angle(msci::atan_grade(float(values[1]/values[0])));
+					return angle(scifir::atan_grade(float(values[1]/values[0])));
 				}
 				else
 				{
@@ -422,7 +422,7 @@ namespace msci
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return msci::sqrt(msci::pow(values[0],2) + msci::pow(values[1],2) + msci::pow(values[2],2));
+					return scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2));
 				}
 				else
 				{
@@ -434,7 +434,7 @@ namespace msci
 			{
 				if (get_nd() == 3)
 				{
-					return angle(msci::acos_grade(float(values[2]/msci::sqrt(msci::pow(values[0],2) + msci::pow(values[1],2) + msci::pow(values[2],2)))));
+					return angle(scifir::acos_grade(float(values[2]/scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2)))));
 				}
 				else
 				{
@@ -444,12 +444,12 @@ namespace msci
 
 			angle get_latitude() const
 			{
-				return msci::asin(float(values[2]/T(6317,"km")));
+				return scifir::asin(float(values[2]/T(6317,"km")));
 			}
 
 			angle get_longitude() const
 			{
-				return msci::atan(float(values[1]/values[0]));
+				return scifir::atan(float(values[1]/values[0]));
 			}
 
 			T get_altitude() const
@@ -662,8 +662,8 @@ namespace msci
 			void set_position(const T& new_p,const angle& new_theta)
 			{
 				values.clear();
-				values.push_back(T(new_p * msci::cos(new_theta)));
-				values.push_back(T(new_p * msci::sin(new_theta)));
+				values.push_back(T(new_p * scifir::cos(new_theta)));
+				values.push_back(T(new_p * scifir::sin(new_theta)));
 			}
 
 			void set_position(const T& new_x,const T& new_y,const T& new_z)
@@ -678,25 +678,25 @@ namespace msci
 			{
 				values.clear();
 				new_z.change_dimensions(new_p);
-				values.push_back(T(new_p * msci::cos(new_theta)));
-				values.push_back(T(new_p * msci::sin(new_theta)));
+				values.push_back(T(new_p * scifir::cos(new_theta)));
+				values.push_back(T(new_p * scifir::sin(new_theta)));
 				values.push_back(new_z);
 			}
 
 			void set_position(const T& new_r,const angle& new_theta,const angle& new_phi)
 			{
 				values.clear();
-				values.push_back(T(new_r * msci::cos(new_theta) * msci::sin(new_phi)));
-				values.push_back(T(new_r * msci::sin(new_theta) * msci::sin(new_phi)));
-				values.push_back(T(new_r * msci::cos(new_phi)));
+				values.push_back(T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi)));
+				values.push_back(T(new_r * scifir::sin(new_theta) * scifir::sin(new_phi)));
+				values.push_back(T(new_r * scifir::cos(new_phi)));
 			}
 
 			void set_position(const angle& new_latitude,const angle& new_longitude,const T& new_altitude)
 			{
 				values.clear();
-				values.push_back(T(new_altitude * msci::cos(new_latitude) * msci::cos(new_longitude)));
-				values.push_back(T(new_altitude * msci::cos(new_latitude) * msci::sin(new_longitude)));
-				values.push_back(T(new_altitude * msci::sin(new_latitude)));
+				values.push_back(T(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude)));
+				values.push_back(T(new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude)));
+				values.push_back(T(new_altitude * scifir::sin(new_latitude)));
 			}
 
 			void set_position(const vector<T>& new_values)
@@ -711,15 +711,15 @@ namespace msci
 				{
 					T x_coord = values[0];
 					T y_coord = values[1];
-					values[0] = x_coord * msci::cos(new_theta) - y_coord * msci::sin(new_theta);
-					values[1] = x_coord * msci::sin(new_theta) + y_coord * msci::cos(new_theta);
+					values[0] = x_coord * scifir::cos(new_theta) - y_coord * scifir::sin(new_theta);
+					values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
 				}
 				else if (dimension_number == 3 and get_nd() == 3)
 				{
 					T coord_1 = values[axis + 1];
 					T coord_2 = values[axis + 2];
-					values[axis + 1] = coord_1 * msci::cos(new_theta) - coord_2 * msci::sin(new_theta);
-					values[axis + 2] = coord_1 * msci::sin(new_theta) + coord_2 * msci::cos(new_theta);
+					values[axis + 1] = coord_1 * scifir::cos(new_theta) - coord_2 * scifir::sin(new_theta);
+					values[axis + 2] = coord_1 * scifir::sin(new_theta) + coord_2 * scifir::cos(new_theta);
 				}
 			}
 
@@ -753,8 +753,8 @@ namespace msci
 			{
 				if (values.size() == 2)
 				{
-					values[0] += new_p * msci::cos(new_theta);
-					values[1] += new_p * msci::sin(new_theta);
+					values[0] += new_p * scifir::cos(new_theta);
+					values[1] += new_p * scifir::sin(new_theta);
 				}
 			}
 
@@ -783,8 +783,8 @@ namespace msci
 				if (values.size() == 3)
 				{
 					new_z.change_dimensions(new_p);
-					values[0] += T(new_p * msci::cos(new_theta));
-					values[1] += T(new_p * msci::sin(new_theta));
+					values[0] += T(new_p * scifir::cos(new_theta));
+					values[1] += T(new_p * scifir::sin(new_theta));
 					values[2] += new_z;
 				}
 			}
@@ -793,9 +793,9 @@ namespace msci
 			{
 				if (values.size() == 3)
 				{
-					values[0] += T(new_r * msci::cos(new_theta) * msci::sin(new_phi));
-					values[1] += T(new_r * msci::sin(new_theta) * msci::sin(new_phi));
-					values[2] += T(new_r * msci::cos(new_phi));
+					values[0] += T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
+					values[1] += T(new_r * scifir::sin(new_theta) * scifir::sin(new_phi));
+					values[2] += T(new_r * scifir::cos(new_phi));
 				}
 			}
 
@@ -821,9 +821,9 @@ namespace msci
 				scalar_unit x_T = scalar_unit(0,"m2");
 				for (int i = 0; i < values.size(); i++)
 				{
-					x_T += msci::pow(values[i],2);
+					x_T += scifir::pow(values[i],2);
 				}
-				return msci::sqrt(x_T);
+				return scifir::sqrt(x_T);
 			}
 
 			string display_polar() const
@@ -1276,7 +1276,7 @@ namespace msci
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return angle(msci::atan_grade(float(values[1]/values[0])));
+					return angle(scifir::atan_grade(float(values[1]/values[0])));
 				}
 				else
 				{
@@ -1300,7 +1300,7 @@ namespace msci
 			{
 				if (get_nd() == 3)
 				{
-					return angle(msci::acos_grade(float(values[2]/std::sqrt(std::pow(values[0],2) + std::pow(values[1],2) + std::pow(values[2],2)))));
+					return angle(scifir::acos_grade(float(values[2]/std::sqrt(std::pow(values[0],2) + std::pow(values[1],2) + std::pow(values[2],2)))));
 				}
 				else
 				{
@@ -1310,12 +1310,12 @@ namespace msci
 
 			angle get_latitude() const
 			{
-				return msci::asin(float(values[2]/6317));
+				return scifir::asin(float(values[2]/6317));
 			}
 
 			angle get_longitude() const
 			{
-				return msci::atan(float(values[1]/values[0]));
+				return scifir::atan(float(values[1]/values[0]));
 			}
 
 			float get_altitude() const
@@ -1528,8 +1528,8 @@ namespace msci
 			void set_position(const float& new_p,const angle& new_theta)
 			{
 				values.clear();
-				values.push_back(new_p * msci::cos(new_theta));
-				values.push_back(new_p * msci::sin(new_theta));
+				values.push_back(new_p * scifir::cos(new_theta));
+				values.push_back(new_p * scifir::sin(new_theta));
 			}
 
 			void set_position(const float& new_x,const float& new_y,const float& new_z)
@@ -1543,25 +1543,25 @@ namespace msci
 			void set_position(const float& new_p,const angle& new_theta,const float& new_z)
 			{
 				values.clear();
-				values.push_back(new_p * msci::cos(new_theta));
-				values.push_back(new_p * msci::sin(new_theta));
+				values.push_back(new_p * scifir::cos(new_theta));
+				values.push_back(new_p * scifir::sin(new_theta));
 				values.push_back(new_z);
 			}
 
 			void set_position(const float& new_r,const angle& new_theta,const angle& new_phi)
 			{
 				values.clear();
-				values.push_back(new_r * msci::cos(new_theta) * msci::sin(new_phi));
-				values.push_back(new_r * msci::sin(new_theta) * msci::sin(new_phi));
-				values.push_back(new_r * msci::cos(new_phi));
+				values.push_back(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
+				values.push_back(new_r * scifir::sin(new_theta) * scifir::sin(new_phi));
+				values.push_back(new_r * scifir::cos(new_phi));
 			}
 
 			void set_position(const angle& new_latitude,const angle& new_longitude,const float& new_altitude)
 			{
 				values.clear();
-				values.push_back(new_altitude * msci::cos(new_latitude) * msci::cos(new_longitude));
-				values.push_back(new_altitude * msci::cos(new_latitude) * msci::sin(new_longitude));
-				values.push_back(new_altitude * msci::sin(new_latitude));
+				values.push_back(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude));
+				values.push_back(new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude));
+				values.push_back(new_altitude * scifir::sin(new_latitude));
 			}
 
 			void set_position(const vector<float>& new_values)
@@ -1576,15 +1576,15 @@ namespace msci
 				{
 					float x_coord = values[0];
 					float y_coord = values[1];
-					values[0] = x_coord * msci::cos(new_theta) - y_coord * msci::sin(new_theta);
-					values[1] = x_coord * msci::sin(new_theta) + y_coord * msci::cos(new_theta);
+					values[0] = x_coord * scifir::cos(new_theta) - y_coord * scifir::sin(new_theta);
+					values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
 				}
 				else if (dimension_number == 3 and get_nd() == 3)
 				{
 					float coord_1 = values[axis + 1];
 					float coord_2 = values[axis + 2];
-					values[axis + 1] = coord_1 * msci::cos(new_theta) - coord_2 * msci::sin(new_theta);
-					values[axis + 2] = coord_1 * msci::sin(new_theta) + coord_2 * msci::cos(new_theta);
+					values[axis + 1] = coord_1 * scifir::cos(new_theta) - coord_2 * scifir::sin(new_theta);
+					values[axis + 2] = coord_1 * scifir::sin(new_theta) + coord_2 * scifir::cos(new_theta);
 				}
 			}
 
@@ -1618,8 +1618,8 @@ namespace msci
 			{
 				if (values.size() == 2)
 				{
-					values[0] += new_p * msci::cos(new_theta);
-					values[1] += new_p * msci::sin(new_theta);
+					values[0] += new_p * scifir::cos(new_theta);
+					values[1] += new_p * scifir::sin(new_theta);
 				}
 			}
 
@@ -1647,8 +1647,8 @@ namespace msci
 			{
 				if (values.size() == 3)
 				{
-					values[0] += new_p * msci::cos(new_theta);
-					values[1] += new_p * msci::sin(new_theta);
+					values[0] += new_p * scifir::cos(new_theta);
+					values[1] += new_p * scifir::sin(new_theta);
 					values[2] += new_z;
 				}
 			}
@@ -1657,9 +1657,9 @@ namespace msci
 			{
 				if (values.size() == 3)
 				{
-					values[0] += new_r * msci::cos(new_theta) * msci::sin(new_phi);
-					values[1] += new_r * msci::sin(new_theta) * msci::sin(new_phi);
-					values[2] += new_r * msci::cos(new_phi);
+					values[0] += new_r * scifir::cos(new_theta) * scifir::sin(new_phi);
+					values[1] += new_r * scifir::sin(new_theta) * scifir::sin(new_phi);
+					values[2] += new_r * scifir::cos(new_phi);
 				}
 			}
 
@@ -1783,9 +1783,9 @@ namespace msci
 			scalar_unit x_length = scalar_unit(0,"m2");
 			for (int i = 0; i < x1.values.size(); i++)
 			{
-				x_length += msci::pow(x1.values[i] - x2.values[i],2);
+				x_length += scifir::pow(x1.values[i] - x2.values[i],2);
 			}
-			return msci::sqrt(x_length);
+			return scifir::sqrt(x_length);
 		}
 		else
 		{
@@ -1803,9 +1803,9 @@ namespace msci
 			scalar_unit x_length = scalar_unit(0,"m2");
 			for (int i = 0; i < x1.values.size(); i++)
 			{
-				x_length += msci::pow(x1.values[i] - x2.values[i],2);
+				x_length += scifir::pow(x1.values[i] - x2.values[i],2);
 			}
-			return msci::sqrt(x_length);
+			return scifir::sqrt(x_length);
 		}
 		else
 		{
@@ -1823,9 +1823,9 @@ namespace msci
 			scalar_unit x_length = scalar_unit(0,"m2");
 			for (int i = 0; i < x1.values.size(); i++)
 			{
-				x_length += msci::pow(x1.values[i] - x2.values[i],2);
+				x_length += scifir::pow(x1.values[i] - x2.values[i],2);
 			}
-			return msci::sqrt(x_length);
+			return scifir::sqrt(x_length);
 		}
 		else
 		{
@@ -1843,9 +1843,9 @@ namespace msci
 			scalar_unit x_length = scalar_unit(0,"m2");
 			for (int i = 0; i < x1.values.size(); i++)
 			{
-				x_length += msci::pow(x1.values[i] - x2.values[i],2);
+				x_length += scifir::pow(x1.values[i] - x2.values[i],2);
 			}
-			return msci::sqrt(x_length);
+			return scifir::sqrt(x_length);
 		}
 		else
 		{
@@ -1863,9 +1863,9 @@ namespace msci
 			scalar_unit x_length = scalar_unit(0,"m2");
 			for (int i = 0; i < x1.values.size(); i++)
 			{
-				x_length += msci::pow(x1.values[i] - x2.values[i],2);
+				x_length += scifir::pow(x1.values[i] - x2.values[i],2);
 			}
-			return msci::sqrt(x_length);
+			return scifir::sqrt(x_length);
 		}
 		else
 		{
@@ -1877,7 +1877,7 @@ namespace msci
 }
 
 template<typename T>
-bool operator ==(const msci::coordinates_ndr<T>& x,const msci::coordinates_ndr<T>& y)
+bool operator ==(const scifir::coordinates_ndr<T>& x,const scifir::coordinates_ndr<T>& y)
 {
 	for (int i = 0; i < x.get_values().size(); i++)
 	{
@@ -1897,13 +1897,13 @@ bool operator ==(const msci::coordinates_ndr<T>& x,const msci::coordinates_ndr<T
 }
 
 template<typename T>
-bool operator !=(const msci::coordinates_ndr<T>& x,const msci::coordinates_ndr<T>& y)
+bool operator !=(const scifir::coordinates_ndr<T>& x,const scifir::coordinates_ndr<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const msci::coordinates_ndr<T>& x,const msci::point_nd<T>& y)
+bool operator ==(const scifir::coordinates_ndr<T>& x,const scifir::point_nd<T>& y)
 {
 	for (int i = 0 ; i < x.values.size(); i++)
 	{
@@ -1916,13 +1916,13 @@ bool operator ==(const msci::coordinates_ndr<T>& x,const msci::point_nd<T>& y)
 }
 
 template<typename T>
-bool operator !=(const msci::coordinates_ndr<T>& x,const msci::point_nd<T>& y)
+bool operator !=(const scifir::coordinates_ndr<T>& x,const scifir::point_nd<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const msci::point_nd<T>& x,const msci::coordinates_ndr<T>& y)
+bool operator ==(const scifir::point_nd<T>& x,const scifir::coordinates_ndr<T>& y)
 {
 	for (int i = 0 ; i < x.values.size(); i++)
 	{
@@ -1935,71 +1935,71 @@ bool operator ==(const msci::point_nd<T>& x,const msci::coordinates_ndr<T>& y)
 }
 
 template<typename T>
-bool operator !=(const msci::point_nd<T>& x,const msci::coordinates_ndr<T>& y)
+bool operator !=(const scifir::point_nd<T>& x,const scifir::coordinates_ndr<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const msci::coordinates_ndr<T>& x, const string& y)
+bool operator ==(const scifir::coordinates_ndr<T>& x, const string& y)
 {
 	coordinates_ndr<T> y_coordinates = coordinates_ndr<T>(y);
 	return (x == y_coordinates);
 }
 
 template<typename T>
-bool operator !=(const msci::coordinates_ndr<T>& x, const string& y)
+bool operator !=(const scifir::coordinates_ndr<T>& x, const string& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const string& x, const msci::coordinates_ndr<T>& y)
+bool operator ==(const string& x, const scifir::coordinates_ndr<T>& y)
 {
 	coordinates_ndr<T> x_coordinates = coordinates_ndr<T>(x);
 	return (x_coordinates == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const msci::coordinates_ndr<T>& y)
+bool operator !=(const string& x, const scifir::coordinates_ndr<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-void operator +=(string& x, const msci::coordinates_ndr<T>& y)
+void operator +=(string& x, const scifir::coordinates_ndr<T>& y)
 {
 	x += to_string(y);
 }
 
 template<typename T>
-string operator +(const string& x,const msci::coordinates_ndr<T>& y)
+string operator +(const string& x,const scifir::coordinates_ndr<T>& y)
 {
 	return x + to_string(y);
 }
 
 template<typename T>
-string operator +(const msci::coordinates_ndr<T>& x,const string& y)
+string operator +(const scifir::coordinates_ndr<T>& x,const string& y)
 {
 	return to_string(x) + y;
 }
 
 template<typename T>
-ostream& operator <<(ostream& os,const msci::coordinates_ndr<T>& x)
+ostream& operator <<(ostream& os,const scifir::coordinates_ndr<T>& x)
 {
 	return os << to_string(x);
 }
 
 template<typename T>
-istream& operator >>(istream& is, msci::coordinates_ndr<T>& x)
+istream& operator >>(istream& is, scifir::coordinates_ndr<T>& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::coordinates_ndr<T> c(b);
+	scifir::coordinates_ndr<T> c(b);
 	x = c;
 	return is;
 }
 
-#endif // MSCI_UNITS_COORDINATES_COORDINATES_NDR_HPP_INCLUDED
+#endif // SCIFIR_UNITS_COORDINATES_COORDINATES_NDR_HPP_INCLUDED

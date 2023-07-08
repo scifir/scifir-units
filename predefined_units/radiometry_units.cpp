@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	SCALAR_UNIT_CPP(radioactivity,"Bq");
 	VECTOR_UNIT_CPP(irradiance,"kg/s3");

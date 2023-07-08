@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_SPECIAL_UNITS_ZID_HPP_INCLUDED
-#define MSCI_UNITS_SPECIAL_UNITS_ZID_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_SPECIAL_UNITS_ZID_HPP_INCLUDED
+#define SCIFIR_UNITS_SPECIAL_UNITS_ZID_HPP_INCLUDED
 
 #include "special_units/aid.hpp"
 
@@ -8,7 +8,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	class zid
 	{
@@ -21,7 +21,7 @@ namespace msci
 			zid& operator=(const zid&);
 			zid& operator=(zid&&);
 
-			msci::aid aid;
+			scifir::aid aid;
 			vector<string> regions;
 			string country;
 			string zone;
@@ -30,20 +30,20 @@ namespace msci
 	string to_string(const zid&);
 }
 
-bool operator ==(const msci::zid&, const msci::zid&);
-bool operator !=(const msci::zid&, const msci::zid&);
+bool operator ==(const scifir::zid&, const scifir::zid&);
+bool operator !=(const scifir::zid&, const scifir::zid&);
 
-bool operator ==(const msci::zid&, const string&);
-bool operator !=(const msci::zid&, const string&);
+bool operator ==(const scifir::zid&, const string&);
+bool operator !=(const scifir::zid&, const string&);
 
-bool operator ==(const string&, const msci::zid&);
-bool operator !=(const string&, const msci::zid&);
+bool operator ==(const string&, const scifir::zid&);
+bool operator !=(const string&, const scifir::zid&);
 
-void operator +=(string&, const msci::zid&);
-string operator +(const string&, const msci::zid&);
-string operator +(const msci::zid&, const string&);
+void operator +=(string&, const scifir::zid&);
+string operator +(const string&, const scifir::zid&);
+string operator +(const scifir::zid&, const string&);
 
-ostream& operator <<(ostream&, const msci::zid&);
-istream& operator >>(istream&, msci::zid&);
+ostream& operator <<(ostream&, const scifir::zid&);
+istream& operator >>(istream&, scifir::zid&);
 
-#endif // MSCI_UNITS_SPECIAL_UNITS_ZID_HPP_INCLUDED
+#endif // SCIFIR_UNITS_SPECIAL_UNITS_ZID_HPP_INCLUDED

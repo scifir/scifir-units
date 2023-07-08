@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	conversion::conversion() : unit_to(),factor()
 	{

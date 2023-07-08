@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	vector_unit_3d::vector_unit_3d() : scalar_unit(),theta(),phi()
 	{}
@@ -373,13 +373,13 @@ namespace msci
 
 	vector_unit_3d sqrt(const vector_unit_3d& x)
 	{
-		scalar_unit new_value = msci::sqrt(scalar_unit(x));
+		scalar_unit new_value = scifir::sqrt(scalar_unit(x));
 		return vector_unit_3d(new_value, x.theta, x.phi);
 	}
 
 	vector_unit_3d sqrt_nth(const vector_unit_3d& x, int y)
 	{
-		scalar_unit new_value = msci::sqrt_nth(scalar_unit(x), y);
+		scalar_unit new_value = scifir::sqrt_nth(scalar_unit(x), y);
 		return vector_unit_3d(new_value, x.theta, x.phi);
 	}
 
@@ -416,7 +416,7 @@ namespace msci
 
 	angle angle_between(const vector_unit_3d& x,const vector_unit_3d& y)
 	{
-		return msci::acos(float(dot_product(x,y)/(norm(x)*norm(y))));
+		return scifir::acos(float(dot_product(x,y)/(norm(x)*norm(y))));
 	}
 
 	bool same_direction(const vector_unit_3d& x, const vector_unit_3d& y)
@@ -433,7 +433,7 @@ namespace msci
 
 	bool parallel(const vector_unit_3d& x, const vector_unit_3d& y)
 	{
-		if (msci::parallel(x.theta,y.theta) and msci::parallel(x.phi,y.phi) )
+		if (scifir::parallel(x.theta,y.theta) and scifir::parallel(x.phi,y.phi) )
 		{
 			return true;
 		}
@@ -445,7 +445,7 @@ namespace msci
 
 	bool orthogonal(const vector_unit_3d& x,const vector_unit_3d& y)
 	{
-		if (msci::orthogonal(x.theta,y.theta) and msci::orthogonal(x.phi,y.phi) )
+		if (scifir::orthogonal(x.theta,y.theta) and scifir::orthogonal(x.phi,y.phi) )
 		{
 			return true;
 		}
@@ -459,7 +459,7 @@ namespace msci
 bool operator ==(const vector_unit_3d& x, vector_unit_3d y)
 {
 	y.change_dimensions(x);
-	if(x.get_value() == y.get_value() and msci::same_direction(x,y) and x.has_dimensions(y))
+	if(x.get_value() == y.get_value() and scifir::same_direction(x,y) and x.has_dimensions(y))
 	{
 		return true;
 	}

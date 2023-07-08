@@ -1,12 +1,12 @@
-#ifndef MSCI_UNITS_PREDEFINED_UNITS_HARDWARE_UNITS_HPP_INCLUDED
-#define MSCI_UNITS_PREDEFINED_UNITS_HARDWARE_UNITS_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_PREDEFINED_UNITS_HARDWARE_UNITS_HPP_INCLUDED
+#define SCIFIR_UNITS_PREDEFINED_UNITS_HARDWARE_UNITS_HPP_INCLUDED
 
 #include "units/scalar_unit.hpp"
 #include "units/vector_unit_3d.hpp"
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	SCALAR_UNIT_HPP(electrical_conductivity);
 	SCALAR_UNIT_HPP(resistance);
@@ -18,4 +18,4 @@ namespace msci
 	SCALAR_UNIT_HPP(frequency_drift);
 }
 
-#endif // MSCI_UNITS_PREDEFINED_UNITS_HARDWARE_UNITS_HPP_INCLUDED
+#endif // SCIFIR_UNITS_PREDEFINED_UNITS_HARDWARE_UNITS_HPP_INCLUDED

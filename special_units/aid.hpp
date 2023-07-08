@@ -1,11 +1,11 @@
-#ifndef MSCI_UNITS_SPECIAL_UNITS_AID_HPP_INCLUDED
-#define MSCI_UNITS_SPECIAL_UNITS_AID_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_SPECIAL_UNITS_AID_HPP_INCLUDED
+#define SCIFIR_UNITS_SPECIAL_UNITS_AID_HPP_INCLUDED
 
 #include <string>
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	enum class astronomical_body : char {NONE,MILKY_WAY,ANDROMEDA,SOLAR_SYSTEM,SUN,MOON,MERCURY,VENUS,EARTH,MARS,JUPITER,SATURN,URANUS,NEPTUNE,CERES,ORCUS,PLUTO,HAUMEA,QUAOAR,MAKEMAKE,GONGGONG,ERIS,SEDNA,IO,EUROPA,GANYMEDE,CALLISTO,MIMAS,ENCELADUS,TETHYS,DIONE,RHEA,TITAN,IAPETUS,MIRANDA,ARIEL,UMBRIEL,TITANIA,OBERON,TRITON,CHARON,DYSNOMIA};
 
@@ -38,20 +38,20 @@ namespace msci
 	aid::type create_astronomical_type(const string&);
 }
 
-bool operator ==(const msci::aid&, const msci::aid&);
-bool operator !=(const msci::aid&, const msci::aid&);
+bool operator ==(const scifir::aid&, const scifir::aid&);
+bool operator !=(const scifir::aid&, const scifir::aid&);
 
-bool operator ==(const msci::aid&, const string&);
-bool operator !=(const msci::aid&, const string&);
+bool operator ==(const scifir::aid&, const string&);
+bool operator !=(const scifir::aid&, const string&);
 
-bool operator ==(const string&, const msci::aid&);
-bool operator !=(const string&, const msci::aid&);
+bool operator ==(const string&, const scifir::aid&);
+bool operator !=(const string&, const scifir::aid&);
 
-void operator +=(string&, const msci::aid&);
-string operator +(const string&, const msci::aid&);
-string operator +(const msci::aid&, const string&);
+void operator +=(string&, const scifir::aid&);
+string operator +(const string&, const scifir::aid&);
+string operator +(const scifir::aid&, const string&);
 
-ostream& operator <<(ostream&, const msci::aid&);
-istream& operator >>(istream&, msci::aid&);
+ostream& operator <<(ostream&, const scifir::aid&);
+istream& operator >>(istream&, scifir::aid&);
 
-#endif // MSCI_UNITS_SPECIAL_UNITS_AID_HPP_INCLUDED
+#endif // SCIFIR_UNITS_SPECIAL_UNITS_AID_HPP_INCLUDED

@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_SPECIAL_UNITS_PIXEL_HPP_INCLUDED
-#define MSCI_UNITS_SPECIAL_UNITS_PIXEL_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_SPECIAL_UNITS_PIXEL_HPP_INCLUDED
+#define SCIFIR_UNITS_SPECIAL_UNITS_PIXEL_HPP_INCLUDED
 
 #include "topology/constants.hpp"
 #include "util/is_number.hpp"
@@ -12,7 +12,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	class pixel
 	{
@@ -51,67 +51,67 @@ namespace msci
 			void operator /=(const pixel&);
 			void operator ^=(const pixel&);
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator =(T y)
 			{
 				value = y;
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			pixel operator +(T y) const
 			{
 				return pixel(value + y);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			pixel operator -(T y) const
 			{
 				return pixel(value - y);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			pixel operator *(T y) const
 			{
 				return pixel(value * y);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			pixel operator /(T y) const
 			{
 				return pixel(value / y);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			pixel operator ^(T y) const
 			{
 				return pixel(std::pow(value, y));
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator +=(T y)
 			{
 				value += y;
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator -=(T y)
 			{
 				value -= y;
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator *=(T y)
 			{
 				value *= y;
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator /=(T y)
 			{
 				value /= y;
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator ^=(T y)
 			{
 				value = std::pow(value, y);
@@ -134,126 +134,126 @@ namespace msci
 	pixel sqrt_nth(const pixel&,int);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::pixel operator +(T x, const msci::pixel& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::pixel operator +(T x, const scifir::pixel& y)
 {
 	return pixel(x + y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::pixel operator -(T x, const msci::pixel& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::pixel operator -(T x, const scifir::pixel& y)
 {
 	return pixel(x - y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::pixel operator *(T x, const msci::pixel& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::pixel operator *(T x, const scifir::pixel& y)
 {
 	return pixel(x * y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::pixel operator /(T x, const msci::pixel& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::pixel operator /(T x, const scifir::pixel& y)
 {
 	return pixel(x / y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::pixel operator ^(T x, const msci::pixel& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::pixel operator ^(T x, const scifir::pixel& y)
 {
 	return pixel(pow(x, y.get_value()));
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator ==(T x, const msci::pixel& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator ==(T x, const scifir::pixel& y)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator !=(T x, const msci::pixel& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator !=(T x, const scifir::pixel& y)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <(T x, const msci::pixel& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <(T x, const scifir::pixel& y)
 {
 	return (x < y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >(T x, const msci::pixel& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >(T x, const scifir::pixel& y)
 {
 	return (x > y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <=(T x, const msci::pixel& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <=(T x, const scifir::pixel& y)
 {
 	return (x <= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >=(T x, const msci::pixel& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >=(T x, const scifir::pixel& y)
 {
 	return (x >= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator ==(const msci::pixel& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator ==(const scifir::pixel& y, T x)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator !=(const msci::pixel& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator !=(const scifir::pixel& y, T x)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <(const msci::pixel& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <(const scifir::pixel& y, T x)
 {
 	return (y.get_value() < x);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >(const msci::pixel& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >(const scifir::pixel& y, T x)
 {
 	return (y.get_value() > x);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <=(const msci::pixel& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <=(const scifir::pixel& y, T x)
 {
 	return (y.get_value() <= x);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >=(const msci::pixel& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >=(const scifir::pixel& y, T x)
 {
 	return (y.get_value() >= x);
 }
 
-bool operator ==(const msci::pixel&, const msci::pixel&);
-bool operator !=(const msci::pixel&, const msci::pixel&);
-bool operator <(const msci::pixel&, const msci::pixel&);
-bool operator >(const msci::pixel&, const msci::pixel&);
-bool operator <=(const msci::pixel&, const msci::pixel&);
-bool operator >=(const msci::pixel&, const msci::pixel&);
+bool operator ==(const scifir::pixel&, const scifir::pixel&);
+bool operator !=(const scifir::pixel&, const scifir::pixel&);
+bool operator <(const scifir::pixel&, const scifir::pixel&);
+bool operator >(const scifir::pixel&, const scifir::pixel&);
+bool operator <=(const scifir::pixel&, const scifir::pixel&);
+bool operator >=(const scifir::pixel&, const scifir::pixel&);
 
-bool operator ==(const msci::pixel&, const string&);
-bool operator !=(const msci::pixel&, const string&);
+bool operator ==(const scifir::pixel&, const string&);
+bool operator !=(const scifir::pixel&, const string&);
 
-bool operator ==(const string&, const msci::pixel&);
-bool operator !=(const string&, const msci::pixel&);
+bool operator ==(const string&, const scifir::pixel&);
+bool operator !=(const string&, const scifir::pixel&);
 
-void operator +=(string&, const msci::pixel&);
-string operator +(const string&, const msci::pixel&);
-string operator +(const msci::pixel&, const string&);
+void operator +=(string&, const scifir::pixel&);
+string operator +(const string&, const scifir::pixel&);
+string operator +(const scifir::pixel&, const string&);
 
-ostream& operator <<(ostream&, const msci::pixel&);
-istream& operator >>(istream&, msci::pixel&);
+ostream& operator <<(ostream&, const scifir::pixel&);
+istream& operator >>(istream&, scifir::pixel&);
 
-#endif // MSCI_UNITS_SPECIAL_UNITS_PIXEL_HPP_INCLUDED
+#endif // SCIFIR_UNITS_SPECIAL_UNITS_PIXEL_HPP_INCLUDED

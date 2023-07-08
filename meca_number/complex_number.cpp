@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	bool is_complex(const string& init_complex_number)
 	{

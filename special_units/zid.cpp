@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	zid::zid() : regions(),country(),zone()
 	{}
@@ -65,7 +65,7 @@ namespace msci
 	}
 }
 
-bool operator ==(const msci::zid& x, const msci::zid& y)
+bool operator ==(const scifir::zid& x, const scifir::zid& y)
 {
 	if(x.country == y.country)
 	{
@@ -91,41 +91,41 @@ bool operator ==(const msci::zid& x, const msci::zid& y)
 	}
 }
 
-bool operator !=(const msci::zid& x, const msci::zid& y)
+bool operator !=(const scifir::zid& x, const scifir::zid& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const msci::zid& x, const string& y)
+bool operator ==(const scifir::zid& x, const string& y)
 {
-	msci::zid y_zid = msci::zid(y);
+	scifir::zid y_zid = scifir::zid(y);
 	return (x == y_zid);
 }
 
-bool operator !=(const msci::zid& x, const string& y)
+bool operator !=(const scifir::zid& x, const string& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const string& x, const msci::zid& y)
+bool operator ==(const string& x, const scifir::zid& y)
 {
-	msci::zid x_zid = msci::zid(x);
+	scifir::zid x_zid = scifir::zid(x);
 	return (x_zid == y);
 }
 
-bool operator !=(const string& x, const msci::zid& y)
+bool operator !=(const string& x, const scifir::zid& y)
 {
 	return !(x == y);
 }
 
-void operator +=(string& x, const msci::zid& y)
+void operator +=(string& x, const scifir::zid& y)
 {
 	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-string operator +(const string& x, const msci::zid& y)
+string operator +(const string& x, const scifir::zid& y)
 {
 	ostringstream output;
 	output << x;
@@ -133,7 +133,7 @@ string operator +(const string& x, const msci::zid& y)
 	return output.str();
 }
 
-string operator +(const msci::zid& y, const string& x)
+string operator +(const scifir::zid& y, const string& x)
 {
 	ostringstream output;
 	output << y;
@@ -141,18 +141,18 @@ string operator +(const msci::zid& y, const string& x)
 	return output.str();
 }
 
-ostream& operator <<(ostream& os, const msci::zid& x)
+ostream& operator <<(ostream& os, const scifir::zid& x)
 {
 	return os << to_string(x);
 }
 
-istream& operator >>(istream& is, msci::zid& x)
+istream& operator >>(istream& is, scifir::zid& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::zid c(b);
+	scifir::zid c(b);
 	x = c;
 	return is;
 }

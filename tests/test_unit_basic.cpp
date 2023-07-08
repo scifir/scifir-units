@@ -15,19 +15,19 @@ TEST_CASE("basic units","Full test of basic units") {
 	}
 
 	SECTION("time_duration class") {
-		msci::time_duration a = msci::time_duration("365 d");
+		scifir::time_duration a = scifir::time_duration("365 d");
 		REQUIRE (bool(a.display_years() == "1 y"));
-		msci::time_duration b = msci::time_duration("30 d");
+		scifir::time_duration b = scifir::time_duration("30 d");
 		REQUIRE (bool(b.display_months() == "1 months"));
-		msci::time_duration c = msci::time_duration("7 d");
+		scifir::time_duration c = scifir::time_duration("7 d");
 		REQUIRE (bool(c.display_weeks() == "1 weeks"));
-		msci::time_duration d = msci::time_duration("24 h");
+		scifir::time_duration d = scifir::time_duration("24 h");
 		REQUIRE (bool(d.display_days() == "1 d"));
-		msci::time_duration e = msci::time_duration("3600 s");
+		scifir::time_duration e = scifir::time_duration("3600 s");
 		REQUIRE (bool(e.display_hours() == "1 h"));
-		msci::time_duration f = msci::time_duration("60 s");
+		scifir::time_duration f = scifir::time_duration("60 s");
 		REQUIRE (bool(f.display_minutes() == "1 min"));
-		msci::time_duration g = msci::time_duration("35 s");
+		scifir::time_duration g = scifir::time_duration("35 s");
 		REQUIRE (bool(g.display_seconds() == "35 s"));
 	}
 

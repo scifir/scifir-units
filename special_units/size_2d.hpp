@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_SPECIAL_UNITS_SIZE_2D_HPP_INCLUDED
-#define MSCI_UNITS_SPECIAL_UNITS_SIZE_2D_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_SPECIAL_UNITS_SIZE_2D_HPP_INCLUDED
+#define SCIFIR_UNITS_SPECIAL_UNITS_SIZE_2D_HPP_INCLUDED
 
 #include "predefined_units/space_units.hpp"
 
@@ -9,7 +9,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	template<typename T>
 	class size_2d
@@ -98,7 +98,7 @@ namespace msci
 }
 
 template<typename T>
-bool operator ==(const msci::size_2d<T>& x, const msci::size_2d<T>& y)
+bool operator ==(const scifir::size_2d<T>& x, const scifir::size_2d<T>& y)
 {
 	if (x.width == y.width and x.height == y.height)
 	{
@@ -111,44 +111,44 @@ bool operator ==(const msci::size_2d<T>& x, const msci::size_2d<T>& y)
 }
 
 template<typename T>
-bool operator !=(const msci::size_2d<T>& x, const msci::size_2d<T>& y)
+bool operator !=(const scifir::size_2d<T>& x, const scifir::size_2d<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-void operator +=(string& x, const msci::size_2d<T>& y)
+void operator +=(string& x, const scifir::size_2d<T>& y)
 {
 	x += to_string(y);
 }
 
 template<typename T>
-string operator +(const string& x, const msci::size_2d<T>& y)
+string operator +(const string& x, const scifir::size_2d<T>& y)
 {
 	return x + to_string(y);
 }
 
 template<typename T>
-string operator +(const msci::size_2d<T>& x, const string& y)
+string operator +(const scifir::size_2d<T>& x, const string& y)
 {
 	return to_string(x) + y;
 }
 
 template<typename T>
-ostream& operator <<(ostream& os, const msci::size_2d<T>& x)
+ostream& operator <<(ostream& os, const scifir::size_2d<T>& x)
 {
 	return os << to_string(x);
 }
 
 template<typename T>
-istream& operator >>(istream& is, msci::size_2d<T>& x)
+istream& operator >>(istream& is, scifir::size_2d<T>& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
-	msci::size_2d<T> c(b);
+	scifir::size_2d<T> c(b);
 	x = c;
 	return is;
 }
 
-#endif // MSCI_UNITS_SPECIAL_UNITS_SIZE_2D_HPP_INCLUDED
+#endif // SCIFIR_UNITS_SPECIAL_UNITS_SIZE_2D_HPP_INCLUDED

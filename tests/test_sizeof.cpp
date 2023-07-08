@@ -93,12 +93,12 @@ int main()
 	//cout << to_string(new_dimensions) << endl;
 	//cout << scalar_unit("10 usd") << endl;
 	//scalar_unit c = scalar_unit("10 usd");
-	//cout << "custom symbol: " << reinterpret_cast<const msci::custom_dimension&>(c.get_dimensions()[0]).get_symbol() << endl;
+	//cout << "custom symbol: " << reinterpret_cast<const scifir::custom_dimension&>(c.get_dimensions()[0]).get_symbol() << endl;
 	//if (c.get_dimensions()[0].dimension_type == dimension::custom)
 	//{
 	//	cout << "custom dimension type" << endl;
 	//}
-	//msci::custom_dimension b = msci::custom_dimension("asdf",prefix(),dimension::POSITIVE);
+	//scifir::custom_dimension b = scifir::custom_dimension("asdf",prefix(),dimension::POSITIVE);
 	//cout << b.get_symbol() << endl;
 	pH phA = pH(6);
 	cout << "pH" << phA << endl;
@@ -174,6 +174,6 @@ int main()
 		cout << "match!" << endl;
 	}
 	
-	msci::time_duration x_time = msci::time_duration(100.5,"d");
+	scifir::time_duration x_time = scifir::time_duration(100.5,"d");
 	cout << "time: " << x_time.display_as_time() << endl;
 }

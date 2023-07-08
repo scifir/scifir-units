@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	vector_unit_2d::vector_unit_2d() : scalar_unit(),theta()
 	{}
@@ -187,13 +187,13 @@ namespace msci
 
 	vector_unit_2d sqrt(const vector_unit_2d& x)
 	{
-		scalar_unit new_value = msci::sqrt(scalar_unit(x));
+		scalar_unit new_value = scifir::sqrt(scalar_unit(x));
 		return vector_unit_2d(new_value, x.theta);
 	}
 
 	vector_unit_2d sqrt_nth(const vector_unit_2d& x, int y)
 	{
-		scalar_unit new_value = msci::sqrt_nth(scalar_unit(x), y);
+		scalar_unit new_value = scifir::sqrt_nth(scalar_unit(x), y);
 		return vector_unit_2d(new_value, x.theta);
 	}
 
@@ -216,19 +216,19 @@ namespace msci
 
 	bool parallel(const vector_unit_2d& x, const vector_unit_2d& y)
 	{
-		return msci::parallel(x.theta,y.theta);
+		return scifir::parallel(x.theta,y.theta);
 	}
 
 	bool orthogonal(const vector_unit_2d& x,const vector_unit_2d& y)
 	{
-		return msci::orthogonal(x.theta,y.theta);
+		return scifir::orthogonal(x.theta,y.theta);
 	}
 }
 
 bool operator ==(const vector_unit_2d& x, vector_unit_2d y)
 {
 	y.change_dimensions(x);
-	if(x.get_value() == y.get_value() and msci::same_direction(x,y) and x.has_dimensions(y))
+	if(x.get_value() == y.get_value() and scifir::same_direction(x,y) and x.has_dimensions(y))
 	{
 		return true;
 	}

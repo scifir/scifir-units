@@ -11,7 +11,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	pixel::pixel() : value(0)
 	{}
@@ -233,7 +233,7 @@ namespace msci
 	}
 }
 
-bool operator ==(const msci::pixel& x, const msci::pixel& y)
+bool operator ==(const scifir::pixel& x, const scifir::pixel& y)
 {
 	if(x.get_value() == y.get_value())
 	{
@@ -245,12 +245,12 @@ bool operator ==(const msci::pixel& x, const msci::pixel& y)
 	}
 }
 
-bool operator !=(const msci::pixel& x, const msci::pixel& y)
+bool operator !=(const scifir::pixel& x, const scifir::pixel& y)
 {
 	return !(x == y);
 }
 
-bool operator <(const msci::pixel& x, const msci::pixel& y)
+bool operator <(const scifir::pixel& x, const scifir::pixel& y)
 {
 	if(x.get_value() < y.get_value())
 	{
@@ -262,7 +262,7 @@ bool operator <(const msci::pixel& x, const msci::pixel& y)
 	}
 }
 
-bool operator >(const msci::pixel& x, const msci::pixel& y)
+bool operator >(const scifir::pixel& x, const scifir::pixel& y)
 {
 	if(x.get_value() > y.get_value())
 	{
@@ -274,46 +274,46 @@ bool operator >(const msci::pixel& x, const msci::pixel& y)
 	}
 }
 
-bool operator <=(const msci::pixel& x, const msci::pixel& y)
+bool operator <=(const scifir::pixel& x, const scifir::pixel& y)
 {
 	return !(x > y);
 }
 
-bool operator >=(const msci::pixel& x, const msci::pixel& y)
+bool operator >=(const scifir::pixel& x, const scifir::pixel& y)
 {
 	return !(x < y);
 }
 
-bool operator ==(const msci::pixel& x, const string& y)
+bool operator ==(const scifir::pixel& x, const string& y)
 {
-	msci::pixel y_pixel = msci::pixel(y);
+	scifir::pixel y_pixel = scifir::pixel(y);
 	return (x == y_pixel);
 }
 
-bool operator !=(const msci::pixel& x, const string& y)
+bool operator !=(const scifir::pixel& x, const string& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const string& x, const msci::pixel& y)
+bool operator ==(const string& x, const scifir::pixel& y)
 {
-	msci::pixel x_pixel = msci::pixel(x);
+	scifir::pixel x_pixel = scifir::pixel(x);
 	return (x_pixel == y);
 }
 
-bool operator !=(const string& x, const msci::pixel& y)
+bool operator !=(const string& x, const scifir::pixel& y)
 {
 	return !(x == y);
 }
 
-void operator +=(string& x, const msci::pixel& y)
+void operator +=(string& x, const scifir::pixel& y)
 {
 	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-string operator +(const string& x, const msci::pixel& y)
+string operator +(const string& x, const scifir::pixel& y)
 {
 	ostringstream output;
 	output << x;
@@ -321,7 +321,7 @@ string operator +(const string& x, const msci::pixel& y)
 	return output.str();
 }
 
-string operator +(const msci::pixel& y, const string& x)
+string operator +(const scifir::pixel& y, const string& x)
 {
 	ostringstream output;
 	output << y;
@@ -329,18 +329,18 @@ string operator +(const msci::pixel& y, const string& x)
 	return output.str();
 }
 
-ostream& operator <<(ostream& os, const msci::pixel& x)
+ostream& operator <<(ostream& os, const scifir::pixel& x)
 {
 	return os << to_string(x);
 }
 
-istream& operator >>(istream& is, msci::pixel& x)
+istream& operator >>(istream& is, scifir::pixel& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::pixel c(b);
+	scifir::pixel c(b);
 	x = c;
 	return is;
 }

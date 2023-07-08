@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_UNITS_PREFIX_HPP_INCLUDED
-#define MSCI_UNITS_UNITS_PREFIX_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_UNITS_PREFIX_HPP_INCLUDED
+#define SCIFIR_UNITS_UNITS_PREFIX_HPP_INCLUDED
 
 #include <iostream>
 #include <map>
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	class prefix
 	{
@@ -27,7 +27,7 @@ namespace msci
 			string get_name() const;
 			string get_symbol() const;
 
-			bool operator<(const msci::prefix&) const;
+			bool operator<(const scifir::prefix&) const;
 
 			prefix::type prefix_type;
 	};
@@ -38,12 +38,12 @@ namespace msci
 	prefix create_prefix_by_factor(int);
 }
 
-bool operator ==(const msci::prefix&,const msci::prefix&);
-bool operator !=(const msci::prefix&,const msci::prefix&);
-bool operator <=(const msci::prefix&,const msci::prefix&);
-bool operator >(const msci::prefix&,const msci::prefix&);
-bool operator >=(const msci::prefix&,const msci::prefix&);
+bool operator ==(const scifir::prefix&,const scifir::prefix&);
+bool operator !=(const scifir::prefix&,const scifir::prefix&);
+bool operator <=(const scifir::prefix&,const scifir::prefix&);
+bool operator >(const scifir::prefix&,const scifir::prefix&);
+bool operator >=(const scifir::prefix&,const scifir::prefix&);
 
-ostream& operator <<(ostream&, const msci::prefix&);
+ostream& operator <<(ostream&, const scifir::prefix&);
 
-#endif // MSCI_UNITS_UNITS_PREFIX_HPP_INCLUDED
+#endif // SCIFIR_UNITS_UNITS_PREFIX_HPP_INCLUDED

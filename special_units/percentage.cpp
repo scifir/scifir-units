@@ -9,7 +9,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	percentage::percentage() : value(0)
 	{}
@@ -371,17 +371,17 @@ namespace msci
 	}
 }
 
-msci::scalar_unit operator *(const msci::scalar_unit& x, const msci::percentage& y)
+scifir::scalar_unit operator *(const scifir::scalar_unit& x, const scifir::percentage& y)
 {
 	return x * y.get_factor();
 }
 
-msci::scalar_unit operator /(const msci::scalar_unit& x, const msci::percentage& y)
+scifir::scalar_unit operator /(const scifir::scalar_unit& x, const scifir::percentage& y)
 {
 	return x / y.get_factor();
 }
 
-bool operator ==(const msci::percentage& x, const msci::percentage& y)
+bool operator ==(const scifir::percentage& x, const scifir::percentage& y)
 {
 	if(x.get_value() == y.get_value())
 	{
@@ -393,12 +393,12 @@ bool operator ==(const msci::percentage& x, const msci::percentage& y)
 	}
 }
 
-bool operator !=(const msci::percentage& x, const msci::percentage& y)
+bool operator !=(const scifir::percentage& x, const scifir::percentage& y)
 {
 	return !(x == y);
 }
 
-bool operator <(const msci::percentage& x, const msci::percentage& y)
+bool operator <(const scifir::percentage& x, const scifir::percentage& y)
 {
 	if(x.get_value() < y.get_value())
 	{
@@ -410,7 +410,7 @@ bool operator <(const msci::percentage& x, const msci::percentage& y)
 	}
 }
 
-bool operator >(const msci::percentage& x, const msci::percentage& y)
+bool operator >(const scifir::percentage& x, const scifir::percentage& y)
 {
 	if(x.get_value() > y.get_value())
 	{
@@ -422,46 +422,46 @@ bool operator >(const msci::percentage& x, const msci::percentage& y)
 	}
 }
 
-bool operator <=(const msci::percentage& x, const msci::percentage& y)
+bool operator <=(const scifir::percentage& x, const scifir::percentage& y)
 {
 	return !(x > y);
 }
 
-bool operator >=(const msci::percentage& x, const msci::percentage& y)
+bool operator >=(const scifir::percentage& x, const scifir::percentage& y)
 {
 	return !(x < y);
 }
 
-bool operator ==(const msci::percentage& x, const string& y)
+bool operator ==(const scifir::percentage& x, const string& y)
 {
-	msci::percentage y_percentage = msci::percentage(y);
+	scifir::percentage y_percentage = scifir::percentage(y);
 	return (x == y_percentage);
 }
 
-bool operator !=(const msci::percentage& x, const string& y)
+bool operator !=(const scifir::percentage& x, const string& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const string& x, const msci::percentage& y)
+bool operator ==(const string& x, const scifir::percentage& y)
 {
-	msci::percentage x_percentage = msci::percentage(x);
+	scifir::percentage x_percentage = scifir::percentage(x);
 	return (x_percentage == y);
 }
 
-bool operator !=(const string& x, const msci::percentage& y)
+bool operator !=(const string& x, const scifir::percentage& y)
 {
 	return !(x == y);
 }
 
-void operator +=(string& x, const msci::percentage& y)
+void operator +=(string& x, const scifir::percentage& y)
 {
 	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-string operator +(const string& x, const msci::percentage& y)
+string operator +(const string& x, const scifir::percentage& y)
 {
 	ostringstream output;
 	output << x;
@@ -469,7 +469,7 @@ string operator +(const string& x, const msci::percentage& y)
 	return output.str();
 }
 
-string operator +(const msci::percentage& y, const string& x)
+string operator +(const scifir::percentage& y, const string& x)
 {
 	ostringstream output;
 	output << y;
@@ -477,18 +477,18 @@ string operator +(const msci::percentage& y, const string& x)
 	return output.str();
 }
 
-ostream& operator <<(ostream& os, const msci::percentage& x)
+ostream& operator <<(ostream& os, const scifir::percentage& x)
 {
 	return os << to_string(x);
 }
 
-istream& operator >>(istream& is, msci::percentage& x)
+istream& operator >>(istream& is, scifir::percentage& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::percentage c(b);
+	scifir::percentage c(b);
 	x = c;
 	return is;
 }

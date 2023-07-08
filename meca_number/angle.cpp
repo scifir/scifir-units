@@ -13,7 +13,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	angle::angle() : value(0)
 	{}
@@ -363,7 +363,7 @@ namespace msci
 	}
 }
 
-bool operator ==(const msci::angle& x, const msci::angle& y)
+bool operator ==(const scifir::angle& x, const scifir::angle& y)
 {
 	if(x.get_value() == y.get_value())
 	{
@@ -375,12 +375,12 @@ bool operator ==(const msci::angle& x, const msci::angle& y)
 	}
 }
 
-bool operator !=(const msci::angle& x, const msci::angle& y)
+bool operator !=(const scifir::angle& x, const scifir::angle& y)
 {
 	return !(x == y);
 }
 
-bool operator <(const msci::angle& x, const msci::angle& y)
+bool operator <(const scifir::angle& x, const scifir::angle& y)
 {
 	if(x.get_value() < y.get_value())
 	{
@@ -392,7 +392,7 @@ bool operator <(const msci::angle& x, const msci::angle& y)
 	}
 }
 
-bool operator >(const msci::angle& x, const msci::angle& y)
+bool operator >(const scifir::angle& x, const scifir::angle& y)
 {
 	if(x.get_value() > y.get_value())
 	{
@@ -404,46 +404,46 @@ bool operator >(const msci::angle& x, const msci::angle& y)
 	}
 }
 
-bool operator <=(const msci::angle& x, const msci::angle& y)
+bool operator <=(const scifir::angle& x, const scifir::angle& y)
 {
 	return !(x > y);
 }
 
-bool operator >=(const msci::angle& x, const msci::angle& y)
+bool operator >=(const scifir::angle& x, const scifir::angle& y)
 {
 	return !(x < y);
 }
 
-bool operator ==(const msci::angle& x, const string& y)
+bool operator ==(const scifir::angle& x, const string& y)
 {
-	msci::angle y_angle = msci::angle(y);
+	scifir::angle y_angle = scifir::angle(y);
 	return (x == y_angle);
 }
 
-bool operator !=(const msci::angle& x, const string& y)
+bool operator !=(const scifir::angle& x, const string& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const string& x, const msci::angle& y)
+bool operator ==(const string& x, const scifir::angle& y)
 {
-	msci::angle x_angle = msci::angle(x);
+	scifir::angle x_angle = scifir::angle(x);
 	return (x_angle == y);
 }
 
-bool operator !=(const string& x, const msci::angle& y)
+bool operator !=(const string& x, const scifir::angle& y)
 {
 	return !(x == y);
 }
 
-void operator +=(string& x, const msci::angle& y)
+void operator +=(string& x, const scifir::angle& y)
 {
 	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-string operator +(const string& x, const msci::angle& y)
+string operator +(const string& x, const scifir::angle& y)
 {
 	ostringstream output;
 	output << x;
@@ -451,7 +451,7 @@ string operator +(const string& x, const msci::angle& y)
 	return output.str();
 }
 
-string operator +(const msci::angle& y, const string& x)
+string operator +(const scifir::angle& y, const string& x)
 {
 	ostringstream output;
 	output << y;
@@ -459,18 +459,18 @@ string operator +(const msci::angle& y, const string& x)
 	return output.str();
 }
 
-ostream& operator <<(ostream& os, const msci::angle& x)
+ostream& operator <<(ostream& os, const scifir::angle& x)
 {
 	return os << to_string(x);
 }
 
-istream& operator >>(istream& is, msci::angle& x)
+istream& operator >>(istream& is, scifir::angle& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::angle c(b);
+	scifir::angle c(b);
 	x = c;
 	return is;
 }

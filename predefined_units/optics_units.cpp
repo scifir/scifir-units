@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	SCALAR_UNIT_CPP(optical_power,"1/m");
 	SCALAR_UNIT_CPP(luminance,"cd/m2");

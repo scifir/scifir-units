@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	angle coordinates_ndr_no_angle = angle();
 	float coordinates_ndr<float>::no_value = 0;

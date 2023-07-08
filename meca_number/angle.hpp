@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_MECA_NUMBER_ANGLE_HPP_INCLUDED
-#define MSCI_UNITS_MECA_NUMBER_ANGLE_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_MECA_NUMBER_ANGLE_HPP_INCLUDED
+#define SCIFIR_UNITS_MECA_NUMBER_ANGLE_HPP_INCLUDED
 
 #include "topology/constants.hpp"
 #include "util/is_number.hpp"
@@ -12,7 +12,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	inline float radian_to_grade(float x)
 	{
@@ -61,72 +61,72 @@ namespace msci
 			void operator /=(const angle&);
 			void operator ^=(const angle&);
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator =(T y)
 			{
 				value = y;
 				normalize_value();
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			angle operator +(T y) const
 			{
 				return angle(value + y);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			angle operator -(T y) const
 			{
 				return angle(value - y);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			angle operator *(T y) const
 			{
 				return angle(value * y);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			angle operator /(T y) const
 			{
 				return angle(value / y);
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			angle operator ^(T y) const
 			{
 				return angle(std::pow(value, y));
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator +=(T y)
 			{
 				value += y;
 				normalize_value();
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator -=(T y)
 			{
 				value -= y;
 				normalize_value();
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator *=(T y)
 			{
 				value *= y;
 				normalize_value();
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator /=(T y)
 			{
 				value /= y;
 				normalize_value();
 			}
 
-			template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator ^=(T y)
 			{
 				value = std::pow(value, y);
@@ -210,126 +210,126 @@ namespace msci
 	}
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::angle operator +(T x, const msci::angle& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::angle operator +(T x, const scifir::angle& y)
 {
 	return angle(x + y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::angle operator -(T x, const msci::angle& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::angle operator -(T x, const scifir::angle& y)
 {
 	return angle(x - y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::angle operator *(T x, const msci::angle& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::angle operator *(T x, const scifir::angle& y)
 {
 	return angle(x * y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::angle operator /(T x, const msci::angle& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::angle operator /(T x, const scifir::angle& y)
 {
 	return angle(x / y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-msci::angle operator ^(T x, const msci::angle& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::angle operator ^(T x, const scifir::angle& y)
 {
 	return angle(pow(x, y.get_value()));
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator ==(T x, const msci::angle& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator ==(T x, const scifir::angle& y)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator !=(T x, const msci::angle& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator !=(T x, const scifir::angle& y)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <(T x, const msci::angle& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <(T x, const scifir::angle& y)
 {
 	return (x < y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >(T x, const msci::angle& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >(T x, const scifir::angle& y)
 {
 	return (x > y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <=(T x, const msci::angle& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <=(T x, const scifir::angle& y)
 {
 	return (x <= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >=(T x, const msci::angle& y)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >=(T x, const scifir::angle& y)
 {
 	return (x >= y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator ==(const msci::angle& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator ==(const scifir::angle& y, T x)
 {
 	return (x == y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator !=(const msci::angle& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator !=(const scifir::angle& y, T x)
 {
 	return (x != y.get_value());
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <(const msci::angle& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <(const scifir::angle& y, T x)
 {
 	return (y.get_value() < x);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >(const msci::angle& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >(const scifir::angle& y, T x)
 {
 	return (y.get_value() > x);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator <=(const msci::angle& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator <=(const scifir::angle& y, T x)
 {
 	return (y.get_value() <= x);
 }
 
-template<typename T, typename = typename enable_if<msci::is_number<T>::value>::type>
-bool operator >=(const msci::angle& y, T x)
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+bool operator >=(const scifir::angle& y, T x)
 {
 	return (y.get_value() >= x);
 }
 
-bool operator ==(const msci::angle&, const msci::angle&);
-bool operator !=(const msci::angle&, const msci::angle&);
-bool operator <(const msci::angle&, const msci::angle&);
-bool operator >(const msci::angle&, const msci::angle&);
-bool operator <=(const msci::angle&, const msci::angle&);
-bool operator >=(const msci::angle&, const msci::angle&);
+bool operator ==(const scifir::angle&, const scifir::angle&);
+bool operator !=(const scifir::angle&, const scifir::angle&);
+bool operator <(const scifir::angle&, const scifir::angle&);
+bool operator >(const scifir::angle&, const scifir::angle&);
+bool operator <=(const scifir::angle&, const scifir::angle&);
+bool operator >=(const scifir::angle&, const scifir::angle&);
 
-bool operator ==(const msci::angle&, const string&);
-bool operator !=(const msci::angle&, const string&);
+bool operator ==(const scifir::angle&, const string&);
+bool operator !=(const scifir::angle&, const string&);
 
-bool operator ==(const string&, const msci::angle&);
-bool operator !=(const string&, const msci::angle&);
+bool operator ==(const string&, const scifir::angle&);
+bool operator !=(const string&, const scifir::angle&);
 
-void operator +=(string&, const msci::angle&);
-string operator +(const string&, const msci::angle&);
-string operator +(const msci::angle&, const string&);
+void operator +=(string&, const scifir::angle&);
+string operator +(const string&, const scifir::angle&);
+string operator +(const scifir::angle&, const string&);
 
-ostream& operator <<(ostream&, const msci::angle&);
-istream& operator >>(istream&, msci::angle&);
+ostream& operator <<(ostream&, const scifir::angle&);
+istream& operator >>(istream&, scifir::angle&);
 
-#endif // MSCI_UNITS_MECA_NUMBER_ANGLE_HPP_INCLUDED
+#endif // SCIFIR_UNITS_MECA_NUMBER_ANGLE_HPP_INCLUDED

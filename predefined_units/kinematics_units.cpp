@@ -1,6 +1,6 @@
 #include "predefined_units/kinematics_units.hpp"
 
-namespace msci
+namespace scifir
 {
 	SCALAR_UNIT_CPP(distance,"m");
 	VECTOR_UNIT_2D_CPP(displacement,"m");

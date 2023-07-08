@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	VECTOR_UNIT_CPP(specific_angular_momentum,"m2/s");
 }

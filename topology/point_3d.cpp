@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	point_3d<float>::point_3d(const coordinates_3d<float>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z)
 	{}

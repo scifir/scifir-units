@@ -2012,19 +2012,19 @@ volume operator"" _mL(unsigned long long int x)
 	return volume(float(x), "m");
 }
 
-msci::time_duration operator"" _min(unsigned long long int x)
+scifir::time_duration operator"" _min(unsigned long long int x)
 {
-	return msci::time_duration(float(x), "min");
+	return scifir::time_duration(float(x), "min");
 }
 
-msci::time_duration operator"" _hour(unsigned long long int x)
+scifir::time_duration operator"" _hour(unsigned long long int x)
 {
-	return msci::time_duration(float(x), "hour");
+	return scifir::time_duration(float(x), "hour");
 }
 
-msci::time_duration operator"" _day(unsigned long long int x)
+scifir::time_duration operator"" _day(unsigned long long int x)
 {
-	return msci::time_duration(float(x), "day");
+	return scifir::time_duration(float(x), "day");
 }
 
 length operator"" _YAU(unsigned long long int x)
@@ -4597,19 +4597,19 @@ volume operator"" _mL(long double x)
 	return volume(float(x), "m");
 }
 
-msci::time_duration operator"" _min(long double x)
+scifir::time_duration operator"" _min(long double x)
 {
-	return msci::time_duration(float(x), "min");
+	return scifir::time_duration(float(x), "min");
 }
 
-msci::time_duration operator"" _hour(long double x)
+scifir::time_duration operator"" _hour(long double x)
 {
-	return msci::time_duration(float(x), "hour");
+	return scifir::time_duration(float(x), "hour");
 }
 
-msci::time_duration operator"" _day(long double x)
+scifir::time_duration operator"" _day(long double x)
 {
-	return msci::time_duration(float(x), "day");
+	return scifir::time_duration(float(x), "day");
 }
 
 length operator"" _YAU(long double x)

@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_PREDEFINED_UNITS_SPACE_UNITS_HPP_INCLUDED
-#define MSCI_UNITS_PREDEFINED_UNITS_SPACE_UNITS_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_PREDEFINED_UNITS_SPACE_UNITS_HPP_INCLUDED
+#define SCIFIR_UNITS_PREDEFINED_UNITS_SPACE_UNITS_HPP_INCLUDED
 
 #include "units/scalar_unit.hpp"
 #include "units/vector_unit_3d.hpp"
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	template<typename T>
 	class size_2d;
@@ -30,4 +30,4 @@ namespace msci
 	SCALAR_UNIT_HPP(curvature);
 }
 
-#endif // MSCI_UNITS_PREDEFINED_UNITS_SPACE_UNITS_HPP_INCLUDED
+#endif // SCIFIR_UNITS_PREDEFINED_UNITS_SPACE_UNITS_HPP_INCLUDED

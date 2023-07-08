@@ -13,7 +13,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	map<string,vector<dimension>> dimension::base_dimensions = map<string,vector<dimension>>();
 	map<int,string> dimension::full_symbols = map<int,string>();
@@ -33,10 +33,10 @@ namespace msci
 		std::strcpy(symbol, move(x.symbol));
 	}
 
-	dimension::dimension(dimension::type new_dimension_type,msci::prefix::type new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
+	dimension::dimension(dimension::type new_dimension_type,scifir::prefix::type new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
 	{}
 
-	dimension::dimension(dimension::type new_dimension_type,const msci::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
+	dimension::dimension(dimension::type new_dimension_type,const scifir::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
 	{}
 
 	dimension::dimension(const string& init_dimension,dimension::sign new_sign) : prefix(),dimension_type(dimension::none),dimension_sign(new_sign),symbol()
@@ -58,7 +58,7 @@ namespace msci
 			prefix_name = "";
 			dimension_name = init_dimension;
 		}
-		prefix = msci::prefix(prefix_name);
+		prefix = scifir::prefix(prefix_name);
 		if(dimension_name == "m")
 		{
 			dimension_type = dimension::m;
@@ -241,7 +241,7 @@ namespace msci
 		}
 		else
 		{
-			prefix = msci::prefix(prefix::no_prefix);
+			prefix = scifir::prefix(prefix::no_prefix);
 			if (init_dimension.size() > 3)
 			{
 				string symbol_abreviation = dimension::create_full_symbol(init_dimension);
@@ -593,7 +593,7 @@ namespace msci
 
 	long double dimension::prefix_math() const
 	{
-		return msci::prefix_math(*this, prefix);
+		return scifir::prefix_math(*this, prefix);
 	}
 
 	bool dimension::is_simple_dimension() const
@@ -1552,7 +1552,7 @@ namespace msci
 	}
 }
 
-bool operator==(const msci::dimension& x,const msci::dimension& y)
+bool operator==(const scifir::dimension& x,const scifir::dimension& y)
 {
 	if (x.dimension_type == y.dimension_type and x.dimension_sign == y.dimension_sign)
 	{
@@ -1564,12 +1564,12 @@ bool operator==(const msci::dimension& x,const msci::dimension& y)
 	}
 }
 
-bool operator!=(const msci::dimension& x,const msci::dimension& y)
+bool operator!=(const scifir::dimension& x,const scifir::dimension& y)
 {
 	return !(x == y);
 }
 
-ostream& operator <<(ostream& os, const msci::dimension& x)
+ostream& operator <<(ostream& os, const scifir::dimension& x)
 {
 	return os << x.prefix.get_symbol() << x.get_symbol();
 }

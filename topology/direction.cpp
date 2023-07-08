@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	direction::direction() : value(direction::NONE)
 	{}
@@ -40,7 +40,7 @@ namespace msci
 	
 	void direction::invert()
 	{
-		value = msci::invert(value);
+		value = scifir::invert(value);
 	}
 	
 	direction::name create_direction(const string& x)
@@ -335,7 +335,7 @@ namespace msci
 	}
 }
 
-bool operator ==(const msci::direction& x, const msci::direction& y)
+bool operator ==(const scifir::direction& x, const scifir::direction& y)
 {
 	if(x.value == y.value)
 	{
@@ -347,12 +347,12 @@ bool operator ==(const msci::direction& x, const msci::direction& y)
 	}
 }
 
-bool operator !=(const msci::direction& x, const msci::direction& y)
+bool operator !=(const scifir::direction& x, const scifir::direction& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const msci::direction& x, msci::direction::name y)
+bool operator ==(const scifir::direction& x, scifir::direction::name y)
 {
 	if(x.value == y)
 	{
@@ -364,51 +364,51 @@ bool operator ==(const msci::direction& x, msci::direction::name y)
 	}
 }
 
-bool operator !=(const msci::direction& x, msci::direction::name y)
+bool operator !=(const scifir::direction& x, scifir::direction::name y)
 {
 	return !(x == y);
 }
 
-bool operator ==(msci::direction::name y, const msci::direction& x)
+bool operator ==(scifir::direction::name y, const scifir::direction& x)
 {
 	return (x == y);
 }
 
-bool operator !=(msci::direction::name y, const msci::direction& x)
+bool operator !=(scifir::direction::name y, const scifir::direction& x)
 {
 	return !(x == y);
 }
 
-bool operator ==(const msci::direction& x, const string& y)
+bool operator ==(const scifir::direction& x, const string& y)
 {
-	msci::direction y_direction = msci::direction(y);
+	scifir::direction y_direction = scifir::direction(y);
 	return (x == y_direction);
 }
 
-bool operator !=(const msci::direction& x, const string& y)
+bool operator !=(const scifir::direction& x, const string& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const string& x, const msci::direction& y)
+bool operator ==(const string& x, const scifir::direction& y)
 {
-	msci::direction x_direction = msci::direction(x);
+	scifir::direction x_direction = scifir::direction(x);
 	return (x_direction == y);
 }
 
-bool operator !=(const string& x, const msci::direction& y)
+bool operator !=(const string& x, const scifir::direction& y)
 {
 	return !(x == y);
 }
 
-void operator +=(string& x, const msci::direction& y)
+void operator +=(string& x, const scifir::direction& y)
 {
 	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-string operator +(const string& x, const msci::direction& y)
+string operator +(const string& x, const scifir::direction& y)
 {
 	ostringstream output;
 	output << x;
@@ -416,7 +416,7 @@ string operator +(const string& x, const msci::direction& y)
 	return output.str();
 }
 
-string operator +(const msci::direction& y, const string& x)
+string operator +(const scifir::direction& y, const string& x)
 {
 	ostringstream output;
 	output << y;
@@ -424,18 +424,18 @@ string operator +(const msci::direction& y, const string& x)
 	return output.str();
 }
 
-ostream& operator <<(ostream& os, const msci::direction& x)
+ostream& operator <<(ostream& os, const scifir::direction& x)
 {
 	return os << to_string(x);
 }
 
-istream& operator >>(istream& is, msci::direction& x)
+istream& operator >>(istream& is, scifir::direction& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::direction c(b);
+	scifir::direction c(b);
 	x = c;
 	return is;
 }

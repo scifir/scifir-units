@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_UNITS_DIMENSION_HPP_INCLUDED
-#define MSCI_UNITS_UNITS_DIMENSION_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_UNITS_DIMENSION_HPP_INCLUDED
+#define SCIFIR_UNITS_UNITS_DIMENSION_HPP_INCLUDED
 
 #include "units/prefix.hpp"
 
@@ -16,7 +16,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	class dimension;
 
@@ -36,8 +36,8 @@ namespace msci
 			dimension();
 			dimension(const dimension&);
 			dimension(dimension&&);
-			explicit dimension(dimension::type,msci::prefix::type,dimension::sign);
-			explicit dimension(dimension::type,const msci::prefix&,dimension::sign);
+			explicit dimension(dimension::type,scifir::prefix::type,dimension::sign);
+			explicit dimension(dimension::type,const scifir::prefix&,dimension::sign);
 			explicit dimension(const string&,dimension::sign);
 
 			~dimension();
@@ -58,7 +58,7 @@ namespace msci
 
 			void invert();
 
-			msci::prefix prefix;
+			scifir::prefix prefix;
 			dimension::type dimension_type;
 			dimension::sign dimension_sign;
 			char symbol[3];
@@ -181,9 +181,9 @@ namespace msci
 	bool equal_dimensions(const vector<dimension>&,const vector<dimension>&);
 }
 
-bool operator==(const msci::dimension&,const msci::dimension&);
-bool operator!=(const msci::dimension&,const msci::dimension&);
+bool operator==(const scifir::dimension&,const scifir::dimension&);
+bool operator!=(const scifir::dimension&,const scifir::dimension&);
 
-ostream& operator <<(ostream&, const msci::dimension&);
+ostream& operator <<(ostream&, const scifir::dimension&);
 
-#endif // MSCI_UNITS_UNITS_DIMENSION_HPP_INCLUDED
+#endif // SCIFIR_UNITS_UNITS_DIMENSION_HPP_INCLUDED

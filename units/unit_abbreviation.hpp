@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
-#define MSCI_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
+#define SCIFIR_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
 
 #include "units/scalar_unit.hpp"
 #include "units/unit_basic.hpp"
@@ -441,9 +441,9 @@ length operator"" _angstrom(unsigned long long int);
 volume operator"" _L(unsigned long long int);
 volume operator"" _mL(unsigned long long int);
 
-msci::time_duration operator"" _min(unsigned long long int);
-msci::time_duration operator"" _hour(unsigned long long int);
-msci::time_duration operator"" _day(unsigned long long int);
+scifir::time_duration operator"" _min(unsigned long long int);
+scifir::time_duration operator"" _hour(unsigned long long int);
+scifir::time_duration operator"" _day(unsigned long long int);
 
 length operator"" _YAU(unsigned long long int);
 length operator"" _ZAU(unsigned long long int);
@@ -986,11 +986,11 @@ length operator"" _angstrom(long double);
 volume operator"" _L(long double);
 volume operator"" _mL(long double);
 
-msci::time_duration operator"" _min(long double);
+scifir::time_duration operator"" _min(long double);
 
-msci::time_duration operator"" _hour(long double);
+scifir::time_duration operator"" _hour(long double);
 
-msci::time_duration operator"" _day(long double);
+scifir::time_duration operator"" _day(long double);
 
 length operator"" _YAU(long double);
 length operator"" _ZAU(long double);
@@ -1111,4 +1111,4 @@ percentage operator"" _ppb(long double);
 percentage operator"" _ppt(long double);
 percentage operator"" _ppq(long double);
 
-#endif // MSCI_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
+#endif // SCIFIR_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED

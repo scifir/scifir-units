@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	float distance(const coordinates_3d<float>& x,const coordinates_3d<float>& y)
 	{

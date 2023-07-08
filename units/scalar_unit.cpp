@@ -18,7 +18,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	scalar_unit::scalar_unit() : dimensions(),value(0)
 	{}
@@ -545,7 +545,7 @@ namespace msci
 	}
 }
 
-bool operator ==(const msci::scalar_unit& x, msci::scalar_unit y)
+bool operator ==(const scifir::scalar_unit& x, scifir::scalar_unit y)
 {
 	y.change_dimensions(x);
 	if(x.get_value() == y.get_value() and x.has_dimensions(y))
@@ -558,18 +558,18 @@ bool operator ==(const msci::scalar_unit& x, msci::scalar_unit y)
 	}
 }
 
-bool operator !=(const msci::scalar_unit& x, msci::scalar_unit y)
+bool operator !=(const scifir::scalar_unit& x, scifir::scalar_unit y)
 {
 	return !(x == y);
 }
 
-bool operator <(const msci::scalar_unit& x, const msci::scalar_unit& y)
+bool operator <(const scifir::scalar_unit& x, const scifir::scalar_unit& y)
 {
 	if(!x.has_dimensions(y))
 	{
 		return false;
 	}
-	msci::scalar_unit z = x;
+	scifir::scalar_unit z = x;
 	z.change_dimensions(y);
 	if(z.get_value() < y.get_value())
 	{
@@ -581,13 +581,13 @@ bool operator <(const msci::scalar_unit& x, const msci::scalar_unit& y)
 	}
 }
 
-bool operator >(const msci::scalar_unit& x, const msci::scalar_unit& y)
+bool operator >(const scifir::scalar_unit& x, const scifir::scalar_unit& y)
 {
 	if(!x.has_dimensions(y))
 	{
 		return false;
 	}
-	msci::scalar_unit z = x;
+	scifir::scalar_unit z = x;
 	z.change_dimensions(y);
 	if(z.get_value() > y.get_value())
 	{
@@ -599,89 +599,89 @@ bool operator >(const msci::scalar_unit& x, const msci::scalar_unit& y)
 	}
 }
 
-bool operator <=(const msci::scalar_unit& x, const msci::scalar_unit& y)
+bool operator <=(const scifir::scalar_unit& x, const scifir::scalar_unit& y)
 {
 	return !(x > y);
 }
 
-bool operator >=(const msci::scalar_unit& x, const msci::scalar_unit& y)
+bool operator >=(const scifir::scalar_unit& x, const scifir::scalar_unit& y)
 {
 	return !(x < y);
 }
 
-bool operator ==(const msci::scalar_unit& x, const string& y_init)
+bool operator ==(const scifir::scalar_unit& x, const string& y_init)
 {
-	msci::scalar_unit y(y_init);
+	scifir::scalar_unit y(y_init);
 	return (x == y);
 }
 
-bool operator !=(const msci::scalar_unit& x, const string& y_init)
+bool operator !=(const scifir::scalar_unit& x, const string& y_init)
 {
 	return !(x == y_init);
 }
 
-bool operator <(const msci::scalar_unit& x, const string& y_init)
+bool operator <(const scifir::scalar_unit& x, const string& y_init)
 {
-	msci::scalar_unit y(y_init);
+	scifir::scalar_unit y(y_init);
 	return (x < y);
 }
 
-bool operator >(const msci::scalar_unit& x, const string& y_init)
+bool operator >(const scifir::scalar_unit& x, const string& y_init)
 {
-	msci::scalar_unit y(y_init);
+	scifir::scalar_unit y(y_init);
 	return (x > y);
 }
 
-bool operator <=(const msci::scalar_unit& x, const string& y_init)
+bool operator <=(const scifir::scalar_unit& x, const string& y_init)
 {
 	return !(x > y_init);
 }
 
-bool operator >=(const msci::scalar_unit& x, const string& y_init)
+bool operator >=(const scifir::scalar_unit& x, const string& y_init)
 {
 	return !(x < y_init);
 }
 
-bool operator ==(const string& x_init, const msci::scalar_unit& y)
+bool operator ==(const string& x_init, const scifir::scalar_unit& y)
 {
 	return (y == x_init);
 }
 
-bool operator !=(const string& x_init, const msci::scalar_unit& y)
+bool operator !=(const string& x_init, const scifir::scalar_unit& y)
 {
 	return (y != x_init);
 }
 
-bool operator <(const string& x_init, const msci::scalar_unit& y)
+bool operator <(const string& x_init, const scifir::scalar_unit& y)
 {
-	msci::scalar_unit x(x_init);
+	scifir::scalar_unit x(x_init);
 	return (x < y);
 }
 
-bool operator >(const string& x_init, const msci::scalar_unit& y)
+bool operator >(const string& x_init, const scifir::scalar_unit& y)
 {
-	msci::scalar_unit x(x_init);
+	scifir::scalar_unit x(x_init);
 	return (x > y);
 }
 
-bool operator <=(const string& x_init, const msci::scalar_unit& y)
+bool operator <=(const string& x_init, const scifir::scalar_unit& y)
 {
 	return !(x_init > y);
 }
 
-bool operator >=(const string& x_init, const msci::scalar_unit& y)
+bool operator >=(const string& x_init, const scifir::scalar_unit& y)
 {
 	return !(x_init < y);
 }
 
-void operator +=(string& x, const msci::scalar_unit& y)
+void operator +=(string& x, const scifir::scalar_unit& y)
 {
 	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-string operator +(const string& x, const msci::scalar_unit& y)
+string operator +(const string& x, const scifir::scalar_unit& y)
 {
 	ostringstream output;
 	output << x;
@@ -689,7 +689,7 @@ string operator +(const string& x, const msci::scalar_unit& y)
 	return output.str();
 }
 
-string operator +(const msci::scalar_unit& y, const string& x)
+string operator +(const scifir::scalar_unit& y, const string& x)
 {
 	ostringstream output;
 	output << y;
@@ -697,18 +697,18 @@ string operator +(const msci::scalar_unit& y, const string& x)
 	return output.str();
 }
 
-ostream& operator <<(ostream& os, const msci::scalar_unit& x)
+ostream& operator <<(ostream& os, const scifir::scalar_unit& x)
 {
 	return os << to_string(x);
 }
 
-istream& operator >>(istream& is, msci::scalar_unit& x)
+istream& operator >>(istream& is, scifir::scalar_unit& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::scalar_unit c(b);
+	scifir::scalar_unit c(b);
 	x = c;
 	return is;
 }

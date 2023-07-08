@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	vector_unit_nd::vector_unit_nd() : scalar_unit(),angles()
 	{}
@@ -541,11 +541,11 @@ namespace msci
 		}
 		else if (is_nd(2))
 		{
-			return scalar_unit(scalar_unit::value * msci::cos(angles[0]),get_dimensions());
+			return scalar_unit(scalar_unit::value * scifir::cos(angles[0]),get_dimensions());
 		}
 		else if (is_nd(3))
 		{
-			return scalar_unit(scalar_unit::value * msci::cos(angles[0]) * msci::sin(angles[1]),get_dimensions());
+			return scalar_unit(scalar_unit::value * scifir::cos(angles[0]) * scifir::sin(angles[1]),get_dimensions());
 		}
 		else
 		{
@@ -561,11 +561,11 @@ namespace msci
 		}
 		else if (is_nd(2))
 		{
-			return scalar_unit(scalar_unit::value * msci::sin(angles[0]),get_dimensions());
+			return scalar_unit(scalar_unit::value * scifir::sin(angles[0]),get_dimensions());
 		}
 		else if (is_nd(3))
 		{
-			return scalar_unit(scalar_unit::value * msci::sin(angles[0]) * msci::sin(angles[1]),get_dimensions());
+			return scalar_unit(scalar_unit::value * scifir::sin(angles[0]) * scifir::sin(angles[1]),get_dimensions());
 		}
 		else
 		{
@@ -585,7 +585,7 @@ namespace msci
 		}
 		else if (is_nd(3))
 		{
-			return scalar_unit(scalar_unit::value * msci::cos(angles[1]),get_dimensions());
+			return scalar_unit(scalar_unit::value * scifir::cos(angles[1]),get_dimensions());
 		}
 		else
 		{
@@ -619,13 +619,13 @@ namespace msci
 
 	vector_unit_nd sqrt(const vector_unit_nd& x)
 	{
-		scalar_unit new_value = msci::sqrt(x);
+		scalar_unit new_value = scifir::sqrt(x);
 		return vector_unit_nd(new_value, x.angles);
 	}
 
 	vector_unit_nd sqrt_nth(const vector_unit_nd& x, int y)
 	{
-		scalar_unit new_value = msci::sqrt_nth(scalar_unit(x), y);
+		scalar_unit new_value = scifir::sqrt_nth(scalar_unit(x), y);
 		return vector_unit_nd(new_value, x.angles);
 	}
 
@@ -673,7 +673,7 @@ namespace msci
 
 	angle angle_between(const vector_unit_nd& x,const vector_unit_nd& y)
 	{
-		return msci::acos(float(dot_product(x,y)/(norm(x) * norm(y))));
+		return scifir::acos(float(dot_product(x,y)/(norm(x) * norm(y))));
 	}
 
 	bool same_nd(const vector_unit_nd& x, const vector_unit_nd& y)
@@ -704,7 +704,7 @@ namespace msci
 	{
 		for(unsigned int i = 0; i < x.angles.size(); i++)
 		{
-			if(!msci::parallel(x.angles[i], y.angles[i]))
+			if(!scifir::parallel(x.angles[i], y.angles[i]))
 			{
 				return false;
 			}
@@ -716,7 +716,7 @@ namespace msci
 	{
 		for(unsigned int i = 0; i < x.angles.size(); i++)
 		{
-			if(msci::orthogonal(x.angles[i], y.angles[i]))
+			if(scifir::orthogonal(x.angles[i], y.angles[i]))
 			{
 				return true;
 			}
@@ -728,7 +728,7 @@ namespace msci
 bool operator ==(const vector_unit_nd& x, vector_unit_nd y)
 {
 	y.change_dimensions(x);
-	if(x.get_value() == y.get_value() and msci::same_direction(x,y) and x.has_dimensions(y))
+	if(x.get_value() == y.get_value() and scifir::same_direction(x,y) and x.has_dimensions(y))
 	{
 		return true;
 	}
@@ -808,7 +808,7 @@ istream& operator >>(istream& is, vector_unit_nd& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::vector_unit_nd c(b);
+	scifir::vector_unit_nd c(b);
 	x = c;
 	return is;
 }

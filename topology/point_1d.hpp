@@ -1,5 +1,5 @@
-#ifndef MSCI_UNITS_TOPOLOGY_POINT_1D_HPP_INCLUDED
-#define MSCI_UNITS_TOPOLOGY_POINT_1D_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_TOPOLOGY_POINT_1D_HPP_INCLUDED
+#define SCIFIR_UNITS_TOPOLOGY_POINT_1D_HPP_INCLUDED
 
 #include "predefined_units/kinematics_units.hpp"
 #include "units/unit_basic.hpp"
@@ -9,7 +9,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	template<typename T>
 	class coordinates_1d;
@@ -151,84 +151,84 @@ namespace msci
 	template<typename T>
 	T distance(const point_1d<T>& x1,const point_1d<T>& x2)
 	{
-		return msci::sqrt(msci::pow(x1.x - x2.x,2));
+		return scifir::sqrt(scifir::pow(x1.x - x2.x,2));
 	}
 
 	float distance(const point_1d<float>&,const point_1d<float>&);
 }
 
 template<typename T>
-bool operator ==(const msci::point_1d<T>& x,const msci::point_1d<T>& y)
+bool operator ==(const scifir::point_1d<T>& x,const scifir::point_1d<T>& y)
 {
 	return (x.x == y.x);
 }
 
 template<typename T>
-bool operator !=(const msci::point_1d<T>& x,const msci::point_1d<T>& y)
+bool operator !=(const scifir::point_1d<T>& x,const scifir::point_1d<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const msci::point_1d<T>& x, const string& y)
+bool operator ==(const scifir::point_1d<T>& x, const string& y)
 {
 	point_1d<T> y_point = point_1d<T>(y);
 	return (x == y_point);
 }
 
 template<typename T>
-bool operator !=(const msci::point_1d<T>& x, const string& y)
+bool operator !=(const scifir::point_1d<T>& x, const string& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const string& x, const msci::point_1d<T>& y)
+bool operator ==(const string& x, const scifir::point_1d<T>& y)
 {
 	point_1d<T> x_point = point_1d<T>(x);
 	return (x_point == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const msci::point_1d<T>& y)
+bool operator !=(const string& x, const scifir::point_1d<T>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-void operator +=(string& x, const msci::point_1d<T>& y)
+void operator +=(string& x, const scifir::point_1d<T>& y)
 {
 	x += to_string(y);
 }
 
 template<typename T>
-string operator +(const string& x,const msci::point_1d<T>& y)
+string operator +(const string& x,const scifir::point_1d<T>& y)
 {
 	return x + to_string(y);
 }
 
 template<typename T>
-string operator +(const msci::point_1d<T>& x,const string& y)
+string operator +(const scifir::point_1d<T>& x,const string& y)
 {
 	return to_string(x) + y;
 }
 
 template<typename T>
-ostream& operator <<(ostream& os,const msci::point_1d<T>& x)
+ostream& operator <<(ostream& os,const scifir::point_1d<T>& x)
 {
 	return os << to_string(x);
 }
 
 template<typename T>
-istream& operator >>(istream& is, msci::point_1d<T>& x)
+istream& operator >>(istream& is, scifir::point_1d<T>& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::point_1d<T> c(b);
+	scifir::point_1d<T> c(b);
 	x = c;
 	return is;
 }
 
-#endif // MSCI_UNITS_TOPOLOGY_POINT_1D_HPP_INCLUDED
+#endif // SCIFIR_UNITS_TOPOLOGY_POINT_1D_HPP_INCLUDED

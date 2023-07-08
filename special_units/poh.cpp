@@ -11,7 +11,7 @@
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	pOH::pOH() : value(0)
 	{}
@@ -207,7 +207,7 @@ namespace msci
 	}
 }
 
-bool operator ==(const msci::pOH& x, const msci::pOH& y)
+bool operator ==(const scifir::pOH& x, const scifir::pOH& y)
 {
 	if(x.get_value() == y.get_value())
 	{
@@ -219,12 +219,12 @@ bool operator ==(const msci::pOH& x, const msci::pOH& y)
 	}
 }
 
-bool operator !=(const msci::pOH& x, const msci::pOH& y)
+bool operator !=(const scifir::pOH& x, const scifir::pOH& y)
 {
 	return !(x == y);
 }
 
-bool operator <(const msci::pOH& x, const msci::pOH& y)
+bool operator <(const scifir::pOH& x, const scifir::pOH& y)
 {
 	if(x.get_value() < y.get_value())
 	{
@@ -236,7 +236,7 @@ bool operator <(const msci::pOH& x, const msci::pOH& y)
 	}
 }
 
-bool operator >(const msci::pOH& x, const msci::pOH& y)
+bool operator >(const scifir::pOH& x, const scifir::pOH& y)
 {
 	if(x.get_value() > y.get_value())
 	{
@@ -248,46 +248,46 @@ bool operator >(const msci::pOH& x, const msci::pOH& y)
 	}
 }
 
-bool operator <=(const msci::pOH& x, const msci::pOH& y)
+bool operator <=(const scifir::pOH& x, const scifir::pOH& y)
 {
 	return !(x > y);
 }
 
-bool operator >=(const msci::pOH& x, const msci::pOH& y)
+bool operator >=(const scifir::pOH& x, const scifir::pOH& y)
 {
 	return !(x < y);
 }
 
-bool operator ==(const msci::pOH& x, const string& y)
+bool operator ==(const scifir::pOH& x, const string& y)
 {
-	msci::pOH y_pOH = msci::pOH(y);
+	scifir::pOH y_pOH = scifir::pOH(y);
 	return (x == y_pOH);
 }
 
-bool operator !=(const msci::pOH& x, const string& y)
+bool operator !=(const scifir::pOH& x, const string& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const string& x, const msci::pOH& y)
+bool operator ==(const string& x, const scifir::pOH& y)
 {
-	msci::pOH x_pOH = msci::pOH(x);
+	scifir::pOH x_pOH = scifir::pOH(x);
 	return (x_pOH == y);
 }
 
-bool operator !=(const string& x, const msci::pOH& y)
+bool operator !=(const string& x, const scifir::pOH& y)
 {
 	return !(x == y);
 }
 
-void operator +=(string& x, const msci::pOH& y)
+void operator +=(string& x, const scifir::pOH& y)
 {
 	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-string operator +(const string& x, const msci::pOH& y)
+string operator +(const string& x, const scifir::pOH& y)
 {
 	ostringstream output;
 	output << x;
@@ -295,7 +295,7 @@ string operator +(const string& x, const msci::pOH& y)
 	return output.str();
 }
 
-string operator +(const msci::pOH& y, const string& x)
+string operator +(const scifir::pOH& y, const string& x)
 {
 	ostringstream output;
 	output << y;
@@ -303,18 +303,18 @@ string operator +(const msci::pOH& y, const string& x)
 	return output.str();
 }
 
-ostream& operator <<(ostream& os, const msci::pOH& x)
+ostream& operator <<(ostream& os, const scifir::pOH& x)
 {
 	return os << to_string(x);
 }
 
-istream& operator >>(istream& is, msci::pOH& x)
+istream& operator >>(istream& is, scifir::pOH& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	msci::pOH c(b);
+	scifir::pOH c(b);
 	x = c;
 	return is;
 }

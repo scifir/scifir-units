@@ -6,8 +6,8 @@ using namespace std;
 
 int main()
 {
-	msci::prefix prefix_a("m");
-	msci::prefix prefix_b = prefix("m");
+	scifir::prefix prefix_a("m");
+	scifir::prefix prefix_b = prefix("m");
 
 	cout << "prefix a: " << prefix_a << endl;
 	cout << "prefix b: " << prefix_b << endl;
@@ -16,11 +16,11 @@ int main()
 
 	cout << "dimension a: " << dimension_a << endl;
 
-	msci::length a("50 m");
-	msci::length b("30 m");
-	msci::length c("30 s");
-	msci::length d("5.41905738 mm");
-	msci::length e("5 cm");
+	scifir::length a("50 m");
+	scifir::length b("30 m");
+	scifir::length c("30 s");
+	scifir::length d("5.41905738 mm");
+	scifir::length e("5 cm");
 
 	cout << "a: " << a << endl;
 	cout << "b: " << b << endl;
@@ -34,6 +34,6 @@ int main()
 	cout << "d + a: " << (d + a) << endl;
 	cout << "d + e: " << (e + d) << endl;
 
-	/*msci::length f = e + d;
+	/*scifir::length f = e + d;
 	cout << "f: " << f.display(0) << endl;*/
 }

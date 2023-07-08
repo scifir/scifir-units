@@ -1,12 +1,12 @@
-#ifndef MSCI_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED
-#define MSCI_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED
+#ifndef SCIFIR_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED
+#define SCIFIR_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED
 
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-namespace msci
+namespace scifir
 {
 	class direction;
 	
@@ -36,24 +36,24 @@ namespace msci
 	direction::name invert(direction::name);
 }
 
-bool operator ==(const msci::direction& x, const msci::direction& y);
-bool operator !=(const msci::direction& x, const msci::direction& y);
-bool operator ==(const msci::direction& x, msci::direction::name y);
-bool operator !=(const msci::direction& x, msci::direction::name y);
-bool operator ==(msci::direction::name y, const msci::direction& x);
-bool operator !=(msci::direction::name y, const msci::direction& x);
+bool operator ==(const scifir::direction& x, const scifir::direction& y);
+bool operator !=(const scifir::direction& x, const scifir::direction& y);
+bool operator ==(const scifir::direction& x, scifir::direction::name y);
+bool operator !=(const scifir::direction& x, scifir::direction::name y);
+bool operator ==(scifir::direction::name y, const scifir::direction& x);
+bool operator !=(scifir::direction::name y, const scifir::direction& x);
 
-bool operator ==(const msci::direction&, const string&);
-bool operator !=(const msci::direction&, const string&);
+bool operator ==(const scifir::direction&, const string&);
+bool operator !=(const scifir::direction&, const string&);
 
-bool operator ==(const string&, const msci::direction&);
-bool operator !=(const string&, const msci::direction&);
+bool operator ==(const string&, const scifir::direction&);
+bool operator !=(const string&, const scifir::direction&);
 
-void operator +=(string&, const msci::direction&);
-string operator +(const string&, const msci::direction&);
-string operator +(const msci::direction&, const string&);
+void operator +=(string&, const scifir::direction&);
+string operator +(const string&, const scifir::direction&);
+string operator +(const scifir::direction&, const string&);
 
-ostream& operator <<(ostream& os, const msci::direction& x);
-istream& operator >>(istream&, msci::direction&);
+ostream& operator <<(ostream& os, const scifir::direction& x);
+istream& operator >>(istream&, scifir::direction&);
 
-#endif // MSCI_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED
+#endif // SCIFIR_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED
