@@ -8,7 +8,7 @@ The Scifir Collection is under development, but the units are already released. 
 
 ### Team
 
-The **Scifir Collection** is developed by [Ismael Correa](https://github.com/Iarfen/), a software developer of 32 years old. You can email him if you find bugs, you want to request new features, or have any other need, at ismael.correa.castro@gmail.com.
+The **Scifir Collection** is developed by [Ismael Correa](https://github.com/Iarfen/), a software developer of 32 years old. You can email him if you find bugs, you want to request new features, or have any other need, at ismael.correa.castro@gmail.com. His ORCID is 0009-0007-3815-7053, if you want to reference this work inside any publication.
 
 ### Funding
 
