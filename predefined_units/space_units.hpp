@@ -27,6 +27,8 @@ namespace scifir
 
 	SCALAR_UNIT_HPP_END();
 
+	SCALAR_UNIT_HPP(volume_4d);
+
 	SCALAR_UNIT_HPP(curvature);
 }
 

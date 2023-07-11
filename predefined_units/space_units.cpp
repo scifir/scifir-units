@@ -28,5 +28,7 @@ namespace scifir
 		*this = x.width * x_height * x_depth;
 	}
 
+	SCALAR_UNIT_CPP(volume_4d,"m4");
+
 	SCALAR_UNIT_CPP(curvature,"1/m");
 }
