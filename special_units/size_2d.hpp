@@ -11,7 +11,7 @@ using namespace std;
 
 namespace scifir
 {
-	template<typename T>
+	template<typename T = length>
 	class size_2d
 	{
 		public:
@@ -24,7 +24,7 @@ namespace scifir
 			size_2d<T>(size_2d<T>&& x) : width(move(x.width)),height(move(x.height))
 			{}
 
-			explicit size_2d<T>(T new_width,T new_height) : width(new_width),height(new_height)
+			explicit size_2d<T>(const T& new_width,const T& new_height) : width(new_width),height(new_height)
 			{}
 
 			explicit size_2d<T>(const string& new_width,const string& new_height) : width(new_width),height(new_height)
