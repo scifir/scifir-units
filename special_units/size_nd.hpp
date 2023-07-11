@@ -104,17 +104,23 @@ namespace scifir
 
 			void operator +=(const size_nd<T>& x)
 			{
-				for (int i = 0; i < widths.size(); i++)
+				if (get_nd() == x.get_nd())
 				{
-					widths[i] += x.widths[i];
+					for (int i = 0; i < widths.size(); i++)
+					{
+						widths[i] += x.widths[i];
+					}
 				}
 			}
 
 			void operator -=(const size_nd<T>& x)
 			{
-				for (int i = 0; i < widths.size(); i++)
+				if (get_nd() == x.get_nd())
 				{
-					widths[i] -= x.widths[i];
+					for (int i = 0; i < widths.size(); i++)
+					{
+						widths[i] -= x.widths[i];
+					}
 				}
 			}
 
