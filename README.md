@@ -47,6 +47,15 @@ The angle class uses only 4 bytes, and works perfectly fine, very similar to a n
 
 ## Core functionalities
 
+All the classes of scifir-units are inside the **namespace scifir**, as with all libraries of the **Scifir Collection**. So, to use any of this classes, like angle, you have to type any of the following codes:
+
+```cpp
+using namespace scifir; // Maybe this is usually the better choice
+scifir::angle a; // You can use the namespace directly
+```
+
+All the example code presented here is written assuming you know this namespace scifir.
+
 ### Initialization strings
 
 All the unit classes, and also the other related classes of this library, can be constructed with what is called here an **initialization string**. An initialization string is an string used to instantiate the class, and it's also used when converting the class to an string for any purpose (like printing it on the screen).
