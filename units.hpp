@@ -58,6 +58,7 @@
 #include "special_units/poh.hpp"
 #include "special_units/size_2d.hpp"
 #include "special_units/size_3d.hpp"
+#include "special_units/size_nd.hpp"
 #include "special_units/zid.hpp"
 
 #include "meca_number/lab_number.hpp"
