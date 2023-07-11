@@ -15,7 +15,7 @@ TEST_CASE("basic units","Full test of basic units") {
 	}
 
 	SECTION("time_duration class") {
-		scifir::time_duration a = scifir::time_duration("365 d");
+		scifir::time_duration a = scifir::time_duration("365d");
 		REQUIRE (bool(a.display_years() == "1 y"));
 		scifir::time_duration b = scifir::time_duration("30 d");
 		REQUIRE (bool(b.display_months() == "1 months"));
