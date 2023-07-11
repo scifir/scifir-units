@@ -41,4 +41,5 @@ jobs:
       run: |
         echo ${{github.workspace}}
         ctest -C ${{env.BUILD_TYPE}} -L tests
+        cat /home/runner/work/scifir-units/scifir-units/build/Testing/Temporary/LastTest.log
 
