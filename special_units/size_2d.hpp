@@ -88,6 +88,83 @@ namespace scifir
 			T height;
 	};
 
+	template<>
+	class size_2d<float>
+	{
+		public:
+			size_2d<float>() : width(),height()
+			{}
+
+			size_2d<float>(const size_2d<float>& x) : width(x.width),height(x.height)
+			{}
+
+			size_2d<float>(size_2d<float>&& x) : width(move(x.width)),height(move(x.height))
+			{}
+
+			explicit size_2d<float>(const float& new_width,const float& new_height) : width(new_width),height(new_height)
+			{}
+
+			explicit size_2d<float>(const string& new_width,const string& new_height) : width(stof(new_width)),height(stof(new_height))
+			{}
+
+			explicit size_2d<float>(const string& init_size_2d) : size_2d<float>()
+			{
+				vector<string> widths;
+				boost::split(widths,init_size_2d,boost::is_any_of("*"));
+				if (widths.size() == 2)
+				{
+					boost::trim(widths[0]);
+					boost::trim(widths[1]);
+					width = stof(widths[0]);
+					height = stof(widths[1]);
+				}
+			}
+
+			size_2d<float>& operator=(const size_2d<float>& x)
+			{
+				width = x.width;
+				height = x.height;
+				return *this;
+			}
+
+			size_2d<float>& operator=(size_2d<float>&& x)
+			{
+				width = move(x.width);
+				height = move(x.height);
+				return *this;
+			}
+
+			size_2d<float> operator +(const size_2d<float>& x) const
+			{
+				return size_2d<float>(width + x.width,height + x.height);
+			}
+
+			size_2d<float> operator -(const size_2d<float>& x) const
+			{
+				return size_2d<float>(width - x.width,height - x.height);
+			}
+
+			void operator +=(const size_2d<float>& x)
+			{
+				width += x.width;
+				height += x.height;
+			}
+
+			void operator -=(const size_2d<float>& x)
+			{
+				width -= x.width;
+				height -= x.height;
+			}
+
+			float get_area() const
+			{
+				return width * height;
+			}
+
+			float width;
+			float height;
+	};
+
 	template<typename T>
 	string to_string(const size_2d<T>& x)
 	{
@@ -95,6 +172,8 @@ namespace scifir
 		output << x.width << " * " << x.height;
 		return output.str();
 	}
+
+	string to_string(const size_2d<float>&);
 }
 
 template<typename T>

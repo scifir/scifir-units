@@ -95,6 +95,90 @@ namespace scifir
 			T depth;
 	};
 
+	template<>
+	class size_3d<float>
+	{
+		public:
+			size_3d<float>() : width(),height(),depth()
+			{}
+
+			size_3d<float>(const size_3d<float>& x) : width(x.width),height(x.height),depth(x.depth)
+			{}
+
+			size_3d<float>(size_3d<float>&& x) : width(move(x.width)),height(move(x.height)),depth(move(x.depth))
+			{}
+
+			explicit size_3d<float>(const float& new_width,const float& new_height,const float& new_depth) : width(new_width),height(new_height),depth(new_depth)
+			{}
+
+			explicit size_3d<float>(const string& new_width,const string& new_height,const string& new_depth) : width(stof(new_width)),height(stof(new_height)),depth(stof(new_depth))
+			{}
+
+			explicit size_3d<float>(const string& init_size_3d) : size_3d<float>()
+			{
+				vector<string> widths;
+				boost::split(widths,init_size_3d,boost::is_any_of("*"));
+				if (widths.size() == 3)
+				{
+					boost::trim(widths[0]);
+					boost::trim(widths[1]);
+					boost::trim(widths[2]);
+					width = stof(widths[0]);
+					height = stof(widths[1]);
+					depth = stof(widths[2]);
+				}
+			}
+
+			size_3d<float>& operator=(const size_3d<float>& x)
+			{
+				width = x.width;
+				height = x.height;
+				depth = x.depth;
+				return *this;
+			}
+
+			size_3d<float>& operator=(size_3d<float>&& x)
+			{
+				width = move(x.width);
+				height = move(x.height);
+				depth = move(x.depth);
+				return *this;
+			}
+
+			size_3d<float> operator +(const size_3d<float>& x) const
+			{
+				return size_3d<float>(width + x.width,height + x.height,depth + x.depth);
+			}
+
+			size_3d<float> operator -(const size_3d<float>& x) const
+			{
+				return size_3d<float>(width - x.width,height - x.height,depth - x.depth);
+			}
+
+			void operator +=(const size_3d<float>& x)
+			{
+				width += x.width;
+				height += x.height;
+				depth += x.depth;
+			}
+
+			void operator -=(const size_3d<float>& x)
+			{
+				width -= x.width;
+				height -= x.height;
+				depth -= x.depth;
+			}
+
+			float get_volume() const
+			{
+				return width * height * depth;
+			}
+
+			float width;
+			float height;
+			float depth;
+	};
+
 	template<typename T>
 	string to_string(const size_3d<T>& x)
 	{
@@ -102,6 +186,8 @@ namespace scifir
 		output << x.width << " * " << x.height << " * " << x.depth;
 		return output.str();
 	}
+
+	string to_string(const size_3d<float>&);
 }
 
 template<typename T>
