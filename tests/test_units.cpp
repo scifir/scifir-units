@@ -97,4 +97,21 @@ TEST_CASE("scalar_unit class","Full test of scalar_units") {
 	REQUIRE (bool(sqrt_nth(g,3) == "100 m"));
 	scalar_unit h = 10_N;
 	REQUIRE (bool(h.display_derived() == "10 kg*m/s2"));
+	
+	SECTION("is_scalar_unit") {
+		REQUIRE(bool(is_scalar_unit("1 m") == true));
+		REQUIRE(bool(is_scalar_unit("1.5 C") == true));
+		REQUIRE(bool(is_scalar_unit("1.5e6 s") == true));
+		REQUIRE(bool(is_scalar_unit("1.5*10^34 m") == true));
+		REQUIRE(bool(is_scalar_unit("12.37 m/s*C") == true));
+		REQUIRE(bool(is_scalar_unit("ms") == false));
+		REQUIRE(bool(is_scalar_unit("ms/C*s") == false));
+		REQUIRE(bool(is_scalar_unit("1.23e5") == false));
+		REQUIRE(bool(is_scalar_unit("1.23e m") == false));
+		REQUIRE(bool(is_scalar_unit("1.5*10^ m") == false));
+		REQUIRE(bool(is_scalar_unit("101") == false));
+		REQUIRE(bool(is_scalar_unit("10.1") == false));
+		REQUIRE(bool(is_scalar_unit("101 ") == false));
+		REQUIRE(bool(is_scalar_unit("10.1 ") == false));
+	}
 }

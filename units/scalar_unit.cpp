@@ -518,6 +518,184 @@ namespace scifir
 		return output.str();
 	}
 
+	bool is_scalar_unit(const string& x)
+	{
+		bool dot_present = false;
+		bool e_present = false;
+		int current_pos = 0;
+		int e_present_pos = 0;
+		for (int i = 0; i < x.length(); i++)
+		{
+			if (x[i] == ' ')
+			{
+				if (e_present and ((e_present_pos + 1) == i))
+				{
+					return false;
+				}
+				current_pos = i;
+				break;
+			}
+			if (e_present == false)
+			{
+				if (x[i] == '.')
+				{
+					if (dot_present)
+					{
+						return false;
+					}
+					else
+					{
+						dot_present = true;
+					}
+				}
+				else if (x[i] == 'e' or x[i] == 'E')
+				{
+					e_present = true;
+					e_present_pos = i;
+					continue;
+				}
+				else if (x[i] == '*')
+				{
+					if (!(x.substr(i + 1,3) == "10^"))
+					{
+						return false;
+					}
+					else
+					{
+						e_present = true;
+						i += 3;
+						e_present_pos = i;
+						continue;
+					}
+				}
+				else if (!isdigit(x[i]))
+				{
+					return false;
+				}
+				else if (i == (x.length() - 1))
+				{
+					return false;
+				}
+			}
+			else
+			{
+				if (!isdigit(x[i]))
+				{
+					return false;
+				}
+			}
+		}
+		if (current_pos == (x.length() - 1))
+		{
+			return false;
+		}
+		if (current_pos == 0)
+		{
+			return false;
+		}
+		vector<string> values;
+		boost::split(values,x.substr(current_pos),boost::is_any_of("/"));
+		if (values.size() == 1)
+		{
+			vector<string> subvalues;
+			boost::split(subvalues,values[0],boost::is_any_of("*"));
+			for (string& x_subvalue : subvalues)
+			{
+				boost::trim(x_subvalue);
+				bool number_present = false;
+				for (int i = 0; i < x_subvalue.length(); i++)
+				{
+					if (number_present == false)
+					{
+						if (isdigit(x_subvalue[i]))
+						{
+							number_present = true;
+							continue;
+						}
+						else if (!isalpha(x_subvalue[i]))
+						{
+							return false;
+						}
+					}
+					else
+					{
+						if (!isdigit(x_subvalue[i]))
+						{
+							return false;
+						}
+					}
+				}
+			}
+			return true;
+		}
+		else if (values.size() == 2)
+		{
+			if (values[0] != "1")
+			{
+				vector<string> subvalues;
+				boost::split(subvalues,values[0],boost::is_any_of("*"));
+				for (string& x_subvalue : subvalues)
+				{
+					boost::trim(x_subvalue);
+					bool number_present = false;
+					for (int i = 0; i < x_subvalue.length(); i++)
+					{
+						if (number_present == false)
+						{
+							if (isdigit(x_subvalue[i]))
+							{
+								number_present = true;
+								continue;
+							}
+							else if (!isalpha(x_subvalue[i]))
+							{
+								return false;
+							}
+						}
+						else
+						{
+							if (!isdigit(x_subvalue[i]))
+							{
+								return false;
+							}
+						}
+					}
+				}
+			}
+			vector<string> subvalues_denominator;
+			boost::split(subvalues_denominator,values[1],boost::is_any_of("*"));
+			for (string& x_subvalue : subvalues_denominator)
+			{
+				boost::trim(x_subvalue);
+				bool number_present = false;
+				for (int i = 0; i < x_subvalue.length(); i++)
+				{
+					if (number_present == false)
+					{
+						if (isdigit(x_subvalue[i]))
+						{
+							number_present = true;
+							continue;
+						}
+						else if (!isalpha(x_subvalue[i]))
+						{
+							return false;
+						}
+					}
+					else
+					{
+						if (!isdigit(x_subvalue[i]))
+						{
+							return false;
+						}
+					}
+				}
+			}
+			return true;
+		}
+		return false;
+	}
+
 	float abs(const scalar_unit& x)
 	{
 		return std::abs(x.get_value());

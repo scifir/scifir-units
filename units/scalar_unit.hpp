@@ -198,6 +198,7 @@ namespace scifir
 	};
 
 	string to_string(const scalar_unit&);
+	bool is_scalar_unit(const string&);
 	float abs(const scalar_unit&);
 	scalar_unit pow(const scalar_unit&,int);
 	scalar_unit sqrt(const scalar_unit&);
