@@ -48,10 +48,25 @@ target_link_libraries(test_dimensions PRIVATE Catch2::Catch2 scifir_units boost_
 add_test(NAME test_dimensions COMMAND test_dimensions)
 set_tests_properties(test_dimensions PROPERTIES LABELS tests)
 
-add_executable(test_units tests/test_units.cpp)
-target_link_libraries(test_units PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
-add_test(NAME test_units COMMAND test_units)
-set_tests_properties(test_units PROPERTIES LABELS tests)
+add_executable(test_scalar_unit tests/test_scalar_unit.cpp)
+target_link_libraries(test_scalar_unit PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
+add_test(NAME test_scalar_unit COMMAND test_scalar_unit)
+set_tests_properties(test_scalar_unit PROPERTIES LABELS tests)
+
+add_executable(test_vector_unit_2d tests/test_vector_unit_2d.cpp)
+target_link_libraries(test_vector_unit_2d PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
+add_test(NAME test_vector_unit_2d COMMAND test_vector_unit_2d)
+set_tests_properties(test_vector_unit_2d PROPERTIES LABELS tests)
+
+add_executable(test_vector_unit_3d tests/test_vector_unit_3d.cpp)
+target_link_libraries(test_vector_unit_3d PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
+add_test(NAME test_vector_unit_3d COMMAND test_vector_unit_3d)
+set_tests_properties(test_vector_unit_3d PROPERTIES LABELS tests)
+
+add_executable(test_vector_unit_nd tests/test_vector_unit_nd.cpp)
+target_link_libraries(test_vector_unit_nd PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
+add_test(NAME test_vector_unit_nd COMMAND test_vector_unit_nd)
+set_tests_properties(test_vector_unit_nd PROPERTIES LABELS tests)
 
 add_executable(test_unit_basic tests/test_unit_basic.cpp)
 target_link_libraries(test_unit_basic PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
@@ -70,7 +85,7 @@ set_tests_properties(benchmark_units PROPERTIES LABELS benchmarks)
 
 include(CTest)
 include(Catch)
-catch_discover_tests(test_units)
+#catch_discover_tests(test_units)
 
 install(TARGETS scifir_units ARCHIVE DESTINATION lib)
 install(FILES units.hpp DESTINATION include/scifir)

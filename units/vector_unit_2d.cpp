@@ -176,7 +176,7 @@ namespace scifir
 	string to_string(const vector_unit_2d& x)
 	{
 		ostringstream out;
-		out << x.get_value() << " " << x.display_dimensions() << " " << x.theta;
+		out << x.get_value() << " " << x.display_dimensions() << " " << x.theta.get_value() << "\u03B8";
 		return out.str();
 	}
 

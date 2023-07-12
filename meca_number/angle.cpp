@@ -199,7 +199,7 @@ namespace scifir
 		{
 			output << display_float(get_value(),number_of_decimals);
 		}
-		output << "°";
+		output << "\u00B0";
 		return output.str();
 	}
 

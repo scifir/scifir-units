@@ -9,7 +9,7 @@
 
 using namespace std;
 
-TEST_CASE("scalar_unit class","Full test of scalar_units") {
+TEST_CASE("scalar_unit class","Full test of scalar_unit class") {
 	mass a(100,"g");
 	ostringstream a_out;
 	a_out << a;

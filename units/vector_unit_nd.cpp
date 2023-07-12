@@ -795,11 +795,11 @@ ostream& operator <<(ostream& os, const vector_unit_nd& x)
 	{
 		for(const auto& x_angle : x.angles)
 		{
-			angles_text << x_angle;
 			angles_text << " ";
+			angles_text << x_angle;
 		}
 	}
-	return os << x.get_value() << " " << x.display_dimensions() << " " << angles_text.str().substr(0,-1);
+	return os << x.get_value() << " " << x.display_dimensions() << angles_text.str();
 }
 
 istream& operator >>(istream& is, vector_unit_nd& x)
