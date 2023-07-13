@@ -93,7 +93,6 @@ angle y = 54; // Better constructor! Preferred method
 angle a = 367; // Gets converted to the value 7, because 7 is the equivalent of 367 inside 0 and 360
 angle b = angle(12);
 angle c = angle(34_Pa);
-angle x = 73_angle; // Not the most optimum constructor, but equally supported
 angle z = 23_N; // Angles can be instantiated with units if that is needed, although it's not recommended
 
 // Angles operations with other angles
@@ -172,7 +171,7 @@ x.change_dimensions("s"); // An scalar_unit can't change to other dimensions dif
 if (x.has_dimensions("km")) // Dimensions are compared without prefixes
 {}
 
-x.set_same_prefix(y); // Now x has dimensions "mm" as y
+x.change_dimensions(y); // Now x has dimensions "mm" as y
 
 ostringstream out;
 out << x; // scalar_unit classes can operate with streams
@@ -184,7 +183,7 @@ float a = abs(x); // abs() gives the absolute value of the scalar_unit
 scalar_unit b = sqrt(xy); // sqrt() gives the square root of the scalar_unit
 scalar_unit c = pow(a,x); // Dimensions would be "m3"
 
-if (equal_dimensions(x,y)) // Evaluates to true if the two scalar_unit objects have the same dimensions, independent of prefixes
+if (x.has_dimensions(y)) // Evaluates to true if the two scalar_unit objects have the same dimensions, independent of prefixes
 {}
 
 if (x == y) // Evaluates to true if the scalar_unit objects have the same value and the same dimensions
