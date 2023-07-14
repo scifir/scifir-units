@@ -34,6 +34,12 @@ TEST_CASE("class vector_unit_nd","Complete test of vector_unit_nd")
 		REQUIRE (bool(to_string(l) == "100 g 20° 20° 20°"));
 		vector_unit_nd m("100 g 20° 20° 20° 20°");
 		REQUIRE (bool(to_string(m) == "100 g 20° 20° 20° 20°"));
+		vector_unit_nd n = vector_unit_nd::cartesian_2d("m",1,1);
+		REQUIRE (bool(to_string(n) == "1.41421 m 45°"));
+		vector_unit_nd o = vector_unit_nd::cartesian_3d("m",1,1,1);
+		REQUIRE (bool(to_string(o) == "1.73205 m 45° 54.73°"));
+		vector_unit_nd p = vector_unit_nd::cylindrical("m",1,angle(45),1);
+		REQUIRE (bool(to_string(p) == "1.41421 m 45° 45°"));
 	}
 }
 

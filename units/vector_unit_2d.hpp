@@ -68,6 +68,13 @@ namespace scifir
 			explicit vector_unit_2d(const string&,const angle&);
 			explicit vector_unit_2d(const string&); // Example of initialization string "1N 50º"
 
+			static vector_unit_2d cartesian_2d(const string& new_dimensions,float new_x,float new_y)
+			{
+				float new_value = std::sqrt(std::pow(new_x,2) + std::pow(new_y,2));
+				float new_theta = scifir::atan_grade(new_y / new_x);
+				return vector_unit_2d(new_value,new_dimensions,angle(new_theta));
+			}
+
 			vector_unit_2d& operator =(const vector_unit_2d&);
 			vector_unit_2d& operator =(vector_unit_2d&&);
 

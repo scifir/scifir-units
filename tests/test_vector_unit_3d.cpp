@@ -34,5 +34,9 @@ TEST_CASE("class vector_unit_3d","Complete test of vector_unit_3d")
 		REQUIRE (bool(to_string(l) == "100 g 20\u03B8 20\u03A6"));
 		vector_unit_3d m("100 g 20º 20º");
 		REQUIRE (bool(to_string(m) == "100 g 20\u03B8 20\u03A6"));
+		vector_unit_3d n = vector_unit_3d::cartesian_3d("m",1,1,1);
+		REQUIRE (bool(to_string(n) == "1.73205 m 45θ 54.7356Φ"));
+		vector_unit_3d o = vector_unit_3d::cylindrical("m",1,angle(45),1);
+		REQUIRE (bool(to_string(o) == "1.41421 m 45θ 45Φ"));
 	}
 }

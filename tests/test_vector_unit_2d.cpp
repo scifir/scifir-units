@@ -34,6 +34,8 @@ TEST_CASE("class vector_unit_2d","Complete test of vector_unit_2d")
 		REQUIRE (bool(to_string(l) == "100 g 20\u03B8"));
 		vector_unit_2d m("100 g 20º");
 		REQUIRE (bool(to_string(m) == "100 g 20\u03B8"));
+		vector_unit_2d n = vector_unit_2d::cartesian_2d("m",1,1);
+		REQUIRE (bool(to_string(n) == "1.41421 m 45\u03B8"));
 	}
 }
 

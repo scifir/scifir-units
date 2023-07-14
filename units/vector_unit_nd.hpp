@@ -77,6 +77,28 @@ namespace scifir
 			explicit vector_unit_nd(const string&,const vector<angle>&);
 			explicit vector_unit_nd(const string&);
 
+			static vector_unit_nd cartesian_2d(const string& new_dimensions,float new_x,float new_y)
+			{
+				float new_value = std::sqrt(std::pow(new_x,2) + std::pow(new_y,2));
+				float new_theta = scifir::atan_grade(new_y / new_x);
+				return vector_unit_nd(new_value,new_dimensions, {angle(new_theta)});
+			}
+
+			static vector_unit_nd cartesian_3d(const string& new_dimensions,float new_x,float new_y,float new_z)
+			{
+				float new_value = std::sqrt(std::pow(new_x,2) + std::pow(new_y,2) + std::pow(new_z,2));
+				float new_theta = scifir::atan_grade(new_y / new_x);
+				float new_phi = scifir::acos_grade(new_z / new_value);
+				return vector_unit_nd(new_value,new_dimensions, {angle(new_theta), angle(new_phi)});
+			}
+
+			static vector_unit_nd cylindrical(const string& new_dimensions,float new_p,angle new_theta,float new_z)
+			{
+				float new_value = std::sqrt(std::pow(new_p,2) + std::pow(new_z,2));
+				float new_phi = scifir::atan_grade(new_p / new_z);
+				return vector_unit_nd(new_value,new_dimensions, {new_theta, angle(new_phi)});
+			}
+
 			vector_unit_nd& operator =(const vector_unit_nd&);
 			vector_unit_nd& operator =(vector_unit_nd&&);
 			vector_unit_nd& operator =(const scalar_unit&);
