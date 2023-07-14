@@ -47,7 +47,7 @@ namespace scifir
 	vector_unit_nd::vector_unit_nd(const scalar_unit& x) : scalar_unit(x),angles()
 	{}
 
-	vector_unit_nd::vector_unit_nd(const scalar_unit& x,const vector<float>& new_angles)
+	vector_unit_nd::vector_unit_nd(const scalar_unit& x,const vector<float>& new_angles) : scalar_unit(x),angles()
 	{
 		for(const float& x_angle : new_angles)
 		{
@@ -56,20 +56,6 @@ namespace scifir
 	}
 
 	vector_unit_nd::vector_unit_nd(const scalar_unit& x,const vector<angle>& new_angles) : scalar_unit(x),angles(new_angles)
-	{}
-
-	vector_unit_nd::vector_unit_nd(scalar_unit&& x)
-	{}
-
-	vector_unit_nd::vector_unit_nd(scalar_unit&& x,const vector<float>& new_angles) : scalar_unit(x),angles()
-	{
-		for(const float& x_angle : new_angles)
-		{
-			angles.push_back(angle(x_angle));
-		}
-	}
-
-	vector_unit_nd::vector_unit_nd(scalar_unit&& x,const vector<angle>& new_angles) : scalar_unit(x),angles(new_angles)
 	{}
 
 	vector_unit_nd::vector_unit_nd(const string& init_scalar,const vector<float>& new_angles) : scalar_unit(init_scalar),angles()

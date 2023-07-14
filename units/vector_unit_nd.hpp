@@ -73,9 +73,6 @@ namespace scifir
 			explicit vector_unit_nd(const scalar_unit&);
 			explicit vector_unit_nd(const scalar_unit&,const vector<float>&);
 			explicit vector_unit_nd(const scalar_unit&,const vector<angle>&);
-			explicit vector_unit_nd(scalar_unit&&);
-			explicit vector_unit_nd(scalar_unit&&,const vector<float>&);
-			explicit vector_unit_nd(scalar_unit&&,const vector<angle>&);
 			explicit vector_unit_nd(const string&,const vector<float>&);
 			explicit vector_unit_nd(const string&,const vector<angle>&);
 			explicit vector_unit_nd(const string&);

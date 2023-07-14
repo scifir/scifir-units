@@ -34,7 +34,7 @@ namespace scifir
 		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
 		if (init_angle_unicode.endsWith(u'º'))
 		{
-			init_angle_unicode = init_angle_unicode.tempSubString(0,-1);
+			init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);
 		}
 		init_angle.clear();
 		init_angle_unicode.toUTF8String(init_angle);
@@ -80,7 +80,7 @@ namespace scifir
 		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
 		if (init_angle_unicode.endsWith(u'º'))
 		{
-			init_angle_unicode = init_angle_unicode.tempSubString(0,-1);
+			init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);
 		}
 		
 		init_angle.clear();
