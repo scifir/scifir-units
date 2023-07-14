@@ -32,7 +32,7 @@ namespace scifir
 	angle::angle(string init_angle) : value()
 	{
 		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
-		if (init_angle_unicode.endsWith(u'º'))
+		if (init_angle_unicode.endsWith(u'°') or init_angle_unicode.endsWith(u'º'))
 		{
 			init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);
 		}
@@ -78,7 +78,7 @@ namespace scifir
 	angle& angle::operator=(string init_angle)
 	{
 		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
-		if (init_angle_unicode.endsWith(u'º'))
+		if (init_angle_unicode.endsWith(u'°') or init_angle_unicode.endsWith(u'º'))
 		{
 			init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);
 		}
