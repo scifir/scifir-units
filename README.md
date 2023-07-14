@@ -217,7 +217,7 @@ The basic dimensions of this library, for scalar_unit classes, all the different
 | Luminous intensity | cd | Measures the intensity of light |
 | Byte | B | Measures the amount of information |
 | Money | money | Measures the economic value of an entity |
-| Memo | memo | Measures the size occupied by a memory inside the brain of an animal, including human brains |
+| Memo | memo | Measures the size occupied by a memory inside the brain of an animal, including human brains. Created by Ismael Correa, it's not an official basic dimension of the SI system of units |
 
 There are also derived dimensions of those basic dimensions, which are documented in the reference. Yet, you should memorize all those basic dimensions.
 
