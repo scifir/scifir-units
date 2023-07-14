@@ -201,6 +201,26 @@ a += x; // Adds the scalar_unit to the string
 string b = "x: " + x;
 string c = x + " value";
 ```
+
+The basic dimensions of this library, for scalar_unit classes, all the different vector_unit classes, and all other classes that handle units, are the following. They are all in SI units, excepting memo, which is a basic dimension created by Ismael Correa, the author of this library, to measure the size occupied by a memory inside the animal brain, including human brains.
+
+| Name | Symbol | Description
+| ----- | --- | --------------------------|
+| Length | m | Measures the length occupied in space by an object |
+| Time | s | Measures the duration in time of some event |
+| Mass | g | Measures the amount of substance related to the strength of a gravitational field |
+| Radian | rad | Measures the size of an angle |
+| Steradian | sr | Measures the size of a solid angle |
+| Coulomb | C | Measures the amount of charge |
+| Temperature | K | Measures the amount of hotness or coldness. Microscopically it measures the speed at which the particles that constitute the matter are moving |
+| Mole | mol | Measures the amount of a substance related to the number of its constituent particles |
+| Luminous intensity | cd | Measures the intensity of light |
+| Byte | B | Measures the amount of information |
+| Money | money | Measures the economic value of an entity |
+| Memo | memo | Measures the size occupied by a memory inside the brain of an animal, including human brains |
+
+There are also derived dimensions of those basic dimensions, which are documented in the reference. Yet, you should memorize all those basic dimensions.
+
 ### Vector units in 2D
 
 Vector units in 2D allow to do calculations for lab machines and simulations of physics and other areas of science in 2 dimensions. They inherit scalar_unit, and additional to his member-variables they include the member-variable theta, of class angle (described above).
