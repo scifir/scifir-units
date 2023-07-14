@@ -62,11 +62,11 @@ All the unit classes, and also the other related classes of this library, can be
 
 The initialization strings are the following:
 
-- **angle**: "37º"
+- **angle**: "37°"
 - **scalar_unit**: "1 km"
-- **vector_unit_2d**: "5 km 10º"
-- **vector_unit_3d**: "3 km 10º 20º"
-- **vector_unit_nd**: "3 km 10º 20º 35º"
+- **vector_unit_2d**: "5 km 10°"
+- **vector_unit_3d**: "3 km 10° 20°"
+- **vector_unit_nd**: "3 km 10° 20° 35°"
 - **point_1d**: "3 m" or "(3 m)"
 - **point_2d**: "2 m,4 m" or "(2 m,4 m)"
 - **point_3d**: "1 m,9 m,3 m" or "(1 m,9 m,3 m)"
@@ -75,9 +75,9 @@ The initialization strings are the following:
 - **coordinates_2d**: "1 m,2 m" or "(1 m,2 m)"
 - **coordinates_3d**: "1 m,7 m,5 m" or "(1 m,7 m,5 m)"
 - **coordinates_nd**: "1 m,7 m,5 m,8 m" or "(1 m,7 m,5 m,8 m)"
-- **coordinates_2dr**: "1 m,2 m;45º" or "(1 m,2 m;45º)"
-- **coordinates_3dr**: "1 m,7 m,5 m;17º 25º" or "(1 m,7 m,5 m;17º 25º)"
-- **coordinates_ndr**: "1 m,7 m,5 m,8 m;32º 56º 78º" or "(1 m,7 m,5 m,8 m;32º 56º 78º)"
+- **coordinates_2dr**: "1 m,2 m;45°" or "(1 m,2 m;45°)"
+- **coordinates_3dr**: "1 m,7 m,5 m;17° 25°" or "(1 m,7 m,5 m;17° 25°)"
+- **coordinates_ndr**: "1 m,7 m,5 m,8 m;32° 56° 78°" or "(1 m,7 m,5 m,8 m;32° 56° 78°)"
 
 In order to store units inside a file an initialization string should be used. For any purpose, when converting some of those classes to an string, the string initialization has to be always used.
 
@@ -228,9 +228,9 @@ Vector units in 2D allow to do calculations for lab machines and simulations of 
 An example of use of it is the following:
 
 ```cpp
-force_2d x = force_2d(21_N,56_angle); // Creates a force_2d with a value of 21 N and an inclination angle of 56º
-force_2d y = force_2d(32,"mN",11); // vector_unid_2d of force with values "32 mN 11º"
-vector_unit_2d z = vector_unid_2d(10,"kPa",48); // vector_unit_2d with values "10 kPa 48º"
+force_2d x = force_2d(21_N,56_angle); // Creates a force_2d with a value of 21 N and an inclination angle of 56°
+force_2d y = force_2d(32,"mN",11); // vector_unid_2d of force with values "32 mN 11°"
+vector_unit_2d z = vector_unid_2d(10,"kPa",48); // vector_unit_2d with values "10 kPa 48°"
 
 x.theta += 21_angle; // theta of x can be accessed directed and used as any angle, it's the better way to use it
 
@@ -259,7 +259,7 @@ force f = x.y_projection(); // vector_unid_2d projection on the y axis
 
 x.invert(); // Now x points to the opposite direction
 
-string x_display = to_string(x); // Prints "21N 56º"
+string x_display = to_string(x); // Prints "21N 56°"
 energy c = norm(x) * 2_m; // Use of norm() for vector_unit_2d
 vector_unid_2d xy = sqrt(x^4); // Gives x ^ 2
 vector_unid_2d xy = sqrt_nth(x^4,4); // Gives x
@@ -272,13 +272,13 @@ if (same_direction(x,y)) // Gives true if the vectors point to the same directio
 if (parallel(x,y)) // Gives true if the vectors are parallel (point to the same or to the opposite direction)
 {}
 
-if (orthogonal(x,y)) // Gives true if the vectors are orthogonal (have 90º of difference in the direction they point to)
+if (orthogonal(x,y)) // Gives true if the vectors are orthogonal (have 90° of difference in the direction they point to)
 {}
 
 if (x == y) // Gives true if the two vector_unit_2d are equal. There's the operator != too
 {}
 
-if (x == "21N 56º") // Gives true if the vector is the specified by the string. There's the operator != too
+if (x == "21N 56°") // Gives true if the vector is the specified by the string. There's the operator != too
 {}
 
 string b;
@@ -300,9 +300,9 @@ Vector units in 3D are the most useful vectorial units. They allow to do all the
 An example of use is the following:
 
 ```cpp
-force_3d x = force_3d(45_N,12_angle); // Creates a force_3d with a value of 45 N and an inclination angle of 12º
-force_3d y = force_3d(78,"kN",67); // vector_unid_3d of force with values "78 mN 67º"
-vector_unit_3d z = vector_unid_3d(100,"MPa",60); // vector_unit_3d with values "100 MPa 60º"
+force_3d x = force_3d(45_N,12_angle); // Creates a force_3d with a value of 45 N and an inclination angle of 12°
+force_3d y = force_3d(78,"kN",67); // vector_unid_3d of force with values "78 mN 67°"
+vector_unit_3d z = vector_unid_3d(100,"MPa",60); // vector_unit_3d with values "100 MPa 60°"
 
 x.theta += 16; // theta of x can be accessed directed and used as any angle, it's the better way to use it
 x.phi = 90; // phi of x can be accessed directly too
@@ -333,7 +333,7 @@ force f = x.z_projection(); // vector_unid_3d projection on the z axis
 
 x.invert(); // Now x points to the opposite direction
 
-string x_display = to_string(x); // Prints "45N 12º"
+string x_display = to_string(x); // Prints "45N 12°"
 energy c = norm(x) * 2_m; // Use of norm() for vector_unit_3d
 vector_unid_3d xy = sqrt(x^4); // Gives x ^ 2
 vector_unid_3d xy = sqrt_nth(x^4,4); // Gives x
@@ -347,13 +347,13 @@ if (same_direction(x,y)) // Gives true if the vectors point to the same directio
 if (parallel(x,y)) // Gives true if the vectors are parallel (point to the same or to the opposite direction)
 {}
 
-if (orthogonal(x,y)) // Gives true if the vectors are orthogonal (have 90º of difference in the direction they point to)
+if (orthogonal(x,y)) // Gives true if the vectors are orthogonal (have 90° of difference in the direction they point to)
 {}
 
 if (x == y) // Gives true if the two vector_unit_3d are equal. There's the operator != too
 {}
 
-if (x == "45N 12º") // Gives true if the vector is the specified by the string. There's the operator != too
+if (x == "45N 12°") // Gives true if the vector is the specified by the string. There's the operator != too
 {}
 
 string b;
@@ -375,9 +375,9 @@ Vector units in ND are very interesting vector units. They allow to operate in N
 An example of use is the following:
 
 ```cpp
-force_nd x = force_nd(29_N,{8_angle,16_angle,32_angle}); // Creates a force_nd with a value of 29 N and an inclination angle of 8º, another of 16º and another of 32º
-force_nd y = force_nd(44,"dN",{55,13,42}); // vector_unid_nd of force with values "44 dN 55º 13º 42º"
-vector_unit_nd z = vector_unit_nd(81,"MPa",{32,44,67}); // vector_unit_nd with values "81 MPa 32º 44º 67º"
+force_nd x = force_nd(29_N,{8_angle,16_angle,32_angle}); // Creates a force_nd with a value of 29 N and an inclination angle of 8°, another of 16° and another of 32°
+force_nd y = force_nd(44,"dN",{55,13,42}); // vector_unid_nd of force with values "44 dN 55° 13° 42°"
+vector_unit_nd z = vector_unit_nd(81,"MPa",{32,44,67}); // vector_unit_nd with values "81 MPa 32° 44° 67°"
 
 x.angles[0] += 7; // theta of x can be accessed directed and used as any angle, it's the better way to use it
 x.angles[1] = 71; // phi of x can be accessed directly too
@@ -411,7 +411,7 @@ force f = x.n_projection(2); // vector_unit_nd projection on the y axis, any axi
 
 x.invert(); // Now x points to the opposite direction
 
-string x_display = to_string(x); // Prints "29N 8º 16º 32º"
+string x_display = to_string(x); // Prints "29N 8° 16° 32°"
 energy c = norm(x) * 2_m; // Use of norm() for vector_unit_nd
 vector_unid_nd xy = sqrt(x^4); // Gives x ^ 2
 vector_unid_nd xy = sqrt_nth(x^4,4); // Gives x
@@ -428,13 +428,13 @@ if (same_direction(x,y)) // Gives true if the vectors point to the same directio
 if (parallel(x,y)) // Gives true if the vectors are parallel (point to the same or to the opposite direction)
 {}
 
-if (orthogonal(x,y)) // Gives true if the vectors are orthogonal (have 90º of difference in the direction they point to)
+if (orthogonal(x,y)) // Gives true if the vectors are orthogonal (have 90° of difference in the direction they point to)
 {}
 
 if (x == y) // Gives true if the two vector_unit_nd are equal. There's the operator != too
 {}
 
-if (x == "29N 8º 16º 32º") // Gives true if the vector is the specified by the string. There's the operator != too
+if (x == "29N 8° 16° 32°") // Gives true if the vector is the specified by the string. There's the operator != too
 {}
 
 string b;
@@ -515,7 +515,7 @@ x.set_position(1_km,2_hm); // the position is now "1 km,2 hm"
 x.set_position(1_m,angle(10)); // the position has been specified using polar coordinates
 x.rotate(angle(10)); // rotate the position in the angle specified related to the origin
 x.move(1_m,5_cm); // move 1 m to the right and 5 cm up
-x.move(3_m,angle(20)); // move 3 m and 20º specified in polar coordinates
+x.move(3_m,angle(20)); // move 3 m and 20° specified in polar coordinates
 displacement_2d c_displacement = displacement_2d("2 km",10); // create a displacement_2d to specify a movement
 x.move(c_displacement); // move in the specified displacement
 length x_distance = x.distance_to_origin(); // gives the absolute distance to the origin
@@ -575,8 +575,8 @@ x.rotate_in_x(angle(10)); // rotate the position in the angle specified related 
 x.rotate_in_y(angle(20)); // rotate the position in the angle specified related to the y axis
 x.rotate_in_z(angle(35)); // rotate the position in the angle specified related to the z axis
 x.move(1_m,5_cm,3_cm); // move 1 m to the right, 5 cm up and 3 cm depth
-x.move(3_m,angle(20),2_m); // move 3 m, 20º and 2 m specified in cylindrical coordinates
-x.move(5_m,angle(15),angle(10)); // move 5 m, 15º and 10º specified in spherical coordinates
+x.move(3_m,angle(20),2_m); // move 3 m, 20° and 2 m specified in cylindrical coordinates
+x.move(5_m,angle(15),angle(10)); // move 5 m, 15° and 10° specified in spherical coordinates
 displacement_3d c_displacement = displacement_3d("2 km",10,15); // create a displacement_3d to specify a movement
 x.move(c_displacement); // move in the specified displacement
 length x_distance = x.distance_to_origin(); // gives the absolute distance to the origin
