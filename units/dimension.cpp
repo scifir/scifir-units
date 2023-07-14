@@ -43,7 +43,7 @@ namespace scifir
 	{
 		string dimension_name;
 		string prefix_name;
-		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "h" and init_dimension != "d" and init_dimension != "cd" and init_dimension != "money")
+		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "h" and init_dimension != "d" and init_dimension != "cd" and init_dimension != "money" and init_dimension != "memo")
 		{
 			prefix_name = init_dimension.substr(0,1);
 			dimension_name = init_dimension.substr(1);
@@ -235,6 +235,10 @@ namespace scifir
 		{
 			dimension_type = dimension::pixel;
 		}
+		else if(dimension_name == "memo")
+		{
+			dimension_type = dimension::memo;
+		}
 		else if(dimension_name == "")
 		{
 			dimension_type = dimension::none;
@@ -377,6 +381,8 @@ namespace scifir
 				return "money";
 			case dimension::pixel:
 				return "pixel";
+			case dimension::memo:
+				return "memo";
 			case dimension::none:
 				return "none";
 		}
@@ -481,6 +487,8 @@ namespace scifir
 				return "money";
 			case dimension::pixel:
 				return "px";
+			case dimension::memo:
+				return "memo";
 			case dimension::none:
 				return "empty";
 		}
@@ -585,6 +593,8 @@ namespace scifir
 				return 1l;
 			case dimension::pixel:
 				return 0.00026l;
+			case dimension::memo:
+				return 1l;
 			case dimension::none:
 				return 1l;
 		}
@@ -694,6 +704,8 @@ namespace scifir
 				return true;
 			case dimension::pixel:
 				return true;
+			case dimension::memo:
+				return true;
 			case dimension::none:
 				return true;
 		}
@@ -798,6 +810,8 @@ namespace scifir
 				return true;
 			case dimension::pixel:
 				return false;
+			case dimension::memo:
+				return true;
 			case dimension::none:
 				return true;
 		}
@@ -1026,6 +1040,9 @@ namespace scifir
 				break;
 			case dimension::pixel:
 				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
+				break;
+			case dimension::memo:
+				basic_dimensions.push_back(dimension(dimension::memo,prefix::no_prefix,dimension::POSITIVE));
 				break;
 			case dimension::none:
 				basic_dimensions.push_back(dimension(dimension::none,prefix::no_prefix,dimension::POSITIVE));

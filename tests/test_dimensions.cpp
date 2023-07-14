@@ -45,6 +45,8 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		REQUIRE (bool(j.get_symbol() == "sr"));
 		dimension k = dimension("money",dimension::POSITIVE);
 		REQUIRE (bool(k.get_symbol() == "money"));
+		dimension l = dimension("memo",dimension::POSITIVE);
+		REQUIRE (bool(l.get_symbol() == "memo"));
 	}
 	
 	SECTION("Testing of length classes") {
