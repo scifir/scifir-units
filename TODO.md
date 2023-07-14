@@ -2,49 +2,51 @@ MSCI UNITS - VERSION 2
 
 // COORDINATES AND POINTS
 // TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd
-// TODO: displacement_nd in point_nd class should be initialized with zero dimensions instead of m?
-// TODO: add as default template argument length for all coordinates classes
+// TODO: displacement_nd in point_nd class should be initialized with zero dimensions instead of m?. Check the all the default dimensions cases for point_nd, coordinates_nd and coordinates_ndr
+// TODO: think on the different cases of use of coordinates and document them, including the use of an origin
 
 // VECTOR FIELDS
 // TODO: vector_field (it should operate with vector_units and maybe with scalar_units. With (x,y,z) it gives the respective vector). +, - and ^ with vector_field, + - * with vector_unit
 // TODO: Typecasting of vector_unit to math_vector, boost_Ublas_vector, etc. Same for math_vector to vector_unit
 
 // C++
-// TODO: delete the use of namespace std from is_number
 // TODO: use of constexpr
+// TODO: change char in enum for int8_t
+// TODO: use scientific notation for the avogadro constant
+// TODO: change the use of const-reference to value and std::move in constructors
+// TODO: change the use of const-reference to value and std::move in other places
 
 // DIMENSIONS
-// TODO: sqrt() and sqrt_nth() should cover the case of abbreviations in both the numerator and the denominator. sqrt_nth() should be handled more
-// TODO: add display_derived() to scalar_unit by finishing first the derived dimensions of the dimension class
+// TODO: support the binary prefixes too
+// TODO: see how to free the char[]
 
 // UNITS
-// TODO: vector_unit classes can have constructors specifying the axis instead of the length and angles, and inside the constructor the value and angles get calculated
+// TODO: finish the tests of all the unit classes
+
+// TODO: to_string() of vector_unit classes should truncate the amount of digits to display for the value and for the angles
 
 // TODO: see what to do with the imprecision when converting the string to a float, it's needed to have perfect precision, not an approximated conversion instead
 
-// TODO: allow to display in any conversion. By default it should always display in SI units, only if a conversion is expressly specified in the display functions the conversion is the dimension that gets displayed
+// TODO: allow to display in any conversion. By default it should always display in SI units, only if a conversion is expressly specified in the display functions the conversion is then the dimension that gets displayed
+
+// TODO: add the emotional dimensions for robotics and similar purposes. Think of the names for rage, mourning, etc related to the dimensions, which has to be a different name than the name of the emotion
+
+// TODO: vectorial_display for vector_unit classes using custom_display() and display_derived() of scalar_unit, but adding the angles next to it
+
+// TODO: check dimensions in all inheriting classes of scalar_unit and vector_unit, it's needed another constructor
 
 // SPECIAL UNITS
-// TODO: pixel_color<>. Use monochrome_pixel, truecolor_pixel, etc, as typedefs of pixel_color<>
-// TODO: add the conversion of pixel to mm as another conversion, apart from the special unit of pixels and from the pixel dimension. It should work only for length classes
-
-// TODO: time class should have functions display_years(), display_months(), display_days(), display_hours(), display_minutes(), display_seconds()
-// TODO: time class function to_duration() which gives a std::duration object with the time specified
-// TODO: another name for time class, maybe time_lapse
-
-// TODO: mole class should have initialization with ppm and ppb. They should be deleted as dimensions
-
 // TODO: complete color class like coordinate classes, with all the getters of all the different color versions, like get_h(), get_s(), get_v()
+// TODO: pixel_color<>. Use monochrome_pixel, truecolor_pixel, etc, as typedefs of pixel_color<>
 
 // TODO: complex_number<> should have trigonometric functions for complex numbers
 
-// TODO: size_nd and volume_nd classes
-// TODO: maybe create a mesh_point class, or vector<point_3d>
+// TODO: maybe create a mesh_3d class, or vector<point_3d<>>
 
 // TODO: study the geographic coordinates deeply, and see if to add something more related to them
 
-// TODO: implement the parts per million and the parts per billion
-// TODO: percentage class should be allowed to be initialized with ppm and ppb
+// CALCULUS WITH UNITS
+// TODO: think if to add the functions of calculations or to add example of calculations in the documentation
 
 // UNITS - ADVANCED
 // TODO: maybe delete the dimensions member-variable of scalar_unit, and use instead another system for handling prefixes. The dimensions can be automatic based on their class. One possibility is to use an empty array and, when it's empty, to send the fixed dimensions of the class instead, and only when changing something to add the dimensions there
@@ -62,6 +64,10 @@ MSCI UNITS - VERSION 2
 // TODO: think if to change the float for a double, or if to make scalar_unit a template class converting the default type of the value to float type
 // TODO: support the conversions natively
 // TODO: function to_SI_convention(vector<scalar_unit>&)
+// TODO: finish initial_dimensions_get_structure() and get_dimensions_match() related to the new implementation
+
+// BASIC UNITS
+// TODO: think if to add another concentration class, the previous one has been deprecated
 
 // SPECIAL UNIS - EXTRA
 // ip class? check networking libraries of C++ and decide if to add it here
@@ -72,6 +78,12 @@ MSCI UNITS - VERSION 2
 // TODO: Publish the ISO of geographic location based on aid and zid classes
 // TODO: See if to make an ISO of an official symbol for money (not a concrete money of a country, but a universal one)
 // TODO: Add "depth" to an ISO of names for the lengths of objects (width, height and depth are the names). It's needed to have a name in spanish for the depth too
+// TODO: Maybe create an "ISO" of geographic positioning taking the major axis of the planet, which can be the Earth or not, and adding 50 km to it, in order to have a border of safety in order to be sure that no point remains uncovered by the imaginary sphere that the geographic positioning creates around the planet. It can be used for any planet of the universe. The center of the planet is considered always the geometrical one, not the center of mass, because that last one changes with changes of the distribution of mass inside the planet
+
+// ISO C++
+// TODO: add º to the string literals
+// TODO: add % to the string literals
+// TODO: add the possibility to create class names starting with numbers
 
 // MATERIAL_VECTOR_UNIT
 // TODO: decide how it'll be, in order to include real space to the vector_unit?
@@ -97,10 +109,12 @@ MSCI UNITS - VERSION 2
 // TODO: document that the pixel in dimension is only as length, not as a pixel on the screen as is in the pixel class
 // TODO: document how ppm and ppb work, also in the theorical sense
 // TODO: document an example of converting all currencies to money dimension, with different values. Use the currency abreviations of the ISO of currencies
+// TODO: add nomenclature of units
 
 // RELEASE
 // TODO: configure CMake with cpack
 // TODO: see what to do with msci.pc
+// TODO: see what to do to configure optimizations
 
 // MATRIX
 // TODO: See if it's best to use template arguments for row and column or if to store those values as member-variables
@@ -140,3 +154,5 @@ MSCI UNITS - VERSION 2
 // Color: https://en.wikipedia.org/wiki/Color
 // RGB color model: https://en.wikipedia.org/wiki/RGB_color_model
 // Color model: https://en.wikipedia.org/wiki/Color_model
+// Unit prefix: https://en.wikipedia.org/wiki/Unit_prefix
+// Metric prefix: https://en.wikipedia.org/wiki/Metric_prefix
