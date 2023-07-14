@@ -325,12 +325,12 @@ namespace scifir
 
 	inline float polar_to_cartesian_2d_x(float r,const angle& angle)
 	{
-		return r*scifir::cos(angle);
+		return r * scifir::cos(angle);
 	}
 
 	inline float polar_to_cartesian_2d_y(float r,const angle& angle)
 	{
-		return r*scifir::sin(angle);
+		return r * scifir::sin(angle);
 	}
 }
 

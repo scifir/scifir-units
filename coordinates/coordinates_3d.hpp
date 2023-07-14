@@ -560,7 +560,7 @@ namespace scifir
 
 	inline float cartesian_3d_to_cylindrical_theta(float x,float y,float z)
 	{
-		return std::atan(y/x);
+		return scifir::atan_grade(y / x);
 	}
 
 	inline float cartesian_3d_to_cylindrical_z(float x,float y,float z)
@@ -575,12 +575,12 @@ namespace scifir
 
 	inline float cartesian_3d_to_spherical_theta(float x,float y,float z)
 	{
-		return std::atan(y/x);
+		return scifir::atan_grade(y / x);
 	}
 
 	inline float cartesian_3d_to_spherical_phi(float x,float y,float z)
 	{
-		return std::acos(z/std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)));
+		return scifir::acos_grade(z / std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)));
 	}
 
 	inline float spherical_to_cartesian_3d_x(float r,const angle& angle1, const angle& angle2)
@@ -628,19 +628,19 @@ namespace scifir
 		return z;
 	}
 
-	inline float cylindrical_to_spherical_r(float r,const angle& angle, float z)
+	inline float cylindrical_to_spherical_r(float p,const angle& angle, float z)
 	{
-		return std::sqrt(std::pow(r,2) + std::pow(z,2));
+		return std::sqrt(std::pow(p,2) + std::pow(z,2));
 	}
 
-	inline float cylindrical_to_spherical_theta(float r,const angle& angle, float z)
+	inline float cylindrical_to_spherical_theta(float p,const angle& angle, float z)
 	{
 		return angle.get_value();
 	}
 
-	inline float cylindrical_to_spherical_phi(float r,const angle& angle, float z)
+	inline float cylindrical_to_spherical_phi(float p,const angle& angle, float z)
 	{
-		return std::atan(r/z);
+		return scifir::atan_grade(p / z);
 	}
 }
 
