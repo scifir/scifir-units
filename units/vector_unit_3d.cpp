@@ -1,5 +1,7 @@
 #include "units/vector_unit_3d.hpp"
+
 #include "coordinates/coordinates_3d.hpp"
+#include "util/types.hpp"
 
 using namespace std;
 
@@ -311,7 +313,7 @@ namespace scifir
 	string to_string(const vector_unit_3d& x)
 	{
 		ostringstream out;
-		out << x.get_value() << " " << x.display_dimensions() << " " << x.theta.get_value() << "\u03B8 " << x.phi.get_value() << "\u03A6";
+		out << x.display(2) << " " << display_float(x.theta.get_value(),2) << "\u03B8 " << display_float(x.phi.get_value(),2) << "\u03A6";
 		return out.str();
 	}
 

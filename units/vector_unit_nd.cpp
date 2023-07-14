@@ -590,10 +590,10 @@ namespace scifir
 	string to_string(const vector_unit_nd& x)
 	{
 		ostringstream out;
-		out << x.get_value() << " " << x.display_dimensions();
+		out << x.display(2);
 		for (const angle& x_angle : x.angles)
 		{
-			out << " " << x_angle;
+			out << " " << x_angle.display(2);
 		}
 		return out.str();
 	}

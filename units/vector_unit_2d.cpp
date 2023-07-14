@@ -1,6 +1,7 @@
 #include "units/vector_unit_2d.hpp"
 
 #include "coordinates/coordinates_2d.hpp"
+#include "util/types.hpp"
 
 #include "boost/algorithm/string.hpp"
 
@@ -170,7 +171,7 @@ namespace scifir
 	string to_string(const vector_unit_2d& x)
 	{
 		ostringstream out;
-		out << x.get_value() << " " << x.display_dimensions() << " " << x.theta.get_value() << "\u03B8";
+		out << x.display(2) << " " << display_float(x.theta.get_value(),2) << "\u03B8";
 		return out.str();
 	}
 
