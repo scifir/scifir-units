@@ -93,11 +93,11 @@ namespace scifir
 	{
 		vector<string> values;
 		boost::split(values,init_vector_3d,boost::is_any_of(" "));
-		if (values.size() == 3)
+		if (values.size() == 4)
 		{
-			set_from_string(values[0]);
-			theta = angle(values[1]);
-			phi = angle(values[2]);
+			set_from_string(values[0] + " " + values[1]);
+			theta = angle(values[2]);
+			phi = angle(values[3]);
 		}
 	}
 	

@@ -87,10 +87,10 @@ namespace scifir
 	{
 		vector<string> values;
 		boost::split(values,init_vector_nd,boost::is_any_of(" "));
-		set_from_string(values[0]);
-		if (values.size() > 1)
+		set_from_string(values[0] + " " + values[1]);
+		if (values.size() > 2)
 		{
-			for (int i = 1; i < values.size(); i++)
+			for (int i = 2; i < values.size(); i++)
 			{
 				angles.push_back(angle(values[i]));
 			}

@@ -36,7 +36,8 @@ namespace scifir
 		{
 			init_angle_unicode = init_angle_unicode.tempSubString(0,-1);
 		}
-		init_angle = init_angle_unicode.toUTF8String(init_angle);
+		init_angle.clear();
+		init_angle_unicode.toUTF8String(init_angle);
 		value = stof(init_angle);
 		normalize_value();
 	}
@@ -81,7 +82,9 @@ namespace scifir
 		{
 			init_angle_unicode = init_angle_unicode.tempSubString(0,-1);
 		}
-		init_angle = init_angle_unicode.toUTF8String(init_angle);
+		
+		init_angle.clear();
+		init_angle_unicode.toUTF8String(init_angle);
 		value = stof(init_angle);
 		normalize_value();
 		return *this;

@@ -51,10 +51,10 @@ namespace scifir
 	{
 		vector<string> values;
 		boost::split(values,init_vector_2d,boost::is_any_of(" "));
-		if (values.size() == 2)
+		if (values.size() == 3)
 		{
-			set_from_string(values[0]);
-			theta = angle(values[1]);
+			set_from_string(values[0] + " " + values[1]);
+			theta = angle(values[2]);
 		}
 	}
 	

@@ -69,16 +69,16 @@ namespace scifir
 			explicit vector_unit_2d(const string&,float);
 			explicit vector_unit_2d(const string&,const angle&);
 			explicit vector_unit_2d(const string&); // Example of initialization string "1N 50º"
-			
+
 			vector_unit_2d& operator =(const vector_unit_2d&);
 			vector_unit_2d& operator =(vector_unit_2d&&);
-			
+
 			vector_unit_2d& operator =(const scalar_unit&);
 			vector_unit_2d& operator =(scalar_unit&&);
-			
+
 			void operator +=(const vector_unit_2d&);
 			void operator -=(vector_unit_2d);
-			
+
 			vector_unit_2d operator +(const vector_unit_2d&) const;
 			vector_unit_2d operator -(vector_unit_2d) const;
 
@@ -143,10 +143,10 @@ namespace scifir
 			{
 				theta.invert();
 			}
-			
+
 			angle theta;
 	};
-	
+
 	string to_string(const vector_unit_2d&);
 	scalar_unit norm(const vector_unit_2d&);
 	vector_unit_2d sqrt(const vector_unit_2d&);

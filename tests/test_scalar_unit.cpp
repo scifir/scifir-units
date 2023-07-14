@@ -10,6 +10,21 @@
 using namespace std;
 
 TEST_CASE("scalar_unit class","Full test of scalar_unit class") {
+	SECTION("Initialization of scalar_unit classes")
+	{
+		scalar_unit a;
+		REQUIRE (bool(to_string(a) == "0 [empty]"));
+		scalar_unit b = scalar_unit("100 g");
+		scalar_unit c = scalar_unit(b);
+		REQUIRE (bool(to_string(c) == "1 hg"));
+		scalar_unit d = scalar_unit(100,"g");
+		REQUIRE (bool(to_string(d) == "1 hg"));
+		scalar_unit e = scalar_unit(100,{dimension("g",dimension::POSITIVE)});
+		REQUIRE (bool(to_string(e) == "1 hg"));
+		scalar_unit f = scalar_unit("100 g");
+		REQUIRE (bool(to_string(f) == "1 hg"));
+	}
+	
 	mass a(100,"g");
 	ostringstream a_out;
 	a_out << a;
