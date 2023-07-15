@@ -111,7 +111,7 @@ TEST_CASE("scalar_unit class","Full test of scalar_unit class") {
 	scalar_unit g = scalar_unit("1000 km*m*m");
 	REQUIRE (bool(sqrt_nth(g,3) == "100 m"));
 	scalar_unit h = 10_N;
-	REQUIRE (bool(h.display_derived() == "10 kg*m/s2"));
+	REQUIRE (bool(h.derived_display() == "10 kg*m/s2"));
 	
 	SECTION("is_scalar_unit") {
 		REQUIRE(bool(is_scalar_unit("1 m") == true));

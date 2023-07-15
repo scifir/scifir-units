@@ -37,5 +37,13 @@ TEST_CASE("class vector_unit_2d","Complete test of vector_unit_2d")
 		vector_unit_2d n = vector_unit_2d::cartesian_2d("m",1,1);
 		REQUIRE (bool(to_string(n) == "1.41 m 45\u03B8"));
 	}
+
+	SECTION("Display of vector_unit_2d classes")
+	{
+		vector_unit_2d a = vector_unit_2d(1,"N",20);
+		REQUIRE (bool(a.vectorial_display() == "1 N 20\u03B8"));
+		REQUIRE (bool(a.vectorial_derived_display() == "1 kg*m/s2 20\u03B8"));
+		REQUIRE (bool(a.vectorial_custom_display("g*m/s2") == "1000 g*m/s2 20\u03B8"));
+	}
 }
 

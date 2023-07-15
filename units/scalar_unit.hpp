@@ -184,7 +184,7 @@ namespace scifir
 			}
 
 			string display(int = 2) const;
-			string display_derived(int = 2) const;
+			string derived_display(int = 2) const;
 			string custom_display(const string&,int = 2) const;
 
 		protected:

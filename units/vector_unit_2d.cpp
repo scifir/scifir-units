@@ -167,7 +167,28 @@ namespace scifir
 			return vector_unit_2d();
 		}
 	}
-	
+
+	string vector_unit_2d::vectorial_display(int number_of_decimals) const
+	{
+		ostringstream out;
+		out << display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\u03B8";
+		return out.str();
+	}
+
+	string vector_unit_2d::vectorial_derived_display(int number_of_decimals) const
+	{
+		ostringstream out;
+		out << derived_display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\u03B8";
+		return out.str();
+	}
+
+	string vector_unit_2d::vectorial_custom_display(const string& new_dimensions_str,int number_of_decimals) const
+	{
+		ostringstream out;
+		out << custom_display(new_dimensions_str,number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\u03B8";
+		return out.str();
+	}
+
 	string to_string(const vector_unit_2d& x)
 	{
 		ostringstream out;

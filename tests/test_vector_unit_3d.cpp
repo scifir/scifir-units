@@ -39,4 +39,12 @@ TEST_CASE("class vector_unit_3d","Complete test of vector_unit_3d")
 		vector_unit_3d o = vector_unit_3d::cylindrical("m",1,angle(45),1);
 		REQUIRE (bool(to_string(o) == "1.41 m 45θ 45Φ"));
 	}
+
+	SECTION("Display of vector_unit_3d classes")
+	{
+		vector_unit_3d a = vector_unit_3d(1,"N",20,20);
+		REQUIRE (bool(a.vectorial_display() == "1 N 20\u03B8 20\u03A6"));
+		REQUIRE (bool(a.vectorial_derived_display() == "1 kg*m/s2 20\u03B8 20\u03A6"));
+		REQUIRE (bool(a.vectorial_custom_display("g*m/s2") == "1000 g*m/s2 20\u03B8 20\u03A6"));
+	}
 }

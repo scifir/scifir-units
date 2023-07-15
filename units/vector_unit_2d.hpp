@@ -149,6 +149,10 @@ namespace scifir
 				theta.invert();
 			}
 
+			string vectorial_display(int = 2) const;
+			string vectorial_derived_display(int = 2) const;
+			string vectorial_custom_display(const string&,int = 2) const;
+
 			angle theta;
 	};
 

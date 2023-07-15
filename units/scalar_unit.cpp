@@ -352,7 +352,7 @@ namespace scifir
 		return output.str();
 	}
 
-	string scalar_unit::display_derived(int number_of_decimals) const
+	string scalar_unit::derived_display(int number_of_decimals) const
 	{
 		ostringstream output;
 		long double x_value = get_value();
@@ -391,6 +391,18 @@ namespace scifir
 				else if (x_dimension.dimension_sign == dimension::NEGATIVE)
 				{
 					new_value /= x_dimension.get_conversion_factor();
+					new_value /= x_dimension.prefix_math();
+				}
+			}
+			vector<dimension> derived_dimensions = create_derived_dimensions(dimensions);
+			for(const dimension& x_dimension : derived_dimensions)
+			{
+				if (x_dimension.dimension_sign == dimension::POSITIVE)
+				{
+					new_value *= x_dimension.prefix_math();
+				}
+				else if (x_dimension.dimension_sign == dimension::NEGATIVE)
+				{
 					new_value /= x_dimension.prefix_math();
 				}
 			}

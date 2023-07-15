@@ -41,5 +41,13 @@ TEST_CASE("class vector_unit_nd","Complete test of vector_unit_nd")
 		vector_unit_nd p = vector_unit_nd::cylindrical("m",1,angle(45),1);
 		REQUIRE (bool(to_string(p) == "1.41 m 45° 45°"));
 	}
+
+	SECTION("Display of vector_unit_nd classes")
+	{
+		vector_unit_nd a = vector_unit_nd(1,"N",{20,20,20,20});
+		REQUIRE (bool(a.vectorial_display() == "1 N 20° 20° 20° 20°"));
+		REQUIRE (bool(a.vectorial_derived_display() == "1 kg*m/s2 20° 20° 20° 20°"));
+		REQUIRE (bool(a.vectorial_custom_display("g*m/s2") == "1000 g*m/s2 20° 20° 20° 20°"));
+	}
 }
 

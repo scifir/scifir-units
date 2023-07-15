@@ -587,6 +587,39 @@ namespace scifir
 		}
 	}
 
+	string vector_unit_nd::vectorial_display(int number_of_decimals) const
+	{
+		ostringstream out;
+		out << display(number_of_decimals);
+		for (const angle& x_angle : angles)
+		{
+			out << " " << x_angle.display(number_of_decimals);
+		}
+		return out.str();
+	}
+
+	string vector_unit_nd::vectorial_derived_display(int number_of_decimals) const
+	{
+		ostringstream out;
+		out << derived_display(number_of_decimals);
+		for (const angle& x_angle : angles)
+		{
+			out << " " << x_angle.display(number_of_decimals);
+		}
+		return out.str();
+	}
+
+	string vector_unit_nd::vectorial_custom_display(const string& new_dimensions_str,int number_of_decimals) const
+	{
+		ostringstream out;
+		out << custom_display(new_dimensions_str,number_of_decimals);
+		for (const angle& x_angle : angles)
+		{
+			out << " " << x_angle.display(number_of_decimals);
+		}
+		return out.str();
+	}
+
 	string to_string(const vector_unit_nd& x)
 	{
 		ostringstream out;
