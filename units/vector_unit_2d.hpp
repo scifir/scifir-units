@@ -92,15 +92,42 @@ namespace scifir
 			vector_unit_2d operator ^(const scalar_unit&) const;
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_2d operator +(U) const;
+			vector_unit_2d operator +(U x) const
+			{
+				vector_unit_2d y = *this;
+				y += x;
+				return y;
+			}
+
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_2d operator -(U) const;
+			vector_unit_2d operator -(U x) const
+			{
+				vector_unit_2d y = *this;
+				y -= x;
+				return y;
+			}
+
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_2d operator *(U) const;
+			vector_unit_2d operator *(U x) const
+			{
+				vector_unit_2d y = *this;
+				y *= x;
+				return y;
+			}
+
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_2d operator /(U) const;
+			vector_unit_2d operator /(U x) const
+			{
+				vector_unit_2d y = *this;
+				y /= x;
+				return y;
+			}
+
 			template<typename U, typename = typename enable_if<is_integer_number<U>::value>::type>
-			vector_unit_2d operator ^(U) const;
+			vector_unit_2d operator ^(U x) const
+			{
+				return vector_unit_2d(std::pow(get_value(),x),power_dimensions(get_dimensions(),x),theta);
+			}
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			void operator +=(U y)
@@ -133,7 +160,7 @@ namespace scifir
 					theta.invert();
 				}
 			}
-			
+
 			inline scalar_unit x_projection() const
 			{
 				return scalar_unit(scalar_unit::value * scifir::cos(theta),get_dimensions());
@@ -165,6 +192,39 @@ namespace scifir
 	bool same_direction(const vector_unit_2d&,const vector_unit_2d&);
 	bool parallel(const vector_unit_2d&,const vector_unit_2d&);
 	bool orthogonal(const vector_unit_2d&,const vector_unit_2d&);
+}
+
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::vector_unit_2d operator +(const T y,const scifir::vector_unit_2d& x)
+{
+	scifir::vector_unit_2d z = x;
+	z += y;
+	return z;
+}
+
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::vector_unit_2d operator -(const T y,const scifir::vector_unit_2d& x)
+{
+	return scifir::vector_unit_2d(y - x.get_value(),x.get_dimensions(),x.theta);
+}
+
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::vector_unit_2d operator *(const T y,const scifir::vector_unit_2d& x)
+{
+	scifir::vector_unit_2d z = x;
+	z *= y;
+	return z;
+}
+
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::vector_unit_2d operator /(const T y,const scifir::vector_unit_2d& x)
+{
+	vector<scifir::dimension> new_dimensions = x.get_dimensions();
+	for (scifir::dimension& new_dimension : new_dimensions)
+	{
+		new_dimension.invert();
+	}
+	return scifir::vector_unit_2d(y / x.get_value(),new_dimensions,x.theta);
 }
 
 bool operator ==(const vector_unit_2d&, vector_unit_2d);

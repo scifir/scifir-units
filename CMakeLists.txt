@@ -3,14 +3,20 @@ cmake_minimum_required(VERSION 3.7.1)
 find_package(Catch2 REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
+if(WITH_GCOV)
+	set(CMAKE_CXX_FLAGS "--coverage -fprofile-arcs -ftest-coverage")
+	set(CMAKE_EXE_LINKER_FLAGS "--coverage -lgcov")
+endif()
+set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/build)
 
 #set(CMAKE_CXX_COMPILER clang++-13)
 
 include_directories(.)
 link_directories("${CMAKE_INSTALL_PREFIX}/lib")
 
-set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set( CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/bin)
 
 set(TARGET_LOCAL_H
 units.hpp)
@@ -38,42 +44,77 @@ target_link_libraries(scifir_units boost_system icuuc)
 add_executable(test_sizeof tests/test_sizeof.cpp)
 target_link_libraries(test_sizeof scifir_units boost_system icuuc)
 
-add_executable(test_prefixes tests/test_prefixes.cpp)
+add_executable(test_prefixes tests/units/test_prefixes.cpp)
 target_link_libraries(test_prefixes PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
 add_test(NAME test_prefixes COMMAND test_prefixes)
 set_tests_properties(test_prefixes PROPERTIES LABELS tests)
 
-add_executable(test_dimensions tests/test_dimensions.cpp)
+add_executable(test_dimensions tests/units/test_dimensions.cpp)
 target_link_libraries(test_dimensions PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
 add_test(NAME test_dimensions COMMAND test_dimensions)
 set_tests_properties(test_dimensions PROPERTIES LABELS tests)
 
-add_executable(test_scalar_unit tests/test_scalar_unit.cpp)
+add_executable(test_scalar_unit tests/units/test_scalar_unit.cpp)
 target_link_libraries(test_scalar_unit PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
 add_test(NAME test_scalar_unit COMMAND test_scalar_unit)
 set_tests_properties(test_scalar_unit PROPERTIES LABELS tests)
 
-add_executable(test_vector_unit_2d tests/test_vector_unit_2d.cpp)
+add_executable(test_vector_unit_2d tests/units/test_vector_unit_2d.cpp)
 target_link_libraries(test_vector_unit_2d PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
 add_test(NAME test_vector_unit_2d COMMAND test_vector_unit_2d)
 set_tests_properties(test_vector_unit_2d PROPERTIES LABELS tests)
 
-add_executable(test_vector_unit_3d tests/test_vector_unit_3d.cpp)
+add_executable(test_vector_unit_3d tests/units/test_vector_unit_3d.cpp)
 target_link_libraries(test_vector_unit_3d PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
 add_test(NAME test_vector_unit_3d COMMAND test_vector_unit_3d)
 set_tests_properties(test_vector_unit_3d PROPERTIES LABELS tests)
 
-add_executable(test_vector_unit_nd tests/test_vector_unit_nd.cpp)
+add_executable(test_vector_unit_nd tests/units/test_vector_unit_nd.cpp)
 target_link_libraries(test_vector_unit_nd PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
 add_test(NAME test_vector_unit_nd COMMAND test_vector_unit_nd)
 set_tests_properties(test_vector_unit_nd PROPERTIES LABELS tests)
 
-add_executable(test_unit_basic tests/test_unit_basic.cpp)
+add_executable(test_unit_basic tests/units/test_unit_basic.cpp)
 target_link_libraries(test_unit_basic PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
 add_test(NAME test_unit_basic COMMAND test_unit_basic)
 set_tests_properties(test_unit_basic PROPERTIES LABELS tests)
 
-add_executable(test_percentage tests/test_percentage.cpp)
+add_executable(test_coordinates_1d tests/coordinates/test_coordinates_1d.cpp)
+target_link_libraries(test_coordinates_1d PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
+add_test(NAME test_coordinates_1d COMMAND test_coordinates_1d)
+set_tests_properties(test_coordinates_1d PROPERTIES LABELS tests)
+
+add_executable(test_coordinates_2d tests/coordinates/test_coordinates_2d.cpp)
+target_link_libraries(test_coordinates_2d PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
+add_test(NAME test_coordinates_2d COMMAND test_coordinates_2d)
+set_tests_properties(test_coordinates_2d PROPERTIES LABELS tests)
+
+add_executable(test_coordinates_2dr tests/coordinates/test_coordinates_2dr.cpp)
+target_link_libraries(test_coordinates_2dr PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
+add_test(NAME test_coordinates_2dr COMMAND test_coordinates_2dr)
+set_tests_properties(test_coordinates_2dr PROPERTIES LABELS tests)
+
+add_executable(test_coordinates_3d tests/coordinates/test_coordinates_3d.cpp)
+target_link_libraries(test_coordinates_3d PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
+add_test(NAME test_coordinates_3d COMMAND test_coordinates_3d)
+set_tests_properties(test_coordinates_3d PROPERTIES LABELS tests)
+
+add_executable(test_coordinates_3dr tests/coordinates/test_coordinates_3dr.cpp)
+target_link_libraries(test_coordinates_3dr PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
+add_test(NAME test_coordinates_3dr COMMAND test_coordinates_3dr)
+set_tests_properties(test_coordinates_3dr PROPERTIES LABELS tests)
+
+add_executable(test_coordinates_nd tests/coordinates/test_coordinates_nd.cpp)
+target_link_libraries(test_coordinates_nd PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
+add_test(NAME test_coordinates_nd COMMAND test_coordinates_nd)
+set_tests_properties(test_coordinates_nd PROPERTIES LABELS tests)
+
+add_executable(test_coordinates_ndr tests/coordinates/test_coordinates_ndr.cpp)
+target_link_libraries(test_coordinates_ndr PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
+add_test(NAME test_coordinates_ndr COMMAND test_coordinates_ndr)
+set_tests_properties(test_coordinates_ndr PROPERTIES LABELS tests)
+
+add_executable(test_percentage tests/special_units/test_percentage.cpp)
 target_link_libraries(test_percentage PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)
 add_test(NAME test_percentage COMMAND test_percentage)
 set_tests_properties(test_percentage PROPERTIES LABELS tests)

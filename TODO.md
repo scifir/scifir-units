@@ -4,6 +4,9 @@ MSCI UNITS - VERSION 2
 // TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd
 // TODO: displacement_nd in point_nd class should be initialized with zero dimensions instead of m?. Check the all the default dimensions cases for point_nd, coordinates_nd and coordinates_ndr
 // TODO: think on the different cases of use of coordinates and document them, including the use of an origin
+// TODO: add coordinates_3d::origin() to allow to initialize with an origin, it's specially useful for geographic coordinates
+// TODO: add the construction with an string for geographic coordinates
+// TODO: document the coordinates for the universe, publish that too as an standard inside scifir
 
 // VECTOR FIELDS
 // TODO: vector_field (it should operate with vector_units and maybe with scalar_units. With (x,y,z) it gives the respective vector). +, - and ^ with vector_field, + - * with vector_unit
@@ -15,6 +18,7 @@ MSCI UNITS - VERSION 2
 // TODO: use scientific notation for the avogadro constant
 // TODO: change the use of const-reference to value and std::move in constructors
 // TODO: change the use of const-reference to value and std::move in other places
+// TODO: use reference when instantiating variables and when it's not needed to instantiate by value
 
 // DIMENSIONS
 // TODO: support the binary prefixes too
@@ -23,15 +27,7 @@ MSCI UNITS - VERSION 2
 // UNITS
 // TODO: finish the tests of all the unit classes
 
-// TODO: to_string() of vector_unit classes should truncate the amount of digits to display for the value and for the angles
-
-// TODO: see what to do with the imprecision when converting the string to a float, it's needed to have perfect precision, not an approximated conversion instead
-
 // TODO: allow to display in any conversion. By default it should always display in SI units, only if a conversion is expressly specified in the display functions the conversion is then the dimension that gets displayed
-
-// TODO: add the emotional dimensions for robotics and similar purposes. Think of the names for rage, mourning, etc related to the dimensions, which has to be a different name than the name of the emotion
-
-// TODO: vectorial_display for vector_unit classes using custom_display() and display_derived() of scalar_unit, but adding the angles next to it
 
 // TODO: check dimensions in all inheriting classes of scalar_unit and vector_unit, it's needed another constructor
 
@@ -51,8 +47,8 @@ MSCI UNITS - VERSION 2
 // UNITS - ADVANCED
 // TODO: maybe delete the dimensions member-variable of scalar_unit, and use instead another system for handling prefixes. The dimensions can be automatic based on their class. One possibility is to use an empty array and, when it's empty, to send the fixed dimensions of the class instead, and only when changing something to add the dimensions there
 // TODO: add const to the enum of light_unit
-// TODO: 2d display of scalar_units and of vector_units (create a msci_units_2d library for it)
-// TODO: 3d display of scalar_units and of vector_units (create a msci_units_3d library for it)
+// TODO: 2d display of scalar_units and of vector_units (create a scifir_units_2d library for it)
+// TODO: 3d display of scalar_units and of vector_units (create a scifir_units_3d library for it)
 // TODO: divide single dimensions unit of multiple-dimensions unit in order to save a lot of space by not using vectors of prefixes, dimensions and abbreviations
 // TODO: check the object code resulting by testing different functions of the unit classes
 // TODO: light_length which uses only an enum of prefixes and a value, maybe it should be called length, and length should be called full_length
@@ -63,8 +59,8 @@ MSCI UNITS - VERSION 2
 // TODO: maybe the prefix and the dimension can be removed as member-variables if displaying automatically in some way or another, as it's expressly specified. That is maybe the biggest optimization possible
 // TODO: think if to change the float for a double, or if to make scalar_unit a template class converting the default type of the value to float type
 // TODO: support the conversions natively
-// TODO: function to_SI_convention(vector<scalar_unit>&)
 // TODO: finish initial_dimensions_get_structure() and get_dimensions_match() related to the new implementation
+// TODO: add the operators +,-,* and / in the derived classes of scalar_unit and vector_unit with the same class in order to avoid to check that the dimensions are the same, that saves time
 
 // BASIC UNITS
 // TODO: think if to add another concentration class, the previous one has been deprecated
@@ -73,6 +69,10 @@ MSCI UNITS - VERSION 2
 // ip class? check networking libraries of C++ and decide if to add it here
 // isbn class
 // issn class
+// nutrition_information
+
+// EMOTIONAL UNITS
+// TODO: add the emotional dimensions for robotics and similar purposes. Think of the names for rage, mourning, etc related to the dimensions, which has to be a different name than the name of the emotion
 
 // ISOs
 // TODO: Publish the ISO of geographic location based on aid and zid classes

@@ -117,15 +117,42 @@ namespace scifir
 			vector_unit_nd operator ^(const scalar_unit&) const;
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_nd operator +(U) const;
+			vector_unit_nd operator +(U x) const
+			{
+				vector_unit_nd y = *this;
+				y += x;
+				return y;
+			}
+
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_nd operator -(U) const;
+			vector_unit_nd operator -(U x) const
+			{
+				vector_unit_nd y = *this;
+				y -= x;
+				return y;
+			}
+
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_nd operator *(U) const;
+			vector_unit_nd operator *(U x) const
+			{
+				vector_unit_nd y = *this;
+				y *= x;
+				return y;
+			}
+
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_nd operator /(U) const;
+			vector_unit_nd operator /(U x) const
+			{
+				vector_unit_nd y = *this;
+				y /= x;
+				return y;
+			}
+
 			template<typename U, typename = typename enable_if<is_integer_number<U>::value>::type>
-			vector_unit_nd operator ^(U) const;
+			vector_unit_nd operator ^(U x) const
+			{
+				return vector_unit_nd(std::pow(get_value(),x),power_dimensions(get_dimensions(),x),angles);
+			}
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			void operator +=(U y)
@@ -194,6 +221,39 @@ namespace scifir
 	bool same_direction(const vector_unit_nd&,const vector_unit_nd&);
 	bool parallel(const vector_unit_nd&,const vector_unit_nd&);
 	bool orthogonal(const vector_unit_nd&,const vector_unit_nd&);
+}
+
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::vector_unit_nd operator +(const T y,const scifir::vector_unit_nd& x)
+{
+	scifir::vector_unit_nd z = x;
+	z += y;
+	return z;
+}
+
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::vector_unit_nd operator -(const T y,const scifir::vector_unit_nd& x)
+{
+	return scifir::vector_unit_nd(y - x.get_value(),x.get_dimensions(),x.angles);
+}
+
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::vector_unit_nd operator *(const T y,const scifir::vector_unit_nd& x)
+{
+	scifir::vector_unit_nd z = x;
+	z *= y;
+	return z;
+}
+
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::vector_unit_nd operator /(const T y,const scifir::vector_unit_nd& x)
+{
+	vector<scifir::dimension> new_dimensions = x.get_dimensions();
+	for (scifir::dimension& new_dimension : new_dimensions)
+	{
+		new_dimension.invert();
+	}
+	return scifir::vector_unit_nd(y / x.get_value(),new_dimensions,x.angles);
 }
 
 bool operator ==(const vector_unit_nd&, vector_unit_nd);

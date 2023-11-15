@@ -4,13 +4,10 @@
 // TODO: test of create_abbreviation()
 // TODO: test of create_dimension()
 // TODO: test of create_prefix()
-// TODO: test of undefined_number
-// TODO: test of unit_number
 // TODO: test of angle
 // TODO: test of lab_number
 // TODO: test of coordinates (is easy)
 // TODO: test of unit constructors
-// TODO: test of auto_unit
 // TODO: test of scalar_unit (check temperature special initialization)
 // TODO: test of vector_unit_3d
 

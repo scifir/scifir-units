@@ -120,15 +120,42 @@ namespace scifir
 			vector_unit_3d operator ^(const scalar_unit&) const;
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_3d operator +(U) const;
+			vector_unit_3d operator +(U x) const
+			{
+				vector_unit_3d y = *this;
+				y += x;
+				return y;
+			}
+
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_3d operator -(U) const;
+			vector_unit_3d operator -(U x) const
+			{
+				vector_unit_3d y = *this;
+				y -= x;
+				return y;
+			}
+
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_3d operator *(U) const;
+			vector_unit_3d operator *(U x) const
+			{
+				vector_unit_3d y = *this;
+				y *= x;
+				return y;
+			}
+
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_3d operator /(U) const;
+			vector_unit_3d operator /(U x) const
+			{
+				vector_unit_3d y = *this;
+				y /= x;
+				return y;
+			}
+
 			template<typename U, typename = typename enable_if<is_integer_number<U>::value>::type>
-			vector_unit_3d operator ^(U) const;
+			vector_unit_3d operator ^(U x) const
+			{
+				return vector_unit_3d(std::pow(get_value(),x),power_dimensions(get_dimensions(),x),theta,phi);
+			}
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			void operator +=(U y)
@@ -201,6 +228,39 @@ namespace scifir
 	bool same_direction(const vector_unit_3d&,const vector_unit_3d&);
 	bool parallel(const vector_unit_3d&,const vector_unit_3d&);
 	bool orthogonal(const vector_unit_3d&,const vector_unit_3d&);
+}
+
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::vector_unit_3d operator +(const T y,const scifir::vector_unit_3d& x)
+{
+	scifir::vector_unit_3d z = x;
+	z += y;
+	return z;
+}
+
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::vector_unit_3d operator -(const T y,const scifir::vector_unit_3d& x)
+{
+	return scifir::vector_unit_3d(y - x.get_value(),x.get_dimensions(),x.theta,x.phi);
+}
+
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::vector_unit_3d operator *(const T y,const scifir::vector_unit_3d& x)
+{
+	scifir::vector_unit_3d z = x;
+	z *= y;
+	return z;
+}
+
+template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+scifir::vector_unit_3d operator /(const T y,const scifir::vector_unit_3d& x)
+{
+	vector<scifir::dimension> new_dimensions = x.get_dimensions();
+	for (scifir::dimension& new_dimension : new_dimensions)
+	{
+		new_dimension.invert();
+	}
+	return scifir::vector_unit_3d(y / x.get_value(),new_dimensions,x.theta,x.phi);
 }
 
 bool operator ==(const vector_unit_3d&, vector_unit_3d);
