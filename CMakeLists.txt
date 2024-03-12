@@ -11,8 +11,19 @@ set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/build)
 
 #set(CMAKE_CXX_COMPILER clang++-13)
 
+if((NOT_DEFINED(${PLATFORM})) OR (${PLATFORM} MATCHES "linux"))
 include_directories(.)
 link_directories("${CMAKE_INSTALL_PREFIX}/lib")
+elseif(${PLATFORM} MATCHES "wsl")
+include_directories(. "/usr/include/c++/11" "/usr/include")
+link_directories("/usr/lib/x86_64-linux-gnu")
+endif()
+if((DEFINED(${INCLUDE_PATH})))
+include_directories(. ${INCLUDE_PATH})
+endif()
+if((DEFINED(${LINK_PATH})))
+link_directories(${LINK_PATH})
+endif()
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/lib)
@@ -40,9 +51,10 @@ project(scifir_units VERSION 2.0.0)
 
 add_library(scifir_units ${TARGET_SRC})
 target_link_libraries(scifir_units boost_system icuuc)
+#target_link_libraries(scifir_units boost_system icuuc comdlg32 gdi32)
 
 add_executable(test_sizeof tests/test_sizeof.cpp)
-target_link_libraries(test_sizeof scifir_units boost_system icuuc)
+target_link_libraries(test_sizeof PRIVATE scifir_units boost_system icuuc)
 
 add_executable(test_prefixes tests/units/test_prefixes.cpp)
 target_link_libraries(test_prefixes PRIVATE Catch2::Catch2 scifir_units boost_system icuuc)

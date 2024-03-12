@@ -1,4 +1,8 @@
-MSCI UNITS - VERSION 2
+SCIFIR UNITS - VERSION 2
+
+// BUILD
+// TODO: Add the boost configuration for Windows, by adding a variable that sets the path of boost
+// TODO: Rename msci.pc to scifir-units.pc, and change it accordingly
 
 // COORDINATES AND POINTS
 // TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd
