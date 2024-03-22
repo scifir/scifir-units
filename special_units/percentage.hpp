@@ -69,15 +69,15 @@ namespace scifir
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			T operator *(T y) const
+			float operator *(T y) const
 			{
-				return T(value * y / 100);
+				return float(value * y / 100);
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			T operator /(T y) const
+			float operator /(T y) const
 			{
-				return percentage(100 * value / y);
+				return float(value / (100 * y));
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
@@ -146,15 +146,15 @@ scifir::percentage operator -(T x, const scifir::percentage& y)
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-T operator *(T x, const scifir::percentage& y)
+float operator *(T x, const scifir::percentage& y)
 {
-	return percentage(x * y.get_value() / 100);
+	return float(x * y.get_value() / 100);
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-T operator /(T x, const scifir::percentage& y)
+float operator /(T x, const scifir::percentage& y)
 {
-	return percentage(100 * x / y.get_value());
+	return float(100 * x / y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
