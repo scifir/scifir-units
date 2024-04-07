@@ -3,6 +3,7 @@ SCIFIR UNITS - VERSION 2
 // BUILD
 // TODO: Add the boost configuration for Windows, by adding a variable that sets the path of boost
 // TODO: Rename msci.pc to scifir-units.pc, and change it accordingly
+// TODO: try to integrate the library to MSYS2
 
 // COORDINATES AND POINTS
 // TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd
@@ -17,12 +18,14 @@ SCIFIR UNITS - VERSION 2
 // TODO: Typecasting of vector_unit to math_vector, boost_Ublas_vector, etc. Same for math_vector to vector_unit
 
 // C++
+// TODO: check how are inline constructors and constexpr constructors
 // TODO: use of constexpr
-// TODO: change char in enum for int8_t
 // TODO: use scientific notation for the avogadro constant
 // TODO: change the use of const-reference to value and std::move in constructors
 // TODO: change the use of const-reference to value and std::move in other places
-// TODO: use reference when instantiating variables and when it's not needed to instantiate by value
+// TODO: use reference when instantiating variables and when it's not needed to instantiate by value inside the body of functions
+// TODO: possible use of #pragma?
+// TODO: if size_t and other similar constants are intended to be used inside normal code
 
 // DIMENSIONS
 // TODO: support the binary prefixes too
@@ -32,10 +35,11 @@ SCIFIR UNITS - VERSION 2
 // TODO: finish the tests of all the unit classes
 // TODO: allow to display in any conversion. By default it should always display in SI units, only if a conversion is expressly specified in the display functions the conversion is then the dimension that gets displayed
 // TODO: check dimensions in all inheriting classes of scalar_unit and vector_unit, it's needed another constructor that checks them
+// TODO: Regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_dimensions_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr
+// TODO: Detect when there's the same dimension at the numerator and at the denominator of the string initialization
 // TODO: add "[]" optionally to display() functions of scalar_unit surrounding the dimensions
 
 // PREDEFINED UNITS
-// TODO: reorder all files of predefined_units to chemistry, physics, informatics, among other possible categories
 // TODO: think if to add accoustic and matter predefined units, or if it's not needed
 // TODO: delete all field classes that currently are vector_units, and make them fields
 // TODO: move cas_number to a special_unit, or even to another category
@@ -119,6 +123,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: document an example of converting all currencies to money dimension, with different values. Use the currency abreviations of the ISO of currencies
 // TODO: add nomenclature of units
 // TODO: think if to add the functions of calculations or to add example of calculations in the documentation
+// TODO: document the explanation of what each unit means, given the defintion of the SI or of the entity that corresponds to reference
 
 // RELEASE
 // TODO: configure CMake with cpack

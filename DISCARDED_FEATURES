@@ -1,4 +1,6 @@
 DISCARDED FEATURES
-1. Macro that allows to embed coordinates inside classes by adding all his member-variables and functions inside it. It has been preferred the use of composition or inheritance over it
+1. Macro that allows to embed coordinates inside classes by adding all his member-variables and functions inside it. It has been preferred the use of composition or inheritance over it.
 2. Units are displayed on the english locale, not on any other locale in order to avoid confusion with any other use of the ',' symbol used near the displaying of the number, cause if the number is displayed with a ',' the meaning of each ',' becomes more ambiguous, and can be interpreted as two different numbers.
-3. vector_unit_3d, or any other class that has constructors with angle and float for angles can't have all the combinations, but instead just a constructor with floats and just a constructor with angle, not any other, because this way the code becomes simpler
+3. vector_unit_3d, or any other class that has constructors with angle and float for angles can't have all the combinations, but instead just a constructor with floats and just a constructor with angle, not any other, because this way the code becomes simpler.
+4. sqrt() can't give scalar_units with squared dimensions, that's, with dimensions at a power of 1/2, although that appears in some scientific texts it's very possibly a wrong statement and then is discarded as feature for this library.
+5. Temperature can have negative values, that's an express feature of the library. The reason of that is that then erroneous calculations appears expressly with the negative symbol, which is better than to throw an error message.
