@@ -10,7 +10,7 @@ namespace scifir
 {
 	SCALAR_UNIT_HPP(electric_current);
 	SCALAR_UNIT_HPP(voltage);
-	VECTOR_UNIT_HPP(electric_displacement_field);
+	VECTOR_UNIT_HPP(electric_displacement_field);  // TODO: vector_field
 	SCALAR_UNIT_HPP(electric_charge_density);
 	SCALAR_UNIT_HPP(electric_current_density);
 	VECTOR_UNIT_HPP(electric_field_strength);
