@@ -30,41 +30,20 @@ SCIFIR UNITS - VERSION 2
 
 // UNITS
 // TODO: finish the tests of all the unit classes
-
 // TODO: allow to display in any conversion. By default it should always display in SI units, only if a conversion is expressly specified in the display functions the conversion is then the dimension that gets displayed
+// TODO: check dimensions in all inheriting classes of scalar_unit and vector_unit, it's needed another constructor that checks them
+// TODO: add "[]" optionally to display() functions of scalar_unit surrounding the dimensions
 
-// TODO: check dimensions in all inheriting classes of scalar_unit and vector_unit, it's needed another constructor
+// PREDEFINED UNITS
+// TODO: reorder all files of predefined_units to chemistry, physics, informatics, among other possible categories
+// TODO: think if to add accoustic and matter predefined units, or if it's not needed
+// TODO: delete all field classes that currently are vector_units, and make them fields
+// TODO: move cas_number to a special_unit, or even to another category
 
-// SPECIAL UNITS
-// TODO: complete color class like coordinate classes, with all the getters of all the different color versions, like get_h(), get_s(), get_v()
-// TODO: pixel_color<>. Use monochrome_pixel, truecolor_pixel, etc, as typedefs of pixel_color<>
-
-// TODO: complex_number<> should have trigonometric functions for complex numbers
-
-// TODO: maybe create a mesh_3d class, or vector<point_3d<>>
-
-// TODO: study the geographic coordinates deeply, and see if to add something more related to them
-
-// CALCULUS WITH UNITS
-// TODO: think if to add the functions of calculations or to add example of calculations in the documentation
-
-// UNITS - ADVANCED
-// TODO: maybe delete the dimensions member-variable of scalar_unit, and use instead another system for handling prefixes. The dimensions can be automatic based on their class. One possibility is to use an empty array and, when it's empty, to send the fixed dimensions of the class instead, and only when changing something to add the dimensions there
-// TODO: add const to the enum of light_unit
-// TODO: 2d display of scalar_units and of vector_units (create a scifir_units_2d library for it)
-// TODO: 3d display of scalar_units and of vector_units (create a scifir_units_3d library for it)
-// TODO: divide single dimensions unit of multiple-dimensions unit in order to save a lot of space by not using vectors of prefixes, dimensions and abbreviations
-// TODO: check the object code resulting by testing different functions of the unit classes
-// TODO: light_length which uses only an enum of prefixes and a value, maybe it should be called length, and length should be called full_length
-// TODO: sqrt() and pow() maybe should be direct for created units, instead of passing by scalar_unit again to initialize after that the other unit
-// TODO: check if it's needed to add a function that gives whether the dimension is basic or not in the sense of the SI system of units
-// TODO: support and UTF32 string constructor for scalar_unit in order to allow to create dimensions directly with some Unicode characters that are not present in UTF8
-// TODO: scalar_unit should have is_valid() with some system
-// TODO: maybe the prefix and the dimension can be removed as member-variables if displaying automatically in some way or another, as it's expressly specified. That is maybe the biggest optimization possible
-// TODO: think if to change the float for a double, or if to make scalar_unit a template class converting the default type of the value to float type
-// TODO: support the conversions natively
-// TODO: finish initial_dimensions_get_structure() and get_dimensions_match() related to the new implementation
-// TODO: add the operators +,-,* and / in the derived classes of scalar_unit and vector_unit with the same class in order to avoid to check that the dimensions are the same, that saves time
+// MECA NUMBERS
+// TODO: add the allowed typenames to lab_number, and don't accept any other type
+// TODO: lab_number should have another symbol in place of +-
+// TODO: lab_number should handle the error of display like scalar_unit classes
 
 // BASIC UNITS
 // TODO: think if to add another concentration class, the previous one has been deprecated
@@ -76,7 +55,36 @@ SCIFIR UNITS - VERSION 2
 // nutrition_information
 
 // EMOTIONAL UNITS
-// TODO: add the emotional dimensions for robotics and similar purposes. Think of the names for rage, mourning, etc related to the dimensions, which has to be a different name than the name of the emotion
+// TODO: add the emotions as enum, not as dimensions
+// TODO: add the feelings as enum
+// TODO: add the sensations as enum
+
+// SPECIAL UNITS
+// TODO: complete color class like coordinate classes, with all the getters of all the different color versions, like get_h(), get_s(), get_v()
+// TODO: pixel_color<>. Use monochrome_pixel, truecolor_pixel, etc, as typedefs of pixel_color<>
+// TODO: complex_number<> should have trigonometric functions for complex numbers
+// TODO: maybe create a mesh_3d class, or vector<point_3d<>>
+// TODO: study the geographic coordinates deeply, and see if to add something more related to them
+
+// UNITS - ADVANCED
+// TODO: sqrt() and pow() maybe should be direct for created units, instead of passing by scalar_unit again to initialize after that the other unit
+// TODO: check if it's needed to add a function is_si_basic_dimension() that gives whether the dimension is basic or not in the sense of the SI system of units
+// TODO: support and UTF32 string constructor for scalar_unit in order to allow to create dimensions directly with some Unicode characters that are not present in UTF8
+// TODO: scalar_unit should have is_valid() with some system
+// TODO: think if to make scalar_unit a template class converting the default type of the value member-variable to float type
+// TODO: support the conversions natively
+// TODO: add the operators +,-,* and / in the derived classes of scalar_unit and vector_unit with the same class in order to avoid to check that the dimensions are the same, that saves time
+// TODO: check the object code resulting by testing different functions of the unit classes
+// TODO: 2d display of scalar_units and of vector_units (create a scifir_units_2d library for it)
+// TODO: 3d display of scalar_units and of vector_units (create a scifir_units_3d library for it)
+
+// UNITS - ADVANCED - REDUCTION OF MEMORY CONSUMPTION
+// OPTION 1: maybe delete the dimensions member-variable of scalar_unit, and use instead another system for handling prefixes. The dimensions can be automatic based on their class. One possibility is to use an empty array and, when it's empty, to send the fixed dimensions of the class instead, and only when changing something to add the dimensions there
+// OPTION 2: divide single dimensions unit of multiple-dimensions unit by adding only one dimension instead of the vector<dimension>
+// OPTION 3: maybe the prefix and the dimension can be removed as member-variables if displaying automatically in some way or another, as it's expressly specified. That is maybe the biggest optimization possible
+// OPTION 4: light_length which uses only an enum of prefixes and a value, maybe it should be called length, and length should be called full_length
+// OPTION 4 - TODO: add const to the enum of light_unit
+// AFTER SOME OPTION - TODO: finish initial_dimensions_get_structure() and get_dimensions_match() related to the new implementation
 
 // ISOs
 // TODO: Publish the ISO of geographic location based on aid and zid classes
@@ -91,10 +99,6 @@ SCIFIR UNITS - VERSION 2
 
 // MATERIAL_VECTOR_UNIT
 // TODO: decide how it'll be, in order to include real space to the vector_unit?
-
-// MECA NUMBERS
-// TODO: add the allowed typenames to lab_number, and don't accept any other type
-// TODO: lab_number should have another symbol in place of +-
 
 // ELECTRONICS
 // TODO: check sensor libraries and decide which ones to support inside msci_units (maybe in a new msci library if needed)
@@ -114,6 +118,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: document how ppm and ppb work, also in the theorical sense
 // TODO: document an example of converting all currencies to money dimension, with different values. Use the currency abreviations of the ISO of currencies
 // TODO: add nomenclature of units
+// TODO: think if to add the functions of calculations or to add example of calculations in the documentation
 
 // RELEASE
 // TODO: configure CMake with cpack

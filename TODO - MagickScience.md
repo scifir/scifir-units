@@ -1,26 +1,12 @@
 // Number of todos: 190
 
 // PROPERLY USE OF TESTS
-// TODO: test of create_abbreviation()
-// TODO: test of create_dimension()
-// TODO: test of create_prefix()
-// TODO: test of angle
-// TODO: test of lab_number
-// TODO: test of coordinates (is easy)
-// TODO: test of unit constructors
 // TODO: test of scalar_unit (check temperature special initialization)
-// TODO: test of vector_unit_3d
 
 // MEMORY OPTIMIZATION
 // TODO: Use a memory profiler to analize the size of each object
 // TODO: Implement real_dimensions with a UTF8 string (use an order to print each dimension, then it's done) if it's faster than actual_dimensions container and only in that case
 // TODO: Check if the clone() function of undefined_number (and some others also) are causing a memory leak
-
-// MAGICKSCIENCE
-// TODO: delete some extra folders of physics
-// TODO: divide between msci and msci_genetics
-// TODO: maybe divide each msci discipline as one different msci library. Check first how if then it's mandatory to have different namespaces (see how to integrate that to GitHub). The libraries are msci_units, msci_geometry, msci_chemistry, msci_genetics, msci_plot
-// TODO: document in a .odt file all the class and function names
 
 // C++
 // TODO: See if to send reference in some cases and const-reference when const is a practice, and add those two functions everywhere. Maybe change some member-variables to be public instead of using both functions
