@@ -8,7 +8,7 @@ using namespace std;
 namespace scifir
 {
 	constexpr float PI = boost::math::constants::pi<float>();
-	const static long double AVOGADRO_CONSTANT = 602214078000000000000000.0l;
+	const static long double AVOGADRO_CONSTANT = 6.02214076e23;
 }
 
 #endif // SCIFIR_UNITS_TOPOLOGY_CONSTANTS_HPP_INCLUDED
