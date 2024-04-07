@@ -4,17 +4,11 @@
 #include "units/scalar_unit.hpp"
 #include "units/unit_basic.hpp"
 
-#include "predefined_units/dynamics_units.hpp"
-#include "predefined_units/electricity_units.hpp"
 #include "predefined_units/electronics_units.hpp"
-#include "predefined_units/kinematics_units.hpp"
-#include "predefined_units/magnetism_units.hpp"
-#include "predefined_units/optics_units.hpp"
+#include "predefined_units/physics_units.hpp"
 #include "predefined_units/radiometry_units.hpp"
 #include "predefined_units/space_units.hpp"
-#include "predefined_units/substance_units.hpp"
-#include "predefined_units/thermodynamics_units.hpp"
-#include "predefined_units/waves_units.hpp"
+#include "predefined_units/chemistry_units.hpp"
 
 #include "special_units/percentage.hpp"
 

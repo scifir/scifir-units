@@ -6,6 +6,7 @@ using namespace std;
 
 namespace scifir
 {
+	// GENERAL CHEMISTRY
 	SCALAR_UNIT_CPP(density,"g/m3");
 	SCALAR_UNIT_CPP(viscosity,"m2/s");
 	SCALAR_UNIT_CPP(specific_volume,"m3/g");
@@ -30,4 +31,13 @@ namespace scifir
 	{
 		return value;
 	}
+
+	// SUBSTANCE
+	SCALAR_UNIT_CPP(molarity,"mol/m3");
+	SCALAR_UNIT_CPP(molality,"mol/g");
+	SCALAR_UNIT_CPP(linear_mass_density,"g/m");
+	SCALAR_UNIT_CPP(area_density,"g/m2");
+	SCALAR_UNIT_CPP(dynamic_viscosity,"g/m*s");
+	SCALAR_UNIT_CPP(mass_flow_rate,"g/s");
+	SCALAR_UNIT_CPP(catalytic_activity,"kat");
 }

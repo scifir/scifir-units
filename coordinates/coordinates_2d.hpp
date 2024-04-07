@@ -4,7 +4,7 @@
 #include "topology/point_2d.hpp"
 #include "units/unit_basic.hpp"
 
-#include "predefined_units/kinematics_units.hpp"
+#include "predefined_units/physics_units.hpp"
 
 #include <iostream>
 #include <string>

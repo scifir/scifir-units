@@ -10,10 +10,7 @@ using namespace std;
 
 namespace scifir
 {
-	SCALAR_UNIT_HPP(wavenumber);
-	SCALAR_UNIT_HPP(frequency);
 	
-	typedef length wavelength;
 }
 
 #endif // SCIFIR_UNITS_PREDEFINED_UNITS_WAVES_UNITS_HPP_INCLUDED

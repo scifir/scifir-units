@@ -7,6 +7,7 @@ using namespace std;
 
 namespace scifir
 {
+	// GENERAL CHEMISTRY
 	SCALAR_UNIT_HPP(density);
 	SCALAR_UNIT_HPP(viscosity);
 	SCALAR_UNIT_HPP(specific_volume);
@@ -38,6 +39,15 @@ namespace scifir
 		private:
 			string value;
 	};
+
+	// SUBSTANCE
+	SCALAR_UNIT_HPP(molarity);
+	SCALAR_UNIT_HPP(molality);
+	SCALAR_UNIT_HPP(linear_mass_density);
+	SCALAR_UNIT_HPP(area_density);
+	SCALAR_UNIT_HPP(dynamic_viscosity);
+	SCALAR_UNIT_HPP(mass_flow_rate);
+	SCALAR_UNIT_HPP(catalytic_activity);
 }
 
 #endif // SCIFIR_UNITS_PREDEFINED_UNITS_ATOMS_UNITS_HPP_INCLUDED
