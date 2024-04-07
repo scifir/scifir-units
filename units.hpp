@@ -22,13 +22,11 @@
 #include "predefined_units/space_units.hpp"
 #include "predefined_units/thermodynamics_units.hpp"
 #include "predefined_units/waves_units.hpp"
-#include "predefined_units/acoustics_units.hpp"
 #include "predefined_units/optics_units.hpp"
 #include "predefined_units/radiometry_units.hpp"
 #include "predefined_units/informatics_units.hpp"
 #include "predefined_units/biochemistry_units.hpp"
 #include "predefined_units/atoms_units.hpp"
-#include "predefined_units/matter_units.hpp"
 #include "predefined_units/substance_units.hpp"
 
 #include "topology/direction.hpp"
