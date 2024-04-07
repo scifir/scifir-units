@@ -71,12 +71,11 @@ Apart from those basic scalar_unit subclasses, there are a great amount of more 
 All those additional unit classes are the following:
 
 - **Astronomy:** specific_angular_momentum, specific_angular_momentum_2d, specific_angular_momentum_3d, specific_angular_momentum_nd
-- **Atoms:** density, viscosity, specific_volume, specific_heat_capacity, specific_entropy, specific_energy, molar_volume, molar_mass, molar_heat_capacity, molar_enthalpy, molar_entropy, molar_energy, molar_conductivity, energy_density
-- **Biochemistry:** catalytic_efficiency
+- **Chemistry:** density, viscosity, specific_volume, specific_heat_capacity, specific_entropy, specific_energy, molar_volume, molar_mass, molar_heat_capacity, molar_enthalpy, molar_entropy, molar_energy, molar_conductivity, energy_density, catalytic_efficiency
 - **Dynamics:** impulse, impulse_2d, impulse_3d, impulse_nd, force, force_2d, force_3d, force_nd, torque, torque_2d, torque_3d, torque_nd, pressure, pressure_2d, pressure_3d, pressure_nd, surface_tension, surface_tension_2d, surface_tension_3d, surface_tension_nd, stiffness, moment_of_inertia
 - **Electricity:** electric_current, voltage, electric_charge_density, electric_current_density, electric_field_strength, electric_field_strength_2d, electric_field_strength_3d, electric_field_strength_nd, electron_mobility, inductance
+- **Electronics:** electrical_conductivity, resistance, electric_conductance, capacitance, permittivity, resistivity, linear_charge_density, frequency_drift
 - **Fluid dynamics:** volumetric_flow, diffusion_coefficient, compressibility
-- **Hardware:** electrical_conductivity, resistance, electric_conductance, capacitance, permittivity, resistivity, linear_charge_density, frequency_drift
 - **Informatics:** transfer_speed
 - **Kinematics:** distance, displacement_2d, displacement_3d, displacement_nd, velocity, velocity_2d, velocity_3d, velocity_nd, acceleration, acceleration_2d, acceleration_3d, acceleration_nd, jerk, jerk_2d, jerk_3d, jerk_nd, snap, snap_2d, snap_3d, snap_nd, angular_velocity, angular_velocity_2d, angular_velocity_3d, angular_velocity_nd, angular_acceleration, angular_acceleration_2d, angular_acceleration_3d, angular_acceleration_nd, angular_momentum, angular_momentum_2d, angular_momentum_3d, angular_momentum_nd
 - **Magnetism:** magnetic_flux, magnetic_moment, magnetic_moment_2d, magnetic_moment_3d, magnetic_moment_nd, magnetic_reluctance, magnetic_rigidity, magnetomotive_force, magnetomotive_force_2d, magnetomotive_force_3d, magnetomotive_force_nd, magnetic_susceptibility
