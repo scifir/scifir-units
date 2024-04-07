@@ -1,4 +1,4 @@
-#include "predefined_units/atoms_units.hpp"
+#include "predefined_units/chemistry_units.hpp"
 
 #include <string>
 
@@ -20,6 +20,7 @@ namespace scifir
 	SCALAR_UNIT_CPP(molar_energy,"m2*g/s2*mol");
 	SCALAR_UNIT_CPP(molar_conductivity,"s3*A2/g*mol");
 	SCALAR_UNIT_CPP(energy_density,"g/m*s2");
+	SCALAR_UNIT_CPP(catalytic_efficiency,"m3/s*mol");
 
 	cas_number::cas_number(string new_value) : value(new_value)
 	{

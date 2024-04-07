@@ -14,7 +14,7 @@
 
 #include "predefined_units/astronomy_units.hpp"
 #include "predefined_units/electricity_units.hpp"
-#include "predefined_units/hardware_units.hpp"
+#include "predefined_units/electronics_units.hpp"
 #include "predefined_units/magnetism_units.hpp"
 #include "predefined_units/dynamics_units.hpp"
 #include "predefined_units/fluid_dynamics_units.hpp"
@@ -25,8 +25,7 @@
 #include "predefined_units/optics_units.hpp"
 #include "predefined_units/radiometry_units.hpp"
 #include "predefined_units/informatics_units.hpp"
-#include "predefined_units/biochemistry_units.hpp"
-#include "predefined_units/atoms_units.hpp"
+#include "predefined_units/chemistry_units.hpp"
 #include "predefined_units/substance_units.hpp"
 
 #include "topology/direction.hpp"

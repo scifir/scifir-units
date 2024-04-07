@@ -21,6 +21,7 @@ namespace scifir
 	SCALAR_UNIT_HPP(molar_energy);
 	SCALAR_UNIT_HPP(molar_conductivity);
 	SCALAR_UNIT_HPP(energy_density);
+	SCALAR_UNIT_HPP(catalytic_efficiency);
 
 	class cas_number
 	{
