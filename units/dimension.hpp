@@ -26,12 +26,12 @@ namespace scifir
 	class dimension
 	{
 		public:
-			enum type : char
+			enum type : int8_t
 			{
 				none, m, radian, steradian, s, g, C, K, mol, cd, B, Hz, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, L, minute, h, d, AU, pc, eV, Da, amu, barn, M, particles, custom, custom_basic, custom_full_symbol, money, pixel, memo
 			};
 
-			enum sign : char {NO_SIGN, POSITIVE, NEGATIVE};
+			enum sign : int8_t {NO_SIGN, POSITIVE, NEGATIVE};
 
 			dimension();
 			dimension(const dimension&);
