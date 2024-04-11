@@ -3,6 +3,8 @@
 
 #include "units/prefix.hpp"
 
+#include "boost/algorithm/string.hpp"
+
 #include <algorithm>
 #include <cstring>
 #include <cstddef>
@@ -20,7 +22,7 @@ namespace scifir
 {
 	class dimension;
 
-	vector<dimension> create_dimensions(string);
+	constexpr vector<dimension> create_dimensions(string);
 	vector<dimension> create_derived_dimensions(const string&);
 
 	class dimension
@@ -158,6 +160,56 @@ namespace scifir
 			static int total_full_symbols;
 			static set<string> prefixes_options;
 	};
+
+	constexpr vector<dimension> create_dimensions(string init_value)
+	{
+		boost::algorithm::erase_all(init_value, " ");
+		dimension::sign new_sign = dimension::POSITIVE;
+		int new_scale = 1;
+		int new_size = 1;
+		int new_start = 0;
+		constexpr string new_dimension_str;
+		constexpr vector<dimension> dimensions = vector<dimension>();
+		for(int j = 0; j < init_value.size(); j++)
+		{
+			if(init_value[j] == '1' and init_value[j + 1] == '/')
+			{
+				new_sign = dimension::NEGATIVE;
+			}
+			if(isalpha(init_value[j]) and (!isalpha(init_value[j + 1]) or (j + 1) == init_value.size()))
+			{
+				new_dimension_str = init_value.substr(new_start, new_size);
+				if(isdigit(init_value[j + 1]))
+				{
+					new_scale = stoi(init_value.substr(j + 1, 1));
+				}
+			}
+			if(init_value[j] == '*')
+			{
+				new_size = 0;
+				new_start = j + 1;
+			}
+			else if(init_value[j] == '/')
+			{
+				new_sign = dimension::NEGATIVE;
+				new_size = 0;
+				new_start = j + 1;
+			}
+			if(!new_dimension_str.empty())
+			{
+				dimension new_dimension = dimension(new_dimension_str,new_sign);
+				for (int k = 0; k < new_scale; k++)
+				{
+					dimensions.push_back(new_dimension);
+				}
+				new_dimension_str.clear();
+				new_scale = 1;
+				new_size = 0;
+			}
+			new_size++;
+		}
+		return dimensions;
+	}
 
 	string to_string(const dimension&);
 	string to_string(const vector<dimension>&);
