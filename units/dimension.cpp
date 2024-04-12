@@ -1176,7 +1176,7 @@ namespace scifir
 		return out.str();
 	}
 
-	/*vector<dimension> create_dimensions(string init_value)
+	vector<dimension> create_dimensions(string init_value)
 	{
 		boost::algorithm::erase_all(init_value, " ");
 		dimension::sign new_sign = dimension::POSITIVE;
@@ -1224,7 +1224,7 @@ namespace scifir
 			new_size++;
 		}
 		return dimensions;
-	}*/
+	}
 
 	vector<dimension> create_derived_dimensions(const string& init_value)
 	{

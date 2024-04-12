@@ -60,22 +60,22 @@ namespace scifir
 				float init_value_float;
 				ss >> init_value_float;
 				string init_value_dimension = init_values[i].substr(j);
-				float init_value_dimension_quantity;
+				float init_value_dimension_quantity = 0.0f;
 				if (init_value_dimension == "d")
 				{
-					init_value_dimension_quantity = 86400;
+					init_value_dimension_quantity = 86400.0f;
 				}
 				else if(init_value_dimension == "h")
 				{
-					init_value_dimension_quantity = 3600;
+					init_value_dimension_quantity = 3600.0f;
 				}
 				else if(init_value_dimension == "min")
 				{
-					init_value_dimension_quantity = 60;
+					init_value_dimension_quantity = 60.0f;
 				}
 				else if(init_value_dimension == "s")
 				{
-					init_value_dimension_quantity = 1;
+					init_value_dimension_quantity = 1.0f;
 				}
 				value += init_value_float * init_value_dimension_quantity;
 			}

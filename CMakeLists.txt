@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.7.1)
 find_package(Catch2 REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
+
 if(WITH_GCOV)
 	set(CMAKE_CXX_FLAGS "--coverage -fprofile-arcs -ftest-coverage")
 	set(CMAKE_EXE_LINKER_FLAGS "--coverage -lgcov")
@@ -49,7 +50,7 @@ topology
 units
 util)
 
-file(GLOB_RECURSE TARGET_SRC coordinates/*.cpp coordinates/light/*.cpp fields/*.cpp meca_number/*.cpp predefined_units/*.cpp special_units/*.cpp topology/*.cpp units/*.cpp util/*.cpp)
+file(GLOB_RECURSE TARGET_SRC coordinates/*.cpp fields/*.cpp meca_number/*.cpp predefined_units/*.cpp special_units/*.cpp topology/*.cpp units/*.cpp util/*.cpp)
 
 enable_testing()
 

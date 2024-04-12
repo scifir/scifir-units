@@ -78,10 +78,6 @@ namespace scifir
 			scalar_unit();
 			scalar_unit(const scalar_unit&);
 			scalar_unit(scalar_unit&&);
-
-			/*explicit constexpr scalar_unit(float new_value, const string& init_dimensions) : value(new_value),dimensions(create_dimensions(init_dimensions))
-			{}*/
-
 			explicit scalar_unit(float, const string&);
 			explicit scalar_unit(float, const vector<dimension>&);
 			explicit scalar_unit(const string&);
