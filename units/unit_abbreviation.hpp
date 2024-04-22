@@ -1,16 +1,16 @@
 #ifndef SCIFIR_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
 
-#include "units/scalar_unit.hpp"
-#include "units/unit_basic.hpp"
+#include "../units/scalar_unit.hpp"
+#include "../units/unit_basic.hpp"
 
-#include "predefined_units/electronics_units.hpp"
-#include "predefined_units/physics_units.hpp"
-#include "predefined_units/radiometry_units.hpp"
-#include "predefined_units/space_units.hpp"
-#include "predefined_units/chemistry_units.hpp"
+#include "../predefined_units/electronics_units.hpp"
+#include "../predefined_units/physics_units.hpp"
+#include "../predefined_units/radiometry_units.hpp"
+#include "../predefined_units/space_units.hpp"
+#include "../predefined_units/chemistry_units.hpp"
 
-#include "special_units/percentage.hpp"
+#include "../special_units/percentage.hpp"
 
 frequency operator"" _YHz(unsigned long long int);
 frequency operator"" _ZHz(unsigned long long int);

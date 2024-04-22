@@ -1,7 +1,7 @@
 #ifndef SCIFIR_UNITS_PREDEFINED_UNITS_INFORMATICS_UNITS_HPP_INCLUDED
 #define SCIFIR_UNITS_PREDEFINED_UNITS_INFORMATICS_UNITS_HPP_INCLUDED
 
-#include "units/scalar_unit.hpp"
+#include "../units/scalar_unit.hpp"
 
 using namespace std;
 

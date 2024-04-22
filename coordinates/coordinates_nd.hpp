@@ -1,10 +1,9 @@
 #ifndef SCIFIR_UNITS_COORDINATES_COORDINATES_ND_HPP_INCLUDED
 #define SCIFIR_UNITS_COORDINATES_COORDINATES_ND_HPP_INCLUDED
 
-#include "topology/point_nd.hpp"
-
-#include "predefined_units/physics_units.hpp"
-#include "units/unit_basic.hpp"
+#include "../topology/point_nd.hpp"
+#include "../predefined_units/physics_units.hpp"
+#include "../units/unit_basic.hpp"
 
 #include <iostream>
 #include <string>

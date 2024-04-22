@@ -336,8 +336,16 @@ namespace scifir
 		ostringstream output;
 		if (dimensions.size() == 1)
 		{
-			int value_scale = int(log10(get_value()));
-			prefix display_prefix = closest_prefix(dimensions[0].prefix,value_scale);
+			prefix display_prefix;
+			if (get_value() != 0)
+			{
+				int value_scale = int(log10(get_value()));
+				display_prefix = closest_prefix(dimensions[0].prefix,value_scale);
+			}
+			else
+			{
+				display_prefix = prefix(prefix::no_prefix);
+			}
 			float x_value = get_value();
 			x_value *= dimensions[0].prefix_math();
 			x_value /= prefix_math(dimensions[0],display_prefix);

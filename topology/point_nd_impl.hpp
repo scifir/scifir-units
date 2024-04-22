@@ -1,9 +1,9 @@
 #ifndef SCIFIR_UNITS_TOPOLOGY_POINT_ND_IMPL_HPP_INCLUDED
 #define SCIFIR_UNITS_TOPOLOGY_POINT_ND_IMPL_HPP_INCLUDED
 
-#include "topology/point_nd.hpp"
+#include "../topology/point_nd.hpp"
 
-#include "coordinates/coordinates_nd.hpp"
+#include "../coordinates/coordinates_nd.hpp"
 
 using namespace std;
 

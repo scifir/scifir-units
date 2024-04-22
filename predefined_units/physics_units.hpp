@@ -1,11 +1,10 @@
 #ifndef SCIFIR_UNITS_PREDEFINED_UNITS_KINEMATICS_UNITS_HPP_INCLUDED
 #define SCIFIR_UNITS_PREDEFINED_UNITS_KINEMATICS_UNITS_HPP_INCLUDED
 
-#include "units/scalar_unit.hpp"
-#include "units/vector_unit_2d.hpp"
-#include "units/vector_unit_3d.hpp"
-
-#include "units/unit_basic.hpp"
+#include "../units/scalar_unit.hpp"
+#include "../units/vector_unit_2d.hpp"
+#include "../units/vector_unit_3d.hpp"
+#include "../units/unit_basic.hpp"
 
 using namespace std;
 

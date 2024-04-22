@@ -1,8 +1,8 @@
 #ifndef SCIFIR_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED
 #define SCIFIR_UNITS_MECA_NUMBER_LAB_NUMBER_HPP_INCLUDED
 
-#include "util/is_number.hpp"
-#include "util/types.hpp"
+#include "../util/is_number.hpp"
+#include "../util/types.hpp"
 
 #include "boost/algorithm/string.hpp"
 

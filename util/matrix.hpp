@@ -1,7 +1,7 @@
 #ifndef SCIFIR_UNITS_UTIL_MATRIX_HPP_INCLUDED
 #define SCIFIR_UNITS_UTIL_MATRIX_HPP_INCLUDED
 
-#include "units/scalar_unit.hpp"
+#include "../units/scalar_unit.hpp"
 
 #include <iostream>
 #include <sstream>

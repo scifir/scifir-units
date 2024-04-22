@@ -1,9 +1,8 @@
 #ifndef SCIFIR_UNITS_MECA_NUMBER_COMPLEX_NUMBER_HPP_INCLUDED
 #define SCIFIR_UNITS_MECA_NUMBER_COMPLEX_NUMBER_HPP_INCLUDED
 
-#include "meca_number/angle.hpp"
-
-#include "util/is_number.hpp"
+#include "../meca_number/angle.hpp"
+#include "../util/is_number.hpp"
 
 #include "boost/algorithm/string.hpp"
 

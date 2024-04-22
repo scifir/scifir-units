@@ -1,9 +1,9 @@
 #ifndef SCIFIR_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED
 
-#include "units/dimension.hpp"
-#include "units/prefix.hpp"
-#include "util/is_number.hpp"
+#include "../units/dimension.hpp"
+#include "../units/prefix.hpp"
+#include "../util/is_number.hpp"
 
 #include <cmath>
 #include <map>
@@ -45,7 +45,11 @@
 			static const vector<dimension> real_dimensions; \
 	}
 
-#define SCALAR_UNIT_CPP(name,init_dimensions) name::name() : scalar_unit() {} \
+#define SCALAR_UNIT_CPP(name,init_dimensions) name::name() : scalar_unit() { \
+	dimensions = real_dimensions; \
+	cout << "here: " << dimensions[0] << endl; \
+	cout << "here prefix: " << dimensions[0].prefix << endl; \
+} \
 \
 	name::name(const scalar_unit& x) \
 	{ \

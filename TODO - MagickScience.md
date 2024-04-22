@@ -2,8 +2,6 @@
 // TODO: Use a memory profiler to analize the size of each object
 
 // C++
-// TODO: possible use of noexcept?
-
 // TODO: include the build configuration of CodeBlocks inside GitHub with a file
 // TODO: Debug target maybe can have configuration options that improve performance by avoiding some optimizations
 // TODO: Apply GNU Coding Standards

@@ -1,10 +1,10 @@
 #ifndef SCIFIR_UNITS_UNITS_VECTOR_UNIT_ND_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_VECTOR_UNIT_ND_HPP_INCLUDED
 
-#include "units/scalar_unit.hpp"
-#include "meca_number/angle.hpp"
-#include "util/is_number.hpp"
-#include "topology/direction.hpp"
+#include "../units/scalar_unit.hpp"
+#include "../meca_number/angle.hpp"
+#include "../util/is_number.hpp"
+#include "../topology/direction.hpp"
 
 #include "boost/algorithm/string.hpp"
 

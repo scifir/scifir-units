@@ -1,11 +1,10 @@
 #ifndef SCIFIR_UNITS_COORDINATES_COORDINATES_3D_HPP_INCLUDED
 #define SCIFIR_UNITS_COORDINATES_COORDINATES_3D_HPP_INCLUDED
 
-#include "topology/point_3d.hpp"
-#include "meca_number/angle.hpp"
-
-#include "units/unit_basic.hpp"
-#include "predefined_units/physics_units.hpp"
+#include "../topology/point_3d.hpp"
+#include "../meca_number/angle.hpp"
+#include "../units/unit_basic.hpp"
+#include "../predefined_units/physics_units.hpp"
 
 #include <iostream>
 #include <string>

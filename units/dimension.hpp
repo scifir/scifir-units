@@ -1,7 +1,7 @@
 #ifndef SCIFIR_UNITS_UNITS_DIMENSION_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_DIMENSION_HPP_INCLUDED
 
-#include "units/prefix.hpp"
+#include "../units/prefix.hpp"
 
 #include "boost/algorithm/string.hpp"
 

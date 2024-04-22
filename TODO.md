@@ -15,12 +15,9 @@ SCIFIR UNITS - VERSION 2
 
 // VECTOR FIELDS
 // TODO: vector_field (it should operate with vector_units and maybe with scalar_units. With (x,y,z) it gives the respective vector). +, - and ^ with vector_field, + - * with vector_unit
-// TODO: Typecasting of vector_unit to math_vector, boost_Ublas_vector, etc. Same for math_vector to vector_unit
 
 // C++
-// TODO: check how are inline constructors and constexpr constructors
-// TODO: use of constexpr
-// TODO: use scientific notation for the avogadro constant
+// TODO: use constexpr and consteval to initialize units instantly, possibly use it in more parts of the code
 // TODO: change the use of const-reference to value and std::move in constructors
 // TODO: change the use of const-reference to value and std::move in other places
 // TODO: use reference when instantiating variables and when it's not needed to instantiate by value inside the body of functions
@@ -32,6 +29,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: see how to free the char[]
 
 // UNITS
+// TODO: change the automatic conversion of prefixes to be optional with a boolean, default it to false
 // TODO: finish the tests of all the unit classes
 // TODO: allow to display in any conversion. By default it should always display in SI units, only if a conversion is expressly specified in the display functions the conversion is then the dimension that gets displayed
 // TODO: check dimensions in all inheriting classes of scalar_unit and vector_unit, it's needed another constructor that checks them
@@ -51,6 +49,9 @@ SCIFIR UNITS - VERSION 2
 
 // BASIC UNITS
 // TODO: think if to add another concentration class, the previous one has been deprecated
+
+// VECTOR UNITS
+// TODO: Possible typecasting of vector_unit to math_vector?
 
 // SPECIAL UNIS - EXTRA
 // ip class? check networking libraries of C++ and decide if to add it here
