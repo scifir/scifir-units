@@ -6,10 +6,10 @@ using namespace std;
 
 TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 {
-	SECTION("Initialization of coordinates_nd classes")
+	SECTION("Constructors of coordinates_nd classes")
 	{
-		coordinates_nd a;
-		cout << "a: " << a << endl;
+		coordinates_nd<> a;
+		//cout << "a: " << a << endl;
 	}
 
 	SECTION("Operations of coordinates_nd classes")
