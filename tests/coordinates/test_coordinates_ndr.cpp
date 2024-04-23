@@ -1,11 +1,12 @@
 #define CATCH_CONFIG_MAIN
 
 #include "catch2/catch.hpp"
-#include "../../units.hpp"
+#include "../../coordinates/coordinates_ndr.hpp"
 
 #include <iostream>
 
 using namespace std;
+using namespace scifir;
 
 TEST_CASE("class coordinates_ndr","Complete test of coordinates_ndr")
 {

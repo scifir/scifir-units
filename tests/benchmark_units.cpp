@@ -2,13 +2,14 @@
 #define CATCH_CONFIG_ENABLE_BENCHMARKING
 #include "catch2/catch.hpp"
 
-#include "../units.hpp"
+#include "../units/scalar_unit.hpp"
 
 #include <iostream>
 #include <sstream>
 #include <string>
 
 using namespace std;
+using namespace scifir;
 
 TEST_CASE("scalar_unit class","Full test of scalar_units") {
 	BENCHMARK("Sum of floats") {

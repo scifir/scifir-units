@@ -1,9 +1,31 @@
-#include "../units.hpp"
+#include "../units/prefix.hpp"
+#include "../units/dimension.hpp"
+#include "../meca_number/angle.hpp"
+#include "../meca_number/lab_number.hpp"
+#include "../units/scalar_unit.hpp"
+#include "../units/unit_basic.hpp"
+#include "../units/vector_unit_2d.hpp"
+#include "../units/vector_unit_3d.hpp"
+#include "../units/vector_unit_nd.hpp"
+#include "../topology/point_1d.hpp"
+#include "../topology/point_2d.hpp"
+#include "../topology/point_3d.hpp"
+#include "../topology/point_nd.hpp"
+#include "../coordinates/coordinates_1d.hpp"
+#include "../coordinates/coordinates_2d.hpp"
+#include "../coordinates/coordinates_2dr.hpp"
+#include "../coordinates/coordinates_3d.hpp"
+#include "../coordinates/coordinates_3dr.hpp"
+#include "../coordinates/coordinates_nd.hpp"
+#include "../coordinates/coordinates_ndr.hpp"
+#include "../special_units/aid.hpp"
+#include "../special_units/pH.hpp"
 
 #include <iostream>
 #include <string>
 
 using namespace std;
+using namespace scifir;
 
 class test_empty_class
 {

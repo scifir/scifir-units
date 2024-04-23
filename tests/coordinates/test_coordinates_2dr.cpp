@@ -1,8 +1,10 @@
 #define CATCH_CONFIG_MAIN
+
 #include "catch2/catch.hpp"
-#include "../../units.hpp"
+#include "../../coordinates/coordinates_2dr.hpp"
 
 using namespace std;
+using namespace scifir;
 
 TEST_CASE("class coordinates_2dr","Complete test of coordinates_2dr")
 {

@@ -1,13 +1,16 @@
 #define CATCH_CONFIG_MAIN
-#include "catch2/catch.hpp"
 
-#include "../../units.hpp"
+#include "catch2/catch.hpp"
+#include "../../units/scalar_unit.hpp"
+#include "../../units/unit_basic.hpp"
+#include "../../units/unit_abbreviation.hpp"
 
 #include <iostream>
 #include <sstream>
 #include <string>
 
 using namespace std;
+using namespace scifir;
 
 TEST_CASE("scalar_unit class","Full test of scalar_unit class") {
 	SECTION("Constructors of scalar_unit classes")

@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
-#include "catch2/catch.hpp"
 
-#include "../../units.hpp"
+#include "catch2/catch.hpp"
+#include "../../units/dimension.hpp"
 
 #include "unicode/unistr.h"
 
@@ -10,6 +10,7 @@
 #include <string>
 
 using namespace std;
+using namespace scifir;
 
 TEST_CASE("dimension class","Full test of dimension class") {
 	SECTION("Base functionalities of dimension class") {

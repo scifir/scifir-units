@@ -1,8 +1,11 @@
-#include "../../units.hpp"
+#include "../units/prefix.hpp"
+#include "../units/dimension.hpp"
+#include "../units/unit_basic.hpp"
 
 #include <iostream>
 
 using namespace std;
+using namespace scifir;
 
 int main()
 {

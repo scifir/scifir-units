@@ -1,8 +1,11 @@
 #define CATCH_CONFIG_MAIN
+
 #include "catch2/catch.hpp"
-#include "../../units.hpp"
+#include "../../units/vector_unit_2d.hpp"
+#include "../../units/unit_basic.hpp"
 
 using namespace std;
+using namespace scifir;
 
 TEST_CASE("class vector_unit_2d","Complete test of vector_unit_2d")
 {
