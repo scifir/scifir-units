@@ -151,7 +151,8 @@ install(TARGETS scifir-units ARCHIVE DESTINATION lib)
 install(FILES units.hpp DESTINATION include/scifir)
 install(DIRECTORY ${TARGET_H} DESTINATION include/scifir/units
 	FILES_MATCHING PATTERN "*.hpp")
-	
+install(FILES scifir-units.pc DESTINATION share/pkgconfig)
+
 set(CPACK_PACKAGE_NAME "scifir-units")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "C++ library of units, angles, special units, points and coordinates")
 set(CPACK_PACKAGE_VENDOR "Scifir")
