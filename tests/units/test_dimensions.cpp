@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
 #include "catch2/catch.hpp"
 
-#include "units.hpp"
+#include "../../units.hpp"
 
 #include "unicode/unistr.h"
 
@@ -49,7 +49,7 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		REQUIRE (bool(l.get_symbol() == "memo"));
 	}
 	
-	SECTION("Testing of length classes") {
+	SECTION("Testing of length dimensions") {
 		dimension a = dimension("Ym",dimension::POSITIVE);
 		REQUIRE (bool(to_string(a) == "Ym"));
 		dimension b = dimension("Zm",dimension::POSITIVE);
@@ -136,6 +136,10 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		vector<dimension> p = normalize_dimensions(o,o2);
 		REQUIRE (bool(o2 == 1000.0));
 		REQUIRE (bool(to_string(p) == "kg*m/s2"));
+		vector<dimension> t = create_dimensions("m2*s2/m4*C3");
+		vector<dimension> u = normalize_dimensions(t);
+		cout << "u: " << to_string(u) << endl;
+		REQUIRE (bool(to_string(u) == "s2/m2*C3"));
 	}
 	
 	SECTION ("Operations with dimensions") {

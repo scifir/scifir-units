@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
 #include "catch2/catch.hpp"
 
-#include "units.hpp"
+#include "../../units.hpp"
 
 #include <iostream>
 #include <sstream>
@@ -10,33 +10,53 @@
 using namespace std;
 
 TEST_CASE("scalar_unit class","Full test of scalar_unit class") {
-	SECTION("Initialization of scalar_unit classes")
+	SECTION("Constructors of scalar_unit classes")
 	{
 		scalar_unit a;
 		REQUIRE (bool(to_string(a) == "0 [empty]"));
 		scalar_unit b = scalar_unit("100 g");
 		scalar_unit c = scalar_unit(b);
-		REQUIRE (bool(to_string(c) == "1 hg"));
+		REQUIRE (bool(to_string(c) == "100 g"));
 		scalar_unit d = scalar_unit(100,"g");
-		REQUIRE (bool(to_string(d) == "1 hg"));
+		REQUIRE (bool(to_string(d) == "100 g"));
 		scalar_unit e = scalar_unit(100,{dimension("g",dimension::POSITIVE)});
-		REQUIRE (bool(to_string(e) == "1 hg"));
+		REQUIRE (bool(to_string(e) == "100 g"));
 		scalar_unit f = scalar_unit("100 g");
-		REQUIRE (bool(to_string(f) == "1 hg"));
+		REQUIRE (bool(to_string(f) == "100 g"));
 	}
-	
+
+	SECTION("Assignments of scalar_unit classes")
+	{
+
+	}
+
+	SECTION("Operators of scalar_unit classes with other scalar_unit classes")
+	{
+
+	}
+
+	SECTION("Operators of scalar_unit classes with numeric types")
+	{
+
+	}
+
+	SECTION("String functions of scalar_unit classes")
+	{
+		
+	}
+
 	mass a(100,"g");
 	ostringstream a_out;
 	a_out << a;
-	REQUIRE (a_out.str() == "1 hg");
+	REQUIRE (a_out.str() == "100 g");
 	mass b(50,"g");
 	ostringstream b_out;
 	b_out << b;
-	REQUIRE (b_out.str() == "5 dag");
+	REQUIRE (b_out.str() == "50 g");
 	mass c("5.2*10^3 m");
 	ostringstream c_out;
 	c_out << c;
-	REQUIRE (c_out.str() == "5.19 km");
+	REQUIRE (c_out.str() == "5200 m");
 	REQUIRE (c.custom_display("sci") == "5.19e3 m");
 	REQUIRE (bool((a + b) == 150_g));
 	REQUIRE (bool((a - b) == 50_g));
@@ -85,7 +105,7 @@ TEST_CASE("scalar_unit class","Full test of scalar_unit class") {
 	a.change_dimensions("kg");
 	a_out = ostringstream();
 	a_out << a;
-	REQUIRE (bool(a_out.str() == "1 hg"));
+	REQUIRE (bool(a_out.str() == "0.10 kg"));
 	REQUIRE (bool(a.custom_display("mg") == "100000 mg"));
 	REQUIRE (bool(a.has_dimensions("g")));
 	REQUIRE (bool(a.has_dimensions("kg")));

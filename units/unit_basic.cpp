@@ -1,9 +1,9 @@
-#include "units/unit_basic.hpp"
+#include "./unit_basic.hpp"
 
-#include "units/scalar_unit.hpp"
-#include "units/dimension.hpp"
-#include "units/prefix.hpp"
-#include "topology/constants.hpp"
+#include "./scalar_unit.hpp"
+#include "./dimension.hpp"
+#include "./prefix.hpp"
+#include "../topology/constants.hpp"
 
 #include "boost/algorithm/string.hpp"
 

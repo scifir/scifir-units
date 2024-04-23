@@ -1,6 +1,6 @@
-#include "special_units/pixel.hpp"
+#include "./pixel.hpp"
 
-#include "util/types.hpp"
+#include "../util/types.hpp"
 
 #include "boost/algorithm/string.hpp"
 

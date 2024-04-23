@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN
 #include "catch2/catch.hpp"
-#include "units.hpp"
+#include "../../units.hpp"
 
 using namespace std;
 

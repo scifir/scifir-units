@@ -1,7 +1,7 @@
-#include "units/vector_unit_2d.hpp"
+#include "./vector_unit_2d.hpp"
 
-#include "coordinates/coordinates_2d.hpp"
-#include "util/types.hpp"
+#include "../coordinates/coordinates_2d.hpp"
+#include "../util/types.hpp"
 
 #include "boost/algorithm/string.hpp"
 

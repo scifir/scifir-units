@@ -1,4 +1,4 @@
-#include "coordinates/coordinates_1d.hpp"
+#include "./coordinates_1d.hpp"
 
 using namespace std;
 

@@ -1,6 +1,6 @@
-#include "topology/point_nd.hpp"
+#include "./point_nd.hpp"
 
-#include "coordinates/coordinates_nd.hpp"
+#include "../coordinates/coordinates_nd.hpp"
 
 using namespace std;
 

@@ -1,4 +1,4 @@
-#include "topology/direction.hpp"
+#include "./direction.hpp"
 
 #include "boost/algorithm/string.hpp"
 

@@ -1,7 +1,7 @@
-#include "units/vector_unit_nd.hpp"
+#include "./vector_unit_nd.hpp"
 
-#include "coordinates/coordinates_2d.hpp"
-#include "coordinates/coordinates_3d.hpp"
+#include "../coordinates/coordinates_2d.hpp"
+#include "../coordinates/coordinates_3d.hpp"
 
 using namespace std;
 

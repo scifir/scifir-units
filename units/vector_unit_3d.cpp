@@ -1,7 +1,7 @@
-#include "units/vector_unit_3d.hpp"
+#include "./vector_unit_3d.hpp"
 
-#include "coordinates/coordinates_3d.hpp"
-#include "util/types.hpp"
+#include "../coordinates/coordinates_3d.hpp"
+#include "../util/types.hpp"
 
 using namespace std;
 

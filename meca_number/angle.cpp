@@ -1,6 +1,6 @@
-#include "meca_number/angle.hpp"
+#include "./angle.hpp"
 
-#include "util/types.hpp"
+#include "../util/types.hpp"
 
 #include "boost/algorithm/string.hpp"
 #include "unicode/unistr.h"

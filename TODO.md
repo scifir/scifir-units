@@ -2,8 +2,8 @@ SCIFIR UNITS - VERSION 2
 
 // BUILD
 // TODO: Add the boost configuration for Windows, by adding a variable that sets the path of boost
-// TODO: Rename msci.pc to scifir-units.pc, and change it accordingly
 // TODO: try to integrate the library to MSYS2
+// TODO: add the pc file to be installed inside CMakeLists.txt
 
 // COORDINATES AND POINTS
 // TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd
@@ -29,13 +29,14 @@ SCIFIR UNITS - VERSION 2
 // TODO: see how to free the char[]
 
 // UNITS
-// TODO: change the automatic conversion of prefixes to be optional with a boolean, default it to false
 // TODO: finish the tests of all the unit classes
+// TODO: configure how to display the float of scalar_unit for display(), derived_display() and custom_display(). Maybe the solution is that it never prints a decimal if it's a 0.
 // TODO: allow to display in any conversion. By default it should always display in SI units, only if a conversion is expressly specified in the display functions the conversion is then the dimension that gets displayed
 // TODO: check dimensions in all inheriting classes of scalar_unit and vector_unit, it's needed another constructor that checks them
 // TODO: Regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_dimensions_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr
 // TODO: Detect when there's the same dimension at the numerator and at the denominator of the string initialization
 // TODO: add "[]" optionally to display() functions of scalar_unit surrounding the dimensions
+// TODO: make scalar_unit a template class converting the default type of the value member-variable to float type. Change the derived units to template classes too, and also all vector_units. Change the macro that defines derived units to be only the macro with HPP and use it in all predefined_unit files
 
 // PREDEFINED UNITS
 // TODO: think if to add accoustic and matter predefined units, or if it's not needed
@@ -76,7 +77,6 @@ SCIFIR UNITS - VERSION 2
 // TODO: check if it's needed to add a function is_si_basic_dimension() that gives whether the dimension is basic or not in the sense of the SI system of units
 // TODO: support and UTF32 string constructor for scalar_unit in order to allow to create dimensions directly with some Unicode characters that are not present in UTF8
 // TODO: scalar_unit should have is_valid() with some system
-// TODO: think if to make scalar_unit a template class converting the default type of the value member-variable to float type
 // TODO: support the conversions natively
 // TODO: add the operators +,-,* and / in the derived classes of scalar_unit and vector_unit with the same class in order to avoid to check that the dimensions are the same, that saves time
 // TODO: check the object code resulting by testing different functions of the unit classes
@@ -128,7 +128,6 @@ SCIFIR UNITS - VERSION 2
 
 // RELEASE
 // TODO: configure CMake with cpack
-// TODO: see what to do with msci.pc
 // TODO: see what to do to configure optimizations
 
 // MATRIX

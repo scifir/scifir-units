@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
 #include "catch2/catch.hpp"
 
-#include "units.hpp"
+#include "../../units.hpp"
 
 #include <iostream>
 #include <sstream>
@@ -32,12 +32,12 @@ TEST_CASE("basic units","Full test of basic units") {
 	}
 
 	SECTION("mass class") {
-		mass a = mass("5 ppm","10000000 g");
-		REQUIRE (bool(to_string(a) == "5 dag"));
+		scifir::mass a = scifir::mass("5 ppm","10000000 g");
+		REQUIRE (bool(to_string(a) == "50 g"));
 	}
 
 	SECTION("mole class") {
-		mole a = mole("1 ppm","1000000 g");
+		scifir::mole a = scifir::mole("1 ppm","1000000 g");
 		REQUIRE (bool(to_string(a) == "1 g"));
 	}
 }

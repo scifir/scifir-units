@@ -1,9 +1,9 @@
-#include "units/scalar_unit.hpp"
+#include "./scalar_unit.hpp"
 
-#include "units/conversion.hpp"
-#include "units/unit_basic.hpp"
-#include "units/prefix.hpp"
-#include "util/types.hpp"
+#include "./conversion.hpp"
+#include "./unit_basic.hpp"
+#include "./prefix.hpp"
+#include "../util/types.hpp"
 
 #include "boost/algorithm/string/erase.hpp"
 #include "boost/algorithm/string.hpp"
@@ -331,10 +331,10 @@ namespace scifir
 		return create_derived_dimensions(dimensions);
 	}
 
-	string scalar_unit::display(int number_of_decimals) const
+	string scalar_unit::display(int number_of_decimals,bool use_close_prefix) const
 	{
 		ostringstream output;
-		if (dimensions.size() == 1)
+		if (dimensions.size() == 1 && use_close_prefix == true)
 		{
 			prefix display_prefix;
 			if (get_value() != 0)
@@ -360,12 +360,12 @@ namespace scifir
 		return output.str();
 	}
 
-	string scalar_unit::derived_display(int number_of_decimals) const
+	string scalar_unit::derived_display(int number_of_decimals,bool use_close_prefix) const
 	{
 		ostringstream output;
 		long double x_value = get_value();
 		vector<dimension> derived_dimensions = create_derived_dimensions(dimensions,x_value);
-		if (derived_dimensions.size() == 1)
+		if (derived_dimensions.size() == 1 && use_close_prefix == true)
 		{
 			int value_scale = int(log10(get_value()));
 			prefix display_prefix = closest_prefix(derived_dimensions[0].prefix,value_scale);

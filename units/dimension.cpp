@@ -1,6 +1,6 @@
-#include "units/dimension.hpp"
+#include "./dimension.hpp"
 
-#include "topology/constants.hpp"
+#include "../topology/constants.hpp"
 
 #include "boost/algorithm/string.hpp"
 
@@ -1410,6 +1410,7 @@ namespace scifir
 		vector<int> skip_dimensions = vector<int>();
 		for(int i = 0; i < new_x.size(); i++)
 		{
+			bool skip = false;
 			for(int j = i + 1; j < new_x.size(); j++)
 			{
 				if (skip_dimensions.size() > 0)
@@ -1420,12 +1421,11 @@ namespace scifir
 						if (j == skip_dimensions[k])
 						{
 							skip = true;
-							break;
 						}
 					}
 					if (skip)
 					{
-						break;
+						continue;
 					}
 				}
 				if (new_x[i].dimension_type == new_x[j].dimension_type and new_x[i].dimension_sign != new_x[j].dimension_sign)
@@ -1461,6 +1461,7 @@ namespace scifir
 		vector<int> skip_dimensions = vector<int>();
 		for(int i = 0; i < new_x.size(); i++)
 		{
+			bool skip = false;
 			for(int j = i + 1; j < new_x.size(); j++)
 			{
 				if (skip_dimensions.size() > 0)
@@ -1471,12 +1472,11 @@ namespace scifir
 						if (j == skip_dimensions[k])
 						{
 							skip = true;
-							break;
 						}
 					}
 					if (skip)
 					{
-						break;
+						continue;
 					}
 				}
 				if (new_x[i].dimension_type == new_x[j].dimension_type and new_x[i].dimension_sign != new_x[j].dimension_sign)
