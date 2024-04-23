@@ -2,12 +2,15 @@
 #include "catch2/catch.hpp"
 
 #include "../../special_units/percentage.hpp"
+#include "../../units/unit_basic.hpp"
+#include "../../units/unit_abbreviation.hpp"
 
 #include <iostream>
 #include <sstream>
 #include <string>
 
 using namespace std;
+using namespace scifir;
 
 TEST_CASE("percentage class","Full test of percentage class") {
 	SECTION("Constructors of percentage class") {
