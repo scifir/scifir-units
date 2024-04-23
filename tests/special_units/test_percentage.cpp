@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
 #include "catch2/catch.hpp"
 
-#include "../../units.hpp"
+#include "../../special_units/percentage.hpp"
 
 #include <iostream>
 #include <sstream>
