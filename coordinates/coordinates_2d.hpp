@@ -16,27 +16,27 @@ namespace scifir
 	class coordinates_2d
 	{
 		public:
-			coordinates_2d<T>() : x(),y()
+			coordinates_2d() : x(),y()
 			{}
 
-			coordinates_2d<T>(const coordinates_2d<T>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y)
+			coordinates_2d(const coordinates_2d<T>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y)
 			{}
 
-			coordinates_2d<T>(coordinates_2d<T>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y))
+			coordinates_2d(coordinates_2d<T>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y))
 			{}
 
-			explicit coordinates_2d<T>(const T& new_x,const T& new_y) : x(new_x),y(new_y)
+			explicit coordinates_2d(const T& new_x,const T& new_y) : x(new_x),y(new_y)
 			{}
 
-			explicit coordinates_2d<T>(const T& new_p,const angle& new_theta)
+			explicit coordinates_2d(const T& new_p,const angle& new_theta)
 			{
 				set_position(new_p,new_theta);
 			}
 
-			explicit coordinates_2d<T>(const scifir::point_2d<T>& new_point) : x(new_point.x),y(new_point.y)
+			explicit coordinates_2d(const scifir::point_2d<T>& new_point) : x(new_point.x),y(new_point.y)
 			{}
 
-			explicit coordinates_2d<T>(string init_coordinates_2d) : coordinates_2d<T>()
+			explicit coordinates_2d(string init_coordinates_2d) : coordinates_2d()
 			{
 				vector<string> values;
 				if (init_coordinates_2d.front() == '(')
@@ -150,27 +150,27 @@ namespace scifir
 	class coordinates_2d<float>
 	{
 		public:
-			coordinates_2d<float>() : x(),y()
+			coordinates_2d() : x(),y()
 			{}
 
-			coordinates_2d<float>(const coordinates_2d<float>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y)
+			coordinates_2d(const coordinates_2d<float>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y)
 			{}
 
-			coordinates_2d<float>(coordinates_2d<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y))
+			coordinates_2d(coordinates_2d<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y))
 			{}
 
-			explicit coordinates_2d<float>(const float& new_x,const float& new_y) : x(new_x),y(new_y)
+			explicit coordinates_2d(const float& new_x,const float& new_y) : x(new_x),y(new_y)
 			{}
 
-			explicit coordinates_2d<float>(const float& new_p,const angle& new_theta)
+			explicit coordinates_2d(const float& new_p,const angle& new_theta)
 			{
 				set_position(new_p,new_theta);
 			}
 
-			explicit coordinates_2d<float>(const scifir::point_2d<float>& new_point) : x(new_point.x),y(new_point.y)
+			explicit coordinates_2d(const scifir::point_2d<float>& new_point) : x(new_point.x),y(new_point.y)
 			{}
 
-			explicit coordinates_2d<float>(string init_coordinates_2d) : coordinates_2d<float>()
+			explicit coordinates_2d(string init_coordinates_2d) : coordinates_2d()
 			{
 				vector<string> values;
 				if (init_coordinates_2d.front() == '(')

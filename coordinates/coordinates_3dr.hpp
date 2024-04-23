@@ -18,40 +18,40 @@ namespace scifir
 	class coordinates_3dr
 	{
 		public:
-			coordinates_3dr<T>() : x(),y(),z(),theta(),phi()
+			coordinates_3dr() : x(),y(),z(),theta(),phi()
 			{}
 
-			coordinates_3dr<T>(const coordinates_3dr<T>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z),theta(x_coordinates.theta),phi(x_coordinates.phi)
+			coordinates_3dr(const coordinates_3dr<T>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z),theta(x_coordinates.theta),phi(x_coordinates.phi)
 			{}
 
-			coordinates_3dr<T>(coordinates_3dr<T>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z)),theta(std::move(x_coordinates.theta)),phi(std::move(x_coordinates.phi))
+			coordinates_3dr(coordinates_3dr<T>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z)),theta(std::move(x_coordinates.theta)),phi(std::move(x_coordinates.phi))
 			{}
 
-			explicit coordinates_3dr<T>(const T& new_x,const T& new_y,const T& new_z,const angle& new_theta,const angle& new_phi) : x(new_x),y(new_y),z(new_z),theta(new_theta),phi(new_phi)
+			explicit coordinates_3dr(const T& new_x,const T& new_y,const T& new_z,const angle& new_theta,const angle& new_phi) : x(new_x),y(new_y),z(new_z),theta(new_theta),phi(new_phi)
 			{}
 
-			explicit coordinates_3dr<T>(const T& new_p,const angle& new_cylindrical_theta,T new_z,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
+			explicit coordinates_3dr(const T& new_p,const angle& new_cylindrical_theta,T new_z,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
 			{
 				set_position(new_p,new_cylindrical_theta,new_z);
 			}
 
-			explicit coordinates_3dr<T>(const T& new_r,const angle& new_spherical_theta,const angle& new_spherical_phi,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
+			explicit coordinates_3dr(const T& new_r,const angle& new_spherical_theta,const angle& new_spherical_phi,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
 			{
 				set_position(new_r,new_spherical_theta,new_spherical_phi);
 			}
 
-			explicit coordinates_3dr<T>(const angle& new_latitude,const angle& new_longitude,const T& new_altitude,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
+			explicit coordinates_3dr(const angle& new_latitude,const angle& new_longitude,const T& new_altitude,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
 			{
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit coordinates_3dr<T>(const point_3d<T>& x_point,const angle& new_theta,const angle& new_phi) : x(x_point.x),y(x_point.y),z(x_point.z),theta(new_theta),phi(new_phi)
+			explicit coordinates_3dr(const point_3d<T>& x_point,const angle& new_theta,const angle& new_phi) : x(x_point.x),y(x_point.y),z(x_point.z),theta(new_theta),phi(new_phi)
 			{}
 
-			explicit coordinates_3dr<T>(const coordinates_3d<T>& x_coordinates,const angle& new_theta,const angle& new_phi) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z),theta(new_theta),phi(new_phi)
+			explicit coordinates_3dr(const coordinates_3d<T>& x_coordinates,const angle& new_theta,const angle& new_phi) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z),theta(new_theta),phi(new_phi)
 			{}
 
-			explicit coordinates_3dr<T>(string init_coordinates_3dr) : coordinates_3dr<T>()
+			explicit coordinates_3dr(string init_coordinates_3dr) : coordinates_3dr()
 			{
 				vector<string> init_coordinates;
 				vector<string> init_values;
@@ -435,40 +435,40 @@ namespace scifir
 	class coordinates_3dr<float>
 	{
 		public:
-			coordinates_3dr<float>() : x(),y(),z(),theta(),phi()
+			coordinates_3dr() : x(),y(),z(),theta(),phi()
 			{}
 
-			coordinates_3dr<float>(const coordinates_3dr<float>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z),theta(x_coordinates.theta),phi(x_coordinates.phi)
+			coordinates_3dr(const coordinates_3dr<float>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z),theta(x_coordinates.theta),phi(x_coordinates.phi)
 			{}
 
-			coordinates_3dr<float>(coordinates_3dr<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z)),theta(std::move(x_coordinates.theta)),phi(std::move(x_coordinates.phi))
+			coordinates_3dr(coordinates_3dr<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z)),theta(std::move(x_coordinates.theta)),phi(std::move(x_coordinates.phi))
 			{}
 
-			explicit coordinates_3dr<float>(const float& new_x,const float& new_y,const float& new_z,const angle& new_theta,const angle& new_phi) : x(new_x),y(new_y),z(new_z)
+			explicit coordinates_3dr(const float& new_x,const float& new_y,const float& new_z,const angle& new_theta,const angle& new_phi) : x(new_x),y(new_y),z(new_z)
 			{}
 
-			explicit coordinates_3dr<float>(const float& new_p,const angle& new_cylindrical_theta,const float& new_z,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
+			explicit coordinates_3dr(const float& new_p,const angle& new_cylindrical_theta,const float& new_z,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
 			{
 				set_position(new_p,new_cylindrical_theta,new_z);
 			}
 
-			explicit coordinates_3dr<float>(const float& new_r,const angle& new_spherical_theta,const angle& new_spherical_phi,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
+			explicit coordinates_3dr(const float& new_r,const angle& new_spherical_theta,const angle& new_spherical_phi,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
 			{
 				set_position(new_r,new_spherical_theta,new_spherical_phi);
 			}
 
-			explicit coordinates_3dr<float>(const angle& new_latitude,const angle& new_longitude,const float& new_altitude,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
+			explicit coordinates_3dr(const angle& new_latitude,const angle& new_longitude,const float& new_altitude,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
 			{
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit coordinates_3dr<float>(const point_3d<float>& x_point,const angle& new_theta,const angle& new_phi) : x(x_point.x),y(x_point.y),z(x_point.z),theta(new_theta),phi(new_phi)
+			explicit coordinates_3dr(const point_3d<float>& x_point,const angle& new_theta,const angle& new_phi) : x(x_point.x),y(x_point.y),z(x_point.z),theta(new_theta),phi(new_phi)
 			{}
 
-			explicit coordinates_3dr<float>(const coordinates_3d<float>& x_coordinates,const angle& new_theta,const angle& new_phi) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z),theta(new_theta),phi(new_phi)
+			explicit coordinates_3dr(const coordinates_3d<float>& x_coordinates,const angle& new_theta,const angle& new_phi) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z),theta(new_theta),phi(new_phi)
 			{}
 
-			explicit coordinates_3dr<float>(string init_coordinates_3dr) : coordinates_3dr<float>()
+			explicit coordinates_3dr(string init_coordinates_3dr) : coordinates_3dr()
 			{
 				vector<string> init_coordinates;
 				vector<string> init_values;

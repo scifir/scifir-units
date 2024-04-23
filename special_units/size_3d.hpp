@@ -15,22 +15,22 @@ namespace scifir
 	class size_3d
 	{
 		public:
-			size_3d<T>() : width(),height(),depth()
+			size_3d() : width(),height(),depth()
 			{}
 
-			size_3d<T>(const size_3d<T>& x) : width(x.width),height(x.height),depth(x.depth)
+			size_3d(const size_3d<T>& x) : width(x.width),height(x.height),depth(x.depth)
 			{}
 
-			size_3d<T>(size_3d<T>&& x) : width(move(x.width)),height(move(x.height)),depth(move(x.depth))
+			size_3d(size_3d<T>&& x) : width(move(x.width)),height(move(x.height)),depth(move(x.depth))
 			{}
 
-			explicit size_3d<T>(const T& new_width,const T& new_height,const T& new_depth) : width(new_width),height(new_height),depth(new_depth)
+			explicit size_3d(const T& new_width,const T& new_height,const T& new_depth) : width(new_width),height(new_height),depth(new_depth)
 			{}
 
-			explicit size_3d<T>(const string& new_width,const string& new_height,const string& new_depth) : width(new_width),height(new_height),depth(new_depth)
+			explicit size_3d(const string& new_width,const string& new_height,const string& new_depth) : width(new_width),height(new_height),depth(new_depth)
 			{}
 
-			explicit size_3d<T>(const string& init_size_3d) : size_3d<T>()
+			explicit size_3d(const string& init_size_3d) : size_3d()
 			{
 				vector<string> widths;
 				boost::split(widths,init_size_3d,boost::is_any_of("*"));
@@ -99,22 +99,22 @@ namespace scifir
 	class size_3d<float>
 	{
 		public:
-			size_3d<float>() : width(),height(),depth()
+			size_3d() : width(),height(),depth()
 			{}
 
-			size_3d<float>(const size_3d<float>& x) : width(x.width),height(x.height),depth(x.depth)
+			size_3d(const size_3d<float>& x) : width(x.width),height(x.height),depth(x.depth)
 			{}
 
-			size_3d<float>(size_3d<float>&& x) : width(move(x.width)),height(move(x.height)),depth(move(x.depth))
+			size_3d(size_3d<float>&& x) : width(move(x.width)),height(move(x.height)),depth(move(x.depth))
 			{}
 
-			explicit size_3d<float>(const float& new_width,const float& new_height,const float& new_depth) : width(new_width),height(new_height),depth(new_depth)
+			explicit size_3d(const float& new_width,const float& new_height,const float& new_depth) : width(new_width),height(new_height),depth(new_depth)
 			{}
 
-			explicit size_3d<float>(const string& new_width,const string& new_height,const string& new_depth) : width(stof(new_width)),height(stof(new_height)),depth(stof(new_depth))
+			explicit size_3d(const string& new_width,const string& new_height,const string& new_depth) : width(stof(new_width)),height(stof(new_height)),depth(stof(new_depth))
 			{}
 
-			explicit size_3d<float>(const string& init_size_3d) : size_3d<float>()
+			explicit size_3d(const string& init_size_3d) : size_3d()
 			{
 				vector<string> widths;
 				boost::split(widths,init_size_3d,boost::is_any_of("*"));

@@ -23,6 +23,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: use reference when instantiating variables and when it's not needed to instantiate by value inside the body of functions
 // TODO: possible use of #pragma?
 // TODO: if size_t and other similar constants are intended to be used inside normal code
+// TODO: replace boost::split by split of C++20
 
 // DIMENSIONS
 // TODO: support the binary prefixes too
@@ -33,8 +34,10 @@ SCIFIR UNITS - VERSION 2
 // TODO: configure how to display the float of scalar_unit for display(), derived_display() and custom_display(). Maybe the solution is that it never prints a decimal if it's a 0.
 // TODO: allow to display in any conversion. By default it should always display in SI units, only if a conversion is expressly specified in the display functions the conversion is then the dimension that gets displayed
 // TODO: check dimensions in all inheriting classes of scalar_unit and vector_unit, it's needed another constructor that checks them
-// TODO: Regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_dimensions_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr
+
+// TODO: Regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_initialization_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr
 // TODO: Detect when there's the same dimension at the numerator and at the denominator of the string initialization
+
 // TODO: add "[]" optionally to display() functions of scalar_unit surrounding the dimensions
 // TODO: make scalar_unit a template class converting the default type of the value member-variable to float type. Change the derived units to template classes too, and also all vector_units. Change the macro that defines derived units to be only the macro with HPP and use it in all predefined_unit files
 

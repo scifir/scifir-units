@@ -17,26 +17,26 @@ namespace scifir
 	class point_2d
 	{
 		public:
-			point_2d<T>() : x(),y()
+			point_2d() : x(),y()
 			{}
 
-			point_2d<T>(const point_2d<T>& x_point) : x(x_point.x),y(x_point.y)
+			point_2d(const point_2d<T>& x_point) : x(x_point.x),y(x_point.y)
 			{}
 
-			point_2d<T>(point_2d<T>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y))
+			point_2d(point_2d<T>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y))
 			{}
 
-			explicit point_2d<T>(const T& new_x,const T& new_y) : x(new_x),y(new_y)
+			explicit point_2d(const T& new_x,const T& new_y) : x(new_x),y(new_y)
 			{}
 	
-			explicit point_2d<T>(const T& new_p,const angle& new_theta)
+			explicit point_2d(const T& new_p,const angle& new_theta)
 			{
 				set_position(new_p,new_theta);
 			}
 
-			explicit point_2d<T>(const coordinates_2d<T>&);
+			explicit point_2d(const coordinates_2d<T>&);
 
-			explicit point_2d<T>(string init_point_2d) : point_2d<T>()
+			explicit point_2d(string init_point_2d) : point_2d()
 			{
 				vector<string> values;
 				if (init_point_2d.front() == '(')
@@ -145,26 +145,26 @@ namespace scifir
 	class point_2d<float>
 	{
 		public:
-			point_2d<float>() : x(),y()
+			point_2d() : x(),y()
 			{}
 
-			point_2d<float>(const point_2d<float>& x_point) : x(x_point.x),y(x_point.y)
+			point_2d(const point_2d<float>& x_point) : x(x_point.x),y(x_point.y)
 			{}
 
-			point_2d<float>(point_2d<float>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y))
+			point_2d(point_2d<float>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y))
 			{}
 
-			explicit point_2d<float>(const float& new_x,const float& new_y) : x(new_x),y(new_y)
+			explicit point_2d(const float& new_x,const float& new_y) : x(new_x),y(new_y)
 			{}
 	
-			explicit point_2d<float>(const float& new_p,const angle& new_theta)
+			explicit point_2d(const float& new_p,const angle& new_theta)
 			{
 				set_position(new_p,new_theta);
 			}
 
-			explicit point_2d<float>(const coordinates_2d<float>&);
+			explicit point_2d(const coordinates_2d<float>&);
 
-			explicit point_2d<float>(string init_point_2d) : point_2d<float>()
+			explicit point_2d(string init_point_2d) : point_2d()
 			{
 				vector<string> values;
 				if (init_point_2d.front() == '(')

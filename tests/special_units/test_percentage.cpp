@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN
-#include "catch2/catch.hpp"
 
+#include "catch2/catch_all.hpp"
 #include "../../special_units/percentage.hpp"
 #include "../../units/unit_basic.hpp"
 #include "../../units/unit_abbreviation.hpp"

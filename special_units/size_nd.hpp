@@ -16,19 +16,19 @@ namespace scifir
 	class size_nd
 	{
 		public:
-			size_nd<T>() : widths()
+			size_nd() : widths()
 			{}
 
-			size_nd<T>(const size_nd<T>& x) : widths(x.widths)
+			size_nd(const size_nd<T>& x) : widths(x.widths)
 			{}
 
-			size_nd<T>(size_nd<T>&& x) : widths(move(x.widths))
+			size_nd(size_nd<T>&& x) : widths(move(x.widths))
 			{}
 
-			explicit size_nd<T>(const vector<T>& new_widths) : widths(new_widths)
+			explicit size_nd(const vector<T>& new_widths) : widths(new_widths)
 			{}
 
-			explicit size_nd<T>(const vector<string>& new_widths) : widths()
+			explicit size_nd(const vector<string>& new_widths) : widths()
 			{
 				for (const string& new_width : new_widths)
 				{
@@ -36,7 +36,7 @@ namespace scifir
 				}
 			}
 
-			explicit size_nd<T>(const string& init_size_nd) : size_nd<T>()
+			explicit size_nd(const string& init_size_nd) : size_nd()
 			{
 				vector<string> new_widths;
 				boost::split(new_widths,init_size_nd,boost::is_any_of("*"));
@@ -143,19 +143,19 @@ namespace scifir
 	class size_nd<float>
 	{
 		public:
-			size_nd<float>() : widths()
+			size_nd() : widths()
 			{}
 
-			size_nd<float>(const size_nd<float>& x) : widths(x.widths)
+			size_nd(const size_nd<float>& x) : widths(x.widths)
 			{}
 
-			size_nd<float>(size_nd<float>&& x) : widths(move(x.widths))
+			size_nd(size_nd<float>&& x) : widths(move(x.widths))
 			{}
 
-			explicit size_nd<float>(const vector<float>& new_widths) : widths(new_widths)
+			explicit size_nd(const vector<float>& new_widths) : widths(new_widths)
 			{}
 
-			explicit size_nd<float>(const vector<string>& new_widths) : widths()
+			explicit size_nd(const vector<string>& new_widths) : widths()
 			{
 				for (const string& new_width : new_widths)
 				{
@@ -163,7 +163,7 @@ namespace scifir
 				}
 			}
 
-			explicit size_nd<float>(const string& init_size_nd) : size_nd<float>()
+			explicit size_nd(const string& init_size_nd) : size_nd()
 			{
 				vector<string> new_widths;
 				boost::split(new_widths,init_size_nd,boost::is_any_of("*"));

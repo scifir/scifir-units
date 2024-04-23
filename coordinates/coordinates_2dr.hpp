@@ -17,30 +17,30 @@ namespace scifir
 	class coordinates_2dr
 	{
 		public:
-			coordinates_2dr<T>() : x(),y(),theta()
+			coordinates_2dr() : x(),y(),theta()
 			{}
 
-			coordinates_2dr<T>(const coordinates_2dr<T>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),theta(x_coordinates.theta)
+			coordinates_2dr(const coordinates_2dr<T>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),theta(x_coordinates.theta)
 			{}
 
-			coordinates_2dr<T>(coordinates_2dr<T>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),theta(std::move(x_coordinates.theta))
+			coordinates_2dr(coordinates_2dr<T>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),theta(std::move(x_coordinates.theta))
 			{}
 
-			explicit coordinates_2dr<T>(const T& new_x,const T& new_y,const angle& new_theta) : x(new_x),y(new_y),theta(new_theta)
+			explicit coordinates_2dr(const T& new_x,const T& new_y,const angle& new_theta) : x(new_x),y(new_y),theta(new_theta)
 			{}
 
-			explicit coordinates_2dr<T>(const T& new_p,const angle& new_polar_theta,const angle& new_theta) : x(),y(),theta(new_theta)
+			explicit coordinates_2dr(const T& new_p,const angle& new_polar_theta,const angle& new_theta) : x(),y(),theta(new_theta)
 			{
 				set_position(new_p,new_polar_theta);
 			}
 
-			explicit coordinates_2dr<T>(const scifir::point_2d<T>& new_point,const angle& new_theta) : x(new_point.x),y(new_point.y),theta(new_theta)
+			explicit coordinates_2dr(const scifir::point_2d<T>& new_point,const angle& new_theta) : x(new_point.x),y(new_point.y),theta(new_theta)
 			{}
 
-			explicit coordinates_2dr<T>(const scifir::coordinates_2d<T>& new_coordinates,const angle& new_theta) : x(new_coordinates.x),y(new_coordinates.y),theta(new_theta)
+			explicit coordinates_2dr(const scifir::coordinates_2d<T>& new_coordinates,const angle& new_theta) : x(new_coordinates.x),y(new_coordinates.y),theta(new_theta)
 			{}
 
-			explicit coordinates_2dr<T>(string init_coordinates_2dr) : coordinates_2dr<T>()
+			explicit coordinates_2dr(string init_coordinates_2dr) : coordinates_2dr()
 			{
 				vector<string> init_coordinates;
 				vector<string> init_values;
@@ -211,30 +211,30 @@ namespace scifir
 	class coordinates_2dr<float>
 	{
 		public:
-			coordinates_2dr<float>() : x(),y(),theta()
+			coordinates_2dr() : x(),y(),theta()
 			{}
 
-			coordinates_2dr<float>(const coordinates_2dr<float>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),theta(x_coordinates.theta)
+			coordinates_2dr(const coordinates_2dr<float>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),theta(x_coordinates.theta)
 			{}
 
-			coordinates_2dr<float>(coordinates_2dr<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),theta(std::move(x_coordinates.theta))
+			coordinates_2dr(coordinates_2dr<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),theta(std::move(x_coordinates.theta))
 			{}
 
-			explicit coordinates_2dr<float>(const float& new_x,const float& new_y,const angle& new_theta) : x(new_x),y(new_y),theta(new_theta)
+			explicit coordinates_2dr(const float& new_x,const float& new_y,const angle& new_theta) : x(new_x),y(new_y),theta(new_theta)
 			{}
 
-			explicit coordinates_2dr<float>(const float& new_p,const angle& new_polar_theta,const angle& new_theta) : x(),y(),theta(new_theta)
+			explicit coordinates_2dr(const float& new_p,const angle& new_polar_theta,const angle& new_theta) : x(),y(),theta(new_theta)
 			{
 				set_position(new_p,new_polar_theta);
 			}
 
-			explicit coordinates_2dr<float>(const scifir::point_2d<float>& new_point,const angle& new_theta) : x(new_point.x),y(new_point.y),theta(new_theta)
+			explicit coordinates_2dr(const scifir::point_2d<float>& new_point,const angle& new_theta) : x(new_point.x),y(new_point.y),theta(new_theta)
 			{}
 
-			explicit coordinates_2dr<float>(const scifir::coordinates_2d<float>& new_point,const angle& new_theta) : x(new_point.x),y(new_point.y),theta(new_theta)
+			explicit coordinates_2dr(const scifir::coordinates_2d<float>& new_point,const angle& new_theta) : x(new_point.x),y(new_point.y),theta(new_theta)
 			{}
 
-			explicit coordinates_2dr<float>(string init_coordinates_2dr) : coordinates_2dr<float>()
+			explicit coordinates_2dr(string init_coordinates_2dr) : coordinates_2dr()
 			{
 				vector<string> init_coordinates;
 				vector<string> init_values;

@@ -21,59 +21,59 @@ namespace scifir
 	class point_nd
 	{
 		public:
-			point_nd<T>() : values()
+			point_nd() : values()
 			{}
 
-			point_nd<T>(const point_nd<T>& x) : values(x.values)
+			point_nd(const point_nd<T>& x) : values(x.values)
 			{}
 
-			point_nd<T>(point_nd<T>&& x) : values(std::move(x.values))
+			point_nd(point_nd<T>&& x) : values(std::move(x.values))
 			{}
 
-			explicit point_nd<T>(const vector<T>& new_values) : values(new_values)
+			explicit point_nd(const vector<T>& new_values) : values(new_values)
 			{}
 
-			explicit point_nd<T>(const T& new_x) : values()
+			explicit point_nd(const T& new_x) : values()
 			{
 				values.push_back(new_x);
 			}
 
-			explicit point_nd<T>(const T& new_x,const T& new_y) : values()
+			explicit point_nd(const T& new_x,const T& new_y) : values()
 			{
 				values.push_back(new_x);
 				values.push_back(new_y);
 			}
 
-			explicit point_nd<T>(const T& new_p,const angle& new_theta) : values()
+			explicit point_nd(const T& new_p,const angle& new_theta) : values()
 			{
 				set_position(new_p,new_theta);
 			}
 
-			explicit point_nd<T>(const T& new_x,const T& new_y,const T& new_z) : values()
+			explicit point_nd(const T& new_x,const T& new_y,const T& new_z) : values()
 			{
 				values.push_back(new_x);
 				values.push_back(new_y);
 				values.push_back(new_z);
 			}
 
-			explicit point_nd<T>(const T& new_p,const angle& new_theta,T new_z) : values()
+			explicit point_nd(const T& new_p,const angle& new_theta,T new_z) : values()
 			{
 				set_position(new_p,new_theta,new_z);
 			}
 
-			explicit point_nd<T>(const T& new_r,const angle& new_theta,const angle& new_phi) : values()
+			explicit point_nd(const T& new_r,const angle& new_theta,const angle& new_phi) : values()
 			{
 				set_position(new_r,new_theta,new_phi);
 			}
 
-			explicit point_nd<T>(const angle& new_latitude,const angle& new_longitude,const T& new_altitude) : values()
+			explicit point_nd(const angle& new_latitude,const angle& new_longitude,const T& new_altitude) : values()
 			{
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit point_nd<T>(const coordinates_nd<T>&);
+			explicit point_nd(const coordinates_nd<T>&);
 
-			explicit point_nd<T>(string init_point_nd) : values()
+			explicit point_nd(string init_point_nd) : values()
 			{
 				vector<string> init_values;
 				if (init_point_nd.front() == '(')
@@ -441,59 +441,59 @@ namespace scifir
 	class point_nd<float>
 	{
 		public:
-			point_nd<float>() : values()
+			point_nd() : values()
 			{}
 
-			point_nd<float>(const point_nd<float>& x) : values(x.values)
+			point_nd(const point_nd<float>& x) : values(x.values)
 			{}
 
-			point_nd<float>(point_nd<float>&& x) : values(std::move(x.values))
+			point_nd(point_nd<float>&& x) : values(std::move(x.values))
 			{}
 
-			explicit point_nd<float>(const vector<float>& new_values) : values(new_values)
+			explicit point_nd(const vector<float>& new_values) : values(new_values)
 			{}
 
-			explicit point_nd<float>(const float& new_x) : values()
+			explicit point_nd(const float& new_x) : values()
 			{
 				values.push_back(new_x);
 			}
 
-			explicit point_nd<float>(const float& new_x,const float& new_y) : values()
+			explicit point_nd(const float& new_x,const float& new_y) : values()
 			{
 				values.push_back(new_x);
 				values.push_back(new_y);
 			}
 
-			explicit point_nd<float>(const float& new_p,const angle& new_theta) : values()
+			explicit point_nd(const float& new_p,const angle& new_theta) : values()
 			{
 				set_position(new_p,new_theta);
 			}
 
-			explicit point_nd<float>(const float& new_x,const float& new_y,const float& new_z) : values()
+			explicit point_nd(const float& new_x,const float& new_y,const float& new_z) : values()
 			{
 				values.push_back(new_x);
 				values.push_back(new_y);
 				values.push_back(new_z);
 			}
 
-			explicit point_nd<float>(const float& new_p,const angle& new_theta,const float& new_z) : values()
+			explicit point_nd(const float& new_p,const angle& new_theta,const float& new_z) : values()
 			{
 				set_position(new_p,new_theta,new_z);
 			}
 
-			explicit point_nd<float>(const float& new_r,const angle& new_theta,const angle& new_phi) : values()
+			explicit point_nd(const float& new_r,const angle& new_theta,const angle& new_phi) : values()
 			{
 				set_position(new_r,new_theta,new_phi);
 			}
 
-			explicit point_nd<float>(const angle& new_latitude,const angle& new_longitude,const float& new_altitude) : values()
+			explicit point_nd(const angle& new_latitude,const angle& new_longitude,const float& new_altitude) : values()
 			{
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit point_nd<float>(const coordinates_nd<float>&);
+			explicit point_nd(const coordinates_nd<float>&);
 
-			explicit point_nd<float>(string init_point_nd) : values()
+			explicit point_nd(string init_point_nd) : values()
 			{
 				vector<string> init_values;
 				if (init_point_nd.front() == '(')

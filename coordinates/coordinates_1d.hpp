@@ -17,22 +17,22 @@ namespace scifir
 	class coordinates_1d
 	{
 		public:
-			coordinates_1d<T>() : x()
+			coordinates_1d() : x()
 			{}
 			
-			coordinates_1d<T>(const coordinates_1d<T>& x_coordinates) : x(x_coordinates.x)
+			coordinates_1d(const coordinates_1d<T>& x_coordinates) : x(x_coordinates.x)
 			{}
 
-			coordinates_1d<T>(coordinates_1d<T>&& x_coordinates) : x(std::move(x_coordinates.x))
+			coordinates_1d(coordinates_1d<T>&& x_coordinates) : x(std::move(x_coordinates.x))
 			{}
 
-			explicit coordinates_1d<T>(const T& new_x) : x(new_x)
+			explicit coordinates_1d(const T& new_x) : x(new_x)
 			{}
 
-			explicit coordinates_1d<T>(const point_1d<T>& new_point) : x(new_point.x)
+			explicit coordinates_1d(const point_1d<T>& new_point) : x(new_point.x)
 			{}
 
-			explicit coordinates_1d<T>(string init_coordinates_1d) : coordinates_1d<T>()
+			explicit coordinates_1d(string init_coordinates_1d) : coordinates_1d()
 			{
 				if (init_coordinates_1d.front() == '(')
 				{
@@ -85,22 +85,22 @@ namespace scifir
 	class coordinates_1d<float>
 	{
 		public:
-			coordinates_1d<float>() : x()
+			coordinates_1d() : x()
 			{}
 			
-			coordinates_1d<float>(const coordinates_1d<float>& x_coordinates) : x(x_coordinates.x)
+			coordinates_1d(const coordinates_1d<float>& x_coordinates) : x(x_coordinates.x)
 			{}
 
-			coordinates_1d<float>(coordinates_1d<float>&& x_coordinates) : x(std::move(x_coordinates.x))
+			coordinates_1d(coordinates_1d<float>&& x_coordinates) : x(std::move(x_coordinates.x))
 			{}
 
-			explicit coordinates_1d<float>(const float& new_x) : x(new_x)
+			explicit coordinates_1d(const float& new_x) : x(new_x)
 			{}
 
-			explicit coordinates_1d<float>(const point_1d<float>& new_point) : x(new_point.x)
+			explicit coordinates_1d(const point_1d<float>& new_point) : x(new_point.x)
 			{}
 
-			explicit coordinates_1d<float>(string init_coordinates_1d) : coordinates_1d<float>()
+			explicit coordinates_1d(string init_coordinates_1d) : coordinates_1d()
 			{
 				if (init_coordinates_1d.front() == '(')
 				{

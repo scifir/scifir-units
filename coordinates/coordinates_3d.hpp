@@ -18,37 +18,37 @@ namespace scifir
 	class coordinates_3d
 	{
 		public:
-			coordinates_3d<T>() : x(),y(),z()
+			coordinates_3d() : x(),y(),z()
 			{}
 
-			coordinates_3d<T>(const coordinates_3d<T>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z)
+			coordinates_3d(const coordinates_3d<T>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z)
 			{}
 
-			coordinates_3d<T>(coordinates_3d<T>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z))
+			coordinates_3d(coordinates_3d<T>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z))
 			{}
 
-			explicit coordinates_3d<T>(const T& new_x,const T& new_y,const T& new_z) : x(new_x),y(new_y),z(new_z)
+			explicit coordinates_3d(const T& new_x,const T& new_y,const T& new_z) : x(new_x),y(new_y),z(new_z)
 			{}
 
-			explicit coordinates_3d<T>(const T& new_p,const angle& new_theta,T new_z)
+			explicit coordinates_3d(const T& new_p,const angle& new_theta,T new_z)
 			{
 				set_position(new_p,new_theta,new_z);
 			}
 
-			explicit coordinates_3d<T>(const T& new_r,const angle& new_theta,const angle& new_phi)
+			explicit coordinates_3d(const T& new_r,const angle& new_theta,const angle& new_phi)
 			{
 				set_position(new_r,new_theta,new_phi);
 			}
 
-			explicit coordinates_3d<T>(const angle& new_latitude,const angle& new_longitude,const T& new_altitude) : coordinates_3d()
+			explicit coordinates_3d(const angle& new_latitude,const angle& new_longitude,const T& new_altitude) : coordinates_3d()
 			{
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit coordinates_3d<T>(const point_3d<T>& x_point) : x(x_point.x),y(x_point.y),z(x_point.z)
+			explicit coordinates_3d(const point_3d<T>& x_point) : x(x_point.x),y(x_point.y),z(x_point.z)
 			{}
 
-			explicit coordinates_3d<T>(string init_coordinates_3d) : coordinates_3d()
+			explicit coordinates_3d(string init_coordinates_3d) : coordinates_3d()
 			{
 				vector<string> values;
 				if (init_coordinates_3d.front() == '(')
@@ -272,37 +272,37 @@ namespace scifir
 	class coordinates_3d<float>
 	{
 		public:
-			coordinates_3d<float>() : x(),y(),z()
+			coordinates_3d() : x(),y(),z()
 			{}
 
-			coordinates_3d<float>(const coordinates_3d<float>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z)
+			coordinates_3d(const coordinates_3d<float>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z)
 			{}
 
-			coordinates_3d<float>(coordinates_3d<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z))
+			coordinates_3d(coordinates_3d<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z))
 			{}
 
-			explicit coordinates_3d<float>(const float& new_x,const float& new_y,const float& new_z) : x(new_x),y(new_y),z(new_z)
+			explicit coordinates_3d(const float& new_x,const float& new_y,const float& new_z) : x(new_x),y(new_y),z(new_z)
 			{}
 
-			explicit coordinates_3d<float>(const float& new_p,const angle& new_theta,const float& new_z)
+			explicit coordinates_3d(const float& new_p,const angle& new_theta,const float& new_z)
 			{
 				set_position(new_p,new_theta,new_z);
 			}
 
-			explicit coordinates_3d<float>(const float& new_r,const angle& new_theta,const angle& new_phi)
+			explicit coordinates_3d(const float& new_r,const angle& new_theta,const angle& new_phi)
 			{
 				set_position(new_r,new_theta,new_phi);
 			}
 
-			explicit coordinates_3d<float>(const angle& new_latitude,const angle& new_longitude,const float& new_altitude) : coordinates_3d()
+			explicit coordinates_3d(const angle& new_latitude,const angle& new_longitude,const float& new_altitude) : coordinates_3d()
 			{
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit coordinates_3d<float>(const point_3d<float>& x_point) : x(x_point.x),y(x_point.y),z(x_point.z)
+			explicit coordinates_3d(const point_3d<float>& x_point) : x(x_point.x),y(x_point.y),z(x_point.z)
 			{}
 
-			explicit coordinates_3d<float>(string init_coordinates_3d) : coordinates_3d<float>()
+			explicit coordinates_3d(string init_coordinates_3d) : coordinates_3d()
 			{
 				vector<string> values;
 				if (init_coordinates_3d.front() == '(')

@@ -18,21 +18,21 @@ namespace scifir
 	class point_1d
 	{
 		public:
-			point_1d<T>() : x()
+			point_1d() : x()
 			{}
 
-			point_1d<T>(const point_1d<T>& x_point) : x(x_point.x)
+			point_1d(const point_1d<T>& x_point) : x(x_point.x)
 			{}
 
-			point_1d<T>(point_1d<T>&& x_point) : x(std::move(x_point.x))
+			point_1d(point_1d<T>&& x_point) : x(std::move(x_point.x))
 			{}
 
-			explicit point_1d<T>(const T& new_x) : x(new_x)
+			explicit point_1d(const T& new_x) : x(new_x)
 			{}
 
-			explicit point_1d<T>(const coordinates_1d<T>&);
+			explicit point_1d(const coordinates_1d<T>&);
 
-			explicit point_1d<T>(string init_point_1d) : point_1d<T>()
+			explicit point_1d(string init_point_1d) : point_1d()
 			{
 				if (init_point_1d.front() == '(')
 				{
@@ -81,21 +81,21 @@ namespace scifir
 	class point_1d<float>
 	{
 		public:
-			point_1d<float>() : x()
+			point_1d() : x()
 			{}
 
-			point_1d<float>(const point_1d<float>& x_point) : x(x_point.x)
+			point_1d(const point_1d<float>& x_point) : x(x_point.x)
 			{}
 
-			point_1d<float>(point_1d<float>&& x_point) : x(std::move(x_point.x))
+			point_1d(point_1d<float>&& x_point) : x(std::move(x_point.x))
 			{}
 
-			explicit point_1d<float>(const float& new_x) : x(new_x)
+			explicit point_1d(const float& new_x) : x(new_x)
 			{}
 
-			explicit point_1d<float>(const coordinates_1d<float>&);
+			explicit point_1d(const coordinates_1d<float>&);
 
-			explicit point_1d<float>(string init_point_1d) : point_1d<float>()
+			explicit point_1d(string init_point_1d) : point_1d()
 			{
 				if (init_point_1d.front() == '(')
 				{

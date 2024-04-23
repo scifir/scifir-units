@@ -15,22 +15,22 @@ namespace scifir
 	class size_2d
 	{
 		public:
-			size_2d<T>() : width(),height()
+			size_2d() : width(),height()
 			{}
 
-			size_2d<T>(const size_2d<T>& x) : width(x.width),height(x.height)
+			size_2d(const size_2d<T>& x) : width(x.width),height(x.height)
 			{}
 
-			size_2d<T>(size_2d<T>&& x) : width(move(x.width)),height(move(x.height))
+			size_2d(size_2d<T>&& x) : width(move(x.width)),height(move(x.height))
 			{}
 
-			explicit size_2d<T>(const T& new_width,const T& new_height) : width(new_width),height(new_height)
+			explicit size_2d(const T& new_width,const T& new_height) : width(new_width),height(new_height)
 			{}
 
-			explicit size_2d<T>(const string& new_width,const string& new_height) : width(new_width),height(new_height)
+			explicit size_2d(const string& new_width,const string& new_height) : width(new_width),height(new_height)
 			{}
 
-			explicit size_2d<T>(const string& init_size_2d) : size_2d<T>()
+			explicit size_2d(const string& init_size_2d) : size_2d()
 			{
 				vector<string> widths;
 				boost::split(widths,init_size_2d,boost::is_any_of("*"));
@@ -92,22 +92,22 @@ namespace scifir
 	class size_2d<float>
 	{
 		public:
-			size_2d<float>() : width(),height()
+			size_2d() : width(),height()
 			{}
 
-			size_2d<float>(const size_2d<float>& x) : width(x.width),height(x.height)
+			size_2d(const size_2d<float>& x) : width(x.width),height(x.height)
 			{}
 
-			size_2d<float>(size_2d<float>&& x) : width(move(x.width)),height(move(x.height))
+			size_2d(size_2d<float>&& x) : width(move(x.width)),height(move(x.height))
 			{}
 
-			explicit size_2d<float>(const float& new_width,const float& new_height) : width(new_width),height(new_height)
+			explicit size_2d(const float& new_width,const float& new_height) : width(new_width),height(new_height)
 			{}
 
-			explicit size_2d<float>(const string& new_width,const string& new_height) : width(stof(new_width)),height(stof(new_height))
+			explicit size_2d(const string& new_width,const string& new_height) : width(stof(new_width)),height(stof(new_height))
 			{}
 
-			explicit size_2d<float>(const string& init_size_2d) : size_2d<float>()
+			explicit size_2d(const string& init_size_2d) : size_2d()
 			{
 				vector<string> widths;
 				boost::split(widths,init_size_2d,boost::is_any_of("*"));
