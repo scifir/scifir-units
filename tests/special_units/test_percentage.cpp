@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
 #include "catch2/catch.hpp"
 
-#include "units.hpp"
+#include "../../units.hpp"
 
 #include <iostream>
 #include <sstream>
@@ -10,6 +10,47 @@
 using namespace std;
 
 TEST_CASE("percentage class","Full test of percentage class") {
+	SECTION("Constructors of percentage class") {
+		percentage a = percentage();
+		REQUIRE (bool(a.get_value() == 0.0f));
+		percentage b = percentage("23%");
+		percentage c = percentage(b);
+		REQUIRE (bool(c.get_value() == 23.0f));
+		percentage c2 = percentage(move(b));
+		REQUIRE (bool(c.get_value() == 23.0f));
+		percentage d = percentage(26);
+		REQUIRE (bool(d.get_value() == 26.0f));
+		percentage e = percentage(28,"%");
+		REQUIRE (bool(e.get_value() == 28.0f));
+		percentage f = percentage("24%");
+		REQUIRE (bool(f.get_value() == 24.0f));
+		scalar_unit g1 = 100_N;
+		percentage g = percentage(g1 / 10_N);
+		REQUIRE (bool(g.get_value() == 10.0f));
+	}
+
+	SECTION("Assignments of percentage class") {
+		percentage a = percentage("40%");
+		percentage b = percentage("20%");
+		a = b;
+		REQUIRE (bool(a.get_value() == 20.0f));
+		percentage c = percentage("30%");
+		a = move(c);
+		REQUIRE (bool(a.get_value() == 30.0f));
+		a = 24.0f;
+		REQUIRE (bool(a.get_value() == 24.0f));
+		a = "29%";
+		REQUIRE (bool(a.get_value() == 29.0f));
+		scalar_unit d = 42_N;
+		a = float(d / 21.0f);
+		REQUIRE (bool(a.get_value() == 2.0f));
+	}
+
+	SECTION("Implicit conversion of percentage class") {
+		percentage a = percentage("17%");
+		REQUIRE (bool(float(a) == 17.0f));
+	}
+
 	SECTION("Base functionalities of percentage class") {
 		percentage a = percentage("90%");
 		REQUIRE (bool(a.get_factor() == 0.9f));
@@ -106,6 +147,92 @@ TEST_CASE("percentage class","Full test of percentage class") {
 		scalar_unit ag = scalar_unit("4 N");
 		scalar_unit ah = af / ag;
 		REQUIRE (bool(to_string(ah) == "0.50 s2/kg*m"));
+		percentage ai = percentage("70%");
+		REQUIRE (bool(ai.get_factor() == 0.7f));
+	}
+
+	SECTION("Functions ppm, ppb, ppt and ppq of percentage class") {
+		/*percentage a = percentage("30%");
+		REQUIRE (bool(a.get_ppm() == 300000));
+		REQUIRE (bool(a.get_ppb() == 300000000));
+		REQUIRE (bool(a.get_ppt() == 300000000000));
+		REQUIRE (bool(a.get_ppq() == 300000000000000));
+		REQUIRE (bool(a.display_ppm() == "300000 ppm"));
+		cout << "a ppb: " << a.display_ppb() << endl;
+		REQUIRE (bool(a.display_ppb() == "300000000 ppb"));
+		REQUIRE (bool(a.display_ppt() == "300000000000 ppt"));
+		REQUIRE (bool(a.display_ppq() == "300000000000000 ppq"));*/
+	}
+
+	SECTION("String functions of percentage class") {
+		/*percentage a = percentage("30%");
+		REQUIRE (bool(to_string(a) == "30%"));
+		REQUIRE (bool(is_percentage("65%") == true));
+		REQUIRE (bool(is_percentage("10 ppm") == true));
+		REQUIRE (bool(is_percentage("35 ppb") == true));
+		REQUIRE (bool(is_percentage("4 ppt") == true));
+		REQUIRE (bool(is_percentage("55 ppq") == false));*/
+	}
+
+	SECTION("Number operators of percentage class") {
+		/*percentage a = percentage("30%");
+		REQUIRE (bool((a + 20.0f) == percentage("50%")));
+		REQUIRE (bool((a - 7.0f) == percentage("23%")));
+		REQUIRE (bool((a * 100.0f) == 30.0f));
+		REQUIRE (bool((a / 15.0f) == 2.0f));
+		REQUIRE (bool(a == 30.0f));
+		REQUIRE (bool(a != 20.0f));
+		REQUIRE (bool(a > 20.0f));
+		REQUIRE (bool(a < 35.0f));
+		REQUIRE (bool(a >= 25.0f));
+		REQUIRE (bool(a <= 40.0f));
+		REQUIRE (bool((20.0f + a) == percentage("50%")));
+		REQUIRE (bool((37.0f - a) == percentage("7%")));
+		REQUIRE (bool((100.0f * a) == 30.0f));
+		REQUIRE (bool((60.0f / a) == 2.0f));
+		REQUIRE (bool(30.0f == a));
+		REQUIRE (bool(20.0f != a));
+		REQUIRE (bool(20.0f < a));
+		REQUIRE (bool(35.0f > a));
+		REQUIRE (bool(25.0f <= a));
+		REQUIRE (bool(40.0f >= a));*/
+	}
+
+	SECTION("Operators of percentage class with other percentage classes") {
+		percentage a = percentage("30%");
+		percentage b = percentage("20%");
+		REQUIRE (bool(a > b));
+		REQUIRE (bool(a >= b));
+		percentage c = percentage("30%");
+		percentage d = percentage("20%");
+		REQUIRE (bool(d < c));
+		REQUIRE (bool(d <= c));
+		percentage e = percentage("20%");
+		percentage f = percentage("20%");
+		REQUIRE (bool(e <= f));
+		REQUIRE (bool(e >= f));
+		REQUIRE (bool(e == f));
+		REQUIRE (bool(a != b));
+	}
+
+	SECTION("String operators of percentage class") {
+		REQUIRE (bool(percentage("45%") == "45%"));
+		REQUIRE (bool(percentage("45%") != "40%"));
+		REQUIRE (bool("45%" == percentage("45%")));
+		REQUIRE (bool("40%" != percentage("45%")));
+		string a = "percentage ";
+		a += percentage("40%");
+		REQUIRE (bool(a == "percentage 40%"));
+		percentage b = percentage("20%");
+		REQUIRE (bool("b " + b == "b 20%"));
+		REQUIRE (bool(b + " b" == "20% b"));
+	}
+
+	SECTION("String operators of percentage class") {
+		percentage a = percentage("25%");
+		ostringstream out;
+		out << "a " << a;
+		REQUIRE (bool(out.str() == "a 25%"));
 	}
 }
 
