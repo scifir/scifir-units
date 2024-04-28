@@ -103,7 +103,8 @@ namespace scifir
 				ostringstream output;
 				if(std::abs(error_value) > std::abs(value))
 				{
-					output << "Error: error greater than value" << endl;
+					output << "Error: value of error greater than value" << endl;
+					cerr << "Error: value of error greater than value" << endl;
 				}
 				else
 				{
@@ -199,7 +200,7 @@ istream& operator >>(istream& is, scifir::lab_number<T>& x)
 	is.getline(a, 256);
 	string b(a);
 	vector<string> values;
-	boost::split(values,b,boost::is_any_of(" +- "));
+	boost::split(values,b,boost::is_any_of(" +- , \u00B1 "));
 	scifir::lab_number<T> c;
 	if (values.size() == 2)
 	{
