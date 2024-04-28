@@ -12,14 +12,9 @@
 // TODO: check the better code scan tools for C++
 // TODO: if the optimization of the compiler gives code optimized in order to see the code by layers
 
-// BUILDING
-// TODO: see file formats for files NEWS, INSTALL, README, etc
-// TODO: see how to delete doxygen comments when building with autotools (see best practices for doxygen first)
-
 // DOCUMENTATION
 // TODO: Maybe document common variables: https://en.wikipedia.org/wiki/List_of_common_physics_notations
 // TODO: Units: why to use units? section providing a complete example of the advantage
-// TODO: Divide the documentation of units in different pages in order to reduce the total size
 // TODO: Units: The problem with commas and dots to write numbers (maybe use english notation)
 // TODO: Units: Formulas with * up and down appear bad
 // TODO: Units: unit classes should appear in their informatic form (and say classname as the title of the column)
@@ -36,16 +31,12 @@
 // GITHUB
 // TODO: see of the habit of adding the author of a file inside the header
 // TODO: See every program for developing that GitHub has for open source projects
-// TODO: Maybe change the name to lowercase to have a more C++ friendly project (do the same with smartText)
 // TODO: Follow all GitHub rules for the repository
 // TODO: See the guide to find users for the library
-// TODO: See the best build automation tool to add to the project, and the INSTALL.md file
+// TODO: See the INSTALL.md file
 // TODO: see the best way to versioning the project
-// TODO: Create a donations system
-// TODO: Add stars to every important project I know of
 // TODO: See how to distribute MagickScience along the open-source community
-// TODO: Add MagickScience to the list of https://www.contributor-covenant.org/
-// TODO: Think if to create a website for MagickScience
+// TODO: Add Scifir to the list of https://www.contributor-covenant.org/
 
 // PROMOTION
 // TODO: promote the library inside the #chemistry channel
@@ -56,7 +47,7 @@
 // TODO: Find in which cases angle becomes -0
 // TODO: a limit of initialization of mole related to the maximum number that can be given there without having mid particles
 // TODO: a way to initialize concentration without the ' ' at last (maybe to use % as an special abbreviation of empty dimensions)
-// TODO: time_display of unit time class should display months related to the actual day
+// TODO: time_display of unit time_duration class should display months related to the actual day
 
 // FIND OUT
 // TODO: when I have to use entire namespace scope to access a variable (what has happened with templates)
