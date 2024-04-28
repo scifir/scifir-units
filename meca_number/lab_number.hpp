@@ -107,7 +107,7 @@ namespace scifir
 				}
 				else
 				{
-					output << display_float(float(value),number_of_decimals) << " +- " << display_float(float(error_value),number_of_decimals);
+					output << display_float(float(value),number_of_decimals) << " \u00B1 " << display_float(float(error_value),number_of_decimals);
 				}
 				return output.str();
 			}
