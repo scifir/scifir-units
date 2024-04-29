@@ -16,7 +16,7 @@ The **Scifir Foundation** is looking for **funding**, in order to do some digita
 
 ## Installation
 
-To install scifir-units you have to use CMake and Make. The library is called scifir_units, the other scifir libraries aren't yet published in the web. The commands to install it are the following:
+To install **scifir-units** you have to use **CMake** and **make**. The library is called scifir-units, the other scifir libraries aren't yet published in the web. The commands to install it are the following:
 
 ```
 cmake .
@@ -162,6 +162,10 @@ The initialization strings are the following:
 
 In order to store units inside a file an initialization string should be used. For any purpose, when converting some of those classes to an string, the string initialization has to be always used.
 
+### Space
+
+Inside scifir-units the space can be measured with float or with length. Secondarily, any scalar_unit can be used as measure of space, because inside science there are modelings of imaginary spaces, where the length is not used. Because of that reason, all coordinates and point classes are template classes that accept floats or scalar_unit classes.
+
 ### Angle
 
 An angle object manages angles. It stores angles in grades, rather than in radians. It can be initialized to any grade between 0 and 360 (without including 360, cause this is identical to 0 in meaning), and any initialization that's not inside this range of values gets automatically converted inside it, to his equivalent value between the range.
@@ -213,6 +217,8 @@ float y = float(x); // Angles can be converted to float
 Scalar units and vector units are the central objects of scifir-units. They store a value and a set of dimensions, as units on science do. Scalar units are just normal values, while vector units have a value and a direction to which the vector points to.
 
 Scalar units can operate with other scalar units, as well as with numeric primitive types. Functions like abs(), sqrt() and to_string() are supported. They have functions to operate with strings, and functions to operate with streams.
+
+Scalar units can have any dimension of the SI system of units, or, also, any **custom dimension**. A custom dimension is a dimension with an arbitrary name, which is commonly used inside some fields of science when there's no name for a needed dimension.
 
 An example of use of an scalar unit is the following:
 
@@ -714,4 +720,4 @@ Internally, the library has some important mechanisms important to be known by a
 
 The first important mechanism to describe is the static storage of custom dimensions. This storage is static, meaning that every time a unit of a dimension not registered is created, this storage is the one used, instead of the name being stored inside the instance. With that behavior, when instantiating a big amount of dimensions, a big amount of memory is saved. To refer to the static storage it's used the char symbol[3] of the dimension class, which uses only 3 bytes instead of the bytes the full dimension name would use. Then, each instance of a dimension class, given that static storage, uses only 6 bytes of memory.
 
-The square of dimensions work in the following way: If the dimension consist only of one type of dimension, independently as if the dimension is a basic dimension or an abbreviation, the dimensions get squared. If the dimension is of more than one type, all the abbreviations are then converted to their derived types, and the total result gets squared. If the dimensions can't be squared because there's an odd number of them, the dimensions are then initialized empty.
+The square of dimensions works in the following way: If the dimension consist only of one type of dimension, independently as if the dimension is a basic dimension or an abbreviation, the dimensions get squared. If the dimension is of more than one type, all the abbreviations are then converted to their derived types, and the total result gets squared. If the dimensions can't be squared because there's an odd number of them, the dimensions are then initialized empty.
