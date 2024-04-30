@@ -37,6 +37,7 @@ namespace scifir
 
 	scalar_unit::scalar_unit(const string& init_scalar) : scalar_unit()
 	{
+		//static_assert(is_valid_scalar_unit("asdf"),"invalid initialization string");
 		set_from_string(init_scalar);
 	}
 
@@ -331,7 +332,7 @@ namespace scifir
 		return create_derived_dimensions(dimensions);
 	}
 
-	string scalar_unit::display(int number_of_decimals,bool use_close_prefix) const
+	string scalar_unit::display(int number_of_decimals,bool with_brackets,bool use_close_prefix) const
 	{
 		ostringstream output;
 		if (dimensions.size() == 1 && use_close_prefix == true)
@@ -351,16 +352,16 @@ namespace scifir
 			x_value /= prefix_math(dimensions[0],display_prefix);
 			vector<dimension> x_dimensions = dimensions;
 			x_dimensions[0].prefix = display_prefix;
-			output << display_float(x_value,number_of_decimals) << " " << to_string(x_dimensions);
+			output << display_float(x_value,number_of_decimals) << " " << to_string(x_dimensions,with_brackets);
 		}
 		else
 		{
-			output << display_float(get_value(),number_of_decimals) << " " << to_string(dimensions);
+			output << display_float(get_value(),number_of_decimals) << " " << to_string(dimensions,with_brackets);
 		}
 		return output.str();
 	}
 
-	string scalar_unit::derived_display(int number_of_decimals,bool use_close_prefix) const
+	string scalar_unit::derived_display(int number_of_decimals,bool with_brackets,bool use_close_prefix) const
 	{
 		ostringstream output;
 		long double x_value = get_value();
@@ -373,16 +374,16 @@ namespace scifir
 			x_value /= prefix_math(derived_dimensions[0],display_prefix);
 			vector<dimension> x_dimensions = derived_dimensions;
 			x_dimensions[0].prefix = display_prefix;
-			output << display_float(x_value,number_of_decimals) << " " << to_string(derived_dimensions);
+			output << display_float(x_value,number_of_decimals) << " " << to_string(derived_dimensions,with_brackets);
 		}
 		else
 		{
-			output << display_float(x_value,number_of_decimals) << " " << to_string(derived_dimensions);
+			output << display_float(x_value,number_of_decimals) << " " << to_string(derived_dimensions,with_brackets);
 		}
 		return output.str();
 	}
 
-	string scalar_unit::custom_display(const string& new_dimensions_str,int number_of_decimals) const
+	string scalar_unit::custom_display(const string& new_dimensions_str,int number_of_decimals,bool with_brackets) const
 	{
 		ostringstream output;
 		float new_value = get_value();
@@ -427,7 +428,16 @@ namespace scifir
 					new_value *= x_new_dimension.prefix_math();
 				}
 			}
-			output << display_float(new_value,number_of_decimals) << " " << new_dimensions_str;
+			output << display_float(new_value,number_of_decimals) << " ";
+			if (with_brackets)
+			{
+				output << "[";
+			}
+			output << new_dimensions_str;
+			if (with_brackets)
+			{
+				output << "]";
+			}
 		}
 		else
 		{
@@ -441,7 +451,7 @@ namespace scifir
 				x_new_dimension.prefix.prefix_type = prefix::no_prefix;
 			}
 			int value_scale = int(log10(get_value()));
-			output << display_float(new_value / std::pow(10,value_scale),number_of_decimals) << "e" << value_scale << " " << to_string(new_dimensions);
+			output << display_float(new_value / std::pow(10,value_scale),number_of_decimals) << "e" << value_scale << " " << to_string(new_dimensions,with_brackets);
 		}
 		return output.str();
 	}

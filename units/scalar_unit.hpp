@@ -10,6 +10,7 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <string_view>
 #include <vector>
 
 #define SCALAR_UNIT_HPP_BEGIN(name) class name : public scalar_unit \
@@ -187,9 +188,9 @@ namespace scifir
 				return value;
 			}
 
-			string display(int = 2,bool = false) const;
-			string derived_display(int = 2,bool = false) const;
-			string custom_display(const string&,int = 2) const;
+			string display(int = 2,bool = false,bool = false) const;
+			string derived_display(int = 2,bool = false,bool = false) const;
+			string custom_display(const string&,int = 2,bool = false) const;
 
 		protected:
 			vector<dimension> dimensions;
@@ -207,6 +208,185 @@ namespace scifir
 	scalar_unit pow(const scalar_unit&,int);
 	scalar_unit sqrt(const scalar_unit&);
 	scalar_unit sqrt_nth(const scalar_unit&, int);
+
+	/*constexpr bool is_valid_scalar_unit(const char* x_init)
+	{
+		string_view x = x_init;
+		bool dot_present = false;
+		bool e_present = false;
+		int current_pos = 0;
+		int e_present_pos = 0;
+		for (int i = 0; i < x.length(); i++)
+		{
+			if (x[i] == ' ')
+			{
+				if (e_present and ((e_present_pos + 1) == i))
+				{
+					return false;
+				}
+				current_pos = i;
+				break;
+			}
+			if (e_present == false)
+			{
+				if (x[i] == '.')
+				{
+					if (dot_present)
+					{
+						return false;
+					}
+					else
+					{
+						dot_present = true;
+					}
+				}
+				else if (x[i] == 'e' or x[i] == 'E')
+				{
+					e_present = true;
+					e_present_pos = i;
+					continue;
+				}
+				else if (x[i] == '*')
+				{
+					if (!(x.substr(i + 1,3) == "10^"))
+					{
+						return false;
+					}
+					else
+					{
+						e_present = true;
+						i += 3;
+						e_present_pos = i;
+						continue;
+					}
+				}
+				else if (!isdigit(x[i]))
+				{
+					return false;
+				}
+				else if (i == (x.length() - 1))
+				{
+					return false;
+				}
+			}
+			else
+			{
+				if (!isdigit(x[i]))
+				{
+					return false;
+				}
+			}
+		}
+		if (current_pos == (x.length() - 1))
+		{
+			return false;
+		}
+		if (current_pos == 0)
+		{
+			return false;
+		}
+		vector<string_view> values = x | std::ranges::split(x,"/") | std::ranges::to<std::vector>();
+//		boost::split(values,x.substr(current_pos),boost::is_any_of("/"));
+		if (values.size() == 1)
+		{
+			vector<string_view> subvalues;
+			boost::split(subvalues,values[0],boost::is_any_of("*"));
+			for (string_view& x_subvalue : subvalues)
+			{
+				boost::trim(x_subvalue);
+				bool number_present = false;
+				for (int i = 0; i < x_subvalue.length(); i++)
+				{
+					if (number_present == false)
+					{
+						if (isdigit(x_subvalue[i]))
+						{
+							number_present = true;
+							continue;
+						}
+						else if (!isalpha(x_subvalue[i]))
+						{
+							return false;
+						}
+					}
+					else
+					{
+						if (!isdigit(x_subvalue[i]))
+						{
+							return false;
+						}
+					}
+				}
+			}
+			return true;
+		}
+		else if (values.size() == 2)
+		{
+			if (values[0] != "1")
+			{
+				vector<string_view> subvalues;
+				boost::split(subvalues,values[0],boost::is_any_of("*"));
+				for (string_view& x_subvalue : subvalues)
+				{
+					boost::trim(x_subvalue);
+					bool number_present = false;
+					for (int i = 0; i < x_subvalue.length(); i++)
+					{
+						if (number_present == false)
+						{
+							if (isdigit(x_subvalue[i]))
+							{
+								number_present = true;
+								continue;
+							}
+							else if (!isalpha(x_subvalue[i]))
+							{
+								return false;
+							}
+						}
+						else
+						{
+							if (!isdigit(x_subvalue[i]))
+							{
+								return false;
+							}
+						}
+					}
+				}
+			}
+			vector<string_view> subvalues_denominator;
+			boost::split(subvalues_denominator,values[1],boost::is_any_of("*"));
+			for (string_view& x_subvalue : subvalues_denominator)
+			{
+				boost::trim(x_subvalue);
+				bool number_present = false;
+				for (int i = 0; i < x_subvalue.length(); i++)
+				{
+					if (number_present == false)
+					{
+						if (isdigit(x_subvalue[i]))
+						{
+							number_present = true;
+							continue;
+						}
+						else if (!isalpha(x_subvalue[i]))
+						{
+							return false;
+						}
+					}
+					else
+					{
+						if (!isdigit(x_subvalue[i]))
+						{
+							return false;
+						}
+					}
+				}
+			}
+			return true;
+		}
+		return false;
+	}*/
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>

@@ -1070,11 +1070,15 @@ namespace scifir
 		return out.str();
 	}
 
-	string to_string(const vector<dimension>& x_dimensions)
+	string to_string(const vector<dimension>& x_dimensions,bool with_brackets)
 	{
 		ostringstream out;
 		if (x_dimensions.size() > 0)
 		{
+			if (with_brackets)
+			{
+				out << "[";
+			}
 			vector<dimension::type> printed_dimensions = vector<dimension::type>();
 			map<prefix,int> counted_prefixes = map<prefix,int>();
 			for (const dimension& x_dimension : x_dimensions)
@@ -1167,6 +1171,10 @@ namespace scifir
 					}
 					printed_dimensions.push_back(x_dimension.dimension_type);
 				}
+			}
+			if (with_brackets)
+			{
+				out << "]";
 			}
 		}
 		else

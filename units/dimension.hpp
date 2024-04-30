@@ -162,7 +162,7 @@ namespace scifir
 	};
 
 	string to_string(const dimension&);
-	string to_string(const vector<dimension>&);
+	string to_string(const vector<dimension>&,bool = false);
 
 	vector<dimension> create_derived_dimensions(const string&);
 	vector<dimension> create_derived_dimensions(const vector<dimension>&);
@@ -181,6 +181,11 @@ namespace scifir
 	bool common_dimension(const dimension&,const dimension&);
 	bool equal_dimensions(const string&,const string&);
 	bool equal_dimensions(const vector<dimension>&,const vector<dimension>&);
+
+	/*constexpr bool is_dimensions(const char* x)
+	{
+		return true;
+	}*/
 }
 
 bool operator==(const scifir::dimension&,const scifir::dimension&);
