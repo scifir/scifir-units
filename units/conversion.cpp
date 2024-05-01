@@ -8,12 +8,10 @@ using namespace std;
 namespace scifir
 {
 	conversion::conversion() : unit_to(),factor()
-	{
-	}
+	{}
 
 	conversion::conversion(const string& new_unit_to, float new_factor) : unit_to(new_unit_to),factor(new_factor)
-	{
-	}
+	{}
 
 	map<string, conversion> get_conversion
 	{
