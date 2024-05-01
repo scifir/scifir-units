@@ -11,7 +11,6 @@ using namespace std;
 namespace scifir
 {
 	// KINEMATICS
-	SCALAR_UNIT_HPP(distance);
 	VECTOR_UNIT_2D_HPP(displacement);
 	VECTOR_UNIT_3D_HPP(displacement);
 	VECTOR_UNIT_ND_HPP(displacement);

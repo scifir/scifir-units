@@ -3,7 +3,6 @@
 namespace scifir
 {
 	// KINEMATICS
-	SCALAR_UNIT_CPP(distance,"m");
 	VECTOR_UNIT_2D_CPP(displacement,"m");
 	VECTOR_UNIT_3D_CPP(displacement,"m");
 	VECTOR_UNIT_ND_CPP(displacement,"m");
