@@ -14,7 +14,7 @@ namespace scifir
 	direction::direction(const direction& x) : direction(x.value)
 	{}
 	
-	direction::direction(direction&& x) : direction(move(x.value))
+	direction::direction(direction&& x) : direction(std::move(x.value))
 	{}
 
 	direction::direction(direction::name new_direction) : value(new_direction)
@@ -30,7 +30,7 @@ namespace scifir
 	
 	void direction::operator=(direction&& x)
 	{
-		value = move(x.value);
+		value = std::move(x.value);
 	}
 	
 	void direction::operator =(direction::name new_direction)

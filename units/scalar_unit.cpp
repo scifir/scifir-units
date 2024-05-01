@@ -26,7 +26,7 @@ namespace scifir
 	scalar_unit::scalar_unit(const scalar_unit& x) : dimensions(x.get_dimensions()),value(x.get_value())
 	{}
 
-	scalar_unit::scalar_unit(scalar_unit&& x) : dimensions(move(x.get_dimensions())),value(move(x.get_value()))
+	scalar_unit::scalar_unit(scalar_unit&& x) : dimensions(std::move(x.get_dimensions())),value(std::move(x.get_value()))
 	{}
 
 	scalar_unit::scalar_unit(float new_value, const string& init_dimensions) : value(new_value),dimensions(create_dimensions(init_dimensions))
@@ -59,8 +59,8 @@ namespace scifir
 	{
 		if (has_dimensions(x))
 		{
-			dimensions = move(x.get_dimensions());
-			value = move(x.get_value());
+			dimensions = std::move(x.get_dimensions());
+			value = std::move(x.get_value());
 		}
 		else
 		{

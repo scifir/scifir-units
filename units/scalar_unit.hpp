@@ -65,8 +65,8 @@
 	{ \
 		if (x.has_dimensions(name::real_dimensions)) \
 		{ \
-			value = move(x.get_value()); \
-			dimensions = move(x.get_dimensions()); \
+			value = std::move(x.get_value()); \
+			dimensions = std::move(x.get_dimensions()); \
 		} \
 	} \
 \

@@ -21,7 +21,7 @@ namespace scifir
 			size_2d(const size_2d<T>& x) : width(x.width),height(x.height)
 			{}
 
-			size_2d(size_2d<T>&& x) : width(move(x.width)),height(move(x.height))
+			size_2d(size_2d<T>&& x) : width(std::move(x.width)),height(std::move(x.height))
 			{}
 
 			explicit size_2d(const T& new_width,const T& new_height) : width(new_width),height(new_height)
@@ -52,8 +52,8 @@ namespace scifir
 
 			size_2d<T>& operator=(size_2d<T>&& x)
 			{
-				width = move(x.width);
-				height = move(x.height);
+				width = std::move(x.width);
+				height = std::move(x.height);
 				return *this;
 			}
 
@@ -98,7 +98,7 @@ namespace scifir
 			size_2d(const size_2d<float>& x) : width(x.width),height(x.height)
 			{}
 
-			size_2d(size_2d<float>&& x) : width(move(x.width)),height(move(x.height))
+			size_2d(size_2d<float>&& x) : width(std::move(x.width)),height(std::move(x.height))
 			{}
 
 			explicit size_2d(const float& new_width,const float& new_height) : width(new_width),height(new_height)
@@ -129,8 +129,8 @@ namespace scifir
 
 			size_2d<float>& operator=(size_2d<float>&& x)
 			{
-				width = move(x.width);
-				height = move(x.height);
+				width = std::move(x.width);
+				height = std::move(x.height);
 				return *this;
 			}
 

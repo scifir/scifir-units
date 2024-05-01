@@ -14,7 +14,7 @@ namespace scifir
 	zid::zid(const zid& x) : regions(x.regions),country(x.country),zone(x.zone)
 	{}
 
-	zid::zid(zid&& x) : regions(move(x.regions)),country(move(x.country)),zone(move(x.zone))
+	zid::zid(zid&& x) : regions(std::move(x.regions)),country(std::move(x.country)),zone(std::move(x.zone))
 	{}
 
 	zid::zid(const string& init_zid) : zid()
@@ -46,9 +46,9 @@ namespace scifir
 
 	zid& zid::operator=(zid&& x)
 	{
-		regions = move(x.regions);
-		country = move(x.country);
-		zone = move(x.zone);
+		regions = std::move(x.regions);
+		country = std::move(x.country);
+		zone = std::move(x.zone);
 		return *this;
 	}
 

@@ -17,7 +17,7 @@ namespace scifir
 	percentage::percentage(const percentage& x) : value(x.get_value())
 	{}
 	
-	percentage::percentage(percentage&& x) : value(move(x.get_value()))
+	percentage::percentage(percentage&& x) : value(std::move(x.get_value()))
 	{}
 
 	percentage::percentage(float x) : value(x)
@@ -120,7 +120,7 @@ namespace scifir
 
 	percentage& percentage::operator=(percentage&& x)
 	{
-		value = move(x.get_value());
+		value = std::move(x.get_value());
 		return *this;
 	}
 

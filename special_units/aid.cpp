@@ -16,7 +16,7 @@ namespace scifir
 	aid::aid(const aid& x) : universe(x.universe),galaxy(x.galaxy),solar_system(x.solar_system),astronomical_body(x.astronomical_body),astronomical_type(x.astronomical_type)
 	{}
 
-	aid::aid(aid&& x) : universe(move(x.universe)),galaxy(move(x.galaxy)),solar_system(move(x.solar_system)),astronomical_body(move(x.astronomical_body)),astronomical_type(move(x.astronomical_type))
+	aid::aid(aid&& x) : universe(std::move(x.universe)),galaxy(std::move(x.galaxy)),solar_system(std::move(x.solar_system)),astronomical_body(std::move(x.astronomical_body)),astronomical_type(std::move(x.astronomical_type))
 	{}
 	
 	aid::aid(const enum astronomical_body& x) : aid()
@@ -362,11 +362,11 @@ namespace scifir
 	
 	aid& aid::operator=(aid&& x)
 	{
-		universe = move(x.universe);
-		galaxy = move(x.galaxy);
-		solar_system = move(x.solar_system);
-		astronomical_body = move(x.astronomical_body);
-		astronomical_type = move(x.astronomical_type);
+		universe = std::move(x.universe);
+		galaxy = std::move(x.galaxy);
+		solar_system = std::move(x.solar_system);
+		astronomical_body = std::move(x.astronomical_body);
+		astronomical_type = std::move(x.astronomical_type);
 		return *this;
 	}
 

@@ -20,7 +20,7 @@ namespace scifir
 	pH::pH(const pH& x) : value(x.get_value())
 	{}
 
-	pH::pH(pH&& x) : value(move(x.get_value()))
+	pH::pH(pH&& x) : value(std::move(x.get_value()))
 	{}
 
 	pH::pH(float x) : value(x)
@@ -56,7 +56,7 @@ namespace scifir
 
 	pH& pH::operator=(pH&& x)
 	{
-		value = move(x.get_value());
+		value = std::move(x.get_value());
 		return *this;
 	}
 

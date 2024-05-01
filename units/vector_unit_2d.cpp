@@ -62,8 +62,8 @@ namespace scifir
 
 	vector_unit_2d& vector_unit_2d::operator =(vector_unit_2d&& x)
 	{
-		scalar_unit::operator=(move(x));
-		theta = move(x.theta);
+		scalar_unit::operator=(std::move(x));
+		theta = std::move(x.theta);
 		return *this;
 	}
 
@@ -75,7 +75,7 @@ namespace scifir
 
 	vector_unit_2d& vector_unit_2d::operator =(scalar_unit&& x)
 	{
-		scalar_unit::operator=(move(x));
+		scalar_unit::operator=(std::move(x));
 		return *this;
 	}
 	

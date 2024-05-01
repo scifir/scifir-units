@@ -68,7 +68,7 @@ namespace scifir
 				{
 					x(1,j + 1) = data[i - 1][j];
 				}
-				return move(x);
+				return std::move(x);
 			}
 
 			matrix<T,M,1> column(int j) const
@@ -82,7 +82,7 @@ namespace scifir
 				{
 					x(i + 1,1) = data[i][j - 1];
 				}
-				return move(x);
+				return std::move(x);
 			}
 
 			const T& operator()(int i, int j) const
@@ -107,14 +107,14 @@ namespace scifir
 			{
 				matrix<T, M, N> y = *clone();
 				y += x;
-				return move(y);
+				return std::move(y);
 			}
 
 			matrix<T, M, N> operator -(const matrix<T, M, N>& x)
 			{
 				matrix<T, M, N> y = *clone();
 				y -= x;
-				return move(y);
+				return std::move(y);
 			}
 
 			template<int N2>

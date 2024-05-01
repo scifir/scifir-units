@@ -13,7 +13,7 @@ namespace scifir
 	vector_unit_nd::vector_unit_nd(const vector_unit_nd& x) : scalar_unit(x),angles(x.angles)
 	{}
 
-	vector_unit_nd::vector_unit_nd(vector_unit_nd&& x) : scalar_unit(move(x)),angles(move(x.angles))
+	vector_unit_nd::vector_unit_nd(vector_unit_nd&& x) : scalar_unit(std::move(x)),angles(std::move(x.angles))
 	{}
 
 	vector_unit_nd::vector_unit_nd(float new_value,const string& init_dimensions) : scalar_unit(new_value,init_dimensions),angles()
@@ -92,8 +92,8 @@ namespace scifir
 
 	vector_unit_nd& vector_unit_nd::operator =(vector_unit_nd&& x)
 	{
-		scalar_unit::operator=(move(x));
-		angles = move(x.angles);
+		scalar_unit::operator=(std::move(x));
+		angles = std::move(x.angles);
 		return *this;
 	}
 
@@ -105,7 +105,7 @@ namespace scifir
 
 	vector_unit_nd& vector_unit_nd::operator =(scalar_unit&& x)
 	{
-		scalar_unit::operator=(move(x));
+		scalar_unit::operator=(std::move(x));
 		return *this;
 	}
 

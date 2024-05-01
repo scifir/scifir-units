@@ -19,7 +19,7 @@ namespace scifir
 	pOH::pOH(const pOH& x) : value(x.get_value())
 	{}
 
-	pOH::pOH(pOH&& x) : value(move(x.get_value()))
+	pOH::pOH(pOH&& x) : value(std::move(x.get_value()))
 	{}
 
 	pOH::pOH(float x) : value(x)
@@ -55,7 +55,7 @@ namespace scifir
 	
 	pOH& pOH::operator=(pOH&& x)
 	{
-		value = move(x.get_value());
+		value = std::move(x.get_value());
 		return *this;
 	}
 

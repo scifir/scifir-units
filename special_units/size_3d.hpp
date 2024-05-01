@@ -21,7 +21,7 @@ namespace scifir
 			size_3d(const size_3d<T>& x) : width(x.width),height(x.height),depth(x.depth)
 			{}
 
-			size_3d(size_3d<T>&& x) : width(move(x.width)),height(move(x.height)),depth(move(x.depth))
+			size_3d(size_3d<T>&& x) : width(std::move(x.width)),height(std::move(x.height)),depth(std::move(x.depth))
 			{}
 
 			explicit size_3d(const T& new_width,const T& new_height,const T& new_depth) : width(new_width),height(new_height),depth(new_depth)
@@ -55,9 +55,9 @@ namespace scifir
 
 			size_3d<T>& operator=(size_3d<T>&& x)
 			{
-				width = move(x.width);
-				height = move(x.height);
-				depth = move(x.depth);
+				width = std::move(x.width);
+				height = std::move(x.height);
+				depth = std::move(x.depth);
 				return *this;
 			}
 
@@ -105,7 +105,7 @@ namespace scifir
 			size_3d(const size_3d<float>& x) : width(x.width),height(x.height),depth(x.depth)
 			{}
 
-			size_3d(size_3d<float>&& x) : width(move(x.width)),height(move(x.height)),depth(move(x.depth))
+			size_3d(size_3d<float>&& x) : width(std::move(x.width)),height(std::move(x.height)),depth(std::move(x.depth))
 			{}
 
 			explicit size_3d(const float& new_width,const float& new_height,const float& new_depth) : width(new_width),height(new_height),depth(new_depth)
@@ -139,9 +139,9 @@ namespace scifir
 
 			size_3d<float>& operator=(size_3d<float>&& x)
 			{
-				width = move(x.width);
-				height = move(x.height);
-				depth = move(x.depth);
+				width = std::move(x.width);
+				height = std::move(x.height);
+				depth = std::move(x.depth);
 				return *this;
 			}
 

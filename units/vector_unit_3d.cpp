@@ -63,9 +63,9 @@ namespace scifir
 
 	vector_unit_3d& vector_unit_3d::operator =(vector_unit_3d&& x)
 	{
-		scalar_unit::operator=(move(x));
-		theta = move(x.theta);
-		phi = move(x.phi);
+		scalar_unit::operator=(std::move(x));
+		theta = std::move(x.theta);
+		phi = std::move(x.phi);
 		return *this;
 	}
 
@@ -77,7 +77,7 @@ namespace scifir
 
 	vector_unit_3d& vector_unit_3d::operator =(scalar_unit&& x)
 	{
-		scalar_unit::operator=(move(x));
+		scalar_unit::operator=(std::move(x));
 		return *this;
 	}
 

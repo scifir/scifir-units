@@ -23,7 +23,7 @@ namespace scifir
 			complex_number(const complex_number<T>& x) : real(x.real),imaginary(x.imaginary)
 			{}
 
-			complex_number(complex_number<T>&& x) : real(move(x.real)),imaginary(move(x.imaginary))
+			complex_number(complex_number<T>&& x) : real(std::move(x.real)),imaginary(std::move(x.imaginary))
 			{}
 
 			explicit complex_number(T x,T y) : real(x),imaginary(y)
@@ -67,8 +67,8 @@ namespace scifir
 
 			complex_number<T>& operator=(complex_number<T>&& x)
 			{
-				real = move(x.real);
-				imaginary = move(x.imaginary);
+				real = std::move(x.real);
+				imaginary = std::move(x.imaginary);
 				return *this;
 			}
 

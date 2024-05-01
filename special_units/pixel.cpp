@@ -19,7 +19,7 @@ namespace scifir
 	pixel::pixel(const pixel& x) : value(x.get_value())
 	{}
 	
-	pixel::pixel(pixel&& x) : value(move(x.get_value()))
+	pixel::pixel(pixel&& x) : value(std::move(x.get_value()))
 	{}
 
 	pixel::pixel(float x) : value(x)
@@ -62,7 +62,7 @@ namespace scifir
 
 	pixel& pixel::operator=(pixel&& x)
 	{
-		value = move(x.get_value());
+		value = std::move(x.get_value());
 		return *this;
 	}
 

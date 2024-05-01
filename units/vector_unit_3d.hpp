@@ -51,7 +51,7 @@
 
 #define VECTOR_UNIT_3D_CPP(name,init_dimensions) name##_3d::name##_3d() : vector_unit_3d() {} \
 	name##_3d::name##_3d(const name##_3d& x) : vector_unit_3d(x) {} \
-	name##_3d::name##_3d(name##_3d&& x) : vector_unit_3d(move(x)) {} \
+	name##_3d::name##_3d(name##_3d&& x) : vector_unit_3d(std::move(x)) {} \
 const string name##_3d::dimensions_match = init_dimensions; \
 const vector<dimension> name##_3d::real_dimensions = create_derived_dimensions(init_dimensions)
 

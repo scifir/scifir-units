@@ -49,7 +49,7 @@
 
 #define VECTOR_UNIT_ND_CPP(name,init_dimensions) name##_nd::name##_nd() : vector_unit_nd() {} \
 	name##_nd::name##_nd(const name##_nd& x) : vector_unit_nd(x) {} \
-	name##_nd::name##_nd(name##_nd&& x) : vector_unit_nd(move(x)) {} \
+	name##_nd::name##_nd(name##_nd&& x) : vector_unit_nd(std::move(x)) {} \
 const string name##_nd::dimensions_match = init_dimensions; \
 const vector<dimension> name##_nd::real_dimensions = create_derived_dimensions(init_dimensions)
 

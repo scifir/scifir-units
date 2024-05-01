@@ -12,7 +12,7 @@ namespace scifir
 	prefix::prefix(const prefix& x) : prefix_type(x.prefix_type)
 	{}
 
-	prefix::prefix(prefix&& x) : prefix_type(move(x.prefix_type))
+	prefix::prefix(prefix&& x) : prefix_type(std::move(x.prefix_type))
 	{}
 
 	prefix::prefix(prefix::type new_type) : prefix_type(new_type)
@@ -29,7 +29,7 @@ namespace scifir
 
 	prefix& prefix::operator=(prefix&& x)
 	{
-		prefix_type = move(x.prefix_type);
+		prefix_type = std::move(x.prefix_type);
 		return *this;
 	}
 

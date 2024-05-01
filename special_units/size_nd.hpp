@@ -22,7 +22,7 @@ namespace scifir
 			size_nd(const size_nd<T>& x) : widths(x.widths)
 			{}
 
-			size_nd(size_nd<T>&& x) : widths(move(x.widths))
+			size_nd(size_nd<T>&& x) : widths(std::move(x.widths))
 			{}
 
 			explicit size_nd(const vector<T>& new_widths) : widths(new_widths)
@@ -55,7 +55,7 @@ namespace scifir
 
 			size_nd<T>& operator=(size_nd<T>&& x)
 			{
-				widths = move(x.widths);
+				widths = std::move(x.widths);
 				return *this;
 			}
 
@@ -149,7 +149,7 @@ namespace scifir
 			size_nd(const size_nd<float>& x) : widths(x.widths)
 			{}
 
-			size_nd(size_nd<float>&& x) : widths(move(x.widths))
+			size_nd(size_nd<float>&& x) : widths(std::move(x.widths))
 			{}
 
 			explicit size_nd(const vector<float>& new_widths) : widths(new_widths)
@@ -182,7 +182,7 @@ namespace scifir
 
 			size_nd<float>& operator=(size_nd<float>&& x)
 			{
-				widths = move(x.widths);
+				widths = std::move(x.widths);
 				return *this;
 			}
 

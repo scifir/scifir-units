@@ -28,9 +28,9 @@ namespace scifir
 		std::strcpy(symbol, x.symbol);
 	}
 
-	dimension::dimension(dimension&& x) : prefix(move(x.prefix)),dimension_type(move(x.dimension_type)),dimension_sign(move(x.dimension_sign))
+	dimension::dimension(dimension&& x) : prefix(std::move(x.prefix)),dimension_type(std::move(x.dimension_type)),dimension_sign(std::move(x.dimension_sign))
 	{
-		std::strcpy(symbol, move(x.symbol));
+		std::strcpy(symbol, std::move(x.symbol));
 	}
 
 	dimension::dimension(dimension::type new_dimension_type,scifir::prefix::type new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
@@ -276,10 +276,10 @@ namespace scifir
 	
 	dimension& dimension::operator=(dimension&& x)
 	{
-		prefix = move(x.prefix);
-		dimension_type = move(x.dimension_type);
-		dimension_sign = move(x.dimension_sign);
-		strcpy(symbol,move(x.symbol));
+		prefix = std::move(x.prefix);
+		dimension_type = std::move(x.dimension_type);
+		dimension_sign = std::move(x.dimension_sign);
+		strcpy(symbol,std::move(x.symbol));
 		return *this;
 	}
 

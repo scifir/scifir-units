@@ -23,7 +23,7 @@ namespace scifir
 			lab_number(const lab_number<T>& x) : value(x.value),error_value(x.error_value)
 			{}
 
-			lab_number(lab_number<T>&& x) : value(move(x.value)),error_value(move(x.error_value))
+			lab_number(lab_number<T>&& x) : value(std::move(x.value)),error_value(std::move(x.error_value))
 			{}
 
 			explicit lab_number(T x,T y) : value(x),error_value(y)
@@ -38,8 +38,8 @@ namespace scifir
 
 			lab_number<T>& operator=(lab_number<T>&& x)
 			{
-				value = move(x.value);
-				error_value = move(x.error_value);
+				value = std::move(x.value);
+				error_value = std::move(x.error_value);
 				return *this;
 			}
 
