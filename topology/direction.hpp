@@ -1,6 +1,7 @@
 #ifndef SCIFIR_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED
 #define SCIFIR_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED
 
+#include <cstdint>
 #include <iostream>
 #include <string>
 

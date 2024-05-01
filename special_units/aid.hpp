@@ -1,6 +1,7 @@
 #ifndef SCIFIR_UNITS_SPECIAL_UNITS_AID_HPP_INCLUDED
 #define SCIFIR_UNITS_SPECIAL_UNITS_AID_HPP_INCLUDED
 
+#include <cstdint>
 #include <string>
 
 using namespace std;

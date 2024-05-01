@@ -1,6 +1,7 @@
 #ifndef SCIFIR_UNITS_UNITS_PREFIX_HPP_INCLUDED
 #define SCIFIR_UNITS_UNITS_PREFIX_HPP_INCLUDED
 
+#include <cstdint>
 #include <iostream>
 #include <map>
 #include <string>
