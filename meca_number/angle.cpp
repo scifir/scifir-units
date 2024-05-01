@@ -21,7 +21,7 @@ namespace scifir
 	angle::angle(const angle& x) : value(x.get_value())
 	{}
 
-	angle::angle(angle&& x) : value(move(x.get_value()))
+	angle::angle(angle&& x) : value(std::move(x.get_value()))
 	{}
 
 	angle::angle(float x) : value(x)
@@ -32,7 +32,7 @@ namespace scifir
 	angle::angle(string init_angle) : value()
 	{
 		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
-		if (init_angle_unicode.endsWith(u'°') or init_angle_unicode.endsWith(u'º'))
+		if (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA))
 		{
 			init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);
 		}
@@ -64,7 +64,7 @@ namespace scifir
 
 	angle& angle::operator=(angle&& x)
 	{
-		value = move(x.get_value());
+		value = std::move(x.get_value());
 		return *this;
 	}
 
@@ -78,7 +78,7 @@ namespace scifir
 	angle& angle::operator=(string init_angle)
 	{
 		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
-		if (init_angle_unicode.endsWith(u'°') or init_angle_unicode.endsWith(u'º'))
+		if (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA))
 		{
 			init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);
 		}
@@ -244,7 +244,7 @@ namespace scifir
 	{
 		icu::UnicodeString x_unicode = icu::UnicodeString(x.c_str());
 		int total_chars = x_unicode.countChar32() - 1;
-		if (x_unicode[total_chars - 1] == U'º')
+		if (x_unicode[total_chars - 1] == 0x00B0 || x_unicode[total_chars - 1] == 0x00BA)
 		{
 			bool dot_present = false;
 			for (int i = 0; i < total_chars; i++)
