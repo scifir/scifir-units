@@ -1,0 +1,155 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+      "major": 3,
+      "minor": 7,
+      "patch": 1
+    },
+    "configurePresets": [
+      {
+        "name": "linux",
+        "displayName": "Linux distribution",
+        "description": "This configuration is for Linux distributions",
+        "generator": "Unix Makefiles",
+        "binaryDir": "${sourceDir}/build/linux",
+        "cacheVariables": {
+          "PLATFORM": "linux"
+        }
+      },
+      {
+        "name": "windows",
+        "displayName": "MSVC",
+        "description": "This configuration is for building scifir-units for Windows as dll or lib file",
+        "generator": "Visual Studio 17 2022",
+        "binaryDir": "${sourceDir}/build/windows",
+        "cacheVariables": {
+          "INCLUDE_PATH": "C:\\Programas\\vcpkg\\installed\\x64-windows\\include",
+          "LINK_PATH": "C:\\Programas\\vcpkg\\installed\\x64-windows\\lib",
+          "CMAKE_BUILD_TYPE": "Release",
+          "Boost_INCLUDE_DIR": "C:\\Programas\\vcpkg\\installed\\x64-windows\\include",
+          "Boost_ARCHITECTURE": "-x64",
+          "Boost_LIB_PREFIX" : "",
+          "Boost_COMPILER" : "-vc143"
+          /*"Boost_LIBRARY": "C:\\Programas\\vcpkg\\installed\\x64-windows\\lib",
+          "Boost_LIBRARY_DIR_RELEASE": "C:\\Programas\\vcpkg\\installed\\x64-windows\\lib",
+          "BOOST_ROOT": "C:\\Programas\\vcpkg\\installed\\x64-windows",
+          "CMAKE_TOOLCHAIN_FILE": {
+            "value": "$env{VCPKG_ROOT}\\scripts\\buildsystems\\vcpkg.cmake",
+            "type": "FILEPATH"
+          },
+          "VCPKG_TARGET_TRIPLET": "x64-windows-static"*/
+        }
+      },
+      {
+        "name": "windows-wsl",
+        "displayName": "Windows WSL distribution",
+        "description": "This configuration is for the WSL of Windows",
+        "generator": "Unix Makefiles",
+        "binaryDir": "${sourceDir}/build/windows-wsl",
+        "cacheVariables": {
+          "PLATFORM": "wsl"
+        }
+      },
+      {
+        "name": "windows-mingw",
+        "displayName": "MinGW",
+        "description": "This configuration is for building inside MinGW",
+        "generator": "MinGW Makefiles",
+        "binaryDir": "${sourceDir}/build/windows-mingw",
+        "cacheVariables": {
+          "INCLUDE_PATH": "$env{MINGW64_DIR}/include",
+          "LINK_PATH": "$env{MINGW64_DIR}/lib"
+        }
+      }
+    ],
+    "buildPresets": [
+      {
+        "name": "linux",
+        "configurePreset": "linux"
+      },
+      {
+        "name": "windows",
+        "configurePreset": "windows"
+      },
+      {
+        "name": "windows-wsl",
+        "configurePreset": "windows-wsl"
+      },
+      {
+        "name": "windows-mingw",
+        "configurePreset": "windows-mingw"
+      }
+    ],
+    "testPresets": [
+      {
+        "name": "linux",
+        "configurePreset": "linux",
+        "output": {"outputOnFailure": true},
+        "execution": {"noTestsAction": "error", "stopOnFailure": true}
+      },
+      {
+        "name": "windows",
+        "configurePreset": "windows",
+        "output": {"outputOnFailure": true},
+        "execution": {"noTestsAction": "error", "stopOnFailure": true}
+      },
+      {
+        "name": "windows-wsl",
+        "configurePreset": "windows-wsl",
+        "output": {"outputOnFailure": true},
+        "execution": {"noTestsAction": "error", "stopOnFailure": true}
+      },
+      {
+        "name": "windows-mingw",
+        "configurePreset": "windows-mingw",
+        "output": {"outputOnFailure": true},
+        "execution": {"noTestsAction": "error", "stopOnFailure": true}
+      }
+    ],
+    "packagePresets": [
+      {
+        "name": "linux",
+        "configurePreset": "linux"
+      },
+      {
+        "name": "windows",
+        "configurePreset": "windows"
+      },
+      {
+        "name": "windows-wsl",
+        "configurePreset": "windows-wsl"
+      },
+      {
+        "name": "windows-mingw",
+        "configurePreset": "windows-mingw"
+      }
+    ],
+    "workflowPresets": [
+      {
+        "name": "windows-mingw",
+        "steps": [
+          {
+            "type": "configure",
+            "name": "windows-mingw"
+          },
+          {
+            "type": "build",
+            "name": "windows-mingw"
+          },
+          {
+            "type": "test",
+            "name": "windows-mingw"
+          },
+          {
+            "type": "package",
+            "name": "windows-mingw"
+          }
+        ]
+      }
+    ],
+    "vendor": {
+      "Scifir": {
+        "autoFormat": false
+      }
+    }
+  }
