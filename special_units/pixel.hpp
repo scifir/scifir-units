@@ -21,6 +21,9 @@ namespace scifir
 			pixel(const pixel&);
 			pixel(pixel&&);
 			explicit pixel(float);
+			explicit pixel(double);
+			explicit pixel(long double);
+			explicit pixel(int);
 			explicit pixel(string);
 			explicit pixel(const scalar_unit&);
 

@@ -186,14 +186,14 @@ namespace scifir
 				return *this;
 			}
 
-			bool is_nd(int i) const
+			bool is_nd(unsigned int i) const
 			{
 				return widths.size() == i;
 			}
 
 			int get_nd() const
 			{
-				return widths.size();
+				return int(widths.size());
 			}
 
 			size_nd<float> operator +(const size_nd<float>& x) const
@@ -201,7 +201,7 @@ namespace scifir
 				if (get_nd() == x.get_nd())
 				{
 					vector<float> new_widths = widths;
-					for (int i = 0; i < new_widths.size(); i++)
+					for (unsigned int i = 0; i < new_widths.size(); i++)
 					{
 						new_widths[i] += x.widths[i];
 					}
@@ -218,7 +218,7 @@ namespace scifir
 				if (get_nd() == x.get_nd())
 				{
 					vector<float> new_widths = widths;
-					for (int i = 0; i < new_widths.size(); i++)
+					for (unsigned int i = 0; i < new_widths.size(); i++)
 					{
 						new_widths[i] -= x.widths[i];
 					}
@@ -234,7 +234,7 @@ namespace scifir
 			{
 				if (get_nd() == x.get_nd())
 				{
-					for (int i = 0; i < widths.size(); i++)
+					for (unsigned int i = 0; i < widths.size(); i++)
 					{
 						widths[i] += x.widths[i];
 					}
@@ -245,7 +245,7 @@ namespace scifir
 			{
 				if (get_nd() == x.get_nd())
 				{
-					for (int i = 0; i < widths.size(); i++)
+					for (unsigned int i = 0; i < widths.size(); i++)
 					{
 						widths[i] -= x.widths[i];
 					}
@@ -255,7 +255,7 @@ namespace scifir
 			float get_volume_nd() const
 			{
 				float new_value = 1;
-				for (int i = 0; i < widths.size(); i++)
+				for (unsigned int i = 0; i < widths.size(); i++)
 				{
 					new_value *= widths[i];
 				}

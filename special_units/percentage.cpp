@@ -23,6 +23,15 @@ namespace scifir
 	percentage::percentage(float x) : value(x)
 	{}
 
+	percentage::percentage(double x) : value(float(x))
+	{}
+
+	percentage::percentage(long double x) : value(float(x))
+	{}
+
+	percentage::percentage(int x) : value(float(x))
+	{}
+
 	percentage::percentage(float x,const string& init_dimensions)
 	{
 		if (init_dimensions == "%")
@@ -44,6 +53,78 @@ namespace scifir
 		else if (init_dimensions == "ppq")
 		{
 			value = x / 10000000000000.0f;
+		}
+	}
+
+	percentage::percentage(double x,const string& init_dimensions)
+	{
+		if (init_dimensions == "%")
+		{
+			value = float(x);
+		}
+		else if (init_dimensions == "ppm")
+		{
+			value = float(x) / 10000.0f;
+		}
+		else if (init_dimensions == "ppb")
+		{
+			value = float(x) / 10000000.0f;
+		}
+		else if (init_dimensions == "ppt")
+		{
+			value = float(x) / 10000000000.0f;
+		}
+		else if (init_dimensions == "ppq")
+		{
+			value = float(x) / 10000000000000.0f;
+		}
+	}
+
+	percentage::percentage(long double x,const string& init_dimensions)
+	{
+		if (init_dimensions == "%")
+		{
+			value = float(x);
+		}
+		else if (init_dimensions == "ppm")
+		{
+			value = float(x) / 10000.0f;
+		}
+		else if (init_dimensions == "ppb")
+		{
+			value = float(x) / 10000000.0f;
+		}
+		else if (init_dimensions == "ppt")
+		{
+			value = float(x) / 10000000000.0f;
+		}
+		else if (init_dimensions == "ppq")
+		{
+			value = float(x) / 10000000000000.0f;
+		}
+	}
+
+	percentage::percentage(int x,const string& init_dimensions)
+	{
+		if (init_dimensions == "%")
+		{
+			value = float(x);
+		}
+		else if (init_dimensions == "ppm")
+		{
+			value = float(x) / 10000.0f;
+		}
+		else if (init_dimensions == "ppb")
+		{
+			value = float(x) / 10000000.0f;
+		}
+		else if (init_dimensions == "ppt")
+		{
+			value = float(x) / 10000000000.0f;
+		}
+		else if (init_dimensions == "ppq")
+		{
+			value = float(x) / 10000000000000.0f;
 		}
 	}
 
@@ -107,7 +188,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "An percentage cannot be initialized with dimensions";
+			cerr << "An percentage cannot be initialized with dimensions" << endl;
 			value = 0;
 		}
 	}
@@ -191,7 +272,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "An percentage cannot be initialized with dimensions";
+			cerr << "An percentage cannot be initialized with dimensions" << endl;
 		}
 		return *this;
 	}
@@ -338,11 +419,11 @@ namespace scifir
 		string percentage_unit = x.substr(x.length() - 4,4);
 		if (percentage_unit == " ppm" or percentage_unit == " ppb" or percentage_unit == " ppt" or percentage_unit == " ppq")
 		{
-			iteration_limit = x.length() - 4;
+			iteration_limit = int(x.length()) - 4;
 		}
 		else if (x[x.length() - 1] == '%')
 		{
-			iteration_limit = x.length() - 1;
+			iteration_limit = int(x.length()) - 1;
 		}
 		else
 		{

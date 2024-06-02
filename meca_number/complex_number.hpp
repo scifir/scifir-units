@@ -136,7 +136,7 @@ namespace scifir
 				}
 				else if (real < 0 and imaginary == 0)
 				{
-					return angle(180);
+					return angle(180.0f);
 				}
 				else
 				{

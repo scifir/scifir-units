@@ -207,7 +207,7 @@ namespace scifir
 
 			float get_p() const
 			{
-				return std::sqrt(std::pow(x,2) + std::pow(y,2));
+				return float(std::sqrt(std::pow(x,2) + std::pow(y,2)));
 			}
 
 			angle get_theta() const
@@ -255,7 +255,7 @@ namespace scifir
 
 			float distance_to_origin() const
 			{
-				return std::sqrt(std::pow(x,2) + std::pow(y,2));
+				return float(std::sqrt(std::pow(x,2) + std::pow(y,2)));
 			}
 
 			string display_polar() const

@@ -84,7 +84,11 @@ namespace scifir
 			scalar_unit(const scalar_unit&);
 			scalar_unit(scalar_unit&&);
 			explicit scalar_unit(float, const string&);
+			explicit scalar_unit(double, const string&);
+			explicit scalar_unit(long double, const string&);
 			explicit scalar_unit(float, const vector<dimension>&);
+			explicit scalar_unit(double, const vector<dimension>&);
+			explicit scalar_unit(long double, const vector<dimension>&);
 			explicit scalar_unit(const string&);
 
 			scalar_unit& operator =(const scalar_unit&);
@@ -400,7 +404,7 @@ scifir::scalar_unit operator +(const T y,const scifir::scalar_unit& x)
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::scalar_unit operator -(const T y,const scifir::scalar_unit& x)
 {
-	scifir::scalar_unit z = scifir::scalar_unit(y,x.get_dimensions());
+	scifir::scalar_unit z = scifir::scalar_unit((long double)y,x.get_dimensions());
 	z -= x;
 	return z;
 }
@@ -416,7 +420,7 @@ scifir::scalar_unit operator *(const T y,const scifir::scalar_unit& x)
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::scalar_unit operator /(const T y,const scifir::scalar_unit& x)
 {
-	scifir::scalar_unit z = scifir::scalar_unit(y,vector<scifir::dimension>());
+	scifir::scalar_unit z = scifir::scalar_unit((long double)y,vector<scifir::dimension>());
 	return z / x;
 }
 

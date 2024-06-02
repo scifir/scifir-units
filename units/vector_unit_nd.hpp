@@ -79,14 +79,14 @@ namespace scifir
 
 			static vector_unit_nd cartesian_2d(const string& new_dimensions,float new_x,float new_y)
 			{
-				float new_value = std::sqrt(std::pow(new_x,2) + std::pow(new_y,2));
+				float new_value = float(std::sqrt(std::pow(new_x,2) + std::pow(new_y,2)));
 				float new_theta = scifir::atan_grade(new_y / new_x);
 				return vector_unit_nd(new_value,new_dimensions, {angle(new_theta)});
 			}
 
 			static vector_unit_nd cartesian_3d(const string& new_dimensions,float new_x,float new_y,float new_z)
 			{
-				float new_value = std::sqrt(std::pow(new_x,2) + std::pow(new_y,2) + std::pow(new_z,2));
+				float new_value = float(std::sqrt(std::pow(new_x,2) + std::pow(new_y,2) + std::pow(new_z,2)));
 				float new_theta = scifir::atan_grade(new_y / new_x);
 				float new_phi = scifir::acos_grade(new_z / new_value);
 				return vector_unit_nd(new_value,new_dimensions, {angle(new_theta), angle(new_phi)});
@@ -94,7 +94,7 @@ namespace scifir
 
 			static vector_unit_nd cylindrical(const string& new_dimensions,float new_p,angle new_theta,float new_z)
 			{
-				float new_value = std::sqrt(std::pow(new_p,2) + std::pow(new_z,2));
+				float new_value = float(std::sqrt(std::pow(new_p,2) + std::pow(new_z,2)));
 				float new_phi = scifir::atan_grade(new_p / new_z);
 				return vector_unit_nd(new_value,new_dimensions, {new_theta, angle(new_phi)});
 			}
@@ -186,14 +186,14 @@ namespace scifir
 				}
 			}
 
-			inline bool is_nd(int i) const
+			inline bool is_nd(unsigned int i) const
 			{
 				return angles.size() == (i - 1);
 			}
 			
 			inline int get_nd() const
 			{
-				return (angles.size() + 1);
+				return int(angles.size() + 1);
 			}
 
 			scalar_unit n_projection(int) const;

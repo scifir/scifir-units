@@ -8,7 +8,7 @@ namespace scifir
 	{
 		ostringstream output;
 		output << x.widths[0];
-		for (int i = 1; i < x.widths.size(); i++)
+		for (unsigned int i = 1; i < x.widths.size(); i++)
 		{
 			output << " * " << x.widths[i];
 		}

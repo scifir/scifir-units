@@ -817,7 +817,7 @@ namespace scifir
 
 			T distance_to_origin() const
 			{
-				scalar_unit x_T = scalar_unit(0,"m2");
+				scalar_unit x_T = scalar_unit(0.0f,"m2");
 				for (int i = 0; i < values.size(); i++)
 				{
 					x_T += scifir::pow(values[i],2);
@@ -1092,11 +1092,11 @@ namespace scifir
 				{
 					if (init_values.size() == (init_angles.size() + 1))
 					{
-						for (int i = 0; i < init_values.size(); i++)
+						for (unsigned int i = 0; i < init_values.size(); i++)
 						{
 							values.push_back(stof(init_values[i]));
 						}
-						for (int i = 0; i < init_angles.size(); i++)
+						for (unsigned int i = 0; i < init_angles.size(); i++)
 						{
 							angles.push_back(angle(init_angles[i]));
 						}
@@ -1142,17 +1142,17 @@ namespace scifir
 				return *this;
 			}
 
-			bool is_nd(int i) const
+			bool is_nd(unsigned int i) const
 			{
 				return values.size() == i;
 			}
 
 			int get_nd() const
 			{
-				return values.size();
+				return int(values.size());
 			}
 
-			void change_nd(int i,const vector<float>& new_values,const vector<float>& new_angles)
+			void change_nd(unsigned int i,const vector<float>& new_values,const vector<float>& new_angles)
 			{
 				if (i == new_values.size() and new_values.size() == (new_angles.size() + 1))
 				{
@@ -1165,7 +1165,7 @@ namespace scifir
 				}
 			}
 
-			void change_nd(int i,const vector<float>& new_values,const vector<angle>& new_angles)
+			void change_nd(unsigned int i,const vector<float>& new_values,const vector<angle>& new_angles)
 			{
 				if (i == new_values.size() and new_values.size() == (new_angles.size() + 1))
 				{
@@ -1187,7 +1187,7 @@ namespace scifir
 				}
 			}
 
-			const float& get_value(int i) const
+			const float& get_value(unsigned int i) const
 			{
 				if (i < (values.size()))
 				{
@@ -1199,7 +1199,7 @@ namespace scifir
 				}
 			}
 
-			float& get_value(int i)
+			float& get_value(unsigned int i)
 			{
 				if (i < (values.size()))
 				{
@@ -1235,7 +1235,7 @@ namespace scifir
 				}
 			}
 
-			const angle& get_angle(int i) const
+			const angle& get_angle(unsigned int i) const
 			{
 				if (i < (values.size() - 1))
 				{
@@ -1247,7 +1247,7 @@ namespace scifir
 				}
 			}
 
-			angle& get_angle(int i)
+			angle& get_angle(unsigned int i)
 			{
 				if (i < (values.size() - 1))
 				{
@@ -1263,7 +1263,7 @@ namespace scifir
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return std::sqrt(std::pow(values[0],2) + std::pow(values[1],2));
+					return float(std::sqrt(std::pow(values[0],2) + std::pow(values[1],2)));
 				}
 				else
 				{
@@ -1287,7 +1287,7 @@ namespace scifir
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return std::sqrt(std::pow(values[0],2) + std::pow(values[1],2) + std::pow(values[2],2));
+					return float(std::sqrt(std::pow(values[0],2) + std::pow(values[1],2) + std::pow(values[2],2)));
 				}
 				else
 				{
@@ -1682,9 +1682,9 @@ namespace scifir
 			float distance_to_origin() const
 			{
 				float x_T = 0;
-				for (int i = 0; i < values.size(); i++)
+				for (unsigned int i = 0; i < values.size(); i++)
 				{
-					x_T += std::pow(values[i],2);
+					x_T += float(std::pow(values[i],2));
 				}
 				return std::sqrt(x_T);
 			}
@@ -1779,7 +1779,7 @@ namespace scifir
 	{
 		if (x1.get_nd() == x2.get_nd())
 		{
-			scalar_unit x_length = scalar_unit(0,"m2");
+			scalar_unit x_length = scalar_unit(0.0f,"m2");
 			for (int i = 0; i < x1.values.size(); i++)
 			{
 				x_length += scifir::pow(x1.values[i] - x2.values[i],2);
@@ -1799,7 +1799,7 @@ namespace scifir
 	{
 		if (x1.get_nd() == x2.get_nd())
 		{
-			scalar_unit x_length = scalar_unit(0,"m2");
+			scalar_unit x_length = scalar_unit(0.0f,"m2");
 			for (int i = 0; i < x1.values.size(); i++)
 			{
 				x_length += scifir::pow(x1.values[i] - x2.values[i],2);
@@ -1819,7 +1819,7 @@ namespace scifir
 	{
 		if (x1.get_nd() == x2.get_nd())
 		{
-			scalar_unit x_length = scalar_unit(0,"m2");
+			scalar_unit x_length = scalar_unit(0.0f,"m2");
 			for (int i = 0; i < x1.values.size(); i++)
 			{
 				x_length += scifir::pow(x1.values[i] - x2.values[i],2);
@@ -1839,7 +1839,7 @@ namespace scifir
 	{
 		if (x1.get_nd() == x2.get_nd())
 		{
-			scalar_unit x_length = scalar_unit(0,"m2");
+			scalar_unit x_length = scalar_unit(0.0f,"m2");
 			for (int i = 0; i < x1.values.size(); i++)
 			{
 				x_length += scifir::pow(x1.values[i] - x2.values[i],2);
@@ -1859,7 +1859,7 @@ namespace scifir
 	{
 		if (x1.get_nd() == x2.get_nd())
 		{
-			scalar_unit x_length = scalar_unit(0,"m2");
+			scalar_unit x_length = scalar_unit(0.0f,"m2");
 			for (int i = 0; i < x1.values.size(); i++)
 			{
 				x_length += scifir::pow(x1.values[i] - x2.values[i],2);

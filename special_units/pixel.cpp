@@ -24,6 +24,15 @@ namespace scifir
 
 	pixel::pixel(float x) : value(x)
 	{}
+
+	pixel::pixel(double x) : value(float(x))
+	{}
+
+	pixel::pixel(long double x) : value(float(x))
+	{}
+
+	pixel::pixel(int x) : value(float(x))
+	{}
 	
 	pixel::pixel(string init_pixel) : value()
 	{
@@ -49,7 +58,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "An pixel cannot be initialized with dimensions";
+			cerr << "An pixel cannot be initialized with dimensions" << endl;
 			value = 0;
 		}
 	}
@@ -97,7 +106,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "An pixel cannot be initialized with dimensions";
+			cerr << "An pixel cannot be initialized with dimensions" << endl;
 		}
 		return *this;
 	}
@@ -190,15 +199,15 @@ namespace scifir
 		int iteration_limit;
 		if (x.substr(x.length() - 3,3) == " px")
 		{
-			iteration_limit = x.length() - 3;
+			iteration_limit = int(x.length()) - 3;
 		}
 		else if (x.substr(x.length() - 2,2) == "px")
 		{
-			iteration_limit = x.length() - 2;
+			iteration_limit = int(x.length()) - 2;
 		}
 		else
 		{
-			iteration_limit = x.length();
+			iteration_limit = int(x.length());
 		}
 		bool dot_present = false;
 		for (int i = 0; i < iteration_limit; i++)

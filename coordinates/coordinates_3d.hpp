@@ -376,7 +376,7 @@ namespace scifir
 
 			float get_p() const
 			{
-				return std::sqrt(std::pow(x,2) + std::pow(y,2));
+				return float(std::sqrt(std::pow(x,2) + std::pow(y,2)));
 			}
 
 			angle get_theta() const
@@ -386,7 +386,7 @@ namespace scifir
 
 			float get_r() const
 			{
-				return std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2));
+				return float(std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)));
 			}
 
 			angle get_phi() const
@@ -491,7 +491,7 @@ namespace scifir
 
 			float distance_to_origin() const
 			{
-				return std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2));
+				return float(std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)));
 			}
 
 			string display_cylindrical() const
@@ -554,7 +554,7 @@ namespace scifir
 
 	inline float cartesian_3d_to_cylindrical_r(float x,float y,float z)
 	{
-		return std::sqrt(std::pow(x,2) + std::pow(y,2));
+		return float(std::sqrt(std::pow(x,2) + std::pow(y,2)));
 	}
 
 	inline float cartesian_3d_to_cylindrical_theta(float x,float y,float z)
@@ -569,7 +569,7 @@ namespace scifir
 
 	inline float cartesian_3d_to_spherical_r(float x,float y,float z)
 	{
-		return std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2));
+		return float(std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)));
 	}
 
 	inline float cartesian_3d_to_spherical_theta(float x,float y,float z)
@@ -579,7 +579,7 @@ namespace scifir
 
 	inline float cartesian_3d_to_spherical_phi(float x,float y,float z)
 	{
-		return scifir::acos_grade(z / std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)));
+		return float(scifir::acos_grade(float(z / float(std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2))))));
 	}
 
 	inline float spherical_to_cartesian_3d_x(float r,const angle& angle1, const angle& angle2)
@@ -629,7 +629,7 @@ namespace scifir
 
 	inline float cylindrical_to_spherical_r(float p,const angle& angle, float z)
 	{
-		return std::sqrt(std::pow(p,2) + std::pow(z,2));
+		return float(std::sqrt(std::pow(p,2) + std::pow(z,2)));
 	}
 
 	inline float cylindrical_to_spherical_theta(float p,const angle& angle, float z)

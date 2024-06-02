@@ -21,7 +21,13 @@ namespace scifir
 			percentage(const percentage&);
 			percentage(percentage&&);
 			explicit percentage(float);
+			explicit percentage(double);
+			explicit percentage(long double);
+			explicit percentage(int);
 			explicit percentage(float,const string&);
+			explicit percentage(double,const string&);
+			explicit percentage(long double,const string&);
+			explicit percentage(int,const string&);
 			explicit percentage(const string&);
 			explicit percentage(const scalar_unit&);
 

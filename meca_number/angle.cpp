@@ -66,7 +66,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "An angle cannot be initialized with dimensions";
+			cerr << "An angle cannot be initialized with dimensions" << endl;
 			value = 0;
 		}
 	}
@@ -114,7 +114,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "An angle cannot be initialized with dimensions";
+			cerr << "An angle cannot be initialized with dimensions" << endl;
 		}
 		return *this;
 	}

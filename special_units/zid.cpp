@@ -24,7 +24,7 @@ namespace scifir
 		country = values[0];
 		if (values.size() > 2)
 		{
-			int total_for_values = (values.size() - 1);
+			int total_for_values = int(values.size()) - 1;
 			for (int i = 1; i < total_for_values; i++)
 			{
 				regions.push_back(values[i]);
@@ -69,7 +69,7 @@ bool operator ==(const scifir::zid& x, const scifir::zid& y)
 {
 	if(x.country == y.country)
 	{
-		for (int i = 0; i < x.regions.size(); i++)
+		for (unsigned int i = 0; i < x.regions.size(); i++)
 		{
 			if (x.regions[i] != y.regions[i])
 			{

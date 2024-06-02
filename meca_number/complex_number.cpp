@@ -14,11 +14,11 @@ namespace scifir
 			{
 				return false;
 			}
-			int imaginary_length = numbers[1].length() - 3;
+			int imaginary_length = int(numbers[1].length()) - 3;
 			if (numbers[1].substr(0,imaginary_length) == "(i)")
 			{
 				bool dot_present = false;
-				for (int i = 0; i < numbers[0].length(); i++)
+				for (unsigned int i = 0; i < numbers[0].length(); i++)
 				{
 					if (numbers[0][i] == '.')
 					{

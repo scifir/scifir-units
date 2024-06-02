@@ -29,10 +29,22 @@ namespace scifir
 	scalar_unit::scalar_unit(scalar_unit&& x) : dimensions(std::move(x.get_dimensions())),value(std::move(x.get_value()))
 	{}
 
-	scalar_unit::scalar_unit(float new_value, const string& init_dimensions) : value(new_value),dimensions(create_dimensions(init_dimensions))
+	scalar_unit::scalar_unit(float new_value, const string& init_dimensions) : dimensions(create_dimensions(init_dimensions)),value(new_value)
 	{}
 
-	scalar_unit::scalar_unit(float new_value, const vector<dimension>& new_dimensions) : value(new_value),dimensions(new_dimensions)
+	scalar_unit::scalar_unit(double new_value, const string& init_dimensions) : dimensions(create_dimensions(init_dimensions)),value(float(new_value))
+	{}
+
+	scalar_unit::scalar_unit(long double new_value, const string& init_dimensions) : dimensions(create_dimensions(init_dimensions)),value(float(new_value))
+	{}
+
+	scalar_unit::scalar_unit(float new_value, const vector<dimension>& new_dimensions) : dimensions(new_dimensions),value(new_value)
+	{}
+
+	scalar_unit::scalar_unit(double new_value, const vector<dimension>& new_dimensions) : dimensions(new_dimensions),value(float(new_value))
+	{}
+
+	scalar_unit::scalar_unit(long double new_value, const vector<dimension>& new_dimensions) : dimensions(new_dimensions),value(float(new_value))
 	{}
 
 	scalar_unit::scalar_unit(const string& init_scalar) : scalar_unit()
@@ -50,7 +62,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Cannot initialize to different dimensions";
+			cerr << "Cannot initialize to different dimensions" << endl;
 		}
 		return *this;
 	}
@@ -64,7 +76,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Cannot initialize to different dimensions";
+			cerr << "Cannot initialize to different dimensions" << endl;
 		}
 		return *this;
 	}
@@ -85,7 +97,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Cannot sum different dimensions";
+			cerr << "Cannot sum different dimensions" << endl;
 			return scalar_unit();
 		}
 	}
@@ -101,7 +113,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Cannot substract different dimensions";
+			cerr << "Cannot substract different dimensions" << endl;
 			return scalar_unit();
 		}
 	}
@@ -130,7 +142,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Exponent of dimensions doesn't exist";
+			cerr << "Exponent of dimensions doesn't exist" << endl;
 			return scalar_unit();
 		}
 	}
@@ -139,7 +151,7 @@ namespace scifir
 	{
 		if(!has_dimensions(x))
 		{
-			cerr << "Cannot sum different dimensions";
+			cerr << "Cannot sum different dimensions" << endl;
 			return;
 		}
 		x.change_dimensions(x);
@@ -150,7 +162,7 @@ namespace scifir
 	{
 		if(!has_dimensions(x))
 		{
-			cerr << "Cannot substract different dimensions";
+			cerr << "Cannot substract different dimensions" << endl;
 			return;
 		}
 		x.change_dimensions(x);
@@ -347,12 +359,12 @@ namespace scifir
 			{
 				display_prefix = prefix(prefix::no_prefix);
 			}
-			float x_value = get_value();
+			long double x_value = get_value();
 			x_value *= dimensions[0].prefix_math();
 			x_value /= prefix_math(dimensions[0],display_prefix);
 			vector<dimension> x_dimensions = dimensions;
 			x_dimensions[0].prefix = display_prefix;
-			output << display_float(x_value,number_of_decimals) << " " << to_string(x_dimensions,with_brackets);
+			output << display_float(float(x_value),number_of_decimals) << " " << to_string(x_dimensions,with_brackets);
 		}
 		else
 		{
@@ -374,11 +386,11 @@ namespace scifir
 			x_value /= prefix_math(derived_dimensions[0],display_prefix);
 			vector<dimension> x_dimensions = derived_dimensions;
 			x_dimensions[0].prefix = display_prefix;
-			output << display_float(x_value,number_of_decimals) << " " << to_string(derived_dimensions,with_brackets);
+			output << display_float(float(x_value),number_of_decimals) << " " << to_string(derived_dimensions,with_brackets);
 		}
 		else
 		{
-			output << display_float(x_value,number_of_decimals) << " " << to_string(derived_dimensions,with_brackets);
+			output << display_float(float(x_value),number_of_decimals) << " " << to_string(derived_dimensions,with_brackets);
 		}
 		return output.str();
 	}
@@ -386,7 +398,7 @@ namespace scifir
 	string scalar_unit::custom_display(const string& new_dimensions_str,int number_of_decimals,bool with_brackets) const
 	{
 		ostringstream output;
-		float new_value = get_value();
+		long double new_value = get_value();
 		if (new_dimensions_str != "sci")
 		{
 			vector<dimension> new_dimensions = create_dimensions(new_dimensions_str);
@@ -428,7 +440,7 @@ namespace scifir
 					new_value *= x_new_dimension.prefix_math();
 				}
 			}
-			output << display_float(new_value,number_of_decimals) << " ";
+			output << display_float(float(new_value),number_of_decimals) << " ";
 			if (with_brackets)
 			{
 				output << "[";
@@ -451,7 +463,7 @@ namespace scifir
 				x_new_dimension.prefix.prefix_type = prefix::no_prefix;
 			}
 			int value_scale = int(log10(get_value()));
-			output << display_float(new_value / std::pow(10,value_scale),number_of_decimals) << "e" << value_scale << " " << to_string(new_dimensions,with_brackets);
+			output << display_float(float(new_value / std::pow(10,value_scale)),number_of_decimals) << "e" << value_scale << " " << to_string(new_dimensions,with_brackets);
 		}
 		return output.str();
 	}
@@ -460,13 +472,13 @@ namespace scifir
 	{
 		if (new_dimension.dimension_sign == dimension::POSITIVE)
 		{
-			value /= new_dimension.get_conversion_factor();
-			value /= new_dimension.prefix_math();
+			value /= float(new_dimension.get_conversion_factor());
+			value /= float(new_dimension.prefix_math());
 		}
 		else if (new_dimension.dimension_sign == dimension::NEGATIVE)
 		{
-			value *= new_dimension.get_conversion_factor();
-			value *= new_dimension.prefix_math();
+			value *= float(new_dimension.get_conversion_factor());
+			value *= float(new_dimension.prefix_math());
 		}
 	}
 
@@ -474,13 +486,13 @@ namespace scifir
 	{
 		if (old_dimension.dimension_sign == dimension::POSITIVE)
 		{
-			value *= old_dimension.get_conversion_factor();
-			value *= old_dimension.prefix_math();
+			value *= float(old_dimension.get_conversion_factor());
+			value *= float(old_dimension.prefix_math());
 		}
 		else if (old_dimension.dimension_sign == dimension::NEGATIVE)
 		{
-			value /= old_dimension.get_conversion_factor();
-			value /= old_dimension.prefix_math();
+			value /= float(old_dimension.get_conversion_factor());
+			value /= float(old_dimension.prefix_math());
 		}
 	}
 
@@ -552,13 +564,13 @@ namespace scifir
 	{
 		bool dot_present = false;
 		bool e_present = false;
-		int current_pos = 0;
+		unsigned int current_pos = 0;
 		int e_present_pos = 0;
-		for (int i = 0; i < x.length(); i++)
+		for (unsigned int i = 0; i < x.length(); i++)
 		{
 			if (x[i] == ' ')
 			{
-				if (e_present and ((e_present_pos + 1) == i))
+				if (e_present and ((unsigned int)(e_present_pos + 1) == i))
 				{
 					return false;
 				}
@@ -633,7 +645,7 @@ namespace scifir
 			{
 				boost::trim(x_subvalue);
 				bool number_present = false;
-				for (int i = 0; i < x_subvalue.length(); i++)
+				for (unsigned int i = 0; i < x_subvalue.length(); i++)
 				{
 					if (number_present == false)
 					{
@@ -668,7 +680,7 @@ namespace scifir
 				{
 					boost::trim(x_subvalue);
 					bool number_present = false;
-					for (int i = 0; i < x_subvalue.length(); i++)
+					for (unsigned int i = 0; i < x_subvalue.length(); i++)
 					{
 						if (number_present == false)
 						{
@@ -698,7 +710,7 @@ namespace scifir
 			{
 				boost::trim(x_subvalue);
 				bool number_present = false;
-				for (int i = 0; i < x_subvalue.length(); i++)
+				for (unsigned int i = 0; i < x_subvalue.length(); i++)
 				{
 					if (number_present == false)
 					{

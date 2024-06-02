@@ -76,7 +76,7 @@ namespace scifir
 		set_from_string(values[0] + " " + values[1]);
 		if (values.size() > 2)
 		{
-			for (int i = 2; i < values.size(); i++)
+			for (unsigned int i = 2; i < values.size(); i++)
 			{
 				angles.push_back(angle(values[i]));
 			}
@@ -325,7 +325,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Cannot sum vectors of different dimensions";
+			cerr << "Cannot sum vectors of different dimensions" << endl;
 		}
 	}
 
@@ -338,7 +338,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Cannot substract vectors of different dimensions";
+			cerr << "Cannot substract vectors of different dimensions" << endl;
 		}
 	}
 
@@ -378,7 +378,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Cannot sum vectors of different dimensions";
+			cerr << "Cannot sum vectors of different dimensions" << endl;
 			return vector_unit_nd();
 		}
 	}
@@ -420,7 +420,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Cannot sum vectors of different dimensions";
+			cerr << "Cannot sum vectors of different dimensions" << endl;
 			return vector_unit_nd();
 		}
 	}
@@ -429,7 +429,7 @@ namespace scifir
 	{
 		long double new_value = scalar_unit::value * x.get_value();
 		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(), x.get_dimensions(),new_value);
-		scalar_unit new_unit = scalar_unit(new_value, new_dimensions);
+		scalar_unit new_unit = scalar_unit(float(new_value), new_dimensions);
 		if(is_nd(1))
 		{
 			return vector_unit_nd(new_unit);
@@ -452,7 +452,7 @@ namespace scifir
 	{
 		long double new_value = scalar_unit::value / x.get_value();
 		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(), x.get_dimensions(),new_value);
-		scalar_unit new_unit = scalar_unit(new_value, new_dimensions);
+		scalar_unit new_unit = scalar_unit(float(new_value), new_dimensions);
 		if(is_nd(1))
 		{
 			return vector_unit_nd(new_unit);
@@ -638,7 +638,7 @@ namespace scifir
 
 	vector_unit_nd sqrt(const vector_unit_nd& x)
 	{
-		scalar_unit new_value = scifir::sqrt(x);
+		scalar_unit new_value = scifir::sqrt(scalar_unit(x));
 		return vector_unit_nd(new_value, x.angles);
 	}
 
@@ -652,7 +652,7 @@ namespace scifir
 	{
 		long double new_value = float(x.x_projection()*y.x_projection() + x.y_projection()*y.y_projection() + x.z_projection()*y.z_projection());
 		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
-		return scalar_unit(new_value,new_dimensions);
+		return scalar_unit(float(new_value),new_dimensions);
 	}
 
 	vector_unit_nd cross_product(const vector_unit_nd& x,const vector_unit_nd& y)
@@ -678,7 +678,7 @@ namespace scifir
 				angle2 = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
 			}
 			vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
-			scalar_unit new_unit = scalar_unit(new_value, new_dimensions);
+			scalar_unit new_unit = scalar_unit(float(new_value), new_dimensions);
 			vector<angle> angles;
 			angles.push_back(angle(angle1));
 			angles.push_back(angle(angle2));

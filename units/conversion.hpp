@@ -14,8 +14,10 @@ namespace scifir
 		public:
 			conversion();
 			explicit conversion(const string&, float);
+			explicit conversion(const string&, double);
+			explicit conversion(const string&, long double);
 
-			inline const float& get_factor() const
+			inline const long double& get_factor() const
 			{
 				return factor;
 			}
@@ -27,7 +29,7 @@ namespace scifir
 
 		private:
 			string unit_to;
-			float factor;
+			long double factor;
 	};
 
 	extern map<string, conversion> get_conversion;

@@ -17,6 +17,6 @@ namespace scifir
 
 	float distance(const point_1d<float>& x1,const point_1d<float>& x2)
 	{
-		return std::sqrt(std::pow(x1.x - x2.x,2));
+		return float(std::sqrt(std::pow(x1.x - x2.x,2)));
 	}
 }
