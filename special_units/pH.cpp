@@ -14,7 +14,7 @@ using namespace std;
 
 namespace scifir
 {
-	pH::pH() : value(0)
+	pH::pH() : value(0.0f)
 	{}
 
 	pH::pH(const pH& x) : value(x.get_value())
@@ -43,8 +43,8 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "A pH cannot be initialized with dimensions";
-			value = 0;
+			value = 0.0f;
+			cerr << "A pH cannot be initialized with dimensions" << endl;
 		}
 	}
 
@@ -83,7 +83,8 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "A pH cannot be initialized with dimensions";
+			value = 0.0f;
+			cerr << "A pH cannot be initialized with dimensions" << endl;
 		}
 		return *this;
 	}
@@ -138,45 +139,45 @@ namespace scifir
 
 	molarity pH::get_H() const
 	{
-		return molarity(std::pow(10,-value),"M");
+		return molarity(std::pow(10.0f,-value),"M");
 	}
 
 	molarity pH::get_OH() const
 	{
-		return molarity(std::pow(10,-float(14 - value)),"M");
+		return molarity(std::pow(10.0f,-float(14.0f - value)),"M");
 	}
 
 	pOH pH::get_pOH() const
 	{
-		float pOH_value = 14 - value;
+		float pOH_value = 14.0f - value;
 		return pOH(pOH_value);
 	}
 
 	bool pH::is_acidic() const
 	{
-		return (value < 7);
+		return (value < 7.0f);
 	}
 
 	bool pH::is_basic() const
 	{
-		return (value > 7);
+		return (value > 7.0f);
 	}
 
 	bool pH::is_neutral() const
 	{
-		return (value == 7);
+		return (value == 7.0f);
 	}
 
 	string pH::display(int number_of_decimals) const
 	{
 		ostringstream output;
-		if (get_value() == -0)
+		if (value == -0.0f)
 		{
 			output << 0;
 		}
 		else
 		{
-			output << display_float(get_value(),number_of_decimals);
+			output << display_float(value,number_of_decimals);
 		}
 		return output.str();
 	}
@@ -185,18 +186,14 @@ namespace scifir
 	{
 		if(isfinite(value))
 		{
-			if (value > 14)
+			if (value > 14.0f)
 			{
-				value = 0;
+				value = 0.0f;
 			}
-			else if (value < 1)
+			else if (value < 1.0f)
 			{
-				value = 0;
+				value = 0.0f;
 			}
-		}
-		else
-		{
-			return;
 		}
 	}
 	

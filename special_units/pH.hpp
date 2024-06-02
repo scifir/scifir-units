@@ -100,13 +100,13 @@ namespace scifir
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::pH operator +(T x, const scifir::pH& y)
 {
-	return pH(x + y.get_value());
+	return scifir::pH(x + y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::pH operator -(T x, const scifir::pH& y)
 {
-	return pH(x - y.get_value());
+	return scifir::pH(x - y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>

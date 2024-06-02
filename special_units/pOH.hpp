@@ -99,13 +99,13 @@ namespace scifir
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::pOH operator +(T x, const scifir::pOH& y)
 {
-	return pOH(x + y.get_value());
+	return scifir::pOH(x + y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::pOH operator -(T x, const scifir::pOH& y)
 {
-	return pOH(x - y.get_value());
+	return scifir::pOH(x - y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
