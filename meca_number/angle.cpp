@@ -29,6 +29,21 @@ namespace scifir
 		normalize_value();
 	}
 
+	angle::angle(double x) : value(float(x))
+	{
+		normalize_value();
+	}
+
+	angle::angle(long double x) : value(float(x))
+	{
+		normalize_value();
+	}
+
+	angle::angle(int x) : value(float(x))
+	{
+		normalize_value();
+	}
+
 	angle::angle(string init_angle) : value()
 	{
 		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
@@ -210,26 +225,20 @@ namespace scifir
 	{
 		if(isfinite(value))
 		{
-			if (value >= 360)
+			if (value >= 360.0f)
 			{
-				float decimal_part;
-				float value_remainder = modf(value / 360,&decimal_part);
-				value = value_remainder * 360;
+				while (value >= 360.0f)
+				{
+					value -= 360.0f;
+				}
 			}
-			else if (value < 0)
+			else if (value < 0.0f)
 			{
-				float decimal_part;
-				float value_remainder = modf(value / 360,&decimal_part);
-				value = 360 - std::abs(value_remainder * 360);
+				while (value < 0.0f)
+				{
+					value += 360.0f;
+				}
 			}
-			if (value > 359.99)
-			{
-				value = 0;
-			}
-		}
-		else
-		{
-			return;
 		}
 	}
 
@@ -243,11 +252,11 @@ namespace scifir
 	bool is_angle(const string& x)
 	{
 		icu::UnicodeString x_unicode = icu::UnicodeString(x.c_str());
-		int total_chars = x_unicode.countChar32() - 1;
+		int total_chars = x_unicode.countChar32();
 		if (x_unicode[total_chars - 1] == 0x00B0 || x_unicode[total_chars - 1] == 0x00BA)
 		{
 			bool dot_present = false;
-			for (int i = 0; i < total_chars; i++)
+			for (int i = 0; i < (total_chars - 1); i++)
 			{
 				if (x_unicode[i] == '.')
 				{
@@ -275,7 +284,7 @@ namespace scifir
 
 	bool parallel(const angle& x, const angle& y)
 	{
-		if(x == y /*or (x + 180) == y*/)
+		if(x == y or (x + 180) == y)
 		{
 			return true;
 		}
@@ -287,12 +296,15 @@ namespace scifir
 
 	bool orthogonal(const angle& x, const angle& y)
 	{
-		return true;
-		/*float difference = (x - y).get_value();
+		float difference = std::abs((x - y).get_value());
 		if (difference == 90 or difference == 270)
 		{
 			return true;
-		}*/
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	angle sqrt(const angle& x)
@@ -302,7 +314,7 @@ namespace scifir
 
 	angle sqrt_nth(const angle& x, int y)
 	{
-		return angle(std::pow(x.get_value(), 1 / y));
+		return angle(std::pow(x.get_value(), float(1.0f / y)));
 	}
 
 	float sin(const angle& x)

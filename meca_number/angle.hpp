@@ -31,6 +31,9 @@ namespace scifir
 			angle(const angle&);
 			angle(angle&&);
 			explicit angle(float);
+			explicit angle(double);
+			explicit angle(long double);
+			explicit angle(int);
 			explicit angle(string);
 			explicit angle(const scalar_unit&);
 
@@ -64,7 +67,7 @@ namespace scifir
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 			void operator =(T y)
 			{
-				value = y;
+				value = float(y);
 				normalize_value();
 			}
 
