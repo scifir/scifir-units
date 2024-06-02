@@ -1,0 +1,11 @@
+prefix = /usr
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+
+Name: scifir-units
+Description: Lab machines essential library for handling units of measure and similar data
+URL: https://www.github.com/scifir/scifir-units
+Version: 2.0.0
+CFlags: -I${includedir}
+Libs: -L${libdir} -lboost_system -licuuc -lscifir-units
