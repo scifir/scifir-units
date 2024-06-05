@@ -23,15 +23,27 @@ namespace scifir
 	dimension::dimension() : prefix(),dimension_type(dimension::none),dimension_sign(dimension::NO_SIGN),symbol()
 	{}
 
+#ifdef IS_UNIX
 	dimension::dimension(const dimension& x) : prefix(x.prefix),dimension_type(x.dimension_type),dimension_sign(x.dimension_sign)
 	{
-		std::strcpy(symbol, x.symbol);
+		std::strncpy(symbol, x.symbol, 3);
 	}
 
 	dimension::dimension(dimension&& x) : prefix(std::move(x.prefix)),dimension_type(std::move(x.dimension_type)),dimension_sign(std::move(x.dimension_sign))
 	{
-		std::strcpy(symbol, std::move(x.symbol));
+		std::strncpy(symbol, std::move(x.symbol), 3);
 	}
+#elif IS_WINDOWS
+	dimension::dimension(const dimension& x) : prefix(x.prefix),dimension_type(x.dimension_type),dimension_sign(x.dimension_sign)
+	{
+		strncpy_s(symbol, x.symbol, 3);
+	}
+
+	dimension::dimension(dimension&& x) : prefix(std::move(x.prefix)),dimension_type(std::move(x.dimension_type)),dimension_sign(std::move(x.dimension_sign))
+	{
+		strncpy_s(symbol, std::move(x.symbol), 3);
+	}
+#endif
 
 	dimension::dimension(dimension::type new_dimension_type,scifir::prefix::type new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
 	{}
@@ -131,7 +143,7 @@ namespace scifir
 		{
 			dimension_type = dimension::F;
 		}
-		else if(dimension_name == "ohm" or dimension_name == "Ohm" or dimension_name == "\u03A9")
+		else if(dimension_name == "ohm" or dimension_name == "Ohm" or u32string(dimension_name.begin(),dimension_name.end()) == U"\U000003A9")
 		{
 			dimension_type = dimension::Ohm;
 		}
@@ -175,7 +187,7 @@ namespace scifir
 		{
 			dimension_type = dimension::kat;
 		}
-		else if(dimension_name == "angstrom" or dimension_name == "\u212B")
+		else if(dimension_name == "angstrom" or u32string(dimension_name.begin(),dimension_name.end()) == U"\U0000212B")
 		{
 			dimension_type = dimension::angstrom;
 		}
@@ -265,12 +277,13 @@ namespace scifir
 		//free(symbol);
 	}
 
+#ifdef IS_UNIX
 	dimension& dimension::operator=(const dimension& x)
 	{
 		prefix = x.prefix;
 		dimension_type = x.dimension_type;
 		dimension_sign = x.dimension_sign;
-		strcpy(symbol,x.symbol);
+		std::strncpy(symbol,x.symbol,3);
 		return *this;
 	}
 	
@@ -279,9 +292,28 @@ namespace scifir
 		prefix = std::move(x.prefix);
 		dimension_type = std::move(x.dimension_type);
 		dimension_sign = std::move(x.dimension_sign);
-		strcpy(symbol,std::move(x.symbol));
+		std::strncpy(symbol,std::move(x.symbol),3);
 		return *this;
 	}
+#elif IS_WINDOWS
+	dimension& dimension::operator=(const dimension& x)
+	{
+		prefix = x.prefix;
+		dimension_type = x.dimension_type;
+		dimension_sign = x.dimension_sign;
+		strncpy_s(symbol,x.symbol,3);
+		return *this;
+	}
+	
+	dimension& dimension::operator=(dimension&& x)
+	{
+		prefix = std::move(x.prefix);
+		dimension_type = std::move(x.dimension_type);
+		dimension_sign = std::move(x.dimension_sign);
+		strncpy_s(symbol,std::move(x.symbol),3);
+		return *this;
+	}
+#endif
 
 	string dimension::get_name() const
 	{
@@ -429,8 +461,13 @@ namespace scifir
 				return "V";
 			case dimension::F:
 				return "F";
+#ifdef IS_UNIX
 			case dimension::Ohm:
-				return "\u03A9";
+				return "\U000003A9";
+#elif IS_WINDOWS
+			case dimension::Ohm:
+				return "\U03A9";
+#endif
 			case dimension::S:
 				return "S";
 			case dimension::Wb:
@@ -451,8 +488,13 @@ namespace scifir
 				return "Sv";
 			case dimension::kat:
 				return "kat";
+#ifdef IS_UNIX
 			case dimension::angstrom:
-				return "\u212B";
+				return "\U0000212B";
+#elif IS_WINDOWS
+			case dimension::angstrom:
+				return "\U212B";
+#endif
 			case dimension::L:
 				return "L";
 			case dimension::minute:
@@ -1193,7 +1235,7 @@ namespace scifir
 		int new_start = 0;
 		string new_dimension_str;
 		vector<dimension> dimensions = vector<dimension>();
-		for(int j = 0; j < init_value.size(); j++)
+		for(unsigned int j = 0; j < init_value.size(); j++)
 		{
 			if(init_value[j] == '1' and init_value[j + 1] == '/')
 			{
@@ -1243,7 +1285,7 @@ namespace scifir
 	vector<dimension> create_derived_dimensions(const vector<dimension>& x)
 	{
 		vector<dimension> new_x = vector<dimension>();
-		for(int i = 0; i < x.size(); i++)
+		for(unsigned int i = 0; i < x.size(); i++)
 		{
 			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
@@ -1261,7 +1303,7 @@ namespace scifir
 	vector<dimension> create_derived_dimensions(const vector<dimension>& x,long double& value)
 	{
 		vector<dimension> new_x = vector<dimension>();
-		for(int i = 0; i < x.size(); i++)
+		for(unsigned int i = 0; i < x.size(); i++)
 		{
 			if (x[i].dimension_sign == dimension::POSITIVE)
 			{
@@ -1357,7 +1399,7 @@ namespace scifir
 					value /= x[i].prefix_math();
 				}
 			}
-			int total_dimensions = std::pow(dimensions_count[x[0].dimension_type], 1.0 / scale);
+			int total_dimensions = int(std::pow(dimensions_count[x[0].dimension_type], 1.0f / scale));
 			x[0].prefix.prefix_type = prefix::no_prefix;
 			for (int j = 0; j < total_dimensions; j++)
 			{
@@ -1388,7 +1430,7 @@ namespace scifir
 				{
 					continue;
 				}
-				int total_dimensions = std::pow(dimensions_count[x_dimension.dimension_type], 1.0 / scale);
+				int total_dimensions = int(std::pow(dimensions_count[x_dimension.dimension_type], 1.0f / scale));
 				for (int j = 0; j < total_dimensions; j++)
 				{
 					new_dimensions.push_back(x_dimension);
@@ -1415,16 +1457,15 @@ namespace scifir
 	vector<dimension> normalize_dimensions(const vector<dimension>& x)
 	{
 		vector<dimension> new_x = create_derived_dimensions(x);
-		vector<int> skip_dimensions = vector<int>();
-		for(int i = 0; i < new_x.size(); i++)
+		vector<unsigned int> skip_dimensions = vector<unsigned int>();
+		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
-			bool skip = false;
-			for(int j = i + 1; j < new_x.size(); j++)
+			for(unsigned int j = i + 1; j < new_x.size(); j++)
 			{
 				if (skip_dimensions.size() > 0)
 				{
 					bool skip = false;
-					for(int k = 0; k < skip_dimensions.size(); k++)
+					for(unsigned int k = 0; k < skip_dimensions.size(); k++)
 					{
 						if (j == skip_dimensions[k])
 						{
@@ -1445,10 +1486,10 @@ namespace scifir
 			}
 		}
 		vector<dimension> new_dimensions = vector<dimension>();
-		for(int i = 0; i < new_x.size(); i++)
+		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
 			bool skip = false;
-			for(int j = 0; j < skip_dimensions.size(); j++)
+			for(unsigned int j = 0; j < skip_dimensions.size(); j++)
 			{
 				if (i == skip_dimensions[j])
 				{
@@ -1466,16 +1507,15 @@ namespace scifir
 	vector<dimension> normalize_dimensions(const vector<dimension>& x,long double& value)
 	{
 		vector<dimension> new_x = create_derived_dimensions(x,value);
-		vector<int> skip_dimensions = vector<int>();
-		for(int i = 0; i < new_x.size(); i++)
+		vector<unsigned int> skip_dimensions = vector<unsigned int>();
+		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
-			bool skip = false;
-			for(int j = i + 1; j < new_x.size(); j++)
+			for(unsigned int j = i + 1; j < new_x.size(); j++)
 			{
 				if (skip_dimensions.size() > 0)
 				{
 					bool skip = false;
-					for(int k = 0; k < skip_dimensions.size(); k++)
+					for(unsigned int k = 0; k < skip_dimensions.size(); k++)
 					{
 						if (j == skip_dimensions[k])
 						{
@@ -1496,10 +1536,10 @@ namespace scifir
 			}
 		}
 		vector<dimension> new_dimensions = vector<dimension>();
-		for(int i = 0; i < new_x.size(); i++)
+		for(unsigned int i = 0; i < new_x.size(); i++)
 		{
 			bool skip = false;
-			for(int j = 0; j < skip_dimensions.size(); j++)
+			for(unsigned int j = 0; j < skip_dimensions.size(); j++)
 			{
 				if (i == skip_dimensions[j])
 				{
@@ -1540,16 +1580,16 @@ namespace scifir
 	{
 		vector<dimension> x_derived_dimensions = create_derived_dimensions(x);
 		vector<dimension> y_derived_dimensions = create_derived_dimensions(y);
-		vector<int> skip = vector<int>();
+		vector<unsigned int> skip = vector<unsigned int>();
 		for (const dimension& x_dimension: x_derived_dimensions)
 		{
 			bool is_equal = false;
-			for (int j = 0; j < y_derived_dimensions.size(); j++)
+			for (unsigned int j = 0; j < y_derived_dimensions.size(); j++)
 			{
 				bool skip_j = false;
 				if (skip.size() > 0)
 				{
-					for (int k = 0; k < skip.size(); k++)
+					for (unsigned int k = 0; k < skip.size(); k++)
 					{
 						if (j == skip[k])
 						{

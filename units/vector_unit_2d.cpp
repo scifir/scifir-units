@@ -23,11 +23,35 @@ namespace scifir
 	
 	vector_unit_2d::vector_unit_2d(float new_value,const string& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
 	{}
+
+	vector_unit_2d::vector_unit_2d(double new_value,const string& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	{}
+	
+	vector_unit_2d::vector_unit_2d(double new_value,const string& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	{}
+
+	vector_unit_2d::vector_unit_2d(long double new_value,const string& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	{}
+	
+	vector_unit_2d::vector_unit_2d(long double new_value,const string& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	{}
 	
 	vector_unit_2d::vector_unit_2d(float new_value,const vector<dimension>& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
 	{}
 	
 	vector_unit_2d::vector_unit_2d(float new_value,const vector<dimension>& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	{}
+
+	vector_unit_2d::vector_unit_2d(double new_value,const vector<dimension>& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	{}
+	
+	vector_unit_2d::vector_unit_2d(double new_value,const vector<dimension>& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	{}
+
+	vector_unit_2d::vector_unit_2d(long double new_value,const vector<dimension>& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	{}
+	
+	vector_unit_2d::vector_unit_2d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
 	{}
 	
 	vector_unit_2d::vector_unit_2d(const scalar_unit& x,float new_angle) : scalar_unit(x),theta(new_angle)
@@ -90,7 +114,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Cannot sum vectors of different dimensions";
+			cerr << "Cannot sum vectors of different dimensions" << endl;
 		}
 	}
 
@@ -103,7 +127,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Cannot substract vectors of different dimensions";
+			cerr << "Cannot substract vectors of different dimensions" << endl;
 		}
 	}
 
@@ -142,14 +166,14 @@ namespace scifir
 
 	vector_unit_2d vector_unit_2d::operator *(const scalar_unit& x) const
 	{
-		long double new_value = scalar_unit::value * x.get_value();
+		long double new_value = (long double)(scalar_unit::value * x.get_value());
 		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(), x.get_dimensions(),new_value);
 		return vector_unit_2d(new_value, new_dimensions, theta);
 	}
 
 	vector_unit_2d vector_unit_2d::operator /(const scalar_unit& x) const
 	{
-		long double new_value = scalar_unit::value / x.get_value();
+		long double new_value = (long double)(scalar_unit::value / x.get_value());
 		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(), x.get_dimensions(),new_value);
 		return vector_unit_2d(new_value, new_dimensions, theta);
 	}
@@ -163,38 +187,68 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Cannot power with as exponent a unit with dimensions";
+			cerr << "Cannot power with as exponent a unit with dimensions" << endl;
 			return vector_unit_2d();
 		}
 	}
 
+#ifdef IS_UNIX
 	string vector_unit_2d::vectorial_display(int number_of_decimals) const
 	{
 		ostringstream out;
-		out << display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\u03B8";
+		out << display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U000003B8";
 		return out.str();
 	}
 
 	string vector_unit_2d::vectorial_derived_display(int number_of_decimals) const
 	{
 		ostringstream out;
-		out << derived_display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\u03B8";
+		out << derived_display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U000003B8";
 		return out.str();
 	}
 
 	string vector_unit_2d::vectorial_custom_display(const string& new_dimensions_str,int number_of_decimals) const
 	{
 		ostringstream out;
-		out << custom_display(new_dimensions_str,number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\u03B8";
+		out << custom_display(new_dimensions_str,number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U000003B8";
 		return out.str();
 	}
 
 	string to_string(const vector_unit_2d& x)
 	{
 		ostringstream out;
-		out << x.display(2) << " " << display_float(x.theta.get_value(),2) << "\u03B8";
+		out << x.display(2) << " " << display_float(x.theta.get_value(),2) << "\U000003B8";
 		return out.str();
 	}
+#elif IS_WINDOWS
+	string vector_unit_2d::vectorial_display(int number_of_decimals) const
+	{
+		ostringstream out;
+		out << display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U03B8";
+		return out.str();
+	}
+
+	string vector_unit_2d::vectorial_derived_display(int number_of_decimals) const
+	{
+		ostringstream out;
+		out << derived_display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U03B8";
+		return out.str();
+	}
+
+	string vector_unit_2d::vectorial_custom_display(const string& new_dimensions_str,int number_of_decimals) const
+	{
+		ostringstream out;
+		out << custom_display(new_dimensions_str,number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U03B8";
+		return out.str();
+	}
+
+	string to_string(const vector_unit_2d& x)
+	{
+		ostringstream out;
+		out << x.display(2) << " " << display_float(x.theta.get_value(),2) << "\U03B8";
+		return out.str();
+	}
+#endif
 
 	scalar_unit norm(const vector_unit_2d& x)
 	{
@@ -215,7 +269,7 @@ namespace scifir
 
 	scalar_unit dot_product(const vector_unit_2d& x, const vector_unit_2d& y)
 	{
-		long double new_value = float(x.x_projection() * y.x_projection() + x.y_projection() * y.y_projection());
+		long double new_value = (x.x_projection() * y.x_projection() + x.y_projection() * y.y_projection()).get_value();
 		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
 		return scalar_unit(new_value,new_dimensions);
 	}

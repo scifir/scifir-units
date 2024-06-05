@@ -88,7 +88,7 @@ namespace scifir
 
 			static vector_unit_3d cartesian_3d(const string& new_dimensions,float new_x,float new_y,float new_z)
 			{
-				float new_value = std::sqrt(std::pow(new_x,2) + std::pow(new_y,2) + std::pow(new_z,2));
+				float new_value = float(std::sqrt(std::pow(new_x,2) + std::pow(new_y,2) + std::pow(new_z,2)));
 				float new_theta = scifir::atan_grade(new_y / new_x);
 				float new_phi = scifir::acos_grade(new_z / new_value);
 				return vector_unit_3d(new_value,new_dimensions,angle(new_theta),angle(new_phi));
@@ -96,7 +96,7 @@ namespace scifir
 
 			static vector_unit_3d cylindrical(const string& new_dimensions,float new_p,angle new_theta,float new_z)
 			{
-				float new_value = std::sqrt(std::pow(new_p,2) + std::pow(new_z,2));
+				float new_value = float(std::sqrt(std::pow(new_p,2) + std::pow(new_z,2)));
 				float new_phi = scifir::atan_grade(new_p / new_z);
 				return vector_unit_3d(new_value,new_dimensions,new_theta,angle(new_phi));
 			}

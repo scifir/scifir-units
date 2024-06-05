@@ -75,8 +75,7 @@ namespace scifir
 
 			static char* create_full_symbol(const string& full_symbol)
 			{
-				int symbol_code;
-				char symbol_abbreviation[3];
+				char symbol_abbreviation[3] = "";
 				total_full_symbols++;
 				if (total_full_symbols <= 255)
 				{
@@ -87,7 +86,6 @@ namespace scifir
 					symbol_abbreviation[0] = char(total_full_symbols);
 					symbol_abbreviation[1] = '\n';
 					symbol_abbreviation[2] = '\n';
-					symbol_code = total_full_symbols;
 				}
 				else if (total_full_symbols <= 65535)
 				{
@@ -97,7 +95,7 @@ namespace scifir
 						char_code1 = 33;
 					}
 					symbol_abbreviation[0] += char(char_code1);
-					int closest_number = floor(total_full_symbols / 256.0) * 256;
+					int closest_number = int(floor(total_full_symbols / 256.0)) * 256;
 					int char_code2 = total_full_symbols - closest_number;
 					if (char_code2 <= 32)
 					{
@@ -114,14 +112,14 @@ namespace scifir
 						char_code1 = 33;
 					}
 					symbol_abbreviation[0] += char(char_code1);
-					int closest_number = floor(total_full_symbols / 65536.0) * 65536;
+					int closest_number = int(floor(total_full_symbols / 65536.0)) * 65536;
 					int char_code2 = total_full_symbols - closest_number;
 					if (char_code2 <= 32)
 					{
 						char_code2 = 33;
 					}
 					symbol_abbreviation[1] += char(char_code2);
-					int closest_number2 = floor(total_full_symbols / 256.0) * 256;
+					int closest_number2 = int(floor(total_full_symbols / 256.0)) * 256;
 					int char_code3 = total_full_symbols - closest_number2;
 					if (char_code3 <= 32)
 					{

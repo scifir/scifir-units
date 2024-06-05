@@ -21,13 +21,13 @@ namespace scifir
 
 			explicit operator std::chrono::seconds() const;
 
-			float get_years() const;
-			float get_months() const;
-			float get_weeks() const;
-			float get_days() const;
-			float get_hours() const;
-			float get_minutes() const;
-			float get_seconds() const;
+			int get_years() const;
+			int get_months() const;
+			int get_weeks() const;
+			int get_days() const;
+			int get_hours() const;
+			int get_minutes() const;
+			int get_seconds() const;
 
 			string get_finish_date() const;
 			string display_as_time() const;
@@ -44,7 +44,7 @@ namespace scifir
 			scifir::time_duration& operator+=(chrono::duration<T1,T2> x)
 			{
 				 chrono::seconds d = chrono::duration_cast<chrono::seconds>(x);
-				 scifir::time_duration x_second = scifir::time_duration(d.count(),"s");
+				 scifir::time_duration x_second = scifir::time_duration((long double)d.count(),"s");
 				 scalar_unit::operator+=(x_second);
 				 return *this;
 			}
@@ -53,7 +53,7 @@ namespace scifir
 			scifir::time_duration& operator-=(chrono::duration<T1,T2> x)
 			{
 				 chrono::seconds d = chrono::duration_cast<chrono::seconds>(x);
-				 scifir::time_duration x_second = scifir::time_duration(d.count(),"s");
+				 scifir::time_duration x_second = scifir::time_duration((long double)d.count(),"s");
 				 scalar_unit::operator-=(x_second);
 				 return *this;
 			}

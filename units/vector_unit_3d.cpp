@@ -228,7 +228,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Cannot sum vectors of different dimensions";
+			cerr << "Cannot sum vectors of different dimensions" << endl;
 		}
 	}
 
@@ -241,7 +241,7 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Cannot substract vectors of different dimensions";
+			cerr << "Cannot substract vectors of different dimensions" << endl;
 		}
 	}
 
@@ -286,14 +286,14 @@ namespace scifir
 	{
 		long double new_value = scalar_unit::value * x.get_value();
 		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(), x.get_dimensions(),new_value);
-		return vector_unit_3d(new_value, new_dimensions, theta, phi);
+		return vector_unit_3d(float(new_value), new_dimensions, theta, phi);
 	}
 
 	vector_unit_3d vector_unit_3d::operator /(const scalar_unit& x) const
 	{
 		long double new_value = scalar_unit::value / x.get_value();
 		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(), x.get_dimensions(),new_value);
-		return vector_unit_3d(new_value, new_dimensions, theta, phi);
+		return vector_unit_3d(float(new_value), new_dimensions, theta, phi);
 	}
 
 	vector_unit_3d vector_unit_3d::operator ^(const scalar_unit& x) const
@@ -305,38 +305,68 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "Cannot power with as exponent a unit with dimensions";
+			cerr << "Cannot power with as exponent a unit with dimensions" << endl;
 			return vector_unit_3d();
 		}
 	}
 
+#ifdef IS_UNIX
 	string vector_unit_3d::vectorial_display(int number_of_decimals) const
 	{
 		ostringstream out;
-		out << display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\u03B8 " << display_float(phi.get_value(),number_of_decimals) << "\u03A6";
+		out << display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U000003B8 " << display_float(phi.get_value(),number_of_decimals) << "\U000003A6";
 		return out.str();
 	}
 
 	string vector_unit_3d::vectorial_derived_display(int number_of_decimals) const
 	{
 		ostringstream out;
-		out << derived_display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\u03B8 " << display_float(phi.get_value(),number_of_decimals) << "\u03A6";
+		out << derived_display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U000003B8 " << display_float(phi.get_value(),number_of_decimals) << "\U000003A6";
 		return out.str();
 	}
 
 	string vector_unit_3d::vectorial_custom_display(const string& new_dimensions_str,int number_of_decimals) const
 	{
 		ostringstream out;
-		out << custom_display(new_dimensions_str,number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\u03B8 " << display_float(phi.get_value(),number_of_decimals) << "\u03A6";
+		out << custom_display(new_dimensions_str,number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U000003B8 " << display_float(phi.get_value(),number_of_decimals) << "\U000003A6";
 		return out.str();
 	}
 
 	string to_string(const vector_unit_3d& x)
 	{
 		ostringstream out;
-		out << x.display(2) << " " << display_float(x.theta.get_value(),2) << "\u03B8 " << display_float(x.phi.get_value(),2) << "\u03A6";
+		out << x.display(2) << " " << display_float(x.theta.get_value(),2) << "\U000003B8 " << display_float(x.phi.get_value(),2) << "\U000003A6";
 		return out.str();
 	}
+#elif IS_WINDOWS
+	string vector_unit_3d::vectorial_display(int number_of_decimals) const
+	{
+		ostringstream out;
+		out << display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U03B8 " << display_float(phi.get_value(),number_of_decimals) << "\U03A6";
+		return out.str();
+	}
+
+	string vector_unit_3d::vectorial_derived_display(int number_of_decimals) const
+	{
+		ostringstream out;
+		out << derived_display(number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U03B8 " << display_float(phi.get_value(),number_of_decimals) << "\U03A6";
+		return out.str();
+	}
+
+	string vector_unit_3d::vectorial_custom_display(const string& new_dimensions_str,int number_of_decimals) const
+	{
+		ostringstream out;
+		out << custom_display(new_dimensions_str,number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U03B8 " << display_float(phi.get_value(),number_of_decimals) << "\U03A6";
+		return out.str();
+	}
+
+	string to_string(const vector_unit_3d& x)
+	{
+		ostringstream out;
+		out << x.display(2) << " " << display_float(x.theta.get_value(),2) << "\U03B8 " << display_float(x.phi.get_value(),2) << "\U03A6";
+		return out.str();
+	}
+#endif
 
 	scalar_unit norm(const vector_unit_3d& x)
 	{
@@ -359,7 +389,7 @@ namespace scifir
 	{
 		long double new_value = float(x.x_projection()*y.x_projection() + x.y_projection()*y.y_projection() + x.z_projection()*y.z_projection());
 		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
-		return scalar_unit(new_value,new_dimensions);
+		return scalar_unit(float(new_value),new_dimensions);
 	}
 
 	vector_unit_3d cross_product(const vector_unit_3d& x,const vector_unit_3d& y)
@@ -383,7 +413,7 @@ namespace scifir
 			new_phi = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
 		}
 		vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
-		return vector_unit_3d(new_value, new_dimensions, new_theta, new_phi);
+		return vector_unit_3d(float(new_value), new_dimensions, new_theta, new_phi);
 	}
 
 	angle angle_between(const vector_unit_3d& x,const vector_unit_3d& y)

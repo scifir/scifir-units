@@ -8,46 +8,32 @@
     "configurePresets": [
       {
         "name": "linux",
-        "displayName": "Linux distribution",
-        "description": "This configuration is for Linux distributions",
+        "displayName": "Linux",
+        "description": "This configuration is for Linux distributions, it uses the normal build system of Linux",
         "generator": "Unix Makefiles",
         "binaryDir": "${sourceDir}/build/linux",
         "cacheVariables": {
-          "PLATFORM": "linux"
+          "CMAKE_IGNORE_PREFIX_PATH": "/mnt",
+          "PLATFORM": "linux",
+          "Boost_INCLUDE_DIR": "/usr/include"
         }
       },
       {
         "name": "windows",
         "displayName": "MSVC",
-        "description": "This configuration is for building scifir-units for Windows as dll or lib file",
+        "description": "This configuration is for building scifir-units for Windows as dll or lib file, it uses vcpkg",
         "generator": "Visual Studio 17 2022",
         "binaryDir": "${sourceDir}/build/windows",
+        "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
         "cacheVariables": {
-          "INCLUDE_PATH": "C:\\Programas\\vcpkg\\installed\\x64-windows\\include",
-          "LINK_PATH": "C:\\Programas\\vcpkg\\installed\\x64-windows\\lib",
-          "CMAKE_BUILD_TYPE": "Release",
-          "Boost_INCLUDE_DIR": "C:\\Programas\\vcpkg\\installed\\x64-windows\\include",
+          "INCLUDE_PATH": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}/include",
+          "LINK_PATH": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}/lib",
+          "Boost_INCLUDE_DIR": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}/include",
           "Boost_ARCHITECTURE": "-x64",
           "Boost_LIB_PREFIX" : "",
-          "Boost_COMPILER" : "-vc143"
-          /*"Boost_LIBRARY": "C:\\Programas\\vcpkg\\installed\\x64-windows\\lib",
-          "Boost_LIBRARY_DIR_RELEASE": "C:\\Programas\\vcpkg\\installed\\x64-windows\\lib",
-          "BOOST_ROOT": "C:\\Programas\\vcpkg\\installed\\x64-windows",
-          "CMAKE_TOOLCHAIN_FILE": {
-            "value": "$env{VCPKG_ROOT}\\scripts\\buildsystems\\vcpkg.cmake",
-            "type": "FILEPATH"
-          },
-          "VCPKG_TARGET_TRIPLET": "x64-windows-static"*/
-        }
-      },
-      {
-        "name": "windows-wsl",
-        "displayName": "Windows WSL distribution",
-        "description": "This configuration is for the WSL of Windows",
-        "generator": "Unix Makefiles",
-        "binaryDir": "${sourceDir}/build/windows-wsl",
-        "cacheVariables": {
-          "PLATFORM": "wsl"
+          "Boost_COMPILER" : "-vc143",
+          "CMAKE_INSTALL_PREFIX": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}",
+          "CMAKE_FIND_ROOT_PATH": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}"
         }
       },
       {
@@ -58,7 +44,64 @@
         "binaryDir": "${sourceDir}/build/windows-mingw",
         "cacheVariables": {
           "INCLUDE_PATH": "$env{MINGW64_DIR}/include",
-          "LINK_PATH": "$env{MINGW64_DIR}/lib"
+          "LINK_PATH": "$env{MINGW64_DIR}/lib",
+          "Boost_INCLUDE_DIR": "$env{MINGW64_DIR}/include",
+          "CMAKE_INSTALL_PREFIX": "$env{MINGW64_DIR}",
+          "CMAKE_FIND_ROOT_PATH": "$env{MINGW64_DIR}"
+        }
+      },
+      {
+          "name": "macos",
+          "displayName": "MacOS",
+          "description": "This configuration is for building the library for MacOS, it uses homebrew",
+          "generator": "Xcode",
+          "binaryDir": "${sourceDir}/build/macos",
+          "cacheVariables": {
+            "Boost_INCLUDE_DIR": "/usr/include"
+          }
+      },
+      {
+          "name": "android",
+          "displayName": "Android",
+          "description": "This configuration is for building the library of Android, accessible then with Android NDK",
+          "generator": "Ninja",
+          "binaryDir": "${sourceDir}/build/android",
+          "toolchainFile": "$env{ANDROID_NDK_ROOT}\\build\\cmake\\android.toolchain.cmake",
+          "cacheVariables": {
+            "INCLUDE_PATH": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}/include",
+            "LINK_PATH": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}/lib",
+            "Boost_INCLUDE_DIR": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}/include",
+            "Boost_ARCHITECTURE": "-x64",
+            "Boost_LIB_PREFIX" : "",
+            "Boost_COMPILER" : "-vc143",
+            "ANDROID_ABI": "arm64-v8a",
+            "ANDROID_PLATFORM": "android-25",
+            "ANDROID_NDK": "$env{ANDROID_NDK_ROOT}"
+          }
+      },
+      {
+        "name": "vcpkg",
+        "displayName": "Vcpkg",
+        "description": "This configuration is for Linux distributions with vcpkg as toolchain",
+        "generator": "Unix Makefiles",
+        "binaryDir": "${sourceDir}/build/vcpkg",
+        "cacheVariables": {
+          "INCLUDE_PATH": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}/include",
+          "LINK_PATH": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}/lib",
+          "Boost_INCLUDE_DIR": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}/include",
+          "Boost_LIBRARY_DIR": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}/lib"
+        }
+      },
+      {
+        "name": "microcontrollers",
+        "displayName": "Microcontrollers",
+        "description": "This configuration is for building scifir-units for Microcontrollers, it needs the compiler for the microcontroller you want to build",
+        "generator": "Unix Makefiles",
+        "binaryDir": "${sourceDir}/build/microcontrollers",
+        "cacheVariables": {
+          "CMAKE_IGNORE_PREFIX_PATH": "/mnt",
+          "PLATFORM": "linux",
+          "Boost_INCLUDE_DIR": "/usr/include"
         }
       }
     ],
@@ -69,15 +112,32 @@
       },
       {
         "name": "windows",
-        "configurePreset": "windows"
-      },
-      {
-        "name": "windows-wsl",
-        "configurePreset": "windows-wsl"
+        "configurePreset": "windows",
+        "cleanFirst": true
       },
       {
         "name": "windows-mingw",
         "configurePreset": "windows-mingw"
+      },
+      {
+        "name": "macos",
+        "configurePreset": "macos",
+        "cleanFirst": true
+      },
+      {
+        "name": "android",
+        "configurePreset": "android",
+        "cleanFirst": true
+      },
+      {
+        "name": "vcpkg",
+        "configurePreset": "vcpkg",
+        "cleanFirst": true
+      },
+      {
+        "name": "microcontrollers",
+        "configurePreset": "microcontrollers",
+        "cleanFirst": true
       }
     ],
     "testPresets": [
@@ -90,18 +150,38 @@
       {
         "name": "windows",
         "configurePreset": "windows",
-        "output": {"outputOnFailure": true},
-        "execution": {"noTestsAction": "error", "stopOnFailure": true}
-      },
-      {
-        "name": "windows-wsl",
-        "configurePreset": "windows-wsl",
-        "output": {"outputOnFailure": true},
-        "execution": {"noTestsAction": "error", "stopOnFailure": true}
+        "filter": { "include": { "label": "tests" }},
+        "configuration": "Debug",
+        "output": {"outputOnFailure": true, "verbosity": "verbose"},
+        "execution": {"noTestsAction": "error", "stopOnFailure": false}
       },
       {
         "name": "windows-mingw",
         "configurePreset": "windows-mingw",
+        "output": {"outputOnFailure": true},
+        "execution": {"noTestsAction": "error", "stopOnFailure": true}
+      },
+      {
+        "name": "macos",
+        "configurePreset": "macos",
+        "output": {"outputOnFailure": true},
+        "execution": {"noTestsAction": "error", "stopOnFailure": true}
+      },
+      {
+        "name": "android",
+        "configurePreset": "android",
+        "output": {"outputOnFailure": true},
+        "execution": {"noTestsAction": "error", "stopOnFailure": true}
+      },
+      {
+        "name": "vcpkg",
+        "configurePreset": "vcpkg",
+        "output": {"outputOnFailure": true},
+        "execution": {"noTestsAction": "error", "stopOnFailure": true}
+      },
+      {
+        "name": "microcontrollers",
+        "configurePreset": "microcontrollers",
         "output": {"outputOnFailure": true},
         "execution": {"noTestsAction": "error", "stopOnFailure": true}
       }
@@ -116,15 +196,48 @@
         "configurePreset": "windows"
       },
       {
-        "name": "windows-wsl",
-        "configurePreset": "windows-wsl"
-      },
-      {
         "name": "windows-mingw",
         "configurePreset": "windows-mingw"
+      },
+      {
+        "name": "macos",
+        "configurePreset": "macos"
+      },
+      {
+        "name": "android",
+        "configurePreset": "android"
+      },
+      {
+        "name": "vcpkg",
+        "configurePreset": "vcpkg"
+      },
+      {
+        "name": "microcontrollers",
+        "configurePreset": "microcontrollers"
       }
     ],
     "workflowPresets": [
+      {
+        "name": "windows",
+        "steps": [
+          {
+            "type": "configure",
+            "name": "windows"
+          },
+          {
+            "type": "build",
+            "name": "windows"
+          },
+          {
+            "type": "test",
+            "name": "windows"
+          },
+          {
+            "type": "package",
+            "name": "windows"
+          }
+        ]
+      },
       {
         "name": "windows-mingw",
         "steps": [

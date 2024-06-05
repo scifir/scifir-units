@@ -60,8 +60,16 @@ namespace scifir
 			vector_unit_2d(vector_unit_2d&&);
 			explicit vector_unit_2d(float,const string&,float); // Example of initialization (10,"N",50)
 			explicit vector_unit_2d(float,const string&,const angle&); // Example of initialization (10,"N",50ª)
+			explicit vector_unit_2d(double,const string&,float); // Example of initialization (10,"N",50)
+			explicit vector_unit_2d(double,const string&,const angle&);
+			explicit vector_unit_2d(long double,const string&,float); // Example of initialization (10,"N",50)
+			explicit vector_unit_2d(long double,const string&,const angle&);
 			explicit vector_unit_2d(float,const vector<dimension>&,float);
 			explicit vector_unit_2d(float,const vector<dimension>&,const angle&);
+			explicit vector_unit_2d(double,const vector<dimension>&,float);
+			explicit vector_unit_2d(double,const vector<dimension>&,const angle&);
+			explicit vector_unit_2d(long double,const vector<dimension>&,float);
+			explicit vector_unit_2d(long double,const vector<dimension>&,const angle&);
 			explicit vector_unit_2d(const scalar_unit&,float);
 			explicit vector_unit_2d(const scalar_unit&,const angle&);
 			explicit vector_unit_2d(const string&,float);
@@ -70,7 +78,7 @@ namespace scifir
 
 			static vector_unit_2d cartesian_2d(const string& new_dimensions,float new_x,float new_y)
 			{
-				float new_value = std::sqrt(std::pow(new_x,2) + std::pow(new_y,2));
+				float new_value = float(std::sqrt(std::pow(new_x,2) + std::pow(new_y,2)));
 				float new_theta = scifir::atan_grade(new_y / new_x);
 				return vector_unit_2d(new_value,new_dimensions,angle(new_theta));
 			}
