@@ -34,7 +34,7 @@ namespace scifir
 	pixel::pixel(int x) : value(float(x))
 	{}
 	
-	pixel::pixel(string init_pixel) : value()
+	pixel::pixel(const string& init_pixel) : value()
 	{
 		if (init_pixel.substr(init_pixel.length() - 3,3) == " px")
 		{
@@ -81,7 +81,7 @@ namespace scifir
 		return *this;
 	}
 
-	pixel& pixel::operator=(string& init_pixel)
+	pixel& pixel::operator=(const string& init_pixel)
 	{
 		if (init_pixel.substr(init_pixel.length() - 3,3) == " px")
 		{
@@ -238,7 +238,7 @@ namespace scifir
 
 	pixel sqrt_nth(const pixel& x, int y)
 	{
-		return pixel(std::pow(x.get_value(), 1 / y));
+		return pixel(std::pow(x.get_value(), 1.0f / y));
 	}
 }
 

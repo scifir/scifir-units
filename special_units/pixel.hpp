@@ -24,13 +24,13 @@ namespace scifir
 			explicit pixel(double);
 			explicit pixel(long double);
 			explicit pixel(int);
-			explicit pixel(string);
+			explicit pixel(const string&);
 			explicit pixel(const scalar_unit&);
 
 			pixel& operator=(const pixel&);
 			pixel& operator=(pixel&&);
 			pixel& operator=(float);
-			pixel& operator=(string&);
+			pixel& operator=(const string&);
 			pixel& operator=(const scalar_unit&);
 
 			explicit operator float() const
@@ -140,31 +140,31 @@ namespace scifir
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::pixel operator +(T x, const scifir::pixel& y)
 {
-	return pixel(x + y.get_value());
+	return scifir::pixel(x + y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::pixel operator -(T x, const scifir::pixel& y)
 {
-	return pixel(x - y.get_value());
+	return scifir::pixel(x - y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::pixel operator *(T x, const scifir::pixel& y)
 {
-	return pixel(x * y.get_value());
+	return scifir::pixel(x * y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::pixel operator /(T x, const scifir::pixel& y)
 {
-	return pixel(x / y.get_value());
+	return scifir::pixel(x / y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::pixel operator ^(T x, const scifir::pixel& y)
 {
-	return pixel(pow(x, y.get_value()));
+	return scifir::pixel(std::pow(x, y.get_value()));
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
