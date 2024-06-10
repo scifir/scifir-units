@@ -102,7 +102,43 @@ namespace scifir
 		scalar_unit::operator=(std::move(x));
 		return *this;
 	}
-	
+
+	void vector_unit_2d::point_to(direction::name x)
+	{
+		if (x == direction::LEFT)
+		{
+			theta = 180.0f;
+		}
+		else if(x == direction::RIGHT)
+		{
+			theta = 0.0f;
+		}
+		else if(x == direction::TOP)
+		{
+			theta = 90.0f;
+		}
+		else if(x == direction::BOTTOM)
+		{
+			theta = 270.0f;
+		}
+		else if(x == direction::LEFT_TOP)
+		{
+			theta = 135.0f;
+		}
+		else if(x == direction::RIGHT_TOP)
+		{
+			theta = 45.0f;
+		}
+		else if(x == direction::RIGHT_BOTTOM)
+		{
+			theta = 315.0f;
+		}
+		else if(x == direction::LEFT_BOTTOM)
+		{
+			theta = 225.0f;
+		}
+	}
+
 	void vector_unit_2d::operator +=(const vector_unit_2d& y)
 	{
 		if(has_dimensions(y))

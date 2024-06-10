@@ -4,6 +4,7 @@
 #include "../units/scalar_unit.hpp"
 #include "../meca_number/angle.hpp"
 #include "../util/is_number.hpp"
+#include "../topology/direction.hpp"
 
 #include "boost/algorithm/string.hpp"
 
@@ -85,9 +86,10 @@ namespace scifir
 
 			vector_unit_2d& operator =(const vector_unit_2d&);
 			vector_unit_2d& operator =(vector_unit_2d&&);
-
 			vector_unit_2d& operator =(const scalar_unit&);
 			vector_unit_2d& operator =(scalar_unit&&);
+
+			void point_to(direction::name);
 
 			void operator +=(const vector_unit_2d&);
 			void operator -=(vector_unit_2d);
