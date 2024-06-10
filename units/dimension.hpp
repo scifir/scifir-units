@@ -179,6 +179,7 @@ namespace scifir
 	bool common_dimension(const dimension&,const dimension&);
 	bool equal_dimensions(const string&,const string&);
 	bool equal_dimensions(const vector<dimension>&,const vector<dimension>&);
+	bool equal_dimensions_and_prefixes(const vector<dimension>&,const vector<dimension>&);
 
 	/*constexpr bool is_dimensions(const char* x)
 	{

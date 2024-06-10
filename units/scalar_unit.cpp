@@ -20,7 +20,7 @@ using namespace std;
 
 namespace scifir
 {
-	scalar_unit::scalar_unit() : dimensions(),value(0)
+	scalar_unit::scalar_unit() : dimensions(),value(0.0f)
 	{}
 
 	scalar_unit::scalar_unit(const scalar_unit& x) : dimensions(x.get_dimensions()),value(x.get_value())
@@ -200,6 +200,10 @@ namespace scifir
 		vector<dimension> new_dimensions = create_dimensions(new_dimensions_str);
 		if(has_dimensions(new_dimensions))
 		{
+			if (equal_dimensions_and_prefixes(dimensions,new_dimensions))
+			{
+				return;
+			}
 			for(const dimension& actual_dimension : dimensions)
 			{
 				remove_dimension(actual_dimension);
@@ -237,6 +241,10 @@ namespace scifir
 	{
 		if(has_dimensions(x.get_dimensions()))
 		{
+			if (equal_dimensions_and_prefixes(dimensions,x.get_dimensions()))
+			{
+				return;
+			}
 			for(const dimension& actual_dimension : dimensions)
 			{
 				remove_dimension(actual_dimension);

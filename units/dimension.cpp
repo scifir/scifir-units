@@ -1615,6 +1615,44 @@ namespace scifir
 		}
 		return true;
 	}
+
+	bool equal_dimensions_and_prefixes(const vector<dimension>& x,const vector<dimension>& y)
+	{
+		vector<unsigned int> skip = vector<unsigned int>();
+		for (const dimension& x_dimension: x)
+		{
+			bool is_equal = false;
+			for (unsigned int j = 0; j < y.size(); j++)
+			{
+				bool skip_j = false;
+				if (skip.size() > 0)
+				{
+					for (unsigned int k = 0; k < skip.size(); k++)
+					{
+						if (j == skip[k])
+						{
+							skip_j = true;
+						}
+					}
+				}
+				if (skip_j)
+				{
+					continue;
+				}
+				if (x_dimension == y[j] and x_dimension.prefix == y[j].prefix)
+				{
+					skip.push_back(j);
+					is_equal = true;
+					break;
+				}
+			}
+			if (!is_equal)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
 }
 
 bool operator==(const scifir::dimension& x,const scifir::dimension& y)

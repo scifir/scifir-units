@@ -48,8 +48,6 @@
 
 #define SCALAR_UNIT_CPP(name,init_dimensions) name::name() : scalar_unit() { \
 	dimensions = real_dimensions; \
-	cout << "here: " << dimensions[0] << endl; \
-	cout << "here prefix: " << dimensions[0].prefix << endl; \
 } \
 \
 	name::name(const scalar_unit& x) \
