@@ -18,20 +18,20 @@ TEST_CASE("class vector_unit_nd","Complete test of vector_unit_nd")
 		REQUIRE (bool(to_string(c) == "100 g 50° 20° 20°"));
 		vector_unit_nd d = vector_unit_nd(50,"m",{20,20,20});
 		REQUIRE (bool(to_string(d) == "50 m 20° 20° 20°"));
-		vector_unit_nd e = vector_unit_nd(50,"m",{angle(20),angle(20)});
+		vector_unit_nd e = vector_unit_nd(50,"m",{angle(20.0f),angle(20.0f)});
 		REQUIRE (bool(to_string(e) == "50 m 20° 20°"));
 		vector_unit_nd f = vector_unit_nd(50,{dimension("m",dimension::POSITIVE)},{20,20,20});
 		REQUIRE (bool(to_string(f) == "50 m 20° 20° 20°"));
-		vector_unit_nd g = vector_unit_nd(50,{dimension("m",dimension::POSITIVE)},{angle(20),angle(20)});
+		vector_unit_nd g = vector_unit_nd(50,{dimension("m",dimension::POSITIVE)},{angle(20.0f),angle(20.0f)});
 		REQUIRE (bool(to_string(g) == "50 m 20° 20°"));
 		scalar_unit h2 = scalar_unit("50 g");
 		vector_unit_nd h = vector_unit_nd(h2,{20,20,20});
 		REQUIRE (bool(to_string(h) == "50 g 20° 20° 20°"));
-		vector_unit_nd i = vector_unit_nd(h2,{angle(20),angle(20)});
+		vector_unit_nd i = vector_unit_nd(h2,{angle(20.0f),angle(20.0f)});
 		REQUIRE (bool(to_string(i) == "50 g 20° 20°"));
 		vector_unit_nd j("100 g",{24,24,24});
 		REQUIRE (bool(to_string(j) == "100 g 24° 24° 24°"));
-		vector_unit_nd k("100 g",{angle(24),angle(24)});
+		vector_unit_nd k("100 g",{angle(24.0f),angle(24.0f)});
 		REQUIRE (bool(to_string(k) == "100 g 24° 24°"));
 		vector_unit_nd l("100 g 20 20 20");
 		REQUIRE (bool(to_string(l) == "100 g 20° 20° 20°"));
@@ -41,7 +41,7 @@ TEST_CASE("class vector_unit_nd","Complete test of vector_unit_nd")
 		REQUIRE (bool(to_string(n) == "1.41 m 45°"));
 		vector_unit_nd o = vector_unit_nd::cartesian_3d("m",1,1,1);
 		REQUIRE (bool(to_string(o) == "1.73 m 45° 54.73°"));
-		vector_unit_nd p = vector_unit_nd::cylindrical("m",1,angle(45),1);
+		vector_unit_nd p = vector_unit_nd::cylindrical("m",1,angle(45.0f),1);
 		REQUIRE (bool(to_string(p) == "1.41 m 45° 45°"));
 	}
 
