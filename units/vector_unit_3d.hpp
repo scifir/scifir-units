@@ -103,7 +103,6 @@ namespace scifir
 
 			vector_unit_3d& operator =(const vector_unit_3d&);
 			vector_unit_3d& operator =(vector_unit_3d&&);
-			
 			vector_unit_3d& operator =(const scalar_unit&);
 			vector_unit_3d& operator =(scalar_unit&&);
 
@@ -207,7 +206,7 @@ namespace scifir
 			inline void invert()
 			{
 				theta.invert();
-				phi.invert();
+				phi = 180.0f - phi;
 			}
 
 			string vectorial_display(int = 2) const;
@@ -229,6 +228,8 @@ namespace scifir
 	bool parallel(const vector_unit_3d&,const vector_unit_3d&);
 	bool orthogonal(const vector_unit_3d&,const vector_unit_3d&);
 }
+
+vector_unit_3d operator *(const scifir::scalar_unit&,const scifir::vector_unit_3d&);
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::vector_unit_3d operator +(const T y,const scifir::vector_unit_3d& x)
@@ -268,7 +269,6 @@ bool operator !=(const vector_unit_3d&, const vector_unit_3d&);
 
 bool operator ==(const vector_unit_3d&, const string&);
 bool operator !=(const vector_unit_3d&, const string&);
-
 bool operator ==(const string&, const vector_unit_3d&);
 bool operator !=(const string&, const vector_unit_3d&);
 

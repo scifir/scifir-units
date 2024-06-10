@@ -85,136 +85,136 @@ namespace scifir
 	{
 		if (x == direction::LEFT)
 		{
-			theta = 270;
-			phi = 90;
+			theta = 270.0f;
+			phi = 90.0f;
 		}
 		else if(x == direction::RIGHT)
 		{
-			theta = 90;
-			phi = 90;
+			theta = 90.0f;
+			phi = 90.0f;
 		}
 		else if(x == direction::TOP)
 		{
-			theta = 0;
-			phi = 0;
+			theta = 0.0f;
+			phi = 0.0f;
 		}
 		else if(x == direction::BOTTOM)
 		{
-			theta = 0;
-			phi = 180;
+			theta = 0.0f;
+			phi = 180.0f;
 		}
 		else if(x == direction::LEFT_TOP)
 		{
-			theta = 270;
-			phi = 45;
+			theta = 270.0f;
+			phi = 45.0f;
 		}
 		else if(x == direction::RIGHT_TOP)
 		{
-			theta = 90;
-			phi = 45;
+			theta = 90.0f;
+			phi = 45.0f;
 		}
 		else if(x == direction::RIGHT_BOTTOM)
 		{
-			theta = 90;
-			phi = 135;
+			theta = 90.0f;
+			phi = 135.0f;
 		}
 		else if(x == direction::LEFT_BOTTOM)
 		{
-			theta = 270;
-			phi = 135;
+			theta = 270.0f;
+			phi = 135.0f;
 		}
 		else if(x == direction::FRONT)
 		{
-			theta = 0;
-			phi = 90;
+			theta = 0.0f;
+			phi = 90.0f;
 		}
 		else if(x == direction::BACK)
 		{
-			theta = 180;
-			phi = 90;
+			theta = 180.0f;
+			phi = 90.0f;
 		}
 		else if(x == direction::LEFT_FRONT)
 		{
-			theta = 315;
-			phi = 90;
+			theta = 315.0f;
+			phi = 90.0f;
 		}
 		else if(x == direction::RIGHT_FRONT)
 		{
-			theta = 45;
-			phi = 90;
+			theta = 45.0f;
+			phi = 90.0f;
 		}
 		else if(x == direction::TOP_FRONT)
 		{
-			theta = 0;
-			phi = 45;
+			theta = 0.0f;
+			phi = 45.0f;
 		}
 		else if(x == direction::BOTTOM_FRONT)
 		{
-			theta = 0;
-			phi = 135;
+			theta = 0.0f;
+			phi = 135.0f;
 		}
 		else if(x == direction::LEFT_BACK)
 		{
-			theta = 225;
-			phi = 90;
+			theta = 225.0f;
+			phi = 90.0f;
 		}
 		else if(x == direction::RIGHT_BACK)
 		{
-			theta = 135;
-			phi = 90;
+			theta = 135.0f;
+			phi = 90.0f;
 		}
 		else if(x == direction::TOP_BACK)
 		{
-			theta = 180;
-			phi = 45;
+			theta = 180.0f;
+			phi = 45.0f;
 		}
 		else if(x == direction::BOTTOM_BACK)
 		{
-			theta = 180;
-			phi = 135;
+			theta = 180.0f;
+			phi = 135.0f;
 		}
 		else if(x == direction::LEFT_TOP_FRONT)
 		{
-			theta = 315;
-			phi = 45;
+			theta = 315.0f;
+			phi = 45.0f;
 		}
 		else if(x == direction::RIGHT_TOP_FRONT)
 		{
-			theta = 45;
-			phi = 45;
+			theta = 45.0f;
+			phi = 45.0f;
 		}
 		else if(x == direction::LEFT_BOTTOM_FRONT)
 		{
-			theta = 315;
-			phi = 135;
+			theta = 315.0f;
+			phi = 135.0f;
 		}
 		else if(x == direction::RIGHT_BOTTOM_FRONT)
 		{
-			theta = 45;
-			phi = 135;
+			theta = 45.0f;
+			phi = 135.0f;
 		}
 		else if(x == direction::LEFT_TOP_BACK)
 		{
-			theta = 225;
-			phi = 45;
+			theta = 225.0f;
+			phi = 45.0f;
 		}
 		else if(x == direction::RIGHT_TOP_BACK)
 		{
-			theta = 135;
-			phi = 45;
+			theta = 135.0f;
+			phi = 45.0f;
 		}
 		else if(x == direction::LEFT_BOTTOM_BACK)
 		{
-			theta = 225;
-			phi = 135;
+			theta = 225.0f;
+			phi = 135.0f;
 		}
 		else if(x == direction::RIGHT_BOTTOM_BACK)
 		{
-			theta = 135;
-			phi = 135;
+			theta = 135.0f;
+			phi = 135.0f;
 		}
 	}
-	
+
 	void vector_unit_3d::operator +=(const vector_unit_3d& y)
 	{
 		if(has_dimensions(y))
@@ -456,6 +456,13 @@ namespace scifir
 			return false;
 		}
 	}
+}
+
+vector_unit_3d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_3d& y)
+{
+	long double new_value = x.get_value() * y.get_value();
+	vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
+	return vector_unit_3d(float(new_value), new_dimensions, y.theta, y.phi);
 }
 
 bool operator ==(const vector_unit_3d& x, vector_unit_3d y)
