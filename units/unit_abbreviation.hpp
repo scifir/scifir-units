@@ -556,6 +556,8 @@ molarity operator"" _yM(unsigned long long int);
 mole operator"" _particles(unsigned long long int);
 percentage operator"" _ppm(unsigned long long int);
 percentage operator"" _ppb(unsigned long long int);
+percentage operator"" _ppt(unsigned long long int);
+percentage operator"" _ppq(unsigned long long int);
 
 frequency operator"" _YHz(long double);
 frequency operator"" _ZHz(long double);

@@ -2004,12 +2004,12 @@ length operator"" _angstrom(unsigned long long int x)
 
 volume operator"" _L(unsigned long long int x)
 {
-	return volume((long double)x, "");
+	return volume((long double)x, "L");
 }
 
 volume operator"" _mL(unsigned long long int x)
 {
-	return volume((long double)x, "m");
+	return volume((long double)x, "mL");
 }
 
 scifir::time_duration operator"" _min(unsigned long long int x)

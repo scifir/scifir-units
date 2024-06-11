@@ -150,6 +150,11 @@ if(BUILD_TESTING)
 		add_test(NAME unit_basic COMMAND test_unit_basic)
 		set_tests_properties(unit_basic PROPERTIES LABELS tests)
 
+		add_executable(test_unit_abbreviation tests/units/test_unit_abbreviation.cpp)
+		target_link_libraries(test_unit_abbreviation PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		add_test(NAME unit_abbreviation COMMAND test_unit_abbreviation)
+		set_tests_properties(unit_abbreviation PROPERTIES LABELS tests)
+
 		add_executable(test_coordinates_1d tests/coordinates/test_coordinates_1d.cpp)
 		target_link_libraries(test_coordinates_1d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
 		add_test(NAME coordinates_1d COMMAND test_coordinates_1d)
