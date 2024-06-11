@@ -195,6 +195,16 @@ if(BUILD_TESTING)
 		add_test(NAME pH COMMAND test_pH)
 		set_tests_properties(pH PROPERTIES LABELS tests)
 
+		add_executable(test_pOH tests/special_units/test_pOH.cpp)
+		target_link_libraries(test_pOH PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		add_test(NAME pOH COMMAND test_pOH)
+		set_tests_properties(pOH PROPERTIES LABELS tests)
+
+		add_executable(test_pixel tests/special_units/test_pixel.cpp)
+		target_link_libraries(test_pixel PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		add_test(NAME pixel COMMAND test_pixel)
+		set_tests_properties(pixel PROPERTIES LABELS tests)
+
 		add_executable(benchmark_units tests/benchmark_units.cpp)
 		target_link_libraries(benchmark_units PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
 		add_test(NAME benchmark_units COMMAND benchmark_units)
