@@ -216,31 +216,31 @@ namespace scifir
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::angle operator +(T x, const scifir::angle& y)
 {
-	return angle(x + y.get_value());
+	return scifir::angle(x + y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::angle operator -(T x, const scifir::angle& y)
 {
-	return angle(x - y.get_value());
+	return scifir::angle(x - y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::angle operator *(T x, const scifir::angle& y)
 {
-	return angle(x * y.get_value());
+	return scifir::angle(x * y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::angle operator /(T x, const scifir::angle& y)
 {
-	return angle(x / y.get_value());
+	return scifir::angle(x / y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::angle operator ^(T x, const scifir::angle& y)
 {
-	return angle(pow(x, y.get_value()));
+	return scifir::angle(pow(x, y.get_value()));
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
