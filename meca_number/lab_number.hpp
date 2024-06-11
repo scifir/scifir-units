@@ -146,25 +146,25 @@ bool operator !=(const scifir::lab_number<T>& x, const scifir::lab_number<T>& y)
 }
 
 template<typename T>
-bool operator ==(const scifir::angle& x, const string& y)
+bool operator ==(const scifir::lab_number<T>& x, const string& y)
 {
 	return (to_string(x) == y);
 }
 
 template<typename T>
-bool operator !=(const scifir::angle& x, const string& y)
+bool operator !=(const scifir::lab_number<T>& x, const string& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const string& x, const scifir::angle& y)
+bool operator ==(const string& x, const scifir::lab_number<T>& y)
 {
 	return (x == to_string(y));
 }
 
 template<typename T>
-bool operator !=(const string& x, const scifir::angle& y)
+bool operator !=(const string& x, const scifir::lab_number<T>& y)
 {
 	return !(x == y);
 }
