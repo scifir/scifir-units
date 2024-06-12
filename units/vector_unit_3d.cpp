@@ -34,10 +34,10 @@ namespace scifir
 	vector_unit_3d::vector_unit_3d(const scalar_unit& x,const angle& new_theta,const angle& new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
 	{}
 
-	vector_unit_3d::vector_unit_3d(const string& init,float new_theta,float new_phi) : scalar_unit(init),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(const string& init_scalar,float new_theta,float new_phi) : scalar_unit(init_scalar),theta(new_theta),phi(new_phi)
 	{}
 
-	vector_unit_3d::vector_unit_3d(const string& init,const angle& new_theta,const angle& new_phi) : scalar_unit(init),theta(new_theta),phi(new_phi)
+	vector_unit_3d::vector_unit_3d(const string& init_scalar,const angle& new_theta,const angle& new_phi) : scalar_unit(init_scalar),theta(new_theta),phi(new_phi)
 	{}
 
 	vector_unit_3d::vector_unit_3d(const string& init_vector_3d) : vector_unit_3d()
@@ -300,7 +300,7 @@ namespace scifir
 	{
 		if(x.has_empty_dimensions())
 		{
-			scalar_unit new_unit = *this ^ x;
+			scalar_unit new_unit = scalar_unit::operator^(x);
 			return vector_unit_3d(new_unit, theta, phi);
 		}
 		else
@@ -435,7 +435,7 @@ namespace scifir
 
 	bool parallel(const vector_unit_3d& x, const vector_unit_3d& y)
 	{
-		if (scifir::parallel(x.theta,y.theta) and scifir::parallel(x.phi,y.phi) )
+		if ((x.theta == y.theta and x.phi == y.phi) or (x.theta == (180.0f + y.theta) and x.phi == (180.0f - y.phi)))
 		{
 			return true;
 		}
@@ -447,14 +447,8 @@ namespace scifir
 
 	bool orthogonal(const vector_unit_3d& x,const vector_unit_3d& y)
 	{
-		if (scifir::orthogonal(x.theta,y.theta) and scifir::orthogonal(x.phi,y.phi) )
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		scifir::angle x_angle = angle_between(x,y);
+		return (x_angle == 90.0f);
 	}
 }
 

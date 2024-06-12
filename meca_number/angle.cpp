@@ -284,7 +284,7 @@ namespace scifir
 
 	bool parallel(const angle& x, const angle& y)
 	{
-		if(x == y or (x + 180) == y)
+		if(x == y or (x + 180.0f) == y)
 		{
 			return true;
 		}
@@ -297,7 +297,7 @@ namespace scifir
 	bool orthogonal(const angle& x, const angle& y)
 	{
 		float difference = std::abs((x - y).get_value());
-		if (difference == 90 or difference == 270)
+		if (difference == 90.0f or difference == 270.0f)
 		{
 			return true;
 		}

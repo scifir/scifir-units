@@ -154,7 +154,7 @@ namespace scifir
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			void operator *=(U y)
 			{
-				scalar_unit::value *= y;
+				scalar_unit::value *= std::abs(y);
 				if(y < 0)
 				{
 					theta.invert();
@@ -164,7 +164,7 @@ namespace scifir
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			void operator /=(U y)
 			{
-				scalar_unit::value /= y;
+				scalar_unit::value /= std::abs(y);
 				if(y < 0)
 				{
 					theta.invert();
