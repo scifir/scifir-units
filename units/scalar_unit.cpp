@@ -355,7 +355,7 @@ namespace scifir
 	string scalar_unit::display(int number_of_decimals,bool with_brackets,bool use_close_prefix) const
 	{
 		ostringstream output;
-		if (dimensions.size() == 1 && use_close_prefix == true)
+		if (dimensions.size() == 1 and use_close_prefix == true)
 		{
 			prefix display_prefix;
 			if (get_value() != 0)
@@ -386,7 +386,7 @@ namespace scifir
 		ostringstream output;
 		long double x_value = get_value();
 		vector<dimension> derived_dimensions = create_derived_dimensions(dimensions,x_value);
-		if (derived_dimensions.size() == 1 && use_close_prefix == true)
+		if (derived_dimensions.size() == 1 and use_close_prefix == true)
 		{
 			int value_scale = int(log10(get_value()));
 			prefix display_prefix = closest_prefix(derived_dimensions[0].prefix,value_scale);
