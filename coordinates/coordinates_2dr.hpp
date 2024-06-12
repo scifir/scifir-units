@@ -5,6 +5,7 @@
 #include "../topology/direction.hpp"
 #include "../topology/point_2d.hpp"
 #include "../meca_number/angle.hpp"
+#include "../util/types.hpp"
 
 #include <iostream>
 #include <string>
@@ -113,7 +114,7 @@ namespace scifir
 
 			angle get_polar_theta() const
 			{
-				return angle(std::atan2(y.get_value(),x.get_value()));
+				return angle(radian_to_grade(std::atan2(y.get_value(),x.get_value())));
 			}
 
 			void point_to(direction::name x)
@@ -198,7 +199,7 @@ namespace scifir
 			string display_polar() const
 			{
 				ostringstream out;
-				out << "(" << get_p() << "," << get_polar_theta() << "," << theta << ")";
+				out << "(" << get_p() << "," << get_polar_theta() << ";" << theta << ")";
 				return out.str();
 			}
 
@@ -307,7 +308,7 @@ namespace scifir
 
 			angle get_polar_theta() const
 			{
-				return angle(std::atan2(y,x));
+				return angle(radian_to_grade(std::atan2(y,x)));
 			}
 
 			void point_to(direction::name x)
@@ -392,7 +393,7 @@ namespace scifir
 			string display_polar() const
 			{
 				ostringstream out;
-				out << "(" << get_p() << "," << get_polar_theta() << "," << theta << ")";
+				out << "(" << display_float(get_p()) << "," << get_polar_theta() << ";" << theta << ")";
 				return out.str();
 			}
 
@@ -408,6 +409,8 @@ namespace scifir
 		out << "(" << x.x << "," << x.y << ";" << x.theta << ")";
 		return out.str();
 	}
+
+	string to_string(const coordinates_2dr<float>& x);
 
 	template<typename T>
 	T distance(const coordinates_2dr<T>& x,const coordinates_2dr<T>& y)
@@ -546,10 +549,56 @@ bool operator !=(const scifir::point_2d<T>& x,const scifir::coordinates_2dr<T>& 
 }
 
 template<typename T>
+bool operator ==(const scifir::coordinates_2dr<T>& x, const string& y)
+{
+	coordinates_2dr<T> y_coordinates = coordinates_2dr<T>(y);
+	return (x == y_coordinates);
+}
+
+template<typename T>
+bool operator !=(const scifir::coordinates_2dr<T>& x, const string& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+bool operator ==(const string& x, const scifir::coordinates_2dr<T>& y)
+{
+	coordinates_2dr<T> x_coordinates = coordinates_2dr<T>(x);
+	return (x_coordinates == y);
+}
+
+template<typename T>
+bool operator !=(const string& x, const scifir::coordinates_2dr<T>& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+void operator +=(string& x, const scifir::coordinates_2dr<T>& y)
+{
+	x += to_string(y);
+}
+
+template<typename T>
+string operator +(const string& x,const scifir::coordinates_2dr<T>& y)
+{
+	return x + to_string(y);
+}
+
+template<typename T>
+string operator +(const scifir::coordinates_2dr<T>& x,const string& y)
+{
+	return to_string(x) + y;
+}
+
+template<typename T>
 ostream& operator << (ostream& os, const scifir::coordinates_2dr<T>& x)
 {
 	return os << to_string(x);
 }
+
+ostream& operator << (ostream& os,const scifir::coordinates_2dr<float>& x);
 
 template<typename T>
 istream& operator >>(istream& is,scifir::coordinates_2dr<T>& x)

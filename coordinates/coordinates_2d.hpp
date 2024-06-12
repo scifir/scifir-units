@@ -4,6 +4,7 @@
 #include "../topology/point_2d.hpp"
 #include "../units/unit_basic.hpp"
 #include "../predefined_units/physics_units.hpp"
+#include "../util/types.hpp"
 
 #include <iostream>
 #include <string>
@@ -89,7 +90,7 @@ namespace scifir
 
 			angle get_theta() const
 			{
-				return angle(std::atan2(y.get_value(),x.get_value()));
+				return angle(radian_to_grade(std::atan2(y.get_value(),x.get_value())));
 			}
 
 			void set_position(const T& new_x,const T& new_y)
@@ -223,7 +224,7 @@ namespace scifir
 
 			angle get_theta() const
 			{
-				return angle(std::atan2(y,x));
+				return angle(radian_to_grade(std::atan2(y,x)));
 			}
 
 			void set_position(const float& new_x,const float& new_y)
@@ -272,7 +273,7 @@ namespace scifir
 			string display_polar() const
 			{
 				ostringstream out;
-				out << "(" << get_p() << "," << get_theta() << ")";
+				out << "(" << display_float(get_p(),2) << "," << get_theta() << ")";
 				return out.str();
 			}
 
@@ -281,12 +282,26 @@ namespace scifir
 	};
 
 	template<typename T>
+	point_2d<T>::point_2d(const coordinates_2d<T>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y)
+	{}
+
+	template<typename T>
+	point_2d<T>& point_2d<T>::operator=(const coordinates_2d<T>& x_coordinates)
+	{
+		x = x_coordinates.x;
+		y = x_coordinates.y;
+		return *this;
+	}
+
+	template<typename T>
 	string to_string(const coordinates_2d<T>& x)
 	{
 		ostringstream out;
 		out << "(" << x.x << "," << x.y << ")";
 		return out.str();
 	}
+
+	string to_string(const coordinates_2d<float>& x);
 
 	template<typename T>
 	T distance(const coordinates_2d<T>& x,const coordinates_2d<T>& y)
@@ -439,6 +454,8 @@ ostream& operator << (ostream& os,const scifir::coordinates_2d<T>& x)
 {
 	return os << to_string(x);
 }
+
+ostream& operator << (ostream& os,const scifir::coordinates_2d<float>& x);
 
 template<typename T>
 istream& operator >>(istream& is,scifir::coordinates_2d<T>& x)

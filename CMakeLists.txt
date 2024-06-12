@@ -190,6 +190,11 @@ if(BUILD_TESTING)
 		add_test(NAME coordinates_ndr COMMAND test_coordinates_ndr)
 		set_tests_properties(coordinates_ndr PROPERTIES LABELS tests)
 
+		add_executable(test_point_2d tests/topology/test_point_2d.cpp)
+		target_link_libraries(test_point_2d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		add_test(NAME point_2d COMMAND test_point_2d)
+		set_tests_properties(point_2d PROPERTIES LABELS tests)
+
 		add_executable(test_percentage tests/special_units/test_percentage.cpp)
 		target_link_libraries(test_percentage PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
 		add_test(NAME percentage COMMAND test_percentage)
@@ -209,6 +214,11 @@ if(BUILD_TESTING)
 		target_link_libraries(test_pixel PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
 		add_test(NAME pixel COMMAND test_pixel)
 		set_tests_properties(pixel PROPERTIES LABELS tests)
+
+		add_executable(test_types tests/util/test_types.cpp)
+		target_link_libraries(test_types PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		add_test(NAME types COMMAND test_types)
+		set_tests_properties(types PROPERTIES LABELS tests)
 
 		add_executable(benchmark_units tests/benchmark_units.cpp)
 		target_link_libraries(benchmark_units PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
