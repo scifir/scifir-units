@@ -16,12 +16,12 @@ namespace scifir
 {
 	inline float radian_to_grade(float x)
 	{
-		return x * 180 / PI;
+		return x * 180.0f / PI;
 	}
 
 	inline float grade_to_radian(float x)
 	{
-		return x * PI / 180;
+		return x * PI / 180.0f;
 	}
 
 	class angle
