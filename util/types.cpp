@@ -38,19 +38,19 @@ namespace scifir
 		ostringstream output;
 		if (number_of_decimals > 0)
 		{
-			float fract_value,int_value;
-			fract_value = modf(value,&int_value);
-			output << (int)int_value;
-			if (fract_value != 0)
-			{
-				output << ".";
-				output << int(fract_value*std::pow(10,number_of_decimals));
-			}
+			output << (std::trunc(value*std::pow(10,number_of_decimals)) / std::pow(10,number_of_decimals));
 		}
 		else
 		{
 			output << value;
 		}
-		return output.str();
+		if (output.str() == "-0")
+		{
+			return "0";
+		}
+		else
+		{
+			return output.str();
+		}
 	}
 }
