@@ -15,7 +15,7 @@ namespace scifir
 	vector_unit_2d::vector_unit_2d(const vector_unit_2d& x) : scalar_unit(x),theta(x.theta)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(vector_unit_2d&& x) : scalar_unit(x),theta(x.theta)
+	vector_unit_2d::vector_unit_2d(vector_unit_2d&& x) : scalar_unit(std::move(x)),theta(std::move(x.theta))
 	{}
 	
 	vector_unit_2d::vector_unit_2d(float new_value,const string& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)

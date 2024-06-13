@@ -13,7 +13,7 @@ namespace scifir
 	vector_unit_3d::vector_unit_3d(const vector_unit_3d& x) : scalar_unit(x),theta(x.theta),phi(x.phi)
 	{}
 
-	vector_unit_3d::vector_unit_3d(vector_unit_3d&& x) : scalar_unit(x),theta(x.theta),phi(x.phi)
+	vector_unit_3d::vector_unit_3d(vector_unit_3d&& x) : scalar_unit(std::move(x)),theta(std::move(x.theta)),phi(std::move(x.phi))
 	{}
 
 	vector_unit_3d::vector_unit_3d(float new_value,const string& init_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
