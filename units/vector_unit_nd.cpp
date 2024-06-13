@@ -721,26 +721,63 @@ namespace scifir
 
 	bool parallel(const vector_unit_nd& x, const vector_unit_nd& y)
 	{
-		for(unsigned int i = 0; i < x.angles.size(); i++)
+		if (same_nd(x,y))
 		{
-			if(!scifir::parallel(x.angles[i], y.angles[i]))
+			if (x.get_nd() == 1)
 			{
-				return false;
+				if ((x.get_value() >= 0 and y.get_value() >= 0) or (x.get_value() <= 0 and y.get_value() <= 0))
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+			else if (x.get_nd() == 2)
+			{
+				return scifir::parallel(x.angles[0],y.angles[0]);
+			}
+			else if (x.get_nd() == 3)
+			{
+				if ((x.angles[0] == y.angles[0] and x.angles[1] == y.angles[1]) or (x.angles[0] == (180.0f + y.angles[0]) and x.angles[1] == (180.0f - y.angles[1])))
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
 			}
 		}
-		return true;
+		else
+		{
+			return false;
+		}
 	}
 
 	bool orthogonal(const vector_unit_nd& x,const vector_unit_nd& y)
 	{
-		for(unsigned int i = 0; i < x.angles.size(); i++)
+		if (same_nd(x,y))
 		{
-			if(scifir::orthogonal(x.angles[i], y.angles[i]))
+			if (x.get_nd() == 1)
 			{
-				return true;
+				return false;
+			}
+			else if (x.get_nd() == 2)
+			{
+				return scifir::orthogonal(x.angles[0],y.angles[0]);
+			}
+			else if (x.get_nd() == 3)
+			{
+				scifir::angle x_angle = angle_between(x,y);
+				return (x_angle == 90.0f);
 			}
 		}
-		return false;
+		else
+		{
+			return false;
+		}
 	}
 }
 
