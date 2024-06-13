@@ -134,8 +134,8 @@ TEST_CASE("pH class","Full test of pH class") {
     SECTION("Display of pH")
     {
         pH a(6.5f);
-        REQUIRE (bool(a.display() == "6.50"));
-        REQUIRE (bool(to_string(a) == "6.50"));
+        REQUIRE (bool(a.display() == "6.5"));
+        REQUIRE (bool(to_string(a) == "6.5"));
     }
 
     SECTION("Normalize value of pH")

@@ -204,6 +204,8 @@ namespace scifir
 	bool orthogonal(const vector_unit_2d&,const vector_unit_2d&);
 }
 
+vector_unit_2d operator *(const scifir::scalar_unit&,const scifir::vector_unit_2d&);
+
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::vector_unit_2d operator +(const T y,const scifir::vector_unit_2d& x)
 {

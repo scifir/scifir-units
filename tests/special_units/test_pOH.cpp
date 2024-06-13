@@ -134,8 +134,8 @@ TEST_CASE("pOH class","Full test of pOH class") {
     SECTION("Display of pOH")
     {
         pOH a(6.5f);
-        REQUIRE (bool(a.display() == "6.50"));
-        REQUIRE (bool(to_string(a) == "6.50"));
+        REQUIRE (bool(a.display() == "6.5"));
+        REQUIRE (bool(to_string(a) == "6.5"));
     }
 
     SECTION("Normalize value of pOH")

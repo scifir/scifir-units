@@ -312,7 +312,7 @@ namespace scifir
 
 	angle angle_between(const vector_unit_2d& x,const vector_unit_2d& y)
 	{
-		return angle(std::atan2(float(y.y_projection() * x.x_projection() - y.x_projection() * x.y_projection()),float(y.x_projection() * x.x_projection() + y.y_projection() * x.y_projection())));
+		return angle(radian_to_grade(std::atan2(float(y.y_projection() * x.x_projection() - y.x_projection() * x.y_projection()),float(y.x_projection() * x.x_projection() + y.y_projection() * x.y_projection()))));
 	}
 
 	bool same_direction(const vector_unit_2d& x, const vector_unit_2d& y)
@@ -329,6 +329,13 @@ namespace scifir
 	{
 		return scifir::orthogonal(x.theta,y.theta);
 	}
+}
+
+vector_unit_2d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_2d& y)
+{
+	long double new_value = x.get_value() * y.get_value();
+	vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
+	return vector_unit_2d(float(new_value), new_dimensions, y.theta);
 }
 
 bool operator ==(const vector_unit_2d& x, vector_unit_2d y)

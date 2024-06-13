@@ -319,7 +319,7 @@ TEST_CASE("class vector_unit_3d","Complete test of vector_unit_3d")
 		REQUIRE (bool((c + " b") == "2 N 10\u03B8 10\u03A6 b"));
 	}
 
-	SECTION("Stream operators of pixel class")
+	SECTION("Stream operators of vector_unit_3d class")
     {
         ostringstream a;
         a << vector_unit_3d("2 N",10.0f,10.0f);

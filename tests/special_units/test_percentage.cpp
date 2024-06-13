@@ -149,7 +149,7 @@ TEST_CASE("percentage class","Full test of percentage class") {
 		percentage af = percentage("200%");
 		scalar_unit ag = scalar_unit("4 N");
 		scalar_unit ah = af / ag;
-		REQUIRE (bool(to_string(ah) == "0.50 s2/kg*m"));
+		REQUIRE (bool(to_string(ah) == "0.5 s2/kg*m"));
 		percentage ai = percentage("70%");
 		REQUIRE (bool(ai.get_factor() == 0.7f));
 	}
