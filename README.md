@@ -64,7 +64,7 @@ The commands to install scifir-units in Linux distribution are the following (it
 
 ```
 cmake --preset=linux
-cmake --build ./build/linux
+cmake --build --preset=linux
 cmake --install ./build/linux
 ```
 
@@ -76,7 +76,7 @@ To install scifir-units inside Windows you have to specify a path to some Window
 
 ```
 cmake --preset=windows -DCMAKE_INSTALL_PREFIX=<path-to-windows-dir>
-cmake --build ./build/windows
+cmake --build --preset=windows
 cmake --install ./build/windows
 ```
 
@@ -84,11 +84,11 @@ To compile for Windows Universal Applications, which targets both Windows Store 
 
 ### MinGW
 
-To install scifir-units inside MinGW you have to configure **MinGW** with the environment variable **MINGW64_DIR**, or set the path to it inside the variable **CMAKE_INSTALL_PREFIX**:
+To install scifir-units inside MinGW you have to configure **MinGW** with the environment variable **MINGW64_DIR**, which sets the path to the installation directory of MinGW. Inside MinGW you need to install **icu** and **boost_system**. Then, execute the following commands:
 
 ```
 cmake --preset=windows-mingw
-cmake --build ./build/windows-mingw
+cmake --build --preset=windows-mingw
 cmake --install ./build/windows-mingw
 ```
 
@@ -98,19 +98,19 @@ scifir-units uses the XCode generator of cmake to compile for MacOS. You need to
 
 ```
 cmake --preset=macos
-cmake --build ./build/macos
+cmake --build --preset=macos
 cmake --install ./build/macos
 ```
 
 To compile scifir-units for iOS, tvOS, visionOS or watchOS you must add the flag **-DCMAKE_SYSTEM_NAME=<os-name>** to the first command (the command which specifies the preset). Optionally, you can also use the flag **-DCMAKE_OSX_ARCHITECTURES** to specify the architecture of the device or the simulator.
 
-### Vcpkg
+### vcpkg
 
 scifir-units can be compiled with vcpkg inside every triplet of vcpkg, not only inside Windows. To do that, after installing icu and boost_system in vcpkg, use the following commands:
 
 ```
 cmake --preset=vcpkg
-cmake --build ./build/vcpkg
+cmake --build --preset=vcpkg
 cmake --install ./build/vcpkg
 ```
 
@@ -120,7 +120,7 @@ First, set **ANDROID_HOME** and **ANDROID_NDK_ROOT** to the paths of your Androi
 
 ```
 cmake --preset=android -DCMAKE_INSTALL_PREFIX=<path-to-android-project>
-cmake --build ./build/android
+cmake --build --preset=android
 cmake --install ./build/android
 ```
 
@@ -134,7 +134,7 @@ For electronics, you can build scifir-units using the compiler of your microcont
 
 The SDK of microcontrollers can be downloaded on the website of the vendor of the microcontroller, which can be **Microchip**, **STMicroelectronics**, or any other.
 
-### Cpack
+### cpack
 
 If you need to package scifir-units into any format supported by cpack, you just need to use the preset that you've previously used to build scifir-units.
 
@@ -144,7 +144,7 @@ cpack --preset=<your-preset> -G <generator-needed>
 
 You can type the command **cpack --help** to check all available generators.
 
-### Ctest
+### ctest
 
 You can test scifir-units executing ctest if you want. It's not needed to execute those tests in your local computer, but you can do it if for any reason you find it helpful. To build the tests, add the flags **-DBUILD_TESTING=ON** to the first preset command, in order to set the variable BUILD_TESTING to ON, that variable configures the build to build also all the tests.
 
@@ -328,6 +328,10 @@ In order to store units inside a file an initialization string should be used. F
 ### Space
 
 Inside scifir-units the space can be measured with float or with length. Secondarily, any scalar_unit can be used as measure of space, because inside science there are modelings of imaginary spaces, where the length is not used. Because of that reason, all coordinates and point classes are template classes that accept floats or scalar_unit classes.
+
+### Dimensions
+
+Inside scifir-units a **basic dimension** is a dimension considered basic under the SI system of units. Different to that, a **simple dimension** is a dimension without any derived dimension. That's, it's a dimension that's not an abbreviation of two or more other dimensions.
 
 ### Angle
 
