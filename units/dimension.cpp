@@ -870,6 +870,9 @@ namespace scifir
 		vector<dimension> basic_dimensions = vector<dimension>();
 		switch (dimension_type)
 		{
+			case dimension::none:
+				basic_dimensions.push_back(dimension(dimension::none,prefix::no_prefix,dimension::POSITIVE));
+				break;
 			case dimension::m:
 				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
 				break;
@@ -1085,9 +1088,6 @@ namespace scifir
 				break;
 			case dimension::memo:
 				basic_dimensions.push_back(dimension(dimension::memo,prefix::no_prefix,dimension::POSITIVE));
-				break;
-			case dimension::none:
-				basic_dimensions.push_back(dimension(dimension::none,prefix::no_prefix,dimension::POSITIVE));
 				break;
 		}
 		return basic_dimensions;

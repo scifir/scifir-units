@@ -530,7 +530,211 @@ TEST_CASE("dimension class","Full test of dimension class") {
 
 	SECTION ("get_basic_dimensions() of dimension class")
 	{
-
+		dimension a0("",dimension::POSITIVE);
+		vector<dimension> b0 = { dimension(dimension::none,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a0.get_basic_dimensions(),b0)));
+		dimension a("m",dimension::POSITIVE);
+		vector<dimension> b = { dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a.get_basic_dimensions(),b)));
+		dimension a2("rad",dimension::POSITIVE);
+		vector<dimension> b2 = { dimension(dimension::radian,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a2.get_basic_dimensions(),b2)));
+		dimension a3("sr",dimension::POSITIVE);
+		vector<dimension> b3 = { dimension(dimension::steradian,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a3.get_basic_dimensions(),b3)));
+		dimension a4("s",dimension::POSITIVE);
+		vector<dimension> b4 = { dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a4.get_basic_dimensions(),b4)));
+		dimension a5("g",dimension::POSITIVE);
+		vector<dimension> b5 = { dimension(dimension::g,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a5.get_basic_dimensions(),b5)));
+		dimension a6("C",dimension::POSITIVE);
+		vector<dimension> b6 = { dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a6.get_basic_dimensions(),b6)));
+		dimension a7("K",dimension::POSITIVE);
+		vector<dimension> b7 = { dimension(dimension::K,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a7.get_basic_dimensions(),b7)));
+		dimension a8("mol",dimension::POSITIVE);
+		vector<dimension> b8 = { dimension(dimension::mol,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a8.get_basic_dimensions(),b8)));
+		dimension a9("cd",dimension::POSITIVE);
+		vector<dimension> b9 = { dimension(dimension::cd,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a9.get_basic_dimensions(),b9)));
+		dimension a10("B",dimension::POSITIVE);
+		vector<dimension> b10 = { dimension(dimension::B,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a10.get_basic_dimensions(),b10)));
+		dimension a11("Hz",dimension::POSITIVE);
+		vector<dimension> b11 = { dimension(dimension::Hz,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a11.get_basic_dimensions(),b11)));
+		dimension a12("N",dimension::POSITIVE);
+		vector<dimension> b12 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a12.get_basic_dimensions(),b12)));
+		dimension a13("Pa",dimension::POSITIVE);
+		vector<dimension> b13 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a13.get_basic_dimensions(),b13)));
+		dimension a14("J",dimension::POSITIVE);
+		vector<dimension> b14 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a14.get_basic_dimensions(),b14)));
+		dimension a15("W",dimension::POSITIVE);
+		vector<dimension> b15 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a15.get_basic_dimensions(),b15)));
+		dimension a16("A",dimension::POSITIVE);
+		vector<dimension> b16 = { dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a16.get_basic_dimensions(),b16)));
+		dimension a17("V",dimension::POSITIVE);
+		vector<dimension> b17 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a17.get_basic_dimensions(),b17)));
+		dimension a18("F",dimension::POSITIVE);
+		vector<dimension> b18 = { dimension(dimension::g,prefix::k,dimension::NEGATIVE),
+				dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE),
+				dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE),
+				dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
+				dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
+				dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE),
+				dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a18.get_basic_dimensions(),b18)));
+		dimension a19("Ohm",dimension::POSITIVE);
+		vector<dimension> b19 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a19.get_basic_dimensions(),b19)));
+		dimension a20("S",dimension::POSITIVE);
+		vector<dimension> b20 = { dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::g,prefix::k,dimension::NEGATIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a20.get_basic_dimensions(),b20)));
+		dimension a21("Wb",dimension::POSITIVE);
+		vector<dimension> b21 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a21.get_basic_dimensions(),b21)));
+		dimension a22("T",dimension::POSITIVE);
+		vector<dimension> b22 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
+			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a22.get_basic_dimensions(),b22)));
+		dimension a23("H",dimension::POSITIVE);
+		vector<dimension> b23 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a23.get_basic_dimensions(),b23)));
+		dimension a24("lm",dimension::POSITIVE);
+		vector<dimension> b24 = { dimension(dimension::cd,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::steradian,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a24.get_basic_dimensions(),b24)));
+		dimension a25("lx",dimension::POSITIVE);
+		vector<dimension> b25 = { dimension(dimension::cd,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::steradian,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a25.get_basic_dimensions(),b25)));
+		dimension a26("Bq",dimension::POSITIVE);
+		vector<dimension> b26 = { dimension(dimension::Bq,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a26.get_basic_dimensions(),b26)));
+		dimension a27("Gy",dimension::POSITIVE);
+		vector<dimension> b27 = { dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a27.get_basic_dimensions(),b27)));
+		dimension a28("Sv",dimension::POSITIVE);
+		vector<dimension> b28 = { dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a28.get_basic_dimensions(),b28)));
+		dimension a29("kat",dimension::POSITIVE);
+		vector<dimension> b29 = { dimension(dimension::mol,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a29.get_basic_dimensions(),b29)));
+		dimension a30("angstrom",dimension::POSITIVE);
+		vector<dimension> b30 = { dimension(dimension::angstrom,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a30.get_basic_dimensions(),b30)));
+		dimension a31("L",dimension::POSITIVE);
+		vector<dimension> b31 = { dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a31.get_basic_dimensions(),b31)));
+		dimension a32("min",dimension::POSITIVE);
+		vector<dimension> b32 = { dimension(dimension::minute,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a32.get_basic_dimensions(),b32)));
+		dimension a33("h",dimension::POSITIVE);
+		vector<dimension> b33 = { dimension(dimension::h,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a33.get_basic_dimensions(),b33)));
+		dimension a34("d",dimension::POSITIVE);
+		vector<dimension> b34 = { dimension(dimension::d,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a34.get_basic_dimensions(),b34)));
+		dimension a35("AU",dimension::POSITIVE);
+		vector<dimension> b35 = { dimension(dimension::AU,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a35.get_basic_dimensions(),b35)));
+		dimension a36("pc",dimension::POSITIVE);
+		vector<dimension> b36 = { dimension(dimension::pc,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a36.get_basic_dimensions(),b36)));
+		dimension a37("eV",dimension::POSITIVE);
+		vector<dimension> b37 = { dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::g,prefix::k,dimension::POSITIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
+			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a37.get_basic_dimensions(),b37)));
+		dimension a38("Da",dimension::POSITIVE);
+		vector<dimension> b38 = { dimension(dimension::Da,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a38.get_basic_dimensions(),b38)));
+		dimension a39("amu",dimension::POSITIVE);
+		vector<dimension> b39 = { dimension(dimension::amu,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a39.get_basic_dimensions(),b39)));
+		dimension a40("barn",dimension::POSITIVE);
+		vector<dimension> b40 = { dimension(dimension::barn,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a40.get_basic_dimensions(),b40)));
+		dimension a41("M",dimension::POSITIVE);
+		vector<dimension> b41 = { dimension(dimension::mol,prefix::no_prefix,dimension::POSITIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE),
+			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE) };
+		REQUIRE(bool(equal_dimensions(a41.get_basic_dimensions(),b41)));
+		dimension a42("particles",dimension::POSITIVE);
+		vector<dimension> b42 = { dimension(dimension::particles,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a42.get_basic_dimensions(),b42)));
+		dimension a43("money",dimension::POSITIVE);
+		vector<dimension> b43 = { dimension(dimension::money,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a43.get_basic_dimensions(),b43)));
+		dimension a44("px",dimension::POSITIVE);
+		vector<dimension> b44 = { dimension(dimension::pixel,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a44.get_basic_dimensions(),b44)));
+		dimension a45("memo",dimension::POSITIVE);
+		vector<dimension> b45 = { dimension(dimension::memo,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a45.get_basic_dimensions(),b45)));
 	}
 
 	SECTION ("create_custom_dimension(), create_full_symbol() and get_full_symbol() of dimension class")
@@ -673,6 +877,17 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		vector<dimension> ai = create_dimensions("s");
 		REQUIRE (bool(equal_dimensions(ah,ai) == true));
 		REQUIRE (bool(ag2 == 167961600000000.0));
+		vector<dimension> aj = create_dimensions("s3");
+		long double aj2 = 1.0;
+		vector<dimension> ak = square_dimensions(aj,aj2,2);
+		REQUIRE (bool(ak.size() == 0));
+		REQUIRE (bool(aj2 == 1.0));
+		vector<dimension> al = create_dimensions("1/s2");
+		long double al2 = 4.0;
+		vector<dimension> am = square_dimensions(al,al2,2);
+		vector<dimension> an = create_dimensions("1/s");
+		REQUIRE (bool(equal_dimensions(am,an) == true));
+		REQUIRE (bool(al2 == 4.0));
 	}
 
 	SECTION("common_dimension(), equal_dimensions() and equal_dimensions_and_prefixes()")
