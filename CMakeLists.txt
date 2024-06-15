@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.13.0)
 
 cmake_policy(SET CMP0048 NEW) # This policy sets the VERSION variable with the project() command
 
+project(scifir-units VERSION 2.0.0 DESCRIPTION "scifir-units is a library of units of measurement, angles, coordinates, fields, and related data, all lightweight, that help in the development of scientific software and scientific machines" HOMEPAGE_URL "https://www.github.com/scifir/scifir-units" LANGUAGES "CXX")
+
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_COMPILER_VERSION 13.2)
 
@@ -17,10 +19,36 @@ endif()
 
 option(BUILD_SHARED_LIBS "Build using shared libraries" OFF)
 option(BUILD_TESTING "Build test programs" OFF)
+option(DEBUG_FLAGS "Add debug flags" OFF)
+option(WARNING_FLAGS "Add warning flags" OFF)
 
-if(BUILD_TESTING)
+if(DEBUG_FLAGS)
+	if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Og")
+	endif()
+	if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+	endif()
+	if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /Zi /EHsc")
+	endif()
+endif()
+
+if(WARNING_FLAGS)
+	if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+	endif()
+	if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+	endif()
+	if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /Wall")
+	endif()
+endif()
+
+if(BUILD_TESTING AND (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang"))
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
-	set(CMAKE_EXE_LINKER_FLAGS "--coverage -lgcov")
+	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --coverage -lgcov")
 endif()
 
 if(DEFINED(${INCLUDE_PATH}))
@@ -62,8 +90,6 @@ util)
 file(GLOB_RECURSE TARGET_SRC coordinates/*.cpp fields/*.cpp meca_number/*.cpp predefined_units/*.cpp special_units/*.cpp topology/*.cpp units/*.cpp util/*.cpp)
 
 # Project to build
-
-project(scifir-units VERSION 2.0.0 DESCRIPTION "scifir-units is a library of units of measurement, angles, coordinates, fields, and related data, all lightweight, that help in the development of scientific software and scientific machines" HOMEPAGE_URL "https://www.github.com/scifir/scifir-units" LANGUAGES "CXX")
 
 add_library(scifir-units ${TARGET_SRC})
 target_link_libraries(scifir-units Boost::system icuuc)
