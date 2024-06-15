@@ -31,7 +31,7 @@
           "Boost_INCLUDE_DIR": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}/include",
           "Boost_ARCHITECTURE": "-x64",
           "Boost_LIB_PREFIX" : "",
-          "Boost_COMPILER" : "-vc143",
+          "Boost_COMPILER" : "-vc144",
           "CMAKE_INSTALL_PREFIX": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}",
           "CMAKE_FIND_ROOT_PATH": "$env{VCPKG_ROOT}/installed/$env{VCPKG_DEFAULT_TRIPLET}"
         }
@@ -145,7 +145,7 @@
         "name": "linux",
         "configurePreset": "linux",
         "output": {"outputOnFailure": true},
-        "execution": {"noTestsAction": "error", "stopOnFailure": true}
+        "execution": {"noTestsAction": "error", "stopOnFailure": false}
       },
       {
         "name": "windows",

@@ -4589,12 +4589,12 @@ length operator"" _angstrom(long double x)
 
 volume operator"" _L(long double x)
 {
-	return volume(x, "");
+	return volume(x, "L");
 }
 
 volume operator"" _mL(long double x)
 {
-	return volume(x, "m");
+	return volume(x, "mL");
 }
 
 scifir::time_duration operator"" _min(long double x)

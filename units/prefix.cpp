@@ -182,7 +182,7 @@ namespace scifir
 		}
 		return "";
 	}
-	
+
 	bool prefix::operator<(const scifir::prefix& y) const
 	{
 		return (get_conversion_factor() < y.get_conversion_factor());
@@ -369,7 +369,7 @@ namespace scifir
 		{
 			return prefix(prefix::z);
 		}
-		else if (factor < -24)
+		else if (factor <= -24)
 		{
 			return prefix(prefix::y);
 		}

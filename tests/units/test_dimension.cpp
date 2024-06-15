@@ -2,6 +2,7 @@
 
 #include "catch2/catch_all.hpp"
 #include "../../units/dimension.hpp"
+#include "../../topology/constants.hpp"
 
 #include "unicode/unistr.h"
 
@@ -22,7 +23,24 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		dimension b = dimension("m",dimension::NEGATIVE);
 		REQUIRE (bool(b.dimension_sign == dimension::NEGATIVE));
 	}
-	
+
+	SECTION("Constructors of dimension class")
+	{
+		dimension a;
+		REQUIRE (bool(a.dimension_type == dimension::none));
+		dimension b2(dimension::m,prefix::no_prefix,dimension::POSITIVE);
+		dimension b(b2);
+		REQUIRE (bool(b.dimension_type = dimension::m));
+		dimension c2(dimension::m,prefix::no_prefix,dimension::POSITIVE);
+		dimension c(std::move(c2));
+		REQUIRE (bool(c.dimension_type = dimension::m));
+		dimension d(dimension::m,prefix::k,dimension::POSITIVE);
+		REQUIRE (bool(to_string(d) == "km"));
+		prefix e2(prefix::k);
+		dimension e(dimension::m,e2,dimension::POSITIVE);
+		REQUIRE (bool(to_string(e) == "km"));
+	}
+
 	SECTION("Creation of basic dimension classes") {
 		dimension a = dimension("m",dimension::POSITIVE);
 		REQUIRE (bool(a.get_symbol() == "m"));
@@ -49,7 +67,121 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		dimension l = dimension("memo",dimension::POSITIVE);
 		REQUIRE (bool(l.get_symbol() == "memo"));
 	}
-	
+
+	SECTION("Creation of all dimension types")
+	{
+		dimension a("m",dimension::POSITIVE);
+		REQUIRE(bool(a.dimension_type == dimension::m));
+		dimension a2("rad",dimension::POSITIVE);
+		REQUIRE(bool(a2.dimension_type == dimension::radian));
+		dimension a3("sr",dimension::POSITIVE);
+		REQUIRE(bool(a3.dimension_type == dimension::steradian));
+		dimension a4("s",dimension::POSITIVE);
+		REQUIRE(bool(a4.dimension_type == dimension::s));
+		dimension a5("g",dimension::POSITIVE);
+		REQUIRE(bool(a5.dimension_type == dimension::g));
+		dimension a6("C",dimension::POSITIVE);
+		REQUIRE(bool(a6.dimension_type == dimension::C));
+		dimension a7("K",dimension::POSITIVE);
+		REQUIRE(bool(a7.dimension_type == dimension::K));
+		dimension a8("mol",dimension::POSITIVE);
+		REQUIRE(bool(a8.dimension_type == dimension::mol));
+		dimension a9("cd",dimension::POSITIVE);
+		REQUIRE(bool(a9.dimension_type == dimension::cd));
+		dimension a10("B",dimension::POSITIVE);
+		REQUIRE(bool(a10.dimension_type == dimension::B));
+		dimension a11("Hz",dimension::POSITIVE);
+		REQUIRE(bool(a11.dimension_type == dimension::Hz));
+		dimension a12("N",dimension::POSITIVE);
+		REQUIRE(bool(a12.dimension_type == dimension::N));
+		dimension a13("Pa",dimension::POSITIVE);
+		REQUIRE(bool(a13.dimension_type == dimension::Pa));
+		dimension a14("J",dimension::POSITIVE);
+		REQUIRE(bool(a14.dimension_type == dimension::J));
+		dimension a15("W",dimension::POSITIVE);
+		REQUIRE(bool(a15.dimension_type == dimension::W));
+		dimension a16("A",dimension::POSITIVE);
+		REQUIRE(bool(a16.dimension_type == dimension::A));
+		dimension a17("V",dimension::POSITIVE);
+		REQUIRE(bool(a17.dimension_type == dimension::V));
+		dimension a18("F",dimension::POSITIVE);
+		REQUIRE(bool(a18.dimension_type == dimension::F));
+		dimension a19("ohm",dimension::POSITIVE);
+		REQUIRE(bool(a19.dimension_type == dimension::Ohm));
+		dimension a19_2("Ohm",dimension::POSITIVE);
+		REQUIRE(bool(a19_2.dimension_type == dimension::Ohm));
+		/*dimension a19_3("\U000003A9",dimension::POSITIVE);
+		REQUIRE(bool(a19_3.dimension_type == dimension::Ohm));*/
+		dimension a20("S",dimension::POSITIVE);
+		REQUIRE(bool(a20.dimension_type == dimension::S));
+		dimension a21("Wb",dimension::POSITIVE);
+		REQUIRE(bool(a21.dimension_type == dimension::Wb));
+		dimension a22("T",dimension::POSITIVE);
+		REQUIRE(bool(a22.dimension_type == dimension::T));
+		dimension a23("H",dimension::POSITIVE);
+		REQUIRE(bool(a23.dimension_type == dimension::H));
+		dimension a24("lm",dimension::POSITIVE);
+		REQUIRE(bool(a24.dimension_type == dimension::lm));
+		dimension a25("lx",dimension::POSITIVE);
+		REQUIRE(bool(a25.dimension_type == dimension::lx));
+		dimension a26("Bq",dimension::POSITIVE);
+		REQUIRE(bool(a26.dimension_type == dimension::Bq));
+		dimension a27("Gy",dimension::POSITIVE);
+		REQUIRE(bool(a27.dimension_type == dimension::Gy));
+		dimension a28("Sv",dimension::POSITIVE);
+		REQUIRE(bool(a28.dimension_type == dimension::Sv));
+		dimension a29("kat",dimension::POSITIVE);
+		REQUIRE(bool(a29.dimension_type == dimension::kat));
+		dimension a30("angstrom",dimension::POSITIVE); // MORE CASES
+		REQUIRE(bool(a30.dimension_type == dimension::angstrom));
+		dimension a31("L",dimension::POSITIVE);
+		REQUIRE(bool(a31.dimension_type == dimension::L));
+		dimension a32("min",dimension::POSITIVE);
+		REQUIRE(bool(a32.dimension_type == dimension::minute));
+		dimension a33("h",dimension::POSITIVE);
+		REQUIRE(bool(a33.dimension_type == dimension::h));
+		dimension a34("d",dimension::POSITIVE);
+		REQUIRE(bool(a34.dimension_type == dimension::d));
+		dimension a35("AU",dimension::POSITIVE);
+		REQUIRE(bool(a35.dimension_type == dimension::AU));
+		dimension a36("pc",dimension::POSITIVE);
+		REQUIRE(bool(a36.dimension_type == dimension::pc));
+		dimension a37("eV",dimension::POSITIVE);
+		REQUIRE(bool(a37.dimension_type == dimension::eV));
+		dimension a38("Da",dimension::POSITIVE);
+		REQUIRE(bool(a38.dimension_type == dimension::Da));
+		dimension a39("amu",dimension::POSITIVE);
+		REQUIRE(bool(a39.dimension_type == dimension::amu));
+		dimension a40("barn",dimension::POSITIVE);
+		REQUIRE(bool(a40.dimension_type == dimension::barn));
+		dimension a41("M",dimension::POSITIVE);
+		REQUIRE(bool(a41.dimension_type == dimension::M));
+		dimension a42("particles",dimension::POSITIVE);
+		REQUIRE(bool(a42.dimension_type == dimension::particles));
+		dimension a43("money",dimension::POSITIVE);
+		REQUIRE(bool(a43.dimension_type == dimension::money));
+		dimension a44("px",dimension::POSITIVE);
+		REQUIRE(bool(a44.dimension_type == dimension::pixel));
+		dimension a45("memo",dimension::POSITIVE);
+		REQUIRE(bool(a45.dimension_type == dimension::memo));
+		dimension a46("",dimension::POSITIVE);
+		REQUIRE(bool(a46.dimension_type == dimension::none));
+		dimension a47("hello",dimension::POSITIVE);
+		REQUIRE(bool(a47.dimension_type == dimension::custom_full_symbol));
+	}
+
+	SECTION("Assignments of dimension class")
+	{
+		dimension a;
+		dimension b(dimension::g,prefix::no_prefix,dimension::POSITIVE);
+		a = b;
+		REQUIRE(bool(a.dimension_type == dimension::g));
+		dimension c;
+		dimension d(dimension::g,prefix::no_prefix,dimension::POSITIVE);
+		c = std::move(d);
+		REQUIRE(bool(c.dimension_type == dimension::g));
+	}
+
 	SECTION("Testing of length dimensions") {
 		dimension a = dimension("Ym",dimension::POSITIVE);
 		REQUIRE (bool(to_string(a) == "Ym"));
@@ -97,8 +229,332 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		dimension t = dimension("ym",dimension::POSITIVE);
 		REQUIRE (bool(to_string(t) == "ym"));
 	}
-	
-	SECTION ("Functionalities of dimension class") {
+
+	SECTION ("get_name(), get_symbol(), get_conversion_factor(), is_simple_dmension(), is_basic_dimension() of dimension class")
+	{
+		dimension a(dimension::none,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a.get_name() == "empty"));
+		REQUIRE (bool(a.get_symbol() == "empty"));
+		REQUIRE (bool(a.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a.is_simple_dimension() == true));
+		REQUIRE (bool(a.is_basic_dimension() == true));
+		dimension a2(dimension::m,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a2.get_name() == "meter"));
+		REQUIRE (bool(a2.get_symbol() == "m"));
+		REQUIRE (bool(a2.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a2.is_simple_dimension() == true));
+		REQUIRE (bool(a2.is_basic_dimension() == true));
+		dimension a3(dimension::radian,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a3.get_name() == "radian"));
+		REQUIRE (bool(a3.get_symbol() == "rad"));
+		REQUIRE (bool(a3.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a3.is_simple_dimension() == true));
+		REQUIRE (bool(a3.is_basic_dimension() == true));
+		dimension a4(dimension::steradian,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a4.get_name() == "steradian"));
+		REQUIRE (bool(a4.get_symbol() == "sr"));
+		REQUIRE (bool(a4.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a4.is_simple_dimension() == true));
+		REQUIRE (bool(a4.is_basic_dimension() == true));
+		dimension a5(dimension::s,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a5.get_name() == "second"));
+		REQUIRE (bool(a5.get_symbol() == "s"));
+		REQUIRE (bool(a5.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a5.is_simple_dimension() == true));
+		REQUIRE (bool(a5.is_basic_dimension() == true));
+		dimension a6(dimension::g,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a6.get_name() == "gram"));
+		REQUIRE (bool(a6.get_symbol() == "g"));
+		REQUIRE (bool(a6.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a6.is_simple_dimension() == true));
+		REQUIRE (bool(a6.is_basic_dimension() == true));
+		dimension a7(dimension::C,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a7.get_name() == "coulomb"));
+		REQUIRE (bool(a7.get_symbol() == "C"));
+		REQUIRE (bool(a7.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a7.is_simple_dimension() == true));
+		REQUIRE (bool(a7.is_basic_dimension() == true));
+		dimension a8(dimension::K,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a8.get_name() == "kelvin"));
+		REQUIRE (bool(a8.get_symbol() == "K"));
+		REQUIRE (bool(a8.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a8.is_simple_dimension() == true));
+		REQUIRE (bool(a8.is_basic_dimension() == true));
+		dimension a9(dimension::mol,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a9.get_name() == "mole"));
+		REQUIRE (bool(a9.get_symbol() == "mol"));
+		REQUIRE (bool(a9.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a9.is_simple_dimension() == true));
+		REQUIRE (bool(a9.is_basic_dimension() == true));
+		dimension a10(dimension::cd,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a10.get_name() == "candela"));
+		REQUIRE (bool(a10.get_symbol() == "cd"));
+		REQUIRE (bool(a10.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a10.is_simple_dimension() == true));
+		REQUIRE (bool(a10.is_basic_dimension() == true));
+		dimension a11(dimension::B,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a11.get_name() == "byte"));
+		REQUIRE (bool(a11.get_symbol() == "B"));
+		REQUIRE (bool(a11.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a11.is_simple_dimension() == true));
+		REQUIRE (bool(a11.is_basic_dimension() == true));
+		dimension a12(dimension::Hz,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a12.get_name() == "hertz"));
+		REQUIRE (bool(a12.get_symbol() == "Hz"));
+		REQUIRE (bool(a12.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a12.is_simple_dimension() == true));
+		REQUIRE (bool(a12.is_basic_dimension() == false));
+		dimension a13(dimension::N,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a13.get_name() == "newton"));
+		REQUIRE (bool(a13.get_symbol() == "N"));
+		REQUIRE (bool(a13.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a13.is_simple_dimension() == false));
+		REQUIRE (bool(a13.is_basic_dimension() == false));
+		dimension a14(dimension::Pa,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a14.get_name() == "pascal"));
+		REQUIRE (bool(a14.get_symbol() == "Pa"));
+		REQUIRE (bool(a14.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a14.is_simple_dimension() == false));
+		REQUIRE (bool(a14.is_basic_dimension() == false));
+		dimension a15(dimension::J,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a15.get_name() == "joule"));
+		REQUIRE (bool(a15.get_symbol() == "J"));
+		REQUIRE (bool(a15.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a15.is_simple_dimension() == false));
+		REQUIRE (bool(a15.is_basic_dimension() == false));
+		dimension a16(dimension::W,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a16.get_name() == "watt"));
+		REQUIRE (bool(a16.get_symbol() == "W"));
+		REQUIRE (bool(a16.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a16.is_simple_dimension() == false));
+		REQUIRE (bool(a16.is_basic_dimension() == false));
+		dimension a17(dimension::A,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a17.get_name() == "ampere"));
+		REQUIRE (bool(a17.get_symbol() == "A"));
+		REQUIRE (bool(a17.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a17.is_simple_dimension() == true));
+		REQUIRE (bool(a17.is_basic_dimension() == false));
+		dimension a18(dimension::V,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a18.get_name() == "volt"));
+		REQUIRE (bool(a18.get_symbol() == "V"));
+		REQUIRE (bool(a18.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a18.is_simple_dimension() == false));
+		REQUIRE (bool(a18.is_basic_dimension() == false));
+		dimension a19(dimension::F,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a19.get_name() == "faraday"));
+		REQUIRE (bool(a19.get_symbol() == "F"));
+		REQUIRE (bool(a19.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a19.is_simple_dimension() == false));
+		REQUIRE (bool(a19.is_basic_dimension() == false));
+		dimension a20(dimension::Ohm,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a20.get_name() == "ohm"));
+		REQUIRE (bool(a20.get_symbol() == "\U000003A9"));
+		REQUIRE (bool(a20.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a20.is_simple_dimension() == false));
+		REQUIRE (bool(a20.is_basic_dimension() == false));
+		dimension a21(dimension::S,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a21.get_name() == "siemens"));
+		REQUIRE (bool(a21.get_symbol() == "S"));
+		REQUIRE (bool(a21.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a21.is_simple_dimension() == false));
+		REQUIRE (bool(a21.is_basic_dimension() == false));
+		dimension a22(dimension::Wb,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a22.get_name() == "weber"));
+		REQUIRE (bool(a22.get_symbol() == "Wb"));
+		REQUIRE (bool(a22.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a22.is_simple_dimension() == false));
+		REQUIRE (bool(a22.is_basic_dimension() == false));
+		dimension a23(dimension::T,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a23.get_name() == "tesla"));
+		REQUIRE (bool(a23.get_symbol() == "T"));
+		REQUIRE (bool(a23.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a23.is_simple_dimension() == false));
+		REQUIRE (bool(a23.is_basic_dimension() == false));
+		dimension a24(dimension::H,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a24.get_name() == "henry"));
+		REQUIRE (bool(a24.get_symbol() == "H"));
+		REQUIRE (bool(a24.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a24.is_simple_dimension() == false));
+		REQUIRE (bool(a24.is_basic_dimension() == false));
+		dimension a25(dimension::lm,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a25.get_name() == "lumen"));
+		REQUIRE (bool(a25.get_symbol() == "lm"));
+		REQUIRE (bool(a25.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a25.is_simple_dimension() == false));
+		REQUIRE (bool(a25.is_basic_dimension() == false));
+		dimension a26(dimension::lx,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a26.get_name() == "lux"));
+		REQUIRE (bool(a26.get_symbol() == "lx"));
+		REQUIRE (bool(a26.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a26.is_simple_dimension() == false));
+		REQUIRE (bool(a26.is_basic_dimension() == false));
+		dimension a27(dimension::Bq,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a27.get_name() == "becquerel"));
+		REQUIRE (bool(a27.get_symbol() == "Bq"));
+		REQUIRE (bool(a27.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a27.is_simple_dimension() == true));
+		REQUIRE (bool(a27.is_basic_dimension() == false));
+		dimension a28(dimension::Gy,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a28.get_name() == "gray"));
+		REQUIRE (bool(a28.get_symbol() == "Gy"));
+		REQUIRE (bool(a28.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a28.is_simple_dimension() == false));
+		REQUIRE (bool(a28.is_basic_dimension() == false));
+		dimension a29(dimension::Sv,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a29.get_name() == "sievert"));
+		REQUIRE (bool(a29.get_symbol() == "Sv"));
+		REQUIRE (bool(a29.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a29.is_simple_dimension() == false));
+		REQUIRE (bool(a29.is_basic_dimension() == false));
+		dimension a30(dimension::kat,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a30.get_name() == "katal"));
+		REQUIRE (bool(a30.get_symbol() == "kat"));
+		REQUIRE (bool(a30.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a30.is_simple_dimension() == false));
+		REQUIRE (bool(a30.is_basic_dimension() == false));
+		dimension a31(dimension::angstrom,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a31.get_name() == "angstrom"));
+		REQUIRE (bool(a31.get_symbol() == "\U0000212B"));
+		REQUIRE (bool(a31.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a31.is_simple_dimension() == true));
+		REQUIRE (bool(a31.is_basic_dimension() == false));
+		dimension a32(dimension::L,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a32.get_name() == "liter"));
+		REQUIRE (bool(a32.get_symbol() == "L"));
+		REQUIRE (bool(a32.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a32.is_simple_dimension() == false));
+		REQUIRE (bool(a32.is_basic_dimension() == false));
+		dimension a33(dimension::minute,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a33.get_name() == "minute"));
+		REQUIRE (bool(a33.get_symbol() == "min"));
+		REQUIRE (bool(a33.get_conversion_factor() == 60.0l));
+		REQUIRE (bool(a33.is_simple_dimension() == true));
+		REQUIRE (bool(a33.is_basic_dimension() == false));
+		dimension a34(dimension::h,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a34.get_name() == "hour"));
+		REQUIRE (bool(a34.get_symbol() == "h"));
+		REQUIRE (bool(a34.get_conversion_factor() == 3600.0l));
+		REQUIRE (bool(a34.is_simple_dimension() == true));
+		REQUIRE (bool(a34.is_basic_dimension() == false));
+		dimension a35(dimension::d,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a35.get_name() == "day"));
+		REQUIRE (bool(a35.get_symbol() == "d"));
+		REQUIRE (bool(a35.get_conversion_factor() == 86400.0l));
+		REQUIRE (bool(a35.is_simple_dimension() == true));
+		REQUIRE (bool(a35.is_basic_dimension() == false));
+		dimension a36(dimension::AU,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a36.get_name() == "astronomical unit"));
+		REQUIRE (bool(a36.get_symbol() == "AU"));
+		REQUIRE (bool(a36.get_conversion_factor() == 149597870700.0l));
+		REQUIRE (bool(a36.is_simple_dimension() == true));
+		REQUIRE (bool(a36.is_basic_dimension() == false));
+		dimension a37(dimension::pc,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a37.get_name() == "parsec"));
+		REQUIRE (bool(a37.get_symbol() == "pc"));
+		REQUIRE (bool(a37.get_conversion_factor() == 30856775814913673.0l));
+		REQUIRE (bool(a37.is_simple_dimension() == true));
+		REQUIRE (bool(a37.is_basic_dimension() == false));
+		dimension a38(dimension::eV,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a38.get_name() == "electronvolt"));
+		REQUIRE (bool(a38.get_symbol() == "eV"));
+		REQUIRE (bool(a38.get_conversion_factor() == 0.0000000000000000001602176634l));
+		REQUIRE (bool(a38.is_simple_dimension() == false));
+		REQUIRE (bool(a38.is_basic_dimension() == false));
+		dimension a39(dimension::Da,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a39.get_name() == "dalton"));
+		REQUIRE (bool(a39.get_symbol() == "Da"));
+		REQUIRE (bool(a39.get_conversion_factor() == 0.00000000000000000000000000166053886l));
+		REQUIRE (bool(a39.is_simple_dimension() == true));
+		REQUIRE (bool(a39.is_basic_dimension() == false));
+		dimension a40(dimension::amu,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a40.get_name() == "atomic mass unit"));
+		REQUIRE (bool(a40.get_symbol() == "amu"));
+		REQUIRE (bool(a40.get_conversion_factor() == 0.00000000000000000000000000166053886l));
+		REQUIRE (bool(a40.is_simple_dimension() == true));
+		REQUIRE (bool(a40.is_basic_dimension() == false));
+		dimension a41(dimension::barn,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a41.get_name() == "barn"));
+		REQUIRE (bool(a41.get_symbol() == "barn"));
+		REQUIRE (bool(a41.get_conversion_factor() == 0.0000000000000000000000000001l));
+		REQUIRE (bool(a41.is_simple_dimension() == false));
+		REQUIRE (bool(a41.is_basic_dimension() == false));
+		dimension a42(dimension::M,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a42.get_name() == "molarity"));
+		REQUIRE (bool(a42.get_symbol() == "M"));
+		REQUIRE (bool(a42.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a42.is_simple_dimension() == false));
+		REQUIRE (bool(a42.is_basic_dimension() == false));
+		dimension a43(dimension::particles,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a43.get_name() == "particles"));
+		REQUIRE (bool(a43.get_symbol() == "particles"));
+		REQUIRE (bool(a43.get_conversion_factor() == 1l/AVOGADRO_CONSTANT));
+		REQUIRE (bool(a43.is_simple_dimension() == true));
+		REQUIRE (bool(a43.is_basic_dimension() == false));
+		/*dimension a44("hello",dimension::POSITIVE);
+		REQUIRE (bool(a44.get_name() == "custom-dimension"));
+		REQUIRE (bool(a44.get_symbol() == "hello"));
+		REQUIRE (bool(a44.get_conversion_factor() == 1.0));
+		REQUIRE (bool(a44.is_simple_dimension() == false));
+		REQUIRE (bool(a44.is_basic_dimension() == false));
+		dimension a45(dimension::custom_basic,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a45.get_name() == "custom-basic"));
+		REQUIRE (bool(a45.get_symbol() == "custom-basic"));
+		REQUIRE (bool(a45.get_conversion_factor() == 1.0));
+		REQUIRE (bool(a45.is_simple_dimension() == false));
+		REQUIRE (bool(a45.is_basic_dimension() == false));
+		dimension a46(dimension::custom_full_symbol,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a46.get_name() == "custom-full-symbol"));
+		REQUIRE (bool(a46.get_symbol() == ""));
+		REQUIRE (bool(a46.get_conversion_factor() == 1.0));
+		REQUIRE (bool(a46.is_simple_dimension() == false));
+		REQUIRE (bool(a46.is_basic_dimension() == false));*/
+		dimension a47(dimension::money,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a47.get_name() == "money"));
+		REQUIRE (bool(a47.get_symbol() == "money"));
+		REQUIRE (bool(a47.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a47.is_simple_dimension() == true));
+		REQUIRE (bool(a47.is_basic_dimension() == true));
+		dimension a48(dimension::pixel,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a48.get_name() == "pixel"));
+		REQUIRE (bool(a48.get_symbol() == "px"));
+		REQUIRE (bool(a48.get_conversion_factor() == 0.00026l));
+		REQUIRE (bool(a48.is_simple_dimension() == true));
+		REQUIRE (bool(a48.is_basic_dimension() == false));
+		dimension a49(dimension::memo,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a49.get_name() == "memo"));
+		REQUIRE (bool(a49.get_symbol() == "memo"));
+		REQUIRE (bool(a49.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a49.is_simple_dimension() == true));
+		REQUIRE (bool(a49.is_basic_dimension() == true));
+	}
+
+	SECTION ("get_basic_dimensions() of dimension class")
+	{
+
+	}
+
+	SECTION ("create_custom_dimension(), create_full_symbol() and get_full_symbol() of dimension class")
+	{
+		/*dimension::create_custom_dimension("hello","m*s");
+		char symbol[3];
+		string full_symbol = dimension::create_full_symbol("symbol1");
+		full_symbol.copy(symbol, string("symbol1").length());
+		REQUIRE (bool(dimension::get_full_symbol(symbol) == "symbol1"));*/
+	}
+
+	SECTION("to_string() of dimension class")
+	{
+		vector<dimension> a = create_dimensions("m*s2/C4");
+		REQUIRE (bool(to_string(a) == "m*s2/C4"));
+		REQUIRE (bool(to_string(a,true) == "[m*s2/C4]"));
+		vector<dimension> b = create_dimensions("1/m");
+		REQUIRE (bool(to_string(b) == "1/m"));
+		REQUIRE (bool(to_string(b,true) == "[1/m]"));
+		dimension c("km",dimension::POSITIVE);
+		REQUIRE (bool(to_string(c) == "km"));
+	}
+
+	SECTION ("create_dimensions(), create_derived_dimensions() and normalize_dimensions()") {
 		vector<dimension> a = create_dimensions("m*s2/C4");
 		REQUIRE (bool(to_string(a) == "m*s2/C4"));
 		REQUIRE (bool(equal_dimensions(to_string(a),"s2*m/C4")));
@@ -141,9 +597,21 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		vector<dimension> u = normalize_dimensions(t);
 		REQUIRE (bool(to_string(u) == "s2/m2*C3"));
 	}
-	
-	SECTION ("Operations with dimensions") {
-		
+
+	SECTION ("prefix_math() of dimesion_class")
+	{
+		dimension a("km",dimension::POSITIVE);
+		REQUIRE (bool(a.prefix_math() == 1000));
+		dimension b("kB",dimension::POSITIVE);
+		REQUIRE (bool(b.prefix_math() == 1024));
+	}
+
+	SECTION ("multiply_dimensions(), divide_dimensions(), square_dimensions() and power_dimensions() of dimension class")
+	{
+		vector<dimension> a0 = create_dimensions("m");
+		vector<dimension> b0 = create_dimensions("N");
+		vector<dimension> c0 = multiply_dimensions(a0,b0);
+		REQUIRE (bool(to_string(c0) == "m*N"));
 		vector<dimension> a = create_dimensions("m");
 		vector<dimension> b = create_dimensions("N");
 		long double a2 = 1.0;
@@ -206,7 +674,41 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		REQUIRE (bool(equal_dimensions(ah,ai) == true));
 		REQUIRE (bool(ag2 == 167961600000000.0));
 	}
-	
+
+	SECTION("common_dimension(), equal_dimensions() and equal_dimensions_and_prefixes()")
+	{
+		dimension a(dimension::m,prefix::no_prefix,dimension::POSITIVE);
+		dimension b(dimension::AU,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(common_dimension(a,b) == true));
+		REQUIRE (bool(equal_dimensions("m","AU") == true));
+		REQUIRE (bool(equal_dimensions("m","pc") == true));
+		dimension a2(dimension::g,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(common_dimension(a,a2) == false));
+		vector<dimension> c = create_dimensions("m/s");
+		vector<dimension> d = create_dimensions("AU/s");
+		vector<dimension> e = create_dimensions("pc/s");
+		vector<dimension> f = create_dimensions("km/s");
+		REQUIRE (bool(equal_dimensions(c,d) == true));
+		REQUIRE (bool(equal_dimensions(c,e) == true));
+		REQUIRE (bool(equal_dimensions(d,e) == true));
+		REQUIRE (bool(equal_dimensions_and_prefixes(c,d) == false));
+		REQUIRE (bool(equal_dimensions_and_prefixes(c,e) == false));
+		REQUIRE (bool(equal_dimensions_and_prefixes(c,f) == false));
+	}
+
+	SECTION("Comparison of dimension classes")
+	{
+		dimension a(dimension::m,prefix::no_prefix,dimension::POSITIVE);
+		dimension b(dimension::m,prefix::no_prefix,dimension::POSITIVE);
+		dimension c(dimension::AU,prefix::no_prefix,dimension::POSITIVE);
+		dimension d(dimension::m,prefix::no_prefix,dimension::NEGATIVE);
+		REQUIRE (bool((a == b) == true));
+		REQUIRE (bool((a != c) == true));
+		REQUIRE (bool((a == c) == false));
+		REQUIRE (bool((a == d) == false));
+		REQUIRE (bool((a != d) == true));
+	}
+
 	SECTION ("Testing of custom dimensions") {
 		dimension::create_custom_dimension("custom_dimension","m*s");
 		dimension a = dimension("custom_dimension",dimension::POSITIVE);

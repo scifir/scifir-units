@@ -138,7 +138,7 @@ namespace scifir
 	{
 		if(x.has_empty_dimensions())
 		{
-			return (*this ^ int(x.get_value()));
+			return scalar_unit(std::pow(value,x.get_value()),power_dimensions(get_dimensions(),x.get_value()));
 		}
 		else
 		{
@@ -154,7 +154,7 @@ namespace scifir
 			cerr << "Cannot sum different dimensions" << endl;
 			return;
 		}
-		x.change_dimensions(x);
+		x.change_dimensions(*this);
 		value += x.get_value();
 	}
 
@@ -165,7 +165,7 @@ namespace scifir
 			cerr << "Cannot substract different dimensions" << endl;
 			return;
 		}
-		x.change_dimensions(x);
+		x.change_dimensions(*this);
 		value -= x.get_value();
 	}
 
@@ -342,10 +342,10 @@ namespace scifir
 		return dimension_text.str();
 	}
 
-	string scalar_unit::get_dimensions_match() const
+	/*string scalar_unit::get_dimensions_match() const
 	{
 		return "";
-	}
+	}*/
 
 	vector<dimension> scalar_unit::get_derived_dimensions() const
 	{
@@ -365,7 +365,7 @@ namespace scifir
 			}
 			else
 			{
-				display_prefix = prefix(prefix::no_prefix);
+				display_prefix = dimensions[0].prefix;
 			}
 			long double x_value = get_value();
 			x_value *= dimensions[0].prefix_math();
@@ -502,28 +502,6 @@ namespace scifir
 			value /= float(old_dimension.get_conversion_factor());
 			value /= float(old_dimension.prefix_math());
 		}
-	}
-
-	string scalar_unit::initial_dimensions_get_structure(const string& init_value) const
-	{
-		return "";
-		/*if(!isdigit(init_value[0]))
-		{
-			return;
-		}
-		else
-		{
-			int i = 0;
-			while(isdigit(init_value[i]) || init_value[i] == '.')
-			{
-				i++;
-			}
-			if(init_value[i] != ' ')
-			{
-				return;
-			}
-			return init_value.substr(i);
-		}*/
 	}
 
 	void scalar_unit::set_from_string(const string& init_scalar)

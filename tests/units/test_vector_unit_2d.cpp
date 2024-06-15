@@ -62,11 +62,11 @@ TEST_CASE("class vector_unit_2d","Complete test of vector_unit_2d")
 
 	SECTION("Assignments of vector_unit_2d classes")
 	{
-		vector_unit_2d a;
+		vector_unit_2d a("10 N",angle(10.0f));
 		vector_unit_2d b("20 N",angle(20.0f));
 		a = b;
 		REQUIRE (bool(to_string(a) == "20 N 20\u03B8"));
-		vector_unit_2d c;
+		vector_unit_2d c("10 N",angle(10.0f));
 		vector_unit_2d d("30 N",angle(15.0f));
 		c = std::move(d);
 		REQUIRE (bool(to_string(c) == "30 N 15\u03B8"));
@@ -269,7 +269,7 @@ TEST_CASE("class vector_unit_2d","Complete test of vector_unit_2d")
         REQUIRE (bool(a.str() == "2 N 10\u03B8"));
         stringstream b;
         b << "3 N 10\u03B8";
-        vector_unit_2d b2;
+        vector_unit_2d b2("1 N",angle(0.0f));
         b >> b2;
         REQUIRE (bool(b2 == "3 N 10\u03B8"));
     }

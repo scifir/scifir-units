@@ -177,7 +177,7 @@ namespace scifir
 			bool has_empty_dimensions() const;
 			string display_dimensions() const;
 
-			string get_dimensions_match() const;
+			//string get_dimensions_match() const;
 			vector<dimension> get_derived_dimensions() const;
 			
 			inline const vector<dimension>& get_dimensions() const
@@ -198,7 +198,6 @@ namespace scifir
 			vector<dimension> dimensions;
 			float value;
 
-			string initial_dimensions_get_structure(const string&) const;
 			void add_dimension(const dimension&);
 			void remove_dimension(const dimension&);
 			void set_from_string(const string&);

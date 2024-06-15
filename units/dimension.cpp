@@ -55,7 +55,7 @@ namespace scifir
 	{
 		string dimension_name;
 		string prefix_name;
-		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "h" and init_dimension != "d" and init_dimension != "cd" and init_dimension != "money" and init_dimension != "memo")
+		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "h" and init_dimension != "d" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo")
 		{
 			prefix_name = init_dimension.substr(0,1);
 			dimension_name = init_dimension.substr(1);
@@ -143,7 +143,7 @@ namespace scifir
 		{
 			dimension_type = dimension::F;
 		}
-		else if(dimension_name == "ohm" or dimension_name == "Ohm" or u32string(dimension_name.begin(),dimension_name.end()) == U"\U000003A9")
+		else if(dimension_name == "ohm" or dimension_name == "Ohm"/* or dimension_name == U"\U000003A9"*/)
 		{
 			dimension_type = dimension::Ohm;
 		}
@@ -319,16 +319,18 @@ namespace scifir
 	{
 		switch(dimension_type)
 		{
+			case dimension::none:
+				return "empty";
 			case dimension::m:
 				return "meter";
 			case dimension::radian:
 				return "radian";
 			case dimension::steradian:
 				return "steradian";
-			case dimension::g:
-				return "gram";
 			case dimension::s:
 				return "second";
+			case dimension::g:
+				return "gram";
 			case dimension::C:
 				return "coulomb";
 			case dimension::K:
@@ -415,8 +417,6 @@ namespace scifir
 				return "pixel";
 			case dimension::memo:
 				return "memo";
-			case dimension::none:
-				return "none";
 		}
 		return "";
 	}
@@ -425,16 +425,18 @@ namespace scifir
 	{
 		switch(dimension_type)
 		{
+			case dimension::none:
+				return "empty";
 			case dimension::m:
 				return "m";
 			case dimension::radian:
 				return "rad";
 			case dimension::steradian:
 				return "sr";
-			case dimension::g:
-				return "g";
 			case dimension::s:
 				return "s";
+			case dimension::g:
+				return "g";
 			case dimension::C:
 				return "C";
 			case dimension::K:
@@ -531,8 +533,6 @@ namespace scifir
 				return "px";
 			case dimension::memo:
 				return "memo";
-			case dimension::none:
-				return "empty";
 		}
 		return "";
 	}
@@ -541,68 +541,70 @@ namespace scifir
 	{
 		switch(dimension_type)
 		{
+			case dimension::none:
+				return 1.0l;
 			case dimension::m:
-				return 1l;
+				return 1.0l;
 			case dimension::radian:
-				return 1l;
+				return 1.0l;
 			case dimension::steradian:
-				return 1l;
+				return 1.0l;
 			case dimension::g:
-				return 1l;
+				return 1.0l;
 			case dimension::s:
-				return 1l;
+				return 1.0l;
 			case dimension::C:
-				return 1l;
+				return 1.0l;
 			case dimension::K:
-				return 1l;
+				return 1.0l;
 			case dimension::mol:
-				return 1l;
+				return 1.0l;
 			case dimension::cd:
-				return 1l;
+				return 1.0l;
 			case dimension::B:
-				return 1l;
+				return 1.0l;
 			case dimension::Hz:
-				return 1l;
+				return 1.0l;
 			case dimension::N:
-				return 1l;
+				return 1.0l;
 			case dimension::Pa:
-				return 1l;
+				return 1.0l;
 			case dimension::J:
-				return 1l;
+				return 1.0l;
 			case dimension::W:
-				return 1l;
+				return 1.0l;
 			case dimension::A:
-				return 1l;
+				return 1.0l;
 			case dimension::V:
-				return 1l;
+				return 1.0l;
 			case dimension::F:
 				return 1;
 			case dimension::Ohm:
-				return 1l;
+				return 1.0l;
 			case dimension::S:
-				return 1l;
+				return 1.0l;
 			case dimension::Wb:
-				return 1l;
+				return 1.0l;
 			case dimension::T:
-				return 1l;
+				return 1.0l;
 			case dimension::H:
-				return 1l;
+				return 1.0l;
 			case dimension::lm:
-				return 1l;
+				return 1.0l;
 			case dimension::lx:
-				return 1l;
+				return 1.0l;
 			case dimension::Bq:
-				return 1l;
+				return 1.0l;
 			case dimension::Gy:
-				return 1l;
+				return 1.0l;
 			case dimension::Sv:
-				return 1l;
+				return 1.0l;
 			case dimension::kat:
-				return 1l;
+				return 1.0l;
 			case dimension::angstrom:
-				return 1l;
+				return 1.0l;
 			case dimension::L:
-				return 1l;
+				return 1.0l;
 			case dimension::minute:
 				return 60l;
 			case dimension::h:
@@ -622,25 +624,23 @@ namespace scifir
 			case dimension::barn:
 				return 0.0000000000000000000000000001l;
 			case dimension::M:
-				return 1l;
+				return 1.0l;
 			case dimension::particles:
-				return 1l/AVOGADRO_CONSTANT;
+				return 1.0l/AVOGADRO_CONSTANT;
 			case dimension::custom:
-				return 1l;
+				return 1.0l;
 			case dimension::custom_basic:
-				return 1l;
+				return 1.0l;
 			case dimension::custom_full_symbol:
-				return 1l;
+				return 1.0l;
 			case dimension::money:
-				return 1l;
+				return 1.0l;
 			case dimension::pixel:
 				return 0.00026l;
 			case dimension::memo:
-				return 1l;
-			case dimension::none:
-				return 1l;
+				return 1.0l;
 		}
-		return 1l;
+		return 1.0l;
 	}
 
 	long double dimension::prefix_math() const
@@ -652,6 +652,8 @@ namespace scifir
 	{
 		switch(dimension_type)
 		{
+			case dimension::none:
+				return true;
 			case dimension::m:
 				return true;
 			case dimension::radian:
@@ -747,8 +749,6 @@ namespace scifir
 			case dimension::pixel:
 				return true;
 			case dimension::memo:
-				return true;
-			case dimension::none:
 				return true;
 		}
 		return false;
@@ -758,6 +758,8 @@ namespace scifir
 	{
 		switch(dimension_type)
 		{
+			case dimension::none:
+				return true;
 			case dimension::m:
 				return true;
 			case dimension::radian:
@@ -853,8 +855,6 @@ namespace scifir
 			case dimension::pixel:
 				return false;
 			case dimension::memo:
-				return true;
-			case dimension::none:
 				return true;
 		}
 		return true;
@@ -1123,6 +1123,7 @@ namespace scifir
 			}
 			vector<dimension::type> printed_dimensions = vector<dimension::type>();
 			map<prefix,int> counted_prefixes = map<prefix,int>();
+			bool first_print = true;
 			for (const dimension& x_dimension : x_dimensions)
 			{
 				if (x_dimension.dimension_sign == dimension::POSITIVE)
@@ -1149,7 +1150,7 @@ namespace scifir
 					}
 					for (const auto& x_prefix : counted_prefixes)
 					{
-						if (out.str() != "")
+						if (!first_print)
 						{
 							out << "*";
 						}
@@ -1158,6 +1159,7 @@ namespace scifir
 						{
 							out << x_prefix.second;
 						}
+						first_print = false;
 					}
 					printed_dimensions.push_back(x_dimension.dimension_type);
 				}
@@ -1171,7 +1173,7 @@ namespace scifir
 				{
 					if (first_negative_iteration == true)
 					{
-						if (out.tellp() == std::streampos(0))
+						if (first_print)
 						{
 							out << "1";
 						}
@@ -1529,6 +1531,26 @@ namespace scifir
 				}
 				if (new_x[i].dimension_type == new_x[j].dimension_type and new_x[i].dimension_sign != new_x[j].dimension_sign)
 				{
+					if (new_x[i].dimension_sign == dimension::POSITIVE)
+					{
+						value *= float(new_x[i].get_conversion_factor());
+						value *= float(new_x[i].prefix_math());
+					}
+					else if (new_x[i].dimension_sign == dimension::NEGATIVE)
+					{
+						value /= float(new_x[i].get_conversion_factor());
+						value /= float(new_x[i].prefix_math());
+					}
+					if (new_x[j].dimension_sign == dimension::POSITIVE)
+					{
+						value *= float(new_x[j].get_conversion_factor());
+						value *= float(new_x[j].prefix_math());
+					}
+					else if (new_x[j].dimension_sign == dimension::NEGATIVE)
+					{
+						value /= float(new_x[j].get_conversion_factor());
+						value /= float(new_x[j].prefix_math());
+					}
 					skip_dimensions.push_back(i);
 					skip_dimensions.push_back(j);
 					break;
@@ -1544,6 +1566,7 @@ namespace scifir
 				if (i == skip_dimensions[j])
 				{
 					skip = true;
+					break;
 				}
 			}
 			if (!skip)
@@ -1580,78 +1603,92 @@ namespace scifir
 	{
 		vector<dimension> x_derived_dimensions = create_derived_dimensions(x);
 		vector<dimension> y_derived_dimensions = create_derived_dimensions(y);
-		vector<unsigned int> skip = vector<unsigned int>();
-		for (const dimension& x_dimension: x_derived_dimensions)
+		if (x_derived_dimensions.size() == y_derived_dimensions.size())
 		{
-			bool is_equal = false;
-			for (unsigned int j = 0; j < y_derived_dimensions.size(); j++)
+			vector<unsigned int> skip = vector<unsigned int>();
+			for (const dimension& x_dimension: x_derived_dimensions)
 			{
-				bool skip_j = false;
-				if (skip.size() > 0)
+				bool is_equal = false;
+				for (unsigned int j = 0; j < y_derived_dimensions.size(); j++)
 				{
-					for (unsigned int k = 0; k < skip.size(); k++)
+					bool skip_j = false;
+					if (skip.size() > 0)
 					{
-						if (j == skip[k])
+						for (unsigned int k = 0; k < skip.size(); k++)
 						{
-							skip_j = true;
+							if (j == skip[k])
+							{
+								skip_j = true;
+							}
 						}
 					}
+					if (skip_j)
+					{
+						continue;
+					}
+					if (x_dimension == y_derived_dimensions[j])
+					{
+						skip.push_back(j);
+						is_equal = true;
+						break;
+					}
 				}
-				if (skip_j)
+				if (!is_equal)
 				{
-					continue;
-				}
-				if (x_dimension == y_derived_dimensions[j])
-				{
-					skip.push_back(j);
-					is_equal = true;
-					break;
+					return false;
 				}
 			}
-			if (!is_equal)
-			{
-				return false;
-			}
+			return true;
 		}
-		return true;
+		else
+		{
+			return false;
+		}
 	}
 
 	bool equal_dimensions_and_prefixes(const vector<dimension>& x,const vector<dimension>& y)
 	{
 		vector<unsigned int> skip = vector<unsigned int>();
-		for (const dimension& x_dimension: x)
+		if (x.size() == y.size())
 		{
-			bool is_equal = false;
-			for (unsigned int j = 0; j < y.size(); j++)
+			for (const dimension& x_dimension: x)
 			{
-				bool skip_j = false;
-				if (skip.size() > 0)
+				bool is_equal = false;
+				for (unsigned int j = 0; j < y.size(); j++)
 				{
-					for (unsigned int k = 0; k < skip.size(); k++)
+					bool skip_j = false;
+					if (skip.size() > 0)
 					{
-						if (j == skip[k])
+						for (unsigned int k = 0; k < skip.size(); k++)
 						{
-							skip_j = true;
+							if (j == skip[k])
+							{
+								skip_j = true;
+							}
 						}
 					}
+					if (skip_j)
+					{
+						continue;
+					}
+					if (x_dimension == y[j] and x_dimension.prefix == y[j].prefix)
+					{
+						skip.push_back(j);
+						is_equal = true;
+						break;
+					}
 				}
-				if (skip_j)
+				if (!is_equal)
 				{
-					continue;
-				}
-				if (x_dimension == y[j] and x_dimension.prefix == y[j].prefix)
-				{
-					skip.push_back(j);
-					is_equal = true;
-					break;
+					return false;
 				}
 			}
-			if (!is_equal)
-			{
-				return false;
-			}
+			return true;
 		}
-		return true;
+		else
+		{
+			return false;
+		}
 	}
 }
 

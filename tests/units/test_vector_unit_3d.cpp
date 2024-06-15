@@ -49,11 +49,11 @@ TEST_CASE("class vector_unit_3d","Complete test of vector_unit_3d")
 
 	SECTION("Assignments of vector_unit_3d classes")
 	{
-		vector_unit_3d a;
+		vector_unit_3d a("10 N",angle(10.0f),angle(5.0f));
 		vector_unit_3d b("20 N",angle(20.0f),angle(30.0f));
 		a = b;
 		REQUIRE (bool(to_string(a) == "20 N 20\u03B8 30\u03A6"));
-		vector_unit_3d c;
+		vector_unit_3d c("5 N",angle(5.0f),angle(15.0f));
 		vector_unit_3d d("30 N",angle(15.0f),angle(20.0f));
 		c = std::move(d);
 		REQUIRE (bool(to_string(c) == "30 N 15\u03B8 20\u03A6"));
@@ -192,7 +192,7 @@ TEST_CASE("class vector_unit_3d","Complete test of vector_unit_3d")
 		REQUIRE (bool(to_string(a2 * a) == "50 g*kg*m/s2 10\u03B8 10\u03A6"));
 		vector_unit_3d b("10 N",10.0f,10.0f);
 		scalar_unit b2("5 g");
-		REQUIRE (bool(to_string(b / b2) == "2 m/s2 10\u03B8 10\u03A6"));
+		REQUIRE (bool(to_string(b / b2) == "2000 m/s2 10\u03B8 10\u03A6"));
 		vector_unit_3d c("10 N",10.0f,10.0f);
 		scalar_unit c2(10_N / 5_N);
 		REQUIRE (bool(to_string(c ^ c2) == "100 N2 10\u03B8 10\u03A6"));
@@ -326,7 +326,7 @@ TEST_CASE("class vector_unit_3d","Complete test of vector_unit_3d")
         REQUIRE (bool(a.str() == "2 N 10\u03B8 10\u03A6"));
         stringstream b;
         b << "3 N 10\u03B8 10\u03A6";
-        vector_unit_3d b2;
+        vector_unit_3d b2("1 N",angle(5.0f),angle(2.0f));
         b >> b2;
         REQUIRE (bool(b2 == "3 N 10\u03B8 10\u03A6"));
     }
