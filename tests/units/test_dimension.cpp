@@ -30,10 +30,10 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		REQUIRE (bool(a.dimension_type == dimension::none));
 		dimension b2(dimension::m,prefix::no_prefix,dimension::POSITIVE);
 		dimension b(b2);
-		REQUIRE (bool(b.dimension_type = dimension::m));
+		REQUIRE (bool(b.dimension_type == dimension::m));
 		dimension c2(dimension::m,prefix::no_prefix,dimension::POSITIVE);
 		dimension c(std::move(c2));
-		REQUIRE (bool(c.dimension_type = dimension::m));
+		REQUIRE (bool(c.dimension_type == dimension::m));
 		dimension d(dimension::m,prefix::k,dimension::POSITIVE);
 		REQUIRE (bool(to_string(d) == "km"));
 		prefix e2(prefix::k);
@@ -737,13 +737,35 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		REQUIRE(bool(equal_dimensions(a45.get_basic_dimensions(),b45)));
 	}
 
+	SECTION ("Constructor of custom dimensions")
+	{
+		dimension a("usd",dimension::POSITIVE);
+		vector<dimension> b = { dimension("usd",dimension::POSITIVE) };
+		REQUIRE (bool(a.get_name() == "custom-dimension"));
+		REQUIRE (bool(a.get_symbol() == "usd"));
+		REQUIRE (bool(a.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a.is_simple_dimension() == false));
+		REQUIRE (bool(a.is_basic_dimension() == false));
+		REQUIRE (bool(equal_dimensions(a.get_basic_dimensions(),b)));
+		dimension a2("long-dimension",dimension::POSITIVE);
+		vector<dimension> b2 = { dimension("long-dimension",dimension::POSITIVE) };
+		REQUIRE (bool(a2.get_name() == "custom-full-symbol"));
+		REQUIRE (bool(a2.get_symbol() == "long-dimension"));
+		REQUIRE (bool(a2.get_conversion_factor() == 1.0l));
+		REQUIRE (bool(a2.is_simple_dimension() == false));
+		REQUIRE (bool(a2.is_basic_dimension() == false));
+		REQUIRE (bool(equal_dimensions(a2.get_basic_dimensions(),b2)));
+	}
+
 	SECTION ("create_custom_dimension(), create_full_symbol() and get_full_symbol() of dimension class")
 	{
-		/*dimension::create_custom_dimension("hello","m*s");
-		char symbol[3];
+		dimension::create_custom_dimension("hello","m*s");
+		/*char symbol[3];
 		string full_symbol = dimension::create_full_symbol("symbol1");
-		full_symbol.copy(symbol, string("symbol1").length());
-		REQUIRE (bool(dimension::get_full_symbol(symbol) == "symbol1"));*/
+		cout << "full symbol: " << full_symbol << endl;
+		cout << "length: " << full_symbol.length() << endl;*/
+		//full_symbol.copy(symbol, full_symbol.length() - 1);
+		/*REQUIRE (bool(dimension::get_full_symbol(symbol) == "symbol1"));*/
 	}
 
 	SECTION("to_string() of dimension class")
@@ -783,12 +805,12 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		long double k2 = 10;
 		vector<dimension> l = create_derived_dimensions(k,k2);
 		REQUIRE (bool(equal_dimensions(k,l)));
-		REQUIRE (bool(k2 = 36000));
+		REQUIRE (bool(k2 == 36000));
 		vector<dimension> r = create_dimensions("1/h");
 		long double r2 = 10;
 		vector<dimension> s = create_derived_dimensions(r,r2);
 		REQUIRE (bool(equal_dimensions(r,s)));
-		REQUIRE (bool(r2 = 0.00277778));
+		REQUIRE (bool(r2 == 0.00277778));
 		vector<dimension> m = create_dimensions("m*s2/m2*C4");
 		vector<dimension> n = normalize_dimensions(m);
 		REQUIRE (bool(to_string(n) == "s2/m*C4"));
