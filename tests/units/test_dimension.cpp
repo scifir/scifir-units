@@ -810,7 +810,7 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		long double r2 = 10;
 		vector<dimension> s = create_derived_dimensions(r,r2);
 		REQUIRE (bool(equal_dimensions(r,s)));
-		REQUIRE (bool(r2 == 0.00277778));
+		REQUIRE (bool(std::fabs(r2 - 0.00277778l) < 0.00000001l));
 		vector<dimension> m = create_dimensions("m*s2/m2*C4");
 		vector<dimension> n = normalize_dimensions(m);
 		REQUIRE (bool(to_string(n) == "s2/m*C4"));
