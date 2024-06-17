@@ -26,6 +26,8 @@ TEST_CASE("scalar_unit class","Full test of scalar_unit class") {
 		REQUIRE (bool(to_string(e) == "100 g"));
 		scalar_unit f = scalar_unit("100 g");
 		REQUIRE (bool(to_string(f) == "100 g"));
+		scalar_unit g = scalar_unit("2E5 g");
+		REQUIRE (bool(to_string(g) == "200000 g"));
 	}
 
 	SECTION("Assignments of scalar_unit classes")
@@ -135,8 +137,21 @@ TEST_CASE("scalar_unit class","Full test of scalar_unit class") {
 		scalar_unit b("50 N2");
 		scalar_unit c("20 N*g*m/s2");
 		b.change_dimensions(c);
-		cout << "b: " << b << endl;
 		REQUIRE (bool(b == "50000 N*g*m/s2"));
+		scalar_unit b2("50 N");
+		scalar_unit c2("20 N*g*m/s2");
+		b2.change_dimensions(c2);
+		REQUIRE (bool(b2 == "50 N"));
+		scalar_unit b3("50 N*kg");
+		scalar_unit c3("20 N*kg");
+		b3.change_dimensions(c3);
+		REQUIRE (bool(b3 == "50 N*kg"));
+		scalar_unit d("50 N*kg");
+		d.change_dimensions("N*kg");
+		REQUIRE (bool(d == "50 N*kg"));
+		scalar_unit e("50 N*kg");
+		e.change_dimensions("kg");
+		REQUIRE (bool(e == "50 N*kg"));
 	}
 
 	SECTION("display_dimensions() of scalar_unit classes")
@@ -163,10 +178,13 @@ TEST_CASE("scalar_unit class","Full test of scalar_unit class") {
 		REQUIRE (bool(b.display() == "100 m"));
 		REQUIRE (bool(b.display(2,false,true) == "1 hm"));
 		scalar_unit c("10 N");
-		cout << "derived display: " << c.derived_display(2,false,true) << endl;
 		REQUIRE (bool(c.derived_display(2,false,true) == "10 kg*m/s2"));
-		scalar_unit d("1000 N");
-		cout << "custom display: " << d.custom_display("sci",2,true) << endl;
+		scalar_unit d("0 m");
+		REQUIRE (bool(d.display(2,false,true) == "0 m"));
+		scalar_unit e("1 AU");
+		REQUIRE (bool(e.derived_display(2,false,true) == "1.49598e+11 m"));
+		scalar_unit f("1 km/h");
+		REQUIRE (bool(f.custom_display("m/s",2,true) == "0.27 [m/s]"));
 	}
 
 	SECTION("Math functions of scalar_unit classes")
@@ -181,7 +199,7 @@ TEST_CASE("scalar_unit class","Full test of scalar_unit class") {
 		REQUIRE (bool(scifir::pow(d,2) == "4 N2"));
 	}
 
-	SECTION("Comparison operators of scalar_unit classes")
+	SECTION("Comparison operators of scalar_unit classes with other scalar_unit classes")
 	{
 		scalar_unit a("2 N");
 		scalar_unit a2("2 N");
@@ -189,6 +207,42 @@ TEST_CASE("scalar_unit class","Full test of scalar_unit class") {
 		scalar_unit b("2 N");
 		scalar_unit b2("2 N2");
 		REQUIRE (bool(b != b2));
+		REQUIRE (bool(scalar_unit("2 N") > scalar_unit("1 N")));
+		REQUIRE (bool(scalar_unit("2 N") >= scalar_unit("2 N")));
+		REQUIRE (bool(scalar_unit("1 N") < scalar_unit("2 N")));
+		REQUIRE (bool(scalar_unit("1 N") <= scalar_unit("2 N")));
+	}
+
+	SECTION("Comparison operators of scalar_unit classes with strings")
+	{
+		REQUIRE (bool(scalar_unit("2 N") == "2 N"));
+		REQUIRE (bool(scalar_unit("2 N") != "1 N"));
+		REQUIRE (bool(scalar_unit("2 N") > "1 N"));
+		REQUIRE (bool(scalar_unit("2 N") >= "2 N"));
+		REQUIRE (bool(scalar_unit("2 N") < "3 N"));
+		REQUIRE (bool(scalar_unit("2 N") <= "3 N"));
+		REQUIRE (bool("2 N" == scalar_unit("2 N")));
+		REQUIRE (bool("1 N" != scalar_unit("2 N")));
+		REQUIRE (bool("1 N" < scalar_unit("2 N")));
+		REQUIRE (bool("2 N" <= scalar_unit("2 N")));
+		REQUIRE (bool("3 N" > scalar_unit("2 N")));
+		REQUIRE (bool("3 N" >= scalar_unit("2 N")));
+	}
+
+	SECTION("Comparison operators of scalar_unit classes with numeric types")
+	{
+		REQUIRE (bool(scalar_unit("2 N") == 2));
+		REQUIRE (bool(scalar_unit("2 N") != 1));
+		REQUIRE (bool(scalar_unit("2 N") > 1));
+		REQUIRE (bool(scalar_unit("2 N") >= 2));
+		REQUIRE (bool(scalar_unit("2 N") < 3));
+		REQUIRE (bool(scalar_unit("2 N") <= 3));
+		REQUIRE (bool(2 == scalar_unit("2 N")));
+		REQUIRE (bool(1 != scalar_unit("2 N")));
+		REQUIRE (bool(1 < scalar_unit("2 N")));
+		REQUIRE (bool(2 <= scalar_unit("2 N")));
+		REQUIRE (bool(3 > scalar_unit("2 N")));
+		REQUIRE (bool(3 >= scalar_unit("2 N")));
 	}
 
 	SECTION("String operations with scalar_unit classes")
@@ -309,6 +363,18 @@ TEST_CASE("scalar_unit class","Full test of scalar_unit class") {
 	
 	SECTION("is_scalar_unit") {
 		REQUIRE(bool(is_scalar_unit("1 m") == true));
+		REQUIRE(bool(is_scalar_unit("7 m2") == true));
+		REQUIRE(bool(is_scalar_unit("2 m/s2") == true));
+		REQUIRE(bool(is_scalar_unit("5 m2/s2") == true));
+		REQUIRE(bool(is_scalar_unit("7 $") == false));
+		REQUIRE(bool(is_scalar_unit("8 $2") == false));
+		REQUIRE(bool(is_scalar_unit("2 m$") == false));
+		REQUIRE(bool(is_scalar_unit("2 m2$") == false));
+		REQUIRE(bool(is_scalar_unit("4 g2$/m") == false));
+		REQUIRE(bool(is_scalar_unit("4 g/$") == false));
+		REQUIRE(bool(is_scalar_unit("6 m/$2") == false));
+		REQUIRE(bool(is_scalar_unit("9 s/m$") == false));
+		REQUIRE(bool(is_scalar_unit("9 s/m2$") == false));
 		REQUIRE(bool(is_scalar_unit("1.5 C") == true));
 		REQUIRE(bool(is_scalar_unit("1.5e6 s") == true));
 		REQUIRE(bool(is_scalar_unit("1.5*10^34 m") == true));
