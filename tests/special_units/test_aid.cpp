@@ -19,22 +19,56 @@ TEST_CASE("aid class","Full test of aid class") {
 		REQUIRE (bool(a.galaxy == ""));
 		REQUIRE (bool(a.solar_system == ""));
 		REQUIRE (bool(a.astronomical_body == ""));
-		aid b;
 		aid b2 = aid(aid::PLANET,"universe","milky-way","solar-system","earth");
-		b = b2;
+		aid b(b2);
 		REQUIRE (bool(b.astronomical_type == aid::PLANET));
 		REQUIRE (bool(b.universe == "universe"));
 		REQUIRE (bool(b.galaxy == "milky-way"));
 		REQUIRE (bool(b.solar_system == "solar-system"));
 		REQUIRE (bool(b.astronomical_body == "earth"));
-		aid c;
 		aid c2 = aid(aid::PLANET,"universe","milky-way","solar-system","earth");
-		c = std::move(c2);
+		aid c(std::move(c2));
 		REQUIRE (bool(c.astronomical_type == aid::PLANET));
 		REQUIRE (bool(c.universe == "universe"));
 		REQUIRE (bool(c.galaxy == "milky-way"));
 		REQUIRE (bool(c.solar_system == "solar-system"));
 		REQUIRE (bool(c.astronomical_body == "earth"));
+		aid d("universe","milky-way");
+		REQUIRE (bool(d.astronomical_type == aid::GALAXY));
+		REQUIRE (bool(d.universe == "universe"));
+		REQUIRE (bool(d.galaxy == "milky-way"));
+		REQUIRE (bool(d.solar_system == ""));
+		REQUIRE (bool(d.astronomical_body == ""));
+		aid e("universe","milky-way","solar-system");
+		REQUIRE (bool(e.astronomical_type == aid::SOLAR_SYSTEM));
+		REQUIRE (bool(e.universe == "universe"));
+		REQUIRE (bool(e.galaxy == "milky-way"));
+		REQUIRE (bool(e.solar_system == "solar-system"));
+		REQUIRE (bool(e.astronomical_body == ""));
+		aid f(aid::PLANET,"universe","milky-way","solar-system","earth");
+		REQUIRE (bool(f.astronomical_type == aid::PLANET));
+		REQUIRE (bool(f.universe == "universe"));
+		REQUIRE (bool(f.galaxy == "milky-way"));
+		REQUIRE (bool(f.solar_system == "solar-system"));
+		REQUIRE (bool(f.astronomical_body == "earth"));
+		aid g("(P)universe:milky-way:solar-system:earth");
+		REQUIRE (bool(g.astronomical_type == aid::PLANET));
+		REQUIRE (bool(g.universe == "universe"));
+		REQUIRE (bool(g.galaxy == "milky-way"));
+		REQUIRE (bool(g.solar_system == "solar-system"));
+		REQUIRE (bool(g.astronomical_body == "earth"));
+		aid h("(G)universe:milky-way");
+		REQUIRE (bool(h.astronomical_type == aid::GALAXY));
+		REQUIRE (bool(h.universe == "universe"));
+		REQUIRE (bool(h.galaxy == "milky-way"));
+		REQUIRE (bool(h.solar_system == ""));
+		REQUIRE (bool(h.astronomical_body == ""));
+		aid i("(SS)universe:milky-way:solar-system");
+		REQUIRE (bool(i.astronomical_type == aid::SOLAR_SYSTEM));
+		REQUIRE (bool(i.universe == "universe"));
+		REQUIRE (bool(i.galaxy == "milky-way"));
+		REQUIRE (bool(i.solar_system == "solar-system"));
+		REQUIRE (bool(i.astronomical_body == ""));
 	}
 
 	SECTION("Constructors of aid class that use the enum astronomical_body")
@@ -291,5 +325,99 @@ TEST_CASE("aid class","Full test of aid class") {
 		REQUIRE (bool(a42.galaxy == "milky-way"));
 		REQUIRE (bool(a42.solar_system == "solar-system"));
 		REQUIRE (bool(a42.astronomical_body == "dysnomia"));
+	}
+
+	SECTION("Assignments of aid class")
+	{
+		aid b;
+		aid b2 = aid(aid::PLANET,"universe","milky-way","solar-system","earth");
+		b = b2;
+		REQUIRE (bool(b.astronomical_type == aid::PLANET));
+		REQUIRE (bool(b.universe == "universe"));
+		REQUIRE (bool(b.galaxy == "milky-way"));
+		REQUIRE (bool(b.solar_system == "solar-system"));
+		REQUIRE (bool(b.astronomical_body == "earth"));
+		aid c;
+		aid c2 = aid(aid::PLANET,"universe","milky-way","solar-system","earth");
+		c = std::move(c2);
+		REQUIRE (bool(c.astronomical_type == aid::PLANET));
+		REQUIRE (bool(c.universe == "universe"));
+		REQUIRE (bool(c.galaxy == "milky-way"));
+		REQUIRE (bool(c.solar_system == "solar-system"));
+		REQUIRE (bool(c.astronomical_body == "earth"));
+	}
+
+	SECTION("to_string() of aid class")
+	{
+		aid a("(SS)universe:milky-way:solar-system");
+		REQUIRE (bool(to_string(a) == "(SS)universe:milky-way:solar-system"));
+		aid b("(U)universe");
+		REQUIRE (bool(to_string(b) == "(U)universe"));
+		aid c("(G)universe:milky-way");
+		REQUIRE (bool(to_string(c) == "(G)universe:milky-way"));
+		aid d("(P)universe:milky-way:solar-system:mars");
+		REQUIRE (bool(to_string(d) == "(P)universe:milky-way:solar-system:mars"));
+	}
+
+	SECTION("to_string() of aid::type")
+	{
+		REQUIRE (bool(to_string(aid::UNIVERSE) == "U"));
+		REQUIRE (bool(to_string(aid::GALAXY) == "G"));
+		REQUIRE (bool(to_string(aid::SOLAR_SYSTEM) == "SS"));
+		REQUIRE (bool(to_string(aid::PLANET) == "P"));
+		REQUIRE (bool(to_string(aid::STAR) == "ST"));
+		REQUIRE (bool(to_string(aid::ASTEROID) == "A"));
+		REQUIRE (bool(to_string(aid::MOON) == "MN"));
+		REQUIRE (bool(to_string(aid::METEOR) == "MT"));
+		REQUIRE (bool(to_string(aid::NONE) == ""));
+	}
+
+	SECTION("create_astronomical_type()")
+	{
+		REQUIRE (bool(create_astronomical_type("U") == aid::UNIVERSE));
+		REQUIRE (bool(create_astronomical_type("G") == aid::GALAXY));
+		REQUIRE (bool(create_astronomical_type("SS") == aid::SOLAR_SYSTEM));
+		REQUIRE (bool(create_astronomical_type("P") == aid::PLANET));
+		REQUIRE (bool(create_astronomical_type("ST") == aid::STAR));
+		REQUIRE (bool(create_astronomical_type("A") == aid::ASTEROID));
+		REQUIRE (bool(create_astronomical_type("MN") == aid::MOON));
+		REQUIRE (bool(create_astronomical_type("MT") == aid::METEOR));
+		REQUIRE (bool(create_astronomical_type("") == aid::NONE));
+	}
+
+	SECTION("Operators of aid class")
+	{
+		aid a("(G)universe:milky-way");
+		aid b("(G)universe:milky-way");
+		aid c("(G)universe:andromeda");
+		REQUIRE (bool(a == b));
+		REQUIRE (bool((a == c) == false));
+		REQUIRE (bool(a != c));
+	}
+
+	SECTION("String operators of aid class")
+	{
+		REQUIRE (bool(aid("(SS)universe:milky-way:solar-system") == "(SS)universe:milky-way:solar-system"));
+		REQUIRE (bool(aid("(SS)universe:milky-way:solar-system") != "(SS)universe:milky-way:alpha-centauri"));
+		REQUIRE (bool("(SS)universe:milky-way:alpha-centauri" == aid("(SS)universe:milky-way:alpha-centauri")));
+		REQUIRE (bool("(SS)universe:milky-way:alpha-centauri" != aid("(SS)universe:milky-way:solar-system")));
+		string a = "aid ";
+		a += aid("(SS)universe:milky-way:alpha-centauri");
+		REQUIRE (bool(a == "aid (SS)universe:milky-way:alpha-centauri"));
+		aid b = aid("(SS)universe:milky-way:alpha-centauri");
+		REQUIRE (bool("b " + b == "b (SS)universe:milky-way:alpha-centauri"));
+		REQUIRE (bool(b + " b" == "(SS)universe:milky-way:alpha-centauri b"));
+	}
+
+	SECTION("Streams of aid class")
+	{
+		ostringstream a;
+        a << aid("(SS)universe:milky-way:alpha-centauri");
+        REQUIRE (bool(a.str() == "(SS)universe:milky-way:alpha-centauri"));
+        stringstream b;
+        b << "(SS)universe:milky-way:alpha-centauri";
+        aid b2;
+        b >> b2;
+        REQUIRE (bool(to_string(b2) == "(SS)universe:milky-way:alpha-centauri"));
 	}
 }

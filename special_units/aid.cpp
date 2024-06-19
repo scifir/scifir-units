@@ -423,7 +423,7 @@ namespace scifir
 			case aid::NONE:
 				return "";
 		}
-		return "U";
+		return "";
 	}
 
 	aid::type create_astronomical_type(const string& x)
