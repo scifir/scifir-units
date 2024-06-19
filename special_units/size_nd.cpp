@@ -6,12 +6,19 @@ namespace scifir
 {
 	string to_string(const size_nd<float>& x)
 	{
-		ostringstream output;
-		output << x.widths[0];
-		for (unsigned int i = 1; i < x.widths.size(); i++)
+		if (x.widths.size() > 0)
 		{
-			output << " * " << x.widths[i];
+			ostringstream output;
+			output << x.widths[0];
+			for (unsigned int i = 1; i < x.widths.size(); i++)
+			{
+				output << " * " << x.widths[i];
+			}
+			return output.str();
 		}
-		return output.str();
+		else
+		{
+			return "[empty]";
+		}
 	}
 }

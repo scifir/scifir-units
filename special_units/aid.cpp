@@ -18,10 +18,13 @@ namespace scifir
 
 	aid::aid(aid&& x) : universe(std::move(x.universe)),galaxy(std::move(x.galaxy)),solar_system(std::move(x.solar_system)),astronomical_body(std::move(x.astronomical_body)),astronomical_type(std::move(x.astronomical_type))
 	{}
-	
+
 	aid::aid(const enum astronomical_body& x) : aid()
 	{
-		universe = "universe";
+		if (x != astronomical_body::NONE)
+		{
+			universe = "universe";
+		}
 		if (x == astronomical_body::MILKY_WAY)
 		{
 			galaxy = "milky-way";

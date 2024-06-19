@@ -210,6 +210,32 @@ bool operator !=(const scifir::size_3d<T>& x, const scifir::size_3d<T>& y)
 }
 
 template<typename T>
+bool operator ==(const scifir::size_3d<T>& x, const string& y)
+{
+	size_3d<T> y_size = size_3d<T>(y);
+	return (x == y_size);
+}
+
+template<typename T>
+bool operator !=(const scifir::size_3d<T>& x, const string& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+bool operator ==(const string& x, const scifir::size_3d<T>& y)
+{
+	size_3d<T> x_size = size_3d<T>(x);
+	return (x_size == y);
+}
+
+template<typename T>
+bool operator !=(const string& x, const scifir::size_3d<T>& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
 void operator +=(string& x, const scifir::size_3d<T>& y)
 {
 	x += to_string(y);

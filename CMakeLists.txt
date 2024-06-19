@@ -221,6 +221,11 @@ if(BUILD_TESTING)
 		add_test(NAME point_2d COMMAND test_point_2d)
 		set_tests_properties(point_2d PROPERTIES LABELS tests)
 
+		add_executable(test_aid tests/special_units/test_aid.cpp)
+		target_link_libraries(test_aid PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		add_test(NAME aid COMMAND test_aid)
+		set_tests_properties(aid PROPERTIES LABELS tests)
+
 		add_executable(test_percentage tests/special_units/test_percentage.cpp)
 		target_link_libraries(test_percentage PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
 		add_test(NAME percentage COMMAND test_percentage)
@@ -240,6 +245,21 @@ if(BUILD_TESTING)
 		target_link_libraries(test_pixel PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
 		add_test(NAME pixel COMMAND test_pixel)
 		set_tests_properties(pixel PROPERTIES LABELS tests)
+
+		add_executable(test_size_2d tests/special_units/test_size_2d.cpp)
+		target_link_libraries(test_size_2d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		add_test(NAME size_2d COMMAND test_size_2d)
+		set_tests_properties(size_2d PROPERTIES LABELS tests)
+
+		add_executable(test_size_3d tests/special_units/test_size_3d.cpp)
+		target_link_libraries(test_size_3d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		add_test(NAME size_3d COMMAND test_size_3d)
+		set_tests_properties(size_3d PROPERTIES LABELS tests)
+
+		add_executable(test_size_nd tests/special_units/test_size_nd.cpp)
+		target_link_libraries(test_size_nd PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		add_test(NAME size_nd COMMAND test_size_nd)
+		set_tests_properties(size_nd PROPERTIES LABELS tests)
 
 		add_executable(test_types tests/util/test_types.cpp)
 		target_link_libraries(test_types PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)

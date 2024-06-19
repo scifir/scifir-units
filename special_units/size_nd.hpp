@@ -127,7 +127,7 @@ namespace scifir
 
 			scalar_unit get_volume_nd() const
 			{
-				vector<dimension> new_dimensions = create_dimensions(widths[0].get_dimensions()[0].get_symbol() + to_string(get_nd()));
+				vector<dimension> new_dimensions = create_dimensions(widths[0].get_dimensions()[0].get_symbol() + std::to_string(get_nd()));
 				float new_value = 1;
 				for (int i = 0; i < widths.size(); i++)
 				{
@@ -268,13 +268,20 @@ namespace scifir
 	template<typename T>
 	string to_string(const size_nd<T>& x)
 	{
-		ostringstream output;
-		output << x.widths[0];
-		for (int i = 1; i < x.widths.size(); i++)
+		if (x.widths.size() > 0)
 		{
-			output << " * " << x.widths[i];
+			ostringstream output;
+			output << x.widths[0];
+			for (int i = 1; i < x.widths.size(); i++)
+			{
+				output << " * " << x.widths[i];
+			}
+			return output.str();
 		}
-		return output.str();
+		else
+		{
+			return "[empty]";
+		}
 	}
 
 	string to_string(const size_nd<float>&);
@@ -302,6 +309,32 @@ bool operator ==(const scifir::size_nd<T>& x, const scifir::size_nd<T>& y)
 
 template<typename T>
 bool operator !=(const scifir::size_nd<T>& x, const scifir::size_nd<T>& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+bool operator ==(const scifir::size_nd<T>& x, const string& y)
+{
+	size_nd<T> y_size = size_nd<T>(y);
+	return (x == y_size);
+}
+
+template<typename T>
+bool operator !=(const scifir::size_nd<T>& x, const string& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+bool operator ==(const string& x, const scifir::size_nd<T>& y)
+{
+	size_nd<T> x_size = size_nd<T>(x);
+	return (x_size == y);
+}
+
+template<typename T>
+bool operator !=(const string& x, const scifir::size_nd<T>& y)
 {
 	return !(x == y);
 }
