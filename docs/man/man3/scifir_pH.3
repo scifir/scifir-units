@@ -1,0 +1,109 @@
+.TH "scifir::pH" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scifir::pH
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBpH\fP (\fBconst\fP \fBpH\fP &)"
+.br
+.ti -1c
+.RI "\fBpH\fP (\fBpH\fP &&)"
+.br
+.ti -1c
+.RI "\fBpH\fP (\fBfloat\fP)"
+.br
+.ti -1c
+.RI "\fBpH\fP (\fBconst\fP \fBstring\fP &)"
+.br
+.ti -1c
+.RI "\fBpH\fP (\fBconst\fP \fBscalar_unit\fP &)"
+.br
+.ti -1c
+.RI "\fBpH\fP & \fBoperator=\fP (\fBconst\fP \fBpH\fP &)"
+.br
+.ti -1c
+.RI "\fBpH\fP & \fBoperator=\fP (\fBpH\fP &&)"
+.br
+.ti -1c
+.RI "\fBpH\fP & \fBoperator=\fP (\fBfloat\fP)"
+.br
+.ti -1c
+.RI "\fBpH\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &)"
+.br
+.ti -1c
+.RI "\fBpH\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &)"
+.br
+.ti -1c
+.RI "\fBoperator float\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBconst\fP \fBfloat\fP & \fBget_value\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBpH\fP \fBoperator+\fP (\fBconst\fP \fBpH\fP &) \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBpH\fP \fBoperator\-\fP (\fBconst\fP \fBpH\fP &) \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBpH\fP &)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBoperator\-=\fP (\fBconst\fP \fBpH\fP &)"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpH\fP \fBoperator+\fP (T y) \fBconst\fP"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpH\fP \fBoperator\-\fP (T y) \fBconst\fP"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator+=\fP (T y)"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator\-=\fP (T y)"
+.br
+.ti -1c
+.RI "\fBpH\fP & \fBoperator++\fP ()"
+.br
+.ti -1c
+.RI "\fBpH\fP \fBoperator++\fP (\fBint\fP)"
+.br
+.ti -1c
+.RI "\fBpH\fP & \fBoperator\-\-\fP ()"
+.br
+.ti -1c
+.RI "\fBpH\fP \fBoperator\-\-\fP (\fBint\fP)"
+.br
+.ti -1c
+.RI "\fBmolarity\fP \fBget_H\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBmolarity\fP \fBget_OH\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBpOH\fP \fBget_pOH\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBis_acidic\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBis_basic\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBis_neutral\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBdisplay\fP (\fBint\fP=2) \fBconst\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

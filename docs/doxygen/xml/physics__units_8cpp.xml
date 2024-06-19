@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="physics__units_8cpp" kind="file" language="C++">
+    <compoundname>physics_units.cpp</compoundname>
+    <includes refid="physics__units_8hpp" local="yes">./physics_units.hpp</includes>
+    <incdepgraph>
+      <node id="22">
+        <label>../meca_number/angle.hpp</label>
+        <link refid="angle_8hpp_source"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>predefined_units/physics_units.cpp</label>
+        <link refid="physics__units_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>./physics_units.hpp</label>
+        <link refid="physics__units_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>../special_units/percentage.hpp</label>
+        <link refid="percentage_8hpp_source"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>../topology/constants.hpp</label>
+        <link refid="constants_8hpp_source"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>../topology/direction.hpp</label>
+        <link refid="direction_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>../units/dimension.hpp</label>
+        <link refid="dimension_8hpp_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>../units/prefix.hpp</label>
+        <link refid="prefix_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>../units/scalar_unit.hpp</label>
+        <link refid="scalar__unit_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>../units/unit_basic.hpp</label>
+        <link refid="unit__basic_8hpp_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>../units/vector_unit_2d.hpp</label>
+        <link refid="vector__unit__2d_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>../units/vector_unit_3d.hpp</label>
+        <link refid="vector__unit__3d_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>../units/vector_unit_nd.hpp</label>
+        <link refid="vector__unit__nd_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>../util/is_number.hpp</label>
+        <link refid="is__number_8hpp_source"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>algorithm</label>
+      </node>
+      <node id="10">
+        <label>boost/algorithm/string.hpp</label>
+      </node>
+      <node id="24">
+        <label>boost/math/constants/constants.hpp</label>
+      </node>
+      <node id="32">
+        <label>chrono</label>
+      </node>
+      <node id="14">
+        <label>cmath</label>
+      </node>
+      <node id="13">
+        <label>cstddef</label>
+      </node>
+      <node id="6">
+        <label>cstdint</label>
+      </node>
+      <node id="12">
+        <label>cstring</label>
+      </node>
+      <node id="28">
+        <label>functional</label>
+      </node>
+      <node id="7">
+        <label>iostream</label>
+      </node>
+      <node id="29">
+        <label>list</label>
+      </node>
+      <node id="8">
+        <label>map</label>
+      </node>
+      <node id="15">
+        <label>set</label>
+      </node>
+      <node id="16">
+        <label>sstream</label>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+      <node id="20">
+        <label>string_view</label>
+      </node>
+      <node id="19">
+        <label>type_traits</label>
+      </node>
+      <node id="17">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacescifir">scifir</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;./physics_units.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">scifir</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>KINEMATICS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_2D_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">displacement</ref>,</highlight><highlight class="stringliteral">&quot;m&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_3D_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">displacement</ref>,</highlight><highlight class="stringliteral">&quot;m&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_ND_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">displacement</ref>,</highlight><highlight class="stringliteral">&quot;m&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">velocity</ref>,</highlight><highlight class="stringliteral">&quot;m/s&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">acceleration</ref>,</highlight><highlight class="stringliteral">&quot;m/s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">jerk</ref>,</highlight><highlight class="stringliteral">&quot;m/s3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">snap</ref>,</highlight><highlight class="stringliteral">&quot;m/s4&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">angular_velocity</ref>,</highlight><highlight class="stringliteral">&quot;rad/s&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">angular_acceleration</ref>,</highlight><highlight class="stringliteral">&quot;rad/s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">angular_momentum</ref>,</highlight><highlight class="stringliteral">&quot;m2*kg/s&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>DYNAMICS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">impulse</ref>,</highlight><highlight class="stringliteral">&quot;m*kg/s&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">force</ref>,</highlight><highlight class="stringliteral">&quot;kg*m/s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">torque</ref>,</highlight><highlight class="stringliteral">&quot;kg*m2/s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">pressure</ref>,</highlight><highlight class="stringliteral">&quot;kg/m*s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">surface_tension</ref>,</highlight><highlight class="stringliteral">&quot;kg/s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">stiffness</ref>,</highlight><highlight class="stringliteral">&quot;kg/s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">moment_of_inertia</ref>,</highlight><highlight class="stringliteral">&quot;m2*kg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ELECTRICITY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electric_current</ref>,</highlight><highlight class="stringliteral">&quot;A&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">voltage</ref>,</highlight><highlight class="stringliteral">&quot;V&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electric_displacement_field</ref>,</highlight><highlight class="stringliteral">&quot;A*s/m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electric_charge_density</ref>,</highlight><highlight class="stringliteral">&quot;A*s/m3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electric_current_density</ref>,</highlight><highlight class="stringliteral">&quot;A/m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electric_field_strength</ref>,</highlight><highlight class="stringliteral">&quot;kg*m/A*s3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electron_mobility</ref>,</highlight><highlight class="stringliteral">&quot;A*s2/kg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">inductance</ref>,</highlight><highlight class="stringliteral">&quot;H&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>FLUID<sp/>DYNAMICS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">volumetric_flow</ref>,</highlight><highlight class="stringliteral">&quot;m3/s&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">diffusion_coefficient</ref>,</highlight><highlight class="stringliteral">&quot;m2/s&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">compressibility</ref>,</highlight><highlight class="stringliteral">&quot;m*s2/kg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>MAGNETISM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">polarization_density</ref>,</highlight><highlight class="stringliteral">&quot;A*s/m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_permeability</ref>,</highlight><highlight class="stringliteral">&quot;A2*s2/kg*m&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetization</ref>,</highlight><highlight class="stringliteral">&quot;A/m&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_flux</ref>,</highlight><highlight class="stringliteral">&quot;Wb&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_strength</ref>,</highlight><highlight class="stringliteral">&quot;Wb/m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_moment</ref>,</highlight><highlight class="stringliteral">&quot;A*m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_reluctance</ref>,</highlight><highlight class="stringliteral">&quot;A2*s2/kg*m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_vector_potential</ref>,</highlight><highlight class="stringliteral">&quot;kg*m/A*s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_rigidity</ref>,</highlight><highlight class="stringliteral">&quot;kg*m/A*s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetomotive_force</ref>,</highlight><highlight class="stringliteral">&quot;A&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_susceptibility</ref>,</highlight><highlight class="stringliteral">&quot;A2*s2/kg*m&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>OPTICS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">optical_power</ref>,</highlight><highlight class="stringliteral">&quot;1/m&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">luminance</ref>,</highlight><highlight class="stringliteral">&quot;cd/m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">illuminance</ref>,</highlight><highlight class="stringliteral">&quot;lx&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">luminous_flux</ref>,</highlight><highlight class="stringliteral">&quot;lm&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">luminous_energy</ref>,</highlight><highlight class="stringliteral">&quot;cd*sr*s&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">luminous_exposure</ref>,</highlight><highlight class="stringliteral">&quot;cd*sr*s/m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">luminous_efficacy</ref>,</highlight><highlight class="stringliteral">&quot;lm/W&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">ionizing_radiation</ref>,</highlight><highlight class="stringliteral">&quot;A*s/kg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">absorbed_dose</ref>,</highlight><highlight class="stringliteral">&quot;m2/s3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>THERMODYNAMICS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">energy</ref>,</highlight><highlight class="stringliteral">&quot;kg*m2/s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">action</ref>,</highlight><highlight class="stringliteral">&quot;kg*m2/s&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">power</ref>,</highlight><highlight class="stringliteral">&quot;kg*m2/s3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">power_density</ref>,</highlight><highlight class="stringliteral">&quot;kg/m*s3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">enthalpy</ref>,</highlight><highlight class="stringliteral">&quot;kg*m2/s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">entropy</ref>,</highlight><highlight class="stringliteral">&quot;kg*m2/K*s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">heat_capacity</ref>,</highlight><highlight class="stringliteral">&quot;kg*m2/K*s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">heat_flux_density</ref>,</highlight><highlight class="stringliteral">&quot;kg/s3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">thermal_conductivity</ref>,</highlight><highlight class="stringliteral">&quot;kg*m/K*s3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">thermal_diffusivity</ref>,</highlight><highlight class="stringliteral">&quot;m2/s&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">thermal_resistance</ref>,</highlight><highlight class="stringliteral">&quot;K*s3/kg*m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">thermal_expansion_coefficient</ref>,</highlight><highlight class="stringliteral">&quot;1/K&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">temperature_gradient</ref>,</highlight><highlight class="stringliteral">&quot;K/m&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">energy_flux_density</ref>,</highlight><highlight class="stringliteral">&quot;kg/s3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>WAVES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">wavenumber</ref>,</highlight><highlight class="stringliteral">&quot;1/m&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">frequency</ref>,</highlight><highlight class="stringliteral">&quot;1/s&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="predefined_units/physics_units.cpp"/>
+  </compounddef>
+</doxygen>

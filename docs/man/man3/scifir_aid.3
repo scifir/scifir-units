@@ -1,0 +1,69 @@
+.TH "scifir::aid" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scifir::aid
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBtype\fP : int8_t { \fBNONE\fP, \fBUNIVERSE\fP, \fBGALAXY\fP, \fBSOLAR_SYSTEM\fP, \fBPLANET\fP, \fBSTAR\fP, \fBASTEROID\fP, \fBMOON\fP, \fBMETEOR\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBaid\fP (\fBconst\fP \fBaid\fP &)"
+.br
+.ti -1c
+.RI "\fBaid\fP (\fBaid\fP &&)"
+.br
+.ti -1c
+.RI "\fBaid\fP (\fBconst\fP astronomical_body &)"
+.br
+.ti -1c
+.RI "\fBaid\fP (\fBconst\fP \fBstring\fP &, \fBconst\fP \fBstring\fP &)"
+.br
+.ti -1c
+.RI "\fBaid\fP (\fBconst\fP \fBstring\fP &, \fBconst\fP \fBstring\fP &, \fBconst\fP \fBstring\fP &)"
+.br
+.ti -1c
+.RI "\fBaid\fP (\fBconst\fP aid::type &, \fBconst\fP \fBstring\fP &, \fBconst\fP \fBstring\fP &, \fBconst\fP \fBstring\fP &, \fBconst\fP \fBstring\fP &)"
+.br
+.ti -1c
+.RI "\fBaid\fP (\fBconst\fP \fBstring\fP &)"
+.br
+.ti -1c
+.RI "\fBaid\fP & \fBoperator=\fP (\fBconst\fP \fBaid\fP &)"
+.br
+.ti -1c
+.RI "\fBaid\fP & \fBoperator=\fP (\fBaid\fP &&)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstring\fP \fBuniverse\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBgalaxy\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBsolar_system\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBastronomical_body\fP"
+.br
+.ti -1c
+.RI "aid::type \fBastronomical_type\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

@@ -1,0 +1,148 @@
+.TH "scifir::angle" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scifir::angle
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBangle\fP (\fBconst\fP \fBangle\fP &)"
+.br
+.ti -1c
+.RI "\fBangle\fP (\fBangle\fP &&)"
+.br
+.ti -1c
+.RI "\fBangle\fP (\fBfloat\fP)"
+.br
+.ti -1c
+.RI "\fBangle\fP (\fBdouble\fP)"
+.br
+.ti -1c
+.RI "\fBangle\fP (\fBlong\fP \fBdouble\fP)"
+.br
+.ti -1c
+.RI "\fBangle\fP (\fBint\fP)"
+.br
+.ti -1c
+.RI "\fBangle\fP (\fBstring\fP)"
+.br
+.ti -1c
+.RI "\fBangle\fP (\fBconst\fP \fBscalar_unit\fP &)"
+.br
+.ti -1c
+.RI "\fBangle\fP & \fBoperator=\fP (\fBconst\fP \fBangle\fP &)"
+.br
+.ti -1c
+.RI "\fBangle\fP & \fBoperator=\fP (\fBangle\fP &&)"
+.br
+.ti -1c
+.RI "\fBangle\fP & \fBoperator=\fP (\fBfloat\fP)"
+.br
+.ti -1c
+.RI "\fBangle\fP & \fBoperator=\fP (\fBstring\fP)"
+.br
+.ti -1c
+.RI "\fBangle\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &)"
+.br
+.ti -1c
+.RI "\fBoperator float\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBconst\fP \fBfloat\fP & \fBget_value\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBoperator+\fP (\fBconst\fP \fBangle\fP &) \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBoperator\-\fP (\fBconst\fP \fBangle\fP &) \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBoperator*\fP (\fBconst\fP \fBangle\fP &) \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBoperator/\fP (\fBconst\fP \fBangle\fP &) \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBoperator^\fP (\fBconst\fP \fBangle\fP &) \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBangle\fP &)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBoperator\-=\fP (\fBconst\fP \fBangle\fP &)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBoperator*=\fP (\fBconst\fP \fBangle\fP &)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBoperator/=\fP (\fBconst\fP \fBangle\fP &)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBoperator^=\fP (\fBconst\fP \fBangle\fP &)"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator=\fP (T y)"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP \fBoperator+\fP (T y) \fBconst\fP"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP \fBoperator\-\fP (T y) \fBconst\fP"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP \fBoperator*\fP (T y) \fBconst\fP"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP \fBoperator/\fP (T y) \fBconst\fP"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBangle\fP \fBoperator^\fP (T y) \fBconst\fP"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator+=\fP (T y)"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator\-=\fP (T y)"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator*=\fP (T y)"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator/=\fP (T y)"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator^=\fP (T y)"
+.br
+.ti -1c
+.RI "\fBangle\fP & \fBoperator++\fP ()"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBoperator++\fP (\fBint\fP)"
+.br
+.ti -1c
+.RI "\fBangle\fP & \fBoperator\-\-\fP ()"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBoperator\-\-\fP (\fBint\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBinvert\fP ()"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBdisplay\fP (\fBint\fP=2) \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBfloat\fP \fBget_grade\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBfloat\fP \fBget_radian\fP () \fBconst\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

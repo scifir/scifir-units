@@ -1,0 +1,903 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>scifir-units<sp/>library</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[![Linux<sp/>build<sp/>status](https://github.com/scifir/scifir-units/actions/workflows/cmake.yml/badge.svg)](https://github.com/scifir/scifir-units/actions/workflows/cmake.yml)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Welcome!<sp/>The<sp/>**Scifir<sp/>Collection**<sp/>is<sp/>a<sp/>set<sp/>of<sp/>scientific<sp/>libraries,<sp/>written<sp/>in<sp/>**C++**,<sp/>for<sp/>developing<sp/>**laboratory<sp/>machines**<sp/>and<sp/>**scientific<sp/>inventions**.<sp/>It<sp/>provides<sp/>units,<sp/>molecules,<sp/>among<sp/>other<sp/>features,<sp/>to<sp/>allow<sp/>developers<sp/>of<sp/>scientific<sp/>software<sp/>to<sp/>develop<sp/>their<sp/>software<sp/>and<sp/>firmware<sp/>easily.<sp/>Enjoy!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>Scifir<sp/>Collection<sp/>is<sp/>under<sp/>development,<sp/>but<sp/>the<sp/>units<sp/>are<sp/>already<sp/>released.<sp/>Molecules<sp/>aren&apos;t,<sp/>but<sp/>they<sp/>will<sp/>by<sp/>ready<sp/>soon!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**scifir-units**<sp/>includes<sp/>units<sp/>with<sp/>dimensions<sp/>to<sp/>use,<sp/>then<sp/>it&apos;s<sp/>unneeded<sp/>to<sp/>care<sp/>about<sp/>having<sp/>the<sp/>proper<sp/>dimensions<sp/>and<sp/>prefixes<sp/>when<sp/>developing<sp/>scientific<sp/>software,<sp/>you<sp/>can<sp/>instantiate<sp/>any<sp/>value<sp/>you<sp/>have<sp/>on<sp/>the<sp/>machine,<sp/>without<sp/>performing<sp/>operations<sp/>with<sp/>a<sp/>calculator<sp/>first<sp/>to<sp/>convert<sp/>the<sp/>units<sp/>to<sp/>a<sp/>common<sp/>prefix.<sp/>Learn<sp/>how<sp/>to<sp/>use<sp/>them<sp/>at<sp/>the<sp/>[Wiki](https://github.com/scifir/scifir-units/wiki).<sp/>It&apos;s<sp/>been<sp/>developed<sp/>under<sp/>**C++20**<sp/>and<sp/>uses<sp/>**cmake**<sp/>as<sp/>build<sp/>automation<sp/>tool.<sp/>It&apos;s<sp/>available<sp/>for<sp/>**Linux<sp/>distributions**<sp/>and<sp/>**Windows**.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>**current<sp/>version**<sp/>of<sp/>scifir-units<sp/>is<sp/>the<sp/>**beta-version-2.0**.<sp/>The<sp/>version<sp/>1.0<sp/>has<sp/>never<sp/>been<sp/>released<sp/>because<sp/>the<sp/>version<sp/>2.0<sp/>was<sp/>better<sp/>by<sp/>a<sp/>great<sp/>extent.<sp/>The<sp/>version<sp/>2.0<sp/>includes<sp/>a<sp/>better<sp/>inheritance<sp/>system<sp/>and<sp/>a<sp/>wide<sp/>simplification<sp/>of<sp/>all<sp/>the<sp/>programming<sp/>of<sp/>the<sp/>library<sp/>and,<sp/>then,<sp/>a<sp/>better<sp/>compilation<sp/>and<sp/>a<sp/>saving<sp/>of<sp/>RAM<sp/>for<sp/>each<sp/>instantiation<sp/>of<sp/>each<sp/>class.<sp/>Because<sp/>of<sp/>that<sp/>reason,<sp/>the<sp/>version<sp/>2.0<sp/>has<sp/>been<sp/>preferred<sp/>over<sp/>the<sp/>version<sp/>1.0.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Team</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>**Scifir<sp/>Collection**<sp/>is<sp/>developed<sp/>by<sp/>[Ismael<sp/>Correa<sp/>Castro](https://iarfen.github.io),<sp/>a<sp/>software<sp/>developer<sp/>of<sp/>32<sp/>years<sp/>old.<sp/>You<sp/>can<sp/>email<sp/>him<sp/>if<sp/>you<sp/>find<sp/>bugs,<sp/>you<sp/>want<sp/>to<sp/>request<sp/>new<sp/>features,<sp/>or<sp/>have<sp/>any<sp/>other<sp/>need,<sp/>at<sp/>ismael.correa.castro@gmail.com.<sp/>His<sp/>ORCID<sp/>is<sp/>0009-0007-3815-7053,<sp/>if<sp/>you<sp/>want<sp/>to<sp/>reference<sp/>this<sp/>work<sp/>inside<sp/>any<sp/>publication.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Funding</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>**Scifir<sp/>Foundation**<sp/>is<sp/>looking<sp/>for<sp/>**funding**,<sp/>in<sp/>order<sp/>to<sp/>do<sp/>some<sp/>digital<sp/>marketing<sp/>and<sp/>pay<sp/>some<sp/>other<sp/>needs<sp/>of<sp/>the<sp/>project.<sp/>If<sp/>you<sp/>want<sp/>to<sp/>support<sp/>this<sp/>libraries,<sp/>**science<sp/>will<sp/>thank<sp/>you**<sp/>for<sp/>that,<sp/>you<sp/>can<sp/>donate<sp/>in<sp/>this<sp/>[sponsors<sp/>page](https://github.com/sponsors/iarfen).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Installation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>install<sp/>**scifir-units**<sp/>you<sp/>have<sp/>to<sp/>use<sp/>**CMake**<sp/>and<sp/>**make**.<sp/>scifir-units<sp/>can<sp/>be<sp/>compiled<sp/>with<sp/>**g++**,<sp/>**clang++**<sp/>and<sp/>**msvc**.<sp/>Also,<sp/>**nvcc**<sp/>and<sp/>**dpcpp**<sp/>can<sp/>also<sp/>be<sp/>used.<sp/>The<sp/>compilers<sp/>for<sp/>microcontrollers<sp/>can<sp/>also<sp/>be<sp/>used.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">scifir-units<sp/>uses<sp/>**icu**<sp/>and<sp/>**boost**<sp/>libraries.<sp/>Of<sp/>boost,<sp/>it<sp/>uses<sp/>boost-system.<sp/>You<sp/>have<sp/>to<sp/>install<sp/>those<sp/>two<sp/>libraries<sp/>in<sp/>order<sp/>to<sp/>install<sp/>scifir-units.<sp/>To<sp/>do<sp/>so,<sp/>use<sp/>**apt**<sp/>in<sp/>Ubuntu<sp/>and<sp/>Debian,<sp/>**yum**<sp/>for<sp/>Fedora<sp/>and<sp/>similar<sp/>distributions,<sp/>or<sp/>another<sp/>package<sp/>manager<sp/>if<sp/>your<sp/>Linux<sp/>distribution<sp/>doesn&apos;t<sp/>use<sp/>those<sp/>two.<sp/>Inside<sp/>Windows,<sp/>install<sp/>those<sp/>libraries<sp/>through<sp/>**vcpkg**,<sp/>if<sp/>you<sp/>want<sp/>to<sp/>build<sp/>scifir-units<sp/>as<sp/>lib<sp/>or<sp/>dll,<sp/>or<sp/>through<sp/>**mingw**,<sp/>if<sp/>you<sp/>want<sp/>to<sp/>use<sp/>scifir-units<sp/>as<sp/>on<sp/>Linux<sp/>distributions.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Also,<sp/>if<sp/>you<sp/>want<sp/>to<sp/>compile<sp/>the<sp/>tests,<sp/>you&apos;ll<sp/>need<sp/>the<sp/>library<sp/>**catch2**,<sp/>which<sp/>you<sp/>can<sp/>install<sp/>with<sp/>the<sp/>same<sp/>package<sp/>manager<sp/>that<sp/>you<sp/>have<sp/>used<sp/>to<sp/>install<sp/>icu<sp/>and<sp/>boost.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>want<sp/>to<sp/>change<sp/>the<sp/>compiler<sp/>to<sp/>use<sp/>you<sp/>have<sp/>to<sp/>use<sp/>the<sp/>argument<sp/>**-DCMAKE_CXX_COMPILER**<sp/>in<sp/>the<sp/>first<sp/>cmake<sp/>command,<sp/>the<sp/>cmake<sp/>command<sp/>with<sp/>the<sp/>--preset<sp/>argument.<sp/>There,<sp/>you<sp/>can<sp/>specify,<sp/>for<sp/>example,<sp/>-DCMAKE_CXX_COMPILER=clang++,<sp/>to<sp/>use<sp/>the<sp/>**clang++**<sp/>compiler.<sp/>You<sp/>can<sp/>also<sp/>specify<sp/>flags<sp/>for<sp/>the<sp/>compiler<sp/>using<sp/>the<sp/>argument<sp/>**-DCMAKE_CXX_FLAGS**.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>environment<sp/>variables<sp/>needed<sp/>to<sp/>be<sp/>set<sp/>in<sp/>your<sp/>operating<sp/>system<sp/>to<sp/>build<sp/>scifir-units<sp/>vary<sp/>depending<sp/>on<sp/>the<sp/>preset<sp/>you<sp/>want<sp/>to<sp/>use.<sp/>For<sp/>Linux<sp/>and<sp/>the<sp/>WSL<sp/>(the<sp/>Windows<sp/>Subsystem<sp/>for<sp/>Linux),<sp/>you<sp/>don&apos;t<sp/>need<sp/>to<sp/>set<sp/>any<sp/>environment<sp/>variable.<sp/>For<sp/>Windows,<sp/>that&apos;s,<sp/>inside<sp/>Windows<sp/>but<sp/>outside<sp/>MinGW,<sp/>you<sp/>need<sp/>to<sp/>set<sp/>**VCPKG_ROOT**<sp/>to<sp/>the<sp/>installation<sp/>directory<sp/>of<sp/>vcpkg<sp/>and<sp/>**VCPKG_DEFAULT_TRIPLET**<sp/>to<sp/>the<sp/>default<sp/>triplet<sp/>you&apos;re<sp/>using<sp/>in<sp/>that<sp/>installation<sp/>of<sp/>vcpkg.<sp/>For<sp/>all<sp/>builds<sp/>using<sp/>vcpkg,<sp/>even<sp/>outside<sp/>Windows,<sp/>you<sp/>need<sp/>to<sp/>set<sp/>VCPKG_ROOT<sp/>and<sp/>VCPKG_DEFAULT_TRIPLET,<sp/>not<sp/>only<sp/>inside<sp/>Windows.<sp/>For<sp/>MinGW<sp/>you<sp/>need<sp/>to<sp/>set<sp/>**MINGW64_DIR**<sp/>to<sp/>the<sp/>installation<sp/>directory<sp/>of<sp/>MinGW.<sp/>For<sp/>Android<sp/>NDK<sp/>you<sp/>need<sp/>to<sp/>set<sp/>**ANDROID_NDK_ROOT**<sp/>to<sp/>the<sp/>installation<sp/>directory<sp/>of<sp/>the<sp/>NDK<sp/>version<sp/>you&apos;re<sp/>using<sp/>(select<sp/>the<sp/>folder<sp/>of<sp/>the<sp/>version,<sp/>there<sp/>can<sp/>be<sp/>more<sp/>than<sp/>one<sp/>version<sp/>of<sp/>Android<sp/>NDK<sp/>installed<sp/>in<sp/>the<sp/>same<sp/>installation<sp/>of<sp/>Android<sp/>SDK<sp/>and<sp/>Android<sp/>Studio).<sp/>To<sp/>build<sp/>for<sp/>microcontrollers<sp/>you<sp/>don&apos;t<sp/>need<sp/>to<sp/>set<sp/>any<sp/>environment<sp/>variable,<sp/>but<sp/>you<sp/>need<sp/>to<sp/>point<sp/>CMAKE_CXX_COMPILER<sp/>to<sp/>the<sp/>C++<sp/>compiler<sp/>of<sp/>the<sp/>toolchain<sp/>of<sp/>the<sp/>microcontroller<sp/>you<sp/>want,<sp/>and<sp/>set<sp/>the<sp/>flag<sp/>-mmcu<sp/>of<sp/>your<sp/>C++<sp/>compiler<sp/>using<sp/>CMAKE_CXX_FLAGS=&quot;-mmcu=&lt;mmcu-model&gt;&quot;<sp/>to<sp/>the<sp/>model<sp/>of<sp/>your<sp/>microcontroller.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If,<sp/>for<sp/>any<sp/>reason,<sp/>you<sp/>need<sp/>to<sp/>configure<sp/>something<sp/>inside<sp/>your<sp/>local<sp/>installation<sp/>of<sp/>cmake<sp/>to<sp/>build<sp/>scifir-units,<sp/>or<sp/>if<sp/>you<sp/>have<sp/>any<sp/>problem<sp/>building<sp/>scifir-units,<sp/>check<sp/>the<sp/>documentation<sp/>of<sp/>cmake<sp/>here:<sp/>[https://www.cmake.org/documentation](https://www.cmake.org/documentation).<sp/>cmake<sp/>is<sp/>a<sp/>software<sp/>easy<sp/>to<sp/>use,<sp/>and<sp/>you<sp/>shouldn&apos;t<sp/>need<sp/>more<sp/>than<sp/>some<sp/>days<sp/>of<sp/>study<sp/>(thinking<sp/>that<sp/>you<sp/>don&apos;t<sp/>know<sp/>cmake<sp/>yet)<sp/>to<sp/>fully<sp/>learn<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Configuring<sp/>cmake<sp/>for<sp/>boost</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>build<sp/>scifir-units<sp/>you<sp/>need<sp/>to<sp/>configure<sp/>cmake<sp/>to<sp/>find<sp/>boost<sp/>with<sp/>the<sp/>module<sp/>**FindBoost.cmake**.<sp/>To<sp/>do<sp/>so,<sp/>set<sp/>the<sp/>environment<sp/>variables<sp/>of<sp/>cmake<sp/>called<sp/>**CMAKE_INCLUDE_PATH**<sp/>to<sp/>the<sp/>include<sp/>directory<sp/>(usually<sp/>**/usr/include**<sp/>in<sp/>Linux)<sp/>and<sp/>**CMAKE_LIBRARY_PATH**<sp/>to<sp/>the<sp/>link<sp/>directory<sp/>(usually<sp/>**/usr/lib**<sp/>in<sp/>Linux).<sp/>The<sp/>include<sp/>directory<sp/>usually<sp/>doesn&apos;t<sp/>change<sp/>with<sp/>Linux<sp/>distributions,<sp/>but<sp/>the<sp/>link<sp/>directory<sp/>does.<sp/>The<sp/>link<sp/>directory<sp/>can<sp/>be,<sp/>for<sp/>example,<sp/>**/usr/lib/x86_64-gnu-linux**<sp/>in<sp/>Debian,<sp/>**/usr/lib64**<sp/>in<sp/>Fedora,<sp/>**/usr/lib**<sp/>in<sp/>Arch<sp/>Linux,<sp/>other<sp/>Linux<sp/>distributions<sp/>have<sp/>others<sp/>link<sp/>directories.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>link<sp/>directories<sp/>of<sp/>various<sp/>Linux<sp/>distributions<sp/>are<sp/>the<sp/>following,<sp/>set<sp/>CMAKE_LIBRARY_PATH<sp/>based<sp/>on<sp/>the<sp/>Linux<sp/>distribution<sp/>you&apos;re<sp/>using<sp/>to<sp/>build<sp/>scifir-units:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Debian:**<sp/>/usr/lib/x86_64-gnu-linux.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Ubuntu:**<sp/>/usr/lib/x86_64-gnu-linux.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**KDE<sp/>Neon:**<sp/>/usr/lib/x86_64-gnu-linux.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Linux<sp/>Mint:**<sp/>/usr/lib/x86_64-gnu-linux.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Fedora:**<sp/>/usr/lib64.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**CentOS:**<sp/>/usr/lib64.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Arch<sp/>Linux:**<sp/>/usr/lib.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Manjaro:**<sp/>/usr/lib.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**OpenSUSE<sp/>Leap:**<sp/>/usr/lib64.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**OpenSUSE<sp/>Tumbleweed:**<sp/>/usr/lib64.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Gentoo:**<sp/>/usr/lib64.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>Windows,<sp/>you<sp/>have<sp/>to<sp/>set<sp/>the<sp/>include<sp/>directory<sp/>and<sp/>the<sp/>link<sp/>directory<sp/>of<sp/>the<sp/>toolchain<sp/>you&apos;re<sp/>using<sp/>to<sp/>build<sp/>scifir-units.<sp/>For<sp/>Windows<sp/>builds,<sp/>scifir-units<sp/>comes<sp/>with<sp/>the<sp/>toolchains<sp/>vcpkg<sp/>and<sp/>mingw<sp/>already<sp/>configured.<sp/>If<sp/>you<sp/>use<sp/>another<sp/>toolchain,<sp/>look<sp/>the<sp/>files<sp/>CMakeLists.txt<sp/>and<sp/>CMakePresets.json<sp/>to<sp/>configure<sp/>your<sp/>toolchain<sp/>in<sp/>the<sp/>same<sp/>manner<sp/>as<sp/>vcpkg<sp/>and<sp/>mingw.<sp/>Also,<sp/>cmake<sp/>can<sp/>find<sp/>the<sp/>boost<sp/>library<sp/>when<sp/>you&apos;re<sp/>using<sp/>vcpkg<sp/>only<sp/>if<sp/>you<sp/>set<sp/>the<sp/>environment<sp/>variable<sp/>**VCPKG_ROOT**<sp/>to<sp/>be<sp/>the<sp/>installation<sp/>path<sp/>of<sp/>vcpkg.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Also,<sp/>to<sp/>configure<sp/>cmake<sp/>to<sp/>find<sp/>boost<sp/>with<sp/>the<sp/>module<sp/>FindBoost.cmake<sp/>you<sp/>have<sp/>to<sp/>set<sp/>the<sp/>variables<sp/>**Boost_LIB_PREFIX**,<sp/>**Boost_ARCHITECTURE**<sp/>and<sp/>**Boost_COMPILER**<sp/>to<sp/>the<sp/>respective<sp/>values<sp/>of<sp/>the<sp/>version<sp/>of<sp/>boost<sp/>that<sp/>you&apos;ve<sp/>installed<sp/>in<sp/>order<sp/>for<sp/>the<sp/>script<sp/>**FindBoost**<sp/>to<sp/>work.<sp/>If,<sp/>when<sp/>using<sp/>cmake,<sp/>boost<sp/>is<sp/>not<sp/>found,<sp/>check<sp/>a<sp/>documentation<sp/>of<sp/>FindBoost,<sp/>or<sp/>just<sp/>look<sp/>at<sp/>the<sp/>file<sp/>**FindBoost.cmake**,<sp/>to<sp/>correct<sp/>the<sp/>problem<sp/>that<sp/>impedes<sp/>cmake<sp/>to<sp/>find<sp/>boost,<sp/>otherwise<sp/>scifir-units<sp/>can&apos;t<sp/>be<sp/>build.<sp/>The<sp/>names<sp/>of<sp/>boost<sp/>libraries<sp/>follow<sp/>the<sp/>following<sp/>convention:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">${Boost_LIB_PREFIX}${Boost_NAMESPACE}_${component}${Boost_COMPILER}${Boost_USE_MULTITHREADED}${_boost_RELEASE_ABI_TAG}${Boost_ARCHITECTURE}-${Boost_LIB_VERSION}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Just<sp/>look<sp/>at<sp/>your<sp/>boost<sp/>libraries<sp/>which<sp/>name<sp/>they<sp/>have<sp/>and<sp/>set<sp/>all<sp/>those<sp/>variables<sp/>to<sp/>those<sp/>values.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Linux</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>commands<sp/>to<sp/>install<sp/>scifir-units<sp/>in<sp/>Linux<sp/>distribution<sp/>are<sp/>the<sp/>following<sp/>(it<sp/>also<sp/>works<sp/>inside<sp/>**WSL**):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--preset=linux</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--build<sp/>--preset=linux</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--install<sp/>./build/linux</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Optionally,<sp/>you<sp/>can<sp/>change<sp/>the<sp/>installation<sp/>directory<sp/>by<sp/>setting<sp/>**CMAKE_INSTALL_PREFIX**<sp/>when<sp/>running<sp/>the<sp/>first<sp/>command.<sp/>Set<sp/>it<sp/>using<sp/>-DCMAKE_INSTALL_PREFIX=&lt;path-to-installation-directory&gt;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Windows</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>install<sp/>scifir-units<sp/>inside<sp/>Windows<sp/>you<sp/>have<sp/>to<sp/>specify<sp/>a<sp/>path<sp/>to<sp/>some<sp/>Windows<sp/>folder,<sp/>the<sp/>file<sp/>**scifir-units.lib**<sp/>will<sp/>be<sp/>installed<sp/>there,<sp/>and<sp/>also<sp/>the<sp/>headers.<sp/>You<sp/>have<sp/>to<sp/>install<sp/>using<sp/>**vcpkg**<sp/>the<sp/>packages<sp/>**icu**<sp/>and<sp/>**boost_system**<sp/>in<sp/>order<sp/>to<sp/>build<sp/>the<sp/>library.<sp/>The<sp/>commands<sp/>are<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--preset=windows<sp/>-DCMAKE_INSTALL_PREFIX=&lt;path-to-windows-dir&gt;</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--build<sp/>--preset=windows</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--install<sp/>./build/windows</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>compile<sp/>for<sp/>Windows<sp/>Universal<sp/>Applications,<sp/>which<sp/>targets<sp/>both<sp/>Windows<sp/>Store<sp/>and<sp/>Windows<sp/>Phone,<sp/>you<sp/>have<sp/>to<sp/>use<sp/>the<sp/>flags<sp/>**-DCMAKE_SYSTEM_NAME=WindowsStore**<sp/>and<sp/>**-DCMAKE_SYSTEM_VERSION=&quot;10.0&quot;**<sp/>with<sp/>the<sp/>first<sp/>command<sp/>(the<sp/>command<sp/>which<sp/>specifies<sp/>the<sp/>preset).<sp/>CMAKE_SYSTEM_VERSION<sp/>can<sp/>be<sp/>higher<sp/>than<sp/>10.0,<sp/>but<sp/>no<sp/>lower.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>MinGW</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>install<sp/>scifir-units<sp/>inside<sp/>MinGW<sp/>you<sp/>have<sp/>to<sp/>configure<sp/>**MinGW**<sp/>with<sp/>the<sp/>environment<sp/>variable<sp/>**MINGW64_DIR**,<sp/>which<sp/>sets<sp/>the<sp/>path<sp/>to<sp/>the<sp/>installation<sp/>directory<sp/>of<sp/>MinGW.<sp/>Inside<sp/>MinGW<sp/>you<sp/>need<sp/>to<sp/>install<sp/>**icu**<sp/>and<sp/>**boost_system**.<sp/>Then,<sp/>execute<sp/>the<sp/>following<sp/>commands:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--preset=windows-mingw</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--build<sp/>--preset=windows-mingw</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--install<sp/>./build/windows-mingw</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>MacOS<sp/>and<sp/>Apple<sp/>devices</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">scifir-units<sp/>uses<sp/>the<sp/>XCode<sp/>generator<sp/>of<sp/>cmake<sp/>to<sp/>compile<sp/>for<sp/>MacOS.<sp/>You<sp/>need<sp/>to<sp/>install<sp/>icu<sp/>and<sp/>boost_system<sp/>to<sp/>build<sp/>scifir-units<sp/>inside<sp/>MacOS.<sp/>The<sp/>commands<sp/>to<sp/>compile<sp/>and<sp/>install<sp/>scifir-units<sp/>inside<sp/>MacOS<sp/>are<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--preset=macos</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--build<sp/>--preset=macos</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--install<sp/>./build/macos</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>compile<sp/>scifir-units<sp/>for<sp/>iOS,<sp/>tvOS,<sp/>visionOS<sp/>or<sp/>watchOS<sp/>you<sp/>must<sp/>add<sp/>the<sp/>flag<sp/>**-DCMAKE_SYSTEM_NAME=&lt;os-name&gt;**<sp/>to<sp/>the<sp/>first<sp/>command<sp/>(the<sp/>command<sp/>which<sp/>specifies<sp/>the<sp/>preset).<sp/>Optionally,<sp/>you<sp/>can<sp/>also<sp/>use<sp/>the<sp/>flag<sp/>**-DCMAKE_OSX_ARCHITECTURES**<sp/>to<sp/>specify<sp/>the<sp/>architecture<sp/>of<sp/>the<sp/>device<sp/>or<sp/>the<sp/>simulator.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>vcpkg</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">scifir-units<sp/>can<sp/>be<sp/>compiled<sp/>with<sp/>vcpkg<sp/>inside<sp/>every<sp/>triplet<sp/>of<sp/>vcpkg,<sp/>not<sp/>only<sp/>inside<sp/>Windows.<sp/>To<sp/>do<sp/>that,<sp/>after<sp/>installing<sp/>icu<sp/>and<sp/>boost_system<sp/>in<sp/>vcpkg,<sp/>use<sp/>the<sp/>following<sp/>commands:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--preset=vcpkg</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--build<sp/>--preset=vcpkg</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--install<sp/>./build/vcpkg</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Android</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">First,<sp/>set<sp/>**ANDROID_HOME**<sp/>and<sp/>**ANDROID_NDK_ROOT**<sp/>to<sp/>the<sp/>paths<sp/>of<sp/>your<sp/>Android<sp/>SDK<sp/>installation<sp/>and<sp/>of<sp/>your<sp/>Android<sp/>NDK<sp/>installation.<sp/>After<sp/>that,<sp/>install<sp/>vcpkg,<sp/>and<sp/>set<sp/>the<sp/>environment<sp/>variable<sp/>**VCPKG_ROOT**<sp/>to<sp/>the<sp/>installation<sp/>directory<sp/>of<sp/>vcpkg.<sp/>Set<sp/>also<sp/>the<sp/>environment<sp/>variable<sp/>**VCPKG_DEFAULT_TRIPLET**<sp/>to<sp/>be<sp/>the<sp/>triplet<sp/>of<sp/>the<sp/>computer<sp/>you&apos;re<sp/>using<sp/>to<sp/>build<sp/>scifir-units.<sp/>Finally,<sp/>to<sp/>compile<sp/>scifir-units<sp/>to<sp/>work<sp/>inside<sp/>an<sp/>Android<sp/>application<sp/>that<sp/>uses<sp/>Android<sp/>NDK<sp/>for<sp/>that<sp/>purpose,<sp/>you<sp/>have<sp/>to<sp/>use<sp/>the<sp/>following<sp/>commands:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--preset=android<sp/>-DCMAKE_INSTALL_PREFIX=&lt;path-to-android-project&gt;</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--build<sp/>--preset=android</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--install<sp/>./build/android</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">After<sp/>building<sp/>scifir-units<sp/>you<sp/>have<sp/>to<sp/>move<sp/>the<sp/>library<sp/>file<sp/>to<sp/>your<sp/>Android<sp/>project.<sp/>Inside<sp/>Android<sp/>Studio,<sp/>create<sp/>the<sp/>JNI<sp/>folder<sp/>under<sp/>the<sp/>right-click<sp/>menu<sp/>of<sp/>the<sp/>**app<sp/>folder**,<sp/>under<sp/>the<sp/>option<sp/>**New<sp/>&gt;<sp/>Folder<sp/>&gt;<sp/>JNI<sp/>Folder**.<sp/>Inside<sp/>the<sp/>jni<sp/>folder,<sp/>you<sp/>should<sp/>create<sp/>a<sp/>folder<sp/>for<sp/>each<sp/>**Android<sp/>ABI**<sp/>existing,<sp/>and<sp/>add<sp/>scifir-units<sp/>there<sp/>compiled<sp/>for<sp/>that<sp/>Android<sp/>ABI<sp/>by<sp/>using<sp/>the<sp/>option<sp/>**-DANDROID_ABI**<sp/>of<sp/>this<sp/>cmake<sp/>configuration.<sp/>Search<sp/>all<sp/>Android<sp/>ABIs<sp/>existing<sp/>and<sp/>compile<sp/>this<sp/>library<sp/>for<sp/>each<sp/>of<sp/>them,<sp/>in<sp/>order<sp/>to<sp/>have<sp/>your<sp/>Android<sp/>application<sp/>working<sp/>on<sp/>all<sp/>Android<sp/>devices.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>include<sp/>path<sp/>for<sp/>scifir-units<sp/>inside<sp/>your<sp/>Android<sp/>Studio<sp/>project<sp/>should<sp/>be<sp/>the<sp/>same<sp/>as<sp/>the<sp/>linux<sp/>distribution,<sp/>vcpkg<sp/>or<sp/>mingw,<sp/>use<sp/>the<sp/>same<sp/>as<sp/>always.<sp/>The<sp/>headers<sp/>of<sp/>scifir-units,<sp/>then,<sp/>as<sp/>any<sp/>C++<sp/>library<sp/>for<sp/>Android,<sp/>doesn&apos;t<sp/>need<sp/>to<sp/>be<sp/>copied<sp/>inside<sp/>your<sp/>Android<sp/>project<sp/>and,<sp/>then,<sp/>they<sp/>aren&apos;t<sp/>part<sp/>of<sp/>the<sp/>final<sp/>**APK<sp/>file**.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Microcontrollers</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>electronics,<sp/>you<sp/>can<sp/>build<sp/>scifir-units<sp/>using<sp/>the<sp/>compiler<sp/>of<sp/>your<sp/>microcontroller,<sp/>which<sp/>comes<sp/>with<sp/>the<sp/>SDK<sp/>of<sp/>your<sp/>microcontroller.<sp/>You<sp/>have<sp/>to<sp/>specify,<sp/>using<sp/>the<sp/>option<sp/>**-DCMAKE_CXX_COMPILER**,<sp/>the<sp/>compiler<sp/>to<sp/>use,<sp/>and,<sp/>also,<sp/>you<sp/>have<sp/>to<sp/>use<sp/>the<sp/>option<sp/>**-DCMAKE_CXX_FLAGS=&quot;-mmcu=&lt;microcontroller-model&gt;&quot;**<sp/>to<sp/>specify<sp/>the<sp/>model<sp/>of<sp/>your<sp/>microcontroller<sp/>in<sp/>order<sp/>for<sp/>your<sp/>compiler<sp/>to<sp/>know<sp/>for<sp/>which<sp/>microcontroller<sp/>model<sp/>to<sp/>compile.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>SDK<sp/>of<sp/>microcontrollers<sp/>can<sp/>be<sp/>downloaded<sp/>on<sp/>the<sp/>website<sp/>of<sp/>the<sp/>vendor<sp/>of<sp/>the<sp/>microcontroller,<sp/>which<sp/>can<sp/>be<sp/>**Microchip**,<sp/>**STMicroelectronics**,<sp/>or<sp/>any<sp/>other.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>cpack</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>need<sp/>to<sp/>package<sp/>scifir-units<sp/>into<sp/>any<sp/>format<sp/>supported<sp/>by<sp/>cpack,<sp/>you<sp/>just<sp/>need<sp/>to<sp/>use<sp/>the<sp/>preset<sp/>that<sp/>you&apos;ve<sp/>previously<sp/>used<sp/>to<sp/>build<sp/>scifir-units.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">cpack<sp/>--preset=&lt;your-preset&gt;<sp/>-G<sp/>&lt;generator-needed&gt;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>type<sp/>the<sp/>command<sp/>**cpack<sp/>--help**<sp/>to<sp/>check<sp/>all<sp/>available<sp/>generators.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>ctest</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>test<sp/>scifir-units<sp/>executing<sp/>ctest<sp/>if<sp/>you<sp/>want.<sp/>It&apos;s<sp/>not<sp/>needed<sp/>to<sp/>execute<sp/>those<sp/>tests<sp/>in<sp/>your<sp/>local<sp/>computer,<sp/>but<sp/>you<sp/>can<sp/>do<sp/>it<sp/>if<sp/>for<sp/>any<sp/>reason<sp/>you<sp/>find<sp/>it<sp/>helpful.<sp/>To<sp/>build<sp/>the<sp/>tests,<sp/>add<sp/>the<sp/>flags<sp/>**-DBUILD_TESTING=ON**<sp/>to<sp/>the<sp/>first<sp/>preset<sp/>command,<sp/>in<sp/>order<sp/>to<sp/>set<sp/>the<sp/>variable<sp/>BUILD_TESTING<sp/>to<sp/>ON,<sp/>that<sp/>variable<sp/>configures<sp/>the<sp/>build<sp/>to<sp/>build<sp/>also<sp/>all<sp/>the<sp/>tests.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">ctest<sp/>--preset=&lt;your-preset&gt;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Using<sp/>the<sp/>library</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">First<sp/>you<sp/>have<sp/>to<sp/>link<sp/>**scifir-units**<sp/>to<sp/>your<sp/>project.<sp/>To<sp/>link<sp/>scifir-units,<sp/>after<sp/>installing<sp/>it<sp/>following<sp/>the<sp/>steps<sp/>above,<sp/>add<sp/>the<sp/>following<sp/>code<sp/>inside<sp/>your<sp/>CMakeLists.txt<sp/>file:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">target_link_libraries(your-project<sp/>scifir-units)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Now<sp/>that<sp/>the<sp/>library<sp/>es<sp/>linked,<sp/>you<sp/>can<sp/>use<sp/>it<sp/>inside<sp/>your<sp/>code<sp/>by<sp/>including<sp/>the<sp/>**header<sp/>&quot;scifir/units.hpp&quot;**.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;scifir/units.hpp&quot;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Introduction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>Scifir<sp/>Collection<sp/>is<sp/>a<sp/>set<sp/>of<sp/>libraries<sp/>that<sp/>allows<sp/>to<sp/>create<sp/>the<sp/>software<sp/>of<sp/>scientific<sp/>inventions,<sp/>being<sp/>them<sp/>scientific<sp/>machines<sp/>or<sp/>just<sp/>scientific<sp/>software.<sp/>This<sp/>library,<sp/>scifir-units,<sp/>allows<sp/>to<sp/>handle<sp/>scalar<sp/>and<sp/>vectorial<sp/>units<sp/>inside<sp/>the<sp/>code.<sp/>They<sp/>are<sp/>very<sp/>lightweight,<sp/>they<sp/>size<sp/>similar<sp/>to<sp/>a<sp/>float,<sp/>and<sp/>can<sp/>be<sp/>used<sp/>extensively<sp/>to<sp/>do<sp/>any<sp/>math<sp/>calculation<sp/>necessary<sp/>for<sp/>the<sp/>invention.<sp/>The<sp/>prefixes<sp/>can<sp/>be<sp/>changed,<sp/>in<sp/>order<sp/>to<sp/>display<sp/>the<sp/>units<sp/>in<sp/>the<sp/>more<sp/>proper<sp/>dimensions.<sp/>Also,<sp/>all<sp/>the<sp/>conversions<sp/>known<sp/>are<sp/>supported.<sp/>Then,<sp/>instead<sp/>of<sp/>the<sp/>meter,<sp/>a<sp/>length<sp/>can<sp/>be<sp/>described<sp/>by<sp/>a<sp/>light-year,<sp/>an<sp/>astronomical<sp/>unit<sp/>(AU),<sp/>among<sp/>other<sp/>units<sp/>of<sp/>measure.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>unit<sp/>classes<sp/>that<sp/>scifir-units<sp/>provides<sp/>are<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**scalar_unit:**<sp/>Handles<sp/>scalar<sp/>units.<sp/>It<sp/>covers<sp/>vectors<sp/>in<sp/>1D<sp/>too.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**vector_unit_2d:**<sp/>Handles<sp/>vector<sp/>units<sp/>in<sp/>2D<sp/>dimensions.<sp/>It<sp/>inherits<sp/>scalar_unit.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**vector_unit_3d:**<sp/>Handles<sp/>vector<sp/>units<sp/>in<sp/>3D<sp/>dimensions.<sp/>It<sp/>inherits<sp/>scalar_unit.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**vector_unit_nd:**<sp/>Handles<sp/>vector<sp/>units<sp/>in<sp/>ND<sp/>dimensions.<sp/>It<sp/>inherits<sp/>scalar_unit.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">scalar_unit<sp/>classes<sp/>can<sp/>be<sp/>used<sp/>both<sp/>for<sp/>scalar<sp/>units<sp/>and<sp/>vector<sp/>units<sp/>in<sp/>1D.<sp/>In<sp/>the<sp/>case<sp/>of<sp/>vector<sp/>units<sp/>in<sp/>1D,<sp/>a<sp/>negative<sp/>value<sp/>indicates,<sp/>as<sp/>on<sp/>math,<sp/>that<sp/>it<sp/>points<sp/>to<sp/>the<sp/>left<sp/>on<sp/>the<sp/>x<sp/>axis.<sp/>Otherwise,<sp/>if<sp/>the<sp/>value<sp/>is<sp/>positive,<sp/>it<sp/>points<sp/>to<sp/>the<sp/>right.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">All<sp/>the<sp/>unit<sp/>classes<sp/>have<sp/>fixed<sp/>dimensions.<sp/>Once<sp/>instantiated,<sp/>they<sp/>can&apos;t<sp/>change<sp/>to<sp/>a<sp/>different<sp/>set<sp/>of<sp/>dimensions.<sp/>Besides<sp/>that,<sp/>prefixes<sp/>and<sp/>abbreviations<sp/>can<sp/>be<sp/>used<sp/>freely,<sp/>every<sp/>unit<sp/>can<sp/>change<sp/>to<sp/>any<sp/>other<sp/>prefix<sp/>and<sp/>use<sp/>any<sp/>abbreviation<sp/>that<sp/>matches<sp/>the<sp/>original<sp/>dimensions<sp/>(and<sp/>no<sp/>other<sp/>set<sp/>of<sp/>dimensions).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>are<sp/>also<sp/>special<sp/>units<sp/>inside<sp/>scifir-units.<sp/>Those<sp/>special<sp/>units<sp/>are<sp/>aid,<sp/>color,<sp/>percentage,<sp/>pH,<sp/>pixel,<sp/>pOH,<sp/>size_2d,<sp/>size_3d,<sp/>size_nd<sp/>and<sp/>zid.<sp/>**Always<sp/>prefer<sp/>pH**<sp/>over<sp/>pOH,<sp/>pOH<sp/>is<sp/>provided<sp/>by<sp/>the<sp/>library<sp/>only<sp/>for<sp/>very<sp/>infrequent<sp/>cases.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Class<sp/>list</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>most<sp/>important<sp/>classes<sp/>are<sp/>the<sp/>scalar<sp/>units<sp/>and<sp/>the<sp/>vector<sp/>units.<sp/>Vector<sp/>units<sp/>are<sp/>in<sp/>2D,<sp/>3D<sp/>and<sp/>ND<sp/>(a<sp/>variable<sp/>number<sp/>of<sp/>dimensions).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>scalar_unit.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>vector_unit_2d.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>vector_unit_3d.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>vector_unit_nd.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>dimension.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>prefix.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>conversion.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>classes<sp/>dimension,<sp/>prefix<sp/>and<sp/>conversion<sp/>are<sp/>intended<sp/>for<sp/>**internal<sp/>use**<sp/>mainly,<sp/>but<sp/>they<sp/>can<sp/>be<sp/>used<sp/>if<sp/>they<sp/>are<sp/>needed.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>basic<sp/>unit<sp/>classes<sp/>that<sp/>inherit<sp/>scalar_unit<sp/>and<sp/>use,<sp/>then,<sp/>too,<sp/>dimension<sp/>and<sp/>prefix<sp/>classes,<sp/>are<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>length.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>time_duration.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>mass.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>charge.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>temperature.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>mole.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>light.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>data.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Apart<sp/>from<sp/>those<sp/>basic<sp/>scalar_unit<sp/>subclasses,<sp/>there<sp/>are<sp/>a<sp/>great<sp/>amount<sp/>of<sp/>more<sp/>unit<sp/>classes<sp/>defined,<sp/>that<sp/>are<sp/>derived<sp/>from<sp/>scalar_unit<sp/>or<sp/>from<sp/>vector_unit.<sp/>All<sp/>scalar<sp/>unit<sp/>subclasses<sp/>derive<sp/>from<sp/>scalar_unit,<sp/>and<sp/>all<sp/>vector<sp/>unit<sp/>subclasses<sp/>are<sp/>defined<sp/>one<sp/>time<sp/>for<sp/>2d,<sp/>one<sp/>time<sp/>for<sp/>3d,<sp/>one<sp/>time<sp/>for<sp/>nd,<sp/>and<sp/>one<sp/>time<sp/>for<sp/>the<sp/>scalar_unit<sp/>case.<sp/>Then,<sp/>force<sp/>units,<sp/>which<sp/>are<sp/>vector<sp/>units,<sp/>exist<sp/>as<sp/>force,<sp/>force_2d,<sp/>force_3d<sp/>and<sp/>force_nd.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">All<sp/>those<sp/>additional<sp/>unit<sp/>classes<sp/>are<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Astronomy:**<sp/>specific_angular_momentum,<sp/>specific_angular_momentum_2d,<sp/>specific_angular_momentum_3d,<sp/>specific_angular_momentum_nd</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Chemistry:**<sp/>density,<sp/>viscosity,<sp/>specific_volume,<sp/>specific_heat_capacity,<sp/>specific_entropy,<sp/>specific_energy,<sp/>molar_volume,<sp/>molar_mass,<sp/>molar_heat_capacity,<sp/>molar_enthalpy,<sp/>molar_entropy,<sp/>molar_energy,<sp/>molar_conductivity,<sp/>energy_density,<sp/>catalytic_efficiency</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Dynamics:**<sp/>impulse,<sp/>impulse_2d,<sp/>impulse_3d,<sp/>impulse_nd,<sp/>force,<sp/>force_2d,<sp/>force_3d,<sp/>force_nd,<sp/>torque,<sp/>torque_2d,<sp/>torque_3d,<sp/>torque_nd,<sp/>pressure,<sp/>pressure_2d,<sp/>pressure_3d,<sp/>pressure_nd,<sp/>surface_tension,<sp/>surface_tension_2d,<sp/>surface_tension_3d,<sp/>surface_tension_nd,<sp/>stiffness,<sp/>moment_of_inertia</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Electricity:**<sp/>electric_current,<sp/>voltage,<sp/>electric_charge_density,<sp/>electric_current_density,<sp/>electric_field_strength,<sp/>electric_field_strength_2d,<sp/>electric_field_strength_3d,<sp/>electric_field_strength_nd,<sp/>electron_mobility,<sp/>inductance</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Electronics:**<sp/>electrical_conductivity,<sp/>resistance,<sp/>electric_conductance,<sp/>capacitance,<sp/>permittivity,<sp/>resistivity,<sp/>linear_charge_density,<sp/>frequency_drift</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Fluid<sp/>dynamics:**<sp/>volumetric_flow,<sp/>diffusion_coefficient,<sp/>compressibility</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Informatics:**<sp/>transfer_speed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Kinematics:**<sp/>distance,<sp/>displacement_2d,<sp/>displacement_3d,<sp/>displacement_nd,<sp/>velocity,<sp/>velocity_2d,<sp/>velocity_3d,<sp/>velocity_nd,<sp/>acceleration,<sp/>acceleration_2d,<sp/>acceleration_3d,<sp/>acceleration_nd,<sp/>jerk,<sp/>jerk_2d,<sp/>jerk_3d,<sp/>jerk_nd,<sp/>snap,<sp/>snap_2d,<sp/>snap_3d,<sp/>snap_nd,<sp/>angular_velocity,<sp/>angular_velocity_2d,<sp/>angular_velocity_3d,<sp/>angular_velocity_nd,<sp/>angular_acceleration,<sp/>angular_acceleration_2d,<sp/>angular_acceleration_3d,<sp/>angular_acceleration_nd,<sp/>angular_momentum,<sp/>angular_momentum_2d,<sp/>angular_momentum_3d,<sp/>angular_momentum_nd</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Magnetism:**<sp/>magnetic_flux,<sp/>magnetic_moment,<sp/>magnetic_moment_2d,<sp/>magnetic_moment_3d,<sp/>magnetic_moment_nd,<sp/>magnetic_reluctance,<sp/>magnetic_rigidity,<sp/>magnetomotive_force,<sp/>magnetomotive_force_2d,<sp/>magnetomotive_force_3d,<sp/>magnetomotive_force_nd,<sp/>magnetic_susceptibility</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Optics:**<sp/>optical_power,<sp/>luminance,<sp/>illuminance,<sp/>luminous_flux,<sp/>luminous_energy,<sp/>luminous_exposure,<sp/>luminous_efficacy,<sp/>ionizing_radiation,<sp/>absorbed_dose</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Radiometry:**<sp/>radioactivity,<sp/>irradiance,<sp/>irradiance_2d,<sp/>irradiance_3d,<sp/>irradiance_nd,<sp/>radiant_exposure,<sp/>radiant_exposure_2d,<sp/>radiant_exposure_3d,<sp/>radiant_exposure_nd,<sp/>radiant_intensity,<sp/>spectral_intensity,<sp/>radiance,<sp/>spectral_radiance,<sp/>radiant_flux,<sp/>radiant_flux_2d,<sp/>radiant_flux_3d,<sp/>radiant_flux_nd,<sp/>spectral_flux,<sp/>spectral_flux_2d,<sp/>spectral_flux_3d,<sp/>spectral_flux_nd</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Space:**<sp/>area,<sp/>volume,<sp/>volume_4d,<sp/>curvature</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Substance:**<sp/>molarity,<sp/>molality,<sp/>linear_mass_density,<sp/>area_density,<sp/>dynamic_viscosity,<sp/>mass_flow_rate,<sp/>catalytic_activity</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Thermodynamics:**<sp/>energy,<sp/>action,<sp/>power,<sp/>power_density,<sp/>enthalpy,<sp/>entropy,<sp/>heat_capacity,<sp/>heat_flux_density,<sp/>thermal_conductivity,<sp/>thermal_diffusivity,<sp/>thermal_resistance,<sp/>thermal_expansion_coefficient,<sp/>temperature_gradient,<sp/>temperature_gradient_2d,<sp/>temperature_gradient_3d,<sp/>temperature_gradient_nd,<sp/>energy_flux_density</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Waves:**<sp/>wavenumber,<sp/>frequency,<sp/>wavelength</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>meca<sp/>numbers<sp/>are<sp/>special<sp/>numbers<sp/>that<sp/>don&apos;t<sp/>behave<sp/>exactly<sp/>like<sp/>an<sp/>scalar<sp/>unit:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>angle.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>complex_number.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>lab_number.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>coordinates<sp/>classes<sp/>handle<sp/>position<sp/>in<sp/>space.<sp/>The<sp/>point<sp/>classes<sp/>also<sp/>handle<sp/>position<sp/>in<sp/>space.<sp/>Coordinates<sp/>are<sp/>used<sp/>for<sp/>positions<sp/>and<sp/>points<sp/>are<sp/>intended<sp/>for<sp/>more<sp/>stationary<sp/>cases,<sp/>like<sp/>for<sp/>example<sp/>vertex<sp/>of<sp/>triangles<sp/>that<sp/>form<sp/>a<sp/>3D<sp/>model.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>coordinates_1d.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>coordinates_2d.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>coordinates_2dr.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>coordinates_3d.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>coordinates_3dr.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>coordinates_nd.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>coordinates_ndr.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>point_1d.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>point_2d.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>point_3d.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>point_nd.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>direction.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>special<sp/>unit<sp/>classes<sp/>handle<sp/>special<sp/>cases<sp/>of<sp/>values:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>aid.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>zid.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>color.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>percentage.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>pH.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>pOH.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>pixel.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>size_2d.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>size_3d.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>size_nd.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Data<sp/>conventions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">It&apos;s<sp/>mandatory<sp/>to<sp/>follow<sp/>the<sp/>**data<sp/>conventions**<sp/>of<sp/>Scifir<sp/>when<sp/>using<sp/>scifir-units,<sp/>which<sp/>is<sp/>used<sp/>not<sp/>only<sp/>for<sp/>this<sp/>library<sp/>but<sp/>also<sp/>for<sp/>every<sp/>Scifir<sp/>project.<sp/>The<sp/>data<sp/>conventions<sp/>of<sp/>Scifir<sp/>allow<sp/>to<sp/>handle<sp/>data<sp/>easy<sp/>without<sp/>multiple<sp/>interpretations<sp/>of<sp/>the<sp/>meaning<sp/>of<sp/>any<sp/>value,<sp/>because<sp/>it<sp/>doesn&apos;t<sp/>has<sp/>ambiguities.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>conventions<sp/>are<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Units:**<sp/>All<sp/>units<sp/>are<sp/>stored<sp/>identical<sp/>to<sp/>their<sp/>initialization<sp/>string,<sp/>as<sp/>text.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Genes:**<sp/>Genes<sp/>are<sp/>stored<sp/>by<sp/>their<sp/>gene<sp/>name,<sp/>following<sp/>the<sp/>**scifir<sp/>nomenclature<sp/>of<sp/>genes**.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Molecules:**<sp/>Molecules<sp/>are<sp/>stored<sp/>by<sp/>their<sp/>IUPAC<sp/>name,<sp/>canonicalized.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Zones:**<sp/>Zones<sp/>are<sp/>stored<sp/>by<sp/>their<sp/>ZID<sp/>initialization<sp/>string.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Positions:**<sp/>Positions<sp/>are<sp/>stored<sp/>writing<sp/>their<sp/>zone,<sp/>and,<sp/>in<sp/>parentheses,<sp/>the<sp/>geographic<sp/>coordinates.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Languages:**<sp/>Languages<sp/>are<sp/>stored<sp/>by<sp/>their<sp/>language<sp/>code<sp/>of<sp/>the<sp/>ISO<sp/>of<sp/>languages.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Countries:**<sp/>Countries<sp/>are<sp/>stored<sp/>by<sp/>their<sp/>country<sp/>code<sp/>of<sp/>the<sp/>ISO<sp/>of<sp/>countries.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Currencies:**<sp/>Currrencies<sp/>are<sp/>stored<sp/>by<sp/>their<sp/>currency<sp/>code<sp/>of<sp/>the<sp/>ISO<sp/>of<sp/>currencies.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Phone<sp/>numbers:**<sp/>Phone<sp/>numbers<sp/>are<sp/>stored<sp/>with<sp/>their<sp/>phone<sp/>code<sp/>of<sp/>the<sp/>ISO<sp/>of<sp/>phone<sp/>codes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>conventions<sp/>for<sp/>storing<sp/>informatic<sp/>data<sp/>are<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Ips:**<sp/>Store<sp/>the<sp/>ip,<sp/>as<sp/>is<sp/>written.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Computers:**<sp/>Store<sp/>computers<sp/>by<sp/>their<sp/>model<sp/>name,<sp/>canonicalized.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Consumption<sp/>of<sp/>memory</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>scalar_unit<sp/>and<sp/>vector<sp/>unit<sp/>classes,<sp/>vector_unid_2d,<sp/>vector_unid_3d<sp/>and<sp/>vector_unit_nd<sp/>size<sp/>more<sp/>than<sp/>a<sp/>single<sp/>float,<sp/>which<sp/>uses<sp/>4<sp/>bytes,<sp/>but<sp/>don&apos;t<sp/>size<sp/>a<sp/>big<sp/>amount<sp/>and<sp/>so,<sp/>they<sp/>can<sp/>be<sp/>used<sp/>in<sp/>great<sp/>quantities<sp/>for<sp/>any<sp/>purpose,<sp/>cause<sp/>they<sp/>are<sp/>very<sp/>lightweight.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>angle<sp/>class<sp/>uses<sp/>only<sp/>4<sp/>bytes,<sp/>and<sp/>works<sp/>perfectly<sp/>fine,<sp/>very<sp/>similar<sp/>to<sp/>a<sp/>normal<sp/>float.<sp/>Then,<sp/>you<sp/>can<sp/>use<sp/>it<sp/>freely<sp/>every<sp/>time<sp/>you<sp/>need<sp/>to<sp/>do<sp/>calculations<sp/>that<sp/>need<sp/>angles.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Core<sp/>functionalities</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">All<sp/>the<sp/>classes<sp/>of<sp/>scifir-units<sp/>are<sp/>inside<sp/>the<sp/>**namespace<sp/>scifir**,<sp/>as<sp/>with<sp/>all<sp/>libraries<sp/>of<sp/>the<sp/>**Scifir<sp/>Collection**.<sp/>So,<sp/>to<sp/>use<sp/>any<sp/>of<sp/>this<sp/>classes,<sp/>like<sp/>angle,<sp/>you<sp/>have<sp/>to<sp/>type<sp/>any<sp/>of<sp/>the<sp/>following<sp/>codes:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">using<sp/>namespace<sp/>scifir;<sp/>//<sp/>Maybe<sp/>this<sp/>is<sp/>usually<sp/>the<sp/>better<sp/>choice</highlight></codeline>
+<codeline><highlight class="normal">scifir::angle<sp/>a;<sp/>//<sp/>You<sp/>can<sp/>use<sp/>the<sp/>namespace<sp/>directly</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">All<sp/>the<sp/>example<sp/>code<sp/>presented<sp/>here<sp/>is<sp/>written<sp/>assuming<sp/>you<sp/>know<sp/>this<sp/>namespace<sp/>scifir.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Initialization<sp/>strings</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">All<sp/>the<sp/>unit<sp/>classes,<sp/>and<sp/>also<sp/>the<sp/>other<sp/>related<sp/>classes<sp/>of<sp/>this<sp/>library,<sp/>can<sp/>be<sp/>constructed<sp/>with<sp/>what<sp/>is<sp/>called<sp/>here<sp/>an<sp/>**initialization<sp/>string**.<sp/>An<sp/>initialization<sp/>string<sp/>is<sp/>an<sp/>string<sp/>used<sp/>to<sp/>instantiate<sp/>the<sp/>class,<sp/>and<sp/>it&apos;s<sp/>also<sp/>used<sp/>when<sp/>converting<sp/>the<sp/>class<sp/>to<sp/>an<sp/>string<sp/>for<sp/>any<sp/>purpose<sp/>(like<sp/>printing<sp/>it<sp/>on<sp/>the<sp/>screen).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>initialization<sp/>strings<sp/>are<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**angle**:<sp/>&quot;37°&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**scalar_unit**:<sp/>&quot;1<sp/>km&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**vector_unit_2d**:<sp/>&quot;5<sp/>km<sp/>10°&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**vector_unit_3d**:<sp/>&quot;3<sp/>km<sp/>10°<sp/>20°&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**vector_unit_nd**:<sp/>&quot;3<sp/>km<sp/>10°<sp/>20°<sp/>35°&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**point_1d**:<sp/>&quot;3<sp/>m&quot;<sp/>or<sp/>&quot;(3<sp/>m)&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**point_2d**:<sp/>&quot;2<sp/>m,4<sp/>m&quot;<sp/>or<sp/>&quot;(2<sp/>m,4<sp/>m)&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**point_3d**:<sp/>&quot;1<sp/>m,9<sp/>m,3<sp/>m&quot;<sp/>or<sp/>&quot;(1<sp/>m,9<sp/>m,3<sp/>m)&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**point_nd**:<sp/>&quot;3<sp/>m,2<sp/>m,4<sp/>m,1<sp/>m&quot;<sp/>or<sp/>&quot;(3<sp/>m,2<sp/>m,4<sp/>m,1<sp/>m)&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**coordinates_1d**:<sp/>&quot;1<sp/>m&quot;<sp/>or<sp/>&quot;(1<sp/>m)&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**coordinates_2d**:<sp/>&quot;1<sp/>m,2<sp/>m&quot;<sp/>or<sp/>&quot;(1<sp/>m,2<sp/>m)&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**coordinates_3d**:<sp/>&quot;1<sp/>m,7<sp/>m,5<sp/>m&quot;<sp/>or<sp/>&quot;(1<sp/>m,7<sp/>m,5<sp/>m)&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**coordinates_nd**:<sp/>&quot;1<sp/>m,7<sp/>m,5<sp/>m,8<sp/>m&quot;<sp/>or<sp/>&quot;(1<sp/>m,7<sp/>m,5<sp/>m,8<sp/>m)&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**coordinates_2dr**:<sp/>&quot;1<sp/>m,2<sp/>m;45°&quot;<sp/>or<sp/>&quot;(1<sp/>m,2<sp/>m;45°)&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**coordinates_3dr**:<sp/>&quot;1<sp/>m,7<sp/>m,5<sp/>m;17°<sp/>25°&quot;<sp/>or<sp/>&quot;(1<sp/>m,7<sp/>m,5<sp/>m;17°<sp/>25°)&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**coordinates_ndr**:<sp/>&quot;1<sp/>m,7<sp/>m,5<sp/>m,8<sp/>m;32°<sp/>56°<sp/>78°&quot;<sp/>or<sp/>&quot;(1<sp/>m,7<sp/>m,5<sp/>m,8<sp/>m;32°<sp/>56°<sp/>78°)&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>store<sp/>units<sp/>inside<sp/>a<sp/>file<sp/>an<sp/>initialization<sp/>string<sp/>should<sp/>be<sp/>used.<sp/>For<sp/>any<sp/>purpose,<sp/>when<sp/>converting<sp/>some<sp/>of<sp/>those<sp/>classes<sp/>to<sp/>an<sp/>string,<sp/>the<sp/>string<sp/>initialization<sp/>has<sp/>to<sp/>be<sp/>always<sp/>used.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Space</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Inside<sp/>scifir-units<sp/>the<sp/>space<sp/>can<sp/>be<sp/>measured<sp/>with<sp/>float<sp/>or<sp/>with<sp/>length.<sp/>Secondarily,<sp/>any<sp/>scalar_unit<sp/>can<sp/>be<sp/>used<sp/>as<sp/>measure<sp/>of<sp/>space,<sp/>because<sp/>inside<sp/>science<sp/>there<sp/>are<sp/>modelings<sp/>of<sp/>imaginary<sp/>spaces,<sp/>where<sp/>the<sp/>length<sp/>is<sp/>not<sp/>used.<sp/>Because<sp/>of<sp/>that<sp/>reason,<sp/>all<sp/>coordinates<sp/>and<sp/>point<sp/>classes<sp/>are<sp/>template<sp/>classes<sp/>that<sp/>accept<sp/>floats<sp/>or<sp/>scalar_unit<sp/>classes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Dimensions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Inside<sp/>scifir-units<sp/>a<sp/>**basic<sp/>dimension**<sp/>is<sp/>a<sp/>dimension<sp/>considered<sp/>basic<sp/>under<sp/>the<sp/>SI<sp/>system<sp/>of<sp/>units.<sp/>Different<sp/>to<sp/>that,<sp/>a<sp/>**simple<sp/>dimension**<sp/>is<sp/>a<sp/>dimension<sp/>without<sp/>any<sp/>derived<sp/>dimension.<sp/>That&apos;s,<sp/>it&apos;s<sp/>a<sp/>dimension<sp/>that&apos;s<sp/>not<sp/>an<sp/>abbreviation<sp/>of<sp/>two<sp/>or<sp/>more<sp/>other<sp/>dimensions.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Angle</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">An<sp/>angle<sp/>object<sp/>manages<sp/>angles.<sp/>It<sp/>stores<sp/>angles<sp/>in<sp/>grades,<sp/>rather<sp/>than<sp/>in<sp/>radians.<sp/>It<sp/>can<sp/>be<sp/>initialized<sp/>to<sp/>any<sp/>grade<sp/>between<sp/>0<sp/>and<sp/>360<sp/>(without<sp/>including<sp/>360,<sp/>cause<sp/>this<sp/>is<sp/>identical<sp/>to<sp/>0<sp/>in<sp/>meaning),<sp/>and<sp/>any<sp/>initialization<sp/>that&apos;s<sp/>not<sp/>inside<sp/>this<sp/>range<sp/>of<sp/>values<sp/>gets<sp/>automatically<sp/>converted<sp/>inside<sp/>it,<sp/>to<sp/>his<sp/>equivalent<sp/>value<sp/>between<sp/>the<sp/>range.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">An<sp/>example<sp/>of<sp/>use<sp/>of<sp/>angle<sp/>is<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Constructors<sp/>and<sp/>instantiation</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>y<sp/>=<sp/>54;<sp/>//<sp/>Better<sp/>constructor!<sp/>Preferred<sp/>method</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>a<sp/>=<sp/>367;<sp/>//<sp/>Gets<sp/>converted<sp/>to<sp/>the<sp/>value<sp/>7,<sp/>because<sp/>7<sp/>is<sp/>the<sp/>equivalent<sp/>of<sp/>367<sp/>inside<sp/>0<sp/>and<sp/>360</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>b<sp/>=<sp/>angle(12);</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>c<sp/>=<sp/>angle(34_Pa);</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>z<sp/>=<sp/>23_N;<sp/>//<sp/>Angles<sp/>can<sp/>be<sp/>instantiated<sp/>with<sp/>units<sp/>if<sp/>that<sp/>is<sp/>needed,<sp/>although<sp/>it&apos;s<sp/>not<sp/>recommended</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Angles<sp/>operations<sp/>with<sp/>other<sp/>angles</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>b<sp/>=<sp/>a<sp/>+<sp/>x;</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>c<sp/>=<sp/>a<sp/>-<sp/>x;</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>d<sp/>=<sp/>a<sp/>*<sp/>b;</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>e<sp/>=<sp/>a<sp/>/<sp/>c;</highlight></codeline>
+<codeline><highlight class="normal">b<sp/>+=<sp/>a;</highlight></codeline>
+<codeline><highlight class="normal">c<sp/>-=<sp/>b;</highlight></codeline>
+<codeline><highlight class="normal">e<sp/>*=<sp/>a;</highlight></codeline>
+<codeline><highlight class="normal">c<sp/>/=<sp/>e;</highlight></codeline>
+<codeline><highlight class="normal">d<sp/>^=<sp/>a;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Numeric<sp/>operations</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>x<sp/>=<sp/>a<sp/>+<sp/>3;</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>y<sp/>=<sp/>x<sp/>-<sp/>6;</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>z<sp/>=<sp/>x<sp/>*<sp/>3;</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>g<sp/>=<sp/>y<sp/>/<sp/>4;</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>h<sp/>=<sp/>z<sp/>^<sp/>5;</highlight></codeline>
+<codeline><highlight class="normal">x<sp/>+=<sp/>3;</highlight></codeline>
+<codeline><highlight class="normal">x<sp/>-=<sp/>6;</highlight></codeline>
+<codeline><highlight class="normal">x<sp/>*=<sp/>2;</highlight></codeline>
+<codeline><highlight class="normal">x<sp/>/=<sp/>4;</highlight></codeline>
+<codeline><highlight class="normal">x<sp/>^=<sp/>7;</highlight></codeline>
+<codeline><highlight class="normal">x++;</highlight></codeline>
+<codeline><highlight class="normal">++x;</highlight></codeline>
+<codeline><highlight class="normal">x--;</highlight></codeline>
+<codeline><highlight class="normal">--x;</highlight></codeline>
+<codeline><highlight class="normal">float<sp/>a_grade<sp/>=<sp/>x.get_grade();</highlight></codeline>
+<codeline><highlight class="normal">float<sp/>a_radians<sp/>=<sp/>x.get_radian();</highlight></codeline>
+<codeline><highlight class="normal">x.invert();<sp/>//<sp/>Inverts<sp/>the<sp/>angle,<sp/>the<sp/>orientation<sp/>described<sp/>by<sp/>this<sp/>angle<sp/>points<sp/>now<sp/>in<sp/>the<sp/>opposite<sp/>direction</highlight></codeline>
+<codeline><highlight class="normal">float<sp/>y<sp/>=<sp/>float(x);<sp/>//<sp/>Angles<sp/>can<sp/>be<sp/>converted<sp/>to<sp/>float</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Scalar<sp/>units</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Scalar<sp/>units<sp/>and<sp/>vector<sp/>units<sp/>are<sp/>the<sp/>central<sp/>objects<sp/>of<sp/>scifir-units.<sp/>They<sp/>store<sp/>a<sp/>value<sp/>and<sp/>a<sp/>set<sp/>of<sp/>dimensions,<sp/>as<sp/>units<sp/>on<sp/>science<sp/>do.<sp/>Scalar<sp/>units<sp/>are<sp/>just<sp/>normal<sp/>values,<sp/>while<sp/>vector<sp/>units<sp/>have<sp/>a<sp/>value<sp/>and<sp/>a<sp/>direction<sp/>to<sp/>which<sp/>the<sp/>vector<sp/>points<sp/>to.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Scalar<sp/>units<sp/>can<sp/>operate<sp/>with<sp/>other<sp/>scalar<sp/>units,<sp/>as<sp/>well<sp/>as<sp/>with<sp/>numeric<sp/>primitive<sp/>types.<sp/>Functions<sp/>like<sp/>abs(),<sp/>sqrt()<sp/>and<sp/>to_string()<sp/>are<sp/>supported.<sp/>They<sp/>have<sp/>functions<sp/>to<sp/>operate<sp/>with<sp/>strings,<sp/>and<sp/>functions<sp/>to<sp/>operate<sp/>with<sp/>streams.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Scalar<sp/>units<sp/>can<sp/>have<sp/>any<sp/>dimension<sp/>of<sp/>the<sp/>SI<sp/>system<sp/>of<sp/>units,<sp/>or,<sp/>also,<sp/>any<sp/>**custom<sp/>dimension**.<sp/>A<sp/>custom<sp/>dimension<sp/>is<sp/>a<sp/>dimension<sp/>with<sp/>an<sp/>arbitrary<sp/>name,<sp/>which<sp/>is<sp/>commonly<sp/>used<sp/>inside<sp/>some<sp/>fields<sp/>of<sp/>science<sp/>when<sp/>there&apos;s<sp/>no<sp/>name<sp/>for<sp/>a<sp/>needed<sp/>dimension.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">An<sp/>example<sp/>of<sp/>use<sp/>of<sp/>an<sp/>scalar<sp/>unit<sp/>is<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>x<sp/>=<sp/>10_m;</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>y<sp/>=<sp/>length(8,&quot;mm&quot;);</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>z<sp/>=<sp/>length(&quot;10<sp/>m&quot;);</highlight></codeline>
+<codeline><highlight class="normal">area<sp/>xy<sp/>=<sp/>area(100,&quot;m2&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x<sp/>=<sp/>2_m;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">length<sp/>a<sp/>=<sp/>x<sp/>+<sp/>3.2_dm;</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>e<sp/>=<sp/>x<sp/>-<sp/>1_mm;</highlight></codeline>
+<codeline><highlight class="normal">area<sp/>b<sp/>=<sp/>y<sp/>*<sp/>3_m;</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>c<sp/>=<sp/>b<sp/>/<sp/>2_m;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x<sp/>+=<sp/>1_km;</highlight></codeline>
+<codeline><highlight class="normal">y<sp/>-=<sp/>50_cm;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">length<sp/>f<sp/>=<sp/>a<sp/>+<sp/>1.5;</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>g<sp/>=<sp/>b<sp/>-<sp/>7;</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>h<sp/>=<sp/>c<sp/>*<sp/>3;</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>i<sp/>=<sp/>c<sp/>/<sp/>1.5;</highlight></codeline>
+<codeline><highlight class="normal">area<sp/>j<sp/>=<sp/>c<sp/>^<sp/>2;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">f<sp/>+=<sp/>2;</highlight></codeline>
+<codeline><highlight class="normal">f<sp/>-=<sp/>1;</highlight></codeline>
+<codeline><highlight class="normal">g<sp/>*=<sp/>1.5;</highlight></codeline>
+<codeline><highlight class="normal">h<sp/>/=<sp/>5;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x++;</highlight></codeline>
+<codeline><highlight class="normal">y--;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x.change_dimensions(&quot;mm&quot;);<sp/>//<sp/>Dimensions<sp/>can<sp/>be<sp/>set<sp/>to<sp/>any<sp/>prefix</highlight></codeline>
+<codeline><highlight class="normal">x.change_dimensions(&quot;s&quot;);<sp/>//<sp/>An<sp/>scalar_unit<sp/>can&apos;t<sp/>change<sp/>to<sp/>other<sp/>dimensions<sp/>different<sp/>than<sp/>the<sp/>dimensions<sp/>they<sp/>started</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x.has_dimensions(&quot;km&quot;))<sp/>//<sp/>Dimensions<sp/>are<sp/>compared<sp/>without<sp/>prefixes</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x.change_dimensions(y);<sp/>//<sp/>Now<sp/>x<sp/>has<sp/>dimensions<sp/>&quot;mm&quot;<sp/>as<sp/>y</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">ostringstream<sp/>out;</highlight></codeline>
+<codeline><highlight class="normal">out<sp/>&lt;&lt;<sp/>x;<sp/>//<sp/>scalar_unit<sp/>classes<sp/>can<sp/>operate<sp/>with<sp/>streams</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">length<sp/>w<sp/>=<sp/>100_m;</highlight></codeline>
+<codeline><highlight class="normal">string<sp/>d<sp/>=<sp/>to_string(w);<sp/>//<sp/>Creates<sp/>the<sp/>string<sp/>&quot;100<sp/>m&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">float<sp/>a<sp/>=<sp/>abs(x);<sp/>//<sp/>abs()<sp/>gives<sp/>the<sp/>absolute<sp/>value<sp/>of<sp/>the<sp/>scalar_unit</highlight></codeline>
+<codeline><highlight class="normal">scalar_unit<sp/>b<sp/>=<sp/>sqrt(xy);<sp/>//<sp/>sqrt()<sp/>gives<sp/>the<sp/>square<sp/>root<sp/>of<sp/>the<sp/>scalar_unit</highlight></codeline>
+<codeline><highlight class="normal">scalar_unit<sp/>c<sp/>=<sp/>pow(a,x);<sp/>//<sp/>Dimensions<sp/>would<sp/>be<sp/>&quot;m3&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x.has_dimensions(y))<sp/>//<sp/>Evaluates<sp/>to<sp/>true<sp/>if<sp/>the<sp/>two<sp/>scalar_unit<sp/>objects<sp/>have<sp/>the<sp/>same<sp/>dimensions,<sp/>independent<sp/>of<sp/>prefixes</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>y)<sp/>//<sp/>Evaluates<sp/>to<sp/>true<sp/>if<sp/>the<sp/>scalar_unit<sp/>objects<sp/>have<sp/>the<sp/>same<sp/>value<sp/>and<sp/>the<sp/>same<sp/>dimensions</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>3)<sp/>//<sp/>Compares<sp/>by<sp/>value,<sp/>it&apos;s<sp/>better<sp/>to<sp/>only<sp/>compare<sp/>scalar_unit.<sp/>To<sp/>use<sp/>3_m<sp/>instead<sp/>would<sp/>have<sp/>been<sp/>better,<sp/>but<sp/>numeric<sp/>primitive<sp/>types<sp/>are<sp/>allow<sp/>to<sp/>be<sp/>used</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">length<sp/>a;</highlight></codeline>
+<codeline><highlight class="normal">cin<sp/>&gt;&gt;<sp/>a;<sp/>//<sp/>There&apos;s<sp/>support<sp/>for<sp/>input<sp/>streams</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">string<sp/>a;</highlight></codeline>
+<codeline><highlight class="normal">a<sp/>+=<sp/>x;<sp/>//<sp/>Adds<sp/>the<sp/>scalar_unit<sp/>to<sp/>the<sp/>string</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">string<sp/>b<sp/>=<sp/>&quot;x:<sp/>&quot;<sp/>+<sp/>x;</highlight></codeline>
+<codeline><highlight class="normal">string<sp/>c<sp/>=<sp/>x<sp/>+<sp/>&quot;<sp/>value&quot;;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>basic<sp/>dimensions<sp/>of<sp/>this<sp/>library,<sp/>for<sp/>scalar_unit<sp/>classes,<sp/>all<sp/>the<sp/>different<sp/>vector_unit<sp/>classes,<sp/>and<sp/>all<sp/>other<sp/>classes<sp/>that<sp/>handle<sp/>units,<sp/>are<sp/>the<sp/>following.<sp/>They<sp/>are<sp/>all<sp/>in<sp/>SI<sp/>units,<sp/>excepting<sp/>memo,<sp/>which<sp/>is<sp/>a<sp/>basic<sp/>dimension<sp/>created<sp/>by<sp/>Ismael<sp/>Correa,<sp/>the<sp/>author<sp/>of<sp/>this<sp/>library,<sp/>to<sp/>measure<sp/>the<sp/>size<sp/>occupied<sp/>by<sp/>a<sp/>memory<sp/>inside<sp/>the<sp/>animal<sp/>brain,<sp/>including<sp/>human<sp/>brains.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Name<sp/>|<sp/>Symbol<sp/>|<sp/>Description</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>-----<sp/>|<sp/>---<sp/>|<sp/>--------------------------|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Length<sp/>|<sp/>m<sp/>|<sp/>Measures<sp/>the<sp/>length<sp/>occupied<sp/>in<sp/>space<sp/>by<sp/>an<sp/>object<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Time<sp/>|<sp/>s<sp/>|<sp/>Measures<sp/>the<sp/>duration<sp/>in<sp/>time<sp/>of<sp/>some<sp/>event<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Mass<sp/>|<sp/>g<sp/>|<sp/>Measures<sp/>the<sp/>amount<sp/>of<sp/>substance<sp/>related<sp/>to<sp/>the<sp/>strength<sp/>of<sp/>a<sp/>gravitational<sp/>field<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Radian<sp/>|<sp/>rad<sp/>|<sp/>Measures<sp/>the<sp/>size<sp/>of<sp/>an<sp/>angle<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Steradian<sp/>|<sp/>sr<sp/>|<sp/>Measures<sp/>the<sp/>size<sp/>of<sp/>a<sp/>solid<sp/>angle<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Coulomb<sp/>|<sp/>C<sp/>|<sp/>Measures<sp/>the<sp/>amount<sp/>of<sp/>charge<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Temperature<sp/>|<sp/>K<sp/>|<sp/>Measures<sp/>the<sp/>amount<sp/>of<sp/>hotness<sp/>or<sp/>coldness.<sp/>Microscopically<sp/>it<sp/>measures<sp/>the<sp/>speed<sp/>at<sp/>which<sp/>the<sp/>particles<sp/>that<sp/>constitute<sp/>the<sp/>matter<sp/>are<sp/>moving<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Mole<sp/>|<sp/>mol<sp/>|<sp/>Measures<sp/>the<sp/>amount<sp/>of<sp/>a<sp/>substance<sp/>related<sp/>to<sp/>the<sp/>number<sp/>of<sp/>its<sp/>constituent<sp/>particles<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Luminous<sp/>intensity<sp/>|<sp/>cd<sp/>|<sp/>Measures<sp/>the<sp/>intensity<sp/>of<sp/>light<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Byte<sp/>|<sp/>B<sp/>|<sp/>Measures<sp/>the<sp/>amount<sp/>of<sp/>information<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Money<sp/>|<sp/>money<sp/>|<sp/>Measures<sp/>the<sp/>economic<sp/>value<sp/>of<sp/>an<sp/>entity<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Memo<sp/>|<sp/>memo<sp/>|<sp/>Measures<sp/>the<sp/>size<sp/>occupied<sp/>by<sp/>a<sp/>memory<sp/>inside<sp/>the<sp/>brain<sp/>of<sp/>an<sp/>animal,<sp/>including<sp/>human<sp/>brains.<sp/>Created<sp/>by<sp/>Ismael<sp/>Correa,<sp/>it&apos;s<sp/>not<sp/>an<sp/>official<sp/>basic<sp/>dimension<sp/>of<sp/>the<sp/>SI<sp/>system<sp/>of<sp/>units<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>are<sp/>also<sp/>derived<sp/>dimensions<sp/>of<sp/>those<sp/>basic<sp/>dimensions,<sp/>which<sp/>are<sp/>documented<sp/>in<sp/>the<sp/>reference.<sp/>Yet,<sp/>you<sp/>should<sp/>memorize<sp/>all<sp/>those<sp/>basic<sp/>dimensions.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Vector<sp/>units<sp/>in<sp/>2D</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Vector<sp/>units<sp/>in<sp/>2D<sp/>allow<sp/>to<sp/>do<sp/>calculations<sp/>for<sp/>lab<sp/>machines<sp/>and<sp/>simulations<sp/>of<sp/>physics<sp/>and<sp/>other<sp/>areas<sp/>of<sp/>science<sp/>in<sp/>2<sp/>dimensions.<sp/>They<sp/>inherit<sp/>scalar_unit,<sp/>and<sp/>additional<sp/>to<sp/>his<sp/>member-variables<sp/>they<sp/>include<sp/>the<sp/>member-variable<sp/>theta,<sp/>of<sp/>class<sp/>angle<sp/>(described<sp/>above).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">An<sp/>example<sp/>of<sp/>use<sp/>of<sp/>it<sp/>is<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">force_2d<sp/>x<sp/>=<sp/>force_2d(21_N,56_angle);<sp/>//<sp/>Creates<sp/>a<sp/>force_2d<sp/>with<sp/>a<sp/>value<sp/>of<sp/>21<sp/>N<sp/>and<sp/>an<sp/>inclination<sp/>angle<sp/>of<sp/>56°</highlight></codeline>
+<codeline><highlight class="normal">force_2d<sp/>y<sp/>=<sp/>force_2d(32,&quot;mN&quot;,11);<sp/>//<sp/>vector_unid_2d<sp/>of<sp/>force<sp/>with<sp/>values<sp/>&quot;32<sp/>mN<sp/>11°&quot;</highlight></codeline>
+<codeline><highlight class="normal">vector_unit_2d<sp/>z<sp/>=<sp/>vector_unid_2d(10,&quot;kPa&quot;,48);<sp/>//<sp/>vector_unit_2d<sp/>with<sp/>values<sp/>&quot;10<sp/>kPa<sp/>48°&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x.theta<sp/>+=<sp/>21_angle;<sp/>//<sp/>theta<sp/>of<sp/>x<sp/>can<sp/>be<sp/>accessed<sp/>directed<sp/>and<sp/>used<sp/>as<sp/>any<sp/>angle,<sp/>it&apos;s<sp/>the<sp/>better<sp/>way<sp/>to<sp/>use<sp/>it</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x<sp/>+=<sp/>y;<sp/>//<sp/>Sum<sp/>a<sp/>vector<sp/>of<sp/>the<sp/>same<sp/>dimensions</highlight></codeline>
+<codeline><highlight class="normal">y<sp/>-=<sp/>z;<sp/>//<sp/>Substraction<sp/>supported.<sp/>Can&apos;t<sp/>substract<sp/>vectors<sp/>of<sp/>different<sp/>dimensions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">force_2d<sp/>a<sp/>=<sp/>x<sp/>+<sp/>y;<sp/>//<sp/>Sum<sp/>of<sp/>vector_unid_2d</highlight></codeline>
+<codeline><highlight class="normal">force_2d<sp/>b<sp/>=<sp/>x<sp/>-<sp/>y;<sp/>//<sp/>Substraction<sp/>of<sp/>vector_unid_2d</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">velocity_2d<sp/>acc<sp/>=<sp/>acceleration_2d(&quot;5<sp/>m/s&quot;)<sp/>*<sp/>100_s;<sp/>//<sp/>vector_unid_2d<sp/>can<sp/>multiply<sp/>with<sp/>scalar_unit</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_2d<sp/>p<sp/>=<sp/>x<sp/>/<sp/>area(&quot;10<sp/>m2&quot;);<sp/>//<sp/>vector_unid_2d<sp/>can<sp/>divide<sp/>with<sp/>scalar_unit</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">vector_unid_2d<sp/>ab<sp/>=<sp/>x<sp/>+<sp/>4;<sp/>//<sp/>vector_unid_2d<sp/>can<sp/>sum<sp/>with<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_2d<sp/>ac<sp/>=<sp/>y<sp/>-<sp/>7;<sp/>//<sp/>vector_unid_2d<sp/>can<sp/>substract<sp/>with<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_2d<sp/>ad<sp/>=<sp/>x<sp/>*<sp/>3;<sp/>//<sp/>vector_unid_2d<sp/>can<sp/>multiply<sp/>with<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_2d<sp/>ae<sp/>=<sp/>y<sp/>/<sp/>5;<sp/>//<sp/>vector_unid_2d<sp/>can<sp/>divide<sp/>with<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_2d<sp/>xy<sp/>=<sp/>x<sp/>^<sp/>2;<sp/>//<sp/>vector_unid_2d<sp/>can<sp/>power<sp/>with<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x<sp/>+=<sp/>3;<sp/>//<sp/>vector_unid_2d<sp/>with<sp/>operator+=<sp/>for<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">y<sp/>-=<sp/>9;<sp/>//<sp/>vector_unid_2d<sp/>with<sp/>operator-=<sp/>for<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">x<sp/>*=<sp/>2;<sp/>//<sp/>vector_unid_2d<sp/>with<sp/>operator*=<sp/>for<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">y<sp/>/=<sp/>6;<sp/>//<sp/>vector_unid_2d<sp/>with<sp/>operator/=<sp/>for<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">force<sp/>e<sp/>=<sp/>x.x_projection();<sp/>//<sp/>vector_unid_2d<sp/>projection<sp/>on<sp/>the<sp/>x<sp/>axis</highlight></codeline>
+<codeline><highlight class="normal">force<sp/>f<sp/>=<sp/>x.y_projection();<sp/>//<sp/>vector_unid_2d<sp/>projection<sp/>on<sp/>the<sp/>y<sp/>axis</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x.invert();<sp/>//<sp/>Now<sp/>x<sp/>points<sp/>to<sp/>the<sp/>opposite<sp/>direction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">string<sp/>x_display<sp/>=<sp/>to_string(x);<sp/>//<sp/>Prints<sp/>&quot;21N<sp/>56°&quot;</highlight></codeline>
+<codeline><highlight class="normal">energy<sp/>c<sp/>=<sp/>norm(x)<sp/>*<sp/>2_m;<sp/>//<sp/>Use<sp/>of<sp/>norm()<sp/>for<sp/>vector_unit_2d</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_2d<sp/>xy<sp/>=<sp/>sqrt(x^4);<sp/>//<sp/>Gives<sp/>x<sp/>^<sp/>2</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_2d<sp/>xy<sp/>=<sp/>sqrt_nth(x^4,4);<sp/>//<sp/>Gives<sp/>x</highlight></codeline>
+<codeline><highlight class="normal">scalar_unit<sp/>a<sp/>=<sp/>dot_product(x,y);<sp/>//<sp/>Gives<sp/>the<sp/>dot<sp/>product<sp/>of<sp/>x<sp/>and<sp/>y,<sp/>which<sp/>is<sp/>an<sp/>scalar_unit</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>b<sp/>=<sp/>angle_between(x,y);<sp/>//<sp/>Gives<sp/>the<sp/>angle<sp/>between<sp/>the<sp/>two<sp/>vectors</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(same_direction(x,y))<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>vectors<sp/>point<sp/>to<sp/>the<sp/>same<sp/>direction</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(parallel(x,y))<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>vectors<sp/>are<sp/>parallel<sp/>(point<sp/>to<sp/>the<sp/>same<sp/>or<sp/>to<sp/>the<sp/>opposite<sp/>direction)</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(orthogonal(x,y))<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>vectors<sp/>are<sp/>orthogonal<sp/>(have<sp/>90°<sp/>of<sp/>difference<sp/>in<sp/>the<sp/>direction<sp/>they<sp/>point<sp/>to)</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>y)<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>two<sp/>vector_unit_2d<sp/>are<sp/>equal.<sp/>There&apos;s<sp/>the<sp/>operator<sp/>!=<sp/>too</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>&quot;21N<sp/>56°&quot;)<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>vector<sp/>is<sp/>the<sp/>specified<sp/>by<sp/>the<sp/>string.<sp/>There&apos;s<sp/>the<sp/>operator<sp/>!=<sp/>too</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">string<sp/>b;</highlight></codeline>
+<codeline><highlight class="normal">b<sp/>=+<sp/>x;<sp/>//<sp/>Appends<sp/>x<sp/>to<sp/>the<sp/>string<sp/>b</highlight></codeline>
+<codeline><highlight class="normal">string<sp/>c<sp/>=<sp/>&quot;x:<sp/>&quot;<sp/>+<sp/>x;<sp/>//<sp/>Creates<sp/>a<sp/>new<sp/>string<sp/>by<sp/>inserting<sp/>x<sp/>as<sp/>with<sp/>to_string(x)</highlight></codeline>
+<codeline><highlight class="normal">string<sp/>d<sp/>=<sp/>x<sp/>+<sp/>&quot;<sp/>is<sp/>a<sp/>vector&quot;;<sp/>//<sp/>Both<sp/>directions<sp/>are<sp/>supported<sp/>for<sp/>creating<sp/>strings<sp/>with<sp/>vector_unit_2d</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">cout<sp/>&lt;&lt;<sp/>x;<sp/>//<sp/>Prints<sp/>x<sp/>in<sp/>the<sp/>output<sp/>stream,<sp/>any<sp/>ostream<sp/>can<sp/>be<sp/>used,<sp/>not<sp/>only<sp/>cout.<sp/>x<sp/>is<sp/>printed<sp/>with<sp/>to_string</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">vector_unit_2d<sp/>a;</highlight></codeline>
+<codeline><highlight class="normal">cin<sp/>&gt;&gt;<sp/>a;<sp/>//<sp/>Initializes<sp/>a<sp/>with<sp/>the<sp/>string<sp/>given<sp/>to<sp/>cin</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Vector<sp/>units<sp/>in<sp/>3D</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Vector<sp/>units<sp/>in<sp/>3D<sp/>are<sp/>the<sp/>most<sp/>useful<sp/>vectorial<sp/>units.<sp/>They<sp/>allow<sp/>to<sp/>do<sp/>all<sp/>the<sp/>simulations<sp/>of<sp/>physics<sp/>and<sp/>any<sp/>other<sp/>area<sp/>of<sp/>science<sp/>in<sp/>3D,<sp/>which<sp/>is<sp/>the<sp/>most<sp/>common<sp/>scenario.<sp/>To<sp/>work,<sp/>they<sp/>have,<sp/>as<sp/>vector_unit_2d,<sp/>a<sp/>value,<sp/>dimensions,<sp/>and<sp/>an<sp/>angle<sp/>theta,<sp/>but<sp/>they<sp/>include<sp/>the<sp/>angle<sp/>phi.<sp/>So,<sp/>they<sp/>work<sp/>as<sp/>spherical<sp/>coordinates,<sp/>having<sp/>cartesian<sp/>projections<sp/>for<sp/>each<sp/>axis.<sp/>The<sp/>class<sp/>vector_unit_3d<sp/>inherits<sp/>from<sp/>scalar_unit,<sp/>as<sp/>vector_unit_2d,<sp/>but<sp/>not<sp/>from<sp/>vector_unit_2d,<sp/>evading<sp/>math<sp/>errors<sp/>that<sp/>would<sp/>be<sp/>derived<sp/>from<sp/>that,<sp/>because<sp/>2D<sp/>and<sp/>3D<sp/>dimensions<sp/>are<sp/>not<sp/>mathematically<sp/>equivalent<sp/>in<sp/>2D<sp/>(when<sp/>projecting<sp/>the<sp/>x<sp/>and<sp/>y<sp/>axis<sp/>there<sp/>appears<sp/>the<sp/>angle<sp/>phi<sp/>on<sp/>the<sp/>equations<sp/>for<sp/>the<sp/>3D<sp/>cases).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">An<sp/>example<sp/>of<sp/>use<sp/>is<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">force_3d<sp/>x<sp/>=<sp/>force_3d(45_N,12_angle);<sp/>//<sp/>Creates<sp/>a<sp/>force_3d<sp/>with<sp/>a<sp/>value<sp/>of<sp/>45<sp/>N<sp/>and<sp/>an<sp/>inclination<sp/>angle<sp/>of<sp/>12°</highlight></codeline>
+<codeline><highlight class="normal">force_3d<sp/>y<sp/>=<sp/>force_3d(78,&quot;kN&quot;,67);<sp/>//<sp/>vector_unid_3d<sp/>of<sp/>force<sp/>with<sp/>values<sp/>&quot;78<sp/>mN<sp/>67°&quot;</highlight></codeline>
+<codeline><highlight class="normal">vector_unit_3d<sp/>z<sp/>=<sp/>vector_unid_3d(100,&quot;MPa&quot;,60);<sp/>//<sp/>vector_unit_3d<sp/>with<sp/>values<sp/>&quot;100<sp/>MPa<sp/>60°&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x.theta<sp/>+=<sp/>16;<sp/>//<sp/>theta<sp/>of<sp/>x<sp/>can<sp/>be<sp/>accessed<sp/>directed<sp/>and<sp/>used<sp/>as<sp/>any<sp/>angle,<sp/>it&apos;s<sp/>the<sp/>better<sp/>way<sp/>to<sp/>use<sp/>it</highlight></codeline>
+<codeline><highlight class="normal">x.phi<sp/>=<sp/>90;<sp/>//<sp/>phi<sp/>of<sp/>x<sp/>can<sp/>be<sp/>accessed<sp/>directly<sp/>too</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x<sp/>+=<sp/>y;<sp/>//<sp/>Sum<sp/>a<sp/>vector<sp/>of<sp/>the<sp/>same<sp/>dimensions</highlight></codeline>
+<codeline><highlight class="normal">y<sp/>-=<sp/>z;<sp/>//<sp/>Substraction<sp/>supported.<sp/>Can&apos;t<sp/>substract<sp/>vectors<sp/>of<sp/>different<sp/>dimensions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">force_3d<sp/>a<sp/>=<sp/>x<sp/>+<sp/>y;<sp/>//<sp/>Sum<sp/>of<sp/>vector_unid_3d</highlight></codeline>
+<codeline><highlight class="normal">force_3d<sp/>b<sp/>=<sp/>x<sp/>-<sp/>y;<sp/>//<sp/>Substraction<sp/>of<sp/>vector_unid_3d</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">velocity_3d<sp/>acc<sp/>=<sp/>acceleration_3d(&quot;25<sp/>m/s&quot;)<sp/>*<sp/>100_s;<sp/>//<sp/>vector_unid_3d<sp/>can<sp/>multiply<sp/>with<sp/>scalar_unit</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_3d<sp/>p<sp/>=<sp/>x<sp/>/<sp/>area(&quot;100<sp/>m2&quot;);<sp/>//<sp/>vector_unid_3d<sp/>can<sp/>divide<sp/>with<sp/>scalar_unit</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">vector_unid_3d<sp/>ab<sp/>=<sp/>x<sp/>+<sp/>16;<sp/>//<sp/>vector_unid_3d<sp/>can<sp/>sum<sp/>with<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_3d<sp/>ac<sp/>=<sp/>y<sp/>-<sp/>98;<sp/>//<sp/>vector_unid_3d<sp/>can<sp/>substract<sp/>with<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_3d<sp/>ad<sp/>=<sp/>x<sp/>*<sp/>2;<sp/>//<sp/>vector_unid_3d<sp/>can<sp/>multiply<sp/>with<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_3d<sp/>ae<sp/>=<sp/>y<sp/>/<sp/>8;<sp/>//<sp/>vector_unid_3d<sp/>can<sp/>divide<sp/>with<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_3d<sp/>xy<sp/>=<sp/>x<sp/>^<sp/>4;<sp/>//<sp/>vector_unid_3d<sp/>can<sp/>power<sp/>with<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x<sp/>+=<sp/>7;<sp/>//<sp/>vector_unid_3d<sp/>with<sp/>operator+=<sp/>for<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">y<sp/>-=<sp/>19;<sp/>//<sp/>vector_unid_3d<sp/>with<sp/>operator-=<sp/>for<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">x<sp/>*=<sp/>4;<sp/>//<sp/>vector_unid_3d<sp/>with<sp/>operator*=<sp/>for<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">y<sp/>/=<sp/>2;<sp/>//<sp/>vector_unid_3d<sp/>with<sp/>operator/=<sp/>for<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">force<sp/>e<sp/>=<sp/>x.x_projection();<sp/>//<sp/>vector_unid_3d<sp/>projection<sp/>on<sp/>the<sp/>x<sp/>axis</highlight></codeline>
+<codeline><highlight class="normal">force<sp/>f<sp/>=<sp/>x.y_projection();<sp/>//<sp/>vector_unid_3d<sp/>projection<sp/>on<sp/>the<sp/>y<sp/>axis</highlight></codeline>
+<codeline><highlight class="normal">force<sp/>f<sp/>=<sp/>x.z_projection();<sp/>//<sp/>vector_unid_3d<sp/>projection<sp/>on<sp/>the<sp/>z<sp/>axis</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x.invert();<sp/>//<sp/>Now<sp/>x<sp/>points<sp/>to<sp/>the<sp/>opposite<sp/>direction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">string<sp/>x_display<sp/>=<sp/>to_string(x);<sp/>//<sp/>Prints<sp/>&quot;45N<sp/>12°&quot;</highlight></codeline>
+<codeline><highlight class="normal">energy<sp/>c<sp/>=<sp/>norm(x)<sp/>*<sp/>2_m;<sp/>//<sp/>Use<sp/>of<sp/>norm()<sp/>for<sp/>vector_unit_3d</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_3d<sp/>xy<sp/>=<sp/>sqrt(x^4);<sp/>//<sp/>Gives<sp/>x<sp/>^<sp/>2</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_3d<sp/>xy<sp/>=<sp/>sqrt_nth(x^4,4);<sp/>//<sp/>Gives<sp/>x</highlight></codeline>
+<codeline><highlight class="normal">scalar_unit<sp/>a<sp/>=<sp/>dot_product(x,y);<sp/>//<sp/>Gives<sp/>the<sp/>dot<sp/>product<sp/>of<sp/>x<sp/>and<sp/>y,<sp/>which<sp/>is<sp/>an<sp/>scalar_unit</highlight></codeline>
+<codeline><highlight class="normal">vector_unit_3d<sp/>b<sp/>=<sp/>cross_product(x,y);<sp/>//<sp/>Gives<sp/>the<sp/>cross<sp/>product<sp/>of<sp/>x<sp/>and<sp/>y,<sp/>which<sp/>is<sp/>a<sp/>vector_unit_3d</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>b<sp/>=<sp/>angle_between(x,y);<sp/>//<sp/>Gives<sp/>the<sp/>angle<sp/>between<sp/>the<sp/>two<sp/>vectors</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(same_direction(x,y))<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>vectors<sp/>point<sp/>to<sp/>the<sp/>same<sp/>direction</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(parallel(x,y))<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>vectors<sp/>are<sp/>parallel<sp/>(point<sp/>to<sp/>the<sp/>same<sp/>or<sp/>to<sp/>the<sp/>opposite<sp/>direction)</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(orthogonal(x,y))<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>vectors<sp/>are<sp/>orthogonal<sp/>(have<sp/>90°<sp/>of<sp/>difference<sp/>in<sp/>the<sp/>direction<sp/>they<sp/>point<sp/>to)</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>y)<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>two<sp/>vector_unit_3d<sp/>are<sp/>equal.<sp/>There&apos;s<sp/>the<sp/>operator<sp/>!=<sp/>too</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>&quot;45N<sp/>12°&quot;)<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>vector<sp/>is<sp/>the<sp/>specified<sp/>by<sp/>the<sp/>string.<sp/>There&apos;s<sp/>the<sp/>operator<sp/>!=<sp/>too</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">string<sp/>b;</highlight></codeline>
+<codeline><highlight class="normal">b<sp/>=+<sp/>x;<sp/>//<sp/>Appends<sp/>x<sp/>to<sp/>the<sp/>string<sp/>b</highlight></codeline>
+<codeline><highlight class="normal">string<sp/>c<sp/>=<sp/>&quot;x:<sp/>&quot;<sp/>+<sp/>x;<sp/>//<sp/>Creates<sp/>a<sp/>new<sp/>string<sp/>by<sp/>inserting<sp/>x<sp/>as<sp/>with<sp/>to_string(x)</highlight></codeline>
+<codeline><highlight class="normal">string<sp/>d<sp/>=<sp/>x<sp/>+<sp/>&quot;<sp/>is<sp/>a<sp/>vector&quot;;<sp/>//<sp/>Both<sp/>directions<sp/>are<sp/>supported<sp/>for<sp/>creating<sp/>strings<sp/>with<sp/>vector_unit_3d</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">cout<sp/>&lt;&lt;<sp/>x;<sp/>//<sp/>Prints<sp/>x<sp/>in<sp/>the<sp/>output<sp/>stream,<sp/>any<sp/>ostream<sp/>can<sp/>be<sp/>used,<sp/>not<sp/>only<sp/>cout.<sp/>x<sp/>is<sp/>printed<sp/>with<sp/>to_string</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">vector_unit_3d<sp/>a;</highlight></codeline>
+<codeline><highlight class="normal">cin<sp/>&gt;&gt;<sp/>a;<sp/>//<sp/>Initializes<sp/>a<sp/>with<sp/>the<sp/>string<sp/>given<sp/>to<sp/>cin</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Vector<sp/>units<sp/>in<sp/>ND</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Vector<sp/>units<sp/>in<sp/>ND<sp/>are<sp/>very<sp/>interesting<sp/>vector<sp/>units.<sp/>They<sp/>allow<sp/>to<sp/>operate<sp/>in<sp/>ND,<sp/>which<sp/>means,<sp/>inside<sp/>scifir-units,<sp/>that<sp/>the<sp/>dimensions<sp/>can<sp/>be<sp/>changed.<sp/>ND<sp/>allows<sp/>to<sp/>operate<sp/>in<sp/>1D,<sp/>2D,<sp/>3D<sp/>and<sp/>more<sp/>dimensions<sp/>at<sp/>the<sp/>same<sp/>time.<sp/>The<sp/>way<sp/>they<sp/>allow<sp/>that<sp/>is<sp/>with<sp/>a<sp/>vector&lt;angle&gt;<sp/>member-variable,<sp/>which<sp/>allows<sp/>to<sp/>control<sp/>the<sp/>angles<sp/>of<sp/>the<sp/>n<sp/>dimensions<sp/>were<sp/>the<sp/>vector<sp/>operates.<sp/>For<sp/>2D<sp/>it<sp/>has<sp/>one<sp/>angle,<sp/>as<sp/>vector_unit_2d,<sp/>and<sp/>for<sp/>3D<sp/>it<sp/>has<sp/>two<sp/>angles,<sp/>as<sp/>vector_unit_3d.<sp/>For<sp/>1D<sp/>it<sp/>doesn&apos;t<sp/>has<sp/>any<sp/>angle.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">An<sp/>example<sp/>of<sp/>use<sp/>is<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">force_nd<sp/>x<sp/>=<sp/>force_nd(29_N,{8_angle,16_angle,32_angle});<sp/>//<sp/>Creates<sp/>a<sp/>force_nd<sp/>with<sp/>a<sp/>value<sp/>of<sp/>29<sp/>N<sp/>and<sp/>an<sp/>inclination<sp/>angle<sp/>of<sp/>8°,<sp/>another<sp/>of<sp/>16°<sp/>and<sp/>another<sp/>of<sp/>32°</highlight></codeline>
+<codeline><highlight class="normal">force_nd<sp/>y<sp/>=<sp/>force_nd(44,&quot;dN&quot;,{55,13,42});<sp/>//<sp/>vector_unid_nd<sp/>of<sp/>force<sp/>with<sp/>values<sp/>&quot;44<sp/>dN<sp/>55°<sp/>13°<sp/>42°&quot;</highlight></codeline>
+<codeline><highlight class="normal">vector_unit_nd<sp/>z<sp/>=<sp/>vector_unit_nd(81,&quot;MPa&quot;,{32,44,67});<sp/>//<sp/>vector_unit_nd<sp/>with<sp/>values<sp/>&quot;81<sp/>MPa<sp/>32°<sp/>44°<sp/>67°&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x.angles[0]<sp/>+=<sp/>7;<sp/>//<sp/>theta<sp/>of<sp/>x<sp/>can<sp/>be<sp/>accessed<sp/>directed<sp/>and<sp/>used<sp/>as<sp/>any<sp/>angle,<sp/>it&apos;s<sp/>the<sp/>better<sp/>way<sp/>to<sp/>use<sp/>it</highlight></codeline>
+<codeline><highlight class="normal">x.angles[1]<sp/>=<sp/>71;<sp/>//<sp/>phi<sp/>of<sp/>x<sp/>can<sp/>be<sp/>accessed<sp/>directly<sp/>too</highlight></codeline>
+<codeline><highlight class="normal">x.angles[2]<sp/>-=<sp/>4;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x<sp/>+=<sp/>y;<sp/>//<sp/>Sum<sp/>a<sp/>vector<sp/>of<sp/>the<sp/>same<sp/>dimensions</highlight></codeline>
+<codeline><highlight class="normal">y<sp/>-=<sp/>z;<sp/>//<sp/>Substraction<sp/>supported.<sp/>Can&apos;t<sp/>substract<sp/>vectors<sp/>of<sp/>different<sp/>dimensions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">force_nd<sp/>a<sp/>=<sp/>x<sp/>+<sp/>y;<sp/>//<sp/>Sum<sp/>of<sp/>vector_unit_nd</highlight></codeline>
+<codeline><highlight class="normal">force_nd<sp/>b<sp/>=<sp/>x<sp/>-<sp/>y;<sp/>//<sp/>Substraction<sp/>of<sp/>vector_unit_nd</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">velocity_nd<sp/>acc<sp/>=<sp/>acceleration_nd(&quot;19<sp/>m/s&quot;,{14,52,33})<sp/>*<sp/>80_s;<sp/>//<sp/>vector_unit_nd<sp/>can<sp/>multiply<sp/>with<sp/>scalar_unit</highlight></codeline>
+<codeline><highlight class="normal">vector_unit_nd<sp/>p<sp/>=<sp/>x<sp/>/<sp/>area(&quot;100<sp/>m2&quot;);<sp/>//<sp/>vector_unit_nd<sp/>can<sp/>divide<sp/>with<sp/>scalar_unit</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">vector_unit_nd<sp/>ab<sp/>=<sp/>x<sp/>+<sp/>9;<sp/>//<sp/>vector_unit_nd<sp/>can<sp/>sum<sp/>with<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">vector_unit_nd<sp/>ac<sp/>=<sp/>y<sp/>-<sp/>78;<sp/>//<sp/>vector_unit_nd<sp/>can<sp/>substract<sp/>with<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">vector_unit_nd<sp/>ad<sp/>=<sp/>x<sp/>*<sp/>3;<sp/>//<sp/>vector_unit_nd<sp/>can<sp/>multiply<sp/>with<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">vector_unit_nd<sp/>ae<sp/>=<sp/>y<sp/>/<sp/>5;<sp/>//<sp/>vector_unit_nd<sp/>can<sp/>divide<sp/>with<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">vector_unit_nd<sp/>xy<sp/>=<sp/>x<sp/>^<sp/>3;<sp/>//<sp/>vector_unit_nd<sp/>can<sp/>power<sp/>with<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x<sp/>+=<sp/>45;<sp/>//<sp/>vector_unit_nd<sp/>with<sp/>operator+=<sp/>for<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">y<sp/>-=<sp/>15;<sp/>//<sp/>vector_unit_nd<sp/>with<sp/>operator-=<sp/>for<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">x<sp/>*=<sp/>3;<sp/>//<sp/>vector_unit_nd<sp/>with<sp/>operator*=<sp/>for<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline><highlight class="normal">y<sp/>/=<sp/>7;<sp/>//<sp/>vector_unit_nd<sp/>with<sp/>operator/=<sp/>for<sp/>numeric<sp/>primitive<sp/>types</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">force<sp/>e<sp/>=<sp/>x.x_projection();<sp/>//<sp/>vector_unit_nd<sp/>projection<sp/>on<sp/>the<sp/>x<sp/>axis</highlight></codeline>
+<codeline><highlight class="normal">force<sp/>f<sp/>=<sp/>x.y_projection();<sp/>//<sp/>vector_unit_nd<sp/>projection<sp/>on<sp/>the<sp/>y<sp/>axis</highlight></codeline>
+<codeline><highlight class="normal">force<sp/>f<sp/>=<sp/>x.z_projection();<sp/>//<sp/>vector_unit_nd<sp/>projection<sp/>on<sp/>the<sp/>z<sp/>axis</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">force<sp/>f<sp/>=<sp/>x.n_projection(2);<sp/>//<sp/>vector_unit_nd<sp/>projection<sp/>on<sp/>the<sp/>y<sp/>axis,<sp/>any<sp/>axis<sp/>can<sp/>be<sp/>specified.<sp/>x<sp/>is<sp/>1,<sp/>y<sp/>is<sp/>2,<sp/>z<sp/>is<sp/>3</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x.invert();<sp/>//<sp/>Now<sp/>x<sp/>points<sp/>to<sp/>the<sp/>opposite<sp/>direction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">string<sp/>x_display<sp/>=<sp/>to_string(x);<sp/>//<sp/>Prints<sp/>&quot;29N<sp/>8°<sp/>16°<sp/>32°&quot;</highlight></codeline>
+<codeline><highlight class="normal">energy<sp/>c<sp/>=<sp/>norm(x)<sp/>*<sp/>2_m;<sp/>//<sp/>Use<sp/>of<sp/>norm()<sp/>for<sp/>vector_unit_nd</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_nd<sp/>xy<sp/>=<sp/>sqrt(x^4);<sp/>//<sp/>Gives<sp/>x<sp/>^<sp/>2</highlight></codeline>
+<codeline><highlight class="normal">vector_unid_nd<sp/>xy<sp/>=<sp/>sqrt_nth(x^4,4);<sp/>//<sp/>Gives<sp/>x</highlight></codeline>
+<codeline><highlight class="normal">scalar_unit<sp/>a<sp/>=<sp/>dot_product(x,y);<sp/>//<sp/>Gives<sp/>the<sp/>dot<sp/>product<sp/>of<sp/>x<sp/>and<sp/>y,<sp/>which<sp/>is<sp/>an<sp/>scalar_unit</highlight></codeline>
+<codeline><highlight class="normal">vector_unit_nd<sp/>b<sp/>=<sp/>cross_product(x,y);<sp/>//<sp/>Gives<sp/>the<sp/>cross<sp/>product<sp/>of<sp/>x<sp/>and<sp/>y,<sp/>which<sp/>is<sp/>a<sp/>vector_unit_nd</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>b<sp/>=<sp/>angle_between(x,y);<sp/>//<sp/>Gives<sp/>the<sp/>angle<sp/>between<sp/>the<sp/>two<sp/>vectors</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(same_nd(x,y))<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>vector<sp/>have<sp/>the<sp/>same<sp/>ND,<sp/>if<sp/>both<sp/>are<sp/>2D,<sp/>both<sp/>are<sp/>3D,<sp/>or<sp/>both<sp/>are<sp/>1D</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(same_direction(x,y))<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>vectors<sp/>point<sp/>to<sp/>the<sp/>same<sp/>direction</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(parallel(x,y))<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>vectors<sp/>are<sp/>parallel<sp/>(point<sp/>to<sp/>the<sp/>same<sp/>or<sp/>to<sp/>the<sp/>opposite<sp/>direction)</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(orthogonal(x,y))<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>vectors<sp/>are<sp/>orthogonal<sp/>(have<sp/>90°<sp/>of<sp/>difference<sp/>in<sp/>the<sp/>direction<sp/>they<sp/>point<sp/>to)</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>y)<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>two<sp/>vector_unit_nd<sp/>are<sp/>equal.<sp/>There&apos;s<sp/>the<sp/>operator<sp/>!=<sp/>too</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>&quot;29N<sp/>8°<sp/>16°<sp/>32°&quot;)<sp/>//<sp/>Gives<sp/>true<sp/>if<sp/>the<sp/>vector<sp/>is<sp/>the<sp/>specified<sp/>by<sp/>the<sp/>string.<sp/>There&apos;s<sp/>the<sp/>operator<sp/>!=<sp/>too</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">string<sp/>b;</highlight></codeline>
+<codeline><highlight class="normal">b<sp/>=+<sp/>x;<sp/>//<sp/>Appends<sp/>x<sp/>to<sp/>the<sp/>string<sp/>b</highlight></codeline>
+<codeline><highlight class="normal">string<sp/>c<sp/>=<sp/>&quot;x:<sp/>&quot;<sp/>+<sp/>x;<sp/>//<sp/>Creates<sp/>a<sp/>new<sp/>string<sp/>by<sp/>inserting<sp/>x<sp/>as<sp/>with<sp/>to_string(x)</highlight></codeline>
+<codeline><highlight class="normal">string<sp/>d<sp/>=<sp/>x<sp/>+<sp/>&quot;<sp/>is<sp/>a<sp/>vector&quot;;<sp/>//<sp/>Both<sp/>directions<sp/>are<sp/>supported<sp/>for<sp/>creating<sp/>strings<sp/>with<sp/>vector_unit_nd</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">cout<sp/>&lt;&lt;<sp/>x;<sp/>//<sp/>Prints<sp/>x<sp/>in<sp/>the<sp/>output<sp/>stream,<sp/>any<sp/>ostream<sp/>can<sp/>be<sp/>used,<sp/>not<sp/>only<sp/>cout.<sp/>x<sp/>is<sp/>printed<sp/>with<sp/>to_string</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">vector_unit_nd<sp/>a;</highlight></codeline>
+<codeline><highlight class="normal">cin<sp/>&gt;&gt;<sp/>a;<sp/>//<sp/>Initializes<sp/>a<sp/>with<sp/>the<sp/>string<sp/>given<sp/>to<sp/>cin</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Coordinates<sp/>and<sp/>points<sp/>in<sp/>1D</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Coordinates<sp/>in<sp/>1D<sp/>allow<sp/>to<sp/>move<sp/>any<sp/>object,<sp/>particle,<sp/>solid<sp/>or<sp/>immaterial,<sp/>through<sp/>a<sp/>1D<sp/>space.<sp/>The<sp/>coordinates_1d<sp/>class<sp/>has<sp/>been<sp/>implemented<sp/>as<sp/>a<sp/>template<sp/>class,<sp/>allowing<sp/>to<sp/>use<sp/>any<sp/>scalar_unit,<sp/>or,<sp/>also,<sp/>a<sp/>single<sp/>float.<sp/>Any<sp/>scalar_unit<sp/>can<sp/>be<sp/>used,<sp/>because<sp/>then<sp/>coordinates_1d<sp/>allows<sp/>to<sp/>move<sp/>in<sp/>dimensions<sp/>different<sp/>than<sp/>length,<sp/>as<sp/>dimensions<sp/>on<sp/>some<sp/>science-fiction<sp/>speculations<sp/>are<sp/>(because<sp/>on<sp/>some<sp/>science-fiction<sp/>ideas,<sp/>a<sp/>dimension<sp/>can<sp/>be<sp/>anything).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">point_1d<sp/>is<sp/>equivalent<sp/>in<sp/>functionality<sp/>as<sp/>coordinates_1d,<sp/>it<sp/>has<sp/>the<sp/>same<sp/>member-variables<sp/>and<sp/>functions,<sp/>its<sp/>intended<sp/>use<sp/>is<sp/>to<sp/>be<sp/>an<sp/>abstract<sp/>point<sp/>in<sp/>1D,<sp/>rather<sp/>than<sp/>a<sp/>position<sp/>in<sp/>1D<sp/>(as<sp/>coordinates_1d<sp/>are).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">An<sp/>example<sp/>of<sp/>use<sp/>of<sp/>coordinates_1d<sp/>is<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">coordinates_1d&lt;length&gt;<sp/>x<sp/>=<sp/>coordinates_1d&lt;length&gt;(1_m);</highlight></codeline>
+<codeline><highlight class="normal">coordinates_1d&lt;length&gt;<sp/>y<sp/>=<sp/>coordinates_1d&lt;length&gt;(length(3,&quot;km&quot;));</highlight></codeline>
+<codeline><highlight class="normal">coordinates_1d&lt;length&gt;<sp/>z<sp/>=<sp/>coordinates_1d&lt;length&gt;(&quot;4<sp/>dam&quot;);</highlight></codeline>
+<codeline><highlight class="normal">coordinates_1d&lt;float&gt;<sp/>z<sp/>=<sp/>coordinates_1d&lt;float&gt;(12);<sp/>//<sp/>coordinates_1d<sp/>can<sp/>be<sp/>used<sp/>with<sp/>a<sp/>float<sp/>in<sp/>order<sp/>to<sp/>save<sp/>memory,<sp/>or<sp/>if<sp/>any<sp/>other<sp/>unit<sp/>is<sp/>useful<sp/>for<sp/>the<sp/>use<sp/>case</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">point_1d&lt;length&gt;<sp/>a<sp/>=<sp/>point_1d&lt;length&gt;(1_dm);</highlight></codeline>
+<codeline><highlight class="normal">x<sp/>=<sp/>a;<sp/>//<sp/>A<sp/>coordinates_1d<sp/>can<sp/>be<sp/>assigned<sp/>a<sp/>point_1d<sp/>to<sp/>get<sp/>his<sp/>same<sp/>position</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x.set_position(1_km);<sp/>//<sp/>the<sp/>position<sp/>is<sp/>now<sp/>1<sp/>km</highlight></codeline>
+<codeline><highlight class="normal">x.move(1_m);<sp/>//<sp/>move<sp/>1<sp/>m<sp/>to<sp/>the<sp/>right</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>x_distance<sp/>=<sp/>x.distance_to_origin();<sp/>//<sp/>gives<sp/>the<sp/>absolute<sp/>distance<sp/>to<sp/>the<sp/>origin</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">string<sp/>x_display<sp/>=<sp/>to_string(x);<sp/>//<sp/>prints<sp/>the<sp/>coordinates_1d</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>xy_distance<sp/>=<sp/>distance(x,y);<sp/>//<sp/>calculates<sp/>the<sp/>distance<sp/>between<sp/>the<sp/>two<sp/>positions</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>xa_distance<sp/>=<sp/>distance(x,a);<sp/>//<sp/>calculates<sp/>the<sp/>distance<sp/>between<sp/>a<sp/>coordinates_1d<sp/>and<sp/>a<sp/>point_1d</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>y)<sp/>//<sp/>gives<sp/>true<sp/>if<sp/>both<sp/>coordinates_1d<sp/>are<sp/>equal</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>a)<sp/>//<sp/>gives<sp/>true<sp/>if<sp/>coordinates_1d<sp/>is<sp/>equal<sp/>to<sp/>point_1d</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>&quot;1m&quot;)<sp/>//<sp/>gives<sp/>true<sp/>if<sp/>the<sp/>coordinates_1d<sp/>are<sp/>equal<sp/>to<sp/>the<sp/>specified<sp/>coordinates<sp/>in<sp/>the<sp/>string</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">string<sp/>b;</highlight></codeline>
+<codeline><highlight class="normal">b<sp/>+=<sp/>x;<sp/>//<sp/>coordinates_1d<sp/>can<sp/>be<sp/>added<sp/>to<sp/>an<sp/>string</highlight></codeline>
+<codeline><highlight class="normal">string<sp/>c<sp/>=<sp/>&quot;x:<sp/>&quot;<sp/>+<sp/>x;<sp/>//<sp/>coordinates_1d<sp/>has<sp/>an<sp/>operator<sp/>+<sp/>with<sp/>string<sp/>to<sp/>give<sp/>another<sp/>string</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">cout<sp/>&lt;&lt;<sp/>x;<sp/>//<sp/>coordinates_1d<sp/>can<sp/>be<sp/>printed<sp/>to<sp/>cout</highlight></codeline>
+<codeline><highlight class="normal">cin<sp/>&gt;&gt;<sp/>x;<sp/>//<sp/>coordinates_1d<sp/>can<sp/>be<sp/>initialized<sp/>through<sp/>cin</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Coordinates<sp/>and<sp/>points<sp/>in<sp/>2D</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">coordinates_2d<sp/>class<sp/>allows<sp/>to<sp/>create<sp/>software<sp/>with<sp/>positions<sp/>in<sp/>2D.<sp/>It<sp/>has<sp/>a<sp/>very<sp/>similar<sp/>interface<sp/>to<sp/>coordinates_1d,<sp/>it&apos;s<sp/>initialized<sp/>with<sp/>an<sp/>string<sp/>of<sp/>the<sp/>form<sp/>&quot;1<sp/>m,2<sp/>m&quot;<sp/>or<sp/>&quot;(1<sp/>m,2<sp/>m)&quot;<sp/>because<sp/>the<sp/>character<sp/>&apos;(&apos;<sp/>can<sp/>be<sp/>present<sp/>or<sp/>not.<sp/>It&apos;s,<sp/>as<sp/>coordinates_1d,<sp/>a<sp/>template<sp/>class,<sp/>and<sp/>can<sp/>then<sp/>specify<sp/>coordinates<sp/>of<sp/>any<sp/>scalar_unit<sp/>(usually,<sp/>length),<sp/>or<sp/>with<sp/>a<sp/>float,<sp/>if<sp/>there&apos;s<sp/>no<sp/>unit<sp/>that<sp/>represents<sp/>adequately<sp/>the<sp/>coordinates,<sp/>or<sp/>if<sp/>it&apos;s<sp/>needed<sp/>to<sp/>save<sp/>some<sp/>memory<sp/>(because<sp/>the<sp/>float<sp/>is<sp/>lighter<sp/>than<sp/>a<sp/>unit<sp/>in<sp/>his<sp/>consumption<sp/>of<sp/>memory).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">coordinates_2d<sp/>can<sp/>be<sp/>used<sp/>as<sp/>cartesian<sp/>and<sp/>as<sp/>polar<sp/>coordinates<sp/>at<sp/>the<sp/>same<sp/>time.<sp/>It<sp/>has<sp/>x<sp/>and<sp/>y<sp/>as<sp/>member-variables,<sp/>which<sp/>can<sp/>be<sp/>of<sp/>the<sp/>type<sp/>of<sp/>any<sp/>scalar_unit<sp/>or<sp/>a<sp/>float.<sp/>When<sp/>working<sp/>with<sp/>polar<sp/>coordinates,<sp/>the<sp/>calculations<sp/>are<sp/>stored<sp/>as<sp/>x<sp/>and<sp/>y,<sp/>that&apos;s,<sp/>as<sp/>cartesian<sp/>coordinates,<sp/>but<sp/>when<sp/>accessing<sp/>it,<sp/>with<sp/>functions<sp/>like<sp/>get_p()<sp/>and<sp/>get_theta(),<sp/>they<sp/>give<sp/>the<sp/>values<sp/>in<sp/>polar<sp/>coordinates.<sp/>Then,<sp/>at<sp/>the<sp/>same<sp/>time,<sp/>coordinates_2d<sp/>behave<sp/>as<sp/>cartesian<sp/>and<sp/>as<sp/>polar<sp/>coordinates,<sp/>by<sp/>storing<sp/>the<sp/>values<sp/>only<sp/>once,<sp/>not<sp/>two<sp/>times.<sp/>Then,<sp/>coordinates_2d<sp/>is<sp/>like<sp/>a<sp/>dual<sp/>object,<sp/>it<sp/>contains<sp/>cartesian_2d<sp/>and<sp/>polar_coordinates<sp/>inside.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">point_2d<sp/>is<sp/>equivalent<sp/>to<sp/>coordinates_2d,<sp/>it&apos;s<sp/>intended<sp/>to<sp/>be<sp/>used<sp/>as<sp/>a<sp/>point<sp/>in<sp/>2D<sp/>instead<sp/>of<sp/>as<sp/>a<sp/>position<sp/>in<sp/>2D<sp/>(as<sp/>coordinates_2d).<sp/>point_2d<sp/>has<sp/>the<sp/>same<sp/>functionalities<sp/>as<sp/>coordinates_2d,<sp/>that&apos;s,<sp/>the<sp/>same<sp/>functions<sp/>and<sp/>member-variables,<sp/>but<sp/>its<sp/>use<sp/>is<sp/>intended<sp/>to<sp/>be<sp/>semantic,<sp/>it<sp/>provides<sp/>clarity<sp/>as<sp/>when<sp/>in<sp/>the<sp/>program<sp/>the<sp/>data<sp/>represents<sp/>a<sp/>position<sp/>(as<sp/>coordinates_2d)<sp/>or<sp/>an<sp/>abstract<sp/>point<sp/>in<sp/>2D<sp/>(as<sp/>point_2d).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">coordinates_2d&lt;length&gt;<sp/>x<sp/>=<sp/>coordinates_2d&lt;length&gt;(1_m,2_m);</highlight></codeline>
+<codeline><highlight class="normal">coordinates_2d&lt;length&gt;<sp/>y<sp/>=<sp/>coordinates_2d&lt;length&gt;(length(3,&quot;km&quot;),length(5,&quot;dam&quot;));</highlight></codeline>
+<codeline><highlight class="normal">coordinates_2d&lt;length&gt;<sp/>z<sp/>=<sp/>coordinates_2d&lt;length&gt;(&quot;4<sp/>dam,2<sp/>m&quot;);<sp/>//<sp/>initialization<sp/>string</highlight></codeline>
+<codeline><highlight class="normal">coordinates_2d&lt;float&gt;<sp/>z<sp/>=<sp/>coordinates_2d&lt;float&gt;(12,20);<sp/>//<sp/>coordinates_2d<sp/>can<sp/>be<sp/>used<sp/>with<sp/>a<sp/>float<sp/>in<sp/>order<sp/>to<sp/>save<sp/>memory,<sp/>or<sp/>if<sp/>any<sp/>other<sp/>unit<sp/>is<sp/>useful<sp/>for<sp/>the<sp/>use<sp/>case</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">point_2d&lt;length&gt;<sp/>a<sp/>=<sp/>point_2d&lt;length&gt;(1_dm,5_cm);</highlight></codeline>
+<codeline><highlight class="normal">x<sp/>=<sp/>a;<sp/>//<sp/>A<sp/>coordinates_2d<sp/>can<sp/>be<sp/>assigned<sp/>a<sp/>point_2d<sp/>to<sp/>get<sp/>his<sp/>same<sp/>position</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">length<sp/>x_p<sp/>=<sp/>x.get_p();<sp/>//<sp/>coordinates_2d<sp/>give<sp/>the<sp/>value<sp/>of<sp/>p<sp/>of<sp/>polar<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>x_theta<sp/>=<sp/>x.get_theta();<sp/>//<sp/>coordinates_2d<sp/>give<sp/>the<sp/>angle<sp/>theta<sp/>of<sp/>polar<sp/>coordinates</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x.set_position(1_km,2_hm);<sp/>//<sp/>the<sp/>position<sp/>is<sp/>now<sp/>&quot;1<sp/>km,2<sp/>hm&quot;</highlight></codeline>
+<codeline><highlight class="normal">x.set_position(1_m,angle(10));<sp/>//<sp/>the<sp/>position<sp/>has<sp/>been<sp/>specified<sp/>using<sp/>polar<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">x.rotate(angle(10));<sp/>//<sp/>rotate<sp/>the<sp/>position<sp/>in<sp/>the<sp/>angle<sp/>specified<sp/>related<sp/>to<sp/>the<sp/>origin</highlight></codeline>
+<codeline><highlight class="normal">x.move(1_m,5_cm);<sp/>//<sp/>move<sp/>1<sp/>m<sp/>to<sp/>the<sp/>right<sp/>and<sp/>5<sp/>cm<sp/>up</highlight></codeline>
+<codeline><highlight class="normal">x.move(3_m,angle(20));<sp/>//<sp/>move<sp/>3<sp/>m<sp/>and<sp/>20°<sp/>specified<sp/>in<sp/>polar<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">displacement_2d<sp/>c_displacement<sp/>=<sp/>displacement_2d(&quot;2<sp/>km&quot;,10);<sp/>//<sp/>create<sp/>a<sp/>displacement_2d<sp/>to<sp/>specify<sp/>a<sp/>movement</highlight></codeline>
+<codeline><highlight class="normal">x.move(c_displacement);<sp/>//<sp/>move<sp/>in<sp/>the<sp/>specified<sp/>displacement</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>x_distance<sp/>=<sp/>x.distance_to_origin();<sp/>//<sp/>gives<sp/>the<sp/>absolute<sp/>distance<sp/>to<sp/>the<sp/>origin</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">string<sp/>x_display<sp/>=<sp/>to_string(x);<sp/>//<sp/>prints<sp/>the<sp/>coordinates_2d</highlight></codeline>
+<codeline><highlight class="normal">string<sp/>x_polar_display<sp/>=<sp/>x.display_polar();<sp/>//<sp/>prints<sp/>the<sp/>coordinates_2d<sp/>in<sp/>polar<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>xy_distance<sp/>=<sp/>distance(x,y);<sp/>//<sp/>calculates<sp/>the<sp/>distance<sp/>between<sp/>the<sp/>two<sp/>positions</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>xa_distance<sp/>=<sp/>distance(x,a);<sp/>//<sp/>calculates<sp/>the<sp/>distance<sp/>between<sp/>a<sp/>coordinates_2d<sp/>and<sp/>a<sp/>point_2d</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>y)<sp/>//<sp/>gives<sp/>true<sp/>if<sp/>both<sp/>coordinates_2d<sp/>are<sp/>equal</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>a)<sp/>//<sp/>gives<sp/>true<sp/>if<sp/>coordinates_2d<sp/>is<sp/>equal<sp/>to<sp/>point_2d</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>&quot;1<sp/>m,2<sp/>m&quot;)<sp/>//<sp/>gives<sp/>true<sp/>if<sp/>the<sp/>coordinates_2d<sp/>are<sp/>equal<sp/>to<sp/>the<sp/>specified<sp/>coordinates<sp/>in<sp/>the<sp/>string</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">string<sp/>b;</highlight></codeline>
+<codeline><highlight class="normal">b<sp/>+=<sp/>x;<sp/>//<sp/>coordinates_2d<sp/>can<sp/>be<sp/>added<sp/>to<sp/>an<sp/>string</highlight></codeline>
+<codeline><highlight class="normal">string<sp/>c<sp/>=<sp/>&quot;x:<sp/>&quot;<sp/>+<sp/>x;<sp/>//<sp/>coordinates_2d<sp/>has<sp/>an<sp/>operator<sp/>+<sp/>with<sp/>string<sp/>to<sp/>give<sp/>another<sp/>string</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">cout<sp/>&lt;&lt;<sp/>x;<sp/>//<sp/>coordinates_2d<sp/>can<sp/>be<sp/>printed<sp/>to<sp/>cout</highlight></codeline>
+<codeline><highlight class="normal">cin<sp/>&gt;&gt;<sp/>x;<sp/>//<sp/>coordinates_2d<sp/>can<sp/>be<sp/>initialized<sp/>through<sp/>cin</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Coordinates<sp/>and<sp/>points<sp/>in<sp/>3D</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">coordinates_3d<sp/>class<sp/>allows<sp/>to<sp/>work<sp/>with<sp/>positions<sp/>in<sp/>3D.<sp/>Its<sp/>initialization<sp/>string<sp/>is<sp/>of<sp/>the<sp/>form<sp/>&quot;10<sp/>m,5<sp/>m,3<sp/>m&quot;,<sp/>or<sp/>of<sp/>the<sp/>form<sp/>&quot;(10<sp/>m,5<sp/>m,3<sp/>m)&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">coordinates_3d<sp/>can<sp/>be<sp/>used<sp/>as<sp/>cartesian<sp/>coordinates,<sp/>as<sp/>cylindrical<sp/>coordinates,<sp/>as<sp/>spherical<sp/>coordinates<sp/>and<sp/>as<sp/>geographical<sp/>coordinates<sp/>at<sp/>the<sp/>same<sp/>time.<sp/>It<sp/>has<sp/>x,<sp/>y<sp/>and<sp/>z<sp/>as<sp/>member-variables,<sp/>which<sp/>can<sp/>be<sp/>of<sp/>the<sp/>type<sp/>of<sp/>any<sp/>scalar_unit<sp/>or<sp/>a<sp/>float.<sp/>When<sp/>working<sp/>with<sp/>coordinates<sp/>different<sp/>than<sp/>cartesian<sp/>coordinates,<sp/>the<sp/>calculations<sp/>are<sp/>stored<sp/>as<sp/>x,<sp/>y<sp/>and<sp/>z,<sp/>that&apos;s,<sp/>as<sp/>cartesian<sp/>coordinates,<sp/>but<sp/>when<sp/>accessing<sp/>it,<sp/>with<sp/>functions<sp/>like<sp/>get_p(),<sp/>get_theta()<sp/>and<sp/>get_r(),<sp/>they<sp/>give<sp/>the<sp/>values<sp/>in<sp/>the<sp/>other<sp/>coordinates<sp/>systems.<sp/>Then,<sp/>at<sp/>the<sp/>same<sp/>time,<sp/>coordinates_3d<sp/>behave<sp/>as<sp/>cartesian,<sp/>cylindrical,<sp/>spherical<sp/>and<sp/>geographical<sp/>coordinates,<sp/>by<sp/>storing<sp/>the<sp/>values<sp/>only<sp/>once,<sp/>not<sp/>various<sp/>times.<sp/>Then,<sp/>coordinates_3d<sp/>is<sp/>like<sp/>a<sp/>multiple<sp/>object,<sp/>it<sp/>contains<sp/>cartesian_3d_coordinates,<sp/>cylindrical_coordinates,<sp/>spherical_coordinates<sp/>and<sp/>geographical_coordinates<sp/>inside.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">point_3d<sp/>is<sp/>equivalent<sp/>to<sp/>coordinates_3d,<sp/>it<sp/>change<sp/>of<sp/>name<sp/>but<sp/>not<sp/>on<sp/>functionality<sp/>related<sp/>to<sp/>coordinates_3d.<sp/>coordinates_3d<sp/>is<sp/>intended<sp/>to<sp/>represent<sp/>positions<sp/>in<sp/>3D,<sp/>and<sp/>point_3d<sp/>is<sp/>intended<sp/>to<sp/>be<sp/>used<sp/>as<sp/>a<sp/>point<sp/>in<sp/>3D<sp/>for<sp/>any<sp/>purpose<sp/>(like<sp/>graphical<sp/>computing,<sp/>as<sp/>part<sp/>of<sp/>the<sp/>matter<sp/>of<sp/>a<sp/>physics<sp/>body,<sp/>an<sp/>abstract<sp/>point<sp/>in<sp/>space,<sp/>etc).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">coordinates_3d&lt;length&gt;<sp/>x<sp/>=<sp/>coordinates_3d&lt;length&gt;(1_m,2_m,3_m);</highlight></codeline>
+<codeline><highlight class="normal">coordinates_3d&lt;length&gt;<sp/>y<sp/>=<sp/>coordinates_3d&lt;length&gt;(length(3,&quot;km&quot;),length(5,&quot;dam&quot;),length(7,&quot;hm&quot;));</highlight></codeline>
+<codeline><highlight class="normal">coordinates_3d&lt;length&gt;<sp/>z<sp/>=<sp/>coordinates_3d&lt;length&gt;(&quot;4<sp/>dam,2<sp/>m,1<sp/>km&quot;);<sp/>//<sp/>initialization<sp/>string</highlight></codeline>
+<codeline><highlight class="normal">coordinates_3d&lt;float&gt;<sp/>z<sp/>=<sp/>coordinates_3d&lt;float&gt;(12,20,15);<sp/>//<sp/>coordinates_3d<sp/>can<sp/>be<sp/>used<sp/>with<sp/>a<sp/>float<sp/>in<sp/>order<sp/>to<sp/>save<sp/>memory,<sp/>or<sp/>if<sp/>any<sp/>other<sp/>unit<sp/>is<sp/>useful<sp/>for<sp/>the<sp/>use<sp/>case</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">point_3d&lt;length&gt;<sp/>a<sp/>=<sp/>point_3d&lt;length&gt;(1_dm,5_cm,10_mm);</highlight></codeline>
+<codeline><highlight class="normal">x<sp/>=<sp/>a;<sp/>//<sp/>A<sp/>coordinates_3d<sp/>can<sp/>be<sp/>assigned<sp/>a<sp/>point_3d<sp/>to<sp/>get<sp/>his<sp/>same<sp/>position</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">length<sp/>x_p<sp/>=<sp/>x.get_p();<sp/>//<sp/>coordinates_3d<sp/>give<sp/>the<sp/>value<sp/>of<sp/>p<sp/>of<sp/>cylindrical<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>x_theta<sp/>=<sp/>x.get_theta();<sp/>//<sp/>coordinates_3d<sp/>give<sp/>the<sp/>angle<sp/>theta<sp/>of<sp/>cylindrical<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>x_r<sp/>=<sp/>x.get_r();<sp/>//<sp/>coordinates_3d<sp/>give<sp/>the<sp/>value<sp/>of<sp/>r<sp/>of<sp/>spherical<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>x_phi<sp/>=<sp/>x.get_phi();<sp/>//<sp/>coordinates_3d<sp/>give<sp/>the<sp/>angle<sp/>phi<sp/>of<sp/>spherical<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>x_latitude<sp/>=<sp/>x.get_latitude();<sp/>//<sp/>coordinates_3d<sp/>give<sp/>the<sp/>latitude<sp/>of<sp/>geographical<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>x_longitude<sp/>=<sp/>x.get_longitude();<sp/>//<sp/>coordinates_3d<sp/>give<sp/>the<sp/>longitude<sp/>of<sp/>geographical<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>x_altitude<sp/>=<sp/>x.get_altitude();<sp/>//<sp/>coordinates_3d<sp/>give<sp/>the<sp/>altitude<sp/>of<sp/>geographical<sp/>coordinates</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">x.set_position(1_km,2_hm,5_hm);<sp/>//<sp/>the<sp/>position<sp/>is<sp/>now<sp/>&quot;1<sp/>km,2<sp/>hm,5<sp/>hm&quot;</highlight></codeline>
+<codeline><highlight class="normal">x.set_position(5_m,angle(46),3_m);<sp/>//<sp/>the<sp/>position<sp/>has<sp/>been<sp/>specified<sp/>using<sp/>cylindrical<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">x.set_position(1_m,angle(10),angle(15));<sp/>//<sp/>the<sp/>position<sp/>has<sp/>been<sp/>specified<sp/>using<sp/>spherical<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">x.set_position(angle(20),angle(15),3_m);<sp/>//<sp/>the<sp/>position<sp/>has<sp/>been<sp/>specified<sp/>using<sp/>geographical<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">x.rotate_in_x(angle(10));<sp/>//<sp/>rotate<sp/>the<sp/>position<sp/>in<sp/>the<sp/>angle<sp/>specified<sp/>related<sp/>to<sp/>the<sp/>x<sp/>axis</highlight></codeline>
+<codeline><highlight class="normal">x.rotate_in_y(angle(20));<sp/>//<sp/>rotate<sp/>the<sp/>position<sp/>in<sp/>the<sp/>angle<sp/>specified<sp/>related<sp/>to<sp/>the<sp/>y<sp/>axis</highlight></codeline>
+<codeline><highlight class="normal">x.rotate_in_z(angle(35));<sp/>//<sp/>rotate<sp/>the<sp/>position<sp/>in<sp/>the<sp/>angle<sp/>specified<sp/>related<sp/>to<sp/>the<sp/>z<sp/>axis</highlight></codeline>
+<codeline><highlight class="normal">x.move(1_m,5_cm,3_cm);<sp/>//<sp/>move<sp/>1<sp/>m<sp/>to<sp/>the<sp/>right,<sp/>5<sp/>cm<sp/>up<sp/>and<sp/>3<sp/>cm<sp/>depth</highlight></codeline>
+<codeline><highlight class="normal">x.move(3_m,angle(20),2_m);<sp/>//<sp/>move<sp/>3<sp/>m,<sp/>20°<sp/>and<sp/>2<sp/>m<sp/>specified<sp/>in<sp/>cylindrical<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">x.move(5_m,angle(15),angle(10));<sp/>//<sp/>move<sp/>5<sp/>m,<sp/>15°<sp/>and<sp/>10°<sp/>specified<sp/>in<sp/>spherical<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">displacement_3d<sp/>c_displacement<sp/>=<sp/>displacement_3d(&quot;2<sp/>km&quot;,10,15);<sp/>//<sp/>create<sp/>a<sp/>displacement_3d<sp/>to<sp/>specify<sp/>a<sp/>movement</highlight></codeline>
+<codeline><highlight class="normal">x.move(c_displacement);<sp/>//<sp/>move<sp/>in<sp/>the<sp/>specified<sp/>displacement</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>x_distance<sp/>=<sp/>x.distance_to_origin();<sp/>//<sp/>gives<sp/>the<sp/>absolute<sp/>distance<sp/>to<sp/>the<sp/>origin</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">string<sp/>x_display<sp/>=<sp/>to_string(x);<sp/>//<sp/>prints<sp/>the<sp/>coordinates_3d</highlight></codeline>
+<codeline><highlight class="normal">string<sp/>x_cylindrical_display<sp/>=<sp/>x.display_cylindrical();<sp/>//<sp/>prints<sp/>the<sp/>coordinates_3d<sp/>in<sp/>cylindrical<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">string<sp/>x_spherical_display<sp/>=<sp/>x.display_spherical();<sp/>//<sp/>prints<sp/>the<sp/>coordinates_3d<sp/>in<sp/>spherical<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">string<sp/>x_geographical_display<sp/>=<sp/>x.display_geographical();<sp/>//<sp/>prints<sp/>the<sp/>coordinates_3d<sp/>in<sp/>geographical<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>xy_distance<sp/>=<sp/>distance(x,y);<sp/>//<sp/>calculates<sp/>the<sp/>distance<sp/>between<sp/>the<sp/>two<sp/>positions</highlight></codeline>
+<codeline><highlight class="normal">length<sp/>xa_distance<sp/>=<sp/>distance(x,a);<sp/>//<sp/>calculates<sp/>the<sp/>distance<sp/>between<sp/>a<sp/>coordinates_3d<sp/>and<sp/>a<sp/>point_3d</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>y)<sp/>//<sp/>gives<sp/>true<sp/>if<sp/>both<sp/>coordinates_3d<sp/>are<sp/>equal</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>a)<sp/>//<sp/>gives<sp/>true<sp/>if<sp/>coordinates_3d<sp/>is<sp/>equal<sp/>to<sp/>point_2d</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(x<sp/>==<sp/>&quot;1<sp/>m,4<sp/>m,7<sp/>m&quot;)<sp/>//<sp/>gives<sp/>true<sp/>if<sp/>the<sp/>coordinates_3d<sp/>are<sp/>equal<sp/>to<sp/>the<sp/>specified<sp/>coordinates<sp/>in<sp/>the<sp/>string</highlight></codeline>
+<codeline><highlight class="normal">{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">string<sp/>b;</highlight></codeline>
+<codeline><highlight class="normal">b<sp/>+=<sp/>x;<sp/>//<sp/>coordinates_3d<sp/>can<sp/>be<sp/>added<sp/>to<sp/>an<sp/>string</highlight></codeline>
+<codeline><highlight class="normal">string<sp/>c<sp/>=<sp/>&quot;x:<sp/>&quot;<sp/>+<sp/>x;<sp/>//<sp/>coordinates_3d<sp/>has<sp/>an<sp/>operator<sp/>+<sp/>with<sp/>string<sp/>to<sp/>give<sp/>another<sp/>string</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">cout<sp/>&lt;&lt;<sp/>x;<sp/>//<sp/>coordinates_3d<sp/>can<sp/>be<sp/>printed<sp/>to<sp/>cout</highlight></codeline>
+<codeline><highlight class="normal">cin<sp/>&gt;&gt;<sp/>x;<sp/>//<sp/>coordinates_3d<sp/>can<sp/>be<sp/>initialized<sp/>through<sp/>cin</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>AID<sp/>and<sp/>ZID</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">An<sp/>**AID**,<sp/>acronym<sp/>of<sp/>**Astronomycal<sp/>ID**,<sp/>is<sp/>an<sp/>identifier<sp/>of<sp/>an<sp/>astronomical<sp/>object,<sp/>like<sp/>planets,<sp/>moons,<sp/>galaxies,<sp/>stars,<sp/>and<sp/>any<sp/>other<sp/>astronomical<sp/>object.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>**ZID**,<sp/>acronym<sp/>of<sp/>**Zone<sp/>ID**,<sp/>is<sp/>an<sp/>identifier<sp/>of<sp/>a<sp/>zone,<sp/>like<sp/>a<sp/>region,<sp/>a<sp/>district,<sp/>a<sp/>store,<sp/>a<sp/>lake,<sp/>a<sp/>country,<sp/>and<sp/>any<sp/>other<sp/>zone.<sp/>A<sp/>zone<sp/>is<sp/>defined<sp/>here<sp/>as<sp/>any<sp/>closed<sp/>surface<sp/>that<sp/>can<sp/>be<sp/>drawn<sp/>over<sp/>an<sp/>astronomycal<sp/>object.<sp/>A<sp/>ZID<sp/>is<sp/>composed<sp/>of<sp/>the<sp/>AID<sp/>of<sp/>which<sp/>the<sp/>zone<sp/>pertains,<sp/>and<sp/>the<sp/>zone<sp/>itself.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>percentage</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>**percentage**<sp/>class<sp/>represents<sp/>percentages,<sp/>they<sp/>calculate<sp/>the<sp/>factor<sp/>of<sp/>the<sp/>percentage<sp/>and<sp/>automatically,<sp/>when<sp/>operating<sp/>with<sp/>numeric<sp/>types,<sp/>calculate<sp/>the<sp/>percentage<sp/>of<sp/>that<sp/>number.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>pixel</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>**pixel**<sp/>class<sp/>represents<sp/>pixels,<sp/>which<sp/>are<sp/>the<sp/>squares<sp/>that<sp/>compose<sp/>screens.<sp/>It<sp/>can<sp/>be<sp/>used<sp/>to<sp/>calculate<sp/>distance<sp/>over<sp/>pixels<sp/>instead<sp/>of<sp/>distances<sp/>of<sp/>physical<sp/>lengths,<sp/>which<sp/>is<sp/>a<sp/>need<sp/>of<sp/>some<sp/>digital<sp/>applications.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>pH<sp/>and<sp/>pOH</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>**pH**<sp/>class<sp/>allows<sp/>to<sp/>work<sp/>with<sp/>pH,<sp/>which<sp/>is<sp/>used<sp/>inside<sp/>chemistry<sp/>software<sp/>to<sp/>store<sp/>data<sp/>about<sp/>pH.<sp/>The<sp/>**pOH**<sp/>class<sp/>is<sp/>the<sp/>counterpart<sp/>of<sp/>the<sp/>pH<sp/>class,<sp/>and<sp/>is<sp/>not<sp/>commonly<sp/>needed,<sp/>but<sp/>it<sp/>can<sp/>be<sp/>used<sp/>if<sp/>the<sp/>pH<sp/>class<sp/>is<sp/>not<sp/>being<sp/>useful<sp/>for<sp/>some<sp/>reason,<sp/>and<sp/>if<sp/>instead<sp/>the<sp/>pOH<sp/>class<sp/>is<sp/>useful.<sp/>The<sp/>pH<sp/>class<sp/>should<sp/>always<sp/>be<sp/>**prefered**<sp/>to<sp/>be<sp/>used<sp/>over<sp/>the<sp/>pOH<sp/>class,<sp/>and<sp/>that<sp/>last<sp/>should<sp/>be<sp/>used<sp/>**only**<sp/>if<sp/>the<sp/>pH<sp/>class<sp/>is<sp/>not<sp/>properly<sp/>solving<sp/>the<sp/>needs.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Sizes<sp/>in<sp/>2D,<sp/>3D<sp/>and<sp/>ND</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>**size_2d**<sp/>class<sp/>allows<sp/>to<sp/>store<sp/>the<sp/>data<sp/>of<sp/>the<sp/>width<sp/>and<sp/>height<sp/>of<sp/>an<sp/>object<sp/>in<sp/>length<sp/>classes.<sp/>The<sp/>**size_3d**<sp/>allows<sp/>to<sp/>store<sp/>the<sp/>data<sp/>of<sp/>the<sp/>width,<sp/>the<sp/>height<sp/>and<sp/>the<sp/>depth<sp/>of<sp/>an<sp/>object<sp/>in<sp/>length<sp/>classes.<sp/>The<sp/>**size_nd**<sp/>class<sp/>allows<sp/>to<sp/>store<sp/>lengths<sp/>corresponding<sp/>to<sp/>the<sp/>dimension<sp/>of<sp/>an<sp/>object<sp/>in<sp/>a<sp/>variable<sp/>number<sp/>of<sp/>dimensions.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Internals</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Internally,<sp/>the<sp/>library<sp/>has<sp/>some<sp/>important<sp/>mechanisms<sp/>important<sp/>to<sp/>be<sp/>known<sp/>by<sp/>a<sp/>serious<sp/>developer.<sp/>Those<sp/>important<sp/>mechanisms<sp/>are<sp/>described<sp/>here,<sp/>in<sp/>order<sp/>to<sp/>avoid<sp/>the<sp/>developer<sp/>to<sp/>read<sp/>the<sp/>code<sp/>of<sp/>the<sp/>library<sp/>and<sp/>learn<sp/>every<sp/>detail.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>first<sp/>important<sp/>mechanism<sp/>to<sp/>describe<sp/>is<sp/>the<sp/>static<sp/>storage<sp/>of<sp/>custom<sp/>dimensions.<sp/>This<sp/>storage<sp/>is<sp/>static,<sp/>meaning<sp/>that<sp/>every<sp/>time<sp/>a<sp/>unit<sp/>of<sp/>a<sp/>dimension<sp/>not<sp/>registered<sp/>is<sp/>created,<sp/>this<sp/>storage<sp/>is<sp/>the<sp/>one<sp/>used,<sp/>instead<sp/>of<sp/>the<sp/>name<sp/>being<sp/>stored<sp/>inside<sp/>the<sp/>instance.<sp/>With<sp/>that<sp/>behavior,<sp/>when<sp/>instantiating<sp/>a<sp/>big<sp/>amount<sp/>of<sp/>dimensions,<sp/>a<sp/>big<sp/>amount<sp/>of<sp/>memory<sp/>is<sp/>saved.<sp/>To<sp/>refer<sp/>to<sp/>the<sp/>static<sp/>storage<sp/>it&apos;s<sp/>used<sp/>the<sp/>char<sp/>symbol[3]<sp/>of<sp/>the<sp/>dimension<sp/>class,<sp/>which<sp/>uses<sp/>only<sp/>3<sp/>bytes<sp/>instead<sp/>of<sp/>the<sp/>bytes<sp/>the<sp/>full<sp/>dimension<sp/>name<sp/>would<sp/>use.<sp/>Then,<sp/>each<sp/>instance<sp/>of<sp/>a<sp/>dimension<sp/>class,<sp/>given<sp/>that<sp/>static<sp/>storage,<sp/>uses<sp/>only<sp/>6<sp/>bytes<sp/>of<sp/>memory.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>square<sp/>of<sp/>dimensions<sp/>works<sp/>in<sp/>the<sp/>following<sp/>way:<sp/>If<sp/>the<sp/>dimension<sp/>consist<sp/>only<sp/>of<sp/>one<sp/>type<sp/>of<sp/>dimension,<sp/>independently<sp/>as<sp/>if<sp/>the<sp/>dimension<sp/>is<sp/>a<sp/>basic<sp/>dimension<sp/>or<sp/>an<sp/>abbreviation,<sp/>the<sp/>dimensions<sp/>get<sp/>squared.<sp/>If<sp/>the<sp/>dimension<sp/>is<sp/>of<sp/>more<sp/>than<sp/>one<sp/>type,<sp/>all<sp/>the<sp/>abbreviations<sp/>are<sp/>then<sp/>converted<sp/>to<sp/>their<sp/>derived<sp/>types,<sp/>and<sp/>the<sp/>total<sp/>result<sp/>gets<sp/>squared.<sp/>If<sp/>the<sp/>dimensions<sp/>can&apos;t<sp/>be<sp/>squared<sp/>because<sp/>there&apos;s<sp/>an<sp/>odd<sp/>number<sp/>of<sp/>them,<sp/>the<sp/>dimensions<sp/>are<sp/>then<sp/>initialized<sp/>empty.</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

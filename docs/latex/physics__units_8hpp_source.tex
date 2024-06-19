@@ -1,0 +1,102 @@
+\doxysection{physics\+\_\+units.\+hpp}
+\hypertarget{physics__units_8hpp_source}{}\label{physics__units_8hpp_source}\index{predefined\_units/physics\_units.hpp@{predefined\_units/physics\_units.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_PREDEFINED\_UNITS\_KINEMATICS\_UNITS\_HPP\_INCLUDED}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_PREDEFINED\_UNITS\_KINEMATICS\_UNITS\_HPP\_INCLUDED}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../units/scalar\_unit.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../units/vector\_unit\_2d.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../units/vector\_unit\_3d.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../units/unit\_basic.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }scifir}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ KINEMATICS}}
+\DoxyCodeLine{00014\ \ \ \ \ VECTOR\_UNIT\_2D\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{displacement}});}
+\DoxyCodeLine{00015\ \ \ \ \ VECTOR\_UNIT\_3D\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{displacement}});}
+\DoxyCodeLine{00016\ \ \ \ \ VECTOR\_UNIT\_ND\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{displacement}});}
+\DoxyCodeLine{00017\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{velocity}});}
+\DoxyCodeLine{00018\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{acceleration}});}
+\DoxyCodeLine{00019\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{jerk}});}
+\DoxyCodeLine{00020\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{snap}});}
+\DoxyCodeLine{00021\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{angular\_velocity}});}
+\DoxyCodeLine{00022\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{angular\_acceleration}});}
+\DoxyCodeLine{00023\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{angular\_momentum}});}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ DYNAMICS}}
+\DoxyCodeLine{00026\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{impulse}});}
+\DoxyCodeLine{00027\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{force}});}
+\DoxyCodeLine{00028\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{torque}});}
+\DoxyCodeLine{00029\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{pressure}});}
+\DoxyCodeLine{00030\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{surface\_tension}});}
+\DoxyCodeLine{00031\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stiffness}});}
+\DoxyCodeLine{00032\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{moment\_of\_inertia}});}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ ELECTRICITY}}
+\DoxyCodeLine{00035\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{electric\_current}});}
+\DoxyCodeLine{00036\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{voltage}});}
+\DoxyCodeLine{00037\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{electric\_displacement\_field}});\ \ \textcolor{comment}{//\ TODO:\ vector\_field}}
+\DoxyCodeLine{00038\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{electric\_charge\_density}});}
+\DoxyCodeLine{00039\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{electric\_current\_density}});}
+\DoxyCodeLine{00040\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{electric\_field\_strength}});}
+\DoxyCodeLine{00041\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{electron\_mobility}});}
+\DoxyCodeLine{00042\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{inductance}});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ FLUID\ DYNAMICS}}
+\DoxyCodeLine{00045\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{volumetric\_flow}});}
+\DoxyCodeLine{00046\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{diffusion\_coefficient}});}
+\DoxyCodeLine{00047\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{compressibility}});}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ MAGNETISM}}
+\DoxyCodeLine{00050\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{polarization\_density}});\ \textcolor{comment}{//\ TODO:\ vector\_field}}
+\DoxyCodeLine{00051\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{magnetic\_permeability}});\ \textcolor{comment}{//\ TODO:\ vector\_field}}
+\DoxyCodeLine{00052\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{magnetization}});\ \textcolor{comment}{//\ TODO:\ vector\_field}}
+\DoxyCodeLine{00053\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{magnetic\_flux}});}
+\DoxyCodeLine{00054\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{magnetic\_strength}});\ \textcolor{comment}{//\ TODO:\ vector\_field}}
+\DoxyCodeLine{00055\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{magnetic\_moment}});}
+\DoxyCodeLine{00056\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{magnetic\_reluctance}});}
+\DoxyCodeLine{00057\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{magnetic\_vector\_potential}});\ \textcolor{comment}{//\ TODO:\ vector\_field}}
+\DoxyCodeLine{00058\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{magnetic\_rigidity}});}
+\DoxyCodeLine{00059\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{magnetomotive\_force}});}
+\DoxyCodeLine{00060\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{magnetic\_susceptibility}});}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ OPTICS}}
+\DoxyCodeLine{00063\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{optical\_power}});}
+\DoxyCodeLine{00064\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{luminance}});}
+\DoxyCodeLine{00065\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{illuminance}});}
+\DoxyCodeLine{00066\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{luminous\_flux}});}
+\DoxyCodeLine{00067\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{luminous\_energy}});}
+\DoxyCodeLine{00068\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{luminous\_exposure}});}
+\DoxyCodeLine{00069\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{luminous\_efficacy}});}
+\DoxyCodeLine{00070\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{ionizing\_radiation}});}
+\DoxyCodeLine{00071\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{absorbed\_dose}});}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ THERMODYNAMICS}}
+\DoxyCodeLine{00074\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{energy}});}
+\DoxyCodeLine{00075\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{action}});}
+\DoxyCodeLine{00076\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{power}});}
+\DoxyCodeLine{00077\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{power\_density}});}
+\DoxyCodeLine{00078\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{enthalpy}});}
+\DoxyCodeLine{00079\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{entropy}});}
+\DoxyCodeLine{00080\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{heat\_capacity}});}
+\DoxyCodeLine{00081\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{heat\_flux\_density}});}
+\DoxyCodeLine{00082\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{thermal\_conductivity}});}
+\DoxyCodeLine{00083\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{thermal\_diffusivity}});}
+\DoxyCodeLine{00084\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{thermal\_resistance}});}
+\DoxyCodeLine{00085\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{thermal\_expansion\_coefficient}});}
+\DoxyCodeLine{00086\ \ \ \ \ VECTOR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{temperature\_gradient}});}
+\DoxyCodeLine{00087\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{energy\_flux\_density}});}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ WAVES}}
+\DoxyCodeLine{00090\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{wavenumber}});}
+\DoxyCodeLine{00091\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{frequency}});}
+\DoxyCodeLine{00092\ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{length}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{wavelength}};}
+\DoxyCodeLine{00094\ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_PREDEFINED\_UNITS\_KINEMATICS\_UNITS\_HPP\_INCLUDED}}
+
+\end{DoxyCode}

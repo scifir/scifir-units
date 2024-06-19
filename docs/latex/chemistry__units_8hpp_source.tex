@@ -1,0 +1,59 @@
+\doxysection{chemistry\+\_\+units.\+hpp}
+\hypertarget{chemistry__units_8hpp_source}{}\label{chemistry__units_8hpp_source}\index{predefined\_units/chemistry\_units.hpp@{predefined\_units/chemistry\_units.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_PREDEFINED\_UNITS\_ATOMS\_UNITS\_HPP\_INCLUDED}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_PREDEFINED\_UNITS\_ATOMS\_UNITS\_HPP\_INCLUDED}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../units/scalar\_unit.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }scifir}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{//\ GENERAL\ CHEMISTRY}}
+\DoxyCodeLine{00011\ \ \ \ \ SCALAR\_UNIT\_HPP(density);}
+\DoxyCodeLine{00012\ \ \ \ \ SCALAR\_UNIT\_HPP(viscosity);}
+\DoxyCodeLine{00013\ \ \ \ \ SCALAR\_UNIT\_HPP(specific\_volume);}
+\DoxyCodeLine{00014\ \ \ \ \ SCALAR\_UNIT\_HPP(specific\_heat\_capacity);}
+\DoxyCodeLine{00015\ \ \ \ \ SCALAR\_UNIT\_HPP(specific\_entropy);}
+\DoxyCodeLine{00016\ \ \ \ \ SCALAR\_UNIT\_HPP(specific\_energy);}
+\DoxyCodeLine{00017\ \ \ \ \ SCALAR\_UNIT\_HPP(molar\_volume);}
+\DoxyCodeLine{00018\ \ \ \ \ SCALAR\_UNIT\_HPP(molar\_mass);}
+\DoxyCodeLine{00019\ \ \ \ \ SCALAR\_UNIT\_HPP(molar\_heat\_capacity);}
+\DoxyCodeLine{00020\ \ \ \ \ SCALAR\_UNIT\_HPP(molar\_enthalpy);}
+\DoxyCodeLine{00021\ \ \ \ \ SCALAR\_UNIT\_HPP(molar\_entropy);}
+\DoxyCodeLine{00022\ \ \ \ \ SCALAR\_UNIT\_HPP(molar\_energy);}
+\DoxyCodeLine{00023\ \ \ \ \ SCALAR\_UNIT\_HPP(molar\_conductivity);}
+\DoxyCodeLine{00024\ \ \ \ \ SCALAR\_UNIT\_HPP(energy\_density);}
+\DoxyCodeLine{00025\ \ \ \ \ SCALAR\_UNIT\_HPP(catalytic\_efficiency);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1cas__number}{cas\_number}}}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1cas__number}{cas\_number}}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{string}\ get\_value()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00033\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ value;}
+\DoxyCodeLine{00041\ \ \ \ \ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ SUBSTANCE}}
+\DoxyCodeLine{00044\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{molarity}});}
+\DoxyCodeLine{00045\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{molality}});}
+\DoxyCodeLine{00046\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{linear\_mass\_density}});}
+\DoxyCodeLine{00047\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{area\_density}});}
+\DoxyCodeLine{00048\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{dynamic\_viscosity}});}
+\DoxyCodeLine{00049\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{mass\_flow\_rate}});}
+\DoxyCodeLine{00050\ \ \ \ \ SCALAR\_UNIT\_HPP(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{catalytic\_activity}});}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_PREDEFINED\_UNITS\_ATOMS\_UNITS\_HPP\_INCLUDED}}
+
+\end{DoxyCode}

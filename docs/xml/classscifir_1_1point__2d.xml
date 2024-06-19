@@ -1,0 +1,437 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classscifir_1_1point__2d" kind="class" language="C++" prot="public">
+    <compoundname>scifir::point_2d</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+        <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">length</ref></defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classscifir_1_1point__2d_1ae6a8265d8de1321967e525717e14d2f6" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T scifir::point_2d&lt; T &gt;::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>scifir::point_2d::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="141" column="3" bodyfile="topology/point_2d.hpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classscifir_1_1point__2d_1a8d1d898fa4b7856bfa89eaf105dadeea" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T scifir::point_2d&lt; T &gt;::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>scifir::point_2d::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="142" column="3" bodyfile="topology/point_2d.hpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classscifir_1_1point__2d_1a6a7113ba1c75995ba45b5bc8f441a103" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::point_2d&lt; T &gt;::point_2d</definition>
+        <argsstring>()</argsstring>
+        <name>point_2d</name>
+        <qualifiedname>scifir::point_2d::point_2d</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="21" column="1" bodyfile="topology/point_2d.hpp" bodystart="21" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1a22a62e88851e5ea5e480b05f68cba1e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::point_2d&lt; T &gt;::point_2d</definition>
+        <argsstring>(const point_2d&lt; T &gt; &amp;x_point)</argsstring>
+        <name>point_2d</name>
+        <qualifiedname>scifir::point_2d::point_2d</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; T &gt; &amp;</type>
+          <declname>x_point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="24" column="1" bodyfile="topology/point_2d.hpp" bodystart="24" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1ad38e392fc479bd808227f18405b5b295" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::point_2d&lt; T &gt;::point_2d</definition>
+        <argsstring>(point_2d&lt; T &gt; &amp;&amp;x_point)</argsstring>
+        <name>point_2d</name>
+        <qualifiedname>scifir::point_2d::point_2d</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; T &gt; &amp;&amp;</type>
+          <declname>x_point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="27" column="1" bodyfile="topology/point_2d.hpp" bodystart="27" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1ac17ad95e301a1dbe7f72d50c698146c0" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::point_2d&lt; T &gt;::point_2d</definition>
+        <argsstring>(const T &amp;new_x, const T &amp;new_y)</argsstring>
+        <name>point_2d</name>
+        <qualifiedname>scifir::point_2d::point_2d</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_x</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="30" column="10" bodyfile="topology/point_2d.hpp" bodystart="30" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1a8d1c22c354c58597fda3f7a52cfcfc29" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::point_2d&lt; T &gt;::point_2d</definition>
+        <argsstring>(const T &amp;new_p, const angle &amp;new_theta)</argsstring>
+        <name>point_2d</name>
+        <qualifiedname>scifir::point_2d::point_2d</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_p</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_theta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="33" column="10" bodyfile="topology/point_2d.hpp" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1a78af6eed1d2917def5811a24bfb6c15c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::point_2d&lt; T &gt;::point_2d</definition>
+        <argsstring>(const scifir::coordinates_2d&lt; T &gt; &amp;new_coordinates)</argsstring>
+        <name>point_2d</name>
+        <qualifiedname>scifir::point_2d::point_2d</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__2d" kindref="compound">scifir::coordinates_2d</ref>&lt; T &gt; &amp;</type>
+          <declname>new_coordinates</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="38" column="10" bodyfile="coordinates/coordinates_2d.hpp" bodystart="285" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1ac41367b0fc144eb2a805bd53f9f35208" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::point_2d&lt; T &gt;::point_2d</definition>
+        <argsstring>(string init_point_2d)</argsstring>
+        <name>point_2d</name>
+        <qualifiedname>scifir::point_2d::point_2d</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+          <declname>init_point_2d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="40" column="10" bodyfile="topology/point_2d.hpp" bodystart="40" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1a329d206dff1207edaf5deee48fdc35e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; T &gt; &amp;</type>
+        <definition>point_2d&lt; T &gt; &amp; scifir::point_2d&lt; T &gt;::operator=</definition>
+        <argsstring>(const point_2d&lt; T &gt; &amp;x_point)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::point_2d::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; T &gt; &amp;</type>
+          <declname>x_point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="65" column="10" bodyfile="topology/point_2d.hpp" bodystart="65" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1a0e96f57cbefeec47ed3548697cccb615" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; T &gt; &amp;</type>
+        <definition>point_2d&lt; T &gt; &amp; scifir::point_2d&lt; T &gt;::operator=</definition>
+        <argsstring>(point_2d&lt; T &gt; &amp;&amp;x_point)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::point_2d::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; T &gt; &amp;&amp;</type>
+          <declname>x_point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="72" column="10" bodyfile="topology/point_2d.hpp" bodystart="72" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1ae15b825fed9c2c86bfc2e9879624b47c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; T &gt; &amp;</type>
+        <definition>point_2d&lt; T &gt; &amp; scifir::point_2d&lt; T &gt;::operator=</definition>
+        <argsstring>(const coordinates_2d&lt; T &gt; &amp;)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::point_2d::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; T &gt; &amp;</type>
+          <defname>x_coordinates</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="79" column="10" bodyfile="coordinates/coordinates_2d.hpp" bodystart="289" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1ab495f2dc0ef3945902f7779536239605" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T scifir::point_2d&lt; T &gt;::get_p</definition>
+        <argsstring>() const</argsstring>
+        <name>get_p</name>
+        <qualifiedname>scifir::point_2d::get_p</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="81" column="3" bodyfile="topology/point_2d.hpp" bodystart="81" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1ac45bb82808a26f7daca07e812a43f145" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
+        <definition>angle scifir::point_2d&lt; T &gt;::get_theta</definition>
+        <argsstring>() const</argsstring>
+        <name>get_theta</name>
+        <qualifiedname>scifir::point_2d::get_theta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="86" column="7" bodyfile="topology/point_2d.hpp" bodystart="86" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1a59c5f988a50f764a7fbccebcda5407e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::point_2d&lt; T &gt;::set_position</definition>
+        <argsstring>(const T &amp;new_x, const T &amp;new_y)</argsstring>
+        <name>set_position</name>
+        <qualifiedname>scifir::point_2d::set_position</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_x</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="91" column="6" bodyfile="topology/point_2d.hpp" bodystart="91" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1afc28308a38ac5ccc4ca9c92aa37fe893" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::point_2d&lt; T &gt;::set_position</definition>
+        <argsstring>(const T &amp;new_p, const angle &amp;new_theta)</argsstring>
+        <name>set_position</name>
+        <qualifiedname>scifir::point_2d::set_position</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_p</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_theta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="97" column="6" bodyfile="topology/point_2d.hpp" bodystart="97" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1a69ba6a2d03b0617d2fc1ccf0429c8c03" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::point_2d&lt; T &gt;::rotate</definition>
+        <argsstring>(const angle &amp;x_angle)</argsstring>
+        <name>rotate</name>
+        <qualifiedname>scifir::point_2d::rotate</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>x_angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="103" column="6" bodyfile="topology/point_2d.hpp" bodystart="103" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1a4c15c721b02b49a1c9411a7b7125ab4b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::point_2d&lt; T &gt;::move</definition>
+        <argsstring>(const displacement_2d &amp;x_displacement)</argsstring>
+        <name>move</name>
+        <qualifiedname>scifir::point_2d::move</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">displacement_2d</ref> &amp;</type>
+          <declname>x_displacement</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="111" column="6" bodyfile="topology/point_2d.hpp" bodystart="111" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1a953161cb3794606050087caaede20d21" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::point_2d&lt; T &gt;::move</definition>
+        <argsstring>(const T &amp;new_x, const T &amp;new_y)</argsstring>
+        <name>move</name>
+        <qualifiedname>scifir::point_2d::move</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_x</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="117" column="6" bodyfile="topology/point_2d.hpp" bodystart="117" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1ab72a64f0fc2507ba51df88bfb6c4204a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::point_2d&lt; T &gt;::move</definition>
+        <argsstring>(const T &amp;new_p, const angle &amp;new_theta)</argsstring>
+        <name>move</name>
+        <qualifiedname>scifir::point_2d::move</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_p</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_theta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="123" column="6" bodyfile="topology/point_2d.hpp" bodystart="123" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1a9b74ce7fd9831f09a563499c47b365c7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T scifir::point_2d&lt; T &gt;::distance_to_origin</definition>
+        <argsstring>() const</argsstring>
+        <name>distance_to_origin</name>
+        <qualifiedname>scifir::point_2d::distance_to_origin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="129" column="3" bodyfile="topology/point_2d.hpp" bodystart="129" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__2d_1ab24bb8de10d8dc1a803b2836a355308a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <definition>string scifir::point_2d&lt; T &gt;::display_polar</definition>
+        <argsstring>() const</argsstring>
+        <name>display_polar</name>
+        <qualifiedname>scifir::point_2d::display_polar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_2d.hpp" line="134" column="8" bodyfile="topology/point_2d.hpp" bodystart="134" bodyend="139"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="topology/point_2d.hpp" line="18" column="1" bodyfile="topology/point_2d.hpp" bodystart="19" bodyend="143"/>
+    <listofallmembers>
+      <member refid="classscifir_1_1point__2d_1ab24bb8de10d8dc1a803b2836a355308a" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>display_polar</name></member>
+      <member refid="classscifir_1_1point__2d_1a9b74ce7fd9831f09a563499c47b365c7" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>distance_to_origin</name></member>
+      <member refid="classscifir_1_1point__2d_1ab495f2dc0ef3945902f7779536239605" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>get_p</name></member>
+      <member refid="classscifir_1_1point__2d_1ac45bb82808a26f7daca07e812a43f145" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>get_theta</name></member>
+      <member refid="classscifir_1_1point__2d_1a4c15c721b02b49a1c9411a7b7125ab4b" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>move</name></member>
+      <member refid="classscifir_1_1point__2d_1a953161cb3794606050087caaede20d21" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>move</name></member>
+      <member refid="classscifir_1_1point__2d_1ab72a64f0fc2507ba51df88bfb6c4204a" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>move</name></member>
+      <member refid="classscifir_1_1point__2d_1a329d206dff1207edaf5deee48fdc35e3" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1point__2d_1a0e96f57cbefeec47ed3548697cccb615" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1point__2d_1ae15b825fed9c2c86bfc2e9879624b47c" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1point__2d_1a6a7113ba1c75995ba45b5bc8f441a103" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>point_2d</name></member>
+      <member refid="classscifir_1_1point__2d_1a22a62e88851e5ea5e480b05f68cba1e6" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>point_2d</name></member>
+      <member refid="classscifir_1_1point__2d_1ad38e392fc479bd808227f18405b5b295" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>point_2d</name></member>
+      <member refid="classscifir_1_1point__2d_1ac17ad95e301a1dbe7f72d50c698146c0" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>point_2d</name></member>
+      <member refid="classscifir_1_1point__2d_1a8d1c22c354c58597fda3f7a52cfcfc29" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>point_2d</name></member>
+      <member refid="classscifir_1_1point__2d_1a78af6eed1d2917def5811a24bfb6c15c" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>point_2d</name></member>
+      <member refid="classscifir_1_1point__2d_1ac41367b0fc144eb2a805bd53f9f35208" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>point_2d</name></member>
+      <member refid="classscifir_1_1point__2d_1a69ba6a2d03b0617d2fc1ccf0429c8c03" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>rotate</name></member>
+      <member refid="classscifir_1_1point__2d_1a59c5f988a50f764a7fbccebcda5407e2" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>set_position</name></member>
+      <member refid="classscifir_1_1point__2d_1afc28308a38ac5ccc4ca9c92aa37fe893" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>set_position</name></member>
+      <member refid="classscifir_1_1point__2d_1ae6a8265d8de1321967e525717e14d2f6" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>x</name></member>
+      <member refid="classscifir_1_1point__2d_1a8d1d898fa4b7856bfa89eaf105dadeea" prot="public" virt="non-virtual"><scope>scifir::point_2d</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

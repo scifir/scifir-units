@@ -1,0 +1,1037 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classscifir_1_1coordinates__nd" kind="class" language="C++" prot="public">
+    <compoundname>scifir::coordinates_nd</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
+        <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">length</ref></defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classscifir_1_1coordinates__nd_1a3884b7fbaef60e51cabd613297d1bf0d" prot="public" static="no" mutable="no">
+        <type>vector&lt; T &gt;</type>
+        <definition>vector&lt;T&gt; scifir::coordinates_nd&lt; T &gt;::values</definition>
+        <argsstring></argsstring>
+        <name>values</name>
+        <qualifiedname>scifir::coordinates_nd::values</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="438" column="8" bodyfile="coordinates/coordinates_nd.hpp" bodystart="438" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1ab235a48e8b4aa1db42e54a0be222053f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::coordinates_nd&lt; T &gt;::coordinates_nd</definition>
+        <argsstring>()</argsstring>
+        <name>coordinates_nd</name>
+        <qualifiedname>scifir::coordinates_nd::coordinates_nd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="20" column="1" bodyfile="coordinates/coordinates_nd.hpp" bodystart="20" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a05bf700306cd28d4da7505a4c69217db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::coordinates_nd&lt; T &gt;::coordinates_nd</definition>
+        <argsstring>(const coordinates_nd&lt; T &gt; &amp;x)</argsstring>
+        <name>coordinates_nd</name>
+        <qualifiedname>scifir::coordinates_nd::coordinates_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__nd" kindref="compound">coordinates_nd</ref>&lt; T &gt; &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="23" column="1" bodyfile="coordinates/coordinates_nd.hpp" bodystart="23" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a89d54260ac7d0d702d47a81a40e58f16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::coordinates_nd&lt; T &gt;::coordinates_nd</definition>
+        <argsstring>(coordinates_nd&lt; T &gt; &amp;&amp;x)</argsstring>
+        <name>coordinates_nd</name>
+        <qualifiedname>scifir::coordinates_nd::coordinates_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__nd" kindref="compound">coordinates_nd</ref>&lt; T &gt; &amp;&amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="26" column="1" bodyfile="coordinates/coordinates_nd.hpp" bodystart="26" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a9f6aed206e7ec60c2041d7d44922b57e" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::coordinates_nd&lt; T &gt;::coordinates_nd</definition>
+        <argsstring>(const vector&lt; T &gt; &amp;new_values)</argsstring>
+        <name>coordinates_nd</name>
+        <qualifiedname>scifir::coordinates_nd::coordinates_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; T &gt; &amp;</type>
+          <declname>new_values</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="29" column="10" bodyfile="coordinates/coordinates_nd.hpp" bodystart="29" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a398ace3663d6e21dc209cf0c2355df4a" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::coordinates_nd&lt; T &gt;::coordinates_nd</definition>
+        <argsstring>(const T &amp;new_x)</argsstring>
+        <name>coordinates_nd</name>
+        <qualifiedname>scifir::coordinates_nd::coordinates_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="32" column="10" bodyfile="coordinates/coordinates_nd.hpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a4f8676509a7b810d9cc5bf10a1cec367" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::coordinates_nd&lt; T &gt;::coordinates_nd</definition>
+        <argsstring>(const T &amp;new_x, const T &amp;new_y)</argsstring>
+        <name>coordinates_nd</name>
+        <qualifiedname>scifir::coordinates_nd::coordinates_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_x</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="37" column="10" bodyfile="coordinates/coordinates_nd.hpp" bodystart="37" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a7b72c4133d3b1cff5c15874990818b38" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::coordinates_nd&lt; T &gt;::coordinates_nd</definition>
+        <argsstring>(const T &amp;new_p, const angle &amp;new_theta)</argsstring>
+        <name>coordinates_nd</name>
+        <qualifiedname>scifir::coordinates_nd::coordinates_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_p</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_theta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="43" column="10" bodyfile="coordinates/coordinates_nd.hpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a4259b0ff61066bb072ce2adfb5cb6109" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::coordinates_nd&lt; T &gt;::coordinates_nd</definition>
+        <argsstring>(const T &amp;new_x, const T &amp;new_y, const T &amp;new_z)</argsstring>
+        <name>coordinates_nd</name>
+        <qualifiedname>scifir::coordinates_nd::coordinates_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_x</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_y</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="48" column="10" bodyfile="coordinates/coordinates_nd.hpp" bodystart="48" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a188688ce589f876a55923128cbc0973f" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::coordinates_nd&lt; T &gt;::coordinates_nd</definition>
+        <argsstring>(const T &amp;new_p, const angle &amp;new_theta, T new_z)</argsstring>
+        <name>coordinates_nd</name>
+        <qualifiedname>scifir::coordinates_nd::coordinates_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_p</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_theta</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>new_z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="55" column="10" bodyfile="coordinates/coordinates_nd.hpp" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a35bec25777bc8681afe95ac86ce7b6ad" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::coordinates_nd&lt; T &gt;::coordinates_nd</definition>
+        <argsstring>(const T &amp;new_r, const angle &amp;new_theta, const angle &amp;new_phi)</argsstring>
+        <name>coordinates_nd</name>
+        <qualifiedname>scifir::coordinates_nd::coordinates_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_r</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_theta</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_phi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="60" column="10" bodyfile="coordinates/coordinates_nd.hpp" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1aea3d626907d35a094d2fb74bbc03d9d0" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::coordinates_nd&lt; T &gt;::coordinates_nd</definition>
+        <argsstring>(const angle &amp;new_latitude, const angle &amp;new_longitude, const T &amp;new_altitude)</argsstring>
+        <name>coordinates_nd</name>
+        <qualifiedname>scifir::coordinates_nd::coordinates_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_latitude</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_longitude</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_altitude</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="65" column="10" bodyfile="coordinates/coordinates_nd.hpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1aa97c13260cff0f5842228b945e1fe840" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::coordinates_nd&lt; T &gt;::coordinates_nd</definition>
+        <argsstring>(const point_nd&lt; T &gt; &amp;new_point)</argsstring>
+        <name>coordinates_nd</name>
+        <qualifiedname>scifir::coordinates_nd::coordinates_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1point__nd" kindref="compound">point_nd</ref>&lt; T &gt; &amp;</type>
+          <declname>new_point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="70" column="10" bodyfile="coordinates/coordinates_nd.hpp" bodystart="70" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a8a673b4fd7433fbf8c12dba5989a2efe" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::coordinates_nd&lt; T &gt;::coordinates_nd</definition>
+        <argsstring>(string init_coordinates_nd)</argsstring>
+        <name>coordinates_nd</name>
+        <qualifiedname>scifir::coordinates_nd::coordinates_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+          <declname>init_coordinates_nd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="73" column="10" bodyfile="coordinates/coordinates_nd.hpp" bodystart="73" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a4fcc726a07cae4f5c330223e98437de2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__nd" kindref="compound">coordinates_nd</ref>&lt; T &gt; &amp;</type>
+        <definition>coordinates_nd&lt; T &gt; &amp; scifir::coordinates_nd&lt; T &gt;::operator=</definition>
+        <argsstring>(const coordinates_nd&lt; T &gt; &amp;x_coordinates)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::coordinates_nd::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__nd" kindref="compound">coordinates_nd</ref>&lt; T &gt; &amp;</type>
+          <declname>x_coordinates</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="139" column="16" bodyfile="coordinates/coordinates_nd.hpp" bodystart="139" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a7825bc80faa47d14cc6cd3cf4a0db4af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__nd" kindref="compound">coordinates_nd</ref>&lt; T &gt; &amp;</type>
+        <definition>coordinates_nd&lt; T &gt; &amp; scifir::coordinates_nd&lt; T &gt;::operator=</definition>
+        <argsstring>(coordinates_nd&lt; T &gt; &amp;&amp;x_coordinates)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::coordinates_nd::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__nd" kindref="compound">coordinates_nd</ref>&lt; T &gt; &amp;&amp;</type>
+          <declname>x_coordinates</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="145" column="16" bodyfile="coordinates/coordinates_nd.hpp" bodystart="145" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1abbaaf887cef9d9ea46a49701c38f3108" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__nd" kindref="compound">coordinates_nd</ref>&lt; T &gt; &amp;</type>
+        <definition>coordinates_nd&lt; T &gt; &amp; scifir::coordinates_nd&lt; T &gt;::operator=</definition>
+        <argsstring>(const point_nd&lt; T &gt; &amp;x_point)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::coordinates_nd::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1point__nd" kindref="compound">point_nd</ref>&lt; T &gt; &amp;</type>
+          <declname>x_point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="151" column="16" bodyfile="coordinates/coordinates_nd.hpp" bodystart="151" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a169ef21631dba86502661f323502f006" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <definition>bool scifir::coordinates_nd&lt; T &gt;::is_nd</definition>
+        <argsstring>(int i) const</argsstring>
+        <name>is_nd</name>
+        <qualifiedname>scifir::coordinates_nd::is_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="157" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="157" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a7bc0544913091cf5b1d8f836e8712539" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+        <definition>int scifir::coordinates_nd&lt; T &gt;::get_nd</definition>
+        <argsstring>() const</argsstring>
+        <name>get_nd</name>
+        <qualifiedname>scifir::coordinates_nd::get_nd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="162" column="5" bodyfile="coordinates/coordinates_nd.hpp" bodystart="162" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a80b80014d4d41e3b2825f4598348be9f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T scifir::coordinates_nd&lt; T &gt;::get_p</definition>
+        <argsstring>() const</argsstring>
+        <name>get_p</name>
+        <qualifiedname>scifir::coordinates_nd::get_p</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="167" column="3" bodyfile="coordinates/coordinates_nd.hpp" bodystart="167" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a0f76265a05edf08632079a48f1263a04" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
+        <definition>angle scifir::coordinates_nd&lt; T &gt;::get_theta</definition>
+        <argsstring>() const</argsstring>
+        <name>get_theta</name>
+        <qualifiedname>scifir::coordinates_nd::get_theta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="179" column="7" bodyfile="coordinates/coordinates_nd.hpp" bodystart="179" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a75d888d8579c454a4cf52cb19aaf439f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T scifir::coordinates_nd&lt; T &gt;::get_r</definition>
+        <argsstring>() const</argsstring>
+        <name>get_r</name>
+        <qualifiedname>scifir::coordinates_nd::get_r</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="191" column="3" bodyfile="coordinates/coordinates_nd.hpp" bodystart="191" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1abd87c0a49ba28cfa59f8ce5da26adafa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
+        <definition>angle scifir::coordinates_nd&lt; T &gt;::get_phi</definition>
+        <argsstring>() const</argsstring>
+        <name>get_phi</name>
+        <qualifiedname>scifir::coordinates_nd::get_phi</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="203" column="7" bodyfile="coordinates/coordinates_nd.hpp" bodystart="203" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a5a82b261c0adbfc6f420d4afc0fd7fbd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
+        <definition>angle scifir::coordinates_nd&lt; T &gt;::get_latitude</definition>
+        <argsstring>() const</argsstring>
+        <name>get_latitude</name>
+        <qualifiedname>scifir::coordinates_nd::get_latitude</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="215" column="7" bodyfile="coordinates/coordinates_nd.hpp" bodystart="215" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a294047983eab17a9a3ee85bd06556667" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
+        <definition>angle scifir::coordinates_nd&lt; T &gt;::get_longitude</definition>
+        <argsstring>() const</argsstring>
+        <name>get_longitude</name>
+        <qualifiedname>scifir::coordinates_nd::get_longitude</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="220" column="7" bodyfile="coordinates/coordinates_nd.hpp" bodystart="220" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a47f12ed3b61012c892b045b28d1b40f6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T scifir::coordinates_nd&lt; T &gt;::get_altitude</definition>
+        <argsstring>() const</argsstring>
+        <name>get_altitude</name>
+        <qualifiedname>scifir::coordinates_nd::get_altitude</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="225" column="3" bodyfile="coordinates/coordinates_nd.hpp" bodystart="225" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1adc68a6ca132428992bfdf30ac75a474e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::set_position</definition>
+        <argsstring>(const T &amp;new_x)</argsstring>
+        <name>set_position</name>
+        <qualifiedname>scifir::coordinates_nd::set_position</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="230" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="230" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a21a9ba9dd8a6f3f0c5e839fab7865f7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::set_position</definition>
+        <argsstring>(const T &amp;new_x, const T &amp;new_y)</argsstring>
+        <name>set_position</name>
+        <qualifiedname>scifir::coordinates_nd::set_position</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_x</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="236" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="236" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a4904271e8acd92b5f25f56c5226f3ee9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::set_position</definition>
+        <argsstring>(const T &amp;new_p, const angle &amp;new_theta)</argsstring>
+        <name>set_position</name>
+        <qualifiedname>scifir::coordinates_nd::set_position</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_p</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_theta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="243" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="243" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a8987a4d2fb74927ed57b51923f3e6984" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::set_position</definition>
+        <argsstring>(const T &amp;new_x, const T &amp;new_y, const T &amp;new_z)</argsstring>
+        <name>set_position</name>
+        <qualifiedname>scifir::coordinates_nd::set_position</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_x</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_y</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="250" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="250" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a78941ea65d9abab200354cc75fdf2293" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::set_position</definition>
+        <argsstring>(const T &amp;new_p, const angle &amp;new_theta, T new_z)</argsstring>
+        <name>set_position</name>
+        <qualifiedname>scifir::coordinates_nd::set_position</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_p</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_theta</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>new_z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="258" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="258" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a2965f4032e25a3a22f7471783ac365fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::set_position</definition>
+        <argsstring>(const T &amp;new_r, const angle &amp;new_theta, const angle &amp;new_phi)</argsstring>
+        <name>set_position</name>
+        <qualifiedname>scifir::coordinates_nd::set_position</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_r</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_theta</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_phi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="267" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="267" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1ace9f2f8e703d21c2be75cc0b0dee262d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::set_position</definition>
+        <argsstring>(const angle &amp;new_latitude, const angle &amp;new_longitude, const T &amp;new_altitude)</argsstring>
+        <name>set_position</name>
+        <qualifiedname>scifir::coordinates_nd::set_position</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_latitude</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_longitude</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_altitude</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="275" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="275" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a6febfc0b84984d8cf50c2898b9b0ed04" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::set_position</definition>
+        <argsstring>(const vector&lt; T &gt; &amp;new_values)</argsstring>
+        <name>set_position</name>
+        <qualifiedname>scifir::coordinates_nd::set_position</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; T &gt; &amp;</type>
+          <declname>new_values</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="283" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="283" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a33f68f51f1c024a23fda024599f810a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::rotate</definition>
+        <argsstring>(int dimension_number, int axis, const angle &amp;new_theta)</argsstring>
+        <name>rotate</name>
+        <qualifiedname>scifir::coordinates_nd::rotate</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>dimension_number</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_theta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="289" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="289" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a0dd3a438c1c7e446e17043ce348a9239" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::move</definition>
+        <argsstring>(const T &amp;new_x)</argsstring>
+        <name>move</name>
+        <qualifiedname>scifir::coordinates_nd::move</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="307" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="307" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1ad17f4585901b607b083fbb17282f68a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::move</definition>
+        <argsstring>(const displacement_2d &amp;x_displacement)</argsstring>
+        <name>move</name>
+        <qualifiedname>scifir::coordinates_nd::move</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">displacement_2d</ref> &amp;</type>
+          <declname>x_displacement</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="315" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="315" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a41d4ddeb8c9f578a698f30bb8c9dc66b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::move</definition>
+        <argsstring>(const T &amp;new_x, const T &amp;new_y)</argsstring>
+        <name>move</name>
+        <qualifiedname>scifir::coordinates_nd::move</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_x</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="324" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="324" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a72cdb0f4a8249753c80c6aa37319e8e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::move</definition>
+        <argsstring>(const T &amp;new_p, const angle &amp;new_theta)</argsstring>
+        <name>move</name>
+        <qualifiedname>scifir::coordinates_nd::move</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_p</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_theta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="333" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="333" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1ad51f4150a975fd67d9c402d3eb963f71" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::move</definition>
+        <argsstring>(const displacement_3d &amp;x_displacement)</argsstring>
+        <name>move</name>
+        <qualifiedname>scifir::coordinates_nd::move</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">displacement_3d</ref> &amp;</type>
+          <declname>x_displacement</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="342" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="342" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a4656fa564d7c1940431e0a7e70f8d594" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::move</definition>
+        <argsstring>(const T &amp;new_x, const T &amp;new_y, const T &amp;new_z)</argsstring>
+        <name>move</name>
+        <qualifiedname>scifir::coordinates_nd::move</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_x</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_y</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="352" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="352" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1aeee0d1f1f658588d76db7a9fc232ba94" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::move</definition>
+        <argsstring>(const T &amp;new_p, const angle &amp;new_theta, T new_z)</argsstring>
+        <name>move</name>
+        <qualifiedname>scifir::coordinates_nd::move</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_p</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_theta</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>new_z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="362" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="362" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a9c48a81ec7558fa8910ed9659d085b89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::move</definition>
+        <argsstring>(const T &amp;new_r, const angle &amp;new_theta, const angle &amp;new_phi)</argsstring>
+        <name>move</name>
+        <qualifiedname>scifir::coordinates_nd::move</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_r</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_theta</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_phi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="373" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="373" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a3356af36c278d3e6e552c032a1b03db7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::move</definition>
+        <argsstring>(const displacement_nd &amp;x_displacement)</argsstring>
+        <name>move</name>
+        <qualifiedname>scifir::coordinates_nd::move</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">displacement_nd</ref> &amp;</type>
+          <declname>x_displacement</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="383" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="383" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a7eadb7c0f3dbcfed96ba73d8120f17a8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_nd&lt; T &gt;::move</definition>
+        <argsstring>(const T &amp;new_r, const vector&lt; angle &gt; &amp;new_angles)</argsstring>
+        <name>move</name>
+        <qualifiedname>scifir::coordinates_nd::move</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
+          <declname>new_r</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &gt; &amp;</type>
+          <declname>new_angles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="394" column="6" bodyfile="coordinates/coordinates_nd.hpp" bodystart="394" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1af90a01d5bf4056de251fdd74f424cf78" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T scifir::coordinates_nd&lt; T &gt;::distance_to_origin</definition>
+        <argsstring>() const</argsstring>
+        <name>distance_to_origin</name>
+        <qualifiedname>scifir::coordinates_nd::distance_to_origin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="400" column="3" bodyfile="coordinates/coordinates_nd.hpp" bodystart="400" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a5ef2adbd24ec188b00a97dd0c608ab3c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <definition>string scifir::coordinates_nd&lt; T &gt;::display_polar</definition>
+        <argsstring>() const</argsstring>
+        <name>display_polar</name>
+        <qualifiedname>scifir::coordinates_nd::display_polar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="410" column="8" bodyfile="coordinates/coordinates_nd.hpp" bodystart="410" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a34eea0783e85a74e70f71e99425644cf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <definition>string scifir::coordinates_nd&lt; T &gt;::display_cylindrical</definition>
+        <argsstring>() const</argsstring>
+        <name>display_cylindrical</name>
+        <qualifiedname>scifir::coordinates_nd::display_cylindrical</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="417" column="8" bodyfile="coordinates/coordinates_nd.hpp" bodystart="417" bodyend="422"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a1bbbf6b9042e6b214072c8a1bb45a329" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <definition>string scifir::coordinates_nd&lt; T &gt;::display_spherical</definition>
+        <argsstring>() const</argsstring>
+        <name>display_spherical</name>
+        <qualifiedname>scifir::coordinates_nd::display_spherical</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="424" column="8" bodyfile="coordinates/coordinates_nd.hpp" bodystart="424" bodyend="429"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__nd_1a08e2ecf468c3c3af23e2e71c3804aaa9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <definition>string scifir::coordinates_nd&lt; T &gt;::display_geographical</definition>
+        <argsstring>() const</argsstring>
+        <name>display_geographical</name>
+        <qualifiedname>scifir::coordinates_nd::display_geographical</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_nd.hpp" line="431" column="8" bodyfile="coordinates/coordinates_nd.hpp" bodystart="431" bodyend="436"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="coordinates/coordinates_nd.hpp" line="17" column="1" bodyfile="coordinates/coordinates_nd.hpp" bodystart="18" bodyend="439"/>
+    <listofallmembers>
+      <member refid="classscifir_1_1coordinates__nd_1ab235a48e8b4aa1db42e54a0be222053f" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>coordinates_nd</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a05bf700306cd28d4da7505a4c69217db" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>coordinates_nd</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a89d54260ac7d0d702d47a81a40e58f16" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>coordinates_nd</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a9f6aed206e7ec60c2041d7d44922b57e" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>coordinates_nd</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a398ace3663d6e21dc209cf0c2355df4a" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>coordinates_nd</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a4f8676509a7b810d9cc5bf10a1cec367" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>coordinates_nd</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a7b72c4133d3b1cff5c15874990818b38" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>coordinates_nd</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a4259b0ff61066bb072ce2adfb5cb6109" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>coordinates_nd</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a188688ce589f876a55923128cbc0973f" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>coordinates_nd</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a35bec25777bc8681afe95ac86ce7b6ad" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>coordinates_nd</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1aea3d626907d35a094d2fb74bbc03d9d0" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>coordinates_nd</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1aa97c13260cff0f5842228b945e1fe840" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>coordinates_nd</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a8a673b4fd7433fbf8c12dba5989a2efe" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>coordinates_nd</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a34eea0783e85a74e70f71e99425644cf" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>display_cylindrical</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a08e2ecf468c3c3af23e2e71c3804aaa9" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>display_geographical</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a5ef2adbd24ec188b00a97dd0c608ab3c" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>display_polar</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a1bbbf6b9042e6b214072c8a1bb45a329" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>display_spherical</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1af90a01d5bf4056de251fdd74f424cf78" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>distance_to_origin</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a47f12ed3b61012c892b045b28d1b40f6" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>get_altitude</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a5a82b261c0adbfc6f420d4afc0fd7fbd" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>get_latitude</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a294047983eab17a9a3ee85bd06556667" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>get_longitude</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a7bc0544913091cf5b1d8f836e8712539" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>get_nd</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a80b80014d4d41e3b2825f4598348be9f" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>get_p</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1abd87c0a49ba28cfa59f8ce5da26adafa" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>get_phi</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a75d888d8579c454a4cf52cb19aaf439f" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>get_r</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a0f76265a05edf08632079a48f1263a04" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>get_theta</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a169ef21631dba86502661f323502f006" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>is_nd</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a0dd3a438c1c7e446e17043ce348a9239" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>move</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1ad17f4585901b607b083fbb17282f68a0" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>move</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a41d4ddeb8c9f578a698f30bb8c9dc66b" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>move</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a72cdb0f4a8249753c80c6aa37319e8e8" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>move</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1ad51f4150a975fd67d9c402d3eb963f71" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>move</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a4656fa564d7c1940431e0a7e70f8d594" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>move</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1aeee0d1f1f658588d76db7a9fc232ba94" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>move</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a9c48a81ec7558fa8910ed9659d085b89" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>move</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a3356af36c278d3e6e552c032a1b03db7" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>move</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a7eadb7c0f3dbcfed96ba73d8120f17a8" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>move</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a4fcc726a07cae4f5c330223e98437de2" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a7825bc80faa47d14cc6cd3cf4a0db4af" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1abbaaf887cef9d9ea46a49701c38f3108" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a33f68f51f1c024a23fda024599f810a4" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>rotate</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1adc68a6ca132428992bfdf30ac75a474e" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>set_position</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a21a9ba9dd8a6f3f0c5e839fab7865f7c" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>set_position</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a4904271e8acd92b5f25f56c5226f3ee9" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>set_position</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a8987a4d2fb74927ed57b51923f3e6984" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>set_position</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a78941ea65d9abab200354cc75fdf2293" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>set_position</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a2965f4032e25a3a22f7471783ac365fd" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>set_position</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1ace9f2f8e703d21c2be75cc0b0dee262d" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>set_position</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a6febfc0b84984d8cf50c2898b9b0ed04" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>set_position</name></member>
+      <member refid="classscifir_1_1coordinates__nd_1a3884b7fbaef60e51cabd613297d1bf0d" prot="public" virt="non-virtual"><scope>scifir::coordinates_nd</scope><name>values</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

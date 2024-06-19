@@ -1,0 +1,696 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="direction_8hpp" kind="file" language="C++">
+    <compoundname>direction.hpp</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">string</includes>
+    <includedby refid="coordinates__2dr_8hpp" local="yes">coordinates/coordinates_2dr.hpp</includedby>
+    <includedby refid="direction_8cpp" local="yes">topology/direction.cpp</includedby>
+    <includedby refid="units_8hpp" local="yes">units.hpp</includedby>
+    <includedby refid="vector__unit__2d_8hpp" local="yes">units/vector_unit_2d.hpp</includedby>
+    <includedby refid="vector__unit__3d_8hpp" local="yes">units/vector_unit_3d.hpp</includedby>
+    <includedby refid="vector__unit__nd_8hpp" local="yes">units/vector_unit_nd.hpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>topology/direction.hpp</label>
+        <link refid="direction_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>coordinates/coordinates_1d.hpp</label>
+        <link refid="coordinates__1d_8hpp_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>coordinates/coordinates_2d.hpp</label>
+        <link refid="coordinates__2d_8hpp_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>coordinates/coordinates_2dr.hpp</label>
+        <link refid="coordinates__2dr_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>coordinates/coordinates_3d.hpp</label>
+        <link refid="coordinates__3d_8hpp_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>coordinates/coordinates_3dr.hpp</label>
+        <link refid="coordinates__3dr_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>coordinates/coordinates_nd.hpp</label>
+        <link refid="coordinates__nd_8hpp_source"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>coordinates/coordinates_ndr.hpp</label>
+        <link refid="coordinates__ndr_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>predefined_units/astronomy_units.hpp</label>
+        <link refid="astronomy__units_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>predefined_units/electronics_units.hpp</label>
+        <link refid="electronics__units_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>predefined_units/physics_units.hpp</label>
+        <link refid="physics__units_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>predefined_units/radiometry_units.hpp</label>
+        <link refid="radiometry__units_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>predefined_units/space_units.hpp</label>
+        <link refid="space__units_8hpp_source"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>special_units/size_2d.hpp</label>
+        <link refid="size__2d_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>special_units/size_3d.hpp</label>
+        <link refid="size__3d_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>special_units/size_nd.hpp</label>
+        <link refid="size__nd_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>topology/direction.hpp</label>
+        <link refid="direction_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>topology/point_1d.hpp</label>
+        <link refid="point__1d_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>topology/point_1d_impl.hpp</label>
+        <link refid="point__1d__impl_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>topology/point_2d.hpp</label>
+        <link refid="point__2d_8hpp_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>topology/point_2d_impl.hpp</label>
+        <link refid="point__2d__impl_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>topology/point_3d.hpp</label>
+        <link refid="point__3d_8hpp_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>topology/point_3d_impl.hpp</label>
+        <link refid="point__3d__impl_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>topology/point_nd.hpp</label>
+        <link refid="point__nd_8hpp_source"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>topology/point_nd_impl.hpp</label>
+        <link refid="point__nd__impl_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>units.hpp</label>
+        <link refid="units_8hpp_source"/>
+      </node>
+      <node id="10">
+        <label>units/material_vector_unit_2d.hpp</label>
+        <link refid="material__vector__unit__2d_8hpp_source"/>
+      </node>
+      <node id="21">
+        <label>units/unit_abbreviation.hpp</label>
+        <link refid="unit__abbreviation_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>units/vector_unit_2d.hpp</label>
+        <link refid="vector__unit__2d_8hpp_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>units/vector_unit_3d.hpp</label>
+        <link refid="vector__unit__3d_8hpp_source"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>units/vector_unit_nd.hpp</label>
+        <link refid="vector__unit__nd_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classscifir_1_1direction" prot="public">scifir::direction</innerclass>
+    <innernamespace refid="namespacescifir">scifir</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="direction_8hpp_1a0f6558c733aefa110323a011e9a61bf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(const scifir::direction &amp;x, const scifir::direction &amp;y)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="40" column="6" bodyfile="topology/direction.cpp" bodystart="338" bodyend="348" declfile="topology/direction.hpp" declline="40" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="direction_8hpp_1a0e3f49f7be372061c882e7f31a2a3efd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator!=</definition>
+        <argsstring>(const scifir::direction &amp;x, const scifir::direction &amp;y)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="41" column="6" bodyfile="topology/direction.cpp" bodystart="350" bodyend="353" declfile="topology/direction.hpp" declline="41" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="direction_8hpp_1acda64e4f2f38d7bbd2777bc45406b668" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(const scifir::direction &amp;x, scifir::direction::name y)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>scifir::direction::name</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="42" column="6" bodyfile="topology/direction.cpp" bodystart="355" bodyend="365" declfile="topology/direction.hpp" declline="42" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="direction_8hpp_1a1bc1c91e847187e7cd7697d600a8d3eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator!=</definition>
+        <argsstring>(const scifir::direction &amp;x, scifir::direction::name y)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>scifir::direction::name</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="43" column="6" bodyfile="topology/direction.cpp" bodystart="367" bodyend="370" declfile="topology/direction.hpp" declline="43" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="direction_8hpp_1a8ebf4ebaf3d5cc5455509c66a477b11c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(scifir::direction::name y, const scifir::direction &amp;x)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>scifir::direction::name</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="44" column="6" bodyfile="topology/direction.cpp" bodystart="372" bodyend="375" declfile="topology/direction.hpp" declline="44" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="direction_8hpp_1a1bed3290b95887e0105dbcc5ebed6901" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator!=</definition>
+        <argsstring>(scifir::direction::name y, const scifir::direction &amp;x)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>scifir::direction::name</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="45" column="6" bodyfile="topology/direction.cpp" bodystart="377" bodyend="380" declfile="topology/direction.hpp" declline="45" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="direction_8hpp_1a1d5cf10997751825190ee96b4f4417aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(const scifir::direction &amp;, const string &amp;)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="47" column="6" bodyfile="topology/direction.cpp" bodystart="382" bodyend="386" declfile="topology/direction.hpp" declline="47" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="direction_8hpp_1a0a0a7a47867ba6e2b96ec0088cb3d362" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator!=</definition>
+        <argsstring>(const scifir::direction &amp;, const string &amp;)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="48" column="6" bodyfile="topology/direction.cpp" bodystart="388" bodyend="391" declfile="topology/direction.hpp" declline="48" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="direction_8hpp_1ad8ab79e4c68b56d85e7eb36654c47aa2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(const string &amp;, const scifir::direction &amp;)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="50" column="6" bodyfile="topology/direction.cpp" bodystart="393" bodyend="397" declfile="topology/direction.hpp" declline="50" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="direction_8hpp_1ae0adcb5c8573d8317289f4f4827e5531" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator!=</definition>
+        <argsstring>(const string &amp;, const scifir::direction &amp;)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="51" column="6" bodyfile="topology/direction.cpp" bodystart="399" bodyend="402" declfile="topology/direction.hpp" declline="51" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="direction_8hpp_1aefe569594cc8f2c5751f8b500c749f01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void operator+=</definition>
+        <argsstring>(string &amp;, const scifir::direction &amp;)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>string &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="53" column="6" bodyfile="topology/direction.cpp" bodystart="404" bodyend="409" declfile="topology/direction.hpp" declline="53" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="direction_8hpp_1adb0e11d8877acc7e33a2fbe96616dbb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string operator+</definition>
+        <argsstring>(const string &amp;, const scifir::direction &amp;)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="54" column="8" bodyfile="topology/direction.cpp" bodystart="411" bodyend="417" declfile="topology/direction.hpp" declline="54" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="direction_8hpp_1aa0a48df7c22507890ea8a1642ee5c3ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string operator+</definition>
+        <argsstring>(const scifir::direction &amp;, const string &amp;)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="55" column="8" bodyfile="topology/direction.cpp" bodystart="419" bodyend="425" declfile="topology/direction.hpp" declline="55" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="direction_8hpp_1a260343da55a8be132aea79ad914e115f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ostream &amp;</type>
+        <definition>ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;os, const scifir::direction &amp;x)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="57" column="1" bodyfile="topology/direction.cpp" bodystart="427" bodyend="430" declfile="topology/direction.hpp" declline="57" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="direction_8hpp_1a5e19aae64137d322be68085638f47f45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>istream &amp;</type>
+        <definition>istream &amp; operator&gt;&gt;</definition>
+        <argsstring>(istream &amp;, scifir::direction &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>istream &amp;</type>
+          <declname>is</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="58" column="9" bodyfile="topology/direction.cpp" bodystart="432" bodyend="441" declfile="topology/direction.hpp" declline="58" declcolumn="9"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SCIFIR_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SCIFIR_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">scifir</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">direction;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="14" refid="classscifir_1_1direction" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classscifir_1_1direction" kindref="compound">direction</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>name<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int8_t</ref><sp/>{NONE,<sp/>LEFT,<sp/>RIGHT,<sp/>TOP,<sp/>BOTTOM,<sp/>FRONT,<sp/>BACK,<sp/>LEFT_TOP,<sp/>LEFT_BOTTOM,<sp/>RIGHT_TOP,<sp/>RIGHT_BOTTOM,<sp/>LEFT_FRONT,<sp/>LEFT_BACK,<sp/>RIGHT_FRONT,<sp/>RIGHT_BACK,<sp/>TOP_FRONT,<sp/>TOP_BACK,<sp/>BOTTOM_FRONT,<sp/>BOTTOM_BACK,<sp/>LEFT_TOP_FRONT,<sp/>LEFT_TOP_BACK,<sp/>LEFT_BOTTOM_FRONT,<sp/>LEFT_BOTTOM_BACK,<sp/>RIGHT_TOP_FRONT,<sp/>RIGHT_TOP_BACK,<sp/>RIGHT_BOTTOM_FRONT,<sp/>RIGHT_BOTTOM_BACK};</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>(<ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;&amp;);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>(direction::name);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator=(<ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;&amp;);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator=(direction::name);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>invert();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>direction::name<sp/>value;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>to_string(direction::name);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>to_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">direction</ref>&amp;);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>direction::name<sp/>create_direction(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>direction::name<sp/>invert(direction::name);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>x,<sp/>scifir::direction::name<sp/>y);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>x,<sp/>scifir::direction::name<sp/>y);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(scifir::direction::name<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(scifir::direction::name<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>+=(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>operator<sp/>+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>operator<sp/>+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">ostream&amp;<sp/>operator<sp/>&lt;&lt;(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">istream&amp;<sp/>operator<sp/>&gt;&gt;(istream&amp;,<sp/><ref refid="classscifir_1_1direction" kindref="compound">scifir::direction</ref>&amp;);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_TOPOLOGY_DIRECTION_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="topology/direction.hpp"/>
+  </compounddef>
+</doxygen>

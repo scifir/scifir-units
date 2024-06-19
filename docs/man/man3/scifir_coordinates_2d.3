@@ -1,0 +1,83 @@
+.TH "scifir::coordinates_2d< T >" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scifir::coordinates_2d< T >
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcoordinates_2d\fP (\fBconst\fP \fBcoordinates_2d\fP< T > &\fBx_coordinates\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_2d\fP (\fBcoordinates_2d\fP< T > &&\fBx_coordinates\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_2d\fP (\fBconst\fP T &\fBnew_x\fP, \fBconst\fP T &\fBnew_y\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_2d\fP (\fBconst\fP T &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_2d\fP (\fBconst\fP \fBscifir::point_2d\fP< T > &\fBnew_point\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_2d\fP (\fBstring\fP \fBinit_coordinates_2d\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_2d\fP< T > & \fBoperator=\fP (\fBconst\fP \fBcoordinates_2d\fP< T > &\fBx_coordinates\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_2d\fP< T > & \fBoperator=\fP (\fBcoordinates_2d\fP< T > &&\fBx_coordinates\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_2d\fP< T > & \fBoperator=\fP (\fBconst\fP \fBpoint_2d\fP< T > &\fBx_point\fP)"
+.br
+.ti -1c
+.RI "T \fBget_p\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBget_theta\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP T &\fBnew_x\fP, \fBconst\fP T &\fBnew_y\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP T &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBrotate\fP (\fBconst\fP \fBangle\fP &\fBx_angle\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBdisplacement_2d\fP &\fBx_displacement\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP T &\fBnew_x\fP, \fBconst\fP T &\fBnew_y\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP T &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.br
+.ti -1c
+.RI "T \fBdistance_to_origin\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBdisplay_polar\fP () \fBconst\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "T \fBx\fP"
+.br
+.ti -1c
+.RI "T \fBy\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

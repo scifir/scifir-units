@@ -1,0 +1,60 @@
+.TH "scifir::prefix" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scifir::prefix
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBtype\fP : int8_t { \fBno_prefix\fP, \fBY\fP, \fBZ\fP, \fBE\fP, \fBP\fP, \fBT\fP, \fBG\fP, \fBM\fP, \fBk\fP, \fBh\fP, \fBda\fP, \fBd\fP, \fBc\fP, \fBm\fP, \fBu\fP, \fBn\fP, \fBp\fP, \fBf\fP, \fBa\fP, \fBz\fP, \fBy\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBprefix\fP (\fBconst\fP \fBprefix\fP &)"
+.br
+.ti -1c
+.RI "\fBprefix\fP (\fBprefix\fP &&)"
+.br
+.ti -1c
+.RI "\fBprefix\fP (prefix::type)"
+.br
+.ti -1c
+.RI "\fBprefix\fP (\fBconst\fP \fBstring\fP &)"
+.br
+.ti -1c
+.RI "\fBprefix\fP & \fBoperator=\fP (\fBconst\fP \fBprefix\fP &)"
+.br
+.ti -1c
+.RI "\fBprefix\fP & \fBoperator=\fP (\fBprefix\fP &&)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBget_conversion_factor\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBget_name\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBget_symbol\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBoperator<\fP (\fBconst\fP \fBscifir::prefix\fP &) \fBconst\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "prefix::type \fBprefix_type\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.
