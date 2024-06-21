@@ -20,7 +20,7 @@ namespace scifir
 	int dimension::total_full_symbols = 0;
 	set<string> dimension::prefixes_options {"Y", "Z", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "\u00B5", "u", "n", "p", "f", "a", "z", "y"};
 
-	dimension::dimension() : prefix(),dimension_type(dimension::none),dimension_sign(dimension::NO_SIGN),symbol()
+	dimension::dimension() : prefix(),dimension_type(dimension::NONE),dimension_sign(dimension::NO_SIGN),symbol()
 	{}
 
 #ifdef IS_UNIX
@@ -51,7 +51,7 @@ namespace scifir
 	dimension::dimension(dimension::type new_dimension_type,const scifir::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
 	{}
 
-	dimension::dimension(const string& init_dimension,dimension::sign new_sign) : prefix(),dimension_type(dimension::none),dimension_sign(new_sign),symbol()
+	dimension::dimension(const string& init_dimension,dimension::sign new_sign) : prefix(),dimension_type(dimension::NONE),dimension_sign(new_sign),symbol()
 	{
 		string dimension_name;
 		string prefix_name;
@@ -253,7 +253,7 @@ namespace scifir
 		}
 		else if(dimension_name == "")
 		{
-			dimension_type = dimension::none;
+			dimension_type = dimension::NONE;
 		}
 		else
 		{
@@ -319,7 +319,7 @@ namespace scifir
 	{
 		switch(dimension_type)
 		{
-			case dimension::none:
+			case dimension::NONE:
 				return "empty";
 			case dimension::m:
 				return "meter";
@@ -425,7 +425,7 @@ namespace scifir
 	{
 		switch(dimension_type)
 		{
-			case dimension::none:
+			case dimension::NONE:
 				return "empty";
 			case dimension::m:
 				return "m";
@@ -541,7 +541,7 @@ namespace scifir
 	{
 		switch(dimension_type)
 		{
-			case dimension::none:
+			case dimension::NONE:
 				return 1.0l;
 			case dimension::m:
 				return 1.0l;
@@ -652,7 +652,7 @@ namespace scifir
 	{
 		switch(dimension_type)
 		{
-			case dimension::none:
+			case dimension::NONE:
 				return true;
 			case dimension::m:
 				return true;
@@ -758,7 +758,7 @@ namespace scifir
 	{
 		switch(dimension_type)
 		{
-			case dimension::none:
+			case dimension::NONE:
 				return true;
 			case dimension::m:
 				return true;
@@ -870,8 +870,8 @@ namespace scifir
 		vector<dimension> basic_dimensions = vector<dimension>();
 		switch (dimension_type)
 		{
-			case dimension::none:
-				basic_dimensions.push_back(dimension(dimension::none,prefix::no_prefix,dimension::POSITIVE));
+			case dimension::NONE:
+				basic_dimensions.push_back(dimension(dimension::NONE,prefix::no_prefix,dimension::POSITIVE));
 				break;
 			case dimension::m:
 				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));

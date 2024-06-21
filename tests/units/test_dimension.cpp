@@ -27,7 +27,7 @@ TEST_CASE("dimension class","Full test of dimension class") {
 	SECTION("Constructors of dimension class")
 	{
 		dimension a;
-		REQUIRE (bool(a.dimension_type == dimension::none));
+		REQUIRE (bool(a.dimension_type == dimension::NONE));
 		dimension b2(dimension::m,prefix::no_prefix,dimension::POSITIVE);
 		dimension b(b2);
 		REQUIRE (bool(b.dimension_type == dimension::m));
@@ -165,7 +165,7 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		dimension a45("memo",dimension::POSITIVE);
 		REQUIRE(bool(a45.dimension_type == dimension::memo));
 		dimension a46("",dimension::POSITIVE);
-		REQUIRE(bool(a46.dimension_type == dimension::none));
+		REQUIRE(bool(a46.dimension_type == dimension::NONE));
 		dimension a47("hello",dimension::POSITIVE);
 		REQUIRE(bool(a47.dimension_type == dimension::custom_full_symbol));
 	}
@@ -232,7 +232,7 @@ TEST_CASE("dimension class","Full test of dimension class") {
 
 	SECTION ("get_name(), get_symbol(), get_conversion_factor(), is_simple_dmension(), is_basic_dimension() of dimension class")
 	{
-		dimension a(dimension::none,prefix::no_prefix,dimension::POSITIVE);
+		dimension a(dimension::NONE,prefix::no_prefix,dimension::POSITIVE);
 		REQUIRE (bool(a.get_name() == "empty"));
 		REQUIRE (bool(a.get_symbol() == "empty"));
 		REQUIRE (bool(a.get_conversion_factor() == 1.0l));
@@ -531,7 +531,7 @@ TEST_CASE("dimension class","Full test of dimension class") {
 	SECTION ("get_basic_dimensions() of dimension class")
 	{
 		dimension a0("",dimension::POSITIVE);
-		vector<dimension> b0 = { dimension(dimension::none,prefix::no_prefix,dimension::POSITIVE) };
+		vector<dimension> b0 = { dimension(dimension::NONE,prefix::no_prefix,dimension::POSITIVE) };
 		REQUIRE(bool(equal_dimensions(a0.get_basic_dimensions(),b0)));
 		dimension a("m",dimension::POSITIVE);
 		vector<dimension> b = { dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE) };
