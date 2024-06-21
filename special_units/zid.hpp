@@ -16,10 +16,13 @@ namespace scifir
 			zid();
 			zid(const zid&);
 			zid(zid&&);
+			explicit zid(const scifir::aid&,const string&,const vector<string>&,const string&);
+			explicit zid(const scifir::aid&,const string&);
 			explicit zid(const string&);
 
 			zid& operator=(const zid&);
 			zid& operator=(zid&&);
+			zid& operator=(const string&);
 
 			scifir::aid aid;
 			vector<string> regions;

@@ -373,33 +373,76 @@ namespace scifir
 		return *this;
 	}
 
+	aid& aid::operator=(const string& init_aid)
+	{
+		vector<string> values;
+		boost::split(values,init_aid,boost::is_any_of(":"));
+		string aid_type;
+		if (values[0].front() == '(' and isalpha(values[0][1]))
+		{
+			if (isalpha(values[0][2]))
+			{
+				astronomical_type = create_astronomical_type(values[0].substr(1,2));
+				universe = values[0].substr(4);
+			}
+			else
+			{
+				astronomical_type = create_astronomical_type(values[0].substr(1,1));
+				universe = values[0].substr(3);
+			}
+			if (values.size() == 4)
+			{
+				galaxy = values[1];
+				solar_system = values[2];
+				astronomical_body = values[3];
+			}
+			else if (values.size() == 3)
+			{
+				galaxy = values[1];
+				solar_system = values[2];
+			}
+			else if (values.size() == 2)
+			{
+				galaxy = values[1];
+			}
+		}
+		return *this;
+	}
+
 	string to_string(const aid& x)
 	{
-		ostringstream out;
-		out << "(" << to_string(x.astronomical_type) << ")";
-		if (x.astronomical_type == aid::UNIVERSE)
+		if (x.astronomical_type != aid::NONE)
 		{
-			out << x.universe;
-		}
-		else if (x.astronomical_type == aid::GALAXY)
-		{
-			out << x.universe << ":" << x.galaxy;
-		}
-		else if (x.astronomical_type == aid::SOLAR_SYSTEM)
-		{
-			out << x.universe << ":" << x.galaxy << ":" << x.solar_system;
+			ostringstream out;
+			out << "(" << to_string(x.astronomical_type) << ")";
+			if (x.astronomical_type == aid::UNIVERSE)
+			{
+				out << x.universe;
+			}
+			else if (x.astronomical_type == aid::GALAXY)
+			{
+				out << x.universe << ":" << x.galaxy;
+			}
+			else if (x.astronomical_type == aid::SOLAR_SYSTEM)
+			{
+				out << x.universe << ":" << x.galaxy << ":" << x.solar_system;
+			}
+			else
+			{
+				if (x.universe != "")
+				{
+					out << x.universe << ":";
+				}
+				out << x.galaxy << ":" << x.solar_system << ":" << x.astronomical_body;
+			}
+			return out.str();
 		}
 		else
 		{
-			if (x.universe != "")
-			{
-				out << x.universe << ":";
-			}
-			out << x.galaxy << ":" << x.solar_system << ":" << x.astronomical_body;
+			return "";
 		}
-		return out.str();
 	}
-	
+
 	string to_string(const aid::type& x)
 	{
 		switch (x)

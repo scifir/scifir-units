@@ -26,6 +26,7 @@ namespace scifir
 
 			aid& operator=(const aid&);
 			aid& operator=(aid&&);
+			aid& operator=(const string&);
 
 			string universe;
 			string galaxy;

@@ -69,6 +69,12 @@ TEST_CASE("aid class","Full test of aid class") {
 		REQUIRE (bool(i.galaxy == "milky-way"));
 		REQUIRE (bool(i.solar_system == "solar-system"));
 		REQUIRE (bool(i.astronomical_body == ""));
+		aid j("");
+		REQUIRE (bool(j.astronomical_type == aid::NONE));
+		REQUIRE (bool(j.universe == ""));
+		REQUIRE (bool(j.galaxy == ""));
+		REQUIRE (bool(j.solar_system == ""));
+		REQUIRE (bool(j.astronomical_body == ""));
 	}
 
 	SECTION("Constructors of aid class that use the enum astronomical_body")
@@ -345,6 +351,27 @@ TEST_CASE("aid class","Full test of aid class") {
 		REQUIRE (bool(c.galaxy == "milky-way"));
 		REQUIRE (bool(c.solar_system == "solar-system"));
 		REQUIRE (bool(c.astronomical_body == "earth"));
+		aid d;
+		d = "(SS)universe:milky-way:solar-system";
+		REQUIRE (bool(d.astronomical_type == aid::SOLAR_SYSTEM));
+		REQUIRE (bool(d.universe == "universe"));
+		REQUIRE (bool(d.galaxy == "milky-way"));
+		REQUIRE (bool(d.solar_system == "solar-system"));
+		REQUIRE (bool(d.astronomical_body == ""));
+		aid e;
+		e = "(P)universe:milky-way:solar-system:earth";
+		REQUIRE (bool(e.astronomical_type == aid::PLANET));
+		REQUIRE (bool(e.universe == "universe"));
+		REQUIRE (bool(e.galaxy == "milky-way"));
+		REQUIRE (bool(e.solar_system == "solar-system"));
+		REQUIRE (bool(e.astronomical_body == "earth"));
+		aid f;
+		f = "(G)universe:milky-way";
+		REQUIRE (bool(f.astronomical_type == aid::GALAXY));
+		REQUIRE (bool(f.universe == "universe"));
+		REQUIRE (bool(f.galaxy == "milky-way"));
+		REQUIRE (bool(f.solar_system == ""));
+		REQUIRE (bool(f.astronomical_body == ""));
 	}
 
 	SECTION("to_string() of aid class")
@@ -357,6 +384,8 @@ TEST_CASE("aid class","Full test of aid class") {
 		REQUIRE (bool(to_string(c) == "(G)universe:milky-way"));
 		aid d("(P)universe:milky-way:solar-system:mars");
 		REQUIRE (bool(to_string(d) == "(P)universe:milky-way:solar-system:mars"));
+		aid e;
+		REQUIRE (bool(to_string(e) == ""));
 	}
 
 	SECTION("to_string() of aid::type")
