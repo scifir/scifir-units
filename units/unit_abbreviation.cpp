@@ -2572,7 +2572,7 @@ percentage operator"" _ppm(unsigned long long int x)
 	return percentage((long double)x, "ppm");
 }
 
-percentage operator"" _ppb(unsigned long long int x)
+/*percentage operator"" _ppb(unsigned long long int x)
 {
 	return percentage((long double)x, "ppb");
 }
@@ -2585,7 +2585,7 @@ percentage operator"" _ppt(unsigned long long int x)
 percentage operator"" _ppq(unsigned long long int x)
 {
 	return percentage((long double)x, "ppq");
-}
+}*/
 
 frequency operator"" _YHz(long double x)
 {
@@ -5152,7 +5152,7 @@ percentage operator"" _ppm(long double x)
 	return percentage(x, "ppm");
 }
 
-percentage operator"" _ppb(long double x)
+/*percentage operator"" _ppb(long double x)
 {
 	return percentage(x, "ppb");
 }
@@ -5165,4 +5165,4 @@ percentage operator"" _ppt(long double x)
 percentage operator"" _ppq(long double x)
 {
 	return percentage(x, "ppq");
-}
+}*/

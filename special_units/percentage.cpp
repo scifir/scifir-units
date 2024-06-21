@@ -1,5 +1,7 @@
 #include "./percentage.hpp"
 
+#include "../util/types.hpp"
+
 #include "boost/algorithm/string.hpp"
 
 #include <cmath>
@@ -42,7 +44,11 @@ namespace scifir
 		{
 			value = x / 10000.0f;
 		}
-		else if (init_dimensions == "ppb")
+		else
+		{
+			value = 0.0f;
+		}
+		/*else if (init_dimensions == "ppb")
 		{
 			value = x / 10000000.0f;
 		}
@@ -53,7 +59,7 @@ namespace scifir
 		else if (init_dimensions == "ppq")
 		{
 			value = x / 10000000000000.0f;
-		}
+		}*/
 	}
 
 	percentage::percentage(double x,const string& init_dimensions)
@@ -66,7 +72,11 @@ namespace scifir
 		{
 			value = float(x) / 10000.0f;
 		}
-		else if (init_dimensions == "ppb")
+		else
+		{
+			value = 0.0f;
+		}
+		/*else if (init_dimensions == "ppb")
 		{
 			value = float(x) / 10000000.0f;
 		}
@@ -77,7 +87,7 @@ namespace scifir
 		else if (init_dimensions == "ppq")
 		{
 			value = float(x) / 10000000000000.0f;
-		}
+		}*/
 	}
 
 	percentage::percentage(long double x,const string& init_dimensions)
@@ -90,7 +100,11 @@ namespace scifir
 		{
 			value = float(x) / 10000.0f;
 		}
-		else if (init_dimensions == "ppb")
+		else
+		{
+			value = 0.0f;
+		}
+		/*else if (init_dimensions == "ppb")
 		{
 			value = float(x) / 10000000.0f;
 		}
@@ -101,7 +115,7 @@ namespace scifir
 		else if (init_dimensions == "ppq")
 		{
 			value = float(x) / 10000000000000.0f;
-		}
+		}*/
 	}
 
 	percentage::percentage(int x,const string& init_dimensions)
@@ -114,7 +128,11 @@ namespace scifir
 		{
 			value = float(x) / 10000.0f;
 		}
-		else if (init_dimensions == "ppb")
+		else
+		{
+			value = 0.0f;
+		}
+		/*else if (init_dimensions == "ppb")
 		{
 			value = float(x) / 10000000.0f;
 		}
@@ -125,7 +143,7 @@ namespace scifir
 		else if (init_dimensions == "ppq")
 		{
 			value = float(x) / 10000000000000.0f;
-		}
+		}*/
 	}
 
 	percentage::percentage(const string& init_percentage) : value()
@@ -134,14 +152,14 @@ namespace scifir
 		{
 			value = stof(init_percentage.substr(0,init_percentage.length() - 1));
 		}
-		else if (init_percentage.length() >= 4)
+		else if (init_percentage.find(" ") != string::npos)
 		{
 			string percentage_unit = init_percentage.substr(init_percentage.length() - 4,4);
 			if (percentage_unit == " ppm")
 			{
 				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000.0f;
 			}
-			else if (percentage_unit == " ppb")
+			/*else if (percentage_unit == " ppb")
 			{
 				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000.0f;
 			}
@@ -152,16 +170,20 @@ namespace scifir
 			else if (percentage_unit == " ppq")
 			{
 				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000000000.0f;
+			}*/
+			else
+			{
+				value = 0.0f;
 			}
 		}
-		else if (init_percentage.length() >= 3)
+		else if (init_percentage.length() > 3)
 		{
 			string percentage_unit = init_percentage.substr(init_percentage.length() - 3,3);
 			if (percentage_unit == "ppm")
 			{
 				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000.0f;
 			}
-			else if (percentage_unit == "ppb")
+			/*else if (percentage_unit == "ppb")
 			{
 				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000.0f;
 			}
@@ -172,11 +194,15 @@ namespace scifir
 			else if (percentage_unit == "ppq")
 			{
 				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000000000.0f;
-			}
+			}*/
 			else
 			{
-				value = 0;
+				value = 0.0f;
 			}
+		}
+		else
+		{
+			value = 0.0f;
 		}
 	}
 
@@ -188,8 +214,8 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "An percentage cannot be initialized with dimensions" << endl;
-			value = 0;
+			cerr << "A percentage cannot be initialized with dimensions" << endl;
+			value = 0.0f;
 		}
 	}
 
@@ -211,20 +237,36 @@ namespace scifir
 		return *this;
 	}
 
+	percentage& percentage::operator=(double x)
+	{
+		value = float(x);
+		return *this;
+	}
+
+	percentage& percentage::operator=(long double x)
+	{
+		value = float(x);
+		return *this;
+	}
+
 	percentage& percentage::operator=(const string& init_percentage)
 	{
 		if (init_percentage[init_percentage.length() - 1] == '%')
 		{
 			value = stof(init_percentage.substr(0,init_percentage.length() - 1));
 		}
-		else if (init_percentage.length() >= 4)
+		else if (init_percentage.find(" ") != string::npos)
 		{
 			string percentage_unit = init_percentage.substr(init_percentage.length() - 4,4);
 			if (percentage_unit == " ppm")
 			{
 				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000.0f;
 			}
-			else if (percentage_unit == " ppb")
+			else
+			{
+				value = 0.0f;
+			}
+			/*else if (percentage_unit == " ppb")
 			{
 				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000.0f;
 			}
@@ -235,16 +277,16 @@ namespace scifir
 			else if (percentage_unit == " ppq")
 			{
 				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000000000.0f;
-			}
+			}*/
 		}
-		else if (init_percentage.length() >= 3)
+		else if (init_percentage.length() > 3)
 		{
 			string percentage_unit = init_percentage.substr(init_percentage.length() - 3,3);
 			if (percentage_unit == "ppm")
 			{
 				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000.0f;
 			}
-			else if (percentage_unit == "ppb")
+			/*else if (percentage_unit == "ppb")
 			{
 				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000.0f;
 			}
@@ -255,11 +297,15 @@ namespace scifir
 			else if (percentage_unit == "ppq")
 			{
 				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000000000.0f;
-			}
+			}*/
 			else
 			{
-				value = 0;
+				value = 0.0f;
 			}
+		}
+		else
+		{
+			value = 0.0f;
 		}
 		return *this;
 	}
@@ -272,7 +318,8 @@ namespace scifir
 		}
 		else
 		{
-			cerr << "An percentage cannot be initialized with dimensions" << endl;
+			cerr << "A percentage cannot be initialized with dimensions" << endl;
+			value = 0.0f;
 		}
 		return *this;
 	}
@@ -363,7 +410,7 @@ namespace scifir
 		return value * 10000.0f;
 	}
 
-	float percentage::get_ppb() const
+	/*float percentage::get_ppb() const
 	{
 		return value * 10000000.0f;
 	}
@@ -376,35 +423,35 @@ namespace scifir
 	float percentage::get_ppq() const
 	{
 		return value * 10000000000000.0f;
-	}
+	}*/
 
 	string percentage::display_ppm() const
 	{
 		ostringstream out;
-		out << get_ppm() << " ppm";
+		out << display_float(get_ppm()) << " ppm";
 		return out.str();
 	}
 
-	string percentage::display_ppb() const
+	/*string percentage::display_ppb() const
 	{
 		ostringstream out;
-		out << get_ppb() << " ppb";
+		out << display_float(get_ppb()) << " ppb";
 		return out.str();
 	}
 
 	string percentage::display_ppt() const
 	{
 		ostringstream out;
-		out << get_ppt() << " ppt";
+		out << display_float(get_ppt()) << " ppt";
 		return out.str();
 	}
 
 	string percentage::display_ppq() const
 	{
 		ostringstream out;
-		out << get_ppq() << " ppq";
+		out << display_float(get_ppq()) << " ppq";
 		return out.str();
-	}
+	}*/
 
 	string to_string(const percentage& x)
 	{
@@ -416,18 +463,29 @@ namespace scifir
 	bool is_percentage(const string& x)
 	{
 		int iteration_limit;
-		string percentage_unit = x.substr(x.length() - 4,4);
-		if (percentage_unit == " ppm" or percentage_unit == " ppb" or percentage_unit == " ppt" or percentage_unit == " ppq")
-		{
-			iteration_limit = int(x.length()) - 4;
-		}
-		else if (x[x.length() - 1] == '%')
+		if (x.back() == '%')
 		{
 			iteration_limit = int(x.length()) - 1;
 		}
 		else
 		{
-			return false;
+			string percentage_unit = x.substr(x.length() - 4,4);
+			if (percentage_unit == " ppm"/* or percentage_unit == " ppb" or percentage_unit == " ppt" or percentage_unit == " ppq"*/)
+			{
+				iteration_limit = int(x.length()) - 4;
+			}
+			else
+			{
+				percentage_unit = x.substr(x.length() - 3,3);
+				if (percentage_unit == "ppm"/* or percentage_unit == "ppb" or percentage_unit == "ppt" or percentage_unit == "ppq"*/)
+				{
+					iteration_limit = int(x.length()) - 3;
+				}
+				else
+				{
+					return false;
+				}
+			}
 		}
 		bool dot_present = false;
 		for (int i = 0; i < iteration_limit; i++)

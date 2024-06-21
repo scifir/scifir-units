@@ -14,39 +14,143 @@ using namespace scifir;
 
 TEST_CASE("percentage class","Full test of percentage class") {
 	SECTION("Constructors of percentage class") {
-		percentage a = percentage();
+		percentage a;
 		REQUIRE (bool(a.get_value() == 0.0f));
-		percentage b = percentage("23%");
-		percentage c = percentage(b);
+		percentage b("23%");
+		percentage c(b);
 		REQUIRE (bool(c.get_value() == 23.0f));
-		percentage c2 = percentage(move(b));
+		percentage c2(std::move(b));
 		REQUIRE (bool(c.get_value() == 23.0f));
-		percentage d = percentage(26);
+		percentage d(26.0f);
 		REQUIRE (bool(d.get_value() == 26.0f));
-		percentage e = percentage(28,"%");
+		percentage d2(26.0);
+		REQUIRE (bool(d2.get_value() == 26.0f));
+		percentage d3(26.0l);
+		REQUIRE (bool(d3.get_value() == 26.0f));
+		percentage d4(26);
+		REQUIRE (bool(d4.get_value() == 26.0f));
+		percentage e(28.0f,"%");
 		REQUIRE (bool(e.get_value() == 28.0f));
-		percentage f = percentage("24%");
-		REQUIRE (bool(f.get_value() == 24.0f));
-		scalar_unit g1 = 100_N;
-		percentage g = percentage(g1 / 10_N);
-		REQUIRE (bool(g.get_value() == 10.0f));
+		percentage e2(28.0f,"ppm");
+		REQUIRE (bool(e2.get_value() == (28.0f / 10000.0f)));
+		percentage e3(28.0f,"a");
+		REQUIRE (bool(e3.get_value() == 0.0f));
+		/*percentage e3(28.0f,"ppb");
+		REQUIRE (bool(e3.get_value() == (28.0f / 10000000.0f)));
+		percentage e4(28.0f,"ppt");
+		REQUIRE (bool(e4.get_value() == (28.0f / 10000000000.0f)));
+		percentage e5(28.0f,"ppq");
+		REQUIRE (bool(e5.get_value() == (28.0f / 10000000000000.0f)));*/
+		percentage f(28.0,"%");
+		REQUIRE (bool(f.get_value() == 28.0f));
+		percentage f2(28.0,"ppm");
+		REQUIRE (bool(f2.get_value() == (28.0f / 10000.0f)));
+		percentage f3(28.0,"a");
+		REQUIRE (bool(f3.get_value() == 0.0f));
+		/*percentage f3(28.0,"ppb");
+		REQUIRE (bool(f3.get_value() == (28.0f / 10000000.0f)));
+		percentage f4(28.0,"ppt");
+		REQUIRE (bool(f4.get_value() == (28.0f / 10000000000.0f)));
+		percentage f5(28.0,"ppq");
+		REQUIRE (bool(f5.get_value() == (28.0f / 10000000000000.0f)));*/
+		percentage g(28.0l,"%");
+		REQUIRE (bool(g.get_value() == 28.0f));
+		percentage g2(28.0l,"ppm");
+		REQUIRE (bool(g2.get_value() == (28.0f / 10000.0f)));
+		percentage g3(28.0l,"a");
+		REQUIRE (bool(g3.get_value() == 0.0f));
+		/*percentage g3(28.0l,"ppb");
+		REQUIRE (bool(g3.get_value() == (28.0f / 10000000.0f)));
+		percentage g4(28.0l,"ppt");
+		REQUIRE (bool(g4.get_value() == (28.0f / 10000000000.0f)));
+		percentage g5(28.0l,"ppq");
+		REQUIRE (bool(g5.get_value() == (28.0f / 10000000000000.0f)));*/
+		percentage h(28,"%");
+		REQUIRE (bool(h.get_value() == 28.0f));
+		percentage h2(28,"ppm");
+		REQUIRE (bool(h2.get_value() == (28.0f / 10000.0f)));
+		percentage h3(28,"a");
+		REQUIRE (bool(h3.get_value() == 0.0f));
+		/*percentage h3(28,"ppb");
+		REQUIRE (bool(h3.get_value() == (28.0f / 10000000.0f)));
+		percentage h4(28,"ppt");
+		REQUIRE (bool(h4.get_value() == (28.0f / 10000000000.0f)));
+		percentage h5(28,"ppq");
+		REQUIRE (bool(h5.get_value() == (28.0f / 10000000000000.0f)));*/
+		percentage i("24%");
+		REQUIRE (bool(i.get_value() == 24.0f));
+		percentage i2("24ppm");
+		REQUIRE (bool(i2.get_value() == (24.0f / 10000.0f)));
+		percentage i3("24a");
+		REQUIRE (bool(i3.get_value() == 0.0f));
+		percentage i4("24aqw");
+		REQUIRE (bool(i4.get_value() == 0.0f));
+		/*percentage i3("24ppb");
+		REQUIRE (bool(i3.get_value() == (24.0f / 10000000.0f)));
+		percentage i4("24ppt");
+		REQUIRE (bool(i4.get_value() == (24.0f / 10000000000.0f)));
+		percentage i5("24ppq");
+		REQUIRE (bool(i5.get_value() == (24.0f / 10000000000000.0f)));*/
+		percentage i6("24 ppm");
+		REQUIRE (bool(i6.get_value() == (24.0f / 10000.0f)));
+		percentage i7("24 a");
+		REQUIRE (bool(i7.get_value() == 0.0f));
+		/*percentage i7("24 ppb");
+		REQUIRE (bool(i7.get_value() == (24.0f / 10000000.0f)));
+		percentage i8("24 ppt");
+		REQUIRE (bool(i8.get_value() == (24.0f / 10000000000.0f)));
+		percentage i9("24 ppq");
+		REQUIRE (bool(i9.get_value() == (24.0f / 10000000000000.0f)));*/
+		scalar_unit j2 = 100_N;
+		percentage j(j2 / 10_N);
+		REQUIRE (bool(j.get_value() == 10.0f));
+		percentage j3(j2);
+		REQUIRE (bool(j3.get_value() == 0.0f));
 	}
 
 	SECTION("Assignments of percentage class") {
-		percentage a = percentage("40%");
-		percentage b = percentage("20%");
+		percentage a("40%");
+		percentage b("20%");
 		a = b;
 		REQUIRE (bool(a.get_value() == 20.0f));
-		percentage c = percentage("30%");
-		a = move(c);
+		percentage c("30%");
+		a = std::move(c);
 		REQUIRE (bool(a.get_value() == 30.0f));
 		a = 24.0f;
 		REQUIRE (bool(a.get_value() == 24.0f));
+		a = 24.0;
+		REQUIRE (bool(a.get_value() == 24.0f));
+		a = 24.0l;
+		REQUIRE (bool(a.get_value() == 24.0f));
 		a = "29%";
 		REQUIRE (bool(a.get_value() == 29.0f));
+		a = "29ppm";
+		REQUIRE (bool(a.get_value() == (29.0f / 10000.0f)));
+		a = "29a";
+		REQUIRE (bool(a.get_value() == 0.0f));
+		a = "29aqe";
+		REQUIRE (bool(a.get_value() == 0.0f));
+		/*a = "29ppb";
+		REQUIRE (bool(a.get_value() == (29.0f / 10000000.0f)));
+		a = "29ppt";
+		REQUIRE (bool(a.get_value() == (29.0f / 10000000000.0f)));
+		a = "29ppq";
+		REQUIRE (bool(a.get_value() == (29.0f / 10000000000000.0f)));*/
+		a = "29 ppm";
+		REQUIRE (bool(a.get_value() == (29.0f / 10000.0f)));
+		a = "29 a";
+		REQUIRE (bool(a.get_value() == 0.0f));
+		/*a = "29 ppb";
+		REQUIRE (bool(a.get_value() == (29.0f / 10000000.0f)));
+		a = "29 ppt";
+		REQUIRE (bool(a.get_value() == (29.0f / 10000000000.0f)));
+		a = "29 ppq";
+		REQUIRE (bool(a.get_value() == (29.0f / 10000000000000.0f)));*/
 		scalar_unit d = 42_N;
-		a = float(d / 21.0f);
+		a = d / 21_N;
 		REQUIRE (bool(a.get_value() == 2.0f));
+		a = d / 21.0f;
+		REQUIRE (bool(a.get_value() == 0.0f));
 	}
 
 	SECTION("Implicit conversion of percentage class") {
@@ -70,7 +174,7 @@ TEST_CASE("percentage class","Full test of percentage class") {
 		percentage f = percentage("1 ppm");
 		REQUIRE (bool(f.get_factor() == 0.000001f));
 		REQUIRE (bool(f.display_ppm() == "1 ppm"));
-		percentage g = percentage("1 ppb");
+		/*percentage g = percentage("1 ppb");
 		REQUIRE (bool(g.get_factor() == 0.000000001f));
 		REQUIRE (bool(g.display_ppb() == "1 ppb"));
 		percentage h = percentage("1 ppt");
@@ -78,8 +182,8 @@ TEST_CASE("percentage class","Full test of percentage class") {
 		REQUIRE (bool(h.display_ppt() == "1 ppt"));
 		percentage i = percentage("1 ppq");
 		REQUIRE (bool(i.get_factor() == 0.000000000000001f));
-		REQUIRE (bool(i.display_ppq() == "1 ppq"));
-		i = percentage("70%");
+		REQUIRE (bool(i.display_ppq() == "1 ppq"));*/
+		percentage i = percentage("70%");
 		REQUIRE (bool(to_string(i) == "70%"));
 		i = 65;
 		REQUIRE (bool(to_string(i) == "65%"));
@@ -146,43 +250,43 @@ TEST_CASE("percentage class","Full test of percentage class") {
 		scalar_unit ad = scalar_unit("5 N");
 		scalar_unit ae = ac * ad;
 		REQUIRE (bool(to_string(ae) == "1 N"));
+		REQUIRE (bool(to_string(ad * ac) == "1 N"));
 		percentage af = percentage("200%");
 		scalar_unit ag = scalar_unit("4 N");
 		scalar_unit ah = af / ag;
 		REQUIRE (bool(to_string(ah) == "0.5 s2/kg*m"));
+		cout << "ag / af: " << to_string(ag / af) << endl;
+		REQUIRE (bool(to_string(ag / af) == "2 N"));
 		percentage ai = percentage("70%");
 		REQUIRE (bool(ai.get_factor() == 0.7f));
 	}
 
-	SECTION("Functions ppm, ppb, ppt and ppq of percentage class") {
-		/*percentage a = percentage("30%");
-		REQUIRE (bool(a.get_ppm() == 300000));
-		REQUIRE (bool(a.get_ppb() == 300000000));
-		REQUIRE (bool(a.get_ppt() == 300000000000));
-		REQUIRE (bool(a.get_ppq() == 300000000000000));
+	SECTION("ppm functions of percentage class") {
+		percentage a = percentage("30%");
+		REQUIRE (bool(a.get_ppm() == 300000.0f));
+		/*REQUIRE (bool(a.get_ppb() == 300000000.0f));
+		REQUIRE (bool(a.get_ppt() == 300000000000.0f));
+		REQUIRE (bool(a.get_ppq() == 300000000000000.0f));*/
 		REQUIRE (bool(a.display_ppm() == "300000 ppm"));
-		cout << "a ppb: " << a.display_ppb() << endl;
+		/*cout << "ppb: " << a.display_ppb() << endl;
+		cout << "ppt: " << a.display_ppt() << endl;
+		cout << "ppq: " << a.display_ppq() << endl;
 		REQUIRE (bool(a.display_ppb() == "300000000 ppb"));
 		REQUIRE (bool(a.display_ppt() == "300000000000 ppt"));
 		REQUIRE (bool(a.display_ppq() == "300000000000000 ppq"));*/
 	}
 
-	SECTION("String functions of percentage class") {
-		/*percentage a = percentage("30%");
+	SECTION("to_string() function of percentage class") {
+		percentage a = percentage("30%");
 		REQUIRE (bool(to_string(a) == "30%"));
-		REQUIRE (bool(is_percentage("65%") == true));
-		REQUIRE (bool(is_percentage("10 ppm") == true));
-		REQUIRE (bool(is_percentage("35 ppb") == true));
-		REQUIRE (bool(is_percentage("4 ppt") == true));
-		REQUIRE (bool(is_percentage("55 ppq") == false));*/
 	}
 
 	SECTION("Number operators of percentage class") {
-		/*percentage a = percentage("30%");
+		percentage a = percentage("30%");
 		REQUIRE (bool((a + 20.0f) == percentage("50%")));
 		REQUIRE (bool((a - 7.0f) == percentage("23%")));
 		REQUIRE (bool((a * 100.0f) == 30.0f));
-		REQUIRE (bool((a / 15.0f) == 2.0f));
+		REQUIRE (bool((a / 15.0f) == 0.02f));
 		REQUIRE (bool(a == 30.0f));
 		REQUIRE (bool(a != 20.0f));
 		REQUIRE (bool(a > 20.0f));
@@ -192,13 +296,30 @@ TEST_CASE("percentage class","Full test of percentage class") {
 		REQUIRE (bool((20.0f + a) == percentage("50%")));
 		REQUIRE (bool((37.0f - a) == percentage("7%")));
 		REQUIRE (bool((100.0f * a) == 30.0f));
-		REQUIRE (bool((60.0f / a) == 2.0f));
+		REQUIRE (bool((60.0f / a) == 200.0f));
 		REQUIRE (bool(30.0f == a));
 		REQUIRE (bool(20.0f != a));
 		REQUIRE (bool(20.0f < a));
 		REQUIRE (bool(35.0f > a));
 		REQUIRE (bool(25.0f <= a));
-		REQUIRE (bool(40.0f >= a));*/
+		REQUIRE (bool(40.0f >= a));
+	}
+
+	SECTION("is_percentage() function")
+	{
+		REQUIRE (bool(is_percentage("90%") == true));
+		REQUIRE (bool(is_percentage("90ppm") == true));
+		/*REQUIRE (bool(is_percentage("90ppb") == true));
+		REQUIRE (bool(is_percentage("90ppt") == true));
+		REQUIRE (bool(is_percentage("90ppq") == true));*/
+		REQUIRE (bool(is_percentage("90 ppm") == true));
+		/*REQUIRE (bool(is_percentage("90 ppb") == true));
+		REQUIRE (bool(is_percentage("90 ppt") == true));
+		REQUIRE (bool(is_percentage("90 ppq") == true));*/
+		REQUIRE (bool(is_percentage("90sad") == false));
+		REQUIRE (bool(is_percentage("90sad%") == false));
+		REQUIRE (bool(is_percentage("90.0%") == true));
+		REQUIRE (bool(is_percentage("90.0.0%") == false));
 	}
 
 	SECTION("Operators of percentage class with other percentage classes") {
@@ -236,6 +357,11 @@ TEST_CASE("percentage class","Full test of percentage class") {
 		ostringstream out;
 		out << "a " << a;
 		REQUIRE (bool(out.str() == "a 25%"));
+		stringstream b;
+        b << "72%";
+        percentage b2;
+        b >> b2;
+        REQUIRE (bool(to_string(b2) == "72%"));
 	}
 }
 

@@ -34,6 +34,8 @@ namespace scifir
 			percentage& operator=(const percentage&);
 			percentage& operator=(percentage&&);
 			percentage& operator=(float);
+			percentage& operator=(double);
+			percentage& operator=(long double);
 			percentage& operator=(const string&);
 			percentage& operator=(const scalar_unit&);
 
@@ -121,14 +123,14 @@ namespace scifir
 			float get_factor() const;
 
 			float get_ppm() const;
-			float get_ppb() const;
+			/*float get_ppb() const;
 			float get_ppt() const;
-			float get_ppq() const;
+			float get_ppq() const;*/
 
 			string display_ppm() const;
-			string display_ppb() const;
+			/*string display_ppb() const;
 			string display_ppt() const;
-			string display_ppq() const;
+			string display_ppq() const;*/
 
 		private:
 			float value;
@@ -142,13 +144,13 @@ namespace scifir
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::percentage operator +(T x, const scifir::percentage& y)
 {
-	return percentage(x + y.get_value());
+	return scifir::percentage(x + y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::percentage operator -(T x, const scifir::percentage& y)
 {
-	return percentage(x - y.get_value());
+	return scifir::percentage(x - y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>

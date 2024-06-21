@@ -555,9 +555,9 @@ molarity operator"" _yM(unsigned long long int);
 
 mole operator"" _particles(unsigned long long int);
 percentage operator"" _ppm(unsigned long long int);
-percentage operator"" _ppb(unsigned long long int);
+/*percentage operator"" _ppb(unsigned long long int);
 percentage operator"" _ppt(unsigned long long int);
-percentage operator"" _ppq(unsigned long long int);
+percentage operator"" _ppq(unsigned long long int);*/
 
 frequency operator"" _YHz(long double);
 frequency operator"" _ZHz(long double);
@@ -1103,8 +1103,8 @@ molarity operator"" _zM(long double);
 molarity operator"" _yM(long double);
 
 percentage operator"" _ppm(long double);
-percentage operator"" _ppb(long double);
+/*percentage operator"" _ppb(long double);
 percentage operator"" _ppt(long double);
-percentage operator"" _ppq(long double);
+percentage operator"" _ppq(long double);*/
 
 #endif // SCIFIR_UNITS_UNITS_UNIT_ABBREVIATION_HPP_INCLUDED
