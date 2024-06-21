@@ -327,24 +327,24 @@ namespace scifir
 
 	float distance(const point_2d<float>&,const coordinates_2d<float>&);
 
-	inline float cartesian_2d_to_polar_r(float x,float y)
+	inline float cartesian_2d_to_polar_p(float x,float y)
 	{
 		return float(std::sqrt(std::pow(x,2) + std::pow(y,2)));
 	}
 
-	inline float cartesian_2d_to_polar_theta(float x,float y)
+	inline angle cartesian_2d_to_polar_theta(float x,float y)
 	{
-		return scifir::atan_grade(y/x);
+		return scifir::angle(scifir::atan_grade(y/x));
 	}
 
-	inline float polar_to_cartesian_2d_x(float r,const angle& angle)
+	inline float polar_to_cartesian_2d_x(float p,const angle& theta)
 	{
-		return r * scifir::cos(angle);
+		return p * scifir::cos(theta);
 	}
 
-	inline float polar_to_cartesian_2d_y(float r,const angle& angle)
+	inline float polar_to_cartesian_2d_y(float p,const angle& theta)
 	{
-		return r * scifir::sin(angle);
+		return p * scifir::sin(theta);
 	}
 }
 

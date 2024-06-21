@@ -180,9 +180,9 @@ TEST_CASE("class point_2d","Complete test of point_2d")
 
 	SECTION("Conversion of coordinates")
 	{
-		float a = cartesian_2d_to_polar_r(100.0f,100.0f);
+		float a = cartesian_2d_to_polar_p(100.0f,100.0f);
 		REQUIRE(bool(a == 141.421356f));
-		float b = cartesian_2d_to_polar_theta(100.0f,100.0f);
+		angle b = cartesian_2d_to_polar_theta(100.0f,100.0f);
 		REQUIRE(bool(b == 45.0f));
 		float c = polar_to_cartesian_2d_x(100.0f,angle(40.0f));
 		REQUIRE(bool(c == 76.6044464f));

@@ -395,13 +395,11 @@ namespace scifir
 	vector_unit_3d cross_product(const vector_unit_3d& x,const vector_unit_3d& y)
 	{
 		long double new_value;
-		float new_theta;
-		float new_phi;
+		angle new_theta;
+		angle new_phi;
 		if(y.theta == x.theta and y.phi == x.phi)
 		{
-			new_value = 0;
-			new_theta = 0;
-			new_phi = 0;
+			new_value = 0.0l;
 		}
 		else
 		{

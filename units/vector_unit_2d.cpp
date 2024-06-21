@@ -145,8 +145,8 @@ namespace scifir
 		{
 				float new_x = float(x_projection() + y.x_projection());
 				float new_y = float(y_projection() + y.y_projection());
-				scalar_unit::value = cartesian_2d_to_polar_r(new_x, new_y);
-				theta = angle(cartesian_2d_to_polar_theta(new_x, new_y));
+				scalar_unit::value = cartesian_2d_to_polar_p(new_x, new_y);
+				theta = cartesian_2d_to_polar_theta(new_x, new_y);
 		}
 		else
 		{
@@ -173,8 +173,8 @@ namespace scifir
 		{
 			float new_x = float(x_projection() + y.x_projection());
 			float new_y = float(y_projection() + y.y_projection());
-			float value = cartesian_2d_to_polar_r(new_x, new_y);
-			angle theta = angle(cartesian_2d_to_polar_theta(new_x, new_y));
+			float value = cartesian_2d_to_polar_p(new_x, new_y);
+			angle theta = cartesian_2d_to_polar_theta(new_x, new_y);
 			return vector_unit_2d(value,get_dimensions(),theta);
 		}
 		else
@@ -190,8 +190,8 @@ namespace scifir
 			y.invert();
 			float new_x = float(x_projection() + y.x_projection());
 			float new_y = float(y_projection() + y.y_projection());
-			float value = cartesian_2d_to_polar_r(new_x, new_y);
-			angle theta = angle(cartesian_2d_to_polar_theta(new_x, new_y));
+			float value = cartesian_2d_to_polar_p(new_x, new_y);
+			angle theta = cartesian_2d_to_polar_theta(new_x, new_y);
 			return vector_unit_2d(value,get_dimensions(),theta);
 		}
 		else

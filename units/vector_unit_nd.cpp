@@ -310,7 +310,7 @@ namespace scifir
 			{
 				float new_x = float(x_projection() + y.x_projection());
 				float new_y = float(y_projection() + y.y_projection());
-				scalar_unit::value = cartesian_2d_to_polar_r(new_x, new_y);
+				scalar_unit::value = cartesian_2d_to_polar_p(new_x, new_y);
 				angles[0] = cartesian_2d_to_polar_theta(new_x, new_y);
 			}
 			else if(is_nd(3))
@@ -355,9 +355,9 @@ namespace scifir
 			{
 				float new_x = float(x_projection() + y.x_projection());
 				float new_y = float(y_projection() + y.y_projection());
-				float new_value = cartesian_2d_to_polar_r(new_x, new_y);
+				float new_value = cartesian_2d_to_polar_p(new_x, new_y);
 				vector<angle> new_angles = vector<angle>();
-				new_angles.push_back(angle(cartesian_2d_to_polar_theta(new_x, new_y)));
+				new_angles.push_back(cartesian_2d_to_polar_theta(new_x, new_y));
 				return vector_unit_nd(new_value,get_dimensions(),new_angles);
 			}
 			else if(is_nd(3))
@@ -397,9 +397,9 @@ namespace scifir
 			{
 				float new_x = float(x_projection() + y.x_projection());
 				float new_y = float(y_projection() + y.y_projection());
-				float new_value = cartesian_2d_to_polar_r(new_x, new_y);
+				float new_value = cartesian_2d_to_polar_p(new_x, new_y);
 				vector<angle> new_angles = vector<angle>();
-				new_angles.push_back(angle(cartesian_2d_to_polar_theta(new_x, new_y)));
+				new_angles.push_back(cartesian_2d_to_polar_theta(new_x, new_y));
 				return vector_unit_nd(new_value,get_dimensions(),new_angles);
 			}
 			else if(is_nd(3))
@@ -660,13 +660,11 @@ namespace scifir
 		if(x.is_nd(3) and y.is_nd(3))
 		{
 			long double new_value;
-			float angle1;
-			float angle2;
+			angle new_theta;
+			angle new_phi;
 			if(y.angles[0] == x.angles[0] and y.angles[1] == x.angles[1])
 			{
-				new_value = 0;
-				angle1 = 0;
-				angle2 = 0;
+				new_value = 0.0l;
 			}
 			else
 			{
@@ -674,14 +672,14 @@ namespace scifir
 				float new_y = float(x.z_projection() * y.x_projection() - x.x_projection() * y.z_projection());
 				float new_z = float(x.x_projection() * y.y_projection() - x.y_projection() * y.x_projection());
 				new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
-				angle1 = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
-				angle2 = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
+				new_theta = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
+				new_phi = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
 			}
 			vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
 			scalar_unit new_unit = scalar_unit(float(new_value), new_dimensions);
 			vector<angle> angles;
-			angles.push_back(angle(angle1));
-			angles.push_back(angle(angle2));
+			angles.push_back(new_theta);
+			angles.push_back(new_phi);
 			return vector_unit_nd(new_unit, angles);
 		}
 		else
