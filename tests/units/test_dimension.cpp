@@ -72,6 +72,8 @@ TEST_CASE("dimension class","Full test of dimension class") {
 	{
 		dimension a("m",dimension::POSITIVE);
 		REQUIRE(bool(a.dimension_type == dimension::m));
+		dimension a1_2("grade",dimension::POSITIVE);
+		REQUIRE(bool(a1_2.dimension_type == dimension::grade));
 		dimension a2("rad",dimension::POSITIVE);
 		REQUIRE(bool(a2.dimension_type == dimension::radian));
 		dimension a3("sr",dimension::POSITIVE);
@@ -142,6 +144,8 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		REQUIRE(bool(a33.dimension_type == dimension::h));
 		dimension a34("d",dimension::POSITIVE);
 		REQUIRE(bool(a34.dimension_type == dimension::d));
+		dimension a35_2("ly",dimension::POSITIVE);
+		REQUIRE(bool(a35_2.dimension_type == dimension::ly));
 		dimension a35("AU",dimension::POSITIVE);
 		REQUIRE(bool(a35.dimension_type == dimension::AU));
 		dimension a36("pc",dimension::POSITIVE);
@@ -244,6 +248,12 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		REQUIRE (bool(a2.get_conversion_factor() == 1.0l));
 		REQUIRE (bool(a2.is_simple_dimension() == true));
 		REQUIRE (bool(a2.is_basic_dimension() == true));
+		dimension a3_2(dimension::grade,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a3_2.get_name() == "grade"));
+		REQUIRE (bool(a3_2.get_symbol() == "\u03B8"));
+		REQUIRE (bool(a3_2.get_conversion_factor() == PI / 180.0l));
+		REQUIRE (bool(a3_2.is_simple_dimension() == true));
+		REQUIRE (bool(a3_2.is_basic_dimension() == true));
 		dimension a3(dimension::radian,prefix::no_prefix,dimension::POSITIVE);
 		REQUIRE (bool(a3.get_name() == "radian"));
 		REQUIRE (bool(a3.get_symbol() == "rad"));
@@ -442,6 +452,12 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		REQUIRE (bool(a35.get_conversion_factor() == 86400.0l));
 		REQUIRE (bool(a35.is_simple_dimension() == true));
 		REQUIRE (bool(a35.is_basic_dimension() == false));
+		dimension a36_2(dimension::ly,prefix::no_prefix,dimension::POSITIVE);
+		REQUIRE (bool(a36_2.get_name() == "light year"));
+		REQUIRE (bool(a36_2.get_symbol() == "ly"));
+		REQUIRE (bool(a36_2.get_conversion_factor() == 9.4607379375591e15));
+		REQUIRE (bool(a36_2.is_simple_dimension() == true));
+		REQUIRE (bool(a36_2.is_basic_dimension() == false));
 		dimension a36(dimension::AU,prefix::no_prefix,dimension::POSITIVE);
 		REQUIRE (bool(a36.get_name() == "astronomical unit"));
 		REQUIRE (bool(a36.get_symbol() == "AU"));
@@ -536,6 +552,9 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		dimension a("m",dimension::POSITIVE);
 		vector<dimension> b = { dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE) };
 		REQUIRE(bool(equal_dimensions(a.get_basic_dimensions(),b)));
+		dimension a2_2("grade",dimension::POSITIVE);
+		vector<dimension> b2_2 = { dimension(dimension::radian,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a2_2.get_basic_dimensions(),b2_2)));
 		dimension a2("rad",dimension::POSITIVE);
 		vector<dimension> b2 = { dimension(dimension::radian,prefix::no_prefix,dimension::POSITIVE) };
 		REQUIRE(bool(equal_dimensions(a2.get_basic_dimensions(),b2)));
@@ -695,6 +714,9 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		dimension a34("d",dimension::POSITIVE);
 		vector<dimension> b34 = { dimension(dimension::d,prefix::no_prefix,dimension::POSITIVE) };
 		REQUIRE(bool(equal_dimensions(a34.get_basic_dimensions(),b34)));
+		dimension a35_2("ly",dimension::POSITIVE);
+		vector<dimension> b35_2 = { dimension(dimension::ly,prefix::no_prefix,dimension::POSITIVE) };
+		REQUIRE(bool(equal_dimensions(a35_2.get_basic_dimensions(),b35_2)));
 		dimension a35("AU",dimension::POSITIVE);
 		vector<dimension> b35 = { dimension(dimension::AU,prefix::no_prefix,dimension::POSITIVE) };
 		REQUIRE(bool(equal_dimensions(a35.get_basic_dimensions(),b35)));
@@ -959,4 +981,3 @@ TEST_CASE("dimension class","Full test of dimension class") {
 		REQUIRE (bool(equal_dimensions(c.get_basic_dimensions(),d)));
 	}
 }
-

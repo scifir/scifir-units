@@ -75,6 +75,10 @@ namespace scifir
 		{
 			dimension_type = dimension::m;
 		}
+		else if(dimension_name == "grade")
+		{
+			dimension_type = dimension::grade;
+		}
 		else if(dimension_name == "rad")
 		{
 			dimension_type = dimension::radian;
@@ -207,6 +211,10 @@ namespace scifir
 		{
 			dimension_type = dimension::d;
 		}
+		else if(dimension_name == "ly")
+		{
+			dimension_type = dimension::ly;
+		}
 		else if(dimension_name == "AU")
 		{
 			dimension_type = dimension::AU;
@@ -272,11 +280,6 @@ namespace scifir
 		}
 	}
 
-	dimension::~dimension()
-	{
-		//free(symbol);
-	}
-
 #ifdef IS_UNIX
 	dimension& dimension::operator=(const dimension& x)
 	{
@@ -323,6 +326,8 @@ namespace scifir
 				return "empty";
 			case dimension::m:
 				return "meter";
+			case dimension::grade:
+				return "grade";
 			case dimension::radian:
 				return "radian";
 			case dimension::steradian:
@@ -389,6 +394,8 @@ namespace scifir
 				return "hour";
 			case dimension::d:
 				return "day";
+			case dimension::ly:
+				return "light year";
 			case dimension::AU:
 				return "astronomical unit";
 			case dimension::pc:
@@ -429,6 +436,13 @@ namespace scifir
 				return "empty";
 			case dimension::m:
 				return "m";
+#ifdef IS_UNIX
+			case dimension::grade:
+				return "\U000003B8";
+#elif IS_WINDOWS
+			case dimension::grade:
+				return "\U03B8";
+#endif
 			case dimension::radian:
 				return "rad";
 			case dimension::steradian:
@@ -505,6 +519,8 @@ namespace scifir
 				return "h";
 			case dimension::d:
 				return "d";
+			case dimension::ly:
+				return "ly";
 			case dimension::AU:
 				return "AU";
 			case dimension::pc:
@@ -545,6 +561,8 @@ namespace scifir
 				return 1.0l;
 			case dimension::m:
 				return 1.0l;
+			case dimension::grade:
+				return PI / 180.0l;
 			case dimension::radian:
 				return 1.0l;
 			case dimension::steradian:
@@ -611,6 +629,8 @@ namespace scifir
 				return 3600l;
 			case dimension::d:
 				return 86400l;
+			case dimension::ly:
+				return 9.4607379375591e15;
 			case dimension::AU:
 				return 149597870700.0l;
 			case dimension::pc:
@@ -656,6 +676,8 @@ namespace scifir
 				return true;
 			case dimension::m:
 				return true;
+			case dimension::grade:
+				return true;
 			case dimension::radian:
 				return true;
 			case dimension::steradian:
@@ -721,6 +743,8 @@ namespace scifir
 			case dimension::h:
 				return true;
 			case dimension::d:
+				return true;
+			case dimension::ly:
 				return true;
 			case dimension::AU:
 				return true;
@@ -762,6 +786,8 @@ namespace scifir
 				return true;
 			case dimension::m:
 				return true;
+			case dimension::grade:
+				return true;
 			case dimension::radian:
 				return true;
 			case dimension::steradian:
@@ -827,6 +853,8 @@ namespace scifir
 			case dimension::h:
 				return false;
 			case dimension::d:
+				return false;
+			case dimension::ly:
 				return false;
 			case dimension::AU:
 				return false;
@@ -875,6 +903,9 @@ namespace scifir
 				break;
 			case dimension::m:
 				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
+				break;
+			case dimension::grade:
+				basic_dimensions.push_back(dimension(dimension::radian,prefix::no_prefix,dimension::POSITIVE));
 				break;
 			case dimension::radian:
 				basic_dimensions.push_back(dimension(dimension::radian,prefix::no_prefix,dimension::POSITIVE));
@@ -1034,6 +1065,9 @@ namespace scifir
 				break;
 			case dimension::d:
 				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE));
+				break;
+			case dimension::ly:
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
 				break;
 			case dimension::AU:
 				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));

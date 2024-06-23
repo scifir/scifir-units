@@ -30,7 +30,7 @@ namespace scifir
 		public:
 			enum type : int8_t
 			{
-				NONE, m, radian, steradian, s, g, C, K, mol, cd, B, Hz, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, L, minute, h, d, AU, pc, eV, Da, amu, barn, M, particles, custom, custom_basic, custom_full_symbol, money, pixel, memo
+				NONE, m, grade, radian, steradian, s, g, C, K, mol, cd, B, Hz, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, L, minute, h, d, ly, AU, pc, eV, Da, amu, barn, M, particles, custom, custom_basic, custom_full_symbol, money, pixel, memo
 			};
 
 			enum sign : int8_t {NO_SIGN, POSITIVE, NEGATIVE};
@@ -41,8 +41,6 @@ namespace scifir
 			explicit dimension(dimension::type,scifir::prefix::type,dimension::sign);
 			explicit dimension(dimension::type,const scifir::prefix&,dimension::sign);
 			explicit dimension(const string&,dimension::sign);
-
-			~dimension();
 
 			dimension& operator=(const dimension&);
 			dimension& operator=(dimension&&);
