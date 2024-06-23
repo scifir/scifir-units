@@ -138,7 +138,7 @@ namespace scifir
 	{
 		if(x.has_empty_dimensions())
 		{
-			return scalar_unit(std::pow(value,x.get_value()),power_dimensions(get_dimensions(),x.get_value()));
+			return scalar_unit(std::pow(value,x.get_value()),power_dimensions(get_dimensions(),int(x.get_value())));
 		}
 		else
 		{

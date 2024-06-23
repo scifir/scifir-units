@@ -748,10 +748,7 @@ namespace scifir
 				}
 			}
 		}
-		else
-		{
-			return false;
-		}
+		return false;
 	}
 
 	bool orthogonal(const vector_unit_nd& x,const vector_unit_nd& y)
@@ -772,10 +769,7 @@ namespace scifir
 				return (x_angle == 90.0f);
 			}
 		}
-		else
-		{
-			return false;
-		}
+		return false;
 	}
 }
 
