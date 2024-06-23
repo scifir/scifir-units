@@ -12,5 +12,9 @@ TEST_CASE("types","Complete test of types functions")
 {
 	SECTION("display_float()")
 	{
+		REQUIRE (bool(display_float(1.003f) == "1"));
+		REQUIRE (bool(display_float(1.003f,3) == "1.003"));
+		REQUIRE (bool(display_float(1.00f) == "1"));
+		REQUIRE (bool(display_float(15.0f) == "15"));
 	}
 }
