@@ -261,6 +261,11 @@ if(BUILD_TESTING)
 		add_test(NAME size_nd COMMAND test_size_nd)
 		set_tests_properties(size_nd PROPERTIES LABELS tests)
 
+		add_executable(test_zid tests/special_units/test_zid.cpp)
+		target_link_libraries(test_zid PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		add_test(NAME zid COMMAND test_zid)
+		set_tests_properties(zid PROPERTIES LABELS tests)
+
 		add_executable(test_types tests/util/test_types.cpp)
 		target_link_libraries(test_types PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
 		add_test(NAME types COMMAND test_types)
