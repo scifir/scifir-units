@@ -3,6 +3,7 @@
 
 #include "../predefined_units/physics_units.hpp"
 #include "../units/unit_basic.hpp"
+#include "../util/types.hpp"
 
 #include <iostream>
 #include <string>
@@ -422,7 +423,7 @@ namespace scifir
 				y = new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude);
 				z = new_altitude * scifir::sin(new_latitude);
 			}
-			
+
 			void rotate_in_x(const angle& x_angle)
 			{
 				float y_coord = y;
@@ -483,21 +484,21 @@ namespace scifir
 			string display_cylindrical() const
 			{
 				ostringstream out;
-				out << "(" << get_p() << "," << get_theta() << "," << z << ")";
+				out << "(" << display_float(get_p()) << "," << get_theta() << "," << display_float(z) << ")";
 				return out.str();
 			}
 
 			string display_spherical() const
 			{
 				ostringstream out;
-				out << "(" << get_r() << "," << get_theta() << "," << get_phi() << ")";
+				out << "(" << display_float(get_r()) << "," << get_theta() << "," << get_phi() << ")";
 				return out.str();
 			}
 
 			string display_geographical() const
 			{
 				ostringstream out;
-				out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ")";
+				out << "(" << get_latitude() << "," << get_longitude() << "," << display_float(get_altitude()) << ")";
 				return out.str();
 			}
 
@@ -513,6 +514,8 @@ namespace scifir
 		out << "(" << x.x << "," << x.y << "," << x.z << ")";
 		return out.str();
 	}
+
+	string to_string(const point_3d<float>& x);
 
 	template<typename T>
 	T distance(const point_3d<T>& x1,const point_3d<T>& x2)
@@ -538,7 +541,7 @@ bool operator !=(const scifir::point_3d<T>& x,const scifir::point_3d<T>& y)
 template<typename T>
 bool operator ==(const scifir::point_3d<T>& x, const string& y)
 {
-	point_3d y_point = point_3d(y);
+	point_3d<T> y_point = point_3d<T>(y);
 	return (x == y_point);
 }
 
@@ -551,7 +554,7 @@ bool operator !=(const scifir::point_3d<T>& x, const string& y)
 template<typename T>
 bool operator ==(const string& x, const scifir::point_3d<T>& y)
 {
-	point_3d x_point = point_3d(x);
+	point_3d<T> x_point = point_3d<T>(x);
 	return (x_point == y);
 }
 
@@ -585,6 +588,8 @@ ostream& operator <<(ostream& os,const scifir::point_3d<T>& x)
 	return os << to_string(x);
 }
 
+ostream& operator <<(ostream& os,const scifir::point_3d<float>& x);
+
 template<typename T>
 istream& operator >>(istream& is, scifir::point_3d<T>& x)
 {
@@ -592,7 +597,7 @@ istream& operator >>(istream& is, scifir::point_3d<T>& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::point_3d c(b);
+	scifir::point_3d<T> c(b);
 	x = c;
 	return is;
 }

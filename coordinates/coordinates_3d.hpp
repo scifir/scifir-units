@@ -5,6 +5,7 @@
 #include "../meca_number/angle.hpp"
 #include "../units/unit_basic.hpp"
 #include "../predefined_units/physics_units.hpp"
+#include "../util/types.hpp"
 
 #include <iostream>
 #include <string>
@@ -142,7 +143,7 @@ namespace scifir
 
 			angle get_latitude() const
 			{
-				return scifir::asin(float(z/T(6317,"km")));
+				return scifir::asin(float(z/T(6317.0f,"km")));
 			}
 
 			angle get_longitude() const
@@ -497,21 +498,21 @@ namespace scifir
 			string display_cylindrical() const
 			{
 				ostringstream out;
-				out << "(" << get_p() << "," << get_theta() << "," << z << ")";
+				out << "(" << display_float(get_p()) << "," << get_theta() << "," << display_float(z) << ")";
 				return out.str();
 			}
 
 			string display_spherical() const
 			{
 				ostringstream out;
-				out << "(" << get_r() << "," << get_theta() << "," << get_phi() << ")";
+				out << "(" << display_float(get_r()) << "," << get_theta() << "," << get_phi() << ")";
 				return out.str();
 			}
 
 			string display_geographical() const
 			{
 				ostringstream out;
-				out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ")";
+				out << "(" << get_latitude() << "," << get_longitude() << "," << display_float(get_altitude()) << ")";
 				return out.str();
 			}
 
@@ -527,6 +528,8 @@ namespace scifir
 		out << "(" << x.x << "," << x.y << "," << x.z << ")";
 		return out.str();
 	}
+
+	string to_string(const coordinates_3d<float>&);
 
 	template<typename T>
 	T distance(const coordinates_3d<T>& x,const coordinates_3d<T>& y)

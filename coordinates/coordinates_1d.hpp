@@ -158,6 +158,8 @@ namespace scifir
 		return out.str();
 	}
 
+	string to_string(const coordinates_1d<float>&);
+
 	template<typename T>
 	T distance(const coordinates_1d<T>& x,const coordinates_1d<T>& y)
 	{

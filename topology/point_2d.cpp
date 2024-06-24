@@ -30,7 +30,7 @@ namespace scifir
 	}
 }
 
-ostream& operator << (ostream& os,const scifir::point_2d<float>& x)
+ostream& operator <<(ostream& os,const scifir::point_2d<float>& x)
 {
 	return os << scifir::to_string(x);
 }

@@ -821,21 +821,21 @@ namespace scifir
 			string display_cylindrical() const
 			{
 				ostringstream out;
-				out << "(" << get_p() << "," << get_spherical_theta() << "," << z << "," << theta << "," << phi << ")";
+				out << "(" << display_float(get_p()) << "," << get_spherical_theta() << "," << display_float(z) << "," << theta << "," << phi << ")";
 				return out.str();
 			}
 
 			string display_spherical() const
 			{
 				ostringstream out;
-				out << "(" << get_r() << "," << get_spherical_theta() << "," << get_spherical_phi() << "," << theta << "," << phi << ")";
+				out << "(" << display_float(get_r()) << "," << get_spherical_theta() << "," << get_spherical_phi() << "," << theta << "," << phi << ")";
 				return out.str();
 			}
 
 			string display_geographical() const
 			{
 				ostringstream out;
-				out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << "," << theta << "," << phi << ")";
+				out << "(" << get_latitude() << "," << get_longitude() << "," << display_float(get_altitude()) << "," << theta << "," << phi << ")";
 				return out.str();
 			}
 
@@ -853,6 +853,8 @@ namespace scifir
 		out << "(" << x.x << "," << x.y << "," << x.z << ";" << x.theta << "," << x.phi << ")";
 		return out.str();
 	}
+
+	string to_string(const coordinates_3dr<float>&);
 
 	template<typename T>
 	T distance(const coordinates_3dr<T>& x,const coordinates_3dr<T>& y)

@@ -1,6 +1,7 @@
 #include "./point_nd.hpp"
 
 #include "../coordinates/coordinates_nd.hpp"
+#include "../util/types.hpp"
 
 using namespace std;
 
@@ -13,6 +14,22 @@ namespace scifir
 	{
 		values = x_coordinates.values;
 		return *this;
+	}
+
+	string to_string(const point_nd<float>& x)
+	{
+		ostringstream out;
+		out << "(";
+		for (int i = 0; i < x.values.size(); i++)
+		{
+			out << display_float(x.values[i]);
+			if ((i + 1) != x.values.size())
+			{
+				out << ",";
+			}
+		}
+		out << ")";
+		return out.str();
 	}
 
 	float distance(const point_nd<float>& x1,const point_nd<float>& x2)
@@ -31,4 +48,9 @@ namespace scifir
 			return float();
 		}
 	}
+}
+
+ostream& operator <<(ostream& os,const scifir::point_nd<float>& x)
+{
+	return os << scifir::to_string(x);
 }

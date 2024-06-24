@@ -4,6 +4,22 @@ using namespace std;
 
 namespace scifir
 {
+	string to_string(const coordinates_nd<float>& x)
+	{
+		ostringstream out;
+		out << "(";
+		for (int i = 0; i < x.values.size(); i++)
+		{
+			out << display_float(x.values[i]);
+			if ((i + 1) != x.values.size())
+			{
+				out << ",";
+			}
+		}
+		out << ")";
+		return out.str();
+	}
+
 	float distance(const coordinates_nd<float>& x1,const coordinates_nd<float>& x2)
 	{
 		if (x1.get_nd() == x2.get_nd())

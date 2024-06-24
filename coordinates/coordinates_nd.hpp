@@ -4,6 +4,7 @@
 #include "../topology/point_nd.hpp"
 #include "../predefined_units/physics_units.hpp"
 #include "../units/unit_basic.hpp"
+#include "../util/types.hpp"
 
 #include <iostream>
 #include <string>
@@ -833,28 +834,28 @@ namespace scifir
 			string display_polar() const
 			{
 				ostringstream out;
-				out << "(" << get_p() << "," << get_theta() << ")";
+				out << "(" << display_float(get_p()) << "," << get_theta() << ")";
 				return out.str();
 			}
 
 			string display_cylindrical() const
 			{
 				ostringstream out;
-				out << "(" << get_p() << "," << get_theta() << "," << values[2] << ")";
+				out << "(" << display_float(get_p()) << "," << get_theta() << "," << display_float(values[2]) << ")";
 				return out.str();
 			}
 
 			string display_spherical() const
 			{
 				ostringstream out;
-				out << "(" << get_r() << "," << get_theta() << "," << get_phi() << ")";
+				out << "(" << display_float(get_r()) << "," << get_theta() << "," << get_phi() << ")";
 				return out.str();
 			}
 
 			string display_geographical() const
 			{
 				ostringstream out;
-				out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ")";
+				out << "(" << get_latitude() << "," << get_longitude() << "," << display_float(get_altitude()) << ")";
 				return out.str();
 			}
 
@@ -877,6 +878,8 @@ namespace scifir
 		out << ")";
 		return out.str();
 	}
+
+	string to_string(const coordinates_nd<float>&);
 
 	template<typename T>
 	T distance(const coordinates_nd<T>& x1,const coordinates_nd<T>& x2)

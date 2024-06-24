@@ -351,7 +351,7 @@ ostream& operator <<(ostream& os,const scifir::point_2d<T>& x)
 	return os << to_string(x);
 }
 
-ostream& operator << (ostream& os,const scifir::point_2d<float>& x);
+ostream& operator <<(ostream& os,const scifir::point_2d<float>& x);
 
 template<typename T>
 istream& operator >>(istream& is, scifir::point_2d<T>& x)
