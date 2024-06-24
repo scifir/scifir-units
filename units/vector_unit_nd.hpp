@@ -169,7 +169,7 @@ namespace scifir
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			void operator *=(U y)
 			{
-				scalar_unit::value *= y;
+				scalar_unit::value *= std::abs(y);
 				if(y < 0)
 				{
 					invert();
@@ -179,7 +179,7 @@ namespace scifir
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			void operator /=(U y)
 			{
-				scalar_unit::value /= y;
+				scalar_unit::value /= std::abs(y);
 				if(y < 0)
 				{
 					invert();
@@ -222,6 +222,8 @@ namespace scifir
 	bool parallel(const vector_unit_nd&,const vector_unit_nd&);
 	bool orthogonal(const vector_unit_nd&,const vector_unit_nd&);
 }
+
+scifir::vector_unit_nd operator *(const scifir::scalar_unit&,const scifir::vector_unit_nd&);
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::vector_unit_nd operator +(const T y,const scifir::vector_unit_nd& x)

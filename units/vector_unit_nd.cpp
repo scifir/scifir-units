@@ -387,14 +387,14 @@ namespace scifir
 	{
 		if(has_dimensions(y))
 		{
-			y.invert();
 			if(is_nd(1))
 			{
-				float new_value = scalar_unit::value + y.get_value();
+				float new_value = scalar_unit::value - y.get_value();
 				return vector_unit_nd(new_value,get_dimensions());
 			}
 			else if(is_nd(2))
 			{
+				y.invert();
 				float new_x = float(x_projection() + y.x_projection());
 				float new_y = float(y_projection() + y.y_projection());
 				float new_value = cartesian_2d_to_polar_p(new_x, new_y);
@@ -404,6 +404,7 @@ namespace scifir
 			}
 			else if(is_nd(3))
 			{
+				y.invert();
 				float new_x = float(x_projection() + y.x_projection());
 				float new_y = float(y_projection() + y.y_projection());
 				float new_z = float(z_projection() + y.z_projection());
@@ -429,22 +430,21 @@ namespace scifir
 	{
 		long double new_value = scalar_unit::value * x.get_value();
 		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(), x.get_dimensions(),new_value);
-		scalar_unit new_unit = scalar_unit(float(new_value), new_dimensions);
 		if(is_nd(1))
 		{
-			return vector_unit_nd(new_unit);
+			return vector_unit_nd(float(new_value), new_dimensions);
 		}
 		else if(is_nd(2))
 		{
-			return vector_unit_nd(new_unit, {angles[0]});
+			return vector_unit_nd(float(new_value), new_dimensions, {angles[0]});
 		}
 		else if(is_nd(3))
 		{
-			return vector_unit_nd(new_unit, {angles[0], angles[1]});
+			return vector_unit_nd(float(new_value), new_dimensions, {angles[0], angles[1]});
 		}
 		else
 		{
-			return vector_unit_nd(new_unit, angles);
+			return vector_unit_nd(float(new_value), new_dimensions, angles);
 		}
 	}
 
@@ -452,22 +452,21 @@ namespace scifir
 	{
 		long double new_value = scalar_unit::value / x.get_value();
 		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(), x.get_dimensions(),new_value);
-		scalar_unit new_unit = scalar_unit(float(new_value), new_dimensions);
 		if(is_nd(1))
 		{
-			return vector_unit_nd(new_unit);
+			return vector_unit_nd(float(new_value), new_dimensions);
 		}
 		else if(is_nd(2))
 		{
-			return vector_unit_nd(new_unit, {angles[0]});
+			return vector_unit_nd(float(new_value), new_dimensions, {angles[0]});
 		}
 		else if(is_nd(3))
 		{
-			return vector_unit_nd(new_unit, {angles[0], angles[1]});
+			return vector_unit_nd(float(new_value), new_dimensions, {angles[0], angles[1]});
 		}
 		else
 		{
-			return vector_unit_nd(new_unit, angles);
+			return vector_unit_nd(float(new_value), new_dimensions, angles);
 		}
 	}
 
@@ -475,7 +474,7 @@ namespace scifir
 	{
 		if(x.has_empty_dimensions())
 		{
-			scalar_unit new_unit = *this ^ x;
+			scalar_unit new_unit = scalar_unit::operator^(x);
 			if(is_nd(1))
 			{
 				return vector_unit_nd(new_unit);
@@ -490,11 +489,12 @@ namespace scifir
 			}
 			else
 			{
-				return vector_unit_nd();
+				return vector_unit_nd(new_unit, angles);
 			}
 		}
 		else
 		{
+			cerr << "Cannot power with as exponent a unit with dimensions" << endl;
 			return vector_unit_nd();
 		}
 	}
@@ -581,9 +581,14 @@ namespace scifir
 
 	void vector_unit_nd::invert()
 	{
-		for(angle& x_angle : angles)
+		if (is_nd(2))
 		{
-			x_angle.invert();
+			angles[0].invert();
+		}
+		else if (is_nd(3))
+		{
+			angles[0].invert();
+			angles[1] = 180.0f - angles[1];
 		}
 	}
 
@@ -723,14 +728,7 @@ namespace scifir
 		{
 			if (x.get_nd() == 1)
 			{
-				if ((x.get_value() >= 0 and y.get_value() >= 0) or (x.get_value() <= 0 and y.get_value() <= 0))
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
+				return true;
 			}
 			else if (x.get_nd() == 2)
 			{
@@ -770,6 +768,28 @@ namespace scifir
 			}
 		}
 		return false;
+	}
+}
+
+scifir::vector_unit_nd operator *(const scifir::scalar_unit& x,const scifir::vector_unit_nd& y)
+{
+	long double new_value = y.get_value() * x.get_value();
+	vector<dimension> new_dimensions = multiply_dimensions(y.get_dimensions(), x.get_dimensions(),new_value);
+	if(y.is_nd(1))
+	{
+		return scifir::vector_unit_nd(float(new_value), new_dimensions);
+	}
+	else if(y.is_nd(2))
+	{
+		return scifir::vector_unit_nd(float(new_value), new_dimensions, {y.angles[0]});
+	}
+	else if(y.is_nd(3))
+	{
+		return scifir::vector_unit_nd(float(new_value), new_dimensions, {y.angles[0], y.angles[1]});
+	}
+	else
+	{
+		return scifir::vector_unit_nd(float(new_value), new_dimensions, y.angles);
 	}
 }
 
