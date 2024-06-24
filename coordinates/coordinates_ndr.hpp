@@ -832,7 +832,7 @@ namespace scifir
 				out << "(";
 				if (get_nd() == 2)
 				{
-					out << get_p() << "," << get_spherical_theta() << ":" << angles[0];
+					out << get_p() << "," << get_spherical_theta() << ";" << angles[0];
 				}
 				out << ")";
 				return out.str();
@@ -844,7 +844,7 @@ namespace scifir
 				out << "(";
 				if (get_nd() == 3)
 				{
-					out << get_p() << "," << get_spherical_theta() << "," << values[2] << ":" << angles[0] << "," << angles[1];
+					out << get_p() << "," << get_spherical_theta() << "," << values[2] << ";" << angles[0] << "," << angles[1];
 				}
 				out << ")";
 				return out.str();
@@ -856,7 +856,7 @@ namespace scifir
 				out << "(";
 				if (get_nd() == 3)
 				{
-					out << get_r() << "," << get_spherical_theta() << "," << get_spherical_phi() << ":" << angles[0] << "," << angles[1];
+					out << get_r() << "," << get_spherical_theta() << "," << get_spherical_phi() << ";" << angles[0] << "," << angles[1];
 				}
 				out << ")";
 				return out.str();
@@ -868,7 +868,7 @@ namespace scifir
 				out << "(";
 				if (get_nd() == 3)
 				{
-					out << get_latitude() << "," << get_longitude() << "," << get_altitude() << ":" << angles[0] << "," << angles[1];
+					out << get_latitude() << "," << get_longitude() << "," << get_altitude() << ";" << angles[0] << "," << angles[1];
 				}
 				out << ")";
 				return out.str();
@@ -1696,7 +1696,7 @@ namespace scifir
 				out << "(";
 				if (get_nd() == 2)
 				{
-					out << display_float(get_p()) << "," << get_spherical_theta() << ":" << angles[0];
+					out << display_float(get_p()) << "," << get_spherical_theta() << ";" << angles[0];
 				}
 				out << ")";
 				return out.str();
@@ -1708,7 +1708,7 @@ namespace scifir
 				out << "(";
 				if (get_nd() == 3)
 				{
-					out << display_float(get_p()) << "," << get_spherical_theta() << "," << display_float(values[2]) << ":" << angles[0] << "," << angles[1];
+					out << display_float(get_p()) << "," << get_spherical_theta() << "," << display_float(values[2]) << ";" << angles[0] << "," << angles[1];
 				}
 				out << ")";
 				return out.str();
@@ -1720,7 +1720,7 @@ namespace scifir
 				out << "(";
 				if (get_nd() == 3)
 				{
-					out << display_float(get_r()) << "," << get_spherical_theta() << "," << get_spherical_phi() << ":" << angles[0] << "," << angles[1];
+					out << display_float(get_r()) << "," << get_spherical_theta() << "," << get_spherical_phi() << ";" << angles[0] << "," << angles[1];
 				}
 				out << ")";
 				return out.str();
@@ -1732,7 +1732,7 @@ namespace scifir
 				out << "(";
 				if (get_nd() == 3)
 				{
-					out << get_latitude() << "," << get_longitude() << "," << display_float(get_altitude()) << ":" << angles[0] << "," << angles[1];
+					out << get_latitude() << "," << get_longitude() << "," << display_float(get_altitude()) << ";" << angles[0] << "," << angles[1];
 				}
 				out << ")";
 				return out.str();

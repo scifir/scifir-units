@@ -406,21 +406,21 @@ namespace scifir
 			string display_cylindrical() const
 			{
 				ostringstream out;
-				out << "(" << get_p() << "," << get_spherical_theta() << "," << z << "," << theta << "," << phi << ")";
+				out << "(" << get_p() << "," << get_spherical_theta() << "," << z << ";" << theta << "," << phi << ")";
 				return out.str();
 			}
 
 			string display_spherical() const
 			{
 				ostringstream out;
-				out << "(" << get_r() << "," << get_spherical_theta() << "," << get_spherical_phi() << "," << theta << "," << phi << ")";
+				out << "(" << get_r() << "," << get_spherical_theta() << "," << get_spherical_phi() << ";" << theta << "," << phi << ")";
 				return out.str();
 			}
 
 			string display_geographical() const
 			{
 				ostringstream out;
-				out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << "," << theta << "," << phi << ")";
+				out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ";" << theta << "," << phi << ")";
 				return out.str();
 			}
 
@@ -444,7 +444,7 @@ namespace scifir
 			coordinates_3dr(coordinates_3dr<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z)),theta(std::move(x_coordinates.theta)),phi(std::move(x_coordinates.phi))
 			{}
 
-			explicit coordinates_3dr(const float& new_x,const float& new_y,const float& new_z,const angle& new_theta,const angle& new_phi) : x(new_x),y(new_y),z(new_z)
+			explicit coordinates_3dr(const float& new_x,const float& new_y,const float& new_z,const angle& new_theta,const angle& new_phi) : x(new_x),y(new_y),z(new_z),theta(new_theta),phi(new_phi)
 			{}
 
 			explicit coordinates_3dr(const float& new_p,const angle& new_cylindrical_theta,const float& new_z,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
@@ -821,21 +821,21 @@ namespace scifir
 			string display_cylindrical() const
 			{
 				ostringstream out;
-				out << "(" << display_float(get_p()) << "," << get_spherical_theta() << "," << display_float(z) << "," << theta << "," << phi << ")";
+				out << "(" << display_float(get_p()) << "," << get_spherical_theta() << "," << display_float(z) << ";" << theta << "," << phi << ")";
 				return out.str();
 			}
 
 			string display_spherical() const
 			{
 				ostringstream out;
-				out << "(" << display_float(get_r()) << "," << get_spherical_theta() << "," << get_spherical_phi() << "," << theta << "," << phi << ")";
+				out << "(" << display_float(get_r()) << "," << get_spherical_theta() << "," << get_spherical_phi() << ";" << theta << "," << phi << ")";
 				return out.str();
 			}
 
 			string display_geographical() const
 			{
 				ostringstream out;
-				out << "(" << get_latitude() << "," << get_longitude() << "," << display_float(get_altitude()) << "," << theta << "," << phi << ")";
+				out << "(" << get_latitude() << "," << get_longitude() << "," << display_float(get_altitude()) << ";" << theta << "," << phi << ")";
 				return out.str();
 			}
 
@@ -990,6 +990,50 @@ template<typename T>
 bool operator !=(const scifir::point_3d<T>& x,const scifir::coordinates_3dr<T>& y)
 {
 	return !(x == y);
+}
+
+template<typename T>
+bool operator ==(const scifir::coordinates_3dr<T>& x, const string& y)
+{
+	coordinates_3dr<T> y_coordinates = coordinates_3dr<T>(y);
+	return (x == y_coordinates);
+}
+
+template<typename T>
+bool operator !=(const scifir::coordinates_3dr<T>& x, const string& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+bool operator ==(const string& x, const scifir::coordinates_3dr<T>& y)
+{
+	coordinates_3dr<T> x_coordinates = coordinates_3dr<T>(x);
+	return (x_coordinates == y);
+}
+
+template<typename T>
+bool operator !=(const string& x, const scifir::coordinates_3dr<T>& y)
+{
+	return !(x == y);
+}
+
+template<typename T>
+void operator +=(string& x, const scifir::coordinates_3dr<T>& y)
+{
+	x += to_string(y);
+}
+
+template<typename T>
+string operator +(const string& x,const scifir::coordinates_3dr<T>& y)
+{
+	return x + to_string(y);
+}
+
+template<typename T>
+string operator +(const scifir::coordinates_3dr<T>& x,const string& y)
+{
+	return to_string(x) + y;
 }
 
 template<typename T>
