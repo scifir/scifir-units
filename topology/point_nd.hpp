@@ -286,21 +286,42 @@ namespace scifir
 				values = new_values;
 			}
 
-			void rotate(int dimension_number,int axis,const angle& new_theta)
+			void rotate_in_2d(const angle& new_theta)
 			{
-				if (dimension_number == 2 and get_nd() == 2)
+				if (get_nd() == 2)
 				{
 					T x_coord = values[0];
 					T y_coord = values[1];
 					values[0] = x_coord * scifir::cos(new_theta) - y_coord * scifir::sin(new_theta);
 					values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
 				}
-				else if (dimension_number == 3 and get_nd() == 3)
+			}
+
+			void rotate_in_3d(int axis,const angle& new_theta)
+			{
+				if (get_nd() == 3)
 				{
-					T coord_1 = values[axis + 1];
-					T coord_2 = values[axis + 2];
-					values[axis + 1] = coord_1 * scifir::cos(new_theta) - coord_2 * scifir::sin(new_theta);
-					values[axis + 2] = coord_1 * scifir::sin(new_theta) + coord_2 * scifir::cos(new_theta);
+					if (axis == 1)
+					{
+						T y_coord = values[1];
+						T z_coord = values[2];
+						values[1] = y_coord * scifir::cos(new_theta) - z_coord * scifir::sin(new_theta);
+						values[2] = y_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
+					}
+					else if (axis == 2)
+					{
+						T x_coord = values[0];
+						T z_coord = values[2];
+						values[0] = x_coord * scifir::cos(new_theta) - z_coord * scifir::sin(new_theta);
+						values[2] = x_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
+					}
+					else if (axis == 3)
+					{
+						T x_coord = values[0];
+						T y_coord = values[1];
+						values[0] = x_coord * scifir::cos(new_theta) - y_coord * scifir::sin(new_theta);
+						values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
+					}
 				}
 			}
 
@@ -705,21 +726,42 @@ namespace scifir
 				values = new_values;
 			}
 
-			void rotate(int dimension_number,int axis,const angle& new_theta)
+			void rotate_in_2d(const angle& new_theta)
 			{
-				if (dimension_number == 2 and get_nd() == 2)
+				if (get_nd() == 2)
 				{
 					float x_coord = values[0];
 					float y_coord = values[1];
 					values[0] = x_coord * scifir::cos(new_theta) - y_coord * scifir::sin(new_theta);
 					values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
 				}
-				else if (dimension_number == 3 and get_nd() == 3)
+			}
+
+			void rotate_in_3d(int axis,const angle& new_theta)
+			{
+				if (get_nd() == 3)
 				{
-					float coord_1 = values[axis + 1];
-					float coord_2 = values[axis + 2];
-					values[axis + 1] = coord_1 * scifir::cos(new_theta) - coord_2 * scifir::sin(new_theta);
-					values[axis + 2] = coord_1 * scifir::sin(new_theta) + coord_2 * scifir::cos(new_theta);
+					if (axis == 1)
+					{
+						float y_coord = values[1];
+						float z_coord = values[2];
+						values[1] = y_coord * scifir::cos(new_theta) - z_coord * scifir::sin(new_theta);
+						values[2] = y_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
+					}
+					else if (axis == 2)
+					{
+						float x_coord = values[0];
+						float z_coord = values[2];
+						values[0] = x_coord * scifir::cos(new_theta) - z_coord * scifir::sin(new_theta);
+						values[2] = x_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
+					}
+					else if (axis == 3)
+					{
+						float x_coord = values[0];
+						float y_coord = values[1];
+						values[0] = x_coord * scifir::cos(new_theta) - y_coord * scifir::sin(new_theta);
+						values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
+					}
 				}
 			}
 
@@ -859,18 +901,25 @@ namespace scifir
 	template<typename T>
 	string to_string(const point_nd<T>& x)
 	{
-		ostringstream out;
-		out << "(";
-		for (int i = 0; i < x.values.size(); i++)
+		if (x.values.size() > 0)
 		{
-			out << x.values[i];
-			if ((i + 1) != x.values.size())
+			ostringstream out;
+			out << "(";
+			for (int i = 0; i < x.values.size(); i++)
 			{
-				out << ",";
+				out << x.values[i];
+				if ((i + 1) != x.values.size())
+				{
+					out << ",";
+				}
 			}
+			out << ")";
+			return out.str();
 		}
-		out << ")";
-		return out.str();
+		else
+		{
+			return "[empty]";
+		}
 	}
 
 	string to_string(const point_nd<float>& x);
@@ -880,7 +929,7 @@ namespace scifir
 	{
 		if (x1.get_nd() == x2.get_nd())
 		{
-			T x_length = T(0,multiply_dimensions(x1.get_dimensions() * x2.get_dimensions()));
+			scalar_unit x_length = scalar_unit(0.0f,"m2");
 			for (int i = 0; i < x1.values.size(); i++)
 			{
 				x_length += scifir::pow(x1.values[i] - x2.values[i],2);

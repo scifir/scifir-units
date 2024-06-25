@@ -18,18 +18,25 @@ namespace scifir
 
 	string to_string(const point_nd<float>& x)
 	{
-		ostringstream out;
-		out << "(";
-		for (int i = 0; i < x.values.size(); i++)
+		if (x.values.size() > 0)
 		{
-			out << display_float(x.values[i]);
-			if ((i + 1) != x.values.size())
+			ostringstream out;
+			out << "(";
+			for (int i = 0; i < x.values.size(); i++)
 			{
-				out << ",";
+				out << display_float(x.values[i]);
+				if ((i + 1) != x.values.size())
+				{
+					out << ",";
+				}
 			}
+			out << ")";
+			return out.str();
 		}
-		out << ")";
-		return out.str();
+		else
+		{
+			return "[empty]";
+		}
 	}
 
 	float distance(const point_nd<float>& x1,const point_nd<float>& x2)

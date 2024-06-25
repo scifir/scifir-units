@@ -226,6 +226,11 @@ if(BUILD_TESTING)
 		add_test(NAME point_3d COMMAND test_point_3d)
 		set_tests_properties(point_3d PROPERTIES LABELS tests)
 
+		add_executable(test_point_nd tests/topology/test_point_nd.cpp)
+		target_link_libraries(test_point_nd PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		add_test(NAME point_nd COMMAND test_point_nd)
+		set_tests_properties(point_nd PROPERTIES LABELS tests)
+
 		add_executable(test_aid tests/special_units/test_aid.cpp)
 		target_link_libraries(test_aid PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
 		add_test(NAME aid COMMAND test_aid)
