@@ -104,11 +104,11 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 
 	SECTION("Values of different coordinates systems of coordinates_3d<> classes")
 	{
-		coordinates_3d<> c(7_m,4_m,2_m);
-		REQUIRE (bool(c.get_p().display() == "8.06 m"));
-		REQUIRE (bool(c.get_theta().display() == "29.74\u00B0"));
-		REQUIRE (bool(c.get_r().display() == "8.3 m"));
-		REQUIRE (bool(c.get_phi().display() == "76.06\u00B0"));
+		coordinates_3d<> a(7_m,4_m,2_m);
+		REQUIRE (bool(a.get_p().display() == "8.06 m"));
+		REQUIRE (bool(a.get_theta().display() == "29.74\u00B0"));
+		REQUIRE (bool(a.get_r().display() == "8.3 m"));
+		REQUIRE (bool(a.get_phi().display() == "76.06\u00B0"));
 		/*REQUIRE (bool(c.get_latitude() == angle(0.0f)));
 		REQUIRE (bool(c.get_longitude() == angle(29.74f)));
 		REQUIRE (bool(c.get_altitude() == "0 m"));*/
@@ -116,11 +116,11 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 
 	SECTION("Values of different coordinates systems of coordinates_3d<float> classes")
 	{
-		coordinates_3d<float> c(7.0f,4.0f,2.0f);
-		REQUIRE (bool(std::fabs(c.get_p() - 8.06f) < 0.01f));
-		REQUIRE (bool(c.get_theta().display() == "29.74\u00B0"));
-		REQUIRE (bool(std::fabs(c.get_r() - 8.3f) < 0.01f));
-		REQUIRE (bool(c.get_phi().display() == "76.06\u00B0"));
+		coordinates_3d<float> a(7.0f,4.0f,2.0f);
+		REQUIRE (bool(std::fabs(a.get_p() - 8.06f) < 0.01f));
+		REQUIRE (bool(a.get_theta().display() == "29.74\u00B0"));
+		REQUIRE (bool(std::fabs(a.get_r() - 8.3f) < 0.01f));
+		REQUIRE (bool(a.get_phi().display() == "76.06\u00B0"));
 		/*REQUIRE (bool(c.get_latitude() == angle(0.0f)));
 		REQUIRE (bool(c.get_longitude() == angle(29.74f)));
 		REQUIRE (bool(c.get_altitude() == "0 m"));*/
