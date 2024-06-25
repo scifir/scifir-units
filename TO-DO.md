@@ -70,11 +70,14 @@ SCIFIR UNITS - VERSION 2
 // TODO: document the use of fabs() and display() to compare values of units
 // TODO: "Things to remember" section, which explains the use of the degree for vector_unit_nd instead of the other two cases, the use of fabs, the use of display that doesn't displays all decimals
 
-// COORDINATES AND POINTS (3)
+// COORDINATES AND POINTS (7)
 // TODO: displacement_nd in point_nd class should be initialized with zero dimensions instead of m?. Check all the default dimensions cases for point_nd, coordinates_nd and coordinates_ndr
 // TODO: add coordinates_3d::origin() to allow to initialize with an origin, it's specially useful for geographic coordinates
 // TODO: functions of conversion of coordinates for scalar_unit classes
 // TODO: coordinates and point classes should have a move constructor and move assignment for the related type (point_3d for coordinates_3d and coordinates_3d for point_3d, etc)
+// TODO: coordinates_nd needs a constructor with vector<T>. coordinates_ndr needs it too
+// TODO: delete the float references in constructors
+// TODO: the case when the initialization string contains only the character ',', without a value, has to initialize to zero
 
 // COORDINATES AND POINTS - FINISH GEOGRAPHIC COORDINATES (2)
 // TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd
@@ -89,7 +92,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: constructor with initialization string
 // TODO: is_algebraic_expression() and is_algebraic_term() functions
 // TODO: static variable storing scalar_units, scalar_fields, etc
-// TODO: search if there's a library that displays equations inside the command-line
+// TODO: search if there's a library that displays equations inside the command-line with math format, with math glyphs
 
 // C++ (6)
 // TODO: use constexpr and consteval to initialize units instantly, possibly use it in more parts of the code
