@@ -1455,168 +1455,168 @@ namespace scifir
 				{
 					if (x == direction::LEFT)
 					{
-						angles[0] = 180;
+						angles[0] = 180.0f;
 					}
 					else if(x == direction::RIGHT)
 					{
-						angles[0] = 0;
+						angles[0] = 0.0f;
 					}
 					else if(x == direction::TOP)
 					{
-						angles[0] = 90;
+						angles[0] = 90.0f;
 					}
 					else if(x == direction::BOTTOM)
 					{
-						angles[0] = 270;
+						angles[0] = 270.0f;
 					}
 					else if(x == direction::LEFT_TOP)
 					{
-						angles[0] = 135;
+						angles[0] = 135.0f;
 					}
 					else if(x == direction::RIGHT_TOP)
 					{
-						angles[0] = 45;
+						angles[0] = 45.0f;
 					}
 					else if(x == direction::RIGHT_BOTTOM)
 					{
-						angles[0] = 315;
+						angles[0] = 315.0f;
 					}
 					else if(x == direction::LEFT_BOTTOM)
 					{
-						angles[0] = 225;
+						angles[0] = 225.0f;
 					}
 				}
 				else if (is_nd(3))
 				{
 					if (x == direction::LEFT)
 					{
-						angles[0] = 270;
-						angles[1] = 90;
+						angles[0] = 270.0f;
+						angles[1] = 90.0f;
 					}
 					else if(x == direction::RIGHT)
 					{
-						angles[0] = 90;
-						angles[1] = 90;
+						angles[0] = 90.0f;
+						angles[1] = 90.0f;
 					}
 					else if(x == direction::TOP)
 					{
-						angles[0] = 0;
-						angles[1] = 0;
+						angles[0] = 0.0f;
+						angles[1] = 0.0f;
 					}
 					else if(x == direction::BOTTOM)
 					{
-						angles[0] = 0;
-						angles[1] = 180;
+						angles[0] = 0.0f;
+						angles[1] = 180.0f;
 					}
 					else if(x == direction::LEFT_TOP)
 					{
-						angles[0] = 270;
-						angles[1] = 45;
+						angles[0] = 270.0f;
+						angles[1] = 45.0f;
 					}
 					else if(x == direction::RIGHT_TOP)
 					{
-						angles[0] = 90;
-						angles[1] = 45;
+						angles[0] = 90.0f;
+						angles[1] = 45.0f;
 					}
 					else if(x == direction::RIGHT_BOTTOM)
 					{
-						angles[0] = 90;
-						angles[1] = 135;
+						angles[0] = 90.0f;
+						angles[1] = 135.0f;
 					}
 					else if(x == direction::LEFT_BOTTOM)
 					{
-						angles[0] = 270;
-						angles[1] = 135;
+						angles[0] = 270.0f;
+						angles[1] = 135.0f;
 					}
 					else if(x == direction::FRONT)
 					{
-						angles[0] = 0;
-						angles[1] = 90;
+						angles[0] = 0.0f;
+						angles[1] = 90.0f;
 					}
 					else if(x == direction::BACK)
 					{
-						angles[0] = 180;
-						angles[1] = 90;
+						angles[0] = 180.0f;
+						angles[1] = 90.0f;
 					}
 					else if(x == direction::LEFT_FRONT)
 					{
-						angles[0] = 315;
-						angles[1] = 90;
+						angles[0] = 315.0f;
+						angles[1] = 90.0f;
 					}
 					else if(x == direction::RIGHT_FRONT)
 					{
-						angles[0] = 45;
-						angles[1] = 90;
+						angles[0] = 45.0f;
+						angles[1] = 90.0f;
 					}
 					else if(x == direction::TOP_FRONT)
 					{
-						angles[0] = 0;
-						angles[1] = 45;
+						angles[0] = 0.0f;
+						angles[1] = 45.0f;
 					}
 					else if(x == direction::BOTTOM_FRONT)
 					{
-						angles[0] = 0;
-						angles[1] = 135;
+						angles[0] = 0.0f;
+						angles[1] = 135.0f;
 					}
 					else if(x == direction::LEFT_BACK)
 					{
-						angles[0] = 225;
-						angles[1] = 90;
+						angles[0] = 225.0f;
+						angles[1] = 90.0f;
 					}
 					else if(x == direction::RIGHT_BACK)
 					{
-						angles[0] = 135;
-						angles[1] = 90;
+						angles[0] = 135.0f;
+						angles[1] = 90.0f;
 					}
 					else if(x == direction::TOP_BACK)
 					{
-						angles[0] = 180;
-						angles[1] = 45;
+						angles[0] = 180.0f;
+						angles[1] = 45.0f;
 					}
 					else if(x == direction::BOTTOM_BACK)
 					{
-						angles[0] = 180;
-						angles[1] = 135;
+						angles[0] = 180.0f;
+						angles[1] = 135.0f;
 					}
 					else if(x == direction::LEFT_TOP_FRONT)
 					{
-						angles[0] = 315;
-						angles[1] = 45;
+						angles[0] = 315.0f;
+						angles[1] = 45.0f;
 					}
 					else if(x == direction::RIGHT_TOP_FRONT)
 					{
-						angles[0] = 45;
-						angles[1] = 45;
+						angles[0] = 45.0f;
+						angles[1] = 45.0f;
 					}
 					else if(x == direction::LEFT_BOTTOM_FRONT)
 					{
-						angles[0] = 315;
-						angles[1] = 135;
+						angles[0] = 315.0f;
+						angles[1] = 135.0f;
 					}
 					else if(x == direction::RIGHT_BOTTOM_FRONT)
 					{
-						angles[0] = 45;
-						angles[1] = 135;
+						angles[0] = 45.0f;
+						angles[1] = 135.0f;
 					}
 					else if(x == direction::LEFT_TOP_BACK)
 					{
-						angles[0] = 225;
-						angles[1] = 45;
+						angles[0] = 225.0f;
+						angles[1] = 45.0f;
 					}
 					else if(x == direction::RIGHT_TOP_BACK)
 					{
-						angles[0] = 135;
-						angles[1] = 45;
+						angles[0] = 135.0f;
+						angles[1] = 45.0f;
 					}
 					else if(x == direction::LEFT_BOTTOM_BACK)
 					{
-						angles[0] = 225;
-						angles[1] = 135;
+						angles[0] = 225.0f;
+						angles[1] = 135.0f;
 					}
 					else if(x == direction::RIGHT_BOTTOM_BACK)
 					{
-						angles[0] = 135;
-						angles[1] = 135;
+						angles[0] = 135.0f;
+						angles[1] = 135.0f;
 					}
 				}
 			}
