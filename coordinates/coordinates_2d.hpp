@@ -327,6 +327,28 @@ namespace scifir
 
 	float distance(const point_2d<float>&,const coordinates_2d<float>&);
 
+	inline scalar_unit cartesian_2d_to_polar_p(const scalar_unit& x,scalar_unit y)
+	{
+		y.change_dimensions(x);
+		return scalar_unit(std::sqrt(std::pow(float(x),2) + std::pow(float(y),2)),x.get_dimensions());
+	}
+
+	inline angle cartesian_2d_to_polar_theta(const scalar_unit& x,scalar_unit y)
+	{
+		y.change_dimensions(x);
+		return scifir::angle(scifir::atan_grade(float(y)/float(x)));
+	}
+
+	inline scalar_unit polar_to_cartesian_2d_x(const scalar_unit& p,const angle& theta)
+	{
+		return p * scifir::cos(theta);
+	}
+
+	inline scalar_unit polar_to_cartesian_2d_y(const scalar_unit& p,const angle& theta)
+	{
+		return p * scifir::sin(theta);
+	}
+
 	inline float cartesian_2d_to_polar_p(float x,float y)
 	{
 		return float(std::sqrt(std::pow(x,2) + std::pow(y,2)));

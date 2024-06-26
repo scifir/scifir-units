@@ -254,7 +254,37 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE (bool(std::fabs(distance(c,b) - 1.41f) < 0.01f));
 	}
 
-	SECTION("Conversion of cartesian 3d and cylindrical coordinates")
+	SECTION("Conversion of cartesian 3d and cylindrical coordinates for the scalar_unit case")
+	{
+		REQUIRE (bool(cartesian_3d_to_cylindrical_p(1_m,2_m,2_m).display() == "2.23 m"));
+		REQUIRE (bool(float(cartesian_3d_to_cylindrical_theta(1_m,2_m,2_m) - angle(63.43f)) < 0.01f));
+		REQUIRE (bool(cartesian_3d_to_cylindrical_z(1_m,2_m,2_m).display() == "2 m"));
+		REQUIRE (bool(cylindrical_to_cartesian_3d_x(2_m,angle(30.0f),3_m).display() == "1.73 m"));
+		REQUIRE (bool(cylindrical_to_cartesian_3d_y(2_m,angle(30.0f),3_m).display() == "1 m"));
+		REQUIRE (bool(cylindrical_to_cartesian_3d_z(2_m,angle(30.0f),3_m).display() == "3 m"));
+	}
+
+	SECTION("Conversion of cartesian 3d and spherical coordinates for the scalar_unit case")
+	{
+		REQUIRE (bool(cartesian_3d_to_spherical_r(1_m,2_m,2_m).display() == "3 m"));
+		REQUIRE (bool(float(cartesian_3d_to_spherical_theta(1_m,2_m,2_m) - angle(63.43f)) < 0.01f));
+		REQUIRE (bool(float(cartesian_3d_to_spherical_phi(1_m,2_m,2_m) - angle(48.18f)) < 0.01f));
+		REQUIRE (bool(spherical_to_cartesian_3d_x(2_m,angle(30.0f),angle(15.0f)).display() == "0.44 m"));
+		REQUIRE (bool(spherical_to_cartesian_3d_y(2_m,angle(30.0f),angle(15.0f)).display() == "0.25 m"));
+		REQUIRE (bool(spherical_to_cartesian_3d_z(2_m,angle(30.0f),angle(15.0f)).display() == "1.93 m"));
+	}
+
+	SECTION("Conversion of cylindrical and spherical coordinates for the scalar_unit case")
+	{
+		REQUIRE (bool(spherical_to_cylindrical_p(5_m,angle(30.0f),angle(15.0f)).display() == "1.29 m"));
+		REQUIRE (bool(float(spherical_to_cylindrical_theta(5_m,angle(30.0f),angle(15.0f)) - angle(30.0f)) < 0.01f));
+		REQUIRE (bool(spherical_to_cylindrical_z(5_m,angle(30.0f),angle(15.0f)).display() == "4.82 m"));
+		REQUIRE (bool(cylindrical_to_spherical_r(2_m,angle(30.0f),3_m).display() == "3.6 m"));
+		REQUIRE (bool(float(cylindrical_to_spherical_theta(2_m,angle(30.0f),3_m) - angle(30.0f)) < 0.01f));
+		REQUIRE (bool(float(cylindrical_to_spherical_phi(2_m,angle(30.0f),3_m) - angle(33.69f)) < 0.01f));
+	}
+
+	SECTION("Conversion of cartesian 3d and cylindrical coordinates for the float case")
 	{
 		REQUIRE (bool(std::fabs(cartesian_3d_to_cylindrical_p(1.0f,2.0f,2.0f) - 2.23f) < 0.01f));
 		REQUIRE (bool(std::fabs(float(cartesian_3d_to_cylindrical_theta(1.0f,2.0f,2.0f) - angle(63.43f))) < 0.01f));
@@ -264,7 +294,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE (bool(std::fabs(cylindrical_to_cartesian_3d_z(2.0f,angle(30.0f),3.0f) - 3.0f) < 0.01f));
 	}
 
-	SECTION("Conversion of cartesian 3d and spherical coordinates")
+	SECTION("Conversion of cartesian 3d and spherical coordinates for the float case")
 	{
 		REQUIRE (bool(std::fabs(cartesian_3d_to_spherical_r(1.0f,2.0f,2.0f) - 3.0f) < 0.01f));
 		REQUIRE (bool(std::fabs(float(cartesian_3d_to_spherical_theta(1.0f,2.0f,2.0f) - angle(63.43f))) < 0.01f));
@@ -274,7 +304,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE (bool(std::fabs(spherical_to_cartesian_3d_z(2.0f,angle(30.0f),angle(15.0f)) - 1.93f) < 0.01f));
 	}
 
-	SECTION("Conversion of cylindrical and spherical coordinates")
+	SECTION("Conversion of cylindrical and spherical coordinates for the float case")
 	{
 		REQUIRE (bool(std::fabs(spherical_to_cylindrical_p(5.0f,angle(30.0f),angle(15.0f)) - 1.29f) < 0.01f));
 		REQUIRE (bool(std::fabs(float(spherical_to_cylindrical_theta(5.0f,angle(30.0f),angle(15.0f)) - angle(30.0f))) < 0.01f));

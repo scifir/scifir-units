@@ -177,7 +177,19 @@ TEST_CASE("class coordinates_2d","Complete test of coordinates_2d")
 		REQUIRE (bool(display_float(distance(d,c),2) == "15.81"));
 	}
 
-	SECTION("Conversion of coordinates")
+	SECTION("Conversion of coordinates for the scalar_unit case")
+	{
+		scalar_unit a = cartesian_2d_to_polar_p(100_m,100_m);
+		REQUIRE(bool(a.display() == "141.42 m"));
+		angle b = cartesian_2d_to_polar_theta(100_m,100_m);
+		REQUIRE(bool(b == 45.0f));
+		scalar_unit c = polar_to_cartesian_2d_x(100_m,angle(40.0f));
+		REQUIRE(bool(c.display() == "76.6 m"));
+		scalar_unit d = polar_to_cartesian_2d_y(100_m,angle(40.0f));
+		REQUIRE(bool(d.display() == "64.27 m"));
+	}
+
+	SECTION("Conversion of coordinates for the float case")
 	{
 		float a = cartesian_2d_to_polar_p(100.0f,100.0f);
 		REQUIRE(bool(a == 141.421356f));
