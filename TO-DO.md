@@ -18,9 +18,10 @@ SCIFIR UNITS - VERSION 2
 // TODO: create percentage<double> and percentage<long double> with ppb, ppt and ppq. Create also the function is_long_percentage() to test for ppb, ppt and ppq
 // TODO: display_double() and display_long_double() functions of types.cpp
 
-// BUILD (2)
+// BUILD (3)
 // TODO: support freebsd and openbsd
 // TODO: upload the package to the container registry of github packages
+// TODO: search if there's a way to add multiple jobs to the build with the command cmake --build, similar to make -j
 
 // BUILD - ADVANCED (7)
 // TODO: study bazel and look the files of bazel that are part of Catch2, maybe the same should be done for scifir-units
@@ -45,8 +46,10 @@ SCIFIR UNITS - VERSION 2
 // TODO: add the code coverage badge
 // TODO: upload scifir-units to sourceforge too
 
-// TESTS (1)
+// TESTS (3)
 // TODO: finish the tests of all classes
+// TODO: review get_nd() of the tests of vector_unit_nd and coordinates_nd
+// TODO: verify that are present all functions of coordinates with rotations
 
 // DOCUMENTATION (18)
 // TODO: document the coordinates for the universe, publish that too as an standard inside scifir
@@ -70,14 +73,17 @@ SCIFIR UNITS - VERSION 2
 // TODO: document the use of fabs() and display() to compare values of units
 // TODO: "Things to remember" section, which explains the use of the degree for vector_unit_nd instead of the other two cases, the use of fabs, the use of display that doesn't displays all decimals
 
-// COORDINATES AND POINTS (7)
-// TODO: displacement_nd in point_nd class should be initialized with zero dimensions instead of m?. Check all the default dimensions cases for point_nd, coordinates_nd and coordinates_ndr
+// COORDINATES AND POINTS (10)
 // TODO: add coordinates_3d::origin() to allow to initialize with an origin, it's specially useful for geographic coordinates
 // TODO: functions of conversion of coordinates for scalar_unit classes
 // TODO: coordinates and point classes should have a move constructor and move assignment for the related type (point_3d for coordinates_3d and coordinates_3d for point_3d, etc)
 // TODO: coordinates_nd needs a constructor with vector<T>. coordinates_ndr needs it too
 // TODO: delete the float references in constructors
 // TODO: the case when the initialization string contains only the character ',', without a value, has to initialize to zero
+// TODO: maybe display_cartesian() function should be in all coordinates classes too
+// TODO: string assignment for all coordinates classes
+// TODO: display functions should allow to change dimensions for any case
+// TODO: add the operator<< of the float specialization everywhere
 
 // COORDINATES AND POINTS - FINISH GEOGRAPHIC COORDINATES (2)
 // TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd
