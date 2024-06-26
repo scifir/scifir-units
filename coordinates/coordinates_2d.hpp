@@ -160,10 +160,10 @@ namespace scifir
 			coordinates_2d(coordinates_2d<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y))
 			{}
 
-			explicit coordinates_2d(const float& new_x,const float& new_y) : x(new_x),y(new_y)
+			explicit coordinates_2d(float new_x,float new_y) : x(new_x),y(new_y)
 			{}
 
-			explicit coordinates_2d(const float& new_p,const angle& new_theta)
+			explicit coordinates_2d(float new_p,const angle& new_theta)
 			{
 				set_position(new_p,new_theta);
 			}
@@ -227,13 +227,13 @@ namespace scifir
 				return angle(radian_to_grade(std::atan2(y,x)));
 			}
 
-			void set_position(const float& new_x,const float& new_y)
+			void set_position(float new_x,float new_y)
 			{
 				x = new_x;
 				y = new_y;
 			}
 
-			void set_position(const float& new_p,const angle& new_theta)
+			void set_position(float new_p,const angle& new_theta)
 			{
 				x = new_p * scifir::cos(new_theta);
 				y = new_p * scifir::sin(new_theta);
@@ -253,13 +253,13 @@ namespace scifir
 				y += float(x_displacement.y_projection());
 			}
 
-			void move(const float& new_x,const float& new_y)
+			void move(float new_x,float new_y)
 			{
 				x += new_x;
 				y += new_y;
 			}
 
-			void move(const float& new_p,const angle& new_theta)
+			void move(float new_p,const angle& new_theta)
 			{
 				x += new_p * scifir::cos(new_theta);
 				y += new_p * scifir::sin(new_theta);

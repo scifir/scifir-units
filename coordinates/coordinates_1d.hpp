@@ -94,7 +94,7 @@ namespace scifir
 			coordinates_1d(coordinates_1d<float>&& x_coordinates) : x(std::move(x_coordinates.x))
 			{}
 
-			explicit coordinates_1d(const float& new_x) : x(new_x)
+			explicit coordinates_1d(float new_x) : x(new_x)
 			{}
 
 			explicit coordinates_1d(const point_1d<float>& new_point) : x(new_point.x)
@@ -132,12 +132,12 @@ namespace scifir
 			}
 
 			
-			void set_position(const float& new_x)
+			void set_position(float new_x)
 			{
 				x = new_x;
 			}
 
-			void move(const float& x_value)
+			void move(float x_value)
 			{
 				x += x_value;
 			}

@@ -186,133 +186,133 @@ namespace scifir
 			{
 				if (x == direction::LEFT)
 				{
-					theta = 270;
-					phi = 90;
+					theta = 270.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::RIGHT)
 				{
-					theta = 90;
-					phi = 90;
+					theta = 90.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::TOP)
 				{
-					theta = 0;
-					phi = 0;
+					theta = 0.0f;
+					phi = 0.0f;
 				}
 				else if(x == direction::BOTTOM)
 				{
-					theta = 0;
-					phi = 180;
+					theta = 0.0f;
+					phi = 180.0f;
 				}
 				else if(x == direction::LEFT_TOP)
 				{
-					theta = 270;
-					phi = 45;
+					theta = 270.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::RIGHT_TOP)
 				{
-					theta = 90;
-					phi = 45;
+					theta = 90.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::RIGHT_BOTTOM)
 				{
-					theta = 90;
-					phi = 135;
+					theta = 90.0f;
+					phi = 135.0f;
 				}
 				else if(x == direction::LEFT_BOTTOM)
 				{
-					theta = 270;
-					phi = 135;
+					theta = 270.0f;
+					phi = 135.0f;
 				}
 				else if(x == direction::FRONT)
 				{
-					theta = 0;
-					phi = 90;
+					theta = 0.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::BACK)
 				{
-					theta = 180;
-					phi = 90;
+					theta = 180.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::LEFT_FRONT)
 				{
-					theta = 315;
-					phi = 90;
+					theta = 315.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::RIGHT_FRONT)
 				{
-					theta = 45;
-					phi = 90;
+					theta = 45.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::TOP_FRONT)
 				{
-					theta = 0;
-					phi = 45;
+					theta = 0.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::BOTTOM_FRONT)
 				{
-					theta = 0;
-					phi = 135;
+					theta = 0.0f;
+					phi = 135.0f;
 				}
 				else if(x == direction::LEFT_BACK)
 				{
-					theta = 225;
-					phi = 90;
+					theta = 225.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::RIGHT_BACK)
 				{
-					theta = 135;
-					phi = 90;
+					theta = 135.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::TOP_BACK)
 				{
-					theta = 180;
-					phi = 45;
+					theta = 180.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::BOTTOM_BACK)
 				{
-					theta = 180;
-					phi = 135;
+					theta = 180.0f;
+					phi = 135.0f;
 				}
 				else if(x == direction::LEFT_TOP_FRONT)
 				{
-					theta = 315;
-					phi = 45;
+					theta = 315.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::RIGHT_TOP_FRONT)
 				{
-					theta = 45;
-					phi = 45;
+					theta = 45.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::LEFT_BOTTOM_FRONT)
 				{
-					theta = 315;
-					phi = 135;
+					theta = 315.0f;
+					phi = 135.0f;
 				}
 				else if(x == direction::RIGHT_BOTTOM_FRONT)
 				{
-					theta = 45;
-					phi = 135;
+					theta = 45.0f;
+					phi = 135.0f;
 				}
 				else if(x == direction::LEFT_TOP_BACK)
 				{
-					theta = 225;
-					phi = 45;
+					theta = 225.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::RIGHT_TOP_BACK)
 				{
-					theta = 135;
-					phi = 45;
+					theta = 135.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::LEFT_BOTTOM_BACK)
 				{
-					theta = 225;
-					phi = 135;
+					theta = 225.0f;
+					phi = 135.0f;
 				}
 				else if(x == direction::RIGHT_BOTTOM_BACK)
 				{
-					theta = 135;
-					phi = 135;
+					theta = 135.0f;
+					phi = 135.0f;
 				}
 			}
 
@@ -444,20 +444,20 @@ namespace scifir
 			coordinates_3dr(coordinates_3dr<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z)),theta(std::move(x_coordinates.theta)),phi(std::move(x_coordinates.phi))
 			{}
 
-			explicit coordinates_3dr(const float& new_x,const float& new_y,const float& new_z,const angle& new_theta,const angle& new_phi) : x(new_x),y(new_y),z(new_z),theta(new_theta),phi(new_phi)
+			explicit coordinates_3dr(float new_x,float new_y,float new_z,const angle& new_theta,const angle& new_phi) : x(new_x),y(new_y),z(new_z),theta(new_theta),phi(new_phi)
 			{}
 
-			explicit coordinates_3dr(const float& new_p,const angle& new_cylindrical_theta,const float& new_z,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
+			explicit coordinates_3dr(float new_p,const angle& new_cylindrical_theta,float new_z,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
 			{
 				set_position(new_p,new_cylindrical_theta,new_z);
 			}
 
-			explicit coordinates_3dr(const float& new_r,const angle& new_spherical_theta,const angle& new_spherical_phi,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
+			explicit coordinates_3dr(float new_r,const angle& new_spherical_theta,const angle& new_spherical_phi,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
 			{
 				set_position(new_r,new_spherical_theta,new_spherical_phi);
 			}
 
-			explicit coordinates_3dr(const angle& new_latitude,const angle& new_longitude,const float& new_altitude,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
+			explicit coordinates_3dr(const angle& new_latitude,const angle& new_longitude,float new_altitude,const angle& new_theta,const angle& new_phi) : x(),y(),z(),theta(new_theta),phi(new_phi)
 			{
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
@@ -596,165 +596,165 @@ namespace scifir
 
 			float get_altitude() const
 			{
-				return float();
+				return 0.0f;
 			}
 
 			void point_to(direction::name x)
 			{
 				if (x == direction::LEFT)
 				{
-					theta = 270;
-					phi = 90;
+					theta = 270.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::RIGHT)
 				{
-					theta = 90;
-					phi = 90;
+					theta = 90.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::TOP)
 				{
-					theta = 0;
-					phi = 0;
+					theta = 0.0f;
+					phi = 0.0f;
 				}
 				else if(x == direction::BOTTOM)
 				{
-					theta = 0;
-					phi = 180;
+					theta = 0.0f;
+					phi = 180.0f;
 				}
 				else if(x == direction::LEFT_TOP)
 				{
-					theta = 270;
-					phi = 45;
+					theta = 270.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::RIGHT_TOP)
 				{
-					theta = 90;
-					phi = 45;
+					theta = 90.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::RIGHT_BOTTOM)
 				{
-					theta = 90;
-					phi = 135;
+					theta = 90.0f;
+					phi = 135.0f;
 				}
 				else if(x == direction::LEFT_BOTTOM)
 				{
-					theta = 270;
-					phi = 135;
+					theta = 270.0f;
+					phi = 135.0f;
 				}
 				else if(x == direction::FRONT)
 				{
-					theta = 0;
-					phi = 90;
+					theta = 0.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::BACK)
 				{
-					theta = 180;
-					phi = 90;
+					theta = 180.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::LEFT_FRONT)
 				{
-					theta = 315;
-					phi = 90;
+					theta = 315.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::RIGHT_FRONT)
 				{
-					theta = 45;
-					phi = 90;
+					theta = 45.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::TOP_FRONT)
 				{
-					theta = 0;
-					phi = 45;
+					theta = 0.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::BOTTOM_FRONT)
 				{
-					theta = 0;
-					phi = 135;
+					theta = 0.0f;
+					phi = 135.0f;
 				}
 				else if(x == direction::LEFT_BACK)
 				{
-					theta = 225;
-					phi = 90;
+					theta = 225.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::RIGHT_BACK)
 				{
-					theta = 135;
-					phi = 90;
+					theta = 135.0f;
+					phi = 90.0f;
 				}
 				else if(x == direction::TOP_BACK)
 				{
-					theta = 180;
-					phi = 45;
+					theta = 180.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::BOTTOM_BACK)
 				{
-					theta = 180;
-					phi = 135;
+					theta = 180.0f;
+					phi = 135.0f;
 				}
 				else if(x == direction::LEFT_TOP_FRONT)
 				{
-					theta = 315;
-					phi = 45;
+					theta = 315.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::RIGHT_TOP_FRONT)
 				{
-					theta = 45;
-					phi = 45;
+					theta = 45.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::LEFT_BOTTOM_FRONT)
 				{
-					theta = 315;
-					phi = 135;
+					theta = 315.0f;
+					phi = 135.0f;
 				}
 				else if(x == direction::RIGHT_BOTTOM_FRONT)
 				{
-					theta = 45;
-					phi = 135;
+					theta = 45.0f;
+					phi = 135.0f;
 				}
 				else if(x == direction::LEFT_TOP_BACK)
 				{
-					theta = 225;
-					phi = 45;
+					theta = 225.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::RIGHT_TOP_BACK)
 				{
-					theta = 135;
-					phi = 45;
+					theta = 135.0f;
+					phi = 45.0f;
 				}
 				else if(x == direction::LEFT_BOTTOM_BACK)
 				{
-					theta = 225;
-					phi = 135;
+					theta = 225.0f;
+					phi = 135.0f;
 				}
 				else if(x == direction::RIGHT_BOTTOM_BACK)
 				{
-					theta = 135;
-					phi = 135;
+					theta = 135.0f;
+					phi = 135.0f;
 				}
 			}
 
-			void set_position(const float& new_x,const float& new_y,const float& new_z)
+			void set_position(float new_x,float new_y,float new_z)
 			{
 				x = new_x;
 				y = new_y;
 				z = new_z;
 			}
 
-			void set_position(const float& new_p,const angle& new_theta,const float& new_z)
+			void set_position(float new_p,const angle& new_theta,float new_z)
 			{
 				x = new_p * scifir::cos(new_theta);
 				y = new_p * scifir::sin(new_theta);
 				z = new_z;
 			}
 
-			void set_position(const float& new_r,const angle& new_theta,const angle& new_phi)
+			void set_position(float new_r,const angle& new_theta,const angle& new_phi)
 			{
 				x = new_r * scifir::cos(new_theta) * scifir::sin(new_phi);
 				y = new_r * scifir::sin(new_theta) * scifir::sin(new_phi);
 				z = new_r * scifir::cos(new_phi);
 			}
 
-			void set_position(const angle& new_latitude,const angle& new_longitude,const float& new_altitude)
+			void set_position(const angle& new_latitude,const angle& new_longitude,float new_altitude)
 			{
 				x = new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude);
 				y = new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude);
@@ -792,21 +792,21 @@ namespace scifir
 				z += float(x_displacement.z_projection());
 			}
 
-			void move(const float& new_x,const float& new_y,const float& new_z)
+			void move(float new_x,float new_y,float new_z)
 			{
 				x += new_x;
 				y += new_y;
 				z += new_z;
 			}
 
-			void move(const float& new_p,const angle& new_theta,const float& new_z)
+			void move(float new_p,const angle& new_theta,float new_z)
 			{
 				x += new_p * scifir::cos(new_theta);
 				y += new_p * scifir::sin(new_theta);
 				z += new_z;
 			}
 
-			void move(const float& new_r,const angle& new_theta,const angle& new_phi)
+			void move(float new_r,const angle& new_theta,const angle& new_phi)
 			{
 				x += new_r * scifir::cos(new_theta) * scifir::sin(new_phi);
 				y += new_r * scifir::sin(new_theta) * scifir::sin(new_phi);

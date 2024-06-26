@@ -1020,26 +1020,26 @@ namespace scifir
 				}
 			}
 
-			coordinates_ndr(const float& new_x) : values(),angles()
+			coordinates_ndr(float new_x) : values(),angles()
 			{
 				values.push_back(new_x);
 			}
 
-			coordinates_ndr(const float& new_x,const float& new_y,const angle& new_theta) : values(),angles()
+			coordinates_ndr(float new_x,float new_y,const angle& new_theta) : values(),angles()
 			{
 				values.push_back(new_x);
 				values.push_back(new_y);
 				angles.push_back(new_theta);
 			}
 
-			coordinates_ndr(const float& new_p,const angle& new_polar_theta,const angle& new_theta) : values(),angles()
+			coordinates_ndr(float new_p,const angle& new_polar_theta,const angle& new_theta) : values(),angles()
 			{
 				values.push_back(new_p * scifir::cos(new_polar_theta));
 				values.push_back(new_p * scifir::sin(new_polar_theta));
 				angles.push_back(new_theta);
 			}
 
-			coordinates_ndr(const float& new_x,const float& new_y,const float& new_z,const angle& new_theta,const angle& new_phi) : values(),angles()
+			coordinates_ndr(float new_x,float new_y,float new_z,const angle& new_theta,const angle& new_phi) : values(),angles()
 			{
 				values.push_back(new_x);
 				values.push_back(new_y);
@@ -1048,7 +1048,7 @@ namespace scifir
 				angles.push_back(new_phi);
 			}
 
-			coordinates_ndr(const float& new_p,const angle& new_cylindrical_theta,const float& new_z,const angle& new_theta,const angle& new_phi) : values(),angles()
+			coordinates_ndr(float new_p,const angle& new_cylindrical_theta,float new_z,const angle& new_theta,const angle& new_phi) : values(),angles()
 			{
 				values.push_back(new_p * scifir::cos(new_cylindrical_theta));
 				values.push_back(new_p * scifir::sin(new_cylindrical_theta));
@@ -1057,7 +1057,7 @@ namespace scifir
 				angles.push_back(new_phi);
 			}
 
-			coordinates_ndr(const float& new_r,const angle& new_spherical_theta,const angle& new_spherical_phi,const angle& new_theta,const angle& new_phi) : values(),angles()
+			coordinates_ndr(float new_r,const angle& new_spherical_theta,const angle& new_spherical_phi,const angle& new_theta,const angle& new_phi) : values(),angles()
 			{
 				values.push_back(new_r * scifir::cos(new_spherical_theta) * scifir::sin(new_spherical_phi));
 				values.push_back(new_r * scifir::sin(new_spherical_theta) * scifir::sin(new_spherical_phi));
@@ -1066,7 +1066,7 @@ namespace scifir
 				angles.push_back(new_phi);
 			}
 
-			coordinates_ndr(const angle& new_latitude,const angle& new_longitude,const float& new_altitude,const angle& new_theta,const angle& new_phi) : values(),angles()
+			coordinates_ndr(const angle& new_latitude,const angle& new_longitude,float new_altitude,const angle& new_theta,const angle& new_phi) : values(),angles()
 			{
 				values.push_back(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude));
 				values.push_back(new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude));
@@ -1621,7 +1621,7 @@ namespace scifir
 				}
 			}
 
-			void set_position(const float& new_x)
+			void set_position(float new_x)
 			{
 				if (values.size() == 1 and angles.size() == 0)
 				{
@@ -1630,7 +1630,7 @@ namespace scifir
 				}
 			}
 
-			void set_position(const float& new_x,const float& new_y)
+			void set_position(float new_x,float new_y)
 			{
 				if (values.size() == 2 and angles.size() == 1)
 				{
@@ -1640,7 +1640,7 @@ namespace scifir
 				}
 			}
 
-			void set_position(const float& new_p,const angle& new_theta)
+			void set_position(float new_p,const angle& new_theta)
 			{
 				if (values.size() == 2 and angles.size() == 1)
 				{
@@ -1650,7 +1650,7 @@ namespace scifir
 				}
 			}
 
-			void set_position(const float& new_x,const float& new_y,const float& new_z)
+			void set_position(float new_x,float new_y,float new_z)
 			{
 				if (values.size() == 3 and angles.size() == 2)
 				{
@@ -1661,7 +1661,7 @@ namespace scifir
 				}
 			}
 
-			void set_position(const float& new_p,const angle& new_theta,const float& new_z)
+			void set_position(float new_p,const angle& new_theta,float new_z)
 			{
 				if (values.size() == 3 and angles.size() == 2)
 				{
@@ -1672,7 +1672,7 @@ namespace scifir
 				}
 			}
 
-			void set_position(const float& new_r,const angle& new_theta,const angle& new_phi)
+			void set_position(float new_r,const angle& new_theta,const angle& new_phi)
 			{
 				if (values.size() == 3 and angles.size() == 2)
 				{
@@ -1683,7 +1683,7 @@ namespace scifir
 				}
 			}
 
-			void set_position(const angle& new_latitude,const angle& new_longitude,const float& new_altitude)
+			void set_position(const angle& new_latitude,const angle& new_longitude,float new_altitude)
 			{
 				if (values.size() == 3 and angles.size() == 2)
 				{
@@ -1739,7 +1739,7 @@ namespace scifir
 				}
 			}
 
-			void move(const float& new_x)
+			void move(float new_x)
 			{
 				if (values.size() == 1 and angles.size() == 0)
 				{
@@ -1756,7 +1756,7 @@ namespace scifir
 				}
 			}
 
-			void move(const float& new_x,const float& new_y)
+			void move(float new_x,float new_y)
 			{
 				if (values.size() == 2 and angles.size() == 1)
 				{
@@ -1765,7 +1765,7 @@ namespace scifir
 				}
 			}
 
-			void move(const float& new_p,const angle& new_theta)
+			void move(float new_p,const angle& new_theta)
 			{
 				if (values.size() == 2 and angles.size() == 1)
 				{
@@ -1784,7 +1784,7 @@ namespace scifir
 				}
 			}
 
-			void move(const float& new_x,const float& new_y,const float& new_z)
+			void move(float new_x,float new_y,float new_z)
 			{
 				if (values.size() == 3 and angles.size() == 2)
 				{
@@ -1794,7 +1794,7 @@ namespace scifir
 				}
 			}
 
-			void move(const float& new_p,const angle& new_theta,const float& new_z)
+			void move(float new_p,const angle& new_theta,float new_z)
 			{
 				if (values.size() == 3 and angles.size() == 2)
 				{
@@ -1804,7 +1804,7 @@ namespace scifir
 				}
 			}
 
-			void move(const float& new_r,const angle& new_theta,const angle& new_phi)
+			void move(float new_r,const angle& new_theta,const angle& new_phi)
 			{
 				if (values.size() == 3 and angles.size() == 2)
 				{
@@ -1825,7 +1825,7 @@ namespace scifir
 				}
 			}
 
-			void move(const float& new_r,const vector<angle>& new_angles)
+			void move(float new_r,const vector<angle>& new_angles)
 			{
 				displacement_nd x_displacement = displacement_nd(new_r,"m",new_angles);
 				move(x_displacement);

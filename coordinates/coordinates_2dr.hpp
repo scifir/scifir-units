@@ -121,35 +121,35 @@ namespace scifir
 			{
 				if (x == direction::LEFT)
 				{
-					theta = 180;
+					theta = 180.0f;
 				}
 				else if(x == direction::RIGHT)
 				{
-					theta = 0;
+					theta = 0.0f;
 				}
 				else if(x == direction::TOP)
 				{
-					theta = 90;
+					theta = 90.0f;
 				}
 				else if(x == direction::BOTTOM)
 				{
-					theta = 270;
+					theta = 270.0f;
 				}
 				else if(x == direction::LEFT_TOP)
 				{
-					theta = 135;
+					theta = 135.0f;
 				}
 				else if(x == direction::RIGHT_TOP)
 				{
-					theta = 45;
+					theta = 45.0f;
 				}
 				else if(x == direction::RIGHT_BOTTOM)
 				{
-					theta = 315;
+					theta = 315.0f;
 				}
 				else if(x == direction::LEFT_BOTTOM)
 				{
-					theta = 225;
+					theta = 225.0f;
 				}
 			}
 
@@ -221,10 +221,10 @@ namespace scifir
 			coordinates_2dr(coordinates_2dr<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),theta(std::move(x_coordinates.theta))
 			{}
 
-			explicit coordinates_2dr(const float& new_x,const float& new_y,const angle& new_theta) : x(new_x),y(new_y),theta(new_theta)
+			explicit coordinates_2dr(float new_x,float new_y,const angle& new_theta) : x(new_x),y(new_y),theta(new_theta)
 			{}
 
-			explicit coordinates_2dr(const float& new_p,const angle& new_polar_theta,const angle& new_theta) : x(),y(),theta(new_theta)
+			explicit coordinates_2dr(float new_p,const angle& new_polar_theta,const angle& new_theta) : x(),y(),theta(new_theta)
 			{
 				set_position(new_p,new_polar_theta);
 			}
@@ -315,45 +315,45 @@ namespace scifir
 			{
 				if (x == direction::LEFT)
 				{
-					theta = 180;
+					theta = 180.0f;
 				}
 				else if(x == direction::RIGHT)
 				{
-					theta = 0;
+					theta = 0.0f;
 				}
 				else if(x == direction::TOP)
 				{
-					theta = 90;
+					theta = 90.0f;
 				}
 				else if(x == direction::BOTTOM)
 				{
-					theta = 270;
+					theta = 270.0f;
 				}
 				else if(x == direction::LEFT_TOP)
 				{
-					theta = 135;
+					theta = 135.0f;
 				}
 				else if(x == direction::RIGHT_TOP)
 				{
-					theta = 45;
+					theta = 45.0f;
 				}
 				else if(x == direction::RIGHT_BOTTOM)
 				{
-					theta = 315;
+					theta = 315.0f;
 				}
 				else if(x == direction::LEFT_BOTTOM)
 				{
-					theta = 225;
+					theta = 225.0f;
 				}
 			}
 
-			void set_position(const float& new_x,const float& new_y)
+			void set_position(float new_x,float new_y)
 			{
 				x = new_x;
 				y = new_y;
 			}
 
-			void set_position(const float& new_p,const angle& new_theta)
+			void set_position(float new_p,const angle& new_theta)
 			{
 				x = new_p * scifir::cos(new_theta);
 				y = new_p * scifir::sin(new_theta);
@@ -373,13 +373,13 @@ namespace scifir
 				y += float(x_displacement.y_projection());
 			}
 
-			void move(const float& new_x,const float& new_y)
+			void move(float new_x,float new_y)
 			{
 				x += new_x;
 				y += new_y;
 			}
 
-			void move(const float& new_p,const angle& new_theta)
+			void move(float new_p,const angle& new_theta)
 			{
 				x += new_p * scifir::cos(new_theta);
 				y += new_p * scifir::sin(new_theta);

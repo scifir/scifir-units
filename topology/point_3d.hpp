@@ -275,20 +275,20 @@ namespace scifir
 			point_3d(point_3d<float>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y)),z(std::move(x_point.z))
 			{}
 
-			explicit point_3d(const float& new_x,const float& new_y,const float& new_z) : x(new_x),y(new_y),z(new_z)
+			explicit point_3d(float new_x,float new_y,float new_z) : x(new_x),y(new_y),z(new_z)
 			{}
 
-			explicit point_3d(const float& new_p,const angle& new_theta,const float& new_z)
+			explicit point_3d(float new_p,const angle& new_theta,float new_z)
 			{
 				set_position(new_p,new_theta,new_z);
 			}
 
-			explicit point_3d(const float& new_r,const angle& new_theta,const angle& new_phi)
+			explicit point_3d(float new_r,const angle& new_theta,const angle& new_phi)
 			{
 				set_position(new_r,new_theta,new_phi);
 			}
 
-			explicit point_3d(const angle& new_latitude,const angle& new_longitude,const float& new_altitude)
+			explicit point_3d(const angle& new_latitude,const angle& new_longitude,float new_altitude)
 			{
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
@@ -396,28 +396,28 @@ namespace scifir
 				return float();
 			}
 
-			void set_position(const float& new_x,const float& new_y,const float& new_z)
+			void set_position(float new_x,float new_y,float new_z)
 			{
 				x = new_x;
 				y = new_y;
 				z = new_z;
 			}
 
-			void set_position(const float& new_p,const angle& new_theta,const float& new_z)
+			void set_position(float new_p,const angle& new_theta,float new_z)
 			{
 				x = new_p * scifir::cos(new_theta);
 				y = new_p * scifir::sin(new_theta);
 				z = new_z;
 			}
 
-			void set_position(const float& new_r,const angle& new_theta,const angle& new_phi)
+			void set_position(float new_r,const angle& new_theta,const angle& new_phi)
 			{
 				x = new_r * scifir::cos(new_theta) * scifir::sin(new_phi);
 				y = new_r * scifir::sin(new_theta) * scifir::sin(new_phi);
 				z = new_r * scifir::cos(new_phi);
 			}
 
-			void set_position(const angle& new_latitude,const angle& new_longitude,const float& new_altitude)
+			void set_position(const angle& new_latitude,const angle& new_longitude,float new_altitude)
 			{
 				x = new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude);
 				y = new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude);
@@ -455,21 +455,21 @@ namespace scifir
 				z += float(x_displacement.z_projection());
 			}
 
-			void move(const float& new_x,const float& new_y,const float& new_z)
+			void move(float new_x,float new_y,float new_z)
 			{
 				x += new_x;
 				y += new_y;
 				z += new_z;
 			}
 
-			void move(const float& new_p,const angle& new_theta,const float& new_z)
+			void move(float new_p,const angle& new_theta,float new_z)
 			{
 				x += new_p * scifir::cos(new_theta);
 				y += new_p * scifir::sin(new_theta);
 				z += new_z;
 			}
 
-			void move(const float& new_r,const angle& new_theta,const angle& new_phi)
+			void move(float new_r,const angle& new_theta,const angle& new_phi)
 			{
 				x += new_r * scifir::cos(new_theta) * scifir::sin(new_phi);
 				y += new_r * scifir::sin(new_theta) * scifir::sin(new_phi);
