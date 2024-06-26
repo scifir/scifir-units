@@ -431,30 +431,58 @@ namespace scifir
 
 			string display_polar() const
 			{
-				ostringstream out;
-				out << "(" << get_p() << "," << get_theta() << ")";
-				return out.str();
+				if (values.size() == 2)
+				{
+					ostringstream out;
+					out << "(" << get_p() << "," << get_theta() << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-2d]";
+				}
 			}
 
 			string display_cylindrical() const
 			{
-				ostringstream out;
-				out << "(" << get_p() << "," << get_theta() << "," << values[2] << ")";
-				return out.str();
+				if (values.size() == 3)
+				{
+					ostringstream out;
+					out << "(" << get_p() << "," << get_theta() << "," << values[2] << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
+				}
 			}
 
 			string display_spherical() const
 			{
-				ostringstream out;
-				out << "(" << get_r() << "," << get_theta() << "," << get_phi() << ")";
-				return out.str();
+				if (values.size() == 3)
+				{
+					ostringstream out;
+					out << "(" << get_r() << "," << get_theta() << "," << get_phi() << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
+				}
 			}
 
 			string display_geographical() const
 			{
-				ostringstream out;
-				out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ")";
-				return out.str();
+				if (values.size() == 3)
+				{
+					ostringstream out;
+					out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
+				}
 			}
 
 			vector<T> values;
@@ -875,30 +903,58 @@ namespace scifir
 
 			string display_polar() const
 			{
-				ostringstream out;
-				out << "(" << display_float(get_p()) << "," << get_theta() << ")";
-				return out.str();
+				if (values.size() == 2)
+				{
+					ostringstream out;
+					out << "(" << display_float(get_p()) << "," << get_theta() << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-2d]";
+				}
 			}
 
 			string display_cylindrical() const
 			{
-				ostringstream out;
-				out << "(" << display_float(get_p()) << "," << get_theta() << "," << display_float(values[2]) << ")";
-				return out.str();
+				if (values.size() == 3)
+				{
+					ostringstream out;
+					out << "(" << display_float(get_p()) << "," << get_theta() << "," << display_float(values[2]) << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
+				}
 			}
 
 			string display_spherical() const
 			{
-				ostringstream out;
-				out << "(" << display_float(get_r()) << "," << get_theta() << "," << get_phi() << ")";
-				return out.str();
+				if (values.size() == 3)
+				{
+					ostringstream out;
+					out << "(" << display_float(get_r()) << "," << get_theta() << "," << get_phi() << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
+				}
 			}
 
 			string display_geographical() const
 			{
-				ostringstream out;
-				out << "(" << get_latitude() << "," << get_longitude() << "," << display_float(get_altitude()) << ")";
-				return out.str();
+				if (values.size() == 3)
+				{					
+					ostringstream out;
+					out << "(" << get_latitude() << "," << get_longitude() << "," << display_float(get_altitude()) << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
+				}
 			}
 
 			vector<float> values;

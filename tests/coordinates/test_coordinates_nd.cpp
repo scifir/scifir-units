@@ -235,8 +235,13 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 	SECTION("Display of coordinates_nd<> classes")
 	{
 		coordinates_nd<> a(2_m,3_m,5_m);
+		REQUIRE (bool(a.display_polar() == "[no-2d]"));
 		REQUIRE (bool(a.display_cylindrical() == "(3.6 m,56.3\u00B0,5 m)"));
 		REQUIRE (bool(a.display_spherical() == "(6.16 m,56.3\u00B0,35.79\u00B0)"));
+		coordinates_nd<> b(5_m,angle(30.0f));
+		REQUIRE (bool(b.display_polar() == "(5 m,30\u00B0)"));
+		REQUIRE (bool(b.display_cylindrical() == "[no-3d]"));
+		REQUIRE (bool(b.display_spherical() == "[no-3d]"));
 		/*coordinates_nd<> b(2_m,3_m,10000_km);
 		cout << "b display geographical: " << b.display_geographical() << endl;
 		REQUIRE (bool(b.display_geographical() == ""));*/
@@ -245,9 +250,14 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 	SECTION("Display of coordinates_nd<float> classes")
 	{
 		coordinates_nd<float> a(2.0f,3.0f,5.0f);
+		REQUIRE (bool(a.display_polar() == "[no-2d]"));
 		REQUIRE (bool(a.display_cylindrical() == "(3.6,56.3\u00B0,5)"));
 		REQUIRE (bool(a.display_spherical() == "(6.16,56.3\u00B0,35.79\u00B0)"));
-		/*coordinates_nd<> b(2_m,3_m,10000_km);
+		coordinates_nd<float> b(5.0f,angle(30.0f));
+		REQUIRE (bool(b.display_polar() == "(5,30\u00B0)"));
+		REQUIRE (bool(b.display_cylindrical() == "[no-3d]"));
+		REQUIRE (bool(b.display_spherical() == "[no-3d]"));
+		/*coordinates_nd<float> b(2_m,3_m,10000_km);
 		cout << "b display geographical: " << b.display_geographical() << endl;
 		REQUIRE (bool(b.display_geographical() == ""));*/
 	}
