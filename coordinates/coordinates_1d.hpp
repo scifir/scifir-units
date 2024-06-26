@@ -287,7 +287,7 @@ string operator +(const scifir::coordinates_1d<T>& x,const string& y)
 }
 
 template<typename T>
-ostream& operator << (ostream& os,const scifir::coordinates_1d<T>& x)
+ostream& operator <<(ostream& os,const scifir::coordinates_1d<T>& x)
 {
 	return os << to_string(x);
 }
