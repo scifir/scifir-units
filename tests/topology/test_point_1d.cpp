@@ -83,6 +83,12 @@ TEST_CASE("class point_1d","Complete test of point_1d")
 		coordinates_1d<> f2(15_m);
 		e2 = std::move(f2);
 		REQUIRE (bool(to_string(e2) == "(15 m)"));
+		point_1d<> g;
+		g = "(1 m)";
+		REQUIRE (bool(to_string(g) == "(1 m)"));
+		point_1d<> h;
+		h = "1 m";
+		REQUIRE (bool(to_string(h) == "(1 m)"));
 	}
 
 	SECTION("Assignments of point_1d<float> classes")
@@ -103,6 +109,12 @@ TEST_CASE("class point_1d","Complete test of point_1d")
 		coordinates_1d<float> f2(15.0f);
 		e2 = std::move(f2);
 		REQUIRE (bool(to_string(e2) == "(15)"));
+		point_1d<float> g;
+		g = "(1)";
+		REQUIRE (bool(to_string(g) == "(1)"));
+		point_1d<float> h;
+		h = "1";
+		REQUIRE (bool(to_string(h) == "(1)"));
 	}
 
 	SECTION("move(), set_position() and distance_to_origin() of point_1d<> classes")

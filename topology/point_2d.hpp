@@ -39,29 +39,9 @@ namespace scifir
 
 			explicit point_2d(scifir::coordinates_2d<T>&& new_coordinates);
 
-			explicit point_2d(string init_point_2d) : point_2d()
+			explicit point_2d(const string& init_point_2d) : point_2d()
 			{
-				vector<string> values;
-				if (init_point_2d.front() == '(')
-				{
-					init_point_2d.erase(0,1);
-				}
-				if (init_point_2d.back() == ')')
-				{
-					init_point_2d.erase(init_point_2d.size()-1,1);
-				}
-				boost::split(values,init_point_2d,boost::is_any_of(","));
-				if (values.size() == 2)
-				{
-					if (is_angle(values[1]))
-					{
-						set_position(length(values[0]),angle(values[1]));
-					}
-					else
-					{
-						set_position(length(values[0]),length(values[1]));
-					}
-				}
+				initialize_from_string(init_point_2d);
 			}
 
 			point_2d<T>& operator=(const point_2d<T>& x_point)
@@ -81,6 +61,12 @@ namespace scifir
 			point_2d<T>& operator=(const coordinates_2d<T>&);
 
 			point_2d<T>& operator=(coordinates_2d<T>&&);
+
+			point_2d<T>& operator=(const string& init_point_2d)
+			{
+				initialize_from_string(init_point_2d);
+				return *this;
+			}
 
 			T get_p() const
 			{
@@ -144,6 +130,32 @@ namespace scifir
 
 			T x;
 			T y;
+
+		private:
+			void initialize_from_string(string init_point_2d)
+			{
+				vector<string> values;
+				if (init_point_2d.front() == '(')
+				{
+					init_point_2d.erase(0,1);
+				}
+				if (init_point_2d.back() == ')')
+				{
+					init_point_2d.erase(init_point_2d.size()-1,1);
+				}
+				boost::split(values,init_point_2d,boost::is_any_of(","));
+				if (values.size() == 2)
+				{
+					if (is_angle(values[1]))
+					{
+						set_position(length(values[0]),angle(values[1]));
+					}
+					else
+					{
+						set_position(length(values[0]),length(values[1]));
+					}
+				}
+			}
 	};
 
 	template<>
@@ -171,29 +183,9 @@ namespace scifir
 
 			explicit point_2d(coordinates_2d<float>&&);
 
-			explicit point_2d(string init_point_2d) : point_2d()
+			explicit point_2d(const string& init_point_2d) : point_2d()
 			{
-				vector<string> values;
-				if (init_point_2d.front() == '(')
-				{
-					init_point_2d.erase(0,1);
-				}
-				if (init_point_2d.back() == ')')
-				{
-					init_point_2d.erase(init_point_2d.size()-1,1);
-				}
-				boost::split(values,init_point_2d,boost::is_any_of(","));
-				if (values.size() == 2)
-				{
-					if (is_angle(values[1]))
-					{
-						set_position(stof(values[0]),angle(values[1]));
-					}
-					else
-					{
-						set_position(stof(values[0]),stof(values[1]));
-					}
-				}
+				initialize_from_string(init_point_2d);
 			}
 
 			point_2d<float>& operator=(const point_2d<float>& x_point)
@@ -213,6 +205,12 @@ namespace scifir
 			point_2d<float>& operator=(const coordinates_2d<float>& x_coordinates);
 
 			point_2d<float>& operator=(coordinates_2d<float>&& x_coordinates);
+
+			point_2d<float>& operator=(const string& init_point_2d)
+			{
+				initialize_from_string(init_point_2d);
+				return *this;
+			}
 
 			float get_p() const
 			{
@@ -276,6 +274,32 @@ namespace scifir
 
 			float x;
 			float y;
+
+		private:
+			void initialize_from_string(string init_point_2d)
+			{
+				vector<string> values;
+				if (init_point_2d.front() == '(')
+				{
+					init_point_2d.erase(0,1);
+				}
+				if (init_point_2d.back() == ')')
+				{
+					init_point_2d.erase(init_point_2d.size()-1,1);
+				}
+				boost::split(values,init_point_2d,boost::is_any_of(","));
+				if (values.size() == 2)
+				{
+					if (is_angle(values[1]))
+					{
+						set_position(stof(values[0]),angle(values[1]));
+					}
+					else
+					{
+						set_position(stof(values[0]),stof(values[1]));
+					}
+				}
+			}
 	};
 
 	template<typename T>

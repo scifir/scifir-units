@@ -74,70 +74,9 @@ namespace scifir
 			explicit coordinates_nd(point_nd<T>&& new_point) : values(std::move(new_point.values))
 			{}
 
-			explicit coordinates_nd(string init_coordinates_nd) : values()
+			explicit coordinates_nd(const string& init_coordinates_nd) : values()
 			{
-				vector<string> init_values;
-				if (init_coordinates_nd.front() == '(')
-				{
-					init_coordinates_nd.erase(0,1);
-				}
-				if (init_coordinates_nd.back() == ')')
-				{
-					init_coordinates_nd.erase(init_coordinates_nd.size()-1,1);
-				}
-				boost::split(init_values,init_coordinates_nd,boost::is_any_of(","));
-				if (init_values.size() == 2)
-				{
-					if (is_angle(init_values[1]))
-					{
-						set_position(T(init_values[0]),angle(init_values[1]));
-					}
-					else
-					{
-						set_position(T(init_values[0]),T(init_values[1]));
-					}
-				}
-				else if (init_values.size() == 3)
-				{
-					if (is_angle(init_values[0]))
-					{
-						if (is_angle(init_values[1]))
-						{
-							if (!is_angle(init_values[2]))
-							{
-								set_position(angle(init_values[0]),angle(init_values[1]),T(init_values[2]));
-							}
-						}
-					}
-					else
-					{
-						if (is_angle(init_values[1]))
-						{
-							if (is_angle(init_values[2]))
-							{
-								set_position(T(init_values[0]),angle(init_values[1]),angle(init_values[2]));
-							}
-							else
-							{
-								set_position(T(init_values[0]),angle(init_values[1]),T(init_values[2]));
-							}
-						}
-						else
-						{
-							if (!is_angle(init_values[2]))
-							{
-								set_position(T(init_values[0]),T(init_values[1]),T(init_values[2]));
-							}
-						}
-					}
-				}
-				else
-				{
-					for (const string& x_value : init_values)
-					{
-						values.push_back(T(x_value));
-					}
-				}
+				initialize_from_string(init_coordinates_nd);
 			}
 
 			coordinates_nd<T>& operator=(const coordinates_nd<T>& x_coordinates)
@@ -161,6 +100,12 @@ namespace scifir
 			coordinates_nd<T>& operator=(point_nd<T>&& x_point)
 			{
 				values = std::move(x_point.values);
+				return *this;
+			}
+
+			coordinates_nd<T>& operator=(const string& init_coordinates_nd)
+			{
+				initialize_from_string(init_coordinates_nd);
 				return *this;
 			}
 
@@ -495,6 +440,73 @@ namespace scifir
 			}
 
 			vector<T> values;
+
+		private:
+			void initialize_from_string(string init_coordinates_nd)
+			{
+				vector<string> init_values;
+				if (init_coordinates_nd.front() == '(')
+				{
+					init_coordinates_nd.erase(0,1);
+				}
+				if (init_coordinates_nd.back() == ')')
+				{
+					init_coordinates_nd.erase(init_coordinates_nd.size()-1,1);
+				}
+				boost::split(init_values,init_coordinates_nd,boost::is_any_of(","));
+				if (init_values.size() == 2)
+				{
+					if (is_angle(init_values[1]))
+					{
+						set_position(T(init_values[0]),angle(init_values[1]));
+					}
+					else
+					{
+						set_position(T(init_values[0]),T(init_values[1]));
+					}
+				}
+				else if (init_values.size() == 3)
+				{
+					if (is_angle(init_values[0]))
+					{
+						if (is_angle(init_values[1]))
+						{
+							if (!is_angle(init_values[2]))
+							{
+								set_position(angle(init_values[0]),angle(init_values[1]),T(init_values[2]));
+							}
+						}
+					}
+					else
+					{
+						if (is_angle(init_values[1]))
+						{
+							if (is_angle(init_values[2]))
+							{
+								set_position(T(init_values[0]),angle(init_values[1]),angle(init_values[2]));
+							}
+							else
+							{
+								set_position(T(init_values[0]),angle(init_values[1]),T(init_values[2]));
+							}
+						}
+						else
+						{
+							if (!is_angle(init_values[2]))
+							{
+								set_position(T(init_values[0]),T(init_values[1]),T(init_values[2]));
+							}
+						}
+					}
+				}
+				else
+				{
+					for (const string& x_value : init_values)
+					{
+						values.push_back(T(x_value));
+					}
+				}
+			}
 	};
 
 	template<>
@@ -557,70 +569,9 @@ namespace scifir
 			explicit coordinates_nd(point_nd<float>&& new_point) : values(std::move(new_point.values))
 			{}
 
-			explicit coordinates_nd(string init_coordinates_nd) : values()
+			explicit coordinates_nd(const string& init_coordinates_nd) : values()
 			{
-				vector<string> init_values;
-				if (init_coordinates_nd.front() == '(')
-				{
-					init_coordinates_nd.erase(0,1);
-				}
-				if (init_coordinates_nd.back() == ')')
-				{
-					init_coordinates_nd.erase(init_coordinates_nd.size()-1,1);
-				}
-				boost::split(init_values,init_coordinates_nd,boost::is_any_of(","));
-				if (init_values.size() == 2)
-				{
-					if (is_angle(init_values[1]))
-					{
-						set_position(stof(init_values[0]),angle(init_values[1]));
-					}
-					else
-					{
-						set_position(stof(init_values[0]),stof(init_values[1]));
-					}
-				}
-				else if (init_values.size() == 3)
-				{
-					if (is_angle(init_values[0]))
-					{
-						if (is_angle(init_values[1]))
-						{
-							if (!is_angle(init_values[2]))
-							{
-								set_position(angle(init_values[0]),angle(init_values[1]),stof(init_values[2]));
-							}
-						}
-					}
-					else
-					{
-						if (is_angle(init_values[1]))
-						{
-							if (is_angle(init_values[2]))
-							{
-								set_position(stof(init_values[0]),angle(init_values[1]),angle(init_values[2]));
-							}
-							else
-							{
-								set_position(stof(init_values[0]),angle(init_values[1]),stof(init_values[2]));
-							}
-						}
-						else
-						{
-							if (!is_angle(init_values[2]))
-							{
-								set_position(stof(init_values[0]),stof(init_values[1]),stof(init_values[2]));
-							}
-						}
-					}
-				}
-				else
-				{
-					for (const string& x_value : init_values)
-					{
-						values.push_back(stof(x_value));
-					}
-				}
+				initialize_from_string(init_coordinates_nd);
 			}
 
 			coordinates_nd<float>& operator=(const coordinates_nd<float>& x_coordinates)
@@ -644,6 +595,12 @@ namespace scifir
 			coordinates_nd<float>& operator=(point_nd<float>&& x_point)
 			{
 				values = std::move(x_point.values);
+				return *this;
+			}
+
+			coordinates_nd<float>& operator=(const string& init_coordinates_nd)
+			{
+				initialize_from_string(init_coordinates_nd);
 				return *this;
 			}
 
@@ -976,6 +933,73 @@ namespace scifir
 			}
 
 			vector<float> values;
+
+		private:
+			void initialize_from_string(string init_coordinates_nd)
+			{
+				vector<string> init_values;
+				if (init_coordinates_nd.front() == '(')
+				{
+					init_coordinates_nd.erase(0,1);
+				}
+				if (init_coordinates_nd.back() == ')')
+				{
+					init_coordinates_nd.erase(init_coordinates_nd.size()-1,1);
+				}
+				boost::split(init_values,init_coordinates_nd,boost::is_any_of(","));
+				if (init_values.size() == 2)
+				{
+					if (is_angle(init_values[1]))
+					{
+						set_position(stof(init_values[0]),angle(init_values[1]));
+					}
+					else
+					{
+						set_position(stof(init_values[0]),stof(init_values[1]));
+					}
+				}
+				else if (init_values.size() == 3)
+				{
+					if (is_angle(init_values[0]))
+					{
+						if (is_angle(init_values[1]))
+						{
+							if (!is_angle(init_values[2]))
+							{
+								set_position(angle(init_values[0]),angle(init_values[1]),stof(init_values[2]));
+							}
+						}
+					}
+					else
+					{
+						if (is_angle(init_values[1]))
+						{
+							if (is_angle(init_values[2]))
+							{
+								set_position(stof(init_values[0]),angle(init_values[1]),angle(init_values[2]));
+							}
+							else
+							{
+								set_position(stof(init_values[0]),angle(init_values[1]),stof(init_values[2]));
+							}
+						}
+						else
+						{
+							if (!is_angle(init_values[2]))
+							{
+								set_position(stof(init_values[0]),stof(init_values[1]),stof(init_values[2]));
+							}
+						}
+					}
+				}
+				else
+				{
+					for (const string& x_value : init_values)
+					{
+						values.push_back(stof(x_value));
+					}
+				}
+			}
 	};
 
 	template<typename T>

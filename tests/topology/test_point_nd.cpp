@@ -118,6 +118,27 @@ TEST_CASE("class point_nd","Complete test of point_nd")
 		coordinates_nd<> c4(100_m,1_m,2_m);
 		c3 = std::move(c4);
 		REQUIRE (bool(to_string(c3) == "(100 m,1 m,2 m)"));
+		point_nd<> d;
+		d = "(1 m)";
+		REQUIRE (bool(to_string(d) == "(1 m)"));
+		point_nd<> d2;
+		d2 = "(1 m,5 m)";
+		REQUIRE (bool(to_string(d2) == "(1 m,5 m)"));
+		point_nd<> d3;
+		d3 = "(1 m,45\u00B0)";
+		REQUIRE (bool(to_string(d3) == "(0.7 m,0.7 m)"));
+		point_nd<> d4;
+		d4 = "(1 m,5 m,2 m)";
+		REQUIRE (bool(to_string(d4) == "(1 m,5 m,2 m)"));
+		point_nd<> e;
+		e = "1 m,5 m,2 m";
+		REQUIRE (bool(to_string(e) == "(1 m,5 m,2 m)"));
+		point_nd<> f;
+		f = "2 m,45\u00B0,3 m";
+		REQUIRE (bool(to_string(f) == "(1.41 m,1.41 m,3 m)"));
+		point_nd<> g;
+		g = "2 m,45\u00B0,20\u00B0";
+		REQUIRE (bool(to_string(g) == "(0.48 m,0.48 m,1.87 m)"));
 	}
 
 	SECTION("Assignments of point_nd<float> classes")
@@ -138,6 +159,27 @@ TEST_CASE("class point_nd","Complete test of point_nd")
 		coordinates_nd<float> c4(100.0f,1.0f,2.0f);
 		c3 = std::move(c4);
 		REQUIRE (bool(to_string(c3) == "(100,1,2)"));
+		point_nd<float> d;
+		d = "(1)";
+		REQUIRE (bool(to_string(d) == "(1)"));
+		point_nd<float> d2;
+		d2 = "(1,5)";
+		REQUIRE (bool(to_string(d2) == "(1,5)"));
+		point_nd<float> d3;
+		d3 = "(1,45\u00B0)";
+		REQUIRE (bool(to_string(d3) == "(0.7,0.7)"));
+		point_nd<float> d4;
+		d4 = "(1,5,2)";
+		REQUIRE (bool(to_string(d4) == "(1,5,2)"));
+		point_nd<float> e;
+		e = "1,5,2";
+		REQUIRE (bool(to_string(e) == "(1,5,2)"));
+		point_nd<float> f;
+		f = "2,45\u00B0,3";
+		REQUIRE (bool(to_string(f) == "(1.41,1.41,3)"));
+		point_nd<float> g;
+		g = "2,45\u00B0,20\u00B0";
+		REQUIRE (bool(to_string(g) == "(0.48,0.48,1.87)"));
 	}
 
 	SECTION("Values of different coordinates systems of point_nd<> classes")

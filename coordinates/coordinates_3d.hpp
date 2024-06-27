@@ -52,52 +52,9 @@ namespace scifir
 			explicit coordinates_3d(point_3d<T>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y)),z(std::move(x_point.z))
 			{}
 
-			explicit coordinates_3d(string init_coordinates_3d) : coordinates_3d()
+			explicit coordinates_3d(const string& init_coordinates_3d) : coordinates_3d()
 			{
-				vector<string> values;
-				if (init_coordinates_3d.front() == '(')
-				{
-					init_coordinates_3d.erase(0,1);
-				}
-				if (init_coordinates_3d.back() == ')')
-				{
-					init_coordinates_3d.erase(init_coordinates_3d.size()-1,1);
-				}
-				boost::split(values,init_coordinates_3d,boost::is_any_of(","));
-				if (values.size() == 3)
-				{
-					if (is_angle(values[0]))
-					{
-						if (is_angle(values[1]))
-						{
-							if (!is_angle(values[2]))
-							{
-								set_position(angle(values[0]),angle(values[1]),T(values[2]));
-							}
-						}
-					}
-					else
-					{
-						if (is_angle(values[1]))
-						{
-							if (is_angle(values[2]))
-							{
-								set_position(T(values[0]),angle(values[1]),angle(values[2]));
-							}
-							else
-							{
-								set_position(T(values[0]),angle(values[1]),T(values[2]));
-							}
-						}
-						else
-						{
-							if (!is_angle(values[2]))
-							{
-								set_position(T(values[0]),T(values[1]),T(values[2]));
-							}
-						}
-					}
-				}
+				initialize_from_string(init_coordinates_3d);
 			}
 
 			coordinates_3d<T>& operator=(const coordinates_3d<T>& x_coordinates)
@@ -129,6 +86,12 @@ namespace scifir
 				x = std::move(x_point.x);
 				y = std::move(x_point.y);
 				z = std::move(x_point.z);
+				return *this;
+			}
+
+			coordinates_3d<T>& operator=(const string& init_coordinates_3d)
+			{
+				initialize_from_string(init_coordinates_3d);
 				return *this;
 			}
 
@@ -278,6 +241,55 @@ namespace scifir
 			T x;
 			T y;
 			T z;
+
+		private:
+			void initialize_from_string(string init_coordinates_3d)
+			{
+				vector<string> values;
+				if (init_coordinates_3d.front() == '(')
+				{
+					init_coordinates_3d.erase(0,1);
+				}
+				if (init_coordinates_3d.back() == ')')
+				{
+					init_coordinates_3d.erase(init_coordinates_3d.size()-1,1);
+				}
+				boost::split(values,init_coordinates_3d,boost::is_any_of(","));
+				if (values.size() == 3)
+				{
+					if (is_angle(values[0]))
+					{
+						if (is_angle(values[1]))
+						{
+							if (!is_angle(values[2]))
+							{
+								set_position(angle(values[0]),angle(values[1]),T(values[2]));
+							}
+						}
+					}
+					else
+					{
+						if (is_angle(values[1]))
+						{
+							if (is_angle(values[2]))
+							{
+								set_position(T(values[0]),angle(values[1]),angle(values[2]));
+							}
+							else
+							{
+								set_position(T(values[0]),angle(values[1]),T(values[2]));
+							}
+						}
+						else
+						{
+							if (!is_angle(values[2]))
+							{
+								set_position(T(values[0]),T(values[1]),T(values[2]));
+							}
+						}
+					}
+				}
+			}
 	};
 
 	template<>
@@ -317,52 +329,9 @@ namespace scifir
 			explicit coordinates_3d(point_3d<float>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y)),z(std::move(x_point.z))
 			{}
 
-			explicit coordinates_3d(string init_coordinates_3d) : coordinates_3d()
+			explicit coordinates_3d(const string& init_coordinates_3d) : coordinates_3d()
 			{
-				vector<string> values;
-				if (init_coordinates_3d.front() == '(')
-				{
-					init_coordinates_3d.erase(0,1);
-				}
-				if (init_coordinates_3d.back() == ')')
-				{
-					init_coordinates_3d.erase(init_coordinates_3d.size()-1,1);
-				}
-				boost::split(values,init_coordinates_3d,boost::is_any_of(","));
-				if (values.size() == 3)
-				{
-					if (is_angle(values[0]))
-					{
-						if (is_angle(values[1]))
-						{
-							if (!is_angle(values[2]))
-							{
-								set_position(angle(values[0]),angle(values[1]),stof(values[2]));
-							}
-						}
-					}
-					else
-					{
-						if (is_angle(values[1]))
-						{
-							if (is_angle(values[2]))
-							{
-								set_position(stof(values[0]),angle(values[1]),angle(values[2]));
-							}
-							else
-							{
-								set_position(stof(values[0]),angle(values[1]),stof(values[2]));
-							}
-						}
-						else
-						{
-							if (!is_angle(values[2]))
-							{
-								set_position(stof(values[0]),stof(values[1]),stof(values[2]));
-							}
-						}
-					}
-				}
+				initialize_from_string(init_coordinates_3d);
 			}
 
 			coordinates_3d<float>& operator=(const coordinates_3d<float>& x_coordinates)
@@ -394,6 +363,12 @@ namespace scifir
 				x = std::move(x_point.x);
 				y = std::move(x_point.y);
 				z = std::move(x_point.z);
+				return *this;
+			}
+
+			coordinates_3d<float>& operator=(const string& init_coordinates_3d)
+			{
+				initialize_from_string(init_coordinates_3d);
 				return *this;
 			}
 
@@ -541,6 +516,55 @@ namespace scifir
 			float x;
 			float y;
 			float z;
+
+		private:
+			void initialize_from_string(string init_coordinates_3d)
+			{
+				vector<string> values;
+				if (init_coordinates_3d.front() == '(')
+				{
+					init_coordinates_3d.erase(0,1);
+				}
+				if (init_coordinates_3d.back() == ')')
+				{
+					init_coordinates_3d.erase(init_coordinates_3d.size()-1,1);
+				}
+				boost::split(values,init_coordinates_3d,boost::is_any_of(","));
+				if (values.size() == 3)
+				{
+					if (is_angle(values[0]))
+					{
+						if (is_angle(values[1]))
+						{
+							if (!is_angle(values[2]))
+							{
+								set_position(angle(values[0]),angle(values[1]),stof(values[2]));
+							}
+						}
+					}
+					else
+					{
+						if (is_angle(values[1]))
+						{
+							if (is_angle(values[2]))
+							{
+								set_position(stof(values[0]),angle(values[1]),angle(values[2]));
+							}
+							else
+							{
+								set_position(stof(values[0]),angle(values[1]),stof(values[2]));
+							}
+						}
+						else
+						{
+							if (!is_angle(values[2]))
+							{
+								set_position(stof(values[0]),stof(values[1]),stof(values[2]));
+							}
+						}
+					}
+				}
+			}
 	};
 
 	template<typename T>

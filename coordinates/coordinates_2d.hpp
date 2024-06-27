@@ -40,29 +40,9 @@ namespace scifir
 			explicit coordinates_2d(scifir::point_2d<T>&& new_point) : x(std::move(new_point.x)),y(std::move(new_point.y))
 			{}
 
-			explicit coordinates_2d(string init_coordinates_2d) : coordinates_2d()
+			explicit coordinates_2d(const string& init_coordinates_2d) : coordinates_2d()
 			{
-				vector<string> values;
-				if (init_coordinates_2d.front() == '(')
-				{
-					init_coordinates_2d.erase(0,1);
-				}
-				if (init_coordinates_2d.back() == ')')
-				{
-					init_coordinates_2d.erase(init_coordinates_2d.size()-1,1);
-				}
-				boost::split(values,init_coordinates_2d,boost::is_any_of(","));
-				if (values.size() == 2)
-				{
-					if (is_angle(values[1]))
-					{
-						set_position(T(values[0]),angle(values[1]));
-					}
-					else
-					{
-						set_position(T(values[0]),T(values[1]));
-					}
-				}
+				initialize_from_string(init_coordinates_2d);
 			}
 
 			coordinates_2d<T>& operator=(const coordinates_2d<T>& x_coordinates)
@@ -90,6 +70,12 @@ namespace scifir
 			{
 				x = std::move(x_point.x);
 				y = std::move(x_point.y);
+				return *this;
+			}
+
+			coordinates_2d<T>& operator=(const string& init_coordinates_2d)
+			{
+				initialize_from_string(init_coordinates_2d);
 				return *this;
 			}
 
@@ -155,6 +141,32 @@ namespace scifir
 
 			T x;
 			T y;
+
+		private:
+			void initialize_from_string(string init_coordinates_2d)
+			{
+				vector<string> values;
+				if (init_coordinates_2d.front() == '(')
+				{
+					init_coordinates_2d.erase(0,1);
+				}
+				if (init_coordinates_2d.back() == ')')
+				{
+					init_coordinates_2d.erase(init_coordinates_2d.size()-1,1);
+				}
+				boost::split(values,init_coordinates_2d,boost::is_any_of(","));
+				if (values.size() == 2)
+				{
+					if (is_angle(values[1]))
+					{
+						set_position(T(values[0]),angle(values[1]));
+					}
+					else
+					{
+						set_position(T(values[0]),T(values[1]));
+					}
+				}
+			}
 	};
 
 	template<>
@@ -184,29 +196,9 @@ namespace scifir
 			explicit coordinates_2d(scifir::point_2d<float>&& new_point) : x(std::move(new_point.x)),y(std::move(new_point.y))
 			{}
 
-			explicit coordinates_2d(string init_coordinates_2d) : coordinates_2d()
+			explicit coordinates_2d(const string& init_coordinates_2d) : coordinates_2d()
 			{
-				vector<string> values;
-				if (init_coordinates_2d.front() == '(')
-				{
-					init_coordinates_2d.erase(0,1);
-				}
-				if (init_coordinates_2d.back() == ')')
-				{
-					init_coordinates_2d.erase(init_coordinates_2d.size()-1,1);
-				}
-				boost::split(values,init_coordinates_2d,boost::is_any_of(","));
-				if (values.size() == 2)
-				{
-					if (is_angle(values[1]))
-					{
-						set_position(stof(values[0]),angle(values[1]));
-					}
-					else
-					{
-						set_position(stof(values[0]),stof(values[1]));
-					}
-				}
+				initialize_from_string(init_coordinates_2d);
 			}
 
 			coordinates_2d<float>& operator=(const coordinates_2d<float>& x_coordinates)
@@ -234,6 +226,12 @@ namespace scifir
 			{
 				x = std::move(x_point.x);
 				y = std::move(x_point.y);
+				return *this;
+			}
+
+			coordinates_2d<float>& operator=(const string& init_coordinates_2d)
+			{
+				initialize_from_string(init_coordinates_2d);
 				return *this;
 			}
 
@@ -299,6 +297,32 @@ namespace scifir
 
 			float x;
 			float y;
+
+		private:
+			void initialize_from_string(string init_coordinates_2d)
+			{
+				vector<string> values;
+				if (init_coordinates_2d.front() == '(')
+				{
+					init_coordinates_2d.erase(0,1);
+				}
+				if (init_coordinates_2d.back() == ')')
+				{
+					init_coordinates_2d.erase(init_coordinates_2d.size()-1,1);
+				}
+				boost::split(values,init_coordinates_2d,boost::is_any_of(","));
+				if (values.size() == 2)
+				{
+					if (is_angle(values[1]))
+					{
+						set_position(stof(values[0]),angle(values[1]));
+					}
+					else
+					{
+						set_position(stof(values[0]),stof(values[1]));
+					}
+				}
+			}
 	};
 
 	template<typename T>

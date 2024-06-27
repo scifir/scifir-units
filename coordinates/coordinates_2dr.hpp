@@ -47,40 +47,9 @@ namespace scifir
 			explicit coordinates_2dr(scifir::coordinates_2d<T>&& new_coordinates,const angle& new_theta) : x(std::move(new_coordinates.x)),y(std::move(new_coordinates.y)),theta(new_theta)
 			{}
 
-			explicit coordinates_2dr(string init_coordinates_2dr) : coordinates_2dr()
+			explicit coordinates_2dr(const string& init_coordinates_2dr) : coordinates_2dr()
 			{
-				vector<string> init_coordinates;
-				vector<string> init_values;
-				vector<string> init_angles;
-				if (init_coordinates_2dr.front() == '(')
-				{
-					init_coordinates_2dr.erase(0,1);
-				}
-				if (init_coordinates_2dr.back() == ')')
-				{
-					init_coordinates_2dr.erase(init_coordinates_2dr.size()-1,1);
-				}
-				boost::split(init_coordinates,init_coordinates_2dr,boost::is_any_of(";"));
-				if (init_coordinates.size() > 0)
-				{
-					boost::split(init_values,init_coordinates[0],boost::is_any_of(","));
-				}
-				if (init_coordinates.size() > 1)
-				{
-					boost::split(init_angles,init_coordinates[1],boost::is_any_of(","));
-				}
-				if (init_values.size() == 2 and init_angles.size() == 1)
-				{
-					if (is_angle(init_values[1]))
-					{
-						set_position(T(init_values[0]),angle(init_values[1]));
-					}
-					else
-					{
-						set_position(T(init_values[0]),T(init_values[1]));
-					}
-					theta = angle(init_angles[0]);
-				}
+				initialize_from_string(init_coordinates_2dr);
 			}
 
 			coordinates_2dr<T>& operator=(const coordinates_2dr<T>& x_coordinates)
@@ -124,6 +93,12 @@ namespace scifir
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
+				return *this;
+			}
+
+			coordinates_2dr<T>& operator=(const string& init_coordinates_2dr)
+			{
+				initialize_from_string(init_coordinates_2dr);
 				return *this;
 			}
 
@@ -226,6 +201,43 @@ namespace scifir
 			T x;
 			T y;
 			angle theta;
+
+		private:
+			void initialize_from_string(string init_coordinates_2dr)
+			{
+				vector<string> init_coordinates;
+				vector<string> init_values;
+				vector<string> init_angles;
+				if (init_coordinates_2dr.front() == '(')
+				{
+					init_coordinates_2dr.erase(0,1);
+				}
+				if (init_coordinates_2dr.back() == ')')
+				{
+					init_coordinates_2dr.erase(init_coordinates_2dr.size()-1,1);
+				}
+				boost::split(init_coordinates,init_coordinates_2dr,boost::is_any_of(";"));
+				if (init_coordinates.size() > 0)
+				{
+					boost::split(init_values,init_coordinates[0],boost::is_any_of(","));
+				}
+				if (init_coordinates.size() > 1)
+				{
+					boost::split(init_angles,init_coordinates[1],boost::is_any_of(","));
+				}
+				if (init_values.size() == 2 and init_angles.size() == 1)
+				{
+					if (is_angle(init_values[1]))
+					{
+						set_position(T(init_values[0]),angle(init_values[1]));
+					}
+					else
+					{
+						set_position(T(init_values[0]),T(init_values[1]));
+					}
+					theta = angle(init_angles[0]);
+				}
+			}
 	};
 
 	template<>
@@ -261,40 +273,9 @@ namespace scifir
 			explicit coordinates_2dr(scifir::coordinates_2d<float>&& new_point,const angle& new_theta) : x(std::move(new_point.x)),y(std::move(new_point.y)),theta(new_theta)
 			{}
 
-			explicit coordinates_2dr(string init_coordinates_2dr) : coordinates_2dr()
+			explicit coordinates_2dr(const string& init_coordinates_2dr) : coordinates_2dr()
 			{
-				vector<string> init_coordinates;
-				vector<string> init_values;
-				vector<string> init_angles;
-				if (init_coordinates_2dr.front() == '(')
-				{
-					init_coordinates_2dr.erase(0,1);
-				}
-				if (init_coordinates_2dr.back() == ')')
-				{
-					init_coordinates_2dr.erase(init_coordinates_2dr.size()-1,1);
-				}
-				boost::split(init_coordinates,init_coordinates_2dr,boost::is_any_of(";"));
-				if (init_coordinates.size() > 0)
-				{
-					boost::split(init_values,init_coordinates[0],boost::is_any_of(","));
-				}
-				if (init_coordinates.size() > 1)
-				{
-					boost::split(init_angles,init_coordinates[1],boost::is_any_of(","));
-				}
-				if (init_values.size() == 2 and init_angles.size() == 1)
-				{
-					if (is_angle(init_values[1]))
-					{
-						set_position(stof(init_values[0]),angle(init_values[1]));
-					}
-					else
-					{
-						set_position(stof(init_values[0]),stof(init_values[1]));
-					}
-					theta = angle(init_angles[0]);
-				}
+				initialize_from_string(init_coordinates_2dr);
 			}
 
 			coordinates_2dr<float>& operator=(const coordinates_2dr<float>& x_coordinates)
@@ -338,6 +319,12 @@ namespace scifir
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
+				return *this;
+			}
+
+			coordinates_2dr<float>& operator=(const string& init_coordinates_2dr)
+			{
+				initialize_from_string(init_coordinates_2dr);
 				return *this;
 			}
 
@@ -440,6 +427,43 @@ namespace scifir
 			float x;
 			float y;
 			angle theta;
+
+		private:
+			void initialize_from_string(string init_coordinates_2dr)
+			{
+				vector<string> init_coordinates;
+				vector<string> init_values;
+				vector<string> init_angles;
+				if (init_coordinates_2dr.front() == '(')
+				{
+					init_coordinates_2dr.erase(0,1);
+				}
+				if (init_coordinates_2dr.back() == ')')
+				{
+					init_coordinates_2dr.erase(init_coordinates_2dr.size()-1,1);
+				}
+				boost::split(init_coordinates,init_coordinates_2dr,boost::is_any_of(";"));
+				if (init_coordinates.size() > 0)
+				{
+					boost::split(init_values,init_coordinates[0],boost::is_any_of(","));
+				}
+				if (init_coordinates.size() > 1)
+				{
+					boost::split(init_angles,init_coordinates[1],boost::is_any_of(","));
+				}
+				if (init_values.size() == 2 and init_angles.size() == 1)
+				{
+					if (is_angle(init_values[1]))
+					{
+						set_position(stof(init_values[0]),angle(init_values[1]));
+					}
+					else
+					{
+						set_position(stof(init_values[0]),stof(init_values[1]));
+					}
+					theta = angle(init_angles[0]);
+				}
+			}
 	};
 
 	template<typename T>

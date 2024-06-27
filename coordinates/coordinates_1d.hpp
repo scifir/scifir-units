@@ -35,17 +35,9 @@ namespace scifir
 			explicit coordinates_1d(point_1d<T>&& new_point) : x(std::move(new_point.x))
 			{}
 
-			explicit coordinates_1d(string init_coordinates_1d) : coordinates_1d()
+			explicit coordinates_1d(const string& init_coordinates_1d) : coordinates_1d()
 			{
-				if (init_coordinates_1d.front() == '(')
-				{
-					init_coordinates_1d.erase(0,1);
-				}
-				if (init_coordinates_1d.back() == ')')
-				{
-					init_coordinates_1d.erase(init_coordinates_1d.size()-1,1);
-				}
-				x = T(init_coordinates_1d);
+				initialize_from_string(init_coordinates_1d);
 			}
 
 			coordinates_1d<T>& operator=(const coordinates_1d<T>& x_coordinates)
@@ -72,6 +64,12 @@ namespace scifir
 				return *this;
 			}
 
+			coordinates_1d<T>& operator=(const string& init_coordinates_1d)
+			{
+				initialize_from_string(init_coordinates_1d);
+				return *this;
+			}
+
 			void set_position(const T& new_x)
 			{
 				x = new_x;
@@ -88,6 +86,20 @@ namespace scifir
 			}
 
 			T x;
+
+		private:
+			void initialize_from_string(string init_coordinates_1d)
+			{
+				if (init_coordinates_1d.front() == '(')
+				{
+					init_coordinates_1d.erase(0,1);
+				}
+				if (init_coordinates_1d.back() == ')')
+				{
+					init_coordinates_1d.erase(init_coordinates_1d.size()-1,1);
+				}
+				x = T(init_coordinates_1d);
+			}
 	};
 
 	template<>
@@ -112,17 +124,9 @@ namespace scifir
 			explicit coordinates_1d(point_1d<float>&& new_point) : x(std::move(new_point.x))
 			{}
 
-			explicit coordinates_1d(string init_coordinates_1d) : coordinates_1d()
+			explicit coordinates_1d(const string& init_coordinates_1d) : coordinates_1d()
 			{
-				if (init_coordinates_1d.front() == '(')
-				{
-					init_coordinates_1d.erase(0,1);
-				}
-				if (init_coordinates_1d.back() == ')')
-				{
-					init_coordinates_1d.erase(init_coordinates_1d.size()-1,1);
-				}
-				x = stof(init_coordinates_1d);
+				initialize_from_string(init_coordinates_1d);
 			}
 
 			coordinates_1d<float>& operator=(const coordinates_1d<float>& x_coordinates)
@@ -149,6 +153,12 @@ namespace scifir
 				return *this;
 			}
 
+			coordinates_1d<float>& operator=(const string& init_coordinates_1d)
+			{
+				initialize_from_string(init_coordinates_1d);
+				return *this;
+			}
+
 			void set_position(float new_x)
 			{
 				x = new_x;
@@ -165,6 +175,20 @@ namespace scifir
 			}
 
 			float x;
+
+		private:
+			void initialize_from_string(string init_coordinates_1d)
+			{
+				if (init_coordinates_1d.front() == '(')
+				{
+					init_coordinates_1d.erase(0,1);
+				}
+				if (init_coordinates_1d.back() == ')')
+				{
+					init_coordinates_1d.erase(init_coordinates_1d.size()-1,1);
+				}
+				x = stof(init_coordinates_1d);
+			}
 	};
 
 	template<typename T>

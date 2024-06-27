@@ -146,6 +146,30 @@ TEST_CASE("class coordinates_ndr","Complete test of coordinates_ndr")
 		point_nd<> c8(100_m,1_m,2_m);
 		c7 = std::move(c8);
 		REQUIRE (bool(to_string(c7) == "(100 m,1 m,2 m;15\u00B0,25\u00B0)"));
+		coordinates_ndr<> d;
+		d = "(1 m)";
+		REQUIRE (bool(to_string(d) == "(1 m)"));
+		coordinates_ndr<> d2;
+		d2 = "(1 m,5 m;20\u00B0)";
+		REQUIRE (bool(to_string(d2) == "(1 m,5 m;20\u00B0)"));
+		coordinates_ndr<> d3;
+		d3 = "(1 m,45\u00B0;20\u00B0)";
+		REQUIRE (bool(to_string(d3) == "(0.7 m,0.7 m;20\u00B0)"));
+		coordinates_ndr<> d4;
+		d4 = "(1 m,5 m,2 m;15\u00B0,25\u00B0)";
+		REQUIRE (bool(to_string(d4) == "(1 m,5 m,2 m;15\u00B0,25\u00B0)"));
+		coordinates_ndr<> e;
+		e = "1 m,5 m,2 m;15\u00B0,25\u00B0";
+		REQUIRE (bool(to_string(e) == "(1 m,5 m,2 m;15\u00B0,25\u00B0)"));
+		coordinates_ndr<> f;
+		f = "2 m,45\u00B0,3 m;15\u00B0,25\u00B0";
+		REQUIRE (bool(to_string(f) == "(1.41 m,1.41 m,3 m;15\u00B0,25\u00B0)"));
+		coordinates_ndr<> g;
+		g = "2 m,45\u00B0,20\u00B0;15\u00B0,25\u00B0";
+		REQUIRE (bool(to_string(g) == "(0.48 m,0.48 m,1.87 m;15\u00B0,25\u00B0)"));
+		coordinates_ndr<> h;
+		h = "2 m,4 m,5 m,3 m;15\u00B0,25\u00B0,10\u00B0";
+		REQUIRE (bool(to_string(h) == "(2 m,4 m,5 m,3 m;15\u00B0,25\u00B0,10\u00B0)"));
 	}
 
 	SECTION("Assignments of coordinates_ndr<float> classes")
@@ -174,6 +198,30 @@ TEST_CASE("class coordinates_ndr","Complete test of coordinates_ndr")
 		coordinates_nd<float> c8(100.0f,1.0f,2.0f);
 		c7 = std::move(c8);
 		REQUIRE (bool(to_string(c7) == "(100,1,2;15\u00B0,25\u00B0)"));
+		coordinates_ndr<float> d;
+		d = "(1)";
+		REQUIRE (bool(to_string(d) == "(1)"));
+		coordinates_ndr<float> d2;
+		d2 = "(1,5;20\u00B0)";
+		REQUIRE (bool(to_string(d2) == "(1,5;20\u00B0)"));
+		coordinates_ndr<float> d3;
+		d3 = "(1,45\u00B0;20\u00B0)";
+		REQUIRE (bool(to_string(d3) == "(0.7,0.7;20\u00B0)"));
+		coordinates_ndr<float> d4;
+		d4 = "(1,5,2;15\u00B0,25\u00B0)";
+		REQUIRE (bool(to_string(d4) == "(1,5,2;15\u00B0,25\u00B0)"));
+		coordinates_ndr<float> e;
+		e = "1,5,2;15\u00B0,25\u00B0";
+		REQUIRE (bool(to_string(e) == "(1,5,2;15\u00B0,25\u00B0)"));
+		coordinates_ndr<float> f;
+		f = "2,45\u00B0,3;15\u00B0,25\u00B0";
+		REQUIRE (bool(to_string(f) == "(1.41,1.41,3;15\u00B0,25\u00B0)"));
+		coordinates_ndr<float> g;
+		g = "2,45\u00B0,20\u00B0;15\u00B0,25\u00B0";
+		REQUIRE (bool(to_string(g) == "(0.48,0.48,1.87;15\u00B0,25\u00B0)"));
+		coordinates_ndr<float> h;
+		h = "2,4,5,3;15\u00B0,25\u00B0,10\u00B0";
+		REQUIRE (bool(to_string(h) == "(2,4,5,3;15\u00B0,25\u00B0,10\u00B0)"));
 	}
 
 	SECTION("nd functions of coordinates_ndr<> classes")

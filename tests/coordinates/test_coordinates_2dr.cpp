@@ -100,6 +100,12 @@ TEST_CASE("class coordinates_2dr","Complete test of coordinates_2dr")
 		coordinates_2d<> h2(15_m,2_m);
 		g2 = std::move(h2);
 		REQUIRE (bool(to_string(g2) == "(15 m,2 m;40\u00B0)"));
+		coordinates_2dr<> i;
+		i = "(1 m,5 m;0\u00B0)";
+		REQUIRE (bool(to_string(i) == "(1 m,5 m;0\u00B0)"));
+		coordinates_2dr<> j;
+		j = "100 m,90\u00B0;0\u00B0";
+		REQUIRE (bool(to_string(j) == "(0 m,100 m;0\u00B0)"));
 	}
 
 	SECTION("Assignments of coordinates_2dr<float> classes")
@@ -128,6 +134,12 @@ TEST_CASE("class coordinates_2dr","Complete test of coordinates_2dr")
 		coordinates_2d<float> h2(15,2);
 		g2 = std::move(h2);
 		REQUIRE (bool(to_string(g2) == "(15,2;40\u00B0)"));
+		coordinates_2dr<float> i;
+		i = "(1,5;0\u00B0)";
+		REQUIRE (bool(to_string(i) == "(1,5;0\u00B0)"));
+		coordinates_2dr<float> j;
+		j = "100,90\u00B0;0\u00B0";
+		REQUIRE (bool(to_string(j) == "(0,100;0\u00B0)"));
 	}
 
 	SECTION("Polar coordinates of coordinates_2d")
