@@ -130,11 +130,32 @@ namespace scifir
 				}
 			}
 
+			explicit coordinates_ndr(point_nd<T>&& new_point,const vector<float>& new_angles) : values(),angles()
+			{
+				if (new_point.values.size() == (new_angles.size() + 1))
+				{
+					values = std::move(new_point.values);
+					for(const float& x_angle : new_angles)
+					{
+						angles.push_back(angle(x_angle));
+					}
+				}
+			}
+
 			explicit coordinates_ndr(const point_nd<T>& new_point,const vector<angle>& new_angles) : values(),angles()
 			{
 				if (new_point.values.size() == (new_angles.size() + 1))
 				{
 					values = new_point.values;
+					angles = new_angles;
+				}
+			}
+
+			explicit coordinates_ndr(point_nd<T>&& new_point,const vector<angle>& new_angles) : values(),angles()
+			{
+				if (new_point.values.size() == (new_angles.size() + 1))
+				{
+					values = std::move(new_point.values);
 					angles = new_angles;
 				}
 			}
@@ -151,11 +172,32 @@ namespace scifir
 				}
 			}
 
+			explicit coordinates_ndr(coordinates_nd<T>&& new_coordinates,const vector<float>& new_angles) : values(),angles()
+			{
+				if (new_coordinates.values.size() == (new_angles.size() + 1))
+				{
+					values = std::move(new_coordinates.values);
+					for(const float& x_angle : new_angles)
+					{
+						angles.push_back(angle(x_angle));
+					}
+				}
+			}
+
 			explicit coordinates_ndr(const coordinates_nd<T>& new_coordinates,const vector<angle>& new_angles) : values(),angles()
 			{
 				if (new_coordinates.values.size() == (new_angles.size() + 1))
 				{
 					values = new_coordinates.values;
+					angles = new_angles;
+				}
+			}
+
+			explicit coordinates_ndr(coordinates_nd<T>&& new_coordinates,const vector<angle>& new_angles) : values(),angles()
+			{
+				if (new_coordinates.values.size() == (new_angles.size() + 1))
+				{
+					values = std::move(new_coordinates.values);
 					angles = new_angles;
 				}
 			}
@@ -285,11 +327,29 @@ namespace scifir
 				return *this;
 			}
 
+			coordinates_ndr<T>& operator=(point_nd<T>&& x_point)
+			{
+				if (x_point.values.size() == (angles.size() + 1))
+				{
+					values = std::move(x_point.values);
+				}
+				return *this;
+			}
+
 			coordinates_ndr<T>& operator=(const coordinates_nd<T>& x_coordinates)
 			{
 				if (x_coordinates.values.size() == (angles.size() + 1))
 				{
 					values = x_coordinates.values;
+				}
+				return *this;
+			}
+
+			coordinates_ndr<T>& operator=(coordinates_nd<T>&& x_coordinates)
+			{
+				if (x_coordinates.values.size() == (angles.size() + 1))
+				{
+					values = std::move(x_coordinates.values);
 				}
 				return *this;
 			}
@@ -1087,11 +1147,32 @@ namespace scifir
 				}
 			}
 
+			coordinates_ndr(point_nd<float>&& new_point,const vector<float>& new_angles) : values(),angles()
+			{
+				if (new_point.values.size() == (new_angles.size() + 1))
+				{
+					values = std::move(new_point.values);
+					for(const float& x_angle : new_angles)
+					{
+						angles.push_back(angle(x_angle));
+					}
+				}
+			}
+
 			coordinates_ndr(const point_nd<float>& new_point,const vector<angle>& new_angles) : values(),angles()
 			{
 				if (new_point.values.size() == (new_angles.size() + 1))
 				{
 					values = new_point.values;
+					angles = new_angles;
+				}
+			}
+
+			coordinates_ndr(point_nd<float>&& new_point,const vector<angle>& new_angles) : values(),angles()
+			{
+				if (new_point.values.size() == (new_angles.size() + 1))
+				{
+					values = std::move(new_point.values);
 					angles = new_angles;
 				}
 			}
@@ -1108,11 +1189,32 @@ namespace scifir
 				}
 			}
 
+			explicit coordinates_ndr(coordinates_nd<float>&& new_coordinates,const vector<float>& new_angles) : values(),angles()
+			{
+				if (new_coordinates.values.size() == (new_angles.size() + 1))
+				{
+					values = std::move(new_coordinates.values);
+					for(const float& x_angle : new_angles)
+					{
+						angles.push_back(angle(x_angle));
+					}
+				}
+			}
+
 			explicit coordinates_ndr(const coordinates_nd<float>& new_coordinates,const vector<angle>& new_angles) : values(),angles()
 			{
 				if (new_coordinates.values.size() == (new_angles.size() + 1))
 				{
 					values = new_coordinates.values;
+					angles = new_angles;
+				}
+			}
+
+			explicit coordinates_ndr(coordinates_nd<float>&& new_coordinates,const vector<angle>& new_angles) : values(),angles()
+			{
+				if (new_coordinates.values.size() == (new_angles.size() + 1))
+				{
+					values = std::move(new_coordinates.values);
 					angles = new_angles;
 				}
 			}
@@ -1242,11 +1344,29 @@ namespace scifir
 				return *this;
 			}
 
+			coordinates_ndr<float>& operator=(point_nd<float>&& x_point)
+			{
+				if (x_point.values.size() == (angles.size() + 1))
+				{
+					values = std::move(x_point.values);
+				}
+				return *this;
+			}
+
 			coordinates_ndr<float>& operator=(const coordinates_nd<float>& x_coordinates)
 			{
 				if (x_coordinates.values.size() == (angles.size() + 1))
 				{
 					values = x_coordinates.values;
+				}
+				return *this;
+			}
+
+			coordinates_ndr<float>& operator=(coordinates_nd<float>&& x_coordinates)
+			{
+				if (x_coordinates.values.size() == (angles.size() + 1))
+				{
+					values = std::move(x_coordinates.values);
 				}
 				return *this;
 			}
@@ -2243,6 +2363,8 @@ ostream& operator <<(ostream& os,const scifir::coordinates_ndr<T>& x)
 {
 	return os << to_string(x);
 }
+
+ostream& operator <<(ostream& os,const scifir::coordinates_ndr<float>& x);
 
 template<typename T>
 istream& operator >>(istream& is, scifir::coordinates_ndr<T>& x)

@@ -35,6 +35,15 @@ TEST_CASE("class coordinates_ndr","Complete test of coordinates_ndr")
 		point_nd<> c2(100_m,1_m,2_m);
 		coordinates_ndr<> c(c2,{angle(15.0f),angle(25.0f)});
 		REQUIRE (bool(to_string(c) == "(100 m,1 m,2 m;15\u00B0,25\u00B0)"));
+		point_nd<> c4(100_m,1_m,2_m);
+		coordinates_ndr<> c3(std::move(c4),{angle(15.0f),angle(25.0f)});
+		REQUIRE (bool(to_string(c3) == "(100 m,1 m,2 m;15\u00B0,25\u00B0)"));
+		coordinates_nd<> c6(100_m,1_m,2_m);
+		coordinates_ndr<> c5(c6,{angle(15.0f),angle(25.0f)});
+		REQUIRE (bool(to_string(c5) == "(100 m,1 m,2 m;15\u00B0,25\u00B0)"));
+		coordinates_nd<> c8(100_m,1_m,2_m);
+		coordinates_ndr<> c7(std::move(c8),{angle(15.0f),angle(25.0f)});
+		REQUIRE (bool(to_string(c7) == "(100 m,1 m,2 m;15\u00B0,25\u00B0)"));
 		coordinates_ndr<> d("(1 m)");
 		REQUIRE (bool(to_string(d) == "(1 m)"));
 		coordinates_ndr<> d2("(1 m,5 m;20\u00B0)");
@@ -80,6 +89,15 @@ TEST_CASE("class coordinates_ndr","Complete test of coordinates_ndr")
 		point_nd<float> c2(100.0f,1.0f,2.0f);
 		coordinates_ndr<float> c(c2,{angle(15.0f),angle(25.0f)});
 		REQUIRE (bool(to_string(c) == "(100,1,2;15\u00B0,25\u00B0)"));
+		point_nd<float> c4(100.0f,1.0f,2.0f);
+		coordinates_ndr<float> c3(std::move(c4),{angle(15.0f),angle(25.0f)});
+		REQUIRE (bool(to_string(c3) == "(100,1,2;15\u00B0,25\u00B0)"));
+		coordinates_nd<float> c6(100.0f,1.0f,2.0f);
+		coordinates_ndr<float> c5(c6,{angle(15.0f),angle(25.0f)});
+		REQUIRE (bool(to_string(c5) == "(100,1,2;15\u00B0,25\u00B0)"));
+		coordinates_nd<float> c8(100.0f,1.0f,2.0f);
+		coordinates_ndr<float> c7(std::move(c8),{angle(15.0f),angle(25.0f)});
+		REQUIRE (bool(to_string(c7) == "(100,1,2;15\u00B0,25\u00B0)"));
 		coordinates_ndr<float> d("(1)");
 		REQUIRE (bool(to_string(d) == "(1)"));
 		coordinates_ndr<float> d2("(1,5;20\u00B0)");
@@ -112,6 +130,18 @@ TEST_CASE("class coordinates_ndr","Complete test of coordinates_ndr")
 		point_nd<> c2(100_m,1_m,2_m);
 		c = c2;
 		REQUIRE (bool(to_string(c) == "(100 m,1 m,2 m;15\u00B0,25\u00B0)"));
+		coordinates_ndr<> c3(5_m,5_m,1_m,angle(15.0f),angle(25.0f));
+		point_nd<> c4(100_m,1_m,2_m);
+		c3 = std::move(c4);
+		REQUIRE (bool(to_string(c3) == "(100 m,1 m,2 m;15\u00B0,25\u00B0)"));
+		coordinates_ndr<> c5(5_m,5_m,1_m,angle(15.0f),angle(25.0f));
+		point_nd<> c6(100_m,1_m,2_m);
+		c5 = c6;
+		REQUIRE (bool(to_string(c5) == "(100 m,1 m,2 m;15\u00B0,25\u00B0)"));
+		coordinates_ndr<> c7(5_m,5_m,1_m,angle(15.0f),angle(25.0f));
+		point_nd<> c8(100_m,1_m,2_m);
+		c7 = std::move(c8);
+		REQUIRE (bool(to_string(c7) == "(100 m,1 m,2 m;15\u00B0,25\u00B0)"));
 	}
 
 	SECTION("Assignments of coordinates_ndr<float> classes")
@@ -128,6 +158,18 @@ TEST_CASE("class coordinates_ndr","Complete test of coordinates_ndr")
 		point_nd<float> c2(100.0f,1.0f,2.0f);
 		c = c2;
 		REQUIRE (bool(to_string(c) == "(100,1,2;15\u00B0,25\u00B0)"));
+		coordinates_ndr<float> c3(5.0f,5.0f,1.0f,angle(15.0f),angle(25.0f));
+		point_nd<float> c4(100.0f,1.0f,2.0f);
+		c3 = std::move(c4);
+		REQUIRE (bool(to_string(c3) == "(100,1,2;15\u00B0,25\u00B0)"));
+		coordinates_ndr<float> c5(5.0f,5.0f,1.0f,angle(15.0f),angle(25.0f));
+		coordinates_nd<float> c6(100.0f,1.0f,2.0f);
+		c5 = c6;
+		REQUIRE (bool(to_string(c5) == "(100,1,2;15\u00B0,25\u00B0)"));
+		coordinates_ndr<float> c7(5.0f,5.0f,1.0f,angle(15.0f),angle(25.0f));
+		coordinates_nd<float> c8(100.0f,1.0f,2.0f);
+		c7 = std::move(c8);
+		REQUIRE (bool(to_string(c7) == "(100,1,2;15\u00B0,25\u00B0)"));
 	}
 
 	SECTION("nd functions of coordinates_ndr<> classes")

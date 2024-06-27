@@ -29,12 +29,18 @@ TEST_CASE("class coordinates_3dr<T>","Complete test of coordinates_3dr")
 		point_3d<> c2(100_m,1_m,2_m);
 		coordinates_3dr<> c(c2,angle(0),angle(0));
 		REQUIRE (bool(to_string(c) == "(100 m,1 m,2 m;0\u00B0,0\u00B0)"));
+		point_3d<> c4(100_m,1_m,2_m);
+		coordinates_3dr<> c3(std::move(c4),angle(0),angle(0));
+		REQUIRE (bool(to_string(c3) == "(100 m,1 m,2 m;0\u00B0,0\u00B0)"));
 		coordinates_3d<> c5(100_m,1_m,2_m);
 		coordinates_3dr<> c6(c5,angle(0),angle(0));
 		REQUIRE (bool(to_string(c6) == "(100 m,1 m,2 m;0\u00B0,0\u00B0)"));
-		coordinates_3dr<> c3(100_m,1_m,2_m,angle(0),angle(0));
-		coordinates_3dr<> c4(c3);
-		REQUIRE (bool(to_string(c) == "(100 m,1 m,2 m;0\u00B0,0\u00B0)"));
+		coordinates_3d<> c7(100_m,1_m,2_m);
+		coordinates_3dr<> c8(std::move(c7),angle(0),angle(0));
+		REQUIRE (bool(to_string(c8) == "(100 m,1 m,2 m;0\u00B0,0\u00B0)"));
+		coordinates_3dr<> c9(100_m,1_m,2_m,angle(0),angle(0));
+		coordinates_3dr<> c10(c9);
+		REQUIRE (bool(to_string(c10) == "(100 m,1 m,2 m;0\u00B0,0\u00B0)"));
 		coordinates_3dr<> d("(1 m,5 m,2 m;0\u00B0,0\u00B0)");
 		REQUIRE (bool(to_string(d) == "(1 m,5 m,2 m;0\u00B0,0\u00B0)"));
 		coordinates_3dr<> e("1 m,5 m,2 m;0\u00B0,0\u00B0");
@@ -66,12 +72,18 @@ TEST_CASE("class coordinates_3dr<T>","Complete test of coordinates_3dr")
 		point_3d<float> c2(100.0f,1.0f,2.0f);
 		coordinates_3dr<float> c(c2,angle(0),angle(0));
 		REQUIRE (bool(to_string(c) == "(100,1,2;0\u00B0,0\u00B0)"));
+		point_3d<float> c4(100.0f,1.0f,2.0f);
+		coordinates_3dr<float> c3(std::move(c4),angle(0),angle(0));
+		REQUIRE (bool(to_string(c3) == "(100,1,2;0\u00B0,0\u00B0)"));
 		coordinates_3d<float> c5(100.0f,1.0f,2.0f);
 		coordinates_3dr<float> c6(c5,angle(0),angle(0));
 		REQUIRE (bool(to_string(c6) == "(100,1,2;0\u00B0,0\u00B0)"));
-		coordinates_3dr<float> c3(100.0f,1.0f,2.0f,angle(0),angle(0));
-		coordinates_3dr<float> c4(c3);
-		REQUIRE (bool(to_string(c) == "(100,1,2;0\u00B0,0\u00B0)"));
+		coordinates_3d<float> c7(100.0f,1.0f,2.0f);
+		coordinates_3dr<float> c8(std::move(c7),angle(0),angle(0));
+		REQUIRE (bool(to_string(c8) == "(100,1,2;0\u00B0,0\u00B0)"));
+		coordinates_3dr<float> c9(100.0f,1.0f,2.0f,angle(0),angle(0));
+		coordinates_3dr<float> c10(c9);
+		REQUIRE (bool(to_string(c10) == "(100,1,2;0\u00B0,0\u00B0)"));
 		coordinates_3dr<float> d("(1,5,2;0\u00B0,0\u00B0)");
 		REQUIRE (bool(to_string(d) == "(1,5,2;0\u00B0,0\u00B0)"));
 		coordinates_3dr<float> e("1,5,2;0\u00B0,0\u00B0");
@@ -96,10 +108,18 @@ TEST_CASE("class coordinates_3dr<T>","Complete test of coordinates_3dr")
 		point_3d<> c2(100_m,1_m,2_m);
 		c = c2;
 		REQUIRE (bool(to_string(c) == "(100 m,1 m,2 m;0\u00B0,0\u00B0)"));
+		coordinates_3dr<> c3;
+		point_3d<> c4(100_m,1_m,2_m);
+		c3 = std::move(c4);
+		REQUIRE (bool(to_string(c3) == "(100 m,1 m,2 m;0\u00B0,0\u00B0)"));
 		coordinates_3dr<> d;
 		coordinates_3d<> d2(100_m,1_m,2_m);
 		d = d2;
 		REQUIRE (bool(to_string(d) == "(100 m,1 m,2 m;0\u00B0,0\u00B0)"));
+		coordinates_3dr<> d3;
+		coordinates_3d<> d4(100_m,1_m,2_m);
+		d3 = std::move(d4);
+		REQUIRE (bool(to_string(d3) == "(100 m,1 m,2 m;0\u00B0,0\u00B0)"));
 	}
 
 	SECTION("Assignments of coordinates_3dr<float> classes")
@@ -116,10 +136,18 @@ TEST_CASE("class coordinates_3dr<T>","Complete test of coordinates_3dr")
 		point_3d<float> c2(100.0f,1.0f,2.0f);
 		c = c2;
 		REQUIRE (bool(to_string(c) == "(100,1,2;0\u00B0,0\u00B0)"));
+		coordinates_3dr<float> c3;
+		point_3d<float> c4(100.0f,1.0f,2.0f);
+		c3 = std::move(c4);
+		REQUIRE (bool(to_string(c3) == "(100,1,2;0\u00B0,0\u00B0)"));
 		coordinates_3dr<float> d;
-		point_3d<float> d2(100.0f,1.0f,2.0f);
+		coordinates_3d<float> d2(100.0f,1.0f,2.0f);
 		d = d2;
 		REQUIRE (bool(to_string(d) == "(100,1,2;0\u00B0,0\u00B0)"));
+		coordinates_3dr<float> d3;
+		coordinates_3d<float> d4(100.0f,1.0f,2.0f);
+		d3 = std::move(d4);
+		REQUIRE (bool(to_string(d3) == "(100,1,2;0\u00B0,0\u00B0)"));
 	}
 
 	SECTION("Values of different coordinates systems of coordinates_3dr<> classes")

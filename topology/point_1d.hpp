@@ -32,6 +32,8 @@ namespace scifir
 
 			explicit point_1d(const coordinates_1d<T>&);
 
+			explicit point_1d(coordinates_1d<T>&&);
+
 			explicit point_1d(string init_point_1d) : point_1d()
 			{
 				if (init_point_1d.front() == '(')
@@ -58,6 +60,8 @@ namespace scifir
 			}
 
 			point_1d<T>& operator=(const coordinates_1d<T>&);
+
+			point_1d<T>& operator=(coordinates_1d<T>&&);
 
 			void set_position(const T& new_x)
 			{
@@ -95,6 +99,8 @@ namespace scifir
 
 			explicit point_1d(const coordinates_1d<float>&);
 
+			explicit point_1d(coordinates_1d<float>&&);
+
 			explicit point_1d(string init_point_1d) : point_1d()
 			{
 				if (init_point_1d.front() == '(')
@@ -121,6 +127,8 @@ namespace scifir
 			}
 
 			point_1d<float>& operator=(const coordinates_1d<float>&);
+
+			point_1d<float>& operator=(coordinates_1d<float>&&);
 
 			void set_position(const float& new_x)
 			{
@@ -218,6 +226,8 @@ ostream& operator <<(ostream& os,const scifir::point_1d<T>& x)
 {
 	return os << to_string(x);
 }
+
+ostream& operator <<(ostream& os,const scifir::point_1d<float>& x);
 
 template<typename T>
 istream& operator >>(istream& is, scifir::point_1d<T>& x)

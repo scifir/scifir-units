@@ -48,6 +48,8 @@ namespace scifir
 
 			explicit point_3d(const coordinates_3d<T>&);
 
+			explicit point_3d(coordinates_3d<T>&&);
+
 			explicit point_3d(string init_point_3d) : point_3d()
 			{
 				vector<string> values;
@@ -113,6 +115,8 @@ namespace scifir
 			}
 
 			point_3d<T>& operator=(const coordinates_3d<T>&);
+
+			point_3d<T>& operator=(coordinates_3d<T>&&);
 
 			T get_p() const
 			{
@@ -295,6 +299,8 @@ namespace scifir
 
 			explicit point_3d(const coordinates_3d<float>&);
 
+			explicit point_3d(coordinates_3d<float>&&);
+
 			explicit point_3d(string init_point_3d) : point_3d()
 			{
 				vector<string> values;
@@ -360,6 +366,8 @@ namespace scifir
 			}
 
 			point_3d<float>& operator=(const coordinates_3d<float>&);
+
+			point_3d<float>& operator=(coordinates_3d<float>&&);
 
 			float get_p() const
 			{

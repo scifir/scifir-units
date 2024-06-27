@@ -29,7 +29,7 @@ namespace scifir
 	}
 }
 
-ostream& operator << (ostream& os,const scifir::coordinates_2d<float>& x)
+ostream& operator <<(ostream& os,const scifir::coordinates_2d<float>& x)
 {
 	return os << scifir::to_string(x);
 }

@@ -49,6 +49,9 @@ namespace scifir
 			explicit coordinates_3d(const point_3d<T>& x_point) : x(x_point.x),y(x_point.y),z(x_point.z)
 			{}
 
+			explicit coordinates_3d(point_3d<T>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y)),z(std::move(x_point.z))
+			{}
+
 			explicit coordinates_3d(string init_coordinates_3d) : coordinates_3d()
 			{
 				vector<string> values;
@@ -118,6 +121,14 @@ namespace scifir
 				x = x_point.x;
 				y = x_point.y;
 				z = x_point.z;
+				return *this;
+			}
+
+			coordinates_3d<T>& operator=(point_3d<T>&& x_point)
+			{
+				x = std::move(x_point.x);
+				y = std::move(x_point.y);
+				z = std::move(x_point.z);
 				return *this;
 			}
 
@@ -303,6 +314,9 @@ namespace scifir
 			explicit coordinates_3d(const point_3d<float>& x_point) : x(x_point.x),y(x_point.y),z(x_point.z)
 			{}
 
+			explicit coordinates_3d(point_3d<float>&& x_point) : x(std::move(x_point.x)),y(std::move(x_point.y)),z(std::move(x_point.z))
+			{}
+
 			explicit coordinates_3d(string init_coordinates_3d) : coordinates_3d()
 			{
 				vector<string> values;
@@ -372,6 +386,14 @@ namespace scifir
 				x = x_point.x;
 				y = x_point.y;
 				z = x_point.z;
+				return *this;
+			}
+
+			coordinates_3d<float>& operator=(point_3d<float>&& x_point)
+			{
+				x = std::move(x_point.x);
+				y = std::move(x_point.y);
+				z = std::move(x_point.z);
 				return *this;
 			}
 
@@ -847,10 +869,12 @@ string operator +(const scifir::coordinates_3d<T>& x,const string& y)
 }
 
 template<typename T>
-ostream& operator << (ostream& os, const scifir::coordinates_3d<T>& x)
+ostream& operator <<(ostream& os, const scifir::coordinates_3d<T>& x)
 {
 	return os << to_string(x);
 }
+
+ostream& operator <<(ostream& os,const scifir::coordinates_3d<float>& x);
 
 template<typename T>
 istream& operator >>(istream& is, scifir::coordinates_3d<T>& x)

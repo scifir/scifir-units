@@ -38,7 +38,13 @@ namespace scifir
 			explicit coordinates_2dr(const scifir::point_2d<T>& new_point,const angle& new_theta) : x(new_point.x),y(new_point.y),theta(new_theta)
 			{}
 
+			explicit coordinates_2dr(scifir::point_2d<T>&& new_point,const angle& new_theta) : x(std::move(new_point.x)),y(std::move(new_point.y)),theta(new_theta)
+			{}
+
 			explicit coordinates_2dr(const scifir::coordinates_2d<T>& new_coordinates,const angle& new_theta) : x(new_coordinates.x),y(new_coordinates.y),theta(new_theta)
+			{}
+
+			explicit coordinates_2dr(scifir::coordinates_2d<T>&& new_coordinates,const angle& new_theta) : x(std::move(new_coordinates.x)),y(std::move(new_coordinates.y)),theta(new_theta)
 			{}
 
 			explicit coordinates_2dr(string init_coordinates_2dr) : coordinates_2dr()
@@ -100,10 +106,24 @@ namespace scifir
 				return *this;
 			}
 
+			coordinates_2dr<T>& operator=(point_2d<T>&& x_point)
+			{
+				x = std::move(x_point.x);
+				y = std::move(x_point.y);
+				return *this;
+			}
+
 			coordinates_2dr<T>& operator=(const coordinates_2d<T>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
+				return *this;
+			}
+
+			coordinates_2dr<T>& operator=(coordinates_2d<T>&& x_coordinates)
+			{
+				x = std::move(x_coordinates.x);
+				y = std::move(x_coordinates.y);
 				return *this;
 			}
 
@@ -232,7 +252,13 @@ namespace scifir
 			explicit coordinates_2dr(const scifir::point_2d<float>& new_point,const angle& new_theta) : x(new_point.x),y(new_point.y),theta(new_theta)
 			{}
 
+			explicit coordinates_2dr(scifir::point_2d<float>&& new_point,const angle& new_theta) : x(std::move(new_point.x)),y(std::move(new_point.y)),theta(new_theta)
+			{}
+
 			explicit coordinates_2dr(const scifir::coordinates_2d<float>& new_point,const angle& new_theta) : x(new_point.x),y(new_point.y),theta(new_theta)
+			{}
+
+			explicit coordinates_2dr(scifir::coordinates_2d<float>&& new_point,const angle& new_theta) : x(std::move(new_point.x)),y(std::move(new_point.y)),theta(new_theta)
 			{}
 
 			explicit coordinates_2dr(string init_coordinates_2dr) : coordinates_2dr()
@@ -294,10 +320,24 @@ namespace scifir
 				return *this;
 			}
 
+			coordinates_2dr<float>& operator=(point_2d<float>&& x_point)
+			{
+				x = std::move(x_point.x);
+				y = std::move(x_point.y);
+				return *this;
+			}
+
 			coordinates_2dr<float>& operator=(const coordinates_2d<float>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
+				return *this;
+			}
+
+			coordinates_2dr<float>& operator=(coordinates_2d<float>&& x_coordinates)
+			{
+				x = std::move(x_coordinates.x);
+				y = std::move(x_coordinates.y);
 				return *this;
 			}
 
@@ -593,12 +633,12 @@ string operator +(const scifir::coordinates_2dr<T>& x,const string& y)
 }
 
 template<typename T>
-ostream& operator << (ostream& os, const scifir::coordinates_2dr<T>& x)
+ostream& operator <<(ostream& os, const scifir::coordinates_2dr<T>& x)
 {
 	return os << to_string(x);
 }
 
-ostream& operator << (ostream& os,const scifir::coordinates_2dr<float>& x);
+ostream& operator <<(ostream& os,const scifir::coordinates_2dr<float>& x);
 
 template<typename T>
 istream& operator >>(istream& is,scifir::coordinates_2dr<T>& x)

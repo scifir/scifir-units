@@ -37,6 +37,9 @@ namespace scifir
 			explicit coordinates_2d(const scifir::point_2d<T>& new_point) : x(new_point.x),y(new_point.y)
 			{}
 
+			explicit coordinates_2d(scifir::point_2d<T>&& new_point) : x(std::move(new_point.x)),y(std::move(new_point.y))
+			{}
+
 			explicit coordinates_2d(string init_coordinates_2d) : coordinates_2d()
 			{
 				vector<string> values;
@@ -80,6 +83,13 @@ namespace scifir
 			{
 				x = x_point.x;
 				y = x_point.y;
+				return *this;
+			}
+
+			coordinates_2d<T>& operator=(point_2d<T>&& x_point)
+			{
+				x = std::move(x_point.x);
+				y = std::move(x_point.y);
 				return *this;
 			}
 
@@ -171,6 +181,9 @@ namespace scifir
 			explicit coordinates_2d(const scifir::point_2d<float>& new_point) : x(new_point.x),y(new_point.y)
 			{}
 
+			explicit coordinates_2d(scifir::point_2d<float>&& new_point) : x(std::move(new_point.x)),y(std::move(new_point.y))
+			{}
+
 			explicit coordinates_2d(string init_coordinates_2d) : coordinates_2d()
 			{
 				vector<string> values;
@@ -214,6 +227,13 @@ namespace scifir
 			{
 				x = x_point.x;
 				y = x_point.y;
+				return *this;
+			}
+
+			coordinates_2d<float>& operator=(point_2d<float>&& x_point)
+			{
+				x = std::move(x_point.x);
+				y = std::move(x_point.y);
 				return *this;
 			}
 
@@ -280,18 +300,6 @@ namespace scifir
 			float x;
 			float y;
 	};
-
-	template<typename T>
-	point_2d<T>::point_2d(const coordinates_2d<T>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y)
-	{}
-
-	template<typename T>
-	point_2d<T>& point_2d<T>::operator=(const coordinates_2d<T>& x_coordinates)
-	{
-		x = x_coordinates.x;
-		y = x_coordinates.y;
-		return *this;
-	}
 
 	template<typename T>
 	string to_string(const coordinates_2d<T>& x)
@@ -472,12 +480,12 @@ string operator +(const scifir::coordinates_2d<T>& x,const string& y)
 }
 
 template<typename T>
-ostream& operator << (ostream& os,const scifir::coordinates_2d<T>& x)
+ostream& operator <<(ostream& os,const scifir::coordinates_2d<T>& x)
 {
 	return os << to_string(x);
 }
 
-ostream& operator << (ostream& os,const scifir::coordinates_2d<float>& x);
+ostream& operator <<(ostream& os,const scifir::coordinates_2d<float>& x);
 
 template<typename T>
 istream& operator >>(istream& is,scifir::coordinates_2d<T>& x)

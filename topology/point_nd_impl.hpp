@@ -14,9 +14,20 @@ namespace scifir
 	{}
 
 	template<typename T>
+	point_nd<T>::point_nd(coordinates_nd<T>&& new_coordinates) : values(std::move(new_coordinates.values))
+	{}
+
+	template<typename T>
 	point_nd<T>& point_nd<T>::operator=(const coordinates_nd<T>& x_coordinates)
 	{
 		values = x_coordinates.values;
+		return *this;
+	}
+
+	template<typename T>
+	point_nd<T>& point_nd<T>::operator=(coordinates_nd<T>&& x_coordinates)
+	{
+		values = std::move(x_coordinates.values);
 		return *this;
 	}
 }

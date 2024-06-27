@@ -37,6 +37,8 @@ namespace scifir
 
 			explicit point_2d(const scifir::coordinates_2d<T>& new_coordinates);
 
+			explicit point_2d(scifir::coordinates_2d<T>&& new_coordinates);
+
 			explicit point_2d(string init_point_2d) : point_2d()
 			{
 				vector<string> values;
@@ -77,6 +79,8 @@ namespace scifir
 			}
 
 			point_2d<T>& operator=(const coordinates_2d<T>&);
+
+			point_2d<T>& operator=(coordinates_2d<T>&&);
 
 			T get_p() const
 			{
@@ -165,6 +169,8 @@ namespace scifir
 
 			explicit point_2d(const coordinates_2d<float>&);
 
+			explicit point_2d(coordinates_2d<float>&&);
+
 			explicit point_2d(string init_point_2d) : point_2d()
 			{
 				vector<string> values;
@@ -205,6 +211,8 @@ namespace scifir
 			}
 
 			point_2d<float>& operator=(const coordinates_2d<float>& x_coordinates);
+
+			point_2d<float>& operator=(coordinates_2d<float>&& x_coordinates);
 
 			float get_p() const
 			{

@@ -71,6 +71,9 @@ namespace scifir
 			explicit coordinates_nd(const point_nd<T>& new_point) : values(new_point.values)
 			{}
 
+			explicit coordinates_nd(point_nd<T>&& new_point) : values(std::move(new_point.values))
+			{}
+
 			explicit coordinates_nd(string init_coordinates_nd) : values()
 			{
 				vector<string> init_values;
@@ -152,6 +155,12 @@ namespace scifir
 			coordinates_nd<T>& operator=(const point_nd<T>& x_point)
 			{
 				values = x_point.values;
+				return *this;
+			}
+
+			coordinates_nd<T>& operator=(point_nd<T>&& x_point)
+			{
+				values = std::move(x_point.values);
 				return *this;
 			}
 
@@ -545,6 +554,9 @@ namespace scifir
 			explicit coordinates_nd(const point_nd<float>& new_point) : values(new_point.values)
 			{}
 
+			explicit coordinates_nd(point_nd<float>&& new_point) : values(std::move(new_point.values))
+			{}
+
 			explicit coordinates_nd(string init_coordinates_nd) : values()
 			{
 				vector<string> init_values;
@@ -626,6 +638,12 @@ namespace scifir
 			coordinates_nd<float>& operator=(const point_nd<float>& x_point)
 			{
 				values = x_point.values;
+				return *this;
+			}
+
+			coordinates_nd<float>& operator=(point_nd<float>&& x_point)
+			{
+				values = std::move(x_point.values);
 				return *this;
 			}
 
@@ -1174,6 +1192,8 @@ ostream& operator <<(ostream& os,const scifir::coordinates_nd<T>& x)
 {
 	return os << to_string(x);
 }
+
+ostream& operator <<(ostream& os,const scifir::coordinates_nd<float>& x);
 
 template<typename T>
 istream& operator >>(istream& is, scifir::coordinates_nd<T>& x)

@@ -10,10 +10,20 @@ namespace scifir
 	point_2d<float>::point_2d(const coordinates_2d<float>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y)
 	{}
 
+	point_2d<float>::point_2d(coordinates_2d<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y))
+	{}
+
 	point_2d<float>& point_2d<float>::operator=(const coordinates_2d<float>& x_coordinates)
 	{
 		x = x_coordinates.x;
 		y = x_coordinates.y;
+		return *this;
+	}
+
+	point_2d<float>& point_2d<float>::operator=(coordinates_2d<float>&& x_coordinates)
+	{
+		x = std::move(x_coordinates.x);
+		y = std::move(x_coordinates.y);
 		return *this;
 	}
 

@@ -74,6 +74,8 @@ namespace scifir
 
 			explicit point_nd(const coordinates_nd<T>&);
 
+			explicit point_nd(coordinates_nd<T>&&);
+
 			explicit point_nd(string init_point_nd) : values()
 			{
 				vector<string> init_values;
@@ -153,6 +155,8 @@ namespace scifir
 			}
 
 			point_nd<T>& operator=(const coordinates_nd<T>&);
+
+			point_nd<T>& operator=(coordinates_nd<T>&&);
 
 			bool is_nd(int i) const
 			{
@@ -543,6 +547,8 @@ namespace scifir
 
 			explicit point_nd(const coordinates_nd<float>&);
 
+			explicit point_nd(coordinates_nd<float>&&);
+
 			explicit point_nd(string init_point_nd) : values()
 			{
 				vector<string> init_values;
@@ -622,6 +628,8 @@ namespace scifir
 			}
 
 			point_nd<float>& operator=(const coordinates_nd<float>&);
+
+			point_nd<float>& operator=(coordinates_nd<float>&&);
 
 			bool is_nd(unsigned int i) const
 			{

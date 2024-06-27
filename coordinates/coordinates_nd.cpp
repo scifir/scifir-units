@@ -78,3 +78,8 @@ namespace scifir
 		}
 	}
 }
+
+ostream& operator <<(ostream& os,const scifir::coordinates_nd<float>& x)
+{
+	return os << scifir::to_string(x);
+}

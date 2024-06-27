@@ -48,7 +48,13 @@ namespace scifir
 			explicit coordinates_3dr(const point_3d<T>& x_point,const angle& new_theta,const angle& new_phi) : x(x_point.x),y(x_point.y),z(x_point.z),theta(new_theta),phi(new_phi)
 			{}
 
+			explicit coordinates_3dr(point_3d<T>&& x_point,const angle& new_theta,const angle& new_phi) : x(std::move(x_point.x)),y(std::move(x_point.y)),z(std::move(x_point.z)),theta(new_theta),phi(new_phi)
+			{}
+
 			explicit coordinates_3dr(const coordinates_3d<T>& x_coordinates,const angle& new_theta,const angle& new_phi) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z),theta(new_theta),phi(new_phi)
+			{}
+
+			explicit coordinates_3dr(coordinates_3d<T>&& x_coordinates,const angle& new_theta,const angle& new_phi) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z)),theta(new_theta),phi(new_phi)
 			{}
 
 			explicit coordinates_3dr(string init_coordinates_3dr) : coordinates_3dr()
@@ -139,11 +145,27 @@ namespace scifir
 				return *this;
 			}
 
+			coordinates_3dr<T>& operator=(point_3d<T>&& x_point)
+			{
+				x = std::move(x_point.x);
+				y = std::move(x_point.y);
+				z = std::move(x_point.z);
+				return *this;
+			}
+
 			coordinates_3dr<T>& operator=(const coordinates_3d<T>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
 				z = x_coordinates.z;
+				return *this;
+			}
+
+			coordinates_3dr<T>& operator=(coordinates_3d<T>&& x_coordinates)
+			{
+				x = std::move(x_coordinates.x);
+				y = std::move(x_coordinates.y);
+				z = std::move(x_coordinates.z);
 				return *this;
 			}
 
@@ -465,7 +487,13 @@ namespace scifir
 			explicit coordinates_3dr(const point_3d<float>& x_point,const angle& new_theta,const angle& new_phi) : x(x_point.x),y(x_point.y),z(x_point.z),theta(new_theta),phi(new_phi)
 			{}
 
+			explicit coordinates_3dr(point_3d<float>&& x_point,const angle& new_theta,const angle& new_phi) : x(std::move(x_point.x)),y(std::move(x_point.y)),z(std::move(x_point.z)),theta(new_theta),phi(new_phi)
+			{}
+
 			explicit coordinates_3dr(const coordinates_3d<float>& x_coordinates,const angle& new_theta,const angle& new_phi) : x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z),theta(new_theta),phi(new_phi)
+			{}
+
+			explicit coordinates_3dr(coordinates_3d<float>&& x_coordinates,const angle& new_theta,const angle& new_phi) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z)),theta(new_theta),phi(new_phi)
 			{}
 
 			explicit coordinates_3dr(string init_coordinates_3dr) : coordinates_3dr()
@@ -556,11 +584,27 @@ namespace scifir
 				return *this;
 			}
 
+			coordinates_3dr<float>& operator=(point_3d<float>&& x_point)
+			{
+				x = std::move(x_point.x);
+				y = std::move(x_point.y);
+				z = std::move(x_point.z);
+				return *this;
+			}
+
 			coordinates_3dr<float>& operator=(const coordinates_3d<float>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
 				z = x_coordinates.z;
+				return *this;
+			}
+
+			coordinates_3dr<float>& operator=(coordinates_3d<float>&& x_coordinates)
+			{
+				x = std::move(x_coordinates.x);
+				y = std::move(x_coordinates.y);
+				z = std::move(x_coordinates.z);
 				return *this;
 			}
 
@@ -1037,10 +1081,12 @@ string operator +(const scifir::coordinates_3dr<T>& x,const string& y)
 }
 
 template<typename T>
-ostream& operator << (ostream& os, const scifir::coordinates_3dr<T>& x)
+ostream& operator <<(ostream& os, const scifir::coordinates_3dr<T>& x)
 {
 	return os << to_string(x);
 }
+
+ostream& operator <<(ostream& os,const scifir::coordinates_3dr<float>& x);
 
 template<typename T>
 istream& operator >>(istream& is,scifir::coordinates_3dr<T>& x)

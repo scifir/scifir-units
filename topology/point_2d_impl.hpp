@@ -14,10 +14,22 @@ namespace scifir
 	{}
 
 	template<typename T>
+	point_2d<T>::point_2d(coordinates_2d<T>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y))
+	{}
+
+	template<typename T>
 	point_2d<T>& point_2d<T>::operator=(const coordinates_2d<T>& x_coordinates)
 	{
 		x = x_coordinates.x;
 		y = x_coordinates.y;
+		return *this;
+	}
+
+	template<typename T>
+	point_2d<T>& point_2d<T>::operator=(coordinates_2d<T>&& x_coordinates)
+	{
+		x = std::move(x_coordinates.x);
+		y = std::move(x_coordinates.y);
 		return *this;
 	}
 }
