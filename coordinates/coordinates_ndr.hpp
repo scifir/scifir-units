@@ -44,7 +44,7 @@ namespace scifir
 
 			explicit coordinates_ndr(const vector<T>& new_values,const vector<float>& new_angles) : values(),angles()
 			{
-				if (new_angles.size() == (new_values.size() + 1))
+				if (new_values.size() == (new_values.size() + 1))
 				{
 					values = new_values;
 					for(const float& x_angle : new_angles)
@@ -56,7 +56,7 @@ namespace scifir
 
 			explicit coordinates_ndr(const vector<T>& new_values,const vector<angle>& new_angles) : values(),angles()
 			{
-				if (new_angles.size() == (new_values.size() + 1))
+				if (new_values.size() == (new_angles.size() + 1))
 				{
 					values = new_values;
 					angles = new_angles;
@@ -1059,9 +1059,9 @@ namespace scifir
 				}
 			}
 
-			coordinates_ndr(const vector<float>& new_values,const vector<float>& new_angles) : values(),angles()
+			explicit coordinates_ndr(const vector<float>& new_values,const vector<float>& new_angles) : values(),angles()
 			{
-				if (new_angles.size() == (new_values.size() + 1))
+				if (new_values.size() == (new_angles.size() + 1))
 				{
 					values = new_values;
 					for(const float& x_angle : new_angles)
@@ -1071,35 +1071,35 @@ namespace scifir
 				}
 			}
 
-			coordinates_ndr(const vector<float>& new_values,const vector<angle>& new_angles) : values(),angles()
+			explicit coordinates_ndr(const vector<float>& new_values,const vector<angle>& new_angles) : values(),angles()
 			{
-				if (new_angles.size() == (new_values.size() + 1))
+				if (new_values.size() == (new_angles.size() + 1))
 				{
 					values = new_values;
 					angles = new_angles;
 				}
 			}
 
-			coordinates_ndr(float new_x) : values(),angles()
+			explicit coordinates_ndr(float new_x) : values(),angles()
 			{
 				values.push_back(new_x);
 			}
 
-			coordinates_ndr(float new_x,float new_y,const angle& new_theta) : values(),angles()
+			explicit coordinates_ndr(float new_x,float new_y,const angle& new_theta) : values(),angles()
 			{
 				values.push_back(new_x);
 				values.push_back(new_y);
 				angles.push_back(new_theta);
 			}
 
-			coordinates_ndr(float new_p,const angle& new_polar_theta,const angle& new_theta) : values(),angles()
+			explicit coordinates_ndr(float new_p,const angle& new_polar_theta,const angle& new_theta) : values(),angles()
 			{
 				values.push_back(new_p * scifir::cos(new_polar_theta));
 				values.push_back(new_p * scifir::sin(new_polar_theta));
 				angles.push_back(new_theta);
 			}
 
-			coordinates_ndr(float new_x,float new_y,float new_z,const angle& new_theta,const angle& new_phi) : values(),angles()
+			explicit coordinates_ndr(float new_x,float new_y,float new_z,const angle& new_theta,const angle& new_phi) : values(),angles()
 			{
 				values.push_back(new_x);
 				values.push_back(new_y);
@@ -1108,7 +1108,7 @@ namespace scifir
 				angles.push_back(new_phi);
 			}
 
-			coordinates_ndr(float new_p,const angle& new_cylindrical_theta,float new_z,const angle& new_theta,const angle& new_phi) : values(),angles()
+			explicit coordinates_ndr(float new_p,const angle& new_cylindrical_theta,float new_z,const angle& new_theta,const angle& new_phi) : values(),angles()
 			{
 				values.push_back(new_p * scifir::cos(new_cylindrical_theta));
 				values.push_back(new_p * scifir::sin(new_cylindrical_theta));
@@ -1117,7 +1117,7 @@ namespace scifir
 				angles.push_back(new_phi);
 			}
 
-			coordinates_ndr(float new_r,const angle& new_spherical_theta,const angle& new_spherical_phi,const angle& new_theta,const angle& new_phi) : values(),angles()
+			explicit coordinates_ndr(float new_r,const angle& new_spherical_theta,const angle& new_spherical_phi,const angle& new_theta,const angle& new_phi) : values(),angles()
 			{
 				values.push_back(new_r * scifir::cos(new_spherical_theta) * scifir::sin(new_spherical_phi));
 				values.push_back(new_r * scifir::sin(new_spherical_theta) * scifir::sin(new_spherical_phi));
@@ -1126,7 +1126,7 @@ namespace scifir
 				angles.push_back(new_phi);
 			}
 
-			coordinates_ndr(const angle& new_latitude,const angle& new_longitude,float new_altitude,const angle& new_theta,const angle& new_phi) : values(),angles()
+			explicit coordinates_ndr(const angle& new_latitude,const angle& new_longitude,float new_altitude,const angle& new_theta,const angle& new_phi) : values(),angles()
 			{
 				values.push_back(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude));
 				values.push_back(new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude));
@@ -1135,7 +1135,7 @@ namespace scifir
 				angles.push_back(new_phi);
 			}
 
-			coordinates_ndr(const point_nd<float>& new_point,const vector<float>& new_angles) : values(),angles()
+			explicit coordinates_ndr(const point_nd<float>& new_point,const vector<float>& new_angles) : values(),angles()
 			{
 				if (new_point.values.size() == (new_angles.size() + 1))
 				{
@@ -1147,7 +1147,7 @@ namespace scifir
 				}
 			}
 
-			coordinates_ndr(point_nd<float>&& new_point,const vector<float>& new_angles) : values(),angles()
+			explicit coordinates_ndr(point_nd<float>&& new_point,const vector<float>& new_angles) : values(),angles()
 			{
 				if (new_point.values.size() == (new_angles.size() + 1))
 				{
@@ -1159,7 +1159,7 @@ namespace scifir
 				}
 			}
 
-			coordinates_ndr(const point_nd<float>& new_point,const vector<angle>& new_angles) : values(),angles()
+			explicit coordinates_ndr(const point_nd<float>& new_point,const vector<angle>& new_angles) : values(),angles()
 			{
 				if (new_point.values.size() == (new_angles.size() + 1))
 				{
@@ -1168,7 +1168,7 @@ namespace scifir
 				}
 			}
 
-			coordinates_ndr(point_nd<float>&& new_point,const vector<angle>& new_angles) : values(),angles()
+			explicit coordinates_ndr(point_nd<float>&& new_point,const vector<angle>& new_angles) : values(),angles()
 			{
 				if (new_point.values.size() == (new_angles.size() + 1))
 				{

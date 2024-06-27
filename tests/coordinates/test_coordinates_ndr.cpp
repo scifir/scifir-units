@@ -16,8 +16,8 @@ TEST_CASE("class coordinates_ndr","Complete test of coordinates_ndr")
 		coordinates_ndr<> a3(a2);
 		REQUIRE (bool(to_string(a3) == "(5 m,5 m,1 m;15\u00B0,25\u00B0)"));
 		coordinates_ndr<> a4(5_m,5_m,1_m,angle(15.0f),angle(25.0f));
-		coordinates_ndr<> a5(move(a4));
-		REQUIRE (bool(to_string(a3) == "(5 m,5 m,1 m;15\u00B0,25\u00B0)"));
+		coordinates_ndr<> a5(std::move(a4));
+		REQUIRE (bool(to_string(a5) == "(5 m,5 m,1 m;15\u00B0,25\u00B0)"));
 		coordinates_ndr<> b(8_m);
 		REQUIRE (bool(to_string(b) == "(8 m)"));
 		coordinates_ndr<> b2(6_m,4_m,angle(20.0f));
@@ -30,6 +30,8 @@ TEST_CASE("class coordinates_ndr","Complete test of coordinates_ndr")
 		REQUIRE (bool(to_string(b5) == "(0 m,100 m,1 m;15\u00B0,25\u00B0)"));
 		coordinates_ndr<> b6(100_m,angle(0),angle(0),angle(15.0f),angle(25.0f));
 		REQUIRE (bool(to_string(b6) == "(0 m,0 m,100 m;15\u00B0,25\u00B0)"));
+		coordinates_ndr<> b7(vector<length>{100_m,50_m,20_m},vector<angle>{angle(15.0f),angle(25.0f)});
+		REQUIRE (bool(to_string(b7) == "(100 m,50 m,20 m;15\u00B0,25\u00B0)"));
 		//coordinates_ndr<> b4(angle(0),angle(0),10_m);
 		//REQUIRE (bool(to_string(b4) == "(0 m,0 m,100 m)"));
 		point_nd<> c2(100_m,1_m,2_m);
@@ -70,8 +72,8 @@ TEST_CASE("class coordinates_ndr","Complete test of coordinates_ndr")
 		coordinates_ndr<float> a3(a2);
 		REQUIRE (bool(to_string(a3) == "(5,5,1;15\u00B0,25\u00B0)"));
 		coordinates_ndr<float> a4(5.0f,5.0f,1.0f,angle(15.0f),angle(25.0f));
-		coordinates_ndr<float> a5(move(a4));
-		REQUIRE (bool(to_string(a3) == "(5,5,1;15\u00B0,25\u00B0)"));
+		coordinates_ndr<float> a5(std::move(a4));
+		REQUIRE (bool(to_string(a5) == "(5,5,1;15\u00B0,25\u00B0)"));
 		coordinates_ndr<float> b(8.0f);
 		REQUIRE (bool(to_string(b) == "(8)"));
 		coordinates_ndr<float> b2(6.0f,4.0f,angle(20.0f));
@@ -84,6 +86,8 @@ TEST_CASE("class coordinates_ndr","Complete test of coordinates_ndr")
 		REQUIRE (bool(to_string(b5) == "(0,100,1;15\u00B0,25\u00B0)"));
 		coordinates_ndr<float> b6(100.0f,angle(0),angle(0),angle(15.0f),angle(25.0f));
 		REQUIRE (bool(to_string(b6) == "(0,0,100;15\u00B0,25\u00B0)"));
+		coordinates_ndr<float> b7(vector<float>{100.0f,50.0f,20.0f},vector<angle>{angle(15.0f),angle(25.0f)});
+		REQUIRE (bool(to_string(b7) == "(100,50,20;15\u00B0,25\u00B0)"));
 		//coordinates_ndr<> b4(angle(0),angle(0),10_m);
 		//REQUIRE (bool(to_string(b4) == "(0 m,0 m,100 m)"));
 		point_nd<float> c2(100.0f,1.0f,2.0f);

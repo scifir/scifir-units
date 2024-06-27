@@ -17,7 +17,7 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE (bool(to_string(a3) == "(5 m,5 m,1 m)"));
 		coordinates_nd<> a4(5_m,5_m,1_m);
 		coordinates_nd<> a5(move(a4));
-		REQUIRE (bool(to_string(a3) == "(5 m,5 m,1 m)"));
+		REQUIRE (bool(to_string(a5) == "(5 m,5 m,1 m)"));
 		coordinates_nd<> b6(8_m);
 		REQUIRE (bool(to_string(b6) == "(8 m)"));
 		coordinates_nd<> b7(6_m,4_m);
@@ -30,6 +30,8 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE (bool(to_string(b2) == "(0 m,100 m,1 m)"));
 		coordinates_nd<> b3(100_m,angle(0),angle(0));
 		REQUIRE (bool(to_string(b3) == "(0 m,0 m,100 m)"));
+		coordinates_nd<> b4(vector<length>{100_m,50_m,20_m});
+		REQUIRE (bool(to_string(b4) == "(100 m,50 m,20 m)"));
 		//coordinates_nd<> b4(angle(0),angle(0),10_m);
 		//REQUIRE (bool(to_string(b4) == "(0 m,0 m,100 m)"));
 		point_nd<> c2(100_m,1_m,2_m);
@@ -63,13 +65,15 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE (bool(to_string(a3) == "(5,5,1)"));
 		coordinates_nd<float> a4(5.0f,5.0f,1.0f);
 		coordinates_nd<float> a5(move(a4));
-		REQUIRE (bool(to_string(a3) == "(5,5,1)"));
+		REQUIRE (bool(to_string(a5) == "(5,5,1)"));
 		coordinates_nd<float> b(100.0f,10.0f,1.0f);
 		REQUIRE (bool(to_string(b) == "(100,10,1)"));
 		coordinates_nd<float> b2(100.0f,angle(90),1.0f);
 		REQUIRE (bool(to_string(b2) == "(0,100,1)"));
 		coordinates_nd<float> b3(100.0f,angle(0),angle(0));
 		REQUIRE (bool(to_string(b3) == "(0,0,100)"));
+		coordinates_nd<float> b4(vector<float>{100.0f,50.0f,20.0f});
+		REQUIRE (bool(to_string(b4) == "(100,50,20)"));
 		//coordinates_nd<> b4(angle(0),angle(0),10_m);
 		//REQUIRE (bool(to_string(b4) == "(0 m,0 m,100 m)"));
 		point_nd<float> c2(100.0f,1.0f,2.0f);

@@ -18,8 +18,8 @@ TEST_CASE("class point_nd","Complete test of point_nd")
 		point_nd<> a3(a2);
 		REQUIRE (bool(to_string(a3) == "(5 m,5 m,1 m)"));
 		point_nd<> a4(5_m,5_m,1_m);
-		point_nd<> a5(move(a4));
-		REQUIRE (bool(to_string(a3) == "(5 m,5 m,1 m)"));
+		point_nd<> a5(std::move(a4));
+		REQUIRE (bool(to_string(a5) == "(5 m,5 m,1 m)"));
 		point_nd<> b6(8_m);
 		REQUIRE (bool(to_string(b6) == "(8 m)"));
 		point_nd<> b7(6_m,4_m);
@@ -32,6 +32,8 @@ TEST_CASE("class point_nd","Complete test of point_nd")
 		REQUIRE (bool(to_string(b2) == "(0 m,100 m,1 m)"));
 		point_nd<> b3(100_m,angle(0),angle(0));
 		REQUIRE (bool(to_string(b3) == "(0 m,0 m,100 m)"));
+		point_nd<> b4(vector<length>{100_m,50_m,20_m});
+		REQUIRE (bool(to_string(b4) == "(100 m,50 m,20 m)"));
 		//point_nd<> b4(angle(0),angle(0),10_m);
 		//REQUIRE (bool(to_string(b4) == "(0 m,0 m,100 m)"));
 		coordinates_nd<> c2(100_m,1_m,2_m);
@@ -64,14 +66,16 @@ TEST_CASE("class point_nd","Complete test of point_nd")
 		point_nd<float> a3(a2);
 		REQUIRE (bool(to_string(a3) == "(5,5,1)"));
 		point_nd<float> a4(5.0f,5.0f,1.0f);
-		point_nd<float> a5(move(a4));
-		REQUIRE (bool(to_string(a3) == "(5,5,1)"));
+		point_nd<float> a5(std::move(a4));
+		REQUIRE (bool(to_string(a5) == "(5,5,1)"));
 		point_nd<float> b(100.0f,10.0f,1.0f);
 		REQUIRE (bool(to_string(b) == "(100,10,1)"));
 		point_nd<float> b2(100.0f,angle(90),1.0f);
 		REQUIRE (bool(to_string(b2) == "(0,100,1)"));
 		point_nd<float> b3(100.0f,angle(0),angle(0));
 		REQUIRE (bool(to_string(b3) == "(0,0,100)"));
+		point_nd<float> b4(vector<float>{100.0f,50.0f,20.0f});
+		REQUIRE (bool(to_string(b4) == "(100,50,20)"));
 		//point_nd<> b4(angle(0),angle(0),10_m);
 		//REQUIRE (bool(to_string(b4) == "(0 m,0 m,100 m)"));
 		coordinates_nd<float> c2(100.0f,1.0f,2.0f);
