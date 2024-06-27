@@ -11,7 +11,7 @@
 using namespace std;
 using namespace scifir;
 
-TEST_CASE("scalar_unit class","Full test of scalar_units") {
+TEST_CASE("Benchmark of scalar_unit class","[!benchmark]") {
 	BENCHMARK("Sum of floats") {
 		float a = 1.5f;
 		float b = 2.5f;
