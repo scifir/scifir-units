@@ -383,6 +383,20 @@ namespace scifir
 				return scifir::sqrt(x_T);
 			}
 
+			string display_cartesian_2d() const
+			{
+				if (values.size() == 2)
+				{
+					ostringstream out;
+					out << "(" << values[0] << "," << values[1] << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-2d]";
+				}
+			}
+
 			string display_polar() const
 			{
 				if (values.size() == 2)
@@ -394,6 +408,20 @@ namespace scifir
 				else
 				{
 					return "[no-2d]";
+				}
+			}
+
+			string display_cartesian_3d() const
+			{
+				if (values.size() == 3)
+				{
+					ostringstream out;
+					out << "(" << values[0] << "," << values[1] << "," << values[2] << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
 				}
 			}
 
@@ -876,6 +904,20 @@ namespace scifir
 				return std::sqrt(x_T);
 			}
 
+			string display_cartesian_2d() const
+			{
+				if (values.size() == 2)
+				{
+					ostringstream out;
+					out << "(" << display_float(values[0]) << "," << display_float(values[1]) << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-2d]";
+				}
+			}
+
 			string display_polar() const
 			{
 				if (values.size() == 2)
@@ -887,6 +929,20 @@ namespace scifir
 				else
 				{
 					return "[no-2d]";
+				}
+			}
+
+			string display_cartesian_3d() const
+			{
+				if (values.size() == 3)
+				{
+					ostringstream out;
+					out << "(" << display_float(values[0]) << "," << display_float(values[1]) << "," << display_float(values[2]) << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
 				}
 			}
 

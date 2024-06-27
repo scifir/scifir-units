@@ -15,7 +15,7 @@ using namespace scifir;
 
 TEST_CASE("class point_1d","Complete test of point_1d")
 {
-	SECTION("Constructors of point_1d<> classes")
+	SECTION("Constructors of point_1d<> class")
 	{
 		point_1d<> a;
 		REQUIRE (bool(to_string(a) == "(0 m)"));
@@ -40,7 +40,7 @@ TEST_CASE("class point_1d","Complete test of point_1d")
 		REQUIRE (bool(to_string(e) == "(1 m)"));
 	}
 
-	SECTION("Constructors of point_1d<float> classes")
+	SECTION("Constructors of point_1d<float> class")
 	{
 		point_1d<float> a;
 		REQUIRE (bool(to_string(a) == "(0)"));
@@ -65,7 +65,7 @@ TEST_CASE("class point_1d","Complete test of point_1d")
 		REQUIRE (bool(to_string(e) == "(1)"));
 	}
 
-	SECTION("Assignments of point_1d<> classes")
+	SECTION("Assignments of point_1d<> class")
 	{
 		point_1d<> a(10_m);
 		point_1d<> b(20_m);
@@ -91,7 +91,7 @@ TEST_CASE("class point_1d","Complete test of point_1d")
 		REQUIRE (bool(to_string(h) == "(1 m)"));
 	}
 
-	SECTION("Assignments of point_1d<float> classes")
+	SECTION("Assignments of point_1d<float> class")
 	{
 		point_1d<float> a(10.0f);
 		point_1d<float> b(20.0f);
@@ -117,7 +117,7 @@ TEST_CASE("class point_1d","Complete test of point_1d")
 		REQUIRE (bool(to_string(h) == "(1)"));
 	}
 
-	SECTION("move(), set_position() and distance_to_origin() of point_1d<> classes")
+	SECTION("move(), set_position() and distance_to_origin() of point_1d<> class")
 	{
 		point_1d<> a(5_m);
 		a.set_position(25_m);
@@ -130,7 +130,7 @@ TEST_CASE("class point_1d","Complete test of point_1d")
 		REQUIRE (bool(to_string(d) == "10 m"));
 	}
 
-	SECTION("move(), set_position() and distance_to_origin() of point_1d<float> classes")
+	SECTION("move(), set_position() and distance_to_origin() of point_1d<float> class")
 	{
 		point_1d<float> a(5.0f);
 		a.set_position(25.0f);
@@ -142,7 +142,19 @@ TEST_CASE("class point_1d","Complete test of point_1d")
 		REQUIRE (bool(c.distance_to_origin() == 10.0f));
 	}
 
-	SECTION("distance() functions of point_1d<> classes")
+	SECTION("display of point_1d<> class")
+	{
+		point_1d<> a(10_m);
+		REQUIRE (bool(a.display_cartesian() == "(10 m)"));
+	}
+
+	SECTION("display of point_1d<float> class")
+	{
+		point_1d<float> a(10.0f);
+		REQUIRE (bool(a.display_cartesian() == "(10)"));
+	}
+
+	SECTION("distance() functions of point_1d<> class")
 	{
 		point_1d<> a(10_m);
 		point_1d<> b(15_m);
@@ -153,7 +165,7 @@ TEST_CASE("class point_1d","Complete test of point_1d")
 		REQUIRE (bool(to_string(distance(d,c)) == "15 m"));
 	}
 
-	SECTION("distance() functions of point_1d<float> classes")
+	SECTION("distance() functions of point_1d<float> class")
 	{
 		point_1d<float> a(10.0f);
 		point_1d<float> b(15.0f);
@@ -164,7 +176,7 @@ TEST_CASE("class point_1d","Complete test of point_1d")
 		REQUIRE (bool(distance(d,c) == 15.0f));
 	}
 
-	SECTION("Relational operators of point_1d<> classes")
+	SECTION("Relational operators of point_1d<> class")
 	{
 		point_1d<> a(7_m);
 		point_1d<> b(7_m);
@@ -180,7 +192,7 @@ TEST_CASE("class point_1d","Complete test of point_1d")
 		REQUIRE(bool(e != a));
 	}
 
-	SECTION("Relational operators of point_1d<float> classes")
+	SECTION("Relational operators of point_1d<float> class")
 	{
 		point_1d<float> a(7.0f);
 		point_1d<float> b(7.0f);
@@ -196,7 +208,7 @@ TEST_CASE("class point_1d","Complete test of point_1d")
 		REQUIRE(bool(e != a));
 	}
 
-	SECTION("String operators of point_1d<> classes")
+	SECTION("String operators of point_1d<> class")
 	{
 		point_1d<> a(7_m);
 		REQUIRE(bool(a == "(7 m)"));
@@ -210,7 +222,7 @@ TEST_CASE("class point_1d","Complete test of point_1d")
 		REQUIRE(bool("x: (7 m)" == ("x: " + a)));
 	}
 
-	SECTION("String operators of point_1d<float> classes")
+	SECTION("String operators of point_1d<float> class")
 	{
 		point_1d<float> a(7.0f);
 		REQUIRE(bool(a == "(7)"));
@@ -224,7 +236,7 @@ TEST_CASE("class point_1d","Complete test of point_1d")
 		REQUIRE(bool("x: (7)" == ("x: " + a)));
 	}
 
-	SECTION("Streams of point_1d<> classes")
+	SECTION("Streams of point_1d<> class")
 	{
 		point_1d<> a(2_m);
 		std::ostringstream out;
@@ -236,7 +248,7 @@ TEST_CASE("class point_1d","Complete test of point_1d")
 		REQUIRE(bool(to_string(b) == "(1 m)"));
 	}
 
-	SECTION("Streams of point_1d<float> classes")
+	SECTION("Streams of point_1d<float> class")
 	{
 		point_1d<float> a(2.0f);
 		std::ostringstream out;

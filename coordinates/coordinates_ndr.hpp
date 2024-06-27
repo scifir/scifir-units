@@ -864,6 +864,25 @@ namespace scifir
 				return scifir::sqrt(x_T);
 			}
 
+			string display_cartesian_2d() const
+			{
+				if (values.size() == 2 and angles.size() == 1)
+				{
+					ostringstream out;
+					out << "(";
+					if (get_nd() == 2)
+					{
+						out << values[0] << "," << values[1] << ";" << angles[0];
+					}
+					out << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-2d]";
+				}
+			}
+
 			string display_polar() const
 			{
 				if (values.size() == 2 and angles.size() == 1)
@@ -880,6 +899,25 @@ namespace scifir
 				else
 				{
 					return "[no-2d]";
+				}
+			}
+
+			string display_cartesian_3d() const
+			{
+				if (values.size() == 3 and angles.size() == 2)
+				{
+					ostringstream out;
+					out << "(";
+					if (get_nd() == 3)
+					{
+						out << values[0] << "," << values[1] << "," << values[2] << ";" << angles[0] << "," << angles[1];
+					}
+					out << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
 				}
 			}
 
@@ -1887,6 +1925,25 @@ namespace scifir
 				return std::sqrt(x_T);
 			}
 
+			string display_cartesian_2d() const
+			{
+				if (values.size() == 2 and angles.size() == 1)
+				{
+					ostringstream out;
+					out << "(";
+					if (get_nd() == 2)
+					{
+						out << display_float(values[0]) << "," << display_float(values[1]) << ";" << angles[0];
+					}
+					out << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-2d]";
+				}
+			}
+
 			string display_polar() const
 			{
 				if (values.size() == 2 and angles.size() == 1)
@@ -1903,6 +1960,25 @@ namespace scifir
 				else
 				{
 					return "[no-2d]";
+				}
+			}
+
+			string display_cartesian_3d() const
+			{
+				if (values.size() == 3 and angles.size() == 2)
+				{
+					ostringstream out;
+					out << "(";
+					if (get_nd() == 3)
+					{
+						out << display_float(values[0]) << "," << display_float(values[1]) << "," << display_float(values[2]) << ";" << angles[0] << "," << angles[1];
+					}
+					out << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
 				}
 			}
 

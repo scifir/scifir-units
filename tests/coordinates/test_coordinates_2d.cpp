@@ -9,7 +9,7 @@ using namespace scifir;
 
 TEST_CASE("class coordinates_2d","Complete test of coordinates_2d")
 {
-	SECTION("Constructors of coordinates_2d classes")
+	SECTION("Constructors of coordinates_2d<> class")
 	{
 		coordinates_2d<> a;
 		REQUIRE (bool(to_string(a) == "(0 m,0 m)"));
@@ -37,7 +37,7 @@ TEST_CASE("class coordinates_2d","Complete test of coordinates_2d")
 		REQUIRE (bool(to_string(f) == "(0 m,100 m)"));
 	}
 
-	SECTION("Constructors of coordinates_2d<float> classes")
+	SECTION("Constructors of coordinates_2d<float> class")
 	{
 		coordinates_2d<float> a;
 		REQUIRE (bool(to_string(a) == "(0,0)"));
@@ -65,7 +65,7 @@ TEST_CASE("class coordinates_2d","Complete test of coordinates_2d")
 		REQUIRE (bool(to_string(f) == "(0,100)"));
 	}
 
-	SECTION("Assignments of coordinates_2d classes")
+	SECTION("Assignments of coordinates_2d<> class")
 	{
 		coordinates_2d<> a(10_m,5_m);
 		coordinates_2d<> b(20_m,8_m);
@@ -94,7 +94,7 @@ TEST_CASE("class coordinates_2d","Complete test of coordinates_2d")
 		REQUIRE (bool(to_string(i) == "(0 m,100 m)"));
 	}
 
-	SECTION("Assignments of coordinates_2d<float> classes")
+	SECTION("Assignments of coordinates_2d<float> class")
 	{
 		coordinates_2d<float> a(10,5);
 		coordinates_2d<float> b(20,8);
@@ -123,21 +123,21 @@ TEST_CASE("class coordinates_2d","Complete test of coordinates_2d")
 		REQUIRE (bool(to_string(i) == "(0,100)"));
 	}
 
-	SECTION("Polar coordinates of coordinates_2d")
+	SECTION("Polar coordinates of coordinates_2d<> class")
 	{
 		coordinates_2d a(5_m,angle(20.0f));
 		REQUIRE(bool(a.get_p() == 5_m));
 		REQUIRE(bool(a.get_theta() == angle(20.0f)));
 	}
 
-	SECTION("Polar coordinates of coordinates_2d<float>")
+	SECTION("Polar coordinates of coordinates_2d<float> class")
 	{
 		coordinates_2d<float> a(5,angle(20.0f));
 		REQUIRE(bool(a.get_p() == 5));
 		REQUIRE(bool(a.get_theta() == angle(20.0f)));
 	}
 
-	SECTION("move(), set_position() and distance_to_origin() of coordinates_2d")
+	SECTION("move(), set_position() and distance_to_origin() of coordinates_2d<> class")
 	{
 		coordinates_2d<> a(5_m,1_m);
 		a.set_position(20_m,7_m);
@@ -162,7 +162,7 @@ TEST_CASE("class coordinates_2d","Complete test of coordinates_2d")
 		REQUIRE (bool(to_string(e) == "(0 m,20 m)"));
 	}
 
-	SECTION("move(), set_position() and distance_to_origin() of coordinates_2d<float>")
+	SECTION("move(), set_position() and distance_to_origin() of coordinates_2d<float> class")
 	{
 		coordinates_2d<float> a(5,1);
 		a.set_position(20,7);
@@ -187,7 +187,23 @@ TEST_CASE("class coordinates_2d","Complete test of coordinates_2d")
 		REQUIRE (bool(to_string(e) == "(0,20)"));
 	}
 
-	SECTION("distance() functions of coordinates_2d")
+	SECTION("display of coordinates_2d<> class")
+	{
+		coordinates_2d<> a(2_m,3_m);
+		REQUIRE(bool(a.display_cartesian() == "(2 m,3 m)"));
+		coordinates_2d<> b(2_m,angle(45.0f));
+		REQUIRE(bool(b.display_polar() == "(1.99 m,45\u00B0)"));
+	}
+
+	SECTION("display of coordinates_2d<float> class")
+	{
+		coordinates_2d<float> a(2.0f,3.0f);
+		REQUIRE(bool(a.display_cartesian() == "(2,3)"));
+		coordinates_2d<float> b(2.0f,angle(45.0f));
+		REQUIRE(bool(b.display_polar() == "(2,45\u00B0)"));
+	}
+
+	SECTION("distance() functions of coordinates_2d<> class")
 	{
 		coordinates_2d<> a(10_m,10_m);
 		coordinates_2d<> b(15_m,10_m);
@@ -198,7 +214,7 @@ TEST_CASE("class coordinates_2d","Complete test of coordinates_2d")
 		REQUIRE (bool(to_string(distance(d,c)) == "15.81 m"));
 	}
 
-	SECTION("distance() functions of coordinates_2d<float>")
+	SECTION("distance() functions of coordinates_2d<float> class")
 	{
 		coordinates_2d<float> a(10,10);
 		coordinates_2d<float> b(15,10);
@@ -233,23 +249,23 @@ TEST_CASE("class coordinates_2d","Complete test of coordinates_2d")
 		REQUIRE(bool(d == 64.2787628f));
 	}
 
-	SECTION("Relational operators of coordinates_2d")
+	SECTION("Relational operators of coordinates_2d<> class")
 	{
-		coordinates_2d a(7_m,3_m);
-		coordinates_2d b(7_m,3_m);
-		coordinates_2d c(6_m,2_m);
+		coordinates_2d<> a(7_m,3_m);
+		coordinates_2d<> b(7_m,3_m);
+		coordinates_2d<> c(6_m,2_m);
 		REQUIRE(bool(a == b));
 		REQUIRE(bool((a == c) == false));
 		REQUIRE(bool(a != c));
-		point_2d d(7_m,3_m);
-		point_2d e(5_m,1_m);
+		point_2d<> d(7_m,3_m);
+		point_2d<> e(5_m,1_m);
 		REQUIRE(bool(a == d));
 		REQUIRE(bool(a != e));
 		REQUIRE(bool(d == a));
 		REQUIRE(bool(e != a));
 	}
 
-	SECTION("Relational operators of coordinates_2d<float>")
+	SECTION("Relational operators of coordinates_2d<float> class")
 	{
 		coordinates_2d<float> a(7,3);
 		coordinates_2d<float> b(7,3);
@@ -265,9 +281,9 @@ TEST_CASE("class coordinates_2d","Complete test of coordinates_2d")
 		REQUIRE(bool(e != a));
 	}
 
-	SECTION("String operators of coordinates_2d")
+	SECTION("String operators of coordinates_2d<> class")
 	{
-		coordinates_2d a(7_m,4_m);
+		coordinates_2d<> a(7_m,4_m);
 		REQUIRE(bool(a == "(7 m,4 m)"));
 		REQUIRE(bool(a != "(6 m,3 m)"));
 		REQUIRE(bool("(7 m,4 m)" == a));
@@ -279,7 +295,7 @@ TEST_CASE("class coordinates_2d","Complete test of coordinates_2d")
 		REQUIRE(bool("x: (7 m,4 m)" == ("x: " + a)));
 	}
 
-	SECTION("String operators of coordinates_2d<float>")
+	SECTION("String operators of coordinates_2d<float> class")
 	{
 		coordinates_2d<float> a(7,4);
 		REQUIRE(bool(a == "(7,4)"));
@@ -293,21 +309,19 @@ TEST_CASE("class coordinates_2d","Complete test of coordinates_2d")
 		REQUIRE(bool("x: (7,4)" == ("x: " + a)));
 	}
 
-	SECTION("Display of coordinates_2d classes")
+	SECTION("Display of coordinates_2d<> class")
 	{
-		coordinates_2d a(2_m,3_m);
+		coordinates_2d<> a(2_m,3_m);
 		ostringstream out;
 		out << a;
 		REQUIRE(bool(out.str() == "(2 m,3 m)"));
 		istringstream iss("(1 m,2 m)");
-		coordinates_2d b;
+		coordinates_2d<> b;
 		iss >> b;
 		REQUIRE(bool(to_string(b) == "(1 m,2 m)"));
-		coordinates_2d c(2_m,angle(45.0f));
-		REQUIRE(bool(c.display_polar() == "(1.99 m,45\u00B0)"));
 	}
 
-	SECTION("Display of coordinates_2d<float> classes")
+	SECTION("Display of coordinates_2d<float> class")
 	{
 		coordinates_2d<float> a(2,3);
 		ostringstream out;
@@ -317,7 +331,5 @@ TEST_CASE("class coordinates_2d","Complete test of coordinates_2d")
 		coordinates_2d<float> b;
 		iss >> b;
 		REQUIRE(bool(to_string(b) == "(1,2)"));
-		coordinates_2d<float> c(2,angle(45.0f));
-		REQUIRE(bool(c.display_polar() == "(2,45\u00B0)"));
 	}
 }

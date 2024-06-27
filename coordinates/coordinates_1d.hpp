@@ -85,6 +85,13 @@ namespace scifir
 				return T(std::abs(x.get_value()),x.get_dimensions());
 			}
 
+			string display_cartesian() const
+			{
+				ostringstream out;
+				out << "(" << x <<  ")";
+				return out.str();
+			}
+
 			T x;
 
 		private:
@@ -172,6 +179,13 @@ namespace scifir
 			float distance_to_origin() const
 			{
 				return float(std::abs(x));
+			}
+
+			string display_cartesian() const
+			{
+				ostringstream out;
+				out << "(" << display_float(x) <<  ")";
+				return out.str();
 			}
 
 			float x;

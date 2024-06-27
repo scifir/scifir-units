@@ -8,7 +8,7 @@ using namespace scifir;
 
 TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 {
-	SECTION("Constructors of coordinates_nd<> classes")
+	SECTION("Constructors of coordinates_nd<> class")
 	{
 		coordinates_nd<> a;
 		REQUIRE (bool(to_string(a) == "[empty]"));
@@ -56,7 +56,7 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE (bool(to_string(g) == "(0.48 m,0.48 m,1.87 m)"));
 	}
 
-	SECTION("Constructors of coordinates_nd<float> classes")
+	SECTION("Constructors of coordinates_nd<float> class")
 	{
 		coordinates_nd<float> a;
 		REQUIRE (bool(to_string(a) == "[empty]"));
@@ -98,7 +98,7 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE (bool(to_string(g) == "(0.48,0.48,1.87)"));
 	}
 
-	SECTION("Assignments of coordinates_nd<> classes")
+	SECTION("Assignments of coordinates_nd<> class")
 	{
 		coordinates_nd<> a;
 		coordinates_nd<> a2(5_m,5_m,1_m);
@@ -139,7 +139,7 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE (bool(to_string(g) == "(0.48 m,0.48 m,1.87 m)"));
 	}
 
-	SECTION("Assignments of coordinates_nd<float> classes")
+	SECTION("Assignments of coordinates_nd<float> class")
 	{
 		coordinates_nd<float> a;
 		coordinates_nd<float> a2(5.0f,5.0f,1.0f);
@@ -180,7 +180,7 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE (bool(to_string(g) == "(0.48,0.48,1.87)"));
 	}
 
-	SECTION("Values of different coordinates systems of coordinates_nd<> classes")
+	SECTION("Values of different coordinates systems of coordinates_nd<> class")
 	{
 		coordinates_nd<> a(7_m,4_m,2_m);
 		REQUIRE (bool(a.get_p().display() == "8.06 m"));
@@ -197,7 +197,7 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE (bool(c.get_altitude() == "0 m"));*/
 	}
 
-	SECTION("Values of different coordinates systems of coordinates_nd<float> classes")
+	SECTION("Values of different coordinates systems of coordinates_nd<float> class")
 	{
 		coordinates_nd<float> c(7.0f,4.0f,2.0f);
 		REQUIRE (bool(std::fabs(c.get_p() - 8.06f) < 0.01f));
@@ -214,7 +214,7 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE (bool(c.get_altitude() == "0 m"));*/
 	}
 
-	SECTION("set_position(), rotate() and move() of coordinates_nd<> classes")
+	SECTION("set_position(), rotate() and move() of coordinates_nd<> class")
 	{
 		coordinates_nd<> a;
 		a.set_position(5_m,5_m,1_m);
@@ -253,7 +253,7 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE (bool(to_string(h) == "(2.41 m,2 m,4.41 m)"));
 	}
 
-	SECTION("set_position(), rotate() and move() of coordinates_nd<float> classes")
+	SECTION("set_position(), rotate() and move() of coordinates_nd<float> class")
 	{
 		coordinates_nd<float> a;
 		a.set_position(5.0f,5.0f,1.0f);
@@ -292,14 +292,18 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE (bool(to_string(h) == "(2.41,2,4.41)"));
 	}
 
-	SECTION("Display of coordinates_nd<> classes")
+	SECTION("Display of coordinates_nd<> class")
 	{
 		coordinates_nd<> a(2_m,3_m,5_m);
+		REQUIRE (bool(a.display_cartesian_2d() == "[no-2d]"));
 		REQUIRE (bool(a.display_polar() == "[no-2d]"));
+		REQUIRE (bool(a.display_cartesian_3d() == "(2 m,3 m,5 m)"));
 		REQUIRE (bool(a.display_cylindrical() == "(3.6 m,56.3\u00B0,5 m)"));
 		REQUIRE (bool(a.display_spherical() == "(6.16 m,56.3\u00B0,35.79\u00B0)"));
 		coordinates_nd<> b(5_m,angle(30.0f));
+		REQUIRE (bool(b.display_cartesian_2d() == "(4.33 m,2.5 m)"));
 		REQUIRE (bool(b.display_polar() == "(5 m,30\u00B0)"));
+		REQUIRE (bool(b.display_cartesian_3d() == "[no-3d]"));
 		REQUIRE (bool(b.display_cylindrical() == "[no-3d]"));
 		REQUIRE (bool(b.display_spherical() == "[no-3d]"));
 		/*coordinates_nd<> b(2_m,3_m,10000_km);
@@ -307,14 +311,18 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE (bool(b.display_geographical() == ""));*/
 	}
 
-	SECTION("Display of coordinates_nd<float> classes")
+	SECTION("Display of coordinates_nd<float> class")
 	{
 		coordinates_nd<float> a(2.0f,3.0f,5.0f);
+		REQUIRE (bool(a.display_cartesian_2d() == "[no-2d]"));
 		REQUIRE (bool(a.display_polar() == "[no-2d]"));
+		REQUIRE (bool(a.display_cartesian_3d() == "(2,3,5)"));
 		REQUIRE (bool(a.display_cylindrical() == "(3.6,56.3\u00B0,5)"));
 		REQUIRE (bool(a.display_spherical() == "(6.16,56.3\u00B0,35.79\u00B0)"));
 		coordinates_nd<float> b(5.0f,angle(30.0f));
+		REQUIRE (bool(b.display_cartesian_2d() == "(4.33,2.5)"));
 		REQUIRE (bool(b.display_polar() == "(5,30\u00B0)"));
+		REQUIRE (bool(b.display_cartesian_3d() == "[no-3d]"));
 		REQUIRE (bool(b.display_cylindrical() == "[no-3d]"));
 		REQUIRE (bool(b.display_spherical() == "[no-3d]"));
 		/*coordinates_nd<float> b(2_m,3_m,10000_km);
@@ -322,19 +330,19 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE (bool(b.display_geographical() == ""));*/
 	}
 
-	SECTION("to_string() of coordinates_nd<>")
+	SECTION("to_string() of coordinates_nd<> class")
 	{
 		coordinates_nd<> a(2_m,3_m,5_m);
 		REQUIRE (bool(to_string(a) == "(2 m,3 m,5 m)"));
 	}
 
-	SECTION("to_string() of coordinates_nd<float>")
+	SECTION("to_string() of coordinates_nd<float> class")
 	{
 		coordinates_nd<float> a(2.0f,3.0f,5.0f);
 		REQUIRE (bool(to_string(a) == "(2,3,5)"));
 	}
 
-	SECTION("distance() of coordinates_nd<>")
+	SECTION("distance() of coordinates_nd<> class")
 	{
 		coordinates_nd<> a(7_m,3_m,1_m);
 		coordinates_nd<> b(6_m,2_m,1_m);
@@ -351,7 +359,7 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE (bool(distance(c2,a) == length()));
 	}
 
-	SECTION("distance() of coordinates_nd<float>")
+	SECTION("distance() of coordinates_nd<float> class")
 	{
 		coordinates_nd<float> a(7.0f,3.0f,1.0f);
 		coordinates_nd<float> b(6.0f,2.0f,1.0f);
@@ -368,7 +376,7 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE (bool(distance(c2,a) == 0.0f));
 	}
 
-	SECTION("Relational operators of coordinates_nd<>")
+	SECTION("Relational operators of coordinates_nd<> class")
 	{
 		coordinates_nd<> a(7_m,3_m,1_m);
 		coordinates_nd<> b(7_m,3_m,1_m);
@@ -389,7 +397,7 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE(bool(e != a));
 	}
 
-	SECTION("Relational operators of coordinates_nd<float>")
+	SECTION("Relational operators of coordinates_nd<float> class")
 	{
 		coordinates_nd<float> a(7.0f,3.0f,1.0f);
 		coordinates_nd<float> b(7.0f,3.0f,1.0f);
@@ -405,7 +413,7 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE(bool(e != a));
 	}
 
-	SECTION("String operators of coordinates_nd<>")
+	SECTION("String operators of coordinates_nd<> class")
 	{
 		coordinates_nd<> a(7_m,4_m,2_m);
 		REQUIRE(bool(a == "(7 m,4 m,2 m)"));
@@ -419,7 +427,7 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE(bool("x: (7 m,4 m,2 m)" == ("x: " + a)));
 	}
 
-	SECTION("String operators of coordinates_nd<float>")
+	SECTION("String operators of coordinates_nd<float> class")
 	{
 		coordinates_nd<float> a(7.0f,4.0f,2.0f);
 		REQUIRE(bool(a == "(7,4,2)"));
@@ -433,7 +441,7 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE(bool("x: (7,4,2)" == ("x: " + a)));
 	}
 
-	SECTION("Stream operators of coordinates_nd<> classes")
+	SECTION("Stream operators of coordinates_nd<> class")
 	{
 		coordinates_nd<> a(2_m,3_m,2_m);
 		ostringstream out;
@@ -445,7 +453,7 @@ TEST_CASE("class coordinates_nd","Complete test of coordinates_nd")
 		REQUIRE(bool(to_string(b) == "(1 m,2 m,1 m)"));
 	}
 
-	SECTION("Stream operators of coordinates_nd<float> classes")
+	SECTION("Stream operators of coordinates_nd<float> class")
 	{
 		coordinates_nd<float> a(2.0f,3.0f,2.0f);
 		ostringstream out;

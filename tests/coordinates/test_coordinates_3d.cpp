@@ -8,7 +8,7 @@ using namespace scifir;
 
 TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 {
-	SECTION("Constructors of coordinates_3d<> classes")
+	SECTION("Constructors of coordinates_3d<> class")
 	{
 		coordinates_3d<> a;
 		REQUIRE (bool(to_string(a) == "(0 m,0 m,0 m)"));
@@ -42,7 +42,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE (bool(to_string(g) == "(0.48 m,0.48 m,1.87 m)"));
 	}
 
-	SECTION("Constructors of coordinates_3d<float> classes")
+	SECTION("Constructors of coordinates_3d<float> class")
 	{
 		coordinates_3d<float> a;
 		REQUIRE (bool(to_string(a) == "(0,0,0)"));
@@ -76,7 +76,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE (bool(to_string(g) == "(0.48,0.48,1.87)"));
 	}
 
-	SECTION("Assignments of coordinates_3d<> classes")
+	SECTION("Assignments of coordinates_3d<> class")
 	{
 		coordinates_3d<> a;
 		coordinates_3d<> a2(5_m,5_m,1_m);
@@ -108,7 +108,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE (bool(to_string(g) == "(0.48 m,0.48 m,1.87 m)"));
 	}
 
-	SECTION("Assignments of coordinates_3d<float> classes")
+	SECTION("Assignments of coordinates_3d<float> class")
 	{
 		coordinates_3d<float> a;
 		coordinates_3d<float> a2(5.0f,5.0f,1.0f);
@@ -140,7 +140,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE (bool(to_string(g) == "(0.48,0.48,1.87)"));
 	}
 
-	SECTION("Values of different coordinates systems of coordinates_3d<> classes")
+	SECTION("Values of different coordinates systems of coordinates_3d<> class")
 	{
 		coordinates_3d<> a(7_m,4_m,2_m);
 		REQUIRE (bool(a.get_p().display() == "8.06 m"));
@@ -152,7 +152,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE (bool(c.get_altitude() == "0 m"));*/
 	}
 
-	SECTION("Values of different coordinates systems of coordinates_3d<float> classes")
+	SECTION("Values of different coordinates systems of coordinates_3d<float> class")
 	{
 		coordinates_3d<float> a(7.0f,4.0f,2.0f);
 		REQUIRE (bool(std::fabs(a.get_p() - 8.06f) < 0.01f));
@@ -164,7 +164,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE (bool(c.get_altitude() == "0 m"));*/
 	}
 
-	SECTION("set_position(), rotate() and move() of coordinates_3d<> classes")
+	SECTION("set_position(), rotate() and move() of coordinates_3d<> class")
 	{
 		coordinates_3d<> a;
 		a.set_position(5_m,5_m,1_m);
@@ -200,7 +200,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE (bool(to_string(h) == "(2.41 m,2 m,4.41 m)"));
 	}
 
-	SECTION("set_position(), rotate() and move() of coordinates_3d<float> classes")
+	SECTION("set_position(), rotate() and move() of coordinates_3d<float> class")
 	{
 		coordinates_3d<float> a;
 		a.set_position(5.0f,5.0f,1.0f);
@@ -236,9 +236,10 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE (bool(to_string(h) == "(2.41,2,4.41)"));
 	}
 
-	SECTION("Display of coordinates_3d<> classes")
+	SECTION("Display of coordinates_3d<> class")
 	{
 		coordinates_3d<> a(2_m,3_m,5_m);
+		REQUIRE (bool(a.display_cartesian() == "(2 m,3 m,5 m)"));
 		REQUIRE (bool(a.display_cylindrical() == "(3.6 m,56.3\u00B0,5 m)"));
 		REQUIRE (bool(a.display_spherical() == "(6.16 m,56.3\u00B0,35.79\u00B0)"));
 		/*coordinates_3d<> b(2_m,3_m,10000_km);
@@ -246,9 +247,10 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE (bool(b.display_geographical() == ""));*/
 	}
 
-	SECTION("Display of coordinates_3d<float> classes")
+	SECTION("Display of coordinates_3d<float> class")
 	{
 		coordinates_3d<float> a(2.0f,3.0f,5.0f);
+		REQUIRE (bool(a.display_cartesian() == "(2,3,5)"));
 		REQUIRE (bool(a.display_cylindrical() == "(3.6,56.3\u00B0,5)"));
 		REQUIRE (bool(a.display_spherical() == "(6.16,56.3\u00B0,35.79\u00B0)"));
 		/*coordinates_3d<> b(2_m,3_m,10000_km);
@@ -256,19 +258,19 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE (bool(b.display_geographical() == ""));*/
 	}
 
-	SECTION("to_string() of coordinates_3d<>")
+	SECTION("to_string() of coordinates_3d<> class")
 	{
 		coordinates_3d<> a(2_m,3_m,5_m);
 		REQUIRE (bool(to_string(a) == "(2 m,3 m,5 m)"));
 	}
 
-	SECTION("to_string() of coordinates_3d<float>")
+	SECTION("to_string() of coordinates_3d<float> class")
 	{
 		coordinates_3d<float> a(2.0f,3.0f,5.0f);
 		REQUIRE (bool(to_string(a) == "(2,3,5)"));
 	}
 
-	SECTION("distance() of coordinates_3d<>")
+	SECTION("distance() of coordinates_3d<> class")
 	{
 		coordinates_3d<> a(7_m,3_m,1_m);
 		coordinates_3d<> b(6_m,2_m,1_m);
@@ -280,7 +282,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE (bool(distance(c,b).display() == "1.41 m"));
 	}
 
-	SECTION("distance() of coordinates_3d<float>")
+	SECTION("distance() of coordinates_3d<float> class")
 	{
 		coordinates_3d<float> a(7.0f,3.0f,1.0f);
 		coordinates_3d<float> b(6.0f,2.0f,1.0f);
@@ -352,7 +354,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE (bool(std::fabs(float(cylindrical_to_spherical_phi(2.0f,angle(30.0f),3.0f) - angle(33.69f))) < 0.01f));
 	}
 
-	SECTION("Relational operators of coordinates_3d<>")
+	SECTION("Relational operators of coordinates_3d<> class")
 	{
 		coordinates_3d<> a(7_m,3_m,1_m);
 		coordinates_3d<> b(7_m,3_m,1_m);
@@ -368,7 +370,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE(bool(e != a));
 	}
 
-	SECTION("Relational operators of coordinates_3d<float>")
+	SECTION("Relational operators of coordinates_3d<float> class")
 	{
 		coordinates_3d<float> a(7.0f,3.0f,1.0f);
 		coordinates_3d<float> b(7.0f,3.0f,1.0f);
@@ -384,7 +386,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE(bool(e != a));
 	}
 
-	SECTION("String operators of coordinates_3d<>")
+	SECTION("String operators of coordinates_3d<> class")
 	{
 		coordinates_3d<> a(7_m,4_m,2_m);
 		REQUIRE(bool(a == "(7 m,4 m,2 m)"));
@@ -398,7 +400,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE(bool("x: (7 m,4 m,2 m)" == ("x: " + a)));
 	}
 
-	SECTION("String operators of coordinates_3d<float>")
+	SECTION("String operators of coordinates_3d<float> class")
 	{
 		coordinates_3d<float> a(7.0f,4.0f,2.0f);
 		REQUIRE(bool(a == "(7,4,2)"));
@@ -412,7 +414,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE(bool("x: (7,4,2)" == ("x: " + a)));
 	}
 
-	SECTION("Stream operators of coordinates_3d<> classes")
+	SECTION("Stream operators of coordinates_3d<> class")
 	{
 		coordinates_3d<> a(2_m,3_m,2_m);
 		ostringstream out;
@@ -424,7 +426,7 @@ TEST_CASE("class coordinates_3d","Complete test of coordinates_3d")
 		REQUIRE(bool(to_string(b) == "(1 m,2 m,1 m)"));
 	}
 
-	SECTION("Stream operators of coordinates_3d<float> classes")
+	SECTION("Stream operators of coordinates_3d<float> class")
 	{
 		coordinates_3d<float> a(2.0f,3.0f,2.0f);
 		ostringstream out;

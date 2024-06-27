@@ -203,6 +203,13 @@ namespace scifir
 				return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2));
 			}
 
+			string display_cartesian() const
+			{
+				ostringstream out;
+				out << "(" << x << "," << y << "," << z << ")";
+				return out.str();
+			}
+
 			string display_cylindrical() const
 			{
 				ostringstream out;
@@ -462,6 +469,13 @@ namespace scifir
 			float distance_to_origin() const
 			{
 				return float(std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)));
+			}
+
+			string display_cartesian() const
+			{
+				ostringstream out;
+				out << "(" << display_float(x) << "," << display_float(y) << "," << display_float(z) << ")";
+				return out.str();
 			}
 
 			string display_cylindrical() const

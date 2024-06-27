@@ -1,6 +1,7 @@
 #include "./point_1d.hpp"
 
 #include "../coordinates/coordinates_1d.hpp"
+#include "../util/types.hpp"
 
 using namespace std;
 
@@ -22,6 +23,13 @@ namespace scifir
 	{
 		x = std::move(x_coordinates.x);
 		return *this;
+	}
+
+	string to_string(const point_1d<float>& x)
+	{
+		ostringstream out;
+		out << "(" << display_float(x.x) << ")";
+		return out.str();
 	}
 
 	float distance(const point_1d<float>& x1,const point_1d<float>& x2)

@@ -3,6 +3,7 @@
 
 #include "../predefined_units/physics_units.hpp"
 #include "../units/unit_basic.hpp"
+#include "../util/types.hpp"
 
 #include <cmath>
 #include <string>
@@ -74,6 +75,13 @@ namespace scifir
 			T distance_to_origin() const
 			{
 				return T(std::abs(x.get_value()),x.get_dimensions());
+			}
+
+			string display_cartesian() const
+			{
+				ostringstream out;
+				out << "(" << x << ")";
+				return out.str();
 			}
 
 			T x;
@@ -155,6 +163,13 @@ namespace scifir
 				return float(std::abs(x));
 			}
 
+			string display_cartesian() const
+			{
+				ostringstream out;
+				out << "(" << display_float(x) << ")";
+				return out.str();
+			}
+
 			float x;
 
 		private:
@@ -179,6 +194,8 @@ namespace scifir
 		out << "(" << x.x << ")";
 		return out.str();
 	}
+
+	string to_string(const point_1d<float>& x);
 
 	template<typename T>
 	T distance(const point_1d<T>& x1,const point_1d<T>& x2)
