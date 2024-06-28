@@ -289,6 +289,20 @@ The scalar_unit and vector unit classes, vector_unid_2d, vector_unid_3d and vect
 
 The angle class uses only 4 bytes, and works perfectly fine, very similar to a normal float. Then, you can use it freely every time you need to do calculations that need angles.
 
+## Use cases
+
+### Technologies for inventions
+
+scifir-units can be used for any project that needs units of measurement, vectors, coordinates, and related calculations. It's primary intended to program **scientific inventions**, **laboratory machines**, **electronic devices** and **medical devices** (medical devices that need a software, not any medical device). In this section it's explained how to build those devices, in order to be known how to create all the project, and not only how to use scifir-units.
+
+To create the electronic circuit of any electronic device, being it a scientific invention, a laboratory machine, a medical device or of other type, you can use **KiCad**. The electronic circuit is then printed using the file created with KiCad. For the operating system, you can use **FreeRTOS**, **FreeBSD**, or even create a custom linux distribution with **Linux From Scratch**. For the GUI of the software of the invention to run inside this operating system, you can use **GTK+**, **wxWidgets** or **Qt**. The inventions not always use a GUI, they can work just with analog buttons or a LCD display. It's with this software where you can use scifir-units to do the calculations the software requires.
+
+To build a desktop application that connects remotely with the invention, use also GTK+, wxWidgets or Qt to build the GUI. You can use as communication technology **bluetooth**, **wifi direct** (which is a wifi peer-to-peer) or **usb**.
+
+Also, to add 3D to the software, you can use **OpenGL**. To do plots, use **matplot++**, **gnuplot** or **GNU plotutils**. Obviously, to store output from the software, you can use **YAML** or **XML**. To work with XML inside C++ you can use **rapidxml**, **tinyxml** or **libxml2**. To work with YAML you can use **yaml-cpp**. Use **conf** for configuration files, the library of it is **libconfig**. To send messages between different servers/daemons that are run inside the invention, you can use **dbus**. To handle large amounts of data, you can use a simple database, like **SQLite**, with **SQLiteCPP**.
+
+From the graphics part, you can use **SVG++** to work with SVG files. To add GPS to the invention, you can use **gpsd**. To do the translation of the software, use **gettext**.
+
 ## Core functionalities
 
 All the classes of scifir-units are inside the **namespace scifir**, as with all libraries of the **Scifir Collection**. So, to use any of this classes, like angle, you have to type any of the following codes:
