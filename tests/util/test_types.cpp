@@ -12,9 +12,9 @@ TEST_CASE("types functions")
 {
 	SECTION("display_float()")
 	{
-		CHECK (bool(display_float(1.003f) == "1"));
-		CHECK (bool(display_float(1.003f,3) == "1.003"));
-		CHECK (bool(display_float(1.00f) == "1"));
-		CHECK (bool(display_float(15.0f) == "15"));
+		CHECK(display_float(1.003f) == "1");
+		CHECK(display_float(1.003f,3) == "1.003");
+		CHECK(display_float(1.00f) == "1");
+		CHECK(display_float(15.0f) == "15");
 	}
 }
