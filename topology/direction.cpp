@@ -271,6 +271,8 @@ namespace scifir
 	{
 		switch (x)
 		{
+			case direction::NONE:
+				return "";
 			case direction::LEFT:
 				return "left";
 			case direction::RIGHT:
@@ -323,12 +325,10 @@ namespace scifir
 				return "right-bottom-front";
 			case direction::RIGHT_BOTTOM_BACK:
 				return "right-bottom-back";
-			case direction::NONE:
-				return "";
 		}
 		return "";
 	}
-	
+
 	string to_string(const direction& x)
 	{
 		return to_string(x.value);

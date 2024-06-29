@@ -30,7 +30,7 @@ namespace scifir
 
 			direction::name value;
 	};
-	
+
 	string to_string(direction::name);
 	string to_string(const direction&);
 	direction::name create_direction(const string&);

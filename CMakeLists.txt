@@ -216,6 +216,11 @@ if(BUILD_TESTING)
 		add_test(NAME coordinates_ndr COMMAND test_coordinates_ndr)
 		set_tests_properties(coordinates_ndr PROPERTIES LABELS tests)
 
+		add_executable(test_direction tests/topology/test_direction.cpp)
+		target_link_libraries(test_direction PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		add_test(NAME direction COMMAND test_direction)
+		set_tests_properties(direction PROPERTIES LABELS tests)
+
 		add_executable(test_point_1d tests/topology/test_point_1d.cpp)
 		target_link_libraries(test_point_1d PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
 		add_test(NAME point_1d COMMAND test_point_1d)
