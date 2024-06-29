@@ -22,10 +22,46 @@ namespace scifir
 	vector_unit_3d::vector_unit_3d(float new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
 	{}
 
+	vector_unit_3d::vector_unit_3d(double new_value,const string& init_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(double new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(long double new_value,const string& init_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(long double new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(int new_value,const string& init_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(int new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
 	vector_unit_3d::vector_unit_3d(float new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
 	{}
 
 	vector_unit_3d::vector_unit_3d(float new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(double new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(double new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(long double new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(int new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(int new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
 	{}
 
 	vector_unit_3d::vector_unit_3d(const scalar_unit& x,float new_theta,float new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)

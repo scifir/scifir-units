@@ -14,24 +14,48 @@ TEST_CASE("class vector_unit_3d")
 	{
 		vector_unit_3d a;
 		CHECK(to_string(a) == "0 [empty] 0\u03B8 0\u03A6");
-		vector_unit_3d b = vector_unit_3d("100 g",50,20);
-		vector_unit_3d c = vector_unit_3d(b);
+		vector_unit_3d b("100 g",50,20);
+		vector_unit_3d c(b);
 		CHECK(to_string(c) == "100 g 50\u03B8 20\u03A6");
-		vector_unit_3d b2 = vector_unit_3d("100 g",50,20);
-		vector_unit_3d c2 = vector_unit_3d(std::move(b2));
+		vector_unit_3d b2("100 g",50,20);
+		vector_unit_3d c2(std::move(b2));
 		CHECK(to_string(c2) == "100 g 50\u03B8 20\u03A6");
-		vector_unit_3d d = vector_unit_3d(50,"m",20,20);
+		vector_unit_3d d(50.0f,"m",20,20);
 		CHECK(to_string(d) == "50 m 20\u03B8 20\u03A6");
-		vector_unit_3d e = vector_unit_3d(50,"m",angle(20.0f),angle(20.0f));
+		vector_unit_3d e(50.0f,"m",angle(20.0f),angle(20.0f));
 		CHECK(to_string(e) == "50 m 20\u03B8 20\u03A6");
-		vector_unit_3d f = vector_unit_3d(50,{dimension("m",dimension::POSITIVE)},20,20);
+		vector_unit_3d d2(50.0,"m",20,20);
+		CHECK(to_string(d2) == "50 m 20\u03B8 20\u03A6");
+		vector_unit_3d e2(50.0,"m",angle(20.0f),angle(20.0f));
+		CHECK(to_string(e2) == "50 m 20\u03B8 20\u03A6");
+		vector_unit_3d d3(50.0l,"m",20,20);
+		CHECK(to_string(d3) == "50 m 20\u03B8 20\u03A6");
+		vector_unit_3d e3(50.0l,"m",angle(20.0f),angle(20.0f));
+		CHECK(to_string(e3) == "50 m 20\u03B8 20\u03A6");
+		vector_unit_3d d4(50,"m",20,20);
+		CHECK(to_string(d4) == "50 m 20\u03B8 20\u03A6");
+		vector_unit_3d e4(50,"m",angle(20.0f),angle(20.0f));
+		CHECK(to_string(e4) == "50 m 20\u03B8 20\u03A6");
+		vector_unit_3d f(50.0f,{dimension("m",dimension::POSITIVE)},20,20);
 		CHECK(to_string(f) == "50 m 20\u03B8 20\u03A6");
-		vector_unit_3d g = vector_unit_3d(50,{dimension("m",dimension::POSITIVE)},angle(20.0f),angle(20.0f));
+		vector_unit_3d g(50.0f,{dimension("m",dimension::POSITIVE)},angle(20.0f),angle(20.0f));
 		CHECK(to_string(g) == "50 m 20\u03B8 20\u03A6");
+		vector_unit_3d f2(50.0,{dimension("m",dimension::POSITIVE)},20,20);
+		CHECK(to_string(f2) == "50 m 20\u03B8 20\u03A6");
+		vector_unit_3d g2(50.0,{dimension("m",dimension::POSITIVE)},angle(20.0f),angle(20.0f));
+		CHECK(to_string(g2) == "50 m 20\u03B8 20\u03A6");
+		vector_unit_3d f3(50.0l,{dimension("m",dimension::POSITIVE)},20,20);
+		CHECK(to_string(f3) == "50 m 20\u03B8 20\u03A6");
+		vector_unit_3d g3(50.0l,{dimension("m",dimension::POSITIVE)},angle(20.0f),angle(20.0f));
+		CHECK(to_string(g3) == "50 m 20\u03B8 20\u03A6");
+		vector_unit_3d f4(50,{dimension("m",dimension::POSITIVE)},20,20);
+		CHECK(to_string(f4) == "50 m 20\u03B8 20\u03A6");
+		vector_unit_3d g4(50,{dimension("m",dimension::POSITIVE)},angle(20.0f),angle(20.0f));
+		CHECK(to_string(g4) == "50 m 20\u03B8 20\u03A6");
 		scalar_unit h2 = scalar_unit("50 g");
-		vector_unit_3d h = vector_unit_3d(h2,20,20);
+		vector_unit_3d h(h2,20,20);
 		CHECK(to_string(h) == "50 g 20\u03B8 20\u03A6");
-		vector_unit_3d i = vector_unit_3d(h2,angle(20.0f),angle(20.0f));
+		vector_unit_3d i(h2,angle(20.0f),angle(20.0f));
 		CHECK(to_string(i) == "50 g 20\u03B8 20\u03A6");
 		vector_unit_3d j("100 g",24,24);
 		CHECK(to_string(j) == "100 g 24\u03B8 24\u03A6");
@@ -254,7 +278,7 @@ TEST_CASE("class vector_unit_3d")
 
 	SECTION("Display of vector_unit_3d classes")
 	{
-		vector_unit_3d a = vector_unit_3d(1,"N",20,20);
+		vector_unit_3d a(1,"N",20,20);
 		CHECK(a.vectorial_display() == "1 N 20\u03B8 20\u03A6");
 		CHECK(a.vectorial_derived_display() == "1 kg*m/s2 20\u03B8 20\u03A6");
 		CHECK(a.vectorial_custom_display("g*m/s2") == "1000 g*m/s2 20\u03B8 20\u03A6");

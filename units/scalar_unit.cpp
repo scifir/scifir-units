@@ -38,6 +38,9 @@ namespace scifir
 	scalar_unit::scalar_unit(long double new_value, const string& init_dimensions) : dimensions(create_dimensions(init_dimensions)),value(float(new_value))
 	{}
 
+	scalar_unit::scalar_unit(int new_value, const string& init_dimensions) : dimensions(create_dimensions(init_dimensions)),value(float(new_value))
+	{}
+
 	scalar_unit::scalar_unit(float new_value, const vector<dimension>& new_dimensions) : dimensions(new_dimensions),value(new_value)
 	{}
 
@@ -45,6 +48,9 @@ namespace scifir
 	{}
 
 	scalar_unit::scalar_unit(long double new_value, const vector<dimension>& new_dimensions) : dimensions(new_dimensions),value(float(new_value))
+	{}
+
+	scalar_unit::scalar_unit(int new_value, const vector<dimension>& new_dimensions) : dimensions(new_dimensions),value(float(new_value))
 	{}
 
 	scalar_unit::scalar_unit(const string& init_scalar) : scalar_unit()

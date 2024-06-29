@@ -84,9 +84,11 @@ namespace scifir
 			explicit scalar_unit(float, const string&);
 			explicit scalar_unit(double, const string&);
 			explicit scalar_unit(long double, const string&);
+			explicit scalar_unit(int, const string&);
 			explicit scalar_unit(float, const vector<dimension>&);
 			explicit scalar_unit(double, const vector<dimension>&);
 			explicit scalar_unit(long double, const vector<dimension>&);
+			explicit scalar_unit(int, const vector<dimension>&);
 			explicit scalar_unit(const string&);
 
 			scalar_unit& operator =(const scalar_unit&);

@@ -17,16 +17,31 @@ TEST_CASE("scalar_unit class") {
 	{
 		scalar_unit a;
 		CHECK(to_string(a) == "0 [empty]");
-		scalar_unit b = scalar_unit("100 g");
-		scalar_unit c = scalar_unit(b);
+		scalar_unit b("100 g");
+		scalar_unit c(b);
 		CHECK(to_string(c) == "100 g");
-		scalar_unit d = scalar_unit(100.0f,"g");
+		scalar_unit b2("100 g");
+		scalar_unit c2(std::move(b2));
+		CHECK(to_string(c2) == "100 g");
+		scalar_unit d(100.0f,"g");
 		CHECK(to_string(d) == "100 g");
-		scalar_unit e = scalar_unit(100.0f,{dimension("g",dimension::POSITIVE)});
+		scalar_unit d2(100.0,"g");
+		CHECK(to_string(d2) == "100 g");
+		scalar_unit d3(100.0l,"g");
+		CHECK(to_string(d3) == "100 g");
+		scalar_unit d4(100,"g");
+		CHECK(to_string(d4) == "100 g");
+		scalar_unit e(100.0f,{dimension("g",dimension::POSITIVE)});
 		CHECK(to_string(e) == "100 g");
-		scalar_unit f = scalar_unit("100 g");
+		scalar_unit e2(100.0,{dimension("g",dimension::POSITIVE)});
+		CHECK(to_string(e2) == "100 g");
+		scalar_unit e3(100.0l,{dimension("g",dimension::POSITIVE)});
+		CHECK(to_string(e3) == "100 g");
+		scalar_unit e4(100,{dimension("g",dimension::POSITIVE)});
+		CHECK(to_string(e4) == "100 g");
+		scalar_unit f("100 g");
 		CHECK(to_string(f) == "100 g");
-		scalar_unit g = scalar_unit("2E5 g");
+		scalar_unit g("2E5 g");
 		CHECK(to_string(g) == "200000 g");
 	}
 
@@ -40,6 +55,14 @@ TEST_CASE("scalar_unit class") {
 		scalar_unit b2("100 N");
 		a2 = b2;
 		CHECK(to_string(a2) == "50 g");
+		scalar_unit a3("50 g");
+		scalar_unit b3("100 g");
+		a3 = std::move(b3);
+		CHECK(to_string(a3) == "100 g");
+		scalar_unit a4("50 g");
+		scalar_unit b4("100 N");
+		a4 = std::move(b4);
+		CHECK(to_string(a4) == "50 g");
 		scalar_unit c("20 m");
 		c = scalar_unit("10 m");
 		CHECK(to_string(c) == "10 m");

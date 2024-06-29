@@ -65,12 +65,16 @@ namespace scifir
 			explicit vector_unit_2d(double,const string&,const angle&);
 			explicit vector_unit_2d(long double,const string&,float); // Example of initialization (10,"N",50)
 			explicit vector_unit_2d(long double,const string&,const angle&);
+			explicit vector_unit_2d(int,const string&,float);
+			explicit vector_unit_2d(int,const string&,const angle&);
 			explicit vector_unit_2d(float,const vector<dimension>&,float);
 			explicit vector_unit_2d(float,const vector<dimension>&,const angle&);
 			explicit vector_unit_2d(double,const vector<dimension>&,float);
 			explicit vector_unit_2d(double,const vector<dimension>&,const angle&);
 			explicit vector_unit_2d(long double,const vector<dimension>&,float);
 			explicit vector_unit_2d(long double,const vector<dimension>&,const angle&);
+			explicit vector_unit_2d(int,const vector<dimension>&,float);
+			explicit vector_unit_2d(int,const vector<dimension>&,const angle&);
 			explicit vector_unit_2d(const scalar_unit&,float);
 			explicit vector_unit_2d(const scalar_unit&,const angle&);
 			explicit vector_unit_2d(const string&,float);

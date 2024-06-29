@@ -78,13 +78,25 @@ namespace scifir
 			vector_unit_3d(vector_unit_3d&&);
 			explicit vector_unit_3d(float,const string&,float,float);
 			explicit vector_unit_3d(float,const string&,const angle&,const angle&);
+			explicit vector_unit_3d(double,const string&,float,float);
+			explicit vector_unit_3d(double,const string&,const angle&,const angle&);
+			explicit vector_unit_3d(long double,const string&,float,float);
+			explicit vector_unit_3d(long double,const string&,const angle&,const angle&);
+			explicit vector_unit_3d(int,const string&,float,float);
+			explicit vector_unit_3d(int,const string&,const angle&,const angle&);
 			explicit vector_unit_3d(float,const vector<dimension>&,float,float);
 			explicit vector_unit_3d(float,const vector<dimension>&,const angle&,const angle&);
+			explicit vector_unit_3d(double,const vector<dimension>&,float,float);
+			explicit vector_unit_3d(double,const vector<dimension>&,const angle&,const angle&);
+			explicit vector_unit_3d(long double,const vector<dimension>&,float,float);
+			explicit vector_unit_3d(long double,const vector<dimension>&,const angle&,const angle&);
+			explicit vector_unit_3d(int,const vector<dimension>&,float,float);
+			explicit vector_unit_3d(int,const vector<dimension>&,const angle&,const angle&);
 			explicit vector_unit_3d(const scalar_unit&,float,float);
 			explicit vector_unit_3d(const scalar_unit&,const angle&,const angle&);
 			explicit vector_unit_3d(const string&,float,float);
 			explicit vector_unit_3d(const string&,const angle&,const angle&);
-			explicit vector_unit_3d(const string&); // Initialize "8N 30ª 50ª"
+			explicit vector_unit_3d(const string&);
 
 			static vector_unit_3d cartesian_3d(const string& new_dimensions,float new_x,float new_y,float new_z)
 			{

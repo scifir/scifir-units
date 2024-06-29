@@ -35,6 +35,12 @@ namespace scifir
 	
 	vector_unit_2d::vector_unit_2d(long double new_value,const string& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
 	{}
+
+	vector_unit_2d::vector_unit_2d(int new_value,const string& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	{}
+	
+	vector_unit_2d::vector_unit_2d(int new_value,const string& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	{}
 	
 	vector_unit_2d::vector_unit_2d(float new_value,const vector<dimension>& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
 	{}
@@ -52,6 +58,12 @@ namespace scifir
 	{}
 	
 	vector_unit_2d::vector_unit_2d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	{}
+
+	vector_unit_2d::vector_unit_2d(int new_value,const vector<dimension>& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	{}
+	
+	vector_unit_2d::vector_unit_2d(int new_value,const vector<dimension>& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
 	{}
 	
 	vector_unit_2d::vector_unit_2d(const scalar_unit& x,float new_angle) : scalar_unit(x),theta(new_angle)
