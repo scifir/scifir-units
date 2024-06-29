@@ -66,7 +66,7 @@ TEST_CASE("pOH class") {
         CHECK(b.get_value() == 3.2f);
     }
 
-    SECTION("Operators of pOH class with other pOH classes")
+    SECTION("Operators of pOH class with other pOH class")
     {
         pOH a(3.0f);
         CHECK(bool(a + pOH(2.0f) == pOH(5.0f)));
@@ -146,7 +146,7 @@ TEST_CASE("pOH class") {
         CHECK(b.get_value() == 0.0f);
     }
 
-    SECTION("Comparison operators of pOH class with pOH classes")
+    SECTION("Comparison operators of pOH class with pOH class")
     {
         CHECK((pOH(3.0f) == pOH(3.0f)) == true);
         CHECK((pOH(3.0f) == pOH(2.0f)) == false);

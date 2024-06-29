@@ -33,7 +33,7 @@ TEST_CASE("prefix class") {
 		CHECK(e.prefix_type == prefix::Y);
 	}
 
-	SECTION("Creation of prefix classes") {
+	SECTION("Creation of prefix class") {
 		prefix a = prefix("Y");
 		CHECK(a.prefix_type == prefix::Y);
 		prefix b = prefix("Z");

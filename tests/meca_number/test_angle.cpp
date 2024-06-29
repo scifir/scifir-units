@@ -11,7 +11,7 @@ using namespace std;
 using namespace scifir;
 
 TEST_CASE("angle class") {
-	SECTION("Constructors of angle classes")
+	SECTION("Constructors of angle class")
     {
         angle a;
         CHECK(a.get_value() == 0.0f);
@@ -40,7 +40,7 @@ TEST_CASE("angle class") {
         CHECK(k.get_value() == 3.5f);
     }
 
-    SECTION("Assignments of angle classes")
+    SECTION("Assignments of angle class")
     {
         angle a2(10.0f);
         angle a;
@@ -69,7 +69,7 @@ TEST_CASE("angle class") {
         CHECK(g.get_value() == 0.0f);
     }
 
-    SECTION("Operators of angle classes with angle classes")
+    SECTION("Operators of angle class with angle class")
     {
         angle a(30.0f);
         angle a2(20.0f);
@@ -103,7 +103,7 @@ TEST_CASE("angle class") {
         CHECK(j.get_value() == 100.0f);
     }
 
-    SECTION("Operators of angle classes with numbers")
+    SECTION("Operators of angle class with numbers")
     {
         angle a(10.0f);
         a++;

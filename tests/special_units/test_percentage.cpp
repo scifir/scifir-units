@@ -322,7 +322,7 @@ TEST_CASE("percentage class") {
 		CHECK(is_percentage("90.0.0%") == false);
 	}
 
-	SECTION("Operators of percentage class with other percentage classes") {
+	SECTION("Operators of percentage class with other percentage class") {
 		percentage a = percentage("30%");
 		percentage b = percentage("20%");
 		CHECK(bool(a > b));

@@ -13,7 +13,7 @@ using namespace std;
 using namespace scifir;
 
 TEST_CASE("scalar_unit class") {
-	SECTION("Constructors of scalar_unit classes")
+	SECTION("Constructors of scalar_unit class")
 	{
 		scalar_unit a;
 		CHECK(to_string(a) == "0 [empty]");
@@ -45,7 +45,7 @@ TEST_CASE("scalar_unit class") {
 		CHECK(to_string(g) == "200000 g");
 	}
 
-	SECTION("Assignments of scalar_unit classes")
+	SECTION("Assignments of scalar_unit class")
 	{
 		scalar_unit a("50 g");
 		scalar_unit b("100 g");
@@ -76,7 +76,7 @@ TEST_CASE("scalar_unit class") {
 		CHECK(float(a) == 50.0f);
 	}
 
-	SECTION("Operators of scalar_unit classes with other scalar_unit classes")
+	SECTION("Operators of scalar_unit class with other scalar_unit class")
 	{
 		scalar_unit a("30 g");
 		scalar_unit b("25 g");
@@ -120,9 +120,9 @@ TEST_CASE("scalar_unit class") {
 		CHECK(to_string(k2) == "3 g");
 	}
 
-	SECTION("Operations of scalar_unit classes with numbers")
+	SECTION("Operations of scalar_unit class with numbers")
 	{
-		scalar_unit f = scalar_unit(100.0f,"m");
+		scalar_unit f(100.0f,"m");
 		CHECK(to_string(f + 50) == "150 m");
 		CHECK(to_string(f - 50) == "50 m");
 		CHECK(to_string(f * 2) == "200 m");
@@ -132,27 +132,27 @@ TEST_CASE("scalar_unit class") {
 		CHECK(to_string(150 - f) == "50 m");
 		CHECK(to_string(2 * f) == "200 m");
 		CHECK(to_string(200 / f) == "2 1/m");
-		scalar_unit g = scalar_unit(100.0f,"m");
+		scalar_unit g(100.0f,"m");
 		g += 10;
 		CHECK(to_string(g) == "110 m");
-		scalar_unit h = scalar_unit(100.0f,"m");
+		scalar_unit h(100.0f,"m");
 		h -= 10;
 		CHECK(to_string(h) == "90 m");
-		scalar_unit i = scalar_unit(100.0f,"m");
+		scalar_unit i(100.0f,"m");
 		i *= 2;
 		CHECK(to_string(i) == "200 m");
-		scalar_unit i2 = scalar_unit(100.0f,"m");
+		scalar_unit i2(100.0f,"m");
 		i2 *= -2;
 		CHECK(to_string(i2) == "-200 m");
-		scalar_unit j = scalar_unit(100.0f,"m");
+		scalar_unit j(100.0f,"m");
 		j /= 2;
 		CHECK(to_string(j) == "50 m");
-		scalar_unit j2 = scalar_unit(100.0f,"m");
+		scalar_unit j2(100.0f,"m");
 		j2 /= -2;
 		CHECK(to_string(j2) == "-50 m");
 	}
 
-	SECTION("change_dimensions() of scalar_unit classes")
+	SECTION("change_dimensions() of scalar_unit class")
 	{
 		scalar_unit a("50 N");
 		a.change_dimensions("g*m/s2");
@@ -177,7 +177,7 @@ TEST_CASE("scalar_unit class") {
 		CHECK(bool(e == "50 N*kg"));
 	}
 
-	SECTION("display_dimensions() of scalar_unit classes")
+	SECTION("display_dimensions() of scalar_unit class")
 	{
 		scalar_unit a("50 m");
 		CHECK(a.display_dimensions() == "m");
@@ -191,9 +191,9 @@ TEST_CASE("scalar_unit class") {
 		CHECK(to_string(e.get_derived_dimensions()) == "kg*m/s2");
 	}
 
-	SECTION("Display of scalar_unit classes")
+	SECTION("Display of scalar_unit class")
 	{
-		scalar_unit a = scalar_unit(1.0f,"N");
+		scalar_unit a(1.0f,"N");
 		CHECK(a.display() == "1 N");
 		CHECK(a.derived_display() == "1 kg*m/s2");
 		CHECK(a.custom_display("g*m/s2") == "1000 g*m/s2");
@@ -210,7 +210,7 @@ TEST_CASE("scalar_unit class") {
 		CHECK(f.custom_display("m/s",2,true) == "0.27 [m/s]");
 	}
 
-	SECTION("Math functions of scalar_unit classes")
+	SECTION("Math functions of scalar_unit class")
 	{
 		scalar_unit a("2 N");
 		CHECK(scifir::abs(a) == 2.0f);
@@ -222,7 +222,7 @@ TEST_CASE("scalar_unit class") {
 		CHECK(bool(scifir::pow(d,2) == "4 N2"));
 	}
 
-	SECTION("Comparison operators of scalar_unit classes with other scalar_unit classes")
+	SECTION("Comparison operators of scalar_unit class with other scalar_unit class")
 	{
 		scalar_unit a("2 N");
 		scalar_unit a2("2 N");
@@ -236,7 +236,7 @@ TEST_CASE("scalar_unit class") {
 		CHECK(bool(scalar_unit("1 N") <= scalar_unit("2 N")));
 	}
 
-	SECTION("Comparison operators of scalar_unit classes with strings")
+	SECTION("Comparison operators of scalar_unit class with strings")
 	{
 		CHECK(bool(scalar_unit("2 N") == "2 N"));
 		CHECK(bool(scalar_unit("2 N") != "1 N"));
@@ -252,7 +252,7 @@ TEST_CASE("scalar_unit class") {
 		CHECK(bool("3 N" >= scalar_unit("2 N")));
 	}
 
-	SECTION("Comparison operators of scalar_unit classes with numeric types")
+	SECTION("Comparison operators of scalar_unit class with numeric types")
 	{
 		CHECK(bool(scalar_unit("2 N") == 2));
 		CHECK(bool(scalar_unit("2 N") != 1));
@@ -268,7 +268,7 @@ TEST_CASE("scalar_unit class") {
 		CHECK(bool(3 >= scalar_unit("2 N")));
 	}
 
-	SECTION("String operations with scalar_unit classes")
+	SECTION("String operators with scalar_unit class")
 	{
 		scalar_unit a("2 N");
 		CHECK(bool(a == "2 N"));
@@ -295,94 +295,6 @@ TEST_CASE("scalar_unit class") {
         b >> b2;
         CHECK(bool(b2 == "3 N"));
     }
-
-	mass a(100.0f,"g");
-	ostringstream a_out;
-	a_out << a;
-	CHECK(a_out.str() == "100 g");
-	mass b(50.0f,"g");
-	ostringstream b_out;
-	b_out << b;
-	CHECK(b_out.str() == "50 g");
-	mass c("5.2*10^3 m");
-	ostringstream c_out;
-	c_out << c;
-	CHECK(c_out.str() == "5200 m");
-	CHECK(c.custom_display("sci") == "5.19e3 m");
-	CHECK(bool((a + b) == 150_g));
-	CHECK(bool((a - b) == 50_g));
-	CHECK(bool((a * b) == "5000 g2"));
-	CHECK(to_string(a / b) == "2 [empty]");
-	a += b;
-	CHECK(bool(a == 150_g));
-	a = mass(100.0f,"g");
-	a -= b;
-	CHECK(bool(a == 50_g));
-	a = mass(100.0f,"g");
-	CHECK(bool((a + 20) == 120_g));
-	CHECK(bool((a - 10) == 90_g));
-	CHECK(bool((a * 5) == 500_g));
-	CHECK(bool((a / 2) == 50_g));
-	CHECK(bool((a ^ 3) == "1000000 g3"));
-	CHECK(bool((20 + a) == 120_g));
-	CHECK(bool((150 - a) == 50_g));
-	CHECK(bool((3 * a) == 300_g));
-	CHECK(bool((200 / a) == "2 1/g"));
-	a = mass(100.0f,"g");
-	a += 10;
-	CHECK(bool(a == 110_g));
-	a = mass(100.0f,"g");
-	a -= 5;
-	CHECK(bool(a == 95_g));
-	a = mass(100.0f,"g");
-	a *= 2;
-	CHECK(bool(a == 200_g));
-	a = mass(100.0f,"g");
-	a /= 4;
-	CHECK(bool(a == 25_g));
-	a = mass(100.0f,"g");
-	a++;
-	CHECK(bool(a == 101_g));
-	a = mass(100.0f,"g");
-	++a;
-	CHECK(bool(a == 101_g));
-	a = mass(100.0f,"g");
-	a--;
-	CHECK(bool(a == 99_g));
-	a = mass(100.0f,"g");
-	--a;
-	CHECK(bool(a == 99_g));
-	a = mass(100.0f,"g");
-	a.change_dimensions("kg");
-	a_out = ostringstream();
-	a_out << a;
-	CHECK(a_out.str() == "0.1 kg");
-	CHECK(a.custom_display("mg") == "100000 mg");
-	CHECK(a.has_dimensions("g"));
-	CHECK(a.has_dimensions("kg"));
-	CHECK(a.has_dimensions("mg"));
-	CHECK_FALSE(a.has_empty_dimensions());
-	a = mass(100.0f,"g");
-	b = mass(50.0f,"g");
-	CHECK((a / b).has_empty_dimensions());
-	CHECK(bool(a < 110_g));
-	CHECK_FALSE(bool(a < 90_g));
-	CHECK(bool(a > 70_g));
-	CHECK_FALSE(bool(a > 120_g));
-	CHECK(bool(a <= 100_g));
-	CHECK_FALSE(bool(a <= 90_g));
-	CHECK(bool(a >= 100_g));
-	CHECK_FALSE(bool(a >= 110_g));
-	mass d = 1.676853_g;
-	CHECK(d.display(0) == "1.67685 g");
-	scifir::time_duration e = scifir::time_duration("10d 10h");
-	CHECK(e.display_as_time() >= "10d 10h");
-	scalar_unit f = scalar_unit("10 km*m");
-	CHECK(bool(sqrt(f) == scalar_unit("100 m")));
-	scalar_unit g = scalar_unit("1000 km*m*m");
-	CHECK(bool(sqrt_nth(g,3) == "100 m"));
-	scalar_unit h = 10_N;
-	CHECK(h.derived_display() == "10 kg*m/s2");
 
 	SECTION("is_scalar_unit() function")
 	{

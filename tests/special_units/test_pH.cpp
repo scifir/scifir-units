@@ -66,7 +66,7 @@ TEST_CASE("pH class") {
         CHECK(b.get_value() == 3.2f);
     }
 
-    SECTION("Operators of pH class with other pH classes")
+    SECTION("Operators of pH class with other pH class")
     {
         pH a(3.0f);
         CHECK(bool(a + pH(2.0f) == pH(5.0f)));
@@ -146,7 +146,7 @@ TEST_CASE("pH class") {
         CHECK(b.get_value() == 0.0f);
     }
 
-    SECTION("Comparison operators of pH class with pH classes")
+    SECTION("Comparison operators of pH class with pH class")
     {
         CHECK((pH(3.0f) == pH(3.0f)) == true);
         CHECK((pH(3.0f) == pH(2.0f)) == false);

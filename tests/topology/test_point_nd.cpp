@@ -10,7 +10,7 @@ using namespace scifir;
 
 TEST_CASE("class point_nd<T> and point_nd<float>")
 {
-	SECTION("Constructors of point_nd<> classes")
+	SECTION("Constructors of point_nd<> class")
 	{
 		point_nd<> a;
 		CHECK(to_string(a) == "[empty]");
@@ -58,7 +58,7 @@ TEST_CASE("class point_nd<T> and point_nd<float>")
 		CHECK(to_string(g) == "(0.48 m,0.48 m,1.87 m)");
 	}
 
-	SECTION("Constructors of point_nd<float> classes")
+	SECTION("Constructors of point_nd<float> class")
 	{
 		point_nd<float> a;
 		CHECK(to_string(a) == "[empty]");
@@ -100,7 +100,7 @@ TEST_CASE("class point_nd<T> and point_nd<float>")
 		CHECK(to_string(g) == "(0.48,0.48,1.87)");
 	}
 
-	SECTION("Assignments of point_nd<> classes")
+	SECTION("Assignments of point_nd<> class")
 	{
 		point_nd<> a;
 		point_nd<> a2(5_m,5_m,1_m);
@@ -141,7 +141,7 @@ TEST_CASE("class point_nd<T> and point_nd<float>")
 		CHECK(to_string(g) == "(0.48 m,0.48 m,1.87 m)");
 	}
 
-	SECTION("Assignments of point_nd<float> classes")
+	SECTION("Assignments of point_nd<float> class")
 	{
 		point_nd<float> a;
 		point_nd<float> a2(5.0f,5.0f,1.0f);
@@ -182,7 +182,7 @@ TEST_CASE("class point_nd<T> and point_nd<float>")
 		CHECK(to_string(g) == "(0.48,0.48,1.87)");
 	}
 
-	SECTION("Values of different coordinates systems of point_nd<> classes")
+	SECTION("Values of different coordinates systems of point_nd<> class")
 	{
 		point_nd<> a(7_m,4_m,2_m);
 		CHECK(a.get_p().display() == "8.06 m");
@@ -199,7 +199,7 @@ TEST_CASE("class point_nd<T> and point_nd<float>")
 		CHECK(c.get_altitude() == "0 m");*/
 	}
 
-	SECTION("Values of different coordinates systems of point_nd<float> classes")
+	SECTION("Values of different coordinates systems of point_nd<float> class")
 	{
 		point_nd<float> c(7.0f,4.0f,2.0f);
 		CHECK(std::fabs(c.get_p() - 8.06f) < 0.01f);
@@ -216,7 +216,7 @@ TEST_CASE("class point_nd<T> and point_nd<float>")
 		CHECK(c.get_altitude() == "0 m");*/
 	}
 
-	SECTION("set_position(), rotate() and move() of point_nd<> classes")
+	SECTION("set_position(), rotate() and move() of point_nd<> class")
 	{
 		point_nd<> a;
 		a.set_position(5_m,5_m,1_m);
@@ -255,7 +255,7 @@ TEST_CASE("class point_nd<T> and point_nd<float>")
 		CHECK(to_string(h) == "(2.41 m,2 m,4.41 m)");
 	}
 
-	SECTION("set_position(), rotate() and move() of point_nd<float> classes")
+	SECTION("set_position(), rotate() and move() of point_nd<float> class")
 	{
 		point_nd<float> a;
 		a.set_position(5.0f,5.0f,1.0f);
@@ -294,7 +294,7 @@ TEST_CASE("class point_nd<T> and point_nd<float>")
 		CHECK(to_string(h) == "(2.41,2,4.41)");
 	}
 
-	SECTION("Display of point_nd<> classes")
+	SECTION("Display of point_nd<> class")
 	{
 		point_nd<> a(2_m,3_m,5_m);
 		CHECK(a.display_cartesian_2d() == "[no-2d]");
@@ -313,7 +313,7 @@ TEST_CASE("class point_nd<T> and point_nd<float>")
 		CHECK(b.display_geographical() == "");*/
 	}
 
-	SECTION("Display of point_nd<float> classes")
+	SECTION("Display of point_nd<float> class")
 	{
 		point_nd<float> a(2.0f,3.0f,5.0f);
 		CHECK(a.display_cartesian_2d() == "[no-2d]");
@@ -443,7 +443,7 @@ TEST_CASE("class point_nd<T> and point_nd<float>")
 		CHECK("x: (7,4,2)" == ("x: " + a));
 	}
 
-	SECTION("Stream operators of point_nd<> classes")
+	SECTION("Stream operators of point_nd<> class")
 	{
 		point_nd<> a(2_m,3_m,2_m);
 		ostringstream out;
@@ -455,7 +455,7 @@ TEST_CASE("class point_nd<T> and point_nd<float>")
 		CHECK(to_string(b) == "(1 m,2 m,1 m)");
 	}
 
-	SECTION("Stream operators of point_nd<float> classes")
+	SECTION("Stream operators of point_nd<float> class")
 	{
 		point_nd<float> a(2.0f,3.0f,2.0f);
 		ostringstream out;

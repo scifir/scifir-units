@@ -189,7 +189,7 @@ TEST_CASE("pixel class") {
         CHECK(bool(scifir::sqrt_nth(b,3) == pixel(2.0f)));
     }
 
-    SECTION("Comparison operators of pixel class with pH classes")
+    SECTION("Comparison operators of pixel class with pH class")
     {
         CHECK((pixel(3.0f) == pixel(3.0f)) == true);
         CHECK((pixel(3.0f) == pixel(2.0f)) == false);

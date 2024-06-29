@@ -41,7 +41,7 @@ TEST_CASE("dimension class") {
 		CHECK(to_string(e) == "km");
 	}
 
-	SECTION("Creation of basic dimension classes") {
+	SECTION("Creation of basic dimension class") {
 		dimension a = dimension("m",dimension::POSITIVE);
 		CHECK(a.get_symbol() == "m");
 		dimension b = dimension("s",dimension::POSITIVE);
@@ -955,7 +955,7 @@ TEST_CASE("dimension class") {
 		CHECK(equal_dimensions_and_prefixes(c,f) == false);
 	}
 
-	SECTION("Comparison of dimension classes")
+	SECTION("Comparison of dimension class")
 	{
 		dimension a(dimension::m,prefix::no_prefix,dimension::POSITIVE);
 		dimension b(dimension::m,prefix::no_prefix,dimension::POSITIVE);

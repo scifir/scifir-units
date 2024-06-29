@@ -131,7 +131,7 @@ TEST_CASE("class size_2d<T> and size_2d<float>") {
 		CHECK(to_string(a) == "2 * 3");
 	}
 
-	SECTION("Comparison of size_2d<> classes")
+	SECTION("Comparison of size_2d<> class")
 	{
 		size_2d<> a(2_m,4_m);
 		size_2d<> b(2_m,4_m);
@@ -140,7 +140,7 @@ TEST_CASE("class size_2d<T> and size_2d<float>") {
 		CHECK(bool(a != c));
 	}
 
-	SECTION("Comparison of size_2d<float> classes")
+	SECTION("Comparison of size_2d<float> class")
 	{
 		size_2d<float> a(2.0f,4.0f);
 		size_2d<float> b(2.0f,4.0f);

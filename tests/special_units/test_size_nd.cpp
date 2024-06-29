@@ -139,7 +139,7 @@ TEST_CASE("class size_nd<T> and size_nd<float>") {
 		CHECK(to_string(a) == "2 * 3 * 4");
 	}
 
-	SECTION("Comparison of size_nd<> classes")
+	SECTION("Comparison of size_nd<> class")
 	{
 		size_nd<> a({2_m,4_m,3_m});
 		size_nd<> b({2_m,4_m,3_m});
@@ -151,7 +151,7 @@ TEST_CASE("class size_nd<T> and size_nd<float>") {
 		CHECK(bool(a != c));
 	}
 
-	SECTION("Comparison of size_nd<float> classes")
+	SECTION("Comparison of size_nd<float> class")
 	{
 		size_nd<float> a(vector<float>{2.0f,4.0f,3.0f});
 		size_nd<float> b(vector<float>{2.0f,4.0f,3.0f});

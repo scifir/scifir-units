@@ -10,7 +10,7 @@ using namespace scifir;
 
 TEST_CASE("class vector_unit_nd")
 {
-	SECTION("Constructors of vector_unit_nd classes")
+	SECTION("Constructors of vector_unit_nd class")
 	{
 		vector_unit_nd a;
 		CHECK(to_string(a) == "0 [empty]");
@@ -89,7 +89,7 @@ TEST_CASE("class vector_unit_nd")
 		CHECK(to_string(p) == "1.41 m 45° 45°");
 	}
 
-	SECTION("Assignments of vector_unit_nd classes")
+	SECTION("Assignments of vector_unit_nd class")
 	{
 		vector_unit_nd a("10 g");
 		vector_unit_nd b("100 g",{50,20,20});
@@ -109,7 +109,7 @@ TEST_CASE("class vector_unit_nd")
 		CHECK(to_string(g) == "100 g 50° 20°");
 	}
 
-	SECTION("point_to() function of vector_unit_nd classes for the 1d case")
+	SECTION("point_to() function of vector_unit_nd class for the 1d case")
 	{
 		vector_unit_nd a("10 N");
 		a.point_to(direction::LEFT);
@@ -118,7 +118,7 @@ TEST_CASE("class vector_unit_nd")
 		CHECK(a.get_value() >= 0);
 	}
 
-	SECTION("point_to() function of vector_unit_nd classes for the 2d case")
+	SECTION("point_to() function of vector_unit_nd class for the 2d case")
 	{
 		vector_unit_nd a("10 N",vector<float>{20.0f});
 		a.point_to(direction::LEFT);
@@ -139,7 +139,7 @@ TEST_CASE("class vector_unit_nd")
 		CHECK(a.angles[0].get_value() == 225.0f);
 	}
 
-	SECTION("point_to() function of vector_unit_nd classes for the 3d case")
+	SECTION("point_to() function of vector_unit_nd class for the 3d case")
 	{
 		vector_unit_nd a("10 N",{20.0f,30.0f});
 		a.point_to(direction::LEFT);
@@ -222,7 +222,7 @@ TEST_CASE("class vector_unit_nd")
 		CHECK(a.angles[1].get_value() == 135.0f);
 	}
 
-	SECTION("Operators of vector_unit_nd classes with other vector_unit_nd classes")
+	SECTION("Operators of vector_unit_nd class with other vector_unit_nd class")
 	{
 		vector_unit_nd a("10 N",{20.0f,30.0f});
 		vector_unit_nd a2("10 N",{20.0f,30.0f});
@@ -280,7 +280,7 @@ TEST_CASE("class vector_unit_nd")
 		CHECK(to_string(d3 - d4) == "0 [empty]");
 	}
 
-	SECTION("Operators of vector_unit_nd classes with scalar_unit classes")
+	SECTION("Operators of vector_unit_nd class with scalar_unit class")
 	{
 		vector_unit_nd a("10 N",{10.0f,10.0f});
 		scalar_unit a2("5 g");
@@ -321,7 +321,7 @@ TEST_CASE("class vector_unit_nd")
 		CHECK(to_string(c3 ^ c4) == "0 [empty]");
 	}
 
-	SECTION("Numeric operators of vector_unit_nd classes")
+	SECTION("Numeric operators of vector_unit_nd class")
 	{
 		vector_unit_nd a("10 N",{20.0f,20.0f});
 		CHECK(to_string(a + 10.0f) == "20 N 20° 20°");
@@ -357,7 +357,7 @@ TEST_CASE("class vector_unit_nd")
 		CHECK(to_string(k) == "5 N 200° 160°");
 	}
 
-	SECTION("Projections of vector_unit_nd classes")
+	SECTION("Projections of vector_unit_nd class")
 	{
 		vector_unit_nd a("2 N",{10.0f,10.0f});
 		CHECK(a.x_projection().display(2) == "0.34 N");
@@ -381,7 +381,7 @@ TEST_CASE("class vector_unit_nd")
 		CHECK(d.z_projection().display(2) == "0 [empty]");
 	}
 
-	SECTION("Invertion of vector_unit_nd classes")
+	SECTION("Invertion of vector_unit_nd class")
 	{
 		vector_unit_nd a("2 N",{10.0f,10.0f});
 		a.invert();
@@ -391,7 +391,7 @@ TEST_CASE("class vector_unit_nd")
 		CHECK(to_string(b) == "2 N 190°");
 	}
 
-	SECTION("Display of vector_unit_nd classes")
+	SECTION("Display of vector_unit_nd class")
 	{
 		vector_unit_nd a(1,"N",{20,20,20,20});
 		CHECK(a.vectorial_display() == "1 N 20° 20° 20° 20°");
@@ -399,7 +399,7 @@ TEST_CASE("class vector_unit_nd")
 		CHECK(a.vectorial_custom_display("g*m/s2") == "1000 g*m/s2 20° 20° 20° 20°");
 	}
 
-	SECTION("Math functions of vector_unit_nd classes")
+	SECTION("Math functions of vector_unit_nd class")
 	{
 		vector_unit_nd a("2 N",{10.0f,10.0f});
 		CHECK(bool(scifir::norm(a) == scalar_unit("2 N")));
@@ -453,7 +453,7 @@ TEST_CASE("class vector_unit_nd")
 		CHECK(scifir::orthogonal(i,i2) == false);
 	}
 
-	SECTION("Comparison operators of vector_unit_nd classes")
+	SECTION("Comparison operators of vector_unit_nd class")
 	{
 		vector_unit_nd a("2 N",{10.0f,10.0f});
 		vector_unit_nd a2("2 N",{10.0f,10.0f});
@@ -463,7 +463,7 @@ TEST_CASE("class vector_unit_nd")
 		CHECK(bool(b != b2));
 	}
 
-	SECTION("String operations with vector_unit_nd classes")
+	SECTION("String operations with vector_unit_nd class")
 	{
 		vector_unit_nd a("2 N",{10.0f,10.0f});
 		CHECK(bool(a == "2 N 10° 10°"));

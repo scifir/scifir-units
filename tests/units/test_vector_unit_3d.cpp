@@ -10,7 +10,7 @@ using namespace scifir;
 
 TEST_CASE("class vector_unit_3d")
 {
-	SECTION("Constructors of vector_unit_3d classes")
+	SECTION("Constructors of vector_unit_3d class")
 	{
 		vector_unit_3d a;
 		CHECK(to_string(a) == "0 [empty] 0\u03B8 0\u03A6");
@@ -71,7 +71,7 @@ TEST_CASE("class vector_unit_3d")
 		CHECK(to_string(o) == "1.41 m 45θ 45Φ");
 	}
 
-	SECTION("Assignments of vector_unit_3d classes")
+	SECTION("Assignments of vector_unit_3d class")
 	{
 		vector_unit_3d a("10 N",angle(10.0f),angle(5.0f));
 		vector_unit_3d b("20 N",angle(20.0f),angle(30.0f));
@@ -90,7 +90,7 @@ TEST_CASE("class vector_unit_3d")
 		CHECK(to_string(f) == "5 N 10\u03B8 10\u03A6");
 	}
 
-	SECTION("point_to() function of vector_unit_3d classes")
+	SECTION("point_to() function of vector_unit_3d class")
 	{
 		vector_unit_3d a("10 N",20.0f,30.0f);
 		a.point_to(direction::LEFT);
@@ -173,7 +173,7 @@ TEST_CASE("class vector_unit_3d")
 		CHECK(a.phi.get_value() == 135.0f);
 	}
 
-	SECTION("Operators of vector_unit_3d classes with other vector_unit_3d classes")
+	SECTION("Operators of vector_unit_3d class with other vector_unit_3d class")
 	{
 		vector_unit_3d a("10 N",20.0f,30.0f);
 		vector_unit_3d a2("10 N",20.0f,30.0f);
@@ -205,7 +205,7 @@ TEST_CASE("class vector_unit_3d")
 		CHECK(to_string(d3 - d4) == "0 [empty] 0\u03B8 0\u03A6");
 	}
 
-	SECTION("Operators of vector_unit_3d classes with scalar_unit classes")
+	SECTION("Operators of vector_unit_3d class with scalar_unit class")
 	{
 		vector_unit_3d a("10 N",10.0f,10.0f);
 		scalar_unit a2("5 g");
@@ -225,7 +225,7 @@ TEST_CASE("class vector_unit_3d")
 		CHECK(to_string(c3 ^ c4) == "0 [empty] 0\u03B8 0\u03A6");
 	}
 
-	SECTION("Numeric operators of vector_unit_3d classes")
+	SECTION("Numeric operators of vector_unit_3d class")
 	{
 		vector_unit_3d a("10 N",20.0f,20.0f);
 		CHECK(to_string(a + 10.0f) == "20 N 20\u03B8 20\u03A6");
@@ -261,7 +261,7 @@ TEST_CASE("class vector_unit_3d")
 		CHECK(to_string(k) == "5 N 200\u03B8 160\u03A6");
 	}
 
-	SECTION("Projections of vector_unit_3d classes")
+	SECTION("Projections of vector_unit_3d class")
 	{
 		vector_unit_3d a("2 N",10.0f,10.0f);
 		CHECK(a.x_projection().display(2) == "0.34 N");
@@ -269,14 +269,14 @@ TEST_CASE("class vector_unit_3d")
 		CHECK(a.z_projection().display(2) == "1.96 N");
 	}
 
-	SECTION("Invertion of vector_unit_3d classes")
+	SECTION("Invertion of vector_unit_3d class")
 	{
 		vector_unit_3d a("2 N",10.0f,10.0f);
 		a.invert();
 		CHECK(to_string(a) == "2 N 190\u03B8 170\u03A6");
 	}
 
-	SECTION("Display of vector_unit_3d classes")
+	SECTION("Display of vector_unit_3d class")
 	{
 		vector_unit_3d a(1,"N",20,20);
 		CHECK(a.vectorial_display() == "1 N 20\u03B8 20\u03A6");
@@ -284,7 +284,7 @@ TEST_CASE("class vector_unit_3d")
 		CHECK(a.vectorial_custom_display("g*m/s2") == "1000 g*m/s2 20\u03B8 20\u03A6");
 	}
 
-	SECTION("Math functions of vector_unit_3d classes")
+	SECTION("Math functions of vector_unit_3d class")
 	{
 		vector_unit_3d a("2 N",10.0f,10.0f);
 		CHECK(bool(scifir::norm(a) == scalar_unit("2 N")));
@@ -317,7 +317,7 @@ TEST_CASE("class vector_unit_3d")
 		CHECK(scifir::orthogonal(h,h2) == true);
 	}
 
-	SECTION("Comparison operators of vector_unit_3d classes")
+	SECTION("Comparison operators of vector_unit_3d class")
 	{
 		vector_unit_3d a("2 N",10.0f,10.0f);
 		vector_unit_3d a2("2 N",10.0f,10.0f);
@@ -327,7 +327,7 @@ TEST_CASE("class vector_unit_3d")
 		CHECK(bool(b != b2));
 	}
 
-	SECTION("String operations with vector_unit_3d classes")
+	SECTION("String operations with vector_unit_3d class")
 	{
 		vector_unit_3d a("2 N",10.0f,10.0f);
 		CHECK(bool(a == "2 N 10\u03B8 10\u03A6"));
