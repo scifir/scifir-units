@@ -117,6 +117,7 @@ namespace scifir
 			vector_unit_3d& operator =(vector_unit_3d&&);
 			vector_unit_3d& operator =(const scalar_unit&);
 			vector_unit_3d& operator =(scalar_unit&&);
+			vector_unit_3d& operator =(const string&);
 
 			void point_to(direction::name);
 
@@ -227,6 +228,9 @@ namespace scifir
 
 			angle theta;
 			angle phi;
+
+		private:
+			void initialize_from_string(string);
 	};
 
 	string to_string(const vector_unit_3d&);

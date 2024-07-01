@@ -155,16 +155,7 @@ namespace scifir
 
 	vector_unit_nd::vector_unit_nd(const string& init_vector_nd) : vector_unit_nd()
 	{
-		vector<string> values;
-		boost::split(values,init_vector_nd,boost::is_any_of(" "));
-		set_from_string(values[0] + " " + values[1]);
-		if (values.size() > 2)
-		{
-			for (unsigned int i = 2; i < values.size(); i++)
-			{
-				angles.push_back(angle(values[i]));
-			}
-		}
+		vector_unit_nd::initialize_from_string(init_vector_nd);
 	}
 
 	vector_unit_nd& vector_unit_nd::operator =(const vector_unit_nd& x)
@@ -190,6 +181,12 @@ namespace scifir
 	vector_unit_nd& vector_unit_nd::operator =(scalar_unit&& x)
 	{
 		scalar_unit::operator=(std::move(x));
+		return *this;
+	}
+
+	vector_unit_nd& vector_unit_nd::operator =(const string& init_vector_nd)
+	{
+		vector_unit_nd::initialize_from_string(init_vector_nd);
 		return *this;
 	}
 
@@ -718,6 +715,21 @@ namespace scifir
 			out << " " << x_angle.display(2);
 		}
 		return out.str();
+	}
+
+	void vector_unit_nd::initialize_from_string(string init_vector_nd)
+	{
+		vector<string> values;
+		boost::split(values,init_vector_nd,boost::is_any_of(" "));
+		scalar_unit::initialize_from_string(values[0] + " " + values[1]);
+		if (values.size() > 2)
+		{
+			angles.clear();
+			for (unsigned int i = 2; i < values.size(); i++)
+			{
+				angles.push_back(angle(values[i]));
+			}
+		}
 	}
 
 	scalar_unit norm(const vector_unit_nd& x)

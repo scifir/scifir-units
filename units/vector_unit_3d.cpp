@@ -78,14 +78,7 @@ namespace scifir
 
 	vector_unit_3d::vector_unit_3d(const string& init_vector_3d) : vector_unit_3d()
 	{
-		vector<string> values;
-		boost::split(values,init_vector_3d,boost::is_any_of(" "));
-		if (values.size() == 4)
-		{
-			set_from_string(values[0] + " " + values[1]);
-			theta = angle(values[2]);
-			phi = angle(values[3]);
-		}
+		vector_unit_3d::initialize_from_string(init_vector_3d);
 	}
 	
 
@@ -114,6 +107,12 @@ namespace scifir
 	vector_unit_3d& vector_unit_3d::operator =(scalar_unit&& x)
 	{
 		scalar_unit::operator=(std::move(x));
+		return *this;
+	}
+
+	vector_unit_3d& vector_unit_3d::operator =(const string& init_vector_3d)
+	{
+		vector_unit_3d::initialize_from_string(init_vector_3d);
 		return *this;
 	}
 
@@ -403,6 +402,18 @@ namespace scifir
 		return out.str();
 	}
 #endif
+
+	void vector_unit_3d::initialize_from_string(string init_vector_3d)
+	{
+		vector<string> values;
+		boost::split(values,init_vector_3d,boost::is_any_of(" "));
+		if (values.size() == 4)
+		{
+			scalar_unit::initialize_from_string(values[0] + " " + values[1]);
+			theta = angle(values[2]);
+			phi = angle(values[3]);
+		}
+	}
 
 	scalar_unit norm(const vector_unit_3d& x)
 	{

@@ -56,7 +56,7 @@ namespace scifir
 	scalar_unit::scalar_unit(const string& init_scalar) : scalar_unit()
 	{
 		//static_assert(is_valid_scalar_unit("asdf"),"invalid initialization string");
-		set_from_string(init_scalar);
+		initialize_from_string(init_scalar);
 	}
 
 	scalar_unit& scalar_unit::operator =(const scalar_unit& x)
@@ -84,6 +84,12 @@ namespace scifir
 		{
 			cerr << "Cannot initialize to different dimensions" << endl;
 		}
+		return *this;
+	}
+
+	scalar_unit& scalar_unit::operator =(const string& init_scalar)
+	{
+		initialize_from_string(init_scalar);
 		return *this;
 	}
 
@@ -510,7 +516,7 @@ namespace scifir
 		}
 	}
 
-	void scalar_unit::set_from_string(const string& init_scalar)
+	void scalar_unit::initialize_from_string(string init_scalar)
 	{
 		if(!isdigit(init_scalar[0]))
 		{

@@ -88,6 +88,9 @@ TEST_CASE("class vector_unit_2d")
 		vector_unit_2d f("10 N",angle(10.0f));
 		f = std::move(scalar_unit("5 N"));
 		CHECK(to_string(f) == "5 N 10\u03B8");
+		vector_unit_2d g("10 N",angle(10.0f));
+		g = "8 N 15\u03B8";
+		CHECK(to_string(g) == "8 N 15\u03B8");
 	}
 
 	SECTION("point_to() function of vector_unit_2d class")

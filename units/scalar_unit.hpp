@@ -93,6 +93,7 @@ namespace scifir
 
 			scalar_unit& operator =(const scalar_unit&);
 			scalar_unit& operator =(scalar_unit&&);
+			scalar_unit& operator =(const string&);
 
 			explicit operator float() const;
 
@@ -202,7 +203,7 @@ namespace scifir
 
 			void add_dimension(const dimension&);
 			void remove_dimension(const dimension&);
-			void set_from_string(const string&);
+			void initialize_from_string(string);
 	};
 
 	string to_string(const scalar_unit&);

@@ -68,6 +68,9 @@ TEST_CASE("scalar_unit class") {
 		CHECK(to_string(c) == "10 m");
 		c = scalar_unit("10 g");
 		CHECK(to_string(c) == "10 m");
+		scalar_unit d("10 K");
+		d = "5 K";
+		CHECK(to_string(d) == "5 K");
 	}
 
 	SECTION("Float cast")
@@ -152,6 +155,34 @@ TEST_CASE("scalar_unit class") {
 		CHECK(to_string(j2) == "-50 m");
 	}
 
+	SECTION("Increment and decrement operators of scalar_unit class")
+	{
+		scalar_unit a(100.0f,"g");
+		a++;
+		CHECK(to_string(a) == "101 g");
+		scalar_unit b(100.0f,"g");
+		++b;
+		CHECK(to_string(b) == "101 g");
+		scalar_unit c(100.0f,"g");
+		c--;
+		CHECK(to_string(c) == "99 g");
+		scalar_unit d(100.0f,"g");
+		--d;
+		CHECK(to_string(d) == "99 g");
+	}
+
+	SECTION("has_dimensions() of scalar_unit_class")
+	{
+		scalar_unit a(100.0f,"g");
+		CHECK(a.has_dimensions("kg") == true);
+		CHECK(a.has_dimensions("N") == false);
+		CHECK(a.has_dimensions("m") == false);
+		scalar_unit b(10.0f,"kg");
+		CHECK(a.has_dimensions(b) == true);
+		scalar_unit c(10.0f,"N");
+		CHECK(a.has_dimensions(c) == false);
+	}
+
 	SECTION("change_dimensions() of scalar_unit class")
 	{
 		scalar_unit a("50 N");
@@ -208,6 +239,38 @@ TEST_CASE("scalar_unit class") {
 		CHECK(e.derived_display(2,false,true) == "1.49598e+11 m");
 		scalar_unit f("1 km/h");
 		CHECK(f.custom_display("m/s",2,true) == "0.27 [m/s]");
+		//CHECK(f.custom_display("sci") == "1000e0 m/h");
+	}
+
+	SECTION("is_scalar_unit() function")
+	{
+		CHECK(is_scalar_unit("1 m") == true);
+		CHECK(is_scalar_unit("7 m2") == true);
+		CHECK(is_scalar_unit("2 m/s2") == true);
+		CHECK(is_scalar_unit("5 m2/s2") == true);
+		CHECK(is_scalar_unit("2m") == false);
+		CHECK(is_scalar_unit("7 $") == false);
+		CHECK(is_scalar_unit("8 $2") == false);
+		CHECK(is_scalar_unit("2 m$") == false);
+		CHECK(is_scalar_unit("2 m2$") == false);
+		CHECK(is_scalar_unit("4 g2$/m") == false);
+		CHECK(is_scalar_unit("4 g/$") == false);
+		CHECK(is_scalar_unit("6 m/$2") == false);
+		CHECK(is_scalar_unit("9 s/m$") == false);
+		CHECK(is_scalar_unit("9 s/m2$") == false);
+		CHECK(is_scalar_unit("1.5 C") == true);
+		CHECK(is_scalar_unit("1.5e6 s") == true);
+		CHECK(is_scalar_unit("1.5*10^34 m") == true);
+		CHECK(is_scalar_unit("12.37 m/s*C") == true);
+		CHECK(is_scalar_unit("ms") == false);
+		CHECK(is_scalar_unit("ms/C*s") == false);
+		CHECK(is_scalar_unit("1.23e5") == false);
+		CHECK(is_scalar_unit("1.23e m") == false);
+		CHECK(is_scalar_unit("1.5*10^ m") == false);
+		CHECK(is_scalar_unit("101") == false);
+		CHECK(is_scalar_unit("10.1") == false);
+		CHECK(is_scalar_unit("101 ") == false);
+		CHECK(is_scalar_unit("10.1 ") == false);
 	}
 
 	SECTION("Math functions of scalar_unit class")
@@ -295,34 +358,4 @@ TEST_CASE("scalar_unit class") {
         b >> b2;
         CHECK(bool(b2 == "3 N"));
     }
-
-	SECTION("is_scalar_unit() function")
-	{
-		CHECK(is_scalar_unit("1 m") == true);
-		CHECK(is_scalar_unit("7 m2") == true);
-		CHECK(is_scalar_unit("2 m/s2") == true);
-		CHECK(is_scalar_unit("5 m2/s2") == true);
-		CHECK(is_scalar_unit("7 $") == false);
-		CHECK(is_scalar_unit("8 $2") == false);
-		CHECK(is_scalar_unit("2 m$") == false);
-		CHECK(is_scalar_unit("2 m2$") == false);
-		CHECK(is_scalar_unit("4 g2$/m") == false);
-		CHECK(is_scalar_unit("4 g/$") == false);
-		CHECK(is_scalar_unit("6 m/$2") == false);
-		CHECK(is_scalar_unit("9 s/m$") == false);
-		CHECK(is_scalar_unit("9 s/m2$") == false);
-		CHECK(is_scalar_unit("1.5 C") == true);
-		CHECK(is_scalar_unit("1.5e6 s") == true);
-		CHECK(is_scalar_unit("1.5*10^34 m") == true);
-		CHECK(is_scalar_unit("12.37 m/s*C") == true);
-		CHECK(is_scalar_unit("ms") == false);
-		CHECK(is_scalar_unit("ms/C*s") == false);
-		CHECK(is_scalar_unit("1.23e5") == false);
-		CHECK(is_scalar_unit("1.23e m") == false);
-		CHECK(is_scalar_unit("1.5*10^ m") == false);
-		CHECK(is_scalar_unit("101") == false);
-		CHECK(is_scalar_unit("10.1") == false);
-		CHECK(is_scalar_unit("101 ") == false);
-		CHECK(is_scalar_unit("10.1 ") == false);
-	}
 }

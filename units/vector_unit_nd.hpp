@@ -121,6 +121,7 @@ namespace scifir
 			vector_unit_nd& operator =(vector_unit_nd&&);
 			vector_unit_nd& operator =(const scalar_unit&);
 			vector_unit_nd& operator =(scalar_unit&&);
+			vector_unit_nd& operator =(const string&);
 
 			void point_to(direction::name);
 			
@@ -226,6 +227,9 @@ namespace scifir
 			string vectorial_custom_display(const string&,int = 2) const;
 
 			vector<angle> angles;
+
+		private:
+			void initialize_from_string(string);
 	};
 
 	string to_string(const vector_unit_nd&);

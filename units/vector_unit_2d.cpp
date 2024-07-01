@@ -77,16 +77,10 @@ namespace scifir
 	
 	vector_unit_2d::vector_unit_2d(const string& init_scalar,const angle& new_angle) : scalar_unit(init_scalar),theta(new_angle)
 	{}
-	
+
 	vector_unit_2d::vector_unit_2d(const string& init_vector_2d) : vector_unit_2d()
 	{
-		vector<string> values;
-		boost::split(values,init_vector_2d,boost::is_any_of(" "));
-		if (values.size() == 3)
-		{
-			set_from_string(values[0] + " " + values[1]);
-			theta = angle(values[2]);
-		}
+		vector_unit_2d::initialize_from_string(init_vector_2d);
 	}
 	
 	vector_unit_2d& vector_unit_2d::operator =(const vector_unit_2d& x)
@@ -112,6 +106,12 @@ namespace scifir
 	vector_unit_2d& vector_unit_2d::operator =(scalar_unit&& x)
 	{
 		scalar_unit::operator=(std::move(x));
+		return *this;
+	}
+
+	vector_unit_2d& vector_unit_2d::operator =(const string& init_vector_2d)
+	{
+		vector_unit_2d::initialize_from_string(init_vector_2d);
 		return *this;
 	}
 
@@ -297,6 +297,17 @@ namespace scifir
 		return out.str();
 	}
 #endif
+
+	void vector_unit_2d::initialize_from_string(string init_vector_2d)
+	{
+		vector<string> values;
+		boost::split(values,init_vector_2d,boost::is_any_of(" "));
+		if (values.size() == 3)
+		{
+			scalar_unit::initialize_from_string(values[0] + " " + values[1]);
+			theta = angle(values[2]);
+		}
+	}
 
 	scalar_unit norm(const vector_unit_2d& x)
 	{

@@ -107,6 +107,9 @@ TEST_CASE("class vector_unit_nd")
 		scalar_unit h("100 g");
 		g = std::move(h);
 		CHECK(to_string(g) == "100 g 50° 20°");
+		vector_unit_nd i("10 N",{angle(10.0f),angle(15.0f),angle(40.0f)});
+		i = "100 N 50° 20° 30°";
+		CHECK(to_string(i) == "100 N 50° 20° 30°");
 	}
 
 	SECTION("point_to() function of vector_unit_nd class for the 1d case")

@@ -92,6 +92,7 @@ namespace scifir
 			vector_unit_2d& operator =(vector_unit_2d&&);
 			vector_unit_2d& operator =(const scalar_unit&);
 			vector_unit_2d& operator =(scalar_unit&&);
+			vector_unit_2d& operator =(const string&);
 
 			void point_to(direction::name);
 
@@ -195,6 +196,9 @@ namespace scifir
 			string vectorial_custom_display(const string&,int = 2) const;
 
 			angle theta;
+
+		private:
+			void initialize_from_string(string);
 	};
 
 	string to_string(const vector_unit_2d&);

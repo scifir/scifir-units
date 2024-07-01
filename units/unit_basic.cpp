@@ -313,7 +313,7 @@ namespace scifir
 
 	mass::mass(const string& init_percentage,const string& init_mass) : scalar_unit()
 	{
-		set_from_string(init_mass);
+		initialize_from_string(init_mass);
 		percentage new_percentage = percentage(init_percentage);
 		value = new_percentage * value;
 	}
@@ -330,7 +330,7 @@ namespace scifir
 
 	mole::mole(const string& init_percentage,const string& init_mole) : scalar_unit()
 	{
-		set_from_string(init_mole);
+		initialize_from_string(init_mole);
 		percentage new_percentage = percentage(init_percentage);
 		value = new_percentage * value;
 	}
