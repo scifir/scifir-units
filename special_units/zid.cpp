@@ -45,50 +45,7 @@ namespace scifir
 
 	zid::zid(const string& init_zid_full) : zid()
 	{
-		if (init_zid_full != "")
-		{
-			int number_whitespaces = std::count(init_zid_full.begin(),init_zid_full.end(),' ');
-			std::size_t last_whitespace = init_zid_full.find_last_of(' ');
-			if (number_whitespaces == 2 or number_whitespaces == 1)
-			{
-				string init_aid = init_zid_full.substr(0,last_whitespace);
-				string init_zid = init_zid_full.substr(last_whitespace + 1);
-				aid = scifir::aid(init_aid);
-				vector<string> values;
-				boost::split(values,init_zid,boost::is_any_of(":"));
-				country = values[0];
-				if (values.size() > 2)
-				{
-					int total_for_values = int(values.size()) - 1;
-					for (int i = 1; i < total_for_values; i++)
-					{
-						regions.push_back(values[i]);
-					}
-				}
-				if (values.size() >= 2)
-				{
-					zone = values.back();
-				}
-			}
-			else if (number_whitespaces == 0)
-			{
-				vector<string> values;
-				boost::split(values,init_zid_full,boost::is_any_of(":"));
-				country = values[0];
-				if (values.size() > 2)
-				{
-					int total_for_values = int(values.size()) - 1;
-					for (int i = 1; i < total_for_values; i++)
-					{
-						regions.push_back(values[i]);
-					}
-				}
-				if (values.size() >= 2)
-				{
-					zone = values.back();
-				}
-			}
-		}
+		initialize_from_string(init_zid_full);
 	}
 
 	zid& zid::operator=(const zid& x)
@@ -111,6 +68,12 @@ namespace scifir
 
 	zid& zid::operator=(const string& init_zid_full)
 	{
+		initialize_from_string(init_zid_full);
+		return *this;
+	}
+
+	void zid::initialize_from_string(const string& init_zid_full)
+	{
 		if (init_zid_full != "")
 		{
 			int number_whitespaces = std::count(init_zid_full.begin(),init_zid_full.end(),' ');
@@ -155,7 +118,6 @@ namespace scifir
 				}
 			}
 		}
-		return *this;
 	}
 
 	string to_string(const zid& x)

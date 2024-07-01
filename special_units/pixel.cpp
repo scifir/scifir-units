@@ -36,18 +36,7 @@ namespace scifir
 	
 	pixel::pixel(const string& init_pixel) : value()
 	{
-		if (init_pixel.substr(init_pixel.length() - 3,3) == " px")
-		{
-			value = stof(init_pixel.substr(0,init_pixel.length() - 3));
-		}
-		else if (init_pixel.substr(init_pixel.length() - 2,2) == "px")
-		{
-			value = stof(init_pixel.substr(0,init_pixel.length() - 2));
-		}
-		else
-		{
-			value = stof(init_pixel);
-		}
+		initialize_from_string(init_pixel);
 	}
 
 	pixel::pixel(const scalar_unit& x)
@@ -83,18 +72,7 @@ namespace scifir
 
 	pixel& pixel::operator=(const string& init_pixel)
 	{
-		if (init_pixel.substr(init_pixel.length() - 3,3) == " px")
-		{
-			value = stof(init_pixel.substr(0,init_pixel.length() - 3));
-		}
-		else if (init_pixel.substr(init_pixel.length() - 2,2) == "px")
-		{
-			value = stof(init_pixel.substr(0,init_pixel.length() - 2));
-		}
-		else
-		{
-			value = stof(init_pixel);
-		}
+		initialize_from_string(init_pixel);
 		return *this;
 	}
 
@@ -185,6 +163,22 @@ namespace scifir
 		pixel tmp = pixel(*this);
 		operator--();
 		return tmp;
+	}
+
+	void pixel::initialize_from_string(const string& init_pixel)
+	{
+		if (init_pixel.substr(init_pixel.length() - 3,3) == " px")
+		{
+			value = stof(init_pixel.substr(0,init_pixel.length() - 3));
+		}
+		else if (init_pixel.substr(init_pixel.length() - 2,2) == "px")
+		{
+			value = stof(init_pixel.substr(0,init_pixel.length() - 2));
+		}
+		else
+		{
+			value = stof(init_pixel);
+		}
 	}
 
 	string to_string(const pixel& x)

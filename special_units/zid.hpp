@@ -28,6 +28,9 @@ namespace scifir
 			vector<string> regions;
 			string country;
 			string zone;
+
+		private:
+			void initialize_from_string(const string&);
 	};
 
 	string to_string(const zid&);

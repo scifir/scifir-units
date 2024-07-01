@@ -33,6 +33,9 @@ namespace scifir
 			string solar_system;
 			string astronomical_body;
 			aid::type astronomical_type;
+
+		private:
+			void initialize_from_string(const string&);
 	};
 	
 	string to_string(const aid&);

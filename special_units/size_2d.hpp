@@ -32,15 +32,7 @@ namespace scifir
 
 			explicit size_2d(const string& init_size_2d) : size_2d()
 			{
-				vector<string> widths;
-				boost::split(widths,init_size_2d,boost::is_any_of("*"));
-				if (widths.size() == 2)
-				{
-					boost::trim(widths[0]);
-					boost::trim(widths[1]);
-					width = T(widths[0]);
-					height = T(widths[1]);
-				}
+				initialize_from_string(init_size_2d);
 			}
 
 			size_2d<T>& operator=(const size_2d<T>& x)
@@ -54,6 +46,12 @@ namespace scifir
 			{
 				width = std::move(x.width);
 				height = std::move(x.height);
+				return *this;
+			}
+
+			size_2d<T>& operator=(const string& init_size_2d)
+			{
+				initialize_from_string(init_size_2d);
 				return *this;
 			}
 
@@ -86,6 +84,20 @@ namespace scifir
 
 			T width;
 			T height;
+
+		private:
+			void initialize_from_string(const string& init_size_2d)
+			{
+				vector<string> widths;
+				boost::split(widths,init_size_2d,boost::is_any_of("*"));
+				if (widths.size() == 2)
+				{
+					boost::trim(widths[0]);
+					boost::trim(widths[1]);
+					width = T(widths[0]);
+					height = T(widths[1]);
+				}
+			}
 	};
 
 	template<>
@@ -109,15 +121,7 @@ namespace scifir
 
 			explicit size_2d(const string& init_size_2d) : size_2d()
 			{
-				vector<string> widths;
-				boost::split(widths,init_size_2d,boost::is_any_of("*"));
-				if (widths.size() == 2)
-				{
-					boost::trim(widths[0]);
-					boost::trim(widths[1]);
-					width = stof(widths[0]);
-					height = stof(widths[1]);
-				}
+				initialize_from_string(init_size_2d);
 			}
 
 			size_2d<float>& operator=(const size_2d<float>& x)
@@ -131,6 +135,12 @@ namespace scifir
 			{
 				width = std::move(x.width);
 				height = std::move(x.height);
+				return *this;
+			}
+
+			size_2d<float>& operator=(const string& init_size_2d)
+			{
+				initialize_from_string(init_size_2d);
 				return *this;
 			}
 
@@ -163,6 +173,20 @@ namespace scifir
 
 			float width;
 			float height;
+
+		private:
+			void initialize_from_string(const string& init_size_2d)
+			{
+				vector<string> widths;
+				boost::split(widths,init_size_2d,boost::is_any_of("*"));
+				if (widths.size() == 2)
+				{
+					boost::trim(widths[0]);
+					boost::trim(widths[1]);
+					width = stof(widths[0]);
+					height = stof(widths[1]);
+				}
+			}
 	};
 
 	template<typename T>

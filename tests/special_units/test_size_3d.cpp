@@ -57,6 +57,9 @@ TEST_CASE("class size_3d<T> and size_3d<float>") {
 		size_3d<> b2(2_m,3_m,1_m);
 		b = std::move(b2);
 		CHECK(to_string(b) == "2 m * 3 m * 1 m");
+		size_3d<> c(2_m,3_m,1_m);
+		c = "5 m * 6 m * 2 m";
+		CHECK(to_string(c) == "5 m * 6 m * 2 m");
 	}
 
 	SECTION("Assignments of size_3d<float> class")
@@ -69,6 +72,9 @@ TEST_CASE("class size_3d<T> and size_3d<float>") {
 		size_3d<float> b2(2.0f,3.0f,1.0f);
 		b = std::move(b2);
 		CHECK(to_string(b) == "2 * 3 * 1");
+		size_3d<float> c(2.0f,3.0f,1.0f);
+		c = "5 * 6 * 2";
+		CHECK(to_string(c) == "5 * 6 * 2");
 	}
 
 	SECTION("Operators of size_3d<> class")

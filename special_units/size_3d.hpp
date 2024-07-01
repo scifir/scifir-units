@@ -32,17 +32,7 @@ namespace scifir
 
 			explicit size_3d(const string& init_size_3d) : size_3d()
 			{
-				vector<string> widths;
-				boost::split(widths,init_size_3d,boost::is_any_of("*"));
-				if (widths.size() == 3)
-				{
-					boost::trim(widths[0]);
-					boost::trim(widths[1]);
-					boost::trim(widths[2]);
-					width = T(widths[0]);
-					height = T(widths[1]);
-					depth = T(widths[2]);
-				}
+				initialize_from_string(init_size_3d);
 			}
 
 			size_3d<T>& operator=(const size_3d<T>& x)
@@ -58,6 +48,12 @@ namespace scifir
 				width = std::move(x.width);
 				height = std::move(x.height);
 				depth = std::move(x.depth);
+				return *this;
+			}
+
+			size_3d<T>& operator=(const string& init_size_3d)
+			{
+				initialize_from_string(init_size_3d);
 				return *this;
 			}
 
@@ -93,6 +89,22 @@ namespace scifir
 			T width;
 			T height;
 			T depth;
+
+		private:
+			void initialize_from_string(const string& init_size_3d)
+			{
+				vector<string> widths;
+				boost::split(widths,init_size_3d,boost::is_any_of("*"));
+				if (widths.size() == 3)
+				{
+					boost::trim(widths[0]);
+					boost::trim(widths[1]);
+					boost::trim(widths[2]);
+					width = T(widths[0]);
+					height = T(widths[1]);
+					depth = T(widths[2]);
+				}
+			}
 	};
 
 	template<>
@@ -116,17 +128,7 @@ namespace scifir
 
 			explicit size_3d(const string& init_size_3d) : size_3d()
 			{
-				vector<string> widths;
-				boost::split(widths,init_size_3d,boost::is_any_of("*"));
-				if (widths.size() == 3)
-				{
-					boost::trim(widths[0]);
-					boost::trim(widths[1]);
-					boost::trim(widths[2]);
-					width = stof(widths[0]);
-					height = stof(widths[1]);
-					depth = stof(widths[2]);
-				}
+				initialize_from_string(init_size_3d);
 			}
 
 			size_3d<float>& operator=(const size_3d<float>& x)
@@ -142,6 +144,12 @@ namespace scifir
 				width = std::move(x.width);
 				height = std::move(x.height);
 				depth = std::move(x.depth);
+				return *this;
+			}
+
+			size_3d<float>& operator=(const string& init_size_3d)
+			{
+				initialize_from_string(init_size_3d);
 				return *this;
 			}
 
@@ -177,6 +185,22 @@ namespace scifir
 			float width;
 			float height;
 			float depth;
+
+		private:
+			void initialize_from_string(const string& init_size_3d)
+			{
+				vector<string> widths;
+				boost::split(widths,init_size_3d,boost::is_any_of("*"));
+				if (widths.size() == 3)
+				{
+					boost::trim(widths[0]);
+					boost::trim(widths[1]);
+					boost::trim(widths[2]);
+					width = stof(widths[0]);
+					height = stof(widths[1]);
+					depth = stof(widths[2]);
+				}
+			}
 	};
 
 	template<typename T>

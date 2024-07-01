@@ -148,62 +148,7 @@ namespace scifir
 
 	percentage::percentage(const string& init_percentage) : value()
 	{
-		if (init_percentage[init_percentage.length() - 1] == '%')
-		{
-			value = stof(init_percentage.substr(0,init_percentage.length() - 1));
-		}
-		else if (init_percentage.find(" ") != string::npos)
-		{
-			string percentage_unit = init_percentage.substr(init_percentage.length() - 4,4);
-			if (percentage_unit == " ppm")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000.0f;
-			}
-			/*else if (percentage_unit == " ppb")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000.0f;
-			}
-			else if (percentage_unit == " ppt")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000000.0f;
-			}
-			else if (percentage_unit == " ppq")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000000000.0f;
-			}*/
-			else
-			{
-				value = 0.0f;
-			}
-		}
-		else if (init_percentage.length() > 3)
-		{
-			string percentage_unit = init_percentage.substr(init_percentage.length() - 3,3);
-			if (percentage_unit == "ppm")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000.0f;
-			}
-			/*else if (percentage_unit == "ppb")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000.0f;
-			}
-			else if (percentage_unit == "ppt")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000000.0f;
-			}
-			else if (percentage_unit == "ppq")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000000000.0f;
-			}*/
-			else
-			{
-				value = 0.0f;
-			}
-		}
-		else
-		{
-			value = 0.0f;
-		}
+		initialize_from_string(init_percentage);
 	}
 
 	percentage::percentage(const scalar_unit& x)
@@ -251,62 +196,7 @@ namespace scifir
 
 	percentage& percentage::operator=(const string& init_percentage)
 	{
-		if (init_percentage[init_percentage.length() - 1] == '%')
-		{
-			value = stof(init_percentage.substr(0,init_percentage.length() - 1));
-		}
-		else if (init_percentage.find(" ") != string::npos)
-		{
-			string percentage_unit = init_percentage.substr(init_percentage.length() - 4,4);
-			if (percentage_unit == " ppm")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000.0f;
-			}
-			else
-			{
-				value = 0.0f;
-			}
-			/*else if (percentage_unit == " ppb")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000.0f;
-			}
-			else if (percentage_unit == " ppt")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000000.0f;
-			}
-			else if (percentage_unit == " ppq")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000000000.0f;
-			}*/
-		}
-		else if (init_percentage.length() > 3)
-		{
-			string percentage_unit = init_percentage.substr(init_percentage.length() - 3,3);
-			if (percentage_unit == "ppm")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000.0f;
-			}
-			/*else if (percentage_unit == "ppb")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000.0f;
-			}
-			else if (percentage_unit == "ppt")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000000.0f;
-			}
-			else if (percentage_unit == "ppq")
-			{
-				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000000000.0f;
-			}*/
-			else
-			{
-				value = 0.0f;
-			}
-		}
-		else
-		{
-			value = 0.0f;
-		}
+		initialize_from_string(init_percentage);
 		return *this;
 	}
 
@@ -452,6 +342,66 @@ namespace scifir
 		out << display_float(get_ppq()) << " ppq";
 		return out.str();
 	}*/
+
+	void percentage::initialize_from_string(const string& init_percentage)
+	{
+		if (init_percentage[init_percentage.length() - 1] == '%')
+		{
+			value = stof(init_percentage.substr(0,init_percentage.length() - 1));
+		}
+		else if (init_percentage.find(" ") != string::npos)
+		{
+			string percentage_unit = init_percentage.substr(init_percentage.length() - 4,4);
+			if (percentage_unit == " ppm")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000.0f;
+			}
+			else
+			{
+				value = 0.0f;
+			}
+			/*else if (percentage_unit == " ppb")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000.0f;
+			}
+			else if (percentage_unit == " ppt")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000000.0f;
+			}
+			else if (percentage_unit == " ppq")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 4)) / 10000000000000.0f;
+			}*/
+		}
+		else if (init_percentage.length() > 3)
+		{
+			string percentage_unit = init_percentage.substr(init_percentage.length() - 3,3);
+			if (percentage_unit == "ppm")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000.0f;
+			}
+			/*else if (percentage_unit == "ppb")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000.0f;
+			}
+			else if (percentage_unit == "ppt")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000000.0f;
+			}
+			else if (percentage_unit == "ppq")
+			{
+				value = stof(init_percentage.substr(0,init_percentage.length() - 3)) / 10000000000000.0f;
+			}*/
+			else
+			{
+				value = 0.0f;
+			}
+		}
+		else
+		{
+			value = 0.0f;
+		}
+	}
 
 	string to_string(const percentage& x)
 	{

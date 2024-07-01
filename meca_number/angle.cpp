@@ -44,17 +44,9 @@ namespace scifir
 		normalize_value();
 	}
 
-	angle::angle(string init_angle) : value()
+	angle::angle(const string& init_angle) : value()
 	{
-		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
-		if (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA))
-		{
-			init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);
-		}
-		init_angle.clear();
-		init_angle_unicode.toUTF8String(init_angle);
-		value = stof(init_angle);
-		normalize_value();
+		initialize_from_string(init_angle);
 	}
 
 	angle::angle(const scalar_unit& x)
@@ -90,18 +82,9 @@ namespace scifir
 		return *this;
 	}
 
-	angle& angle::operator=(string init_angle)
+	angle& angle::operator=(const string& init_angle)
 	{
-		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
-		if (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA))
-		{
-			init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);
-		}
-		
-		init_angle.clear();
-		init_angle_unicode.toUTF8String(init_angle);
-		value = stof(init_angle);
-		normalize_value();
+		initialize_from_string(init_angle);
 		return *this;
 	}
 
@@ -240,6 +223,19 @@ namespace scifir
 				}
 			}
 		}
+	}
+
+	void angle::initialize_from_string(string init_angle)
+	{
+		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
+		if (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA))
+		{
+			init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);
+		}
+		init_angle.clear();
+		init_angle_unicode.toUTF8String(init_angle);
+		value = stof(init_angle);
+		normalize_value();
 	}
 
 	string to_string(const angle& x)

@@ -34,13 +34,13 @@ namespace scifir
 			explicit angle(double);
 			explicit angle(long double);
 			explicit angle(int);
-			explicit angle(string);
+			explicit angle(const string&);
 			explicit angle(const scalar_unit&);
 
 			angle& operator=(const angle&);
 			angle& operator=(angle&&);
 			angle& operator=(float);
-			angle& operator=(string);
+			angle& operator=(const string&);
 			angle& operator=(const scalar_unit&);
 
 			explicit operator float() const
@@ -159,6 +159,7 @@ namespace scifir
 			float value;
 
 			void normalize_value();
+			void initialize_from_string(string);
 	};
 
 	string to_string(const angle&);

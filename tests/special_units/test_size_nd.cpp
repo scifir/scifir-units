@@ -57,6 +57,9 @@ TEST_CASE("class size_nd<T> and size_nd<float>") {
 		size_nd<> b2({2_m,3_m,1_m});
 		b = std::move(b2);
 		CHECK(to_string(b) == "2 m * 3 m * 1 m");
+		size_nd<> c({2_m,3_m,1_m});
+		c = "4 m * 5 m * 6 m * 2 m";
+		CHECK(to_string(c) == "4 m * 5 m * 6 m * 2 m");
 	}
 
 	SECTION("Assignments of size_nd<float> class")
@@ -69,6 +72,9 @@ TEST_CASE("class size_nd<T> and size_nd<float>") {
 		size_nd<float> b2(vector<float>{2.0f,3.0f,1.0f});
 		b = std::move(b2);
 		CHECK(to_string(b) == "2 * 3 * 1");
+		size_nd<float> c(vector<float>{2.0f,3.0f,1.0f});
+		c = "4 * 5 * 6 * 2";
+		CHECK(to_string(c) == "4 * 5 * 6 * 2");
 	}
 
 	SECTION("Operators of size_nd<> class")

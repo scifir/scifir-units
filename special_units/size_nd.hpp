@@ -38,13 +38,7 @@ namespace scifir
 
 			explicit size_nd(const string& init_size_nd) : size_nd()
 			{
-				vector<string> new_widths;
-				boost::split(new_widths,init_size_nd,boost::is_any_of("*"));
-				for (string& new_width : new_widths)
-				{
-					boost::trim(new_width);
-					widths.push_back(T(new_width));
-				}
+				initialize_from_string(init_size_nd);
 			}
 
 			size_nd<T>& operator=(const size_nd<T>& x)
@@ -56,6 +50,12 @@ namespace scifir
 			size_nd<T>& operator=(size_nd<T>&& x)
 			{
 				widths = std::move(x.widths);
+				return *this;
+			}
+
+			size_nd<T>& operator=(const string& init_size_nd)
+			{
+				initialize_from_string(init_size_nd);
 				return *this;
 			}
 
@@ -137,6 +137,19 @@ namespace scifir
 			}
 
 			vector<T> widths;
+
+		private:
+			void initialize_from_string(const string& init_size_nd)
+			{
+				widths.clear();
+				vector<string> new_widths;
+				boost::split(new_widths,init_size_nd,boost::is_any_of("*"));
+				for (string& new_width : new_widths)
+				{
+					boost::trim(new_width);
+					widths.push_back(T(new_width));
+				}
+			}
 	};
 
 	template<>
@@ -165,13 +178,7 @@ namespace scifir
 
 			explicit size_nd(const string& init_size_nd) : size_nd()
 			{
-				vector<string> new_widths;
-				boost::split(new_widths,init_size_nd,boost::is_any_of("*"));
-				for (string& new_width : new_widths)
-				{
-					boost::trim(new_width);
-					widths.push_back(stof(new_width));
-				}
+				initialize_from_string(init_size_nd);
 			}
 
 			size_nd<float>& operator=(const size_nd<float>& x)
@@ -183,6 +190,12 @@ namespace scifir
 			size_nd<float>& operator=(size_nd<float>&& x)
 			{
 				widths = std::move(x.widths);
+				return *this;
+			}
+
+			size_nd<float>& operator=(const string& init_size_nd)
+			{
+				initialize_from_string(init_size_nd);
 				return *this;
 			}
 
@@ -263,6 +276,19 @@ namespace scifir
 			}
 
 			vector<float> widths;
+
+		private:
+			void initialize_from_string(const string& init_size_nd)
+			{
+				widths.clear();
+				vector<string> new_widths;
+				boost::split(new_widths,init_size_nd,boost::is_any_of("*"));
+				for (string& new_width : new_widths)
+				{
+					boost::trim(new_width);
+					widths.push_back(stof(new_width));
+				}
+			}
 	};
 
 	template<typename T>
