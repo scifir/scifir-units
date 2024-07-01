@@ -38,6 +38,9 @@ TEST_CASE("class direction")
 		direction c;
 		c = direction::RIGHT;
 		CHECK(to_string(c) == "right");
+		direction d;
+		d = "top";
+		CHECK(to_string(d) == "top");
 	}
 
 	SECTION("invert() function of direction class")

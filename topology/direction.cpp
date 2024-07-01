@@ -20,22 +20,31 @@ namespace scifir
 	direction::direction(direction::name new_direction) : value(new_direction)
 	{}
 	
-	direction::direction(const string& new_direction) : value(create_direction(new_direction))
+	direction::direction(const string& init_direction) : value(create_direction(init_direction))
 	{}
 	
-	void direction::operator=(const direction& x)
+	direction& direction::operator=(const direction& x)
 	{
 		value = x.value;
+		return *this;
 	}
 	
-	void direction::operator=(direction&& x)
+	direction& direction::operator=(direction&& x)
 	{
 		value = std::move(x.value);
+		return *this;
 	}
 	
-	void direction::operator =(direction::name new_direction)
+	direction& direction::operator=(direction::name new_direction)
 	{
 		value = new_direction;
+		return *this;
+	}
+
+	direction& direction::operator=(const string& init_direction)
+	{
+		value = create_direction(init_direction);
+		return *this;
 	}
 	
 	void direction::invert()

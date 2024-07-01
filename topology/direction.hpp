@@ -22,9 +22,10 @@ namespace scifir
 			explicit direction(direction::name);
 			explicit direction(const string&);
 			
-			void operator=(const direction&);
-			void operator=(direction&&);
-			void operator=(direction::name);
+			direction& operator=(const direction&);
+			direction& operator=(direction&&);
+			direction& operator=(direction::name);
+			direction& operator=(const string&);
 
 			void invert();
 
