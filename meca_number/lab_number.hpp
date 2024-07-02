@@ -3,10 +3,12 @@
 
 #include "../util/is_number.hpp"
 #include "../util/types.hpp"
+#include "../units/scalar_unit.hpp"
 
 #include "boost/algorithm/string.hpp"
 
 #include <cmath>
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -26,17 +28,17 @@ namespace scifir
 			lab_number(lab_number<T>&& x) : value(std::move(x.value)),error_value(std::move(x.error_value))
 			{}
 
-			explicit lab_number(T x,T y) : value(x),error_value(y)
+			explicit lab_number(const T& x,const T& y) : value(x),error_value(y)
 			{}
 
-			lab_number<T>& operator=(const lab_number<T>& x)
+			lab_number<T>& operator =(const lab_number<T>& x)
 			{
 				value = x.value;
 				error_value = x.error_value;
 				return *this;
 			}
 
-			lab_number<T>& operator=(lab_number<T>&& x)
+			lab_number<T>& operator =(lab_number<T>&& x)
 			{
 				value = std::move(x.value);
 				error_value = std::move(x.error_value);
@@ -53,19 +55,16 @@ namespace scifir
 				return lab_number<T>(value - x.value,error_value - x.error_value);
 			}
 
-			lab_number<T> operator *(const lab_number<T>& x) const
+			template<typename U>
+			lab_number<scalar_unit> operator *(const lab_number<U>& x) const
 			{
-				return lab_number<T>(value * x.value,error_value * x.error_value);
+				return lab_number<scalar_unit>(value * x.value,error_value * x.error_value);
 			}
 
-			lab_number<T> operator /(const lab_number<T>& x) const
+			template<typename U>
+			lab_number<scalar_unit> operator /(const lab_number<U>& x) const
 			{
-				return lab_number<T>(value / x.value,error_value / x.error_value);
-			}
-
-			lab_number<T> operator ^(const lab_number<T>& x) const
-			{
-				return lab_number<T>(value ^ x.value,error_value ^ x.error_value);
+				return lab_number<scalar_unit>(value / x.value,error_value / x.error_value);
 			}
 
 			void operator +=(const lab_number<T>& x)
@@ -80,43 +79,17 @@ namespace scifir
 				error_value -= x.error_value;
 			}
 
-			void operator *=(const lab_number<T>& x)
-			{
-				value *= x.value;
-				error_value *= x.error_value;
-			}
-
-			void operator /=(const lab_number<T>& x)
-			{
-				value /= x.value;
-				error_value /= x.error_value;
-			}
-
-			void operator ^=(const lab_number<T>& x)
-			{
-				value ^= x.value;
-				error_value ^= x.error_value;
-			}
-
 			string display(int number_of_decimals = 2) const
 			{
 				ostringstream output;
-				if(std::abs(error_value) > std::abs(value))
-				{
-					output << "Error: value of error greater than value" << endl;
-					cerr << "Error: value of error greater than value" << endl;
-				}
-				else
-				{
-					output << display_float(float(value),number_of_decimals) << " \u00B1 " << display_float(float(error_value),number_of_decimals);
-				}
+				output << value.display(number_of_decimals) << " \u00B1 " << error_value.display(number_of_decimals);
 				return output.str();
 			}
 
 			T value;
 			T error_value;
 	};
-	
+
 	template<typename T>
 	string to_string(const lab_number<T>& x)
 	{
@@ -126,8 +99,8 @@ namespace scifir
 	}
 }
 
-template<typename T>
-bool operator ==(const scifir::lab_number<T>& x, const scifir::lab_number<T>& y)
+template<typename T,typename U>
+bool operator ==(const scifir::lab_number<T>& x, const scifir::lab_number<U>& y)
 {
 	if (x.value == y.value and x.error_value == y.error_value)
 	{
@@ -139,8 +112,8 @@ bool operator ==(const scifir::lab_number<T>& x, const scifir::lab_number<T>& y)
 	}
 }
 
-template<typename T>
-bool operator !=(const scifir::lab_number<T>& x, const scifir::lab_number<T>& y)
+template<typename T,typename U>
+bool operator !=(const scifir::lab_number<T>& x, const scifir::lab_number<U>& y)
 {
 	return !(x == y);
 }
@@ -200,12 +173,14 @@ istream& operator >>(istream& is, scifir::lab_number<T>& x)
 	is.getline(a, 256);
 	string b(a);
 	vector<string> values;
-	boost::split(values,b,boost::is_any_of(" +- , \u00B1 "));
+	boost::split(values,b,boost::is_any_of("+-,\u00B1"));
 	scifir::lab_number<T> c;
-	if (values.size() == 2)
+	if (values.size() == 3)
 	{
+		boost::trim(values[0]);
+		boost::trim(values[2]);
 		T x1 = T(values[0]);
-		T x2 = T(values[1]);
+		T x2 = T(values[2]);
 		c = scifir::lab_number<T>(x1,x2);
 	}
 	else
