@@ -98,6 +98,19 @@ namespace scifir
 		return value;
 	}
 
+	bool scalar_unit::operator ==(scalar_unit y) const
+	{
+		y.change_dimensions(*this);
+		if(get_value() == y.get_value() and has_dimensions(y))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	scalar_unit scalar_unit::operator +(scalar_unit x) const
 	{
 		if(has_dimensions(x))
@@ -760,19 +773,6 @@ namespace scifir
 		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(), new_value, y);
 		new_value = std::pow(new_value, 1.0 / y);
 		return scalar_unit(new_value, new_dimensions);
-	}
-}
-
-bool operator ==(const scifir::scalar_unit& x, scifir::scalar_unit y)
-{
-	y.change_dimensions(x);
-	if(x.get_value() == y.get_value() and x.has_dimensions(y))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
 	}
 }
 

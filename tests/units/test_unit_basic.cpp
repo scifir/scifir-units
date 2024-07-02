@@ -12,7 +12,13 @@ using namespace scifir;
 
 TEST_CASE("Basic units") {
 	SECTION("Functionalities of basic units") {
-		
+		mass a("10 g");
+		CHECK(to_string(a) == "10 g");
+		mass b("10 g");
+		mass c("20 g");
+		CHECK(bool(a == b));
+		CHECK(bool(a != c));
+		CHECK(bool(a < c));
 	}
 
 	SECTION("time_duration class") {

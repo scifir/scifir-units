@@ -97,6 +97,8 @@ namespace scifir
 
 			explicit operator float() const;
 
+			bool operator ==(scalar_unit y) const;
+
 			scalar_unit operator +(scalar_unit x) const;
 			scalar_unit operator -(scalar_unit x) const;
 			scalar_unit operator *(scalar_unit x) const;
@@ -437,7 +439,6 @@ float operator ^(const T& x, const scifir::scalar_unit& y)
 	}
 }
 
-bool operator ==(const scifir::scalar_unit& x, scifir::scalar_unit y);
 bool operator !=(const scifir::scalar_unit& x, scifir::scalar_unit y);
 bool operator <(const scifir::scalar_unit& x, const scifir::scalar_unit& y);
 bool operator >(const scifir::scalar_unit& x, const scifir::scalar_unit& y);
