@@ -2,21 +2,25 @@ SCIFIR UNITS - VERSION 2
 
 // NUMBER OF TODOS: 52
 
-// BUGS AND SIMILAR PROBLEMS (13)
+// BUGS AND SIMILAR PROBLEMS (11)
 // TODO: add the initialization to aid with string with a whitespace between the type and the universe
 // TODO: zid needs to have a default name for no countries
 // TODO: zid needs full display and partial display
-
-// TODO: all display functions of coordinates classes need an int argument to select number of decimals
-// TODO: scalar_unit needs a constructor with int
-// TODO: check the literal of Ohm initialization in string class to be used instead of IS_UNIX and IS_WINDOWS in all the code files. Also, possibly it's needed to add IS_UNIX and IS_WINDOWS there
-// TODO: look at the 1.99 of test_coordinates_2d vs the 2 of the float specialization
-// TODO: think if to add a function that allows to test for values near another value
-// TODO: -Wall gives a warning for vector_unit_nd with end of non-void function
-// TODO: check prefix_math() everywhere, maybe there's a better implementation to do than the current implementation
-// TODO: check and correct all the warnings of cl.exe with /Wall
-// TODO: create percentage<double> and percentage<long double> with ppb, ppt and ppq. Create also the function is_long_percentage() to test for ppb, ppt and ppq
 // TODO: display_double() and display_long_double() functions of types.cpp
+// TODO: is_lab_number() function, and string constructor for lab_number<>
+// TODO: add the comparison operator of vector unit classes inside the declaration of the class, with the respective tests of that
+// TODO: maybe change the string operators of scalar_unit class to be at the reverse: it's called to_string() for the scalar_unit class
+// TODO: add the possibility of using different template parameters for the comparison operators of coordinates and point classes
+
+// TODO: check prefix_math() everywhere, maybe there's a better implementation to do than the current implementation
+// TODO: think if to add a function that allows to test for values near another value
+// TODO: create percentage<double> and percentage<long double> with ppb, ppt and ppq. Create also the function is_long_percentage() to test for ppb, ppt and ppq
+
+// BUGS AND SIMILAR PROBLEMS - HARD (4)
+// TODO: check and correct all the warnings of cl.exe with /Wall
+// TODO: -Wall gives a warning for vector_unit_nd with end of non-void function
+// TODO: look at the 1.99 of test_coordinates_2d vs the 2 of the float specialization
+// TODO: check the literal of Ohm initialization in string class to be used instead of IS_UNIX and IS_WINDOWS in all the code files. Also, possibly it's needed to add IS_UNIX and IS_WINDOWS there
 
 // BUILD (3)
 // TODO: support freebsd and openbsd
@@ -46,46 +50,56 @@ SCIFIR UNITS - VERSION 2
 // TODO: add the code coverage badge
 // TODO: upload scifir-units to sourceforge too
 
-// TESTS (3)
+// TESTS (5)
 // TODO: finish the tests of all classes
 // TODO: review get_nd() of the tests of vector_unit_nd and coordinates_nd
 // TODO: verify that are present all functions of coordinates with rotations
+// TODO: report the bug to CATCH of the use of bool()
+// TODO: verify the titles of sections of tests of units, meca_number and special_units
+// TODO: test of unit basic classes
 
 // DOCUMENTATION (18)
 // TODO: document the coordinates for the universe, publish that too as an standard inside scifir
 // TODO: document example of use cases (laboratory machines,medical devices,robotics)
-// TODO: document all the NEWS file
-// TODO: reference books related to the physics, chemistry, biology or math implemented
-// TODO: mention the WGS in the part of coordinates
-// TODO: explain the custom dimensions in the file README.md
-// TODO: document the use of the custom_display "sci"
-// TODO: think on the different cases of use of coordinates and document them, including the use of an origin
-// TODO: check what to do with the libraries of ISOs and document them inside the README.md file
 // TODO: document how to create scientific inventions in the library, how to create laboratory machines and how to create medical devices
 // TODO: document how to use the library for robots
-// TODO: think if to add the help of Eclipse, and search if other IDEs use some help too
-// TODO: decide if to generate documentation for man, and if so, exxplain that inside the README.md file
+// TODO: check what to do with the libraries of ISOs and document them inside the README.md file. If there isn't a library of ISOs, decide if to create one
+// TODO: add the names of arguments to all headers in order to be documented inside Doxygen
+// TODO: reference books related to the physics, chemistry, biology or math implemented
+// TODO: explain the custom dimensions in the file README.md
+// TODO: display as plain text the <T> inside the md file
+// TODO: configure the use of dox files
+// TODO: add the file Doxyfile.in to the master branch
+
+// TODO: document the use of the custom_display "sci"
+// TODO: think on the different cases of use of coordinates and document them, including the use of an origin
+// TODO: mention the WGS in the part of coordinates
+// TODO: document the use of fabs() and display() to compare values of units
+
 // TODO: add the summary sheet somewhere
+// TODO: "Things to remember" section, which explains the use of the degree for vector_unit_nd instead of the other two cases, the use of fabs, the use of display that doesn't displays all decimals
+
 // TODO: formulas of physics related to units
 // TODO: formulas of chemistry related to units
 // TODO: formulas of biology related to units
 // TODO: document how all the operations of scalars and vector units work mathematically, possibly use mathjax inside markdown to display formulas
-// TODO: document the use of fabs() and display() to compare values of units
-// TODO: "Things to remember" section, which explains the use of the degree for vector_unit_nd instead of the other two cases, the use of fabs, the use of display that doesn't displays all decimals
 
-// COORDINATES AND POINTS (10)
-// TODO: add coordinates_3d::origin() to allow to initialize with an origin, it's specially useful for geographic coordinates
-// TODO: functions of conversion of coordinates for scalar_unit classes
-// TODO: coordinates and point classes should have a move constructor and move assignment for the related type (point_3d for coordinates_3d and coordinates_3d for point_3d, etc)
-// TODO: coordinates_nd needs a constructor with vector<T>. coordinates_ndr needs it too
-// TODO: delete the float references in constructors
+// TODO: think if to add the help of Eclipse, and search if other IDEs use some help too
+// TODO: decide if to generate documentation for man, and if so, explain that inside the README.md file
+// TODO: document all the NEWS file
+
+// TODO: write an specification of scifir-units to be implemented in any programming language. Write there too the generic method for writing bindings which is to maintain all function names and classnames equal, changing only their spelling to snake-case or camel-case as used in the programming language, and also document equivalencies like using static methods in Java inside a class instead of normal functions in C++.
+
+// COORDINATES AND POINTS (4)
+// TODO: add coordinates_3d::origin() to allow to initialize with an origin (another coordinates class of the same type), it's specially useful for geographic coordinates
+
 // TODO: the case when the initialization string contains only the character ',', without a value, has to initialize to zero
-// TODO: maybe display_cartesian() function should be in all coordinates classes too
-// TODO: string assignment for all coordinates classes
-// TODO: display functions should allow to change dimensions for any case
-// TODO: add the operator<< of the float specialization everywhere
 
-// COORDINATES AND POINTS - FINISH GEOGRAPHIC COORDINATES (2)
+// TODO: display functions of coordinates and point classes should allow to change dimensions for any case, with another function identical in name but with the argument of the string of dimensions
+// TODO: all display functions of coordinates classes need an int argument to select number of decimals
+// TODO: is_coordinates_1d(), is_coordinates_2d(), etc
+
+// COORDINATES AND POINTS - FINISH GEOGRAPHIC COORDINATES (3)
 // TODO: finish get_altitude(). Read about geographic coordinates and decide what to do in point_3d, point_nd, coordinates_3d and coordinates_nd
 // TODO: add the construction with an string for geographic coordinates
 // TODO: study the geographic coordinates deeply, and see if to add something more related to them
@@ -93,6 +107,9 @@ SCIFIR UNITS - VERSION 2
 // VECTOR FIELDS (2)
 // TODO: vector_field (it should operate with vector_units and maybe with scalar_units. With (x,y,z) it gives the respective vector). +, - and ^ with vector_field
 // TODO: parsing of initialization strings of fields. Allow to declare variables that can be refered by name inside initialization strings of vector fields
+
+// PLOTTING
+// TODO: add functions that allow to use also matplot++ inside the library
 
 // ALGEBRA (4)
 // TODO: constructor with initialization string
@@ -126,6 +143,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: vector_unit_3d class maybe need the comparison operators with themselves
 // TODO: use the PI of the std library
 // TODO: function point_to() to a point and point_to() to a coordinate
+// TODO: support the brackets inside is_scalar_unit(), is_complex() and is_lab_number()
 
 // TODO: Regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_initialization_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr
 // TODO: Detect when there's the same dimension at the numerator and at the denominator of the string initialization
@@ -150,6 +168,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: maybe pixel should be called pixel_length
 // TODO: think if to add a default case for the none value of aid and for the none value of zid
 // TODO: functions is_aid() and is_zid()
+// TODO: initialize_from_string() for pH and pOH classes should work with pH and pOH at the start, respectively
 
 // EMOTIONAL UNITS (1)
 // TODO: finish the enums of mind.hpp
