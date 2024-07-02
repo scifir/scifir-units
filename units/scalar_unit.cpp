@@ -98,10 +98,10 @@ namespace scifir
 		return value;
 	}
 
-	bool scalar_unit::operator ==(scalar_unit y) const
+	bool scalar_unit::operator ==(scalar_unit x) const
 	{
-		y.change_dimensions(*this);
-		if(get_value() == y.get_value() and has_dimensions(y))
+		x.change_dimensions(*this);
+		if(get_value() == x.get_value() and has_dimensions(x))
 		{
 			return true;
 		}

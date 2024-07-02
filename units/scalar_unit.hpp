@@ -97,7 +97,7 @@ namespace scifir
 
 			explicit operator float() const;
 
-			bool operator ==(scalar_unit y) const;
+			bool operator ==(scalar_unit x) const;
 
 			scalar_unit operator +(scalar_unit x) const;
 			scalar_unit operator -(scalar_unit x) const;
