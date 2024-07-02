@@ -334,37 +334,7 @@ namespace scifir
 
 	string scalar_unit::display_dimensions() const
 	{
-		ostringstream dimension_text;
-		ostringstream dimension_up_text;
-		ostringstream dimension_down_text;
-		for(const dimension& x_dimension : dimensions)
-		{
-			if(x_dimension.dimension_sign == dimension::POSITIVE)
-			{
-				dimension_up_text << x_dimension;
-			}
-			else
-			{
-				dimension_down_text << x_dimension;
-			}
-		}
-		if(dimension_up_text.tellp() > 0 and dimension_down_text.tellp() > 0)
-		{
-			dimension_text << dimension_up_text.str() << "/" << dimension_down_text.str();
-		}
-		else if(dimension_up_text.tellp() > 0)
-		{
-			dimension_text << dimension_up_text.str();
-		}
-		else if(dimension_down_text.tellp() > 0)
-		{
-			dimension_text << "1/" << dimension_down_text.str();
-		}
-		else
-		{
-			dimension_text << "[empty]";
-		}
-		return dimension_text.str();
+		return to_string(dimensions);
 	}
 
 	/*string scalar_unit::get_dimensions_match() const

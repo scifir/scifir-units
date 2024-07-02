@@ -24,22 +24,22 @@ namespace scifir
 	angle::angle(angle&& x) : value(std::move(x.get_value()))
 	{}
 
-	angle::angle(float x) : value(x)
+	angle::angle(float new_value) : value(new_value)
 	{
 		normalize_value();
 	}
 
-	angle::angle(double x) : value(float(x))
+	angle::angle(double new_value) : value(float(new_value))
 	{
 		normalize_value();
 	}
 
-	angle::angle(long double x) : value(float(x))
+	angle::angle(long double new_value) : value(float(new_value))
 	{
 		normalize_value();
 	}
 
-	angle::angle(int x) : value(float(x))
+	angle::angle(int new_value) : value(float(new_value))
 	{
 		normalize_value();
 	}
@@ -75,9 +75,9 @@ namespace scifir
 		return *this;
 	}
 
-	angle& angle::operator=(float x)
+	angle& angle::operator=(float new_value)
 	{
-		value = x;
+		value = new_value;
 		normalize_value();
 		return *this;
 	}
@@ -245,9 +245,9 @@ namespace scifir
 		return output.str();
 	}
 
-	bool is_angle(const string& x)
+	bool is_angle(const string& init_angle)
 	{
-		icu::UnicodeString x_unicode = icu::UnicodeString(x.c_str());
+		icu::UnicodeString x_unicode = icu::UnicodeString(init_angle.c_str());
 		int total_chars = x_unicode.countChar32();
 		if (x_unicode[total_chars - 1] == 0x00B0 || x_unicode[total_chars - 1] == 0x00BA)
 		{
@@ -425,26 +425,26 @@ bool operator >=(const scifir::angle& x, const scifir::angle& y)
 	return !(x < y);
 }
 
-bool operator ==(const scifir::angle& x, const string& y)
+bool operator ==(const scifir::angle& x, const string& init_angle)
 {
-	scifir::angle y_angle = scifir::angle(y);
-	return (x == y_angle);
+	scifir::angle y = scifir::angle(init_angle);
+	return (x == y);
 }
 
-bool operator !=(const scifir::angle& x, const string& y)
+bool operator !=(const scifir::angle& x, const string& init_angle)
 {
-	return !(x == y);
+	return !(x == init_angle);
 }
 
-bool operator ==(const string& x, const scifir::angle& y)
+bool operator ==(const string& init_angle, const scifir::angle& x)
 {
-	scifir::angle x_angle = scifir::angle(x);
-	return (x_angle == y);
+	scifir::angle y = scifir::angle(init_angle);
+	return (x == y);
 }
 
-bool operator !=(const string& x, const scifir::angle& y)
+bool operator !=(const string& init_angle, const scifir::angle& x)
 {
-	return !(x == y);
+	return !(init_angle == x);
 }
 
 void operator +=(string& x, const scifir::angle& y)
