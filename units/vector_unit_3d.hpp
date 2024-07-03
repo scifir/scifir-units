@@ -280,19 +280,19 @@ scifir::vector_unit_3d operator /(const T y,const scifir::vector_unit_3d& x)
 	return scifir::vector_unit_3d(y / x.get_value(),new_dimensions,x.theta,x.phi);
 }
 
-bool operator ==(const vector_unit_3d& x, vector_unit_3d y);
-bool operator !=(const vector_unit_3d& x, const vector_unit_3d& y);
+bool operator ==(const scifir::vector_unit_3d& x, scifir::vector_unit_3d y);
+bool operator !=(const scifir::vector_unit_3d& x, const scifir::vector_unit_3d& y);
 
-bool operator ==(const vector_unit_3d& x, const string& init_vector_3d);
-bool operator !=(const vector_unit_3d& x, const string& init_vector_3d);
-bool operator ==(const string& init_vector_3d, const vector_unit_3d& x);
-bool operator !=(const string& init_vector_3d, const vector_unit_3d& x);
+bool operator ==(const scifir::vector_unit_3d& x, const string& init_vector_3d);
+bool operator !=(const scifir::vector_unit_3d& x, const string& init_vector_3d);
+bool operator ==(const string& init_vector_3d, const scifir::vector_unit_3d& x);
+bool operator !=(const string& init_vector_3d, const scifir::vector_unit_3d& x);
 
-void operator +=(string& x, const vector_unit_3d& y);
-string operator +(const string& x, const vector_unit_3d& y);
-string operator +(const vector_unit_3d& y, const string& x);
+void operator +=(string& x, const scifir::vector_unit_3d& y);
+string operator +(const string& x, const scifir::vector_unit_3d& y);
+string operator +(const scifir::vector_unit_3d& y, const string& x);
 
-ostream& operator <<(ostream& os, const vector_unit_3d& x);
-istream& operator >>(istream& is, vector_unit_3d& x);
+ostream& operator <<(ostream& os, const scifir::vector_unit_3d& x);
+istream& operator >>(istream& is, scifir::vector_unit_3d& x);
 
 #endif // SCIFIR_UNITS_UNITS_VECTOR_UNIT_3D_HPP_INCLUDED

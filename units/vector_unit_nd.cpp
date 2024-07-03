@@ -870,7 +870,7 @@ namespace scifir
 scifir::vector_unit_nd operator *(const scifir::scalar_unit& x,const scifir::vector_unit_nd& y)
 {
 	long double new_value = y.get_value() * x.get_value();
-	vector<dimension> new_dimensions = multiply_dimensions(y.get_dimensions(), x.get_dimensions(),new_value);
+	vector<scifir::dimension> new_dimensions = multiply_dimensions(y.get_dimensions(), x.get_dimensions(),new_value);
 	if(y.is_nd(1))
 	{
 		return scifir::vector_unit_nd(float(new_value), new_dimensions);
@@ -889,7 +889,7 @@ scifir::vector_unit_nd operator *(const scifir::scalar_unit& x,const scifir::vec
 	}
 }
 
-bool operator ==(const vector_unit_nd& x, vector_unit_nd y)
+bool operator ==(const scifir::vector_unit_nd& x, scifir::vector_unit_nd y)
 {
 	y.change_dimensions(x);
 	if(x.get_value() == y.get_value() and scifir::same_direction(x,y) and x.has_dimensions(y))
@@ -902,41 +902,41 @@ bool operator ==(const vector_unit_nd& x, vector_unit_nd y)
 	}
 }
 
-bool operator !=(const vector_unit_nd& x, const vector_unit_nd& y)
+bool operator !=(const scifir::vector_unit_nd& x, const scifir::vector_unit_nd& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const vector_unit_nd& x, const string& init_vector_nd)
+bool operator ==(const scifir::vector_unit_nd& x, const string& init_vector_nd)
 {
-	vector_unit_nd y(init_vector_nd);
+	scifir::vector_unit_nd y(init_vector_nd);
 	return (x == y);
 }
 
-bool operator !=(const vector_unit_nd& x, const string& init_vector_nd)
+bool operator !=(const scifir::vector_unit_nd& x, const string& init_vector_nd)
 {
 	return !(x == init_vector_nd);
 }
 
-bool operator ==(const string& init_vector_nd, const vector_unit_nd& x)
+bool operator ==(const string& init_vector_nd, const scifir::vector_unit_nd& x)
 {
-	vector_unit_nd y(init_vector_nd);
+	scifir::vector_unit_nd y(init_vector_nd);
 	return (y == x);
 }
 
-bool operator !=(const string& init_vector_nd, const vector_unit_nd& x)
+bool operator !=(const string& init_vector_nd, const scifir::vector_unit_nd& x)
 {
 	return !(init_vector_nd == x);
 }
 
-void operator +=(string& x, const vector_unit_nd& y)
+void operator +=(string& x, const scifir::vector_unit_nd& y)
 {
 	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-string operator +(const string& x, const vector_unit_nd& y)
+string operator +(const string& x, const scifir::vector_unit_nd& y)
 {
 	ostringstream output;
 	output << x;
@@ -944,7 +944,7 @@ string operator +(const string& x, const vector_unit_nd& y)
 	return output.str();
 }
 
-string operator +(const vector_unit_nd& y, const string& x)
+string operator +(const scifir::vector_unit_nd& y, const string& x)
 {
 	ostringstream output;
 	output << y;
@@ -952,7 +952,7 @@ string operator +(const vector_unit_nd& y, const string& x)
 	return output.str();
 }
 
-ostream& operator <<(ostream& os, const vector_unit_nd& x)
+ostream& operator <<(ostream& os, const scifir::vector_unit_nd& x)
 {
 	ostringstream angles_text;
 	if (!x.is_nd(1))
@@ -966,14 +966,13 @@ ostream& operator <<(ostream& os, const vector_unit_nd& x)
 	return os << x.get_value() << " " << x.display_dimensions() << angles_text.str();
 }
 
-istream& operator >>(istream& is, vector_unit_nd& x)
+istream& operator >>(istream& is, scifir::vector_unit_nd& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::vector_unit_nd c(b);
-	x = c;
+	x = scifir::vector_unit_nd(b);
 	return is;
 }
  

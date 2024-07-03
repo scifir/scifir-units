@@ -685,8 +685,7 @@ istream& operator >>(istream& is,scifir::coordinates_2dr<T>& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::coordinates_2dr<T> c(b);
-	x = c;
+	x = scifir::coordinates_2dr<T>(b);
 	return is;
 }
 

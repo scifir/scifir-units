@@ -289,8 +289,7 @@ istream& operator >>(istream& is, scifir::size_3d<T>& x)
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
-	scifir::size_3d<T> c(b);
-	x = c;
+	x = scifir::size_3d<T>(b);
 	return is;
 }
 

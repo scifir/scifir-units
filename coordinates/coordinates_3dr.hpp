@@ -1133,8 +1133,7 @@ istream& operator >>(istream& is,scifir::coordinates_3dr<T>& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::coordinates_3dr<T> c(b);
-	x = c;
+	x = scifir::coordinates_3dr<T>(b);
 	return is;
 }
 

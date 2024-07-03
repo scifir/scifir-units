@@ -280,21 +280,21 @@ scifir::vector_unit_nd operator /(const T y,const scifir::vector_unit_nd& x)
 	return scifir::vector_unit_nd(y / x.get_value(),new_dimensions,x.angles);
 }
 
-bool operator ==(const vector_unit_nd& x, vector_unit_nd y);
-bool operator !=(const vector_unit_nd& x, const vector_unit_nd& y);
+bool operator ==(const scifir::vector_unit_nd& x, scifir::vector_unit_nd y);
+bool operator !=(const scifir::vector_unit_nd& x, const scifir::vector_unit_nd& y);
 
-bool operator ==(const vector_unit_nd& x, const string& init_vector_nd);
-bool operator !=(const vector_unit_nd& x, const string& init_vector_nd);
+bool operator ==(const scifir::vector_unit_nd& x, const string& init_vector_nd);
+bool operator !=(const scifir::vector_unit_nd& x, const string& init_vector_nd);
 
-bool operator ==(const string& init_vector_nd, const vector_unit_nd& x);
-bool operator !=(const string& init_vector_nd, const vector_unit_nd& x);
+bool operator ==(const string& init_vector_nd, const scifir::vector_unit_nd& x);
+bool operator !=(const string& init_vector_nd, const scifir::vector_unit_nd& x);
 
-void operator +=(string& x, const vector_unit_nd& y);
-string operator +(const string& x, const vector_unit_nd& y);
-string operator +(const vector_unit_nd& y, const string& x);
+void operator +=(string& x, const scifir::vector_unit_nd& y);
+string operator +(const string& x, const scifir::vector_unit_nd& y);
+string operator +(const scifir::vector_unit_nd& y, const string& x);
 
-ostream& operator <<(ostream& os, const vector_unit_nd& x);
-istream& operator >>(istream& is, vector_unit_nd& x);
+ostream& operator <<(ostream& os, const scifir::vector_unit_nd& x);
+istream& operator >>(istream& is, scifir::vector_unit_nd& x);
 
 #endif // SCIFIR_UNITS_UNITS_VECTOR_UNIT_ND_HPP_INCLUDED
  

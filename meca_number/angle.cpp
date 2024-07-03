@@ -481,7 +481,6 @@ istream& operator >>(istream& is, scifir::angle& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::angle c(b);
-	x = c;
+	x = scifir::angle(b);
 	return is;
 }

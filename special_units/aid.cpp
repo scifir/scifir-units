@@ -558,7 +558,6 @@ istream& operator >>(istream& is, scifir::aid& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::aid c(b);
-	x = c;
+	x = scifir::aid(b);
 	return is;
 }

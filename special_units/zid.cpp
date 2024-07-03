@@ -234,7 +234,6 @@ istream& operator >>(istream& is, scifir::zid& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::zid c(b);
-	x = c;
+	x = scifir::zid(b);
 	return is;
 }

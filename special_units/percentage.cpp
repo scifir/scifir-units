@@ -583,8 +583,7 @@ istream& operator >>(istream& is, scifir::percentage& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::percentage c(b);
-	x = c;
+	x = scifir::percentage(b);
 	return is;
 }
 

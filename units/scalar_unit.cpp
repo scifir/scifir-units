@@ -896,7 +896,6 @@ istream& operator >>(istream& is, scifir::scalar_unit& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::scalar_unit c(b);
-	x = c;
+	x = scifir::scalar_unit(b);
 	return is;
 }

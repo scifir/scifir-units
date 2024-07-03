@@ -310,8 +310,7 @@ istream& operator >>(istream& is, scifir::pOH& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::pOH c(b);
-	x = c;
+	x = scifir::pOH(b);
 	return is;
 }
 

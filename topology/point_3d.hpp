@@ -643,8 +643,7 @@ istream& operator >>(istream& is, scifir::point_3d<T>& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::point_3d<T> c(b);
-	x = c;
+	x = scifir::point_3d<T>(b);
 	return is;
 }
 

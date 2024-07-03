@@ -444,7 +444,6 @@ istream& operator >>(istream& is, scifir::direction& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::direction c(b);
-	x = c;
+	x = scifir::direction(b);
 	return is;
 }

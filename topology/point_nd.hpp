@@ -1167,8 +1167,7 @@ istream& operator >>(istream& is, scifir::point_nd<T>& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::point_nd<T> c(b);
-	x = c;
+	x = scifir::point_nd<T>(b);
 	return is;
 }
 
