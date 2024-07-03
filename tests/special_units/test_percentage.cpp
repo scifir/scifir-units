@@ -267,6 +267,7 @@ TEST_CASE("percentage class") {
 		/*CHECK(a.get_ppb() == 300000000.0f);
 		CHECK(a.get_ppt() == 300000000000.0f);
 		CHECK(a.get_ppq() == 300000000000000.0f);*/
+		CHECK(a.display_percentage() == "30%");
 		CHECK(a.display_ppm() == "300000 ppm");
 		/*cout << "ppb: " << a.display_ppb() << endl;
 		cout << "ppt: " << a.display_ppt() << endl;

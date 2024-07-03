@@ -321,6 +321,13 @@ namespace scifir
 		return value * 10000000000000.0f;
 	}*/
 
+	string percentage::display_percentage(int number_of_decimals) const
+	{
+		ostringstream out;
+		out << display_float(value,number_of_decimals) << "%";
+		return out.str();
+	}
+
 	string percentage::display_ppm() const
 	{
 		ostringstream out;
@@ -412,7 +419,7 @@ namespace scifir
 	string to_string(const percentage& x)
 	{
 		ostringstream output;
-		output << x.get_value() << "%";
+		output << x.display_percentage();
 		return output.str();
 	}
 

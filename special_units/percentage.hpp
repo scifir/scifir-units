@@ -128,6 +128,7 @@ namespace scifir
 			float get_ppt() const;
 			float get_ppq() const;*/
 
+			string display_percentage(int number_of_decimals = 2) const;
 			string display_ppm() const;
 			/*string display_ppb() const;
 			string display_ppt() const;
