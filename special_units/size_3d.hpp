@@ -234,29 +234,29 @@ bool operator !=(const scifir::size_3d<T>& x, const scifir::size_3d<T>& y)
 }
 
 template<typename T>
-bool operator ==(const scifir::size_3d<T>& x, const string& y)
+bool operator ==(const scifir::size_3d<T>& x, const string& init_size_3d)
 {
-	scifir::size_3d<T> y_size(y);
-	return (x == y_size);
+	scifir::size_3d<T> y(init_size_3d);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const scifir::size_3d<T>& x, const string& y)
+bool operator !=(const scifir::size_3d<T>& x, const string& init_size_3d)
 {
-	return !(x == y);
+	return !(x == init_size_3d);
 }
 
 template<typename T>
-bool operator ==(const string& x, const scifir::size_3d<T>& y)
+bool operator ==(const string& init_size_3d, const scifir::size_3d<T>& x)
 {
-	scifir::size_3d<T> x_size(x);
-	return (x_size == y);
+	scifir::size_3d<T> y(init_size_3d);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const scifir::size_3d<T>& y)
+bool operator !=(const string& init_size_3d, const scifir::size_3d<T>& x)
 {
-	return !(x == y);
+	return !(init_size_3d == x);
 }
 
 template<typename T>

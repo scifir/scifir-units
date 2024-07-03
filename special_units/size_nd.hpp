@@ -340,29 +340,29 @@ bool operator !=(const scifir::size_nd<T>& x, const scifir::size_nd<T>& y)
 }
 
 template<typename T>
-bool operator ==(const scifir::size_nd<T>& x, const string& y)
+bool operator ==(const scifir::size_nd<T>& x, const string& init_size_nd)
 {
-	scifir::size_nd<T> y_size(y);
-	return (x == y_size);
+	scifir::size_nd<T> y(init_size_nd);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const scifir::size_nd<T>& x, const string& y)
+bool operator !=(const scifir::size_nd<T>& x, const string& init_size_nd)
 {
-	return !(x == y);
+	return !(x == init_size_nd);
 }
 
 template<typename T>
-bool operator ==(const string& x, const scifir::size_nd<T>& y)
+bool operator ==(const string& init_size_nd, const scifir::size_nd<T>& x)
 {
-	scifir::size_nd<T> x_size(x);
-	return (x_size == y);
+	scifir::size_nd<T> y(init_size_nd);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const scifir::size_nd<T>& y)
+bool operator !=(const string& init_size_nd, const scifir::size_nd<T>& x)
 {
-	return !(x == y);
+	return !(init_size_nd == x);
 }
 
 template<typename T>
