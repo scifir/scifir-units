@@ -308,9 +308,9 @@ namespace scifir
 		return angle(std::sqrt(x.get_value()));
 	}
 
-	angle sqrt_nth(const angle& x, int y)
+	angle sqrt_nth(const angle& x, int index)
 	{
-		return angle(std::pow(x.get_value(), float(1.0f / y)));
+		return angle(std::pow(x.get_value(), float(1.0f / index)));
 	}
 
 	float sin(const angle& x)

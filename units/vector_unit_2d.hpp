@@ -57,29 +57,29 @@ namespace scifir
 	{
 		public:
 			vector_unit_2d();
-			vector_unit_2d(const vector_unit_2d&);
-			vector_unit_2d(vector_unit_2d&&);
-			explicit vector_unit_2d(float,const string&,float); // Example of initialization (10,"N",50)
-			explicit vector_unit_2d(float,const string&,const angle&); // Example of initialization (10,"N",50ª)
-			explicit vector_unit_2d(double,const string&,float); // Example of initialization (10,"N",50)
-			explicit vector_unit_2d(double,const string&,const angle&);
-			explicit vector_unit_2d(long double,const string&,float); // Example of initialization (10,"N",50)
-			explicit vector_unit_2d(long double,const string&,const angle&);
-			explicit vector_unit_2d(int,const string&,float);
-			explicit vector_unit_2d(int,const string&,const angle&);
-			explicit vector_unit_2d(float,const vector<dimension>&,float);
-			explicit vector_unit_2d(float,const vector<dimension>&,const angle&);
-			explicit vector_unit_2d(double,const vector<dimension>&,float);
-			explicit vector_unit_2d(double,const vector<dimension>&,const angle&);
-			explicit vector_unit_2d(long double,const vector<dimension>&,float);
-			explicit vector_unit_2d(long double,const vector<dimension>&,const angle&);
-			explicit vector_unit_2d(int,const vector<dimension>&,float);
-			explicit vector_unit_2d(int,const vector<dimension>&,const angle&);
-			explicit vector_unit_2d(const scalar_unit&,float);
-			explicit vector_unit_2d(const scalar_unit&,const angle&);
-			explicit vector_unit_2d(const string&,float);
-			explicit vector_unit_2d(const string&,const angle&);
-			explicit vector_unit_2d(const string&); // Example of initialization string "1N 50º"
+			vector_unit_2d(const vector_unit_2d& x);
+			vector_unit_2d(vector_unit_2d&& x);
+			explicit vector_unit_2d(float new_value,const string& init_dimensions,float new_theta); // Example of initialization (10,"N",50)
+			explicit vector_unit_2d(float new_value,const string& init_dimensions,const angle& new_theta); // Example of initialization (10,"N",50ª)
+			explicit vector_unit_2d(double new_value,const string& init_dimensions,float new_theta); // Example of initialization (10,"N",50)
+			explicit vector_unit_2d(double new_value,const string& init_dimensions,const angle& new_theta);
+			explicit vector_unit_2d(long double new_value,const string& init_dimensions,float new_theta); // Example of initialization (10,"N",50)
+			explicit vector_unit_2d(long double new_value,const string& init_dimensions,const angle& new_theta);
+			explicit vector_unit_2d(int new_value,const string& init_dimensions,float new_theta);
+			explicit vector_unit_2d(int new_value,const string& init_dimensions,const angle& new_theta);
+			explicit vector_unit_2d(float new_value,const vector<dimension>& new_dimensions,float new_theta);
+			explicit vector_unit_2d(float new_value,const vector<dimension>& new_dimensions,const angle& new_theta);
+			explicit vector_unit_2d(double new_value,const vector<dimension>& new_dimensions,float new_theta);
+			explicit vector_unit_2d(double new_value,const vector<dimension>& new_dimensions,const angle& new_theta);
+			explicit vector_unit_2d(long double new_value,const vector<dimension>& new_dimensions,float new_theta);
+			explicit vector_unit_2d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_theta);
+			explicit vector_unit_2d(int new_value,const vector<dimension>& new_dimensions,float new_theta);
+			explicit vector_unit_2d(int new_value,const vector<dimension>& new_dimensions,const angle& new_theta);
+			explicit vector_unit_2d(const scalar_unit& x,float new_theta);
+			explicit vector_unit_2d(const scalar_unit& x,const angle& new_theta);
+			explicit vector_unit_2d(const string& init_scalar,float new_theta);
+			explicit vector_unit_2d(const string& init_scalar,const angle& new_theta);
+			explicit vector_unit_2d(const string& init_vector_2d); // Example of initialization string "1N 50º"
 
 			static vector_unit_2d cartesian_2d(const string& new_dimensions,float new_x,float new_y)
 			{
@@ -88,23 +88,23 @@ namespace scifir
 				return vector_unit_2d(new_value,new_dimensions,angle(new_theta));
 			}
 
-			vector_unit_2d& operator =(const vector_unit_2d&);
-			vector_unit_2d& operator =(vector_unit_2d&&);
-			vector_unit_2d& operator =(const scalar_unit&);
-			vector_unit_2d& operator =(scalar_unit&&);
-			vector_unit_2d& operator =(const string&);
+			vector_unit_2d& operator =(const vector_unit_2d& x);
+			vector_unit_2d& operator =(vector_unit_2d&& x);
+			vector_unit_2d& operator =(const scalar_unit& x);
+			vector_unit_2d& operator =(scalar_unit&& x);
+			vector_unit_2d& operator =(const string& init_vector_2d);
 
-			void point_to(direction::name);
+			void point_to(direction::name x);
 
-			void operator +=(const vector_unit_2d&);
-			void operator -=(vector_unit_2d);
+			void operator +=(const vector_unit_2d& x);
+			void operator -=(vector_unit_2d x);
 
-			vector_unit_2d operator +(const vector_unit_2d&) const;
-			vector_unit_2d operator -(vector_unit_2d) const;
+			vector_unit_2d operator +(const vector_unit_2d& x) const;
+			vector_unit_2d operator -(vector_unit_2d x) const;
 
-			vector_unit_2d operator *(const scalar_unit&) const;
-			vector_unit_2d operator /(const scalar_unit&) const;
-			vector_unit_2d operator ^(const scalar_unit&) const;
+			vector_unit_2d operator *(const scalar_unit& x) const;
+			vector_unit_2d operator /(const scalar_unit& x) const;
+			vector_unit_2d operator ^(const scalar_unit& x) const;
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			vector_unit_2d operator +(U x) const
@@ -145,32 +145,32 @@ namespace scifir
 			}
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator +=(U y)
+			void operator +=(U x)
 			{
-				scalar_unit::value += y;
+				scalar_unit::value += x;
 			}
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator -=(U y)
+			void operator -=(U x)
 			{
-				scalar_unit::value -= y;
+				scalar_unit::value -= x;
 			}
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator *=(U y)
+			void operator *=(U x)
 			{
-				scalar_unit::value *= std::abs(y);
-				if(y < 0)
+				scalar_unit::value *= std::abs(x);
+				if(x < 0)
 				{
 					theta.invert();
 				}
 			}
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator /=(U y)
+			void operator /=(U x)
 			{
-				scalar_unit::value /= std::abs(y);
-				if(y < 0)
+				scalar_unit::value /= std::abs(x);
+				if(x < 0)
 				{
 					theta.invert();
 				}
@@ -191,28 +191,28 @@ namespace scifir
 				theta.invert();
 			}
 
-			string vectorial_display(int = 2) const;
-			string vectorial_derived_display(int = 2) const;
-			string vectorial_custom_display(const string&,int = 2) const;
+			string vectorial_display(int number_of_decimals = 2) const;
+			string vectorial_derived_display(int number_of_decimals = 2) const;
+			string vectorial_custom_display(const string& init_dimensions,int number_of_decimals = 2) const;
 
 			angle theta;
 
 		private:
-			void initialize_from_string(string);
+			void initialize_from_string(string init_vector_2d);
 	};
 
-	string to_string(const vector_unit_2d&);
-	scalar_unit norm(const vector_unit_2d&);
-	vector_unit_2d sqrt(const vector_unit_2d&);
-	vector_unit_2d sqrt_nth(const vector_unit_2d&,int);
-	scalar_unit dot_product(const vector_unit_2d&,const vector_unit_2d&);
-	angle angle_between(const vector_unit_2d&,const vector_unit_2d&);
-	bool same_direction(const vector_unit_2d&,const vector_unit_2d&);
-	bool parallel(const vector_unit_2d&,const vector_unit_2d&);
-	bool orthogonal(const vector_unit_2d&,const vector_unit_2d&);
+	string to_string(const vector_unit_2d& x);
+	scalar_unit norm(const vector_unit_2d& x);
+	vector_unit_2d sqrt(const vector_unit_2d& x);
+	vector_unit_2d sqrt_nth(const vector_unit_2d& x,int index);
+	scalar_unit dot_product(const vector_unit_2d& x,const vector_unit_2d& y);
+	angle angle_between(const vector_unit_2d& x,const vector_unit_2d& y);
+	bool same_direction(const vector_unit_2d& x,const vector_unit_2d& y);
+	bool parallel(const vector_unit_2d& x,const vector_unit_2d& y);
+	bool orthogonal(const vector_unit_2d& x,const vector_unit_2d& y);
 }
 
-vector_unit_2d operator *(const scifir::scalar_unit&,const scifir::vector_unit_2d&);
+vector_unit_2d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_2d& y);
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::vector_unit_2d operator +(const T y,const scifir::vector_unit_2d& x)
@@ -247,20 +247,20 @@ scifir::vector_unit_2d operator /(const T y,const scifir::vector_unit_2d& x)
 	return scifir::vector_unit_2d(y / x.get_value(),new_dimensions,x.theta);
 }
 
-bool operator ==(const vector_unit_2d&, vector_unit_2d);
-bool operator !=(const vector_unit_2d&, const vector_unit_2d&);
+bool operator ==(const vector_unit_2d& x, vector_unit_2d y);
+bool operator !=(const vector_unit_2d& x, const vector_unit_2d& y);
 
-bool operator ==(const vector_unit_2d&, const string&);
-bool operator !=(const vector_unit_2d&, const string&);
+bool operator ==(const vector_unit_2d&, const string& init_vector_2d);
+bool operator !=(const vector_unit_2d&, const string& init_vector_2d);
 
-bool operator ==(const string&, const vector_unit_2d&);
-bool operator !=(const string&, const vector_unit_2d&);
+bool operator ==(const string& init_vector_2d, const vector_unit_2d&);
+bool operator !=(const string& init_vector_2d, const vector_unit_2d&);
 
-void operator +=(string&, const vector_unit_2d&);
-string operator +(const string&, const vector_unit_2d&);
-string operator +(const vector_unit_2d&, const string&);
+void operator +=(string& x, const vector_unit_2d& y);
+string operator +(const string& x, const vector_unit_2d& y);
+string operator +(const vector_unit_2d& y, const string& x);
 
-ostream& operator <<(ostream&, const vector_unit_2d&);
-istream& operator >>(istream&, vector_unit_2d&);
+ostream& operator <<(ostream& os, const vector_unit_2d& x);
+istream& operator >>(istream& is, vector_unit_2d& x);
 
 #endif // SCIFIR_UNITS_UNITS_VECTOR_UNIT_2D_HPP_INCLUDED

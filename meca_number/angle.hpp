@@ -168,7 +168,7 @@ namespace scifir
 	bool orthogonal(const angle& x, const angle& y);
 
 	angle sqrt(const angle& x);
-	angle sqrt_nth(const angle& x,int y);
+	angle sqrt_nth(const angle& x,int index);
 
 	float sin(const angle& x);
 	float cos(const angle& x);

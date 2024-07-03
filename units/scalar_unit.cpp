@@ -724,9 +724,9 @@ namespace scifir
 		return std::abs(x.get_value());
 	}
 
-	scalar_unit pow(const scalar_unit& x,int y)
+	scalar_unit pow(const scalar_unit& x,int exponent)
 	{
-		return x ^ y;
+		return x ^ exponent;
 	}
 
 	scalar_unit sqrt(const scalar_unit& x)
@@ -737,11 +737,11 @@ namespace scifir
 		return scalar_unit(new_value, new_dimensions);
 	}
 
-	scalar_unit sqrt_nth(const scalar_unit& x, int y)
+	scalar_unit sqrt_nth(const scalar_unit& x, int index)
 	{
 		long double new_value = x.get_value();
-		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(), new_value, y);
-		new_value = std::pow(new_value, 1.0 / y);
+		vector<dimension> new_dimensions = square_dimensions(x.get_dimensions(), new_value, index);
+		new_value = std::pow(new_value, 1.0f / index);
 		return scalar_unit(new_value, new_dimensions);
 	}
 }

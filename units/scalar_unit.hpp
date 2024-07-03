@@ -211,9 +211,9 @@ namespace scifir
 	string to_string(const scalar_unit& x);
 	bool is_scalar_unit(const string& init_scalar);
 	float abs(const scalar_unit& x);
-	scalar_unit pow(const scalar_unit& x,int y);
+	scalar_unit pow(const scalar_unit& x,int exponent);
 	scalar_unit sqrt(const scalar_unit& x);
-	scalar_unit sqrt_nth(const scalar_unit& x, int y);
+	scalar_unit sqrt_nth(const scalar_unit& x, int index);
 
 	/*constexpr bool is_valid_scalar_unit(const char* x_init)
 	{
