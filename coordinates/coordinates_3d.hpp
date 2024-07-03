@@ -865,7 +865,7 @@ bool operator !=(const scifir::point_3d<T>& x,const scifir::coordinates_3d<T> y)
 template<typename T>
 bool operator ==(const scifir::coordinates_3d<T>& x, const string& init_coordinates_3d)
 {
-	coordinates_3d<T> y = coordinates_3d<T>(init_coordinates_3d);
+	scifir::coordinates_3d<T> y(init_coordinates_3d);
 	return (x == y);
 }
 
@@ -878,7 +878,7 @@ bool operator !=(const scifir::coordinates_3d<T>& x, const string& init_coordina
 template<typename T>
 bool operator ==(const string& init_coordinates_3d, const scifir::coordinates_3d<T>& x)
 {
-	coordinates_3d<T> y = coordinates_3d<T>(init_coordinates_3d);
+	scifir::coordinates_3d<T> y(init_coordinates_3d);
 	return (x == y);
 }
 

@@ -49,7 +49,6 @@ const string name##_2d::dimensions_match = init_dimensions; \
 const vector<dimension> name##_2d::real_dimensions = create_derived_dimensions(init_dimensions)
 
 using namespace std;
-using namespace scifir;
 
 namespace scifir
 {
@@ -212,7 +211,7 @@ namespace scifir
 	bool orthogonal(const vector_unit_2d& x,const vector_unit_2d& y);
 }
 
-vector_unit_2d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_2d& y);
+scifir::vector_unit_2d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_2d& y);
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::vector_unit_2d operator +(const T y,const scifir::vector_unit_2d& x)

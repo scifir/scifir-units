@@ -66,7 +66,6 @@ VECTOR_UNIT_3D_CPP(name,init_dimensions); \
 VECTOR_UNIT_ND_CPP(name,init_dimensions)
 
 using namespace std;
-using namespace scifir;
 
 namespace scifir
 {
@@ -245,7 +244,7 @@ namespace scifir
 	bool orthogonal(const vector_unit_3d& x,const vector_unit_3d& y);
 }
 
-vector_unit_3d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_3d& y);
+scifir::vector_unit_3d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_3d& y);
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::vector_unit_3d operator +(const T y,const scifir::vector_unit_3d& x)

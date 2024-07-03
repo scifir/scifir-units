@@ -629,7 +629,7 @@ bool operator !=(const scifir::point_2d<T>& x,const scifir::coordinates_2dr<T>& 
 template<typename T>
 bool operator ==(const scifir::coordinates_2dr<T>& x, const string& init_coordinates_2dr)
 {
-	coordinates_2dr<T> y = coordinates_2dr<T>(init_coordinates_2dr);
+	scifir::coordinates_2dr<T> y(init_coordinates_2dr);
 	return (x == y);
 }
 
@@ -642,7 +642,7 @@ bool operator !=(const scifir::coordinates_2dr<T>& x, const string& init_coordin
 template<typename T>
 bool operator ==(const string& init_coordinates_2dr, const scifir::coordinates_2dr<T>& x)
 {
-	coordinates_2dr<T> y = coordinates_2dr<T>(init_coordinates_2dr);
+	scifir::coordinates_2dr<T> y(init_coordinates_2dr);
 	return (x == y);
 }
 

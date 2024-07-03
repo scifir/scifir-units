@@ -222,7 +222,7 @@ bool operator !=(const scifir::size_2d<T>& x, const scifir::size_2d<T>& y)
 template<typename T>
 bool operator ==(const scifir::size_2d<T>& x, const string& y)
 {
-	size_2d<T> y_size = size_2d<T>(y);
+	scifir::size_2d<T> y_size(y);
 	return (x == y_size);
 }
 
@@ -235,7 +235,7 @@ bool operator !=(const scifir::size_2d<T>& x, const string& y)
 template<typename T>
 bool operator ==(const string& x, const scifir::size_2d<T>& y)
 {
-	size_2d<T> x_size = size_2d<T>(x);
+	scifir::size_2d<T> x_size(x);
 	return (x_size == y);
 }
 

@@ -54,7 +54,6 @@ const string name##_nd::dimensions_match = init_dimensions; \
 const vector<dimension> name##_nd::real_dimensions = create_derived_dimensions(init_dimensions)
 
 using namespace std;
-using namespace scifir;
 
 namespace scifir
 {

@@ -1111,7 +1111,7 @@ bool operator !=(const scifir::point_nd<T>& x,const scifir::point_nd<T>& y)
 template<typename T>
 bool operator ==(const scifir::point_nd<T>& x, const string& init_point_nd)
 {
-	point_nd<T> y = point_nd<T>(init_point_nd);
+	scifir::point_nd<T> y(init_point_nd);
 	return (x == y);
 }
 
@@ -1124,7 +1124,7 @@ bool operator !=(const scifir::point_nd<T>& x, const string& init_point_nd)
 template<typename T>
 bool operator ==(const string& init_point_nd, const scifir::point_nd<T>& x)
 {
-	point_nd<T> y = point_nd<T>(init_point_nd);
+	scifir::point_nd<T> y(init_point_nd);
 	return (x == y);
 }
 
