@@ -220,6 +220,8 @@ TEST_CASE("scalar_unit class") {
 		CHECK(d.display_dimensions() == "[empty]");
 		scalar_unit e("2 N");
 		CHECK(to_string(e.get_derived_dimensions()) == "kg*m/s2");
+		scalar_unit f("2 m2");
+		CHECK(f.display_dimensions() == "m2");
 	}
 
 	SECTION("Display of scalar_unit class")
