@@ -496,7 +496,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2));
 	}
 
-	float distance(const coordinates_2dr<float>&,const coordinates_2dr<float>&);
+	float distance(const coordinates_2dr<float>& x,const coordinates_2dr<float>& y);
 
 	template<typename T>
 	T distance(const coordinates_2dr<T>& x,const coordinates_2d<T>& y)
@@ -504,7 +504,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2));
 	}
 
-	float distance(const coordinates_2dr<float>&,const coordinates_2d<float>&);
+	float distance(const coordinates_2dr<float>& x,const coordinates_2d<float>& y);
 
 	template<typename T>
 	T distance(const coordinates_2d<T>& x,const coordinates_2dr<T>& y)
@@ -512,7 +512,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2));
 	}
 
-	float distance(const coordinates_2d<float>&,const coordinates_2dr<float>&);
+	float distance(const coordinates_2d<float>& x,const coordinates_2dr<float>& y);
 
 	template<typename T>
 	T distance(const coordinates_2dr<T>& x,const point_2d<T>& y)
@@ -520,7 +520,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2));
 	}
 
-	float distance(const coordinates_2dr<float>&,const point_2d<float>&);
+	float distance(const coordinates_2dr<float>& x,const point_2d<float>& y);
 
 	template<typename T>
 	T distance(const point_2d<T>& x,const coordinates_2dr<T>& y)
@@ -528,7 +528,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2));
 	}
 
-	float distance(const point_2d<float>&,const coordinates_2dr<float>&);
+	float distance(const point_2d<float>& x,const coordinates_2dr<float>& y);
 }
 
 template<typename T>
@@ -627,29 +627,29 @@ bool operator !=(const scifir::point_2d<T>& x,const scifir::coordinates_2dr<T>& 
 }
 
 template<typename T>
-bool operator ==(const scifir::coordinates_2dr<T>& x, const string& y)
+bool operator ==(const scifir::coordinates_2dr<T>& x, const string& init_coordinates_2dr)
 {
-	coordinates_2dr<T> y_coordinates = coordinates_2dr<T>(y);
-	return (x == y_coordinates);
+	coordinates_2dr<T> y = coordinates_2dr<T>(init_coordinates_2dr);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const scifir::coordinates_2dr<T>& x, const string& y)
+bool operator !=(const scifir::coordinates_2dr<T>& x, const string& init_coordinates_2dr)
 {
-	return !(x == y);
+	return !(x == init_coordinates_2dr);
 }
 
 template<typename T>
-bool operator ==(const string& x, const scifir::coordinates_2dr<T>& y)
+bool operator ==(const string& init_coordinates_2dr, const scifir::coordinates_2dr<T>& x)
 {
-	coordinates_2dr<T> x_coordinates = coordinates_2dr<T>(x);
-	return (x_coordinates == y);
+	coordinates_2dr<T> y = coordinates_2dr<T>(init_coordinates_2dr);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const scifir::coordinates_2dr<T>& y)
+bool operator !=(const string& init_coordinates_2dr, const scifir::coordinates_2dr<T>& x)
 {
-	return !(x == y);
+	return !(init_coordinates_2dr == x);
 }
 
 template<typename T>

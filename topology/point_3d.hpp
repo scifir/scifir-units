@@ -46,9 +46,9 @@ namespace scifir
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit point_3d(const coordinates_3d<T>&);
+			explicit point_3d(const coordinates_3d<T>& x_coordinates);
 
-			explicit point_3d(coordinates_3d<T>&&);
+			explicit point_3d(coordinates_3d<T>&& x_coordinates);
 
 			explicit point_3d(const string& init_point_3d) : point_3d()
 			{
@@ -316,9 +316,9 @@ namespace scifir
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit point_3d(const coordinates_3d<float>&);
+			explicit point_3d(const coordinates_3d<float>& x_coordinates);
 
-			explicit point_3d(coordinates_3d<float>&&);
+			explicit point_3d(coordinates_3d<float>&& x_coordinates);
 
 			explicit point_3d(const string& init_point_3d) : point_3d()
 			{
@@ -564,12 +564,12 @@ namespace scifir
 	string to_string(const point_3d<float>& x);
 
 	template<typename T>
-	T distance(const point_3d<T>& x1,const point_3d<T>& x2)
+	T distance(const point_3d<T>& x,const point_3d<T>& y)
 	{
-		return scifir::sqrt(scifir::pow(x1.x - x2.x,2) + scifir::pow(x1.y - x2.y,2) + scifir::pow(x1.z - x2.z,2));
+		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2));
 	}
 
-	float distance(const point_3d<float>&,const point_3d<float>&);
+	float distance(const point_3d<float>& x,const point_3d<float>& y);
 }
 
 template<typename T>
@@ -585,29 +585,29 @@ bool operator !=(const scifir::point_3d<T>& x,const scifir::point_3d<T>& y)
 }
 
 template<typename T>
-bool operator ==(const scifir::point_3d<T>& x, const string& y)
+bool operator ==(const scifir::point_3d<T>& x, const string& init_point_3d)
 {
-	point_3d<T> y_point = point_3d<T>(y);
-	return (x == y_point);
+	point_3d<T> y = point_3d<T>(init_point_3d);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const scifir::point_3d<T>& x, const string& y)
+bool operator !=(const scifir::point_3d<T>& x, const string& init_point_3d)
 {
-	return !(x == y);
+	return !(x == init_point_3d);
 }
 
 template<typename T>
-bool operator ==(const string& x, const scifir::point_3d<T>& y)
+bool operator ==(const string& init_point_3d, const scifir::point_3d<T>& x)
 {
-	point_3d<T> x_point = point_3d<T>(x);
-	return (x_point == y);
+	point_3d<T> y = point_3d<T>(init_point_3d);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const scifir::point_3d<T>& y)
+bool operator !=(const string& init_point_3d, const scifir::point_3d<T>& x)
 {
-	return !(x == y);
+	return !(init_point_3d == x);
 }
 
 template<typename T>

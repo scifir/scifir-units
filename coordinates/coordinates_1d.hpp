@@ -213,7 +213,7 @@ namespace scifir
 		return out.str();
 	}
 
-	string to_string(const coordinates_1d<float>&);
+	string to_string(const coordinates_1d<float>& x);
 
 	template<typename T>
 	T distance(const coordinates_1d<T>& x,const coordinates_1d<T>& y)
@@ -221,7 +221,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2));
 	}
 	
-	float distance(const coordinates_1d<float>&,const coordinates_1d<float>&);
+	float distance(const coordinates_1d<float>& x,const coordinates_1d<float>& y);
 
 	template<typename T>
 	T distance(const coordinates_1d<T>& x,const point_1d<T>& y)
@@ -229,7 +229,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2));
 	}
 
-	float distance(const coordinates_1d<float>&,const point_1d<float>&);
+	float distance(const coordinates_1d<float>& x,const point_1d<float>& y);
 
 	template<typename T>
 	T distance(const point_1d<T>& x,const coordinates_1d<T>& y)
@@ -237,7 +237,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2));
 	}
 
-	float distance(const point_1d<float>&,const coordinates_1d<float>&);
+	float distance(const point_1d<float>& x,const coordinates_1d<float>& y);
 }
 
 template<typename T>
@@ -298,29 +298,29 @@ bool operator !=(const scifir::point_1d<T>& x,const scifir::coordinates_1d<T>& y
 }
 
 template<typename T>
-bool operator ==(const scifir::coordinates_1d<T>& x, const string& y)
+bool operator ==(const scifir::coordinates_1d<T>& x, const string& init_coordinates_1d)
 {
-	coordinates_1d<T> y_coordinates = coordinates_1d<T>(y);
-	return (x == y_coordinates);
+	coordinates_1d<T> y = coordinates_1d<T>(init_coordinates_1d);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const scifir::coordinates_1d<T>& x, const string& y)
+bool operator !=(const scifir::coordinates_1d<T>& x, const string& init_coordinates_1d)
 {
-	return !(x == y);
+	return !(x == init_coordinates_1d);
 }
 
 template<typename T>
-bool operator ==(const string& x, const scifir::coordinates_1d<T>& y)
+bool operator ==(const string& init_coordinates_1d, const scifir::coordinates_1d<T>& x)
 {
-	coordinates_1d<T> x_coordinates = coordinates_1d<T>(x);
-	return (x_coordinates == y);
+	coordinates_1d<T> y = coordinates_1d<T>(init_coordinates_1d);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const scifir::coordinates_1d<T>& y)
+bool operator !=(const string& init_coordinates_1d, const scifir::coordinates_1d<T>& x)
 {
-	return !(x == y);
+	return !(init_coordinates_1d == x);
 }
 
 template<typename T>

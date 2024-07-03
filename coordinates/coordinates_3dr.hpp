@@ -936,7 +936,7 @@ namespace scifir
 		return out.str();
 	}
 
-	string to_string(const coordinates_3dr<float>&);
+	string to_string(const coordinates_3dr<float>& x);
 
 	template<typename T>
 	T distance(const coordinates_3dr<T>& x,const coordinates_3dr<T>& y)
@@ -944,7 +944,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2));
 	}
 
-	float distance(const coordinates_3dr<float>&,const coordinates_3dr<float>&);
+	float distance(const coordinates_3dr<float>& x,const coordinates_3dr<float>& y);
 
 	template<typename T>
 	T distance(const coordinates_3dr<T>& x,const coordinates_3d<T>& y)
@@ -952,7 +952,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2));
 	}
 
-	float distance(const coordinates_3dr<float>&,const coordinates_3d<float>&);
+	float distance(const coordinates_3dr<float>& x,const coordinates_3d<float>& y);
 
 	template<typename T>
 	T distance(const coordinates_3d<T>& x,const coordinates_3dr<T>& y)
@@ -960,7 +960,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2));
 	}
 
-	float distance(const coordinates_3d<float>&,const coordinates_3dr<float>&);
+	float distance(const coordinates_3d<float>& x,const coordinates_3dr<float>& y);
 
 	template<typename T>
 	T distance(const coordinates_3dr<T>& x,const point_3d<T>& y)
@@ -968,7 +968,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2));
 	}
 
-	float distance(const coordinates_3dr<float>&,const point_3d<float>&);
+	float distance(const coordinates_3dr<float>& x,const point_3d<float>& y);
 
 	template<typename T>
 	T distance(const point_3d<T>& x,const coordinates_3dr<T>& y)
@@ -976,7 +976,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2));
 	}
 
-	float distance(const point_3d<float>&,const coordinates_3dr<float>&);
+	float distance(const point_3d<float>& x,const coordinates_3dr<float>& y);
 }
 
 template<typename T>
@@ -1075,29 +1075,29 @@ bool operator !=(const scifir::point_3d<T>& x,const scifir::coordinates_3dr<T>& 
 }
 
 template<typename T>
-bool operator ==(const scifir::coordinates_3dr<T>& x, const string& y)
+bool operator ==(const scifir::coordinates_3dr<T>& x, const string& init_coordinates_3dr)
 {
-	coordinates_3dr<T> y_coordinates = coordinates_3dr<T>(y);
-	return (x == y_coordinates);
+	coordinates_3dr<T> y = coordinates_3dr<T>(init_coordinates_3dr);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const scifir::coordinates_3dr<T>& x, const string& y)
+bool operator !=(const scifir::coordinates_3dr<T>& x, const string& init_coordinates_3dr)
 {
-	return !(x == y);
+	return !(x == init_coordinates_3dr);
 }
 
 template<typename T>
-bool operator ==(const string& x, const scifir::coordinates_3dr<T>& y)
+bool operator ==(const string& init_coordinates_3dr, const scifir::coordinates_3dr<T>& x)
 {
-	coordinates_3dr<T> x_coordinates = coordinates_3dr<T>(x);
-	return (x_coordinates == y);
+	coordinates_3dr<T> y = coordinates_3dr<T>(init_coordinates_3dr);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const scifir::coordinates_3dr<T>& y)
+bool operator !=(const string& init_coordinates_3dr, const scifir::coordinates_3dr<T>& x)
 {
-	return !(x == y);
+	return !(init_coordinates_3dr == x);
 }
 
 template<typename T>

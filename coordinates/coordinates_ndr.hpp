@@ -2180,17 +2180,17 @@ namespace scifir
 		}
 	}
 
-	string to_string(const coordinates_ndr<float>&);
+	string to_string(const coordinates_ndr<float>& x);
 
 	template<typename T>
-	T distance(const coordinates_ndr<T>& x1,const coordinates_ndr<T>& x2)
+	T distance(const coordinates_ndr<T>& x,const coordinates_ndr<T>& y)
 	{
-		if (x1.get_nd() == x2.get_nd())
+		if (x.get_nd() == y.get_nd())
 		{
 			scalar_unit x_length = scalar_unit(0.0f,"m2");
-			for (int i = 0; i < x1.get_values().size(); i++)
+			for (int i = 0; i < x.get_values().size(); i++)
 			{
-				x_length += scifir::pow(x1.get_value(i) - x2.get_value(i),2);
+				x_length += scifir::pow(x.get_value(i) - y.get_value(i),2);
 			}
 			return scifir::sqrt(x_length);
 		}
@@ -2200,17 +2200,17 @@ namespace scifir
 		}
 	}
 
-	float distance(const coordinates_ndr<float>&,const coordinates_ndr<float>&);
+	float distance(const coordinates_ndr<float>& x,const coordinates_ndr<float>& y);
 
 	template<typename T>
-	T distance(const coordinates_ndr<T>& x1,const coordinates_nd<T>& x2)
+	T distance(const coordinates_ndr<T>& x,const coordinates_nd<T>& y)
 	{
-		if (x1.get_nd() == x2.get_nd())
+		if (x.get_nd() == y.get_nd())
 		{
 			scalar_unit x_length = scalar_unit(0.0f,"m2");
-			for (int i = 0; i < x1.get_values().size(); i++)
+			for (int i = 0; i < x.get_values().size(); i++)
 			{
-				x_length += scifir::pow(x1.get_value(i) - x2.values[i],2);
+				x_length += scifir::pow(x.get_value(i) - y.values[i],2);
 			}
 			return scifir::sqrt(x_length);
 		}
@@ -2220,17 +2220,17 @@ namespace scifir
 		}
 	}
 
-	float distance(const coordinates_ndr<float>&,const coordinates_nd<float>&);
+	float distance(const coordinates_ndr<float>& x,const coordinates_nd<float>& y);
 
 	template<typename T>
-	T distance(const coordinates_nd<T>& x1,const coordinates_ndr<T>& x2)
+	T distance(const coordinates_nd<T>& x,const coordinates_ndr<T>& y)
 	{
-		if (x1.get_nd() == x2.get_nd())
+		if (x.get_nd() == y.get_nd())
 		{
 			scalar_unit x_length = scalar_unit(0.0f,"m2");
-			for (int i = 0; i < x1.values.size(); i++)
+			for (int i = 0; i < x.values.size(); i++)
 			{
-				x_length += scifir::pow(x1.values[i] - x2.get_value(i),2);
+				x_length += scifir::pow(x.values[i] - y.get_value(i),2);
 			}
 			return scifir::sqrt(x_length);
 		}
@@ -2240,17 +2240,17 @@ namespace scifir
 		}
 	}
 
-	float distance(const coordinates_nd<float>&,const coordinates_ndr<float>&);
+	float distance(const coordinates_nd<float>& x,const coordinates_ndr<float>& y);
 
 	template<typename T>
-	T distance(const coordinates_ndr<T>& x1,const point_nd<T>& x2)
+	T distance(const coordinates_ndr<T>& x,const point_nd<T>& y)
 	{
-		if (x1.get_nd() == x2.get_nd())
+		if (x.get_nd() == y.get_nd())
 		{
 			scalar_unit x_length = scalar_unit(0.0f,"m2");
-			for (int i = 0; i < x1.get_values().size(); i++)
+			for (int i = 0; i < x.get_values().size(); i++)
 			{
-				x_length += scifir::pow(x1.get_value(i) - x2.values[i],2);
+				x_length += scifir::pow(x.get_value(i) - y.values[i],2);
 			}
 			return scifir::sqrt(x_length);
 		}
@@ -2260,17 +2260,17 @@ namespace scifir
 		}
 	}
 
-	float distance(const coordinates_ndr<float>&,const point_nd<float>&);
+	float distance(const coordinates_ndr<float>& x,const point_nd<float>& y);
 
 	template<typename T>
-	T distance(const point_nd<T>& x1,const coordinates_ndr<T>& x2)
+	T distance(const point_nd<T>& x,const coordinates_ndr<T>& y)
 	{
-		if (x1.get_nd() == x2.get_nd())
+		if (x.get_nd() == y.get_nd())
 		{
 			scalar_unit x_length = scalar_unit(0.0f,"m2");
-			for (int i = 0; i < x1.values.size(); i++)
+			for (int i = 0; i < x.values.size(); i++)
 			{
-				x_length += scifir::pow(x1.values[i] - x2.get_value(i),2);
+				x_length += scifir::pow(x.values[i] - y.get_value(i),2);
 			}
 			return scifir::sqrt(x_length);
 		}
@@ -2280,7 +2280,7 @@ namespace scifir
 		}
 	}
 
-	float distance(const point_nd<float>&,const coordinates_ndr<float>&);
+	float distance(const point_nd<float>& x,const coordinates_ndr<float>& y);
 }
 
 template<typename T>
@@ -2414,29 +2414,29 @@ bool operator !=(const scifir::point_nd<T>& x,const scifir::coordinates_ndr<T>& 
 }
 
 template<typename T>
-bool operator ==(const scifir::coordinates_ndr<T>& x, const string& y)
+bool operator ==(const scifir::coordinates_ndr<T>& x, const string& init_coordinates_ndr)
 {
-	coordinates_ndr<T> y_coordinates = coordinates_ndr<T>(y);
-	return (x == y_coordinates);
+	coordinates_ndr<T> y = coordinates_ndr<T>(init_coordinates_ndr);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const scifir::coordinates_ndr<T>& x, const string& y)
+bool operator !=(const scifir::coordinates_ndr<T>& x, const string& init_coordinates_ndr)
 {
-	return !(x == y);
+	return !(x == init_coordinates_ndr);
 }
 
 template<typename T>
-bool operator ==(const string& x, const scifir::coordinates_ndr<T>& y)
+bool operator ==(const string& init_coordinates_ndr, const scifir::coordinates_ndr<T>& x)
 {
-	coordinates_ndr<T> x_coordinates = coordinates_ndr<T>(x);
-	return (x_coordinates == y);
+	coordinates_ndr<T> y = coordinates_ndr<T>(init_coordinates_ndr);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const scifir::coordinates_ndr<T>& y)
+bool operator !=(const string& init_coordinates_ndr, const scifir::coordinates_ndr<T>& x)
 {
-	return !(x == y);
+	return !(init_coordinates_ndr == x);
 }
 
 template<typename T>

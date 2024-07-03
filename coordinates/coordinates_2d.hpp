@@ -355,7 +355,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2));
 	}
 
-	float distance(const coordinates_2d<float>&,const coordinates_2d<float>&);
+	float distance(const coordinates_2d<float>& x,const coordinates_2d<float>& y);
 
 	template<typename T>
 	T distance(const coordinates_2d<T>& x,const point_2d<T>& y)
@@ -363,7 +363,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2));
 	}
 
-	float distance(const coordinates_2d<float>&,const point_2d<float>&);
+	float distance(const coordinates_2d<float>& x,const point_2d<float>& y);
 
 	template<typename T>
 	T distance(const point_2d<T>& x,const coordinates_2d<T>& y)
@@ -371,7 +371,7 @@ namespace scifir
 		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2));
 	}
 
-	float distance(const point_2d<float>&,const coordinates_2d<float>&);
+	float distance(const point_2d<float>& x,const coordinates_2d<float>& y);
 
 	inline scalar_unit cartesian_2d_to_polar_p(const scalar_unit& x,scalar_unit y)
 	{
@@ -474,29 +474,29 @@ bool operator !=(const scifir::point_2d<T>& x,const scifir::coordinates_2d<T>& y
 }
 
 template<typename T>
-bool operator ==(const scifir::coordinates_2d<T>& x, const string& y)
+bool operator ==(const scifir::coordinates_2d<T>& x, const string& init_coordinates_2d)
 {
-	coordinates_2d<T> y_coordinates = coordinates_2d<T>(y);
-	return (x == y_coordinates);
+	coordinates_2d<T> y = coordinates_2d<T>(init_coordinates_2d);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const scifir::coordinates_2d<T>& x, const string& y)
+bool operator !=(const scifir::coordinates_2d<T>& x, const string& init_coordinates_2d)
 {
-	return !(x == y);
+	return !(x == init_coordinates_2d);
 }
 
 template<typename T>
-bool operator ==(const string& x, const scifir::coordinates_2d<T>& y)
+bool operator ==(const string& init_coordinates_2d, const scifir::coordinates_2d<T>& x)
 {
-	coordinates_2d<T> x_coordinates = coordinates_2d<T>(x);
-	return (x_coordinates == y);
+	coordinates_2d<T> y = coordinates_2d<T>(init_coordinates_2d);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const scifir::coordinates_2d<T>& y)
+bool operator !=(const string& init_coordinates_2d, const scifir::coordinates_2d<T>& x)
 {
-	return !(x == y);
+	return !(init_coordinates_2d == x);
 }
 
 template<typename T>

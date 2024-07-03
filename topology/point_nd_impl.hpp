@@ -10,11 +10,11 @@ using namespace std;
 namespace scifir
 {
 	template<typename T>
-	point_nd<T>::point_nd(const coordinates_nd<T>& new_coordinates) : values(new_coordinates.values)
+	point_nd<T>::point_nd(const coordinates_nd<T>& x_coordinates) : values(x_coordinates.values)
 	{}
 
 	template<typename T>
-	point_nd<T>::point_nd(coordinates_nd<T>&& new_coordinates) : values(std::move(new_coordinates.values))
+	point_nd<T>::point_nd(coordinates_nd<T>&& x_coordinates) : values(std::move(x_coordinates.values))
 	{}
 
 	template<typename T>

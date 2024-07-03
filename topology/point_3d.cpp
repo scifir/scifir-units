@@ -36,9 +36,9 @@ namespace scifir
 		return out.str();
 	}
 
-	float distance(const point_3d<float>& x1,const point_3d<float>& x2)
+	float distance(const point_3d<float>& x,const point_3d<float>& y)
 	{
-		return float(std::sqrt(std::pow(x1.x - x2.x,2) + std::pow(x1.y - x2.y,2) + std::pow(x1.z - x2.z,2)));
+		return float(std::sqrt(std::pow(x.x - y.x,2) + std::pow(x.y - y.y,2) + std::pow(x.z - y.z,2)));
 	}
 }
 

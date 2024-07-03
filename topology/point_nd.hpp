@@ -72,9 +72,9 @@ namespace scifir
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit point_nd(const coordinates_nd<T>&);
+			explicit point_nd(const coordinates_nd<T>& x_coordinates);
 
-			explicit point_nd(coordinates_nd<T>&&);
+			explicit point_nd(coordinates_nd<T>&& x_coordinates);
 
 			explicit point_nd(const string& init_point_nd) : values()
 			{
@@ -585,9 +585,9 @@ namespace scifir
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit point_nd(const coordinates_nd<float>&);
+			explicit point_nd(const coordinates_nd<float>& x_coordinates);
 
-			explicit point_nd(coordinates_nd<float>&&);
+			explicit point_nd(coordinates_nd<float>&& x_coordinates);
 
 			explicit point_nd(const string& init_point_nd) : values()
 			{
@@ -1109,29 +1109,29 @@ bool operator !=(const scifir::point_nd<T>& x,const scifir::point_nd<T>& y)
 }
 
 template<typename T>
-bool operator ==(const scifir::point_nd<T>& x, const string& y)
+bool operator ==(const scifir::point_nd<T>& x, const string& init_point_nd)
 {
-	point_nd<T> y_point = point_nd<T>(y);
-	return (x == y_point);
+	point_nd<T> y = point_nd<T>(init_point_nd);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const scifir::point_nd<T>& x, const string& y)
+bool operator !=(const scifir::point_nd<T>& x, const string& init_point_nd)
 {
-	return !(x == y);
+	return !(x == init_point_nd);
 }
 
 template<typename T>
-bool operator ==(const string& x, const scifir::point_nd<T>& y)
+bool operator ==(const string& init_point_nd, const scifir::point_nd<T>& x)
 {
-	point_nd<T> x_point = point_nd<T>(x);
-	return (x_point == y);
+	point_nd<T> y = point_nd<T>(init_point_nd);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const scifir::point_nd<T>& y)
+bool operator !=(const string& init_point_nd, const scifir::point_nd<T>& x)
 {
-	return !(x == y);
+	return !(init_point_nd == x);
 }
 
 template<typename T>

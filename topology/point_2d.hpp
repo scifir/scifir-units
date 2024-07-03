@@ -35,9 +35,9 @@ namespace scifir
 				set_position(new_p,new_theta);
 			}
 
-			explicit point_2d(const scifir::coordinates_2d<T>& new_coordinates);
+			explicit point_2d(const scifir::coordinates_2d<T>& x_coordinates);
 
-			explicit point_2d(scifir::coordinates_2d<T>&& new_coordinates);
+			explicit point_2d(scifir::coordinates_2d<T>&& x_coordinates);
 
 			explicit point_2d(const string& init_point_2d) : point_2d()
 			{
@@ -186,9 +186,9 @@ namespace scifir
 				set_position(new_p,new_theta);
 			}
 
-			explicit point_2d(const coordinates_2d<float>&);
+			explicit point_2d(const coordinates_2d<float>& x_coordinates);
 
-			explicit point_2d(coordinates_2d<float>&&);
+			explicit point_2d(coordinates_2d<float>&& x_coordinates);
 
 			explicit point_2d(const string& init_point_2d) : point_2d()
 			{
@@ -327,12 +327,12 @@ namespace scifir
 	string to_string(const point_2d<float>& x);
 
 	template<typename T>
-	T distance(const point_2d<T>& x1,const point_2d<T>& x2)
+	T distance(const point_2d<T>& x,const point_2d<T>& y)
 	{
-		return scifir::sqrt(scifir::pow(x1.x - x2.x,2) + scifir::pow(x1.y - x2.y,2));
+		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2));
 	}
 
-	float distance(const point_2d<float>&,const point_2d<float>&);
+	float distance(const point_2d<float>& x,const point_2d<float>& y);
 }
 
 template<typename T>
@@ -348,29 +348,29 @@ bool operator !=(const scifir::point_2d<T>& x,const scifir::point_2d<T>& y)
 }
 
 template<typename T>
-bool operator ==(const scifir::point_2d<T>& x, const string& y)
+bool operator ==(const scifir::point_2d<T>& x, const string& init_point_2d)
 {
-	point_2d<T> y_point = point_2d<T>(y);
-	return (x == y_point);
+	point_2d<T> y = point_2d<T>(init_point_2d);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const scifir::point_2d<T>& x, const string& y)
+bool operator !=(const scifir::point_2d<T>& x, const string& init_point_2d)
 {
-	return !(x == y);
+	return !(x == init_point_2d);
 }
 
 template<typename T>
-bool operator ==(const string& x, const scifir::point_2d<T>& y)
+bool operator ==(const string& init_point_2d, const scifir::point_2d<T>& x)
 {
-	point_2d<T> x_point = point_2d<T>(x);
-	return (x_point == y);
+	point_2d<T> y = point_2d<T>(init_point_2d);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const scifir::point_2d<T>& y)
+bool operator !=(const string& init_point_2d, const scifir::point_2d<T>& x)
 {
-	return !(x == y);
+	return !(init_point_2d == x);
 }
 
 template<typename T>

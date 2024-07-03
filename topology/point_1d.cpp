@@ -32,9 +32,9 @@ namespace scifir
 		return out.str();
 	}
 
-	float distance(const point_1d<float>& x1,const point_1d<float>& x2)
+	float distance(const point_1d<float>& x,const point_1d<float>& y)
 	{
-		return float(std::sqrt(std::pow(x1.x - x2.x,2)));
+		return float(std::sqrt(std::pow(x.x - y.x,2)));
 	}
 }
 
