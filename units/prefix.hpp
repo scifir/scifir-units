@@ -16,35 +16,35 @@ namespace scifir
 			enum type : int8_t {no_prefix,Y,Z,E,P,T,G,M,k,h,da,d,c,m,u,n,p,f,a,z,y};
 
 			prefix();
-			prefix(const prefix&);
-			prefix(prefix&&);
-			explicit prefix(prefix::type);
-			explicit prefix(const string&);
+			prefix(const prefix& x);
+			prefix(prefix&& x);
+			explicit prefix(prefix::type new_type);
+			explicit prefix(const string& new_type);
 
-			prefix& operator=(const prefix&);
-			prefix& operator=(prefix&&);
+			prefix& operator=(const prefix& x);
+			prefix& operator=(prefix&& x);
 
 			int get_conversion_factor() const;
 			string get_name() const;
 			string get_symbol() const;
 
-			bool operator<(const scifir::prefix&) const;
+			bool operator<(const scifir::prefix& x) const;
 
 			prefix::type prefix_type;
 	};
 
-	prefix::type prefix_string(const string&);
+	prefix::type prefix_string(const string& x);
 
-	prefix closest_prefix(const prefix&,int);
-	prefix create_prefix_by_factor(int);
+	prefix closest_prefix(const prefix& actual_prefix,int actual_scale);
+	prefix create_prefix_by_factor(int factor);
 }
 
-bool operator ==(const scifir::prefix&,const scifir::prefix&);
-bool operator !=(const scifir::prefix&,const scifir::prefix&);
-bool operator <=(const scifir::prefix&,const scifir::prefix&);
-bool operator >(const scifir::prefix&,const scifir::prefix&);
-bool operator >=(const scifir::prefix&,const scifir::prefix&);
+bool operator ==(const scifir::prefix& x,const scifir::prefix& y);
+bool operator !=(const scifir::prefix& x,const scifir::prefix& y);
+bool operator <=(const scifir::prefix& x,const scifir::prefix& y);
+bool operator >(const scifir::prefix& x,const scifir::prefix& y);
+bool operator >=(const scifir::prefix& x,const scifir::prefix& y);
 
-ostream& operator <<(ostream&, const scifir::prefix&);
+ostream& operator <<(ostream& os, const scifir::prefix& x);
 
 #endif // SCIFIR_UNITS_UNITS_PREFIX_HPP_INCLUDED

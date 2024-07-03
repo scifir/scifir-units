@@ -1262,35 +1262,35 @@ namespace scifir
 		return out.str();
 	}
 
-	vector<dimension> create_dimensions(string init_value)
+	vector<dimension> create_dimensions(string init_dimensions)
 	{
-		boost::algorithm::erase_all(init_value, " ");
+		boost::algorithm::erase_all(init_dimensions, " ");
 		dimension::sign new_sign = dimension::POSITIVE;
 		int new_scale = 1;
 		int new_size = 1;
 		int new_start = 0;
 		string new_dimension_str;
 		vector<dimension> dimensions = vector<dimension>();
-		for(unsigned int j = 0; j < init_value.size(); j++)
+		for(unsigned int j = 0; j < init_dimensions.size(); j++)
 		{
-			if(init_value[j] == '1' and init_value[j + 1] == '/')
+			if(init_dimensions[j] == '1' and init_dimensions[j + 1] == '/')
 			{
 				new_sign = dimension::NEGATIVE;
 			}
-			if(isalpha(init_value[j]) and (!isalpha(init_value[j + 1]) or (j + 1) == init_value.size()))
+			if(isalpha(init_dimensions[j]) and (!isalpha(init_dimensions[j + 1]) or (j + 1) == init_dimensions.size()))
 			{
-				new_dimension_str = init_value.substr(new_start, new_size);
-				if(isdigit(init_value[j + 1]))
+				new_dimension_str = init_dimensions.substr(new_start, new_size);
+				if(isdigit(init_dimensions[j + 1]))
 				{
-					new_scale = stoi(init_value.substr(j + 1, 1));
+					new_scale = stoi(init_dimensions.substr(j + 1, 1));
 				}
 			}
-			if(init_value[j] == '*')
+			if(init_dimensions[j] == '*')
 			{
 				new_size = 0;
 				new_start = j + 1;
 			}
-			else if(init_value[j] == '/')
+			else if(init_dimensions[j] == '/')
 			{
 				new_sign = dimension::NEGATIVE;
 				new_size = 0;
@@ -1312,9 +1312,9 @@ namespace scifir
 		return dimensions;
 	}
 
-	vector<dimension> create_derived_dimensions(const string& init_value)
+	vector<dimension> create_derived_dimensions(const string& init_dimensions)
 	{
-		vector<dimension> new_dimensions = create_dimensions(init_value);
+		vector<dimension> new_dimensions = create_dimensions(init_dimensions);
 		return create_derived_dimensions(new_dimensions);
 	}
 
@@ -1386,26 +1386,26 @@ namespace scifir
 		return new_dimensions;
 	}
 
-	vector<dimension> multiply_dimensions(vector<dimension> new_dimensions,const vector<dimension>& y,long double& value)
+	vector<dimension> multiply_dimensions(vector<dimension> x,const vector<dimension>& y,long double& value)
 	{
 		for(const dimension& y_dimension : y)
 		{
-			new_dimensions.push_back(y_dimension);
+			x.push_back(y_dimension);
 		}
-		return normalize_dimensions(new_dimensions,value);
+		return normalize_dimensions(x,value);
 	}
 
-	vector<dimension> divide_dimensions(vector<dimension> new_dimensions,const vector<dimension>& y,long double& value)
+	vector<dimension> divide_dimensions(vector<dimension> x,const vector<dimension>& y,long double& value)
 	{
 		for(dimension y_dimension : y)
 		{
 			y_dimension.invert();
-			new_dimensions.push_back(y_dimension);
+			x.push_back(y_dimension);
 		}
-		return normalize_dimensions(new_dimensions,value);
+		return normalize_dimensions(x,value);
 	}
 
-	vector<dimension> square_dimensions(vector<dimension> x,long double& value,int scale)
+	vector<dimension> square_dimensions(vector<dimension> x,long double& value,int index)
 	{
 		map<dimension::type,int> dimensions_count = map<dimension::type,int>();
 		for (const dimension& x_dimension : x)
@@ -1414,7 +1414,7 @@ namespace scifir
 		}
 		for (const auto& x_count : dimensions_count)
 		{
-			if ((x_count.second % scale) != 0)
+			if ((x_count.second % index) != 0)
 			{
 				return vector<dimension>();
 			}
@@ -1435,7 +1435,7 @@ namespace scifir
 					value /= x[i].prefix_math();
 				}
 			}
-			int total_dimensions = int(std::pow(dimensions_count[x[0].dimension_type], 1.0f / scale));
+			int total_dimensions = int(std::pow(dimensions_count[x[0].dimension_type], 1.0f / index));
 			x[0].prefix.prefix_type = prefix::no_prefix;
 			for (int j = 0; j < total_dimensions; j++)
 			{
@@ -1466,7 +1466,7 @@ namespace scifir
 				{
 					continue;
 				}
-				int total_dimensions = int(std::pow(dimensions_count[x_dimension.dimension_type], 1.0f / scale));
+				int total_dimensions = int(std::pow(dimensions_count[x_dimension.dimension_type], 1.0f / index));
 				for (int j = 0; j < total_dimensions; j++)
 				{
 					new_dimensions.push_back(x_dimension);
@@ -1477,12 +1477,12 @@ namespace scifir
 		return new_dimensions;
 	}
 
-	vector<dimension> power_dimensions(const vector<dimension>& x,int scale)
+	vector<dimension> power_dimensions(const vector<dimension>& x,int exponent)
 	{
 		vector<dimension> new_dimensions = vector<dimension>();
 		for (const dimension& x_dimension: x)
 		{
-			for (int j = 1; j <= scale; j++)
+			for (int j = 1; j <= exponent; j++)
 			{
 				new_dimensions.push_back(x_dimension);
 			}
@@ -1626,10 +1626,10 @@ namespace scifir
 		return false;
 	}
 
-	bool equal_dimensions(const string& x,const string& y)
+	bool equal_dimensions(const string& init_dimensions_x,const string& init_dimensions_y)
 	{
-		vector<dimension> x_dimensions = create_dimensions(x);
-		vector<dimension> y_dimensions = create_dimensions(y);
+		vector<dimension> x_dimensions = create_dimensions(init_dimensions_x);
+		vector<dimension> y_dimensions = create_dimensions(init_dimensions_y);
 		return equal_dimensions(x_dimensions,y_dimensions);
 	}
 
