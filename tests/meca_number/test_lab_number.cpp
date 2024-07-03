@@ -24,10 +24,10 @@ TEST_CASE("lab_number<> class") {
 		CHECK(to_string(c) == "10 g \u00B1 1 g");
 		lab_number<mass> d(15_g,10_g);
 		CHECK(to_string(d) == "15 g \u00B1 10 g");
-		/*lab_number<mass> e("10 g + 2 g");
-		CHECK(to_string(e) == "10 g + 2 g");
-		lab_number<mass> f("10 g");
-		CHECK(to_string(f) == "0 g + 0 g");*/
+		lab_number<mass> e(20_g,25_g);
+		CHECK(to_string(e) == "20 g \u00B1 25 g");
+		lab_number<mass> f("20 g \u00B1 25 g");
+		CHECK(to_string(f) == "20 g \u00B1 25 g");
     }
 
     SECTION("Assignments of lab_number<> class")
