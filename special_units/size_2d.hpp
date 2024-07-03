@@ -197,7 +197,7 @@ namespace scifir
 		return output.str();
 	}
 
-	string to_string(const size_2d<float>&);
+	string to_string(const size_2d<float>& x);
 }
 
 template<typename T>

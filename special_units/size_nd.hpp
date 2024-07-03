@@ -310,7 +310,7 @@ namespace scifir
 		}
 	}
 
-	string to_string(const size_nd<float>&);
+	string to_string(const size_nd<float>& x);
 }
 
 template<typename T>

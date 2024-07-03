@@ -22,27 +22,27 @@ namespace scifir
 	percentage::percentage(percentage&& x) : value(std::move(x.get_value()))
 	{}
 
-	percentage::percentage(float x) : value(x)
+	percentage::percentage(float new_value) : value(new_value)
 	{}
 
-	percentage::percentage(double x) : value(float(x))
+	percentage::percentage(double new_value) : value(float(new_value))
 	{}
 
-	percentage::percentage(long double x) : value(float(x))
+	percentage::percentage(long double new_value) : value(float(new_value))
 	{}
 
-	percentage::percentage(int x) : value(float(x))
+	percentage::percentage(int new_value) : value(float(new_value))
 	{}
 
-	percentage::percentage(float x,const string& init_dimensions)
+	percentage::percentage(float new_value,const string& init_dimensions)
 	{
 		if (init_dimensions == "%")
 		{
-			value = x;
+			value = new_value;
 		}
 		else if (init_dimensions == "ppm")
 		{
-			value = x / 10000.0f;
+			value = new_value / 10000.0f;
 		}
 		else
 		{
@@ -50,27 +50,27 @@ namespace scifir
 		}
 		/*else if (init_dimensions == "ppb")
 		{
-			value = x / 10000000.0f;
+			value = new_value / 10000000.0f;
 		}
 		else if (init_dimensions == "ppt")
 		{
-			value = x / 10000000000.0f;
+			value = new_value / 10000000000.0f;
 		}
 		else if (init_dimensions == "ppq")
 		{
-			value = x / 10000000000000.0f;
+			value = new_value / 10000000000000.0f;
 		}*/
 	}
 
-	percentage::percentage(double x,const string& init_dimensions)
+	percentage::percentage(double new_value,const string& init_dimensions)
 	{
 		if (init_dimensions == "%")
 		{
-			value = float(x);
+			value = float(new_value);
 		}
 		else if (init_dimensions == "ppm")
 		{
-			value = float(x) / 10000.0f;
+			value = float(new_value) / 10000.0f;
 		}
 		else
 		{
@@ -78,27 +78,27 @@ namespace scifir
 		}
 		/*else if (init_dimensions == "ppb")
 		{
-			value = float(x) / 10000000.0f;
+			value = float(new_value) / 10000000.0f;
 		}
 		else if (init_dimensions == "ppt")
 		{
-			value = float(x) / 10000000000.0f;
+			value = float(new_value) / 10000000000.0f;
 		}
 		else if (init_dimensions == "ppq")
 		{
-			value = float(x) / 10000000000000.0f;
+			value = float(new_value) / 10000000000000.0f;
 		}*/
 	}
 
-	percentage::percentage(long double x,const string& init_dimensions)
+	percentage::percentage(long double new_value,const string& init_dimensions)
 	{
 		if (init_dimensions == "%")
 		{
-			value = float(x);
+			value = float(new_value);
 		}
 		else if (init_dimensions == "ppm")
 		{
-			value = float(x) / 10000.0f;
+			value = float(new_value) / 10000.0f;
 		}
 		else
 		{
@@ -106,27 +106,27 @@ namespace scifir
 		}
 		/*else if (init_dimensions == "ppb")
 		{
-			value = float(x) / 10000000.0f;
+			value = float(new_value) / 10000000.0f;
 		}
 		else if (init_dimensions == "ppt")
 		{
-			value = float(x) / 10000000000.0f;
+			value = float(new_value) / 10000000000.0f;
 		}
 		else if (init_dimensions == "ppq")
 		{
-			value = float(x) / 10000000000000.0f;
+			value = float(new_value) / 10000000000000.0f;
 		}*/
 	}
 
-	percentage::percentage(int x,const string& init_dimensions)
+	percentage::percentage(int new_value,const string& init_dimensions)
 	{
 		if (init_dimensions == "%")
 		{
-			value = float(x);
+			value = float(new_value);
 		}
 		else if (init_dimensions == "ppm")
 		{
-			value = float(x) / 10000.0f;
+			value = float(new_value) / 10000.0f;
 		}
 		else
 		{
@@ -134,15 +134,15 @@ namespace scifir
 		}
 		/*else if (init_dimensions == "ppb")
 		{
-			value = float(x) / 10000000.0f;
+			value = float(new_value) / 10000000.0f;
 		}
 		else if (init_dimensions == "ppt")
 		{
-			value = float(x) / 10000000000.0f;
+			value = float(new_value) / 10000000000.0f;
 		}
 		else if (init_dimensions == "ppq")
 		{
-			value = float(x) / 10000000000000.0f;
+			value = float(new_value) / 10000000000000.0f;
 		}*/
 	}
 
@@ -164,43 +164,49 @@ namespace scifir
 		}
 	}
 
-	percentage& percentage::operator=(const percentage& x)
+	percentage& percentage::operator =(const percentage& x)
 	{
 		value = x.get_value();
 		return *this;
 	}
 
-	percentage& percentage::operator=(percentage&& x)
+	percentage& percentage::operator =(percentage&& x)
 	{
 		value = std::move(x.get_value());
 		return *this;
 	}
 
-	percentage& percentage::operator=(float x)
+	percentage& percentage::operator =(float new_value)
 	{
-		value = x;
+		value = new_value;
 		return *this;
 	}
 
-	percentage& percentage::operator=(double x)
+	percentage& percentage::operator =(double new_value)
 	{
-		value = float(x);
+		value = float(new_value);
 		return *this;
 	}
 
-	percentage& percentage::operator=(long double x)
+	percentage& percentage::operator =(long double new_value)
 	{
-		value = float(x);
+		value = float(new_value);
 		return *this;
 	}
 
-	percentage& percentage::operator=(const string& init_percentage)
+	percentage& percentage::operator =(int new_value)
+	{
+		value = float(new_value);
+		return *this;
+	}
+
+	percentage& percentage::operator =(const string& init_percentage)
 	{
 		initialize_from_string(init_percentage);
 		return *this;
 	}
 
-	percentage& percentage::operator=(const scalar_unit& x)
+	percentage& percentage::operator =(const scalar_unit& x)
 	{
 		if (x.has_empty_dimensions())
 		{
@@ -410,26 +416,26 @@ namespace scifir
 		return output.str();
 	}
 
-	bool is_percentage(const string& x)
+	bool is_percentage(const string& init_percentage)
 	{
 		int iteration_limit;
-		if (x.back() == '%')
+		if (init_percentage.back() == '%')
 		{
-			iteration_limit = int(x.length()) - 1;
+			iteration_limit = int(init_percentage.length()) - 1;
 		}
 		else
 		{
-			string percentage_unit = x.substr(x.length() - 4,4);
+			string percentage_unit = init_percentage.substr(init_percentage.length() - 4,4);
 			if (percentage_unit == " ppm"/* or percentage_unit == " ppb" or percentage_unit == " ppt" or percentage_unit == " ppq"*/)
 			{
-				iteration_limit = int(x.length()) - 4;
+				iteration_limit = int(init_percentage.length()) - 4;
 			}
 			else
 			{
-				percentage_unit = x.substr(x.length() - 3,3);
+				percentage_unit = init_percentage.substr(init_percentage.length() - 3,3);
 				if (percentage_unit == "ppm"/* or percentage_unit == "ppb" or percentage_unit == "ppt" or percentage_unit == "ppq"*/)
 				{
-					iteration_limit = int(x.length()) - 3;
+					iteration_limit = int(init_percentage.length()) - 3;
 				}
 				else
 				{
@@ -440,7 +446,7 @@ namespace scifir
 		bool dot_present = false;
 		for (int i = 0; i < iteration_limit; i++)
 		{
-			if (x[i] == '.')
+			if (init_percentage[i] == '.')
 			{
 				if (dot_present)
 				{
@@ -451,7 +457,7 @@ namespace scifir
 					dot_present = true;
 				}
 			}
-			else if (!std::isdigit(x[i]))
+			else if (!std::isdigit(init_percentage[i]))
 			{
 				return false;
 			}
@@ -521,26 +527,26 @@ bool operator >=(const scifir::percentage& x, const scifir::percentage& y)
 	return !(x < y);
 }
 
-bool operator ==(const scifir::percentage& x, const string& y)
+bool operator ==(const scifir::percentage& x, const string& init_percentage)
 {
-	scifir::percentage y_percentage = scifir::percentage(y);
-	return (x == y_percentage);
+	scifir::percentage y = scifir::percentage(init_percentage);
+	return (x == y);
 }
 
-bool operator !=(const scifir::percentage& x, const string& y)
+bool operator !=(const scifir::percentage& x, const string& init_percentage)
 {
-	return !(x == y);
+	return !(x == init_percentage);
 }
 
-bool operator ==(const string& x, const scifir::percentage& y)
+bool operator ==(const string& init_percentage, const scifir::percentage& x)
 {
-	scifir::percentage x_percentage = scifir::percentage(x);
-	return (x_percentage == y);
+	scifir::percentage y = scifir::percentage(init_percentage);
+	return (x == y);
 }
 
-bool operator !=(const string& x, const scifir::percentage& y)
+bool operator !=(const string& init_percentage, const scifir::percentage& x)
 {
-	return !(x == y);
+	return !(init_percentage == x);
 }
 
 void operator +=(string& x, const scifir::percentage& y)

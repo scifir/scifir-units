@@ -22,16 +22,16 @@ namespace scifir
 	pixel::pixel(pixel&& x) : value(std::move(x.get_value()))
 	{}
 
-	pixel::pixel(float x) : value(x)
+	pixel::pixel(float new_value) : value(new_value)
 	{}
 
-	pixel::pixel(double x) : value(float(x))
+	pixel::pixel(double new_value) : value(float(new_value))
 	{}
 
-	pixel::pixel(long double x) : value(float(x))
+	pixel::pixel(long double new_value) : value(float(new_value))
 	{}
 
-	pixel::pixel(int x) : value(float(x))
+	pixel::pixel(int new_value) : value(float(new_value))
 	{}
 	
 	pixel::pixel(const string& init_pixel) : value()
@@ -52,31 +52,31 @@ namespace scifir
 		}
 	}
 
-	pixel& pixel::operator=(const pixel& x)
+	pixel& pixel::operator =(const pixel& x)
 	{
 		value = x.get_value();
 		return *this;
 	}
 
-	pixel& pixel::operator=(pixel&& x)
+	pixel& pixel::operator =(pixel&& x)
 	{
 		value = std::move(x.get_value());
 		return *this;
 	}
 
-	pixel& pixel::operator=(float x)
+	pixel& pixel::operator =(float new_value)
 	{
-		value = x;
+		value = new_value;
 		return *this;
 	}
 
-	pixel& pixel::operator=(const string& init_pixel)
+	pixel& pixel::operator =(const string& init_pixel)
 	{
 		initialize_from_string(init_pixel);
 		return *this;
 	}
 
-	pixel& pixel::operator=(const scalar_unit& x)
+	pixel& pixel::operator =(const scalar_unit& x)
 	{
 		if (x.has_empty_dimensions())
 		{
@@ -188,25 +188,25 @@ namespace scifir
 		return output.str();
 	}
 
-	bool is_pixel(const string& x)
+	bool is_pixel(const string& init_pixel)
 	{
 		int iteration_limit;
-		if (x.substr(x.length() - 3,3) == " px")
+		if (init_pixel.substr(init_pixel.length() - 3,3) == " px")
 		{
-			iteration_limit = int(x.length()) - 3;
+			iteration_limit = int(init_pixel.length()) - 3;
 		}
-		else if (x.substr(x.length() - 2,2) == "px")
+		else if (init_pixel.substr(init_pixel.length() - 2,2) == "px")
 		{
-			iteration_limit = int(x.length()) - 2;
+			iteration_limit = int(init_pixel.length()) - 2;
 		}
 		else
 		{
-			iteration_limit = int(x.length());
+			iteration_limit = int(init_pixel.length());
 		}
 		bool dot_present = false;
 		for (int i = 0; i < iteration_limit; i++)
 		{
-			if (x[i] == '.')
+			if (init_pixel[i] == '.')
 			{
 				if (dot_present)
 				{
@@ -217,7 +217,7 @@ namespace scifir
 					dot_present = true;
 				}
 			}
-			else if (!std::isdigit(x[i]))
+			else if (!std::isdigit(init_pixel[i]))
 			{
 				return false;
 			}
@@ -230,9 +230,9 @@ namespace scifir
 		return pixel(std::sqrt(x.get_value()));
 	}
 
-	pixel sqrt_nth(const pixel& x, int y)
+	pixel sqrt_nth(const pixel& x, int index)
 	{
-		return pixel(std::pow(x.get_value(), 1.0f / y));
+		return pixel(std::pow(x.get_value(), 1.0f / index));
 	}
 }
 
@@ -287,26 +287,26 @@ bool operator >=(const scifir::pixel& x, const scifir::pixel& y)
 	return !(x < y);
 }
 
-bool operator ==(const scifir::pixel& x, const string& y)
+bool operator ==(const scifir::pixel& x, const string& init_pixel)
 {
-	scifir::pixel y_pixel = scifir::pixel(y);
-	return (x == y_pixel);
+	scifir::pixel y = scifir::pixel(init_pixel);
+	return (x == y);
 }
 
-bool operator !=(const scifir::pixel& x, const string& y)
+bool operator !=(const scifir::pixel& x, const string& init_pixel)
 {
-	return !(x == y);
+	return !(x == init_pixel);
 }
 
-bool operator ==(const string& x, const scifir::pixel& y)
+bool operator ==(const string& init_pixel, const scifir::pixel& x)
 {
-	scifir::pixel x_pixel = scifir::pixel(x);
-	return (x_pixel == y);
+	scifir::pixel y = scifir::pixel(init_pixel);
+	return (y == x);
 }
 
-bool operator !=(const string& x, const scifir::pixel& y)
+bool operator !=(const string& init_pixel, const scifir::pixel& x)
 {
-	return !(x == y);
+	return !(init_pixel == x);
 }
 
 void operator +=(string& x, const scifir::pixel& y)

@@ -18,10 +18,10 @@ namespace scifir
 	zid::zid(zid&& x) : aid(std::move(x.aid)),regions(std::move(x.regions)),country(std::move(x.country)),zone(std::move(x.zone))
 	{}
 
-	zid::zid(const scifir::aid& x_aid,const string& new_country,const vector<string>& new_regions,const string& new_zone) : aid(x_aid),country(new_country),regions(new_regions),zone(new_zone)
+	zid::zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions,const string& new_zone) : aid(new_aid),country(new_country),regions(new_regions),zone(new_zone)
 	{}
 
-	zid::zid(const scifir::aid& x_aid,const string& init_zid) : aid(x_aid),regions(),country(),zone()
+	zid::zid(const scifir::aid& new_aid,const string& init_zid) : aid(new_aid),regions(),country(),zone()
 	{
 		if (init_zid != "")
 		{
@@ -48,7 +48,7 @@ namespace scifir
 		initialize_from_string(init_zid_full);
 	}
 
-	zid& zid::operator=(const zid& x)
+	zid& zid::operator =(const zid& x)
 	{
 		aid = x.aid;
 		regions = x.regions;
@@ -57,7 +57,7 @@ namespace scifir
 		return *this;
 	}
 
-	zid& zid::operator=(zid&& x)
+	zid& zid::operator =(zid&& x)
 	{
 		aid = std::move(x.aid);
 		regions = std::move(x.regions);
@@ -66,7 +66,7 @@ namespace scifir
 		return *this;
 	}
 
-	zid& zid::operator=(const string& init_zid_full)
+	zid& zid::operator =(const string& init_zid_full)
 	{
 		initialize_from_string(init_zid_full);
 		return *this;
@@ -178,26 +178,26 @@ bool operator !=(const scifir::zid& x, const scifir::zid& y)
 	return !(x == y);
 }
 
-bool operator ==(const scifir::zid& x, const string& y)
+bool operator ==(const scifir::zid& x, const string& init_zid_full)
 {
-	scifir::zid y_zid = scifir::zid(y);
-	return (x == y_zid);
+	scifir::zid y = scifir::zid(init_zid_full);
+	return (x == y);
 }
 
-bool operator !=(const scifir::zid& x, const string& y)
+bool operator !=(const scifir::zid& x, const string& init_zid_full)
 {
-	return !(x == y);
+	return !(x == init_zid_full);
 }
 
-bool operator ==(const string& x, const scifir::zid& y)
+bool operator ==(const string& init_zid_full, const scifir::zid& x)
 {
-	scifir::zid x_zid = scifir::zid(x);
-	return (x_zid == y);
+	scifir::zid y = scifir::zid(init_zid_full);
+	return (x == y);
 }
 
-bool operator !=(const string& x, const scifir::zid& y)
+bool operator !=(const string& init_zid_full, const scifir::zid& x)
 {
-	return !(x == y);
+	return !(init_zid_full == x);
 }
 
 void operator +=(string& x, const scifir::zid& y)
