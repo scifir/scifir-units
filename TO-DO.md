@@ -2,18 +2,13 @@ SCIFIR UNITS - VERSION 2
 
 // NUMBER OF TODOS: 52
 
-// BUGS AND SIMILAR PROBLEMS (11)
-// TODO: add the initialization to aid with string with a whitespace between the type and the universe
-// TODO: zid needs to have a default name for no countries
-// TODO: zid needs full display and partial display
-// TODO: display_double() and display_long_double() functions of types.cpp
-// TODO: is_lab_number() function, and string constructor for lab_number<>
-// TODO: add the comparison operator of vector unit classes inside the declaration of the class, with the respective tests of that
-// TODO: maybe change the string operators of scalar_unit class to be at the reverse: it's called to_string() for the scalar_unit class
+// BUGS AND SIMILAR PROBLEMS (4)
+
+// TODO: is_lab_number() function
 // TODO: add the possibility of using different template parameters for the comparison operators of coordinates and point classes
 
-// TODO: check prefix_math() everywhere, maybe there's a better implementation to do than the current implementation
-// TODO: think if to add a function that allows to test for values near another value
+// TODO: display_double() and display_long_double() functions of types.cpp
+
 // TODO: create percentage<double> and percentage<long double> with ppb, ppt and ppq. Create also the function is_long_percentage() to test for ppb, ppt and ppq
 
 // BUGS AND SIMILAR PROBLEMS - HARD (4)
@@ -58,18 +53,19 @@ SCIFIR UNITS - VERSION 2
 // TODO: verify the titles of sections of tests of units, meca_number and special_units
 // TODO: test of unit basic classes
 
-// DOCUMENTATION (18)
+// DOCUMENTATION (25)
 // TODO: document the coordinates for the universe, publish that too as an standard inside scifir
 // TODO: document example of use cases (laboratory machines,medical devices,robotics)
 // TODO: document how to create scientific inventions in the library, how to create laboratory machines and how to create medical devices
 // TODO: document how to use the library for robots
 // TODO: check what to do with the libraries of ISOs and document them inside the README.md file. If there isn't a library of ISOs, decide if to create one
-// TODO: add the names of arguments to all headers in order to be documented inside Doxygen
 // TODO: reference books related to the physics, chemistry, biology or math implemented
 // TODO: explain the custom dimensions in the file README.md
 // TODO: display as plain text the <T> inside the md file
 // TODO: configure the use of dox files
 // TODO: add the file Doxyfile.in to the master branch
+// TODO: document the special initialization of mass and mole with percentage
+// TODO: document the demonstration of why a number or a scalar unit divided by a vector should give a vector, explaining that it's the reverse as the multiplication
 
 // TODO: document the use of the custom_display "sci"
 // TODO: think on the different cases of use of coordinates and document them, including the use of an origin
