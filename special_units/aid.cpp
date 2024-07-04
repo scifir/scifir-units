@@ -323,7 +323,7 @@ namespace scifir
 		initialize_from_string(init_aid);
 	}
 	
-	aid& aid::operator=(const aid& x)
+	aid& aid::operator =(const aid& x)
 	{
 		universe = x.universe;
 		galaxy = x.galaxy;
@@ -333,7 +333,7 @@ namespace scifir
 		return *this;
 	}
 	
-	aid& aid::operator=(aid&& x)
+	aid& aid::operator =(aid&& x)
 	{
 		universe = std::move(x.universe);
 		galaxy = std::move(x.galaxy);
@@ -343,7 +343,7 @@ namespace scifir
 		return *this;
 	}
 
-	aid& aid::operator=(const string& init_aid)
+	aid& aid::operator =(const string& init_aid)
 	{
 		initialize_from_string(init_aid);
 		return *this;
@@ -384,31 +384,31 @@ namespace scifir
 		}
 	}
 
-	string to_string(const aid& x)
+	string aid::display() const
 	{
-		if (x.astronomical_type != aid::NONE)
+		if (astronomical_type != aid::NONE)
 		{
 			ostringstream out;
-			out << "(" << to_string(x.astronomical_type) << ")";
-			if (x.astronomical_type == aid::UNIVERSE)
+			out << "(" << to_string(astronomical_type) << ")";
+			if (astronomical_type == aid::UNIVERSE)
 			{
-				out << x.universe;
+				out << universe;
 			}
-			else if (x.astronomical_type == aid::GALAXY)
+			else if (astronomical_type == aid::GALAXY)
 			{
-				out << x.universe << ":" << x.galaxy;
+				out << universe << ":" << galaxy;
 			}
-			else if (x.astronomical_type == aid::SOLAR_SYSTEM)
+			else if (astronomical_type == aid::SOLAR_SYSTEM)
 			{
-				out << x.universe << ":" << x.galaxy << ":" << x.solar_system;
+				out << universe << ":" << galaxy << ":" << solar_system;
 			}
 			else
 			{
-				if (x.universe != "")
+				if (universe != "")
 				{
-					out << x.universe << ":";
+					out << universe << ":";
 				}
-				out << x.galaxy << ":" << x.solar_system << ":" << x.astronomical_body;
+				out << galaxy << ":" << solar_system << ":" << astronomical_body;
 			}
 			return out.str();
 		}
@@ -416,6 +416,11 @@ namespace scifir
 		{
 			return "";
 		}
+	}
+
+	string to_string(const aid& x)
+	{
+		return x.display();
 	}
 
 	string to_string(const aid::type& x)

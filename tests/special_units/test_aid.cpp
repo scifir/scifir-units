@@ -374,6 +374,20 @@ TEST_CASE("aid class") {
 		CHECK(f.astronomical_body == "");
 	}
 
+	SECTION("display() of aid class")
+	{
+		aid a("(SS)universe:milky-way:solar-system");
+		CHECK(a.display() == "(SS)universe:milky-way:solar-system");
+		aid b("(U)universe");
+		CHECK(b.display() == "(U)universe");
+		aid c("(G)universe:milky-way");
+		CHECK(c.display() == "(G)universe:milky-way");
+		aid d("(P)universe:milky-way:solar-system:mars");
+		CHECK(d.display() == "(P)universe:milky-way:solar-system:mars");
+		aid e;
+		CHECK(e.display() == "");
+	}
+
 	SECTION("to_string() of aid class")
 	{
 		aid a("(SS)universe:milky-way:solar-system");

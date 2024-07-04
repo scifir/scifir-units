@@ -24,9 +24,11 @@ namespace scifir
 			explicit aid(const aid::type& new_astronomical_type,const string& new_universe,const string& new_galaxy,const string& new_solar_system,const string& new_astronomical_body);
 			explicit aid(const string& init_aid);
 
-			aid& operator=(const aid& x);
-			aid& operator=(aid&& x);
-			aid& operator=(const string& init_aid);
+			aid& operator =(const aid& x);
+			aid& operator =(aid&& x);
+			aid& operator =(const string& init_aid);
+
+			string display() const;
 
 			string universe;
 			string galaxy;
@@ -37,7 +39,7 @@ namespace scifir
 		private:
 			void initialize_from_string(const string& init_aid);
 	};
-	
+
 	string to_string(const aid& x);
 	string to_string(const aid::type& x);
 	aid::type create_astronomical_type(const string& astronomical_type_abbreviation);

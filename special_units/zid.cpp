@@ -184,21 +184,7 @@ namespace scifir
 
 	string to_string(const zid& x)
 	{
-		if (x.country != "")
-		{
-			ostringstream out;
-			out << to_string(x.aid) << " " << x.country << ":";
-			for (const string& x_region : x.regions)
-			{
-				out << x_region << ":";
-			}
-			out << x.zone;
-			return out.str();
-		}
-		else
-		{
-			return "";
-		}
+		return x.display();
 	}
 }
 
