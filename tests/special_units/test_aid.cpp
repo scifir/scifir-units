@@ -374,6 +374,30 @@ TEST_CASE("aid class") {
 		CHECK(f.astronomical_body == "");
 	}
 
+	SECTION("Functions of unknown places of aid class")
+	{
+		aid a("(P)unknown-universe:unknown-galaxy:unknown-solar-system:unknown-planet");
+		CHECK(a.has_unknown_universe());
+		CHECK(a.has_unknown_galaxy());
+		CHECK(a.has_unknown_solar_system());
+		CHECK(a.has_unknown_planet());
+		aid b("(MN)unknown-universe:unknown-galaxy:unknown-solar-system:unknown-moon");
+		CHECK(b.has_unknown_universe());
+		CHECK(b.has_unknown_galaxy());
+		CHECK(b.has_unknown_solar_system());
+		CHECK(b.has_unknown_moon());
+		aid c("(ST)unknown-universe:unknown-galaxy:unknown-solar-system:unknown-star");
+		CHECK(c.has_unknown_universe());
+		CHECK(c.has_unknown_galaxy());
+		CHECK(c.has_unknown_solar_system());
+		CHECK(c.has_unknown_star());
+		aid d("(A)unknown-universe:unknown-galaxy:unknown-solar-system:unknown-asteroid");
+		CHECK(d.has_unknown_universe());
+		CHECK(d.has_unknown_galaxy());
+		CHECK(d.has_unknown_solar_system());
+		CHECK(d.has_unknown_asteroid());
+	}
+
 	SECTION("display() of aid class")
 	{
 		aid a("(SS)universe:milky-way:solar-system");

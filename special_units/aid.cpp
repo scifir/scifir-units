@@ -349,6 +349,41 @@ namespace scifir
 		return *this;
 	}
 
+	bool aid::has_unknown_universe() const
+	{
+		return (universe == "unknown-universe");
+	}
+
+	bool aid::has_unknown_galaxy() const
+	{
+		return (galaxy == "unknown-galaxy");
+	}
+
+	bool aid::has_unknown_solar_system() const
+	{
+		return (solar_system == "unknown-solar-system");
+	}
+
+	bool aid::has_unknown_planet() const
+	{
+		return (astronomical_body == "unknown-planet");
+	}
+
+	bool aid::has_unknown_moon() const
+	{
+		return (astronomical_body == "unknown-moon");
+	}
+
+	bool aid::has_unknown_star() const
+	{
+		return (astronomical_body == "unknown-star");
+	}
+
+	bool aid::has_unknown_asteroid() const
+	{
+		return (astronomical_body == "unknown-asteroid");
+	}
+
 	void aid::initialize_from_string(const string& init_aid)
 	{
 		vector<string> values;

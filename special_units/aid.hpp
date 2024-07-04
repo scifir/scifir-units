@@ -28,6 +28,14 @@ namespace scifir
 			aid& operator =(aid&& x);
 			aid& operator =(const string& init_aid);
 
+			bool has_unknown_universe() const;
+			bool has_unknown_galaxy() const;
+			bool has_unknown_solar_system() const;
+			bool has_unknown_planet() const;
+			bool has_unknown_moon() const;
+			bool has_unknown_star() const;
+			bool has_unknown_asteroid() const;
+
 			string display() const;
 
 			string universe;
