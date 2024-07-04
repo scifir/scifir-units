@@ -208,9 +208,7 @@ namespace scifir
 	template<typename T>
 	string to_string(const coordinates_1d<T>& x)
 	{
-		ostringstream out;
-		out << "(" << x.x <<  ")";
-		return out.str();
+		return x.display_cartesian();
 	}
 
 	string to_string(const coordinates_1d<float>& x);
