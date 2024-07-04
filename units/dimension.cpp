@@ -20,7 +20,7 @@ namespace scifir
 	int dimension::total_full_symbols = 0;
 	set<string> dimension::prefixes_options {"Y", "Z", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "\u00B5", "u", "n", "p", "f", "a", "z", "y"};
 
-	dimension::dimension() : prefix(),dimension_type(dimension::NONE),dimension_sign(dimension::NO_SIGN),symbol()
+	dimension::dimension() : prefix(),dimension_type(dimension::NONE),dimension_sign(dimension::NO_POSITION),symbol()
 	{}
 
 #ifdef IS_UNIX
@@ -45,13 +45,13 @@ namespace scifir
 	}
 #endif
 
-	dimension::dimension(dimension::type new_dimension_type,scifir::prefix::type new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
+	dimension::dimension(dimension::type new_dimension_type,scifir::prefix::type new_prefix,dimension::position new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
 	{}
 
-	dimension::dimension(dimension::type new_dimension_type,const scifir::prefix& new_prefix,dimension::sign new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
+	dimension::dimension(dimension::type new_dimension_type,const scifir::prefix& new_prefix,dimension::position new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
 	{}
 
-	dimension::dimension(const string& init_dimension,dimension::sign new_sign) : prefix(),dimension_type(dimension::NONE),dimension_sign(new_sign),symbol()
+	dimension::dimension(const string& init_dimension,dimension::position new_sign) : prefix(),dimension_type(dimension::NONE),dimension_sign(new_sign),symbol()
 	{
 		string dimension_name;
 		string prefix_name;
@@ -899,207 +899,207 @@ namespace scifir
 		switch (dimension_type)
 		{
 			case dimension::NONE:
-				basic_dimensions.push_back(dimension(dimension::NONE,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::NONE,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::m:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::grade:
-				basic_dimensions.push_back(dimension(dimension::radian,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::radian,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::radian:
-				basic_dimensions.push_back(dimension(dimension::radian,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::radian,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::steradian:
-				basic_dimensions.push_back(dimension(dimension::steradian,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::s:
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::g:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::C:
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::K:
-				basic_dimensions.push_back(dimension(dimension::K,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::K,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::mol:
-				basic_dimensions.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::cd:
-				basic_dimensions.push_back(dimension(dimension::cd,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::cd,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::B:
-				basic_dimensions.push_back(dimension(dimension::B,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::B,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::Hz:
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::N:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::Pa:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::J:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::W:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::A:
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::V:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::F:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::Ohm:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::S:
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::Wb:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::T:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::H:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::lm:
-				basic_dimensions.push_back(dimension(dimension::cd,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::steradian,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::cd,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::lx:
-				basic_dimensions.push_back(dimension(dimension::cd,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::steradian,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::cd,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::Bq:
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::Gy:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::Sv:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::kat:
-				basic_dimensions.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::angstrom:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::L:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::minute:
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::h:
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::d:
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::ly:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::AU:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::pc:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::eV:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::Da:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
 				break;
 			case dimension::amu:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::g,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::barn:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::M:
-				basic_dimensions.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::POSITIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE));
+				basic_dimensions.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
 				break;
 			case dimension::particles:
-				basic_dimensions.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::custom:
 			{
@@ -1115,13 +1115,13 @@ namespace scifir
 				return dimension::base_dimensions[dimension::get_full_symbol(symbol)];
 			}
 			case dimension::money:
-				basic_dimensions.push_back(dimension(dimension::money,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::money,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::pixel:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 			case dimension::memo:
-				basic_dimensions.push_back(dimension(dimension::memo,prefix::no_prefix,dimension::POSITIVE));
+				basic_dimensions.push_back(dimension(dimension::memo,prefix::no_prefix,dimension::NUMERATOR));
 				break;
 		}
 		return basic_dimensions;
@@ -1129,13 +1129,13 @@ namespace scifir
 
 	void dimension::invert()
 	{
-		if (dimension_sign == dimension::POSITIVE)
+		if (dimension_sign == dimension::NUMERATOR)
 		{
-			dimension_sign = dimension::NEGATIVE;
+			dimension_sign = dimension::DENOMINATOR;
 		}
 		else
 		{
-			dimension_sign = dimension::POSITIVE;
+			dimension_sign = dimension::NUMERATOR;
 		}
 	}
 
@@ -1160,7 +1160,7 @@ namespace scifir
 			bool first_print = true;
 			for (const dimension& x_dimension : x_dimensions)
 			{
-				if (x_dimension.dimension_sign == dimension::POSITIVE)
+				if (x_dimension.dimension_sign == dimension::NUMERATOR)
 				{
 					bool printed = false;
 					for (const dimension::type& print_dimension : printed_dimensions)
@@ -1203,7 +1203,7 @@ namespace scifir
 			bool first_negative_prefix = true;
 			for (const dimension& x_dimension : x_dimensions)
 			{
-				if (x_dimension.dimension_sign == dimension::NEGATIVE)
+				if (x_dimension.dimension_sign == dimension::DENOMINATOR)
 				{
 					if (first_negative_iteration == true)
 					{
@@ -1265,7 +1265,7 @@ namespace scifir
 	vector<dimension> create_dimensions(string init_dimensions)
 	{
 		boost::algorithm::erase_all(init_dimensions, " ");
-		dimension::sign new_sign = dimension::POSITIVE;
+		dimension::position new_sign = dimension::NUMERATOR;
 		int new_scale = 1;
 		int new_size = 1;
 		int new_start = 0;
@@ -1275,7 +1275,7 @@ namespace scifir
 		{
 			if(init_dimensions[j] == '1' and init_dimensions[j + 1] == '/')
 			{
-				new_sign = dimension::NEGATIVE;
+				new_sign = dimension::DENOMINATOR;
 			}
 			if(isalpha(init_dimensions[j]) and (!isalpha(init_dimensions[j + 1]) or (j + 1) == init_dimensions.size()))
 			{
@@ -1292,7 +1292,7 @@ namespace scifir
 			}
 			else if(init_dimensions[j] == '/')
 			{
-				new_sign = dimension::NEGATIVE;
+				new_sign = dimension::DENOMINATOR;
 				new_size = 0;
 				new_start = j + 1;
 			}
@@ -1326,7 +1326,7 @@ namespace scifir
 			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
 			{
-				if (x[i].dimension_sign == dimension::NEGATIVE)
+				if (x[i].dimension_sign == dimension::DENOMINATOR)
 				{
 					x_subdimension.invert();
 				}
@@ -1341,12 +1341,12 @@ namespace scifir
 		vector<dimension> new_x = vector<dimension>();
 		for(unsigned int i = 0; i < x.size(); i++)
 		{
-			if (x[i].dimension_sign == dimension::POSITIVE)
+			if (x[i].dimension_sign == dimension::NUMERATOR)
 			{
 				value *= x[i].get_conversion_factor();
 				value *= x[i].prefix_math();
 			}
-			else if (x[i].dimension_sign == dimension::NEGATIVE)
+			else if (x[i].dimension_sign == dimension::DENOMINATOR)
 			{
 				value /= x[i].get_conversion_factor();
 				value /= x[i].prefix_math();
@@ -1354,7 +1354,7 @@ namespace scifir
 			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
 			{
-				if (x[i].dimension_sign == dimension::NEGATIVE)
+				if (x[i].dimension_sign == dimension::DENOMINATOR)
 				{
 					x_subdimension.invert();
 				}
@@ -1424,12 +1424,12 @@ namespace scifir
 		{
 			for (int i = 0; i < dimensions_count[x[0].dimension_type]; i++)
 			{
-				if (x[i].dimension_sign == dimension::POSITIVE)
+				if (x[i].dimension_sign == dimension::NUMERATOR)
 				{
 					value *= x[i].get_conversion_factor();
 					value *= x[i].prefix_math();
 				}
-				else if (x[i].dimension_sign == dimension::NEGATIVE)
+				else if (x[i].dimension_sign == dimension::DENOMINATOR)
 				{
 					value /= x[i].get_conversion_factor();
 					value /= x[i].prefix_math();
@@ -1565,22 +1565,22 @@ namespace scifir
 				}
 				if (new_x[i].dimension_type == new_x[j].dimension_type and new_x[i].dimension_sign != new_x[j].dimension_sign)
 				{
-					if (new_x[i].dimension_sign == dimension::POSITIVE)
+					if (new_x[i].dimension_sign == dimension::NUMERATOR)
 					{
 						value *= float(new_x[i].get_conversion_factor());
 						value *= float(new_x[i].prefix_math());
 					}
-					else if (new_x[i].dimension_sign == dimension::NEGATIVE)
+					else if (new_x[i].dimension_sign == dimension::DENOMINATOR)
 					{
 						value /= float(new_x[i].get_conversion_factor());
 						value /= float(new_x[i].prefix_math());
 					}
-					if (new_x[j].dimension_sign == dimension::POSITIVE)
+					if (new_x[j].dimension_sign == dimension::NUMERATOR)
 					{
 						value *= float(new_x[j].get_conversion_factor());
 						value *= float(new_x[j].prefix_math());
 					}
-					else if (new_x[j].dimension_sign == dimension::NEGATIVE)
+					else if (new_x[j].dimension_sign == dimension::DENOMINATOR)
 					{
 						value /= float(new_x[j].get_conversion_factor());
 						value /= float(new_x[j].prefix_math());

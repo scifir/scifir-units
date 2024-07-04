@@ -15,528 +15,528 @@ using namespace scifir;
 
 TEST_CASE("dimension class") {
 	SECTION("Base functionalities of dimension class") {
-		dimension a = dimension("m",dimension::POSITIVE);
+		dimension a = dimension("m",dimension::NUMERATOR);
 		CHECK(a.dimension_type == dimension::m);
-		CHECK(a.dimension_sign == dimension::POSITIVE);
+		CHECK(a.dimension_sign == dimension::NUMERATOR);
 		CHECK(a.prefix.prefix_type == prefix::no_prefix);
 		CHECK(a.get_symbol() == "m");
-		dimension b = dimension("m",dimension::NEGATIVE);
-		CHECK(b.dimension_sign == dimension::NEGATIVE);
+		dimension b = dimension("m",dimension::DENOMINATOR);
+		CHECK(b.dimension_sign == dimension::DENOMINATOR);
 	}
 
 	SECTION("Constructors of dimension class")
 	{
 		dimension a;
 		CHECK(a.dimension_type == dimension::NONE);
-		dimension b2(dimension::m,prefix::no_prefix,dimension::POSITIVE);
+		dimension b2(dimension::m,prefix::no_prefix,dimension::NUMERATOR);
 		dimension b(b2);
 		CHECK(b.dimension_type == dimension::m);
-		dimension c2(dimension::m,prefix::no_prefix,dimension::POSITIVE);
+		dimension c2(dimension::m,prefix::no_prefix,dimension::NUMERATOR);
 		dimension c(std::move(c2));
 		CHECK(c.dimension_type == dimension::m);
-		dimension d(dimension::m,prefix::k,dimension::POSITIVE);
+		dimension d(dimension::m,prefix::k,dimension::NUMERATOR);
 		CHECK(to_string(d) == "km");
 		prefix e2(prefix::k);
-		dimension e(dimension::m,e2,dimension::POSITIVE);
+		dimension e(dimension::m,e2,dimension::NUMERATOR);
 		CHECK(to_string(e) == "km");
 	}
 
 	SECTION("Creation of basic dimension class") {
-		dimension a = dimension("m",dimension::POSITIVE);
+		dimension a = dimension("m",dimension::NUMERATOR);
 		CHECK(a.get_symbol() == "m");
-		dimension b = dimension("s",dimension::POSITIVE);
+		dimension b = dimension("s",dimension::NUMERATOR);
 		CHECK(b.get_symbol() == "s");
-		dimension c = dimension("g",dimension::POSITIVE);
+		dimension c = dimension("g",dimension::NUMERATOR);
 		CHECK(c.get_symbol() == "g");
-		dimension d = dimension("C",dimension::POSITIVE);
+		dimension d = dimension("C",dimension::NUMERATOR);
 		CHECK(d.get_symbol() == "C");
-		dimension e = dimension("K",dimension::POSITIVE);
+		dimension e = dimension("K",dimension::NUMERATOR);
 		CHECK(e.get_symbol() == "K");
-		dimension f = dimension("mol",dimension::POSITIVE);
+		dimension f = dimension("mol",dimension::NUMERATOR);
 		CHECK(f.get_symbol() == "mol");
-		dimension g = dimension("cd",dimension::POSITIVE);
+		dimension g = dimension("cd",dimension::NUMERATOR);
 		CHECK(g.get_symbol() == "cd");
-		dimension h = dimension("B",dimension::POSITIVE);
+		dimension h = dimension("B",dimension::NUMERATOR);
 		CHECK(h.get_symbol() == "B");
-		dimension i = dimension("rad",dimension::POSITIVE);
+		dimension i = dimension("rad",dimension::NUMERATOR);
 		CHECK(i.get_symbol() == "rad");
-		dimension j = dimension("sr",dimension::POSITIVE);
+		dimension j = dimension("sr",dimension::NUMERATOR);
 		CHECK(j.get_symbol() == "sr");
-		dimension k = dimension("money",dimension::POSITIVE);
+		dimension k = dimension("money",dimension::NUMERATOR);
 		CHECK(k.get_symbol() == "money");
-		dimension l = dimension("memo",dimension::POSITIVE);
+		dimension l = dimension("memo",dimension::NUMERATOR);
 		CHECK(l.get_symbol() == "memo");
 	}
 
 	SECTION("Creation of all dimension types")
 	{
-		dimension a("m",dimension::POSITIVE);
+		dimension a("m",dimension::NUMERATOR);
 		CHECK(a.dimension_type == dimension::m);
-		dimension a1_2("grade",dimension::POSITIVE);
+		dimension a1_2("grade",dimension::NUMERATOR);
 		CHECK(a1_2.dimension_type == dimension::grade);
-		dimension a2("rad",dimension::POSITIVE);
+		dimension a2("rad",dimension::NUMERATOR);
 		CHECK(a2.dimension_type == dimension::radian);
-		dimension a3("sr",dimension::POSITIVE);
+		dimension a3("sr",dimension::NUMERATOR);
 		CHECK(a3.dimension_type == dimension::steradian);
-		dimension a4("s",dimension::POSITIVE);
+		dimension a4("s",dimension::NUMERATOR);
 		CHECK(a4.dimension_type == dimension::s);
-		dimension a5("g",dimension::POSITIVE);
+		dimension a5("g",dimension::NUMERATOR);
 		CHECK(a5.dimension_type == dimension::g);
-		dimension a6("C",dimension::POSITIVE);
+		dimension a6("C",dimension::NUMERATOR);
 		CHECK(a6.dimension_type == dimension::C);
-		dimension a7("K",dimension::POSITIVE);
+		dimension a7("K",dimension::NUMERATOR);
 		CHECK(a7.dimension_type == dimension::K);
-		dimension a8("mol",dimension::POSITIVE);
+		dimension a8("mol",dimension::NUMERATOR);
 		CHECK(a8.dimension_type == dimension::mol);
-		dimension a9("cd",dimension::POSITIVE);
+		dimension a9("cd",dimension::NUMERATOR);
 		CHECK(a9.dimension_type == dimension::cd);
-		dimension a10("B",dimension::POSITIVE);
+		dimension a10("B",dimension::NUMERATOR);
 		CHECK(a10.dimension_type == dimension::B);
-		dimension a11("Hz",dimension::POSITIVE);
+		dimension a11("Hz",dimension::NUMERATOR);
 		CHECK(a11.dimension_type == dimension::Hz);
-		dimension a12("N",dimension::POSITIVE);
+		dimension a12("N",dimension::NUMERATOR);
 		CHECK(a12.dimension_type == dimension::N);
-		dimension a13("Pa",dimension::POSITIVE);
+		dimension a13("Pa",dimension::NUMERATOR);
 		CHECK(a13.dimension_type == dimension::Pa);
-		dimension a14("J",dimension::POSITIVE);
+		dimension a14("J",dimension::NUMERATOR);
 		CHECK(a14.dimension_type == dimension::J);
-		dimension a15("W",dimension::POSITIVE);
+		dimension a15("W",dimension::NUMERATOR);
 		CHECK(a15.dimension_type == dimension::W);
-		dimension a16("A",dimension::POSITIVE);
+		dimension a16("A",dimension::NUMERATOR);
 		CHECK(a16.dimension_type == dimension::A);
-		dimension a17("V",dimension::POSITIVE);
+		dimension a17("V",dimension::NUMERATOR);
 		CHECK(a17.dimension_type == dimension::V);
-		dimension a18("F",dimension::POSITIVE);
+		dimension a18("F",dimension::NUMERATOR);
 		CHECK(a18.dimension_type == dimension::F);
-		dimension a19("ohm",dimension::POSITIVE);
+		dimension a19("ohm",dimension::NUMERATOR);
 		CHECK(a19.dimension_type == dimension::Ohm);
-		dimension a19_2("Ohm",dimension::POSITIVE);
+		dimension a19_2("Ohm",dimension::NUMERATOR);
 		CHECK(a19_2.dimension_type == dimension::Ohm);
-		/*dimension a19_3("\U000003A9",dimension::POSITIVE);
+		/*dimension a19_3("\U000003A9",dimension::NUMERATOR);
 		CHECK(a19_3.dimension_type == dimension::Ohm);*/
-		dimension a20("S",dimension::POSITIVE);
+		dimension a20("S",dimension::NUMERATOR);
 		CHECK(a20.dimension_type == dimension::S);
-		dimension a21("Wb",dimension::POSITIVE);
+		dimension a21("Wb",dimension::NUMERATOR);
 		CHECK(a21.dimension_type == dimension::Wb);
-		dimension a22("T",dimension::POSITIVE);
+		dimension a22("T",dimension::NUMERATOR);
 		CHECK(a22.dimension_type == dimension::T);
-		dimension a23("H",dimension::POSITIVE);
+		dimension a23("H",dimension::NUMERATOR);
 		CHECK(a23.dimension_type == dimension::H);
-		dimension a24("lm",dimension::POSITIVE);
+		dimension a24("lm",dimension::NUMERATOR);
 		CHECK(a24.dimension_type == dimension::lm);
-		dimension a25("lx",dimension::POSITIVE);
+		dimension a25("lx",dimension::NUMERATOR);
 		CHECK(a25.dimension_type == dimension::lx);
-		dimension a26("Bq",dimension::POSITIVE);
+		dimension a26("Bq",dimension::NUMERATOR);
 		CHECK(a26.dimension_type == dimension::Bq);
-		dimension a27("Gy",dimension::POSITIVE);
+		dimension a27("Gy",dimension::NUMERATOR);
 		CHECK(a27.dimension_type == dimension::Gy);
-		dimension a28("Sv",dimension::POSITIVE);
+		dimension a28("Sv",dimension::NUMERATOR);
 		CHECK(a28.dimension_type == dimension::Sv);
-		dimension a29("kat",dimension::POSITIVE);
+		dimension a29("kat",dimension::NUMERATOR);
 		CHECK(a29.dimension_type == dimension::kat);
-		dimension a30("angstrom",dimension::POSITIVE); // MORE CASES
+		dimension a30("angstrom",dimension::NUMERATOR); // MORE CASES
 		CHECK(a30.dimension_type == dimension::angstrom);
-		dimension a31("L",dimension::POSITIVE);
+		dimension a31("L",dimension::NUMERATOR);
 		CHECK(a31.dimension_type == dimension::L);
-		dimension a32("min",dimension::POSITIVE);
+		dimension a32("min",dimension::NUMERATOR);
 		CHECK(a32.dimension_type == dimension::minute);
-		dimension a33("h",dimension::POSITIVE);
+		dimension a33("h",dimension::NUMERATOR);
 		CHECK(a33.dimension_type == dimension::h);
-		dimension a34("d",dimension::POSITIVE);
+		dimension a34("d",dimension::NUMERATOR);
 		CHECK(a34.dimension_type == dimension::d);
-		dimension a35_2("ly",dimension::POSITIVE);
+		dimension a35_2("ly",dimension::NUMERATOR);
 		CHECK(a35_2.dimension_type == dimension::ly);
-		dimension a35("AU",dimension::POSITIVE);
+		dimension a35("AU",dimension::NUMERATOR);
 		CHECK(a35.dimension_type == dimension::AU);
-		dimension a36("pc",dimension::POSITIVE);
+		dimension a36("pc",dimension::NUMERATOR);
 		CHECK(a36.dimension_type == dimension::pc);
-		dimension a37("eV",dimension::POSITIVE);
+		dimension a37("eV",dimension::NUMERATOR);
 		CHECK(a37.dimension_type == dimension::eV);
-		dimension a38("Da",dimension::POSITIVE);
+		dimension a38("Da",dimension::NUMERATOR);
 		CHECK(a38.dimension_type == dimension::Da);
-		dimension a39("amu",dimension::POSITIVE);
+		dimension a39("amu",dimension::NUMERATOR);
 		CHECK(a39.dimension_type == dimension::amu);
-		dimension a40("barn",dimension::POSITIVE);
+		dimension a40("barn",dimension::NUMERATOR);
 		CHECK(a40.dimension_type == dimension::barn);
-		dimension a41("M",dimension::POSITIVE);
+		dimension a41("M",dimension::NUMERATOR);
 		CHECK(a41.dimension_type == dimension::M);
-		dimension a42("particles",dimension::POSITIVE);
+		dimension a42("particles",dimension::NUMERATOR);
 		CHECK(a42.dimension_type == dimension::particles);
-		dimension a43("money",dimension::POSITIVE);
+		dimension a43("money",dimension::NUMERATOR);
 		CHECK(a43.dimension_type == dimension::money);
-		dimension a44("px",dimension::POSITIVE);
+		dimension a44("px",dimension::NUMERATOR);
 		CHECK(a44.dimension_type == dimension::pixel);
-		dimension a45("memo",dimension::POSITIVE);
+		dimension a45("memo",dimension::NUMERATOR);
 		CHECK(a45.dimension_type == dimension::memo);
-		dimension a46("",dimension::POSITIVE);
+		dimension a46("",dimension::NUMERATOR);
 		CHECK(a46.dimension_type == dimension::NONE);
-		dimension a47("hello",dimension::POSITIVE);
+		dimension a47("hello",dimension::NUMERATOR);
 		CHECK(a47.dimension_type == dimension::custom_full_symbol);
 	}
 
 	SECTION("Assignments of dimension class")
 	{
 		dimension a;
-		dimension b(dimension::g,prefix::no_prefix,dimension::POSITIVE);
+		dimension b(dimension::g,prefix::no_prefix,dimension::NUMERATOR);
 		a = b;
 		CHECK(a.dimension_type == dimension::g);
 		dimension c;
-		dimension d(dimension::g,prefix::no_prefix,dimension::POSITIVE);
+		dimension d(dimension::g,prefix::no_prefix,dimension::NUMERATOR);
 		c = std::move(d);
 		CHECK(c.dimension_type == dimension::g);
 	}
 
 	SECTION("Testing of length dimensions") {
-		dimension a = dimension("Ym",dimension::POSITIVE);
+		dimension a = dimension("Ym",dimension::NUMERATOR);
 		CHECK(to_string(a) == "Ym");
-		dimension b = dimension("Zm",dimension::POSITIVE);
+		dimension b = dimension("Zm",dimension::NUMERATOR);
 		CHECK(to_string(b) == "Zm");
-		dimension c = dimension("Em",dimension::POSITIVE);
+		dimension c = dimension("Em",dimension::NUMERATOR);
 		CHECK(to_string(c) == "Em");
-		dimension d = dimension("Pm",dimension::POSITIVE);
+		dimension d = dimension("Pm",dimension::NUMERATOR);
 		CHECK(to_string(d) == "Pm");
-		dimension e = dimension("Tm",dimension::POSITIVE);
+		dimension e = dimension("Tm",dimension::NUMERATOR);
 		CHECK(to_string(e) == "Tm");
-		dimension f = dimension("Gm",dimension::POSITIVE);
+		dimension f = dimension("Gm",dimension::NUMERATOR);
 		CHECK(to_string(f) == "Gm");
-		dimension g = dimension("Mm",dimension::POSITIVE);
+		dimension g = dimension("Mm",dimension::NUMERATOR);
 		CHECK(to_string(g) == "Mm");
-		dimension h = dimension("km",dimension::POSITIVE);
+		dimension h = dimension("km",dimension::NUMERATOR);
 		CHECK(to_string(h) == "km");
-		dimension i = dimension("hm",dimension::POSITIVE);
+		dimension i = dimension("hm",dimension::NUMERATOR);
 		CHECK(to_string(i) == "hm");
-		dimension j = dimension("dam",dimension::POSITIVE);
+		dimension j = dimension("dam",dimension::NUMERATOR);
 		CHECK(to_string(j) == "dam");
-		dimension k = dimension("dm",dimension::POSITIVE);
+		dimension k = dimension("dm",dimension::NUMERATOR);
 		CHECK(to_string(k) == "dm");
-		dimension l = dimension("cm",dimension::POSITIVE);
+		dimension l = dimension("cm",dimension::NUMERATOR);
 		CHECK(to_string(l) == "cm");
-		dimension m = dimension("mm",dimension::POSITIVE);
+		dimension m = dimension("mm",dimension::NUMERATOR);
 		CHECK(to_string(m) == "mm");
-		dimension n = dimension("um",dimension::POSITIVE);
+		dimension n = dimension("um",dimension::NUMERATOR);
 		CHECK(to_string(n) == "\u00B5m");
-		//dimension n2 = dimension("\u00B5m",dimension::POSITIVE);
+		//dimension n2 = dimension("\u00B5m",dimension::NUMERATOR);
 		//cout << "n2: " << to_string(n2) << endl;
 		//string n2_icu;
 		//icu::UnicodeString("\u00B5m").toUTF8String(n2_icu);
 		//CHECK(to_string(n2) == n2_icu);
-		dimension o = dimension("nm",dimension::POSITIVE);
+		dimension o = dimension("nm",dimension::NUMERATOR);
 		CHECK(to_string(o) == "nm");
-		dimension p = dimension("pm",dimension::POSITIVE);
+		dimension p = dimension("pm",dimension::NUMERATOR);
 		CHECK(to_string(p) == "pm");
-		dimension q = dimension("fm",dimension::POSITIVE);
+		dimension q = dimension("fm",dimension::NUMERATOR);
 		CHECK(to_string(q) == "fm");
-		dimension r = dimension("am",dimension::POSITIVE);
+		dimension r = dimension("am",dimension::NUMERATOR);
 		CHECK(to_string(r) == "am");
-		dimension s = dimension("zm",dimension::POSITIVE);
+		dimension s = dimension("zm",dimension::NUMERATOR);
 		CHECK(to_string(s) == "zm");
-		dimension t = dimension("ym",dimension::POSITIVE);
+		dimension t = dimension("ym",dimension::NUMERATOR);
 		CHECK(to_string(t) == "ym");
 	}
 
 	SECTION ("get_name(), get_symbol(), get_conversion_factor(), is_simple_dmension(), is_basic_dimension() of dimension class")
 	{
-		dimension a(dimension::NONE,prefix::no_prefix,dimension::POSITIVE);
+		dimension a(dimension::NONE,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a.get_name() == "empty");
 		CHECK(a.get_symbol() == "empty");
 		CHECK(a.get_conversion_factor() == 1.0l);
 		CHECK(a.is_simple_dimension() == true);
 		CHECK(a.is_basic_dimension() == true);
-		dimension a2(dimension::m,prefix::no_prefix,dimension::POSITIVE);
+		dimension a2(dimension::m,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a2.get_name() == "meter");
 		CHECK(a2.get_symbol() == "m");
 		CHECK(a2.get_conversion_factor() == 1.0l);
 		CHECK(a2.is_simple_dimension() == true);
 		CHECK(a2.is_basic_dimension() == true);
-		dimension a3_2(dimension::grade,prefix::no_prefix,dimension::POSITIVE);
+		dimension a3_2(dimension::grade,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a3_2.get_name() == "grade");
 		CHECK(a3_2.get_symbol() == "\u03B8");
 		CHECK(a3_2.get_conversion_factor() == PI / 180.0l);
 		CHECK(a3_2.is_simple_dimension() == true);
 		CHECK(a3_2.is_basic_dimension() == true);
-		dimension a3(dimension::radian,prefix::no_prefix,dimension::POSITIVE);
+		dimension a3(dimension::radian,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a3.get_name() == "radian");
 		CHECK(a3.get_symbol() == "rad");
 		CHECK(a3.get_conversion_factor() == 1.0l);
 		CHECK(a3.is_simple_dimension() == true);
 		CHECK(a3.is_basic_dimension() == true);
-		dimension a4(dimension::steradian,prefix::no_prefix,dimension::POSITIVE);
+		dimension a4(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a4.get_name() == "steradian");
 		CHECK(a4.get_symbol() == "sr");
 		CHECK(a4.get_conversion_factor() == 1.0l);
 		CHECK(a4.is_simple_dimension() == true);
 		CHECK(a4.is_basic_dimension() == true);
-		dimension a5(dimension::s,prefix::no_prefix,dimension::POSITIVE);
+		dimension a5(dimension::s,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a5.get_name() == "second");
 		CHECK(a5.get_symbol() == "s");
 		CHECK(a5.get_conversion_factor() == 1.0l);
 		CHECK(a5.is_simple_dimension() == true);
 		CHECK(a5.is_basic_dimension() == true);
-		dimension a6(dimension::g,prefix::no_prefix,dimension::POSITIVE);
+		dimension a6(dimension::g,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a6.get_name() == "gram");
 		CHECK(a6.get_symbol() == "g");
 		CHECK(a6.get_conversion_factor() == 1.0l);
 		CHECK(a6.is_simple_dimension() == true);
 		CHECK(a6.is_basic_dimension() == true);
-		dimension a7(dimension::C,prefix::no_prefix,dimension::POSITIVE);
+		dimension a7(dimension::C,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a7.get_name() == "coulomb");
 		CHECK(a7.get_symbol() == "C");
 		CHECK(a7.get_conversion_factor() == 1.0l);
 		CHECK(a7.is_simple_dimension() == true);
 		CHECK(a7.is_basic_dimension() == true);
-		dimension a8(dimension::K,prefix::no_prefix,dimension::POSITIVE);
+		dimension a8(dimension::K,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a8.get_name() == "kelvin");
 		CHECK(a8.get_symbol() == "K");
 		CHECK(a8.get_conversion_factor() == 1.0l);
 		CHECK(a8.is_simple_dimension() == true);
 		CHECK(a8.is_basic_dimension() == true);
-		dimension a9(dimension::mol,prefix::no_prefix,dimension::POSITIVE);
+		dimension a9(dimension::mol,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a9.get_name() == "mole");
 		CHECK(a9.get_symbol() == "mol");
 		CHECK(a9.get_conversion_factor() == 1.0l);
 		CHECK(a9.is_simple_dimension() == true);
 		CHECK(a9.is_basic_dimension() == true);
-		dimension a10(dimension::cd,prefix::no_prefix,dimension::POSITIVE);
+		dimension a10(dimension::cd,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a10.get_name() == "candela");
 		CHECK(a10.get_symbol() == "cd");
 		CHECK(a10.get_conversion_factor() == 1.0l);
 		CHECK(a10.is_simple_dimension() == true);
 		CHECK(a10.is_basic_dimension() == true);
-		dimension a11(dimension::B,prefix::no_prefix,dimension::POSITIVE);
+		dimension a11(dimension::B,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a11.get_name() == "byte");
 		CHECK(a11.get_symbol() == "B");
 		CHECK(a11.get_conversion_factor() == 1.0l);
 		CHECK(a11.is_simple_dimension() == true);
 		CHECK(a11.is_basic_dimension() == true);
-		dimension a12(dimension::Hz,prefix::no_prefix,dimension::POSITIVE);
+		dimension a12(dimension::Hz,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a12.get_name() == "hertz");
 		CHECK(a12.get_symbol() == "Hz");
 		CHECK(a12.get_conversion_factor() == 1.0l);
 		CHECK(a12.is_simple_dimension() == true);
 		CHECK(a12.is_basic_dimension() == false);
-		dimension a13(dimension::N,prefix::no_prefix,dimension::POSITIVE);
+		dimension a13(dimension::N,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a13.get_name() == "newton");
 		CHECK(a13.get_symbol() == "N");
 		CHECK(a13.get_conversion_factor() == 1.0l);
 		CHECK(a13.is_simple_dimension() == false);
 		CHECK(a13.is_basic_dimension() == false);
-		dimension a14(dimension::Pa,prefix::no_prefix,dimension::POSITIVE);
+		dimension a14(dimension::Pa,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a14.get_name() == "pascal");
 		CHECK(a14.get_symbol() == "Pa");
 		CHECK(a14.get_conversion_factor() == 1.0l);
 		CHECK(a14.is_simple_dimension() == false);
 		CHECK(a14.is_basic_dimension() == false);
-		dimension a15(dimension::J,prefix::no_prefix,dimension::POSITIVE);
+		dimension a15(dimension::J,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a15.get_name() == "joule");
 		CHECK(a15.get_symbol() == "J");
 		CHECK(a15.get_conversion_factor() == 1.0l);
 		CHECK(a15.is_simple_dimension() == false);
 		CHECK(a15.is_basic_dimension() == false);
-		dimension a16(dimension::W,prefix::no_prefix,dimension::POSITIVE);
+		dimension a16(dimension::W,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a16.get_name() == "watt");
 		CHECK(a16.get_symbol() == "W");
 		CHECK(a16.get_conversion_factor() == 1.0l);
 		CHECK(a16.is_simple_dimension() == false);
 		CHECK(a16.is_basic_dimension() == false);
-		dimension a17(dimension::A,prefix::no_prefix,dimension::POSITIVE);
+		dimension a17(dimension::A,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a17.get_name() == "ampere");
 		CHECK(a17.get_symbol() == "A");
 		CHECK(a17.get_conversion_factor() == 1.0l);
 		CHECK(a17.is_simple_dimension() == true);
 		CHECK(a17.is_basic_dimension() == false);
-		dimension a18(dimension::V,prefix::no_prefix,dimension::POSITIVE);
+		dimension a18(dimension::V,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a18.get_name() == "volt");
 		CHECK(a18.get_symbol() == "V");
 		CHECK(a18.get_conversion_factor() == 1.0l);
 		CHECK(a18.is_simple_dimension() == false);
 		CHECK(a18.is_basic_dimension() == false);
-		dimension a19(dimension::F,prefix::no_prefix,dimension::POSITIVE);
+		dimension a19(dimension::F,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a19.get_name() == "faraday");
 		CHECK(a19.get_symbol() == "F");
 		CHECK(a19.get_conversion_factor() == 1.0l);
 		CHECK(a19.is_simple_dimension() == false);
 		CHECK(a19.is_basic_dimension() == false);
-		dimension a20(dimension::Ohm,prefix::no_prefix,dimension::POSITIVE);
+		dimension a20(dimension::Ohm,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a20.get_name() == "ohm");
 		CHECK(a20.get_symbol() == "\U000003A9");
 		CHECK(a20.get_conversion_factor() == 1.0l);
 		CHECK(a20.is_simple_dimension() == false);
 		CHECK(a20.is_basic_dimension() == false);
-		dimension a21(dimension::S,prefix::no_prefix,dimension::POSITIVE);
+		dimension a21(dimension::S,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a21.get_name() == "siemens");
 		CHECK(a21.get_symbol() == "S");
 		CHECK(a21.get_conversion_factor() == 1.0l);
 		CHECK(a21.is_simple_dimension() == false);
 		CHECK(a21.is_basic_dimension() == false);
-		dimension a22(dimension::Wb,prefix::no_prefix,dimension::POSITIVE);
+		dimension a22(dimension::Wb,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a22.get_name() == "weber");
 		CHECK(a22.get_symbol() == "Wb");
 		CHECK(a22.get_conversion_factor() == 1.0l);
 		CHECK(a22.is_simple_dimension() == false);
 		CHECK(a22.is_basic_dimension() == false);
-		dimension a23(dimension::T,prefix::no_prefix,dimension::POSITIVE);
+		dimension a23(dimension::T,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a23.get_name() == "tesla");
 		CHECK(a23.get_symbol() == "T");
 		CHECK(a23.get_conversion_factor() == 1.0l);
 		CHECK(a23.is_simple_dimension() == false);
 		CHECK(a23.is_basic_dimension() == false);
-		dimension a24(dimension::H,prefix::no_prefix,dimension::POSITIVE);
+		dimension a24(dimension::H,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a24.get_name() == "henry");
 		CHECK(a24.get_symbol() == "H");
 		CHECK(a24.get_conversion_factor() == 1.0l);
 		CHECK(a24.is_simple_dimension() == false);
 		CHECK(a24.is_basic_dimension() == false);
-		dimension a25(dimension::lm,prefix::no_prefix,dimension::POSITIVE);
+		dimension a25(dimension::lm,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a25.get_name() == "lumen");
 		CHECK(a25.get_symbol() == "lm");
 		CHECK(a25.get_conversion_factor() == 1.0l);
 		CHECK(a25.is_simple_dimension() == false);
 		CHECK(a25.is_basic_dimension() == false);
-		dimension a26(dimension::lx,prefix::no_prefix,dimension::POSITIVE);
+		dimension a26(dimension::lx,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a26.get_name() == "lux");
 		CHECK(a26.get_symbol() == "lx");
 		CHECK(a26.get_conversion_factor() == 1.0l);
 		CHECK(a26.is_simple_dimension() == false);
 		CHECK(a26.is_basic_dimension() == false);
-		dimension a27(dimension::Bq,prefix::no_prefix,dimension::POSITIVE);
+		dimension a27(dimension::Bq,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a27.get_name() == "becquerel");
 		CHECK(a27.get_symbol() == "Bq");
 		CHECK(a27.get_conversion_factor() == 1.0l);
 		CHECK(a27.is_simple_dimension() == true);
 		CHECK(a27.is_basic_dimension() == false);
-		dimension a28(dimension::Gy,prefix::no_prefix,dimension::POSITIVE);
+		dimension a28(dimension::Gy,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a28.get_name() == "gray");
 		CHECK(a28.get_symbol() == "Gy");
 		CHECK(a28.get_conversion_factor() == 1.0l);
 		CHECK(a28.is_simple_dimension() == false);
 		CHECK(a28.is_basic_dimension() == false);
-		dimension a29(dimension::Sv,prefix::no_prefix,dimension::POSITIVE);
+		dimension a29(dimension::Sv,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a29.get_name() == "sievert");
 		CHECK(a29.get_symbol() == "Sv");
 		CHECK(a29.get_conversion_factor() == 1.0l);
 		CHECK(a29.is_simple_dimension() == false);
 		CHECK(a29.is_basic_dimension() == false);
-		dimension a30(dimension::kat,prefix::no_prefix,dimension::POSITIVE);
+		dimension a30(dimension::kat,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a30.get_name() == "katal");
 		CHECK(a30.get_symbol() == "kat");
 		CHECK(a30.get_conversion_factor() == 1.0l);
 		CHECK(a30.is_simple_dimension() == false);
 		CHECK(a30.is_basic_dimension() == false);
-		dimension a31(dimension::angstrom,prefix::no_prefix,dimension::POSITIVE);
+		dimension a31(dimension::angstrom,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a31.get_name() == "angstrom");
 		CHECK(a31.get_symbol() == "\U0000212B");
 		CHECK(a31.get_conversion_factor() == 1.0l);
 		CHECK(a31.is_simple_dimension() == true);
 		CHECK(a31.is_basic_dimension() == false);
-		dimension a32(dimension::L,prefix::no_prefix,dimension::POSITIVE);
+		dimension a32(dimension::L,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a32.get_name() == "liter");
 		CHECK(a32.get_symbol() == "L");
 		CHECK(a32.get_conversion_factor() == 1.0l);
 		CHECK(a32.is_simple_dimension() == false);
 		CHECK(a32.is_basic_dimension() == false);
-		dimension a33(dimension::minute,prefix::no_prefix,dimension::POSITIVE);
+		dimension a33(dimension::minute,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a33.get_name() == "minute");
 		CHECK(a33.get_symbol() == "min");
 		CHECK(a33.get_conversion_factor() == 60.0l);
 		CHECK(a33.is_simple_dimension() == true);
 		CHECK(a33.is_basic_dimension() == false);
-		dimension a34(dimension::h,prefix::no_prefix,dimension::POSITIVE);
+		dimension a34(dimension::h,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a34.get_name() == "hour");
 		CHECK(a34.get_symbol() == "h");
 		CHECK(a34.get_conversion_factor() == 3600.0l);
 		CHECK(a34.is_simple_dimension() == true);
 		CHECK(a34.is_basic_dimension() == false);
-		dimension a35(dimension::d,prefix::no_prefix,dimension::POSITIVE);
+		dimension a35(dimension::d,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a35.get_name() == "day");
 		CHECK(a35.get_symbol() == "d");
 		CHECK(a35.get_conversion_factor() == 86400.0l);
 		CHECK(a35.is_simple_dimension() == true);
 		CHECK(a35.is_basic_dimension() == false);
-		dimension a36_2(dimension::ly,prefix::no_prefix,dimension::POSITIVE);
+		dimension a36_2(dimension::ly,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a36_2.get_name() == "light year");
 		CHECK(a36_2.get_symbol() == "ly");
 		CHECK(a36_2.get_conversion_factor() == 9.4607379375591e15);
 		CHECK(a36_2.is_simple_dimension() == true);
 		CHECK(a36_2.is_basic_dimension() == false);
-		dimension a36(dimension::AU,prefix::no_prefix,dimension::POSITIVE);
+		dimension a36(dimension::AU,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a36.get_name() == "astronomical unit");
 		CHECK(a36.get_symbol() == "AU");
 		CHECK(a36.get_conversion_factor() == 149597870700.0l);
 		CHECK(a36.is_simple_dimension() == true);
 		CHECK(a36.is_basic_dimension() == false);
-		dimension a37(dimension::pc,prefix::no_prefix,dimension::POSITIVE);
+		dimension a37(dimension::pc,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a37.get_name() == "parsec");
 		CHECK(a37.get_symbol() == "pc");
 		CHECK(a37.get_conversion_factor() == 30856775814913673.0l);
 		CHECK(a37.is_simple_dimension() == true);
 		CHECK(a37.is_basic_dimension() == false);
-		dimension a38(dimension::eV,prefix::no_prefix,dimension::POSITIVE);
+		dimension a38(dimension::eV,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a38.get_name() == "electronvolt");
 		CHECK(a38.get_symbol() == "eV");
 		CHECK(a38.get_conversion_factor() == 0.0000000000000000001602176634l);
 		CHECK(a38.is_simple_dimension() == false);
 		CHECK(a38.is_basic_dimension() == false);
-		dimension a39(dimension::Da,prefix::no_prefix,dimension::POSITIVE);
+		dimension a39(dimension::Da,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a39.get_name() == "dalton");
 		CHECK(a39.get_symbol() == "Da");
 		CHECK(a39.get_conversion_factor() == 0.00000000000000000000000000166053886l);
 		CHECK(a39.is_simple_dimension() == true);
 		CHECK(a39.is_basic_dimension() == false);
-		dimension a40(dimension::amu,prefix::no_prefix,dimension::POSITIVE);
+		dimension a40(dimension::amu,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a40.get_name() == "atomic mass unit");
 		CHECK(a40.get_symbol() == "amu");
 		CHECK(a40.get_conversion_factor() == 0.00000000000000000000000000166053886l);
 		CHECK(a40.is_simple_dimension() == true);
 		CHECK(a40.is_basic_dimension() == false);
-		dimension a41(dimension::barn,prefix::no_prefix,dimension::POSITIVE);
+		dimension a41(dimension::barn,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a41.get_name() == "barn");
 		CHECK(a41.get_symbol() == "barn");
 		CHECK(a41.get_conversion_factor() == 0.0000000000000000000000000001l);
 		CHECK(a41.is_simple_dimension() == false);
 		CHECK(a41.is_basic_dimension() == false);
-		dimension a42(dimension::M,prefix::no_prefix,dimension::POSITIVE);
+		dimension a42(dimension::M,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a42.get_name() == "molarity");
 		CHECK(a42.get_symbol() == "M");
 		CHECK(a42.get_conversion_factor() == 1.0l);
 		CHECK(a42.is_simple_dimension() == false);
 		CHECK(a42.is_basic_dimension() == false);
-		dimension a43(dimension::particles,prefix::no_prefix,dimension::POSITIVE);
+		dimension a43(dimension::particles,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a43.get_name() == "particles");
 		CHECK(a43.get_symbol() == "particles");
 		CHECK(a43.get_conversion_factor() == 1l/AVOGADRO_CONSTANT);
 		CHECK(a43.is_simple_dimension() == true);
 		CHECK(a43.is_basic_dimension() == false);
-		/*dimension a44("hello",dimension::POSITIVE);
+		/*dimension a44("hello",dimension::NUMERATOR);
 		CHECK(a44.get_name() == "custom-dimension");
 		CHECK(a44.get_symbol() == "hello");
 		CHECK(a44.get_conversion_factor() == 1.0);
 		CHECK(a44.is_simple_dimension() == false);
 		CHECK(a44.is_basic_dimension() == false);
-		dimension a45(dimension::custom_basic,prefix::no_prefix,dimension::POSITIVE);
+		dimension a45(dimension::custom_basic,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a45.get_name() == "custom-basic");
 		CHECK(a45.get_symbol() == "custom-basic");
 		CHECK(a45.get_conversion_factor() == 1.0);
 		CHECK(a45.is_simple_dimension() == false);
 		CHECK(a45.is_basic_dimension() == false);
-		dimension a46(dimension::custom_full_symbol,prefix::no_prefix,dimension::POSITIVE);
+		dimension a46(dimension::custom_full_symbol,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a46.get_name() == "custom-full-symbol");
 		CHECK(a46.get_symbol() == "");
 		CHECK(a46.get_conversion_factor() == 1.0);
 		CHECK(a46.is_simple_dimension() == false);
 		CHECK(a46.is_basic_dimension() == false);*/
-		dimension a47(dimension::money,prefix::no_prefix,dimension::POSITIVE);
+		dimension a47(dimension::money,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a47.get_name() == "money");
 		CHECK(a47.get_symbol() == "money");
 		CHECK(a47.get_conversion_factor() == 1.0l);
 		CHECK(a47.is_simple_dimension() == true);
 		CHECK(a47.is_basic_dimension() == true);
-		dimension a48(dimension::pixel,prefix::no_prefix,dimension::POSITIVE);
+		dimension a48(dimension::pixel,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a48.get_name() == "pixel");
 		CHECK(a48.get_symbol() == "px");
 		CHECK(a48.get_conversion_factor() == 0.00026l);
 		CHECK(a48.is_simple_dimension() == true);
 		CHECK(a48.is_basic_dimension() == false);
-		dimension a49(dimension::memo,prefix::no_prefix,dimension::POSITIVE);
+		dimension a49(dimension::memo,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(a49.get_name() == "memo");
 		CHECK(a49.get_symbol() == "memo");
 		CHECK(a49.get_conversion_factor() == 1.0l);
@@ -546,231 +546,231 @@ TEST_CASE("dimension class") {
 
 	SECTION ("get_basic_dimensions() of dimension class")
 	{
-		dimension a0("",dimension::POSITIVE);
-		vector<dimension> b0 = { dimension(dimension::NONE,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a0("",dimension::NUMERATOR);
+		vector<dimension> b0 = { dimension(dimension::NONE,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a0.get_basic_dimensions(),b0));
-		dimension a("m",dimension::POSITIVE);
-		vector<dimension> b = { dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a("m",dimension::NUMERATOR);
+		vector<dimension> b = { dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a.get_basic_dimensions(),b));
-		dimension a2_2("grade",dimension::POSITIVE);
-		vector<dimension> b2_2 = { dimension(dimension::radian,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a2_2("grade",dimension::NUMERATOR);
+		vector<dimension> b2_2 = { dimension(dimension::radian,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a2_2.get_basic_dimensions(),b2_2));
-		dimension a2("rad",dimension::POSITIVE);
-		vector<dimension> b2 = { dimension(dimension::radian,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a2("rad",dimension::NUMERATOR);
+		vector<dimension> b2 = { dimension(dimension::radian,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a2.get_basic_dimensions(),b2));
-		dimension a3("sr",dimension::POSITIVE);
-		vector<dimension> b3 = { dimension(dimension::steradian,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a3("sr",dimension::NUMERATOR);
+		vector<dimension> b3 = { dimension(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a3.get_basic_dimensions(),b3));
-		dimension a4("s",dimension::POSITIVE);
-		vector<dimension> b4 = { dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a4("s",dimension::NUMERATOR);
+		vector<dimension> b4 = { dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a4.get_basic_dimensions(),b4));
-		dimension a5("g",dimension::POSITIVE);
-		vector<dimension> b5 = { dimension(dimension::g,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a5("g",dimension::NUMERATOR);
+		vector<dimension> b5 = { dimension(dimension::g,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a5.get_basic_dimensions(),b5));
-		dimension a6("C",dimension::POSITIVE);
-		vector<dimension> b6 = { dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a6("C",dimension::NUMERATOR);
+		vector<dimension> b6 = { dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a6.get_basic_dimensions(),b6));
-		dimension a7("K",dimension::POSITIVE);
-		vector<dimension> b7 = { dimension(dimension::K,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a7("K",dimension::NUMERATOR);
+		vector<dimension> b7 = { dimension(dimension::K,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a7.get_basic_dimensions(),b7));
-		dimension a8("mol",dimension::POSITIVE);
-		vector<dimension> b8 = { dimension(dimension::mol,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a8("mol",dimension::NUMERATOR);
+		vector<dimension> b8 = { dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a8.get_basic_dimensions(),b8));
-		dimension a9("cd",dimension::POSITIVE);
-		vector<dimension> b9 = { dimension(dimension::cd,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a9("cd",dimension::NUMERATOR);
+		vector<dimension> b9 = { dimension(dimension::cd,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a9.get_basic_dimensions(),b9));
-		dimension a10("B",dimension::POSITIVE);
-		vector<dimension> b10 = { dimension(dimension::B,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a10("B",dimension::NUMERATOR);
+		vector<dimension> b10 = { dimension(dimension::B,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a10.get_basic_dimensions(),b10));
-		dimension a11("Hz",dimension::POSITIVE);
-		vector<dimension> b11 = { dimension(dimension::Hz,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a11("Hz",dimension::NUMERATOR);
+		vector<dimension> b11 = { dimension(dimension::Hz,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a11.get_basic_dimensions(),b11));
-		dimension a12("N",dimension::POSITIVE);
-		vector<dimension> b12 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a12("N",dimension::NUMERATOR);
+		vector<dimension> b12 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a12.get_basic_dimensions(),b12));
-		dimension a13("Pa",dimension::POSITIVE);
-		vector<dimension> b13 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a13("Pa",dimension::NUMERATOR);
+		vector<dimension> b13 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a13.get_basic_dimensions(),b13));
-		dimension a14("J",dimension::POSITIVE);
-		vector<dimension> b14 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a14("J",dimension::NUMERATOR);
+		vector<dimension> b14 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a14.get_basic_dimensions(),b14));
-		dimension a15("W",dimension::POSITIVE);
-		vector<dimension> b15 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a15("W",dimension::NUMERATOR);
+		vector<dimension> b15 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a15.get_basic_dimensions(),b15));
-		dimension a16("A",dimension::POSITIVE);
-		vector<dimension> b16 = { dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a16("A",dimension::NUMERATOR);
+		vector<dimension> b16 = { dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a16.get_basic_dimensions(),b16));
-		dimension a17("V",dimension::POSITIVE);
-		vector<dimension> b17 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a17("V",dimension::NUMERATOR);
+		vector<dimension> b17 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a17.get_basic_dimensions(),b17));
-		dimension a18("F",dimension::POSITIVE);
-		vector<dimension> b18 = { dimension(dimension::g,prefix::k,dimension::NEGATIVE),
-				dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE),
-				dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE),
-				dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
-				dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
-				dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE),
-				dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a18("F",dimension::NUMERATOR);
+		vector<dimension> b18 = { dimension(dimension::g,prefix::k,dimension::DENOMINATOR),
+				dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR),
+				dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR),
+				dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
+				dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
+				dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR),
+				dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a18.get_basic_dimensions(),b18));
-		dimension a19("Ohm",dimension::POSITIVE);
-		vector<dimension> b19 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a19("Ohm",dimension::NUMERATOR);
+		vector<dimension> b19 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a19.get_basic_dimensions(),b19));
-		dimension a20("S",dimension::POSITIVE);
-		vector<dimension> b20 = { dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::g,prefix::k,dimension::NEGATIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a20("S",dimension::NUMERATOR);
+		vector<dimension> b20 = { dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::g,prefix::k,dimension::DENOMINATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a20.get_basic_dimensions(),b20));
-		dimension a21("Wb",dimension::POSITIVE);
-		vector<dimension> b21 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a21("Wb",dimension::NUMERATOR);
+		vector<dimension> b21 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a21.get_basic_dimensions(),b21));
-		dimension a22("T",dimension::POSITIVE);
-		vector<dimension> b22 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
-			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a22("T",dimension::NUMERATOR);
+		vector<dimension> b22 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
+			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a22.get_basic_dimensions(),b22));
-		dimension a23("H",dimension::POSITIVE);
-		vector<dimension> b23 = { dimension(dimension::g,prefix::k,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::C,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a23("H",dimension::NUMERATOR);
+		vector<dimension> b23 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a23.get_basic_dimensions(),b23));
-		dimension a24("lm",dimension::POSITIVE);
-		vector<dimension> b24 = { dimension(dimension::cd,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::steradian,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a24("lm",dimension::NUMERATOR);
+		vector<dimension> b24 = { dimension(dimension::cd,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a24.get_basic_dimensions(),b24));
-		dimension a25("lx",dimension::POSITIVE);
-		vector<dimension> b25 = { dimension(dimension::cd,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::steradian,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a25("lx",dimension::NUMERATOR);
+		vector<dimension> b25 = { dimension(dimension::cd,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a25.get_basic_dimensions(),b25));
-		dimension a26("Bq",dimension::POSITIVE);
-		vector<dimension> b26 = { dimension(dimension::Bq,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a26("Bq",dimension::NUMERATOR);
+		vector<dimension> b26 = { dimension(dimension::Bq,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a26.get_basic_dimensions(),b26));
-		dimension a27("Gy",dimension::POSITIVE);
-		vector<dimension> b27 = { dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a27("Gy",dimension::NUMERATOR);
+		vector<dimension> b27 = { dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a27.get_basic_dimensions(),b27));
-		dimension a28("Sv",dimension::POSITIVE);
-		vector<dimension> b28 = { dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a28("Sv",dimension::NUMERATOR);
+		vector<dimension> b28 = { dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a28.get_basic_dimensions(),b28));
-		dimension a29("kat",dimension::POSITIVE);
-		vector<dimension> b29 = { dimension(dimension::mol,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a29("kat",dimension::NUMERATOR);
+		vector<dimension> b29 = { dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a29.get_basic_dimensions(),b29));
-		dimension a30("angstrom",dimension::POSITIVE);
-		vector<dimension> b30 = { dimension(dimension::angstrom,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a30("angstrom",dimension::NUMERATOR);
+		vector<dimension> b30 = { dimension(dimension::angstrom,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a30.get_basic_dimensions(),b30));
-		dimension a31("L",dimension::POSITIVE);
-		vector<dimension> b31 = { dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a31("L",dimension::NUMERATOR);
+		vector<dimension> b31 = { dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a31.get_basic_dimensions(),b31));
-		dimension a32("min",dimension::POSITIVE);
-		vector<dimension> b32 = { dimension(dimension::minute,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a32("min",dimension::NUMERATOR);
+		vector<dimension> b32 = { dimension(dimension::minute,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a32.get_basic_dimensions(),b32));
-		dimension a33("h",dimension::POSITIVE);
-		vector<dimension> b33 = { dimension(dimension::h,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a33("h",dimension::NUMERATOR);
+		vector<dimension> b33 = { dimension(dimension::h,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a33.get_basic_dimensions(),b33));
-		dimension a34("d",dimension::POSITIVE);
-		vector<dimension> b34 = { dimension(dimension::d,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a34("d",dimension::NUMERATOR);
+		vector<dimension> b34 = { dimension(dimension::d,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a34.get_basic_dimensions(),b34));
-		dimension a35_2("ly",dimension::POSITIVE);
-		vector<dimension> b35_2 = { dimension(dimension::ly,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a35_2("ly",dimension::NUMERATOR);
+		vector<dimension> b35_2 = { dimension(dimension::ly,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a35_2.get_basic_dimensions(),b35_2));
-		dimension a35("AU",dimension::POSITIVE);
-		vector<dimension> b35 = { dimension(dimension::AU,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a35("AU",dimension::NUMERATOR);
+		vector<dimension> b35 = { dimension(dimension::AU,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a35.get_basic_dimensions(),b35));
-		dimension a36("pc",dimension::POSITIVE);
-		vector<dimension> b36 = { dimension(dimension::pc,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a36("pc",dimension::NUMERATOR);
+		vector<dimension> b36 = { dimension(dimension::pc,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a36.get_basic_dimensions(),b36));
-		dimension a37("eV",dimension::POSITIVE);
-		vector<dimension> b37 = { dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::g,prefix::k,dimension::POSITIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE),
-			dimension(dimension::s,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a37("eV",dimension::NUMERATOR);
+		vector<dimension> b37 = { dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::g,prefix::k,dimension::NUMERATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
+			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a37.get_basic_dimensions(),b37));
-		dimension a38("Da",dimension::POSITIVE);
-		vector<dimension> b38 = { dimension(dimension::Da,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a38("Da",dimension::NUMERATOR);
+		vector<dimension> b38 = { dimension(dimension::Da,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a38.get_basic_dimensions(),b38));
-		dimension a39("amu",dimension::POSITIVE);
-		vector<dimension> b39 = { dimension(dimension::amu,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a39("amu",dimension::NUMERATOR);
+		vector<dimension> b39 = { dimension(dimension::amu,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a39.get_basic_dimensions(),b39));
-		dimension a40("barn",dimension::POSITIVE);
-		vector<dimension> b40 = { dimension(dimension::barn,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a40("barn",dimension::NUMERATOR);
+		vector<dimension> b40 = { dimension(dimension::barn,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a40.get_basic_dimensions(),b40));
-		dimension a41("M",dimension::POSITIVE);
-		vector<dimension> b41 = { dimension(dimension::mol,prefix::no_prefix,dimension::POSITIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE),
-			dimension(dimension::m,prefix::no_prefix,dimension::NEGATIVE) };
+		dimension a41("M",dimension::NUMERATOR);
+		vector<dimension> b41 = { dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR),
+			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a41.get_basic_dimensions(),b41));
-		dimension a42("particles",dimension::POSITIVE);
-		vector<dimension> b42 = { dimension(dimension::particles,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a42("particles",dimension::NUMERATOR);
+		vector<dimension> b42 = { dimension(dimension::particles,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a42.get_basic_dimensions(),b42));
-		dimension a43("money",dimension::POSITIVE);
-		vector<dimension> b43 = { dimension(dimension::money,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a43("money",dimension::NUMERATOR);
+		vector<dimension> b43 = { dimension(dimension::money,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a43.get_basic_dimensions(),b43));
-		dimension a44("px",dimension::POSITIVE);
-		vector<dimension> b44 = { dimension(dimension::pixel,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a44("px",dimension::NUMERATOR);
+		vector<dimension> b44 = { dimension(dimension::pixel,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a44.get_basic_dimensions(),b44));
-		dimension a45("memo",dimension::POSITIVE);
-		vector<dimension> b45 = { dimension(dimension::memo,prefix::no_prefix,dimension::POSITIVE) };
+		dimension a45("memo",dimension::NUMERATOR);
+		vector<dimension> b45 = { dimension(dimension::memo,prefix::no_prefix,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a45.get_basic_dimensions(),b45));
 	}
 
 	SECTION ("Constructor of custom dimensions")
 	{
-		dimension a("usd",dimension::POSITIVE);
-		vector<dimension> b = { dimension("usd",dimension::POSITIVE) };
+		dimension a("usd",dimension::NUMERATOR);
+		vector<dimension> b = { dimension("usd",dimension::NUMERATOR) };
 		CHECK(a.get_name() == "custom-dimension");
 		CHECK(a.get_symbol() == "usd");
 		CHECK(a.get_conversion_factor() == 1.0l);
 		CHECK(a.is_simple_dimension() == false);
 		CHECK(a.is_basic_dimension() == false);
 		CHECK(equal_dimensions(a.get_basic_dimensions(),b));
-		dimension a2("long-dimension",dimension::POSITIVE);
-		vector<dimension> b2 = { dimension("long-dimension",dimension::POSITIVE) };
+		dimension a2("long-dimension",dimension::NUMERATOR);
+		vector<dimension> b2 = { dimension("long-dimension",dimension::NUMERATOR) };
 		CHECK(a2.get_name() == "custom-full-symbol");
 		CHECK(a2.get_symbol() == "long-dimension");
 		CHECK(a2.get_conversion_factor() == 1.0l);
@@ -798,7 +798,7 @@ TEST_CASE("dimension class") {
 		vector<dimension> b = create_dimensions("1/m");
 		CHECK(to_string(b) == "1/m");
 		CHECK(to_string(b,true) == "[1/m]");
-		dimension c("km",dimension::POSITIVE);
+		dimension c("km",dimension::NUMERATOR);
 		CHECK(to_string(c) == "km");
 	}
 
@@ -848,9 +848,9 @@ TEST_CASE("dimension class") {
 
 	SECTION ("prefix_math() of dimesion_class")
 	{
-		dimension a("km",dimension::POSITIVE);
+		dimension a("km",dimension::NUMERATOR);
 		CHECK(a.prefix_math() == 1000);
-		dimension b("kB",dimension::POSITIVE);
+		dimension b("kB",dimension::NUMERATOR);
 		CHECK(b.prefix_math() == 1024);
 	}
 
@@ -936,12 +936,12 @@ TEST_CASE("dimension class") {
 
 	SECTION("common_dimension(), equal_dimensions() and equal_dimensions_and_prefixes()")
 	{
-		dimension a(dimension::m,prefix::no_prefix,dimension::POSITIVE);
-		dimension b(dimension::AU,prefix::no_prefix,dimension::POSITIVE);
+		dimension a(dimension::m,prefix::no_prefix,dimension::NUMERATOR);
+		dimension b(dimension::AU,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(common_dimension(a,b) == true);
 		CHECK(equal_dimensions("m","AU") == true);
 		CHECK(equal_dimensions("m","pc") == true);
-		dimension a2(dimension::g,prefix::no_prefix,dimension::POSITIVE);
+		dimension a2(dimension::g,prefix::no_prefix,dimension::NUMERATOR);
 		CHECK(common_dimension(a,a2) == false);
 		vector<dimension> c = create_dimensions("m/s");
 		vector<dimension> d = create_dimensions("AU/s");
@@ -957,10 +957,10 @@ TEST_CASE("dimension class") {
 
 	SECTION("Comparison of dimension class")
 	{
-		dimension a(dimension::m,prefix::no_prefix,dimension::POSITIVE);
-		dimension b(dimension::m,prefix::no_prefix,dimension::POSITIVE);
-		dimension c(dimension::AU,prefix::no_prefix,dimension::POSITIVE);
-		dimension d(dimension::m,prefix::no_prefix,dimension::NEGATIVE);
+		dimension a(dimension::m,prefix::no_prefix,dimension::NUMERATOR);
+		dimension b(dimension::m,prefix::no_prefix,dimension::NUMERATOR);
+		dimension c(dimension::AU,prefix::no_prefix,dimension::NUMERATOR);
+		dimension d(dimension::m,prefix::no_prefix,dimension::DENOMINATOR);
 		CHECK((a == b) == true);
 		CHECK((a != c) == true);
 		CHECK((a == c) == false);
@@ -970,12 +970,12 @@ TEST_CASE("dimension class") {
 
 	SECTION ("Testing of custom dimensions") {
 		dimension::create_custom_dimension("custom_dimension","m*s");
-		dimension a = dimension("custom_dimension",dimension::POSITIVE);
+		dimension a = dimension("custom_dimension",dimension::NUMERATOR);
 		vector<dimension> b = create_dimensions("m*s");
 		CHECK(a.get_symbol() == "custom_dimension");
 		CHECK(equal_dimensions(a.get_basic_dimensions(),b));
 		dimension::create_custom_dimension("uUu","g*m*s");
-		dimension c = dimension("uUu",dimension::POSITIVE);
+		dimension c = dimension("uUu",dimension::NUMERATOR);
 		vector<dimension> d = create_dimensions("g*m*s");
 		CHECK(c.get_symbol() == "uUu");
 		CHECK(equal_dimensions(c.get_basic_dimensions(),d));

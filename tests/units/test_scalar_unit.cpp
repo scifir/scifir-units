@@ -31,13 +31,13 @@ TEST_CASE("scalar_unit class") {
 		CHECK(to_string(d3) == "100 g");
 		scalar_unit d4(100,"g");
 		CHECK(to_string(d4) == "100 g");
-		scalar_unit e(100.0f,{dimension("g",dimension::POSITIVE)});
+		scalar_unit e(100.0f,{dimension("g",dimension::NUMERATOR)});
 		CHECK(to_string(e) == "100 g");
-		scalar_unit e2(100.0,{dimension("g",dimension::POSITIVE)});
+		scalar_unit e2(100.0,{dimension("g",dimension::NUMERATOR)});
 		CHECK(to_string(e2) == "100 g");
-		scalar_unit e3(100.0l,{dimension("g",dimension::POSITIVE)});
+		scalar_unit e3(100.0l,{dimension("g",dimension::NUMERATOR)});
 		CHECK(to_string(e3) == "100 g");
-		scalar_unit e4(100,{dimension("g",dimension::POSITIVE)});
+		scalar_unit e4(100,{dimension("g",dimension::NUMERATOR)});
 		CHECK(to_string(e4) == "100 g");
 		scalar_unit f("100 g");
 		CHECK(to_string(f) == "100 g");

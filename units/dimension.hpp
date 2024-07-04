@@ -33,14 +33,14 @@ namespace scifir
 				NONE, m, grade, radian, steradian, s, g, C, K, mol, cd, B, Hz, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, L, minute, h, d, ly, AU, pc, eV, Da, amu, barn, M, particles, custom, custom_basic, custom_full_symbol, money, pixel, memo
 			};
 
-			enum sign : int8_t {NO_SIGN, POSITIVE, NEGATIVE};
+			enum position : int8_t {NO_POSITION, NUMERATOR, DENOMINATOR};
 
 			dimension();
 			dimension(const dimension& x);
 			dimension(dimension&& x);
-			explicit dimension(dimension::type new_dimension_type,scifir::prefix::type new_prefix,dimension::sign new_sign);
-			explicit dimension(dimension::type new_dimension_type,const scifir::prefix& new_prefix,dimension::sign new_sign);
-			explicit dimension(const string& init_dimension,dimension::sign new_sign);
+			explicit dimension(dimension::type new_dimension_type,scifir::prefix::type new_prefix,dimension::position new_sign);
+			explicit dimension(dimension::type new_dimension_type,const scifir::prefix& new_prefix,dimension::position new_sign);
+			explicit dimension(const string& init_dimension,dimension::position new_sign);
 
 			dimension& operator=(const dimension& x);
 			dimension& operator=(dimension&& x);
@@ -60,7 +60,7 @@ namespace scifir
 
 			scifir::prefix prefix;
 			dimension::type dimension_type;
-			dimension::sign dimension_sign;
+			dimension::position dimension_sign;
 			char symbol[3];
 
 			static void create_custom_dimension(const string& new_symbol,const string& init_dimensions)
