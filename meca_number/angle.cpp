@@ -240,9 +240,7 @@ namespace scifir
 
 	string to_string(const angle& x)
 	{
-		ostringstream output;
-		output << x.display(2);
-		return output.str();
+		return x.display(2);
 	}
 
 	bool is_angle(const string& init_angle)

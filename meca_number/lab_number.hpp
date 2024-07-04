@@ -109,9 +109,7 @@ namespace scifir
 	template<typename T>
 	string to_string(const lab_number<T>& x)
 	{
-		ostringstream output;
-		output << x.display(2);
-		return output.str();
+		return x.display(2);
 	}
 }
 
