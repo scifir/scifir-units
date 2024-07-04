@@ -190,6 +190,19 @@ namespace scifir
 		return *this;
 	}
 
+	bool vector_unit_nd::operator ==(scifir::vector_unit_nd x) const
+	{
+		x.change_dimensions(*this);
+		if(get_value() == x.get_value() and scifir::same_direction(*this,x) and has_dimensions(x))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	void vector_unit_nd::point_to(direction::name x)
 	{
 		if (is_nd(1))
@@ -886,19 +899,6 @@ scifir::vector_unit_nd operator *(const scifir::scalar_unit& x,const scifir::vec
 	else
 	{
 		return scifir::vector_unit_nd(float(new_value), new_dimensions, y.angles);
-	}
-}
-
-bool operator ==(const scifir::vector_unit_nd& x, scifir::vector_unit_nd y)
-{
-	y.change_dimensions(x);
-	if(x.get_value() == y.get_value() and scifir::same_direction(x,y) and x.has_dimensions(y))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
 	}
 }
 

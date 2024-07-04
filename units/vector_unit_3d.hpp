@@ -118,6 +118,8 @@ namespace scifir
 			vector_unit_3d& operator =(scalar_unit&& x);
 			vector_unit_3d& operator =(const string& init_vector_3d);
 
+			bool operator ==(vector_unit_3d x) const;
+
 			void point_to(direction::name x);
 
 			void operator +=(const vector_unit_3d& x);
@@ -279,7 +281,6 @@ scifir::vector_unit_3d operator /(const T y,const scifir::vector_unit_3d& x)
 	return scifir::vector_unit_3d(y / x.get_value(),new_dimensions,x.theta,x.phi);
 }
 
-bool operator ==(const scifir::vector_unit_3d& x, scifir::vector_unit_3d y);
 bool operator !=(const scifir::vector_unit_3d& x, const scifir::vector_unit_3d& y);
 
 bool operator ==(const scifir::vector_unit_3d& x, const string& init_vector_3d);

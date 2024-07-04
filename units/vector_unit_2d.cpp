@@ -115,6 +115,19 @@ namespace scifir
 		return *this;
 	}
 
+	bool vector_unit_2d::operator ==(scifir::vector_unit_2d x) const
+	{
+		x.change_dimensions(*this);
+		if(get_value() == x.get_value() and scifir::same_direction(*this,x) and has_dimensions(x))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	void vector_unit_2d::point_to(direction::name x)
 	{
 		if (x == direction::LEFT)
@@ -359,19 +372,6 @@ scifir::vector_unit_2d operator *(const scifir::scalar_unit& x,const scifir::vec
 	long double new_value = x.get_value() * y.get_value();
 	vector<scifir::dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
 	return scifir::vector_unit_2d(float(new_value), new_dimensions, y.theta);
-}
-
-bool operator ==(const scifir::vector_unit_2d& x, scifir::vector_unit_2d y)
-{
-	y.change_dimensions(x);
-	if(x.get_value() == y.get_value() and scifir::same_direction(x,y) and x.has_dimensions(y))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
 }
 
 bool operator !=(const scifir::vector_unit_2d& x, const scifir::vector_unit_2d& y)
