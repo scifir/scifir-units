@@ -418,9 +418,7 @@ namespace scifir
 
 	string to_string(const percentage& x)
 	{
-		ostringstream output;
-		output << x.display_percentage();
-		return output.str();
+		return x.display_percentage();
 	}
 
 	bool is_percentage(const string& init_percentage)

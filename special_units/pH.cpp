@@ -196,12 +196,10 @@ namespace scifir
 			}
 		}
 	}
-	
+
 	string to_string(const pH& x)
 	{
-		ostringstream output;
-		output << x.display(2);
-		return output.str();
+		return x.display(2);
 	}
 }
 
