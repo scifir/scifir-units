@@ -394,12 +394,26 @@ namespace scifir
 			if (isalpha(values[0][2]))
 			{
 				astronomical_type = create_astronomical_type(values[0].substr(1,2));
-				universe = values[0].substr(4);
+				if (values[0][4] != ' ')
+				{
+					universe = values[0].substr(4);
+				}
+				else
+				{
+					universe = values[0].substr(5);
+				}
 			}
 			else
 			{
 				astronomical_type = create_astronomical_type(values[0].substr(1,1));
-				universe = values[0].substr(3);
+				if (values[0][3] != ' ')
+				{
+					universe = values[0].substr(3);
+				}
+				else
+				{
+					universe = values[0].substr(4);
+				}
 			}
 			if (values.size() == 4)
 			{

@@ -75,6 +75,18 @@ TEST_CASE("aid class") {
 		CHECK(j.galaxy == "");
 		CHECK(j.solar_system == "");
 		CHECK(j.astronomical_body == "");
+		aid k("(SS) universe:milky-way:solar-system");
+		CHECK(k.astronomical_type == aid::SOLAR_SYSTEM);
+		CHECK(k.universe == "universe");
+		CHECK(k.galaxy == "milky-way");
+		CHECK(k.solar_system == "solar-system");
+		CHECK(k.astronomical_body == "");
+		aid l("(G) universe:milky-way");
+		CHECK(l.astronomical_type == aid::GALAXY);
+		CHECK(l.universe == "universe");
+		CHECK(l.galaxy == "milky-way");
+		CHECK(l.solar_system == "");
+		CHECK(l.astronomical_body == "");
 	}
 
 	SECTION("Constructors of aid class that use the enum astronomical_body")
