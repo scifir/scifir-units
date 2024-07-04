@@ -96,6 +96,44 @@ namespace scifir
 		}
 	}
 
+	string zid::display() const
+	{
+		if (country != "")
+		{
+			ostringstream out;
+			out << to_string(aid) << " " << country << ":";
+			for (const string& x_region : regions)
+			{
+				out << x_region << ":";
+			}
+			out << zone;
+			return out.str();
+		}
+		else
+		{
+			return "";
+		}
+	}
+
+	string zid::partial_display() const
+	{
+		if (country != "")
+		{
+			ostringstream out;
+			out << country << ":";
+			for (const string& x_region : regions)
+			{
+				out << x_region << ":";
+			}
+			out << zone;
+			return out.str();
+		}
+		else
+		{
+			return "";
+		}
+	}
+
 	void zid::initialize_from_string(const string& init_zid_full)
 	{
 		if (init_zid_full != "")

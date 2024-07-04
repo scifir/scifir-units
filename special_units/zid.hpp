@@ -27,6 +27,9 @@ namespace scifir
 			bool has_no_country() const;
 			bool has_unknown_country() const;
 
+			string display() const;
+			string partial_display() const;
+
 			scifir::aid aid;
 			vector<string> regions;
 			string country;

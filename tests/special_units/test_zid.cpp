@@ -99,6 +99,16 @@ TEST_CASE("zid class") {
 		CHECK(c.has_unknown_country() == false);
 	}
 
+	SECTION("display() and partial_display() of zid class")
+	{
+		zid a("(P)universe:milky-way:solar-system:earth argentina:provincia-de-buenos-aires:buenos-aires:san-telmo");
+		CHECK(a.display() == "(P)universe:milky-way:solar-system:earth argentina:provincia-de-buenos-aires:buenos-aires:san-telmo");
+		CHECK(a.partial_display() == "argentina:provincia-de-buenos-aires:buenos-aires:san-telmo");
+		zid b("");
+		CHECK(b.display() == "");
+		CHECK(b.partial_display() == "");
+	}
+
 	SECTION("to_string() of zid class")
 	{
 		zid a;
