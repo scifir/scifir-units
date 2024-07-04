@@ -10,31 +10,31 @@ namespace scifir
 {
 	direction::direction() : value(direction::NONE)
 	{}
-	
+
 	direction::direction(const direction& x) : direction(x.value)
 	{}
-	
+
 	direction::direction(direction&& x) : direction(std::move(x.value))
 	{}
 
 	direction::direction(direction::name new_direction) : value(new_direction)
 	{}
-	
+
 	direction::direction(const string& init_direction) : value(create_direction(init_direction))
 	{}
-	
+
 	direction& direction::operator=(const direction& x)
 	{
 		value = x.value;
 		return *this;
 	}
-	
+
 	direction& direction::operator=(direction&& x)
 	{
 		value = std::move(x.value);
 		return *this;
 	}
-	
+
 	direction& direction::operator=(direction::name new_direction)
 	{
 		value = new_direction;
@@ -46,12 +46,12 @@ namespace scifir
 		value = create_direction(init_direction);
 		return *this;
 	}
-	
+
 	void direction::invert()
 	{
 		value = scifir::invert(value);
 	}
-	
+
 	direction::name create_direction(const string& x)
 	{
 		if (x == "left")
@@ -388,26 +388,26 @@ bool operator !=(scifir::direction::name y, const scifir::direction& x)
 	return !(x == y);
 }
 
-bool operator ==(const scifir::direction& x, const string& y)
+bool operator ==(const scifir::direction& x, const string& init_direction)
 {
-	scifir::direction y_direction = scifir::direction(y);
-	return (x == y_direction);
+	scifir::direction y(init_direction);
+	return (x == y);
 }
 
-bool operator !=(const scifir::direction& x, const string& y)
+bool operator !=(const scifir::direction& x, const string& init_direction)
 {
-	return !(x == y);
+	return !(x == init_direction);
 }
 
-bool operator ==(const string& x, const scifir::direction& y)
+bool operator ==(const string& init_direction, const scifir::direction& x)
 {
-	scifir::direction x_direction = scifir::direction(x);
-	return (x_direction == y);
+	scifir::direction y(init_direction);
+	return (x == y);
 }
 
-bool operator !=(const string& x, const scifir::direction& y)
+bool operator !=(const string& init_direction, const scifir::direction& x)
 {
-	return !(x == y);
+	return !(init_direction == x);
 }
 
 void operator +=(string& x, const scifir::direction& y)
