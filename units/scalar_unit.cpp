@@ -536,9 +536,7 @@ namespace scifir
 
 	string to_string(const scalar_unit& x)
 	{
-		ostringstream output;
-		output << x.display(2);
-		return output.str();
+		return x.display(2);
 	}
 
 	bool is_scalar_unit(const string& init_scalar)

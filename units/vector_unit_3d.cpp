@@ -381,9 +381,7 @@ namespace scifir
 
 	string to_string(const vector_unit_3d& x)
 	{
-		ostringstream out;
-		out << x.display(2) << " " << display_float(x.theta.get_value(),2) << "\U000003B8 " << display_float(x.phi.get_value(),2) << "\U000003A6";
-		return out.str();
+		return x.vectorial_display(2);
 	}
 #elif IS_WINDOWS
 	string vector_unit_3d::vectorial_display(int number_of_decimals) const
@@ -409,9 +407,7 @@ namespace scifir
 
 	string to_string(const vector_unit_3d& x)
 	{
-		ostringstream out;
-		out << x.display(2) << " " << display_float(x.theta.get_value(),2) << "\U03B8 " << display_float(x.phi.get_value(),2) << "\U03A6";
-		return out.str();
+		return x.vectorial_display(2);
 	}
 #endif
 
