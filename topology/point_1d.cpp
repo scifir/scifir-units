@@ -27,9 +27,7 @@ namespace scifir
 
 	string to_string(const point_1d<float>& x)
 	{
-		ostringstream out;
-		out << "(" << display_float(x.x) << ")";
-		return out.str();
+		return x.display_cartesian();
 	}
 
 	float distance(const point_1d<float>& x,const point_1d<float>& y)
