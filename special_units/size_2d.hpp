@@ -2,6 +2,7 @@
 #define SCIFIR_UNITS_SPECIAL_UNITS_SIZE_2D_HPP_INCLUDED
 
 #include "../predefined_units/space_units.hpp"
+#include "../util/types.hpp"
 
 #include "boost/algorithm/string.hpp"
 
@@ -80,6 +81,13 @@ namespace scifir
 			scalar_unit get_area() const
 			{
 				return scalar_unit(width * height);
+			}
+
+			string display() const
+			{
+				ostringstream output;
+				output << width << " * " << height;
+				return output.str();
 			}
 
 			T width;
@@ -171,6 +179,13 @@ namespace scifir
 				return width * height;
 			}
 
+			string display() const
+			{
+				ostringstream output;
+				output << display_float(width,2) << " * " << display_float(height,2);
+				return output.str();
+			}
+
 			float width;
 			float height;
 
@@ -192,9 +207,7 @@ namespace scifir
 	template<typename T>
 	string to_string(const size_2d<T>& x)
 	{
-		ostringstream output;
-		output << x.width << " * " << x.height;
-		return output.str();
+		return x.display();
 	}
 
 	string to_string(const size_2d<float>& x);

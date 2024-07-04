@@ -125,6 +125,18 @@ TEST_CASE("class size_3d<T> and size_3d<float>") {
 		CHECK(a.get_volume() == 12.0f);
 	}
 
+	SECTION("display() of size_3d<> class")
+	{
+		size_3d<> a("2 m * 3 m * 4 m");
+		CHECK(a.display() == "2 m * 3 m * 4 m");
+	}
+
+	SECTION("display() of size_3d<float> class")
+	{
+		size_3d<float> a("2 * 3 * 4");
+		CHECK(a.display() == "2 * 3 * 4");
+	}
+
 	SECTION("to_string() of size_3d<> class")
 	{
 		size_3d<> a("2 m * 3 m * 4 m");

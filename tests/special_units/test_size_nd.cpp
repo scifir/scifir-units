@@ -133,6 +133,18 @@ TEST_CASE("class size_nd<T> and size_nd<float>") {
 		CHECK(a.get_volume_nd() == 48.0f);
 	}
 
+	SECTION("display() of size_nd<> class")
+	{
+		size_nd<> a("2 m * 3 m * 4 m");
+		CHECK(a.display() == "2 m * 3 m * 4 m");
+	}
+
+	SECTION("display() of size_nd<float> class")
+	{
+		size_nd<float> a("2 * 3 * 4");
+		CHECK(a.display() == "2 * 3 * 4");
+	}
+
 	SECTION("to_string() of size_nd<> class")
 	{
 		size_nd<> a("2 m * 3 m * 4 m");

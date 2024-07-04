@@ -2,6 +2,7 @@
 #define SCIFIR_UNITS_SPECIAL_UNITS_SIZE_ND_HPP_INCLUDED
 
 #include "../predefined_units/space_units.hpp"
+#include "../util/types.hpp"
 
 #include "boost/algorithm/string.hpp"
 
@@ -134,6 +135,24 @@ namespace scifir
 					new_value *= widths[i].get_value();
 				}
 				return scalar_unit(new_value,new_dimensions);
+			}
+
+			string display() const
+			{
+				if (widths.size() > 0)
+				{
+					ostringstream output;
+					output << widths[0];
+					for (int i = 1; i < widths.size(); i++)
+					{
+						output << " * " << widths[i];
+					}
+					return output.str();
+				}
+				else
+				{
+					return "[empty]";
+				}
 			}
 
 			vector<T> widths;
@@ -275,6 +294,24 @@ namespace scifir
 				return new_value;
 			}
 
+			string display() const
+			{
+				if (widths.size() > 0)
+				{
+					ostringstream output;
+					output << display_float(widths[0],2);
+					for (unsigned int i = 1; i < widths.size(); i++)
+					{
+						output << " * " << display_float(widths[i],2);
+					}
+					return output.str();
+				}
+				else
+				{
+					return "[empty]";
+				}
+			}
+
 			vector<float> widths;
 
 		private:
@@ -294,20 +331,7 @@ namespace scifir
 	template<typename T>
 	string to_string(const size_nd<T>& x)
 	{
-		if (x.widths.size() > 0)
-		{
-			ostringstream output;
-			output << x.widths[0];
-			for (int i = 1; i < x.widths.size(); i++)
-			{
-				output << " * " << x.widths[i];
-			}
-			return output.str();
-		}
-		else
-		{
-			return "[empty]";
-		}
+		return x.display();
 	}
 
 	string to_string(const size_nd<float>& x);

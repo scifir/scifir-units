@@ -2,6 +2,7 @@
 #define SCIFIR_UNITS_SPECIAL_UNITS_SIZE_3D_HPP_INCLUDED
 
 #include "../predefined_units/space_units.hpp"
+#include "../util/types.hpp"
 
 #include "boost/algorithm/string.hpp"
 
@@ -84,6 +85,13 @@ namespace scifir
 			scalar_unit get_volume() const
 			{
 				return scalar_unit(width * height * depth);
+			}
+
+			string display() const
+			{
+				ostringstream output;
+				output << width << " * " << height << " * " << depth;
+				return output.str();
 			}
 
 			T width;
@@ -182,6 +190,13 @@ namespace scifir
 				return width * height * depth;
 			}
 
+			string display() const
+			{
+				ostringstream output;
+				output << display_float(width,2) << " * " << display_float(height,2) << " * " << display_float(depth,2);
+				return output.str();
+			}
+
 			float width;
 			float height;
 			float depth;
@@ -206,9 +221,7 @@ namespace scifir
 	template<typename T>
 	string to_string(const size_3d<T>& x)
 	{
-		ostringstream output;
-		output << x.width << " * " << x.height << " * " << x.depth;
-		return output.str();
+		return x.display();
 	}
 
 	string to_string(const size_3d<float>& x);

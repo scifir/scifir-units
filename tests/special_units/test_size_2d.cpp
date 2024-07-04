@@ -125,6 +125,18 @@ TEST_CASE("class size_2d<T> and size_2d<float>") {
 		CHECK(a.get_area() == 4.0f);
 	}
 
+	SECTION("display() of size_2d<> class")
+	{
+		size_2d<> a("2 m * 3 m");
+		CHECK(a.display() == "2 m * 3 m");
+	}
+
+	SECTION("display() of size_2d<float> class")
+	{
+		size_2d<float> a("2 * 3");
+		CHECK(a.display() == "2 * 3");
+	}
+
 	SECTION("to_string() of size_2d<> class")
 	{
 		size_2d<> a("2 m * 3 m");
