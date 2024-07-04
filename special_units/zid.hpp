@@ -24,6 +24,9 @@ namespace scifir
 			zid& operator =(zid&& x);
 			zid& operator =(const string& init_zid_full);
 
+			bool has_no_country() const;
+			bool has_unknown_country() const;
+
 			scifir::aid aid;
 			vector<string> regions;
 			string country;

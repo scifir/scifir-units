@@ -88,6 +88,17 @@ TEST_CASE("zid class") {
 		CHECK(e.zone == "providencia");
 	}
 
+	SECTION("has_no_country() ad has_unknown_country() of zid class")
+	{
+		zid a("unknown-country:big-mountains");
+		CHECK(a.has_unknown_country());
+		zid b("(P)universe:milky-way:solar-system:mars no-country:southern-highlands:noachis-terra");
+		CHECK(b.has_no_country());
+		zid c("(P)universe:milky-way:solar-system:earth argentina:provincia-de-buenos-aires:buenos-aires:san-telmo");
+		CHECK(c.has_no_country() == false);
+		CHECK(c.has_unknown_country() == false);
+	}
+
 	SECTION("to_string() of zid class")
 	{
 		zid a;

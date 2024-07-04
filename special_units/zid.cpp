@@ -72,6 +72,30 @@ namespace scifir
 		return *this;
 	}
 
+	bool zid::has_no_country() const
+	{
+		if (country == "no-country")
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	bool zid::has_unknown_country() const
+	{
+		if (country == "unknown-country")
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	void zid::initialize_from_string(const string& init_zid_full)
 	{
 		if (init_zid_full != "")
