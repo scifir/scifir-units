@@ -15,11 +15,17 @@ namespace scifir
 				return false;
 			}
 			int imaginary_length = int(numbers[1].length()) - 3;
+			if (imaginary_length <= 0)
+			{
+				return false;
+			}
 			if (numbers[1].substr(imaginary_length) == "(i)")
 			{
 				bool dot_present = false;
 				bool after_whitespace = false;
 				bool after_alpha = false;
+				boost::trim(numbers[0]);
+				boost::trim(numbers[1]);
 				for (unsigned int i = 0; i < numbers[0].length(); i++)
 				{
 					if (numbers[0][i] == '.')
@@ -43,19 +49,19 @@ namespace scifir
 					{
 						return false;
 					}
-					else if (!std::isalpha(numbers[0][i]) and after_whitespace == true)
+					else if (after_whitespace == true)
 					{
 						if (after_alpha == true and std::isalpha(numbers[0][i]))
 						{
 							return false;
 						}
+						else if (std::isalpha(numbers[0][i]))
+						{
+							continue;
+						}
 						else if (std::isdigit(numbers[0][i]))
 						{
 							after_alpha = true;
-						}
-						else
-						{
-							return false;
 						}
 					}
 				}
@@ -85,19 +91,19 @@ namespace scifir
 					{
 						return false;
 					}
-					else if (!std::isalpha(numbers[1][i]) and after_whitespace == true)
+					else if (after_whitespace == true)
 					{
 						if (after_alpha == true and std::isalpha(numbers[1][i]))
 						{
 							return false;
 						}
+						else if (std::isalpha(numbers[1][i]))
+						{
+							continue;
+						}
 						else if (std::isdigit(numbers[1][i]))
 						{
 							after_alpha = true;
-						}
-						else
-						{
-							return false;
 						}
 					}
 				}

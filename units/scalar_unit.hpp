@@ -47,7 +47,7 @@
 	}
 
 #define SCALAR_UNIT_CPP(name,init_dimensions) name::name() : scalar_unit() { \
-	dimensions = real_dimensions; \
+	scalar_unit::dimensions = name::real_dimensions; \
 } \
 \
 	name::name(const scalar_unit& x) \

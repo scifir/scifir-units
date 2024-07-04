@@ -34,7 +34,7 @@ namespace scifir
 			explicit complex_number(const string& x,const string& y) : real(x),imaginary(y)
 			{}
 
-			explicit complex_number(const string& init_complex_number) : complex_number()
+			explicit complex_number(const string& init_complex_number)
 			{
 				if (init_complex_number.find("+") != string::npos or init_complex_number.find("-") != string::npos)
 				{
@@ -46,8 +46,8 @@ namespace scifir
 						boost::trim(numbers[1]);
 						if (numbers[1].substr(numbers[1].length() - 3) == "(i)")
 						{
-							real = T(numbers[0]);
-							imaginary = T(numbers[1].substr(0,numbers[1].length() - 3));
+							real = scalar_unit(numbers[0]);
+							imaginary = scalar_unit(numbers[1].substr(0,numbers[1].length() - 3));
 							if (init_complex_number.find("-") != string::npos)
 							{
 								imaginary *= -1;
@@ -173,9 +173,7 @@ namespace scifir
 	template<typename T>
 	string to_string(const complex_number<T>& x)
 	{
-		ostringstream output;
-		output << x.display(2);
-		return output.str();
+		return x.display(2);
 	}
 
 	bool is_complex(const string& init_complex_number);
@@ -236,7 +234,7 @@ bool operator !=(const scifir::complex_number<T>& x, const scifir::complex_numbe
 template<typename T>
 bool operator ==(const scifir::complex_number<T>& x, const string& init_complex_number)
 {
-	return (x == scifir::complex_number<scifir::scalar_unit>(init_complex_number));
+	return (x == scifir::complex_number<T>(init_complex_number));
 }
 
 template<typename T>
@@ -248,7 +246,7 @@ bool operator !=(const scifir::complex_number<T>& x, const string& init_complex_
 template<typename T>
 bool operator ==(const string& init_complex_number, const scifir::complex_number<T>& x)
 {
-	return (scifir::complex_number<scifir::scalar_unit>(init_complex_number) == x);
+	return (scifir::complex_number<T>(init_complex_number) == x);
 }
 
 template<typename T>

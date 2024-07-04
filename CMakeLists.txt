@@ -171,6 +171,16 @@ if(BUILD_TESTING)
 		add_test(NAME angle COMMAND test_angle)
 		set_tests_properties(angle PROPERTIES LABELS tests)
 
+		add_executable(test_complex_number tests/meca_number/test_complex_number.cpp)
+		target_link_libraries(test_complex_number PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		add_test(NAME complex_number COMMAND test_complex_number)
+		set_tests_properties(complex_number PROPERTIES LABELS tests)
+
+		add_executable(test_lab_number tests/meca_number/test_lab_number.cpp)
+		target_link_libraries(test_lab_number PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
+		add_test(NAME lab_number COMMAND test_lab_number)
+		set_tests_properties(lab_number PROPERTIES LABELS tests)
+
 		add_executable(test_unit_basic tests/units/test_unit_basic.cpp)
 		target_link_libraries(test_unit_basic PRIVATE Catch2::Catch2WithMain scifir-units Boost::system icuuc)
 		add_test(NAME unit_basic COMMAND test_unit_basic)
