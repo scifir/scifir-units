@@ -364,7 +364,7 @@ namespace scifir
 			}
 			long double x_value = get_value();
 			x_value *= dimensions[0].prefix_math();
-			x_value /= prefix_math(dimensions[0],display_prefix);
+			x_value /= dimensions[0].prefix_math(display_prefix);
 			vector<dimension> x_dimensions = dimensions;
 			x_dimensions[0].prefix = display_prefix;
 			output << display_float(float(x_value),number_of_decimals) << " " << to_string(x_dimensions,with_brackets);
@@ -386,7 +386,7 @@ namespace scifir
 			int value_scale = int(log10(get_value()));
 			prefix display_prefix = closest_prefix(derived_dimensions[0].prefix,value_scale);
 			x_value *= derived_dimensions[0].prefix_math();
-			x_value /= prefix_math(derived_dimensions[0],display_prefix);
+			x_value /= derived_dimensions[0].prefix_math(display_prefix);
 			vector<dimension> x_dimensions = derived_dimensions;
 			x_dimensions[0].prefix = display_prefix;
 			output << display_float(float(x_value),number_of_decimals) << " " << to_string(derived_dimensions,with_brackets);

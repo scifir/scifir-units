@@ -49,6 +49,7 @@ namespace scifir
 			string get_symbol() const;
 			long double get_conversion_factor() const;
 			long double prefix_math() const;
+			long double prefix_math(const prefix& x_prefix) const;
 
 			bool is_simple_dimension() const;
 			bool is_basic_dimension() const;
@@ -164,7 +165,6 @@ namespace scifir
 	vector<dimension> create_derived_dimensions(const vector<dimension>& x);
 	vector<dimension> create_derived_dimensions(const vector<dimension>& x,long double& value);
 
-	long double prefix_math(const dimension& x_dimension,const prefix& x_prefix);
 	vector<dimension> multiply_dimensions(const vector<dimension>& x,const vector<dimension>& y);
 	vector<dimension> multiply_dimensions(vector<dimension> x,const vector<dimension>& y,long double& value);
 	vector<dimension> divide_dimensions(vector<dimension> x,const vector<dimension>& y,long double& value);

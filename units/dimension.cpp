@@ -665,7 +665,19 @@ namespace scifir
 
 	long double dimension::prefix_math() const
 	{
-		return scifir::prefix_math(*this, prefix);
+		return prefix_math(prefix);
+	}
+
+	long double dimension::prefix_math(const scifir::prefix& x_prefix) const
+	{
+		if (dimension_type == dimension::B)
+		{
+			return std::pow(1024, x_prefix.get_conversion_factor() / 3);
+		}
+		else
+		{
+			return std::pow(10, x_prefix.get_conversion_factor());
+		}
 	}
 
 	bool dimension::is_simple_dimension() const
@@ -1362,18 +1374,6 @@ namespace scifir
 			}
 		}
 		return new_x;
-	}
-
-	long double prefix_math(const dimension& x_dimension,const prefix& x_prefix)
-	{
-		if (x_dimension.dimension_type == dimension::B)
-		{
-			return std::pow(1024, x_prefix.get_conversion_factor() / 3);
-		}
-		else
-		{
-			return std::pow(10, x_prefix.get_conversion_factor());
-		}
 	}
 
 	vector<dimension> multiply_dimensions(const vector<dimension>& x,const vector<dimension>& y)
