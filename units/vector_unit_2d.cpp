@@ -18,63 +18,69 @@ namespace scifir
 	vector_unit_2d::vector_unit_2d(vector_unit_2d&& x) : scalar_unit(std::move(x)),theta(std::move(x.theta))
 	{}
 	
-	vector_unit_2d::vector_unit_2d(float new_value,const string& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(float new_value,const string& init_dimensions,float new_theta) : scalar_unit(new_value,init_dimensions),theta(new_theta)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(float new_value,const string& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(float new_value,const string& init_dimensions,const angle& new_theta) : scalar_unit(new_value,init_dimensions),theta(new_theta)
 	{}
 
-	vector_unit_2d::vector_unit_2d(double new_value,const string& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(double new_value,const string& init_dimensions,float new_theta) : scalar_unit(new_value,init_dimensions),theta(new_theta)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(double new_value,const string& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(double new_value,const string& init_dimensions,const angle& new_theta) : scalar_unit(new_value,init_dimensions),theta(new_theta)
 	{}
 
-	vector_unit_2d::vector_unit_2d(long double new_value,const string& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(long double new_value,const string& init_dimensions,float new_theta) : scalar_unit(new_value,init_dimensions),theta(new_theta)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(long double new_value,const string& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
-	{}
-	
-	vector_unit_2d::vector_unit_2d(float new_value,const vector<dimension>& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
-	{}
-	
-	vector_unit_2d::vector_unit_2d(float new_value,const vector<dimension>& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(long double new_value,const string& init_dimensions,const angle& new_theta) : scalar_unit(new_value,init_dimensions),theta(new_theta)
 	{}
 
-	vector_unit_2d::vector_unit_2d(double new_value,const vector<dimension>& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(int new_value,const string& init_dimensions,float new_theta) : scalar_unit(new_value,init_dimensions),theta(new_theta)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(double new_value,const vector<dimension>& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(int new_value,const string& init_dimensions,const angle& new_theta) : scalar_unit(new_value,init_dimensions),theta(new_theta)
+	{}
+	
+	vector_unit_2d::vector_unit_2d(float new_value,const vector<dimension>& new_dimensions,float new_theta) : scalar_unit(new_value,new_dimensions),theta(new_theta)
+	{}
+	
+	vector_unit_2d::vector_unit_2d(float new_value,const vector<dimension>& new_dimensions,const angle& new_theta) : scalar_unit(new_value,new_dimensions),theta(new_theta)
 	{}
 
-	vector_unit_2d::vector_unit_2d(long double new_value,const vector<dimension>& new_dimensions,float new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(double new_value,const vector<dimension>& new_dimensions,float new_theta) : scalar_unit(new_value,new_dimensions),theta(new_theta)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_angle) : scalar_unit(new_value,new_dimensions),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(double new_value,const vector<dimension>& new_dimensions,const angle& new_theta) : scalar_unit(new_value,new_dimensions),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(long double new_value,const vector<dimension>& new_dimensions,float new_theta) : scalar_unit(new_value,new_dimensions),theta(new_theta)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(const scalar_unit& x,float new_angle) : scalar_unit(x),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_theta) : scalar_unit(new_value,new_dimensions),theta(new_theta)
+	{}
+
+	vector_unit_2d::vector_unit_2d(int new_value,const vector<dimension>& new_dimensions,float new_theta) : scalar_unit(new_value,new_dimensions),theta(new_theta)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(const scalar_unit& x,const angle& new_angle) : scalar_unit(x),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(int new_value,const vector<dimension>& new_dimensions,const angle& new_theta) : scalar_unit(new_value,new_dimensions),theta(new_theta)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(const string& init_scalar,float new_angle) : scalar_unit(init_scalar),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(const scalar_unit& x,float new_theta) : scalar_unit(x),theta(new_theta)
 	{}
 	
-	vector_unit_2d::vector_unit_2d(const string& init_scalar,const angle& new_angle) : scalar_unit(init_scalar),theta(new_angle)
+	vector_unit_2d::vector_unit_2d(const scalar_unit& x,const angle& new_theta) : scalar_unit(x),theta(new_theta)
 	{}
 	
+	vector_unit_2d::vector_unit_2d(const string& init_scalar,float new_theta) : scalar_unit(init_scalar),theta(new_theta)
+	{}
+	
+	vector_unit_2d::vector_unit_2d(const string& init_scalar,const angle& new_theta) : scalar_unit(init_scalar),theta(new_theta)
+	{}
+
 	vector_unit_2d::vector_unit_2d(const string& init_vector_2d) : vector_unit_2d()
 	{
-		vector<string> values;
-		boost::split(values,init_vector_2d,boost::is_any_of(" "));
-		if (values.size() == 3)
-		{
-			set_from_string(values[0] + " " + values[1]);
-			theta = angle(values[2]);
-		}
+		vector_unit_2d::initialize_from_string(init_vector_2d);
 	}
 	
 	vector_unit_2d& vector_unit_2d::operator =(const vector_unit_2d& x)
@@ -101,6 +107,25 @@ namespace scifir
 	{
 		scalar_unit::operator=(std::move(x));
 		return *this;
+	}
+
+	vector_unit_2d& vector_unit_2d::operator =(const string& init_vector_2d)
+	{
+		vector_unit_2d::initialize_from_string(init_vector_2d);
+		return *this;
+	}
+
+	bool vector_unit_2d::operator ==(scifir::vector_unit_2d x) const
+	{
+		x.change_dimensions(*this);
+		if(get_value() == x.get_value() and scifir::same_direction(*this,x) and has_dimensions(x))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	void vector_unit_2d::point_to(direction::name x)
@@ -139,14 +164,14 @@ namespace scifir
 		}
 	}
 
-	void vector_unit_2d::operator +=(const vector_unit_2d& y)
+	void vector_unit_2d::operator +=(const vector_unit_2d& x)
 	{
-		if(has_dimensions(y))
+		if(has_dimensions(x))
 		{
-				float new_x = float(x_projection() + y.x_projection());
-				float new_y = float(y_projection() + y.y_projection());
-				scalar_unit::value = cartesian_2d_to_polar_r(new_x, new_y);
-				theta = angle(cartesian_2d_to_polar_theta(new_x, new_y));
+				float new_x = float(x_projection() + x.x_projection());
+				float new_y = float(y_projection() + x.y_projection());
+				scalar_unit::value = cartesian_2d_to_polar_p(new_x, new_y);
+				theta = cartesian_2d_to_polar_theta(new_x, new_y);
 		}
 		else
 		{
@@ -154,12 +179,12 @@ namespace scifir
 		}
 	}
 
-	void vector_unit_2d::operator -=(vector_unit_2d y)
+	void vector_unit_2d::operator -=(vector_unit_2d x)
 	{
-		if(has_dimensions(y))
+		if(has_dimensions(x))
 		{
-			y.invert();
-			*this += y;
+			x.invert();
+			*this += x;
 		}
 		else
 		{
@@ -167,14 +192,14 @@ namespace scifir
 		}
 	}
 
-	vector_unit_2d vector_unit_2d::operator +(const vector_unit_2d& y) const
+	vector_unit_2d vector_unit_2d::operator +(const vector_unit_2d& x) const
 	{
-		if (has_dimensions(y))
+		if (has_dimensions(x))
 		{
-			float new_x = float(x_projection() + y.x_projection());
-			float new_y = float(y_projection() + y.y_projection());
-			float value = cartesian_2d_to_polar_r(new_x, new_y);
-			angle theta = angle(cartesian_2d_to_polar_theta(new_x, new_y));
+			float new_x = float(x_projection() + x.x_projection());
+			float new_y = float(y_projection() + x.y_projection());
+			float value = cartesian_2d_to_polar_p(new_x, new_y);
+			angle theta = cartesian_2d_to_polar_theta(new_x, new_y);
 			return vector_unit_2d(value,get_dimensions(),theta);
 		}
 		else
@@ -183,15 +208,15 @@ namespace scifir
 		}
 	}
 
-	vector_unit_2d vector_unit_2d::operator -(vector_unit_2d y) const
+	vector_unit_2d vector_unit_2d::operator -(vector_unit_2d x) const
 	{
-		if (has_dimensions(y))
+		if (has_dimensions(x))
 		{
-			y.invert();
-			float new_x = float(x_projection() + y.x_projection());
-			float new_y = float(y_projection() + y.y_projection());
-			float value = cartesian_2d_to_polar_r(new_x, new_y);
-			angle theta = angle(cartesian_2d_to_polar_theta(new_x, new_y));
+			x.invert();
+			float new_x = float(x_projection() + x.x_projection());
+			float new_y = float(y_projection() + x.y_projection());
+			float value = cartesian_2d_to_polar_p(new_x, new_y);
+			angle theta = cartesian_2d_to_polar_theta(new_x, new_y);
 			return vector_unit_2d(value,get_dimensions(),theta);
 		}
 		else
@@ -243,18 +268,16 @@ namespace scifir
 		return out.str();
 	}
 
-	string vector_unit_2d::vectorial_custom_display(const string& new_dimensions_str,int number_of_decimals) const
+	string vector_unit_2d::vectorial_custom_display(const string& init_dimensions,int number_of_decimals) const
 	{
 		ostringstream out;
-		out << custom_display(new_dimensions_str,number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U000003B8";
+		out << custom_display(init_dimensions,number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U000003B8";
 		return out.str();
 	}
 
 	string to_string(const vector_unit_2d& x)
 	{
-		ostringstream out;
-		out << x.display(2) << " " << display_float(x.theta.get_value(),2) << "\U000003B8";
-		return out.str();
+		return x.vectorial_display(2);
 	}
 #elif IS_WINDOWS
 	string vector_unit_2d::vectorial_display(int number_of_decimals) const
@@ -271,20 +294,29 @@ namespace scifir
 		return out.str();
 	}
 
-	string vector_unit_2d::vectorial_custom_display(const string& new_dimensions_str,int number_of_decimals) const
+	string vector_unit_2d::vectorial_custom_display(const string& init_dimensions,int number_of_decimals) const
 	{
 		ostringstream out;
-		out << custom_display(new_dimensions_str,number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U03B8";
+		out << custom_display(init_dimensions,number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U03B8";
 		return out.str();
 	}
 
 	string to_string(const vector_unit_2d& x)
 	{
-		ostringstream out;
-		out << x.display(2) << " " << display_float(x.theta.get_value(),2) << "\U03B8";
-		return out.str();
+		return x.vectorial_display(2);
 	}
 #endif
+
+	void vector_unit_2d::initialize_from_string(string init_vector_2d)
+	{
+		vector<string> values;
+		boost::split(values,init_vector_2d,boost::is_any_of(" "));
+		if (values.size() == 3)
+		{
+			scalar_unit::initialize_from_string(values[0] + " " + values[1]);
+			theta = angle(values[2]);
+		}
+	}
 
 	scalar_unit norm(const vector_unit_2d& x)
 	{
@@ -297,9 +329,9 @@ namespace scifir
 		return vector_unit_2d(new_value, x.theta);
 	}
 
-	vector_unit_2d sqrt_nth(const vector_unit_2d& x, int y)
+	vector_unit_2d sqrt_nth(const vector_unit_2d& x, int index)
 	{
-		scalar_unit new_value = scifir::sqrt_nth(scalar_unit(x), y);
+		scalar_unit new_value = scifir::sqrt_nth(scalar_unit(x), index);
 		return vector_unit_2d(new_value, x.theta);
 	}
 
@@ -331,61 +363,48 @@ namespace scifir
 	}
 }
 
-vector_unit_2d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_2d& y)
+scifir::vector_unit_2d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_2d& y)
 {
 	long double new_value = x.get_value() * y.get_value();
-	vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
-	return vector_unit_2d(float(new_value), new_dimensions, y.theta);
+	vector<scifir::dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
+	return scifir::vector_unit_2d(float(new_value), new_dimensions, y.theta);
 }
 
-bool operator ==(const vector_unit_2d& x, vector_unit_2d y)
-{
-	y.change_dimensions(x);
-	if(x.get_value() == y.get_value() and scifir::same_direction(x,y) and x.has_dimensions(y))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-bool operator !=(const vector_unit_2d& x, const vector_unit_2d& y)
+bool operator !=(const scifir::vector_unit_2d& x, const scifir::vector_unit_2d& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const vector_unit_2d& x, const string& y)
+bool operator ==(const scifir::vector_unit_2d& x, const string& init_vector_2d)
 {
-	vector_unit_2d y_vector = vector_unit_2d(y);
-	return (x == y_vector);
+	scifir::vector_unit_2d y(init_vector_2d);
+	return (x == y);
 }
 
-bool operator !=(const vector_unit_2d& x, const string& y)
+bool operator !=(const scifir::vector_unit_2d& x, const string& init_vector_2d)
 {
-	return !(x == y);
+	return !(x == init_vector_2d);
 }
 
-bool operator ==(const string& x, const vector_unit_2d& y)
+bool operator ==(const string& init_vector_2d, const scifir::vector_unit_2d& x)
 {
-	vector_unit_2d x_vector = vector_unit_2d(x);
-	return (x_vector == y);
+	scifir::vector_unit_2d y(init_vector_2d);
+	return (y == x);
 }
 
-bool operator !=(const string& x, const vector_unit_2d& y)
+bool operator !=(const string& init_vector_2d, const scifir::vector_unit_2d& x)
 {
-	return !(x == y);
+	return !(init_vector_2d == x);
 }
 
-void operator +=(string& x, const vector_unit_2d& y)
+void operator +=(string& x, const scifir::vector_unit_2d& y)
 {
 	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-string operator +(const string& x, const vector_unit_2d& y)
+string operator +(const string& x, const scifir::vector_unit_2d& y)
 {
 	ostringstream output;
 	output << x;
@@ -393,7 +412,7 @@ string operator +(const string& x, const vector_unit_2d& y)
 	return output.str();
 }
 
-string operator +(const vector_unit_2d& y, const string& x)
+string operator +(const scifir::vector_unit_2d& y, const string& x)
 {
 	ostringstream output;
 	output << y;
@@ -401,19 +420,18 @@ string operator +(const vector_unit_2d& y, const string& x)
 	return output.str();
 }
 
-ostream& operator <<(ostream& os, const vector_unit_2d& x)
+ostream& operator <<(ostream& os, const scifir::vector_unit_2d& x)
 {
 	return os << to_string(x);
 }
 
-istream& operator >>(istream& is, vector_unit_2d& x)
+istream& operator >>(istream& is, scifir::vector_unit_2d& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	vector_unit_2d c(b);
-	x = c;
+	x = scifir::vector_unit_2d(b);
 	return is;
 }
  

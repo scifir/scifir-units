@@ -6,8 +6,6 @@ namespace scifir
 {
 	string to_string(const size_2d<float>& x)
 	{
-		ostringstream output;
-		output << x.width << " * " << x.height;
-		return output.str();
+		return x.display();
 	}
 }

@@ -30,6 +30,48 @@ namespace scifir
 	vector_unit_nd::vector_unit_nd(float new_value,const string& init_dimensions,const vector<angle>& new_angles) : scalar_unit(new_value,init_dimensions),angles(new_angles)
 	{}
 
+	vector_unit_nd::vector_unit_nd(double new_value,const string& init_dimensions) : scalar_unit(new_value,init_dimensions),angles()
+	{}
+
+	vector_unit_nd::vector_unit_nd(double new_value,const string& init_dimensions,const vector<float>& new_angles) : scalar_unit(new_value,init_dimensions),angles()
+	{
+		for(const float& x_angle : new_angles)
+		{
+			angles.push_back(angle(x_angle));
+		}
+	}
+
+	vector_unit_nd::vector_unit_nd(double new_value,const string& init_dimensions,const vector<angle>& new_angles) : scalar_unit(new_value,init_dimensions),angles(new_angles)
+	{}
+
+	vector_unit_nd::vector_unit_nd(long double new_value,const string& init_dimensions) : scalar_unit(new_value,init_dimensions),angles()
+	{}
+
+	vector_unit_nd::vector_unit_nd(long double new_value,const string& init_dimensions,const vector<float>& new_angles) : scalar_unit(new_value,init_dimensions),angles()
+	{
+		for(const float& x_angle : new_angles)
+		{
+			angles.push_back(angle(x_angle));
+		}
+	}
+
+	vector_unit_nd::vector_unit_nd(long double new_value,const string& init_dimensions,const vector<angle>& new_angles) : scalar_unit(new_value,init_dimensions),angles(new_angles)
+	{}
+
+	vector_unit_nd::vector_unit_nd(int new_value,const string& init_dimensions) : scalar_unit(new_value,init_dimensions),angles()
+	{}
+
+	vector_unit_nd::vector_unit_nd(int new_value,const string& init_dimensions,const vector<float>& new_angles) : scalar_unit(new_value,init_dimensions),angles()
+	{
+		for(const float& x_angle : new_angles)
+		{
+			angles.push_back(angle(x_angle));
+		}
+	}
+
+	vector_unit_nd::vector_unit_nd(int new_value,const string& init_dimensions,const vector<angle>& new_angles) : scalar_unit(new_value,init_dimensions),angles(new_angles)
+	{}
+
 	vector_unit_nd::vector_unit_nd(float new_value,const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions),angles()
 	{}
 
@@ -42,6 +84,48 @@ namespace scifir
 	}
 
 	vector_unit_nd::vector_unit_nd(float new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles) : scalar_unit(new_value,new_dimensions),angles(new_angles)
+	{}
+
+	vector_unit_nd::vector_unit_nd(double new_value,const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions),angles()
+	{}
+
+	vector_unit_nd::vector_unit_nd(double new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles) : scalar_unit(new_value,new_dimensions),angles()
+	{
+		for(const float& x_angle : new_angles)
+		{
+			angles.push_back(angle(x_angle));
+		}
+	}
+
+	vector_unit_nd::vector_unit_nd(double new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles) : scalar_unit(new_value,new_dimensions),angles(new_angles)
+	{}
+
+	vector_unit_nd::vector_unit_nd(long double new_value,const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions),angles()
+	{}
+
+	vector_unit_nd::vector_unit_nd(long double new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles) : scalar_unit(new_value,new_dimensions),angles()
+	{
+		for(const float& x_angle : new_angles)
+		{
+			angles.push_back(angle(x_angle));
+		}
+	}
+
+	vector_unit_nd::vector_unit_nd(long double new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles) : scalar_unit(new_value,new_dimensions),angles(new_angles)
+	{}
+
+	vector_unit_nd::vector_unit_nd(int new_value,const vector<dimension>& new_dimensions) : scalar_unit(new_value,new_dimensions),angles()
+	{}
+
+	vector_unit_nd::vector_unit_nd(int new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles) : scalar_unit(new_value,new_dimensions),angles()
+	{
+		for(const float& x_angle : new_angles)
+		{
+			angles.push_back(angle(x_angle));
+		}
+	}
+
+	vector_unit_nd::vector_unit_nd(int new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles) : scalar_unit(new_value,new_dimensions),angles(new_angles)
 	{}
 
 	vector_unit_nd::vector_unit_nd(const scalar_unit& x) : scalar_unit(x),angles()
@@ -71,16 +155,7 @@ namespace scifir
 
 	vector_unit_nd::vector_unit_nd(const string& init_vector_nd) : vector_unit_nd()
 	{
-		vector<string> values;
-		boost::split(values,init_vector_nd,boost::is_any_of(" "));
-		set_from_string(values[0] + " " + values[1]);
-		if (values.size() > 2)
-		{
-			for (unsigned int i = 2; i < values.size(); i++)
-			{
-				angles.push_back(angle(values[i]));
-			}
-		}
+		vector_unit_nd::initialize_from_string(init_vector_nd);
 	}
 
 	vector_unit_nd& vector_unit_nd::operator =(const vector_unit_nd& x)
@@ -107,6 +182,25 @@ namespace scifir
 	{
 		scalar_unit::operator=(std::move(x));
 		return *this;
+	}
+
+	vector_unit_nd& vector_unit_nd::operator =(const string& init_vector_nd)
+	{
+		vector_unit_nd::initialize_from_string(init_vector_nd);
+		return *this;
+	}
+
+	bool vector_unit_nd::operator ==(scifir::vector_unit_nd x) const
+	{
+		x.change_dimensions(*this);
+		if(get_value() == x.get_value() and scifir::same_direction(*this,x) and has_dimensions(x))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	void vector_unit_nd::point_to(direction::name x)
@@ -298,26 +392,26 @@ namespace scifir
 		}
 	}
 
-	void vector_unit_nd::operator +=(const vector_unit_nd& y)
+	void vector_unit_nd::operator +=(const vector_unit_nd& x)
 	{
-		if(has_dimensions(y) and get_nd() == y.get_nd())
+		if(has_dimensions(x) and get_nd() == x.get_nd())
 		{
 			if(is_nd(1))
 			{
-				scalar_unit::value += y.get_value();
+				scalar_unit::value += x.get_value();
 			}
 			else if(is_nd(2))
 			{
-				float new_x = float(x_projection() + y.x_projection());
-				float new_y = float(y_projection() + y.y_projection());
-				scalar_unit::value = cartesian_2d_to_polar_r(new_x, new_y);
+				float new_x = float(x_projection() + x.x_projection());
+				float new_y = float(y_projection() + x.y_projection());
+				scalar_unit::value = cartesian_2d_to_polar_p(new_x, new_y);
 				angles[0] = cartesian_2d_to_polar_theta(new_x, new_y);
 			}
 			else if(is_nd(3))
 			{
-				float new_x = float(x_projection() + y.x_projection());
-				float new_y = float(y_projection() + y.y_projection());
-				float new_z = float(z_projection() + y.z_projection());
+				float new_x = float(x_projection() + x.x_projection());
+				float new_y = float(y_projection() + x.y_projection());
+				float new_z = float(z_projection() + x.z_projection());
 				scalar_unit::value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
 				angles[0] = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
 				angles[1] = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
@@ -329,12 +423,12 @@ namespace scifir
 		}
 	}
 
-	void vector_unit_nd::operator -=(vector_unit_nd y)
+	void vector_unit_nd::operator -=(vector_unit_nd x)
 	{
-		if(has_dimensions(y))
+		if(has_dimensions(x))
 		{
-			y.invert();
-			*this += y;
+			x.invert();
+			*this += x;
 		}
 		else
 		{
@@ -342,29 +436,29 @@ namespace scifir
 		}
 	}
 
-	vector_unit_nd vector_unit_nd::operator +(const vector_unit_nd& y) const
+	vector_unit_nd vector_unit_nd::operator +(const vector_unit_nd& x) const
 	{
-		if(has_dimensions(y))
+		if(has_dimensions(x))
 		{
 			if(is_nd(1))
 			{
-				float new_value = scalar_unit::value + y.get_value();
+				float new_value = scalar_unit::value + x.get_value();
 				return vector_unit_nd(new_value,get_dimensions());
 			}
 			else if(is_nd(2))
 			{
-				float new_x = float(x_projection() + y.x_projection());
-				float new_y = float(y_projection() + y.y_projection());
-				float new_value = cartesian_2d_to_polar_r(new_x, new_y);
+				float new_x = float(x_projection() + x.x_projection());
+				float new_y = float(y_projection() + x.y_projection());
+				float new_value = cartesian_2d_to_polar_p(new_x, new_y);
 				vector<angle> new_angles = vector<angle>();
-				new_angles.push_back(angle(cartesian_2d_to_polar_theta(new_x, new_y)));
+				new_angles.push_back(cartesian_2d_to_polar_theta(new_x, new_y));
 				return vector_unit_nd(new_value,get_dimensions(),new_angles);
 			}
 			else if(is_nd(3))
 			{
-				float new_x = float(x_projection() + y.x_projection());
-				float new_y = float(y_projection() + y.y_projection());
-				float new_z = float(z_projection() + y.z_projection());
+				float new_x = float(x_projection() + x.x_projection());
+				float new_y = float(y_projection() + x.y_projection());
+				float new_z = float(z_projection() + x.z_projection());
 				float new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
 				vector<angle> new_angles = vector<angle>();
 				new_angles.push_back(angle(cartesian_3d_to_spherical_theta(new_x, new_y, new_z)));
@@ -383,30 +477,31 @@ namespace scifir
 		}
 	}
 
-	vector_unit_nd vector_unit_nd::operator -(vector_unit_nd y) const
+	vector_unit_nd vector_unit_nd::operator -(vector_unit_nd x) const
 	{
-		if(has_dimensions(y))
+		if(has_dimensions(x))
 		{
-			y.invert();
 			if(is_nd(1))
 			{
-				float new_value = scalar_unit::value + y.get_value();
+				float new_value = scalar_unit::value - x.get_value();
 				return vector_unit_nd(new_value,get_dimensions());
 			}
 			else if(is_nd(2))
 			{
-				float new_x = float(x_projection() + y.x_projection());
-				float new_y = float(y_projection() + y.y_projection());
-				float new_value = cartesian_2d_to_polar_r(new_x, new_y);
+				x.invert();
+				float new_x = float(x_projection() + x.x_projection());
+				float new_y = float(y_projection() + x.y_projection());
+				float new_value = cartesian_2d_to_polar_p(new_x, new_y);
 				vector<angle> new_angles = vector<angle>();
-				new_angles.push_back(angle(cartesian_2d_to_polar_theta(new_x, new_y)));
+				new_angles.push_back(cartesian_2d_to_polar_theta(new_x, new_y));
 				return vector_unit_nd(new_value,get_dimensions(),new_angles);
 			}
 			else if(is_nd(3))
 			{
-				float new_x = float(x_projection() + y.x_projection());
-				float new_y = float(y_projection() + y.y_projection());
-				float new_z = float(z_projection() + y.z_projection());
+				x.invert();
+				float new_x = float(x_projection() + x.x_projection());
+				float new_y = float(y_projection() + x.y_projection());
+				float new_z = float(z_projection() + x.z_projection());
 				float new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
 				vector<angle> new_angles = vector<angle>();
 				new_angles.push_back(angle(cartesian_3d_to_spherical_theta(new_x, new_y, new_z)));
@@ -429,22 +524,21 @@ namespace scifir
 	{
 		long double new_value = scalar_unit::value * x.get_value();
 		vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(), x.get_dimensions(),new_value);
-		scalar_unit new_unit = scalar_unit(float(new_value), new_dimensions);
 		if(is_nd(1))
 		{
-			return vector_unit_nd(new_unit);
+			return vector_unit_nd(float(new_value), new_dimensions);
 		}
 		else if(is_nd(2))
 		{
-			return vector_unit_nd(new_unit, {angles[0]});
+			return vector_unit_nd(float(new_value), new_dimensions, {angles[0]});
 		}
 		else if(is_nd(3))
 		{
-			return vector_unit_nd(new_unit, {angles[0], angles[1]});
+			return vector_unit_nd(float(new_value), new_dimensions, {angles[0], angles[1]});
 		}
 		else
 		{
-			return vector_unit_nd(new_unit, angles);
+			return vector_unit_nd(float(new_value), new_dimensions, angles);
 		}
 	}
 
@@ -452,22 +546,21 @@ namespace scifir
 	{
 		long double new_value = scalar_unit::value / x.get_value();
 		vector<dimension> new_dimensions = divide_dimensions(get_dimensions(), x.get_dimensions(),new_value);
-		scalar_unit new_unit = scalar_unit(float(new_value), new_dimensions);
 		if(is_nd(1))
 		{
-			return vector_unit_nd(new_unit);
+			return vector_unit_nd(float(new_value), new_dimensions);
 		}
 		else if(is_nd(2))
 		{
-			return vector_unit_nd(new_unit, {angles[0]});
+			return vector_unit_nd(float(new_value), new_dimensions, {angles[0]});
 		}
 		else if(is_nd(3))
 		{
-			return vector_unit_nd(new_unit, {angles[0], angles[1]});
+			return vector_unit_nd(float(new_value), new_dimensions, {angles[0], angles[1]});
 		}
 		else
 		{
-			return vector_unit_nd(new_unit, angles);
+			return vector_unit_nd(float(new_value), new_dimensions, angles);
 		}
 	}
 
@@ -475,7 +568,7 @@ namespace scifir
 	{
 		if(x.has_empty_dimensions())
 		{
-			scalar_unit new_unit = *this ^ x;
+			scalar_unit new_unit = scalar_unit::operator^(x);
 			if(is_nd(1))
 			{
 				return vector_unit_nd(new_unit);
@@ -490,11 +583,12 @@ namespace scifir
 			}
 			else
 			{
-				return vector_unit_nd();
+				return vector_unit_nd(new_unit, angles);
 			}
 		}
 		else
 		{
+			cerr << "Cannot power with as exponent a unit with dimensions" << endl;
 			return vector_unit_nd();
 		}
 	}
@@ -581,9 +675,14 @@ namespace scifir
 
 	void vector_unit_nd::invert()
 	{
-		for(angle& x_angle : angles)
+		if (is_nd(2))
 		{
-			x_angle.invert();
+			angles[0].invert();
+		}
+		else if (is_nd(3))
+		{
+			angles[0].invert();
+			angles[1] = 180.0f - angles[1];
 		}
 	}
 
@@ -609,10 +708,10 @@ namespace scifir
 		return out.str();
 	}
 
-	string vector_unit_nd::vectorial_custom_display(const string& new_dimensions_str,int number_of_decimals) const
+	string vector_unit_nd::vectorial_custom_display(const string& init_dimensions,int number_of_decimals) const
 	{
 		ostringstream out;
-		out << custom_display(new_dimensions_str,number_of_decimals);
+		out << custom_display(init_dimensions,number_of_decimals);
 		for (const angle& x_angle : angles)
 		{
 			out << " " << x_angle.display(number_of_decimals);
@@ -620,15 +719,24 @@ namespace scifir
 		return out.str();
 	}
 
+	void vector_unit_nd::initialize_from_string(string init_vector_nd)
+	{
+		vector<string> values;
+		boost::split(values,init_vector_nd,boost::is_any_of(" "));
+		scalar_unit::initialize_from_string(values[0] + " " + values[1]);
+		if (values.size() > 2)
+		{
+			angles.clear();
+			for (unsigned int i = 2; i < values.size(); i++)
+			{
+				angles.push_back(angle(values[i]));
+			}
+		}
+	}
+
 	string to_string(const vector_unit_nd& x)
 	{
-		ostringstream out;
-		out << x.display(2);
-		for (const angle& x_angle : x.angles)
-		{
-			out << " " << x_angle.display(2);
-		}
-		return out.str();
+		return x.vectorial_display(2);
 	}
 
 	scalar_unit norm(const vector_unit_nd& x)
@@ -642,9 +750,9 @@ namespace scifir
 		return vector_unit_nd(new_value, x.angles);
 	}
 
-	vector_unit_nd sqrt_nth(const vector_unit_nd& x, int y)
+	vector_unit_nd sqrt_nth(const vector_unit_nd& x, int index)
 	{
-		scalar_unit new_value = scifir::sqrt_nth(scalar_unit(x), y);
+		scalar_unit new_value = scifir::sqrt_nth(scalar_unit(x), index);
 		return vector_unit_nd(new_value, x.angles);
 	}
 
@@ -660,13 +768,11 @@ namespace scifir
 		if(x.is_nd(3) and y.is_nd(3))
 		{
 			long double new_value;
-			float angle1;
-			float angle2;
+			angle new_theta;
+			angle new_phi;
 			if(y.angles[0] == x.angles[0] and y.angles[1] == x.angles[1])
 			{
-				new_value = 0;
-				angle1 = 0;
-				angle2 = 0;
+				new_value = 0.0l;
 			}
 			else
 			{
@@ -674,14 +780,14 @@ namespace scifir
 				float new_y = float(x.z_projection() * y.x_projection() - x.x_projection() * y.z_projection());
 				float new_z = float(x.x_projection() * y.y_projection() - x.y_projection() * y.x_projection());
 				new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
-				angle1 = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
-				angle2 = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
+				new_theta = cartesian_3d_to_spherical_theta(new_x, new_y, new_z);
+				new_phi = cartesian_3d_to_spherical_phi(new_x, new_y, new_z);
 			}
 			vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
 			scalar_unit new_unit = scalar_unit(float(new_value), new_dimensions);
 			vector<angle> angles;
-			angles.push_back(angle(angle1));
-			angles.push_back(angle(angle2));
+			angles.push_back(new_theta);
+			angles.push_back(new_phi);
 			return vector_unit_nd(new_unit, angles);
 		}
 		else
@@ -725,14 +831,7 @@ namespace scifir
 		{
 			if (x.get_nd() == 1)
 			{
-				if ((x.get_value() >= 0 and y.get_value() >= 0) or (x.get_value() <= 0 and y.get_value() <= 0))
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
+				return true;
 			}
 			else if (x.get_nd() == 2)
 			{
@@ -750,10 +849,7 @@ namespace scifir
 				}
 			}
 		}
-		else
-		{
-			return false;
-		}
+		return false;
 	}
 
 	bool orthogonal(const vector_unit_nd& x,const vector_unit_nd& y)
@@ -774,61 +870,67 @@ namespace scifir
 				return (x_angle == 90.0f);
 			}
 		}
-		else
-		{
-			return false;
-		}
-	}
-}
-
-bool operator ==(const vector_unit_nd& x, vector_unit_nd y)
-{
-	y.change_dimensions(x);
-	if(x.get_value() == y.get_value() and scifir::same_direction(x,y) and x.has_dimensions(y))
-	{
-		return true;
-	}
-	else
-	{
 		return false;
 	}
 }
 
-bool operator !=(const vector_unit_nd& x, const vector_unit_nd& y)
+scifir::vector_unit_nd operator *(const scifir::scalar_unit& x,const scifir::vector_unit_nd& y)
+{
+	long double new_value = y.get_value() * x.get_value();
+	vector<scifir::dimension> new_dimensions = multiply_dimensions(y.get_dimensions(), x.get_dimensions(),new_value);
+	if(y.is_nd(1))
+	{
+		return scifir::vector_unit_nd(float(new_value), new_dimensions);
+	}
+	else if(y.is_nd(2))
+	{
+		return scifir::vector_unit_nd(float(new_value), new_dimensions, {y.angles[0]});
+	}
+	else if(y.is_nd(3))
+	{
+		return scifir::vector_unit_nd(float(new_value), new_dimensions, {y.angles[0], y.angles[1]});
+	}
+	else
+	{
+		return scifir::vector_unit_nd(float(new_value), new_dimensions, y.angles);
+	}
+}
+
+bool operator !=(const scifir::vector_unit_nd& x, const scifir::vector_unit_nd& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const vector_unit_nd& x, const string& y)
+bool operator ==(const scifir::vector_unit_nd& x, const string& init_vector_nd)
 {
-	vector_unit_nd y_vector = vector_unit_nd(y);
-	return (x == y_vector);
+	scifir::vector_unit_nd y(init_vector_nd);
+	return (x == y);
 }
 
-bool operator !=(const vector_unit_nd& x, const string& y)
+bool operator !=(const scifir::vector_unit_nd& x, const string& init_vector_nd)
 {
-	return !(x == y);
+	return !(x == init_vector_nd);
 }
 
-bool operator ==(const string& x, const vector_unit_nd& y)
+bool operator ==(const string& init_vector_nd, const scifir::vector_unit_nd& x)
 {
-	vector_unit_nd x_vector = vector_unit_nd(x);
-	return (x_vector == y);
+	scifir::vector_unit_nd y(init_vector_nd);
+	return (y == x);
 }
 
-bool operator !=(const string& x, const vector_unit_nd& y)
+bool operator !=(const string& init_vector_nd, const scifir::vector_unit_nd& x)
 {
-	return !(x == y);
+	return !(init_vector_nd == x);
 }
 
-void operator +=(string& x, const vector_unit_nd& y)
+void operator +=(string& x, const scifir::vector_unit_nd& y)
 {
 	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-string operator +(const string& x, const vector_unit_nd& y)
+string operator +(const string& x, const scifir::vector_unit_nd& y)
 {
 	ostringstream output;
 	output << x;
@@ -836,7 +938,7 @@ string operator +(const string& x, const vector_unit_nd& y)
 	return output.str();
 }
 
-string operator +(const vector_unit_nd& y, const string& x)
+string operator +(const scifir::vector_unit_nd& y, const string& x)
 {
 	ostringstream output;
 	output << y;
@@ -844,7 +946,7 @@ string operator +(const vector_unit_nd& y, const string& x)
 	return output.str();
 }
 
-ostream& operator <<(ostream& os, const vector_unit_nd& x)
+ostream& operator <<(ostream& os, const scifir::vector_unit_nd& x)
 {
 	ostringstream angles_text;
 	if (!x.is_nd(1))
@@ -858,14 +960,13 @@ ostream& operator <<(ostream& os, const vector_unit_nd& x)
 	return os << x.get_value() << " " << x.display_dimensions() << angles_text.str();
 }
 
-istream& operator >>(istream& is, vector_unit_nd& x)
+istream& operator >>(istream& is, scifir::vector_unit_nd& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::vector_unit_nd c(b);
-	x = c;
+	x = scifir::vector_unit_nd(b);
 	return is;
 }
  

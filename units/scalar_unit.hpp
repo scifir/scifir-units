@@ -47,7 +47,7 @@
 	}
 
 #define SCALAR_UNIT_CPP(name,init_dimensions) name::name() : scalar_unit() { \
-	dimensions = real_dimensions; \
+	scalar_unit::dimensions = name::real_dimensions; \
 } \
 \
 	name::name(const scalar_unit& x) \
@@ -79,31 +79,36 @@ namespace scifir
 	{
 		public:
 			scalar_unit();
-			scalar_unit(const scalar_unit&);
-			scalar_unit(scalar_unit&&);
-			explicit scalar_unit(float, const string&);
-			explicit scalar_unit(double, const string&);
-			explicit scalar_unit(long double, const string&);
-			explicit scalar_unit(float, const vector<dimension>&);
-			explicit scalar_unit(double, const vector<dimension>&);
-			explicit scalar_unit(long double, const vector<dimension>&);
-			explicit scalar_unit(const string&);
+			scalar_unit(const scalar_unit& x);
+			scalar_unit(scalar_unit&& x);
+			explicit scalar_unit(float new_value, const string& init_dimensions);
+			explicit scalar_unit(double new_value, const string& init_dimensions);
+			explicit scalar_unit(long double new_value, const string& init_dimensions);
+			explicit scalar_unit(int new_value, const string& init_dimensions);
+			explicit scalar_unit(float new_value, const vector<dimension>& new_dimensions);
+			explicit scalar_unit(double new_value, const vector<dimension>& new_dimensions);
+			explicit scalar_unit(long double new_value, const vector<dimension>& new_dimensions);
+			explicit scalar_unit(int new_value, const vector<dimension>& new_dimensions);
+			explicit scalar_unit(const string& init_scalar);
 
-			scalar_unit& operator =(const scalar_unit&);
-			scalar_unit& operator =(scalar_unit&&);
+			scalar_unit& operator =(const scalar_unit& x);
+			scalar_unit& operator =(scalar_unit&& x);
+			scalar_unit& operator =(const string& init_scalar);
 
 			explicit operator float() const;
 
-			scalar_unit operator +(scalar_unit) const;
-			scalar_unit operator -(scalar_unit) const;
-			scalar_unit operator *(scalar_unit) const;
-			scalar_unit operator /(scalar_unit) const;
-			scalar_unit operator ^(const scalar_unit&) const;
-			void operator +=(scalar_unit);
-			void operator -=(scalar_unit);
+			bool operator ==(scalar_unit x) const;
+
+			scalar_unit operator +(scalar_unit x) const;
+			scalar_unit operator -(scalar_unit x) const;
+			scalar_unit operator *(scalar_unit x) const;
+			scalar_unit operator /(scalar_unit x) const;
+			scalar_unit operator ^(const scalar_unit& x) const;
+			void operator +=(scalar_unit x);
+			void operator -=(scalar_unit x);
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			scalar_unit operator +(const T y) const
+			scalar_unit operator +(T y) const
 			{
 				scalar_unit x = *this;
 				x += y;
@@ -111,7 +116,7 @@ namespace scifir
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			scalar_unit operator -(const T y) const
+			scalar_unit operator -(T y) const
 			{
 				scalar_unit x = *this;
 				x -= y;
@@ -119,7 +124,7 @@ namespace scifir
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			scalar_unit operator *(const T y) const
+			scalar_unit operator *(T y) const
 			{
 				scalar_unit x = *this;
 				x *= y;
@@ -127,7 +132,7 @@ namespace scifir
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			scalar_unit operator /(const T y) const
+			scalar_unit operator /(T y) const
 			{
 				scalar_unit x = *this;
 				x /= y;
@@ -135,44 +140,44 @@ namespace scifir
 			}
 
 			template<typename T, typename = typename enable_if<is_integer_number<T>::value>::type>
-			scalar_unit operator ^(const T y) const
+			scalar_unit operator ^(T y) const
 			{
 				return scalar_unit(std::pow(get_value(),y),power_dimensions(get_dimensions(),y));
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator +=(const T y)
+			void operator +=(T y)
 			{
 				value += y;
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator -=(const T y)
+			void operator -=(T y)
 			{
 				value -= y;
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator *=(const T y)
+			void operator *=(T y)
 			{
 				value *= y;
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator /=(const T y)
+			void operator /=(T y)
 			{
 				value /= y;
 			}
 
-			scalar_unit& operator++();
-			scalar_unit& operator++(int);
-			scalar_unit& operator--();
-			scalar_unit& operator--(int);
+			scalar_unit& operator ++();
+			scalar_unit& operator ++(int);
+			scalar_unit& operator --();
+			scalar_unit& operator --(int);
 
-			void change_dimensions(const string&);
-			void change_dimensions(const scalar_unit&);
-			bool has_dimensions(const string&) const;
-			bool has_dimensions(const vector<dimension>&) const;
+			void change_dimensions(const string& init_dimensions);
+			void change_dimensions(const scalar_unit& x);
+			bool has_dimensions(const string& init_dimensions) const;
+			bool has_dimensions(const vector<dimension>& x_dimensions) const;
 			bool has_dimensions(const scalar_unit& x) const;
 			bool has_empty_dimensions() const;
 			string display_dimensions() const;
@@ -190,25 +195,25 @@ namespace scifir
 				return value;
 			}
 
-			string display(int = 2,bool = false,bool = false) const;
-			string derived_display(int = 2,bool = false,bool = false) const;
-			string custom_display(const string&,int = 2,bool = false) const;
+			string display(int number_of_decimals = 2 ,bool with_brackets = false,bool use_close_prefix = false) const;
+			string derived_display(int number_of_decimals = 2,bool with_brackets = false,bool use_close_prefix = false) const;
+			string custom_display(const string& init_dimensions,int number_of_decimals = 2,bool with_brackets = false) const;
 
 		protected:
 			vector<dimension> dimensions;
 			float value;
 
-			void add_dimension(const dimension&);
-			void remove_dimension(const dimension&);
-			void set_from_string(const string&);
+			void add_dimension(const dimension& new_dimension);
+			void remove_dimension(const dimension& old_dimension);
+			void initialize_from_string(string init_scalar);
 	};
 
-	string to_string(const scalar_unit&);
-	bool is_scalar_unit(const string&);
-	float abs(const scalar_unit&);
-	scalar_unit pow(const scalar_unit&,int);
-	scalar_unit sqrt(const scalar_unit&);
-	scalar_unit sqrt_nth(const scalar_unit&, int);
+	string to_string(const scalar_unit& x);
+	bool is_scalar_unit(const string& init_scalar);
+	float abs(const scalar_unit& x);
+	scalar_unit pow(const scalar_unit& x,int exponent);
+	scalar_unit sqrt(const scalar_unit& x);
+	scalar_unit sqrt_nth(const scalar_unit& x, int index);
 
 	/*constexpr bool is_valid_scalar_unit(const char* x_init)
 	{
@@ -391,7 +396,7 @@ namespace scifir
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-scifir::scalar_unit operator +(const T y,const scifir::scalar_unit& x)
+scifir::scalar_unit operator +(const T& y,const scifir::scalar_unit& x)
 {
 	scifir::scalar_unit z = x;
 	z += y;
@@ -399,7 +404,7 @@ scifir::scalar_unit operator +(const T y,const scifir::scalar_unit& x)
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-scifir::scalar_unit operator -(const T y,const scifir::scalar_unit& x)
+scifir::scalar_unit operator -(const T& y,const scifir::scalar_unit& x)
 {
 	scifir::scalar_unit z = scifir::scalar_unit((long double)y,x.get_dimensions());
 	z -= x;
@@ -407,7 +412,7 @@ scifir::scalar_unit operator -(const T y,const scifir::scalar_unit& x)
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-scifir::scalar_unit operator *(const T y,const scifir::scalar_unit& x)
+scifir::scalar_unit operator *(const T& y,const scifir::scalar_unit& x)
 {
 	scifir::scalar_unit z = x;
 	z *= y;
@@ -415,14 +420,14 @@ scifir::scalar_unit operator *(const T y,const scifir::scalar_unit& x)
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-scifir::scalar_unit operator /(const T y,const scifir::scalar_unit& x)
+scifir::scalar_unit operator /(const T& y,const scifir::scalar_unit& x)
 {
 	scifir::scalar_unit z = scifir::scalar_unit((long double)y,vector<scifir::dimension>());
 	return z / x;
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-float operator ^(const T x, const scifir::scalar_unit& y)
+float operator ^(const T& x, const scifir::scalar_unit& y)
 {
 	if(y.has_empty_dimensions())
 	{
@@ -434,104 +439,103 @@ float operator ^(const T x, const scifir::scalar_unit& y)
 	}
 }
 
-bool operator ==(const scifir::scalar_unit&, scifir::scalar_unit);
-bool operator !=(const scifir::scalar_unit&, scifir::scalar_unit);
-bool operator <(const scifir::scalar_unit&, const scifir::scalar_unit&);
-bool operator >(const scifir::scalar_unit&, const scifir::scalar_unit&);
-bool operator <=(const scifir::scalar_unit&, const scifir::scalar_unit&);
-bool operator >=(const scifir::scalar_unit&, const scifir::scalar_unit&);
+bool operator !=(const scifir::scalar_unit& x, scifir::scalar_unit y);
+bool operator <(const scifir::scalar_unit& x, const scifir::scalar_unit& y);
+bool operator >(const scifir::scalar_unit& x, const scifir::scalar_unit& y);
+bool operator <=(const scifir::scalar_unit& x, const scifir::scalar_unit& y);
+bool operator >=(const scifir::scalar_unit& x, const scifir::scalar_unit& y);
 
-bool operator ==(const scifir::scalar_unit&, const string&);
-bool operator !=(const scifir::scalar_unit&, const string&);
-bool operator <(const scifir::scalar_unit&, const string&);
-bool operator >(const scifir::scalar_unit&, const string&);
-bool operator <=(const scifir::scalar_unit&, const string&);
-bool operator >=(const scifir::scalar_unit&, const string&);
+bool operator ==(const scifir::scalar_unit& x, const string& init_scalar);
+bool operator !=(const scifir::scalar_unit& x, const string& init_scalar);
+bool operator <(const scifir::scalar_unit& x, const string& init_scalar);
+bool operator >(const scifir::scalar_unit& x, const string& init_scalar);
+bool operator <=(const scifir::scalar_unit& x, const string& init_scalar);
+bool operator >=(const scifir::scalar_unit& x, const string& init_scalar);
 
-bool operator ==(const string&, const scifir::scalar_unit&);
-bool operator !=(const string&, const scifir::scalar_unit&);
-bool operator <(const string&, const scifir::scalar_unit&);
-bool operator >(const string&, const scifir::scalar_unit&);
-bool operator <=(const string&, const scifir::scalar_unit&);
-bool operator >=(const string&, const scifir::scalar_unit&);
+bool operator ==(const string& init_scalar, const scifir::scalar_unit& x);
+bool operator !=(const string& init_scalar, const scifir::scalar_unit& x);
+bool operator <(const string& init_scalar, const scifir::scalar_unit& x);
+bool operator >(const string& init_scalar, const scifir::scalar_unit& x);
+bool operator <=(const string& init_scalar, const scifir::scalar_unit& x);
+bool operator >=(const string& init_scalar, const scifir::scalar_unit& x);
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-bool operator ==(const T x, const scifir::scalar_unit& y)
+bool operator ==(const T& x, const scifir::scalar_unit& y)
 {
 	return (x == y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-bool operator !=(const T x, const scifir::scalar_unit& y)
+bool operator !=(const T& x, const scifir::scalar_unit& y)
 {
 	return !(x == y);
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-bool operator <(const T x, const scifir::scalar_unit& y)
+bool operator <(const T& x, const scifir::scalar_unit& y)
 {
 	return (x < y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-bool operator >(const T x, const scifir::scalar_unit& y)
+bool operator >(const T& x, const scifir::scalar_unit& y)
 {
 	return (x > y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-bool operator <=(const T x, const scifir::scalar_unit& y)
+bool operator <=(const T& x, const scifir::scalar_unit& y)
 {
 	return (x <= y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-bool operator >=(const T x, const scifir::scalar_unit& y)
+bool operator >=(const T& x, const scifir::scalar_unit& y)
 {
 	return (x >= y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-bool operator ==(const scifir::scalar_unit& x, const T y)
+bool operator ==(const scifir::scalar_unit& x, const T& y)
 {
 	return (x.get_value() == y);
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-bool operator !=(const scifir::scalar_unit& x, const T y)
+bool operator !=(const scifir::scalar_unit& x, const T& y)
 {
 	return !(x == y);
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-bool operator <(const scifir::scalar_unit& x,const T y)
+bool operator <(const scifir::scalar_unit& x,const T& y)
 {
 	return (x.get_value() < y);
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-bool operator >(const scifir::scalar_unit& x,const T y)
+bool operator >(const scifir::scalar_unit& x,const T& y)
 {
 	return (x.get_value() > y);
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-bool operator <=(const scifir::scalar_unit& x,const T y)
+bool operator <=(const scifir::scalar_unit& x,const T& y)
 {
 	return (x.get_value() <= y);
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-bool operator >=(const scifir::scalar_unit& x,const T y)
+bool operator >=(const scifir::scalar_unit& x,const T& y)
 {
 	return (x.get_value() >= y);
 }
 
-void operator +=(string&, const scifir::scalar_unit&);
-string operator +(const string&, const scifir::scalar_unit&);
-string operator +(const scifir::scalar_unit&, const string&);
+void operator +=(string& x, const scifir::scalar_unit& y);
+string operator +(const string& x, const scifir::scalar_unit& y);
+string operator +(const scifir::scalar_unit& y, const string& x);
 
-ostream& operator <<(ostream&, const scifir::scalar_unit&);
-istream& operator >>(istream&, scifir::scalar_unit&);
+ostream& operator <<(ostream& os, const scifir::scalar_unit& x);
+istream& operator >>(istream& is, scifir::scalar_unit& x);
 
 #endif // SCIFIR_UNITS_UNITS_SCALAR_UNIT_HPP_INCLUDED

@@ -4,54 +4,82 @@ using namespace std;
 
 namespace scifir
 {
-	float distance(const coordinates_nd<float>& x1,const coordinates_nd<float>& x2)
+	string to_string(const coordinates_nd<float>& x)
 	{
-		if (x1.get_nd() == x2.get_nd())
+		if (x.values.size() > 0)
 		{
-			float x_length = 0;
-			for (unsigned int i = 0; i < x1.values.size(); i++)
+			ostringstream out;
+			out << "(";
+			for (int i = 0; i < x.values.size(); i++)
 			{
-				x_length += float(std::pow(x1.values[i] - x2.values[i],2));
+				out << display_float(x.values[i]);
+				if ((i + 1) != x.values.size())
+				{
+					out << ",";
+				}
 			}
-			return std::sqrt(x_length);
+			out << ")";
+			return out.str();
 		}
 		else
 		{
-			return float();
+			return "[empty]";
 		}
 	}
 
-	float distance(const coordinates_nd<float>& x1,const point_nd<float>& x2)
+	float distance(const coordinates_nd<float>& x,const coordinates_nd<float>& y)
 	{
-		if (x1.get_nd() == x2.get_nd())
+		if (x.get_nd() == y.get_nd())
 		{
 			float x_length = 0;
-			for (unsigned int i = 0; i < x1.values.size(); i++)
+			for (unsigned int i = 0; i < x.values.size(); i++)
 			{
-				x_length += float(std::pow(x1.values[i] - x2.values[i],2));
+				x_length += float(std::pow(x.values[i] - y.values[i],2));
 			}
 			return std::sqrt(x_length);
 		}
 		else
 		{
-			return float();
+			return 0.0f;
 		}
 	}
 
-	float distance(const point_nd<float>& x1,const coordinates_nd<float>& x2)
+	float distance(const coordinates_nd<float>& x,const point_nd<float>& y)
 	{
-		if (x1.get_nd() == x2.get_nd())
+		if (x.get_nd() == y.get_nd())
 		{
 			float x_length = 0;
-			for (unsigned int i = 0; i < x1.values.size(); i++)
+			for (unsigned int i = 0; i < x.values.size(); i++)
 			{
-				x_length += float(std::pow(x1.values[i] - x2.values[i],2));
+				x_length += float(std::pow(x.values[i] - y.values[i],2));
 			}
 			return std::sqrt(x_length);
 		}
 		else
 		{
-			return float();
+			return 0.0f;
 		}
 	}
+
+	float distance(const point_nd<float>& x,const coordinates_nd<float>& y)
+	{
+		if (x.get_nd() == y.get_nd())
+		{
+			float x_length = 0;
+			for (unsigned int i = 0; i < x.values.size(); i++)
+			{
+				x_length += float(std::pow(x.values[i] - y.values[i],2));
+			}
+			return std::sqrt(x_length);
+		}
+		else
+		{
+			return 0.0f;
+		}
+	}
+}
+
+ostream& operator <<(ostream& os,const scifir::coordinates_nd<float>& x)
+{
+	return os << scifir::to_string(x);
 }

@@ -18,24 +18,27 @@ namespace scifir
 	{
 		public:
 			percentage();
-			percentage(const percentage&);
-			percentage(percentage&&);
-			explicit percentage(float);
-			explicit percentage(double);
-			explicit percentage(long double);
-			explicit percentage(int);
-			explicit percentage(float,const string&);
-			explicit percentage(double,const string&);
-			explicit percentage(long double,const string&);
-			explicit percentage(int,const string&);
-			explicit percentage(const string&);
-			explicit percentage(const scalar_unit&);
+			percentage(const percentage& x);
+			percentage(percentage&& x);
+			explicit percentage(float new_value);
+			explicit percentage(double new_value);
+			explicit percentage(long double new_value);
+			explicit percentage(int new_value);
+			explicit percentage(float new_value,const string& init_dimensions);
+			explicit percentage(double new_value,const string& init_dimensions);
+			explicit percentage(long double new_value,const string& init_dimensions);
+			explicit percentage(int new_value,const string& init_dimensions);
+			explicit percentage(const string& init_percentage);
+			explicit percentage(const scalar_unit& x);
 
-			percentage& operator=(const percentage&);
-			percentage& operator=(percentage&&);
-			percentage& operator=(float);
-			percentage& operator=(const string&);
-			percentage& operator=(const scalar_unit&);
+			percentage& operator =(const percentage& x);
+			percentage& operator =(percentage&& x);
+			percentage& operator =(float new_value);
+			percentage& operator =(double new_value);
+			percentage& operator =(long double new_value);
+			percentage& operator =(int new_value);
+			percentage& operator =(const string& init_percentage);
+			percentage& operator =(const scalar_unit& x);
 
 			explicit operator float() const
 			{
@@ -47,67 +50,67 @@ namespace scifir
 				return value;
 			}
 
-			percentage operator +(const percentage&) const;
-			percentage operator -(const percentage&) const;
-			percentage operator *(const percentage&) const;
-			percentage operator /(const percentage&) const;
-			void operator +=(const percentage&);
-			void operator -=(const percentage&);
-			void operator *=(const percentage&);
-			void operator /=(const percentage&);
+			percentage operator +(const percentage& x) const;
+			percentage operator -(const percentage& x) const;
+			percentage operator *(const percentage& x) const;
+			percentage operator /(const percentage& x) const;
+			void operator +=(const percentage& x);
+			void operator -=(const percentage& x);
+			void operator *=(const percentage& x);
+			void operator /=(const percentage& x);
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator =(T y)
+			void operator =(T x)
 			{
-				value = y;
+				value = x;
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			percentage operator +(T y) const
+			percentage operator +(T x) const
 			{
-				return percentage(value + y);
+				return percentage(value + x);
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			percentage operator -(T y) const
+			percentage operator -(T x) const
 			{
-				return percentage(value - y);
+				return percentage(value - x);
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			float operator *(T y) const
+			float operator *(T x) const
 			{
-				return float(value * y / 100);
+				return float(value * x / 100);
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			float operator /(T y) const
+			float operator /(T x) const
 			{
-				return float(value / (100 * y));
+				return float(value / (100 * x));
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator +=(T y)
+			void operator +=(T x)
 			{
-				value += y;
+				value += x;
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator -=(T y)
+			void operator -=(T x)
 			{
-				value -= y;
+				value -= x;
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator *=(T y)
+			void operator *=(T x)
 			{
-				value *= y;
+				value *= x;
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator /=(T y)
+			void operator /=(T x)
 			{
-				value /= y;
+				value /= x;
 			}
 
 			percentage& operator++();
@@ -115,40 +118,43 @@ namespace scifir
 			percentage& operator--();
 			percentage operator--(int);
 
-			scalar_unit operator *(const scalar_unit&) const;
-			scalar_unit operator /(const scalar_unit&) const;
+			scalar_unit operator *(const scalar_unit& x) const;
+			scalar_unit operator /(const scalar_unit& x) const;
 
 			float get_factor() const;
 
 			float get_ppm() const;
-			float get_ppb() const;
+			/*float get_ppb() const;
 			float get_ppt() const;
-			float get_ppq() const;
+			float get_ppq() const;*/
 
+			string display_percentage(int number_of_decimals = 2) const;
 			string display_ppm() const;
-			string display_ppb() const;
+			/*string display_ppb() const;
 			string display_ppt() const;
-			string display_ppq() const;
+			string display_ppq() const;*/
 
 		private:
 			float value;
 
+			void initialize_from_string(const string& init_percentage);
+
 	};
 
-	string to_string(const percentage&);
-	bool is_percentage(const string&);
+	string to_string(const percentage& x);
+	bool is_percentage(const string& init_percentage);
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::percentage operator +(T x, const scifir::percentage& y)
 {
-	return percentage(x + y.get_value());
+	return scifir::percentage(x + y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::percentage operator -(T x, const scifir::percentage& y)
 {
-	return percentage(x - y.get_value());
+	return scifir::percentage(x - y.get_value());
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
@@ -235,27 +241,27 @@ bool operator >=(const scifir::percentage& y, T x)
 	return (y.get_value() >= x);
 }
 
-scifir::scalar_unit operator *(const scifir::scalar_unit&, const scifir::percentage&);
-scifir::scalar_unit operator /(const scifir::scalar_unit&, const scifir::percentage&);
+scifir::scalar_unit operator *(const scifir::scalar_unit& x, const scifir::percentage& y);
+scifir::scalar_unit operator /(const scifir::scalar_unit& x, const scifir::percentage& y);
 
-bool operator ==(const scifir::percentage&, const scifir::percentage&);
-bool operator !=(const scifir::percentage&, const scifir::percentage&);
-bool operator <(const scifir::percentage&, const scifir::percentage&);
-bool operator >(const scifir::percentage&, const scifir::percentage&);
-bool operator <=(const scifir::percentage&, const scifir::percentage&);
-bool operator >=(const scifir::percentage&, const scifir::percentage&);
+bool operator ==(const scifir::percentage& x, const scifir::percentage& y);
+bool operator !=(const scifir::percentage& x, const scifir::percentage& y);
+bool operator <(const scifir::percentage& x, const scifir::percentage& y);
+bool operator >(const scifir::percentage& x, const scifir::percentage& y);
+bool operator <=(const scifir::percentage& x, const scifir::percentage& y);
+bool operator >=(const scifir::percentage& x, const scifir::percentage& y);
 
-bool operator ==(const scifir::percentage&, const string&);
-bool operator !=(const scifir::percentage&, const string&);
+bool operator ==(const scifir::percentage& x, const string& init_percentage);
+bool operator !=(const scifir::percentage& x, const string& init_percentage);
 
-bool operator ==(const string&, const scifir::percentage&);
-bool operator !=(const string&, const scifir::percentage&);
+bool operator ==(const string& init_percentage, const scifir::percentage& x);
+bool operator !=(const string& init_percentage, const scifir::percentage& x);
 
-void operator +=(string&, const scifir::percentage&);
-string operator +(const string&, const scifir::percentage&);
-string operator +(const scifir::percentage&, const string&);
+void operator +=(string& x, const scifir::percentage& y);
+string operator +(const string& x, const scifir::percentage& y);
+string operator +(const scifir::percentage& y, const string& x);
 
-ostream& operator <<(ostream&, const scifir::percentage&);
-istream& operator >>(istream&, scifir::percentage&);
+ostream& operator <<(ostream& os, const scifir::percentage& x);
+istream& operator >>(istream& is, scifir::percentage& x);
 
 #endif // SCIFIR_UNITS_SPECIAL_UNITS_PERCENTAGE_HPP_INCLUDED

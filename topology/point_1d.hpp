@@ -3,6 +3,7 @@
 
 #include "../predefined_units/physics_units.hpp"
 #include "../units/unit_basic.hpp"
+#include "../util/types.hpp"
 
 #include <cmath>
 #include <string>
@@ -30,19 +31,13 @@ namespace scifir
 			explicit point_1d(const T& new_x) : x(new_x)
 			{}
 
-			explicit point_1d(const coordinates_1d<T>&);
+			explicit point_1d(const coordinates_1d<T>& x_coordinates);
 
-			explicit point_1d(string init_point_1d) : point_1d()
+			explicit point_1d(coordinates_1d<T>&& x_coordinates);
+
+			explicit point_1d(const string& init_point_1d) : point_1d()
 			{
-				if (init_point_1d.front() == '(')
-				{
-					init_point_1d.erase(0,1);
-				}
-				if (init_point_1d.back() == ')')
-				{
-					init_point_1d.erase(init_point_1d.size()-1,1);
-				}
-				x = T(init_point_1d);
+				initialize_from_string(init_point_1d);
 			}
 
 			point_1d<T>& operator=(const point_1d<T>& x_point)
@@ -59,6 +54,14 @@ namespace scifir
 
 			point_1d<T>& operator=(const coordinates_1d<T>&);
 
+			point_1d<T>& operator=(coordinates_1d<T>&&);
+
+			point_1d<T>& operator=(const string& init_point_1d)
+			{
+				initialize_from_string(init_point_1d);
+				return *this;
+			}
+
 			void set_position(const T& new_x)
 			{
 				x = new_x;
@@ -74,7 +77,28 @@ namespace scifir
 				return T(std::abs(x.get_value()),x.get_dimensions());
 			}
 
+			string display_cartesian() const
+			{
+				ostringstream out;
+				out << "(" << x << ")";
+				return out.str();
+			}
+
 			T x;
+
+		private:
+			void initialize_from_string(string init_point_1d)
+			{
+				if (init_point_1d.front() == '(')
+				{
+					init_point_1d.erase(0,1);
+				}
+				if (init_point_1d.back() == ')')
+				{
+					init_point_1d.erase(init_point_1d.size()-1,1);
+				}
+				x = T(init_point_1d);
+			}
 	};
 
 	template<>
@@ -90,22 +114,16 @@ namespace scifir
 			point_1d(point_1d<float>&& x_point) : x(std::move(x_point.x))
 			{}
 
-			explicit point_1d(const float& new_x) : x(new_x)
+			explicit point_1d(float new_x) : x(new_x)
 			{}
 
-			explicit point_1d(const coordinates_1d<float>&);
+			explicit point_1d(const coordinates_1d<float>& x_coordinates);
 
-			explicit point_1d(string init_point_1d) : point_1d()
+			explicit point_1d(coordinates_1d<float>&& x_coordinates);
+
+			explicit point_1d(const string& init_point_1d) : point_1d()
 			{
-				if (init_point_1d.front() == '(')
-				{
-					init_point_1d.erase(0,1);
-				}
-				if (init_point_1d.back() == ')')
-				{
-					init_point_1d.erase(init_point_1d.size()-1,1);
-				}
-				x = stof(init_point_1d);
+				initialize_from_string(init_point_1d);
 			}
 
 			point_1d<float>& operator=(const point_1d<float>& x_point)
@@ -122,12 +140,20 @@ namespace scifir
 
 			point_1d<float>& operator=(const coordinates_1d<float>&);
 
+			point_1d<float>& operator=(coordinates_1d<float>&&);
+
+			point_1d<float>& operator=(const string& init_point_1d)
+			{
+				initialize_from_string(init_point_1d);
+				return *this;
+			}
+
 			void set_position(const float& new_x)
 			{
 				x = new_x;
 			}
 
-			void move(const float& x_value)
+			void move(float x_value)
 			{
 				x += x_value;
 			}
@@ -137,62 +163,83 @@ namespace scifir
 				return float(std::abs(x));
 			}
 
+			string display_cartesian() const
+			{
+				ostringstream out;
+				out << "(" << display_float(x) << ")";
+				return out.str();
+			}
+
 			float x;
+
+		private:
+			void initialize_from_string(string init_point_1d)
+			{
+				if (init_point_1d.front() == '(')
+				{
+					init_point_1d.erase(0,1);
+				}
+				if (init_point_1d.back() == ')')
+				{
+					init_point_1d.erase(init_point_1d.size()-1,1);
+				}
+				x = stof(init_point_1d);
+			}
 	};
 
 	template<typename T>
 	string to_string(const point_1d<T>& x)
 	{
-		ostringstream out;
-		out << "(" << x.x << ")";
-		return out.str();
+		return x.display_cartesian();
 	}
 
-	template<typename T>
-	T distance(const point_1d<T>& x1,const point_1d<T>& x2)
+	string to_string(const point_1d<float>& x);
+
+	template<typename T,typename U>
+	T distance(const point_1d<T>& x,const point_1d<U>& y)
 	{
-		return scifir::sqrt(scifir::pow(x1.x - x2.x,2));
+		return scifir::sqrt(scifir::pow(x.x - y.x,2));
 	}
 
-	float distance(const point_1d<float>&,const point_1d<float>&);
+	float distance(const point_1d<float>& x,const point_1d<float>& y);
 }
 
-template<typename T>
-bool operator ==(const scifir::point_1d<T>& x,const scifir::point_1d<T>& y)
+template<typename T,typename U>
+bool operator ==(const scifir::point_1d<T>& x,const scifir::point_1d<U>& y)
 {
 	return (x.x == y.x);
 }
 
-template<typename T>
-bool operator !=(const scifir::point_1d<T>& x,const scifir::point_1d<T>& y)
+template<typename T,typename U>
+bool operator !=(const scifir::point_1d<T>& x,const scifir::point_1d<U>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const scifir::point_1d<T>& x, const string& y)
+bool operator ==(const scifir::point_1d<T>& x, const string& init_point_1d)
 {
-	point_1d<T> y_point = point_1d<T>(y);
-	return (x == y_point);
+	scifir::point_1d<T> y(init_point_1d);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const scifir::point_1d<T>& x, const string& y)
+bool operator !=(const scifir::point_1d<T>& x, const string& init_point_1d)
 {
-	return !(x == y);
+	return !(x == init_point_1d);
 }
 
 template<typename T>
-bool operator ==(const string& x, const scifir::point_1d<T>& y)
+bool operator ==(const string& init_point_1d, const scifir::point_1d<T>& x)
 {
-	point_1d<T> x_point = point_1d<T>(x);
-	return (x_point == y);
+	scifir::point_1d<T> y(init_point_1d);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const scifir::point_1d<T>& y)
+bool operator !=(const string& init_point_1d, const scifir::point_1d<T>& x)
 {
-	return !(x == y);
+	return !(init_point_1d == x);
 }
 
 template<typename T>
@@ -219,6 +266,8 @@ ostream& operator <<(ostream& os,const scifir::point_1d<T>& x)
 	return os << to_string(x);
 }
 
+ostream& operator <<(ostream& os,const scifir::point_1d<float>& x);
+
 template<typename T>
 istream& operator >>(istream& is, scifir::point_1d<T>& x)
 {
@@ -226,8 +275,7 @@ istream& operator >>(istream& is, scifir::point_1d<T>& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::point_1d<T> c(b);
-	x = c;
+	x = scifir::point_1d<T>(b);
 	return is;
 }
 

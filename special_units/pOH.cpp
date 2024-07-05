@@ -22,7 +22,7 @@ namespace scifir
 	pOH::pOH(pOH&& x) : value(std::move(x.get_value()))
 	{}
 
-	pOH::pOH(float x) : value(x)
+	pOH::pOH(float new_value) : value(new_value)
 	{
 		normalize_value();
 	}
@@ -47,33 +47,33 @@ namespace scifir
 		}
 	}
 	
-	pOH& pOH::operator=(const pOH& x)
+	pOH& pOH::operator =(const pOH& x)
 	{
 		value = x.get_value();
 		return *this;
 	}
 	
-	pOH& pOH::operator=(pOH&& x)
+	pOH& pOH::operator =(pOH&& x)
 	{
 		value = std::move(x.get_value());
 		return *this;
 	}
 
-	pOH& pOH::operator=(float x)
+	pOH& pOH::operator =(float new_value)
 	{
-		value = x;
+		value = new_value;
 		normalize_value();
 		return *this;
 	}
 
-	pOH& pOH::operator=(const string& x)
+	pOH& pOH::operator =(const string& init_pOH)
 	{
-		value = stof(x);
+		value = stof(init_pOH);
 		normalize_value();
 		return *this;
 	}
 
-	pOH& pOH::operator=(const scalar_unit& x)
+	pOH& pOH::operator =(const scalar_unit& x)
 	{
 		if (x.has_empty_dimensions())
 		{
@@ -197,9 +197,7 @@ namespace scifir
 
 	string to_string(const pOH& x)
 	{
-		ostringstream output;
-		output << x.display(2);
-		return output.str();
+		return x.display(2);
 	}
 }
 
@@ -254,26 +252,26 @@ bool operator >=(const scifir::pOH& x, const scifir::pOH& y)
 	return !(x < y);
 }
 
-bool operator ==(const scifir::pOH& x, const string& y)
+bool operator ==(const scifir::pOH& x, const string& init_pOH)
 {
-	scifir::pOH y_pOH = scifir::pOH(y);
-	return (x == y_pOH);
+	scifir::pOH y = scifir::pOH(init_pOH);
+	return (x == y);
 }
 
-bool operator !=(const scifir::pOH& x, const string& y)
+bool operator !=(const scifir::pOH& x, const string& init_pOH)
 {
-	return !(x == y);
+	return !(x == init_pOH);
 }
 
-bool operator ==(const string& x, const scifir::pOH& y)
+bool operator ==(const string& init_pOH, const scifir::pOH& x)
 {
-	scifir::pOH x_pOH = scifir::pOH(x);
-	return (x_pOH == y);
+	scifir::pOH y = scifir::pOH(init_pOH);
+	return (x == y);
 }
 
-bool operator !=(const string& x, const scifir::pOH& y)
+bool operator !=(const string& init_pOH, const scifir::pOH& x)
 {
-	return !(x == y);
+	return !(init_pOH == x);
 }
 
 void operator +=(string& x, const scifir::pOH& y)
@@ -310,8 +308,7 @@ istream& operator >>(istream& is, scifir::pOH& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::pOH c(b);
-	x = c;
+	x = scifir::pOH(b);
 	return is;
 }
 

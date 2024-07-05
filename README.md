@@ -2,7 +2,7 @@
 
 [![Linux build status](https://github.com/scifir/scifir-units/actions/workflows/cmake.yml/badge.svg)](https://github.com/scifir/scifir-units/actions/workflows/cmake.yml)
 
-Welcome! The **Scifir Collection** is a set of scientific libraries for developing **laboratory machines** and **scientific inventions**. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
+Welcome! The **Scifir Collection** is a set of scientific libraries, written in **C++**, for developing **laboratory machines** and **scientific inventions**. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
 
 The Scifir Collection is under development, but the units are already released. Molecules aren't, but they will by ready soon!
 
@@ -231,22 +231,22 @@ All those additional unit classes are the following:
 The meca numbers are special numbers that don't behave exactly like an scalar unit:
 
 - angle.
-- complex_number.
-- lab_number.
+- complex_number<T>.
+- lab_number<T>.
 
 The coordinates classes handle position in space. The point classes also handle position in space. Coordinates are used for positions and points are intended for more stationary cases, like for example vertex of triangles that form a 3D model.
 
-- coordinates_1d.
-- coordinates_2d.
-- coordinates_2dr.
-- coordinates_3d.
-- coordinates_3dr.
-- coordinates_nd.
-- coordinates_ndr.
-- point_1d.
-- point_2d.
-- point_3d.
-- point_nd.
+- coordinates_1d<T>.
+- coordinates_2d<T>.
+- coordinates_2dr<T>.
+- coordinates_3d<T>.
+- coordinates_3dr<T>.
+- coordinates_nd<T>.
+- coordinates_ndr<T>.
+- point_1d<T>.
+- point_2d<T>.
+- point_3d<T>.
+- point_nd<T>.
 - direction.
 
 The special unit classes handle special cases of values:
@@ -258,9 +258,9 @@ The special unit classes handle special cases of values:
 - pH.
 - pOH.
 - pixel.
-- size_2d.
-- size_3d.
-- size_nd.
+- size_2d<T>.
+- size_3d<T>.
+- size_nd<T>.
 
 ### Data conventions
 
@@ -280,7 +280,7 @@ The conventions are the following:
 
 The conventions for storing informatic data are the following:
 
-- **Ips:** Store the ip, as is written.
+- **Ip addresses:** Store the ip, as is written.
 - **Computers:** Store computers by their model name, canonicalized.
 
 ### Consumption of memory
@@ -288,6 +288,20 @@ The conventions for storing informatic data are the following:
 The scalar_unit and vector unit classes, vector_unid_2d, vector_unid_3d and vector_unit_nd size more than a single float, which uses 4 bytes, but don't size a big amount and so, they can be used in great quantities for any purpose, cause they are very lightweight.
 
 The angle class uses only 4 bytes, and works perfectly fine, very similar to a normal float. Then, you can use it freely every time you need to do calculations that need angles.
+
+## Use cases
+
+### Technologies for inventions
+
+scifir-units can be used for any project that needs units of measurement, vectors, coordinates, and related calculations. It's primary intended to program **scientific inventions**, **laboratory machines**, **electronic devices** and **medical devices** (medical devices that need a software, not any medical device). In this section it's explained how to build those devices, in order to be known how to create all the project, and not only how to use scifir-units.
+
+To create the electronic circuit of any electronic device, being it a scientific invention, a laboratory machine, a medical device or of other type, you can use **KiCad**. The electronic circuit is then printed using the file created with KiCad. For the operating system, you can use **FreeRTOS**, **FreeBSD**, or even create a custom linux distribution with **Linux From Scratch**. For the GUI of the software of the invention to run inside this operating system, you can use **GTK+**, **wxWidgets** or **Qt**. The inventions not always use a GUI, they can work just with analog buttons or a LCD display. It's with this software where you can use scifir-units to do the calculations the software requires.
+
+To build a desktop application that connects remotely with the invention, use also GTK+, wxWidgets or Qt to build the GUI. You can use as communication technology **bluetooth**, **wifi direct** (which is a wifi peer-to-peer) or **usb**.
+
+Also, to add 3D to the software, you can use **OpenGL**. To do plots, use **matplot++**, **gnuplot** or **GNU plotutils**. Obviously, to store output from the software, you can use **YAML** or **XML**. To work with XML inside C++ you can use **rapidxml**, **tinyxml** or **libxml2**. To work with YAML you can use **yaml-cpp**. Use **conf** for configuration files, the library of it is **libconfig**. To send messages between different servers/daemons that are run inside the invention, you can use **dbus**. To handle large amounts of data, you can use a simple database, like **SQLite**, with **SQLiteCPP**.
+
+From the graphics part, you can use **SVG++** to work with SVG files. To add GPS to the invention, you can use **gpsd**. To do the translation of the software, use **gettext**.
 
 ## Core functionalities
 

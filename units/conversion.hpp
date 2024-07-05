@@ -13,9 +13,9 @@ namespace scifir
 	{
 		public:
 			conversion();
-			explicit conversion(const string&, float);
-			explicit conversion(const string&, double);
-			explicit conversion(const string&, long double);
+			explicit conversion(const string& new_unit_to, float new_factor);
+			explicit conversion(const string& new_unit_to, double new_factor);
+			explicit conversion(const string& new_unit_to, long double new_factor);
 
 			inline const long double& get_factor() const
 			{

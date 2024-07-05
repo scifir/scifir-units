@@ -54,7 +54,6 @@ const string name##_nd::dimensions_match = init_dimensions; \
 const vector<dimension> name##_nd::real_dimensions = create_derived_dimensions(init_dimensions)
 
 using namespace std;
-using namespace scifir;
 
 namespace scifir
 {
@@ -62,20 +61,38 @@ namespace scifir
 	{
 		public:
 			vector_unit_nd();
-			vector_unit_nd(const vector_unit_nd&);
-			vector_unit_nd(vector_unit_nd&&);
-			explicit vector_unit_nd(float,const string&);
-			explicit vector_unit_nd(float,const string&,const vector<float>&);
-			explicit vector_unit_nd(float,const string&,const vector<angle>&);
-			explicit vector_unit_nd(float,const vector<dimension>&);
-			explicit vector_unit_nd(float,const vector<dimension>&,const vector<float>&);
-			explicit vector_unit_nd(float,const vector<dimension>&,const vector<angle>&);
-			explicit vector_unit_nd(const scalar_unit&);
-			explicit vector_unit_nd(const scalar_unit&,const vector<float>&);
-			explicit vector_unit_nd(const scalar_unit&,const vector<angle>&);
-			explicit vector_unit_nd(const string&,const vector<float>&);
-			explicit vector_unit_nd(const string&,const vector<angle>&);
-			explicit vector_unit_nd(const string&);
+			vector_unit_nd(const vector_unit_nd& x);
+			vector_unit_nd(vector_unit_nd&& x);
+			explicit vector_unit_nd(float new_value,const string& init_dimensions);
+			explicit vector_unit_nd(float new_value,const string& init_dimensions,const vector<float>& new_angles);
+			explicit vector_unit_nd(float new_value,const string& init_dimensions,const vector<angle>& new_angles);
+			explicit vector_unit_nd(double new_value,const string& init_dimensions);
+			explicit vector_unit_nd(double new_value,const string& init_dimensions,const vector<float>& new_angles);
+			explicit vector_unit_nd(double new_value,const string& init_dimensions,const vector<angle>& new_angles);
+			explicit vector_unit_nd(long double new_value,const string& init_dimensions);
+			explicit vector_unit_nd(long double new_value,const string& init_dimensions,const vector<float>& new_angles);
+			explicit vector_unit_nd(long double new_value,const string& init_dimensions,const vector<angle>& new_angles);
+			explicit vector_unit_nd(int new_value,const string& init_dimensions);
+			explicit vector_unit_nd(int new_value,const string& init_dimensions,const vector<float>& new_angles);
+			explicit vector_unit_nd(int new_value,const string& init_dimensions,const vector<angle>& new_angles);
+			explicit vector_unit_nd(float new_value,const vector<dimension>& new_dimensions);
+			explicit vector_unit_nd(float new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles);
+			explicit vector_unit_nd(float new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles);
+			explicit vector_unit_nd(double new_value,const vector<dimension>& new_dimensions);
+			explicit vector_unit_nd(double new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles);
+			explicit vector_unit_nd(double new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles);
+			explicit vector_unit_nd(long double new_value,const vector<dimension>& new_dimensions);
+			explicit vector_unit_nd(long double new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles);
+			explicit vector_unit_nd(long double new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles);
+			explicit vector_unit_nd(int new_value,const vector<dimension>& new_dimensions);
+			explicit vector_unit_nd(int new_value,const vector<dimension>& new_dimensions,const vector<float>& new_angles);
+			explicit vector_unit_nd(int new_value,const vector<dimension>& new_dimensions,const vector<angle>& new_angles);
+			explicit vector_unit_nd(const scalar_unit& x);
+			explicit vector_unit_nd(const scalar_unit& x,const vector<float>& new_angles);
+			explicit vector_unit_nd(const scalar_unit& x,const vector<angle>& new_angles);
+			explicit vector_unit_nd(const string& init_scalar,const vector<float>& new_angles);
+			explicit vector_unit_nd(const string& init_scalar,const vector<angle>& new_angles);
+			explicit vector_unit_nd(const string& init_vector_nd);
 
 			static vector_unit_nd cartesian_2d(const string& new_dimensions,float new_x,float new_y)
 			{
@@ -99,22 +116,25 @@ namespace scifir
 				return vector_unit_nd(new_value,new_dimensions, {new_theta, angle(new_phi)});
 			}
 
-			vector_unit_nd& operator =(const vector_unit_nd&);
-			vector_unit_nd& operator =(vector_unit_nd&&);
-			vector_unit_nd& operator =(const scalar_unit&);
-			vector_unit_nd& operator =(scalar_unit&&);
+			vector_unit_nd& operator =(const vector_unit_nd& x);
+			vector_unit_nd& operator =(vector_unit_nd&& x);
+			vector_unit_nd& operator =(const scalar_unit& x);
+			vector_unit_nd& operator =(scalar_unit&& x);
+			vector_unit_nd& operator =(const string& init_vector_nd);
 
-			void point_to(direction::name);
+			bool operator ==(vector_unit_nd x) const;
+
+			void point_to(direction::name x);
 			
-			void operator +=(const vector_unit_nd&);
-			void operator -=(vector_unit_nd);
+			void operator +=(const vector_unit_nd& x);
+			void operator -=(vector_unit_nd x);
 
-			vector_unit_nd operator +(const vector_unit_nd&) const;
-			vector_unit_nd operator -(vector_unit_nd) const;
+			vector_unit_nd operator +(const vector_unit_nd& x) const;
+			vector_unit_nd operator -(vector_unit_nd x) const;
 
-			vector_unit_nd operator *(const scalar_unit&) const;
-			vector_unit_nd operator /(const scalar_unit&) const;
-			vector_unit_nd operator ^(const scalar_unit&) const;
+			vector_unit_nd operator *(const scalar_unit& x) const;
+			vector_unit_nd operator /(const scalar_unit& x) const;
+			vector_unit_nd operator ^(const scalar_unit& x) const;
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			vector_unit_nd operator +(U x) const
@@ -155,32 +175,32 @@ namespace scifir
 			}
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator +=(U y)
+			void operator +=(U x)
 			{
-				scalar_unit::value += y;
+				scalar_unit::value += x;
 			}
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator -=(U y)
+			void operator -=(U x)
 			{
-				scalar_unit::value -= y;
+				scalar_unit::value -= x;
 			}
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator *=(U y)
+			void operator *=(U x)
 			{
-				scalar_unit::value *= y;
-				if(y < 0)
+				scalar_unit::value *= std::abs(x);
+				if(x < 0)
 				{
 					invert();
 				}
 			}
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator /=(U y)
+			void operator /=(U x)
 			{
-				scalar_unit::value /= y;
-				if(y < 0)
+				scalar_unit::value /= std::abs(x);
+				if(x < 0)
 				{
 					invert();
 				}
@@ -196,32 +216,37 @@ namespace scifir
 				return int(angles.size() + 1);
 			}
 
-			scalar_unit n_projection(int) const;
+			scalar_unit n_projection(int i) const;
 			scalar_unit x_projection() const;
 			scalar_unit y_projection() const;
 			scalar_unit z_projection() const;
 
 			void invert();
 
-			string vectorial_display(int = 2) const;
-			string vectorial_derived_display(int = 2) const;
-			string vectorial_custom_display(const string&,int = 2) const;
+			string vectorial_display(int number_of_decimals = 2) const;
+			string vectorial_derived_display(int number_of_decimals = 2) const;
+			string vectorial_custom_display(const string& init_dimensions,int number_of_decimals = 2) const;
 
 			vector<angle> angles;
+
+		private:
+			void initialize_from_string(string init_vector_nd);
 	};
 
-	string to_string(const vector_unit_nd&);
-	scalar_unit norm(const vector_unit_nd&);
-	vector_unit_nd sqrt(const vector_unit_nd&);
-	vector_unit_nd sqrt_nth(const vector_unit_nd&,int);
-	scalar_unit dot_product(const vector_unit_nd&,const vector_unit_nd&);
-	vector_unit_nd cross_product(const vector_unit_nd&,const vector_unit_nd&);
-	angle angle_between(const vector_unit_nd&,const vector_unit_nd&);
-	bool same_nd(const vector_unit_nd&,const vector_unit_nd&);
-	bool same_direction(const vector_unit_nd&,const vector_unit_nd&);
-	bool parallel(const vector_unit_nd&,const vector_unit_nd&);
-	bool orthogonal(const vector_unit_nd&,const vector_unit_nd&);
+	string to_string(const vector_unit_nd& x);
+	scalar_unit norm(const vector_unit_nd& x);
+	vector_unit_nd sqrt(const vector_unit_nd& x);
+	vector_unit_nd sqrt_nth(const vector_unit_nd& x,int index);
+	scalar_unit dot_product(const vector_unit_nd& x,const vector_unit_nd& y);
+	vector_unit_nd cross_product(const vector_unit_nd& x,const vector_unit_nd& y);
+	angle angle_between(const vector_unit_nd& x,const vector_unit_nd& y);
+	bool same_nd(const vector_unit_nd& x,const vector_unit_nd& y);
+	bool same_direction(const vector_unit_nd& x,const vector_unit_nd& y);
+	bool parallel(const vector_unit_nd& x,const vector_unit_nd& y);
+	bool orthogonal(const vector_unit_nd& x,const vector_unit_nd& y);
 }
+
+scifir::vector_unit_nd operator *(const scifir::scalar_unit& x,const scifir::vector_unit_nd& y);
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::vector_unit_nd operator +(const T y,const scifir::vector_unit_nd& x)
@@ -256,21 +281,20 @@ scifir::vector_unit_nd operator /(const T y,const scifir::vector_unit_nd& x)
 	return scifir::vector_unit_nd(y / x.get_value(),new_dimensions,x.angles);
 }
 
-bool operator ==(const vector_unit_nd&, vector_unit_nd);
-bool operator !=(const vector_unit_nd&, const vector_unit_nd&);
+bool operator !=(const scifir::vector_unit_nd& x, const scifir::vector_unit_nd& y);
 
-bool operator ==(const vector_unit_nd&, const string&);
-bool operator !=(const vector_unit_nd&, const string&);
+bool operator ==(const scifir::vector_unit_nd& x, const string& init_vector_nd);
+bool operator !=(const scifir::vector_unit_nd& x, const string& init_vector_nd);
 
-bool operator ==(const string&, const vector_unit_nd&);
-bool operator !=(const string&, const vector_unit_nd&);
+bool operator ==(const string& init_vector_nd, const scifir::vector_unit_nd& x);
+bool operator !=(const string& init_vector_nd, const scifir::vector_unit_nd& x);
 
-void operator +=(string&, const vector_unit_nd&);
-string operator +(const string&, const vector_unit_nd&);
-string operator +(const vector_unit_nd&, const string&);
+void operator +=(string& x, const scifir::vector_unit_nd& y);
+string operator +(const string& x, const scifir::vector_unit_nd& y);
+string operator +(const scifir::vector_unit_nd& y, const string& x);
 
-ostream& operator <<(ostream&, const vector_unit_nd&);
-istream& operator >>(istream&, vector_unit_nd&);
+ostream& operator <<(ostream& os, const scifir::vector_unit_nd& x);
+istream& operator >>(istream& is, scifir::vector_unit_nd& x);
 
 #endif // SCIFIR_UNITS_UNITS_VECTOR_UNIT_ND_HPP_INCLUDED
  

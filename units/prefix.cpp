@@ -183,9 +183,9 @@ namespace scifir
 		return "";
 	}
 
-	bool prefix::operator<(const scifir::prefix& y) const
+	bool prefix::operator<(const scifir::prefix& x) const
 	{
-		return (get_conversion_factor() < y.get_conversion_factor());
+		return (get_conversion_factor() < x.get_conversion_factor());
 	}
 
 	prefix::type prefix_string(const string& x)

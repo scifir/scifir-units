@@ -2,6 +2,7 @@
 #define SCIFIR_UNITS_SPECIAL_UNITS_SIZE_ND_HPP_INCLUDED
 
 #include "../predefined_units/space_units.hpp"
+#include "../util/types.hpp"
 
 #include "boost/algorithm/string.hpp"
 
@@ -38,13 +39,7 @@ namespace scifir
 
 			explicit size_nd(const string& init_size_nd) : size_nd()
 			{
-				vector<string> new_widths;
-				boost::split(new_widths,init_size_nd,boost::is_any_of("*"));
-				for (string& new_width : new_widths)
-				{
-					boost::trim(new_width);
-					widths.push_back(T(new_width));
-				}
+				initialize_from_string(init_size_nd);
 			}
 
 			size_nd<T>& operator=(const size_nd<T>& x)
@@ -56,6 +51,12 @@ namespace scifir
 			size_nd<T>& operator=(size_nd<T>&& x)
 			{
 				widths = std::move(x.widths);
+				return *this;
+			}
+
+			size_nd<T>& operator=(const string& init_size_nd)
+			{
+				initialize_from_string(init_size_nd);
 				return *this;
 			}
 
@@ -127,7 +128,7 @@ namespace scifir
 
 			scalar_unit get_volume_nd() const
 			{
-				vector<dimension> new_dimensions = create_dimensions(widths[0].get_dimensions()[0].get_symbol() + to_string(get_nd()));
+				vector<dimension> new_dimensions = create_dimensions(widths[0].get_dimensions()[0].get_symbol() + std::to_string(get_nd()));
 				float new_value = 1;
 				for (int i = 0; i < widths.size(); i++)
 				{
@@ -136,7 +137,38 @@ namespace scifir
 				return scalar_unit(new_value,new_dimensions);
 			}
 
+			string display() const
+			{
+				if (widths.size() > 0)
+				{
+					ostringstream output;
+					output << widths[0];
+					for (int i = 1; i < widths.size(); i++)
+					{
+						output << " * " << widths[i];
+					}
+					return output.str();
+				}
+				else
+				{
+					return "[empty]";
+				}
+			}
+
 			vector<T> widths;
+
+		private:
+			void initialize_from_string(const string& init_size_nd)
+			{
+				widths.clear();
+				vector<string> new_widths;
+				boost::split(new_widths,init_size_nd,boost::is_any_of("*"));
+				for (string& new_width : new_widths)
+				{
+					boost::trim(new_width);
+					widths.push_back(T(new_width));
+				}
+			}
 	};
 
 	template<>
@@ -165,13 +197,7 @@ namespace scifir
 
 			explicit size_nd(const string& init_size_nd) : size_nd()
 			{
-				vector<string> new_widths;
-				boost::split(new_widths,init_size_nd,boost::is_any_of("*"));
-				for (string& new_width : new_widths)
-				{
-					boost::trim(new_width);
-					widths.push_back(stof(new_width));
-				}
+				initialize_from_string(init_size_nd);
 			}
 
 			size_nd<float>& operator=(const size_nd<float>& x)
@@ -183,6 +209,12 @@ namespace scifir
 			size_nd<float>& operator=(size_nd<float>&& x)
 			{
 				widths = std::move(x.widths);
+				return *this;
+			}
+
+			size_nd<float>& operator=(const string& init_size_nd)
+			{
+				initialize_from_string(init_size_nd);
 				return *this;
 			}
 
@@ -262,22 +294,47 @@ namespace scifir
 				return new_value;
 			}
 
+			string display() const
+			{
+				if (widths.size() > 0)
+				{
+					ostringstream output;
+					output << display_float(widths[0],2);
+					for (unsigned int i = 1; i < widths.size(); i++)
+					{
+						output << " * " << display_float(widths[i],2);
+					}
+					return output.str();
+				}
+				else
+				{
+					return "[empty]";
+				}
+			}
+
 			vector<float> widths;
+
+		private:
+			void initialize_from_string(const string& init_size_nd)
+			{
+				widths.clear();
+				vector<string> new_widths;
+				boost::split(new_widths,init_size_nd,boost::is_any_of("*"));
+				for (string& new_width : new_widths)
+				{
+					boost::trim(new_width);
+					widths.push_back(stof(new_width));
+				}
+			}
 	};
 
 	template<typename T>
 	string to_string(const size_nd<T>& x)
 	{
-		ostringstream output;
-		output << x.widths[0];
-		for (int i = 1; i < x.widths.size(); i++)
-		{
-			output << " * " << x.widths[i];
-		}
-		return output.str();
+		return x.display();
 	}
 
-	string to_string(const size_nd<float>&);
+	string to_string(const size_nd<float>& x);
 }
 
 template<typename T>
@@ -304,6 +361,32 @@ template<typename T>
 bool operator !=(const scifir::size_nd<T>& x, const scifir::size_nd<T>& y)
 {
 	return !(x == y);
+}
+
+template<typename T>
+bool operator ==(const scifir::size_nd<T>& x, const string& init_size_nd)
+{
+	scifir::size_nd<T> y(init_size_nd);
+	return (x == y);
+}
+
+template<typename T>
+bool operator !=(const scifir::size_nd<T>& x, const string& init_size_nd)
+{
+	return !(x == init_size_nd);
+}
+
+template<typename T>
+bool operator ==(const string& init_size_nd, const scifir::size_nd<T>& x)
+{
+	scifir::size_nd<T> y(init_size_nd);
+	return (x == y);
+}
+
+template<typename T>
+bool operator !=(const string& init_size_nd, const scifir::size_nd<T>& x)
+{
+	return !(init_size_nd == x);
 }
 
 template<typename T>
@@ -336,8 +419,7 @@ istream& operator >>(istream& is, scifir::size_nd<T>& x)
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
-	scifir::size_nd<T> c(b);
-	x = c;
+	x = scifir::size_nd<T>(b);
 	return is;
 }
 

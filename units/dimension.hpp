@@ -22,35 +22,34 @@ namespace scifir
 {
 	class dimension;
 
-	vector<dimension> create_dimensions(string);
-	vector<dimension> create_derived_dimensions(const string&);
+	vector<dimension> create_dimensions(string init_dimensions);
+	vector<dimension> create_derived_dimensions(const string& init_dimensions);
 
 	class dimension
 	{
 		public:
 			enum type : int8_t
 			{
-				none, m, radian, steradian, s, g, C, K, mol, cd, B, Hz, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, L, minute, h, d, AU, pc, eV, Da, amu, barn, M, particles, custom, custom_basic, custom_full_symbol, money, pixel, memo
+				NONE, m, grade, radian, steradian, s, g, C, K, mol, cd, B, Hz, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, L, minute, h, d, ly, AU, pc, eV, Da, amu, barn, M, particles, custom, custom_basic, custom_full_symbol, money, pixel, memo
 			};
 
-			enum sign : int8_t {NO_SIGN, POSITIVE, NEGATIVE};
+			enum position : int8_t {NO_POSITION, NUMERATOR, DENOMINATOR};
 
 			dimension();
-			dimension(const dimension&);
-			dimension(dimension&&);
-			explicit dimension(dimension::type,scifir::prefix::type,dimension::sign);
-			explicit dimension(dimension::type,const scifir::prefix&,dimension::sign);
-			explicit dimension(const string&,dimension::sign);
+			dimension(const dimension& x);
+			dimension(dimension&& x);
+			explicit dimension(dimension::type new_dimension_type,scifir::prefix::type new_prefix,dimension::position new_sign);
+			explicit dimension(dimension::type new_dimension_type,const scifir::prefix& new_prefix,dimension::position new_sign);
+			explicit dimension(const string& init_dimension,dimension::position new_sign);
 
-			~dimension();
-
-			dimension& operator=(const dimension&);
-			dimension& operator=(dimension&&);
+			dimension& operator=(const dimension& x);
+			dimension& operator=(dimension&& x);
 
 			string get_name() const;
 			string get_symbol() const;
 			long double get_conversion_factor() const;
 			long double prefix_math() const;
+			long double prefix_math(const prefix& x_prefix) const;
 
 			bool is_simple_dimension() const;
 			bool is_basic_dimension() const;
@@ -62,7 +61,7 @@ namespace scifir
 
 			scifir::prefix prefix;
 			dimension::type dimension_type;
-			dimension::sign dimension_sign;
+			dimension::position dimension_sign;
 			char symbol[3];
 
 			static void create_custom_dimension(const string& new_symbol,const string& init_dimensions)
@@ -159,27 +158,26 @@ namespace scifir
 			static set<string> prefixes_options;
 	};
 
-	string to_string(const dimension&);
-	string to_string(const vector<dimension>&,bool = false);
+	string to_string(const dimension& x);
+	string to_string(const vector<dimension>& x_dimensions,bool with_brackets = false);
 
-	vector<dimension> create_derived_dimensions(const string&);
-	vector<dimension> create_derived_dimensions(const vector<dimension>&);
-	vector<dimension> create_derived_dimensions(const vector<dimension>&,long double&);
+	vector<dimension> create_derived_dimensions(const string& init_dimensions);
+	vector<dimension> create_derived_dimensions(const vector<dimension>& x);
+	vector<dimension> create_derived_dimensions(const vector<dimension>& x,long double& value);
 
-	long double prefix_math(const dimension&,const prefix&);
-	vector<dimension> multiply_dimensions(const vector<dimension>&,const vector<dimension>&);
-	vector<dimension> multiply_dimensions(vector<dimension>,const vector<dimension>&,long double&);
-	vector<dimension> divide_dimensions(vector<dimension>,const vector<dimension>&,long double&);
-	vector<dimension> square_dimensions(vector<dimension>,long double&,int);
-	vector<dimension> power_dimensions(const vector<dimension>&,int);
+	vector<dimension> multiply_dimensions(const vector<dimension>& x,const vector<dimension>& y);
+	vector<dimension> multiply_dimensions(vector<dimension> x,const vector<dimension>& y,long double& value);
+	vector<dimension> divide_dimensions(vector<dimension> x,const vector<dimension>& y,long double& value);
+	vector<dimension> square_dimensions(vector<dimension> x,long double& value,int index);
+	vector<dimension> power_dimensions(const vector<dimension>& x,int exponent);
 
-	vector<dimension> normalize_dimensions(const vector<dimension>&);
-	vector<dimension> normalize_dimensions(const vector<dimension>&,long double&);
+	vector<dimension> normalize_dimensions(const vector<dimension>& x);
+	vector<dimension> normalize_dimensions(const vector<dimension>& x,long double& value);
 
-	bool common_dimension(const dimension&,const dimension&);
-	bool equal_dimensions(const string&,const string&);
-	bool equal_dimensions(const vector<dimension>&,const vector<dimension>&);
-	bool equal_dimensions_and_prefixes(const vector<dimension>&,const vector<dimension>&);
+	bool common_dimension(const dimension& x,const dimension& y);
+	bool equal_dimensions(const string& init_dimensions_x,const string& init_dimensions_y);
+	bool equal_dimensions(const vector<dimension>& x,const vector<dimension>& y);
+	bool equal_dimensions_and_prefixes(const vector<dimension>& x,const vector<dimension>& y);
 
 	/*constexpr bool is_dimensions(const char* x)
 	{
@@ -187,9 +185,9 @@ namespace scifir
 	}*/
 }
 
-bool operator==(const scifir::dimension&,const scifir::dimension&);
-bool operator!=(const scifir::dimension&,const scifir::dimension&);
+bool operator==(const scifir::dimension& x,const scifir::dimension& y);
+bool operator!=(const scifir::dimension& x,const scifir::dimension& y);
 
-ostream& operator <<(ostream&, const scifir::dimension&);
+ostream& operator <<(ostream& os, const scifir::dimension& x);
 
 #endif // SCIFIR_UNITS_UNITS_DIMENSION_HPP_INCLUDED

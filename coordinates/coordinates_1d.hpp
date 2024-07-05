@@ -32,17 +32,12 @@ namespace scifir
 			explicit coordinates_1d(const point_1d<T>& new_point) : x(new_point.x)
 			{}
 
-			explicit coordinates_1d(string init_coordinates_1d) : coordinates_1d()
+			explicit coordinates_1d(point_1d<T>&& new_point) : x(std::move(new_point.x))
+			{}
+
+			explicit coordinates_1d(const string& init_coordinates_1d) : coordinates_1d()
 			{
-				if (init_coordinates_1d.front() == '(')
-				{
-					init_coordinates_1d.erase(0,1);
-				}
-				if (init_coordinates_1d.back() == ')')
-				{
-					init_coordinates_1d.erase(init_coordinates_1d.size()-1,1);
-				}
-				x = T(init_coordinates_1d);
+				initialize_from_string(init_coordinates_1d);
 			}
 
 			coordinates_1d<T>& operator=(const coordinates_1d<T>& x_coordinates)
@@ -63,6 +58,18 @@ namespace scifir
 				return *this;
 			}
 
+			coordinates_1d<T>& operator=(point_1d<T>&& x_point)
+			{
+				x = std::move(x_point.x);
+				return *this;
+			}
+
+			coordinates_1d<T>& operator=(const string& init_coordinates_1d)
+			{
+				initialize_from_string(init_coordinates_1d);
+				return *this;
+			}
+
 			void set_position(const T& new_x)
 			{
 				x = new_x;
@@ -78,7 +85,28 @@ namespace scifir
 				return T(std::abs(x.get_value()),x.get_dimensions());
 			}
 
+			string display_cartesian() const
+			{
+				ostringstream out;
+				out << "(" << x <<  ")";
+				return out.str();
+			}
+
 			T x;
+
+		private:
+			void initialize_from_string(string init_coordinates_1d)
+			{
+				if (init_coordinates_1d.front() == '(')
+				{
+					init_coordinates_1d.erase(0,1);
+				}
+				if (init_coordinates_1d.back() == ')')
+				{
+					init_coordinates_1d.erase(init_coordinates_1d.size()-1,1);
+				}
+				x = T(init_coordinates_1d);
+			}
 	};
 
 	template<>
@@ -94,23 +122,18 @@ namespace scifir
 			coordinates_1d(coordinates_1d<float>&& x_coordinates) : x(std::move(x_coordinates.x))
 			{}
 
-			explicit coordinates_1d(const float& new_x) : x(new_x)
+			explicit coordinates_1d(float new_x) : x(new_x)
 			{}
 
 			explicit coordinates_1d(const point_1d<float>& new_point) : x(new_point.x)
 			{}
 
-			explicit coordinates_1d(string init_coordinates_1d) : coordinates_1d()
+			explicit coordinates_1d(point_1d<float>&& new_point) : x(std::move(new_point.x))
+			{}
+
+			explicit coordinates_1d(const string& init_coordinates_1d) : coordinates_1d()
 			{
-				if (init_coordinates_1d.front() == '(')
-				{
-					init_coordinates_1d.erase(0,1);
-				}
-				if (init_coordinates_1d.back() == ')')
-				{
-					init_coordinates_1d.erase(init_coordinates_1d.size()-1,1);
-				}
-				x = stof(init_coordinates_1d);
+				initialize_from_string(init_coordinates_1d);
 			}
 
 			coordinates_1d<float>& operator=(const coordinates_1d<float>& x_coordinates)
@@ -131,13 +154,24 @@ namespace scifir
 				return *this;
 			}
 
-			
-			void set_position(const float& new_x)
+			coordinates_1d<float>& operator=(point_1d<float>&& x_point)
+			{
+				x = std::move(x_point.x);
+				return *this;
+			}
+
+			coordinates_1d<float>& operator=(const string& init_coordinates_1d)
+			{
+				initialize_from_string(init_coordinates_1d);
+				return *this;
+			}
+
+			void set_position(float new_x)
 			{
 				x = new_x;
 			}
 
-			void move(const float& x_value)
+			void move(float x_value)
 			{
 				x += x_value;
 			}
@@ -147,44 +181,65 @@ namespace scifir
 				return float(std::abs(x));
 			}
 
+			string display_cartesian() const
+			{
+				ostringstream out;
+				out << "(" << display_float(x) <<  ")";
+				return out.str();
+			}
+
 			float x;
+
+		private:
+			void initialize_from_string(string init_coordinates_1d)
+			{
+				if (init_coordinates_1d.front() == '(')
+				{
+					init_coordinates_1d.erase(0,1);
+				}
+				if (init_coordinates_1d.back() == ')')
+				{
+					init_coordinates_1d.erase(init_coordinates_1d.size()-1,1);
+				}
+				x = stof(init_coordinates_1d);
+			}
 	};
 
 	template<typename T>
 	string to_string(const coordinates_1d<T>& x)
 	{
-		ostringstream out;
-		out << "(" << x.x <<  ")";
-		return out.str();
+		return x.display_cartesian();
 	}
 
-	template<typename T>
-	T distance(const coordinates_1d<T>& x,const coordinates_1d<T>& y)
+	string to_string(const coordinates_1d<float>& x);
+
+	template<typename T,typename U>
+	T distance(const coordinates_1d<T>& x,const coordinates_1d<U>& y)
 	{
 		return scifir::sqrt(scifir::pow(x.x - y.x,2));
 	}
 	
-	float distance(const coordinates_1d<float>&,const coordinates_1d<float>&);
+	float distance(const coordinates_1d<float>& x,const coordinates_1d<float>& y);
 
-	template<typename T>
-	T distance(const coordinates_1d<T>& x,const point_1d<T>& y)
+	template<typename T,typename U>
+	T distance(const coordinates_1d<T>& x,const point_1d<U>& y)
 	{
 		return scifir::sqrt(scifir::pow(x.x - y.x,2));
 	}
 
-	float distance(const coordinates_1d<float>&,const point_1d<float>&);
+	float distance(const coordinates_1d<float>& x,const point_1d<float>& y);
 
-	template<typename T>
-	T distance(const point_1d<T>& x,const coordinates_1d<T>& y)
+	template<typename T,typename U>
+	T distance(const point_1d<T>& x,const coordinates_1d<U>& y)
 	{
 		return scifir::sqrt(scifir::pow(x.x - y.x,2));
 	}
 
-	float distance(const point_1d<float>&,const coordinates_1d<float>&);
+	float distance(const point_1d<float>& x,const coordinates_1d<float>& y);
 }
 
-template<typename T>
-bool operator ==(const scifir::coordinates_1d<T>& x,const scifir::coordinates_1d<T>& y)
+template<typename T,typename U>
+bool operator ==(const scifir::coordinates_1d<T>& x,const scifir::coordinates_1d<U>& y)
 {
 	if (x.x == y.x)
 	{
@@ -196,14 +251,14 @@ bool operator ==(const scifir::coordinates_1d<T>& x,const scifir::coordinates_1d
 	}
 }
 
-template<typename T>
-bool operator !=(const scifir::coordinates_1d<T>& x,const scifir::coordinates_1d<T>& y)
+template<typename T,typename U>
+bool operator !=(const scifir::coordinates_1d<T>& x,const scifir::coordinates_1d<U>& y)
 {
 	return !(x == y);
 }
 
-template<typename T>
-bool operator ==(const scifir::coordinates_1d<T>& x,const scifir::point_1d<T>& y)
+template<typename T,typename U>
+bool operator ==(const scifir::coordinates_1d<T>& x,const scifir::point_1d<U>& y)
 {
 	if (x.x == y.x)
 	{
@@ -215,14 +270,14 @@ bool operator ==(const scifir::coordinates_1d<T>& x,const scifir::point_1d<T>& y
 	}
 }
 
-template<typename T>
-bool operator !=(const scifir::coordinates_1d<T>& x,const scifir::point_1d<T>& y)
+template<typename T,typename U>
+bool operator !=(const scifir::coordinates_1d<T>& x,const scifir::point_1d<U>& y)
 {
 	return !(x == y);
 }
 
-template<typename T>
-bool operator ==(const scifir::point_1d<T>& x,const scifir::coordinates_1d<T>& y)
+template<typename T,typename U>
+bool operator ==(const scifir::point_1d<T>& x,const scifir::coordinates_1d<U>& y)
 {
 	if (x.x == y.x)
 	{
@@ -234,36 +289,36 @@ bool operator ==(const scifir::point_1d<T>& x,const scifir::coordinates_1d<T>& y
 	}
 }
 
-template<typename T>
-bool operator !=(const scifir::point_1d<T>& x,const scifir::coordinates_1d<T>& y)
+template<typename T,typename U>
+bool operator !=(const scifir::point_1d<T>& x,const scifir::coordinates_1d<U>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const scifir::coordinates_1d<T>& x, const string& y)
+bool operator ==(const scifir::coordinates_1d<T>& x, const string& init_coordinates_1d)
 {
-	coordinates_1d<T> y_coordinates = coordinates_1d<T>(y);
-	return (x == y_coordinates);
+	scifir::coordinates_1d<T> y(init_coordinates_1d);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const scifir::coordinates_1d<T>& x, const string& y)
+bool operator !=(const scifir::coordinates_1d<T>& x, const string& init_coordinates_1d)
 {
-	return !(x == y);
+	return !(x == init_coordinates_1d);
 }
 
 template<typename T>
-bool operator ==(const string& x, const scifir::coordinates_1d<T>& y)
+bool operator ==(const string& init_coordinates_1d, const scifir::coordinates_1d<T>& x)
 {
-	coordinates_1d<T> x_coordinates = coordinates_1d<T>(x);
-	return (x_coordinates == y);
+	scifir::coordinates_1d<T> y(init_coordinates_1d);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const scifir::coordinates_1d<T>& y)
+bool operator !=(const string& init_coordinates_1d, const scifir::coordinates_1d<T>& x)
 {
-	return !(x == y);
+	return !(init_coordinates_1d == x);
 }
 
 template<typename T>
@@ -285,10 +340,12 @@ string operator +(const scifir::coordinates_1d<T>& x,const string& y)
 }
 
 template<typename T>
-ostream& operator << (ostream& os,const scifir::coordinates_1d<T>& x)
+ostream& operator <<(ostream& os,const scifir::coordinates_1d<T>& x)
 {
 	return os << to_string(x);
 }
+
+ostream& operator <<(ostream& os,const scifir::coordinates_1d<float>& x);
 
 template<typename T>
 istream& operator >>(istream& is,scifir::coordinates_1d<T>& x)
@@ -297,8 +354,7 @@ istream& operator >>(istream& is,scifir::coordinates_1d<T>& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::coordinates_1d<T> c(b);
-	x = c;
+	x = scifir::coordinates_1d<T>(b);
 	return is;
 }
 

@@ -14,11 +14,24 @@ namespace scifir
 	{}
 
 	template<typename T>
+	point_3d<T>::point_3d(coordinates_3d<T>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z))
+	{}
+
+	template<typename T>
 	point_3d<T>& point_3d<T>::operator=(const coordinates_3d<T>& x_coordinates)
 	{
 		x = x_coordinates.x;
 		y = x_coordinates.y;
 		z = x_coordinates.z;
+		return *this;
+	}
+
+	template<typename T>
+	point_3d<T>& point_3d<T>::operator=(coordinates_3d<T>&& x_coordinates)
+	{
+		x = std::move(x_coordinates.x);
+		y = std::move(x_coordinates.y);
+		z = std::move(x_coordinates.z);
 		return *this;
 	}
 }

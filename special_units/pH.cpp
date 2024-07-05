@@ -196,12 +196,10 @@ namespace scifir
 			}
 		}
 	}
-	
+
 	string to_string(const pH& x)
 	{
-		ostringstream output;
-		output << x.display(2);
-		return output.str();
+		return x.display(2);
 	}
 }
 
@@ -312,8 +310,7 @@ istream& operator >>(istream& is, scifir::pH& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::pH c(b);
-	x = c;
+	x = scifir::pH(b);
 	return is;
 }
 

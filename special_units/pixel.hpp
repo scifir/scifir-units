@@ -18,20 +18,20 @@ namespace scifir
 	{
 		public:
 			pixel();
-			pixel(const pixel&);
-			pixel(pixel&&);
-			explicit pixel(float);
-			explicit pixel(double);
-			explicit pixel(long double);
-			explicit pixel(int);
-			explicit pixel(const string&);
-			explicit pixel(const scalar_unit&);
+			pixel(const pixel& x);
+			pixel(pixel&& x);
+			explicit pixel(float new_value);
+			explicit pixel(double new_value);
+			explicit pixel(long double new_value);
+			explicit pixel(int new_value);
+			explicit pixel(const string& init_pixel);
+			explicit pixel(const scalar_unit& x);
 
-			pixel& operator=(const pixel&);
-			pixel& operator=(pixel&&);
-			pixel& operator=(float);
-			pixel& operator=(const string&);
-			pixel& operator=(const scalar_unit&);
+			pixel& operator =(const pixel& x);
+			pixel& operator =(pixel&& x);
+			pixel& operator =(float new_value);
+			pixel& operator =(const string& init_pixel);
+			pixel& operator =(const scalar_unit& x);
 
 			explicit operator float() const
 			{
@@ -43,81 +43,81 @@ namespace scifir
 				return value;
 			}
 
-			pixel operator +(const pixel&) const;
-			pixel operator -(const pixel&) const;
-			pixel operator *(const pixel&) const;
-			pixel operator /(const pixel&) const;
-			pixel operator ^(const pixel&) const;
-			void operator +=(const pixel&);
-			void operator -=(const pixel&);
-			void operator *=(const pixel&);
-			void operator /=(const pixel&);
-			void operator ^=(const pixel&);
+			pixel operator +(const pixel& x) const;
+			pixel operator -(const pixel& x) const;
+			pixel operator *(const pixel& x) const;
+			pixel operator /(const pixel& x) const;
+			pixel operator ^(const pixel& x) const;
+			void operator +=(const pixel& x);
+			void operator -=(const pixel& x);
+			void operator *=(const pixel& x);
+			void operator /=(const pixel& x);
+			void operator ^=(const pixel& x);
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator =(T y)
+			void operator =(T x)
 			{
-				value = y;
+				value = x;
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			pixel operator +(T y) const
+			pixel operator +(T x) const
 			{
-				return pixel(value + y);
+				return pixel(value + x);
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			pixel operator -(T y) const
+			pixel operator -(T x) const
 			{
-				return pixel(value - y);
+				return pixel(value - x);
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			pixel operator *(T y) const
+			pixel operator *(T x) const
 			{
-				return pixel(value * y);
+				return pixel(value * x);
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			pixel operator /(T y) const
+			pixel operator /(T x) const
 			{
-				return pixel(value / y);
+				return pixel(value / x);
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			pixel operator ^(T y) const
+			pixel operator ^(T x) const
 			{
-				return pixel(std::pow(value, y));
+				return pixel(std::pow(value, x));
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator +=(T y)
+			void operator +=(T x)
 			{
-				value += y;
+				value += x;
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator -=(T y)
+			void operator -=(T x)
 			{
-				value -= y;
+				value -= x;
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator *=(T y)
+			void operator *=(T x)
 			{
-				value *= y;
+				value *= x;
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator /=(T y)
+			void operator /=(T x)
 			{
-				value /= y;
+				value /= x;
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator ^=(T y)
+			void operator ^=(T x)
 			{
-				value = std::pow(value, y);
+				value = std::pow(value, x);
 			}
 
 			pixel& operator++();
@@ -128,13 +128,15 @@ namespace scifir
 		private:
 			float value;
 
+			void initialize_from_string(const string& init_pixel);
+
 	};
 
-	string to_string(const pixel&);
-	bool is_pixel(const string&);
+	string to_string(const pixel& x);
+	bool is_pixel(const string& init_pixel);
 
-	pixel sqrt(const pixel&);
-	pixel sqrt_nth(const pixel&,int);
+	pixel sqrt(const pixel& x);
+	pixel sqrt_nth(const pixel& x,int index);
 }
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
@@ -239,24 +241,24 @@ bool operator >=(const scifir::pixel& y, T x)
 	return (y.get_value() >= x);
 }
 
-bool operator ==(const scifir::pixel&, const scifir::pixel&);
-bool operator !=(const scifir::pixel&, const scifir::pixel&);
-bool operator <(const scifir::pixel&, const scifir::pixel&);
-bool operator >(const scifir::pixel&, const scifir::pixel&);
-bool operator <=(const scifir::pixel&, const scifir::pixel&);
-bool operator >=(const scifir::pixel&, const scifir::pixel&);
+bool operator ==(const scifir::pixel& x, const scifir::pixel& y);
+bool operator !=(const scifir::pixel& x, const scifir::pixel& y);
+bool operator <(const scifir::pixel& x, const scifir::pixel& y);
+bool operator >(const scifir::pixel& x, const scifir::pixel& y);
+bool operator <=(const scifir::pixel& x, const scifir::pixel& y);
+bool operator >=(const scifir::pixel& x, const scifir::pixel& y);
 
-bool operator ==(const scifir::pixel&, const string&);
-bool operator !=(const scifir::pixel&, const string&);
+bool operator ==(const scifir::pixel& x, const string& init_pixel);
+bool operator !=(const scifir::pixel& x, const string& init_pixel);
 
-bool operator ==(const string&, const scifir::pixel&);
-bool operator !=(const string&, const scifir::pixel&);
+bool operator ==(const string& init_pixel, const scifir::pixel& x);
+bool operator !=(const string& init_pixel, const scifir::pixel& x);
 
-void operator +=(string&, const scifir::pixel&);
-string operator +(const string&, const scifir::pixel&);
-string operator +(const scifir::pixel&, const string&);
+void operator +=(string& x, const scifir::pixel& y);
+string operator +(const string& x, const scifir::pixel& y);
+string operator +(const scifir::pixel& y, const string& x);
 
-ostream& operator <<(ostream&, const scifir::pixel&);
-istream& operator >>(istream&, scifir::pixel&);
+ostream& operator <<(ostream& os, const scifir::pixel& x);
+istream& operator >>(istream& is, scifir::pixel& x);
 
 #endif // SCIFIR_UNITS_SPECIAL_UNITS_PIXEL_HPP_INCLUDED

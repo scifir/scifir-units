@@ -14,36 +14,48 @@ namespace scifir
 	{
 		public:
 			zid();
-			zid(const zid&);
-			zid(zid&&);
-			explicit zid(const string&);
+			zid(const zid& x);
+			zid(zid&& x);
+			explicit zid(const scifir::aid& new_aid,const string& new_country,const vector<string>& new_regions,const string& new_zone);
+			explicit zid(const scifir::aid& new_aid,const string& init_zid);
+			explicit zid(const string& init_zid_full);
 
-			zid& operator=(const zid&);
-			zid& operator=(zid&&);
+			zid& operator =(const zid& x);
+			zid& operator =(zid&& x);
+			zid& operator =(const string& init_zid_full);
+
+			bool has_no_country() const;
+			bool has_unknown_country() const;
+
+			string display() const;
+			string partial_display() const;
 
 			scifir::aid aid;
 			vector<string> regions;
 			string country;
 			string zone;
+
+		private:
+			void initialize_from_string(const string& init_zid_full);
 	};
 
-	string to_string(const zid&);
+	string to_string(const zid& x);
 }
 
-bool operator ==(const scifir::zid&, const scifir::zid&);
-bool operator !=(const scifir::zid&, const scifir::zid&);
+bool operator ==(const scifir::zid& x, const scifir::zid& y);
+bool operator !=(const scifir::zid& x, const scifir::zid& y);
 
-bool operator ==(const scifir::zid&, const string&);
-bool operator !=(const scifir::zid&, const string&);
+bool operator ==(const scifir::zid& x, const string& init_zid_full);
+bool operator !=(const scifir::zid& x, const string& init_zid_full);
 
-bool operator ==(const string&, const scifir::zid&);
-bool operator !=(const string&, const scifir::zid&);
+bool operator ==(const string& init_zid_full, const scifir::zid& x);
+bool operator !=(const string& init_zid_full, const scifir::zid& x);
 
-void operator +=(string&, const scifir::zid&);
-string operator +(const string&, const scifir::zid&);
-string operator +(const scifir::zid&, const string&);
+void operator +=(string& x, const scifir::zid& y);
+string operator +(const string& x, const scifir::zid& y);
+string operator +(const scifir::zid& y, const string& x);
 
-ostream& operator <<(ostream&, const scifir::zid&);
-istream& operator >>(istream&, scifir::zid&);
+ostream& operator <<(ostream& os, const scifir::zid& x);
+istream& operator >>(istream& is, scifir::zid& x);
 
 #endif // SCIFIR_UNITS_SPECIAL_UNITS_ZID_HPP_INCLUDED

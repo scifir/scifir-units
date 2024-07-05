@@ -18,286 +18,289 @@ namespace scifir
 
 	aid::aid(aid&& x) : universe(std::move(x.universe)),galaxy(std::move(x.galaxy)),solar_system(std::move(x.solar_system)),astronomical_body(std::move(x.astronomical_body)),astronomical_type(std::move(x.astronomical_type))
 	{}
-	
-	aid::aid(const enum astronomical_body& x) : aid()
+
+	aid::aid(const enum astronomical_body& predefined_astronomical_body) : aid()
 	{
-		universe = "universe";
-		if (x == astronomical_body::MILKY_WAY)
+		if (predefined_astronomical_body != astronomical_body::NONE)
+		{
+			universe = "universe";
+		}
+		if (predefined_astronomical_body == astronomical_body::MILKY_WAY)
 		{
 			galaxy = "milky-way";
 			astronomical_type = aid::GALAXY;
 		}
-		else if (x == astronomical_body::ANDROMEDA)
+		else if (predefined_astronomical_body == astronomical_body::ANDROMEDA)
 		{
 			galaxy = "andromeda";
 			astronomical_type = aid::GALAXY;
 		}
-		else if (x == astronomical_body::SOLAR_SYSTEM)
+		else if (predefined_astronomical_body == astronomical_body::SOLAR_SYSTEM)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_type = aid::SOLAR_SYSTEM;
 		}
-		else if (x == astronomical_body::SUN)
+		else if (predefined_astronomical_body == astronomical_body::SUN)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "sun";
 			astronomical_type = aid::STAR;
 		}
-		else if (x == astronomical_body::MOON)
+		else if (predefined_astronomical_body == astronomical_body::MOON)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "moon";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::MERCURY)
+		else if (predefined_astronomical_body == astronomical_body::MERCURY)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "mercury";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::VENUS)
+		else if (predefined_astronomical_body == astronomical_body::VENUS)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "venus";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::EARTH)
+		else if (predefined_astronomical_body == astronomical_body::EARTH)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "earth";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::MARS)
+		else if (predefined_astronomical_body == astronomical_body::MARS)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "mars";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::JUPITER)
+		else if (predefined_astronomical_body == astronomical_body::JUPITER)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "jupiter";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::SATURN)
+		else if (predefined_astronomical_body == astronomical_body::SATURN)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "saturn";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::URANUS)
+		else if (predefined_astronomical_body == astronomical_body::URANUS)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "uranus";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::NEPTUNE)
+		else if (predefined_astronomical_body == astronomical_body::NEPTUNE)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "neptune";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::CERES)
+		else if (predefined_astronomical_body == astronomical_body::CERES)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "ceres";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::ORCUS)
+		else if (predefined_astronomical_body == astronomical_body::ORCUS)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "orcus";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::PLUTO)
+		else if (predefined_astronomical_body == astronomical_body::PLUTO)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "pluto";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::HAUMEA)
+		else if (predefined_astronomical_body == astronomical_body::HAUMEA)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "haumea";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::QUAOAR)
+		else if (predefined_astronomical_body == astronomical_body::QUAOAR)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "quaoar";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::MAKEMAKE)
+		else if (predefined_astronomical_body == astronomical_body::MAKEMAKE)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "makemake";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::GONGGONG)
+		else if (predefined_astronomical_body == astronomical_body::GONGGONG)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "gonggong";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::ERIS)
+		else if (predefined_astronomical_body == astronomical_body::ERIS)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "eris";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::SEDNA)
+		else if (predefined_astronomical_body == astronomical_body::SEDNA)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "sedna";
 			astronomical_type = aid::PLANET;
 		}
-		else if (x == astronomical_body::IO)
+		else if (predefined_astronomical_body == astronomical_body::IO)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "io";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::EUROPA)
+		else if (predefined_astronomical_body == astronomical_body::EUROPA)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "europa";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::GANYMEDE)
+		else if (predefined_astronomical_body == astronomical_body::GANYMEDE)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "ganymede";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::CALLISTO)
+		else if (predefined_astronomical_body == astronomical_body::CALLISTO)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "callisto";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::MIMAS)
+		else if (predefined_astronomical_body == astronomical_body::MIMAS)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "mimas";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::ENCELADUS)
+		else if (predefined_astronomical_body == astronomical_body::ENCELADUS)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "enceladus";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::TETHYS)
+		else if (predefined_astronomical_body == astronomical_body::TETHYS)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "tethys";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::DIONE)
+		else if (predefined_astronomical_body == astronomical_body::DIONE)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "dione";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::RHEA)
+		else if (predefined_astronomical_body == astronomical_body::RHEA)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "rhea";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::TITAN)
+		else if (predefined_astronomical_body == astronomical_body::TITAN)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "titan";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::IAPETUS)
+		else if (predefined_astronomical_body == astronomical_body::IAPETUS)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "iapetus";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::MIRANDA)
+		else if (predefined_astronomical_body == astronomical_body::MIRANDA)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "miranda";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::ARIEL)
+		else if (predefined_astronomical_body == astronomical_body::ARIEL)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "ariel";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::UMBRIEL)
+		else if (predefined_astronomical_body == astronomical_body::UMBRIEL)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "umbriel";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::TITANIA)
+		else if (predefined_astronomical_body == astronomical_body::TITANIA)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "titania";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::OBERON)
+		else if (predefined_astronomical_body == astronomical_body::OBERON)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "oberon";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::TRITON)
+		else if (predefined_astronomical_body == astronomical_body::TRITON)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "triton";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::CHARON)
+		else if (predefined_astronomical_body == astronomical_body::CHARON)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
 			astronomical_body = "charon";
 			astronomical_type = aid::MOON;
 		}
-		else if (x == astronomical_body::DYSNOMIA)
+		else if (predefined_astronomical_body == astronomical_body::DYSNOMIA)
 		{
 			galaxy = "milky-way";
 			solar_system = "solar-system";
@@ -317,6 +320,72 @@ namespace scifir
 
 	aid::aid(const string& init_aid) : aid()
 	{
+		initialize_from_string(init_aid);
+	}
+	
+	aid& aid::operator =(const aid& x)
+	{
+		universe = x.universe;
+		galaxy = x.galaxy;
+		solar_system = x.solar_system;
+		astronomical_body = x.astronomical_body;
+		astronomical_type = x.astronomical_type;
+		return *this;
+	}
+	
+	aid& aid::operator =(aid&& x)
+	{
+		universe = std::move(x.universe);
+		galaxy = std::move(x.galaxy);
+		solar_system = std::move(x.solar_system);
+		astronomical_body = std::move(x.astronomical_body);
+		astronomical_type = std::move(x.astronomical_type);
+		return *this;
+	}
+
+	aid& aid::operator =(const string& init_aid)
+	{
+		initialize_from_string(init_aid);
+		return *this;
+	}
+
+	bool aid::has_unknown_universe() const
+	{
+		return (universe == "unknown-universe");
+	}
+
+	bool aid::has_unknown_galaxy() const
+	{
+		return (galaxy == "unknown-galaxy");
+	}
+
+	bool aid::has_unknown_solar_system() const
+	{
+		return (solar_system == "unknown-solar-system");
+	}
+
+	bool aid::has_unknown_planet() const
+	{
+		return (astronomical_body == "unknown-planet");
+	}
+
+	bool aid::has_unknown_moon() const
+	{
+		return (astronomical_body == "unknown-moon");
+	}
+
+	bool aid::has_unknown_star() const
+	{
+		return (astronomical_body == "unknown-star");
+	}
+
+	bool aid::has_unknown_asteroid() const
+	{
+		return (astronomical_body == "unknown-asteroid");
+	}
+
+	void aid::initialize_from_string(const string& init_aid)
+	{
 		vector<string> values;
 		boost::split(values,init_aid,boost::is_any_of(":"));
 		string aid_type;
@@ -325,12 +394,26 @@ namespace scifir
 			if (isalpha(values[0][2]))
 			{
 				astronomical_type = create_astronomical_type(values[0].substr(1,2));
-				universe = values[0].substr(4);
+				if (values[0][4] != ' ')
+				{
+					universe = values[0].substr(4);
+				}
+				else
+				{
+					universe = values[0].substr(5);
+				}
 			}
 			else
 			{
 				astronomical_type = create_astronomical_type(values[0].substr(1,1));
-				universe = values[0].substr(3);
+				if (values[0][3] != ' ')
+				{
+					universe = values[0].substr(3);
+				}
+				else
+				{
+					universe = values[0].substr(4);
+				}
 			}
 			if (values.size() == 4)
 			{
@@ -349,54 +432,46 @@ namespace scifir
 			}
 		}
 	}
-	
-	aid& aid::operator=(const aid& x)
+
+	string aid::display() const
 	{
-		universe = x.universe;
-		galaxy = x.galaxy;
-		solar_system = x.solar_system;
-		astronomical_body = x.astronomical_body;
-		astronomical_type = x.astronomical_type;
-		return *this;
-	}
-	
-	aid& aid::operator=(aid&& x)
-	{
-		universe = std::move(x.universe);
-		galaxy = std::move(x.galaxy);
-		solar_system = std::move(x.solar_system);
-		astronomical_body = std::move(x.astronomical_body);
-		astronomical_type = std::move(x.astronomical_type);
-		return *this;
+		if (astronomical_type != aid::NONE)
+		{
+			ostringstream out;
+			out << "(" << to_string(astronomical_type) << ")";
+			if (astronomical_type == aid::UNIVERSE)
+			{
+				out << universe;
+			}
+			else if (astronomical_type == aid::GALAXY)
+			{
+				out << universe << ":" << galaxy;
+			}
+			else if (astronomical_type == aid::SOLAR_SYSTEM)
+			{
+				out << universe << ":" << galaxy << ":" << solar_system;
+			}
+			else
+			{
+				if (universe != "")
+				{
+					out << universe << ":";
+				}
+				out << galaxy << ":" << solar_system << ":" << astronomical_body;
+			}
+			return out.str();
+		}
+		else
+		{
+			return "";
+		}
 	}
 
 	string to_string(const aid& x)
 	{
-		ostringstream out;
-		out << "(" << to_string(x.astronomical_type) << ")";
-		if (x.astronomical_type == aid::UNIVERSE)
-		{
-			out << x.universe;
-		}
-		else if (x.astronomical_type == aid::GALAXY)
-		{
-			out << x.universe << ":" << x.galaxy;
-		}
-		else if (x.astronomical_type == aid::SOLAR_SYSTEM)
-		{
-			out << x.universe << ":" << x.galaxy << ":" << x.solar_system;
-		}
-		else
-		{
-			if (x.universe != "")
-			{
-				out << x.universe << ":";
-			}
-			out << x.galaxy << ":" << x.solar_system << ":" << x.astronomical_body;
-		}
-		return out.str();
+		return x.display();
 	}
-	
+
 	string to_string(const aid::type& x)
 	{
 		switch (x)
@@ -420,40 +495,40 @@ namespace scifir
 			case aid::NONE:
 				return "";
 		}
-		return "U";
+		return "";
 	}
 
-	aid::type create_astronomical_type(const string& x)
+	aid::type create_astronomical_type(const string& astronomical_type_abbreviation)
 	{
-		if (x == "U")
+		if (astronomical_type_abbreviation == "U")
 		{
 			return aid::UNIVERSE;
 		}
-		else if (x == "G")
+		else if (astronomical_type_abbreviation == "G")
 		{
 			return aid::GALAXY;
 		}
-		else if (x == "SS")
+		else if (astronomical_type_abbreviation == "SS")
 		{
 			return aid::SOLAR_SYSTEM;
 		}
-		else if (x == "P")
+		else if (astronomical_type_abbreviation == "P")
 		{
 			return aid::PLANET;
 		}
-		else if (x == "ST")
+		else if (astronomical_type_abbreviation == "ST")
 		{
 			return aid::STAR;
 		}
-		else if (x == "A")
+		else if (astronomical_type_abbreviation == "A")
 		{
 			return aid::ASTEROID;
 		}
-		else if (x == "MN")
+		else if (astronomical_type_abbreviation == "MN")
 		{
 			return aid::MOON;
 		}
-		else if (x == "MT")
+		else if (astronomical_type_abbreviation == "MT")
 		{
 			return aid::METEOR;
 		}
@@ -481,26 +556,26 @@ bool operator !=(const scifir::aid& x, const scifir::aid& y)
 	return !(x == y);
 }
 
-bool operator ==(const scifir::aid& x, const string& y)
+bool operator ==(const scifir::aid& x, const string& init_aid)
 {
-	scifir::aid y_aid = scifir::aid(y);
-	return (x == y_aid);
+	scifir::aid y = scifir::aid(init_aid);
+	return (x == y);
 }
 
-bool operator !=(const scifir::aid& x, const string& y)
+bool operator !=(const scifir::aid& x, const string& init_aid)
 {
-	return !(x == y);
+	return !(x == init_aid);
 }
 
-bool operator ==(const string& x, const scifir::aid& y)
+bool operator ==(const string& init_aid, const scifir::aid& x)
 {
-	scifir::aid x_aid = scifir::aid(x);
-	return (x_aid == y);
+	scifir::aid y = scifir::aid(init_aid);
+	return (x == y);
 }
 
-bool operator !=(const string& x, const scifir::aid& y)
+bool operator !=(const string& init_aid, const scifir::aid& x)
 {
-	return !(x == y);
+	return !(init_aid == x);
 }
 
 void operator +=(string& x, const scifir::aid& y)
@@ -537,7 +612,6 @@ istream& operator >>(istream& is, scifir::aid& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::aid c(b);
-	x = c;
+	x = scifir::aid(b);
 	return is;
 }

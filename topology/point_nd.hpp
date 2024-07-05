@@ -3,6 +3,7 @@
 
 #include "../predefined_units/physics_units.hpp"
 #include "../units/unit_basic.hpp"
+#include "../util/types.hpp"
 
 #include <iostream>
 #include <string>
@@ -71,72 +72,13 @@ namespace scifir
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit point_nd(const coordinates_nd<T>&);
+			explicit point_nd(const coordinates_nd<T>& x_coordinates);
 
-			explicit point_nd(string init_point_nd) : values()
+			explicit point_nd(coordinates_nd<T>&& x_coordinates);
+
+			explicit point_nd(const string& init_point_nd) : values()
 			{
-				vector<string> init_values;
-				if (init_point_nd.front() == '(')
-				{
-					init_point_nd.erase(0,1);
-				}
-				if (init_point_nd.back() == ')')
-				{
-					init_point_nd.erase(init_point_nd.size()-1,1);
-				}
-				boost::split(init_values,init_point_nd,boost::is_any_of(","));
-				if (init_values.size() == 2)
-				{
-					if (is_angle(init_values[1]))
-					{
-						set_position(T(init_values[0]),angle(init_values[1]));
-					}
-					else
-					{
-						set_position(T(init_values[0]),T(init_values[1]));
-					}
-				}
-				else if (init_values.size() == 3)
-				{
-					if (is_angle(init_values[0]))
-					{
-						if (is_angle(init_values[1]))
-						{
-							if (!is_angle(init_values[2]))
-							{
-								set_position(angle(init_values[0]),angle(init_values[1]),T(init_values[2]));
-							}
-						}
-					}
-					else
-					{
-						if (is_angle(init_values[1]))
-						{
-							if (is_angle(init_values[2]))
-							{
-								set_position(T(init_values[0]),angle(init_values[1]),angle(init_values[2]));
-							}
-							else
-							{
-								set_position(T(init_values[0]),angle(init_values[1]),T(init_values[2]));
-							}
-						}
-						else
-						{
-							if (!is_angle(init_values[2]))
-							{
-								set_position(T(init_values[0]),T(init_values[1]),T(init_values[2]));
-							}
-						}
-					}
-				}
-				else
-				{
-					for (const string& x_value : init_values)
-					{
-						values.push_back(T(x_value));
-					}
-				}
+				initialize_from_string(init_point_nd);
 			}
 
 			point_nd<T>& operator=(const point_nd<T>& x_point)
@@ -152,6 +94,14 @@ namespace scifir
 			}
 
 			point_nd<T>& operator=(const coordinates_nd<T>&);
+
+			point_nd<T>& operator=(coordinates_nd<T>&&);
+
+			point_nd<T>& operator=(const string& init_point_nd)
+			{
+				initialize_from_string(init_point_nd);
+				return *this;
+			}
 
 			bool is_nd(int i) const
 			{
@@ -285,21 +235,42 @@ namespace scifir
 				values = new_values;
 			}
 
-			void rotate(int dimension_number,int axis,const angle& new_theta)
+			void rotate_in_2d(const angle& new_theta)
 			{
-				if (dimension_number == 2 and get_nd() == 2)
+				if (get_nd() == 2)
 				{
 					T x_coord = values[0];
 					T y_coord = values[1];
 					values[0] = x_coord * scifir::cos(new_theta) - y_coord * scifir::sin(new_theta);
 					values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
 				}
-				else if (dimension_number == 3 and get_nd() == 3)
+			}
+
+			void rotate_in_3d(int axis,const angle& new_theta)
+			{
+				if (get_nd() == 3)
 				{
-					T coord_1 = values[axis + 1];
-					T coord_2 = values[axis + 2];
-					values[axis + 1] = coord_1 * scifir::cos(new_theta) - coord_2 * scifir::sin(new_theta);
-					values[axis + 2] = coord_1 * scifir::sin(new_theta) + coord_2 * scifir::cos(new_theta);
+					if (axis == 1)
+					{
+						T y_coord = values[1];
+						T z_coord = values[2];
+						values[1] = y_coord * scifir::cos(new_theta) - z_coord * scifir::sin(new_theta);
+						values[2] = y_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
+					}
+					else if (axis == 2)
+					{
+						T x_coord = values[0];
+						T z_coord = values[2];
+						values[0] = x_coord * scifir::cos(new_theta) - z_coord * scifir::sin(new_theta);
+						values[2] = x_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
+					}
+					else if (axis == 3)
+					{
+						T x_coord = values[0];
+						T y_coord = values[1];
+						values[0] = x_coord * scifir::cos(new_theta) - y_coord * scifir::sin(new_theta);
+						values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
+					}
 				}
 			}
 
@@ -406,35 +377,158 @@ namespace scifir
 				return scifir::sqrt(x_T);
 			}
 
+			string display_cartesian_2d() const
+			{
+				if (values.size() == 2)
+				{
+					ostringstream out;
+					out << "(" << values[0] << "," << values[1] << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-2d]";
+				}
+			}
+
 			string display_polar() const
 			{
-				ostringstream out;
-				out << "(" << get_p() << "," << get_theta() << ")";
-				return out.str();
+				if (values.size() == 2)
+				{
+					ostringstream out;
+					out << "(" << get_p() << "," << get_theta() << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-2d]";
+				}
+			}
+
+			string display_cartesian_3d() const
+			{
+				if (values.size() == 3)
+				{
+					ostringstream out;
+					out << "(" << values[0] << "," << values[1] << "," << values[2] << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
+				}
 			}
 
 			string display_cylindrical() const
 			{
-				ostringstream out;
-				out << "(" << get_p() << "," << get_theta() << "," << values[2] << ")";
-				return out.str();
+				if (values.size() == 3)
+				{
+					ostringstream out;
+					out << "(" << get_p() << "," << get_theta() << "," << values[2] << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
+				}
 			}
 
 			string display_spherical() const
 			{
-				ostringstream out;
-				out << "(" << get_r() << "," << get_theta() << "," << get_phi() << ")";
-				return out.str();
+				if (values.size() == 3)
+				{
+					ostringstream out;
+					out << "(" << get_r() << "," << get_theta() << "," << get_phi() << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
+				}
 			}
 
 			string display_geographical() const
 			{
-				ostringstream out;
-				out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ")";
-				return out.str();
+				if (values.size() == 3)
+				{
+					ostringstream out;
+					out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
+				}
 			}
 
 			vector<T> values;
+
+		private:
+			void initialize_from_string(string init_point_nd)
+			{
+				vector<string> init_values;
+				if (init_point_nd.front() == '(')
+				{
+					init_point_nd.erase(0,1);
+				}
+				if (init_point_nd.back() == ')')
+				{
+					init_point_nd.erase(init_point_nd.size()-1,1);
+				}
+				boost::split(init_values,init_point_nd,boost::is_any_of(","));
+				if (init_values.size() == 2)
+				{
+					if (is_angle(init_values[1]))
+					{
+						set_position(T(init_values[0]),angle(init_values[1]));
+					}
+					else
+					{
+						set_position(T(init_values[0]),T(init_values[1]));
+					}
+				}
+				else if (init_values.size() == 3)
+				{
+					if (is_angle(init_values[0]))
+					{
+						if (is_angle(init_values[1]))
+						{
+							if (!is_angle(init_values[2]))
+							{
+								set_position(angle(init_values[0]),angle(init_values[1]),T(init_values[2]));
+							}
+						}
+					}
+					else
+					{
+						if (is_angle(init_values[1]))
+						{
+							if (is_angle(init_values[2]))
+							{
+								set_position(T(init_values[0]),angle(init_values[1]),angle(init_values[2]));
+							}
+							else
+							{
+								set_position(T(init_values[0]),angle(init_values[1]),T(init_values[2]));
+							}
+						}
+						else
+						{
+							if (!is_angle(init_values[2]))
+							{
+								set_position(T(init_values[0]),T(init_values[1]),T(init_values[2]));
+							}
+						}
+					}
+				}
+				else
+				{
+					for (const string& x_value : init_values)
+					{
+						values.push_back(T(x_value));
+					}
+				}
+			}
 	};
 
 	template<>
@@ -453,110 +547,51 @@ namespace scifir
 			explicit point_nd(const vector<float>& new_values) : values(new_values)
 			{}
 
-			explicit point_nd(const float& new_x) : values()
+			explicit point_nd(float new_x) : values()
 			{
 				values.push_back(new_x);
 			}
 
-			explicit point_nd(const float& new_x,const float& new_y) : values()
+			explicit point_nd(float new_x,float new_y) : values()
 			{
 				values.push_back(new_x);
 				values.push_back(new_y);
 			}
 
-			explicit point_nd(const float& new_p,const angle& new_theta) : values()
+			explicit point_nd(float new_p,const angle& new_theta) : values()
 			{
 				set_position(new_p,new_theta);
 			}
 
-			explicit point_nd(const float& new_x,const float& new_y,const float& new_z) : values()
+			explicit point_nd(float new_x,float new_y,float new_z) : values()
 			{
 				values.push_back(new_x);
 				values.push_back(new_y);
 				values.push_back(new_z);
 			}
 
-			explicit point_nd(const float& new_p,const angle& new_theta,const float& new_z) : values()
+			explicit point_nd(float new_p,const angle& new_theta,float new_z) : values()
 			{
 				set_position(new_p,new_theta,new_z);
 			}
 
-			explicit point_nd(const float& new_r,const angle& new_theta,const angle& new_phi) : values()
+			explicit point_nd(float new_r,const angle& new_theta,const angle& new_phi) : values()
 			{
 				set_position(new_r,new_theta,new_phi);
 			}
 
-			explicit point_nd(const angle& new_latitude,const angle& new_longitude,const float& new_altitude) : values()
+			explicit point_nd(const angle& new_latitude,const angle& new_longitude,float new_altitude) : values()
 			{
 				set_position(new_latitude,new_longitude,new_altitude);
 			}
 
-			explicit point_nd(const coordinates_nd<float>&);
+			explicit point_nd(const coordinates_nd<float>& x_coordinates);
 
-			explicit point_nd(string init_point_nd) : values()
+			explicit point_nd(coordinates_nd<float>&& x_coordinates);
+
+			explicit point_nd(const string& init_point_nd) : values()
 			{
-				vector<string> init_values;
-				if (init_point_nd.front() == '(')
-				{
-					init_point_nd.erase(0,1);
-				}
-				if (init_point_nd.back() == ')')
-				{
-					init_point_nd.erase(init_point_nd.size()-1,1);
-				}
-				boost::split(init_values,init_point_nd,boost::is_any_of(","));
-				if (init_values.size() == 2)
-				{
-					if (is_angle(init_values[1]))
-					{
-						set_position(stof(init_values[0]),angle(init_values[1]));
-					}
-					else
-					{
-						set_position(stof(init_values[0]),stof(init_values[1]));
-					}
-				}
-				else if (init_values.size() == 3)
-				{
-					if (is_angle(init_values[0]))
-					{
-						if (is_angle(init_values[1]))
-						{
-							if (!is_angle(init_values[2]))
-							{
-								set_position(angle(init_values[0]),angle(init_values[1]),stof(init_values[2]));
-							}
-						}
-					}
-					else
-					{
-						if (is_angle(init_values[1]))
-						{
-							if (is_angle(init_values[2]))
-							{
-								set_position(stof(init_values[0]),angle(init_values[1]),angle(init_values[2]));
-							}
-							else
-							{
-								set_position(stof(init_values[0]),angle(init_values[1]),stof(init_values[2]));
-							}
-						}
-						else
-						{
-							if (!is_angle(init_values[2]))
-							{
-								set_position(stof(init_values[0]),stof(init_values[1]),stof(init_values[2]));
-							}
-						}
-					}
-				}
-				else
-				{
-					for (const string& x_value : init_values)
-					{
-						values.push_back(stof(x_value));
-					}
-				}
+				initialize_from_string(init_point_nd);
 			}
 
 			point_nd<float>& operator=(const point_nd<float>& x_point)
@@ -572,6 +607,14 @@ namespace scifir
 			}
 
 			point_nd<float>& operator=(const coordinates_nd<float>&);
+
+			point_nd<float>& operator=(coordinates_nd<float>&&);
+
+			point_nd<float>& operator=(const string& init_point_nd)
+			{
+				initialize_from_string(init_point_nd);
+				return *this;
+			}
 
 			bool is_nd(unsigned int i) const
 			{
@@ -646,27 +689,27 @@ namespace scifir
 				return float();
 			}
 
-			void set_position(const float& new_x)
+			void set_position(float new_x)
 			{
 				values.clear();
 				values.push_back(new_x);
 			}
 
-			void set_position(const float& new_x,const float& new_y)
+			void set_position(float new_x,float new_y)
 			{
 				values.clear();
 				values.push_back(new_x);
 				values.push_back(new_y);
 			}
 
-			void set_position(const float& new_p,const angle& new_theta)
+			void set_position(float new_p,const angle& new_theta)
 			{
 				values.clear();
 				values.push_back(new_p * scifir::cos(new_theta));
 				values.push_back(new_p * scifir::sin(new_theta));
 			}
 
-			void set_position(const float& new_x,const float& new_y,const float& new_z)
+			void set_position(float new_x,float new_y,float new_z)
 			{
 				values.clear();
 				values.push_back(new_x);
@@ -674,7 +717,7 @@ namespace scifir
 				values.push_back(new_z);
 			}
 
-			void set_position(const float& new_p,const angle& new_theta,const float& new_z)
+			void set_position(float new_p,const angle& new_theta,float new_z)
 			{
 				values.clear();
 				values.push_back(new_p * scifir::cos(new_theta));
@@ -682,7 +725,7 @@ namespace scifir
 				values.push_back(new_z);
 			}
 
-			void set_position(const float& new_r,const angle& new_theta,const angle& new_phi)
+			void set_position(float new_r,const angle& new_theta,const angle& new_phi)
 			{
 				values.clear();
 				values.push_back(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
@@ -690,7 +733,7 @@ namespace scifir
 				values.push_back(new_r * scifir::cos(new_phi));
 			}
 
-			void set_position(const angle& new_latitude,const angle& new_longitude,const float& new_altitude)
+			void set_position(const angle& new_latitude,const angle& new_longitude,float new_altitude)
 			{
 				values.clear();
 				values.push_back(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude));
@@ -704,25 +747,46 @@ namespace scifir
 				values = new_values;
 			}
 
-			void rotate(int dimension_number,int axis,const angle& new_theta)
+			void rotate_in_2d(const angle& new_theta)
 			{
-				if (dimension_number == 2 and get_nd() == 2)
+				if (get_nd() == 2)
 				{
 					float x_coord = values[0];
 					float y_coord = values[1];
 					values[0] = x_coord * scifir::cos(new_theta) - y_coord * scifir::sin(new_theta);
 					values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
 				}
-				else if (dimension_number == 3 and get_nd() == 3)
+			}
+
+			void rotate_in_3d(int axis,const angle& new_theta)
+			{
+				if (get_nd() == 3)
 				{
-					float coord_1 = values[axis + 1];
-					float coord_2 = values[axis + 2];
-					values[axis + 1] = coord_1 * scifir::cos(new_theta) - coord_2 * scifir::sin(new_theta);
-					values[axis + 2] = coord_1 * scifir::sin(new_theta) + coord_2 * scifir::cos(new_theta);
+					if (axis == 1)
+					{
+						float y_coord = values[1];
+						float z_coord = values[2];
+						values[1] = y_coord * scifir::cos(new_theta) - z_coord * scifir::sin(new_theta);
+						values[2] = y_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
+					}
+					else if (axis == 2)
+					{
+						float x_coord = values[0];
+						float z_coord = values[2];
+						values[0] = x_coord * scifir::cos(new_theta) - z_coord * scifir::sin(new_theta);
+						values[2] = x_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
+					}
+					else if (axis == 3)
+					{
+						float x_coord = values[0];
+						float y_coord = values[1];
+						values[0] = x_coord * scifir::cos(new_theta) - y_coord * scifir::sin(new_theta);
+						values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
+					}
 				}
 			}
 
-			void move(const float& new_x)
+			void move(float new_x)
 			{
 				if (values.size() == 1)
 				{
@@ -739,7 +803,7 @@ namespace scifir
 				}
 			}
 
-			void move(const float& new_x,const float& new_y)
+			void move(float new_x,float new_y)
 			{
 				if (values.size() == 2)
 				{
@@ -748,7 +812,7 @@ namespace scifir
 				}
 			}
 
-			void move(const float& new_p,const angle& new_theta)
+			void move(float new_p,const angle& new_theta)
 			{
 				if (values.size() == 2)
 				{
@@ -767,7 +831,7 @@ namespace scifir
 				}
 			}
 
-			void move(const float& new_x,const float& new_y,const float& new_z)
+			void move(float new_x,float new_y,float new_z)
 			{
 				if (values.size() == 3)
 				{
@@ -777,7 +841,7 @@ namespace scifir
 				}
 			}
 
-			void move(const float& new_p,const angle& new_theta,const float& new_z)
+			void move(float new_p,const angle& new_theta,float new_z)
 			{
 				if (values.size() == 3)
 				{
@@ -787,7 +851,7 @@ namespace scifir
 				}
 			}
 
-			void move(const float& new_r,const angle& new_theta,const angle& new_phi)
+			void move(float new_r,const angle& new_theta,const angle& new_phi)
 			{
 				if (values.size() == 3)
 				{
@@ -808,7 +872,7 @@ namespace scifir
 				}
 			}
 
-			void move(const float& new_r,const vector<angle>& new_angles)
+			void move(float new_r,const vector<angle>& new_angles)
 			{
 				displacement_nd x_displacement = displacement_nd(new_r,"m",new_angles);
 				move(x_displacement);
@@ -824,60 +888,192 @@ namespace scifir
 				return std::sqrt(x_T);
 			}
 
+			string display_cartesian_2d() const
+			{
+				if (values.size() == 2)
+				{
+					ostringstream out;
+					out << "(" << display_float(values[0]) << "," << display_float(values[1]) << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-2d]";
+				}
+			}
+
 			string display_polar() const
 			{
-				ostringstream out;
-				out << "(" << get_p() << "," << get_theta() << ")";
-				return out.str();
+				if (values.size() == 2)
+				{
+					ostringstream out;
+					out << "(" << display_float(get_p()) << "," << get_theta() << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-2d]";
+				}
+			}
+
+			string display_cartesian_3d() const
+			{
+				if (values.size() == 3)
+				{
+					ostringstream out;
+					out << "(" << display_float(values[0]) << "," << display_float(values[1]) << "," << display_float(values[2]) << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
+				}
 			}
 
 			string display_cylindrical() const
 			{
-				ostringstream out;
-				out << "(" << get_p() << "," << get_theta() << "," << values[2] << ")";
-				return out.str();
+				if (values.size() == 3)
+				{
+					ostringstream out;
+					out << "(" << display_float(get_p()) << "," << get_theta() << "," << display_float(values[2]) << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
+				}
 			}
 
 			string display_spherical() const
 			{
-				ostringstream out;
-				out << "(" << get_r() << "," << get_theta() << "," << get_phi() << ")";
-				return out.str();
+				if (values.size() == 3)
+				{
+					ostringstream out;
+					out << "(" << display_float(get_r()) << "," << get_theta() << "," << get_phi() << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
+				}
 			}
 
 			string display_geographical() const
 			{
-				ostringstream out;
-				out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ")";
-				return out.str();
+				if (values.size() == 3)
+				{					
+					ostringstream out;
+					out << "(" << get_latitude() << "," << get_longitude() << "," << display_float(get_altitude()) << ")";
+					return out.str();
+				}
+				else
+				{
+					return "[no-3d]";
+				}
 			}
 
 			vector<float> values;
+
+		private:
+			void initialize_from_string(string init_point_nd)
+			{
+				vector<string> init_values;
+				if (init_point_nd.front() == '(')
+				{
+					init_point_nd.erase(0,1);
+				}
+				if (init_point_nd.back() == ')')
+				{
+					init_point_nd.erase(init_point_nd.size()-1,1);
+				}
+				boost::split(init_values,init_point_nd,boost::is_any_of(","));
+				if (init_values.size() == 2)
+				{
+					if (is_angle(init_values[1]))
+					{
+						set_position(stof(init_values[0]),angle(init_values[1]));
+					}
+					else
+					{
+						set_position(stof(init_values[0]),stof(init_values[1]));
+					}
+				}
+				else if (init_values.size() == 3)
+				{
+					if (is_angle(init_values[0]))
+					{
+						if (is_angle(init_values[1]))
+						{
+							if (!is_angle(init_values[2]))
+							{
+								set_position(angle(init_values[0]),angle(init_values[1]),stof(init_values[2]));
+							}
+						}
+					}
+					else
+					{
+						if (is_angle(init_values[1]))
+						{
+							if (is_angle(init_values[2]))
+							{
+								set_position(stof(init_values[0]),angle(init_values[1]),angle(init_values[2]));
+							}
+							else
+							{
+								set_position(stof(init_values[0]),angle(init_values[1]),stof(init_values[2]));
+							}
+						}
+						else
+						{
+							if (!is_angle(init_values[2]))
+							{
+								set_position(stof(init_values[0]),stof(init_values[1]),stof(init_values[2]));
+							}
+						}
+					}
+				}
+				else
+				{
+					for (const string& x_value : init_values)
+					{
+						values.push_back(stof(x_value));
+					}
+				}
+			}
 	};
 
 	template<typename T>
 	string to_string(const point_nd<T>& x)
 	{
-		ostringstream out;
-		out << "(";
-		for (int i = 0; i < x.values.size(); i++)
+		if (x.values.size() > 0)
 		{
-			out << x.values[i];
-			if ((i + 1) != x.values.size())
+			ostringstream out;
+			out << "(";
+			for (int i = 0; i < x.values.size(); i++)
 			{
-				out << ",";
+				out << x.values[i];
+				if ((i + 1) != x.values.size())
+				{
+					out << ",";
+				}
 			}
+			out << ")";
+			return out.str();
 		}
-		out << ")";
-		return out.str();
+		else
+		{
+			return "[empty]";
+		}
 	}
 
-	template<typename T>
-	T distance(const point_nd<T>& x1,const point_nd<T>& x2)
+	string to_string(const point_nd<float>& x);
+
+	template<typename T,typename U>
+	T distance(const point_nd<T>& x1,const point_nd<U>& x2)
 	{
 		if (x1.get_nd() == x2.get_nd())
 		{
-			T x_length = T(0,multiply_dimensions(x1.get_dimensions() * x2.get_dimensions()));
+			scalar_unit x_length = scalar_unit(0.0f,"m2");
 			for (int i = 0; i < x1.values.size(); i++)
 			{
 				x_length += scifir::pow(x1.values[i] - x2.values[i],2);
@@ -893,8 +1089,8 @@ namespace scifir
 	float distance(const point_nd<float>&,const point_nd<float>&);
 }
 
-template<typename T>
-bool operator ==(const scifir::point_nd<T>& x,const scifir::point_nd<T>& y)
+template<typename T,typename U>
+bool operator ==(const scifir::point_nd<T>& x,const scifir::point_nd<U>& y)
 {
 	for (int i = 0; i < x.values.size(); i++)
 	{
@@ -906,36 +1102,36 @@ bool operator ==(const scifir::point_nd<T>& x,const scifir::point_nd<T>& y)
 	return true;
 }
 
-template<typename T>
-bool operator !=(const scifir::point_nd<T>& x,const scifir::point_nd<T>& y)
+template<typename T,typename U>
+bool operator !=(const scifir::point_nd<T>& x,const scifir::point_nd<U>& y)
 {
 	return !(x == y);
 }
 
 template<typename T>
-bool operator ==(const scifir::point_nd<T>& x, const string& y)
+bool operator ==(const scifir::point_nd<T>& x, const string& init_point_nd)
 {
-	point_nd<T> y_point = point_nd<T>(y);
-	return (x == y_point);
+	scifir::point_nd<T> y(init_point_nd);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const scifir::point_nd<T>& x, const string& y)
+bool operator !=(const scifir::point_nd<T>& x, const string& init_point_nd)
 {
-	return !(x == y);
+	return !(x == init_point_nd);
 }
 
 template<typename T>
-bool operator ==(const string& x, const scifir::point_nd<T>& y)
+bool operator ==(const string& init_point_nd, const scifir::point_nd<T>& x)
 {
-	point_nd<T> x_point = point_nd<T>(x);
-	return (x_point == y);
+	scifir::point_nd<T> y(init_point_nd);
+	return (x == y);
 }
 
 template<typename T>
-bool operator !=(const string& x, const scifir::point_nd<T>& y)
+bool operator !=(const string& init_point_nd, const scifir::point_nd<T>& x)
 {
-	return !(x == y);
+	return !(init_point_nd == x);
 }
 
 template<typename T>
@@ -962,6 +1158,8 @@ ostream& operator <<(ostream& os,const scifir::point_nd<T>& x)
 	return os << to_string(x);
 }
 
+ostream& operator <<(ostream& os,const scifir::point_nd<float>& x);
+
 template<typename T>
 istream& operator >>(istream& is, scifir::point_nd<T>& x)
 {
@@ -969,8 +1167,7 @@ istream& operator >>(istream& is, scifir::point_nd<T>& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::point_nd<T> c(b);
-	x = c;
+	x = scifir::point_nd<T>(b);
 	return is;
 }
 

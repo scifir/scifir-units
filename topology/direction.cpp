@@ -10,39 +10,48 @@ namespace scifir
 {
 	direction::direction() : value(direction::NONE)
 	{}
-	
+
 	direction::direction(const direction& x) : direction(x.value)
 	{}
-	
+
 	direction::direction(direction&& x) : direction(std::move(x.value))
 	{}
 
 	direction::direction(direction::name new_direction) : value(new_direction)
 	{}
-	
-	direction::direction(const string& new_direction) : value(create_direction(new_direction))
+
+	direction::direction(const string& init_direction) : value(create_direction(init_direction))
 	{}
-	
-	void direction::operator=(const direction& x)
+
+	direction& direction::operator=(const direction& x)
 	{
 		value = x.value;
+		return *this;
 	}
-	
-	void direction::operator=(direction&& x)
+
+	direction& direction::operator=(direction&& x)
 	{
 		value = std::move(x.value);
+		return *this;
 	}
-	
-	void direction::operator =(direction::name new_direction)
+
+	direction& direction::operator=(direction::name new_direction)
 	{
 		value = new_direction;
+		return *this;
 	}
-	
+
+	direction& direction::operator=(const string& init_direction)
+	{
+		value = create_direction(init_direction);
+		return *this;
+	}
+
 	void direction::invert()
 	{
 		value = scifir::invert(value);
 	}
-	
+
 	direction::name create_direction(const string& x)
 	{
 		if (x == "left")
@@ -271,6 +280,8 @@ namespace scifir
 	{
 		switch (x)
 		{
+			case direction::NONE:
+				return "";
 			case direction::LEFT:
 				return "left";
 			case direction::RIGHT:
@@ -323,12 +334,10 @@ namespace scifir
 				return "right-bottom-front";
 			case direction::RIGHT_BOTTOM_BACK:
 				return "right-bottom-back";
-			case direction::NONE:
-				return "";
 		}
 		return "";
 	}
-	
+
 	string to_string(const direction& x)
 	{
 		return to_string(x.value);
@@ -379,26 +388,26 @@ bool operator !=(scifir::direction::name y, const scifir::direction& x)
 	return !(x == y);
 }
 
-bool operator ==(const scifir::direction& x, const string& y)
+bool operator ==(const scifir::direction& x, const string& init_direction)
 {
-	scifir::direction y_direction = scifir::direction(y);
-	return (x == y_direction);
+	scifir::direction y(init_direction);
+	return (x == y);
 }
 
-bool operator !=(const scifir::direction& x, const string& y)
+bool operator !=(const scifir::direction& x, const string& init_direction)
 {
-	return !(x == y);
+	return !(x == init_direction);
 }
 
-bool operator ==(const string& x, const scifir::direction& y)
+bool operator ==(const string& init_direction, const scifir::direction& x)
 {
-	scifir::direction x_direction = scifir::direction(x);
-	return (x_direction == y);
+	scifir::direction y(init_direction);
+	return (x == y);
 }
 
-bool operator !=(const string& x, const scifir::direction& y)
+bool operator !=(const string& init_direction, const scifir::direction& x)
 {
-	return !(x == y);
+	return !(init_direction == x);
 }
 
 void operator +=(string& x, const scifir::direction& y)
@@ -435,7 +444,6 @@ istream& operator >>(istream& is, scifir::direction& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::direction c(b);
-	x = c;
+	x = scifir::direction(b);
 	return is;
 }

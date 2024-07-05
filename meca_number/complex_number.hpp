@@ -3,6 +3,8 @@
 
 #include "../meca_number/angle.hpp"
 #include "../util/is_number.hpp"
+#include "../units/scalar_unit.hpp"
+#include "../util/types.hpp"
 
 #include "boost/algorithm/string.hpp"
 
@@ -26,23 +28,30 @@ namespace scifir
 			complex_number(complex_number<T>&& x) : real(std::move(x.real)),imaginary(std::move(x.imaginary))
 			{}
 
-			explicit complex_number(T x,T y) : real(x),imaginary(y)
+			explicit complex_number(const T& x,const T& y) : real(x),imaginary(y)
 			{}
 
-			explicit complex_number(const string& init_complex_number) : complex_number()
+			explicit complex_number(const string& x,const string& y) : real(x),imaginary(y)
+			{}
+
+			explicit complex_number(const string& init_complex_number)
 			{
-				if (init_complex_number.find("+"))
+				if (init_complex_number.find("+") != string::npos or init_complex_number.find("-") != string::npos)
 				{
 					vector<string> numbers;
-					boost::split(numbers,init_complex_number,boost::is_any_of("+"));
+					boost::split(numbers,init_complex_number,boost::is_any_of("+-"));
 					if (numbers.size() == 2)
 					{
 						boost::trim(numbers[0]);
 						boost::trim(numbers[1]);
-						if (numbers[1].substr(0,numbers[1].length() - 3) == "(i)")
+						if (numbers[1].substr(numbers[1].length() - 3) == "(i)")
 						{
-							real = T(numbers[0]);
-							imaginary = T(numbers[1].substr(0,numbers[1].length() - 3));
+							real = scalar_unit(numbers[0]);
+							imaginary = scalar_unit(numbers[1].substr(0,numbers[1].length() - 3));
+							if (init_complex_number.find("-") != string::npos)
+							{
+								imaginary *= -1;
+							}
 						}
 						else
 						{
@@ -58,14 +67,14 @@ namespace scifir
 				}
 			}
 
-			complex_number<T>& operator=(const complex_number<T>& x)
+			complex_number<T>& operator =(const complex_number<T>& x)
 			{
 				real = x.real;
 				imaginary = x.imaginary;
 				return *this;
 			}
 
-			complex_number<T>& operator=(complex_number<T>&& x)
+			complex_number<T>& operator =(complex_number<T>&& x)
 			{
 				real = std::move(x.real);
 				imaginary = std::move(x.imaginary);
@@ -82,16 +91,18 @@ namespace scifir
 				return complex_number<T>(real - x.real,imaginary - x.imaginary);
 			}
 
-			complex_number<T> operator *(const complex_number<T>& x) const
+			template<typename U>
+			complex_number<scalar_unit> operator *(const complex_number<U>& x) const
 			{
-				return complex_number<T>(real * x.real - imaginary * x.imaginary,real * x.imaginary + imaginary * x.real);
+				return complex_number<scalar_unit>(real * x.real - imaginary * x.imaginary,real * x.imaginary + imaginary * x.real);
 			}
 
-			complex_number<T> operator /(const complex_number<T>& x) const
+			template<typename U>
+			complex_number<scalar_unit> operator /(const complex_number<U>& x) const
 			{
-				T new_real = (real * x.real + x.imaginary * imaginary) / (real ^ 2 + imaginary ^ 2);
-				T new_imaginary = (x.imaginary * real - x.real * imaginary) / (real ^ 2 + imaginary ^ 2);
-				return complex_number<T>(new_real,new_imaginary);
+				scalar_unit new_real = (real * x.real + x.imaginary * imaginary) / ((real^2) + (imaginary^2));
+				scalar_unit new_imaginary = (x.imaginary * real - x.real * imaginary) / ((real^2) + (imaginary^2));
+				return complex_number<scalar_unit>(new_real,new_imaginary);
 			}
 
 			void operator +=(const complex_number<T>& x)
@@ -106,18 +117,6 @@ namespace scifir
 				imaginary -= x.imaginary;
 			}
 
-			void operator *=(const complex_number<T>& x)
-			{
-				real = real * x.real - imaginary * x.imaginary;
-				imaginary = real * x.imaginary + imaginary * x.real;
-			}
-
-			void operator /=(const complex_number<T>& x)
-			{
-				real = (real * x.real + x.imaginary * imaginary) / (real ^ 2 + imaginary ^ 2);
-				imaginary = (x.imaginary * real - x.real * imaginary) / (real ^ 2 + imaginary ^ 2);
-			}
-
 			complex_number<T> get_conjugate() const
 			{
 				return complex_number<T>(real,imaginary * -1);
@@ -125,14 +124,14 @@ namespace scifir
 
 			T get_r() const
 			{
-				return scifir::sqrt(real^2 + imaginary^2);
+				return scifir::sqrt((real^2) + (imaginary^2));
 			}
 
 			angle get_argument() const
 			{
 				if (imaginary != 0 and real > 0)
 				{
-					return angle(2 * scifir::atan(imaginary / (real + (scifir::sqrt(real^2 + imaginary^2)))));
+					return angle(2 * scifir::atan(float(imaginary / (real + (scifir::sqrt((real^2) + (imaginary^2)))))));
 				}
 				else if (real < 0 and imaginary == 0)
 				{
@@ -144,11 +143,27 @@ namespace scifir
 				}
 			}
 
-			complex_number<T> get_reciprocal() const
+			complex_number<scalar_unit> get_reciprocal() const
 			{
-				T new_real = real / (real ^ 2 + imaginary ^ 2);
-				T new_imaginary = (-1 * imaginary) / (real ^ 2 + imaginary ^ 2);
-				return complex_number<T>(new_real,new_imaginary);
+				scalar_unit new_real = real / ((real^2) + (imaginary^2));
+				scalar_unit new_imaginary = (-1 * imaginary) / ((real^2) + (imaginary^2));
+				return complex_number<scalar_unit>(new_real,new_imaginary);
+			}
+
+			string display(int number_of_decimals = 2) const
+			{
+				ostringstream output;
+				output << real.display(number_of_decimals);
+				if (imaginary >= 0)
+				{
+					output << " + ";
+				}
+				else
+				{
+					output << " - ";
+				}
+				output << display_float(std::abs(imaginary.get_value()),number_of_decimals) << " " << imaginary.display_dimensions() << "(i)";
+				return output.str();
 			}
 
 			T real;
@@ -158,21 +173,19 @@ namespace scifir
 	template<typename T>
 	string to_string(const complex_number<T>& x)
 	{
-		ostringstream output;
-		output << x.real << " + " << x.imaginary << "(i)";
-		return output.str();
+		return x.display(2);
 	}
 
-	bool is_complex(const string&);
+	bool is_complex(const string& init_complex_number);
 
 	template<typename T>
 	T abs(const complex_number<T>& x)
 	{
-		return scifir::sqrt(x.real ^ 2 + x.imaginary ^ 2);
+		return scifir::sqrt((x.real^2) + (x.imaginary^2));
 	}
 
 	template<typename T>
-	complex_number<T> sqrt(const complex_number<T>& x)
+	complex_number<scalar_unit> sqrt(const complex_number<T>& x)
 	{
 		int sgn_value;
 		if (x.imaginary > 0)
@@ -187,20 +200,20 @@ namespace scifir
 		{
 			sgn_value = 0;
 		}
-		T new_real = scifir::sqrt(x.real + scifir::sqrt(x.real ^ 2 + x.imaginary ^ 2));
-		T new_imaginary = sgn_value * scifir::sqrt(((-1) * x.real + scifir::sqrt(x.real ^ 2 + x.imaginary ^ 2)) / 2);
-		return complex_number<T>(new_real,new_imaginary);
+		scalar_unit new_real = scifir::sqrt(x.real + scifir::sqrt((x.real^2) + (x.imaginary^2)));
+		scalar_unit new_imaginary = sgn_value * scifir::sqrt(((-1) * x.real + scifir::sqrt((x.real^2) + (x.imaginary^2))) / 2);
+		return complex_number<scalar_unit>(new_real,new_imaginary);
 	}
 
-	template<typename T>
+	/*template<typename T>
 	T sin(complex_number<T> x)
 	{
 		return std::sin(float(x.real));
-	}
+	}*/
 }
 
-template<typename T>
-bool operator ==(const scifir::complex_number<T>& x, const scifir::complex_number<T>& y)
+template<typename T,typename U>
+bool operator ==(const scifir::complex_number<T>& x, const scifir::complex_number<U>& y)
 {
 	if (x.real == y.real and x.imaginary == y.imaginary)
 	{
@@ -212,10 +225,34 @@ bool operator ==(const scifir::complex_number<T>& x, const scifir::complex_numbe
 	}
 }
 
-template<typename T>
-bool operator !=(const scifir::complex_number<T>& x, const scifir::complex_number<T>& y)
+template<typename T,typename U>
+bool operator !=(const scifir::complex_number<T>& x, const scifir::complex_number<U>& y)
 {
 	return !(x == y);
+}
+
+template<typename T>
+bool operator ==(const scifir::complex_number<T>& x, const string& init_complex_number)
+{
+	return (x == scifir::complex_number<T>(init_complex_number));
+}
+
+template<typename T>
+bool operator !=(const scifir::complex_number<T>& x, const string& init_complex_number)
+{
+	return !(x == init_complex_number);
+}
+
+template<typename T>
+bool operator ==(const string& init_complex_number, const scifir::complex_number<T>& x)
+{
+	return (scifir::complex_number<T>(init_complex_number) == x);
+}
+
+template<typename T>
+bool operator !=(const string& init_complex_number, const scifir::complex_number<T>& x)
+{
+	return !(init_complex_number == x);
 }
 
 template<typename T>
@@ -248,8 +285,7 @@ istream& operator >>(istream& is, scifir::complex_number<T>& x)
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
-	scifir::complex_number<T> c(b);
-	x = c;
+	x = scifir::complex_number<T>(b);
 	return is;
 }
 

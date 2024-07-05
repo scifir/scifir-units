@@ -24,37 +24,29 @@ namespace scifir
 	angle::angle(angle&& x) : value(std::move(x.get_value()))
 	{}
 
-	angle::angle(float x) : value(x)
+	angle::angle(float new_value) : value(new_value)
 	{
 		normalize_value();
 	}
 
-	angle::angle(double x) : value(float(x))
+	angle::angle(double new_value) : value(float(new_value))
 	{
 		normalize_value();
 	}
 
-	angle::angle(long double x) : value(float(x))
+	angle::angle(long double new_value) : value(float(new_value))
 	{
 		normalize_value();
 	}
 
-	angle::angle(int x) : value(float(x))
+	angle::angle(int new_value) : value(float(new_value))
 	{
 		normalize_value();
 	}
 
-	angle::angle(string init_angle) : value()
+	angle::angle(const string& init_angle) : value()
 	{
-		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
-		if (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA))
-		{
-			init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);
-		}
-		init_angle.clear();
-		init_angle_unicode.toUTF8String(init_angle);
-		value = stof(init_angle);
-		normalize_value();
+		initialize_from_string(init_angle);
 	}
 
 	angle::angle(const scalar_unit& x)
@@ -83,25 +75,16 @@ namespace scifir
 		return *this;
 	}
 
-	angle& angle::operator=(float x)
+	angle& angle::operator=(float new_value)
 	{
-		value = x;
+		value = new_value;
 		normalize_value();
 		return *this;
 	}
 
-	angle& angle::operator=(string init_angle)
+	angle& angle::operator=(const string& init_angle)
 	{
-		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
-		if (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA))
-		{
-			init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);
-		}
-		
-		init_angle.clear();
-		init_angle_unicode.toUTF8String(init_angle);
-		value = stof(init_angle);
-		normalize_value();
+		initialize_from_string(init_angle);
 		return *this;
 	}
 
@@ -242,16 +225,27 @@ namespace scifir
 		}
 	}
 
-	string to_string(const angle& x)
+	void angle::initialize_from_string(string init_angle)
 	{
-		ostringstream output;
-		output << x.display(2);
-		return output.str();
+		icu::UnicodeString init_angle_unicode = icu::UnicodeString(init_angle.c_str());
+		if (init_angle_unicode.endsWith(0x00B0) or init_angle_unicode.endsWith(0x00BA))
+		{
+			init_angle_unicode = init_angle_unicode.tempSubString(0,init_angle_unicode.countChar32() - 1);
+		}
+		init_angle.clear();
+		init_angle_unicode.toUTF8String(init_angle);
+		value = stof(init_angle);
+		normalize_value();
 	}
 
-	bool is_angle(const string& x)
+	string to_string(const angle& x)
 	{
-		icu::UnicodeString x_unicode = icu::UnicodeString(x.c_str());
+		return x.display(2);
+	}
+
+	bool is_angle(const string& init_angle)
+	{
+		icu::UnicodeString x_unicode = icu::UnicodeString(init_angle.c_str());
 		int total_chars = x_unicode.countChar32();
 		if (x_unicode[total_chars - 1] == 0x00B0 || x_unicode[total_chars - 1] == 0x00BA)
 		{
@@ -312,9 +306,9 @@ namespace scifir
 		return angle(std::sqrt(x.get_value()));
 	}
 
-	angle sqrt_nth(const angle& x, int y)
+	angle sqrt_nth(const angle& x, int index)
 	{
-		return angle(std::pow(x.get_value(), float(1.0f / y)));
+		return angle(std::pow(x.get_value(), float(1.0f / index)));
 	}
 
 	float sin(const angle& x)
@@ -429,26 +423,26 @@ bool operator >=(const scifir::angle& x, const scifir::angle& y)
 	return !(x < y);
 }
 
-bool operator ==(const scifir::angle& x, const string& y)
+bool operator ==(const scifir::angle& x, const string& init_angle)
 {
-	scifir::angle y_angle = scifir::angle(y);
-	return (x == y_angle);
+	scifir::angle y = scifir::angle(init_angle);
+	return (x == y);
 }
 
-bool operator !=(const scifir::angle& x, const string& y)
+bool operator !=(const scifir::angle& x, const string& init_angle)
 {
-	return !(x == y);
+	return !(x == init_angle);
 }
 
-bool operator ==(const string& x, const scifir::angle& y)
+bool operator ==(const string& init_angle, const scifir::angle& x)
 {
-	scifir::angle x_angle = scifir::angle(x);
-	return (x_angle == y);
+	scifir::angle y = scifir::angle(init_angle);
+	return (x == y);
 }
 
-bool operator !=(const string& x, const scifir::angle& y)
+bool operator !=(const string& init_angle, const scifir::angle& x)
 {
-	return !(x == y);
+	return !(init_angle == x);
 }
 
 void operator +=(string& x, const scifir::angle& y)
@@ -485,7 +479,6 @@ istream& operator >>(istream& is, scifir::angle& x)
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	scifir::angle c(b);
-	x = c;
+	x = scifir::angle(b);
 	return is;
 }

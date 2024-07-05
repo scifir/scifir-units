@@ -10,6 +10,9 @@ namespace scifir
 	point_2d<float>::point_2d(const coordinates_2d<float>& x_coordinates) : x(x_coordinates.x),y(x_coordinates.y)
 	{}
 
+	point_2d<float>::point_2d(coordinates_2d<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y))
+	{}
+
 	point_2d<float>& point_2d<float>::operator=(const coordinates_2d<float>& x_coordinates)
 	{
 		x = x_coordinates.x;
@@ -17,20 +20,25 @@ namespace scifir
 		return *this;
 	}
 
-	string to_string(const point_2d<float>& x)
+	point_2d<float>& point_2d<float>::operator=(coordinates_2d<float>&& x_coordinates)
 	{
-		ostringstream out;
-		out << "(" << display_float(x.x,2) << "," << display_float(x.y,2) << ")";
-		return out.str();
+		x = std::move(x_coordinates.x);
+		y = std::move(x_coordinates.y);
+		return *this;
 	}
 
-	float distance(const point_2d<float>& x1,const point_2d<float>& x2)
+	string to_string(const point_2d<float>& x)
 	{
-		return float(std::sqrt(std::pow(x1.x - x2.x,2) + std::pow(x1.y - x2.y,2)));
+		return x.display_cartesian();
+	}
+
+	float distance(const point_2d<float>& x,const point_2d<float>& y)
+	{
+		return float(std::sqrt(std::pow(x.x - y.x,2) + std::pow(x.y - y.y,2)));
 	}
 }
 
-ostream& operator << (ostream& os,const scifir::point_2d<float>& x)
+ostream& operator <<(ostream& os,const scifir::point_2d<float>& x)
 {
 	return os << scifir::to_string(x);
 }

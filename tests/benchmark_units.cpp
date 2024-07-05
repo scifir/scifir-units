@@ -11,7 +11,7 @@
 using namespace std;
 using namespace scifir;
 
-TEST_CASE("scalar_unit class","Full test of scalar_units") {
+TEST_CASE("Benchmark of scalar_unit class","[!benchmark]") {
 	BENCHMARK("Sum of floats") {
 		float a = 1.5f;
 		float b = 2.5f;
@@ -30,7 +30,7 @@ TEST_CASE("scalar_unit class","Full test of scalar_units") {
 		return a + b;
     };
 
-	BENCHMARK("Sum of scalar_unit classes") {
+	BENCHMARK("Sum of scalar_unit class") {
 		scalar_unit a = scalar_unit(1.5f,"m");
 		scalar_unit b = scalar_unit(2.5f,"m");
 		return a + b;
@@ -54,7 +54,7 @@ TEST_CASE("scalar_unit class","Full test of scalar_units") {
 		return a - b;
     };
 
-	BENCHMARK("Substraction of scalar_unit classes") {
+	BENCHMARK("Substraction of scalar_unit class") {
 		scalar_unit a = scalar_unit(1.5f,"m");
 		scalar_unit b = scalar_unit(2.5f,"m");
 		return a - b;
@@ -78,7 +78,7 @@ TEST_CASE("scalar_unit class","Full test of scalar_units") {
 		return a * b;
     };
 
-	BENCHMARK("Product of scalar_unit classes") {
+	BENCHMARK("Product of scalar_unit class") {
 		scalar_unit a = scalar_unit(1.5f,"m");
 		scalar_unit b = scalar_unit(2.5f,"m");
 		return a * b;
@@ -102,7 +102,7 @@ TEST_CASE("scalar_unit class","Full test of scalar_units") {
 		return a / b;
     };
 
-	BENCHMARK("Division of scalar_unit classes") {
+	BENCHMARK("Division of scalar_unit class") {
 		scalar_unit a = scalar_unit(1.5f,"m");
 		scalar_unit b = scalar_unit(2.5f,"m");
 		return a / b;

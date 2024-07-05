@@ -2,6 +2,7 @@
 #define SCIFIR_UNITS_SPECIAL_UNITS_SIZE_2D_HPP_INCLUDED
 
 #include "../predefined_units/space_units.hpp"
+#include "../util/types.hpp"
 
 #include "boost/algorithm/string.hpp"
 
@@ -32,15 +33,7 @@ namespace scifir
 
 			explicit size_2d(const string& init_size_2d) : size_2d()
 			{
-				vector<string> widths;
-				boost::split(widths,init_size_2d,boost::is_any_of("*"));
-				if (widths.size() == 2)
-				{
-					boost::trim(widths[0]);
-					boost::trim(widths[1]);
-					width = T(widths[0]);
-					height = T(widths[1]);
-				}
+				initialize_from_string(init_size_2d);
 			}
 
 			size_2d<T>& operator=(const size_2d<T>& x)
@@ -54,6 +47,12 @@ namespace scifir
 			{
 				width = std::move(x.width);
 				height = std::move(x.height);
+				return *this;
+			}
+
+			size_2d<T>& operator=(const string& init_size_2d)
+			{
+				initialize_from_string(init_size_2d);
 				return *this;
 			}
 
@@ -84,8 +83,29 @@ namespace scifir
 				return scalar_unit(width * height);
 			}
 
+			string display() const
+			{
+				ostringstream output;
+				output << width << " * " << height;
+				return output.str();
+			}
+
 			T width;
 			T height;
+
+		private:
+			void initialize_from_string(const string& init_size_2d)
+			{
+				vector<string> widths;
+				boost::split(widths,init_size_2d,boost::is_any_of("*"));
+				if (widths.size() == 2)
+				{
+					boost::trim(widths[0]);
+					boost::trim(widths[1]);
+					width = T(widths[0]);
+					height = T(widths[1]);
+				}
+			}
 	};
 
 	template<>
@@ -109,15 +129,7 @@ namespace scifir
 
 			explicit size_2d(const string& init_size_2d) : size_2d()
 			{
-				vector<string> widths;
-				boost::split(widths,init_size_2d,boost::is_any_of("*"));
-				if (widths.size() == 2)
-				{
-					boost::trim(widths[0]);
-					boost::trim(widths[1]);
-					width = stof(widths[0]);
-					height = stof(widths[1]);
-				}
+				initialize_from_string(init_size_2d);
 			}
 
 			size_2d<float>& operator=(const size_2d<float>& x)
@@ -131,6 +143,12 @@ namespace scifir
 			{
 				width = std::move(x.width);
 				height = std::move(x.height);
+				return *this;
+			}
+
+			size_2d<float>& operator=(const string& init_size_2d)
+			{
+				initialize_from_string(init_size_2d);
 				return *this;
 			}
 
@@ -161,19 +179,38 @@ namespace scifir
 				return width * height;
 			}
 
+			string display() const
+			{
+				ostringstream output;
+				output << display_float(width,2) << " * " << display_float(height,2);
+				return output.str();
+			}
+
 			float width;
 			float height;
+
+		private:
+			void initialize_from_string(const string& init_size_2d)
+			{
+				vector<string> widths;
+				boost::split(widths,init_size_2d,boost::is_any_of("*"));
+				if (widths.size() == 2)
+				{
+					boost::trim(widths[0]);
+					boost::trim(widths[1]);
+					width = stof(widths[0]);
+					height = stof(widths[1]);
+				}
+			}
 	};
 
 	template<typename T>
 	string to_string(const size_2d<T>& x)
 	{
-		ostringstream output;
-		output << x.width << " * " << x.height;
-		return output.str();
+		return x.display();
 	}
 
-	string to_string(const size_2d<float>&);
+	string to_string(const size_2d<float>& x);
 }
 
 template<typename T>
@@ -193,6 +230,32 @@ template<typename T>
 bool operator !=(const scifir::size_2d<T>& x, const scifir::size_2d<T>& y)
 {
 	return !(x == y);
+}
+
+template<typename T>
+bool operator ==(const scifir::size_2d<T>& x, const string& init_size_2d)
+{
+	scifir::size_2d<T> y(init_size_2d);
+	return (x == y);
+}
+
+template<typename T>
+bool operator !=(const scifir::size_2d<T>& x, const string& init_size_2d)
+{
+	return !(x == init_size_2d);
+}
+
+template<typename T>
+bool operator ==(const string& init_size_2d, const scifir::size_2d<T>& x)
+{
+	scifir::size_2d<T> y(init_size_2d);
+	return (x == y);
+}
+
+template<typename T>
+bool operator !=(const string& init_size_2d, const scifir::size_2d<T>& x)
+{
+	return !(init_size_2d == x);
 }
 
 template<typename T>
@@ -225,8 +288,7 @@ istream& operator >>(istream& is, scifir::size_2d<T>& x)
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
-	scifir::size_2d<T> c(b);
-	x = c;
+	x = scifir::size_2d<T>(b);
 	return is;
 }
 

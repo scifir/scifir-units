@@ -28,20 +28,20 @@ namespace scifir
 	{
 		public:
 			angle();
-			angle(const angle&);
-			angle(angle&&);
-			explicit angle(float);
-			explicit angle(double);
-			explicit angle(long double);
-			explicit angle(int);
-			explicit angle(string);
-			explicit angle(const scalar_unit&);
+			angle(const angle& x);
+			angle(angle&& x);
+			explicit angle(float new_value);
+			explicit angle(double new_value);
+			explicit angle(long double new_value);
+			explicit angle(int new_value);
+			explicit angle(const string& init_angle);
+			explicit angle(const scalar_unit& x);
 
-			angle& operator=(const angle&);
-			angle& operator=(angle&&);
-			angle& operator=(float);
-			angle& operator=(string);
-			angle& operator=(const scalar_unit&);
+			angle& operator=(const angle& x);
+			angle& operator=(angle&& x);
+			angle& operator=(float new_value);
+			angle& operator=(const string& init_angle);
+			angle& operator=(const scalar_unit& x);
 
 			explicit operator float() const
 			{
@@ -53,86 +53,86 @@ namespace scifir
 				return value;
 			}
 
-			angle operator +(const angle&) const;
-			angle operator -(const angle&) const;
-			angle operator *(const angle&) const;
-			angle operator /(const angle&) const;
-			angle operator ^(const angle&) const;
-			void operator +=(const angle&);
-			void operator -=(const angle&);
-			void operator *=(const angle&);
-			void operator /=(const angle&);
-			void operator ^=(const angle&);
+			angle operator +(const angle& x) const;
+			angle operator -(const angle& x) const;
+			angle operator *(const angle& x) const;
+			angle operator /(const angle& x) const;
+			angle operator ^(const angle& x) const;
+			void operator +=(const angle& x);
+			void operator -=(const angle& x);
+			void operator *=(const angle& x);
+			void operator /=(const angle& x);
+			void operator ^=(const angle& x);
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator =(T y)
+			void operator =(T new_value)
 			{
-				value = float(y);
+				value = float(new_value);
 				normalize_value();
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			angle operator +(T y) const
+			angle operator +(T x) const
 			{
-				return angle(value + y);
+				return angle(value + x);
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			angle operator -(T y) const
+			angle operator -(T x) const
 			{
-				return angle(value - y);
+				return angle(value - x);
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			angle operator *(T y) const
+			angle operator *(T x) const
 			{
-				return angle(value * y);
+				return angle(value * x);
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			angle operator /(T y) const
+			angle operator /(T x) const
 			{
-				return angle(value / y);
+				return angle(value / x);
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			angle operator ^(T y) const
+			angle operator ^(T x) const
 			{
-				return angle(std::pow(value, y));
+				return angle(std::pow(value, x));
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator +=(T y)
+			void operator +=(T x)
 			{
-				value += y;
+				value += x;
 				normalize_value();
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator -=(T y)
+			void operator -=(T x)
 			{
-				value -= y;
+				value -= x;
 				normalize_value();
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator *=(T y)
+			void operator *=(T x)
 			{
-				value *= y;
+				value *= x;
 				normalize_value();
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator /=(T y)
+			void operator /=(T x)
 			{
-				value /= y;
+				value /= x;
 				normalize_value();
 			}
 
 			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
-			void operator ^=(T y)
+			void operator ^=(T x)
 			{
-				value = std::pow(value, y);
+				value = std::pow(value, x);
 				normalize_value();
 			}
 
@@ -143,7 +143,7 @@ namespace scifir
 
 			void invert();
 
-			string display(int = 2) const;
+			string display(int number_of_decimals = 2) const;
 
 			inline float get_grade() const
 			{
@@ -159,28 +159,29 @@ namespace scifir
 			float value;
 
 			void normalize_value();
+			void initialize_from_string(string init_angle);
 	};
 
-	string to_string(const angle&);
-	bool is_angle(const string&);
-	bool parallel(const angle&, const angle&);
-	bool orthogonal(const angle&, const angle&);
+	string to_string(const angle& x);
+	bool is_angle(const string& init_angle);
+	bool parallel(const angle& x, const angle& y);
+	bool orthogonal(const angle& x, const angle& y);
 
-	angle sqrt(const angle&);
-	angle sqrt_nth(const angle&,int);
+	angle sqrt(const angle& x);
+	angle sqrt_nth(const angle& x,int index);
 
-	float sin(const angle&);
-	float cos(const angle&);
-	float tan(const angle&);
-	angle asin(float);
-	angle acos(float);
-	angle atan(float);
-	float sinh(const angle&);
-	float cosh(const angle&);
-	float tanh(const angle&);
-	angle asinh(float);
-	angle acosh(float);
-	angle atanh(float);
+	float sin(const angle& x);
+	float cos(const angle& x);
+	float tan(const angle& x);
+	angle asin(float x);
+	angle acos(float x);
+	angle atan(float x);
+	float sinh(const angle& x);
+	float cosh(const angle& x);
+	float tanh(const angle& x);
+	angle asinh(float x);
+	angle acosh(float x);
+	angle atanh(float x);
 
 	inline float asin_grade(float x)
 	{
@@ -315,24 +316,24 @@ bool operator >=(const scifir::angle& y, T x)
 	return (y.get_value() >= x);
 }
 
-bool operator ==(const scifir::angle&, const scifir::angle&);
-bool operator !=(const scifir::angle&, const scifir::angle&);
-bool operator <(const scifir::angle&, const scifir::angle&);
-bool operator >(const scifir::angle&, const scifir::angle&);
-bool operator <=(const scifir::angle&, const scifir::angle&);
-bool operator >=(const scifir::angle&, const scifir::angle&);
+bool operator ==(const scifir::angle& x, const scifir::angle& y);
+bool operator !=(const scifir::angle& x, const scifir::angle& y);
+bool operator <(const scifir::angle& x, const scifir::angle& y);
+bool operator >(const scifir::angle& x, const scifir::angle& y);
+bool operator <=(const scifir::angle& x, const scifir::angle& y);
+bool operator >=(const scifir::angle& x, const scifir::angle& y);
 
-bool operator ==(const scifir::angle&, const string&);
-bool operator !=(const scifir::angle&, const string&);
+bool operator ==(const scifir::angle& x, const string& init_angle);
+bool operator !=(const scifir::angle& x, const string& init_angle);
 
-bool operator ==(const string&, const scifir::angle&);
-bool operator !=(const string&, const scifir::angle&);
+bool operator ==(const string& init_angle, const scifir::angle& x);
+bool operator !=(const string& init_angle, const scifir::angle& x);
 
-void operator +=(string&, const scifir::angle&);
-string operator +(const string&, const scifir::angle&);
-string operator +(const scifir::angle&, const string&);
+void operator +=(string& x, const scifir::angle& y);
+string operator +(const string& x, const scifir::angle& y);
+string operator +(const scifir::angle& y, const string& x);
 
-ostream& operator <<(ostream&, const scifir::angle&);
-istream& operator >>(istream&, scifir::angle&);
+ostream& operator <<(ostream& os, const scifir::angle& x);
+istream& operator >>(istream& is, scifir::angle& x);
 
 #endif // SCIFIR_UNITS_MECA_NUMBER_ANGLE_HPP_INCLUDED

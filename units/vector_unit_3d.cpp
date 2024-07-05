@@ -22,10 +22,46 @@ namespace scifir
 	vector_unit_3d::vector_unit_3d(float new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
 	{}
 
+	vector_unit_3d::vector_unit_3d(double new_value,const string& init_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(double new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(long double new_value,const string& init_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(long double new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(int new_value,const string& init_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(int new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
 	vector_unit_3d::vector_unit_3d(float new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
 	{}
 
 	vector_unit_3d::vector_unit_3d(float new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(double new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(double new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(long double new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(int new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+	{}
+
+	vector_unit_3d::vector_unit_3d(int new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi) : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
 	{}
 
 	vector_unit_3d::vector_unit_3d(const scalar_unit& x,float new_theta,float new_phi) : scalar_unit(x),theta(new_theta),phi(new_phi)
@@ -42,16 +78,8 @@ namespace scifir
 
 	vector_unit_3d::vector_unit_3d(const string& init_vector_3d) : vector_unit_3d()
 	{
-		vector<string> values;
-		boost::split(values,init_vector_3d,boost::is_any_of(" "));
-		if (values.size() == 4)
-		{
-			set_from_string(values[0] + " " + values[1]);
-			theta = angle(values[2]);
-			phi = angle(values[3]);
-		}
+		vector_unit_3d::initialize_from_string(init_vector_3d);
 	}
-	
 
 	vector_unit_3d& vector_unit_3d::operator =(const vector_unit_3d& x)
 	{
@@ -79,6 +107,25 @@ namespace scifir
 	{
 		scalar_unit::operator=(std::move(x));
 		return *this;
+	}
+
+	vector_unit_3d& vector_unit_3d::operator =(const string& init_vector_3d)
+	{
+		vector_unit_3d::initialize_from_string(init_vector_3d);
+		return *this;
+	}
+
+	bool vector_unit_3d::operator ==(scifir::vector_unit_3d x) const
+	{
+		x.change_dimensions(*this);
+		if(get_value() == x.get_value() and scifir::same_direction(*this,x) and has_dimensions(x))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	void vector_unit_3d::point_to(direction::name x)
@@ -215,13 +262,13 @@ namespace scifir
 		}
 	}
 
-	void vector_unit_3d::operator +=(const vector_unit_3d& y)
+	void vector_unit_3d::operator +=(const vector_unit_3d& x)
 	{
-		if(has_dimensions(y))
+		if(has_dimensions(x))
 		{
-			float new_x = float(x_projection() + y.x_projection());
-			float new_y = float(y_projection() + y.y_projection());
-			float new_z = float(z_projection() + y.z_projection());
+			float new_x = float(x_projection() + x.x_projection());
+			float new_y = float(y_projection() + x.y_projection());
+			float new_z = float(z_projection() + x.z_projection());
 			scalar_unit::value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
 			theta = angle(cartesian_3d_to_spherical_theta(new_x, new_y, new_z));
 			phi = angle(cartesian_3d_to_spherical_phi(new_x, new_y, new_z));
@@ -232,12 +279,12 @@ namespace scifir
 		}
 	}
 
-	void vector_unit_3d::operator -=(vector_unit_3d y)
+	void vector_unit_3d::operator -=(vector_unit_3d x)
 	{
-		if(has_dimensions(y))
+		if(has_dimensions(x))
 		{
-			y.invert();
-			*this += y;
+			x.invert();
+			*this += x;
 		}
 		else
 		{
@@ -245,13 +292,13 @@ namespace scifir
 		}
 	}
 
-	vector_unit_3d vector_unit_3d::operator +(const vector_unit_3d& y) const
+	vector_unit_3d vector_unit_3d::operator +(const vector_unit_3d& x) const
 	{
-		if (has_dimensions(y))
+		if (has_dimensions(x))
 		{
-			float new_x = float(x_projection() + y.x_projection());
-			float new_y = float(y_projection() + y.y_projection());
-			float new_z = float(z_projection() + y.z_projection());
+			float new_x = float(x_projection() + x.x_projection());
+			float new_y = float(y_projection() + x.y_projection());
+			float new_z = float(z_projection() + x.z_projection());
 			float new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
 			angle new_theta = angle(cartesian_3d_to_spherical_theta(new_x, new_y, new_z));
 			angle new_phi = angle(cartesian_3d_to_spherical_phi(new_x, new_y, new_z));
@@ -263,14 +310,14 @@ namespace scifir
 		}
 	}
 
-	vector_unit_3d vector_unit_3d::operator -(vector_unit_3d y) const
+	vector_unit_3d vector_unit_3d::operator -(vector_unit_3d x) const
 	{
-		if (has_dimensions(y))
+		if (has_dimensions(x))
 		{
-			y.invert();
-			float new_x = float(x_projection() + y.x_projection());
-			float new_y = float(y_projection() + y.y_projection());
-			float new_z = float(z_projection() + y.z_projection());
+			x.invert();
+			float new_x = float(x_projection() + x.x_projection());
+			float new_y = float(y_projection() + x.y_projection());
+			float new_z = float(z_projection() + x.z_projection());
 			float new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
 			angle new_theta = angle(cartesian_3d_to_spherical_theta(new_x, new_y, new_z));
 			angle new_phi = angle(cartesian_3d_to_spherical_phi(new_x, new_y, new_z));
@@ -325,18 +372,16 @@ namespace scifir
 		return out.str();
 	}
 
-	string vector_unit_3d::vectorial_custom_display(const string& new_dimensions_str,int number_of_decimals) const
+	string vector_unit_3d::vectorial_custom_display(const string& init_dimensions,int number_of_decimals) const
 	{
 		ostringstream out;
-		out << custom_display(new_dimensions_str,number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U000003B8 " << display_float(phi.get_value(),number_of_decimals) << "\U000003A6";
+		out << custom_display(init_dimensions,number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U000003B8 " << display_float(phi.get_value(),number_of_decimals) << "\U000003A6";
 		return out.str();
 	}
 
 	string to_string(const vector_unit_3d& x)
 	{
-		ostringstream out;
-		out << x.display(2) << " " << display_float(x.theta.get_value(),2) << "\U000003B8 " << display_float(x.phi.get_value(),2) << "\U000003A6";
-		return out.str();
+		return x.vectorial_display(2);
 	}
 #elif IS_WINDOWS
 	string vector_unit_3d::vectorial_display(int number_of_decimals) const
@@ -353,20 +398,30 @@ namespace scifir
 		return out.str();
 	}
 
-	string vector_unit_3d::vectorial_custom_display(const string& new_dimensions_str,int number_of_decimals) const
+	string vector_unit_3d::vectorial_custom_display(const string& init_dimensions,int number_of_decimals) const
 	{
 		ostringstream out;
-		out << custom_display(new_dimensions_str,number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U03B8 " << display_float(phi.get_value(),number_of_decimals) << "\U03A6";
+		out << custom_display(init_dimensions,number_of_decimals) << " " << display_float(theta.get_value(),number_of_decimals) << "\U03B8 " << display_float(phi.get_value(),number_of_decimals) << "\U03A6";
 		return out.str();
 	}
 
 	string to_string(const vector_unit_3d& x)
 	{
-		ostringstream out;
-		out << x.display(2) << " " << display_float(x.theta.get_value(),2) << "\U03B8 " << display_float(x.phi.get_value(),2) << "\U03A6";
-		return out.str();
+		return x.vectorial_display(2);
 	}
 #endif
+
+	void vector_unit_3d::initialize_from_string(string init_vector_3d)
+	{
+		vector<string> values;
+		boost::split(values,init_vector_3d,boost::is_any_of(" "));
+		if (values.size() == 4)
+		{
+			scalar_unit::initialize_from_string(values[0] + " " + values[1]);
+			theta = angle(values[2]);
+			phi = angle(values[3]);
+		}
+	}
 
 	scalar_unit norm(const vector_unit_3d& x)
 	{
@@ -379,9 +434,9 @@ namespace scifir
 		return vector_unit_3d(new_value, x.theta, x.phi);
 	}
 
-	vector_unit_3d sqrt_nth(const vector_unit_3d& x, int y)
+	vector_unit_3d sqrt_nth(const vector_unit_3d& x, int index)
 	{
-		scalar_unit new_value = scifir::sqrt_nth(scalar_unit(x), y);
+		scalar_unit new_value = scifir::sqrt_nth(scalar_unit(x), index);
 		return vector_unit_3d(new_value, x.theta, x.phi);
 	}
 
@@ -395,13 +450,11 @@ namespace scifir
 	vector_unit_3d cross_product(const vector_unit_3d& x,const vector_unit_3d& y)
 	{
 		long double new_value;
-		float new_theta;
-		float new_phi;
+		angle new_theta;
+		angle new_phi;
 		if(y.theta == x.theta and y.phi == x.phi)
 		{
-			new_value = 0;
-			new_theta = 0;
-			new_phi = 0;
+			new_value = 0.0l;
 		}
 		else
 		{
@@ -452,61 +505,48 @@ namespace scifir
 	}
 }
 
-vector_unit_3d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_3d& y)
+scifir::vector_unit_3d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_3d& y)
 {
 	long double new_value = x.get_value() * y.get_value();
-	vector<dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
-	return vector_unit_3d(float(new_value), new_dimensions, y.theta, y.phi);
+	vector<scifir::dimension> new_dimensions = multiply_dimensions(x.get_dimensions(), y.get_dimensions(),new_value);
+	return scifir::vector_unit_3d(float(new_value), new_dimensions, y.theta, y.phi);
 }
 
-bool operator ==(const vector_unit_3d& x, vector_unit_3d y)
-{
-	y.change_dimensions(x);
-	if(x.get_value() == y.get_value() and scifir::same_direction(x,y) and x.has_dimensions(y))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-bool operator !=(const vector_unit_3d& x, const vector_unit_3d& y)
+bool operator !=(const scifir::vector_unit_3d& x, const scifir::vector_unit_3d& y)
 {
 	return !(x == y);
 }
 
-bool operator ==(const vector_unit_3d& x, const string& y)
+bool operator ==(const scifir::vector_unit_3d& x, const string& init_vector_3d)
 {
-	vector_unit_3d y_vector = vector_unit_3d(y);
-	return (x == y_vector);
+	scifir::vector_unit_3d y(init_vector_3d);
+	return (x == y);
 }
 
-bool operator !=(const vector_unit_3d& x, const string& y)
+bool operator !=(const scifir::vector_unit_3d& x, const string& init_vector_3d)
 {
-	return !(x == y);
+	return !(x == init_vector_3d);
 }
 
-bool operator ==(const string& x, const vector_unit_3d& y)
+bool operator ==(const string& init_vector_3d, const scifir::vector_unit_3d& y)
 {
-	vector_unit_3d x_vector = vector_unit_3d(x);
-	return (x_vector == y);
+	scifir::vector_unit_3d x(init_vector_3d);
+	return (x == y);
 }
 
-bool operator !=(const string& x, const vector_unit_3d& y)
+bool operator !=(const string& init_vector_3d, const scifir::vector_unit_3d& y)
 {
-	return !(x == y);
+	return !(init_vector_3d == y);
 }
 
-void operator +=(string& x, const vector_unit_3d& y)
+void operator +=(string& x, const scifir::vector_unit_3d& y)
 {
 	ostringstream output;
 	output << y;
 	x += output.str();
 }
 
-string operator +(const string& x, const vector_unit_3d& y)
+string operator +(const string& x, const scifir::vector_unit_3d& y)
 {
 	ostringstream output;
 	output << x;
@@ -514,7 +554,7 @@ string operator +(const string& x, const vector_unit_3d& y)
 	return output.str();
 }
 
-string operator +(const vector_unit_3d& y, const string& x)
+string operator +(const scifir::vector_unit_3d& y, const string& x)
 {
 	ostringstream output;
 	output << y;
@@ -522,18 +562,17 @@ string operator +(const vector_unit_3d& y, const string& x)
 	return output.str();
 }
 
-ostream& operator <<(ostream& os, const vector_unit_3d& x)
+ostream& operator <<(ostream& os, const scifir::vector_unit_3d& x)
 {
 	return os << to_string(x);
 }
 
-istream& operator >>(istream& is, vector_unit_3d& x)
+istream& operator >>(istream& is, scifir::vector_unit_3d& x)
 {
 	char a[256];
 	is.getline(a, 256);
 	string b(a);
 	boost::trim(b);
-	vector_unit_3d c(b);
-	x = c;
+	x = scifir::vector_unit_3d(b);
 	return is;
 }

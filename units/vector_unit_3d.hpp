@@ -66,7 +66,6 @@ VECTOR_UNIT_3D_CPP(name,init_dimensions); \
 VECTOR_UNIT_ND_CPP(name,init_dimensions)
 
 using namespace std;
-using namespace scifir;
 
 namespace scifir
 {
@@ -74,17 +73,29 @@ namespace scifir
 	{
 		public:
 			vector_unit_3d();
-			vector_unit_3d(const vector_unit_3d&);
-			vector_unit_3d(vector_unit_3d&&);
-			explicit vector_unit_3d(float,const string&,float,float);
-			explicit vector_unit_3d(float,const string&,const angle&,const angle&);
-			explicit vector_unit_3d(float,const vector<dimension>&,float,float);
-			explicit vector_unit_3d(float,const vector<dimension>&,const angle&,const angle&);
-			explicit vector_unit_3d(const scalar_unit&,float,float);
-			explicit vector_unit_3d(const scalar_unit&,const angle&,const angle&);
-			explicit vector_unit_3d(const string&,float,float);
-			explicit vector_unit_3d(const string&,const angle&,const angle&);
-			explicit vector_unit_3d(const string&); // Initialize "8N 30ª 50ª"
+			vector_unit_3d(const vector_unit_3d& x);
+			vector_unit_3d(vector_unit_3d&& x);
+			explicit vector_unit_3d(float new_value,const string& init_dimensions,float new_theta,float new_phi);
+			explicit vector_unit_3d(float new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi);
+			explicit vector_unit_3d(double new_value,const string& init_dimensions,float new_theta,float new_phi);
+			explicit vector_unit_3d(double new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi);
+			explicit vector_unit_3d(long double new_value,const string& init_dimensions,float new_theta,float new_phi);
+			explicit vector_unit_3d(long double new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi);
+			explicit vector_unit_3d(int new_value,const string& init_dimensions,float new_theta,float new_phi);
+			explicit vector_unit_3d(int new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi);
+			explicit vector_unit_3d(float new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi);
+			explicit vector_unit_3d(float new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi);
+			explicit vector_unit_3d(double new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi);
+			explicit vector_unit_3d(double new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi);
+			explicit vector_unit_3d(long double new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi);
+			explicit vector_unit_3d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi);
+			explicit vector_unit_3d(int new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi);
+			explicit vector_unit_3d(int new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi);
+			explicit vector_unit_3d(const scalar_unit& x,float new_theta,float new_phi);
+			explicit vector_unit_3d(const scalar_unit& x,const angle& new_theta,const angle& new_phi);
+			explicit vector_unit_3d(const string& init_scalar,float new_theta,float new_phi);
+			explicit vector_unit_3d(const string& init_scalar,const angle& new_theta,const angle& new_phi);
+			explicit vector_unit_3d(const string& init_vector_3d);
 
 			static vector_unit_3d cartesian_3d(const string& new_dimensions,float new_x,float new_y,float new_z)
 			{
@@ -101,22 +112,25 @@ namespace scifir
 				return vector_unit_3d(new_value,new_dimensions,new_theta,angle(new_phi));
 			}
 
-			vector_unit_3d& operator =(const vector_unit_3d&);
-			vector_unit_3d& operator =(vector_unit_3d&&);
-			vector_unit_3d& operator =(const scalar_unit&);
-			vector_unit_3d& operator =(scalar_unit&&);
+			vector_unit_3d& operator =(const vector_unit_3d& x);
+			vector_unit_3d& operator =(vector_unit_3d&& x);
+			vector_unit_3d& operator =(const scalar_unit& x);
+			vector_unit_3d& operator =(scalar_unit&& x);
+			vector_unit_3d& operator =(const string& init_vector_3d);
 
-			void point_to(direction::name);
+			bool operator ==(vector_unit_3d x) const;
 
-			void operator +=(const vector_unit_3d&);
-			void operator -=(vector_unit_3d);
+			void point_to(direction::name x);
 
-			vector_unit_3d operator +(const vector_unit_3d&) const;
-			vector_unit_3d operator -(vector_unit_3d) const;
+			void operator +=(const vector_unit_3d& x);
+			void operator -=(vector_unit_3d x);
 
-			vector_unit_3d operator *(const scalar_unit&) const;
-			vector_unit_3d operator /(const scalar_unit&) const;
-			vector_unit_3d operator ^(const scalar_unit&) const;
+			vector_unit_3d operator +(const vector_unit_3d& x) const;
+			vector_unit_3d operator -(vector_unit_3d x) const;
+
+			vector_unit_3d operator *(const scalar_unit& x) const;
+			vector_unit_3d operator /(const scalar_unit& x) const;
+			vector_unit_3d operator ^(const scalar_unit& x) const;
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
 			vector_unit_3d operator +(U x) const
@@ -157,32 +171,32 @@ namespace scifir
 			}
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator +=(U y)
+			void operator +=(U x)
 			{
-				scalar_unit::value += y;
+				scalar_unit::value += x;
 			}
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator -=(U y)
+			void operator -=(U x)
 			{
-				scalar_unit::value -= y;
+				scalar_unit::value -= x;
 			}
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator *=(U y)
+			void operator *=(U x)
 			{
-				scalar_unit::value *= std::abs(y);
-				if(y < 0)
+				scalar_unit::value *= std::abs(x);
+				if(x < 0)
 				{
 					invert();
 				}
 			}
 
 			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator /=(U y)
+			void operator /=(U x)
 			{
-				scalar_unit::value /= std::abs(y);
-				if(y < 0)
+				scalar_unit::value /= std::abs(x);
+				if(x < 0)
 				{
 					invert();
 				}
@@ -209,27 +223,30 @@ namespace scifir
 				phi = 180.0f - phi;
 			}
 
-			string vectorial_display(int = 2) const;
-			string vectorial_derived_display(int = 2) const;
-			string vectorial_custom_display(const string&,int = 2) const;
+			string vectorial_display(int number_of_decimals = 2) const;
+			string vectorial_derived_display(int number_of_decimals = 2) const;
+			string vectorial_custom_display(const string& init_dimensions,int number_of_decimals = 2) const;
 
 			angle theta;
 			angle phi;
+
+		private:
+			void initialize_from_string(string init_vector_3d);
 	};
 
-	string to_string(const vector_unit_3d&);
-	scalar_unit norm(const vector_unit_3d&);
-	vector_unit_3d sqrt(const vector_unit_3d&);
-	vector_unit_3d sqrt_nth(const vector_unit_3d&,int);
-	scalar_unit dot_product(const vector_unit_3d&,const vector_unit_3d&);
-	vector_unit_3d cross_product(const vector_unit_3d&,const vector_unit_3d&);
-	angle angle_between(const vector_unit_3d&,const vector_unit_3d&);
-	bool same_direction(const vector_unit_3d&,const vector_unit_3d&);
-	bool parallel(const vector_unit_3d&,const vector_unit_3d&);
-	bool orthogonal(const vector_unit_3d&,const vector_unit_3d&);
+	string to_string(const vector_unit_3d& x);
+	scalar_unit norm(const vector_unit_3d& x);
+	vector_unit_3d sqrt(const vector_unit_3d& x);
+	vector_unit_3d sqrt_nth(const vector_unit_3d& x,int index);
+	scalar_unit dot_product(const vector_unit_3d& x,const vector_unit_3d& y);
+	vector_unit_3d cross_product(const vector_unit_3d& x,const vector_unit_3d& y);
+	angle angle_between(const vector_unit_3d& x,const vector_unit_3d& y);
+	bool same_direction(const vector_unit_3d& x,const vector_unit_3d& y);
+	bool parallel(const vector_unit_3d& x,const vector_unit_3d& y);
+	bool orthogonal(const vector_unit_3d& x,const vector_unit_3d& y);
 }
 
-vector_unit_3d operator *(const scifir::scalar_unit&,const scifir::vector_unit_3d&);
+scifir::vector_unit_3d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_3d& y);
 
 template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
 scifir::vector_unit_3d operator +(const T y,const scifir::vector_unit_3d& x)
@@ -264,19 +281,18 @@ scifir::vector_unit_3d operator /(const T y,const scifir::vector_unit_3d& x)
 	return scifir::vector_unit_3d(y / x.get_value(),new_dimensions,x.theta,x.phi);
 }
 
-bool operator ==(const vector_unit_3d&, vector_unit_3d);
-bool operator !=(const vector_unit_3d&, const vector_unit_3d&);
+bool operator !=(const scifir::vector_unit_3d& x, const scifir::vector_unit_3d& y);
 
-bool operator ==(const vector_unit_3d&, const string&);
-bool operator !=(const vector_unit_3d&, const string&);
-bool operator ==(const string&, const vector_unit_3d&);
-bool operator !=(const string&, const vector_unit_3d&);
+bool operator ==(const scifir::vector_unit_3d& x, const string& init_vector_3d);
+bool operator !=(const scifir::vector_unit_3d& x, const string& init_vector_3d);
+bool operator ==(const string& init_vector_3d, const scifir::vector_unit_3d& x);
+bool operator !=(const string& init_vector_3d, const scifir::vector_unit_3d& x);
 
-void operator +=(string&, const vector_unit_3d&);
-string operator +(const string&, const vector_unit_3d&);
-string operator +(const vector_unit_3d&, const string&);
+void operator +=(string& x, const scifir::vector_unit_3d& y);
+string operator +(const string& x, const scifir::vector_unit_3d& y);
+string operator +(const scifir::vector_unit_3d& y, const string& x);
 
-ostream& operator <<(ostream&, const vector_unit_3d&);
-istream& operator >>(istream&, vector_unit_3d&);
+ostream& operator <<(ostream& os, const scifir::vector_unit_3d& x);
+istream& operator >>(istream& is, scifir::vector_unit_3d& x);
 
 #endif // SCIFIR_UNITS_UNITS_VECTOR_UNIT_3D_HPP_INCLUDED

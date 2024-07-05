@@ -17,7 +17,7 @@ namespace scifir
 
 	SCALAR_UNIT_HPP_BEGIN(time_duration);
 		public:
-			time_duration(const string&);
+			time_duration(const string& init_time);
 
 			explicit operator std::chrono::seconds() const;
 
@@ -62,18 +62,18 @@ namespace scifir
 
 	SCALAR_UNIT_HPP_BEGIN(mass);
 		public:
-			mass(const percentage&,const mass&);
-			mass(const string&,const string&);
-	
+			mass(const percentage& new_percentage,const mass& new_mass);
+			mass(const string& init_percentage,const string& init_mass);
+
 	SCALAR_UNIT_HPP_END();
-	
+
 	SCALAR_UNIT_HPP(charge);
 	SCALAR_UNIT_HPP(temperature);
 
 	SCALAR_UNIT_HPP_BEGIN(mole);
 		public:
-			mole(const percentage&,const mole&);
-			mole(const string&,const string&);
+			mole(const percentage& new_percentage,const mole& new_mole);
+			mole(const string& init_percentage,const string& init_mole);
 
 			int number_of_particles() const;
 	SCALAR_UNIT_HPP_END();

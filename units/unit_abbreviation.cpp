@@ -2,2014 +2,2014 @@
 
 using namespace std;
 
-frequency operator"" _YHz(unsigned long long int x)
+scifir::frequency operator"" _YHz(unsigned long long int x)
 {
-	return frequency((long double)x, "YHz");
+	return scifir::frequency((long double)x, "YHz");
 }
 
-frequency operator"" _ZHz(unsigned long long int x)
+scifir::frequency operator"" _ZHz(unsigned long long int x)
 {
-	return frequency((long double)x, "ZHz");
+	return scifir::frequency((long double)x, "ZHz");
 }
 
-frequency operator"" _EHz(unsigned long long int x)
+scifir::frequency operator"" _EHz(unsigned long long int x)
 {
-	return frequency((long double)x, "EHz");
+	return scifir::frequency((long double)x, "EHz");
 }
 
-frequency operator"" _PHz(unsigned long long int x)
+scifir::frequency operator"" _PHz(unsigned long long int x)
 {
-	return frequency((long double)x, "PHz");
+	return scifir::frequency((long double)x, "PHz");
 }
 
-frequency operator"" _THz(unsigned long long int x)
+scifir::frequency operator"" _THz(unsigned long long int x)
 {
-	return frequency((long double)x, "THz");
+	return scifir::frequency((long double)x, "THz");
 }
 
-frequency operator"" _GHz(unsigned long long int x)
+scifir::frequency operator"" _GHz(unsigned long long int x)
 {
-	return frequency((long double)x, "GHz");
+	return scifir::frequency((long double)x, "GHz");
 }
 
-frequency operator"" _MHz(unsigned long long int x)
+scifir::frequency operator"" _MHz(unsigned long long int x)
 {
-	return frequency((long double)x, "MHz");
+	return scifir::frequency((long double)x, "MHz");
 }
 
-frequency operator"" _kHz(unsigned long long int x)
+scifir::frequency operator"" _kHz(unsigned long long int x)
 {
-	return frequency((long double)x, "kHz");
+	return scifir::frequency((long double)x, "kHz");
 }
 
-frequency operator"" _hHz(unsigned long long int x)
+scifir::frequency operator"" _hHz(unsigned long long int x)
 {
-	return frequency((long double)x, "hHz");
+	return scifir::frequency((long double)x, "hHz");
 }
 
-frequency operator"" _daHz(unsigned long long int x)
+scifir::frequency operator"" _daHz(unsigned long long int x)
 {
-	return frequency((long double)x, "daHz");
+	return scifir::frequency((long double)x, "daHz");
 }
 
-frequency operator"" _Hz(unsigned long long int x)
+scifir::frequency operator"" _Hz(unsigned long long int x)
 {
-	return frequency((long double)x, "Hz");
+	return scifir::frequency((long double)x, "Hz");
 }
 
-frequency operator"" _dHz(unsigned long long int x)
+scifir::frequency operator"" _dHz(unsigned long long int x)
 {
-	return frequency((long double)x, "dHz");
+	return scifir::frequency((long double)x, "dHz");
 }
 
-frequency operator"" _cHz(unsigned long long int x)
+scifir::frequency operator"" _cHz(unsigned long long int x)
 {
-	return frequency((long double)x, "cHz");
+	return scifir::frequency((long double)x, "cHz");
 }
 
-frequency operator"" _mHz(unsigned long long int x)
+scifir::frequency operator"" _mHz(unsigned long long int x)
 {
-	return frequency((long double)x, "mHz");
+	return scifir::frequency((long double)x, "mHz");
 }
 
-frequency operator"" _uHz(unsigned long long int x)
+scifir::frequency operator"" _uHz(unsigned long long int x)
 {
-	return frequency((long double)x, "uHz");
+	return scifir::frequency((long double)x, "uHz");
 }
 
-frequency operator"" _nHz(unsigned long long int x)
+scifir::frequency operator"" _nHz(unsigned long long int x)
 {
-	return frequency((long double)x, "nHz");
+	return scifir::frequency((long double)x, "nHz");
 }
 
-frequency operator"" _pHz(unsigned long long int x)
+scifir::frequency operator"" _pHz(unsigned long long int x)
 {
-	return frequency((long double)x, "pHz");
+	return scifir::frequency((long double)x, "pHz");
 }
 
-frequency operator"" _fHz(unsigned long long int x)
+scifir::frequency operator"" _fHz(unsigned long long int x)
 {
-	return frequency((long double)x, "fHz");
+	return scifir::frequency((long double)x, "fHz");
 }
 
-frequency operator"" _aHz(unsigned long long int x)
+scifir::frequency operator"" _aHz(unsigned long long int x)
 {
-	return frequency((long double)x, "aHz");
+	return scifir::frequency((long double)x, "aHz");
 }
 
-frequency operator"" _zHz(unsigned long long int x)
+scifir::frequency operator"" _zHz(unsigned long long int x)
 {
-	return frequency((long double)x, "zHz");
+	return scifir::frequency((long double)x, "zHz");
 }
 
-frequency operator"" _yHz(unsigned long long int x)
+scifir::frequency operator"" _yHz(unsigned long long int x)
 {
-	return frequency((long double)x, "yHz");
+	return scifir::frequency((long double)x, "yHz");
 }
 
-force operator"" _YN(unsigned long long int x)
+scifir::force operator"" _YN(unsigned long long int x)
 {
-	return force((long double)x, "YN");
+	return scifir::force((long double)x, "YN");
 }
 
-force operator"" _ZN(unsigned long long int x)
+scifir::force operator"" _ZN(unsigned long long int x)
 {
-	return force((long double)x, "ZN");
+	return scifir::force((long double)x, "ZN");
 }
 
-force operator"" _EN(unsigned long long int x)
+scifir::force operator"" _EN(unsigned long long int x)
 {
-	return force((long double)x, "EN");
+	return scifir::force((long double)x, "EN");
 }
 
-force operator"" _PN(unsigned long long int x)
+scifir::force operator"" _PN(unsigned long long int x)
 {
-	return force((long double)x, "PN");
+	return scifir::force((long double)x, "PN");
 }
 
-force operator"" _TN(unsigned long long int x)
+scifir::force operator"" _TN(unsigned long long int x)
 {
-	return force((long double)x, "TN");
+	return scifir::force((long double)x, "TN");
 }
 
-force operator"" _GN(unsigned long long int x)
+scifir::force operator"" _GN(unsigned long long int x)
 {
-	return force((long double)x, "GN");
+	return scifir::force((long double)x, "GN");
 }
 
-force operator"" _MN(unsigned long long int x)
+scifir::force operator"" _MN(unsigned long long int x)
 {
-	return force((long double)x, "MN");
+	return scifir::force((long double)x, "MN");
 }
 
-force operator"" _kN(unsigned long long int x)
+scifir::force operator"" _kN(unsigned long long int x)
 {
-	return force((long double)x, "kN");
+	return scifir::force((long double)x, "kN");
 }
 
-force operator"" _hN(unsigned long long int x)
+scifir::force operator"" _hN(unsigned long long int x)
 {
-	return force((long double)x, "hN");
+	return scifir::force((long double)x, "hN");
 }
 
-force operator"" _daN(unsigned long long int x)
+scifir::force operator"" _daN(unsigned long long int x)
 {
-	return force((long double)x, "daN");
+	return scifir::force((long double)x, "daN");
 }
 
-force operator"" _N(unsigned long long int x)
+scifir::force operator"" _N(unsigned long long int x)
 {
-	return force((long double)x, "N");
+	return scifir::force((long double)x, "N");
 }
 
-force operator"" _dN(unsigned long long int x)
+scifir::force operator"" _dN(unsigned long long int x)
 {
-	return force((long double)x, "dN");
+	return scifir::force((long double)x, "dN");
 }
 
-force operator"" _cN(unsigned long long int x)
+scifir::force operator"" _cN(unsigned long long int x)
 {
-	return force((long double)x, "cN");
+	return scifir::force((long double)x, "cN");
 }
 
-force operator"" _mN(unsigned long long int x)
+scifir::force operator"" _mN(unsigned long long int x)
 {
-	return force((long double)x, "mN");
+	return scifir::force((long double)x, "mN");
 }
 
-force operator"" _uN(unsigned long long int x)
+scifir::force operator"" _uN(unsigned long long int x)
 {
-	return force((long double)x, "uN");
+	return scifir::force((long double)x, "uN");
 }
 
-force operator"" _nN(unsigned long long int x)
+scifir::force operator"" _nN(unsigned long long int x)
 {
-	return force((long double)x, "nN");
+	return scifir::force((long double)x, "nN");
 }
 
-force operator"" _pN(unsigned long long int x)
+scifir::force operator"" _pN(unsigned long long int x)
 {
-	return force((long double)x, "pN");
+	return scifir::force((long double)x, "pN");
 }
 
-force operator"" _fN(unsigned long long int x)
+scifir::force operator"" _fN(unsigned long long int x)
 {
-	return force((long double)x, "fN");
+	return scifir::force((long double)x, "fN");
 }
 
-force operator"" _aN(unsigned long long int x)
+scifir::force operator"" _aN(unsigned long long int x)
 {
-	return force((long double)x, "aN");
+	return scifir::force((long double)x, "aN");
 }
 
-force operator"" _zN(unsigned long long int x)
+scifir::force operator"" _zN(unsigned long long int x)
 {
-	return force((long double)x, "zN");
+	return scifir::force((long double)x, "zN");
 }
 
-force operator"" _yN(unsigned long long int x)
+scifir::force operator"" _yN(unsigned long long int x)
 {
-	return force((long double)x, "yN");
+	return scifir::force((long double)x, "yN");
 }
 
-pressure operator"" _YPa(unsigned long long int x)
+scifir::pressure operator"" _YPa(unsigned long long int x)
 {
-	return pressure((long double)x, "YPa");
+	return scifir::pressure((long double)x, "YPa");
 }
 
-pressure operator"" _ZPa(unsigned long long int x)
+scifir::pressure operator"" _ZPa(unsigned long long int x)
 {
-	return pressure((long double)x, "ZPa");
+	return scifir::pressure((long double)x, "ZPa");
 }
 
-pressure operator"" _EPa(unsigned long long int x)
+scifir::pressure operator"" _EPa(unsigned long long int x)
 {
-	return pressure((long double)x, "EPa");
+	return scifir::pressure((long double)x, "EPa");
 }
 
-pressure operator"" _PPa(unsigned long long int x)
+scifir::pressure operator"" _PPa(unsigned long long int x)
 {
-	return pressure((long double)x, "PPa");
+	return scifir::pressure((long double)x, "PPa");
 }
 
-pressure operator"" _TPa(unsigned long long int x)
+scifir::pressure operator"" _TPa(unsigned long long int x)
 {
-	return pressure((long double)x, "TPa");
+	return scifir::pressure((long double)x, "TPa");
 }
 
-pressure operator"" _GPa(unsigned long long int x)
+scifir::pressure operator"" _GPa(unsigned long long int x)
 {
-	return pressure((long double)x, "GPa");
+	return scifir::pressure((long double)x, "GPa");
 }
 
-pressure operator"" _MPa(unsigned long long int x)
+scifir::pressure operator"" _MPa(unsigned long long int x)
 {
-	return pressure((long double)x, "MPa");
+	return scifir::pressure((long double)x, "MPa");
 }
 
-pressure operator"" _kPa(unsigned long long int x)
+scifir::pressure operator"" _kPa(unsigned long long int x)
 {
-	return pressure((long double)x, "kPa");
+	return scifir::pressure((long double)x, "kPa");
 }
 
-pressure operator"" _hPa(unsigned long long int x)
+scifir::pressure operator"" _hPa(unsigned long long int x)
 {
-	return pressure((long double)x, "hPa");
+	return scifir::pressure((long double)x, "hPa");
 }
 
-pressure operator"" _daPa(unsigned long long int x)
+scifir::pressure operator"" _daPa(unsigned long long int x)
 {
-	return pressure((long double)x, "daPa");
+	return scifir::pressure((long double)x, "daPa");
 }
 
-pressure operator"" _Pa(unsigned long long int x)
+scifir::pressure operator"" _Pa(unsigned long long int x)
 {
-	return pressure((long double)x, "Pa");
+	return scifir::pressure((long double)x, "Pa");
 }
 
-pressure operator"" _dPa(unsigned long long int x)
+scifir::pressure operator"" _dPa(unsigned long long int x)
 {
-	return pressure((long double)x, "dPa");
+	return scifir::pressure((long double)x, "dPa");
 }
 
-pressure operator"" _cPa(unsigned long long int x)
+scifir::pressure operator"" _cPa(unsigned long long int x)
 {
-	return pressure((long double)x, "cPa");
+	return scifir::pressure((long double)x, "cPa");
 }
 
-pressure operator"" _mPa(unsigned long long int x)
+scifir::pressure operator"" _mPa(unsigned long long int x)
 {
-	return pressure((long double)x, "mPa");
+	return scifir::pressure((long double)x, "mPa");
 }
 
-pressure operator"" _uPa(unsigned long long int x)
+scifir::pressure operator"" _uPa(unsigned long long int x)
 {
-	return pressure((long double)x, "uPa");
+	return scifir::pressure((long double)x, "uPa");
 }
 
-pressure operator"" _nPa(unsigned long long int x)
+scifir::pressure operator"" _nPa(unsigned long long int x)
 {
-	return pressure((long double)x, "nPa");
+	return scifir::pressure((long double)x, "nPa");
 }
 
-pressure operator"" _pPa(unsigned long long int x)
+scifir::pressure operator"" _pPa(unsigned long long int x)
 {
-	return pressure((long double)x, "pPa");
+	return scifir::pressure((long double)x, "pPa");
 }
 
-pressure operator"" _fPa(unsigned long long int x)
+scifir::pressure operator"" _fPa(unsigned long long int x)
 {
-	return pressure((long double)x, "fPa");
+	return scifir::pressure((long double)x, "fPa");
 }
 
-pressure operator"" _aPa(unsigned long long int x)
+scifir::pressure operator"" _aPa(unsigned long long int x)
 {
-	return pressure((long double)x, "aPa");
+	return scifir::pressure((long double)x, "aPa");
 }
 
-pressure operator"" _zPa(unsigned long long int x)
+scifir::pressure operator"" _zPa(unsigned long long int x)
 {
-	return pressure((long double)x, "zPa");
+	return scifir::pressure((long double)x, "zPa");
 }
 
-pressure operator"" _yPa(unsigned long long int x)
+scifir::pressure operator"" _yPa(unsigned long long int x)
 {
-	return pressure((long double)x, "yPa");
+	return scifir::pressure((long double)x, "yPa");
 }
 
-energy operator"" _YJ(unsigned long long int x)
+scifir::energy operator"" _YJ(unsigned long long int x)
 {
-	return energy((long double)x, "YJ");
+	return scifir::energy((long double)x, "YJ");
 }
 
-energy operator"" _ZJ(unsigned long long int x)
+scifir::energy operator"" _ZJ(unsigned long long int x)
 {
-	return energy((long double)x, "ZJ");
+	return scifir::energy((long double)x, "ZJ");
 }
 
-energy operator"" _EJ(unsigned long long int x)
+scifir::energy operator"" _EJ(unsigned long long int x)
 {
-	return energy((long double)x, "EJ");
+	return scifir::energy((long double)x, "EJ");
 }
 
-energy operator"" _PJ(unsigned long long int x)
+scifir::energy operator"" _PJ(unsigned long long int x)
 {
-	return energy((long double)x, "PJ");
+	return scifir::energy((long double)x, "PJ");
 }
 
-energy operator"" _TJ(unsigned long long int x)
+scifir::energy operator"" _TJ(unsigned long long int x)
 {
-	return energy((long double)x, "TJ");
+	return scifir::energy((long double)x, "TJ");
 }
 
-energy operator"" _GJ(unsigned long long int x)
+scifir::energy operator"" _GJ(unsigned long long int x)
 {
-	return energy((long double)x, "GJ");
+	return scifir::energy((long double)x, "GJ");
 }
 
-energy operator"" _MJ(unsigned long long int x)
+scifir::energy operator"" _MJ(unsigned long long int x)
 {
-	return energy((long double)x, "MJ");
+	return scifir::energy((long double)x, "MJ");
 }
 
-energy operator"" _kJ(unsigned long long int x)
+scifir::energy operator"" _kJ(unsigned long long int x)
 {
-	return energy((long double)x, "kJ");
+	return scifir::energy((long double)x, "kJ");
 }
 
-energy operator"" _hJ(unsigned long long int x)
+scifir::energy operator"" _hJ(unsigned long long int x)
 {
-	return energy((long double)x, "hJ");
+	return scifir::energy((long double)x, "hJ");
 }
 
-energy operator"" _daJ(unsigned long long int x)
+scifir::energy operator"" _daJ(unsigned long long int x)
 {
-	return energy((long double)x, "daJ");
+	return scifir::energy((long double)x, "daJ");
 }
 
-energy operator"" _J(unsigned long long int x)
+scifir::energy operator"" _J(unsigned long long int x)
 {
-	return energy((long double)x, "J");
+	return scifir::energy((long double)x, "J");
 }
 
-energy operator"" _dJ(unsigned long long int x)
+scifir::energy operator"" _dJ(unsigned long long int x)
 {
-	return energy((long double)x, "dJ");
+	return scifir::energy((long double)x, "dJ");
 }
 
-energy operator"" _cJ(unsigned long long int x)
+scifir::energy operator"" _cJ(unsigned long long int x)
 {
-	return energy((long double)x, "cJ");
+	return scifir::energy((long double)x, "cJ");
 }
 
-energy operator"" _mJ(unsigned long long int x)
+scifir::energy operator"" _mJ(unsigned long long int x)
 {
-	return energy((long double)x, "mJ");
+	return scifir::energy((long double)x, "mJ");
 }
 
-energy operator"" _uJ(unsigned long long int x)
+scifir::energy operator"" _uJ(unsigned long long int x)
 {
-	return energy((long double)x, "uJ");
+	return scifir::energy((long double)x, "uJ");
 }
 
-energy operator"" _nJ(unsigned long long int x)
+scifir::energy operator"" _nJ(unsigned long long int x)
 {
-	return energy((long double)x, "nJ");
+	return scifir::energy((long double)x, "nJ");
 }
 
-energy operator"" _pJ(unsigned long long int x)
+scifir::energy operator"" _pJ(unsigned long long int x)
 {
-	return energy((long double)x, "pJ");
+	return scifir::energy((long double)x, "pJ");
 }
 
-energy operator"" _fJ(unsigned long long int x)
+scifir::energy operator"" _fJ(unsigned long long int x)
 {
-	return energy((long double)x, "fJ");
+	return scifir::energy((long double)x, "fJ");
 }
 
-energy operator"" _aJ(unsigned long long int x)
+scifir::energy operator"" _aJ(unsigned long long int x)
 {
-	return energy((long double)x, "aJ");
+	return scifir::energy((long double)x, "aJ");
 }
 
-energy operator"" _zJ(unsigned long long int x)
+scifir::energy operator"" _zJ(unsigned long long int x)
 {
-	return energy((long double)x, "zJ");
+	return scifir::energy((long double)x, "zJ");
 }
 
-energy operator"" _yJ(unsigned long long int x)
+scifir::energy operator"" _yJ(unsigned long long int x)
 {
-	return energy((long double)x, "yJ");
+	return scifir::energy((long double)x, "yJ");
 }
 
-power operator"" _YW(unsigned long long int x)
+scifir::power operator"" _YW(unsigned long long int x)
 {
-	return power((long double)x, "YW");
+	return scifir::power((long double)x, "YW");
 }
 
-power operator"" _ZW(unsigned long long int x)
+scifir::power operator"" _ZW(unsigned long long int x)
 {
-	return power((long double)x, "ZW");
+	return scifir::power((long double)x, "ZW");
 }
 
-power operator"" _EW(unsigned long long int x)
+scifir::power operator"" _EW(unsigned long long int x)
 {
-	return power((long double)x, "EW");
+	return scifir::power((long double)x, "EW");
 }
 
-power operator"" _PW(unsigned long long int x)
+scifir::power operator"" _PW(unsigned long long int x)
 {
-	return power((long double)x, "PW");
+	return scifir::power((long double)x, "PW");
 }
 
-power operator"" _TW(unsigned long long int x)
+scifir::power operator"" _TW(unsigned long long int x)
 {
-	return power((long double)x, "TW");
+	return scifir::power((long double)x, "TW");
 }
 
-power operator"" _GW(unsigned long long int x)
+scifir::power operator"" _GW(unsigned long long int x)
 {
-	return power((long double)x, "GW");
+	return scifir::power((long double)x, "GW");
 }
 
-power operator"" _MW(unsigned long long int x)
+scifir::power operator"" _MW(unsigned long long int x)
 {
-	return power((long double)x, "MW");
+	return scifir::power((long double)x, "MW");
 }
 
-power operator"" _kW(unsigned long long int x)
+scifir::power operator"" _kW(unsigned long long int x)
 {
-	return power((long double)x, "kW");
+	return scifir::power((long double)x, "kW");
 }
 
-power operator"" _hW(unsigned long long int x)
+scifir::power operator"" _hW(unsigned long long int x)
 {
-	return power((long double)x, "hW");
+	return scifir::power((long double)x, "hW");
 }
 
-power operator"" _daW(unsigned long long int x)
+scifir::power operator"" _daW(unsigned long long int x)
 {
-	return power((long double)x, "daW");
+	return scifir::power((long double)x, "daW");
 }
 
-power operator"" _W(unsigned long long int x)
+scifir::power operator"" _W(unsigned long long int x)
 {
-	return power((long double)x, "W");
+	return scifir::power((long double)x, "W");
 }
 
-power operator"" _dW(unsigned long long int x)
+scifir::power operator"" _dW(unsigned long long int x)
 {
-	return power((long double)x, "dW");
+	return scifir::power((long double)x, "dW");
 }
 
-power operator"" _cW(unsigned long long int x)
+scifir::power operator"" _cW(unsigned long long int x)
 {
-	return power((long double)x, "cW");
+	return scifir::power((long double)x, "cW");
 }
 
-power operator"" _mW(unsigned long long int x)
+scifir::power operator"" _mW(unsigned long long int x)
 {
-	return power((long double)x, "mW");
+	return scifir::power((long double)x, "mW");
 }
 
-power operator"" _uW(unsigned long long int x)
+scifir::power operator"" _uW(unsigned long long int x)
 {
-	return power((long double)x, "uW");
+	return scifir::power((long double)x, "uW");
 }
 
-power operator"" _nW(unsigned long long int x)
+scifir::power operator"" _nW(unsigned long long int x)
 {
-	return power((long double)x, "nW");
+	return scifir::power((long double)x, "nW");
 }
 
-power operator"" _pW(unsigned long long int x)
+scifir::power operator"" _pW(unsigned long long int x)
 {
-	return power((long double)x, "pW");
+	return scifir::power((long double)x, "pW");
 }
 
-power operator"" _fW(unsigned long long int x)
+scifir::power operator"" _fW(unsigned long long int x)
 {
-	return power((long double)x, "fW");
+	return scifir::power((long double)x, "fW");
 }
 
-power operator"" _aW(unsigned long long int x)
+scifir::power operator"" _aW(unsigned long long int x)
 {
-	return power((long double)x, "aW");
+	return scifir::power((long double)x, "aW");
 }
 
-power operator"" _zW(unsigned long long int x)
+scifir::power operator"" _zW(unsigned long long int x)
 {
-	return power((long double)x, "zW");
+	return scifir::power((long double)x, "zW");
 }
 
-power operator"" _yW(unsigned long long int x)
+scifir::power operator"" _yW(unsigned long long int x)
 {
-	return power((long double)x, "yW");
+	return scifir::power((long double)x, "yW");
 }
 
-electric_current operator"" _YA(unsigned long long int x)
+scifir::electric_current operator"" _YA(unsigned long long int x)
 {
-	return electric_current((long double)x, "YA");
+	return scifir::electric_current((long double)x, "YA");
 }
 
-electric_current operator"" _ZA(unsigned long long int x)
+scifir::electric_current operator"" _ZA(unsigned long long int x)
 {
-	return electric_current((long double)x, "ZA");
+	return scifir::electric_current((long double)x, "ZA");
 }
 
-electric_current operator"" _EA(unsigned long long int x)
+scifir::electric_current operator"" _EA(unsigned long long int x)
 {
-	return electric_current((long double)x, "EA");
+	return scifir::electric_current((long double)x, "EA");
 }
 
-electric_current operator"" _PA(unsigned long long int x)
+scifir::electric_current operator"" _PA(unsigned long long int x)
 {
-	return electric_current((long double)x, "PA");
+	return scifir::electric_current((long double)x, "PA");
 }
 
-electric_current operator"" _TA(unsigned long long int x)
+scifir::electric_current operator"" _TA(unsigned long long int x)
 {
-	return electric_current((long double)x, "TA");
+	return scifir::electric_current((long double)x, "TA");
 }
 
-electric_current operator"" _GA(unsigned long long int x)
+scifir::electric_current operator"" _GA(unsigned long long int x)
 {
-	return electric_current((long double)x, "GA");
+	return scifir::electric_current((long double)x, "GA");
 }
 
-electric_current operator"" _MA(unsigned long long int x)
+scifir::electric_current operator"" _MA(unsigned long long int x)
 {
-	return electric_current((long double)x, "MA");
+	return scifir::electric_current((long double)x, "MA");
 }
 
-electric_current operator"" _kA(unsigned long long int x)
+scifir::electric_current operator"" _kA(unsigned long long int x)
 {
-	return electric_current((long double)x, "kA");
+	return scifir::electric_current((long double)x, "kA");
 }
 
-electric_current operator"" _hA(unsigned long long int x)
+scifir::electric_current operator"" _hA(unsigned long long int x)
 {
-	return electric_current((long double)x, "hA");
+	return scifir::electric_current((long double)x, "hA");
 }
 
-electric_current operator"" _daA(unsigned long long int x)
+scifir::electric_current operator"" _daA(unsigned long long int x)
 {
-	return electric_current((long double)x, "daA");
+	return scifir::electric_current((long double)x, "daA");
 }
 
-electric_current operator"" _A(unsigned long long int x)
+scifir::electric_current operator"" _A(unsigned long long int x)
 {
-	return electric_current((long double)x, "A");
+	return scifir::electric_current((long double)x, "A");
 }
 
-electric_current operator"" _dA(unsigned long long int x)
+scifir::electric_current operator"" _dA(unsigned long long int x)
 {
-	return electric_current((long double)x, "dA");
+	return scifir::electric_current((long double)x, "dA");
 }
 
-electric_current operator"" _cA(unsigned long long int x)
+scifir::electric_current operator"" _cA(unsigned long long int x)
 {
-	return electric_current((long double)x, "cA");
+	return scifir::electric_current((long double)x, "cA");
 }
 
-electric_current operator"" _mA(unsigned long long int x)
+scifir::electric_current operator"" _mA(unsigned long long int x)
 {
-	return electric_current((long double)x, "mA");
+	return scifir::electric_current((long double)x, "mA");
 }
 
-electric_current operator"" _uA(unsigned long long int x)
+scifir::electric_current operator"" _uA(unsigned long long int x)
 {
-	return electric_current((long double)x, "uA");
+	return scifir::electric_current((long double)x, "uA");
 }
 
-electric_current operator"" _nA(unsigned long long int x)
+scifir::electric_current operator"" _nA(unsigned long long int x)
 {
-	return electric_current((long double)x, "nA");
+	return scifir::electric_current((long double)x, "nA");
 }
 
-electric_current operator"" _pA(unsigned long long int x)
+scifir::electric_current operator"" _pA(unsigned long long int x)
 {
-	return electric_current((long double)x, "pA");
+	return scifir::electric_current((long double)x, "pA");
 }
 
-electric_current operator"" _fA(unsigned long long int x)
+scifir::electric_current operator"" _fA(unsigned long long int x)
 {
-	return electric_current((long double)x, "fA");
+	return scifir::electric_current((long double)x, "fA");
 }
 
-electric_current operator"" _aA(unsigned long long int x)
+scifir::electric_current operator"" _aA(unsigned long long int x)
 {
-	return electric_current((long double)x, "aA");
+	return scifir::electric_current((long double)x, "aA");
 }
 
-electric_current operator"" _zA(unsigned long long int x)
+scifir::electric_current operator"" _zA(unsigned long long int x)
 {
-	return electric_current((long double)x, "zA");
+	return scifir::electric_current((long double)x, "zA");
 }
 
-electric_current operator"" _yA(unsigned long long int x)
+scifir::electric_current operator"" _yA(unsigned long long int x)
 {
-	return electric_current((long double)x, "yA");
+	return scifir::electric_current((long double)x, "yA");
 }
 
-voltage operator"" _YV(unsigned long long int x)
+scifir::voltage operator"" _YV(unsigned long long int x)
 {
-	return voltage((long double)x, "YV");
+	return scifir::voltage((long double)x, "YV");
 }
 
-voltage operator"" _ZV(unsigned long long int x)
+scifir::voltage operator"" _ZV(unsigned long long int x)
 {
-	return voltage((long double)x, "ZV");
+	return scifir::voltage((long double)x, "ZV");
 }
 
-voltage operator"" _EV(unsigned long long int x)
+scifir::voltage operator"" _EV(unsigned long long int x)
 {
-	return voltage((long double)x, "EV");
+	return scifir::voltage((long double)x, "EV");
 }
 
-voltage operator"" _PV(unsigned long long int x)
+scifir::voltage operator"" _PV(unsigned long long int x)
 {
-	return voltage((long double)x, "PV");
+	return scifir::voltage((long double)x, "PV");
 }
 
-voltage operator"" _TV(unsigned long long int x)
+scifir::voltage operator"" _TV(unsigned long long int x)
 {
-	return voltage((long double)x, "TV");
+	return scifir::voltage((long double)x, "TV");
 }
 
-voltage operator"" _GV(unsigned long long int x)
+scifir::voltage operator"" _GV(unsigned long long int x)
 {
-	return voltage((long double)x, "GV");
+	return scifir::voltage((long double)x, "GV");
 }
 
-voltage operator"" _MV(unsigned long long int x)
+scifir::voltage operator"" _MV(unsigned long long int x)
 {
-	return voltage((long double)x, "MV");
+	return scifir::voltage((long double)x, "MV");
 }
 
-voltage operator"" _kV(unsigned long long int x)
+scifir::voltage operator"" _kV(unsigned long long int x)
 {
-	return voltage((long double)x, "kV");
+	return scifir::voltage((long double)x, "kV");
 }
 
-voltage operator"" _hV(unsigned long long int x)
+scifir::voltage operator"" _hV(unsigned long long int x)
 {
-	return voltage((long double)x, "hV");
+	return scifir::voltage((long double)x, "hV");
 }
 
-voltage operator"" _daV(unsigned long long int x)
+scifir::voltage operator"" _daV(unsigned long long int x)
 {
-	return voltage((long double)x, "daV");
+	return scifir::voltage((long double)x, "daV");
 }
 
-voltage operator"" _V(unsigned long long int x)
+scifir::voltage operator"" _V(unsigned long long int x)
 {
-	return voltage((long double)x, "V");
+	return scifir::voltage((long double)x, "V");
 }
 
-voltage operator"" _dV(unsigned long long int x)
+scifir::voltage operator"" _dV(unsigned long long int x)
 {
-	return voltage((long double)x, "dV");
+	return scifir::voltage((long double)x, "dV");
 }
 
-voltage operator"" _cV(unsigned long long int x)
+scifir::voltage operator"" _cV(unsigned long long int x)
 {
-	return voltage((long double)x, "cV");
+	return scifir::voltage((long double)x, "cV");
 }
 
-voltage operator"" _mV(unsigned long long int x)
+scifir::voltage operator"" _mV(unsigned long long int x)
 {
-	return voltage((long double)x, "mV");
+	return scifir::voltage((long double)x, "mV");
 }
 
-voltage operator"" _uV(unsigned long long int x)
+scifir::voltage operator"" _uV(unsigned long long int x)
 {
-	return voltage((long double)x, "uV");
+	return scifir::voltage((long double)x, "uV");
 }
 
-voltage operator"" _nV(unsigned long long int x)
+scifir::voltage operator"" _nV(unsigned long long int x)
 {
-	return voltage((long double)x, "nV");
+	return scifir::voltage((long double)x, "nV");
 }
 
-voltage operator"" _pV(unsigned long long int x)
+scifir::voltage operator"" _pV(unsigned long long int x)
 {
-	return voltage((long double)x, "pV");
+	return scifir::voltage((long double)x, "pV");
 }
 
-voltage operator"" _fV(unsigned long long int x)
+scifir::voltage operator"" _fV(unsigned long long int x)
 {
-	return voltage((long double)x, "fV");
+	return scifir::voltage((long double)x, "fV");
 }
 
-voltage operator"" _aV(unsigned long long int x)
+scifir::voltage operator"" _aV(unsigned long long int x)
 {
-	return voltage((long double)x, "aV");
+	return scifir::voltage((long double)x, "aV");
 }
 
-voltage operator"" _zV(unsigned long long int x)
+scifir::voltage operator"" _zV(unsigned long long int x)
 {
-	return voltage((long double)x, "zV");
+	return scifir::voltage((long double)x, "zV");
 }
 
-voltage operator"" _yV(unsigned long long int x)
+scifir::voltage operator"" _yV(unsigned long long int x)
 {
-	return voltage((long double)x, "yV");
+	return scifir::voltage((long double)x, "yV");
 }
 
-capacitance operator"" _YF(unsigned long long int x)
+scifir::capacitance operator"" _YF(unsigned long long int x)
 {
-	return capacitance((long double)x, "YF");
+	return scifir::capacitance((long double)x, "YF");
 }
 
-capacitance operator"" _ZF(unsigned long long int x)
+scifir::capacitance operator"" _ZF(unsigned long long int x)
 {
-	return capacitance((long double)x, "ZF");
+	return scifir::capacitance((long double)x, "ZF");
 }
 
-capacitance operator"" _EF(unsigned long long int x)
+scifir::capacitance operator"" _EF(unsigned long long int x)
 {
-	return capacitance((long double)x, "EF");
+	return scifir::capacitance((long double)x, "EF");
 }
 
-capacitance operator"" _PF(unsigned long long int x)
+scifir::capacitance operator"" _PF(unsigned long long int x)
 {
-	return capacitance((long double)x, "PF");
+	return scifir::capacitance((long double)x, "PF");
 }
 
-capacitance operator"" _TF(unsigned long long int x)
+scifir::capacitance operator"" _TF(unsigned long long int x)
 {
-	return capacitance((long double)x, "TF");
+	return scifir::capacitance((long double)x, "TF");
 }
 
-capacitance operator"" _GF(unsigned long long int x)
+scifir::capacitance operator"" _GF(unsigned long long int x)
 {
-	return capacitance((long double)x, "GF");
+	return scifir::capacitance((long double)x, "GF");
 }
 
-capacitance operator"" _MF(unsigned long long int x)
+scifir::capacitance operator"" _MF(unsigned long long int x)
 {
-	return capacitance((long double)x, "MF");
+	return scifir::capacitance((long double)x, "MF");
 }
 
-capacitance operator"" _kF(unsigned long long int x)
+scifir::capacitance operator"" _kF(unsigned long long int x)
 {
-	return capacitance((long double)x, "kF");
+	return scifir::capacitance((long double)x, "kF");
 }
 
-capacitance operator"" _hF(unsigned long long int x)
+scifir::capacitance operator"" _hF(unsigned long long int x)
 {
-	return capacitance((long double)x, "hF");
+	return scifir::capacitance((long double)x, "hF");
 }
 
-capacitance operator"" _daF(unsigned long long int x)
+scifir::capacitance operator"" _daF(unsigned long long int x)
 {
-	return capacitance((long double)x, "daF");
+	return scifir::capacitance((long double)x, "daF");
 }
 
-capacitance operator"" _F(unsigned long long int x)
+scifir::capacitance operator"" _F(unsigned long long int x)
 {
-	return capacitance((long double)x, "F");
+	return scifir::capacitance((long double)x, "F");
 }
 
-capacitance operator"" _dF(unsigned long long int x)
+scifir::capacitance operator"" _dF(unsigned long long int x)
 {
-	return capacitance((long double)x, "dF");
+	return scifir::capacitance((long double)x, "dF");
 }
 
-capacitance operator"" _cF(unsigned long long int x)
+scifir::capacitance operator"" _cF(unsigned long long int x)
 {
-	return capacitance((long double)x, "cF");
+	return scifir::capacitance((long double)x, "cF");
 }
 
-capacitance operator"" _mF(unsigned long long int x)
+scifir::capacitance operator"" _mF(unsigned long long int x)
 {
-	return capacitance((long double)x, "mF");
+	return scifir::capacitance((long double)x, "mF");
 }
 
-capacitance operator"" _uF(unsigned long long int x)
+scifir::capacitance operator"" _uF(unsigned long long int x)
 {
-	return capacitance((long double)x, "uF");
+	return scifir::capacitance((long double)x, "uF");
 }
 
-capacitance operator"" _nF(unsigned long long int x)
+scifir::capacitance operator"" _nF(unsigned long long int x)
 {
-	return capacitance((long double)x, "nF");
+	return scifir::capacitance((long double)x, "nF");
 }
 
-capacitance operator"" _pF(unsigned long long int x)
+scifir::capacitance operator"" _pF(unsigned long long int x)
 {
-	return capacitance((long double)x, "pF");
+	return scifir::capacitance((long double)x, "pF");
 }
 
-capacitance operator"" _fF(unsigned long long int x)
+scifir::capacitance operator"" _fF(unsigned long long int x)
 {
-	return capacitance((long double)x, "fF");
+	return scifir::capacitance((long double)x, "fF");
 }
 
-capacitance operator"" _aF(unsigned long long int x)
+scifir::capacitance operator"" _aF(unsigned long long int x)
 {
-	return capacitance((long double)x, "aF");
+	return scifir::capacitance((long double)x, "aF");
 }
 
-capacitance operator"" _zF(unsigned long long int x)
+scifir::capacitance operator"" _zF(unsigned long long int x)
 {
-	return capacitance((long double)x, "zF");
+	return scifir::capacitance((long double)x, "zF");
 }
 
-capacitance operator"" _yF(unsigned long long int x)
+scifir::capacitance operator"" _yF(unsigned long long int x)
 {
-	return capacitance((long double)x, "yF");
+	return scifir::capacitance((long double)x, "yF");
 }
 
-resistance operator"" _YOhm(unsigned long long int x)
+scifir::resistance operator"" _YOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "YOhm");
+	return scifir::resistance((long double)x, "YOhm");
 }
 
-resistance operator"" _ZOhm(unsigned long long int x)
+scifir::resistance operator"" _ZOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "ZOhm");
+	return scifir::resistance((long double)x, "ZOhm");
 }
 
-resistance operator"" _EOhm(unsigned long long int x)
+scifir::resistance operator"" _EOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "EOhm");
+	return scifir::resistance((long double)x, "EOhm");
 }
 
-resistance operator"" _POhm(unsigned long long int x)
+scifir::resistance operator"" _POhm(unsigned long long int x)
 {
-	return resistance((long double)x, "POhm");
+	return scifir::resistance((long double)x, "POhm");
 }
 
-resistance operator"" _TOhm(unsigned long long int x)
+scifir::resistance operator"" _TOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "TOhm");
+	return scifir::resistance((long double)x, "TOhm");
 }
 
-resistance operator"" _GOhm(unsigned long long int x)
+scifir::resistance operator"" _GOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "GOhm");
+	return scifir::resistance((long double)x, "GOhm");
 }
 
-resistance operator"" _MOhm(unsigned long long int x)
+scifir::resistance operator"" _MOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "MOhm");
+	return scifir::resistance((long double)x, "MOhm");
 }
 
-resistance operator"" _kOhm(unsigned long long int x)
+scifir::resistance operator"" _kOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "kOhm");
+	return scifir::resistance((long double)x, "kOhm");
 }
 
-resistance operator"" _hOhm(unsigned long long int x)
+scifir::resistance operator"" _hOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "hOhm");
+	return scifir::resistance((long double)x, "hOhm");
 }
 
-resistance operator"" _daOhm(unsigned long long int x)
+scifir::resistance operator"" _daOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "daOhm");
+	return scifir::resistance((long double)x, "daOhm");
 }
 
-resistance operator"" _Ohm(unsigned long long int x)
+scifir::resistance operator"" _Ohm(unsigned long long int x)
 {
-	return resistance((long double)x, "Ohm");
+	return scifir::resistance((long double)x, "Ohm");
 }
 
-resistance operator"" _dOhm(unsigned long long int x)
+scifir::resistance operator"" _dOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "dOhm");
+	return scifir::resistance((long double)x, "dOhm");
 }
 
-resistance operator"" _cOhm(unsigned long long int x)
+scifir::resistance operator"" _cOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "cOhm");
+	return scifir::resistance((long double)x, "cOhm");
 }
 
-resistance operator"" _mOhm(unsigned long long int x)
+scifir::resistance operator"" _mOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "mOhm");
+	return scifir::resistance((long double)x, "mOhm");
 }
 
-resistance operator"" _uOhm(unsigned long long int x)
+scifir::resistance operator"" _uOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "uOhm");
+	return scifir::resistance((long double)x, "uOhm");
 }
 
-resistance operator"" _nOhm(unsigned long long int x)
+scifir::resistance operator"" _nOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "nOhm");
+	return scifir::resistance((long double)x, "nOhm");
 }
 
-resistance operator"" _pOhm(unsigned long long int x)
+scifir::resistance operator"" _pOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "pOhm");
+	return scifir::resistance((long double)x, "pOhm");
 }
 
-resistance operator"" _fOhm(unsigned long long int x)
+scifir::resistance operator"" _fOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "fOhm");
+	return scifir::resistance((long double)x, "fOhm");
 }
 
-resistance operator"" _aOhm(unsigned long long int x)
+scifir::resistance operator"" _aOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "aOhm");
+	return scifir::resistance((long double)x, "aOhm");
 }
 
-resistance operator"" _zOhm(unsigned long long int x)
+scifir::resistance operator"" _zOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "zOhm");
+	return scifir::resistance((long double)x, "zOhm");
 }
 
-resistance operator"" _yOhm(unsigned long long int x)
+scifir::resistance operator"" _yOhm(unsigned long long int x)
 {
-	return resistance((long double)x, "yOhm");
+	return scifir::resistance((long double)x, "yOhm");
 }
 
-electric_conductance operator"" _YS(unsigned long long int x)
+scifir::electric_conductance operator"" _YS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "YS");
+	return scifir::electric_conductance((long double)x, "YS");
 }
 
-electric_conductance operator"" _ZS(unsigned long long int x)
+scifir::electric_conductance operator"" _ZS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "ZS");
+	return scifir::electric_conductance((long double)x, "ZS");
 }
 
-electric_conductance operator"" _ES(unsigned long long int x)
+scifir::electric_conductance operator"" _ES(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "ES");
+	return scifir::electric_conductance((long double)x, "ES");
 }
 
-electric_conductance operator"" _PS(unsigned long long int x)
+scifir::electric_conductance operator"" _PS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "PS");
+	return scifir::electric_conductance((long double)x, "PS");
 }
 
-electric_conductance operator"" _TS(unsigned long long int x)
+scifir::electric_conductance operator"" _TS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "TS");
+	return scifir::electric_conductance((long double)x, "TS");
 }
 
-electric_conductance operator"" _GS(unsigned long long int x)
+scifir::electric_conductance operator"" _GS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "GS");
+	return scifir::electric_conductance((long double)x, "GS");
 }
 
-electric_conductance operator"" _MS(unsigned long long int x)
+scifir::electric_conductance operator"" _MS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "MS");
+	return scifir::electric_conductance((long double)x, "MS");
 }
 
-electric_conductance operator"" _kS(unsigned long long int x)
+scifir::electric_conductance operator"" _kS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "kS");
+	return scifir::electric_conductance((long double)x, "kS");
 }
 
-electric_conductance operator"" _hS(unsigned long long int x)
+scifir::electric_conductance operator"" _hS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "hS");
+	return scifir::electric_conductance((long double)x, "hS");
 }
 
-electric_conductance operator"" _daS(unsigned long long int x)
+scifir::electric_conductance operator"" _daS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "daS");
+	return scifir::electric_conductance((long double)x, "daS");
 }
 
-electric_conductance operator"" _S(unsigned long long int x)
+scifir::electric_conductance operator"" _S(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "S");
+	return scifir::electric_conductance((long double)x, "S");
 }
 
-electric_conductance operator"" _dS(unsigned long long int x)
+scifir::electric_conductance operator"" _dS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "dS");
+	return scifir::electric_conductance((long double)x, "dS");
 }
 
-electric_conductance operator"" _cS(unsigned long long int x)
+scifir::electric_conductance operator"" _cS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "cS");
+	return scifir::electric_conductance((long double)x, "cS");
 }
 
-electric_conductance operator"" _mS(unsigned long long int x)
+scifir::electric_conductance operator"" _mS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "mS");
+	return scifir::electric_conductance((long double)x, "mS");
 }
 
-electric_conductance operator"" _uS(unsigned long long int x)
+scifir::electric_conductance operator"" _uS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "uS");
+	return scifir::electric_conductance((long double)x, "uS");
 }
 
-electric_conductance operator"" _nS(unsigned long long int x)
+scifir::electric_conductance operator"" _nS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "nS");
+	return scifir::electric_conductance((long double)x, "nS");
 }
 
-electric_conductance operator"" _pS(unsigned long long int x)
+scifir::electric_conductance operator"" _pS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "pS");
+	return scifir::electric_conductance((long double)x, "pS");
 }
 
-electric_conductance operator"" _fS(unsigned long long int x)
+scifir::electric_conductance operator"" _fS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "fS");
+	return scifir::electric_conductance((long double)x, "fS");
 }
 
-electric_conductance operator"" _aS(unsigned long long int x)
+scifir::electric_conductance operator"" _aS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "aS");
+	return scifir::electric_conductance((long double)x, "aS");
 }
 
-electric_conductance operator"" _zS(unsigned long long int x)
+scifir::electric_conductance operator"" _zS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "zS");
+	return scifir::electric_conductance((long double)x, "zS");
 }
 
-electric_conductance operator"" _yS(unsigned long long int x)
+scifir::electric_conductance operator"" _yS(unsigned long long int x)
 {
-	return electric_conductance((long double)x, "yS");
+	return scifir::electric_conductance((long double)x, "yS");
 }
 
-magnetic_flux operator"" _YWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _YWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "YWb");
+	return scifir::magnetic_flux((long double)x, "YWb");
 }
 
-magnetic_flux operator"" _ZWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _ZWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "ZWb");
+	return scifir::magnetic_flux((long double)x, "ZWb");
 }
 
-magnetic_flux operator"" _EWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _EWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "EWb");
+	return scifir::magnetic_flux((long double)x, "EWb");
 }
 
-magnetic_flux operator"" _PWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _PWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "PWb");
+	return scifir::magnetic_flux((long double)x, "PWb");
 }
 
-magnetic_flux operator"" _TWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _TWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "TWb");
+	return scifir::magnetic_flux((long double)x, "TWb");
 }
 
-magnetic_flux operator"" _GWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _GWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "GWb");
+	return scifir::magnetic_flux((long double)x, "GWb");
 }
 
-magnetic_flux operator"" _MWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _MWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "MWb");
+	return scifir::magnetic_flux((long double)x, "MWb");
 }
 
-magnetic_flux operator"" _kWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _kWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "kWb");
+	return scifir::magnetic_flux((long double)x, "kWb");
 }
 
-magnetic_flux operator"" _hWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _hWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "hWb");
+	return scifir::magnetic_flux((long double)x, "hWb");
 }
 
-magnetic_flux operator"" _daWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _daWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "daWb");
+	return scifir::magnetic_flux((long double)x, "daWb");
 }
 
-magnetic_flux operator"" _Wb(unsigned long long int x)
+scifir::magnetic_flux operator"" _Wb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "Wb");
+	return scifir::magnetic_flux((long double)x, "Wb");
 }
 
-magnetic_flux operator"" _dWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _dWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "dWb");
+	return scifir::magnetic_flux((long double)x, "dWb");
 }
 
-magnetic_flux operator"" _cWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _cWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "cWb");
+	return scifir::magnetic_flux((long double)x, "cWb");
 }
 
-magnetic_flux operator"" _mWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _mWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "mWb");
+	return scifir::magnetic_flux((long double)x, "mWb");
 }
 
-magnetic_flux operator"" _uWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _uWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "uWb");
+	return scifir::magnetic_flux((long double)x, "uWb");
 }
 
-magnetic_flux operator"" _nWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _nWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "nWb");
+	return scifir::magnetic_flux((long double)x, "nWb");
 }
 
-magnetic_flux operator"" _pWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _pWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "pWb");
+	return scifir::magnetic_flux((long double)x, "pWb");
 }
 
-magnetic_flux operator"" _fWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _fWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "fWb");
+	return scifir::magnetic_flux((long double)x, "fWb");
 }
 
-magnetic_flux operator"" _aWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _aWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "aWb");
+	return scifir::magnetic_flux((long double)x, "aWb");
 }
 
-magnetic_flux operator"" _zWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _zWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "zWb");
+	return scifir::magnetic_flux((long double)x, "zWb");
 }
 
-magnetic_flux operator"" _yWb(unsigned long long int x)
+scifir::magnetic_flux operator"" _yWb(unsigned long long int x)
 {
-	return magnetic_flux((long double)x, "yWb");
+	return scifir::magnetic_flux((long double)x, "yWb");
 }
 
-magnetic_strength operator"" _YT(unsigned long long int x)
+scifir::magnetic_strength operator"" _YT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "YT");
+	return scifir::magnetic_strength((long double)x, "YT");
 }
 
-magnetic_strength operator"" _ZT(unsigned long long int x)
+scifir::magnetic_strength operator"" _ZT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "ZT");
+	return scifir::magnetic_strength((long double)x, "ZT");
 }
 
-magnetic_strength operator"" _ET(unsigned long long int x)
+scifir::magnetic_strength operator"" _ET(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "ET");
+	return scifir::magnetic_strength((long double)x, "ET");
 }
 
-magnetic_strength operator"" _PT(unsigned long long int x)
+scifir::magnetic_strength operator"" _PT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "PT");
+	return scifir::magnetic_strength((long double)x, "PT");
 }
 
-magnetic_strength operator"" _TT(unsigned long long int x)
+scifir::magnetic_strength operator"" _TT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "TT");
+	return scifir::magnetic_strength((long double)x, "TT");
 }
 
-magnetic_strength operator"" _GT(unsigned long long int x)
+scifir::magnetic_strength operator"" _GT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "GT");
+	return scifir::magnetic_strength((long double)x, "GT");
 }
 
-/*magnetic_strength operator"" _MT(unsigned long long int x)
+/*scifir::magnetic_strength operator"" _MT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "MT");
+	return scifir::magnetic_strength((long double)x, "MT");
 }*/
 
-magnetic_strength operator"" _kT(unsigned long long int x)
+scifir::magnetic_strength operator"" _kT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "kT");
+	return scifir::magnetic_strength((long double)x, "kT");
 }
 
-magnetic_strength operator"" _hT(unsigned long long int x)
+scifir::magnetic_strength operator"" _hT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "hT");
+	return scifir::magnetic_strength((long double)x, "hT");
 }
 
-magnetic_strength operator"" _daT(unsigned long long int x)
+scifir::magnetic_strength operator"" _daT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "daT");
+	return scifir::magnetic_strength((long double)x, "daT");
 }
 
-magnetic_strength operator"" _T(unsigned long long int x)
+scifir::magnetic_strength operator"" _T(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "T");
+	return scifir::magnetic_strength((long double)x, "T");
 }
 
-magnetic_strength operator"" _dT(unsigned long long int x)
+scifir::magnetic_strength operator"" _dT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "dT");
+	return scifir::magnetic_strength((long double)x, "dT");
 }
 
-magnetic_strength operator"" _cT(unsigned long long int x)
+scifir::magnetic_strength operator"" _cT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "cT");
+	return scifir::magnetic_strength((long double)x, "cT");
 }
 
-magnetic_strength operator"" _mT(unsigned long long int x)
+scifir::magnetic_strength operator"" _mT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "mT");
+	return scifir::magnetic_strength((long double)x, "mT");
 }
 
-magnetic_strength operator"" _uT(unsigned long long int x)
+scifir::magnetic_strength operator"" _uT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "uT");
+	return scifir::magnetic_strength((long double)x, "uT");
 }
 
-magnetic_strength operator"" _nT(unsigned long long int x)
+scifir::magnetic_strength operator"" _nT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "nT");
+	return scifir::magnetic_strength((long double)x, "nT");
 }
 
-magnetic_strength operator"" _pT(unsigned long long int x)
+scifir::magnetic_strength operator"" _pT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "pT");
+	return scifir::magnetic_strength((long double)x, "pT");
 }
 
-magnetic_strength operator"" _fT(unsigned long long int x)
+scifir::magnetic_strength operator"" _fT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "fT");
+	return scifir::magnetic_strength((long double)x, "fT");
 }
 
-magnetic_strength operator"" _aT(unsigned long long int x)
+scifir::magnetic_strength operator"" _aT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "aT");
+	return scifir::magnetic_strength((long double)x, "aT");
 }
 
-magnetic_strength operator"" _zT(unsigned long long int x)
+scifir::magnetic_strength operator"" _zT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "zT");
+	return scifir::magnetic_strength((long double)x, "zT");
 }
 
-magnetic_strength operator"" _yT(unsigned long long int x)
+scifir::magnetic_strength operator"" _yT(unsigned long long int x)
 {
-	return magnetic_strength((long double)x, "yT");
+	return scifir::magnetic_strength((long double)x, "yT");
 }
 
-inductance operator"" _YH(unsigned long long int x)
+scifir::inductance operator"" _YH(unsigned long long int x)
 {
-	return inductance((long double)x, "YH");
+	return scifir::inductance((long double)x, "YH");
 }
 
-inductance operator"" _ZH(unsigned long long int x)
+scifir::inductance operator"" _ZH(unsigned long long int x)
 {
-	return inductance((long double)x, "ZH");
+	return scifir::inductance((long double)x, "ZH");
 }
 
-inductance operator"" _EH(unsigned long long int x)
+scifir::inductance operator"" _EH(unsigned long long int x)
 {
-	return inductance((long double)x, "EH");
+	return scifir::inductance((long double)x, "EH");
 }
 
-inductance operator"" _PH(unsigned long long int x)
+scifir::inductance operator"" _PH(unsigned long long int x)
 {
-	return inductance((long double)x, "PH");
+	return scifir::inductance((long double)x, "PH");
 }
 
-inductance operator"" _TH(unsigned long long int x)
+scifir::inductance operator"" _TH(unsigned long long int x)
 {
-	return inductance((long double)x, "TH");
+	return scifir::inductance((long double)x, "TH");
 }
 
-inductance operator"" _GH(unsigned long long int x)
+scifir::inductance operator"" _GH(unsigned long long int x)
 {
-	return inductance((long double)x, "GH");
+	return scifir::inductance((long double)x, "GH");
 }
 
-inductance operator"" _MH(unsigned long long int x)
+scifir::inductance operator"" _MH(unsigned long long int x)
 {
-	return inductance((long double)x, "MH");
+	return scifir::inductance((long double)x, "MH");
 }
 
-inductance operator"" _kH(unsigned long long int x)
+scifir::inductance operator"" _kH(unsigned long long int x)
 {
-	return inductance((long double)x, "kH");
+	return scifir::inductance((long double)x, "kH");
 }
 
-inductance operator"" _hH(unsigned long long int x)
+scifir::inductance operator"" _hH(unsigned long long int x)
 {
-	return inductance((long double)x, "hH");
+	return scifir::inductance((long double)x, "hH");
 }
 
-inductance operator"" _daH(unsigned long long int x)
+scifir::inductance operator"" _daH(unsigned long long int x)
 {
-	return inductance((long double)x, "daH");
+	return scifir::inductance((long double)x, "daH");
 }
 
-inductance operator"" _H(unsigned long long int x)
+scifir::inductance operator"" _H(unsigned long long int x)
 {
-	return inductance((long double)x, "H");
+	return scifir::inductance((long double)x, "H");
 }
 
-inductance operator"" _dH(unsigned long long int x)
+scifir::inductance operator"" _dH(unsigned long long int x)
 {
-	return inductance((long double)x, "dH");
+	return scifir::inductance((long double)x, "dH");
 }
 
-inductance operator"" _cH(unsigned long long int x)
+scifir::inductance operator"" _cH(unsigned long long int x)
 {
-	return inductance((long double)x, "cH");
+	return scifir::inductance((long double)x, "cH");
 }
 
-inductance operator"" _mH(unsigned long long int x)
+scifir::inductance operator"" _mH(unsigned long long int x)
 {
-	return inductance((long double)x, "mH");
+	return scifir::inductance((long double)x, "mH");
 }
 
-inductance operator"" _uH(unsigned long long int x)
+scifir::inductance operator"" _uH(unsigned long long int x)
 {
-	return inductance((long double)x, "uH");
+	return scifir::inductance((long double)x, "uH");
 }
 
-inductance operator"" _nH(unsigned long long int x)
+scifir::inductance operator"" _nH(unsigned long long int x)
 {
-	return inductance((long double)x, "nH");
+	return scifir::inductance((long double)x, "nH");
 }
 
-inductance operator"" _pH(unsigned long long int x)
+scifir::inductance operator"" _pH(unsigned long long int x)
 {
-	return inductance((long double)x, "pH");
+	return scifir::inductance((long double)x, "pH");
 }
 
-inductance operator"" _fH(unsigned long long int x)
+scifir::inductance operator"" _fH(unsigned long long int x)
 {
-	return inductance((long double)x, "fH");
+	return scifir::inductance((long double)x, "fH");
 }
 
-inductance operator"" _aH(unsigned long long int x)
+scifir::inductance operator"" _aH(unsigned long long int x)
 {
-	return inductance((long double)x, "aH");
+	return scifir::inductance((long double)x, "aH");
 }
 
-inductance operator"" _zH(unsigned long long int x)
+scifir::inductance operator"" _zH(unsigned long long int x)
 {
-	return inductance((long double)x, "zH");
+	return scifir::inductance((long double)x, "zH");
 }
 
-inductance operator"" _yH(unsigned long long int x)
+scifir::inductance operator"" _yH(unsigned long long int x)
 {
-	return inductance((long double)x, "yH");
+	return scifir::inductance((long double)x, "yH");
 }
 
-luminous_flux operator"" _Ylm(unsigned long long int x)
+scifir::luminous_flux operator"" _Ylm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "Ylm");
+	return scifir::luminous_flux((long double)x, "Ylm");
 }
 
-luminous_flux operator"" _Zlm(unsigned long long int x)
+scifir::luminous_flux operator"" _Zlm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "Zlm");
+	return scifir::luminous_flux((long double)x, "Zlm");
 }
 
-luminous_flux operator"" _Elm(unsigned long long int x)
+scifir::luminous_flux operator"" _Elm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "Elm");
+	return scifir::luminous_flux((long double)x, "Elm");
 }
 
-luminous_flux operator"" _Plm(unsigned long long int x)
+scifir::luminous_flux operator"" _Plm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "Plm");
+	return scifir::luminous_flux((long double)x, "Plm");
 }
 
-luminous_flux operator"" _Tlm(unsigned long long int x)
+scifir::luminous_flux operator"" _Tlm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "Tlm");
+	return scifir::luminous_flux((long double)x, "Tlm");
 }
 
-luminous_flux operator"" _Glm(unsigned long long int x)
+scifir::luminous_flux operator"" _Glm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "Glm");
+	return scifir::luminous_flux((long double)x, "Glm");
 }
 
-luminous_flux operator"" _Mlm(unsigned long long int x)
+scifir::luminous_flux operator"" _Mlm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "Mlm");
+	return scifir::luminous_flux((long double)x, "Mlm");
 }
 
-luminous_flux operator"" _klm(unsigned long long int x)
+scifir::luminous_flux operator"" _klm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "klm");
+	return scifir::luminous_flux((long double)x, "klm");
 }
 
-luminous_flux operator"" _hlm(unsigned long long int x)
+scifir::luminous_flux operator"" _hlm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "hlm");
+	return scifir::luminous_flux((long double)x, "hlm");
 }
 
-luminous_flux operator"" _dalm(unsigned long long int x)
+scifir::luminous_flux operator"" _dalm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "dalm");
+	return scifir::luminous_flux((long double)x, "dalm");
 }
 
-luminous_flux operator"" _lm(unsigned long long int x)
+scifir::luminous_flux operator"" _lm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "lm");
+	return scifir::luminous_flux((long double)x, "lm");
 }
 
-luminous_flux operator"" _dlm(unsigned long long int x)
+scifir::luminous_flux operator"" _dlm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "dlm");
+	return scifir::luminous_flux((long double)x, "dlm");
 }
 
-luminous_flux operator"" _clm(unsigned long long int x)
+scifir::luminous_flux operator"" _clm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "clm");
+	return scifir::luminous_flux((long double)x, "clm");
 }
 
-luminous_flux operator"" _mlm(unsigned long long int x)
+scifir::luminous_flux operator"" _mlm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "mlm");
+	return scifir::luminous_flux((long double)x, "mlm");
 }
 
-luminous_flux operator"" _ulm(unsigned long long int x)
+scifir::luminous_flux operator"" _ulm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "ulm");
+	return scifir::luminous_flux((long double)x, "ulm");
 }
 
-luminous_flux operator"" _nlm(unsigned long long int x)
+scifir::luminous_flux operator"" _nlm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "nlm");
+	return scifir::luminous_flux((long double)x, "nlm");
 }
 
-luminous_flux operator"" _plm(unsigned long long int x)
+scifir::luminous_flux operator"" _plm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "plm");
+	return scifir::luminous_flux((long double)x, "plm");
 }
 
-luminous_flux operator"" _flm(unsigned long long int x)
+scifir::luminous_flux operator"" _flm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "flm");
+	return scifir::luminous_flux((long double)x, "flm");
 }
 
-luminous_flux operator"" _alm(unsigned long long int x)
+scifir::luminous_flux operator"" _alm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "alm");
+	return scifir::luminous_flux((long double)x, "alm");
 }
 
-luminous_flux operator"" _zlm(unsigned long long int x)
+scifir::luminous_flux operator"" _zlm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "zlm");
+	return scifir::luminous_flux((long double)x, "zlm");
 }
 
-luminous_flux operator"" _ylm(unsigned long long int x)
+scifir::luminous_flux operator"" _ylm(unsigned long long int x)
 {
-	return luminous_flux((long double)x, "ylm");
+	return scifir::luminous_flux((long double)x, "ylm");
 }
 
-illuminance operator"" _Ylx(unsigned long long int x)
+scifir::illuminance operator"" _Ylx(unsigned long long int x)
 {
-	return illuminance((long double)x, "Ylx");
+	return scifir::illuminance((long double)x, "Ylx");
 }
 
-illuminance operator"" _Zlx(unsigned long long int x)
+scifir::illuminance operator"" _Zlx(unsigned long long int x)
 {
-	return illuminance((long double)x, "Zlx");
+	return scifir::illuminance((long double)x, "Zlx");
 }
 
-illuminance operator"" _Elx(unsigned long long int x)
+scifir::illuminance operator"" _Elx(unsigned long long int x)
 {
-	return illuminance((long double)x, "Elx");
+	return scifir::illuminance((long double)x, "Elx");
 }
 
-illuminance operator"" _Plx(unsigned long long int x)
+scifir::illuminance operator"" _Plx(unsigned long long int x)
 {
-	return illuminance((long double)x, "Plx");
+	return scifir::illuminance((long double)x, "Plx");
 }
 
-illuminance operator"" _Tlx(unsigned long long int x)
+scifir::illuminance operator"" _Tlx(unsigned long long int x)
 {
-	return illuminance((long double)x, "Tlx");
+	return scifir::illuminance((long double)x, "Tlx");
 }
 
-illuminance operator"" _Glx(unsigned long long int x)
+scifir::illuminance operator"" _Glx(unsigned long long int x)
 {
-	return illuminance((long double)x, "Glx");
+	return scifir::illuminance((long double)x, "Glx");
 }
 
-illuminance operator"" _Mlx(unsigned long long int x)
+scifir::illuminance operator"" _Mlx(unsigned long long int x)
 {
-	return illuminance((long double)x, "Mlx");
+	return scifir::illuminance((long double)x, "Mlx");
 }
 
-illuminance operator"" _klx(unsigned long long int x)
+scifir::illuminance operator"" _klx(unsigned long long int x)
 {
-	return illuminance((long double)x, "klx");
+	return scifir::illuminance((long double)x, "klx");
 }
 
-illuminance operator"" _hlx(unsigned long long int x)
+scifir::illuminance operator"" _hlx(unsigned long long int x)
 {
-	return illuminance((long double)x, "hlx");
+	return scifir::illuminance((long double)x, "hlx");
 }
 
-illuminance operator"" _dalx(unsigned long long int x)
+scifir::illuminance operator"" _dalx(unsigned long long int x)
 {
-	return illuminance((long double)x, "dalx");
+	return scifir::illuminance((long double)x, "dalx");
 }
 
-illuminance operator"" _lx(unsigned long long int x)
+scifir::illuminance operator"" _lx(unsigned long long int x)
 {
-	return illuminance((long double)x, "lx");
+	return scifir::illuminance((long double)x, "lx");
 }
 
-illuminance operator"" _dlx(unsigned long long int x)
+scifir::illuminance operator"" _dlx(unsigned long long int x)
 {
-	return illuminance((long double)x, "dlx");
+	return scifir::illuminance((long double)x, "dlx");
 }
 
-illuminance operator"" _clx(unsigned long long int x)
+scifir::illuminance operator"" _clx(unsigned long long int x)
 {
-	return illuminance((long double)x, "clx");
+	return scifir::illuminance((long double)x, "clx");
 }
 
-illuminance operator"" _mlx(unsigned long long int x)
+scifir::illuminance operator"" _mlx(unsigned long long int x)
 {
-	return illuminance((long double)x, "mlx");
+	return scifir::illuminance((long double)x, "mlx");
 }
 
-illuminance operator"" _ulx(unsigned long long int x)
+scifir::illuminance operator"" _ulx(unsigned long long int x)
 {
-	return illuminance((long double)x, "ulx");
+	return scifir::illuminance((long double)x, "ulx");
 }
 
-illuminance operator"" _nlx(unsigned long long int x)
+scifir::illuminance operator"" _nlx(unsigned long long int x)
 {
-	return illuminance((long double)x, "nlx");
+	return scifir::illuminance((long double)x, "nlx");
 }
 
-illuminance operator"" _plx(unsigned long long int x)
+scifir::illuminance operator"" _plx(unsigned long long int x)
 {
-	return illuminance((long double)x, "plx");
+	return scifir::illuminance((long double)x, "plx");
 }
 
-illuminance operator"" _flx(unsigned long long int x)
+scifir::illuminance operator"" _flx(unsigned long long int x)
 {
-	return illuminance((long double)x, "flx");
+	return scifir::illuminance((long double)x, "flx");
 }
 
-illuminance operator"" _alx(unsigned long long int x)
+scifir::illuminance operator"" _alx(unsigned long long int x)
 {
-	return illuminance((long double)x, "alx");
+	return scifir::illuminance((long double)x, "alx");
 }
 
-illuminance operator"" _zlx(unsigned long long int x)
+scifir::illuminance operator"" _zlx(unsigned long long int x)
 {
-	return illuminance((long double)x, "zlx");
+	return scifir::illuminance((long double)x, "zlx");
 }
 
-illuminance operator"" _ylx(unsigned long long int x)
+scifir::illuminance operator"" _ylx(unsigned long long int x)
 {
-	return illuminance((long double)x, "ylx");
+	return scifir::illuminance((long double)x, "ylx");
 }
 
-radioactivity operator"" _YBq(unsigned long long int x)
+scifir::radioactivity operator"" _YBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "YBq");
+	return scifir::radioactivity((long double)x, "YBq");
 }
 
-radioactivity operator"" _ZBq(unsigned long long int x)
+scifir::radioactivity operator"" _ZBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "ZBq");
+	return scifir::radioactivity((long double)x, "ZBq");
 }
 
-radioactivity operator"" _EBq(unsigned long long int x)
+scifir::radioactivity operator"" _EBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "EBq");
+	return scifir::radioactivity((long double)x, "EBq");
 }
 
-radioactivity operator"" _PBq(unsigned long long int x)
+scifir::radioactivity operator"" _PBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "PBq");
+	return scifir::radioactivity((long double)x, "PBq");
 }
 
-radioactivity operator"" _TBq(unsigned long long int x)
+scifir::radioactivity operator"" _TBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "TBq");
+	return scifir::radioactivity((long double)x, "TBq");
 }
 
-radioactivity operator"" _GBq(unsigned long long int x)
+scifir::radioactivity operator"" _GBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "GBq");
+	return scifir::radioactivity((long double)x, "GBq");
 }
 
-radioactivity operator"" _MBq(unsigned long long int x)
+scifir::radioactivity operator"" _MBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "MBq");
+	return scifir::radioactivity((long double)x, "MBq");
 }
 
-radioactivity operator"" _kBq(unsigned long long int x)
+scifir::radioactivity operator"" _kBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "kBq");
+	return scifir::radioactivity((long double)x, "kBq");
 }
 
-radioactivity operator"" _hBq(unsigned long long int x)
+scifir::radioactivity operator"" _hBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "hBq");
+	return scifir::radioactivity((long double)x, "hBq");
 }
 
-radioactivity operator"" _daBq(unsigned long long int x)
+scifir::radioactivity operator"" _daBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "daBq");
+	return scifir::radioactivity((long double)x, "daBq");
 }
 
-radioactivity operator"" _Bq(unsigned long long int x)
+scifir::radioactivity operator"" _Bq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "Bq");
+	return scifir::radioactivity((long double)x, "Bq");
 }
 
-radioactivity operator"" _dBq(unsigned long long int x)
+scifir::radioactivity operator"" _dBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "dBq");
+	return scifir::radioactivity((long double)x, "dBq");
 }
 
-radioactivity operator"" _cBq(unsigned long long int x)
+scifir::radioactivity operator"" _cBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "cBq");
+	return scifir::radioactivity((long double)x, "cBq");
 }
 
-radioactivity operator"" _mBq(unsigned long long int x)
+scifir::radioactivity operator"" _mBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "mBq");
+	return scifir::radioactivity((long double)x, "mBq");
 }
 
-radioactivity operator"" _uBq(unsigned long long int x)
+scifir::radioactivity operator"" _uBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "uBq");
+	return scifir::radioactivity((long double)x, "uBq");
 }
 
-radioactivity operator"" _nBq(unsigned long long int x)
+scifir::radioactivity operator"" _nBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "nBq");
+	return scifir::radioactivity((long double)x, "nBq");
 }
 
-radioactivity operator"" _pBq(unsigned long long int x)
+scifir::radioactivity operator"" _pBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "pBq");
+	return scifir::radioactivity((long double)x, "pBq");
 }
 
-radioactivity operator"" _fBq(unsigned long long int x)
+scifir::radioactivity operator"" _fBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "fBq");
+	return scifir::radioactivity((long double)x, "fBq");
 }
 
-radioactivity operator"" _aBq(unsigned long long int x)
+scifir::radioactivity operator"" _aBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "aBq");
+	return scifir::radioactivity((long double)x, "aBq");
 }
 
-radioactivity operator"" _zBq(unsigned long long int x)
+scifir::radioactivity operator"" _zBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "zBq");
+	return scifir::radioactivity((long double)x, "zBq");
 }
 
-radioactivity operator"" _yBq(unsigned long long int x)
+scifir::radioactivity operator"" _yBq(unsigned long long int x)
 {
-	return radioactivity((long double)x, "yBq");
+	return scifir::radioactivity((long double)x, "yBq");
 }
 
-ionizing_radiation operator"" _YGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _YGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "YGy");
+	return scifir::ionizing_radiation((long double)x, "YGy");
 }
 
-ionizing_radiation operator"" _ZGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _ZGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "ZGy");
+	return scifir::ionizing_radiation((long double)x, "ZGy");
 }
 
-ionizing_radiation operator"" _EGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _EGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "EGy");
+	return scifir::ionizing_radiation((long double)x, "EGy");
 }
 
-ionizing_radiation operator"" _PGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _PGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "PGy");
+	return scifir::ionizing_radiation((long double)x, "PGy");
 }
 
-ionizing_radiation operator"" _TGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _TGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "TGy");
+	return scifir::ionizing_radiation((long double)x, "TGy");
 }
 
-ionizing_radiation operator"" _GGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _GGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "GGy");
+	return scifir::ionizing_radiation((long double)x, "GGy");
 }
 
-ionizing_radiation operator"" _MGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _MGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "MGy");
+	return scifir::ionizing_radiation((long double)x, "MGy");
 }
 
-ionizing_radiation operator"" _kGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _kGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "kGy");
+	return scifir::ionizing_radiation((long double)x, "kGy");
 }
 
-ionizing_radiation operator"" _hGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _hGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "hGy");
+	return scifir::ionizing_radiation((long double)x, "hGy");
 }
 
-ionizing_radiation operator"" _daGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _daGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "daGy");
+	return scifir::ionizing_radiation((long double)x, "daGy");
 }
 
-ionizing_radiation operator"" _Gy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _Gy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "Gy");
+	return scifir::ionizing_radiation((long double)x, "Gy");
 }
 
-ionizing_radiation operator"" _dGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _dGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "dGy");
+	return scifir::ionizing_radiation((long double)x, "dGy");
 }
 
-ionizing_radiation operator"" _cGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _cGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "cGy");
+	return scifir::ionizing_radiation((long double)x, "cGy");
 }
 
-ionizing_radiation operator"" _mGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _mGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "mGy");
+	return scifir::ionizing_radiation((long double)x, "mGy");
 }
 
-ionizing_radiation operator"" _uGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _uGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "uGy");
+	return scifir::ionizing_radiation((long double)x, "uGy");
 }
 
-ionizing_radiation operator"" _nGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _nGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "nGy");
+	return scifir::ionizing_radiation((long double)x, "nGy");
 }
 
-ionizing_radiation operator"" _pGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _pGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "pGy");
+	return scifir::ionizing_radiation((long double)x, "pGy");
 }
 
-ionizing_radiation operator"" _fGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _fGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "fGy");
+	return scifir::ionizing_radiation((long double)x, "fGy");
 }
 
-ionizing_radiation operator"" _aGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _aGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "aGy");
+	return scifir::ionizing_radiation((long double)x, "aGy");
 }
 
-ionizing_radiation operator"" _zGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _zGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "zGy");
+	return scifir::ionizing_radiation((long double)x, "zGy");
 }
 
-ionizing_radiation operator"" _yGy(unsigned long long int x)
+scifir::ionizing_radiation operator"" _yGy(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "yGy");
+	return scifir::ionizing_radiation((long double)x, "yGy");
 }
 
-ionizing_radiation operator"" _YSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _YSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "YSv");
+	return scifir::ionizing_radiation((long double)x, "YSv");
 }
 
-ionizing_radiation operator"" _ZSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _ZSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "ZSv");
+	return scifir::ionizing_radiation((long double)x, "ZSv");
 }
 
-ionizing_radiation operator"" _ESv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _ESv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "ESv");
+	return scifir::ionizing_radiation((long double)x, "ESv");
 }
 
-ionizing_radiation operator"" _PSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _PSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "PSv");
+	return scifir::ionizing_radiation((long double)x, "PSv");
 }
 
-ionizing_radiation operator"" _TSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _TSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "TSv");
+	return scifir::ionizing_radiation((long double)x, "TSv");
 }
 
-ionizing_radiation operator"" _GSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _GSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "GSv");
+	return scifir::ionizing_radiation((long double)x, "GSv");
 }
 
-ionizing_radiation operator"" _MSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _MSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "MSv");
+	return scifir::ionizing_radiation((long double)x, "MSv");
 }
 
-ionizing_radiation operator"" _kSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _kSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "kSv");
+	return scifir::ionizing_radiation((long double)x, "kSv");
 }
 
-ionizing_radiation operator"" _hSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _hSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "hSv");
+	return scifir::ionizing_radiation((long double)x, "hSv");
 }
 
-ionizing_radiation operator"" _daSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _daSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "daSv");
+	return scifir::ionizing_radiation((long double)x, "daSv");
 }
 
-ionizing_radiation operator"" _Sv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _Sv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "Sv");
+	return scifir::ionizing_radiation((long double)x, "Sv");
 }
 
-ionizing_radiation operator"" _dSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _dSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "dSv");
+	return scifir::ionizing_radiation((long double)x, "dSv");
 }
 
-ionizing_radiation operator"" _cSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _cSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "cSv");
+	return scifir::ionizing_radiation((long double)x, "cSv");
 }
 
-ionizing_radiation operator"" _mSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _mSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "mSv");
+	return scifir::ionizing_radiation((long double)x, "mSv");
 }
 
-ionizing_radiation operator"" _uSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _uSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "uSv");
+	return scifir::ionizing_radiation((long double)x, "uSv");
 }
 
-ionizing_radiation operator"" _nSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _nSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "nSv");
+	return scifir::ionizing_radiation((long double)x, "nSv");
 }
 
-ionizing_radiation operator"" _pSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _pSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "pSv");
+	return scifir::ionizing_radiation((long double)x, "pSv");
 }
 
-ionizing_radiation operator"" _fSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _fSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "fSv");
+	return scifir::ionizing_radiation((long double)x, "fSv");
 }
 
-ionizing_radiation operator"" _aSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _aSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "aSv");
+	return scifir::ionizing_radiation((long double)x, "aSv");
 }
 
-ionizing_radiation operator"" _zSv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _zSv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "zSv");
+	return scifir::ionizing_radiation((long double)x, "zSv");
 }
 
-ionizing_radiation operator"" _ySv(unsigned long long int x)
+scifir::ionizing_radiation operator"" _ySv(unsigned long long int x)
 {
-	return ionizing_radiation((long double)x, "ySv");
+	return scifir::ionizing_radiation((long double)x, "ySv");
 }
 
-catalytic_activity operator"" _Ykat(unsigned long long int x)
+scifir::catalytic_activity operator"" _Ykat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "Ykat");
+	return scifir::catalytic_activity((long double)x, "Ykat");
 }
 
-catalytic_activity operator"" _Zkat(unsigned long long int x)
+scifir::catalytic_activity operator"" _Zkat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "Zkat");
+	return scifir::catalytic_activity((long double)x, "Zkat");
 }
 
-catalytic_activity operator"" _Ekat(unsigned long long int x)
+scifir::catalytic_activity operator"" _Ekat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "Ekat");
+	return scifir::catalytic_activity((long double)x, "Ekat");
 }
 
-catalytic_activity operator"" _Pkat(unsigned long long int x)
+scifir::catalytic_activity operator"" _Pkat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "Pkat");
+	return scifir::catalytic_activity((long double)x, "Pkat");
 }
 
-catalytic_activity operator"" _Tkat(unsigned long long int x)
+scifir::catalytic_activity operator"" _Tkat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "Tkat");
+	return scifir::catalytic_activity((long double)x, "Tkat");
 }
 
-catalytic_activity operator"" _Gkat(unsigned long long int x)
+scifir::catalytic_activity operator"" _Gkat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "Gkat");
+	return scifir::catalytic_activity((long double)x, "Gkat");
 }
 
-catalytic_activity operator"" _Mkat(unsigned long long int x)
+scifir::catalytic_activity operator"" _Mkat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "Mkat");
+	return scifir::catalytic_activity((long double)x, "Mkat");
 }
 
-catalytic_activity operator"" _kkat(unsigned long long int x)
+scifir::catalytic_activity operator"" _kkat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "kkat");
+	return scifir::catalytic_activity((long double)x, "kkat");
 }
 
-catalytic_activity operator"" _hkat(unsigned long long int x)
+scifir::catalytic_activity operator"" _hkat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "hkat");
+	return scifir::catalytic_activity((long double)x, "hkat");
 }
 
-catalytic_activity operator"" _dakat(unsigned long long int x)
+scifir::catalytic_activity operator"" _dakat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "dakat");
+	return scifir::catalytic_activity((long double)x, "dakat");
 }
 
-catalytic_activity operator"" _kat(unsigned long long int x)
+scifir::catalytic_activity operator"" _kat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "kat");
+	return scifir::catalytic_activity((long double)x, "kat");
 }
 
-catalytic_activity operator"" _dkat(unsigned long long int x)
+scifir::catalytic_activity operator"" _dkat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "dkat");
+	return scifir::catalytic_activity((long double)x, "dkat");
 }
 
-catalytic_activity operator"" _ckat(unsigned long long int x)
+scifir::catalytic_activity operator"" _ckat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "ckat");
+	return scifir::catalytic_activity((long double)x, "ckat");
 }
 
-catalytic_activity operator"" _mkat(unsigned long long int x)
+scifir::catalytic_activity operator"" _mkat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "mkat");
+	return scifir::catalytic_activity((long double)x, "mkat");
 }
 
-catalytic_activity operator"" _ukat(unsigned long long int x)
+scifir::catalytic_activity operator"" _ukat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "ukat");
+	return scifir::catalytic_activity((long double)x, "ukat");
 }
 
-catalytic_activity operator"" _nkat(unsigned long long int x)
+scifir::catalytic_activity operator"" _nkat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "nkat");
+	return scifir::catalytic_activity((long double)x, "nkat");
 }
 
-catalytic_activity operator"" _pkat(unsigned long long int x)
+scifir::catalytic_activity operator"" _pkat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "pkat");
+	return scifir::catalytic_activity((long double)x, "pkat");
 }
 
-catalytic_activity operator"" _fkat(unsigned long long int x)
+scifir::catalytic_activity operator"" _fkat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "fkat");
+	return scifir::catalytic_activity((long double)x, "fkat");
 }
 
-catalytic_activity operator"" _akat(unsigned long long int x)
+scifir::catalytic_activity operator"" _akat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "akat");
+	return scifir::catalytic_activity((long double)x, "akat");
 }
 
-catalytic_activity operator"" _zkat(unsigned long long int x)
+scifir::catalytic_activity operator"" _zkat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "zkat");
+	return scifir::catalytic_activity((long double)x, "zkat");
 }
 
-catalytic_activity operator"" _ykat(unsigned long long int x)
+scifir::catalytic_activity operator"" _ykat(unsigned long long int x)
 {
-	return catalytic_activity((long double)x, "ykat");
+	return scifir::catalytic_activity((long double)x, "ykat");
 }
 
-length operator"" _angstrom(unsigned long long int x)
+scifir::length operator"" _angstrom(unsigned long long int x)
 {
-	return length((long double)x, "angstrom");
+	return scifir::length((long double)x, "angstrom");
 }
 
-volume operator"" _L(unsigned long long int x)
+scifir::volume operator"" _L(unsigned long long int x)
 {
-	return volume((long double)x, "L");
+	return scifir::volume((long double)x, "L");
 }
 
-volume operator"" _mL(unsigned long long int x)
+scifir::volume operator"" _mL(unsigned long long int x)
 {
-	return volume((long double)x, "mL");
+	return scifir::volume((long double)x, "mL");
 }
 
 scifir::time_duration operator"" _min(unsigned long long int x)
@@ -2027,2574 +2027,2574 @@ scifir::time_duration operator"" _day(unsigned long long int x)
 	return scifir::time_duration((long double)x, "day");
 }
 
-length operator"" _YAU(unsigned long long int x)
+scifir::length operator"" _YAU(unsigned long long int x)
 {
-	return length((long double)x, "YAU");
+	return scifir::length((long double)x, "YAU");
 }
 
-length operator"" _ZAU(unsigned long long int x)
+scifir::length operator"" _ZAU(unsigned long long int x)
 {
-	return length((long double)x, "ZAU");
+	return scifir::length((long double)x, "ZAU");
 }
 
-length operator"" _EAU(unsigned long long int x)
+scifir::length operator"" _EAU(unsigned long long int x)
 {
-	return length((long double)x, "EAU");
+	return scifir::length((long double)x, "EAU");
 }
 
-length operator"" _PAU(unsigned long long int x)
+scifir::length operator"" _PAU(unsigned long long int x)
 {
-	return length((long double)x, "PAU");
+	return scifir::length((long double)x, "PAU");
 }
 
-length operator"" _TAU(unsigned long long int x)
+scifir::length operator"" _TAU(unsigned long long int x)
 {
-	return length((long double)x, "TAU");
+	return scifir::length((long double)x, "TAU");
 }
 
-length operator"" _GAU(unsigned long long int x)
+scifir::length operator"" _GAU(unsigned long long int x)
 {
-	return length((long double)x, "GAU");
+	return scifir::length((long double)x, "GAU");
 }
 
-length operator"" _MAU(unsigned long long int x)
+scifir::length operator"" _MAU(unsigned long long int x)
 {
-	return length((long double)x, "MAU");
+	return scifir::length((long double)x, "MAU");
 }
 
-length operator"" _kAU(unsigned long long int x)
+scifir::length operator"" _kAU(unsigned long long int x)
 {
-	return length((long double)x, "kAU");
+	return scifir::length((long double)x, "kAU");
 }
 
-length operator"" _hAU(unsigned long long int x)
+scifir::length operator"" _hAU(unsigned long long int x)
 {
-	return length((long double)x, "hAU");
+	return scifir::length((long double)x, "hAU");
 }
 
-length operator"" _daAU(unsigned long long int x)
+scifir::length operator"" _daAU(unsigned long long int x)
 {
-	return length((long double)x, "daAU");
+	return scifir::length((long double)x, "daAU");
 }
 
-length operator"" _AU(unsigned long long int x)
+scifir::length operator"" _AU(unsigned long long int x)
 {
-	return length((long double)x, "AU");
+	return scifir::length((long double)x, "AU");
 }
 
-length operator"" _dAU(unsigned long long int x)
+scifir::length operator"" _dAU(unsigned long long int x)
 {
-	return length((long double)x, "dAU");
+	return scifir::length((long double)x, "dAU");
 }
 
-length operator"" _cAU(unsigned long long int x)
+scifir::length operator"" _cAU(unsigned long long int x)
 {
-	return length((long double)x, "cAU");
+	return scifir::length((long double)x, "cAU");
 }
 
-length operator"" _mAU(unsigned long long int x)
+scifir::length operator"" _mAU(unsigned long long int x)
 {
-	return length((long double)x, "mAU");
+	return scifir::length((long double)x, "mAU");
 }
 
-length operator"" _uAU(unsigned long long int x)
+scifir::length operator"" _uAU(unsigned long long int x)
 {
-	return length((long double)x, "uAU");
+	return scifir::length((long double)x, "uAU");
 }
 
-length operator"" _nAU(unsigned long long int x)
+scifir::length operator"" _nAU(unsigned long long int x)
 {
-	return length((long double)x, "nAU");
+	return scifir::length((long double)x, "nAU");
 }
 
-length operator"" _pAU(unsigned long long int x)
+scifir::length operator"" _pAU(unsigned long long int x)
 {
-	return length((long double)x, "pAU");
+	return scifir::length((long double)x, "pAU");
 }
 
-length operator"" _fAU(unsigned long long int x)
+scifir::length operator"" _fAU(unsigned long long int x)
 {
-	return length((long double)x, "fAU");
+	return scifir::length((long double)x, "fAU");
 }
 
-length operator"" _aAU(unsigned long long int x)
+scifir::length operator"" _aAU(unsigned long long int x)
 {
-	return length((long double)x, "aAU");
+	return scifir::length((long double)x, "aAU");
 }
 
-length operator"" _zAU(unsigned long long int x)
+scifir::length operator"" _zAU(unsigned long long int x)
 {
-	return length((long double)x, "zAU");
+	return scifir::length((long double)x, "zAU");
 }
 
-length operator"" _yAU(unsigned long long int x)
+scifir::length operator"" _yAU(unsigned long long int x)
 {
-	return length((long double)x, "yAU");
+	return scifir::length((long double)x, "yAU");
 }
 
-length operator"" _Ypc(unsigned long long int x)
+scifir::length operator"" _Ypc(unsigned long long int x)
 {
-	return length((long double)x, "Ypc");
+	return scifir::length((long double)x, "Ypc");
 }
 
-length operator"" _Zpc(unsigned long long int x)
+scifir::length operator"" _Zpc(unsigned long long int x)
 {
-	return length((long double)x, "Zpc");
+	return scifir::length((long double)x, "Zpc");
 }
 
-length operator"" _Epc(unsigned long long int x)
+scifir::length operator"" _Epc(unsigned long long int x)
 {
-	return length((long double)x, "Epc");
+	return scifir::length((long double)x, "Epc");
 }
 
-length operator"" _Ppc(unsigned long long int x)
+scifir::length operator"" _Ppc(unsigned long long int x)
 {
-	return length((long double)x, "Ppc");
+	return scifir::length((long double)x, "Ppc");
 }
 
-length operator"" _Tpc(unsigned long long int x)
+scifir::length operator"" _Tpc(unsigned long long int x)
 {
-	return length((long double)x, "Tpc");
+	return scifir::length((long double)x, "Tpc");
 }
 
-length operator"" _Gpc(unsigned long long int x)
+scifir::length operator"" _Gpc(unsigned long long int x)
 {
-	return length((long double)x, "Gpc");
+	return scifir::length((long double)x, "Gpc");
 }
 
-length operator"" _Mpc(unsigned long long int x)
+scifir::length operator"" _Mpc(unsigned long long int x)
 {
-	return length((long double)x, "Mpc");
+	return scifir::length((long double)x, "Mpc");
 }
 
-length operator"" _kpc(unsigned long long int x)
+scifir::length operator"" _kpc(unsigned long long int x)
 {
-	return length((long double)x, "kpc");
+	return scifir::length((long double)x, "kpc");
 }
 
-length operator"" _hpc(unsigned long long int x)
+scifir::length operator"" _hpc(unsigned long long int x)
 {
-	return length((long double)x, "hpc");
+	return scifir::length((long double)x, "hpc");
 }
 
-length operator"" _dapc(unsigned long long int x)
+scifir::length operator"" _dapc(unsigned long long int x)
 {
-	return length((long double)x, "dapc");
+	return scifir::length((long double)x, "dapc");
 }
 
-length operator"" _pc(unsigned long long int x)
+scifir::length operator"" _pc(unsigned long long int x)
 {
-	return length((long double)x, "pc");
+	return scifir::length((long double)x, "pc");
 }
 
-length operator"" _dpc(unsigned long long int x)
+scifir::length operator"" _dpc(unsigned long long int x)
 {
-	return length((long double)x, "dpc");
+	return scifir::length((long double)x, "dpc");
 }
 
-length operator"" _cpc(unsigned long long int x)
+scifir::length operator"" _cpc(unsigned long long int x)
 {
-	return length((long double)x, "cpc");
+	return scifir::length((long double)x, "cpc");
 }
 
-length operator"" _mpc(unsigned long long int x)
+scifir::length operator"" _mpc(unsigned long long int x)
 {
-	return length((long double)x, "mpc");
+	return scifir::length((long double)x, "mpc");
 }
 
-length operator"" _upc(unsigned long long int x)
+scifir::length operator"" _upc(unsigned long long int x)
 {
-	return length((long double)x, "upc");
+	return scifir::length((long double)x, "upc");
 }
 
-length operator"" _npc(unsigned long long int x)
+scifir::length operator"" _npc(unsigned long long int x)
 {
-	return length((long double)x, "npc");
+	return scifir::length((long double)x, "npc");
 }
 
-length operator"" _ppc(unsigned long long int x)
+scifir::length operator"" _ppc(unsigned long long int x)
 {
-	return length((long double)x, "ppc");
+	return scifir::length((long double)x, "ppc");
 }
 
-length operator"" _fpc(unsigned long long int x)
+scifir::length operator"" _fpc(unsigned long long int x)
 {
-	return length((long double)x, "fpc");
+	return scifir::length((long double)x, "fpc");
 }
 
-length operator"" _apc(unsigned long long int x)
+scifir::length operator"" _apc(unsigned long long int x)
 {
-	return length((long double)x, "apc");
+	return scifir::length((long double)x, "apc");
 }
 
-length operator"" _zpc(unsigned long long int x)
+scifir::length operator"" _zpc(unsigned long long int x)
 {
-	return length((long double)x, "zpc");
+	return scifir::length((long double)x, "zpc");
 }
 
-length operator"" _ypc(unsigned long long int x)
+scifir::length operator"" _ypc(unsigned long long int x)
 {
-	return length((long double)x, "ypc");
+	return scifir::length((long double)x, "ypc");
 }
 
-energy operator"" _YeV(unsigned long long int x)
+scifir::energy operator"" _YeV(unsigned long long int x)
 {
-	return energy((long double)x, "YeV");
+	return scifir::energy((long double)x, "YeV");
 }
 
-energy operator"" _ZeV(unsigned long long int x)
+scifir::energy operator"" _ZeV(unsigned long long int x)
 {
-	return energy((long double)x, "ZeV");
+	return scifir::energy((long double)x, "ZeV");
 }
 
-energy operator"" _EeV(unsigned long long int x)
+scifir::energy operator"" _EeV(unsigned long long int x)
 {
-	return energy((long double)x, "EeV");
+	return scifir::energy((long double)x, "EeV");
 }
 
-energy operator"" _PeV(unsigned long long int x)
+scifir::energy operator"" _PeV(unsigned long long int x)
 {
-	return energy((long double)x, "PeV");
+	return scifir::energy((long double)x, "PeV");
 }
 
-energy operator"" _TeV(unsigned long long int x)
+scifir::energy operator"" _TeV(unsigned long long int x)
 {
-	return energy((long double)x, "TeV");
+	return scifir::energy((long double)x, "TeV");
 }
 
-energy operator"" _GeV(unsigned long long int x)
+scifir::energy operator"" _GeV(unsigned long long int x)
 {
-	return energy((long double)x, "GeV");
+	return scifir::energy((long double)x, "GeV");
 }
 
-energy operator"" _MeV(unsigned long long int x)
+scifir::energy operator"" _MeV(unsigned long long int x)
 {
-	return energy((long double)x, "MeV");
+	return scifir::energy((long double)x, "MeV");
 }
 
-energy operator"" _keV(unsigned long long int x)
+scifir::energy operator"" _keV(unsigned long long int x)
 {
-	return energy((long double)x, "keV");
+	return scifir::energy((long double)x, "keV");
 }
 
-energy operator"" _heV(unsigned long long int x)
+scifir::energy operator"" _heV(unsigned long long int x)
 {
-	return energy((long double)x, "heV");
+	return scifir::energy((long double)x, "heV");
 }
 
-energy operator"" _daeV(unsigned long long int x)
+scifir::energy operator"" _daeV(unsigned long long int x)
 {
-	return energy((long double)x, "daeV");
+	return scifir::energy((long double)x, "daeV");
 }
 
-energy operator"" _eV(unsigned long long int x)
+scifir::energy operator"" _eV(unsigned long long int x)
 {
-	return energy((long double)x, "eV");
+	return scifir::energy((long double)x, "eV");
 }
 
-energy operator"" _deV(unsigned long long int x)
+scifir::energy operator"" _deV(unsigned long long int x)
 {
-	return energy((long double)x, "deV");
+	return scifir::energy((long double)x, "deV");
 }
 
-energy operator"" _ceV(unsigned long long int x)
+scifir::energy operator"" _ceV(unsigned long long int x)
 {
-	return energy((long double)x, "ceV");
+	return scifir::energy((long double)x, "ceV");
 }
 
-energy operator"" _meV(unsigned long long int x)
+scifir::energy operator"" _meV(unsigned long long int x)
 {
-	return energy((long double)x, "meV");
+	return scifir::energy((long double)x, "meV");
 }
 
-energy operator"" _ueV(unsigned long long int x)
+scifir::energy operator"" _ueV(unsigned long long int x)
 {
-	return energy((long double)x, "ueV");
+	return scifir::energy((long double)x, "ueV");
 }
 
-energy operator"" _neV(unsigned long long int x)
+scifir::energy operator"" _neV(unsigned long long int x)
 {
-	return energy((long double)x, "neV");
+	return scifir::energy((long double)x, "neV");
 }
 
-energy operator"" _peV(unsigned long long int x)
+scifir::energy operator"" _peV(unsigned long long int x)
 {
-	return energy((long double)x, "peV");
+	return scifir::energy((long double)x, "peV");
 }
 
-energy operator"" _feV(unsigned long long int x)
+scifir::energy operator"" _feV(unsigned long long int x)
 {
-	return energy((long double)x, "feV");
+	return scifir::energy((long double)x, "feV");
 }
 
-energy operator"" _aeV(unsigned long long int x)
+scifir::energy operator"" _aeV(unsigned long long int x)
 {
-	return energy((long double)x, "aeV");
+	return scifir::energy((long double)x, "aeV");
 }
 
-energy operator"" _zeV(unsigned long long int x)
+scifir::energy operator"" _zeV(unsigned long long int x)
 {
-	return energy((long double)x, "zeV");
+	return scifir::energy((long double)x, "zeV");
 }
 
-energy operator"" _yeV(unsigned long long int x)
+scifir::energy operator"" _yeV(unsigned long long int x)
 {
-	return energy((long double)x, "yeV");
+	return scifir::energy((long double)x, "yeV");
 }
 
-mass operator"" _Da(unsigned long long int x)
+scifir::mass operator"" _Da(unsigned long long int x)
 {
-	return mass((long double)x, "Da");
+	return scifir::mass((long double)x, "Da");
 }
 
-mass operator"" _amu(unsigned long long int x)
+scifir::mass operator"" _amu(unsigned long long int x)
 {
-	return mass((long double)x, "amu");
+	return scifir::mass((long double)x, "amu");
 }
 
-area operator"" _Yb(unsigned long long int x)
+scifir::area operator"" _Yb(unsigned long long int x)
 {
-	return area((long double)x, "Yb");
+	return scifir::area((long double)x, "Yb");
 }
 
-area operator"" _Zb(unsigned long long int x)
+scifir::area operator"" _Zb(unsigned long long int x)
 {
-	return area((long double)x, "Zb");
+	return scifir::area((long double)x, "Zb");
 }
 
-area operator"" _Eb(unsigned long long int x)
+scifir::area operator"" _Eb(unsigned long long int x)
 {
-	return area((long double)x, "Eb");
+	return scifir::area((long double)x, "Eb");
 }
 
-area operator"" _Pb(unsigned long long int x)
+scifir::area operator"" _Pb(unsigned long long int x)
 {
-	return area((long double)x, "Pb");
+	return scifir::area((long double)x, "Pb");
 }
 
-area operator"" _Tb(unsigned long long int x)
+scifir::area operator"" _Tb(unsigned long long int x)
 {
-	return area((long double)x, "Tb");
+	return scifir::area((long double)x, "Tb");
 }
 
-area operator"" _Gb(unsigned long long int x)
+scifir::area operator"" _Gb(unsigned long long int x)
 {
-	return area((long double)x, "Gb");
+	return scifir::area((long double)x, "Gb");
 }
 
-area operator"" _Mb(unsigned long long int x)
+scifir::area operator"" _Mb(unsigned long long int x)
 {
-	return area((long double)x, "Mb");
+	return scifir::area((long double)x, "Mb");
 }
 
-area operator"" _kb(unsigned long long int x)
+scifir::area operator"" _kb(unsigned long long int x)
 {
-	return area((long double)x, "kb");
+	return scifir::area((long double)x, "kb");
 }
 
-area operator"" _hb(unsigned long long int x)
+scifir::area operator"" _hb(unsigned long long int x)
 {
-	return area((long double)x, "hb");
+	return scifir::area((long double)x, "hb");
 }
 
-area operator"" _dab(unsigned long long int x)
+scifir::area operator"" _dab(unsigned long long int x)
 {
-	return area((long double)x, "dab");
+	return scifir::area((long double)x, "dab");
 }
 
-area operator"" _b(unsigned long long int x)
+scifir::area operator"" _b(unsigned long long int x)
 {
-	return area((long double)x, "b");
+	return scifir::area((long double)x, "b");
 }
 
-area operator"" _db(unsigned long long int x)
+scifir::area operator"" _db(unsigned long long int x)
 {
-	return area((long double)x, "db");
+	return scifir::area((long double)x, "db");
 }
 
-area operator"" _cb(unsigned long long int x)
+scifir::area operator"" _cb(unsigned long long int x)
 {
-	return area((long double)x, "cb");
+	return scifir::area((long double)x, "cb");
 }
 
-area operator"" _mb(unsigned long long int x)
+scifir::area operator"" _mb(unsigned long long int x)
 {
-	return area((long double)x, "mb");
+	return scifir::area((long double)x, "mb");
 }
 
-area operator"" _ub(unsigned long long int x)
+scifir::area operator"" _ub(unsigned long long int x)
 {
-	return area((long double)x, "ub");
+	return scifir::area((long double)x, "ub");
 }
 
-area operator"" _nb(unsigned long long int x)
+scifir::area operator"" _nb(unsigned long long int x)
 {
-	return area((long double)x, "nb");
+	return scifir::area((long double)x, "nb");
 }
 
-area operator"" _pb(unsigned long long int x)
+scifir::area operator"" _pb(unsigned long long int x)
 {
-	return area((long double)x, "pb");
+	return scifir::area((long double)x, "pb");
 }
 
-area operator"" _fb(unsigned long long int x)
+scifir::area operator"" _fb(unsigned long long int x)
 {
-	return area((long double)x, "fb");
+	return scifir::area((long double)x, "fb");
 }
 
-area operator"" _ab(unsigned long long int x)
+scifir::area operator"" _ab(unsigned long long int x)
 {
-	return area((long double)x, "ab");
+	return scifir::area((long double)x, "ab");
 }
 
-area operator"" _zb(unsigned long long int x)
+scifir::area operator"" _zb(unsigned long long int x)
 {
-	return area((long double)x, "zb");
+	return scifir::area((long double)x, "zb");
 }
 
-area operator"" _yb(unsigned long long int x)
+scifir::area operator"" _yb(unsigned long long int x)
 {
-	return area((long double)x, "yb");
+	return scifir::area((long double)x, "yb");
 }
 
-molarity operator"" _YM(unsigned long long int x)
+scifir::molarity operator"" _YM(unsigned long long int x)
 {
-	return molarity((long double)x, "YM");
+	return scifir::molarity((long double)x, "YM");
 }
 
-molarity operator"" _ZM(unsigned long long int x)
+scifir::molarity operator"" _ZM(unsigned long long int x)
 {
-	return molarity((long double)x, "ZM");
+	return scifir::molarity((long double)x, "ZM");
 }
 
-molarity operator"" _EM(unsigned long long int x)
+scifir::molarity operator"" _EM(unsigned long long int x)
 {
-	return molarity((long double)x, "EM");
+	return scifir::molarity((long double)x, "EM");
 }
 
-molarity operator"" _PM(unsigned long long int x)
+scifir::molarity operator"" _PM(unsigned long long int x)
 {
-	return molarity((long double)x, "PM");
+	return scifir::molarity((long double)x, "PM");
 }
 
-molarity operator"" _TM(unsigned long long int x)
+scifir::molarity operator"" _TM(unsigned long long int x)
 {
-	return molarity((long double)x, "TM");
+	return scifir::molarity((long double)x, "TM");
 }
 
-molarity operator"" _GM(unsigned long long int x)
+scifir::molarity operator"" _GM(unsigned long long int x)
 {
-	return molarity((long double)x, "GM");
+	return scifir::molarity((long double)x, "GM");
 }
 
-molarity operator"" _MM(unsigned long long int x)
+scifir::molarity operator"" _MM(unsigned long long int x)
 {
-	return molarity((long double)x, "MM");
+	return scifir::molarity((long double)x, "MM");
 }
 
-molarity operator"" _kM(unsigned long long int x)
+scifir::molarity operator"" _kM(unsigned long long int x)
 {
-	return molarity((long double)x, "kM");
+	return scifir::molarity((long double)x, "kM");
 }
 
-molarity operator"" _hM(unsigned long long int x)
+scifir::molarity operator"" _hM(unsigned long long int x)
 {
-	return molarity((long double)x, "hM");
+	return scifir::molarity((long double)x, "hM");
 }
 
-molarity operator"" _daM(unsigned long long int x)
+scifir::molarity operator"" _daM(unsigned long long int x)
 {
-	return molarity((long double)x, "daM");
+	return scifir::molarity((long double)x, "daM");
 }
 
-molarity operator"" _M(unsigned long long int x)
+scifir::molarity operator"" _M(unsigned long long int x)
 {
-	return molarity((long double)x, "M");
+	return scifir::molarity((long double)x, "M");
 }
 
-molarity operator"" _dM(unsigned long long int x)
+scifir::molarity operator"" _dM(unsigned long long int x)
 {
-	return molarity((long double)x, "dM");
+	return scifir::molarity((long double)x, "dM");
 }
 
-molarity operator"" _cM(unsigned long long int x)
+scifir::molarity operator"" _cM(unsigned long long int x)
 {
-	return molarity((long double)x, "cM");
+	return scifir::molarity((long double)x, "cM");
 }
 
-molarity operator"" _mM(unsigned long long int x)
+scifir::molarity operator"" _mM(unsigned long long int x)
 {
-	return molarity((long double)x, "mM");
+	return scifir::molarity((long double)x, "mM");
 }
 
-molarity operator"" _uM(unsigned long long int x)
+scifir::molarity operator"" _uM(unsigned long long int x)
 {
-	return molarity((long double)x, "uM");
+	return scifir::molarity((long double)x, "uM");
 }
 
-molarity operator"" _nM(unsigned long long int x)
+scifir::molarity operator"" _nM(unsigned long long int x)
 {
-	return molarity((long double)x, "nM");
+	return scifir::molarity((long double)x, "nM");
 }
 
-molarity operator"" _pM(unsigned long long int x)
+scifir::molarity operator"" _pM(unsigned long long int x)
 {
-	return molarity((long double)x, "pM");
+	return scifir::molarity((long double)x, "pM");
 }
 
-molarity operator"" _fM(unsigned long long int x)
+scifir::molarity operator"" _fM(unsigned long long int x)
 {
-	return molarity((long double)x, "fM");
+	return scifir::molarity((long double)x, "fM");
 }
 
-molarity operator"" _aM(unsigned long long int x)
+scifir::molarity operator"" _aM(unsigned long long int x)
 {
-	return molarity((long double)x, "aM");
+	return scifir::molarity((long double)x, "aM");
 }
 
-molarity operator"" _zM(unsigned long long int x)
+scifir::molarity operator"" _zM(unsigned long long int x)
 {
-	return molarity((long double)x, "zM");
+	return scifir::molarity((long double)x, "zM");
 }
 
-molarity operator"" _yM(unsigned long long int x)
+scifir::molarity operator"" _yM(unsigned long long int x)
 {
-	return molarity((long double)x, "yM");
+	return scifir::molarity((long double)x, "yM");
 }
 
-mole operator"" _particles(unsigned long long int x)
+scifir::mole operator"" _particles(unsigned long long int x)
 {
-	return mole((long double)x, "particles");
+	return scifir::mole((long double)x, "particles");
 }
 
-percentage operator"" _ppm(unsigned long long int x)
+scifir::percentage operator"" _ppm(unsigned long long int x)
 {
-	return percentage((long double)x, "ppm");
+	return scifir::percentage((long double)x, "ppm");
 }
 
-percentage operator"" _ppb(unsigned long long int x)
+/*scifir::percentage operator"" _ppb(unsigned long long int x)
 {
-	return percentage((long double)x, "ppb");
+	return scifir::percentage((long double)x, "ppb");
 }
 
-percentage operator"" _ppt(unsigned long long int x)
+scifir::percentage operator"" _ppt(unsigned long long int x)
 {
-	return percentage((long double)x, "ppt");
+	return scifir::percentage((long double)x, "ppt");
 }
 
-percentage operator"" _ppq(unsigned long long int x)
+scifir::percentage operator"" _ppq(unsigned long long int x)
 {
-	return percentage((long double)x, "ppq");
-}
-
-frequency operator"" _YHz(long double x)
-{
-	return frequency(x, "YHz");
-}
-
-frequency operator"" _ZHz(long double x)
-{
-	return frequency(x, "ZHz");
-}
-
-frequency operator"" _EHz(long double x)
-{
-	return frequency(x, "EHz");
-}
-
-frequency operator"" _PHz(long double x)
-{
-	return frequency(x, "PHz");
-}
-
-frequency operator"" _THz(long double x)
-{
-	return frequency(x, "THz");
-}
-
-frequency operator"" _GHz(long double x)
-{
-	return frequency(x, "GHz");
-}
-
-frequency operator"" _MHz(long double x)
-{
-	return frequency(x, "MHz");
-}
-
-frequency operator"" _kHz(long double x)
-{
-	return frequency(x, "kHz");
-}
-
-frequency operator"" _hHz(long double x)
-{
-	return frequency(x, "hHz");
-}
-
-frequency operator"" _daHz(long double x)
-{
-	return frequency(x, "daHz");
-}
-
-frequency operator"" _Hz(long double x)
-{
-	return frequency(x, "Hz");
-}
-
-frequency operator"" _dHz(long double x)
-{
-	return frequency(x, "dHz");
-}
-
-frequency operator"" _cHz(long double x)
-{
-	return frequency(x, "cHz");
-}
-
-frequency operator"" _mHz(long double x)
-{
-	return frequency(x, "mHz");
-}
-
-frequency operator"" _uHz(long double x)
-{
-	return frequency(x, "uHz");
-}
-
-frequency operator"" _nHz(long double x)
-{
-	return frequency(x, "nHz");
-}
-
-frequency operator"" _pHz(long double x)
-{
-	return frequency(x, "pHz");
-}
-
-frequency operator"" _fHz(long double x)
-{
-	return frequency(x, "fHz");
-}
-
-frequency operator"" _aHz(long double x)
-{
-	return frequency(x, "aHz");
-}
-
-frequency operator"" _zHz(long double x)
-{
-	return frequency(x, "zHz");
-}
-
-frequency operator"" _yHz(long double x)
-{
-	return frequency(x, "yHz");
-}
-
-force operator"" _YN(long double x)
-{
-	return force(x, "YN");
-}
-
-force operator"" _ZN(long double x)
-{
-	return force(x, "ZN");
-}
-
-force operator"" _EN(long double x)
-{
-	return force(x, "EN");
-}
-
-force operator"" _PN(long double x)
-{
-	return force(x, "PN");
-}
-
-force operator"" _TN(long double x)
-{
-	return force(x, "TN");
-}
-
-force operator"" _GN(long double x)
-{
-	return force(x, "GN");
-}
-
-force operator"" _MN(long double x)
-{
-	return force(x, "MN");
-}
-
-force operator"" _kN(long double x)
-{
-	return force(x, "kN");
-}
-
-force operator"" _hN(long double x)
-{
-	return force(x, "hN");
-}
-
-force operator"" _daN(long double x)
-{
-	return force(x, "daN");
-}
-
-force operator"" _N(long double x)
-{
-	return force(x, "N");
-}
-
-force operator"" _dN(long double x)
-{
-	return force(x, "dN");
-}
-
-force operator"" _cN(long double x)
-{
-	return force(x, "cN");
-}
-
-force operator"" _mN(long double x)
-{
-	return force(x, "mN");
-}
-
-force operator"" _uN(long double x)
-{
-	return force(x, "uN");
-}
-
-force operator"" _nN(long double x)
-{
-	return force(x, "nN");
-}
-
-force operator"" _pN(long double x)
-{
-	return force(x, "pN");
-}
-
-force operator"" _fN(long double x)
-{
-	return force(x, "fN");
-}
-
-force operator"" _aN(long double x)
-{
-	return force(x, "aN");
-}
-
-force operator"" _zN(long double x)
-{
-	return force(x, "zN");
-}
-
-force operator"" _yN(long double x)
-{
-	return force(x, "yN");
-}
-
-pressure operator"" _YPa(long double x)
-{
-	return pressure(x, "YPa");
-}
-
-pressure operator"" _ZPa(long double x)
-{
-	return pressure(x, "ZPa");
-}
-
-pressure operator"" _EPa(long double x)
-{
-	return pressure(x, "EPa");
-}
-
-pressure operator"" _PPa(long double x)
-{
-	return pressure(x, "PPa");
-}
-
-pressure operator"" _TPa(long double x)
-{
-	return pressure(x, "TPa");
-}
-
-pressure operator"" _GPa(long double x)
-{
-	return pressure(x, "GPa");
-}
-
-pressure operator"" _MPa(long double x)
-{
-	return pressure(x, "MPa");
-}
-
-pressure operator"" _kPa(long double x)
-{
-	return pressure(x, "kPa");
-}
-
-pressure operator"" _hPa(long double x)
-{
-	return pressure(x, "hPa");
-}
-
-pressure operator"" _daPa(long double x)
-{
-	return pressure(x, "daPa");
-}
-
-pressure operator"" _Pa(long double x)
-{
-	return pressure(x, "Pa");
-}
-
-pressure operator"" _dPa(long double x)
-{
-	return pressure(x, "dPa");
-}
-
-pressure operator"" _cPa(long double x)
-{
-	return pressure(x, "cPa");
-}
-
-pressure operator"" _mPa(long double x)
-{
-	return pressure(x, "mPa");
-}
-
-pressure operator"" _uPa(long double x)
-{
-	return pressure(x, "uPa");
-}
-
-pressure operator"" _nPa(long double x)
-{
-	return pressure(x, "nPa");
-}
-
-pressure operator"" _pPa(long double x)
-{
-	return pressure(x, "pPa");
-}
-
-pressure operator"" _fPa(long double x)
-{
-	return pressure(x, "fPa");
-}
-
-pressure operator"" _aPa(long double x)
-{
-	return pressure(x, "aPa");
-}
-
-pressure operator"" _zPa(long double x)
-{
-	return pressure(x, "zPa");
-}
-
-pressure operator"" _yPa(long double x)
-{
-	return pressure(x, "yPa");
-}
-
-energy operator"" _YJ(long double x)
-{
-	return energy(x, "YJ");
-}
-
-energy operator"" _ZJ(long double x)
-{
-	return energy(x, "ZJ");
-}
-
-energy operator"" _EJ(long double x)
-{
-	return energy(x, "EJ");
-}
-
-energy operator"" _PJ(long double x)
-{
-	return energy(x, "PJ");
-}
-
-energy operator"" _TJ(long double x)
-{
-	return energy(x, "TJ");
-}
-
-energy operator"" _GJ(long double x)
-{
-	return energy(x, "GJ");
-}
-
-energy operator"" _MJ(long double x)
-{
-	return energy(x, "MJ");
-}
-
-energy operator"" _kJ(long double x)
-{
-	return energy(x, "kJ");
-}
-
-energy operator"" _hJ(long double x)
-{
-	return energy(x, "hJ");
-}
-
-energy operator"" _daJ(long double x)
-{
-	return energy(x, "daJ");
-}
-
-energy operator"" _J(long double x)
-{
-	return energy(x, "J");
-}
-
-energy operator"" _dJ(long double x)
-{
-	return energy(x, "dJ");
-}
-
-energy operator"" _cJ(long double x)
-{
-	return energy(x, "cJ");
-}
-
-energy operator"" _mJ(long double x)
-{
-	return energy(x, "mJ");
-}
-
-energy operator"" _uJ(long double x)
-{
-	return energy(x, "uJ");
-}
-
-energy operator"" _nJ(long double x)
-{
-	return energy(x, "nJ");
-}
-
-energy operator"" _pJ(long double x)
-{
-	return energy(x, "pJ");
-}
-
-energy operator"" _fJ(long double x)
-{
-	return energy(x, "fJ");
-}
-
-energy operator"" _aJ(long double x)
-{
-	return energy(x, "aJ");
-}
-
-energy operator"" _zJ(long double x)
-{
-	return energy(x, "zJ");
-}
-
-energy operator"" _yJ(long double x)
-{
-	return energy(x, "yJ");
-}
-
-power operator"" _YW(long double x)
-{
-	return power(x, "YW");
-}
-
-power operator"" _ZW(long double x)
-{
-	return power(x, "ZW");
-}
-
-power operator"" _EW(long double x)
-{
-	return power(x, "EW");
-}
-
-power operator"" _PW(long double x)
-{
-	return power(x, "PW");
-}
-
-power operator"" _TW(long double x)
-{
-	return power(x, "TW");
-}
-
-power operator"" _GW(long double x)
-{
-	return power(x, "GW");
-}
-
-power operator"" _MW(long double x)
-{
-	return power(x, "MW");
-}
-
-power operator"" _kW(long double x)
-{
-	return power(x, "kW");
-}
-
-power operator"" _hW(long double x)
-{
-	return power(x, "hW");
-}
-
-power operator"" _daW(long double x)
-{
-	return power(x, "daW");
-}
-
-power operator"" _W(long double x)
-{
-	return power(x, "W");
-}
-
-power operator"" _dW(long double x)
-{
-	return power(x, "dW");
-}
-
-power operator"" _cW(long double x)
-{
-	return power(x, "cW");
-}
-
-power operator"" _mW(long double x)
-{
-	return power(x, "mW");
-}
-
-power operator"" _uW(long double x)
-{
-	return power(x, "uW");
-}
-
-power operator"" _nW(long double x)
-{
-	return power(x, "nW");
-}
-
-power operator"" _pW(long double x)
-{
-	return power(x, "pW");
-}
-
-power operator"" _fW(long double x)
-{
-	return power(x, "fW");
-}
-
-power operator"" _aW(long double x)
-{
-	return power(x, "aW");
-}
-
-power operator"" _zW(long double x)
-{
-	return power(x, "zW");
-}
-
-power operator"" _yW(long double x)
-{
-	return power(x, "yW");
-}
-
-electric_current operator"" _YA(long double x)
-{
-	return electric_current(x, "YA");
-}
-
-electric_current operator"" _ZA(long double x)
-{
-	return electric_current(x, "ZA");
-}
-
-electric_current operator"" _EA(long double x)
-{
-	return electric_current(x, "EA");
-}
-
-electric_current operator"" _PA(long double x)
-{
-	return electric_current(x, "PA");
-}
-
-electric_current operator"" _TA(long double x)
-{
-	return electric_current(x, "TA");
-}
-
-electric_current operator"" _GA(long double x)
-{
-	return electric_current(x, "GA");
-}
-
-electric_current operator"" _MA(long double x)
-{
-	return electric_current(x, "MA");
-}
-
-electric_current operator"" _kA(long double x)
-{
-	return electric_current(x, "kA");
-}
-
-electric_current operator"" _hA(long double x)
-{
-	return electric_current(x, "hA");
-}
-
-electric_current operator"" _daA(long double x)
-{
-	return electric_current(x, "daA");
-}
-
-electric_current operator"" _A(long double x)
-{
-	return electric_current(x, "A");
-}
-
-electric_current operator"" _dA(long double x)
-{
-	return electric_current(x, "dA");
-}
-
-electric_current operator"" _cA(long double x)
-{
-	return electric_current(x, "cA");
-}
-
-electric_current operator"" _mA(long double x)
-{
-	return electric_current(x, "mA");
-}
-
-electric_current operator"" _uA(long double x)
-{
-	return electric_current(x, "uA");
-}
-
-electric_current operator"" _nA(long double x)
-{
-	return electric_current(x, "nA");
-}
-
-electric_current operator"" _pA(long double x)
-{
-	return electric_current(x, "pA");
-}
-
-electric_current operator"" _fA(long double x)
-{
-	return electric_current(x, "fA");
-}
-
-electric_current operator"" _aA(long double x)
-{
-	return electric_current(x, "aA");
-}
-
-electric_current operator"" _zA(long double x)
-{
-	return electric_current(x, "zA");
-}
-
-electric_current operator"" _yA(long double x)
-{
-	return electric_current(x, "yA");
-}
-
-voltage operator"" _YV(long double x)
-{
-	return voltage(x, "YV");
-}
-
-voltage operator"" _ZV(long double x)
-{
-	return voltage(x, "ZV");
-}
-
-voltage operator"" _EV(long double x)
-{
-	return voltage(x, "EV");
-}
-
-voltage operator"" _PV(long double x)
-{
-	return voltage(x, "PV");
-}
-
-voltage operator"" _TV(long double x)
-{
-	return voltage(x, "TV");
-}
-
-voltage operator"" _GV(long double x)
-{
-	return voltage(x, "GV");
-}
-
-voltage operator"" _MV(long double x)
-{
-	return voltage(x, "MV");
-}
-
-voltage operator"" _kV(long double x)
-{
-	return voltage(x, "kV");
-}
-
-voltage operator"" _hV(long double x)
-{
-	return voltage(x, "hV");
-}
-
-voltage operator"" _daV(long double x)
-{
-	return voltage(x, "daV");
-}
-
-voltage operator"" _V(long double x)
-{
-	return voltage(x, "V");
-}
-
-voltage operator"" _dV(long double x)
-{
-	return voltage(x, "dV");
-}
-
-voltage operator"" _cV(long double x)
-{
-	return voltage(x, "cV");
-}
-
-voltage operator"" _mV(long double x)
-{
-	return voltage(x, "mV");
-}
-
-voltage operator"" _uV(long double x)
-{
-	return voltage(x, "uV");
-}
-
-voltage operator"" _nV(long double x)
-{
-	return voltage(x, "nV");
-}
-
-voltage operator"" _pV(long double x)
-{
-	return voltage(x, "pV");
-}
-
-voltage operator"" _fV(long double x)
-{
-	return voltage(x, "fV");
-}
-
-voltage operator"" _aV(long double x)
-{
-	return voltage(x, "aV");
-}
-
-voltage operator"" _zV(long double x)
-{
-	return voltage(x, "zV");
-}
-
-voltage operator"" _yV(long double x)
-{
-	return voltage(x, "yV");
-}
-
-capacitance operator"" _YF(long double x)
-{
-	return capacitance(x, "YF");
-}
-
-capacitance operator"" _ZF(long double x)
-{
-	return capacitance(x, "ZF");
-}
-
-capacitance operator"" _EF(long double x)
-{
-	return capacitance(x, "EF");
-}
-
-capacitance operator"" _PF(long double x)
-{
-	return capacitance(x, "PF");
-}
-
-capacitance operator"" _TF(long double x)
-{
-	return capacitance(x, "TF");
-}
-
-capacitance operator"" _GF(long double x)
-{
-	return capacitance(x, "GF");
-}
-
-capacitance operator"" _MF(long double x)
-{
-	return capacitance(x, "MF");
-}
-
-capacitance operator"" _kF(long double x)
-{
-	return capacitance(x, "kF");
-}
-
-capacitance operator"" _hF(long double x)
-{
-	return capacitance(x, "hF");
-}
-
-capacitance operator"" _daF(long double x)
-{
-	return capacitance(x, "daF");
-}
-
-capacitance operator"" _F(long double x)
-{
-	return capacitance(x, "F");
-}
-
-capacitance operator"" _dF(long double x)
-{
-	return capacitance(x, "dF");
-}
-
-capacitance operator"" _cF(long double x)
-{
-	return capacitance(x, "cF");
-}
-
-capacitance operator"" _mF(long double x)
-{
-	return capacitance(x, "mF");
-}
-
-capacitance operator"" _uF(long double x)
-{
-	return capacitance(x, "uF");
-}
-
-capacitance operator"" _nF(long double x)
-{
-	return capacitance(x, "nF");
-}
-
-capacitance operator"" _pF(long double x)
-{
-	return capacitance(x, "pF");
-}
-
-capacitance operator"" _fF(long double x)
-{
-	return capacitance(x, "fF");
-}
-
-capacitance operator"" _aF(long double x)
-{
-	return capacitance(x, "aF");
-}
-
-capacitance operator"" _zF(long double x)
-{
-	return capacitance(x, "zF");
-}
-
-capacitance operator"" _yF(long double x)
-{
-	return capacitance(x, "yF");
-}
-
-resistance operator"" _YOhm(long double x)
-{
-	return resistance(x, "YOhm");
-}
-
-resistance operator"" _ZOhm(long double x)
-{
-	return resistance(x, "ZOhm");
-}
-
-resistance operator"" _EOhm(long double x)
-{
-	return resistance(x, "EOhm");
-}
-
-resistance operator"" _POhm(long double x)
-{
-	return resistance(x, "POhm");
-}
-
-resistance operator"" _TOhm(long double x)
-{
-	return resistance(x, "TOhm");
-}
-
-resistance operator"" _GOhm(long double x)
-{
-	return resistance(x, "GOhm");
-}
-
-resistance operator"" _MOhm(long double x)
-{
-	return resistance(x, "MOhm");
-}
-
-resistance operator"" _kOhm(long double x)
-{
-	return resistance(x, "kOhm");
-}
-
-resistance operator"" _hOhm(long double x)
-{
-	return resistance(x, "hOhm");
-}
-
-resistance operator"" _daOhm(long double x)
-{
-	return resistance(x, "daOhm");
-}
-
-resistance operator"" _Ohm(long double x)
-{
-	return resistance(x, "Ohm");
-}
-
-resistance operator"" _dOhm(long double x)
-{
-	return resistance(x, "dOhm");
-}
-
-resistance operator"" _cOhm(long double x)
-{
-	return resistance(x, "cOhm");
-}
-
-resistance operator"" _mOhm(long double x)
-{
-	return resistance(x, "mOhm");
-}
-
-resistance operator"" _uOhm(long double x)
-{
-	return resistance(x, "uOhm");
-}
-
-resistance operator"" _nOhm(long double x)
-{
-	return resistance(x, "nOhm");
-}
-
-resistance operator"" _pOhm(long double x)
-{
-	return resistance(x, "pOhm");
-}
-
-resistance operator"" _fOhm(long double x)
-{
-	return resistance(x, "fOhm");
-}
-
-resistance operator"" _aOhm(long double x)
-{
-	return resistance(x, "aOhm");
-}
-
-resistance operator"" _zOhm(long double x)
-{
-	return resistance(x, "zOhm");
-}
-
-resistance operator"" _yOhm(long double x)
-{
-	return resistance(x, "yOhm");
-}
-
-electric_conductance operator"" _YS(long double x)
-{
-	return electric_conductance(x, "YS");
-}
-
-electric_conductance operator"" _ZS(long double x)
-{
-	return electric_conductance(x, "ZS");
-}
-
-electric_conductance operator"" _ES(long double x)
-{
-	return electric_conductance(x, "ES");
-}
-
-electric_conductance operator"" _PS(long double x)
-{
-	return electric_conductance(x, "PS");
-}
-
-electric_conductance operator"" _TS(long double x)
-{
-	return electric_conductance(x, "TS");
-}
-
-electric_conductance operator"" _GS(long double x)
-{
-	return electric_conductance(x, "GS");
-}
-
-electric_conductance operator"" _MS(long double x)
-{
-	return electric_conductance(x, "MS");
-}
-
-electric_conductance operator"" _kS(long double x)
-{
-	return electric_conductance(x, "kS");
-}
-
-electric_conductance operator"" _hS(long double x)
-{
-	return electric_conductance(x, "hS");
-}
-
-electric_conductance operator"" _daS(long double x)
-{
-	return electric_conductance(x, "daS");
-}
-
-electric_conductance operator"" _S(long double x)
-{
-	return electric_conductance(x, "S");
-}
-
-electric_conductance operator"" _dS(long double x)
-{
-	return electric_conductance(x, "dS");
-}
-
-electric_conductance operator"" _cS(long double x)
-{
-	return electric_conductance(x, "cS");
-}
-
-electric_conductance operator"" _mS(long double x)
-{
-	return electric_conductance(x, "mS");
-}
-
-electric_conductance operator"" _uS(long double x)
-{
-	return electric_conductance(x, "uS");
-}
-
-electric_conductance operator"" _nS(long double x)
-{
-	return electric_conductance(x, "nS");
-}
-
-electric_conductance operator"" _pS(long double x)
-{
-	return electric_conductance(x, "pS");
-}
-
-electric_conductance operator"" _fS(long double x)
-{
-	return electric_conductance(x, "fS");
-}
-
-electric_conductance operator"" _aS(long double x)
-{
-	return electric_conductance(x, "aS");
-}
-
-electric_conductance operator"" _zS(long double x)
-{
-	return electric_conductance(x, "zS");
-}
-
-electric_conductance operator"" _yS(long double x)
-{
-	return electric_conductance(x, "yS");
-}
-
-magnetic_flux operator"" _YWb(long double x)
-{
-	return magnetic_flux(x, "YWb");
-}
-
-magnetic_flux operator"" _ZWb(long double x)
-{
-	return magnetic_flux(x, "ZWb");
-}
-
-magnetic_flux operator"" _EWb(long double x)
-{
-	return magnetic_flux(x, "EWb");
-}
-
-magnetic_flux operator"" _PWb(long double x)
-{
-	return magnetic_flux(x, "PWb");
-}
-
-magnetic_flux operator"" _TWb(long double x)
-{
-	return magnetic_flux(x, "TWb");
-}
-
-magnetic_flux operator"" _GWb(long double x)
-{
-	return magnetic_flux(x, "GWb");
-}
-
-magnetic_flux operator"" _MWb(long double x)
-{
-	return magnetic_flux(x, "MWb");
-}
-
-magnetic_flux operator"" _kWb(long double x)
-{
-	return magnetic_flux(x, "kWb");
-}
-
-magnetic_flux operator"" _hWb(long double x)
-{
-	return magnetic_flux(x, "hWb");
-}
-
-magnetic_flux operator"" _daWb(long double x)
-{
-	return magnetic_flux(x, "daWb");
-}
-
-magnetic_flux operator"" _Wb(long double x)
-{
-	return magnetic_flux(x, "Wb");
-}
-
-magnetic_flux operator"" _dWb(long double x)
-{
-	return magnetic_flux(x, "dWb");
-}
-
-magnetic_flux operator"" _cWb(long double x)
-{
-	return magnetic_flux(x, "cWb");
-}
-
-magnetic_flux operator"" _mWb(long double x)
-{
-	return magnetic_flux(x, "mWb");
-}
-
-magnetic_flux operator"" _uWb(long double x)
-{
-	return magnetic_flux(x, "uWb");
-}
-
-magnetic_flux operator"" _nWb(long double x)
-{
-	return magnetic_flux(x, "nWb");
-}
-
-magnetic_flux operator"" _pWb(long double x)
-{
-	return magnetic_flux(x, "pWb");
-}
-
-magnetic_flux operator"" _fWb(long double x)
-{
-	return magnetic_flux(x, "fWb");
-}
-
-magnetic_flux operator"" _aWb(long double x)
-{
-	return magnetic_flux(x, "aWb");
-}
-
-magnetic_flux operator"" _zWb(long double x)
-{
-	return magnetic_flux(x, "zWb");
-}
-
-magnetic_flux operator"" _yWb(long double x)
-{
-	return magnetic_flux(x, "yWb");
-}
-
-magnetic_strength operator"" _YT(long double x)
-{
-	return magnetic_strength(x, "YT");
-}
-
-magnetic_strength operator"" _ZT(long double x)
-{
-	return magnetic_strength(x, "ZT");
-}
-
-magnetic_strength operator"" _ET(long double x)
-{
-	return magnetic_strength(x, "ET");
-}
-
-magnetic_strength operator"" _PT(long double x)
-{
-	return magnetic_strength(x, "PT");
-}
-
-magnetic_strength operator"" _TT(long double x)
-{
-	return magnetic_strength(x, "TT");
-}
-
-magnetic_strength operator"" _GT(long double x)
-{
-	return magnetic_strength(x, "GT");
-}
-
-/*magnetic_strength operator"" _MT(long double x)
-{
-	return magnetic_strength(x, "MT");
+	return scifir::percentage((long double)x, "ppq");
 }*/
 
-magnetic_strength operator"" _kT(long double x)
+scifir::frequency operator"" _YHz(long double x)
 {
-	return magnetic_strength(x, "kT");
+	return scifir::frequency(x, "YHz");
 }
 
-magnetic_strength operator"" _hT(long double x)
+scifir::frequency operator"" _ZHz(long double x)
 {
-	return magnetic_strength(x, "hT");
+	return scifir::frequency(x, "ZHz");
 }
 
-magnetic_strength operator"" _daT(long double x)
+scifir::frequency operator"" _EHz(long double x)
 {
-	return magnetic_strength(x, "daT");
+	return scifir::frequency(x, "EHz");
 }
 
-magnetic_strength operator"" _T(long double x)
+scifir::frequency operator"" _PHz(long double x)
 {
-	return magnetic_strength(x, "T");
+	return scifir::frequency(x, "PHz");
 }
 
-magnetic_strength operator"" _dT(long double x)
+scifir::frequency operator"" _THz(long double x)
 {
-	return magnetic_strength(x, "dT");
+	return scifir::frequency(x, "THz");
 }
 
-magnetic_strength operator"" _cT(long double x)
+scifir::frequency operator"" _GHz(long double x)
 {
-	return magnetic_strength(x, "cT");
+	return scifir::frequency(x, "GHz");
 }
 
-magnetic_strength operator"" _mT(long double x)
+scifir::frequency operator"" _MHz(long double x)
 {
-	return magnetic_strength(x, "mT");
+	return scifir::frequency(x, "MHz");
 }
 
-magnetic_strength operator"" _uT(long double x)
+scifir::frequency operator"" _kHz(long double x)
 {
-	return magnetic_strength(x, "uT");
+	return scifir::frequency(x, "kHz");
 }
 
-magnetic_strength operator"" _nT(long double x)
+scifir::frequency operator"" _hHz(long double x)
 {
-	return magnetic_strength(x, "nT");
+	return scifir::frequency(x, "hHz");
 }
 
-magnetic_strength operator"" _pT(long double x)
+scifir::frequency operator"" _daHz(long double x)
 {
-	return magnetic_strength(x, "pT");
+	return scifir::frequency(x, "daHz");
 }
 
-magnetic_strength operator"" _fT(long double x)
+scifir::frequency operator"" _Hz(long double x)
 {
-	return magnetic_strength(x, "fT");
+	return scifir::frequency(x, "Hz");
 }
 
-magnetic_strength operator"" _aT(long double x)
+scifir::frequency operator"" _dHz(long double x)
 {
-	return magnetic_strength(x, "aT");
+	return scifir::frequency(x, "dHz");
 }
 
-magnetic_strength operator"" _zT(long double x)
+scifir::frequency operator"" _cHz(long double x)
 {
-	return magnetic_strength(x, "zT");
+	return scifir::frequency(x, "cHz");
 }
 
-magnetic_strength operator"" _yT(long double x)
+scifir::frequency operator"" _mHz(long double x)
 {
-	return magnetic_strength(x, "yT");
+	return scifir::frequency(x, "mHz");
 }
 
-inductance operator"" _YH(long double x)
+scifir::frequency operator"" _uHz(long double x)
 {
-	return inductance(x, "YH");
+	return scifir::frequency(x, "uHz");
 }
 
-inductance operator"" _ZH(long double x)
+scifir::frequency operator"" _nHz(long double x)
 {
-	return inductance(x, "ZH");
+	return scifir::frequency(x, "nHz");
 }
 
-inductance operator"" _EH(long double x)
+scifir::frequency operator"" _pHz(long double x)
 {
-	return inductance(x, "EH");
+	return scifir::frequency(x, "pHz");
 }
 
-inductance operator"" _PH(long double x)
+scifir::frequency operator"" _fHz(long double x)
 {
-	return inductance(x, "PH");
+	return scifir::frequency(x, "fHz");
 }
 
-inductance operator"" _TH(long double x)
+scifir::frequency operator"" _aHz(long double x)
 {
-	return inductance(x, "TH");
+	return scifir::frequency(x, "aHz");
 }
 
-inductance operator"" _GH(long double x)
+scifir::frequency operator"" _zHz(long double x)
 {
-	return inductance(x, "GH");
+	return scifir::frequency(x, "zHz");
 }
 
-inductance operator"" _MH(long double x)
+scifir::frequency operator"" _yHz(long double x)
 {
-	return inductance(x, "MH");
+	return scifir::frequency(x, "yHz");
 }
 
-inductance operator"" _kH(long double x)
+scifir::force operator"" _YN(long double x)
 {
-	return inductance(x, "kH");
+	return scifir::force(x, "YN");
 }
 
-inductance operator"" _hH(long double x)
+scifir::force operator"" _ZN(long double x)
 {
-	return inductance(x, "hH");
+	return scifir::force(x, "ZN");
 }
 
-inductance operator"" _daH(long double x)
+scifir::force operator"" _EN(long double x)
 {
-	return inductance(x, "daH");
+	return scifir::force(x, "EN");
 }
 
-inductance operator"" _H(long double x)
+scifir::force operator"" _PN(long double x)
 {
-	return inductance(x, "H");
+	return scifir::force(x, "PN");
 }
 
-inductance operator"" _dH(long double x)
+scifir::force operator"" _TN(long double x)
 {
-	return inductance(x, "dH");
+	return scifir::force(x, "TN");
 }
 
-inductance operator"" _cH(long double x)
+scifir::force operator"" _GN(long double x)
 {
-	return inductance(x, "cH");
+	return scifir::force(x, "GN");
 }
 
-inductance operator"" _mH(long double x)
+scifir::force operator"" _MN(long double x)
 {
-	return inductance(x, "mH");
+	return scifir::force(x, "MN");
 }
 
-inductance operator"" _uH(long double x)
+scifir::force operator"" _kN(long double x)
 {
-	return inductance(x, "uH");
+	return scifir::force(x, "kN");
 }
 
-inductance operator"" _nH(long double x)
+scifir::force operator"" _hN(long double x)
 {
-	return inductance(x, "nH");
+	return scifir::force(x, "hN");
 }
 
-inductance operator"" _pH(long double x)
+scifir::force operator"" _daN(long double x)
 {
-	return inductance(x, "pH");
+	return scifir::force(x, "daN");
 }
 
-inductance operator"" _fH(long double x)
+scifir::force operator"" _N(long double x)
 {
-	return inductance(x, "fH");
+	return scifir::force(x, "N");
 }
 
-inductance operator"" _aH(long double x)
+scifir::force operator"" _dN(long double x)
 {
-	return inductance(x, "aH");
+	return scifir::force(x, "dN");
 }
 
-inductance operator"" _zH(long double x)
+scifir::force operator"" _cN(long double x)
 {
-	return inductance(x, "zH");
+	return scifir::force(x, "cN");
 }
 
-inductance operator"" _yH(long double x)
+scifir::force operator"" _mN(long double x)
 {
-	return inductance(x, "yH");
+	return scifir::force(x, "mN");
 }
 
-luminous_flux operator"" _Ylm(long double x)
+scifir::force operator"" _uN(long double x)
 {
-	return luminous_flux(x, "Ylm");
+	return scifir::force(x, "uN");
 }
 
-luminous_flux operator"" _Zlm(long double x)
+scifir::force operator"" _nN(long double x)
 {
-	return luminous_flux(x, "Zlm");
+	return scifir::force(x, "nN");
 }
 
-luminous_flux operator"" _Elm(long double x)
+scifir::force operator"" _pN(long double x)
 {
-	return luminous_flux(x, "Elm");
+	return scifir::force(x, "pN");
 }
 
-luminous_flux operator"" _Plm(long double x)
+scifir::force operator"" _fN(long double x)
 {
-	return luminous_flux(x, "Plm");
+	return scifir::force(x, "fN");
 }
 
-luminous_flux operator"" _Tlm(long double x)
+scifir::force operator"" _aN(long double x)
 {
-	return luminous_flux(x, "Tlm");
+	return scifir::force(x, "aN");
 }
 
-luminous_flux operator"" _Glm(long double x)
+scifir::force operator"" _zN(long double x)
 {
-	return luminous_flux(x, "Glm");
+	return scifir::force(x, "zN");
 }
 
-luminous_flux operator"" _Mlm(long double x)
+scifir::force operator"" _yN(long double x)
 {
-	return luminous_flux(x, "Mlm");
+	return scifir::force(x, "yN");
 }
 
-luminous_flux operator"" _klm(long double x)
+scifir::pressure operator"" _YPa(long double x)
 {
-	return luminous_flux(x, "klm");
+	return scifir::pressure(x, "YPa");
 }
 
-luminous_flux operator"" _hlm(long double x)
+scifir::pressure operator"" _ZPa(long double x)
 {
-	return luminous_flux(x, "hlm");
+	return scifir::pressure(x, "ZPa");
 }
 
-luminous_flux operator"" _dalm(long double x)
+scifir::pressure operator"" _EPa(long double x)
 {
-	return luminous_flux(x, "dalm");
+	return scifir::pressure(x, "EPa");
 }
 
-luminous_flux operator"" _lm(long double x)
+scifir::pressure operator"" _PPa(long double x)
 {
-	return luminous_flux(x, "lm");
+	return scifir::pressure(x, "PPa");
 }
 
-luminous_flux operator"" _dlm(long double x)
+scifir::pressure operator"" _TPa(long double x)
 {
-	return luminous_flux(x, "dlm");
+	return scifir::pressure(x, "TPa");
 }
 
-luminous_flux operator"" _clm(long double x)
+scifir::pressure operator"" _GPa(long double x)
 {
-	return luminous_flux(x, "clm");
+	return scifir::pressure(x, "GPa");
 }
 
-luminous_flux operator"" _mlm(long double x)
+scifir::pressure operator"" _MPa(long double x)
 {
-	return luminous_flux(x, "mlm");
+	return scifir::pressure(x, "MPa");
 }
 
-luminous_flux operator"" _ulm(long double x)
+scifir::pressure operator"" _kPa(long double x)
 {
-	return luminous_flux(x, "ulm");
+	return scifir::pressure(x, "kPa");
 }
 
-luminous_flux operator"" _nlm(long double x)
+scifir::pressure operator"" _hPa(long double x)
 {
-	return luminous_flux(x, "nlm");
+	return scifir::pressure(x, "hPa");
 }
 
-luminous_flux operator"" _plm(long double x)
+scifir::pressure operator"" _daPa(long double x)
 {
-	return luminous_flux(x, "plm");
+	return scifir::pressure(x, "daPa");
 }
 
-luminous_flux operator"" _flm(long double x)
+scifir::pressure operator"" _Pa(long double x)
 {
-	return luminous_flux(x, "flm");
+	return scifir::pressure(x, "Pa");
 }
 
-luminous_flux operator"" _alm(long double x)
+scifir::pressure operator"" _dPa(long double x)
 {
-	return luminous_flux(x, "alm");
+	return scifir::pressure(x, "dPa");
 }
 
-luminous_flux operator"" _zlm(long double x)
+scifir::pressure operator"" _cPa(long double x)
 {
-	return luminous_flux(x, "zlm");
+	return scifir::pressure(x, "cPa");
 }
 
-luminous_flux operator"" _ylm(long double x)
+scifir::pressure operator"" _mPa(long double x)
 {
-	return luminous_flux(x, "ylm");
+	return scifir::pressure(x, "mPa");
 }
 
-illuminance operator"" _Ylx(long double x)
+scifir::pressure operator"" _uPa(long double x)
 {
-	return illuminance(x, "Ylx");
+	return scifir::pressure(x, "uPa");
 }
 
-illuminance operator"" _Zlx(long double x)
+scifir::pressure operator"" _nPa(long double x)
 {
-	return illuminance(x, "Zlx");
+	return scifir::pressure(x, "nPa");
 }
 
-illuminance operator"" _Elx(long double x)
+scifir::pressure operator"" _pPa(long double x)
 {
-	return illuminance(x, "Elx");
+	return scifir::pressure(x, "pPa");
 }
 
-illuminance operator"" _Plx(long double x)
+scifir::pressure operator"" _fPa(long double x)
 {
-	return illuminance(x, "Plx");
+	return scifir::pressure(x, "fPa");
 }
 
-illuminance operator"" _Tlx(long double x)
+scifir::pressure operator"" _aPa(long double x)
 {
-	return illuminance(x, "Tlx");
+	return scifir::pressure(x, "aPa");
 }
 
-illuminance operator"" _Glx(long double x)
+scifir::pressure operator"" _zPa(long double x)
 {
-	return illuminance(x, "Glx");
+	return scifir::pressure(x, "zPa");
 }
 
-illuminance operator"" _Mlx(long double x)
+scifir::pressure operator"" _yPa(long double x)
 {
-	return illuminance(x, "Mlx");
+	return scifir::pressure(x, "yPa");
 }
 
-illuminance operator"" _klx(long double x)
+scifir::energy operator"" _YJ(long double x)
 {
-	return illuminance(x, "klx");
+	return scifir::energy(x, "YJ");
 }
 
-illuminance operator"" _hlx(long double x)
+scifir::energy operator"" _ZJ(long double x)
 {
-	return illuminance(x, "hlx");
+	return scifir::energy(x, "ZJ");
 }
 
-illuminance operator"" _dalx(long double x)
+scifir::energy operator"" _EJ(long double x)
 {
-	return illuminance(x, "dalx");
+	return scifir::energy(x, "EJ");
 }
 
-illuminance operator"" _lx(long double x)
+scifir::energy operator"" _PJ(long double x)
 {
-	return illuminance(x, "lx");
+	return scifir::energy(x, "PJ");
 }
 
-illuminance operator"" _dlx(long double x)
+scifir::energy operator"" _TJ(long double x)
 {
-	return illuminance(x, "dlx");
+	return scifir::energy(x, "TJ");
 }
 
-illuminance operator"" _clx(long double x)
+scifir::energy operator"" _GJ(long double x)
 {
-	return illuminance(x, "clx");
+	return scifir::energy(x, "GJ");
 }
 
-illuminance operator"" _mlx(long double x)
+scifir::energy operator"" _MJ(long double x)
 {
-	return illuminance(x, "mlx");
+	return scifir::energy(x, "MJ");
 }
 
-illuminance operator"" _ulx(long double x)
+scifir::energy operator"" _kJ(long double x)
 {
-	return illuminance(x, "ulx");
+	return scifir::energy(x, "kJ");
 }
 
-illuminance operator"" _nlx(long double x)
+scifir::energy operator"" _hJ(long double x)
 {
-	return illuminance(x, "nlx");
+	return scifir::energy(x, "hJ");
 }
 
-illuminance operator"" _plx(long double x)
+scifir::energy operator"" _daJ(long double x)
 {
-	return illuminance(x, "plx");
+	return scifir::energy(x, "daJ");
 }
 
-illuminance operator"" _flx(long double x)
+scifir::energy operator"" _J(long double x)
 {
-	return illuminance(x, "flx");
+	return scifir::energy(x, "J");
 }
 
-illuminance operator"" _alx(long double x)
+scifir::energy operator"" _dJ(long double x)
 {
-	return illuminance(x, "alx");
+	return scifir::energy(x, "dJ");
 }
 
-illuminance operator"" _zlx(long double x)
+scifir::energy operator"" _cJ(long double x)
 {
-	return illuminance(x, "zlx");
+	return scifir::energy(x, "cJ");
 }
 
-illuminance operator"" _ylx(long double x)
+scifir::energy operator"" _mJ(long double x)
 {
-	return illuminance(x, "ylx");
+	return scifir::energy(x, "mJ");
 }
 
-radioactivity operator"" _YBq(long double x)
+scifir::energy operator"" _uJ(long double x)
 {
-	return radioactivity(x, "YBq");
+	return scifir::energy(x, "uJ");
 }
 
-radioactivity operator"" _ZBq(long double x)
+scifir::energy operator"" _nJ(long double x)
 {
-	return radioactivity(x, "ZBq");
+	return scifir::energy(x, "nJ");
 }
 
-radioactivity operator"" _EBq(long double x)
+scifir::energy operator"" _pJ(long double x)
 {
-	return radioactivity(x, "EBq");
+	return scifir::energy(x, "pJ");
 }
 
-radioactivity operator"" _PBq(long double x)
+scifir::energy operator"" _fJ(long double x)
 {
-	return radioactivity(x, "PBq");
+	return scifir::energy(x, "fJ");
 }
 
-radioactivity operator"" _TBq(long double x)
+scifir::energy operator"" _aJ(long double x)
 {
-	return radioactivity(x, "TBq");
+	return scifir::energy(x, "aJ");
 }
 
-radioactivity operator"" _GBq(long double x)
+scifir::energy operator"" _zJ(long double x)
 {
-	return radioactivity(x, "GBq");
+	return scifir::energy(x, "zJ");
 }
 
-radioactivity operator"" _MBq(long double x)
+scifir::energy operator"" _yJ(long double x)
 {
-	return radioactivity(x, "MBq");
+	return scifir::energy(x, "yJ");
 }
 
-radioactivity operator"" _kBq(long double x)
+scifir::power operator"" _YW(long double x)
 {
-	return radioactivity(x, "kBq");
+	return scifir::power(x, "YW");
 }
 
-radioactivity operator"" _hBq(long double x)
+scifir::power operator"" _ZW(long double x)
 {
-	return radioactivity(x, "hBq");
+	return scifir::power(x, "ZW");
 }
 
-radioactivity operator"" _daBq(long double x)
+scifir::power operator"" _EW(long double x)
 {
-	return radioactivity(x, "daBq");
+	return scifir::power(x, "EW");
 }
 
-radioactivity operator"" _Bq(long double x)
+scifir::power operator"" _PW(long double x)
 {
-	return radioactivity(x, "Bq");
+	return scifir::power(x, "PW");
 }
 
-radioactivity operator"" _dBq(long double x)
+scifir::power operator"" _TW(long double x)
 {
-	return radioactivity(x, "dBq");
+	return scifir::power(x, "TW");
 }
 
-radioactivity operator"" _cBq(long double x)
+scifir::power operator"" _GW(long double x)
 {
-	return radioactivity(x, "cBq");
+	return scifir::power(x, "GW");
 }
 
-radioactivity operator"" _mBq(long double x)
+scifir::power operator"" _MW(long double x)
 {
-	return radioactivity(x, "mBq");
+	return scifir::power(x, "MW");
 }
 
-radioactivity operator"" _uBq(long double x)
+scifir::power operator"" _kW(long double x)
 {
-	return radioactivity(x, "uBq");
+	return scifir::power(x, "kW");
 }
 
-radioactivity operator"" _nBq(long double x)
+scifir::power operator"" _hW(long double x)
 {
-	return radioactivity(x, "nBq");
+	return scifir::power(x, "hW");
 }
 
-radioactivity operator"" _pBq(long double x)
+scifir::power operator"" _daW(long double x)
 {
-	return radioactivity(x, "pBq");
+	return scifir::power(x, "daW");
 }
 
-radioactivity operator"" _fBq(long double x)
+scifir::power operator"" _W(long double x)
 {
-	return radioactivity(x, "fBq");
+	return scifir::power(x, "W");
 }
 
-radioactivity operator"" _aBq(long double x)
+scifir::power operator"" _dW(long double x)
 {
-	return radioactivity(x, "aBq");
+	return scifir::power(x, "dW");
 }
 
-radioactivity operator"" _zBq(long double x)
+scifir::power operator"" _cW(long double x)
 {
-	return radioactivity(x, "zBq");
+	return scifir::power(x, "cW");
 }
 
-radioactivity operator"" _yBq(long double x)
+scifir::power operator"" _mW(long double x)
 {
-	return radioactivity(x, "yBq");
+	return scifir::power(x, "mW");
 }
 
-ionizing_radiation operator"" _YGy(long double x)
+scifir::power operator"" _uW(long double x)
 {
-	return ionizing_radiation(x, "YGy");
+	return scifir::power(x, "uW");
 }
 
-ionizing_radiation operator"" _ZGy(long double x)
+scifir::power operator"" _nW(long double x)
 {
-	return ionizing_radiation(x, "ZGy");
+	return scifir::power(x, "nW");
 }
 
-ionizing_radiation operator"" _EGy(long double x)
+scifir::power operator"" _pW(long double x)
 {
-	return ionizing_radiation(x, "EGy");
+	return scifir::power(x, "pW");
 }
 
-ionizing_radiation operator"" _PGy(long double x)
+scifir::power operator"" _fW(long double x)
 {
-	return ionizing_radiation(x, "PGy");
+	return scifir::power(x, "fW");
 }
 
-ionizing_radiation operator"" _TGy(long double x)
+scifir::power operator"" _aW(long double x)
 {
-	return ionizing_radiation(x, "TGy");
+	return scifir::power(x, "aW");
 }
 
-ionizing_radiation operator"" _GGy(long double x)
+scifir::power operator"" _zW(long double x)
 {
-	return ionizing_radiation(x, "GGy");
+	return scifir::power(x, "zW");
 }
 
-ionizing_radiation operator"" _MGy(long double x)
+scifir::power operator"" _yW(long double x)
 {
-	return ionizing_radiation(x, "MGy");
+	return scifir::power(x, "yW");
 }
 
-ionizing_radiation operator"" _kGy(long double x)
+scifir::electric_current operator"" _YA(long double x)
 {
-	return ionizing_radiation(x, "kGy");
+	return scifir::electric_current(x, "YA");
 }
 
-ionizing_radiation operator"" _hGy(long double x)
+scifir::electric_current operator"" _ZA(long double x)
 {
-	return ionizing_radiation(x, "hGy");
+	return scifir::electric_current(x, "ZA");
 }
 
-ionizing_radiation operator"" _daGy(long double x)
+scifir::electric_current operator"" _EA(long double x)
 {
-	return ionizing_radiation(x, "daGy");
+	return scifir::electric_current(x, "EA");
 }
 
-ionizing_radiation operator"" _Gy(long double x)
+scifir::electric_current operator"" _PA(long double x)
 {
-	return ionizing_radiation(x, "Gy");
+	return scifir::electric_current(x, "PA");
 }
 
-ionizing_radiation operator"" _dGy(long double x)
+scifir::electric_current operator"" _TA(long double x)
 {
-	return ionizing_radiation(x, "dGy");
+	return scifir::electric_current(x, "TA");
 }
 
-ionizing_radiation operator"" _cGy(long double x)
+scifir::electric_current operator"" _GA(long double x)
 {
-	return ionizing_radiation(x, "cGy");
+	return scifir::electric_current(x, "GA");
 }
 
-ionizing_radiation operator"" _mGy(long double x)
+scifir::electric_current operator"" _MA(long double x)
 {
-	return ionizing_radiation(x, "mGy");
+	return scifir::electric_current(x, "MA");
 }
 
-ionizing_radiation operator"" _uGy(long double x)
+scifir::electric_current operator"" _kA(long double x)
 {
-	return ionizing_radiation(x, "uGy");
+	return scifir::electric_current(x, "kA");
 }
 
-ionizing_radiation operator"" _nGy(long double x)
+scifir::electric_current operator"" _hA(long double x)
 {
-	return ionizing_radiation(x, "nGy");
+	return scifir::electric_current(x, "hA");
 }
 
-ionizing_radiation operator"" _pGy(long double x)
+scifir::electric_current operator"" _daA(long double x)
 {
-	return ionizing_radiation(x, "pGy");
+	return scifir::electric_current(x, "daA");
 }
 
-ionizing_radiation operator"" _fGy(long double x)
+scifir::electric_current operator"" _A(long double x)
 {
-	return ionizing_radiation(x, "fGy");
+	return scifir::electric_current(x, "A");
 }
 
-ionizing_radiation operator"" _aGy(long double x)
+scifir::electric_current operator"" _dA(long double x)
 {
-	return ionizing_radiation(x, "aGy");
+	return scifir::electric_current(x, "dA");
 }
 
-ionizing_radiation operator"" _zGy(long double x)
+scifir::electric_current operator"" _cA(long double x)
 {
-	return ionizing_radiation(x, "zGy");
+	return scifir::electric_current(x, "cA");
 }
 
-ionizing_radiation operator"" _yGy(long double x)
+scifir::electric_current operator"" _mA(long double x)
 {
-	return ionizing_radiation(x, "yGy");
+	return scifir::electric_current(x, "mA");
 }
 
-ionizing_radiation operator"" _YSv(long double x)
+scifir::electric_current operator"" _uA(long double x)
 {
-	return ionizing_radiation(x, "YSv");
+	return scifir::electric_current(x, "uA");
 }
 
-ionizing_radiation operator"" _ZSv(long double x)
+scifir::electric_current operator"" _nA(long double x)
 {
-	return ionizing_radiation(x, "ZSv");
+	return scifir::electric_current(x, "nA");
 }
 
-ionizing_radiation operator"" _ESv(long double x)
+scifir::electric_current operator"" _pA(long double x)
 {
-	return ionizing_radiation(x, "ESv");
+	return scifir::electric_current(x, "pA");
 }
 
-ionizing_radiation operator"" _PSv(long double x)
+scifir::electric_current operator"" _fA(long double x)
 {
-	return ionizing_radiation(x, "PSv");
+	return scifir::electric_current(x, "fA");
 }
 
-ionizing_radiation operator"" _TSv(long double x)
+scifir::electric_current operator"" _aA(long double x)
 {
-	return ionizing_radiation(x, "TSv");
+	return scifir::electric_current(x, "aA");
 }
 
-ionizing_radiation operator"" _GSv(long double x)
+scifir::electric_current operator"" _zA(long double x)
 {
-	return ionizing_radiation(x, "GSv");
+	return scifir::electric_current(x, "zA");
 }
 
-ionizing_radiation operator"" _MSv(long double x)
+scifir::electric_current operator"" _yA(long double x)
 {
-	return ionizing_radiation(x, "MSv");
+	return scifir::electric_current(x, "yA");
 }
 
-ionizing_radiation operator"" _kSv(long double x)
+scifir::voltage operator"" _YV(long double x)
 {
-	return ionizing_radiation(x, "kSv");
+	return scifir::voltage(x, "YV");
 }
 
-ionizing_radiation operator"" _hSv(long double x)
+scifir::voltage operator"" _ZV(long double x)
 {
-	return ionizing_radiation(x, "hSv");
+	return scifir::voltage(x, "ZV");
 }
 
-ionizing_radiation operator"" _daSv(long double x)
+scifir::voltage operator"" _EV(long double x)
 {
-	return ionizing_radiation(x, "daSv");
+	return scifir::voltage(x, "EV");
 }
 
-ionizing_radiation operator"" _Sv(long double x)
+scifir::voltage operator"" _PV(long double x)
 {
-	return ionizing_radiation(x, "Sv");
+	return scifir::voltage(x, "PV");
 }
 
-ionizing_radiation operator"" _dSv(long double x)
+scifir::voltage operator"" _TV(long double x)
 {
-	return ionizing_radiation(x, "dSv");
+	return scifir::voltage(x, "TV");
 }
 
-ionizing_radiation operator"" _cSv(long double x)
+scifir::voltage operator"" _GV(long double x)
 {
-	return ionizing_radiation(x, "cSv");
+	return scifir::voltage(x, "GV");
 }
 
-ionizing_radiation operator"" _mSv(long double x)
+scifir::voltage operator"" _MV(long double x)
 {
-	return ionizing_radiation(x, "mSv");
+	return scifir::voltage(x, "MV");
 }
 
-ionizing_radiation operator"" _uSv(long double x)
+scifir::voltage operator"" _kV(long double x)
 {
-	return ionizing_radiation(x, "uSv");
+	return scifir::voltage(x, "kV");
 }
 
-ionizing_radiation operator"" _nSv(long double x)
+scifir::voltage operator"" _hV(long double x)
 {
-	return ionizing_radiation(x, "nSv");
+	return scifir::voltage(x, "hV");
 }
 
-ionizing_radiation operator"" _pSv(long double x)
+scifir::voltage operator"" _daV(long double x)
 {
-	return ionizing_radiation(x, "pSv");
+	return scifir::voltage(x, "daV");
 }
 
-ionizing_radiation operator"" _fSv(long double x)
+scifir::voltage operator"" _V(long double x)
 {
-	return ionizing_radiation(x, "fSv");
+	return scifir::voltage(x, "V");
 }
 
-ionizing_radiation operator"" _aSv(long double x)
+scifir::voltage operator"" _dV(long double x)
 {
-	return ionizing_radiation(x, "aSv");
+	return scifir::voltage(x, "dV");
 }
 
-ionizing_radiation operator"" _zSv(long double x)
+scifir::voltage operator"" _cV(long double x)
 {
-	return ionizing_radiation(x, "zSv");
+	return scifir::voltage(x, "cV");
 }
 
-ionizing_radiation operator"" _ySv(long double x)
+scifir::voltage operator"" _mV(long double x)
 {
-	return ionizing_radiation(x, "ySv");
+	return scifir::voltage(x, "mV");
 }
 
-catalytic_activity operator"" _Ykat(long double x)
+scifir::voltage operator"" _uV(long double x)
 {
-	return catalytic_activity(x, "Ykat");
+	return scifir::voltage(x, "uV");
 }
 
-catalytic_activity operator"" _Zkat(long double x)
+scifir::voltage operator"" _nV(long double x)
 {
-	return catalytic_activity(x, "Zkat");
+	return scifir::voltage(x, "nV");
 }
 
-catalytic_activity operator"" _Ekat(long double x)
+scifir::voltage operator"" _pV(long double x)
 {
-	return catalytic_activity(x, "Ekat");
+	return scifir::voltage(x, "pV");
 }
 
-catalytic_activity operator"" _Pkat(long double x)
+scifir::voltage operator"" _fV(long double x)
 {
-	return catalytic_activity(x, "Pkat");
+	return scifir::voltage(x, "fV");
 }
 
-catalytic_activity operator"" _Tkat(long double x)
+scifir::voltage operator"" _aV(long double x)
 {
-	return catalytic_activity(x, "Tkat");
+	return scifir::voltage(x, "aV");
 }
 
-catalytic_activity operator"" _Gkat(long double x)
+scifir::voltage operator"" _zV(long double x)
 {
-	return catalytic_activity(x, "Gkat");
+	return scifir::voltage(x, "zV");
 }
 
-catalytic_activity operator"" _Mkat(long double x)
+scifir::voltage operator"" _yV(long double x)
 {
-	return catalytic_activity(x, "Mkat");
+	return scifir::voltage(x, "yV");
 }
 
-catalytic_activity operator"" _kkat(long double x)
+scifir::capacitance operator"" _YF(long double x)
 {
-	return catalytic_activity(x, "kkat");
+	return scifir::capacitance(x, "YF");
 }
 
-catalytic_activity operator"" _hkat(long double x)
+scifir::capacitance operator"" _ZF(long double x)
 {
-	return catalytic_activity(x, "hkat");
+	return scifir::capacitance(x, "ZF");
 }
 
-catalytic_activity operator"" _dakat(long double x)
+scifir::capacitance operator"" _EF(long double x)
 {
-	return catalytic_activity(x, "dakat");
+	return scifir::capacitance(x, "EF");
 }
 
-catalytic_activity operator"" _kat(long double x)
+scifir::capacitance operator"" _PF(long double x)
 {
-	return catalytic_activity(x, "kat");
+	return scifir::capacitance(x, "PF");
 }
 
-catalytic_activity operator"" _dkat(long double x)
+scifir::capacitance operator"" _TF(long double x)
 {
-	return catalytic_activity(x, "dkat");
+	return scifir::capacitance(x, "TF");
 }
 
-catalytic_activity operator"" _ckat(long double x)
+scifir::capacitance operator"" _GF(long double x)
 {
-	return catalytic_activity(x, "ckat");
+	return scifir::capacitance(x, "GF");
 }
 
-catalytic_activity operator"" _mkat(long double x)
+scifir::capacitance operator"" _MF(long double x)
 {
-	return catalytic_activity(x, "mkat");
+	return scifir::capacitance(x, "MF");
 }
 
-catalytic_activity operator"" _ukat(long double x)
+scifir::capacitance operator"" _kF(long double x)
 {
-	return catalytic_activity(x, "ukat");
+	return scifir::capacitance(x, "kF");
 }
 
-catalytic_activity operator"" _nkat(long double x)
+scifir::capacitance operator"" _hF(long double x)
 {
-	return catalytic_activity(x, "nkat");
+	return scifir::capacitance(x, "hF");
 }
 
-catalytic_activity operator"" _pkat(long double x)
+scifir::capacitance operator"" _daF(long double x)
 {
-	return catalytic_activity(x, "pkat");
+	return scifir::capacitance(x, "daF");
 }
 
-catalytic_activity operator"" _fkat(long double x)
+scifir::capacitance operator"" _F(long double x)
 {
-	return catalytic_activity(x, "fkat");
+	return scifir::capacitance(x, "F");
 }
 
-catalytic_activity operator"" _akat(long double x)
+scifir::capacitance operator"" _dF(long double x)
 {
-	return catalytic_activity(x, "akat");
+	return scifir::capacitance(x, "dF");
 }
 
-catalytic_activity operator"" _zkat(long double x)
+scifir::capacitance operator"" _cF(long double x)
 {
-	return catalytic_activity(x, "zkat");
+	return scifir::capacitance(x, "cF");
 }
 
-catalytic_activity operator"" _ykat(long double x)
+scifir::capacitance operator"" _mF(long double x)
 {
-	return catalytic_activity(x, "ykat");
+	return scifir::capacitance(x, "mF");
 }
 
-length operator"" _angstrom(long double x)
+scifir::capacitance operator"" _uF(long double x)
 {
-	return length(x, "angstrom");
+	return scifir::capacitance(x, "uF");
 }
 
-volume operator"" _L(long double x)
+scifir::capacitance operator"" _nF(long double x)
 {
-	return volume(x, "L");
+	return scifir::capacitance(x, "nF");
 }
 
-volume operator"" _mL(long double x)
+scifir::capacitance operator"" _pF(long double x)
 {
-	return volume(x, "mL");
+	return scifir::capacitance(x, "pF");
+}
+
+scifir::capacitance operator"" _fF(long double x)
+{
+	return scifir::capacitance(x, "fF");
+}
+
+scifir::capacitance operator"" _aF(long double x)
+{
+	return scifir::capacitance(x, "aF");
+}
+
+scifir::capacitance operator"" _zF(long double x)
+{
+	return scifir::capacitance(x, "zF");
+}
+
+scifir::capacitance operator"" _yF(long double x)
+{
+	return scifir::capacitance(x, "yF");
+}
+
+scifir::resistance operator"" _YOhm(long double x)
+{
+	return scifir::resistance(x, "YOhm");
+}
+
+scifir::resistance operator"" _ZOhm(long double x)
+{
+	return scifir::resistance(x, "ZOhm");
+}
+
+scifir::resistance operator"" _EOhm(long double x)
+{
+	return scifir::resistance(x, "EOhm");
+}
+
+scifir::resistance operator"" _POhm(long double x)
+{
+	return scifir::resistance(x, "POhm");
+}
+
+scifir::resistance operator"" _TOhm(long double x)
+{
+	return scifir::resistance(x, "TOhm");
+}
+
+scifir::resistance operator"" _GOhm(long double x)
+{
+	return scifir::resistance(x, "GOhm");
+}
+
+scifir::resistance operator"" _MOhm(long double x)
+{
+	return scifir::resistance(x, "MOhm");
+}
+
+scifir::resistance operator"" _kOhm(long double x)
+{
+	return scifir::resistance(x, "kOhm");
+}
+
+scifir::resistance operator"" _hOhm(long double x)
+{
+	return scifir::resistance(x, "hOhm");
+}
+
+scifir::resistance operator"" _daOhm(long double x)
+{
+	return scifir::resistance(x, "daOhm");
+}
+
+scifir::resistance operator"" _Ohm(long double x)
+{
+	return scifir::resistance(x, "Ohm");
+}
+
+scifir::resistance operator"" _dOhm(long double x)
+{
+	return scifir::resistance(x, "dOhm");
+}
+
+scifir::resistance operator"" _cOhm(long double x)
+{
+	return scifir::resistance(x, "cOhm");
+}
+
+scifir::resistance operator"" _mOhm(long double x)
+{
+	return scifir::resistance(x, "mOhm");
+}
+
+scifir::resistance operator"" _uOhm(long double x)
+{
+	return scifir::resistance(x, "uOhm");
+}
+
+scifir::resistance operator"" _nOhm(long double x)
+{
+	return scifir::resistance(x, "nOhm");
+}
+
+scifir::resistance operator"" _pOhm(long double x)
+{
+	return scifir::resistance(x, "pOhm");
+}
+
+scifir::resistance operator"" _fOhm(long double x)
+{
+	return scifir::resistance(x, "fOhm");
+}
+
+scifir::resistance operator"" _aOhm(long double x)
+{
+	return scifir::resistance(x, "aOhm");
+}
+
+scifir::resistance operator"" _zOhm(long double x)
+{
+	return scifir::resistance(x, "zOhm");
+}
+
+scifir::resistance operator"" _yOhm(long double x)
+{
+	return scifir::resistance(x, "yOhm");
+}
+
+scifir::electric_conductance operator"" _YS(long double x)
+{
+	return scifir::electric_conductance(x, "YS");
+}
+
+scifir::electric_conductance operator"" _ZS(long double x)
+{
+	return scifir::electric_conductance(x, "ZS");
+}
+
+scifir::electric_conductance operator"" _ES(long double x)
+{
+	return scifir::electric_conductance(x, "ES");
+}
+
+scifir::electric_conductance operator"" _PS(long double x)
+{
+	return scifir::electric_conductance(x, "PS");
+}
+
+scifir::electric_conductance operator"" _TS(long double x)
+{
+	return scifir::electric_conductance(x, "TS");
+}
+
+scifir::electric_conductance operator"" _GS(long double x)
+{
+	return scifir::electric_conductance(x, "GS");
+}
+
+scifir::electric_conductance operator"" _MS(long double x)
+{
+	return scifir::electric_conductance(x, "MS");
+}
+
+scifir::electric_conductance operator"" _kS(long double x)
+{
+	return scifir::electric_conductance(x, "kS");
+}
+
+scifir::electric_conductance operator"" _hS(long double x)
+{
+	return scifir::electric_conductance(x, "hS");
+}
+
+scifir::electric_conductance operator"" _daS(long double x)
+{
+	return scifir::electric_conductance(x, "daS");
+}
+
+scifir::electric_conductance operator"" _S(long double x)
+{
+	return scifir::electric_conductance(x, "S");
+}
+
+scifir::electric_conductance operator"" _dS(long double x)
+{
+	return scifir::electric_conductance(x, "dS");
+}
+
+scifir::electric_conductance operator"" _cS(long double x)
+{
+	return scifir::electric_conductance(x, "cS");
+}
+
+scifir::electric_conductance operator"" _mS(long double x)
+{
+	return scifir::electric_conductance(x, "mS");
+}
+
+scifir::electric_conductance operator"" _uS(long double x)
+{
+	return scifir::electric_conductance(x, "uS");
+}
+
+scifir::electric_conductance operator"" _nS(long double x)
+{
+	return scifir::electric_conductance(x, "nS");
+}
+
+scifir::electric_conductance operator"" _pS(long double x)
+{
+	return scifir::electric_conductance(x, "pS");
+}
+
+scifir::electric_conductance operator"" _fS(long double x)
+{
+	return scifir::electric_conductance(x, "fS");
+}
+
+scifir::electric_conductance operator"" _aS(long double x)
+{
+	return scifir::electric_conductance(x, "aS");
+}
+
+scifir::electric_conductance operator"" _zS(long double x)
+{
+	return scifir::electric_conductance(x, "zS");
+}
+
+scifir::electric_conductance operator"" _yS(long double x)
+{
+	return scifir::electric_conductance(x, "yS");
+}
+
+scifir::magnetic_flux operator"" _YWb(long double x)
+{
+	return scifir::magnetic_flux(x, "YWb");
+}
+
+scifir::magnetic_flux operator"" _ZWb(long double x)
+{
+	return scifir::magnetic_flux(x, "ZWb");
+}
+
+scifir::magnetic_flux operator"" _EWb(long double x)
+{
+	return scifir::magnetic_flux(x, "EWb");
+}
+
+scifir::magnetic_flux operator"" _PWb(long double x)
+{
+	return scifir::magnetic_flux(x, "PWb");
+}
+
+scifir::magnetic_flux operator"" _TWb(long double x)
+{
+	return scifir::magnetic_flux(x, "TWb");
+}
+
+scifir::magnetic_flux operator"" _GWb(long double x)
+{
+	return scifir::magnetic_flux(x, "GWb");
+}
+
+scifir::magnetic_flux operator"" _MWb(long double x)
+{
+	return scifir::magnetic_flux(x, "MWb");
+}
+
+scifir::magnetic_flux operator"" _kWb(long double x)
+{
+	return scifir::magnetic_flux(x, "kWb");
+}
+
+scifir::magnetic_flux operator"" _hWb(long double x)
+{
+	return scifir::magnetic_flux(x, "hWb");
+}
+
+scifir::magnetic_flux operator"" _daWb(long double x)
+{
+	return scifir::magnetic_flux(x, "daWb");
+}
+
+scifir::magnetic_flux operator"" _Wb(long double x)
+{
+	return scifir::magnetic_flux(x, "Wb");
+}
+
+scifir::magnetic_flux operator"" _dWb(long double x)
+{
+	return scifir::magnetic_flux(x, "dWb");
+}
+
+scifir::magnetic_flux operator"" _cWb(long double x)
+{
+	return scifir::magnetic_flux(x, "cWb");
+}
+
+scifir::magnetic_flux operator"" _mWb(long double x)
+{
+	return scifir::magnetic_flux(x, "mWb");
+}
+
+scifir::magnetic_flux operator"" _uWb(long double x)
+{
+	return scifir::magnetic_flux(x, "uWb");
+}
+
+scifir::magnetic_flux operator"" _nWb(long double x)
+{
+	return scifir::magnetic_flux(x, "nWb");
+}
+
+scifir::magnetic_flux operator"" _pWb(long double x)
+{
+	return scifir::magnetic_flux(x, "pWb");
+}
+
+scifir::magnetic_flux operator"" _fWb(long double x)
+{
+	return scifir::magnetic_flux(x, "fWb");
+}
+
+scifir::magnetic_flux operator"" _aWb(long double x)
+{
+	return scifir::magnetic_flux(x, "aWb");
+}
+
+scifir::magnetic_flux operator"" _zWb(long double x)
+{
+	return scifir::magnetic_flux(x, "zWb");
+}
+
+scifir::magnetic_flux operator"" _yWb(long double x)
+{
+	return scifir::magnetic_flux(x, "yWb");
+}
+
+scifir::magnetic_strength operator"" _YT(long double x)
+{
+	return scifir::magnetic_strength(x, "YT");
+}
+
+scifir::magnetic_strength operator"" _ZT(long double x)
+{
+	return scifir::magnetic_strength(x, "ZT");
+}
+
+scifir::magnetic_strength operator"" _ET(long double x)
+{
+	return scifir::magnetic_strength(x, "ET");
+}
+
+scifir::magnetic_strength operator"" _PT(long double x)
+{
+	return scifir::magnetic_strength(x, "PT");
+}
+
+scifir::magnetic_strength operator"" _TT(long double x)
+{
+	return scifir::magnetic_strength(x, "TT");
+}
+
+scifir::magnetic_strength operator"" _GT(long double x)
+{
+	return scifir::magnetic_strength(x, "GT");
+}
+
+/*scifir::magnetic_strength operator"" _MT(long double x)
+{
+	return scifir::magnetic_strength(x, "MT");
+}*/
+
+scifir::magnetic_strength operator"" _kT(long double x)
+{
+	return scifir::magnetic_strength(x, "kT");
+}
+
+scifir::magnetic_strength operator"" _hT(long double x)
+{
+	return scifir::magnetic_strength(x, "hT");
+}
+
+scifir::magnetic_strength operator"" _daT(long double x)
+{
+	return scifir::magnetic_strength(x, "daT");
+}
+
+scifir::magnetic_strength operator"" _T(long double x)
+{
+	return scifir::magnetic_strength(x, "T");
+}
+
+scifir::magnetic_strength operator"" _dT(long double x)
+{
+	return scifir::magnetic_strength(x, "dT");
+}
+
+scifir::magnetic_strength operator"" _cT(long double x)
+{
+	return scifir::magnetic_strength(x, "cT");
+}
+
+scifir::magnetic_strength operator"" _mT(long double x)
+{
+	return scifir::magnetic_strength(x, "mT");
+}
+
+scifir::magnetic_strength operator"" _uT(long double x)
+{
+	return scifir::magnetic_strength(x, "uT");
+}
+
+scifir::magnetic_strength operator"" _nT(long double x)
+{
+	return scifir::magnetic_strength(x, "nT");
+}
+
+scifir::magnetic_strength operator"" _pT(long double x)
+{
+	return scifir::magnetic_strength(x, "pT");
+}
+
+scifir::magnetic_strength operator"" _fT(long double x)
+{
+	return scifir::magnetic_strength(x, "fT");
+}
+
+scifir::magnetic_strength operator"" _aT(long double x)
+{
+	return scifir::magnetic_strength(x, "aT");
+}
+
+scifir::magnetic_strength operator"" _zT(long double x)
+{
+	return scifir::magnetic_strength(x, "zT");
+}
+
+scifir::magnetic_strength operator"" _yT(long double x)
+{
+	return scifir::magnetic_strength(x, "yT");
+}
+
+scifir::inductance operator"" _YH(long double x)
+{
+	return scifir::inductance(x, "YH");
+}
+
+scifir::inductance operator"" _ZH(long double x)
+{
+	return scifir::inductance(x, "ZH");
+}
+
+scifir::inductance operator"" _EH(long double x)
+{
+	return scifir::inductance(x, "EH");
+}
+
+scifir::inductance operator"" _PH(long double x)
+{
+	return scifir::inductance(x, "PH");
+}
+
+scifir::inductance operator"" _TH(long double x)
+{
+	return scifir::inductance(x, "TH");
+}
+
+scifir::inductance operator"" _GH(long double x)
+{
+	return scifir::inductance(x, "GH");
+}
+
+scifir::inductance operator"" _MH(long double x)
+{
+	return scifir::inductance(x, "MH");
+}
+
+scifir::inductance operator"" _kH(long double x)
+{
+	return scifir::inductance(x, "kH");
+}
+
+scifir::inductance operator"" _hH(long double x)
+{
+	return scifir::inductance(x, "hH");
+}
+
+scifir::inductance operator"" _daH(long double x)
+{
+	return scifir::inductance(x, "daH");
+}
+
+scifir::inductance operator"" _H(long double x)
+{
+	return scifir::inductance(x, "H");
+}
+
+scifir::inductance operator"" _dH(long double x)
+{
+	return scifir::inductance(x, "dH");
+}
+
+scifir::inductance operator"" _cH(long double x)
+{
+	return scifir::inductance(x, "cH");
+}
+
+scifir::inductance operator"" _mH(long double x)
+{
+	return scifir::inductance(x, "mH");
+}
+
+scifir::inductance operator"" _uH(long double x)
+{
+	return scifir::inductance(x, "uH");
+}
+
+scifir::inductance operator"" _nH(long double x)
+{
+	return scifir::inductance(x, "nH");
+}
+
+scifir::inductance operator"" _pH(long double x)
+{
+	return scifir::inductance(x, "pH");
+}
+
+scifir::inductance operator"" _fH(long double x)
+{
+	return scifir::inductance(x, "fH");
+}
+
+scifir::inductance operator"" _aH(long double x)
+{
+	return scifir::inductance(x, "aH");
+}
+
+scifir::inductance operator"" _zH(long double x)
+{
+	return scifir::inductance(x, "zH");
+}
+
+scifir::inductance operator"" _yH(long double x)
+{
+	return scifir::inductance(x, "yH");
+}
+
+scifir::luminous_flux operator"" _Ylm(long double x)
+{
+	return scifir::luminous_flux(x, "Ylm");
+}
+
+scifir::luminous_flux operator"" _Zlm(long double x)
+{
+	return scifir::luminous_flux(x, "Zlm");
+}
+
+scifir::luminous_flux operator"" _Elm(long double x)
+{
+	return scifir::luminous_flux(x, "Elm");
+}
+
+scifir::luminous_flux operator"" _Plm(long double x)
+{
+	return scifir::luminous_flux(x, "Plm");
+}
+
+scifir::luminous_flux operator"" _Tlm(long double x)
+{
+	return scifir::luminous_flux(x, "Tlm");
+}
+
+scifir::luminous_flux operator"" _Glm(long double x)
+{
+	return scifir::luminous_flux(x, "Glm");
+}
+
+scifir::luminous_flux operator"" _Mlm(long double x)
+{
+	return scifir::luminous_flux(x, "Mlm");
+}
+
+scifir::luminous_flux operator"" _klm(long double x)
+{
+	return scifir::luminous_flux(x, "klm");
+}
+
+scifir::luminous_flux operator"" _hlm(long double x)
+{
+	return scifir::luminous_flux(x, "hlm");
+}
+
+scifir::luminous_flux operator"" _dalm(long double x)
+{
+	return scifir::luminous_flux(x, "dalm");
+}
+
+scifir::luminous_flux operator"" _lm(long double x)
+{
+	return scifir::luminous_flux(x, "lm");
+}
+
+scifir::luminous_flux operator"" _dlm(long double x)
+{
+	return scifir::luminous_flux(x, "dlm");
+}
+
+scifir::luminous_flux operator"" _clm(long double x)
+{
+	return scifir::luminous_flux(x, "clm");
+}
+
+scifir::luminous_flux operator"" _mlm(long double x)
+{
+	return scifir::luminous_flux(x, "mlm");
+}
+
+scifir::luminous_flux operator"" _ulm(long double x)
+{
+	return scifir::luminous_flux(x, "ulm");
+}
+
+scifir::luminous_flux operator"" _nlm(long double x)
+{
+	return scifir::luminous_flux(x, "nlm");
+}
+
+scifir::luminous_flux operator"" _plm(long double x)
+{
+	return scifir::luminous_flux(x, "plm");
+}
+
+scifir::luminous_flux operator"" _flm(long double x)
+{
+	return scifir::luminous_flux(x, "flm");
+}
+
+scifir::luminous_flux operator"" _alm(long double x)
+{
+	return scifir::luminous_flux(x, "alm");
+}
+
+scifir::luminous_flux operator"" _zlm(long double x)
+{
+	return scifir::luminous_flux(x, "zlm");
+}
+
+scifir::luminous_flux operator"" _ylm(long double x)
+{
+	return scifir::luminous_flux(x, "ylm");
+}
+
+scifir::illuminance operator"" _Ylx(long double x)
+{
+	return scifir::illuminance(x, "Ylx");
+}
+
+scifir::illuminance operator"" _Zlx(long double x)
+{
+	return scifir::illuminance(x, "Zlx");
+}
+
+scifir::illuminance operator"" _Elx(long double x)
+{
+	return scifir::illuminance(x, "Elx");
+}
+
+scifir::illuminance operator"" _Plx(long double x)
+{
+	return scifir::illuminance(x, "Plx");
+}
+
+scifir::illuminance operator"" _Tlx(long double x)
+{
+	return scifir::illuminance(x, "Tlx");
+}
+
+scifir::illuminance operator"" _Glx(long double x)
+{
+	return scifir::illuminance(x, "Glx");
+}
+
+scifir::illuminance operator"" _Mlx(long double x)
+{
+	return scifir::illuminance(x, "Mlx");
+}
+
+scifir::illuminance operator"" _klx(long double x)
+{
+	return scifir::illuminance(x, "klx");
+}
+
+scifir::illuminance operator"" _hlx(long double x)
+{
+	return scifir::illuminance(x, "hlx");
+}
+
+scifir::illuminance operator"" _dalx(long double x)
+{
+	return scifir::illuminance(x, "dalx");
+}
+
+scifir::illuminance operator"" _lx(long double x)
+{
+	return scifir::illuminance(x, "lx");
+}
+
+scifir::illuminance operator"" _dlx(long double x)
+{
+	return scifir::illuminance(x, "dlx");
+}
+
+scifir::illuminance operator"" _clx(long double x)
+{
+	return scifir::illuminance(x, "clx");
+}
+
+scifir::illuminance operator"" _mlx(long double x)
+{
+	return scifir::illuminance(x, "mlx");
+}
+
+scifir::illuminance operator"" _ulx(long double x)
+{
+	return scifir::illuminance(x, "ulx");
+}
+
+scifir::illuminance operator"" _nlx(long double x)
+{
+	return scifir::illuminance(x, "nlx");
+}
+
+scifir::illuminance operator"" _plx(long double x)
+{
+	return scifir::illuminance(x, "plx");
+}
+
+scifir::illuminance operator"" _flx(long double x)
+{
+	return scifir::illuminance(x, "flx");
+}
+
+scifir::illuminance operator"" _alx(long double x)
+{
+	return scifir::illuminance(x, "alx");
+}
+
+scifir::illuminance operator"" _zlx(long double x)
+{
+	return scifir::illuminance(x, "zlx");
+}
+
+scifir::illuminance operator"" _ylx(long double x)
+{
+	return scifir::illuminance(x, "ylx");
+}
+
+scifir::radioactivity operator"" _YBq(long double x)
+{
+	return scifir::radioactivity(x, "YBq");
+}
+
+scifir::radioactivity operator"" _ZBq(long double x)
+{
+	return scifir::radioactivity(x, "ZBq");
+}
+
+scifir::radioactivity operator"" _EBq(long double x)
+{
+	return scifir::radioactivity(x, "EBq");
+}
+
+scifir::radioactivity operator"" _PBq(long double x)
+{
+	return scifir::radioactivity(x, "PBq");
+}
+
+scifir::radioactivity operator"" _TBq(long double x)
+{
+	return scifir::radioactivity(x, "TBq");
+}
+
+scifir::radioactivity operator"" _GBq(long double x)
+{
+	return scifir::radioactivity(x, "GBq");
+}
+
+scifir::radioactivity operator"" _MBq(long double x)
+{
+	return scifir::radioactivity(x, "MBq");
+}
+
+scifir::radioactivity operator"" _kBq(long double x)
+{
+	return scifir::radioactivity(x, "kBq");
+}
+
+scifir::radioactivity operator"" _hBq(long double x)
+{
+	return scifir::radioactivity(x, "hBq");
+}
+
+scifir::radioactivity operator"" _daBq(long double x)
+{
+	return scifir::radioactivity(x, "daBq");
+}
+
+scifir::radioactivity operator"" _Bq(long double x)
+{
+	return scifir::radioactivity(x, "Bq");
+}
+
+scifir::radioactivity operator"" _dBq(long double x)
+{
+	return scifir::radioactivity(x, "dBq");
+}
+
+scifir::radioactivity operator"" _cBq(long double x)
+{
+	return scifir::radioactivity(x, "cBq");
+}
+
+scifir::radioactivity operator"" _mBq(long double x)
+{
+	return scifir::radioactivity(x, "mBq");
+}
+
+scifir::radioactivity operator"" _uBq(long double x)
+{
+	return scifir::radioactivity(x, "uBq");
+}
+
+scifir::radioactivity operator"" _nBq(long double x)
+{
+	return scifir::radioactivity(x, "nBq");
+}
+
+scifir::radioactivity operator"" _pBq(long double x)
+{
+	return scifir::radioactivity(x, "pBq");
+}
+
+scifir::radioactivity operator"" _fBq(long double x)
+{
+	return scifir::radioactivity(x, "fBq");
+}
+
+scifir::radioactivity operator"" _aBq(long double x)
+{
+	return scifir::radioactivity(x, "aBq");
+}
+
+scifir::radioactivity operator"" _zBq(long double x)
+{
+	return scifir::radioactivity(x, "zBq");
+}
+
+scifir::radioactivity operator"" _yBq(long double x)
+{
+	return scifir::radioactivity(x, "yBq");
+}
+
+scifir::ionizing_radiation operator"" _YGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "YGy");
+}
+
+scifir::ionizing_radiation operator"" _ZGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "ZGy");
+}
+
+scifir::ionizing_radiation operator"" _EGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "EGy");
+}
+
+scifir::ionizing_radiation operator"" _PGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "PGy");
+}
+
+scifir::ionizing_radiation operator"" _TGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "TGy");
+}
+
+scifir::ionizing_radiation operator"" _GGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "GGy");
+}
+
+scifir::ionizing_radiation operator"" _MGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "MGy");
+}
+
+scifir::ionizing_radiation operator"" _kGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "kGy");
+}
+
+scifir::ionizing_radiation operator"" _hGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "hGy");
+}
+
+scifir::ionizing_radiation operator"" _daGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "daGy");
+}
+
+scifir::ionizing_radiation operator"" _Gy(long double x)
+{
+	return scifir::ionizing_radiation(x, "Gy");
+}
+
+scifir::ionizing_radiation operator"" _dGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "dGy");
+}
+
+scifir::ionizing_radiation operator"" _cGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "cGy");
+}
+
+scifir::ionizing_radiation operator"" _mGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "mGy");
+}
+
+scifir::ionizing_radiation operator"" _uGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "uGy");
+}
+
+scifir::ionizing_radiation operator"" _nGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "nGy");
+}
+
+scifir::ionizing_radiation operator"" _pGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "pGy");
+}
+
+scifir::ionizing_radiation operator"" _fGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "fGy");
+}
+
+scifir::ionizing_radiation operator"" _aGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "aGy");
+}
+
+scifir::ionizing_radiation operator"" _zGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "zGy");
+}
+
+scifir::ionizing_radiation operator"" _yGy(long double x)
+{
+	return scifir::ionizing_radiation(x, "yGy");
+}
+
+scifir::ionizing_radiation operator"" _YSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "YSv");
+}
+
+scifir::ionizing_radiation operator"" _ZSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "ZSv");
+}
+
+scifir::ionizing_radiation operator"" _ESv(long double x)
+{
+	return scifir::ionizing_radiation(x, "ESv");
+}
+
+scifir::ionizing_radiation operator"" _PSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "PSv");
+}
+
+scifir::ionizing_radiation operator"" _TSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "TSv");
+}
+
+scifir::ionizing_radiation operator"" _GSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "GSv");
+}
+
+scifir::ionizing_radiation operator"" _MSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "MSv");
+}
+
+scifir::ionizing_radiation operator"" _kSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "kSv");
+}
+
+scifir::ionizing_radiation operator"" _hSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "hSv");
+}
+
+scifir::ionizing_radiation operator"" _daSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "daSv");
+}
+
+scifir::ionizing_radiation operator"" _Sv(long double x)
+{
+	return scifir::ionizing_radiation(x, "Sv");
+}
+
+scifir::ionizing_radiation operator"" _dSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "dSv");
+}
+
+scifir::ionizing_radiation operator"" _cSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "cSv");
+}
+
+scifir::ionizing_radiation operator"" _mSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "mSv");
+}
+
+scifir::ionizing_radiation operator"" _uSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "uSv");
+}
+
+scifir::ionizing_radiation operator"" _nSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "nSv");
+}
+
+scifir::ionizing_radiation operator"" _pSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "pSv");
+}
+
+scifir::ionizing_radiation operator"" _fSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "fSv");
+}
+
+scifir::ionizing_radiation operator"" _aSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "aSv");
+}
+
+scifir::ionizing_radiation operator"" _zSv(long double x)
+{
+	return scifir::ionizing_radiation(x, "zSv");
+}
+
+scifir::ionizing_radiation operator"" _ySv(long double x)
+{
+	return scifir::ionizing_radiation(x, "ySv");
+}
+
+scifir::catalytic_activity operator"" _Ykat(long double x)
+{
+	return scifir::catalytic_activity(x, "Ykat");
+}
+
+scifir::catalytic_activity operator"" _Zkat(long double x)
+{
+	return scifir::catalytic_activity(x, "Zkat");
+}
+
+scifir::catalytic_activity operator"" _Ekat(long double x)
+{
+	return scifir::catalytic_activity(x, "Ekat");
+}
+
+scifir::catalytic_activity operator"" _Pkat(long double x)
+{
+	return scifir::catalytic_activity(x, "Pkat");
+}
+
+scifir::catalytic_activity operator"" _Tkat(long double x)
+{
+	return scifir::catalytic_activity(x, "Tkat");
+}
+
+scifir::catalytic_activity operator"" _Gkat(long double x)
+{
+	return scifir::catalytic_activity(x, "Gkat");
+}
+
+scifir::catalytic_activity operator"" _Mkat(long double x)
+{
+	return scifir::catalytic_activity(x, "Mkat");
+}
+
+scifir::catalytic_activity operator"" _kkat(long double x)
+{
+	return scifir::catalytic_activity(x, "kkat");
+}
+
+scifir::catalytic_activity operator"" _hkat(long double x)
+{
+	return scifir::catalytic_activity(x, "hkat");
+}
+
+scifir::catalytic_activity operator"" _dakat(long double x)
+{
+	return scifir::catalytic_activity(x, "dakat");
+}
+
+scifir::catalytic_activity operator"" _kat(long double x)
+{
+	return scifir::catalytic_activity(x, "kat");
+}
+
+scifir::catalytic_activity operator"" _dkat(long double x)
+{
+	return scifir::catalytic_activity(x, "dkat");
+}
+
+scifir::catalytic_activity operator"" _ckat(long double x)
+{
+	return scifir::catalytic_activity(x, "ckat");
+}
+
+scifir::catalytic_activity operator"" _mkat(long double x)
+{
+	return scifir::catalytic_activity(x, "mkat");
+}
+
+scifir::catalytic_activity operator"" _ukat(long double x)
+{
+	return scifir::catalytic_activity(x, "ukat");
+}
+
+scifir::catalytic_activity operator"" _nkat(long double x)
+{
+	return scifir::catalytic_activity(x, "nkat");
+}
+
+scifir::catalytic_activity operator"" _pkat(long double x)
+{
+	return scifir::catalytic_activity(x, "pkat");
+}
+
+scifir::catalytic_activity operator"" _fkat(long double x)
+{
+	return scifir::catalytic_activity(x, "fkat");
+}
+
+scifir::catalytic_activity operator"" _akat(long double x)
+{
+	return scifir::catalytic_activity(x, "akat");
+}
+
+scifir::catalytic_activity operator"" _zkat(long double x)
+{
+	return scifir::catalytic_activity(x, "zkat");
+}
+
+scifir::catalytic_activity operator"" _ykat(long double x)
+{
+	return scifir::catalytic_activity(x, "ykat");
+}
+
+scifir::length operator"" _angstrom(long double x)
+{
+	return scifir::length(x, "angstrom");
+}
+
+scifir::volume operator"" _L(long double x)
+{
+	return scifir::volume(x, "L");
+}
+
+scifir::volume operator"" _mL(long double x)
+{
+	return scifir::volume(x, "mL");
 }
 
 scifir::time_duration operator"" _min(long double x)
@@ -4612,557 +4612,557 @@ scifir::time_duration operator"" _day(long double x)
 	return scifir::time_duration(x, "day");
 }
 
-length operator"" _YAU(long double x)
+scifir::length operator"" _YAU(long double x)
 {
-	return length(x, "YAU");
+	return scifir::length(x, "YAU");
 }
 
-length operator"" _ZAU(long double x)
+scifir::length operator"" _ZAU(long double x)
 {
-	return length(x, "ZAU");
+	return scifir::length(x, "ZAU");
 }
 
-length operator"" _EAU(long double x)
+scifir::length operator"" _EAU(long double x)
 {
-	return length(x, "EAU");
+	return scifir::length(x, "EAU");
 }
 
-length operator"" _PAU(long double x)
+scifir::length operator"" _PAU(long double x)
 {
-	return length(x, "PAU");
+	return scifir::length(x, "PAU");
 }
 
-length operator"" _TAU(long double x)
+scifir::length operator"" _TAU(long double x)
 {
-	return length(x, "TAU");
+	return scifir::length(x, "TAU");
 }
 
-length operator"" _GAU(long double x)
+scifir::length operator"" _GAU(long double x)
 {
-	return length(x, "GAU");
+	return scifir::length(x, "GAU");
 }
 
-length operator"" _MAU(long double x)
+scifir::length operator"" _MAU(long double x)
 {
-	return length(x, "MAU");
+	return scifir::length(x, "MAU");
 }
 
-length operator"" _kAU(long double x)
+scifir::length operator"" _kAU(long double x)
 {
-	return length(x, "kAU");
+	return scifir::length(x, "kAU");
 }
 
-length operator"" _hAU(long double x)
+scifir::length operator"" _hAU(long double x)
 {
-	return length(x, "hAU");
+	return scifir::length(x, "hAU");
 }
 
-length operator"" _daAU(long double x)
+scifir::length operator"" _daAU(long double x)
 {
-	return length(x, "daAU");
+	return scifir::length(x, "daAU");
 }
 
-length operator"" _AU(long double x)
+scifir::length operator"" _AU(long double x)
 {
-	return length(x, "AU");
+	return scifir::length(x, "AU");
 }
 
-length operator"" _dAU(long double x)
+scifir::length operator"" _dAU(long double x)
 {
-	return length(x, "dAU");
+	return scifir::length(x, "dAU");
 }
 
-length operator"" _cAU(long double x)
+scifir::length operator"" _cAU(long double x)
 {
-	return length(x, "cAU");
+	return scifir::length(x, "cAU");
 }
 
-length operator"" _mAU(long double x)
+scifir::length operator"" _mAU(long double x)
 {
-	return length(x, "mAU");
+	return scifir::length(x, "mAU");
 }
 
-length operator"" _uAU(long double x)
+scifir::length operator"" _uAU(long double x)
 {
-	return length(x, "uAU");
+	return scifir::length(x, "uAU");
 }
 
-length operator"" _nAU(long double x)
+scifir::length operator"" _nAU(long double x)
 {
-	return length(x, "nAU");
+	return scifir::length(x, "nAU");
 }
 
-length operator"" _pAU(long double x)
+scifir::length operator"" _pAU(long double x)
 {
-	return length(x, "pAU");
+	return scifir::length(x, "pAU");
 }
 
-length operator"" _fAU(long double x)
+scifir::length operator"" _fAU(long double x)
 {
-	return length(x, "fAU");
+	return scifir::length(x, "fAU");
 }
 
-length operator"" _aAU(long double x)
+scifir::length operator"" _aAU(long double x)
 {
-	return length(x, "aAU");
+	return scifir::length(x, "aAU");
 }
 
-length operator"" _zAU(long double x)
+scifir::length operator"" _zAU(long double x)
 {
-	return length(x, "zAU");
+	return scifir::length(x, "zAU");
 }
 
-length operator"" _yAU(long double x)
+scifir::length operator"" _yAU(long double x)
 {
-	return length(x, "yAU");
+	return scifir::length(x, "yAU");
 }
 
-length operator"" _Ypc(long double x)
+scifir::length operator"" _Ypc(long double x)
 {
-	return length(x, "Ypc");
+	return scifir::length(x, "Ypc");
 }
 
-length operator"" _Zpc(long double x)
+scifir::length operator"" _Zpc(long double x)
 {
-	return length(x, "Zpc");
+	return scifir::length(x, "Zpc");
 }
 
-length operator"" _Epc(long double x)
+scifir::length operator"" _Epc(long double x)
 {
-	return length(x, "Epc");
+	return scifir::length(x, "Epc");
 }
 
-length operator"" _Ppc(long double x)
+scifir::length operator"" _Ppc(long double x)
 {
-	return length(x, "Ppc");
+	return scifir::length(x, "Ppc");
 }
 
-length operator"" _Tpc(long double x)
+scifir::length operator"" _Tpc(long double x)
 {
-	return length(x, "Tpc");
+	return scifir::length(x, "Tpc");
 }
 
-length operator"" _Gpc(long double x)
+scifir::length operator"" _Gpc(long double x)
 {
-	return length(x, "Gpc");
+	return scifir::length(x, "Gpc");
 }
 
-length operator"" _Mpc(long double x)
+scifir::length operator"" _Mpc(long double x)
 {
-	return length(x, "Mpc");
+	return scifir::length(x, "Mpc");
 }
 
-length operator"" _kpc(long double x)
+scifir::length operator"" _kpc(long double x)
 {
-	return length(x, "kpc");
+	return scifir::length(x, "kpc");
 }
 
-length operator"" _hpc(long double x)
+scifir::length operator"" _hpc(long double x)
 {
-	return length(x, "hpc");
+	return scifir::length(x, "hpc");
 }
 
-length operator"" _dapc(long double x)
+scifir::length operator"" _dapc(long double x)
 {
-	return length(x, "dapc");
+	return scifir::length(x, "dapc");
 }
 
-length operator"" _pc(long double x)
+scifir::length operator"" _pc(long double x)
 {
-	return length(x, "pc");
+	return scifir::length(x, "pc");
 }
 
-length operator"" _dpc(long double x)
+scifir::length operator"" _dpc(long double x)
 {
-	return length(x, "dpc");
+	return scifir::length(x, "dpc");
 }
 
-length operator"" _cpc(long double x)
+scifir::length operator"" _cpc(long double x)
 {
-	return length(x, "cpc");
+	return scifir::length(x, "cpc");
 }
 
-length operator"" _mpc(long double x)
+scifir::length operator"" _mpc(long double x)
 {
-	return length(x, "mpc");
+	return scifir::length(x, "mpc");
 }
 
-length operator"" _upc(long double x)
+scifir::length operator"" _upc(long double x)
 {
-	return length(x, "upc");
+	return scifir::length(x, "upc");
 }
 
-length operator"" _npc(long double x)
+scifir::length operator"" _npc(long double x)
 {
-	return length(x, "npc");
+	return scifir::length(x, "npc");
 }
 
-length operator"" _ppc(long double x)
+scifir::length operator"" _ppc(long double x)
 {
-	return length(x, "ppc");
+	return scifir::length(x, "ppc");
 }
 
-length operator"" _fpc(long double x)
+scifir::length operator"" _fpc(long double x)
 {
-	return length(x, "fpc");
+	return scifir::length(x, "fpc");
 }
 
-length operator"" _apc(long double x)
+scifir::length operator"" _apc(long double x)
 {
-	return length(x, "apc");
+	return scifir::length(x, "apc");
 }
 
-length operator"" _zpc(long double x)
+scifir::length operator"" _zpc(long double x)
 {
-	return length(x, "zpc");
+	return scifir::length(x, "zpc");
 }
 
-length operator"" _ypc(long double x)
+scifir::length operator"" _ypc(long double x)
 {
-	return length(x, "ypc");
+	return scifir::length(x, "ypc");
 }
 
-energy operator"" _YeV(long double x)
+scifir::energy operator"" _YeV(long double x)
 {
-	return energy(x, "YeV");
+	return scifir::energy(x, "YeV");
 }
 
-energy operator"" _ZeV(long double x)
+scifir::energy operator"" _ZeV(long double x)
 {
-	return energy(x, "ZeV");
+	return scifir::energy(x, "ZeV");
 }
 
-energy operator"" _EeV(long double x)
+scifir::energy operator"" _EeV(long double x)
 {
-	return energy(x, "EeV");
+	return scifir::energy(x, "EeV");
 }
 
-energy operator"" _PeV(long double x)
+scifir::energy operator"" _PeV(long double x)
 {
-	return energy(x, "PeV");
+	return scifir::energy(x, "PeV");
 }
 
-energy operator"" _TeV(long double x)
+scifir::energy operator"" _TeV(long double x)
 {
-	return energy(x, "TeV");
+	return scifir::energy(x, "TeV");
 }
 
-energy operator"" _GeV(long double x)
+scifir::energy operator"" _GeV(long double x)
 {
-	return energy(x, "GeV");
+	return scifir::energy(x, "GeV");
 }
 
-energy operator"" _MeV(long double x)
+scifir::energy operator"" _MeV(long double x)
 {
-	return energy(x, "MeV");
+	return scifir::energy(x, "MeV");
 }
 
-energy operator"" _keV(long double x)
+scifir::energy operator"" _keV(long double x)
 {
-	return energy(x, "keV");
+	return scifir::energy(x, "keV");
 }
 
-energy operator"" _heV(long double x)
+scifir::energy operator"" _heV(long double x)
 {
-	return energy(x, "heV");
+	return scifir::energy(x, "heV");
 }
 
-energy operator"" _daeV(long double x)
+scifir::energy operator"" _daeV(long double x)
 {
-	return energy(x, "daeV");
+	return scifir::energy(x, "daeV");
 }
 
-energy operator"" _eV(long double x)
+scifir::energy operator"" _eV(long double x)
 {
-	return energy(x, "eV");
+	return scifir::energy(x, "eV");
 }
 
-energy operator"" _deV(long double x)
+scifir::energy operator"" _deV(long double x)
 {
-	return energy(x, "deV");
+	return scifir::energy(x, "deV");
 }
 
-energy operator"" _ceV(long double x)
+scifir::energy operator"" _ceV(long double x)
 {
-	return energy(x, "ceV");
+	return scifir::energy(x, "ceV");
 }
 
-energy operator"" _meV(long double x)
+scifir::energy operator"" _meV(long double x)
 {
-	return energy(x, "meV");
+	return scifir::energy(x, "meV");
 }
 
-energy operator"" _ueV(long double x)
+scifir::energy operator"" _ueV(long double x)
 {
-	return energy(x, "ueV");
+	return scifir::energy(x, "ueV");
 }
 
-energy operator"" _neV(long double x)
+scifir::energy operator"" _neV(long double x)
 {
-	return energy(x, "neV");
+	return scifir::energy(x, "neV");
 }
 
-energy operator"" _peV(long double x)
+scifir::energy operator"" _peV(long double x)
 {
-	return energy(x, "peV");
+	return scifir::energy(x, "peV");
 }
 
-energy operator"" _feV(long double x)
+scifir::energy operator"" _feV(long double x)
 {
-	return energy(x, "feV");
+	return scifir::energy(x, "feV");
 }
 
-energy operator"" _aeV(long double x)
+scifir::energy operator"" _aeV(long double x)
 {
-	return energy(x, "aeV");
+	return scifir::energy(x, "aeV");
 }
 
-energy operator"" _zeV(long double x)
+scifir::energy operator"" _zeV(long double x)
 {
-	return energy(x, "zeV");
+	return scifir::energy(x, "zeV");
 }
 
-energy operator"" _yeV(long double x)
+scifir::energy operator"" _yeV(long double x)
 {
-	return energy(x, "yeV");
+	return scifir::energy(x, "yeV");
 }
 
-mass operator"" _Da(long double x)
+scifir::mass operator"" _Da(long double x)
 {
-	return mass(x, "Da");
+	return scifir::mass(x, "Da");
 }
 
-mass operator"" _amu(long double x)
+scifir::mass operator"" _amu(long double x)
 {
-	return mass(x, "amu");
+	return scifir::mass(x, "amu");
 }
 
-area operator"" _Yb(long double x)
+scifir::area operator"" _Yb(long double x)
 {
-	return area(x, "Yb");
+	return scifir::area(x, "Yb");
 }
 
-area operator"" _Zb(long double x)
+scifir::area operator"" _Zb(long double x)
 {
-	return area(x, "Zb");
+	return scifir::area(x, "Zb");
 }
 
-area operator"" _Eb(long double x)
+scifir::area operator"" _Eb(long double x)
 {
-	return area(x, "Eb");
+	return scifir::area(x, "Eb");
 }
 
-area operator"" _Pb(long double x)
+scifir::area operator"" _Pb(long double x)
 {
-	return area(x, "Pb");
+	return scifir::area(x, "Pb");
 }
 
-area operator"" _Tb(long double x)
+scifir::area operator"" _Tb(long double x)
 {
-	return area(x, "Tb");
+	return scifir::area(x, "Tb");
 }
 
-area operator"" _Gb(long double x)
+scifir::area operator"" _Gb(long double x)
 {
-	return area(x, "Gb");
+	return scifir::area(x, "Gb");
 }
 
-area operator"" _Mb(long double x)
+scifir::area operator"" _Mb(long double x)
 {
-	return area(x, "Mb");
+	return scifir::area(x, "Mb");
 }
 
-area operator"" _kb(long double x)
+scifir::area operator"" _kb(long double x)
 {
-	return area(x, "kb");
+	return scifir::area(x, "kb");
 }
 
-area operator"" _hb(long double x)
+scifir::area operator"" _hb(long double x)
 {
-	return area(x, "hb");
+	return scifir::area(x, "hb");
 }
 
-area operator"" _dab(long double x)
+scifir::area operator"" _dab(long double x)
 {
-	return area(x, "dab");
+	return scifir::area(x, "dab");
 }
 
-area operator"" _b(long double x)
+scifir::area operator"" _b(long double x)
 {
-	return area(x, "b");
+	return scifir::area(x, "b");
 }
 
-area operator"" _db(long double x)
+scifir::area operator"" _db(long double x)
 {
-	return area(x, "db");
+	return scifir::area(x, "db");
 }
 
-area operator"" _cb(long double x)
+scifir::area operator"" _cb(long double x)
 {
-	return area(x, "cb");
+	return scifir::area(x, "cb");
 }
 
-area operator"" _mb(long double x)
+scifir::area operator"" _mb(long double x)
 {
-	return area(x, "mb");
+	return scifir::area(x, "mb");
 }
 
-area operator"" _ub(long double x)
+scifir::area operator"" _ub(long double x)
 {
-	return area(x, "ub");
+	return scifir::area(x, "ub");
 }
 
-area operator"" _nb(long double x)
+scifir::area operator"" _nb(long double x)
 {
-	return area(x, "nb");
+	return scifir::area(x, "nb");
 }
 
-area operator"" _pb(long double x)
+scifir::area operator"" _pb(long double x)
 {
-	return area(x, "pb");
+	return scifir::area(x, "pb");
 }
 
-area operator"" _fb(long double x)
+scifir::area operator"" _fb(long double x)
 {
-	return area(x, "fb");
+	return scifir::area(x, "fb");
 }
 
-area operator"" _ab(long double x)
+scifir::area operator"" _ab(long double x)
 {
-	return area(x, "ab");
+	return scifir::area(x, "ab");
 }
 
-area operator"" _zb(long double x)
+scifir::area operator"" _zb(long double x)
 {
-	return area(x, "zb");
+	return scifir::area(x, "zb");
 }
 
-area operator"" _yb(long double x)
+scifir::area operator"" _yb(long double x)
 {
-	return area(x, "yb");
+	return scifir::area(x, "yb");
 }
 
-molarity operator"" _YM(long double x)
+scifir::molarity operator"" _YM(long double x)
 {
-	return molarity(x, "YM");
+	return scifir::molarity(x, "YM");
 }
 
-molarity operator"" _ZM(long double x)
+scifir::molarity operator"" _ZM(long double x)
 {
-	return molarity(x, "ZM");
+	return scifir::molarity(x, "ZM");
 }
 
-molarity operator"" _EM(long double x)
+scifir::molarity operator"" _EM(long double x)
 {
-	return molarity(x, "EM");
+	return scifir::molarity(x, "EM");
 }
 
-molarity operator"" _PM(long double x)
+scifir::molarity operator"" _PM(long double x)
 {
-	return molarity(x, "PM");
+	return scifir::molarity(x, "PM");
 }
 
-molarity operator"" _TM(long double x)
+scifir::molarity operator"" _TM(long double x)
 {
-	return molarity(x, "TM");
+	return scifir::molarity(x, "TM");
 }
 
-molarity operator"" _GM(long double x)
+scifir::molarity operator"" _GM(long double x)
 {
-	return molarity(x, "GM");
+	return scifir::molarity(x, "GM");
 }
 
-molarity operator"" _MM(long double x)
+scifir::molarity operator"" _MM(long double x)
 {
-	return molarity(x, "MM");
+	return scifir::molarity(x, "MM");
 }
 
-molarity operator"" _kM(long double x)
+scifir::molarity operator"" _kM(long double x)
 {
-	return molarity(x, "kM");
+	return scifir::molarity(x, "kM");
 }
 
-molarity operator"" _hM(long double x)
+scifir::molarity operator"" _hM(long double x)
 {
-	return molarity(x, "hM");
+	return scifir::molarity(x, "hM");
 }
 
-molarity operator"" _daM(long double x)
+scifir::molarity operator"" _daM(long double x)
 {
-	return molarity(x, "daM");
+	return scifir::molarity(x, "daM");
 }
 
-molarity operator"" _M(long double x)
+scifir::molarity operator"" _M(long double x)
 {
-	return molarity(x, "M");
+	return scifir::molarity(x, "M");
 }
 
-molarity operator"" _dM(long double x)
+scifir::molarity operator"" _dM(long double x)
 {
-	return molarity(x, "dM");
+	return scifir::molarity(x, "dM");
 }
 
-molarity operator"" _cM(long double x)
+scifir::molarity operator"" _cM(long double x)
 {
-	return molarity(x, "cM");
+	return scifir::molarity(x, "cM");
 }
 
-molarity operator"" _mM(long double x)
+scifir::molarity operator"" _mM(long double x)
 {
-	return molarity(x, "mM");
+	return scifir::molarity(x, "mM");
 }
 
-molarity operator"" _uM(long double x)
+scifir::molarity operator"" _uM(long double x)
 {
-	return molarity(x, "uM");
+	return scifir::molarity(x, "uM");
 }
 
-molarity operator"" _nM(long double x)
+scifir::molarity operator"" _nM(long double x)
 {
-	return molarity(x, "nM");
+	return scifir::molarity(x, "nM");
 }
 
-molarity operator"" _pM(long double x)
+scifir::molarity operator"" _pM(long double x)
 {
-	return molarity(x, "pM");
+	return scifir::molarity(x, "pM");
 }
 
-molarity operator"" _fM(long double x)
+scifir::molarity operator"" _fM(long double x)
 {
-	return molarity(x, "fM");
+	return scifir::molarity(x, "fM");
 }
 
-molarity operator"" _aM(long double x)
+scifir::molarity operator"" _aM(long double x)
 {
-	return molarity(x, "aM");
+	return scifir::molarity(x, "aM");
 }
 
-molarity operator"" _zM(long double x)
+scifir::molarity operator"" _zM(long double x)
 {
-	return molarity(x, "zM");
+	return scifir::molarity(x, "zM");
 }
 
-molarity operator"" _yM(long double x)
+scifir::molarity operator"" _yM(long double x)
 {
-	return molarity(x, "yM");
+	return scifir::molarity(x, "yM");
 }
 
-percentage operator"" _ppm(long double x)
+scifir::percentage operator"" _ppm(long double x)
 {
-	return percentage(x, "ppm");
+	return scifir::percentage(x, "ppm");
 }
 
-percentage operator"" _ppb(long double x)
+/*scifir::percentage operator"" _ppb(long double x)
 {
-	return percentage(x, "ppb");
+	return scifir::percentage(x, "ppb");
 }
 
-percentage operator"" _ppt(long double x)
+scifir::percentage operator"" _ppt(long double x)
 {
-	return percentage(x, "ppt");
+	return scifir::percentage(x, "ppt");
 }
 
-percentage operator"" _ppq(long double x)
+scifir::percentage operator"" _ppq(long double x)
 {
-	return percentage(x, "ppq");
-}
+	return scifir::percentage(x, "ppq");
+}*/
