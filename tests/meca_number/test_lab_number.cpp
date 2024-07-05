@@ -78,6 +78,25 @@ TEST_CASE("lab_number<> class") {
 		CHECK(to_string(a) == "10 g \u00B1 1 g");
 	}
 
+	SECTION("is_lab_number() function")
+	{
+		CHECK(is_lab_number("10 g \u00B1 2 g") == true);
+		CHECK(is_lab_number("0 g \u00B1 0 g") == true);
+		CHECK(is_lab_number("0.5 g \u00B1 0.2 g") == true);
+		CHECK(is_lab_number("10 g \u00B1 2 g \u00B1 3 g") == false);
+		CHECK(is_lab_number("0.4.1 g \u00B1 0..2 g") == false);
+		CHECK(is_lab_number("10g \u00B1 0.2 g") == false);
+		CHECK(is_lab_number("10 g2m \u00B1 0.2 g") == false);
+		CHECK(is_lab_number("10 2m \u00B1 0.2 g") == false);
+		CHECK(is_lab_number("15 g \u00B1 0..2 g") == false);
+		CHECK(is_lab_number("10 g \u00B1 2g") == false);
+		CHECK(is_lab_number("10 g \u00B1 2 g2m") == false);
+		CHECK(is_lab_number("10 m \u00B1 2 2g") == false);
+		CHECK(is_lab_number("30 g \u00B1") == false);
+		CHECK(is_lab_number("0 g") == false);
+		CHECK(is_lab_number("\u00B1") == false);
+	}
+
     SECTION("Comparison operators of lab_number<> class")
     {
         CHECK(bool(lab_number<mass>(15_g,2_g) == lab_number<mass>(15_g,2_g)));

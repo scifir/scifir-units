@@ -111,6 +111,8 @@ namespace scifir
 	{
 		return x.display(2);
 	}
+
+	bool is_lab_number(const string& init_lab_number);
 }
 
 template<typename T,typename U>
