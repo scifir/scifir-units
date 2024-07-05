@@ -8,19 +8,19 @@
     <detaileddescription>
 <para><anchor id="index_1md_README"/> <ulink url="https://github.com/scifir/scifir-units/actions/workflows/cmake.yml"><image type="html" name="https://github.com/scifir/scifir-units/actions/workflows/cmake.yml/badge.svg" alt="Linux build status" inline="yes"></image>
 </ulink></para>
-<para>Welcome! The <bold>Scifir Collection</bold> is a set of scientific libraries, written in <bold>C++</bold>, for developing <bold>laboratory machines</bold> and <bold>scientific inventions</bold>. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!</para>
+<para>Welcome! The <bold>Scifir Collection</bold> is a set of scientific libraries for developing <bold>laboratory machines</bold> and <bold>scientific inventions</bold>. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!</para>
 <para>The Scifir Collection is under development, but the units are already released. Molecules aren&apos;t, but they will by ready soon!</para>
 <para><bold>scifir-units</bold> includes units with dimensions to use, then it&apos;s unneeded to care about having the proper dimensions and prefixes when developing scientific software, you can instantiate any value you have on the machine, without performing operations with a calculator first to convert the units to a common prefix. Learn how to use them at the <ulink url="https://github.com/scifir/scifir-units/wiki">Wiki</ulink>. It&apos;s been developed under <bold>C++20</bold> and uses <bold>cmake</bold> as build automation tool. It&apos;s available for <bold>Linux distributions</bold> and <bold>Windows</bold>.</para>
 <para>The <bold>current version</bold> of scifir-units is the <bold>beta-version-2.0</bold>. The version 1.0 has never been released because the version 2.0 was better by a great extent. The version 2.0 includes a better inheritance system and a wide simplification of all the programming of the library and, then, a better compilation and a saving of RAM for each instantiation of each class. Because of that reason, the version 2.0 has been preferred over the version 1.0.</para>
-<sect2 id="index_1autotoc_md7">
+<sect2 id="index_1autotoc_md6">
 <title>Team</title>
 <para>The <bold>Scifir Collection</bold> is developed by <ulink url="https://iarfen.github.io">Ismael Correa Castro</ulink>, a software developer of 32 years old. You can email him if you find bugs, you want to request new features, or have any other need, at <ulink url="mailto:ismael.correa.castro@gmail.com">ismael.correa.castro@gmail.com</ulink>. His ORCID is 0009-0007-3815-7053, if you want to reference this work inside any publication.</para>
 </sect2>
-<sect2 id="index_1autotoc_md8">
+<sect2 id="index_1autotoc_md7">
 <title>Funding</title>
 <para>The <bold>Scifir Foundation</bold> is looking for <bold>funding</bold>, in order to do some digital marketing and pay some other needs of the project. If you want to support this libraries, <bold>science will thank you</bold> for that, you can donate in this <ulink url="https://github.com/sponsors/iarfen">sponsors page</ulink>.</para>
 </sect2>
-<sect1 id="index_1autotoc_md9">
+<sect1 id="index_1autotoc_md8">
 <title>Installation</title>
 <para>To install <bold>scifir-units</bold> you have to use <bold>CMake</bold> and <bold>make</bold>. scifir-units can be compiled with <bold>g++</bold>, <bold>clang++</bold> and <bold>msvc</bold>. Also, <bold>nvcc</bold> and <bold>dpcpp</bold> can also be used. The compilers for microcontrollers can also be used.</para>
 <para>scifir-units uses <bold>icu</bold> and <bold>boost</bold> libraries. Of boost, it uses boost-system. You have to install those two libraries in order to install scifir-units. To do so, use <bold>apt</bold> in Ubuntu and Debian, <bold>yum</bold> for Fedora and similar distributions, or another package manager if your Linux distribution doesn&apos;t use those two. Inside Windows, install those libraries through <bold>vcpkg</bold>, if you want to build scifir-units as lib or dll, or through <bold>mingw</bold>, if you want to use scifir-units as on Linux distributions.</para>
@@ -28,7 +28,7 @@
 <para>If you want to change the compiler to use you have to use the argument <bold>-DCMAKE_CXX_COMPILER</bold> in the first cmake command, the cmake command with the <ndash/>preset argument. There, you can specify, for example, -DCMAKE_CXX_COMPILER=clang++, to use the <bold>clang++</bold> compiler. You can also specify flags for the compiler using the argument <bold>-DCMAKE_CXX_FLAGS</bold>.</para>
 <para>The environment variables needed to be set in your operating system to build scifir-units vary depending on the preset you want to use. For Linux and the WSL (the Windows Subsystem for Linux), you don&apos;t need to set any environment variable. For Windows, that&apos;s, inside Windows but outside MinGW, you need to set <bold>VCPKG_ROOT</bold> to the installation directory of vcpkg and <bold>VCPKG_DEFAULT_TRIPLET</bold> to the default triplet you&apos;re using in that installation of vcpkg. For all builds using vcpkg, even outside Windows, you need to set VCPKG_ROOT and VCPKG_DEFAULT_TRIPLET, not only inside Windows. For MinGW you need to set <bold>MINGW64_DIR</bold> to the installation directory of MinGW. For Android NDK you need to set <bold>ANDROID_NDK_ROOT</bold> to the installation directory of the NDK version you&apos;re using (select the folder of the version, there can be more than one version of Android NDK installed in the same installation of Android SDK and Android Studio). To build for microcontrollers you don&apos;t need to set any environment variable, but you need to point CMAKE_CXX_COMPILER to the C++ compiler of the toolchain of the microcontroller you want, and set the flag -mmcu of your C++ compiler using CMAKE_CXX_FLAGS=&quot;-mmcu=&lt;mmcu-model&gt;&quot; to the model of your microcontroller.</para>
 <para>If, for any reason, you need to configure something inside your local installation of cmake to build scifir-units, or if you have any problem building scifir-units, check the documentation of cmake here: <ulink url="https://www.cmake.org/documentation">https://www.cmake.org/documentation</ulink>. cmake is a software easy to use, and you shouldn&apos;t need more than some days of study (thinking that you don&apos;t know cmake yet) to fully learn it.</para>
-<sect3 id="index_1autotoc_md10">
+<sect3 id="index_1autotoc_md9">
 <title>Configuring cmake for boost</title>
 <para>To build scifir-units you need to configure cmake to find boost with the module <bold>FindBoost.cmake</bold>. To do so, set the environment variables of cmake called <bold>CMAKE_INCLUDE_PATH</bold> to the include directory (usually **/usr/include** in Linux) and <bold>CMAKE_LIBRARY_PATH</bold> to the link directory (usually **/usr/lib** in Linux). The include directory usually doesn&apos;t change with Linux distributions, but the link directory does. The link directory can be, for example, **/usr/lib/x86_64-gnu-linux** in Debian, **/usr/lib64** in Fedora, **/usr/lib** in Arch Linux, other Linux distributions have others link directories.</para>
 <para>The link directories of various Linux distributions are the following, set CMAKE_LIBRARY_PATH based on the Linux distribution you&apos;re using to build scifir-units:</para>
@@ -51,7 +51,7 @@
 <para>${Boost_LIB_PREFIX}${Boost_NAMESPACE}_${component}${Boost_COMPILER}${Boost_USE_MULTITHREADED}${_boost_RELEASE_ABI_TAG}${Boost_ARCHITECTURE}-${Boost_LIB_VERSION}</para>
 <para>Just look at your boost libraries which name they have and set all those variables to those values.</para>
 </sect3>
-<sect2 id="index_1autotoc_md11">
+<sect2 id="index_1autotoc_md10">
 <title>Linux</title>
 <para>The commands to install scifir-units in Linux distribution are the following (it also works inside <bold>WSL</bold>):</para>
 <para><programlisting><codeline><highlight class="normal">cmake<sp/>--preset=linux</highlight></codeline>
@@ -60,7 +60,7 @@
 </programlisting></para>
 <para>Optionally, you can change the installation directory by setting <bold>CMAKE_INSTALL_PREFIX</bold> when running the first command. Set it using -DCMAKE_INSTALL_PREFIX=&lt;path-to-installation-directory&gt;.</para>
 </sect2>
-<sect2 id="index_1autotoc_md12">
+<sect2 id="index_1autotoc_md11">
 <title>Windows</title>
 <para>To install scifir-units inside Windows you have to specify a path to some Windows folder, the file <bold>scifir-units.lib</bold> will be installed there, and also the headers. You have to install using <bold>vcpkg</bold> the packages <bold>icu</bold> and <bold>boost_system</bold> in order to build the library. The commands are the following:</para>
 <para><programlisting><codeline><highlight class="normal">cmake<sp/>--preset=windows<sp/>-DCMAKE_INSTALL_PREFIX=&lt;path-to-windows-dir&gt;</highlight></codeline>
@@ -69,7 +69,7 @@
 </programlisting></para>
 <para>To compile for Windows Universal Applications, which targets both Windows Store and Windows Phone, you have to use the flags <bold>-DCMAKE_SYSTEM_NAME=WindowsStore</bold> and <bold>-DCMAKE_SYSTEM_VERSION=&quot;10.0&quot;</bold> with the first command (the command which specifies the preset). CMAKE_SYSTEM_VERSION can be higher than 10.0, but no lower.</para>
 </sect2>
-<sect2 id="index_1autotoc_md13">
+<sect2 id="index_1autotoc_md12">
 <title>MinGW</title>
 <para>To install scifir-units inside MinGW you have to configure <bold>MinGW</bold> with the environment variable <bold>MINGW64_DIR</bold>, which sets the path to the installation directory of MinGW. Inside MinGW you need to install <bold>icu</bold> and <bold>boost_system</bold>. Then, execute the following commands:</para>
 <para><programlisting><codeline><highlight class="normal">cmake<sp/>--preset=windows-mingw</highlight></codeline>
@@ -77,7 +77,7 @@
 <codeline><highlight class="normal">cmake<sp/>--install<sp/>./build/windows-mingw</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="index_1autotoc_md14">
+<sect2 id="index_1autotoc_md13">
 <title>MacOS and Apple devices</title>
 <para>scifir-units uses the XCode generator of cmake to compile for MacOS. You need to install icu and boost_system to build scifir-units inside MacOS. The commands to compile and install scifir-units inside MacOS are the following:</para>
 <para><programlisting><codeline><highlight class="normal">cmake<sp/>--preset=macos</highlight></codeline>
@@ -86,7 +86,7 @@
 </programlisting></para>
 <para>To compile scifir-units for iOS, tvOS, visionOS or watchOS you must add the flag <bold>-DCMAKE_SYSTEM_NAME=&lt;os-name&gt;</bold> to the first command (the command which specifies the preset). Optionally, you can also use the flag <bold>-DCMAKE_OSX_ARCHITECTURES</bold> to specify the architecture of the device or the simulator.</para>
 </sect2>
-<sect2 id="index_1autotoc_md15">
+<sect2 id="index_1autotoc_md14">
 <title>vcpkg</title>
 <para>scifir-units can be compiled with vcpkg inside every triplet of vcpkg, not only inside Windows. To do that, after installing icu and boost_system in vcpkg, use the following commands:</para>
 <para><programlisting><codeline><highlight class="normal">cmake<sp/>--preset=vcpkg</highlight></codeline>
@@ -94,7 +94,7 @@
 <codeline><highlight class="normal">cmake<sp/>--install<sp/>./build/vcpkg</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="index_1autotoc_md16">
+<sect2 id="index_1autotoc_md15">
 <title>Android</title>
 <para>First, set <bold>ANDROID_HOME</bold> and <bold>ANDROID_NDK_ROOT</bold> to the paths of your Android SDK installation and of your Android NDK installation. After that, install vcpkg, and set the environment variable <bold>VCPKG_ROOT</bold> to the installation directory of vcpkg. Set also the environment variable <bold>VCPKG_DEFAULT_TRIPLET</bold> to be the triplet of the computer you&apos;re using to build scifir-units. Finally, to compile scifir-units to work inside an Android application that uses Android NDK for that purpose, you have to use the following commands:</para>
 <para><programlisting><codeline><highlight class="normal">cmake<sp/>--preset=android<sp/>-DCMAKE_INSTALL_PREFIX=&lt;path-to-android-project&gt;</highlight></codeline>
@@ -104,26 +104,26 @@
 <para>After building scifir-units you have to move the library file to your Android project. Inside Android Studio, create the JNI folder under the right-click menu of the <bold>app folder</bold>, under the option <bold>New &gt; Folder &gt; JNI Folder</bold>. Inside the jni folder, you should create a folder for each <bold>Android ABI</bold> existing, and add scifir-units there compiled for that Android ABI by using the option <bold>-DANDROID_ABI</bold> of this cmake configuration. Search all Android ABIs existing and compile this library for each of them, in order to have your Android application working on all Android devices.</para>
 <para>The include path for scifir-units inside your Android Studio project should be the same as the linux distribution, vcpkg or mingw, use the same as always. The headers of scifir-units, then, as any C++ library for Android, doesn&apos;t need to be copied inside your Android project and, then, they aren&apos;t part of the final <bold>APK file</bold>.</para>
 </sect2>
-<sect2 id="index_1autotoc_md17">
+<sect2 id="index_1autotoc_md16">
 <title>Microcontrollers</title>
 <para>For electronics, you can build scifir-units using the compiler of your microcontroller, which comes with the SDK of your microcontroller. You have to specify, using the option <bold>-DCMAKE_CXX_COMPILER</bold>, the compiler to use, and, also, you have to use the option <bold>-DCMAKE_CXX_FLAGS=&quot;-mmcu=&lt;microcontroller-model&gt;&quot;</bold> to specify the model of your microcontroller in order for your compiler to know for which microcontroller model to compile.</para>
 <para>The SDK of microcontrollers can be downloaded on the website of the vendor of the microcontroller, which can be <bold>Microchip</bold>, <bold>STMicroelectronics</bold>, or any other.</para>
 </sect2>
-<sect2 id="index_1autotoc_md18">
+<sect2 id="index_1autotoc_md17">
 <title>cpack</title>
 <para>If you need to package scifir-units into any format supported by cpack, you just need to use the preset that you&apos;ve previously used to build scifir-units.</para>
 <para><programlisting><codeline><highlight class="normal">cpack<sp/>--preset=&lt;your-preset&gt;<sp/>-G<sp/>&lt;generator-needed&gt;</highlight></codeline>
 </programlisting></para>
 <para>You can type the command <bold>cpack <ndash/>help</bold> to check all available generators.</para>
 </sect2>
-<sect2 id="index_1autotoc_md19">
+<sect2 id="index_1autotoc_md18">
 <title>ctest</title>
 <para>You can test scifir-units executing ctest if you want. It&apos;s not needed to execute those tests in your local computer, but you can do it if for any reason you find it helpful. To build the tests, add the flags <bold>-DBUILD_TESTING=ON</bold> to the first preset command, in order to set the variable BUILD_TESTING to ON, that variable configures the build to build also all the tests.</para>
 <para><programlisting><codeline><highlight class="normal">ctest<sp/>--preset=&lt;your-preset&gt;</highlight></codeline>
 </programlisting></para>
 </sect2>
 </sect1>
-<sect1 id="index_1autotoc_md20">
+<sect1 id="index_1autotoc_md19">
 <title>Using the library</title>
 <para>First you have to link <bold>scifir-units</bold> to your project. To link scifir-units, after installing it following the steps above, add the following code inside your CMakeLists.txt file:</para>
 <para><programlisting><codeline><highlight class="normal">target_link_libraries(your-project<sp/>scifir-units)</highlight></codeline>
@@ -132,7 +132,7 @@
 <para><programlisting><codeline><highlight class="normal">#include<sp/>&quot;scifir/units.hpp&quot;</highlight></codeline>
 </programlisting></para>
 </sect1>
-<sect1 id="index_1autotoc_md21">
+<sect1 id="index_1autotoc_md20">
 <title>Introduction</title>
 <para>The Scifir Collection is a set of libraries that allows to create the software of scientific inventions, being them scientific machines or just scientific software. This library, scifir-units, allows to handle scalar and vectorial units inside the code. They are very lightweight, they size similar to a float, and can be used extensively to do any math calculation necessary for the invention. The prefixes can be changed, in order to display the units in the more proper dimensions. Also, all the conversions known are supported. Then, instead of the meter, a length can be described by a light-year, an astronomical unit (AU), among other units of measure.</para>
 <para>The unit classes that scifir-units provides are the following:</para>
@@ -146,7 +146,7 @@
 <para>scalar_unit classes can be used both for scalar units and vector units in 1D. In the case of vector units in 1D, a negative value indicates, as on math, that it points to the left on the x axis. Otherwise, if the value is positive, it points to the right.</para>
 <para>All the unit classes have fixed dimensions. Once instantiated, they can&apos;t change to a different set of dimensions. Besides that, prefixes and abbreviations can be used freely, every unit can change to any other prefix and use any abbreviation that matches the original dimensions (and no other set of dimensions).</para>
 <para>There are also special units inside scifir-units. Those special units are aid, color, percentage, pH, pixel, pOH, size_2d, size_3d, size_nd and zid. <bold>Always prefer pH</bold> over pOH, pOH is provided by the library only for very infrequent cases.</para>
-<sect2 id="index_1autotoc_md22">
+<sect2 id="index_1autotoc_md21">
 <title>Class list</title>
 <para>The most important classes are the scalar units and the vector units. Vector units are in 2D, 3D and ND (a variable number of dimensions).</para>
 <para><itemizedlist>
@@ -230,7 +230,7 @@
 </listitem></itemizedlist>
 </para>
 </sect2>
-<sect2 id="index_1autotoc_md23">
+<sect2 id="index_1autotoc_md22">
 <title>Data conventions</title>
 <para>It&apos;s mandatory to follow the <bold>data conventions</bold> of Scifir when using scifir-units, which is used not only for this library but also for every Scifir project. The data conventions of Scifir allow to handle data easy without multiple interpretations of the meaning of any value, because it doesn&apos;t has ambiguities.</para>
 <para>The conventions are the following:</para>
@@ -253,20 +253,20 @@
 </listitem></itemizedlist>
 </para>
 </sect2>
-<sect2 id="index_1autotoc_md24">
+<sect2 id="index_1autotoc_md23">
 <title>Consumption of memory</title>
 <para>The scalar_unit and vector unit classes, vector_unid_2d, vector_unid_3d and vector_unit_nd size more than a single float, which uses 4 bytes, but don&apos;t size a big amount and so, they can be used in great quantities for any purpose, cause they are very lightweight.</para>
 <para>The angle class uses only 4 bytes, and works perfectly fine, very similar to a normal float. Then, you can use it freely every time you need to do calculations that need angles.</para>
 </sect2>
 </sect1>
-<sect1 id="index_1autotoc_md25">
+<sect1 id="index_1autotoc_md24">
 <title>Core functionalities</title>
 <para>All the classes of scifir-units are inside the <bold>namespace scifir</bold>, as with all libraries of the <bold>Scifir Collection</bold>. So, to use any of this classes, like angle, you have to type any of the following codes:</para>
 <para><programlisting filename=".cpp"><codeline><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">scifir;<sp/></highlight><highlight class="comment">//<sp/>Maybe<sp/>this<sp/>is<sp/>usually<sp/>the<sp/>better<sp/>choice</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref><sp/>a;<sp/></highlight><highlight class="comment">//<sp/>You<sp/>can<sp/>use<sp/>the<sp/>namespace<sp/>directly</highlight></codeline>
 </programlisting></para>
 <para>All the example code presented here is written assuming you know this namespace scifir.</para>
-<sect2 id="index_1autotoc_md26">
+<sect2 id="index_1autotoc_md25">
 <title>Initialization strings</title>
 <para>All the unit classes, and also the other related classes of this library, can be constructed with what is called here an <bold>initialization string</bold>. An initialization string is an string used to instantiate the class, and it&apos;s also used when converting the class to an string for any purpose (like printing it on the screen).</para>
 <para>The initialization strings are the following:</para>
@@ -291,15 +291,15 @@
 </para>
 <para>In order to store units inside a file an initialization string should be used. For any purpose, when converting some of those classes to an string, the string initialization has to be always used.</para>
 </sect2>
-<sect2 id="index_1autotoc_md27">
+<sect2 id="index_1autotoc_md26">
 <title>Space</title>
 <para>Inside scifir-units the space can be measured with float or with length. Secondarily, any scalar_unit can be used as measure of space, because inside science there are modelings of imaginary spaces, where the length is not used. Because of that reason, all coordinates and point classes are template classes that accept floats or scalar_unit classes.</para>
 </sect2>
-<sect2 id="index_1autotoc_md28">
+<sect2 id="index_1autotoc_md27">
 <title>Dimensions</title>
 <para>Inside scifir-units a <bold>basic dimension</bold> is a dimension considered basic under the SI system of units. Different to that, a <bold>simple dimension</bold> is a dimension without any derived dimension. That&apos;s, it&apos;s a dimension that&apos;s not an abbreviation of two or more other dimensions.</para>
 </sect2>
-<sect2 id="index_1autotoc_md29">
+<sect2 id="index_1autotoc_md28">
 <title>Angle</title>
 <para>An angle object manages angles. It stores angles in grades, rather than in radians. It can be initialized to any grade between 0 and 360 (without including 360, cause this is identical to 0 in meaning), and any initialization that&apos;s not inside this range of values gets automatically converted inside it, to his equivalent value between the range.</para>
 <para>An example of use of angle is the following:</para>
@@ -342,7 +342,7 @@
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y<sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>(x);<sp/></highlight><highlight class="comment">//<sp/>Angles<sp/>can<sp/>be<sp/>converted<sp/>to<sp/>float</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="index_1autotoc_md30">
+<sect2 id="index_1autotoc_md29">
 <title>Scalar units</title>
 <para>Scalar units and vector units are the central objects of scifir-units. They store a value and a set of dimensions, as units on science do. Scalar units are just normal values, while vector units have a value and a direction to which the vector points to.</para>
 <para>Scalar units can operate with other scalar units, as well as with numeric primitive types. Functions like abs(), sqrt() and to_string() are supported. They have functions to operate with strings, and functions to operate with streams.</para>
@@ -483,7 +483,7 @@
 </para>
 <para>There are also derived dimensions of those basic dimensions, which are documented in the reference. Yet, you should memorize all those basic dimensions.</para>
 </sect2>
-<sect2 id="index_1autotoc_md31">
+<sect2 id="index_1autotoc_md30">
 <title>Vector units in 2D</title>
 <para>Vector units in 2D allow to do calculations for lab machines and simulations of physics and other areas of science in 2 dimensions. They inherit scalar_unit, and additional to his member-variables they include the member-variable theta, of class angle (described above).</para>
 <para>An example of use of it is the following:</para>
@@ -551,7 +551,7 @@
 <codeline><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">cin</ref><sp/>&gt;&gt;<sp/>a;<sp/></highlight><highlight class="comment">//<sp/>Initializes<sp/>a<sp/>with<sp/>the<sp/>string<sp/>given<sp/>to<sp/>cin</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="index_1autotoc_md32">
+<sect2 id="index_1autotoc_md31">
 <title>Vector units in 3D</title>
 <para>Vector units in 3D are the most useful vectorial units. They allow to do all the simulations of physics and any other area of science in 3D, which is the most common scenario. To work, they have, as vector_unit_2d, a value, dimensions, and an angle theta, but they include the angle phi. So, they work as spherical coordinates, having cartesian projections for each axis. The class vector_unit_3d inherits from scalar_unit, as vector_unit_2d, but not from vector_unit_2d, evading math errors that would be derived from that, because 2D and 3D dimensions are not mathematically equivalent in 2D (when projecting the x and y axis there appears the angle phi on the equations for the 3D cases).</para>
 <para>An example of use is the following:</para>
@@ -622,7 +622,7 @@
 <codeline><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">cin</ref><sp/>&gt;&gt;<sp/>a;<sp/></highlight><highlight class="comment">//<sp/>Initializes<sp/>a<sp/>with<sp/>the<sp/>string<sp/>given<sp/>to<sp/>cin</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="index_1autotoc_md33">
+<sect2 id="index_1autotoc_md32">
 <title>Vector units in ND</title>
 <para>Vector units in ND are very interesting vector units. They allow to operate in ND, which means, inside scifir-units, that the dimensions can be changed. ND allows to operate in 1D, 2D, 3D and more dimensions at the same time. The way they allow that is with a vector&lt;angle&gt; member-variable, which allows to control the angles of the n dimensions were the vector operates. For 2D it has one angle, as vector_unit_2d, and for 3D it has two angles, as vector_unit_3d. For 1D it doesn&apos;t has any angle.</para>
 <para>An example of use is the following:</para>
@@ -699,7 +699,7 @@
 <codeline><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">cin</ref><sp/>&gt;&gt;<sp/>a;<sp/></highlight><highlight class="comment">//<sp/>Initializes<sp/>a<sp/>with<sp/>the<sp/>string<sp/>given<sp/>to<sp/>cin</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="index_1autotoc_md34">
+<sect2 id="index_1autotoc_md33">
 <title>Coordinates and points in 1D</title>
 <para>Coordinates in 1D allow to move any object, particle, solid or immaterial, through a 1D space. The coordinates_1d class has been implemented as a template class, allowing to use any scalar_unit, or, also, a single float. Any scalar_unit can be used, because then coordinates_1d allows to move in dimensions different than length, as dimensions on some science-fiction speculations are (because on some science-fiction ideas, a dimension can be anything).</para>
 <para>point_1d is equivalent in functionality as coordinates_1d, it has the same member-variables and functions, its intended use is to be an abstract point in 1D, rather than a position in 1D (as coordinates_1d are).</para>
@@ -737,7 +737,7 @@
 <codeline><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">cin</ref><sp/>&gt;&gt;<sp/>x;<sp/></highlight><highlight class="comment">//<sp/>coordinates_1d<sp/>can<sp/>be<sp/>initialized<sp/>through<sp/>cin</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="index_1autotoc_md35">
+<sect2 id="index_1autotoc_md34">
 <title>Coordinates and points in 2D</title>
 <para>coordinates_2d class allows to create software with positions in 2D. It has a very similar interface to coordinates_1d, it&apos;s initialized with an string of the form &quot;1 m,2 m&quot; or &quot;(1 m,2 m)&quot; because the character &apos;(&apos; can be present or not. It&apos;s, as coordinates_1d, a template class, and can then specify coordinates of any scalar_unit (usually, length), or with a float, if there&apos;s no unit that represents adequately the coordinates, or if it&apos;s needed to save some memory (because the float is lighter than a unit in his consumption of memory).</para>
 <para>coordinates_2d can be used as cartesian and as polar coordinates at the same time. It has x and y as member-variables, which can be of the type of any scalar_unit or a float. When working with polar coordinates, the calculations are stored as x and y, that&apos;s, as cartesian coordinates, but when accessing it, with functions like get_p() and get_theta(), they give the values in polar coordinates. Then, at the same time, coordinates_2d behave as cartesian and as polar coordinates, by storing the values only once, not two times. Then, coordinates_2d is like a dual object, it contains cartesian_2d and polar_coordinates inside.</para>
@@ -784,7 +784,7 @@
 <codeline><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">cin</ref><sp/>&gt;&gt;<sp/>x;<sp/></highlight><highlight class="comment">//<sp/>coordinates_2d<sp/>can<sp/>be<sp/>initialized<sp/>through<sp/>cin</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="index_1autotoc_md36">
+<sect2 id="index_1autotoc_md35">
 <title>Coordinates and points in 3D</title>
 <para>coordinates_3d class allows to work with positions in 3D. Its initialization string is of the form &quot;10 m,5 m,3 m&quot;, or of the form &quot;(10 m,5 m,3 m)&quot;.</para>
 <para>coordinates_3d can be used as cartesian coordinates, as cylindrical coordinates, as spherical coordinates and as geographical coordinates at the same time. It has x, y and z as member-variables, which can be of the type of any scalar_unit or a float. When working with coordinates different than cartesian coordinates, the calculations are stored as x, y and z, that&apos;s, as cartesian coordinates, but when accessing it, with functions like get_p(), get_theta() and get_r(), they give the values in the other coordinates systems. Then, at the same time, coordinates_3d behave as cartesian, cylindrical, spherical and geographical coordinates, by storing the values only once, not various times. Then, coordinates_3d is like a multiple object, it contains cartesian_3d_coordinates, cylindrical_coordinates, spherical_coordinates and geographical_coordinates inside.</para>
@@ -843,29 +843,29 @@
 <codeline><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">cin</ref><sp/>&gt;&gt;<sp/>x;<sp/></highlight><highlight class="comment">//<sp/>coordinates_3d<sp/>can<sp/>be<sp/>initialized<sp/>through<sp/>cin</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="index_1autotoc_md37">
+<sect2 id="index_1autotoc_md36">
 <title>AID and ZID</title>
 <para>An <bold>AID</bold>, acronym of <bold>Astronomycal ID</bold>, is an identifier of an astronomical object, like planets, moons, galaxies, stars, and any other astronomical object.</para>
 <para>A <bold>ZID</bold>, acronym of <bold>Zone ID</bold>, is an identifier of a zone, like a region, a district, a store, a lake, a country, and any other zone. A zone is defined here as any closed surface that can be drawn over an astronomycal object. A ZID is composed of the AID of which the zone pertains, and the zone itself.</para>
 </sect2>
-<sect2 id="index_1autotoc_md38">
+<sect2 id="index_1autotoc_md37">
 <title>percentage</title>
 <para>The <bold>percentage</bold> class represents percentages, they calculate the factor of the percentage and automatically, when operating with numeric types, calculate the percentage of that number.</para>
 </sect2>
-<sect2 id="index_1autotoc_md39">
+<sect2 id="index_1autotoc_md38">
 <title>pixel</title>
 <para>The <bold>pixel</bold> class represents pixels, which are the squares that compose screens. It can be used to calculate distance over pixels instead of distances of physical lengths, which is a need of some digital applications.</para>
 </sect2>
-<sect2 id="index_1autotoc_md40">
+<sect2 id="index_1autotoc_md39">
 <title>pH and pOH</title>
 <para>The <bold>pH</bold> class allows to work with pH, which is used inside chemistry software to store data about pH. The <bold>pOH</bold> class is the counterpart of the pH class, and is not commonly needed, but it can be used if the pH class is not being useful for some reason, and if instead the pOH class is useful. The pH class should always be <bold>prefered</bold> to be used over the pOH class, and that last should be used <bold>only</bold> if the pH class is not properly solving the needs.</para>
 </sect2>
-<sect2 id="index_1autotoc_md41">
+<sect2 id="index_1autotoc_md40">
 <title>Sizes in 2D, 3D and ND</title>
 <para>The <bold>size_2d</bold> class allows to store the data of the width and height of an object in length classes. The <bold>size_3d</bold> allows to store the data of the width, the height and the depth of an object in length classes. The <bold>size_nd</bold> class allows to store lengths corresponding to the dimension of an object in a variable number of dimensions.</para>
 </sect2>
 </sect1>
-<sect1 id="index_1autotoc_md42">
+<sect1 id="index_1autotoc_md41">
 <title>Internals</title>
 <para>Internally, the library has some important mechanisms important to be known by a serious developer. Those important mechanisms are described here, in order to avoid the developer to read the code of the library and learn every detail.</para>
 <para>The first important mechanism to describe is the static storage of custom dimensions. This storage is static, meaning that every time a unit of a dimension not registered is created, this storage is the one used, instead of the name being stored inside the instance. With that behavior, when instantiating a big amount of dimensions, a big amount of memory is saved. To refer to the static storage it&apos;s used the char symbol[3] of the dimension class, which uses only 3 bytes instead of the bytes the full dimension name would use. Then, each instance of a dimension class, given that static storage, uses only 6 bytes of memory.</para>

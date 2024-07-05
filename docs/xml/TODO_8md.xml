@@ -11,26 +11,21 @@
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>NUMBER<sp/>OF<sp/>TODOS:<sp/>52</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">//<sp/>BUGS<sp/>AND<sp/>SIMILAR<sp/>PROBLEMS<sp/>(6)</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>check<sp/>the<sp/>literal<sp/>of<sp/>Ohm<sp/>initialization<sp/>in<sp/>string<sp/>class<sp/>to<sp/>be<sp/>used<sp/>instead<sp/>of<sp/>IS_UNIX<sp/>and<sp/>IS_WINDOWS<sp/>in<sp/>all<sp/>the<sp/>code<sp/>files.<sp/>Also,<sp/>possibly<sp/>it&apos;s<sp/>needed<sp/>to<sp/>add<sp/>IS_UNIX<sp/>and<sp/>IS_WINDOWS<sp/>there</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>look<sp/>at<sp/>the<sp/>1.99<sp/>of<sp/>test_coordinates_2d<sp/>vs<sp/>the<sp/>2<sp/>of<sp/>the<sp/>float<sp/>specialization</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>think<sp/>if<sp/>to<sp/>add<sp/>a<sp/>function<sp/>that<sp/>allows<sp/>to<sp/>test<sp/>for<sp/>values<sp/>near<sp/>another<sp/>value</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>-Wall<sp/>gives<sp/>a<sp/>warning<sp/>for<sp/>vector_unit_nd<sp/>with<sp/>end<sp/>of<sp/>non-void<sp/>function</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>check<sp/>prefix_math()<sp/>everywhere,<sp/>maybe<sp/>there&apos;s<sp/>a<sp/>better<sp/>implementation<sp/>to<sp/>do<sp/>than<sp/>the<sp/>current<sp/>implementation</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>check<sp/>and<sp/>correct<sp/>all<sp/>the<sp/>warnings<sp/>of<sp/>cl.exe<sp/>with<sp/>/Wall</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">//<sp/>BUILD<sp/>(2)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>BUILD<sp/>(4)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>configure<sp/>the<sp/>profile<sp/>to<sp/>be<sp/>optional<sp/>in<sp/>order<sp/>to<sp/>generate<sp/>only<sp/>gcov<sp/>files</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>support<sp/>freebsd<sp/>and<sp/>openbsd</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>upload<sp/>the<sp/>package<sp/>to<sp/>the<sp/>container<sp/>registry<sp/>of<sp/>github<sp/>packages</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>check<sp/>and<sp/>correct<sp/>all<sp/>the<sp/>warnings<sp/>of<sp/>cl.exe<sp/>with<sp/>-Wall</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>the<sp/>flags<sp/>&quot;-g<sp/>-Og&quot;<sp/>for<sp/>g++<sp/>and<sp/>&quot;/Zi<sp/>/EHsc&quot;<sp/>for<sp/>msvc</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>remove<sp/>the<sp/>--coverage<sp/>flags<sp/>when<sp/>g++<sp/>or<sp/>clang++<sp/>is<sp/>not<sp/>being<sp/>used</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">//<sp/>BUILD<sp/>-<sp/>ADVANCED<sp/>(7)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>BUILD<sp/>-<sp/>ADVANCED<sp/>(6)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>study<sp/>bazel<sp/>and<sp/>look<sp/>the<sp/>files<sp/>of<sp/>bazel<sp/>that<sp/>are<sp/>part<sp/>of<sp/>Catch2,<sp/>maybe<sp/>the<sp/>same<sp/>should<sp/>be<sp/>done<sp/>for<sp/>scifir-units</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>see<sp/>how<sp/>to<sp/>support<sp/>consoles<sp/>inside<sp/>the<sp/>building,<sp/>if<sp/>possible</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>possibly<sp/>add<sp/>the<sp/>library<sp/>to<sp/>conan</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>test<sp/>vcpkg.json<sp/>uploading<sp/>scifir-units<sp/>to<sp/>vcpkg</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>check<sp/>the<sp/>welcome<sp/>file<sp/>for<sp/>cpack,<sp/>maybe<sp/>it&apos;s<sp/>useful</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>support<sp/>the<sp/>compilation<sp/>with<sp/>Emscripten<sp/>and<sp/>add<sp/>web-assembly<sp/>as<sp/>another<sp/>preset<sp/>more</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>check<sp/>the<sp/>configuration<sp/>options<sp/>that<sp/>exist<sp/>for<sp/>gcov</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>IDE<sp/>(2)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>check<sp/>the<sp/>extension<sp/>gcov<sp/>viewer<sp/>is<sp/>working<sp/>properly</highlight></codeline>
@@ -38,6 +33,7 @@
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>GITHUB<sp/>(9)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>update<sp/>the<sp/>github<sp/>action<sp/>that<sp/>updates<sp/>the<sp/>CHANGELOG.md<sp/>file,<sp/>make<sp/>it<sp/>work</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>try<sp/>to<sp/>install<sp/>only<sp/>boost-headers<sp/>and<sp/>boost-system<sp/>inside<sp/>the<sp/>github<sp/>action<sp/>of<sp/>cmake</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>release<sp/>the<sp/>version<sp/>2.0-beta</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>the<sp/>github<sp/>action<sp/>with<sp/>windows</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>the<sp/>github<sp/>action<sp/>with<sp/>macos</highlight></codeline>
@@ -50,26 +46,16 @@
 <codeline><highlight class="normal">//<sp/>TESTS<sp/>(1)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>finish<sp/>the<sp/>tests<sp/>of<sp/>all<sp/>classes</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">//<sp/>DOCUMENTATION<sp/>(10)</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>example<sp/>of<sp/>use<sp/>cases<sp/>(laboratory<sp/>machines,medical<sp/>devices,robotics)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>DOCUMENTATION<sp/>(1)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>all<sp/>the<sp/>NEWS<sp/>file</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>reference<sp/>books<sp/>realted<sp/>to<sp/>the<sp/>physics,<sp/>chemistry,<sp/>biology<sp/>or<sp/>math<sp/>implemented</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>mention<sp/>the<sp/>WGS<sp/>in<sp/>the<sp/>part<sp/>of<sp/>coordinates</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>explain<sp/>the<sp/>custom<sp/>dimensions<sp/>in<sp/>the<sp/>file<sp/>README.md</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>use<sp/>of<sp/>the<sp/>custom_display<sp/>&quot;sci&quot;</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>think<sp/>on<sp/>the<sp/>different<sp/>cases<sp/>of<sp/>use<sp/>of<sp/>coordinates<sp/>and<sp/>document<sp/>them,<sp/>including<sp/>the<sp/>use<sp/>of<sp/>an<sp/>origin</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>coordinates<sp/>for<sp/>the<sp/>universe,<sp/>publish<sp/>that<sp/>too<sp/>as<sp/>an<sp/>standard<sp/>inside<sp/>scifir</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>check<sp/>what<sp/>to<sp/>do<sp/>with<sp/>the<sp/>libraries<sp/>of<sp/>ISOs<sp/>and<sp/>document<sp/>them<sp/>inside<sp/>the<sp/>README.md<sp/>file</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>how<sp/>to<sp/>create<sp/>scientific<sp/>inventions<sp/>in<sp/>the<sp/>library,<sp/>how<sp/>to<sp/>create<sp/>laboratory<sp/>machines<sp/>and<sp/>how<sp/>to<sp/>create<sp/>medical<sp/>devices</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>how<sp/>to<sp/>use<sp/>the<sp/>library<sp/>for<sp/>robots</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>think<sp/>if<sp/>to<sp/>add<sp/>the<sp/>help<sp/>of<sp/>Eclipse,<sp/>and<sp/>search<sp/>if<sp/>other<sp/>IDEs<sp/>use<sp/>some<sp/>help<sp/>too</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>decide<sp/>if<sp/>to<sp/>generate<sp/>documentation<sp/>for<sp/>man,<sp/>and<sp/>if<sp/>so,<sp/>exxplain<sp/>that<sp/>inside<sp/>the<sp/>README.md<sp/>file</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">//<sp/>COORDINATES<sp/>AND<sp/>POINTS<sp/>(7)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>COORDINATES<sp/>AND<sp/>POINTS<sp/>(9)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>finish<sp/>get_altitude().<sp/>Read<sp/>about<sp/>geographic<sp/>coordinates<sp/>and<sp/>decide<sp/>what<sp/>to<sp/>do<sp/>in<sp/>point_3d,<sp/>point_nd,<sp/>coordinates_3d<sp/>and<sp/>coordinates_nd</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>displacement_nd<sp/>in<sp/>point_nd<sp/>class<sp/>should<sp/>be<sp/>initialized<sp/>with<sp/>zero<sp/>dimensions<sp/>instead<sp/>of<sp/>m?.<sp/>Check<sp/>the<sp/>all<sp/>the<sp/>default<sp/>dimensions<sp/>cases<sp/>for<sp/>point_nd,<sp/>coordinates_nd<sp/>and<sp/>coordinates_ndr</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>think<sp/>on<sp/>the<sp/>different<sp/>cases<sp/>of<sp/>use<sp/>of<sp/>coordinates<sp/>and<sp/>document<sp/>them,<sp/>including<sp/>the<sp/>use<sp/>of<sp/>an<sp/>origin</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>coordinates_3d::origin()<sp/>to<sp/>allow<sp/>to<sp/>initialize<sp/>with<sp/>an<sp/>origin,<sp/>it&apos;s<sp/>specially<sp/>useful<sp/>for<sp/>geographic<sp/>coordinates</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>the<sp/>construction<sp/>with<sp/>an<sp/>string<sp/>for<sp/>geographic<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>coordinates<sp/>for<sp/>the<sp/>universe,<sp/>publish<sp/>that<sp/>too<sp/>as<sp/>an<sp/>standard<sp/>inside<sp/>scifir</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>change<sp/>name<sp/>of<sp/>cartesian_2d_to_polar_r<sp/>to<sp/>p</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>functions<sp/>of<sp/>conversion<sp/>of<sp/>coordinates<sp/>should<sp/>all<sp/>use<sp/>angles<sp/>in<sp/>every<sp/>return<sp/>or<sp/>argument<sp/>case</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>functions<sp/>of<sp/>conversion<sp/>of<sp/>coordinates<sp/>for<sp/>scalar_unit<sp/>classes</highlight></codeline>
@@ -91,14 +77,9 @@
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>if<sp/>size_t<sp/>and<sp/>other<sp/>similar<sp/>constants<sp/>are<sp/>intended<sp/>to<sp/>be<sp/>used<sp/>inside<sp/>normal<sp/>code</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>replace<sp/>boost::split<sp/>by<sp/>split<sp/>of<sp/>C++20</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">//<sp/>DIMENSIONS<sp/>(7)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>DIMENSIONS<sp/>(2)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>support<sp/>the<sp/>binary<sp/>prefixes<sp/>too</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>see<sp/>how<sp/>to<sp/>free<sp/>the<sp/>char[]</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>display<sp/>dimensions<sp/>with<sp/>their<sp/>full<sp/>name,<sp/>including<sp/>the<sp/>prefix</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>light-year<sp/>should<sp/>be<sp/>in<sp/>the<sp/>enum<sp/>of<sp/>dimensions,<sp/>not<sp/>a<sp/>conversion</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>dimension::none<sp/>should<sp/>appear<sp/>in<sp/>uppercase.<sp/>All<sp/>none<sp/>values<sp/>should<sp/>be<sp/>like<sp/>that</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>finish<sp/>the<sp/>test<sp/>of<sp/>custom_basic<sp/>dimensions<sp/>and<sp/>document<sp/>them<sp/>in<sp/>the<sp/>README.md<sp/>file</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>grade<sp/>inside<sp/>the<sp/>enum<sp/>of<sp/>dimensions</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>UNITS<sp/>(9)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>configure<sp/>how<sp/>to<sp/>display<sp/>the<sp/>float<sp/>of<sp/>scalar_unit<sp/>for<sp/>display(),<sp/>derived_display()<sp/>and<sp/>custom_display().<sp/>Maybe<sp/>the<sp/>solution<sp/>is<sp/>that<sp/>it<sp/>never<sp/>prints<sp/>a<sp/>decimal<sp/>if<sp/>it&apos;s<sp/>a<sp/>0.<sp/>Also,<sp/>it<sp/>should<sp/>never<sp/>display<sp/>the<sp/>insignificant<sp/>0s<sp/>of<sp/>the<sp/>decimal<sp/>part.</highlight></codeline>

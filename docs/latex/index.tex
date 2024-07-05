@@ -4,15 +4,15 @@
 \Hypertarget{index_md_README}%
  \href{https://github.com/scifir/scifir-units/actions/workflows/cmake.yml}{\texttt{ }}
 
-Welcome! The {\bfseries{Scifir Collection}} is a set of scientific libraries, written in {\bfseries{C++}}, for developing {\bfseries{laboratory machines}} and {\bfseries{scientific inventions}}. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
+Welcome! The {\bfseries{Scifir Collection}} is a set of scientific libraries for developing {\bfseries{laboratory machines}} and {\bfseries{scientific inventions}}. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
 
 The Scifir Collection is under development, but the units are already released. Molecules aren\textquotesingle{}t, but they will by ready soon!
 
 {\bfseries{scifir-\/units}} includes units with dimensions to use, then it\textquotesingle{}s unneeded to care about having the proper dimensions and prefixes when developing scientific software, you can instantiate any value you have on the machine, without performing operations with a calculator first to convert the units to a common prefix. Learn how to use them at the \href{https://github.com/scifir/scifir-units/wiki}{\texttt{ Wiki}}. It\textquotesingle{}s been developed under {\bfseries{C++20}} and uses {\bfseries{cmake}} as build automation tool. It\textquotesingle{}s available for {\bfseries{Linux distributions}} and {\bfseries{Windows}}.
 
-The {\bfseries{current version}} of scifir-\/units is the {\bfseries{beta-\/version-\/2.\+0}}. The version 1.\+0 has never been released because the version 2.\+0 was better by a great extent. The version 2.\+0 includes a better inheritance system and a wide simplification of all the programming of the library and, then, a better compilation and a saving of RAM for each instantiation of each class. Because of that reason, the version 2.\+0 has been preferred over the version 1.\+0.\hypertarget{index_autotoc_md7}{}\doxysubsection{\texorpdfstring{Team}{Team}}\label{index_autotoc_md7}
-The {\bfseries{Scifir Collection}} is developed by \href{https://iarfen.github.io}{\texttt{ Ismael Correa Castro}}, a software developer of 32 years old. You can email him if you find bugs, you want to request new features, or have any other need, at \href{mailto:ismael.correa.castro@gmail.com}{\texttt{ ismael.\+correa.\+castro@gmail.\+com}}. His ORCID is 0009-\/0007-\/3815-\/7053, if you want to reference this work inside any publication.\hypertarget{index_autotoc_md8}{}\doxysubsection{\texorpdfstring{Funding}{Funding}}\label{index_autotoc_md8}
-The {\bfseries{Scifir Foundation}} is looking for {\bfseries{funding}}, in order to do some digital marketing and pay some other needs of the project. If you want to support this libraries, {\bfseries{science will thank you}} for that, you can donate in this \href{https://github.com/sponsors/iarfen}{\texttt{ sponsors page}}.\hypertarget{index_autotoc_md9}{}\doxysection{\texorpdfstring{Installation}{Installation}}\label{index_autotoc_md9}
+The {\bfseries{current version}} of scifir-\/units is the {\bfseries{beta-\/version-\/2.\+0}}. The version 1.\+0 has never been released because the version 2.\+0 was better by a great extent. The version 2.\+0 includes a better inheritance system and a wide simplification of all the programming of the library and, then, a better compilation and a saving of RAM for each instantiation of each class. Because of that reason, the version 2.\+0 has been preferred over the version 1.\+0.\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{Team}{Team}}\label{index_autotoc_md6}
+The {\bfseries{Scifir Collection}} is developed by \href{https://iarfen.github.io}{\texttt{ Ismael Correa Castro}}, a software developer of 32 years old. You can email him if you find bugs, you want to request new features, or have any other need, at \href{mailto:ismael.correa.castro@gmail.com}{\texttt{ ismael.\+correa.\+castro@gmail.\+com}}. His ORCID is 0009-\/0007-\/3815-\/7053, if you want to reference this work inside any publication.\hypertarget{index_autotoc_md7}{}\doxysubsection{\texorpdfstring{Funding}{Funding}}\label{index_autotoc_md7}
+The {\bfseries{Scifir Foundation}} is looking for {\bfseries{funding}}, in order to do some digital marketing and pay some other needs of the project. If you want to support this libraries, {\bfseries{science will thank you}} for that, you can donate in this \href{https://github.com/sponsors/iarfen}{\texttt{ sponsors page}}.\hypertarget{index_autotoc_md8}{}\doxysection{\texorpdfstring{Installation}{Installation}}\label{index_autotoc_md8}
 To install {\bfseries{scifir-\/units}} you have to use {\bfseries{CMake}} and {\bfseries{make}}. scifir-\/units can be compiled with {\bfseries{g++}}, {\bfseries{clang++}} and {\bfseries{msvc}}. Also, {\bfseries{nvcc}} and {\bfseries{dpcpp}} can also be used. The compilers for microcontrollers can also be used.
 
 scifir-\/units uses {\bfseries{icu}} and {\bfseries{boost}} libraries. Of boost, it uses boost-\/system. You have to install those two libraries in order to install scifir-\/units. To do so, use {\bfseries{apt}} in Ubuntu and Debian, {\bfseries{yum}} for Fedora and similar distributions, or another package manager if your Linux distribution doesn\textquotesingle{}t use those two. Inside Windows, install those libraries through {\bfseries{vcpkg}}, if you want to build scifir-\/units as lib or dll, or through {\bfseries{mingw}}, if you want to use scifir-\/units as on Linux distributions.
@@ -23,7 +23,7 @@ If you want to change the compiler to use you have to use the argument {\bfserie
 
 The environment variables needed to be set in your operating system to build scifir-\/units vary depending on the preset you want to use. For Linux and the WSL (the Windows Subsystem for Linux), you don\textquotesingle{}t need to set any environment variable. For Windows, that\textquotesingle{}s, inside Windows but outside Min\+GW, you need to set {\bfseries{VCPKG\+\_\+\+ROOT}} to the installation directory of vcpkg and {\bfseries{VCPKG\+\_\+\+DEFAULT\+\_\+\+TRIPLET}} to the default triplet you\textquotesingle{}re using in that installation of vcpkg. For all builds using vcpkg, even outside Windows, you need to set VCPKG\+\_\+\+ROOT and VCPKG\+\_\+\+DEFAULT\+\_\+\+TRIPLET, not only inside Windows. For Min\+GW you need to set {\bfseries{MINGW64\+\_\+\+DIR}} to the installation directory of Min\+GW. For Android NDK you need to set {\bfseries{ANDROID\+\_\+\+NDK\+\_\+\+ROOT}} to the installation directory of the NDK version you\textquotesingle{}re using (select the folder of the version, there can be more than one version of Android NDK installed in the same installation of Android SDK and Android Studio). To build for microcontrollers you don\textquotesingle{}t need to set any environment variable, but you need to point CMAKE\+\_\+\+CXX\+\_\+\+COMPILER to the C++ compiler of the toolchain of the microcontroller you want, and set the flag -\/mmcu of your C++ compiler using CMAKE\+\_\+\+CXX\+\_\+\+FLAGS="{}-\/mmcu=$<$mmcu-\/model$>$"{} to the model of your microcontroller.
 
-If, for any reason, you need to configure something inside your local installation of cmake to build scifir-\/units, or if you have any problem building scifir-\/units, check the documentation of cmake here\+: \href{https://www.cmake.org/documentation}{\texttt{ https\+://www.\+cmake.\+org/documentation}}. cmake is a software easy to use, and you shouldn\textquotesingle{}t need more than some days of study (thinking that you don\textquotesingle{}t know cmake yet) to fully learn it.\hypertarget{index_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{Configuring cmake for boost}{Configuring cmake for boost}}\label{index_autotoc_md10}
+If, for any reason, you need to configure something inside your local installation of cmake to build scifir-\/units, or if you have any problem building scifir-\/units, check the documentation of cmake here\+: \href{https://www.cmake.org/documentation}{\texttt{ https\+://www.\+cmake.\+org/documentation}}. cmake is a software easy to use, and you shouldn\textquotesingle{}t need more than some days of study (thinking that you don\textquotesingle{}t know cmake yet) to fully learn it.\hypertarget{index_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{Configuring cmake for boost}{Configuring cmake for boost}}\label{index_autotoc_md9}
 To build scifir-\/units you need to configure cmake to find boost with the module {\bfseries{Find\+Boost.\+cmake}}. To do so, set the environment variables of cmake called {\bfseries{CMAKE\+\_\+\+INCLUDE\+\_\+\+PATH}} to the include directory (usually \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/usr/include\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} in Linux) and {\bfseries{CMAKE\+\_\+\+LIBRARY\+\_\+\+PATH}} to the link directory (usually \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/usr/lib\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} in Linux). The include directory usually doesn\textquotesingle{}t change with Linux distributions, but the link directory does. The link directory can be, for example, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/usr/lib/x86\+\_\+64-\/gnu-\/linux\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} in Debian, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/usr/lib64\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} in Fedora, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/usr/lib\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} in Arch Linux, other Linux distributions have others link directories.
 
 The link directories of various Linux distributions are the following, set CMAKE\+\_\+\+LIBRARY\+\_\+\+PATH based on the Linux distribution you\textquotesingle{}re using to build scifir-\/units\+:
@@ -49,7 +49,7 @@ Also, to configure cmake to find boost with the module Find\+Boost.\+cmake you h
 
 \$\{Boost\+\_\+\+LIB\+\_\+\+PREFIX\}\$\{Boost\+\_\+\+NAMESPACE\}\+\_\+\$\{component\}\$\{Boost\+\_\+\+COMPILER\}\$\{Boost\+\_\+\+USE\+\_\+\+MULTITHREADED\}\$\{\+\_\+boost\+\_\+\+RELEASE\+\_\+\+ABI\+\_\+\+TAG\}\$\{Boost\+\_\+\+ARCHITECTURE\}-\/\$\{Boost\+\_\+\+LIB\+\_\+\+VERSION\}
 
-Just look at your boost libraries which name they have and set all those variables to those values.\hypertarget{index_autotoc_md11}{}\doxysubsection{\texorpdfstring{Linux}{Linux}}\label{index_autotoc_md11}
+Just look at your boost libraries which name they have and set all those variables to those values.\hypertarget{index_autotoc_md10}{}\doxysubsection{\texorpdfstring{Linux}{Linux}}\label{index_autotoc_md10}
 The commands to install scifir-\/units in Linux distribution are the following (it also works inside {\bfseries{WSL}})\+:
 
 
@@ -61,7 +61,7 @@ The commands to install scifir-\/units in Linux distribution are the following (
 \end{DoxyCode}
 
 
-Optionally, you can change the installation directory by setting {\bfseries{CMAKE\+\_\+\+INSTALL\+\_\+\+PREFIX}} when running the first command. Set it using -\/DCMAKE\+\_\+\+INSTALL\+\_\+\+PREFIX=\texorpdfstring{$<$}{<}path-\/to-\/installation-\/directory\texorpdfstring{$>$}{>}.\hypertarget{index_autotoc_md12}{}\doxysubsection{\texorpdfstring{Windows}{Windows}}\label{index_autotoc_md12}
+Optionally, you can change the installation directory by setting {\bfseries{CMAKE\+\_\+\+INSTALL\+\_\+\+PREFIX}} when running the first command. Set it using -\/DCMAKE\+\_\+\+INSTALL\+\_\+\+PREFIX=\texorpdfstring{$<$}{<}path-\/to-\/installation-\/directory\texorpdfstring{$>$}{>}.\hypertarget{index_autotoc_md11}{}\doxysubsection{\texorpdfstring{Windows}{Windows}}\label{index_autotoc_md11}
 To install scifir-\/units inside Windows you have to specify a path to some Windows folder, the file {\bfseries{scifir-\/units.\+lib}} will be installed there, and also the headers. You have to install using {\bfseries{vcpkg}} the packages {\bfseries{icu}} and {\bfseries{boost\+\_\+system}} in order to build the library. The commands are the following\+:
 
 
@@ -73,7 +73,7 @@ To install scifir-\/units inside Windows you have to specify a path to some Wind
 \end{DoxyCode}
 
 
-To compile for Windows Universal Applications, which targets both Windows Store and Windows Phone, you have to use the flags {\bfseries{-\/DCMAKE\+\_\+\+SYSTEM\+\_\+\+NAME=Windows\+Store}} and {\bfseries{-\/DCMAKE\+\_\+\+SYSTEM\+\_\+\+VERSION="{}10.\+0"{}}} with the first command (the command which specifies the preset). CMAKE\+\_\+\+SYSTEM\+\_\+\+VERSION can be higher than 10.\+0, but no lower.\hypertarget{index_autotoc_md13}{}\doxysubsection{\texorpdfstring{Min\+GW}{MinGW}}\label{index_autotoc_md13}
+To compile for Windows Universal Applications, which targets both Windows Store and Windows Phone, you have to use the flags {\bfseries{-\/DCMAKE\+\_\+\+SYSTEM\+\_\+\+NAME=Windows\+Store}} and {\bfseries{-\/DCMAKE\+\_\+\+SYSTEM\+\_\+\+VERSION="{}10.\+0"{}}} with the first command (the command which specifies the preset). CMAKE\+\_\+\+SYSTEM\+\_\+\+VERSION can be higher than 10.\+0, but no lower.\hypertarget{index_autotoc_md12}{}\doxysubsection{\texorpdfstring{Min\+GW}{MinGW}}\label{index_autotoc_md12}
 To install scifir-\/units inside Min\+GW you have to configure {\bfseries{Min\+GW}} with the environment variable {\bfseries{MINGW64\+\_\+\+DIR}}, which sets the path to the installation directory of Min\+GW. Inside Min\+GW you need to install {\bfseries{icu}} and {\bfseries{boost\+\_\+system}}. Then, execute the following commands\+:
 
 
@@ -83,7 +83,7 @@ To install scifir-\/units inside Min\+GW you have to configure {\bfseries{Min\+G
 \DoxyCodeLine{cmake\ -\/-\/install\ ./build/windows-\/mingw}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md14}{}\doxysubsection{\texorpdfstring{Mac\+OS and Apple devices}{MacOS and Apple devices}}\label{index_autotoc_md14}
+\hypertarget{index_autotoc_md13}{}\doxysubsection{\texorpdfstring{Mac\+OS and Apple devices}{MacOS and Apple devices}}\label{index_autotoc_md13}
 scifir-\/units uses the XCode generator of cmake to compile for Mac\+OS. You need to install icu and boost\+\_\+system to build scifir-\/units inside Mac\+OS. The commands to compile and install scifir-\/units inside Mac\+OS are the following\+:
 
 
@@ -95,7 +95,7 @@ scifir-\/units uses the XCode generator of cmake to compile for Mac\+OS. You nee
 \end{DoxyCode}
 
 
-To compile scifir-\/units for i\+OS, tv\+OS, vision\+OS or watch\+OS you must add the flag {\bfseries{-\/DCMAKE\+\_\+\+SYSTEM\+\_\+\+NAME=\texorpdfstring{$<$}{<}os-\/name\texorpdfstring{$>$}{>}}} to the first command (the command which specifies the preset). Optionally, you can also use the flag {\bfseries{-\/DCMAKE\+\_\+\+OSX\+\_\+\+ARCHITECTURES}} to specify the architecture of the device or the simulator.\hypertarget{index_autotoc_md15}{}\doxysubsection{\texorpdfstring{vcpkg}{vcpkg}}\label{index_autotoc_md15}
+To compile scifir-\/units for i\+OS, tv\+OS, vision\+OS or watch\+OS you must add the flag {\bfseries{-\/DCMAKE\+\_\+\+SYSTEM\+\_\+\+NAME=\texorpdfstring{$<$}{<}os-\/name\texorpdfstring{$>$}{>}}} to the first command (the command which specifies the preset). Optionally, you can also use the flag {\bfseries{-\/DCMAKE\+\_\+\+OSX\+\_\+\+ARCHITECTURES}} to specify the architecture of the device or the simulator.\hypertarget{index_autotoc_md14}{}\doxysubsection{\texorpdfstring{vcpkg}{vcpkg}}\label{index_autotoc_md14}
 scifir-\/units can be compiled with vcpkg inside every triplet of vcpkg, not only inside Windows. To do that, after installing icu and boost\+\_\+system in vcpkg, use the following commands\+:
 
 
@@ -105,7 +105,7 @@ scifir-\/units can be compiled with vcpkg inside every triplet of vcpkg, not onl
 \DoxyCodeLine{cmake\ -\/-\/install\ ./build/vcpkg}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md16}{}\doxysubsection{\texorpdfstring{Android}{Android}}\label{index_autotoc_md16}
+\hypertarget{index_autotoc_md15}{}\doxysubsection{\texorpdfstring{Android}{Android}}\label{index_autotoc_md15}
 First, set {\bfseries{ANDROID\+\_\+\+HOME}} and {\bfseries{ANDROID\+\_\+\+NDK\+\_\+\+ROOT}} to the paths of your Android SDK installation and of your Android NDK installation. After that, install vcpkg, and set the environment variable {\bfseries{VCPKG\+\_\+\+ROOT}} to the installation directory of vcpkg. Set also the environment variable {\bfseries{VCPKG\+\_\+\+DEFAULT\+\_\+\+TRIPLET}} to be the triplet of the computer you\textquotesingle{}re using to build scifir-\/units. Finally, to compile scifir-\/units to work inside an Android application that uses Android NDK for that purpose, you have to use the following commands\+:
 
 
@@ -119,10 +119,10 @@ First, set {\bfseries{ANDROID\+\_\+\+HOME}} and {\bfseries{ANDROID\+\_\+\+NDK\+\
 
 After building scifir-\/units you have to move the library file to your Android project. Inside Android Studio, create the JNI folder under the right-\/click menu of the {\bfseries{app folder}}, under the option {\bfseries{New \texorpdfstring{$>$}{>} Folder \texorpdfstring{$>$}{>} JNI Folder}}. Inside the jni folder, you should create a folder for each {\bfseries{Android ABI}} existing, and add scifir-\/units there compiled for that Android ABI by using the option {\bfseries{-\/DANDROID\+\_\+\+ABI}} of this cmake configuration. Search all Android ABIs existing and compile this library for each of them, in order to have your Android application working on all Android devices.
 
-The include path for scifir-\/units inside your Android Studio project should be the same as the linux distribution, vcpkg or mingw, use the same as always. The headers of scifir-\/units, then, as any C++ library for Android, doesn\textquotesingle{}t need to be copied inside your Android project and, then, they aren\textquotesingle{}t part of the final {\bfseries{APK file}}.\hypertarget{index_autotoc_md17}{}\doxysubsection{\texorpdfstring{Microcontrollers}{Microcontrollers}}\label{index_autotoc_md17}
+The include path for scifir-\/units inside your Android Studio project should be the same as the linux distribution, vcpkg or mingw, use the same as always. The headers of scifir-\/units, then, as any C++ library for Android, doesn\textquotesingle{}t need to be copied inside your Android project and, then, they aren\textquotesingle{}t part of the final {\bfseries{APK file}}.\hypertarget{index_autotoc_md16}{}\doxysubsection{\texorpdfstring{Microcontrollers}{Microcontrollers}}\label{index_autotoc_md16}
 For electronics, you can build scifir-\/units using the compiler of your microcontroller, which comes with the SDK of your microcontroller. You have to specify, using the option {\bfseries{-\/DCMAKE\+\_\+\+CXX\+\_\+\+COMPILER}}, the compiler to use, and, also, you have to use the option {\bfseries{-\/DCMAKE\+\_\+\+CXX\+\_\+\+FLAGS="{}-\/mmcu=$<$microcontroller-\/model$>$"{}}} to specify the model of your microcontroller in order for your compiler to know for which microcontroller model to compile.
 
-The SDK of microcontrollers can be downloaded on the website of the vendor of the microcontroller, which can be {\bfseries{Microchip}}, {\bfseries{STMicroelectronics}}, or any other.\hypertarget{index_autotoc_md18}{}\doxysubsection{\texorpdfstring{cpack}{cpack}}\label{index_autotoc_md18}
+The SDK of microcontrollers can be downloaded on the website of the vendor of the microcontroller, which can be {\bfseries{Microchip}}, {\bfseries{STMicroelectronics}}, or any other.\hypertarget{index_autotoc_md17}{}\doxysubsection{\texorpdfstring{cpack}{cpack}}\label{index_autotoc_md17}
 If you need to package scifir-\/units into any format supported by cpack, you just need to use the preset that you\textquotesingle{}ve previously used to build scifir-\/units.
 
 
@@ -132,7 +132,7 @@ If you need to package scifir-\/units into any format supported by cpack, you ju
 \end{DoxyCode}
 
 
-You can type the command {\bfseries{cpack --help}} to check all available generators.\hypertarget{index_autotoc_md19}{}\doxysubsection{\texorpdfstring{ctest}{ctest}}\label{index_autotoc_md19}
+You can type the command {\bfseries{cpack --help}} to check all available generators.\hypertarget{index_autotoc_md18}{}\doxysubsection{\texorpdfstring{ctest}{ctest}}\label{index_autotoc_md18}
 You can test scifir-\/units executing ctest if you want. It\textquotesingle{}s not needed to execute those tests in your local computer, but you can do it if for any reason you find it helpful. To build the tests, add the flags {\bfseries{-\/DBUILD\+\_\+\+TESTING=ON}} to the first preset command, in order to set the variable BUILD\+\_\+\+TESTING to ON, that variable configures the build to build also all the tests.
 
 
@@ -140,7 +140,7 @@ You can test scifir-\/units executing ctest if you want. It\textquotesingle{}s n
 \DoxyCodeLine{ctest\ -\/-\/preset=<your-\/preset>}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md20}{}\doxysection{\texorpdfstring{Using the library}{Using the library}}\label{index_autotoc_md20}
+\hypertarget{index_autotoc_md19}{}\doxysection{\texorpdfstring{Using the library}{Using the library}}\label{index_autotoc_md19}
 First you have to link {\bfseries{scifir-\/units}} to your project. To link scifir-\/units, after installing it following the steps above, add the following code inside your CMake\+Lists.\+txt file\+:
 
 
@@ -157,7 +157,7 @@ Now that the library es linked, you can use it inside your code by including the
 \DoxyCodeLine{\#include\ "{}scifir/units.hpp"{}}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md21}{}\doxysection{\texorpdfstring{Introduction}{Introduction}}\label{index_autotoc_md21}
+\hypertarget{index_autotoc_md20}{}\doxysection{\texorpdfstring{Introduction}{Introduction}}\label{index_autotoc_md20}
 The Scifir Collection is a set of libraries that allows to create the software of scientific inventions, being them scientific machines or just scientific software. This library, scifir-\/units, allows to handle scalar and vectorial units inside the code. They are very lightweight, they size similar to a float, and can be used extensively to do any math calculation necessary for the invention. The prefixes can be changed, in order to display the units in the more proper dimensions. Also, all the conversions known are supported. Then, instead of the meter, a length can be described by a light-\/year, an astronomical unit (AU), among other units of measure.
 
 The unit classes that scifir-\/units provides are the following\+:
@@ -174,7 +174,7 @@ scalar\+\_\+unit classes can be used both for scalar units and vector units in 1
 
 All the unit classes have fixed dimensions. Once instantiated, they can\textquotesingle{}t change to a different set of dimensions. Besides that, prefixes and abbreviations can be used freely, every unit can change to any other prefix and use any abbreviation that matches the original dimensions (and no other set of dimensions).
 
-There are also special units inside scifir-\/units. Those special units are aid, color, percentage, pH, pixel, p\+OH, size\+\_\+2d, size\+\_\+3d, size\+\_\+nd and zid. {\bfseries{Always prefer pH}} over p\+OH, p\+OH is provided by the library only for very infrequent cases.\hypertarget{index_autotoc_md22}{}\doxysubsection{\texorpdfstring{Class list}{Class list}}\label{index_autotoc_md22}
+There are also special units inside scifir-\/units. Those special units are aid, color, percentage, pH, pixel, p\+OH, size\+\_\+2d, size\+\_\+3d, size\+\_\+nd and zid. {\bfseries{Always prefer pH}} over p\+OH, p\+OH is provided by the library only for very infrequent cases.\hypertarget{index_autotoc_md21}{}\doxysubsection{\texorpdfstring{Class list}{Class list}}\label{index_autotoc_md21}
 The most important classes are the scalar units and the vector units. Vector units are in 2D, 3D and ND (a variable number of dimensions).
 
 
@@ -268,7 +268,7 @@ The special unit classes handle special cases of values\+:
 \item size\+\_\+2d.
 \item size\+\_\+3d.
 \item size\+\_\+nd.
-\end{DoxyItemize}\hypertarget{index_autotoc_md23}{}\doxysubsection{\texorpdfstring{Data conventions}{Data conventions}}\label{index_autotoc_md23}
+\end{DoxyItemize}\hypertarget{index_autotoc_md22}{}\doxysubsection{\texorpdfstring{Data conventions}{Data conventions}}\label{index_autotoc_md22}
 It\textquotesingle{}s mandatory to follow the {\bfseries{data conventions}} of Scifir when using scifir-\/units, which is used not only for this library but also for every Scifir project. The data conventions of Scifir allow to handle data easy without multiple interpretations of the meaning of any value, because it doesn\textquotesingle{}t has ambiguities.
 
 The conventions are the following\+:
@@ -292,10 +292,10 @@ The conventions for storing informatic data are the following\+:
 \begin{DoxyItemize}
 \item {\bfseries{Ips\+:}} Store the ip, as is written.
 \item {\bfseries{Computers\+:}} Store computers by their model name, canonicalized.
-\end{DoxyItemize}\hypertarget{index_autotoc_md24}{}\doxysubsection{\texorpdfstring{Consumption of memory}{Consumption of memory}}\label{index_autotoc_md24}
+\end{DoxyItemize}\hypertarget{index_autotoc_md23}{}\doxysubsection{\texorpdfstring{Consumption of memory}{Consumption of memory}}\label{index_autotoc_md23}
 The scalar\+\_\+unit and vector unit classes, vector\+\_\+unid\+\_\+2d, vector\+\_\+unid\+\_\+3d and vector\+\_\+unit\+\_\+nd size more than a single float, which uses 4 bytes, but don\textquotesingle{}t size a big amount and so, they can be used in great quantities for any purpose, cause they are very lightweight.
 
-The angle class uses only 4 bytes, and works perfectly fine, very similar to a normal float. Then, you can use it freely every time you need to do calculations that need angles.\hypertarget{index_autotoc_md25}{}\doxysection{\texorpdfstring{Core functionalities}{Core functionalities}}\label{index_autotoc_md25}
+The angle class uses only 4 bytes, and works perfectly fine, very similar to a normal float. Then, you can use it freely every time you need to do calculations that need angles.\hypertarget{index_autotoc_md24}{}\doxysection{\texorpdfstring{Core functionalities}{Core functionalities}}\label{index_autotoc_md24}
 All the classes of scifir-\/units are inside the {\bfseries{namespace scifir}}, as with all libraries of the {\bfseries{Scifir Collection}}. So, to use any of this classes, like angle, you have to type any of the following codes\+:
 
 
@@ -306,7 +306,7 @@ All the classes of scifir-\/units are inside the {\bfseries{namespace scifir}}, 
 \end{DoxyCode}
 
 
-All the example code presented here is written assuming you know this namespace scifir.\hypertarget{index_autotoc_md26}{}\doxysubsection{\texorpdfstring{Initialization strings}{Initialization strings}}\label{index_autotoc_md26}
+All the example code presented here is written assuming you know this namespace scifir.\hypertarget{index_autotoc_md25}{}\doxysubsection{\texorpdfstring{Initialization strings}{Initialization strings}}\label{index_autotoc_md25}
 All the unit classes, and also the other related classes of this library, can be constructed with what is called here an {\bfseries{initialization string}}. An initialization string is an string used to instantiate the class, and it\textquotesingle{}s also used when converting the class to an string for any purpose (like printing it on the screen).
 
 The initialization strings are the following\+:
@@ -331,9 +331,9 @@ The initialization strings are the following\+:
 \item {\bfseries{coordinates\+\_\+ndr}}\+: "{}1 m,7 m,5 m,8 m;32° 56° 78°"{} or "{}(1 m,7 m,5 m,8 m;32° 56° 78°)"{}
 \end{DoxyItemize}
 
-In order to store units inside a file an initialization string should be used. For any purpose, when converting some of those classes to an string, the string initialization has to be always used.\hypertarget{index_autotoc_md27}{}\doxysubsection{\texorpdfstring{Space}{Space}}\label{index_autotoc_md27}
-Inside scifir-\/units the space can be measured with float or with length. Secondarily, any scalar\+\_\+unit can be used as measure of space, because inside science there are modelings of imaginary spaces, where the length is not used. Because of that reason, all coordinates and point classes are template classes that accept floats or scalar\+\_\+unit classes.\hypertarget{index_autotoc_md28}{}\doxysubsection{\texorpdfstring{Dimensions}{Dimensions}}\label{index_autotoc_md28}
-Inside scifir-\/units a {\bfseries{basic dimension}} is a dimension considered basic under the SI system of units. Different to that, a {\bfseries{simple dimension}} is a dimension without any derived dimension. That\textquotesingle{}s, it\textquotesingle{}s a dimension that\textquotesingle{}s not an abbreviation of two or more other dimensions.\hypertarget{index_autotoc_md29}{}\doxysubsection{\texorpdfstring{Angle}{Angle}}\label{index_autotoc_md29}
+In order to store units inside a file an initialization string should be used. For any purpose, when converting some of those classes to an string, the string initialization has to be always used.\hypertarget{index_autotoc_md26}{}\doxysubsection{\texorpdfstring{Space}{Space}}\label{index_autotoc_md26}
+Inside scifir-\/units the space can be measured with float or with length. Secondarily, any scalar\+\_\+unit can be used as measure of space, because inside science there are modelings of imaginary spaces, where the length is not used. Because of that reason, all coordinates and point classes are template classes that accept floats or scalar\+\_\+unit classes.\hypertarget{index_autotoc_md27}{}\doxysubsection{\texorpdfstring{Dimensions}{Dimensions}}\label{index_autotoc_md27}
+Inside scifir-\/units a {\bfseries{basic dimension}} is a dimension considered basic under the SI system of units. Different to that, a {\bfseries{simple dimension}} is a dimension without any derived dimension. That\textquotesingle{}s, it\textquotesingle{}s a dimension that\textquotesingle{}s not an abbreviation of two or more other dimensions.\hypertarget{index_autotoc_md28}{}\doxysubsection{\texorpdfstring{Angle}{Angle}}\label{index_autotoc_md28}
 An angle object manages angles. It stores angles in grades, rather than in radians. It can be initialized to any grade between 0 and 360 (without including 360, cause this is identical to 0 in meaning), and any initialization that\textquotesingle{}s not inside this range of values gets automatically converted inside it, to his equivalent value between the range.
 
 An example of use of angle is the following\+:
@@ -379,7 +379,7 @@ An example of use of angle is the following\+:
 \DoxyCodeLine{\textcolor{keywordtype}{float}\ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(x);\ \textcolor{comment}{//\ Angles\ can\ be\ converted\ to\ float}}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md30}{}\doxysubsection{\texorpdfstring{Scalar units}{Scalar units}}\label{index_autotoc_md30}
+\hypertarget{index_autotoc_md29}{}\doxysubsection{\texorpdfstring{Scalar units}{Scalar units}}\label{index_autotoc_md29}
 Scalar units and vector units are the central objects of scifir-\/units. They store a value and a set of dimensions, as units on science do. Scalar units are just normal values, while vector units have a value and a direction to which the vector points to.
 
 Scalar units can operate with other scalar units, as well as with numeric primitive types. Functions like abs(), sqrt() and to\+\_\+string() are supported. They have functions to operate with strings, and functions to operate with streams.
@@ -485,7 +485,7 @@ Memo   &memo   &Measures the size occupied by a memory inside the brain of an an
 \end{longtabu}
 
 
-There are also derived dimensions of those basic dimensions, which are documented in the reference. Yet, you should memorize all those basic dimensions.\hypertarget{index_autotoc_md31}{}\doxysubsection{\texorpdfstring{Vector units in 2D}{Vector units in 2D}}\label{index_autotoc_md31}
+There are also derived dimensions of those basic dimensions, which are documented in the reference. Yet, you should memorize all those basic dimensions.\hypertarget{index_autotoc_md30}{}\doxysubsection{\texorpdfstring{Vector units in 2D}{Vector units in 2D}}\label{index_autotoc_md30}
 Vector units in 2D allow to do calculations for lab machines and simulations of physics and other areas of science in 2 dimensions. They inherit scalar\+\_\+unit, and additional to his member-\/variables they include the member-\/variable theta, of class angle (described above).
 
 An example of use of it is the following\+:
@@ -556,7 +556,7 @@ An example of use of it is the following\+:
 \DoxyCodeLine{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{cin}}\ >>\ a;\ \textcolor{comment}{//\ Initializes\ a\ with\ the\ string\ given\ to\ cin}}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md32}{}\doxysubsection{\texorpdfstring{Vector units in 3D}{Vector units in 3D}}\label{index_autotoc_md32}
+\hypertarget{index_autotoc_md31}{}\doxysubsection{\texorpdfstring{Vector units in 3D}{Vector units in 3D}}\label{index_autotoc_md31}
 Vector units in 3D are the most useful vectorial units. They allow to do all the simulations of physics and any other area of science in 3D, which is the most common scenario. To work, they have, as vector\+\_\+unit\+\_\+2d, a value, dimensions, and an angle theta, but they include the angle phi. So, they work as spherical coordinates, having cartesian projections for each axis. The class vector\+\_\+unit\+\_\+3d inherits from scalar\+\_\+unit, as vector\+\_\+unit\+\_\+2d, but not from vector\+\_\+unit\+\_\+2d, evading math errors that would be derived from that, because 2D and 3D dimensions are not mathematically equivalent in 2D (when projecting the x and y axis there appears the angle phi on the equations for the 3D cases).
 
 An example of use is the following\+:
@@ -630,7 +630,7 @@ An example of use is the following\+:
 \DoxyCodeLine{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{cin}}\ >>\ a;\ \textcolor{comment}{//\ Initializes\ a\ with\ the\ string\ given\ to\ cin}}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md33}{}\doxysubsection{\texorpdfstring{Vector units in ND}{Vector units in ND}}\label{index_autotoc_md33}
+\hypertarget{index_autotoc_md32}{}\doxysubsection{\texorpdfstring{Vector units in ND}{Vector units in ND}}\label{index_autotoc_md32}
 Vector units in ND are very interesting vector units. They allow to operate in ND, which means, inside scifir-\/units, that the dimensions can be changed. ND allows to operate in 1D, 2D, 3D and more dimensions at the same time. The way they allow that is with a vector$<$angle$>$ member-\/variable, which allows to control the angles of the n dimensions were the vector operates. For 2D it has one angle, as vector\+\_\+unit\+\_\+2d, and for 3D it has two angles, as vector\+\_\+unit\+\_\+3d. For 1D it doesn\textquotesingle{}t has any angle.
 
 An example of use is the following\+:
@@ -710,7 +710,7 @@ An example of use is the following\+:
 \DoxyCodeLine{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{cin}}\ >>\ a;\ \textcolor{comment}{//\ Initializes\ a\ with\ the\ string\ given\ to\ cin}}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md34}{}\doxysubsection{\texorpdfstring{Coordinates and points in 1D}{Coordinates and points in 1D}}\label{index_autotoc_md34}
+\hypertarget{index_autotoc_md33}{}\doxysubsection{\texorpdfstring{Coordinates and points in 1D}{Coordinates and points in 1D}}\label{index_autotoc_md33}
 Coordinates in 1D allow to move any object, particle, solid or immaterial, through a 1D space. The coordinates\+\_\+1d class has been implemented as a template class, allowing to use any scalar\+\_\+unit, or, also, a single float. Any scalar\+\_\+unit can be used, because then coordinates\+\_\+1d allows to move in dimensions different than length, as dimensions on some science-\/fiction speculations are (because on some science-\/fiction ideas, a dimension can be anything).
 
 point\+\_\+1d is equivalent in functionality as coordinates\+\_\+1d, it has the same member-\/variables and functions, its intended use is to be an abstract point in 1D, rather than a position in 1D (as coordinates\+\_\+1d are).
@@ -752,7 +752,7 @@ An example of use of coordinates\+\_\+1d is the following\+:
 \DoxyCodeLine{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{cin}}\ >>\ x;\ \textcolor{comment}{//\ coordinates\_1d\ can\ be\ initialized\ through\ cin}}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md35}{}\doxysubsection{\texorpdfstring{Coordinates and points in 2D}{Coordinates and points in 2D}}\label{index_autotoc_md35}
+\hypertarget{index_autotoc_md34}{}\doxysubsection{\texorpdfstring{Coordinates and points in 2D}{Coordinates and points in 2D}}\label{index_autotoc_md34}
 coordinates\+\_\+2d class allows to create software with positions in 2D. It has a very similar interface to coordinates\+\_\+1d, it\textquotesingle{}s initialized with an string of the form "{}1 m,2 m"{} or "{}(1 m,2 m)"{} because the character \textquotesingle{}(\textquotesingle{} can be present or not. It\textquotesingle{}s, as coordinates\+\_\+1d, a template class, and can then specify coordinates of any scalar\+\_\+unit (usually, length), or with a float, if there\textquotesingle{}s no unit that represents adequately the coordinates, or if it\textquotesingle{}s needed to save some memory (because the float is lighter than a unit in his consumption of memory).
 
 coordinates\+\_\+2d can be used as cartesian and as polar coordinates at the same time. It has x and y as member-\/variables, which can be of the type of any scalar\+\_\+unit or a float. When working with polar coordinates, the calculations are stored as x and y, that\textquotesingle{}s, as cartesian coordinates, but when accessing it, with functions like get\+\_\+p() and get\+\_\+theta(), they give the values in polar coordinates. Then, at the same time, coordinates\+\_\+2d behave as cartesian and as polar coordinates, by storing the values only once, not two times. Then, coordinates\+\_\+2d is like a dual object, it contains cartesian\+\_\+2d and polar\+\_\+coordinates inside.
@@ -803,7 +803,7 @@ point\+\_\+2d is equivalent to coordinates\+\_\+2d, it\textquotesingle{}s intend
 \DoxyCodeLine{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{cin}}\ >>\ x;\ \textcolor{comment}{//\ coordinates\_2d\ can\ be\ initialized\ through\ cin}}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md36}{}\doxysubsection{\texorpdfstring{Coordinates and points in 3D}{Coordinates and points in 3D}}\label{index_autotoc_md36}
+\hypertarget{index_autotoc_md35}{}\doxysubsection{\texorpdfstring{Coordinates and points in 3D}{Coordinates and points in 3D}}\label{index_autotoc_md35}
 coordinates\+\_\+3d class allows to work with positions in 3D. Its initialization string is of the form "{}10 m,5 m,3 m"{}, or of the form "{}(10 m,5 m,3 m)"{}.
 
 coordinates\+\_\+3d can be used as cartesian coordinates, as cylindrical coordinates, as spherical coordinates and as geographical coordinates at the same time. It has x, y and z as member-\/variables, which can be of the type of any scalar\+\_\+unit or a float. When working with coordinates different than cartesian coordinates, the calculations are stored as x, y and z, that\textquotesingle{}s, as cartesian coordinates, but when accessing it, with functions like get\+\_\+p(), get\+\_\+theta() and get\+\_\+r(), they give the values in the other coordinates systems. Then, at the same time, coordinates\+\_\+3d behave as cartesian, cylindrical, spherical and geographical coordinates, by storing the values only once, not various times. Then, coordinates\+\_\+3d is like a multiple object, it contains cartesian\+\_\+3d\+\_\+coordinates, cylindrical\+\_\+coordinates, spherical\+\_\+coordinates and geographical\+\_\+coordinates inside.
@@ -866,14 +866,14 @@ point\+\_\+3d is equivalent to coordinates\+\_\+3d, it change of name but not on
 \DoxyCodeLine{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{cin}}\ >>\ x;\ \textcolor{comment}{//\ coordinates\_3d\ can\ be\ initialized\ through\ cin}}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md37}{}\doxysubsection{\texorpdfstring{AID and ZID}{AID and ZID}}\label{index_autotoc_md37}
+\hypertarget{index_autotoc_md36}{}\doxysubsection{\texorpdfstring{AID and ZID}{AID and ZID}}\label{index_autotoc_md36}
 An {\bfseries{AID}}, acronym of {\bfseries{Astronomycal ID}}, is an identifier of an astronomical object, like planets, moons, galaxies, stars, and any other astronomical object.
 
-A {\bfseries{ZID}}, acronym of {\bfseries{Zone ID}}, is an identifier of a zone, like a region, a district, a store, a lake, a country, and any other zone. A zone is defined here as any closed surface that can be drawn over an astronomycal object. A ZID is composed of the AID of which the zone pertains, and the zone itself.\hypertarget{index_autotoc_md38}{}\doxysubsection{\texorpdfstring{percentage}{percentage}}\label{index_autotoc_md38}
-The {\bfseries{percentage}} class represents percentages, they calculate the factor of the percentage and automatically, when operating with numeric types, calculate the percentage of that number.\hypertarget{index_autotoc_md39}{}\doxysubsection{\texorpdfstring{pixel}{pixel}}\label{index_autotoc_md39}
-The {\bfseries{pixel}} class represents pixels, which are the squares that compose screens. It can be used to calculate distance over pixels instead of distances of physical lengths, which is a need of some digital applications.\hypertarget{index_autotoc_md40}{}\doxysubsection{\texorpdfstring{p\+H and p\+OH}{pH and pOH}}\label{index_autotoc_md40}
-The {\bfseries{pH}} class allows to work with pH, which is used inside chemistry software to store data about pH. The {\bfseries{p\+OH}} class is the counterpart of the pH class, and is not commonly needed, but it can be used if the pH class is not being useful for some reason, and if instead the p\+OH class is useful. The pH class should always be {\bfseries{prefered}} to be used over the p\+OH class, and that last should be used {\bfseries{only}} if the pH class is not properly solving the needs.\hypertarget{index_autotoc_md41}{}\doxysubsection{\texorpdfstring{Sizes in 2\+D, 3\+D and ND}{Sizes in 2D, 3D and ND}}\label{index_autotoc_md41}
-The {\bfseries{size\+\_\+2d}} class allows to store the data of the width and height of an object in length classes. The {\bfseries{size\+\_\+3d}} allows to store the data of the width, the height and the depth of an object in length classes. The {\bfseries{size\+\_\+nd}} class allows to store lengths corresponding to the dimension of an object in a variable number of dimensions.\hypertarget{index_autotoc_md42}{}\doxysection{\texorpdfstring{Internals}{Internals}}\label{index_autotoc_md42}
+A {\bfseries{ZID}}, acronym of {\bfseries{Zone ID}}, is an identifier of a zone, like a region, a district, a store, a lake, a country, and any other zone. A zone is defined here as any closed surface that can be drawn over an astronomycal object. A ZID is composed of the AID of which the zone pertains, and the zone itself.\hypertarget{index_autotoc_md37}{}\doxysubsection{\texorpdfstring{percentage}{percentage}}\label{index_autotoc_md37}
+The {\bfseries{percentage}} class represents percentages, they calculate the factor of the percentage and automatically, when operating with numeric types, calculate the percentage of that number.\hypertarget{index_autotoc_md38}{}\doxysubsection{\texorpdfstring{pixel}{pixel}}\label{index_autotoc_md38}
+The {\bfseries{pixel}} class represents pixels, which are the squares that compose screens. It can be used to calculate distance over pixels instead of distances of physical lengths, which is a need of some digital applications.\hypertarget{index_autotoc_md39}{}\doxysubsection{\texorpdfstring{p\+H and p\+OH}{pH and pOH}}\label{index_autotoc_md39}
+The {\bfseries{pH}} class allows to work with pH, which is used inside chemistry software to store data about pH. The {\bfseries{p\+OH}} class is the counterpart of the pH class, and is not commonly needed, but it can be used if the pH class is not being useful for some reason, and if instead the p\+OH class is useful. The pH class should always be {\bfseries{prefered}} to be used over the p\+OH class, and that last should be used {\bfseries{only}} if the pH class is not properly solving the needs.\hypertarget{index_autotoc_md40}{}\doxysubsection{\texorpdfstring{Sizes in 2\+D, 3\+D and ND}{Sizes in 2D, 3D and ND}}\label{index_autotoc_md40}
+The {\bfseries{size\+\_\+2d}} class allows to store the data of the width and height of an object in length classes. The {\bfseries{size\+\_\+3d}} allows to store the data of the width, the height and the depth of an object in length classes. The {\bfseries{size\+\_\+nd}} class allows to store lengths corresponding to the dimension of an object in a variable number of dimensions.\hypertarget{index_autotoc_md41}{}\doxysection{\texorpdfstring{Internals}{Internals}}\label{index_autotoc_md41}
 Internally, the library has some important mechanisms important to be known by a serious developer. Those important mechanisms are described here, in order to avoid the developer to read the code of the library and learn every detail.
 
 The first important mechanism to describe is the static storage of custom dimensions. This storage is static, meaning that every time a unit of a dimension not registered is created, this storage is the one used, instead of the name being stored inside the instance. With that behavior, when instantiating a big amount of dimensions, a big amount of memory is saved. To refer to the static storage it\textquotesingle{}s used the char symbol\mbox{[}3\mbox{]} of the dimension class, which uses only 3 bytes instead of the bytes the full dimension name would use. Then, each instance of a dimension class, given that static storage, uses only 6 bytes of memory.
