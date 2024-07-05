@@ -2182,8 +2182,8 @@ namespace scifir
 
 	string to_string(const coordinates_ndr<float>& x);
 
-	template<typename T>
-	T distance(const coordinates_ndr<T>& x,const coordinates_ndr<T>& y)
+	template<typename T,typename U>
+	T distance(const coordinates_ndr<T>& x,const coordinates_ndr<U>& y)
 	{
 		if (x.get_nd() == y.get_nd())
 		{
@@ -2202,8 +2202,8 @@ namespace scifir
 
 	float distance(const coordinates_ndr<float>& x,const coordinates_ndr<float>& y);
 
-	template<typename T>
-	T distance(const coordinates_ndr<T>& x,const coordinates_nd<T>& y)
+	template<typename T,typename U>
+	T distance(const coordinates_ndr<T>& x,const coordinates_nd<U>& y)
 	{
 		if (x.get_nd() == y.get_nd())
 		{
@@ -2222,8 +2222,8 @@ namespace scifir
 
 	float distance(const coordinates_ndr<float>& x,const coordinates_nd<float>& y);
 
-	template<typename T>
-	T distance(const coordinates_nd<T>& x,const coordinates_ndr<T>& y)
+	template<typename T,typename U>
+	T distance(const coordinates_nd<T>& x,const coordinates_ndr<U>& y)
 	{
 		if (x.get_nd() == y.get_nd())
 		{
@@ -2242,8 +2242,8 @@ namespace scifir
 
 	float distance(const coordinates_nd<float>& x,const coordinates_ndr<float>& y);
 
-	template<typename T>
-	T distance(const coordinates_ndr<T>& x,const point_nd<T>& y)
+	template<typename T,typename U>
+	T distance(const coordinates_ndr<T>& x,const point_nd<U>& y)
 	{
 		if (x.get_nd() == y.get_nd())
 		{
@@ -2262,8 +2262,8 @@ namespace scifir
 
 	float distance(const coordinates_ndr<float>& x,const point_nd<float>& y);
 
-	template<typename T>
-	T distance(const point_nd<T>& x,const coordinates_ndr<T>& y)
+	template<typename T,typename U>
+	T distance(const point_nd<T>& x,const coordinates_ndr<U>& y)
 	{
 		if (x.get_nd() == y.get_nd())
 		{
@@ -2283,8 +2283,8 @@ namespace scifir
 	float distance(const point_nd<float>& x,const coordinates_ndr<float>& y);
 }
 
-template<typename T>
-bool operator ==(const scifir::coordinates_ndr<T>& x,const scifir::coordinates_ndr<T>& y)
+template<typename T,typename U>
+bool operator ==(const scifir::coordinates_ndr<T>& x,const scifir::coordinates_ndr<U>& y)
 {
 	for (int i = 0; i < x.get_values().size(); i++)
 	{
@@ -2303,14 +2303,14 @@ bool operator ==(const scifir::coordinates_ndr<T>& x,const scifir::coordinates_n
 	return true;
 }
 
-template<typename T>
-bool operator !=(const scifir::coordinates_ndr<T>& x,const scifir::coordinates_ndr<T>& y)
+template<typename T,typename U>
+bool operator !=(const scifir::coordinates_ndr<T>& x,const scifir::coordinates_ndr<U>& y)
 {
 	return !(x == y);
 }
 
-template<typename T>
-bool operator ==(const scifir::coordinates_ndr<T>& x,const scifir::coordinates_nd<T>& y)
+template<typename T,typename U>
+bool operator ==(const scifir::coordinates_ndr<T>& x,const scifir::coordinates_nd<U>& y)
 {
 	if (x.get_values().size() == y.values.size())
 	{
@@ -2329,14 +2329,14 @@ bool operator ==(const scifir::coordinates_ndr<T>& x,const scifir::coordinates_n
 	}
 }
 
-template<typename T>
-bool operator !=(const scifir::coordinates_ndr<T>& x,const scifir::coordinates_nd<T>& y)
+template<typename T,typename U>
+bool operator !=(const scifir::coordinates_ndr<T>& x,const scifir::coordinates_nd<U>& y)
 {
 	return !(x == y);
 }
 
-template<typename T>
-bool operator ==(const scifir::coordinates_nd<T>& x,const scifir::coordinates_ndr<T>& y)
+template<typename T,typename U>
+bool operator ==(const scifir::coordinates_nd<T>& x,const scifir::coordinates_ndr<U>& y)
 {
 	if (x.values.size() == y.get_values().size())
 	{
@@ -2355,14 +2355,14 @@ bool operator ==(const scifir::coordinates_nd<T>& x,const scifir::coordinates_nd
 	}
 }
 
-template<typename T>
-bool operator !=(const scifir::coordinates_nd<T>& x,const scifir::coordinates_ndr<T>& y)
+template<typename T,typename U>
+bool operator !=(const scifir::coordinates_nd<T>& x,const scifir::coordinates_ndr<U>& y)
 {
 	return !(x == y);
 }
 
-template<typename T>
-bool operator ==(const scifir::coordinates_ndr<T>& x,const scifir::point_nd<T>& y)
+template<typename T,typename U>
+bool operator ==(const scifir::coordinates_ndr<T>& x,const scifir::point_nd<U>& y)
 {
 	if (x.get_values().size() == y.values.size())
 	{
@@ -2381,14 +2381,14 @@ bool operator ==(const scifir::coordinates_ndr<T>& x,const scifir::point_nd<T>& 
 	}
 }
 
-template<typename T>
-bool operator !=(const scifir::coordinates_ndr<T>& x,const scifir::point_nd<T>& y)
+template<typename T,typename U>
+bool operator !=(const scifir::coordinates_ndr<T>& x,const scifir::point_nd<U>& y)
 {
 	return !(x == y);
 }
 
-template<typename T>
-bool operator ==(const scifir::point_nd<T>& x,const scifir::coordinates_ndr<T>& y)
+template<typename T,typename U>
+bool operator ==(const scifir::point_nd<T>& x,const scifir::coordinates_ndr<U>& y)
 {
 	if (x.values.size() == y.get_values().size())
 	{
@@ -2407,8 +2407,8 @@ bool operator ==(const scifir::point_nd<T>& x,const scifir::coordinates_ndr<T>& 
 	}
 }
 
-template<typename T>
-bool operator !=(const scifir::point_nd<T>& x,const scifir::coordinates_ndr<T>& y)
+template<typename T,typename U>
+bool operator !=(const scifir::point_nd<T>& x,const scifir::coordinates_ndr<U>& y)
 {
 	return !(x == y);
 }

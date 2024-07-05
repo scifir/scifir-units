@@ -561,8 +561,8 @@ namespace scifir
 
 	string to_string(const point_3d<float>& x);
 
-	template<typename T>
-	T distance(const point_3d<T>& x,const point_3d<T>& y)
+	template<typename T,typename U>
+	T distance(const point_3d<T>& x,const point_3d<U>& y)
 	{
 		return scifir::sqrt(scifir::pow(x.x - y.x,2) + scifir::pow(x.y - y.y,2) + scifir::pow(x.z - y.z,2));
 	}
@@ -570,14 +570,14 @@ namespace scifir
 	float distance(const point_3d<float>& x,const point_3d<float>& y);
 }
 
-template<typename T>
-bool operator ==(const scifir::point_3d<T>& x,const scifir::point_3d<T>& y)
+template<typename T,typename U>
+bool operator ==(const scifir::point_3d<T>& x,const scifir::point_3d<U>& y)
 {
 	return (x.x == y.x and x.y == y.y and x.z == y.z);
 }
 
-template<typename T>
-bool operator !=(const scifir::point_3d<T>& x,const scifir::point_3d<T>& y)
+template<typename T,typename U>
+bool operator !=(const scifir::point_3d<T>& x,const scifir::point_3d<U>& y)
 {
 	return !(x == y);
 }

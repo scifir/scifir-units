@@ -1068,8 +1068,8 @@ namespace scifir
 
 	string to_string(const point_nd<float>& x);
 
-	template<typename T>
-	T distance(const point_nd<T>& x1,const point_nd<T>& x2)
+	template<typename T,typename U>
+	T distance(const point_nd<T>& x1,const point_nd<U>& x2)
 	{
 		if (x1.get_nd() == x2.get_nd())
 		{
@@ -1089,8 +1089,8 @@ namespace scifir
 	float distance(const point_nd<float>&,const point_nd<float>&);
 }
 
-template<typename T>
-bool operator ==(const scifir::point_nd<T>& x,const scifir::point_nd<T>& y)
+template<typename T,typename U>
+bool operator ==(const scifir::point_nd<T>& x,const scifir::point_nd<U>& y)
 {
 	for (int i = 0; i < x.values.size(); i++)
 	{
@@ -1102,8 +1102,8 @@ bool operator ==(const scifir::point_nd<T>& x,const scifir::point_nd<T>& y)
 	return true;
 }
 
-template<typename T>
-bool operator !=(const scifir::point_nd<T>& x,const scifir::point_nd<T>& y)
+template<typename T,typename U>
+bool operator !=(const scifir::point_nd<T>& x,const scifir::point_nd<U>& y)
 {
 	return !(x == y);
 }
