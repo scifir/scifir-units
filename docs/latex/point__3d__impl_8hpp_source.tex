@@ -14,19 +14,32 @@
 \DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }scifir}
 \DoxyCodeLine{00011\ \{}
 \DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__3d}{point\_3d<T>::point\_3d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y),z(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z)}
+\DoxyCodeLine{00013\ \ \ \ \ point\_3d<T>::point\_3d(\textcolor{keyword}{const}\ coordinates\_3d<T>\&\ x\_coordinates)\ :\ x(x\_coordinates.x),y(x\_coordinates.y),z(x\_coordinates.z)}
 \DoxyCodeLine{00014\ \ \ \ \ \{\}}
 \DoxyCodeLine{00015\ }
 \DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1point__3d}{point\_3d<T>::operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})}
-\DoxyCodeLine{00018\ \ \ \ \ \{}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x;}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y;}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z;}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00023\ \ \ \ \ \}}
-\DoxyCodeLine{00024\ \}}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_3D\_IMPL\_HPP\_INCLUDED}}
+\DoxyCodeLine{00017\ \ \ \ \ point\_3d<T>::point\_3d(coordinates\_3d<T>\&\&\ x\_coordinates)\ :\ x(std::move(x\_coordinates.x)),y(std::move(x\_coordinates.y)),z(std::move(x\_coordinates.z))}
+\DoxyCodeLine{00018\ \ \ \ \ \{\}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00021\ \ \ \ \ point\_3d<T>\&\ point\_3d<T>::operator=(\textcolor{keyword}{const}\ coordinates\_3d<T>\&\ x\_coordinates)}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ x\ =\ x\_coordinates.x;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ y\ =\ x\_coordinates.y;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ z\ =\ x\_coordinates.z;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00030\ \ \ \ \ point\_3d<T>\&\ point\_3d<T>::operator=(coordinates\_3d<T>\&\&\ x\_coordinates)}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ x\ =\ std::move(x\_coordinates.x);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ y\ =\ std::move(x\_coordinates.y);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ z\ =\ std::move(x\_coordinates.z);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_3D\_IMPL\_HPP\_INCLUDED}}
 
 \end{DoxyCode}

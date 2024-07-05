@@ -18,38 +18,50 @@
 \DoxyCodeLine{00014\ \ \ \ \ \{}
 \DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{zid}}();}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{zid}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&);}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{zid}}(\mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\&);}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1zid}{zid}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&);}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\&);}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}};}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\ regions;}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ country;}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ zone;}
-\DoxyCodeLine{00028\ \ \ \ \ \};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{zid}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\ x);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{zid}}(\mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\&\ x);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1zid}{zid}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_aid}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_country}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_regions}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_zone}});}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1zid}{zid}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_aid}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid}});}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1zid}{zid}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid\_full}});}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\ x);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\&\ x);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid\_full}});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_no\_country()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_unknown\_country()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&);}
-\DoxyCodeLine{00031\ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ partial\_display()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&);}
-\DoxyCodeLine{00034\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&);}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00037\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&);}
-\DoxyCodeLine{00040\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\ regions;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ country;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ zone;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initialize\_from\_string(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid\_full}});}
+\DoxyCodeLine{00040\ \ \ \ \ \};}
 \DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ operator\ +=(\textcolor{keywordtype}{string}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&);}
-\DoxyCodeLine{00043\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&);}
-\DoxyCodeLine{00044\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ ostream\&\ operator\ <<(ostream\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&);}
-\DoxyCodeLine{00047\ istream\&\ operator\ >>(istream\&,\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&);}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_ZID\_HPP\_INCLUDED}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\ x);}
+\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ y);}
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ y);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_zid\_full);}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_zid\_full);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_zid\_full,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x);}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_zid\_full,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ operator\ +=(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ y);}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ y);}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ ostream\&\ operator\ <<(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x);}
+\DoxyCodeLine{00059\ istream\&\ operator\ >>(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_ZID\_HPP\_INCLUDED}}
 
 \end{DoxyCode}

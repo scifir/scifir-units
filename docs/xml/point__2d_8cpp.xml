@@ -332,16 +332,16 @@
     <innernamespace refid="namespacescifir">scifir</innernamespace>
     <sectiondef kind="func">
       <memberdef kind="function" id="point__2d_8cpp_1a663319acedf14e7b1c5ccb51ee2c4617" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">ostream</ref> &amp;</type>
+        <type>ostream &amp;</type>
         <definition>ostream &amp; operator&lt;&lt;</definition>
         <argsstring>(ostream &amp;os, const scifir::point_2d&lt; float &gt; &amp;x)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">ostream</ref> &amp;</type>
+          <type>ostream &amp;</type>
           <declname>os</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1point__2d" kindref="compound">scifir::point_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <type>const <ref refid="classscifir_1_1point__2d" kindref="compound">scifir::point_2d</ref>&lt; float &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -350,7 +350,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/point_2d.cpp" line="33" column="1" bodyfile="topology/point_2d.cpp" bodystart="33" bodyend="36"/>
+        <location file="topology/point_2d.cpp" line="41" column="1" bodyfile="topology/point_2d.cpp" bodystart="41" bodyend="44"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -367,33 +367,41 @@
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">scifir</highlight></codeline>
 <codeline lineno="9"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d&lt;float&gt;::point_2d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_2d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>)<sp/>:<sp/>x(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.x),y(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.y)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>point_2d&lt;float&gt;::point_2d(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_2d&lt;float&gt;&amp;<sp/>x_coordinates)<sp/>:<sp/>x(x_coordinates.x),y(x_coordinates.y)</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_2d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d&lt;float&gt;::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_2d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>)</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.x;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.y;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>to_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_2d&lt;float&gt;</ref>&amp;<sp/>x)</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">ostringstream</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">out</ref>;</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">out</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>display_float(x.x,2)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>display_float(x.y,2)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">out</ref>.str();</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_2d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x1</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_2d&lt;float&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x2</ref>)</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>(std::sqrt(std::pow(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">x1</ref>.x<sp/>-<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x2</ref>.x,2)<sp/>+<sp/>std::pow(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">x1</ref>.y<sp/>-<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x2</ref>.y,2)));</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">ostream</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator &lt;&lt; </ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">ostream</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">os</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::point_2d&lt;float&gt;</ref>&amp;<sp/>x)</highlight></codeline>
-<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">os</ref><sp/>&lt;&lt;<sp/>scifir::to_string(x);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>point_2d&lt;float&gt;::point_2d(coordinates_2d&lt;float&gt;&amp;&amp;<sp/>x_coordinates)<sp/>:<sp/>x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y))</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>point_2d&lt;float&gt;&amp;<sp/>point_2d&lt;float&gt;::operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_2d&lt;float&gt;&amp;<sp/>x_coordinates)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>x_coordinates.x;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>x_coordinates.y;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>point_2d&lt;float&gt;&amp;<sp/>point_2d&lt;float&gt;::operator=(coordinates_2d&lt;float&gt;&amp;&amp;<sp/>x_coordinates)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>std::move(x_coordinates.x);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>std::move(x_coordinates.y);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>to_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point_2d&lt;float&gt;&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x.display_cartesian();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point_2d&lt;float&gt;&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point_2d&lt;float&gt;&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float(std::sqrt(std::pow(x.x<sp/>-<sp/>y.x,2)<sp/>+<sp/>std::pow(x.y<sp/>-<sp/>y.y,2)));</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">ostream&amp;<sp/>operator<sp/>&lt;&lt;(ostream&amp;<sp/>os,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::point_2d&lt;float&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os<sp/>&lt;&lt;<sp/>scifir::to_string(x);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="topology/point_2d.cpp"/>
   </compounddef>

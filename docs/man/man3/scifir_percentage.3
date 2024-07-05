@@ -10,55 +10,64 @@ scifir::percentage
 
 .in +1c
 .ti -1c
-.RI "\fBpercentage\fP (\fBconst\fP \fBpercentage\fP &)"
+.RI "\fBpercentage\fP (\fBconst\fP \fBpercentage\fP &x)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBpercentage\fP &&)"
+.RI "\fBpercentage\fP (\fBpercentage\fP &&x)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBfloat\fP)"
+.RI "\fBpercentage\fP (\fBfloat\fP \fBnew_value\fP)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBdouble\fP)"
+.RI "\fBpercentage\fP (\fBdouble\fP \fBnew_value\fP)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBlong\fP \fBdouble\fP)"
+.RI "\fBpercentage\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBint\fP)"
+.RI "\fBpercentage\fP (\fBint\fP \fBnew_value\fP)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBfloat\fP, \fBconst\fP \fBstring\fP &)"
+.RI "\fBpercentage\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBdouble\fP, \fBconst\fP \fBstring\fP &)"
+.RI "\fBpercentage\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBlong\fP \fBdouble\fP, \fBconst\fP \fBstring\fP &)"
+.RI "\fBpercentage\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBint\fP, \fBconst\fP \fBstring\fP &)"
+.RI "\fBpercentage\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBconst\fP \fBstring\fP &)"
+.RI "\fBpercentage\fP (\fBconst\fP \fBstring\fP &\fBinit_percentage\fP)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP (\fBconst\fP \fBscalar_unit\fP &)"
+.RI "\fBpercentage\fP (\fBconst\fP \fBscalar_unit\fP &x)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP & \fBoperator=\fP (\fBconst\fP \fBpercentage\fP &)"
+.RI "\fBpercentage\fP & \fBoperator=\fP (\fBconst\fP \fBpercentage\fP &x)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP & \fBoperator=\fP (\fBpercentage\fP &&)"
+.RI "\fBpercentage\fP & \fBoperator=\fP (\fBpercentage\fP &&x)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP & \fBoperator=\fP (\fBfloat\fP)"
+.RI "\fBpercentage\fP & \fBoperator=\fP (\fBfloat\fP \fBnew_value\fP)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &)"
+.RI "\fBpercentage\fP & \fBoperator=\fP (\fBdouble\fP \fBnew_value\fP)"
 .br
 .ti -1c
-.RI "\fBpercentage\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &)"
+.RI "\fBpercentage\fP & \fBoperator=\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP)"
+.br
+.ti -1c
+.RI "\fBpercentage\fP & \fBoperator=\fP (\fBint\fP \fBnew_value\fP)"
+.br
+.ti -1c
+.RI "\fBpercentage\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_percentage\fP)"
+.br
+.ti -1c
+.RI "\fBpercentage\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &x)"
 .br
 .ti -1c
 .RI "\fBoperator float\fP () \fBconst\fP"
@@ -67,55 +76,55 @@ scifir::percentage
 .RI "\fBconst\fP \fBfloat\fP & \fBget_value\fP () \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBpercentage\fP \fBoperator+\fP (\fBconst\fP \fBpercentage\fP &) \fBconst\fP"
+.RI "\fBpercentage\fP \fBoperator+\fP (\fBconst\fP \fBpercentage\fP &x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBpercentage\fP \fBoperator\-\fP (\fBconst\fP \fBpercentage\fP &) \fBconst\fP"
+.RI "\fBpercentage\fP \fBoperator\-\fP (\fBconst\fP \fBpercentage\fP &x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBpercentage\fP \fBoperator*\fP (\fBconst\fP \fBpercentage\fP &) \fBconst\fP"
+.RI "\fBpercentage\fP \fBoperator*\fP (\fBconst\fP \fBpercentage\fP &x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBpercentage\fP \fBoperator/\fP (\fBconst\fP \fBpercentage\fP &) \fBconst\fP"
+.RI "\fBpercentage\fP \fBoperator/\fP (\fBconst\fP \fBpercentage\fP &x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBpercentage\fP &)"
+.RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBpercentage\fP &x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator\-=\fP (\fBconst\fP \fBpercentage\fP &)"
+.RI "\fBvoid\fP \fBoperator\-=\fP (\fBconst\fP \fBpercentage\fP &x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator*=\fP (\fBconst\fP \fBpercentage\fP &)"
+.RI "\fBvoid\fP \fBoperator*=\fP (\fBconst\fP \fBpercentage\fP &x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator/=\fP (\fBconst\fP \fBpercentage\fP &)"
+.RI "\fBvoid\fP \fBoperator/=\fP (\fBconst\fP \fBpercentage\fP &x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator=\fP (T y)"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator=\fP (T x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpercentage\fP \fBoperator+\fP (T y) \fBconst\fP"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpercentage\fP \fBoperator+\fP (T x) \fBconst\fP"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpercentage\fP \fBoperator\-\fP (T y) \fBconst\fP"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpercentage\fP \fBoperator\-\fP (T x) \fBconst\fP"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBfloat\fP \fBoperator*\fP (T y) \fBconst\fP"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBfloat\fP \fBoperator*\fP (T x) \fBconst\fP"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBfloat\fP \fBoperator/\fP (T y) \fBconst\fP"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBfloat\fP \fBoperator/\fP (T x) \fBconst\fP"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator+=\fP (T y)"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator+=\fP (T x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator\-=\fP (T y)"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator\-=\fP (T x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator*=\fP (T y)"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator*=\fP (T x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator/=\fP (T y)"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator/=\fP (T x)"
 .br
 .ti -1c
 .RI "\fBpercentage\fP & \fBoperator++\fP ()"
@@ -130,10 +139,10 @@ scifir::percentage
 .RI "\fBpercentage\fP \fBoperator\-\-\fP (\fBint\fP)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBoperator*\fP (\fBconst\fP \fBscalar_unit\fP &) \fBconst\fP"
+.RI "\fBscalar_unit\fP \fBoperator*\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBoperator/\fP (\fBconst\fP \fBscalar_unit\fP &) \fBconst\fP"
+.RI "\fBscalar_unit\fP \fBoperator/\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
 .br
 .ti -1c
 .RI "\fBfloat\fP \fBget_factor\fP () \fBconst\fP"
@@ -142,25 +151,10 @@ scifir::percentage
 .RI "\fBfloat\fP \fBget_ppm\fP () \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBfloat\fP \fBget_ppb\fP () \fBconst\fP"
-.br
-.ti -1c
-.RI "\fBfloat\fP \fBget_ppt\fP () \fBconst\fP"
-.br
-.ti -1c
-.RI "\fBfloat\fP \fBget_ppq\fP () \fBconst\fP"
+.RI "\fBstring\fP \fBdisplay_percentage\fP (\fBint\fP \fBnumber_of_decimals\fP=2) \fBconst\fP"
 .br
 .ti -1c
 .RI "\fBstring\fP \fBdisplay_ppm\fP () \fBconst\fP"
-.br
-.ti -1c
-.RI "\fBstring\fP \fBdisplay_ppb\fP () \fBconst\fP"
-.br
-.ti -1c
-.RI "\fBstring\fP \fBdisplay_ppt\fP () \fBconst\fP"
-.br
-.ti -1c
-.RI "\fBstring\fP \fBdisplay_ppq\fP () \fBconst\fP"
 .br
 .in -1c
 

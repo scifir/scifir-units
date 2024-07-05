@@ -16,7 +16,10 @@ scifir::complex_number< T >
 .RI "\fBcomplex_number\fP (\fBcomplex_number\fP< T > &&x)"
 .br
 .ti -1c
-.RI "\fBcomplex_number\fP (T x, T y)"
+.RI "\fBcomplex_number\fP (\fBconst\fP T &x, \fBconst\fP T &y)"
+.br
+.ti -1c
+.RI "\fBcomplex_number\fP (\fBconst\fP \fBstring\fP &x, \fBconst\fP \fBstring\fP &y)"
 .br
 .ti -1c
 .RI "\fBcomplex_number\fP (\fBconst\fP \fBstring\fP &\fBinit_complex_number\fP)"
@@ -34,22 +37,16 @@ scifir::complex_number< T >
 .RI "\fBcomplex_number\fP< T > \fBoperator\-\fP (\fBconst\fP \fBcomplex_number\fP< T > &x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBcomplex_number\fP< T > \fBoperator*\fP (\fBconst\fP \fBcomplex_number\fP< T > &x) \fBconst\fP"
+.RI "template<\fBtypename\fP \fBU\fP > \fBcomplex_number\fP< \fBscalar_unit\fP > \fBoperator*\fP (\fBconst\fP \fBcomplex_number\fP< \fBU\fP > &x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBcomplex_number\fP< T > \fBoperator/\fP (\fBconst\fP \fBcomplex_number\fP< T > &x) \fBconst\fP"
+.RI "template<\fBtypename\fP \fBU\fP > \fBcomplex_number\fP< \fBscalar_unit\fP > \fBoperator/\fP (\fBconst\fP \fBcomplex_number\fP< \fBU\fP > &x) \fBconst\fP"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBcomplex_number\fP< T > &x)"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBoperator\-=\fP (\fBconst\fP \fBcomplex_number\fP< T > &x)"
-.br
-.ti -1c
-.RI "\fBvoid\fP \fBoperator*=\fP (\fBconst\fP \fBcomplex_number\fP< T > &x)"
-.br
-.ti -1c
-.RI "\fBvoid\fP \fBoperator/=\fP (\fBconst\fP \fBcomplex_number\fP< T > &x)"
 .br
 .ti -1c
 .RI "\fBcomplex_number\fP< T > \fBget_conjugate\fP () \fBconst\fP"
@@ -61,7 +58,10 @@ scifir::complex_number< T >
 .RI "\fBangle\fP \fBget_argument\fP () \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBcomplex_number\fP< T > \fBget_reciprocal\fP () \fBconst\fP"
+.RI "\fBcomplex_number\fP< \fBscalar_unit\fP > \fBget_reciprocal\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBdisplay\fP (\fBint\fP \fBnumber_of_decimals\fP=2) \fBconst\fP"
 .br
 .in -1c
 .SS "Public Attributes"

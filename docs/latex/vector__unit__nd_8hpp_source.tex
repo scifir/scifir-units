@@ -58,225 +58,249 @@
 \DoxyCodeLine{00054\ \textcolor{preprocessor}{const\ vector<dimension>\ name\#\#\_nd::real\_dimensions\ =\ create\_derived\_dimensions(init\_dimensions)}}
 \DoxyCodeLine{00055\ }
 \DoxyCodeLine{00056\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00057\ \textcolor{keyword}{using\ namespace\ }scifir;}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \textcolor{keyword}{namespace\ }scifir}
-\DoxyCodeLine{00060\ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}}
-\DoxyCodeLine{00062\ \ \ \ \ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}();}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\&);}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{float},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{float},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<float>}}\&);}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{float},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\&);}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{float},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&);}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{float},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<float>}}\&);}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{float},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\&);}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&);}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<float>}}\&);}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\&);}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<float>}}\&);}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\&);}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ cartesian\_2d(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},2)\ +\ std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},2)));}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}\ =\ scifir::atan\_grade(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}}\ /\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}});}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\ \{\mbox{\hyperlink{classscifir_1_1angle}{angle}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\});}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ cartesian\_3d(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},2)\ +\ std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},2)\ +\ std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}},2)));}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}\ =\ scifir::atan\_grade(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}}\ /\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}});}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}\ =\ scifir::acos\_grade(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}}\ /\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\ \{\mbox{\hyperlink{classscifir_1_1angle}{angle}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}),\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})\});}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ cylindrical(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\mbox{\hyperlink{classscifir_1_1angle}{angle}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},2)\ +\ std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}},2)));}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}\ =\ scifir::atan\_grade(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ /\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}});}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\ \{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})\});}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\&);}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&);}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\&);}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ point\_to(direction::name);}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/=}}(\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}});}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{namespace\ }scifir}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\&\ x);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}});}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}});}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}});}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}});}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_scalar}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_scalar}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_angles}});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_vector\_nd}});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ cartesian\_2d(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},2)\ +\ std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},2)));}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}\ =\ scifir::atan\_grade(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}}\ /\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}});}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\ \{\mbox{\hyperlink{classscifir_1_1angle}{angle}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\});}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ cartesian\_3d(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},2)\ +\ std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},2)\ +\ std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}},2)));}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}\ =\ scifir::atan\_grade(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}}\ /\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}});}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}\ =\ scifir::acos\_grade(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}}\ /\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\ \{\mbox{\hyperlink{classscifir_1_1angle}{angle}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}),\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})\});}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00111\ }
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/}}(\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}})\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00114\ }
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ \string^}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ cylindrical(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\mbox{\hyperlink{classscifir_1_1angle}{angle}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},2)\ +\ std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}},2)));}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}\ =\ scifir::atan\_grade(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ /\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}});}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\ \{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})\});}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00118\ }
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00121\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ y\ =\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ x;}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\&\ x);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\&\ x);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_vector\_nd}});}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ ==}}(\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ x)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00126\ }
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00129\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ y\ =\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ -\/=\ x;}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ point\_to(direction::name\ x);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/=}}(\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ x);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/}}(\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ x)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00134\ }
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00137\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ y\ =\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ *=\ x;}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00142\ }
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00145\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ y\ =\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ /=\ x;}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00150\ }
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<is\_integer\_number<U>::value}}>::type>}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ \string^}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00153\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(std::pow(get\_value(),x),power\_dimensions(get\_dimensions(),x),angles);}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00156\ }
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ y)}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scalar\_unit::value\ +=\ y;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ \string^}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00141\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ y\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ x;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00149\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ y\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ -\/=\ x;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00157\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ y\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ *=\ x;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
 \DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00162\ }
 \DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ y)}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scalar\_unit::value\ -\/=\ y;}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00168\ }
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ y)}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scalar\_unit::value\ *=\ y;}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ <\ 0)}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ invert();}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00178\ }
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ y)}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scalar\_unit::value\ /=\ y;}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ <\ 0)}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ invert();}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00165\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ y\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ /=\ x;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<is\_integer\_number<U>::value}}>::type>}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ \string^}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00173\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}(std::pow(get\_value(),x),power\_dimensions(get\_dimensions(),x),angles);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scalar\_unit::value\ +=\ x;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scalar\_unit::value\ -\/=\ x;}
 \DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00188\ }
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ is\_nd(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}})\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00190\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ angles.size()\ ==\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ -\/\ 1);}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ get\_nd()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00195\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}(angles.size()\ +\ 1);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scalar\_unit::value\ *=\ std::abs(x);}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ <\ 0)}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ invert();}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00198\ }
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ n\_projection(\textcolor{keywordtype}{int})\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x\_projection()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ y\_projection()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ z\_projection()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00203\ }
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ invert();}
-\DoxyCodeLine{00205\ }
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ vectorial\_display(\textcolor{keywordtype}{int}\ =\ 2)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ vectorial\_derived\_display(\textcolor{keywordtype}{int}\ =\ 2)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ vectorial\_custom\_display(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\textcolor{keywordtype}{int}\ =\ 2)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00209\ }
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\ angles;}
-\DoxyCodeLine{00211\ \ \ \ \ \};}
-\DoxyCodeLine{00212\ }
-\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00214\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ norm(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ sqrt(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ sqrt\_nth(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&,\textcolor{keywordtype}{int});}
-\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ dot\_product(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00218\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ cross\_product(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ angle\_between(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{bool}\ same\_nd(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{bool}\ same\_direction(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordtype}{bool}\ parallel(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{bool}\ orthogonal(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00224\ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scalar\_unit::value\ /=\ std::abs(x);}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ <\ 0)}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ invert();}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ is\_nd(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00210\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ angles.size()\ ==\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ -\/\ 1);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ get\_nd()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00215\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}(angles.size()\ +\ 1);}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ n\_projection(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x\_projection()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ y\_projection()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ z\_projection()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ invert();}
 \DoxyCodeLine{00225\ }
-\DoxyCodeLine{00226\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00227\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ x)}
-\DoxyCodeLine{00228\ \{}
-\DoxyCodeLine{00229\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ z\ =\ x;}
-\DoxyCodeLine{00230\ \ \ \ \ z\ +=\ y;}
-\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
-\DoxyCodeLine{00232\ \}}
-\DoxyCodeLine{00233\ }
-\DoxyCodeLine{00234\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00235\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/}}(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ x)}
-\DoxyCodeLine{00236\ \{}
-\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}(y\ -\/\ x.get\_value(),x.get\_dimensions(),x.angles);}
-\DoxyCodeLine{00238\ \}}
-\DoxyCodeLine{00239\ }
-\DoxyCodeLine{00240\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00241\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *}}(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ x)}
-\DoxyCodeLine{00242\ \{}
-\DoxyCodeLine{00243\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ z\ =\ x;}
-\DoxyCodeLine{00244\ \ \ \ \ z\ *=\ y;}
-\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
-\DoxyCodeLine{00246\ \}}
-\DoxyCodeLine{00247\ }
-\DoxyCodeLine{00248\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00249\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /}}(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ x)}
-\DoxyCodeLine{00250\ \{}
-\DoxyCodeLine{00251\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<scifir::dimension>}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}}\ =\ x.get\_dimensions();}
-\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classscifir_1_1dimension}{scifir::dimension}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimension}}\ :\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}})}
-\DoxyCodeLine{00253\ \ \ \ \ \{}
-\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimension}}.invert();}
-\DoxyCodeLine{00255\ \ \ \ \ \}}
-\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}(y\ /\ x.get\_value(),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},x.angles);}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ vectorial\_display(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ vectorial\_derived\_display(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ vectorial\_custom\_display(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<angle>}}\ angles;}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initialize\_from\_string(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_vector\_nd}});}
+\DoxyCodeLine{00234\ \ \ \ \ \};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x);}
+\DoxyCodeLine{00237\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ norm(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x);}
+\DoxyCodeLine{00238\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ sqrt(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x);}
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ sqrt\_nth(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x,\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00240\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ dot\_product(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ y);}
+\DoxyCodeLine{00241\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\ cross\_product(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ y);}
+\DoxyCodeLine{00242\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ angle\_between(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ y);}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordtype}{bool}\ same\_nd(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ y);}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordtype}{bool}\ same\_direction(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ y);}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{bool}\ parallel(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ y);}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{bool}\ orthogonal(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ y);}
+\DoxyCodeLine{00247\ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ operator\ *(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ y);}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{00252\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ operator\ +(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ x)}
+\DoxyCodeLine{00253\ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ z\ =\ x;}
+\DoxyCodeLine{00255\ \ \ \ \ z\ +=\ y;}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
 \DoxyCodeLine{00257\ \}}
 \DoxyCodeLine{00258\ }
-\DoxyCodeLine{00259\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&,\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}});}
-\DoxyCodeLine{00260\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00261\ }
-\DoxyCodeLine{00262\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00263\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
+\DoxyCodeLine{00259\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{00260\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ operator\ -\/(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ x)}
+\DoxyCodeLine{00261\ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}(y\ -\/\ x.get\_value(),x.get\_dimensions(),x.angles);}
+\DoxyCodeLine{00263\ \}}
 \DoxyCodeLine{00264\ }
-\DoxyCodeLine{00265\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ ==}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00266\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ !=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00267\ }
-\DoxyCodeLine{00268\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +=}}(\textcolor{keywordtype}{string}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00269\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00270\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00271\ }
-\DoxyCodeLine{00272\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostream}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ <<}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostream}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00273\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{istream}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ >>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{istream}}\&,\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&);}
-\DoxyCodeLine{00274\ }
-\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_VECTOR\_UNIT\_ND\_HPP\_INCLUDED}}
-\DoxyCodeLine{00276\ \ }
+\DoxyCodeLine{00265\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{00266\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ operator\ *(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ x)}
+\DoxyCodeLine{00267\ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ z\ =\ x;}
+\DoxyCodeLine{00269\ \ \ \ \ z\ *=\ y;}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
+\DoxyCodeLine{00271\ \}}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{00274\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ operator\ /(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ x)}
+\DoxyCodeLine{00275\ \{}
+\DoxyCodeLine{00276\ \ \ \ \ vector<scifir::dimension>\ new\_dimensions\ =\ x.get\_dimensions();}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classscifir_1_1dimension}{scifir::dimension}}\&\ new\_dimension\ :\ new\_dimensions)}
+\DoxyCodeLine{00278\ \ \ \ \ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ new\_dimension.invert();}
+\DoxyCodeLine{00280\ \ \ \ \ \}}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}(y\ /\ x.get\_value(),new\_dimensions,x.angles);}
+\DoxyCodeLine{00282\ \}}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ y);}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_vector\_nd);}
+\DoxyCodeLine{00287\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_vector\_nd);}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_vector\_nd,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ x);}
+\DoxyCodeLine{00290\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_vector\_nd,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ x);}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \textcolor{keywordtype}{void}\ operator\ +=(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ y);}
+\DoxyCodeLine{00293\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ y);}
+\DoxyCodeLine{00294\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x);}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ ostream\&\ operator\ <<(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ x);}
+\DoxyCodeLine{00297\ istream\&\ operator\ >>(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\&\ x);}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_VECTOR\_UNIT\_ND\_HPP\_INCLUDED}}
+\DoxyCodeLine{00300\ \ }
 
 \end{DoxyCode}

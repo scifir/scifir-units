@@ -21,6 +21,8 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
         <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
@@ -94,6 +96,8 @@
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
@@ -264,6 +268,12 @@
         <childnode refid="21" relation="include">
         </childnode>
       </node>
+      <node id="35">
+        <label>../util/types.hpp</label>
+        <link refid="types_8hpp_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
       <node id="13">
         <label>algorithm</label>
       </node>
@@ -320,6 +330,29 @@
       </node>
     </incdepgraph>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="coordinates__3d_8cpp_1a22b0dfd7184411c277b9f8a5e36d08a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ostream &amp;</type>
+        <definition>ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;os, const scifir::coordinates_3d&lt; float &gt; &amp;x)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classscifir_1_1coordinates__3d" kindref="compound">scifir::coordinates_3d</ref>&lt; float &gt; &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_3d.cpp" line="28" column="1" bodyfile="coordinates/coordinates_3d.cpp" bodystart="28" bodyend="31"/>
+      </memberdef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -331,21 +364,31 @@
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">scifir</highlight></codeline>
 <codeline lineno="6"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_3d&lt;float&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_3d&lt;float&gt;</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>to_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_3d&lt;float&gt;&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>(std::sqrt(std::pow(x.x<sp/>-<sp/>y.x,2)<sp/>+<sp/>std::pow(x.y<sp/>-<sp/>y.y,2)<sp/>+<sp/>std::pow(x.z<sp/>-<sp/>y.z,2)));</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x.display_cartesian();</highlight></codeline>
 <codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_3d&lt;float&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_3d&lt;float&gt;</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_3d&lt;float&gt;&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_3d&lt;float&gt;&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>(std::sqrt(std::pow(x.x<sp/>-<sp/>y.x,2)<sp/>+<sp/>std::pow(x.y<sp/>-<sp/>y.y,2)<sp/>+<sp/>std::pow(x.z<sp/>-<sp/>y.z,2)));</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float(std::sqrt(std::pow(x.x<sp/>-<sp/>y.x,2)<sp/>+<sp/>std::pow(x.y<sp/>-<sp/>y.y,2)<sp/>+<sp/>std::pow(x.z<sp/>-<sp/>y.z,2)));</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_3d&lt;float&gt;</ref>&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_3d&lt;float&gt;</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_3d&lt;float&gt;&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point_3d&lt;float&gt;&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>(std::sqrt(std::pow(x.x<sp/>-<sp/>y.x,2)<sp/>+<sp/>std::pow(x.y<sp/>-<sp/>y.y,2)<sp/>+<sp/>std::pow(x.z<sp/>-<sp/>y.z,2)));</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float(std::sqrt(std::pow(x.x<sp/>-<sp/>y.x,2)<sp/>+<sp/>std::pow(x.y<sp/>-<sp/>y.y,2)<sp/>+<sp/>std::pow(x.z<sp/>-<sp/>y.z,2)));</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point_3d&lt;float&gt;&amp;<sp/>x,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_3d&lt;float&gt;&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float(std::sqrt(std::pow(x.x<sp/>-<sp/>y.x,2)<sp/>+<sp/>std::pow(x.y<sp/>-<sp/>y.y,2)<sp/>+<sp/>std::pow(x.z<sp/>-<sp/>y.z,2)));</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">ostream&amp;<sp/>operator<sp/>&lt;&lt;(ostream&amp;<sp/>os,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::coordinates_3d&lt;float&gt;</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os<sp/>&lt;&lt;<sp/>scifir::to_string(x);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="coordinates/coordinates_3d.cpp"/>
   </compounddef>

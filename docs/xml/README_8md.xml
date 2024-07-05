@@ -11,7 +11,7 @@
 <codeline></codeline>
 <codeline><highlight class="normal">[![Linux<sp/>build<sp/>status](https://github.com/scifir/scifir-units/actions/workflows/cmake.yml/badge.svg)](https://github.com/scifir/scifir-units/actions/workflows/cmake.yml)</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Welcome!<sp/>The<sp/>**Scifir<sp/>Collection**<sp/>is<sp/>a<sp/>set<sp/>of<sp/>scientific<sp/>libraries<sp/>for<sp/>developing<sp/>**laboratory<sp/>machines**<sp/>and<sp/>**scientific<sp/>inventions**.<sp/>It<sp/>provides<sp/>units,<sp/>molecules,<sp/>among<sp/>other<sp/>features,<sp/>to<sp/>allow<sp/>developers<sp/>of<sp/>scientific<sp/>software<sp/>to<sp/>develop<sp/>their<sp/>software<sp/>and<sp/>firmware<sp/>easily.<sp/>Enjoy!</highlight></codeline>
+<codeline><highlight class="normal">Welcome!<sp/>The<sp/>**Scifir<sp/>Collection**<sp/>is<sp/>a<sp/>set<sp/>of<sp/>scientific<sp/>libraries,<sp/>written<sp/>in<sp/>**C++**,<sp/>for<sp/>developing<sp/>**laboratory<sp/>machines**<sp/>and<sp/>**scientific<sp/>inventions**.<sp/>It<sp/>provides<sp/>units,<sp/>molecules,<sp/>among<sp/>other<sp/>features,<sp/>to<sp/>allow<sp/>developers<sp/>of<sp/>scientific<sp/>software<sp/>to<sp/>develop<sp/>their<sp/>software<sp/>and<sp/>firmware<sp/>easily.<sp/>Enjoy!</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">The<sp/>Scifir<sp/>Collection<sp/>is<sp/>under<sp/>development,<sp/>but<sp/>the<sp/>units<sp/>are<sp/>already<sp/>released.<sp/>Molecules<sp/>aren&apos;t,<sp/>but<sp/>they<sp/>will<sp/>by<sp/>ready<sp/>soon!</highlight></codeline>
 <codeline></codeline>
@@ -240,22 +240,22 @@
 <codeline><highlight class="normal">The<sp/>meca<sp/>numbers<sp/>are<sp/>special<sp/>numbers<sp/>that<sp/>don&apos;t<sp/>behave<sp/>exactly<sp/>like<sp/>an<sp/>scalar<sp/>unit:</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">-<sp/>angle.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>complex_number.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>lab_number.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>complex_number&lt;T&gt;.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>lab_number&lt;T&gt;.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">The<sp/>coordinates<sp/>classes<sp/>handle<sp/>position<sp/>in<sp/>space.<sp/>The<sp/>point<sp/>classes<sp/>also<sp/>handle<sp/>position<sp/>in<sp/>space.<sp/>Coordinates<sp/>are<sp/>used<sp/>for<sp/>positions<sp/>and<sp/>points<sp/>are<sp/>intended<sp/>for<sp/>more<sp/>stationary<sp/>cases,<sp/>like<sp/>for<sp/>example<sp/>vertex<sp/>of<sp/>triangles<sp/>that<sp/>form<sp/>a<sp/>3D<sp/>model.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">-<sp/>coordinates_1d.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>coordinates_2d.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>coordinates_2dr.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>coordinates_3d.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>coordinates_3dr.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>coordinates_nd.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>coordinates_ndr.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>point_1d.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>point_2d.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>point_3d.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>point_nd.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>coordinates_1d&lt;T&gt;.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>coordinates_2d&lt;T&gt;.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>coordinates_2dr&lt;T&gt;.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>coordinates_3d&lt;T&gt;.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>coordinates_3dr&lt;T&gt;.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>coordinates_nd&lt;T&gt;.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>coordinates_ndr&lt;T&gt;.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>point_1d&lt;T&gt;.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>point_2d&lt;T&gt;.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>point_3d&lt;T&gt;.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>point_nd&lt;T&gt;.</highlight></codeline>
 <codeline><highlight class="normal">-<sp/>direction.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">The<sp/>special<sp/>unit<sp/>classes<sp/>handle<sp/>special<sp/>cases<sp/>of<sp/>values:</highlight></codeline>
@@ -267,9 +267,9 @@
 <codeline><highlight class="normal">-<sp/>pH.</highlight></codeline>
 <codeline><highlight class="normal">-<sp/>pOH.</highlight></codeline>
 <codeline><highlight class="normal">-<sp/>pixel.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>size_2d.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>size_3d.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>size_nd.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>size_2d&lt;T&gt;.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>size_3d&lt;T&gt;.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>size_nd&lt;T&gt;.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">###<sp/>Data<sp/>conventions</highlight></codeline>
 <codeline></codeline>
@@ -289,7 +289,7 @@
 <codeline></codeline>
 <codeline><highlight class="normal">The<sp/>conventions<sp/>for<sp/>storing<sp/>informatic<sp/>data<sp/>are<sp/>the<sp/>following:</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">-<sp/>**Ips:**<sp/>Store<sp/>the<sp/>ip,<sp/>as<sp/>is<sp/>written.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Ip<sp/>addresses:**<sp/>Store<sp/>the<sp/>ip,<sp/>as<sp/>is<sp/>written.</highlight></codeline>
 <codeline><highlight class="normal">-<sp/>**Computers:**<sp/>Store<sp/>computers<sp/>by<sp/>their<sp/>model<sp/>name,<sp/>canonicalized.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">###<sp/>Consumption<sp/>of<sp/>memory</highlight></codeline>
@@ -297,6 +297,20 @@
 <codeline><highlight class="normal">The<sp/>scalar_unit<sp/>and<sp/>vector<sp/>unit<sp/>classes,<sp/>vector_unid_2d,<sp/>vector_unid_3d<sp/>and<sp/>vector_unit_nd<sp/>size<sp/>more<sp/>than<sp/>a<sp/>single<sp/>float,<sp/>which<sp/>uses<sp/>4<sp/>bytes,<sp/>but<sp/>don&apos;t<sp/>size<sp/>a<sp/>big<sp/>amount<sp/>and<sp/>so,<sp/>they<sp/>can<sp/>be<sp/>used<sp/>in<sp/>great<sp/>quantities<sp/>for<sp/>any<sp/>purpose,<sp/>cause<sp/>they<sp/>are<sp/>very<sp/>lightweight.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">The<sp/>angle<sp/>class<sp/>uses<sp/>only<sp/>4<sp/>bytes,<sp/>and<sp/>works<sp/>perfectly<sp/>fine,<sp/>very<sp/>similar<sp/>to<sp/>a<sp/>normal<sp/>float.<sp/>Then,<sp/>you<sp/>can<sp/>use<sp/>it<sp/>freely<sp/>every<sp/>time<sp/>you<sp/>need<sp/>to<sp/>do<sp/>calculations<sp/>that<sp/>need<sp/>angles.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Use<sp/>cases</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Technologies<sp/>for<sp/>inventions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">scifir-units<sp/>can<sp/>be<sp/>used<sp/>for<sp/>any<sp/>project<sp/>that<sp/>needs<sp/>units<sp/>of<sp/>measurement,<sp/>vectors,<sp/>coordinates,<sp/>and<sp/>related<sp/>calculations.<sp/>It&apos;s<sp/>primary<sp/>intended<sp/>to<sp/>program<sp/>**scientific<sp/>inventions**,<sp/>**laboratory<sp/>machines**,<sp/>**electronic<sp/>devices**<sp/>and<sp/>**medical<sp/>devices**<sp/>(medical<sp/>devices<sp/>that<sp/>need<sp/>a<sp/>software,<sp/>not<sp/>any<sp/>medical<sp/>device).<sp/>In<sp/>this<sp/>section<sp/>it&apos;s<sp/>explained<sp/>how<sp/>to<sp/>build<sp/>those<sp/>devices,<sp/>in<sp/>order<sp/>to<sp/>be<sp/>known<sp/>how<sp/>to<sp/>create<sp/>all<sp/>the<sp/>project,<sp/>and<sp/>not<sp/>only<sp/>how<sp/>to<sp/>use<sp/>scifir-units.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>create<sp/>the<sp/>electronic<sp/>circuit<sp/>of<sp/>any<sp/>electronic<sp/>device,<sp/>being<sp/>it<sp/>a<sp/>scientific<sp/>invention,<sp/>a<sp/>laboratory<sp/>machine,<sp/>a<sp/>medical<sp/>device<sp/>or<sp/>of<sp/>other<sp/>type,<sp/>you<sp/>can<sp/>use<sp/>**KiCad**.<sp/>The<sp/>electronic<sp/>circuit<sp/>is<sp/>then<sp/>printed<sp/>using<sp/>the<sp/>file<sp/>created<sp/>with<sp/>KiCad.<sp/>For<sp/>the<sp/>operating<sp/>system,<sp/>you<sp/>can<sp/>use<sp/>**FreeRTOS**,<sp/>**FreeBSD**,<sp/>or<sp/>even<sp/>create<sp/>a<sp/>custom<sp/>linux<sp/>distribution<sp/>with<sp/>**Linux<sp/>From<sp/>Scratch**.<sp/>For<sp/>the<sp/>GUI<sp/>of<sp/>the<sp/>software<sp/>of<sp/>the<sp/>invention<sp/>to<sp/>run<sp/>inside<sp/>this<sp/>operating<sp/>system,<sp/>you<sp/>can<sp/>use<sp/>**GTK+**,<sp/>**wxWidgets**<sp/>or<sp/>**Qt**.<sp/>The<sp/>inventions<sp/>not<sp/>always<sp/>use<sp/>a<sp/>GUI,<sp/>they<sp/>can<sp/>work<sp/>just<sp/>with<sp/>analog<sp/>buttons<sp/>or<sp/>a<sp/>LCD<sp/>display.<sp/>It&apos;s<sp/>with<sp/>this<sp/>software<sp/>where<sp/>you<sp/>can<sp/>use<sp/>scifir-units<sp/>to<sp/>do<sp/>the<sp/>calculations<sp/>the<sp/>software<sp/>requires.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>build<sp/>a<sp/>desktop<sp/>application<sp/>that<sp/>connects<sp/>remotely<sp/>with<sp/>the<sp/>invention,<sp/>use<sp/>also<sp/>GTK+,<sp/>wxWidgets<sp/>or<sp/>Qt<sp/>to<sp/>build<sp/>the<sp/>GUI.<sp/>You<sp/>can<sp/>use<sp/>as<sp/>communication<sp/>technology<sp/>**bluetooth**,<sp/>**wifi<sp/>direct**<sp/>(which<sp/>is<sp/>a<sp/>wifi<sp/>peer-to-peer)<sp/>or<sp/>**usb**.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Also,<sp/>to<sp/>add<sp/>3D<sp/>to<sp/>the<sp/>software,<sp/>you<sp/>can<sp/>use<sp/>**OpenGL**.<sp/>To<sp/>do<sp/>plots,<sp/>use<sp/>**matplot++**,<sp/>**gnuplot**<sp/>or<sp/>**GNU<sp/>plotutils**.<sp/>Obviously,<sp/>to<sp/>store<sp/>output<sp/>from<sp/>the<sp/>software,<sp/>you<sp/>can<sp/>use<sp/>**YAML**<sp/>or<sp/>**XML**.<sp/>To<sp/>work<sp/>with<sp/>XML<sp/>inside<sp/>C++<sp/>you<sp/>can<sp/>use<sp/>**rapidxml**,<sp/>**tinyxml**<sp/>or<sp/>**libxml2**.<sp/>To<sp/>work<sp/>with<sp/>YAML<sp/>you<sp/>can<sp/>use<sp/>**yaml-cpp**.<sp/>Use<sp/>**conf**<sp/>for<sp/>configuration<sp/>files,<sp/>the<sp/>library<sp/>of<sp/>it<sp/>is<sp/>**libconfig**.<sp/>To<sp/>send<sp/>messages<sp/>between<sp/>different<sp/>servers/daemons<sp/>that<sp/>are<sp/>run<sp/>inside<sp/>the<sp/>invention,<sp/>you<sp/>can<sp/>use<sp/>**dbus**.<sp/>To<sp/>handle<sp/>large<sp/>amounts<sp/>of<sp/>data,<sp/>you<sp/>can<sp/>use<sp/>a<sp/>simple<sp/>database,<sp/>like<sp/>**SQLite**,<sp/>with<sp/>**SQLiteCPP**.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">From<sp/>the<sp/>graphics<sp/>part,<sp/>you<sp/>can<sp/>use<sp/>**SVG++**<sp/>to<sp/>work<sp/>with<sp/>SVG<sp/>files.<sp/>To<sp/>add<sp/>GPS<sp/>to<sp/>the<sp/>invention,<sp/>you<sp/>can<sp/>use<sp/>**gpsd**.<sp/>To<sp/>do<sp/>the<sp/>translation<sp/>of<sp/>the<sp/>software,<sp/>use<sp/>**gettext**.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">##<sp/>Core<sp/>functionalities</highlight></codeline>
 <codeline></codeline>

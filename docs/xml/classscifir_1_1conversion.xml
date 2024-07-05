@@ -47,19 +47,19 @@
         </inbodydescription>
         <location file="units/conversion.hpp" line="15" column="1" bodyfile="units/conversion.cpp" bodystart="10" bodyend="11"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1conversion_1a4a965f3994ad0f5c23d02e8a11390836" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1conversion_1a777276190f1888d24f28c271c507bd2a" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::conversion::conversion</definition>
-        <argsstring>(const string &amp;, float)</argsstring>
+        <argsstring>(const string &amp;new_unit_to, float new_factor)</argsstring>
         <name>conversion</name>
         <qualifiedname>scifir::conversion::conversion</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>new_unit_to</defname>
+          <declname>new_unit_to</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-          <defname>new_factor</defname>
+          <declname>new_factor</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -69,19 +69,19 @@
         </inbodydescription>
         <location file="units/conversion.hpp" line="16" column="10" bodyfile="units/conversion.cpp" bodystart="13" bodyend="14"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1conversion_1ae93e649c33f0f7bbe6e49c093beddfc6" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1conversion_1a59bcdfaaa45ad31fae525e316a6cbd97" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::conversion::conversion</definition>
-        <argsstring>(const string &amp;, double)</argsstring>
+        <argsstring>(const string &amp;new_unit_to, double new_factor)</argsstring>
         <name>conversion</name>
         <qualifiedname>scifir::conversion::conversion</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>new_unit_to</defname>
+          <declname>new_unit_to</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
-          <defname>new_factor</defname>
+          <declname>new_factor</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -91,19 +91,19 @@
         </inbodydescription>
         <location file="units/conversion.hpp" line="17" column="10" bodyfile="units/conversion.cpp" bodystart="16" bodyend="17"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1conversion_1a74ea2fdb48a2f3c348a3564209b11bbb" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1conversion_1a8bce1e2068cb238bad745aa25567de6a" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::conversion::conversion</definition>
-        <argsstring>(const string &amp;, long double)</argsstring>
+        <argsstring>(const string &amp;new_unit_to, long double new_factor)</argsstring>
         <name>conversion</name>
         <qualifiedname>scifir::conversion::conversion</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>new_unit_to</defname>
+          <declname>new_unit_to</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
-          <defname>new_factor</defname>
+          <declname>new_factor</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -149,9 +149,9 @@
     <location file="units/conversion.hpp" line="12" column="1" bodyfile="units/conversion.hpp" bodystart="13" bodyend="33"/>
     <listofallmembers>
       <member refid="classscifir_1_1conversion_1accd934a3ecd35a2a4f2d01b714de8b74" prot="public" virt="non-virtual"><scope>scifir::conversion</scope><name>conversion</name></member>
-      <member refid="classscifir_1_1conversion_1a4a965f3994ad0f5c23d02e8a11390836" prot="public" virt="non-virtual"><scope>scifir::conversion</scope><name>conversion</name></member>
-      <member refid="classscifir_1_1conversion_1ae93e649c33f0f7bbe6e49c093beddfc6" prot="public" virt="non-virtual"><scope>scifir::conversion</scope><name>conversion</name></member>
-      <member refid="classscifir_1_1conversion_1a74ea2fdb48a2f3c348a3564209b11bbb" prot="public" virt="non-virtual"><scope>scifir::conversion</scope><name>conversion</name></member>
+      <member refid="classscifir_1_1conversion_1a777276190f1888d24f28c271c507bd2a" prot="public" virt="non-virtual"><scope>scifir::conversion</scope><name>conversion</name></member>
+      <member refid="classscifir_1_1conversion_1a59bcdfaaa45ad31fae525e316a6cbd97" prot="public" virt="non-virtual"><scope>scifir::conversion</scope><name>conversion</name></member>
+      <member refid="classscifir_1_1conversion_1a8bce1e2068cb238bad745aa25567de6a" prot="public" virt="non-virtual"><scope>scifir::conversion</scope><name>conversion</name></member>
       <member refid="classscifir_1_1conversion_1a2d59d30c69b9590d19b3c40fc5f8f419" prot="private" virt="non-virtual"><scope>scifir::conversion</scope><name>factor</name></member>
       <member refid="classscifir_1_1conversion_1a26c934c434343280071cf47e38b139d8" prot="public" virt="non-virtual"><scope>scifir::conversion</scope><name>get_factor</name></member>
       <member refid="classscifir_1_1conversion_1a0822b806a115ee21e1c5d1a785af8868" prot="public" virt="non-virtual"><scope>scifir::conversion</scope><name>get_unit_to</name></member>

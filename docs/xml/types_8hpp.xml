@@ -3,16 +3,31 @@
   <compounddef id="types_8hpp" kind="file" language="C++">
     <compoundname>types.hpp</compoundname>
     <includes local="no">string</includes>
+    <includedby refid="coordinates__1d_8cpp" local="yes">coordinates/coordinates_1d.cpp</includedby>
     <includedby refid="coordinates__2d_8cpp" local="yes">coordinates/coordinates_2d.cpp</includedby>
     <includedby refid="coordinates__2d_8hpp" local="yes">coordinates/coordinates_2d.hpp</includedby>
     <includedby refid="coordinates__2dr_8hpp" local="yes">coordinates/coordinates_2dr.hpp</includedby>
+    <includedby refid="coordinates__3d_8hpp" local="yes">coordinates/coordinates_3d.hpp</includedby>
+    <includedby refid="coordinates__nd_8hpp" local="yes">coordinates/coordinates_nd.hpp</includedby>
+    <includedby refid="coordinates__ndr_8hpp" local="yes">coordinates/coordinates_ndr.hpp</includedby>
     <includedby refid="angle_8cpp" local="yes">meca_number/angle.cpp</includedby>
+    <includedby refid="complex__number_8hpp" local="yes">meca_number/complex_number.hpp</includedby>
     <includedby refid="lab__number_8hpp" local="yes">meca_number/lab_number.hpp</includedby>
     <includedby refid="pH_8cpp" local="yes">special_units/pH.cpp</includedby>
     <includedby refid="pOH_8cpp" local="yes">special_units/pOH.cpp</includedby>
+    <includedby refid="percentage_8cpp" local="yes">special_units/percentage.cpp</includedby>
     <includedby refid="pixel_8cpp" local="yes">special_units/pixel.cpp</includedby>
+    <includedby refid="size__2d_8hpp" local="yes">special_units/size_2d.hpp</includedby>
+    <includedby refid="size__3d_8hpp" local="yes">special_units/size_3d.hpp</includedby>
+    <includedby refid="size__nd_8hpp" local="yes">special_units/size_nd.hpp</includedby>
+    <includedby refid="point__1d_8cpp" local="yes">topology/point_1d.cpp</includedby>
+    <includedby refid="point__1d_8hpp" local="yes">topology/point_1d.hpp</includedby>
     <includedby refid="point__2d_8cpp" local="yes">topology/point_2d.cpp</includedby>
     <includedby refid="point__2d_8hpp" local="yes">topology/point_2d.hpp</includedby>
+    <includedby refid="point__3d_8cpp" local="yes">topology/point_3d.cpp</includedby>
+    <includedby refid="point__3d_8hpp" local="yes">topology/point_3d.hpp</includedby>
+    <includedby refid="point__nd_8cpp" local="yes">topology/point_nd.cpp</includedby>
+    <includedby refid="point__nd_8hpp" local="yes">topology/point_nd.hpp</includedby>
     <includedby refid="scalar__unit_8cpp" local="yes">units/scalar_unit.cpp</includedby>
     <includedby refid="vector__unit__2d_8cpp" local="yes">units/vector_unit_2d.cpp</includedby>
     <includedby refid="vector__unit__3d_8cpp" local="yes">units/vector_unit_3d.cpp</includedby>
@@ -29,6 +44,14 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="19">
+        <label>coordinates/coordinates_1d.hpp</label>
+        <link refid="coordinates__1d_8hpp_source"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
       <node id="2">
         <label>coordinates/coordinates_2d.hpp</label>
         <link refid="coordinates__2d_8hpp_source"/>
@@ -48,12 +71,82 @@
         </childnode>
       </node>
       <node id="7">
+        <label>coordinates/coordinates_3d.hpp</label>
+        <link refid="coordinates__3d_8hpp_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>coordinates/coordinates_3dr.hpp</label>
+        <link refid="coordinates__3dr_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>coordinates/coordinates_nd.hpp</label>
+        <link refid="coordinates__nd_8hpp_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>coordinates/coordinates_ndr.hpp</label>
+        <link refid="coordinates__ndr_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>meca_number/complex_number.hpp</label>
+        <link refid="complex__number_8hpp_source"/>
+      </node>
+      <node id="14">
         <label>meca_number/lab_number.hpp</label>
         <link refid="lab__number_8hpp_source"/>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="8">
+      <node id="15">
+        <label>special_units/size_2d.hpp</label>
+        <link refid="size__2d_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>special_units/size_3d.hpp</label>
+        <link refid="size__3d_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>special_units/size_nd.hpp</label>
+        <link refid="size__nd_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>topology/point_1d.hpp</label>
+        <link refid="point__1d_8hpp_source"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>topology/point_1d_impl.hpp</label>
+        <link refid="point__1d__impl_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
         <label>topology/point_2d.hpp</label>
         <link refid="point__2d_8hpp_source"/>
         <childnode refid="2" relation="include">
@@ -68,6 +161,42 @@
       <node id="5">
         <label>topology/point_2d_impl.hpp</label>
         <link refid="point__2d__impl_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>topology/point_3d.hpp</label>
+        <link refid="point__3d_8hpp_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>topology/point_3d_impl.hpp</label>
+        <link refid="point__3d__impl_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>topology/point_nd.hpp</label>
+        <link refid="point__nd_8hpp_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>topology/point_nd_impl.hpp</label>
+        <link refid="point__nd__impl_8hpp_source"/>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
@@ -88,7 +217,27 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

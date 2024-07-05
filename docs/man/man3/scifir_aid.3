@@ -17,31 +17,58 @@ scifir::aid
 
 .in +1c
 .ti -1c
-.RI "\fBaid\fP (\fBconst\fP \fBaid\fP &)"
+.RI "\fBaid\fP (\fBconst\fP \fBaid\fP &x)"
 .br
 .ti -1c
-.RI "\fBaid\fP (\fBaid\fP &&)"
+.RI "\fBaid\fP (\fBaid\fP &&x)"
 .br
 .ti -1c
-.RI "\fBaid\fP (\fBconst\fP astronomical_body &)"
+.RI "\fBaid\fP (\fBconst\fP astronomical_body &\fBpredefined_astronomical_body\fP)"
 .br
 .ti -1c
-.RI "\fBaid\fP (\fBconst\fP \fBstring\fP &, \fBconst\fP \fBstring\fP &)"
+.RI "\fBaid\fP (\fBconst\fP \fBstring\fP &\fBnew_universe\fP, \fBconst\fP \fBstring\fP &\fBnew_galaxy\fP)"
 .br
 .ti -1c
-.RI "\fBaid\fP (\fBconst\fP \fBstring\fP &, \fBconst\fP \fBstring\fP &, \fBconst\fP \fBstring\fP &)"
+.RI "\fBaid\fP (\fBconst\fP \fBstring\fP &\fBnew_universe\fP, \fBconst\fP \fBstring\fP &\fBnew_galaxy\fP, \fBconst\fP \fBstring\fP &\fBnew_solar_system\fP)"
 .br
 .ti -1c
-.RI "\fBaid\fP (\fBconst\fP aid::type &, \fBconst\fP \fBstring\fP &, \fBconst\fP \fBstring\fP &, \fBconst\fP \fBstring\fP &, \fBconst\fP \fBstring\fP &)"
+.RI "\fBaid\fP (\fBconst\fP aid::type &\fBnew_astronomical_type\fP, \fBconst\fP \fBstring\fP &\fBnew_universe\fP, \fBconst\fP \fBstring\fP &\fBnew_galaxy\fP, \fBconst\fP \fBstring\fP &\fBnew_solar_system\fP, \fBconst\fP \fBstring\fP &\fBnew_astronomical_body\fP)"
 .br
 .ti -1c
-.RI "\fBaid\fP (\fBconst\fP \fBstring\fP &)"
+.RI "\fBaid\fP (\fBconst\fP \fBstring\fP &\fBinit_aid\fP)"
 .br
 .ti -1c
-.RI "\fBaid\fP & \fBoperator=\fP (\fBconst\fP \fBaid\fP &)"
+.RI "\fBaid\fP & \fBoperator=\fP (\fBconst\fP \fBaid\fP &x)"
 .br
 .ti -1c
-.RI "\fBaid\fP & \fBoperator=\fP (\fBaid\fP &&)"
+.RI "\fBaid\fP & \fBoperator=\fP (\fBaid\fP &&x)"
+.br
+.ti -1c
+.RI "\fBaid\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_aid\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBhas_unknown_universe\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBhas_unknown_galaxy\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBhas_unknown_solar_system\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBhas_unknown_planet\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBhas_unknown_moon\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBhas_unknown_star\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBhas_unknown_asteroid\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBdisplay\fP () \fBconst\fP"
 .br
 .in -1c
 .SS "Public Attributes"

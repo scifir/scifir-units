@@ -20,45 +20,59 @@
 \DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ type\ :\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int8\_t}}\ \{NONE,UNIVERSE,GALAXY,SOLAR\_SYSTEM,PLANET,STAR,ASTEROID,MOON,METEOR\};}
 \DoxyCodeLine{00017\ }
 \DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{aid}}();}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}\&);}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\mbox{\hyperlink{classscifir_1_1aid}{aid}}\&\&);}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\textcolor{keyword}{const}\ astronomical\_body\&);}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\textcolor{keyword}{const}\ aid::type\&,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}\&\ x);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\mbox{\hyperlink{classscifir_1_1aid}{aid}}\&\&\ x);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\textcolor{keyword}{const}\ astronomical\_body\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{predefined\_astronomical\_body}});}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_universe}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_galaxy}});}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_universe}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_galaxy}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_solar\_system}});}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\textcolor{keyword}{const}\ aid::type\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_astronomical\_type}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_universe}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_galaxy}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_solar\_system}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_astronomical\_body}});}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_aid}});}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{aid}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}\&);}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{aid}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1aid}{aid}}\&\&);}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ universe;}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ galaxy;}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ solar\_system;}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ astronomical\_body;}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ aid::type\ astronomical\_type;}
-\DoxyCodeLine{00035\ \ \ \ \ \};}
-\DoxyCodeLine{00036\ \ \ \ \ }
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}\&);}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ aid::type\&);}
-\DoxyCodeLine{00039\ \ \ \ \ aid::type\ create\_astronomical\_type(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00040\ \}}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&);}
-\DoxyCodeLine{00043\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&);}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00046\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&);}
-\DoxyCodeLine{00049\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{aid}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}\&\ x);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{aid}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1aid}{aid}}\&\&\ x);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{aid}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_aid}});}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_unknown\_universe()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_unknown\_galaxy()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_unknown\_solar\_system()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_unknown\_planet()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_unknown\_moon()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_unknown\_star()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_unknown\_asteroid()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ universe;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ galaxy;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ solar\_system;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ astronomical\_body;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ aid::type\ astronomical\_type;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initialize\_from\_string(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_aid}});}
+\DoxyCodeLine{00049\ \ \ \ \ \};}
 \DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ operator\ +=(\textcolor{keywordtype}{string}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&);}
-\DoxyCodeLine{00052\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&);}
-\DoxyCodeLine{00053\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ ostream\&\ operator\ <<(ostream\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&);}
-\DoxyCodeLine{00056\ istream\&\ operator\ >>(istream\&,\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&);}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_AID\_HPP\_INCLUDED}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}\&\ x);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ aid::type\&\ x);}
+\DoxyCodeLine{00053\ \ \ \ \ aid::type\ create\_astronomical\_type(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{astronomical\_type\_abbreviation}});}
+\DoxyCodeLine{00054\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ y);}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ y);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_aid);}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_aid);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_aid,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ x);}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_aid,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ x);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ operator\ +=(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ y);}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ y);}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ ostream\&\ operator\ <<(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ x);}
+\DoxyCodeLine{00070\ istream\&\ operator\ >>(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ x);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_AID\_HPP\_INCLUDED}}
 
 \end{DoxyCode}

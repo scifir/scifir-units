@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="210" column="8" bodyfile="units/vector_unit_nd.hpp" bodystart="210" bodyend="-1"/>
+        <location file="units/vector_unit_nd.hpp" line="230" column="8" bodyfile="units/vector_unit_nd.hpp" bodystart="230" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -32,17 +32,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="64" column="1" bodyfile="units/vector_unit_nd.cpp" bodystart="10" bodyend="11"/>
+        <location file="units/vector_unit_nd.hpp" line="63" column="1" bodyfile="units/vector_unit_nd.cpp" bodystart="10" bodyend="11"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ad18d11b4177ab643c1f13a61f5e617cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1abdce27e8a92c91c88c14cc1a0f28328a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
-        <argsstring>(const vector_unit_nd &amp;)</argsstring>
+        <argsstring>(const vector_unit_nd &amp;x)</argsstring>
         <name>vector_unit_nd</name>
         <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -50,17 +50,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="65" column="1" bodyfile="units/vector_unit_nd.cpp" bodystart="13" bodyend="14"/>
+        <location file="units/vector_unit_nd.hpp" line="64" column="1" bodyfile="units/vector_unit_nd.cpp" bodystart="13" bodyend="14"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a3cff2ac287463c59fc2c07da147472c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a2feb55109e32f679236f4fd4e0f51ebc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
-        <argsstring>(vector_unit_nd &amp;&amp;)</argsstring>
+        <argsstring>(vector_unit_nd &amp;&amp;x)</argsstring>
         <name>vector_unit_nd</name>
         <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref> &amp;&amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -68,21 +68,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="66" column="1" bodyfile="units/vector_unit_nd.cpp" bodystart="16" bodyend="17"/>
+        <location file="units/vector_unit_nd.hpp" line="65" column="1" bodyfile="units/vector_unit_nd.cpp" bodystart="16" bodyend="17"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a6a70ff7efc4630e09aa69a13881d3a3d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ae83bc4126e3635acda61e0b944d28cce" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
-        <argsstring>(float, const string &amp;)</argsstring>
+        <argsstring>(float new_value, const string &amp;init_dimensions)</argsstring>
         <name>vector_unit_nd</name>
         <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-          <defname>new_value</defname>
+          <declname>new_value</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_dimensions</defname>
+          <declname>init_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -90,25 +90,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="67" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="19" bodyend="20"/>
+        <location file="units/vector_unit_nd.hpp" line="66" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="19" bodyend="20"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1aad580721c8a8c55f408eba608f424fc8" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ace6719eb1de17193c7cc3cf12e9ced7f" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
-        <argsstring>(float, const string &amp;, const vector&lt; float &gt; &amp;)</argsstring>
+        <argsstring>(float new_value, const string &amp;init_dimensions, const vector&lt; float &gt; &amp;new_angles)</argsstring>
         <name>vector_unit_nd</name>
         <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-          <defname>new_value</defname>
+          <declname>new_value</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_dimensions</defname>
+          <declname>init_dimensions</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-          <defname>new_angles</defname>
+          <declname>new_angles</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -116,25 +116,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="68" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="22" bodyend="28"/>
+        <location file="units/vector_unit_nd.hpp" line="67" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="22" bodyend="28"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1aabc851c9209cfb66d9424039f298ecf8" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a0b1fa099306696cd31b327b1cdf57abb" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
-        <argsstring>(float, const string &amp;, const vector&lt; angle &gt; &amp;)</argsstring>
+        <argsstring>(float new_value, const string &amp;init_dimensions, const vector&lt; angle &gt; &amp;new_angles)</argsstring>
         <name>vector_unit_nd</name>
         <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-          <defname>new_value</defname>
+          <declname>new_value</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_dimensions</defname>
+          <declname>init_dimensions</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &gt; &amp;</type>
-          <defname>new_angles</defname>
+          <declname>new_angles</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -142,21 +142,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="69" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="30" bodyend="31"/>
+        <location file="units/vector_unit_nd.hpp" line="68" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="30" bodyend="31"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a42e4397740da27422609ddaee9e05014" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a6bcfe008b6847b5977d935100db9bfb7" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
-        <argsstring>(float, const vector&lt; dimension &gt; &amp;)</argsstring>
+        <argsstring>(double new_value, const string &amp;init_dimensions)</argsstring>
         <name>vector_unit_nd</name>
         <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-          <defname>new_value</defname>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
-          <defname>new_dimensions</defname>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -164,25 +164,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="70" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="33" bodyend="34"/>
+        <location file="units/vector_unit_nd.hpp" line="69" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="33" bodyend="34"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a58c98733b653c57659a66034b925f21c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1aa2625007e78490225dfa9e3d15abe5d9" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
-        <argsstring>(float, const vector&lt; dimension &gt; &amp;, const vector&lt; float &gt; &amp;)</argsstring>
+        <argsstring>(double new_value, const string &amp;init_dimensions, const vector&lt; float &gt; &amp;new_angles)</argsstring>
         <name>vector_unit_nd</name>
         <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-          <defname>new_value</defname>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
-          <defname>new_dimensions</defname>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_dimensions</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-          <defname>new_angles</defname>
+          <declname>new_angles</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -190,25 +190,195 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="71" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="36" bodyend="42"/>
+        <location file="units/vector_unit_nd.hpp" line="70" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="36" bodyend="42"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a6350681fcbb14e9ce044d5b6439bea59" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a6534561233e6459b7edcc47ef30883fb" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
-        <argsstring>(float, const vector&lt; dimension &gt; &amp;, const vector&lt; angle &gt; &amp;)</argsstring>
+        <argsstring>(double new_value, const string &amp;init_dimensions, const vector&lt; angle &gt; &amp;new_angles)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_dimensions</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &gt; &amp;</type>
+          <declname>new_angles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="71" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="44" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a59a9703a9e566463a42a87d4c2463bf3" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(long double new_value, const string &amp;init_dimensions)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_dimensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="72" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="47" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1aa13c311fa8e9158e717a37f8827de88d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(long double new_value, const string &amp;init_dimensions, const vector&lt; float &gt; &amp;new_angles)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_dimensions</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <declname>new_angles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="73" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="50" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a842cc9b7f2543b59f7df54ba8b6fc34e" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(long double new_value, const string &amp;init_dimensions, const vector&lt; angle &gt; &amp;new_angles)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_dimensions</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &gt; &amp;</type>
+          <declname>new_angles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="74" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="58" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a95a8c1d954de41b42bc6768c7df04251" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(int new_value, const string &amp;init_dimensions)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_dimensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="75" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="61" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a4a4a9266041592df54e44263e70c174f" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(int new_value, const string &amp;init_dimensions, const vector&lt; float &gt; &amp;new_angles)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_dimensions</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <declname>new_angles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="76" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="64" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a350d25549b309aafd355ba53d6531556" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(int new_value, const string &amp;init_dimensions, const vector&lt; angle &gt; &amp;new_angles)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_dimensions</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &gt; &amp;</type>
+          <declname>new_angles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="77" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="72" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1abc54e6c6c0bde1d95ba09f783ba8c1de" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(float new_value, const vector&lt; dimension &gt; &amp;new_dimensions)</argsstring>
         <name>vector_unit_nd</name>
         <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-          <defname>new_value</defname>
+          <declname>new_value</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
-          <defname>new_dimensions</defname>
-        </param>
-        <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &gt; &amp;</type>
-          <defname>new_angles</defname>
+          <declname>new_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -216,17 +386,291 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="72" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="44" bodyend="45"/>
+        <location file="units/vector_unit_nd.hpp" line="78" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="75" bodyend="76"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a5e95d03fd2ddad89112b7ee9bb4d54b4" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a2c456b4fa6ecb16f53cd86a1c8e7952f" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
-        <argsstring>(const scalar_unit &amp;)</argsstring>
+        <argsstring>(float new_value, const vector&lt; dimension &gt; &amp;new_dimensions, const vector&lt; float &gt; &amp;new_angles)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <declname>new_dimensions</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <declname>new_angles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="79" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="78" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a0300260317a8d6cb016cc7d287289f84" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(float new_value, const vector&lt; dimension &gt; &amp;new_dimensions, const vector&lt; angle &gt; &amp;new_angles)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <declname>new_dimensions</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &gt; &amp;</type>
+          <declname>new_angles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="80" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="86" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a64bf0cca3a5ebf0f27611e7745b90ba7" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(double new_value, const vector&lt; dimension &gt; &amp;new_dimensions)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <declname>new_dimensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="81" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="89" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a0b98afa47294c2b92a574a1a4a6cd419" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(double new_value, const vector&lt; dimension &gt; &amp;new_dimensions, const vector&lt; float &gt; &amp;new_angles)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <declname>new_dimensions</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <declname>new_angles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="82" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="92" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1af3b6f77e799ff55e4abf4422699bf98b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(double new_value, const vector&lt; dimension &gt; &amp;new_dimensions, const vector&lt; angle &gt; &amp;new_angles)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <declname>new_dimensions</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &gt; &amp;</type>
+          <declname>new_angles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="83" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="100" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a2eab5794697d68ad27681ba7a1d9f6ed" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(long double new_value, const vector&lt; dimension &gt; &amp;new_dimensions)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <declname>new_dimensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="84" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="103" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a4e83d08c60f1ac9de87f642ed771d305" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(long double new_value, const vector&lt; dimension &gt; &amp;new_dimensions, const vector&lt; float &gt; &amp;new_angles)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <declname>new_dimensions</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <declname>new_angles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="85" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="106" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1abb9146e8fffde7d45e96e8c7d98d3bd1" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(long double new_value, const vector&lt; dimension &gt; &amp;new_dimensions, const vector&lt; angle &gt; &amp;new_angles)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <declname>new_dimensions</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &gt; &amp;</type>
+          <declname>new_angles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="86" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="114" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a232b31929a5c46e81435b50ece178905" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(int new_value, const vector&lt; dimension &gt; &amp;new_dimensions)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <declname>new_dimensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="87" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="117" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a9c47915106a6d5faae03bd2a8577ba71" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(int new_value, const vector&lt; dimension &gt; &amp;new_dimensions, const vector&lt; float &gt; &amp;new_angles)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <declname>new_dimensions</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
+          <declname>new_angles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="88" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="120" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a0f92adffe47b77242318fce76400e42c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(int new_value, const vector&lt; dimension &gt; &amp;new_dimensions, const vector&lt; angle &gt; &amp;new_angles)</argsstring>
+        <name>vector_unit_nd</name>
+        <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <declname>new_dimensions</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &gt; &amp;</type>
+          <declname>new_angles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="89" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="128" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a337794a7fabcefd0cd5d668a16abed54" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
+        <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>vector_unit_nd</name>
         <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -234,21 +678,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="73" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="47" bodyend="48"/>
+        <location file="units/vector_unit_nd.hpp" line="90" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="131" bodyend="132"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1adbd547d5cd4863e123c3c38f8906a4f4" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ac2a3c89deeab8214d634579dd550c3b9" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
-        <argsstring>(const scalar_unit &amp;, const vector&lt; float &gt; &amp;)</argsstring>
+        <argsstring>(const scalar_unit &amp;x, const vector&lt; float &gt; &amp;new_angles)</argsstring>
         <name>vector_unit_nd</name>
         <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-          <defname>new_angles</defname>
+          <declname>new_angles</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -256,21 +700,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="74" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="50" bodyend="56"/>
+        <location file="units/vector_unit_nd.hpp" line="91" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="134" bodyend="140"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a564367d6d000c3d9000cb41d70dfcaff" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ad787f36ba8c93fda679dc3a3ddbeb763" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
-        <argsstring>(const scalar_unit &amp;, const vector&lt; angle &gt; &amp;)</argsstring>
+        <argsstring>(const scalar_unit &amp;x, const vector&lt; angle &gt; &amp;new_angles)</argsstring>
         <name>vector_unit_nd</name>
         <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &gt; &amp;</type>
-          <defname>new_angles</defname>
+          <declname>new_angles</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -278,21 +722,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="75" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="58" bodyend="59"/>
+        <location file="units/vector_unit_nd.hpp" line="92" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="142" bodyend="143"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a3d13782157818189e889634572960720" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a60fe95755ead6fadf35af77144f45f63" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
-        <argsstring>(const string &amp;, const vector&lt; float &gt; &amp;)</argsstring>
+        <argsstring>(const string &amp;init_scalar, const vector&lt; float &gt; &amp;new_angles)</argsstring>
         <name>vector_unit_nd</name>
         <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_scalar</defname>
+          <declname>init_scalar</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &gt; &amp;</type>
-          <defname>new_angles</defname>
+          <declname>new_angles</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -300,21 +744,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="76" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="61" bodyend="67"/>
+        <location file="units/vector_unit_nd.hpp" line="93" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="145" bodyend="151"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a5aa4333d7cd6bf64e316add6cfe87f0e" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a95caff6ee5585e44b02cf075bd15502d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
-        <argsstring>(const string &amp;, const vector&lt; angle &gt; &amp;)</argsstring>
+        <argsstring>(const string &amp;init_scalar, const vector&lt; angle &gt; &amp;new_angles)</argsstring>
         <name>vector_unit_nd</name>
         <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_scalar</defname>
+          <declname>init_scalar</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &gt; &amp;</type>
-          <defname>new_angles</defname>
+          <declname>new_angles</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -322,17 +766,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="77" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="69" bodyend="70"/>
+        <location file="units/vector_unit_nd.hpp" line="94" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="153" bodyend="154"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a54bff69cfc41755348a9a08fcae7085b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a039766193302fb45c7801a3d6ca4cf5a" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::vector_unit_nd::vector_unit_nd</definition>
-        <argsstring>(const string &amp;)</argsstring>
+        <argsstring>(const string &amp;init_vector_nd)</argsstring>
         <name>vector_unit_nd</name>
         <qualifiedname>scifir::vector_unit_nd::vector_unit_nd</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_vector_nd</defname>
+          <declname>init_vector_nd</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -340,17 +784,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="78" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="72" bodyend="84"/>
+        <location file="units/vector_unit_nd.hpp" line="95" column="10" bodyfile="units/vector_unit_nd.cpp" bodystart="156" bodyend="159"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a66448d71896229a4f75e65940ec532fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ad0952f0ddfd4f9bf50cc1928981de489" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref> &amp;</type>
         <definition>vector_unit_nd &amp; scifir::vector_unit_nd::operator=</definition>
-        <argsstring>(const vector_unit_nd &amp;)</argsstring>
+        <argsstring>(const vector_unit_nd &amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::vector_unit_nd::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -358,17 +802,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="102" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="86" bodyend="91"/>
+        <location file="units/vector_unit_nd.hpp" line="119" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="161" bodyend="166"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a080601214c9b3511956df19a028e87c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1aaf45f794dc1614322f08cbd51f68f3b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref> &amp;</type>
         <definition>vector_unit_nd &amp; scifir::vector_unit_nd::operator=</definition>
-        <argsstring>(vector_unit_nd &amp;&amp;)</argsstring>
+        <argsstring>(vector_unit_nd &amp;&amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::vector_unit_nd::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref> &amp;&amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -376,17 +820,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="103" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="93" bodyend="98"/>
+        <location file="units/vector_unit_nd.hpp" line="120" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="168" bodyend="173"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a3fd3764863e27f925b1c535703d76a8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ae05ba93b52592803d5cff7d9c68306cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref> &amp;</type>
         <definition>vector_unit_nd &amp; scifir::vector_unit_nd::operator=</definition>
-        <argsstring>(const scalar_unit &amp;)</argsstring>
+        <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::vector_unit_nd::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -394,17 +838,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="104" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="100" bodyend="104"/>
+        <location file="units/vector_unit_nd.hpp" line="121" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="175" bodyend="179"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a9b652165d65fb42d617ff09a9f17bdfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a2157cbf2bc77f071822e65160de23705" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref> &amp;</type>
         <definition>vector_unit_nd &amp; scifir::vector_unit_nd::operator=</definition>
-        <argsstring>(scalar_unit &amp;&amp;)</argsstring>
+        <argsstring>(scalar_unit &amp;&amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::vector_unit_nd::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;&amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -412,17 +856,53 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="105" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="106" bodyend="110"/>
+        <location file="units/vector_unit_nd.hpp" line="122" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="181" bodyend="185"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a872715e45eb2894183c2c439caf5fb38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a6a791b68f88b87368a61ce3a3d66641a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref> &amp;</type>
+        <definition>vector_unit_nd &amp; scifir::vector_unit_nd::operator=</definition>
+        <argsstring>(const string &amp;init_vector_nd)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::vector_unit_nd::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_vector_nd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="123" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="187" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a6e84feec1de8cf9929652b570eeabaeb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <definition>bool scifir::vector_unit_nd::operator==</definition>
+        <argsstring>(vector_unit_nd x) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>scifir::vector_unit_nd::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="125" column="6" bodyfile="units/vector_unit_nd.cpp" bodystart="193" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ae41cb1b4cbb9e9023766c5bc0e5c1f3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::vector_unit_nd::point_to</definition>
-        <argsstring>(direction::name)</argsstring>
+        <argsstring>(direction::name x)</argsstring>
         <name>point_to</name>
         <qualifiedname>scifir::vector_unit_nd::point_to</qualifiedname>
         <param>
           <type>direction::name</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -430,17 +910,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="107" column="6" bodyfile="units/vector_unit_nd.cpp" bodystart="112" bodyend="299"/>
+        <location file="units/vector_unit_nd.hpp" line="127" column="6" bodyfile="units/vector_unit_nd.cpp" bodystart="206" bodyend="393"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ae7909dcca9ebcd6dcadd7a038607fe09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a443ed8e173fd54ee411f4a3da7940fb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::vector_unit_nd::operator+=</definition>
-        <argsstring>(const vector_unit_nd &amp;)</argsstring>
+        <argsstring>(const vector_unit_nd &amp;x)</argsstring>
         <name>operator+=</name>
         <qualifiedname>scifir::vector_unit_nd::operator+=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref> &amp;</type>
-          <defname>y</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -448,17 +928,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="109" column="6" bodyfile="units/vector_unit_nd.cpp" bodystart="301" bodyend="330"/>
+        <location file="units/vector_unit_nd.hpp" line="129" column="6" bodyfile="units/vector_unit_nd.cpp" bodystart="395" bodyend="424"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a7b54a70b64058393a4a0f7df28f3006a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a38606eb40f50c1949a6cc2eecf99c884" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::vector_unit_nd::operator-=</definition>
-        <argsstring>(vector_unit_nd)</argsstring>
+        <argsstring>(vector_unit_nd x)</argsstring>
         <name>operator-=</name>
         <qualifiedname>scifir::vector_unit_nd::operator-=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref></type>
-          <defname>y</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -466,17 +946,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="110" column="6" bodyfile="units/vector_unit_nd.cpp" bodystart="332" bodyend="343"/>
+        <location file="units/vector_unit_nd.hpp" line="130" column="6" bodyfile="units/vector_unit_nd.cpp" bodystart="426" bodyend="437"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ab8cdcdf9473f789b8c33cce90f6166b4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1aa95c5c726591b56ab8c21309b7454c16" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref></type>
         <definition>vector_unit_nd scifir::vector_unit_nd::operator+</definition>
-        <argsstring>(const vector_unit_nd &amp;) const</argsstring>
+        <argsstring>(const vector_unit_nd &amp;x) const</argsstring>
         <name>operator+</name>
         <qualifiedname>scifir::vector_unit_nd::operator+</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref> &amp;</type>
-          <defname>y</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -484,17 +964,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="112" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="345" bodyend="384"/>
+        <location file="units/vector_unit_nd.hpp" line="132" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="439" bodyend="478"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a23790e937efd812b49b668e7cc1711c6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1aaefa9684c8cba036f901b1a402fa3148" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref></type>
         <definition>vector_unit_nd scifir::vector_unit_nd::operator-</definition>
-        <argsstring>(vector_unit_nd) const</argsstring>
+        <argsstring>(vector_unit_nd x) const</argsstring>
         <name>operator-</name>
         <qualifiedname>scifir::vector_unit_nd::operator-</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref></type>
-          <defname>y</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -502,17 +982,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="113" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="386" bodyend="426"/>
+        <location file="units/vector_unit_nd.hpp" line="133" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="480" bodyend="521"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a6578385e7452dcb5eebd64db8cd47fd8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a16cfc18d15b783b07a0809263330e25a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref></type>
         <definition>vector_unit_nd scifir::vector_unit_nd::operator*</definition>
-        <argsstring>(const scalar_unit &amp;) const</argsstring>
+        <argsstring>(const scalar_unit &amp;x) const</argsstring>
         <name>operator*</name>
         <qualifiedname>scifir::vector_unit_nd::operator*</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -520,17 +1000,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="115" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="428" bodyend="449"/>
+        <location file="units/vector_unit_nd.hpp" line="135" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="523" bodyend="543"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a036d3708b63e5d745199d0094f6c5271" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a84e3baecee4f0d71e309b755022df5eb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref></type>
         <definition>vector_unit_nd scifir::vector_unit_nd::operator/</definition>
-        <argsstring>(const scalar_unit &amp;) const</argsstring>
+        <argsstring>(const scalar_unit &amp;x) const</argsstring>
         <name>operator/</name>
         <qualifiedname>scifir::vector_unit_nd::operator/</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -538,17 +1018,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="116" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="451" bodyend="472"/>
+        <location file="units/vector_unit_nd.hpp" line="136" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="545" bodyend="565"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1aa392e63f3a74e930f5a37e5505f55821" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a09a683c9860b0dc7c3a25b6c5de79bb9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref></type>
         <definition>vector_unit_nd scifir::vector_unit_nd::operator^</definition>
-        <argsstring>(const scalar_unit &amp;) const</argsstring>
+        <argsstring>(const scalar_unit &amp;x) const</argsstring>
         <name>operator^</name>
         <qualifiedname>scifir::vector_unit_nd::operator^</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -556,7 +1036,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="117" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="474" bodyend="500"/>
+        <location file="units/vector_unit_nd.hpp" line="137" column="16" bodyfile="units/vector_unit_nd.cpp" bodystart="567" bodyend="594"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a9df16710a4b9cfbb27e2598f4e6d8c58" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -583,7 +1063,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="120" column="16" bodyfile="units/vector_unit_nd.hpp" bodystart="120" bodyend="125"/>
+        <location file="units/vector_unit_nd.hpp" line="140" column="16" bodyfile="units/vector_unit_nd.hpp" bodystart="140" bodyend="145"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a9368f2029ec8934e0c80432ff5613c30" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -610,7 +1090,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="128" column="16" bodyfile="units/vector_unit_nd.hpp" bodystart="128" bodyend="133"/>
+        <location file="units/vector_unit_nd.hpp" line="148" column="16" bodyfile="units/vector_unit_nd.hpp" bodystart="148" bodyend="153"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ab5c1c285036f7aa97eff575f7ab1700f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -637,7 +1117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="136" column="16" bodyfile="units/vector_unit_nd.hpp" bodystart="136" bodyend="141"/>
+        <location file="units/vector_unit_nd.hpp" line="156" column="16" bodyfile="units/vector_unit_nd.hpp" bodystart="156" bodyend="161"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1abdd4310fcb74e73441350481a58c3ae2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -664,7 +1144,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="144" column="16" bodyfile="units/vector_unit_nd.hpp" bodystart="144" bodyend="149"/>
+        <location file="units/vector_unit_nd.hpp" line="164" column="16" bodyfile="units/vector_unit_nd.hpp" bodystart="164" bodyend="169"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a5bf194c6c87e50c00cb6273275286d99" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -691,9 +1171,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="152" column="16" bodyfile="units/vector_unit_nd.hpp" bodystart="152" bodyend="155"/>
+        <location file="units/vector_unit_nd.hpp" line="172" column="16" bodyfile="units/vector_unit_nd.hpp" bodystart="172" bodyend="175"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a7d2d138ad2e160827157fbe577734a07" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a22917c00ed4a724c8182322b7d69f5bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
@@ -705,12 +1185,12 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::vector_unit_nd::operator+=</definition>
-        <argsstring>(U y)</argsstring>
+        <argsstring>(U x)</argsstring>
         <name>operator+=</name>
         <qualifiedname>scifir::vector_unit_nd::operator+=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -718,9 +1198,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="158" column="6" bodyfile="units/vector_unit_nd.hpp" bodystart="158" bodyend="161"/>
+        <location file="units/vector_unit_nd.hpp" line="178" column="6" bodyfile="units/vector_unit_nd.hpp" bodystart="178" bodyend="181"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a3e2843a033ba65cb8880daabb88eb2be" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1aaa31d29e31cad60f10682bd68561738d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
@@ -732,12 +1212,12 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::vector_unit_nd::operator-=</definition>
-        <argsstring>(U y)</argsstring>
+        <argsstring>(U x)</argsstring>
         <name>operator-=</name>
         <qualifiedname>scifir::vector_unit_nd::operator-=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -745,9 +1225,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="164" column="6" bodyfile="units/vector_unit_nd.hpp" bodystart="164" bodyend="167"/>
+        <location file="units/vector_unit_nd.hpp" line="184" column="6" bodyfile="units/vector_unit_nd.hpp" bodystart="184" bodyend="187"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1af70fbecf829d3e7705dac0e2790146c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a33c629477717cc1bdbb0fcb2e114cefa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
@@ -759,12 +1239,12 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::vector_unit_nd::operator*=</definition>
-        <argsstring>(U y)</argsstring>
+        <argsstring>(U x)</argsstring>
         <name>operator*=</name>
         <qualifiedname>scifir::vector_unit_nd::operator*=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -772,9 +1252,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="170" column="6" bodyfile="units/vector_unit_nd.hpp" bodystart="170" bodyend="177"/>
+        <location file="units/vector_unit_nd.hpp" line="190" column="6" bodyfile="units/vector_unit_nd.hpp" bodystart="190" bodyend="197"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ac3d4f1475e3e82b589391d8a7049558c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a27bca2fb5243bdf023af93c8b758da88" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
@@ -786,12 +1266,12 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::vector_unit_nd::operator/=</definition>
-        <argsstring>(U y)</argsstring>
+        <argsstring>(U x)</argsstring>
         <name>operator/=</name>
         <qualifiedname>scifir::vector_unit_nd::operator/=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -799,7 +1279,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="180" column="6" bodyfile="units/vector_unit_nd.hpp" bodystart="180" bodyend="187"/>
+        <location file="units/vector_unit_nd.hpp" line="200" column="6" bodyfile="units/vector_unit_nd.hpp" bodystart="200" bodyend="207"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a375d5d9e20eee2a10c5fe583fd64b97f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
@@ -817,7 +1297,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="189" column="13" bodyfile="units/vector_unit_nd.hpp" bodystart="189" bodyend="192"/>
+        <location file="units/vector_unit_nd.hpp" line="209" column="13" bodyfile="units/vector_unit_nd.hpp" bodystart="209" bodyend="212"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a544b545723f9ef4592daea2facdd0407" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
@@ -831,17 +1311,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="194" column="12" bodyfile="units/vector_unit_nd.hpp" bodystart="194" bodyend="197"/>
+        <location file="units/vector_unit_nd.hpp" line="214" column="12" bodyfile="units/vector_unit_nd.hpp" bodystart="214" bodyend="217"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1abf83445ce650920236f1e8baf9e43199" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a4e0703c092bf1acca73a5258901a0f58" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scifir::vector_unit_nd::n_projection</definition>
-        <argsstring>(int) const</argsstring>
+        <argsstring>(int i) const</argsstring>
         <name>n_projection</name>
         <qualifiedname>scifir::vector_unit_nd::n_projection</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
-          <defname>i</defname>
+          <declname>i</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -849,7 +1329,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="199" column="13" bodyfile="units/vector_unit_nd.cpp" bodystart="502" bodyend="520"/>
+        <location file="units/vector_unit_nd.hpp" line="219" column="13" bodyfile="units/vector_unit_nd.cpp" bodystart="596" bodyend="614"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a4ccdab8a3c34cd9467f879b8fb289478" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
@@ -863,7 +1343,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="200" column="13" bodyfile="units/vector_unit_nd.cpp" bodystart="522" bodyend="540"/>
+        <location file="units/vector_unit_nd.hpp" line="220" column="13" bodyfile="units/vector_unit_nd.cpp" bodystart="616" bodyend="634"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a39b5b6ca8fca3cf8bb88dc5ea3c27699" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
@@ -877,7 +1357,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="201" column="13" bodyfile="units/vector_unit_nd.cpp" bodystart="542" bodyend="560"/>
+        <location file="units/vector_unit_nd.hpp" line="221" column="13" bodyfile="units/vector_unit_nd.cpp" bodystart="636" bodyend="654"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ada70b23bb80c068edbf29b790b59cf34" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
@@ -891,7 +1371,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="202" column="13" bodyfile="units/vector_unit_nd.cpp" bodystart="562" bodyend="580"/>
+        <location file="units/vector_unit_nd.hpp" line="222" column="13" bodyfile="units/vector_unit_nd.cpp" bodystart="656" bodyend="674"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a289c2f3f91da1201acbc71dc9e391bc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -905,17 +1385,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="204" column="6" bodyfile="units/vector_unit_nd.cpp" bodystart="582" bodyend="588"/>
+        <location file="units/vector_unit_nd.hpp" line="224" column="6" bodyfile="units/vector_unit_nd.cpp" bodystart="676" bodyend="687"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a579f02aefd85061519daf248cb7c9ef9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a54b4a6cbbee4da93280de2355a6176e3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
         <definition>string scifir::vector_unit_nd::vectorial_display</definition>
-        <argsstring>(int=2) const</argsstring>
+        <argsstring>(int number_of_decimals=2) const</argsstring>
         <name>vectorial_display</name>
         <qualifiedname>scifir::vector_unit_nd::vectorial_display</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
-          <defname>number_of_decimals</defname>
+          <declname>number_of_decimals</declname>
           <defval>2</defval>
         </param>
         <briefdescription>
@@ -924,17 +1404,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="206" column="8" bodyfile="units/vector_unit_nd.cpp" bodystart="590" bodyend="599"/>
+        <location file="units/vector_unit_nd.hpp" line="226" column="8" bodyfile="units/vector_unit_nd.cpp" bodystart="689" bodyend="698"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ac1cabe7e541cfe0cf9a1db5b601b1758" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ab569434414860db7930f110fe995e45c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
         <definition>string scifir::vector_unit_nd::vectorial_derived_display</definition>
-        <argsstring>(int=2) const</argsstring>
+        <argsstring>(int number_of_decimals=2) const</argsstring>
         <name>vectorial_derived_display</name>
         <qualifiedname>scifir::vector_unit_nd::vectorial_derived_display</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
-          <defname>number_of_decimals</defname>
+          <declname>number_of_decimals</declname>
           <defval>2</defval>
         </param>
         <briefdescription>
@@ -943,21 +1423,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="207" column="8" bodyfile="units/vector_unit_nd.cpp" bodystart="601" bodyend="610"/>
+        <location file="units/vector_unit_nd.hpp" line="227" column="8" bodyfile="units/vector_unit_nd.cpp" bodystart="700" bodyend="709"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1acd75fb71dd29e9984e0c3644e28e0e83" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a645c497b05427cd49bf85c3bf6055e1a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
         <definition>string scifir::vector_unit_nd::vectorial_custom_display</definition>
-        <argsstring>(const string &amp;, int=2) const</argsstring>
+        <argsstring>(const string &amp;init_dimensions, int number_of_decimals=2) const</argsstring>
         <name>vectorial_custom_display</name>
         <qualifiedname>scifir::vector_unit_nd::vectorial_custom_display</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>new_dimensions_str</defname>
+          <declname>init_dimensions</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
-          <defname>number_of_decimals</defname>
+          <declname>number_of_decimals</declname>
           <defval>2</defval>
         </param>
         <briefdescription>
@@ -966,7 +1446,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="208" column="8" bodyfile="units/vector_unit_nd.cpp" bodystart="612" bodyend="621"/>
+        <location file="units/vector_unit_nd.hpp" line="228" column="8" bodyfile="units/vector_unit_nd.cpp" bodystart="711" bodyend="720"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-func">
@@ -994,7 +1474,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="80" column="23" bodyfile="units/vector_unit_nd.hpp" bodystart="80" bodyend="85"/>
+        <location file="units/vector_unit_nd.hpp" line="97" column="23" bodyfile="units/vector_unit_nd.hpp" bodystart="97" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a8a31aaf77ce127253dd9a37b8f02cff6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref></type>
@@ -1024,7 +1504,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="87" column="23" bodyfile="units/vector_unit_nd.hpp" bodystart="87" bodyend="93"/>
+        <location file="units/vector_unit_nd.hpp" line="104" column="23" bodyfile="units/vector_unit_nd.hpp" bodystart="104" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1ab928f1d182a72b3bd07749db354d43e0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1vector__unit__nd" kindref="compound">vector_unit_nd</ref></type>
@@ -1054,7 +1534,27 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/vector_unit_nd.hpp" line="95" column="23" bodyfile="units/vector_unit_nd.hpp" bodystart="95" bodyend="100"/>
+        <location file="units/vector_unit_nd.hpp" line="112" column="23" bodyfile="units/vector_unit_nd.hpp" bodystart="112" bodyend="117"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classscifir_1_1vector__unit__nd_1a8977bbc85ca58b5f7084a8c67db9503f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::vector_unit_nd::initialize_from_string</definition>
+        <argsstring>(string init_vector_nd)</argsstring>
+        <name>initialize_from_string</name>
+        <qualifiedname>scifir::vector_unit_nd::initialize_from_string</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+          <declname>init_vector_nd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/vector_unit_nd.hpp" line="233" column="6" bodyfile="units/vector_unit_nd.cpp" bodystart="722" bodyend="735"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -1085,103 +1585,126 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="units/vector_unit_nd.hpp" line="61" column="1" bodyfile="units/vector_unit_nd.hpp" bodystart="62" bodyend="211"/>
+    <location file="units/vector_unit_nd.hpp" line="60" column="1" bodyfile="units/vector_unit_nd.hpp" bodystart="61" bodyend="234"/>
     <listofallmembers>
-      <member refid="classscifir_1_1scalar__unit_1aadfdf56e7df6a99627fd468bd3c02ba1" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>add_dimension</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a0fe440745fb805824daf53e9ae66e810" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>add_dimension</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1a17eed3849732c0256577450131dda3fc" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>angles</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1a9be0b433aceee3918d40285ec0761bf0" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>cartesian_2d</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1a8a31aaf77ce127253dd9a37b8f02cff6" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>cartesian_3d</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ab58286c5045e63e2ca90571306626724" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>change_dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ac64621e7969dfc9aea0c12dd6ee048b8" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>change_dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1acfcf1821b6b0dbb4a05915d66f610833" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>custom_display</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a994687b147289403e4a993344f768e64" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>change_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ae7d76f1d37b44e675d5ba313c9d95fb8" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>change_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a8530221b5e65bda1fcd706c571de15f5" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>custom_display</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1ab928f1d182a72b3bd07749db354d43e0" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>cylindrical</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ab6c6f9368db3f6b066c7aae5d7d1245f" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>derived_display</name></member>
+      <member refid="classscifir_1_1scalar__unit_1aa19d314f836ae7cc5a5d55611e56e01a" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>derived_display</name></member>
       <member refid="classscifir_1_1scalar__unit_1a47854a88ee4cacf7099c756e111b198d" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ad160d04f5ea534a9c81142a5efd652a0" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>display</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a5da2eba7a064be5ac532d36e2aeb865d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>display</name></member>
       <member refid="classscifir_1_1scalar__unit_1a8c84a2ee69d730d6667b7103396730bd" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>display_dimensions</name></member>
       <member refid="classscifir_1_1scalar__unit_1a49a18cc0d9347e017f2d13f1ce97889b" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>get_derived_dimensions</name></member>
       <member refid="classscifir_1_1scalar__unit_1ac7a640edca2e933bc19a6194cb522204" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>get_dimensions</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1a544b545723f9ef4592daea2facdd0407" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>get_nd</name></member>
       <member refid="classscifir_1_1scalar__unit_1aef86fe20676b9a14120270e6bb6c49b1" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>get_value</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a04899eed4d05a6267b1b44e832cc4d57" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>has_dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a1a2a12f475dc032f277bd577fd9b975d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>has_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ad65df774f292c9a466e6f44127c1485c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>has_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a5d88ebeac2c66b3fbaff69a5a8aeb387" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>has_dimensions</name></member>
       <member refid="classscifir_1_1scalar__unit_1a7edbf723398b8acd1a84669b1c3be30c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>has_dimensions</name></member>
       <member refid="classscifir_1_1scalar__unit_1ae4b941ec3823e325a9d7290a56d4c226" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>has_empty_dimensions</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a8977bbc85ca58b5f7084a8c67db9503f" prot="private" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>initialize_from_string</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1a289c2f3f91da1201acbc71dc9e391bc5" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>invert</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1a375d5d9e20eee2a10c5fe583fd64b97f" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>is_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1abf83445ce650920236f1e8baf9e43199" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>n_projection</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a4e0703c092bf1acca73a5258901a0f58" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>n_projection</name></member>
       <member refid="classscifir_1_1scalar__unit_1acab38ee2d23c051283285f08b9cac2c1" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator float</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a6578385e7452dcb5eebd64db8cd47fd8" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator*</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a16cfc18d15b783b07a0809263330e25a" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator*</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1ab5c1c285036f7aa97eff575f7ab1700f" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ada6156aec98a6c56065f0cc774e8a7a7" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a76638cb2e1edb72efe75e985fcf8b923" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1af70fbecf829d3e7705dac0e2790146c0" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator*=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1af82ffc4bfd5f62118ea38ed5376ba093" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator*=</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1ab8cdcdf9473f789b8c33cce90f6166b4" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a329d34994d4acf60210c6d794f70653e" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator*</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a41d09ddac49e6c3c783468cc387681af" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator*</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a33c629477717cc1bdbb0fcb2e114cefa" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator*=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1aa3d5f3ab5a33da028a7a4ca6126ac018" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator*=</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1aa95c5c726591b56ab8c21309b7454c16" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator+</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1a9df16710a4b9cfbb27e2598f4e6d8c58" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator+</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a0ac0f8c43b2dea473b9e74b9ec510aa0" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator+</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a05b93fe8c1ae6b47f457c5bfd7a65e60" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1scalar__unit_1af34f5d9608d82039cb118a45c7adbdd4" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a3a646369c40d046343636e69cac739fc" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator+</name></member>
       <member refid="classscifir_1_1scalar__unit_1af36b7d319844aad7f838a71aced338f4" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator++</name></member>
       <member refid="classscifir_1_1scalar__unit_1ad4a110c3c13cf37db7329e70266a4ed7" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator++</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1ae7909dcca9ebcd6dcadd7a038607fe09" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a7d2d138ad2e160827157fbe577734a07" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a5abaecf2a19c1d5a0bca214f0c1b55f2" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a118fcc15617a867f55e5b05a301e687c" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a23790e937efd812b49b668e7cc1711c6" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a443ed8e173fd54ee411f4a3da7940fb7" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator+=</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a22917c00ed4a724c8182322b7d69f5bc" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator+=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a3c5b90d093e8cd6c15fe32fd6f9aa77f" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator+=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ab92fdf13cdd566edb88804d6abf4894c" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator+=</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1aaefa9684c8cba036f901b1a402fa3148" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator-</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1a9368f2029ec8934e0c80432ff5613c30" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator-</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a6c5f227e788c24feb0f82a0041a3ff91" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator-</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a020d08f5344018f5f17dd86e59b33ac2" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1scalar__unit_1aaa86f3d182021b17b880b404e075ff4f" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a3b4775b30dd9e07d022dd691135e98ed" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator-</name></member>
       <member refid="classscifir_1_1scalar__unit_1a180b89f1bb61a2d38175f2ceb408632d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator--</name></member>
       <member refid="classscifir_1_1scalar__unit_1a1b069d8e8f353795ff9ea007ae7399eb" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator--</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a7b54a70b64058393a4a0f7df28f3006a" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a3e2843a033ba65cb8880daabb88eb2be" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1aa38e580247e28f32f744094e3a3ddf95" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a2f9328b2e6bd1114c144eb6267651dad" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a036d3708b63e5d745199d0094f6c5271" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator/</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a38606eb40f50c1949a6cc2eecf99c884" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator-=</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1aaa31d29e31cad60f10682bd68561738d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator-=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ae22b4b57bbb6ab2ac8173c1cf5f7a5e1" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator-=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a337edf5896b9f05abde7fe8bcd71588c" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator-=</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a84e3baecee4f0d71e309b755022df5eb" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator/</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1abdd4310fcb74e73441350481a58c3ae2" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a2de981aa756ea61334717a4b290446d2" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a186c0df0fe96b3da6e45cb4e580cf455" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1ac3d4f1475e3e82b589391d8a7049558c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator/=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a156e0918dadd06776e73c4fcf3b16576" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator/=</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a66448d71896229a4f75e65940ec532fa" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a080601214c9b3511956df19a028e87c2" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a3fd3764863e27f925b1c535703d76a8f" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a9b652165d65fb42d617ff09a9f17bdfe" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1aa392e63f3a74e930f5a37e5505f55821" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator^</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a0f5687f5407c49376f8139286fb8108c" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator/</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a6c7befde1f4bb1ed08817dff3adb13f7" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator/</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a27bca2fb5243bdf023af93c8b758da88" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator/=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1afa7f6d6fbb4f94882e976cc569b1d62b" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator/=</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1ad0952f0ddfd4f9bf50cc1928981de489" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1aaf45f794dc1614322f08cbd51f68f3b9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1ae05ba93b52592803d5cff7d9c68306cc" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a2157cbf2bc77f071822e65160de23705" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a6a791b68f88b87368a61ce3a3d66641a" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a6e84feec1de8cf9929652b570eeabaeb" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator==</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a77abc5702f3e6a0df005a4a12d281b05" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator==</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a09a683c9860b0dc7c3a25b6c5de79bb9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator^</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1a5bf194c6c87e50c00cb6273275286d99" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>operator^</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a871cfaa2684c085ca2dcc75acc8f3fdc" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator^</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a872715e45eb2894183c2c439caf5fb38" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>point_to</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a2fec577682ea5238f05e1927fb92cb33" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>remove_dimension</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a53c5f6d3f946b7361ff19b4aacad4b65" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_nd</scope><name>operator^</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1ae41cb1b4cbb9e9023766c5bc0e5c1f3b" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>point_to</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a1d9a11f3d4c951cb55917288767d3feb" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>remove_dimension</name></member>
       <member refid="classscifir_1_1scalar__unit_1a8ecd0310f82a51bfcc87b2aa892375b9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1af5216813417816260ebe01e51195d74f" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a926fad376793fefcfda09c71a43c7b0b" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ad6c7d0c43bd2113048e3515719c32164" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a166ba9531851b6017f45798246e984c9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a5a666567f8c0783b0be278911a8da435" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a53864997d7b4e251260069eac6ffb3ca" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a8019338691279bf0d0b9a3887d3fdb5c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ab8e7a7df3619e3d74ab1991c2ee0e2ea" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a46cf27440aa4714d68076ede0ae1a1fd" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a00a73942f2517b827e9df38e870f138c" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>set_from_string</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ab89b028a2e344c1cd62b1cb49ff7a92c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a2c60c79ed8b911b51f1b3431a102cda5" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a6534c793900bb3d3ec7d7df6c6e620b6" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a3ec66e006930ee8ecf3510fed0ced5f5" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a04e818cc54fc33342d62aba88da198c2" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a91f7f7d47084e468fdee9440ab51cf1e" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a7859b5685704328c9e876fba89c69c20" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a22622caa696487e08ccb2fa9e0f64107" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a7487c672fd9d31f08abb3d7d7c2b3f18" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a8a22b2fe2afa56d71d72cfd6f462f343" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a8805acbb0e474f299ae077862cc312e7" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>scalar_unit</name></member>
       <member refid="classscifir_1_1scalar__unit_1af1e3a220f55d66f5bb27ab6dfa84c632" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>value</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1a48877ef99ffd213b7eb17133a9bfd470" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1ad18d11b4177ab643c1f13a61f5e617cc" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a3cff2ac287463c59fc2c07da147472c7" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a6a70ff7efc4630e09aa69a13881d3a3d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1aad580721c8a8c55f408eba608f424fc8" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1aabc851c9209cfb66d9424039f298ecf8" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a42e4397740da27422609ddaee9e05014" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a58c98733b653c57659a66034b925f21c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a6350681fcbb14e9ce044d5b6439bea59" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a5e95d03fd2ddad89112b7ee9bb4d54b4" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1adbd547d5cd4863e123c3c38f8906a4f4" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a564367d6d000c3d9000cb41d70dfcaff" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a3d13782157818189e889634572960720" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a5aa4333d7cd6bf64e316add6cfe87f0e" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a54bff69cfc41755348a9a08fcae7085b" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1acd75fb71dd29e9984e0c3644e28e0e83" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vectorial_custom_display</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1ac1cabe7e541cfe0cf9a1db5b601b1758" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vectorial_derived_display</name></member>
-      <member refid="classscifir_1_1vector__unit__nd_1a579f02aefd85061519daf248cb7c9ef9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vectorial_display</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1abdce27e8a92c91c88c14cc1a0f28328a" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a2feb55109e32f679236f4fd4e0f51ebc" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1ae83bc4126e3635acda61e0b944d28cce" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1ace6719eb1de17193c7cc3cf12e9ced7f" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a0b1fa099306696cd31b327b1cdf57abb" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a6bcfe008b6847b5977d935100db9bfb7" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1aa2625007e78490225dfa9e3d15abe5d9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a6534561233e6459b7edcc47ef30883fb" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a59a9703a9e566463a42a87d4c2463bf3" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1aa13c311fa8e9158e717a37f8827de88d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a842cc9b7f2543b59f7df54ba8b6fc34e" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a95a8c1d954de41b42bc6768c7df04251" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a4a4a9266041592df54e44263e70c174f" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a350d25549b309aafd355ba53d6531556" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1abc54e6c6c0bde1d95ba09f783ba8c1de" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a2c456b4fa6ecb16f53cd86a1c8e7952f" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a0300260317a8d6cb016cc7d287289f84" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a64bf0cca3a5ebf0f27611e7745b90ba7" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a0b98afa47294c2b92a574a1a4a6cd419" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1af3b6f77e799ff55e4abf4422699bf98b" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a2eab5794697d68ad27681ba7a1d9f6ed" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a4e83d08c60f1ac9de87f642ed771d305" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1abb9146e8fffde7d45e96e8c7d98d3bd1" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a232b31929a5c46e81435b50ece178905" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a9c47915106a6d5faae03bd2a8577ba71" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a0f92adffe47b77242318fce76400e42c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a337794a7fabcefd0cd5d668a16abed54" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1ac2a3c89deeab8214d634579dd550c3b9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1ad787f36ba8c93fda679dc3a3ddbeb763" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a60fe95755ead6fadf35af77144f45f63" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a95caff6ee5585e44b02cf075bd15502d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a039766193302fb45c7801a3d6ca4cf5a" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vector_unit_nd</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a645c497b05427cd49bf85c3bf6055e1a" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vectorial_custom_display</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1ab569434414860db7930f110fe995e45c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vectorial_derived_display</name></member>
+      <member refid="classscifir_1_1vector__unit__nd_1a54b4a6cbbee4da93280de2355a6176e3" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>vectorial_display</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1a4ccdab8a3c34cd9467f879b8fb289478" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>x_projection</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1a39b5b6ca8fca3cf8bb88dc5ea3c27699" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>y_projection</name></member>
       <member refid="classscifir_1_1vector__unit__nd_1ada70b23bb80c068edbf29b790b59cf34" prot="public" virt="non-virtual"><scope>scifir::vector_unit_nd</scope><name>z_projection</name></member>

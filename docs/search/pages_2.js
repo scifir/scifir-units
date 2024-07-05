@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['library_0',['scifir-units library',['../index.html',1,'']]]
+  ['installation_0',['Installation',['../md_INSTALL.html',1,'']]]
 ];

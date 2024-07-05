@@ -16,25 +16,31 @@ scifir::coordinates_3dr< float >
 .RI "\fBcoordinates_3dr\fP (\fBcoordinates_3dr\fP< \fBfloat\fP > &&\fBx_coordinates\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3dr\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP, \fBconst\fP \fBfloat\fP &\fBnew_y\fP, \fBconst\fP \fBfloat\fP &\fBnew_z\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBcoordinates_3dr\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP, \fBfloat\fP \fBnew_z\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3dr\fP (\fBconst\fP \fBfloat\fP &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_cylindrical_theta\fP, \fBconst\fP \fBfloat\fP &\fBnew_z\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBcoordinates_3dr\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_cylindrical_theta\fP, \fBfloat\fP \fBnew_z\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3dr\fP (\fBconst\fP \fBfloat\fP &\fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_spherical_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_spherical_phi\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBcoordinates_3dr\fP (\fBfloat\fP \fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_spherical_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_spherical_phi\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3dr\fP (\fBconst\fP \fBangle\fP &\fBnew_latitude\fP, \fBconst\fP \fBangle\fP &\fBnew_longitude\fP, \fBconst\fP \fBfloat\fP &\fBnew_altitude\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBcoordinates_3dr\fP (\fBconst\fP \fBangle\fP &\fBnew_latitude\fP, \fBconst\fP \fBangle\fP &\fBnew_longitude\fP, \fBfloat\fP \fBnew_altitude\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
 .br
 .ti -1c
 .RI "\fBcoordinates_3dr\fP (\fBconst\fP \fBpoint_3d\fP< \fBfloat\fP > &\fBx_point\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
 .br
 .ti -1c
+.RI "\fBcoordinates_3dr\fP (\fBpoint_3d\fP< \fBfloat\fP > &&\fBx_point\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.br
+.ti -1c
 .RI "\fBcoordinates_3dr\fP (\fBconst\fP \fBcoordinates_3d\fP< \fBfloat\fP > &\fBx_coordinates\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3dr\fP (\fBstring\fP \fBinit_coordinates_3dr\fP)"
+.RI "\fBcoordinates_3dr\fP (\fBcoordinates_3d\fP< \fBfloat\fP > &&\fBx_coordinates\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_3dr\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_3dr\fP)"
 .br
 .ti -1c
 .RI "\fBcoordinates_3dr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBcoordinates_3dr\fP< \fBfloat\fP > &\fBx_coordinates\fP)"
@@ -46,7 +52,16 @@ scifir::coordinates_3dr< float >
 .RI "\fBcoordinates_3dr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBpoint_3d\fP< \fBfloat\fP > &\fBx_point\fP)"
 .br
 .ti -1c
+.RI "\fBcoordinates_3dr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBpoint_3d\fP< \fBfloat\fP > &&\fBx_point\fP)"
+.br
+.ti -1c
 .RI "\fBcoordinates_3dr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBcoordinates_3d\fP< \fBfloat\fP > &\fBx_coordinates\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_3dr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBcoordinates_3d\fP< \fBfloat\fP > &&\fBx_coordinates\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_3dr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_3dr\fP)"
 .br
 .ti -1c
 .RI "\fBfloat\fP \fBget_p\fP () \fBconst\fP"
@@ -73,16 +88,16 @@ scifir::coordinates_3dr< float >
 .RI "\fBvoid\fP \fBpoint_to\fP (direction::name x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP, \fBconst\fP \fBfloat\fP &\fBnew_y\fP, \fBconst\fP \fBfloat\fP &\fBnew_z\fP)"
+.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP, \fBfloat\fP \fBnew_z\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBfloat\fP &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBfloat\fP &\fBnew_z\fP)"
+.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBfloat\fP \fBnew_z\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBfloat\fP &\fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBangle\fP &\fBnew_latitude\fP, \fBconst\fP \fBangle\fP &\fBnew_longitude\fP, \fBconst\fP \fBfloat\fP &\fBnew_altitude\fP)"
+.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBangle\fP &\fBnew_latitude\fP, \fBconst\fP \fBangle\fP &\fBnew_longitude\fP, \fBfloat\fP \fBnew_altitude\fP)"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBrotate_in_x\fP (\fBconst\fP \fBangle\fP &\fBx_angle\fP)"
@@ -97,16 +112,19 @@ scifir::coordinates_3dr< float >
 .RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBdisplacement_3d\fP &\fBx_displacement\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP, \fBconst\fP \fBfloat\fP &\fBnew_y\fP, \fBconst\fP \fBfloat\fP &\fBnew_z\fP)"
+.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP, \fBfloat\fP \fBnew_z\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBfloat\fP &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBfloat\fP &\fBnew_z\fP)"
+.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBfloat\fP \fBnew_z\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBfloat\fP &\fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
 .br
 .ti -1c
 .RI "\fBfloat\fP \fBdistance_to_origin\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBdisplay_cartesian\fP () \fBconst\fP"
 .br
 .ti -1c
 .RI "\fBstring\fP \fBdisplay_cylindrical\fP () \fBconst\fP"

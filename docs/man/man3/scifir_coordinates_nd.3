@@ -43,7 +43,10 @@ scifir::coordinates_nd< T >
 .RI "\fBcoordinates_nd\fP (\fBconst\fP \fBpoint_nd\fP< T > &\fBnew_point\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_nd\fP (\fBstring\fP \fBinit_coordinates_nd\fP)"
+.RI "\fBcoordinates_nd\fP (\fBpoint_nd\fP< T > &&\fBnew_point\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_nd\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_nd\fP)"
 .br
 .ti -1c
 .RI "\fBcoordinates_nd\fP< T > & \fBoperator=\fP (\fBconst\fP \fBcoordinates_nd\fP< T > &\fBx_coordinates\fP)"
@@ -53,6 +56,12 @@ scifir::coordinates_nd< T >
 .br
 .ti -1c
 .RI "\fBcoordinates_nd\fP< T > & \fBoperator=\fP (\fBconst\fP \fBpoint_nd\fP< T > &\fBx_point\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_nd\fP< T > & \fBoperator=\fP (\fBpoint_nd\fP< T > &&\fBx_point\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_nd\fP< T > & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_nd\fP)"
 .br
 .ti -1c
 .RI "\fBbool\fP \fBis_nd\fP (\fBint\fP \fBi\fP) \fBconst\fP"
@@ -106,7 +115,10 @@ scifir::coordinates_nd< T >
 .RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP vector< T > &\fBnew_values\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBrotate\fP (\fBint\fP \fBdimension_number\fP, \fBint\fP \fBaxis\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.RI "\fBvoid\fP \fBrotate_in_2d\fP (\fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBrotate_in_3d\fP (\fBint\fP \fBaxis\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBmove\fP (\fBconst\fP T &\fBnew_x\fP)"
@@ -142,7 +154,13 @@ scifir::coordinates_nd< T >
 .RI "T \fBdistance_to_origin\fP () \fBconst\fP"
 .br
 .ti -1c
+.RI "\fBstring\fP \fBdisplay_cartesian_2d\fP () \fBconst\fP"
+.br
+.ti -1c
 .RI "\fBstring\fP \fBdisplay_polar\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBdisplay_cartesian_3d\fP () \fBconst\fP"
 .br
 .ti -1c
 .RI "\fBstring\fP \fBdisplay_cylindrical\fP () \fBconst\fP"

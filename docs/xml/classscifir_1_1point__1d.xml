@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/point_1d.hpp" line="77" column="3" bodyfile="topology/point_1d.hpp" bodystart="77" bodyend="-1"/>
+        <location file="topology/point_1d.hpp" line="87" column="3" bodyfile="topology/point_1d.hpp" bodystart="87" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -37,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/point_1d.hpp" line="21" column="1" bodyfile="topology/point_1d.hpp" bodystart="21" bodyend="22"/>
+        <location file="topology/point_1d.hpp" line="22" column="1" bodyfile="topology/point_1d.hpp" bodystart="22" bodyend="23"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__1d_1a5503cc376e339b4d3a35216604c3667d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/point_1d.hpp" line="24" column="1" bodyfile="topology/point_1d.hpp" bodystart="24" bodyend="25"/>
+        <location file="topology/point_1d.hpp" line="25" column="1" bodyfile="topology/point_1d.hpp" bodystart="25" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__1d_1adccc3f4053e76938bb4f2c0cad65a0d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/point_1d.hpp" line="27" column="1" bodyfile="topology/point_1d.hpp" bodystart="27" bodyend="28"/>
+        <location file="topology/point_1d.hpp" line="28" column="1" bodyfile="topology/point_1d.hpp" bodystart="28" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__1d_1ae4fdc323b4c41d30402a9a46abedc09e" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
@@ -91,17 +91,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/point_1d.hpp" line="30" column="10" bodyfile="topology/point_1d.hpp" bodystart="30" bodyend="31"/>
+        <location file="topology/point_1d.hpp" line="31" column="10" bodyfile="topology/point_1d.hpp" bodystart="31" bodyend="32"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1point__1d_1a614dd983df008135bfa6908393c031bd" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1point__1d_1af4a60c25a6cc525460ec1f857efc9a1e" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::point_1d&lt; T &gt;::point_1d</definition>
-        <argsstring>(const coordinates_1d&lt; T &gt; &amp;)</argsstring>
+        <argsstring>(const coordinates_1d&lt; T &gt; &amp;x_coordinates)</argsstring>
         <name>point_1d</name>
         <qualifiedname>scifir::point_1d::point_1d</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d</ref>&lt; T &gt; &amp;</type>
-          <defname>x_coordinates</defname>
+          <declname>x_coordinates</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -109,16 +109,34 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/point_1d.hpp" line="33" column="10" bodyfile="topology/point_1d_impl.hpp" bodystart="13" bodyend="14"/>
+        <location file="topology/point_1d.hpp" line="34" column="10" bodyfile="topology/point_1d_impl.hpp" bodystart="13" bodyend="14"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1point__1d_1adf602544e6363e30b93d7a14de7b7b4a" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1point__1d_1ae52c67618e30b04da2845a8cda1e0719" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::point_1d&lt; T &gt;::point_1d</definition>
-        <argsstring>(string init_point_1d)</argsstring>
+        <argsstring>(coordinates_1d&lt; T &gt; &amp;&amp;x_coordinates)</argsstring>
         <name>point_1d</name>
         <qualifiedname>scifir::point_1d::point_1d</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d</ref>&lt; T &gt; &amp;&amp;</type>
+          <declname>x_coordinates</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_1d.hpp" line="36" column="10" bodyfile="topology/point_1d_impl.hpp" bodystart="17" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__1d_1a47c45a73cd2bda2c064c28efea9b3b17" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::point_1d&lt; T &gt;::point_1d</definition>
+        <argsstring>(const string &amp;init_point_1d)</argsstring>
+        <name>point_1d</name>
+        <qualifiedname>scifir::point_1d::point_1d</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
           <declname>init_point_1d</declname>
         </param>
         <briefdescription>
@@ -127,7 +145,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/point_1d.hpp" line="35" column="10" bodyfile="topology/point_1d.hpp" bodystart="35" bodyend="46"/>
+        <location file="topology/point_1d.hpp" line="38" column="10" bodyfile="topology/point_1d.hpp" bodystart="38" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__1d_1aca3c267dd4a87213d6f31686aebd71a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1point__1d" kindref="compound">point_1d</ref>&lt; T &gt; &amp;</type>
@@ -145,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/point_1d.hpp" line="48" column="10" bodyfile="topology/point_1d.hpp" bodystart="48" bodyend="52"/>
+        <location file="topology/point_1d.hpp" line="43" column="10" bodyfile="topology/point_1d.hpp" bodystart="43" bodyend="47"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__1d_1a4746fdb063fa50f3b170d6d36370f342" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1point__1d" kindref="compound">point_1d</ref>&lt; T &gt; &amp;</type>
@@ -163,7 +181,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/point_1d.hpp" line="54" column="10" bodyfile="topology/point_1d.hpp" bodystart="54" bodyend="58"/>
+        <location file="topology/point_1d.hpp" line="49" column="10" bodyfile="topology/point_1d.hpp" bodystart="49" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__1d_1acbe0b5a45339df626aa3138ac17fed38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1point__1d" kindref="compound">point_1d</ref>&lt; T &gt; &amp;</type>
@@ -181,7 +199,43 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/point_1d.hpp" line="60" column="10" bodyfile="topology/point_1d_impl.hpp" bodystart="17" bodyend="21"/>
+        <location file="topology/point_1d.hpp" line="55" column="10" bodyfile="topology/point_1d_impl.hpp" bodystart="21" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__1d_1a47d76ef3c5dbebbb3e368d45abcbcfea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1point__1d" kindref="compound">point_1d</ref>&lt; T &gt; &amp;</type>
+        <definition>point_1d&lt; T &gt; &amp; scifir::point_1d&lt; T &gt;::operator=</definition>
+        <argsstring>(coordinates_1d&lt; T &gt; &amp;&amp;)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::point_1d::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_1d</ref>&lt; T &gt; &amp;&amp;</type>
+          <defname>x_coordinates</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_1d.hpp" line="57" column="10" bodyfile="topology/point_1d_impl.hpp" bodystart="28" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__1d_1a993e18973c37198071636f70c64c113e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1point__1d" kindref="compound">point_1d</ref>&lt; T &gt; &amp;</type>
+        <definition>point_1d&lt; T &gt; &amp; scifir::point_1d&lt; T &gt;::operator=</definition>
+        <argsstring>(const string &amp;init_point_1d)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::point_1d::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_point_1d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_1d.hpp" line="59" column="10" bodyfile="topology/point_1d.hpp" bodystart="59" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__1d_1a6709763fe32ba69b7cd9e94bd31562f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -199,7 +253,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/point_1d.hpp" line="62" column="6" bodyfile="topology/point_1d.hpp" bodystart="62" bodyend="65"/>
+        <location file="topology/point_1d.hpp" line="65" column="6" bodyfile="topology/point_1d.hpp" bodystart="65" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__1d_1a3f24e5d2b7936e4f3481d64637b8166a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -217,7 +271,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/point_1d.hpp" line="67" column="6" bodyfile="topology/point_1d.hpp" bodystart="67" bodyend="70"/>
+        <location file="topology/point_1d.hpp" line="70" column="6" bodyfile="topology/point_1d.hpp" bodystart="70" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1point__1d_1ae859b58e40c37664a1df32441f5b605f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>T</type>
@@ -231,26 +285,65 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/point_1d.hpp" line="72" column="3" bodyfile="topology/point_1d.hpp" bodystart="72" bodyend="75"/>
+        <location file="topology/point_1d.hpp" line="75" column="3" bodyfile="topology/point_1d.hpp" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1point__1d_1ad80fd9bdae6e7f16cddf93dfff93cb0e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <definition>string scifir::point_1d&lt; T &gt;::display_cartesian</definition>
+        <argsstring>() const</argsstring>
+        <name>display_cartesian</name>
+        <qualifiedname>scifir::point_1d::display_cartesian</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_1d.hpp" line="80" column="8" bodyfile="topology/point_1d.hpp" bodystart="80" bodyend="85"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classscifir_1_1point__1d_1a38ef6ceae346a5569d487618b8764682" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::point_1d&lt; T &gt;::initialize_from_string</definition>
+        <argsstring>(string init_point_1d)</argsstring>
+        <name>initialize_from_string</name>
+        <qualifiedname>scifir::point_1d::initialize_from_string</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+          <declname>init_point_1d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/point_1d.hpp" line="90" column="6" bodyfile="topology/point_1d.hpp" bodystart="90" bodyend="101"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="topology/point_1d.hpp" line="18" column="1" bodyfile="topology/point_1d.hpp" bodystart="19" bodyend="78"/>
+    <location file="topology/point_1d.hpp" line="19" column="1" bodyfile="topology/point_1d.hpp" bodystart="20" bodyend="102"/>
     <listofallmembers>
+      <member refid="classscifir_1_1point__1d_1ad80fd9bdae6e7f16cddf93dfff93cb0e" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>display_cartesian</name></member>
       <member refid="classscifir_1_1point__1d_1ae859b58e40c37664a1df32441f5b605f" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>distance_to_origin</name></member>
+      <member refid="classscifir_1_1point__1d_1a38ef6ceae346a5569d487618b8764682" prot="private" virt="non-virtual"><scope>scifir::point_1d</scope><name>initialize_from_string</name></member>
       <member refid="classscifir_1_1point__1d_1a3f24e5d2b7936e4f3481d64637b8166a" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>move</name></member>
       <member refid="classscifir_1_1point__1d_1aca3c267dd4a87213d6f31686aebd71a2" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>operator=</name></member>
       <member refid="classscifir_1_1point__1d_1a4746fdb063fa50f3b170d6d36370f342" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>operator=</name></member>
       <member refid="classscifir_1_1point__1d_1acbe0b5a45339df626aa3138ac17fed38" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1point__1d_1a47d76ef3c5dbebbb3e368d45abcbcfea" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1point__1d_1a993e18973c37198071636f70c64c113e" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>operator=</name></member>
       <member refid="classscifir_1_1point__1d_1a9a2b1c2c6db19e3baf97ea184473158b" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>point_1d</name></member>
       <member refid="classscifir_1_1point__1d_1a5503cc376e339b4d3a35216604c3667d" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>point_1d</name></member>
       <member refid="classscifir_1_1point__1d_1adccc3f4053e76938bb4f2c0cad65a0d1" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>point_1d</name></member>
       <member refid="classscifir_1_1point__1d_1ae4fdc323b4c41d30402a9a46abedc09e" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>point_1d</name></member>
-      <member refid="classscifir_1_1point__1d_1a614dd983df008135bfa6908393c031bd" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>point_1d</name></member>
-      <member refid="classscifir_1_1point__1d_1adf602544e6363e30b93d7a14de7b7b4a" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>point_1d</name></member>
+      <member refid="classscifir_1_1point__1d_1af4a60c25a6cc525460ec1f857efc9a1e" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>point_1d</name></member>
+      <member refid="classscifir_1_1point__1d_1ae52c67618e30b04da2845a8cda1e0719" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>point_1d</name></member>
+      <member refid="classscifir_1_1point__1d_1a47c45a73cd2bda2c064c28efea9b3b17" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>point_1d</name></member>
       <member refid="classscifir_1_1point__1d_1a6709763fe32ba69b7cd9e94bd31562f6" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>set_position</name></member>
       <member refid="classscifir_1_1point__1d_1ada6845ca9e3a02e9f4a0d79d67e51f4a" prot="public" virt="non-virtual"><scope>scifir::point_1d</scope><name>x</name></member>
     </listofallmembers>

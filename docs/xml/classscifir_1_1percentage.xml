@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="134" column="7" bodyfile="special_units/percentage.hpp" bodystart="134" bodyend="-1"/>
+        <location file="special_units/percentage.hpp" line="138" column="7" bodyfile="special_units/percentage.hpp" bodystart="138" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -31,17 +31,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="20" column="1" bodyfile="special_units/percentage.cpp" bodystart="14" bodyend="15"/>
+        <location file="special_units/percentage.hpp" line="20" column="1" bodyfile="special_units/percentage.cpp" bodystart="16" bodyend="17"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a2a562445037b2fe5d0ed5d0d7dc42377" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a2c01f02d4b74d48fba8bd27bd4976ce5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::percentage::percentage</definition>
-        <argsstring>(const percentage &amp;)</argsstring>
+        <argsstring>(const percentage &amp;x)</argsstring>
         <name>percentage</name>
         <qualifiedname>scifir::percentage::percentage</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -49,17 +49,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="21" column="1" bodyfile="special_units/percentage.cpp" bodystart="17" bodyend="18"/>
+        <location file="special_units/percentage.hpp" line="21" column="1" bodyfile="special_units/percentage.cpp" bodystart="19" bodyend="20"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a61bf969f17c1d9af773e5641277a9e11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a1710685f83c6dfb22cf0027590d47090" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::percentage::percentage</definition>
-        <argsstring>(percentage &amp;&amp;)</argsstring>
+        <argsstring>(percentage &amp;&amp;x)</argsstring>
         <name>percentage</name>
         <qualifiedname>scifir::percentage::percentage</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;&amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -67,17 +67,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="22" column="1" bodyfile="special_units/percentage.cpp" bodystart="20" bodyend="21"/>
+        <location file="special_units/percentage.hpp" line="22" column="1" bodyfile="special_units/percentage.cpp" bodystart="22" bodyend="23"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1abc5a21e8c33864be2be524601d5f4cb6" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1aca3d6e3ba0960825b161cc8dddf91db9" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::percentage::percentage</definition>
-        <argsstring>(float)</argsstring>
+        <argsstring>(float new_value)</argsstring>
         <name>percentage</name>
         <qualifiedname>scifir::percentage::percentage</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-          <defname>x</defname>
+          <declname>new_value</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -85,17 +85,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="23" column="10" bodyfile="special_units/percentage.cpp" bodystart="23" bodyend="24"/>
+        <location file="special_units/percentage.hpp" line="23" column="10" bodyfile="special_units/percentage.cpp" bodystart="25" bodyend="26"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1ab239c73f7462da0b222c440911ec9c1d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1af1ca132169724c44756948e65c4eb7fa" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::percentage::percentage</definition>
-        <argsstring>(double)</argsstring>
+        <argsstring>(double new_value)</argsstring>
         <name>percentage</name>
         <qualifiedname>scifir::percentage::percentage</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
-          <defname>x</defname>
+          <declname>new_value</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -103,17 +103,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="24" column="10" bodyfile="special_units/percentage.cpp" bodystart="26" bodyend="27"/>
+        <location file="special_units/percentage.hpp" line="24" column="10" bodyfile="special_units/percentage.cpp" bodystart="28" bodyend="29"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1ab405b44bf7f23d266dd5ff08fc6de539" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1aa1e8fca665495f8383a647d333954275" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::percentage::percentage</definition>
-        <argsstring>(long double)</argsstring>
+        <argsstring>(long double new_value)</argsstring>
         <name>percentage</name>
         <qualifiedname>scifir::percentage::percentage</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
-          <defname>x</defname>
+          <declname>new_value</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -121,17 +121,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="25" column="10" bodyfile="special_units/percentage.cpp" bodystart="29" bodyend="30"/>
+        <location file="special_units/percentage.hpp" line="25" column="10" bodyfile="special_units/percentage.cpp" bodystart="31" bodyend="32"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a8d6d92a350f666fafd038202c1a71438" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a8f83b25ea8c690d92bc8e25deef77bba" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::percentage::percentage</definition>
-        <argsstring>(int)</argsstring>
+        <argsstring>(int new_value)</argsstring>
         <name>percentage</name>
         <qualifiedname>scifir::percentage::percentage</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
-          <defname>x</defname>
+          <declname>new_value</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -139,21 +139,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="26" column="10" bodyfile="special_units/percentage.cpp" bodystart="32" bodyend="33"/>
+        <location file="special_units/percentage.hpp" line="26" column="10" bodyfile="special_units/percentage.cpp" bodystart="34" bodyend="35"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a19517e666c83aa123de48331e10e0e9f" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a0e557b96be6e32d2d7adf39a03cf57cf" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::percentage::percentage</definition>
-        <argsstring>(float, const string &amp;)</argsstring>
+        <argsstring>(float new_value, const string &amp;init_dimensions)</argsstring>
         <name>percentage</name>
         <qualifiedname>scifir::percentage::percentage</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-          <defname>x</defname>
+          <declname>new_value</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_dimensions</defname>
+          <declname>init_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -161,21 +161,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="27" column="10" bodyfile="special_units/percentage.cpp" bodystart="35" bodyend="57"/>
+        <location file="special_units/percentage.hpp" line="27" column="10" bodyfile="special_units/percentage.cpp" bodystart="37" bodyend="63"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a556e85e3c672618f09206d793d6bc73b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a37056f1da6c4ccafc426aa3b1676c6ea" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::percentage::percentage</definition>
-        <argsstring>(double, const string &amp;)</argsstring>
+        <argsstring>(double new_value, const string &amp;init_dimensions)</argsstring>
         <name>percentage</name>
         <qualifiedname>scifir::percentage::percentage</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
-          <defname>x</defname>
+          <declname>new_value</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_dimensions</defname>
+          <declname>init_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -183,21 +183,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="28" column="10" bodyfile="special_units/percentage.cpp" bodystart="59" bodyend="81"/>
+        <location file="special_units/percentage.hpp" line="28" column="10" bodyfile="special_units/percentage.cpp" bodystart="65" bodyend="91"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a6546c5ba3761b4b1170b4d418c677538" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a36876d08e5d4ff4b01bacaa2ece7c632" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::percentage::percentage</definition>
-        <argsstring>(long double, const string &amp;)</argsstring>
+        <argsstring>(long double new_value, const string &amp;init_dimensions)</argsstring>
         <name>percentage</name>
         <qualifiedname>scifir::percentage::percentage</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
-          <defname>x</defname>
+          <declname>new_value</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_dimensions</defname>
+          <declname>init_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -205,21 +205,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="29" column="10" bodyfile="special_units/percentage.cpp" bodystart="83" bodyend="105"/>
+        <location file="special_units/percentage.hpp" line="29" column="10" bodyfile="special_units/percentage.cpp" bodystart="93" bodyend="119"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1ab7f6644f596931ce18b2d8364f64dca7" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1ae637c964c5674c6cc33c5e26e8bfa452" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::percentage::percentage</definition>
-        <argsstring>(int, const string &amp;)</argsstring>
+        <argsstring>(int new_value, const string &amp;init_dimensions)</argsstring>
         <name>percentage</name>
         <qualifiedname>scifir::percentage::percentage</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
-          <defname>x</defname>
+          <declname>new_value</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_dimensions</defname>
+          <declname>init_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -227,17 +227,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="30" column="10" bodyfile="special_units/percentage.cpp" bodystart="107" bodyend="129"/>
+        <location file="special_units/percentage.hpp" line="30" column="10" bodyfile="special_units/percentage.cpp" bodystart="121" bodyend="147"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1acca8180a4c6bacd2b14261ed67e68360" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a3c5f810ae0131c660db073954a6722cd" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::percentage::percentage</definition>
-        <argsstring>(const string &amp;)</argsstring>
+        <argsstring>(const string &amp;init_percentage)</argsstring>
         <name>percentage</name>
         <qualifiedname>scifir::percentage::percentage</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_percentage</defname>
+          <declname>init_percentage</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -245,17 +245,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="31" column="10" bodyfile="special_units/percentage.cpp" bodystart="131" bodyend="181"/>
+        <location file="special_units/percentage.hpp" line="31" column="10" bodyfile="special_units/percentage.cpp" bodystart="149" bodyend="152"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a543dcfc12f0b0f3e62e2aa4d4321d9f7" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a2a28cc4a3b5a788b37133fd25d5ee7da" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::percentage::percentage</definition>
-        <argsstring>(const scalar_unit &amp;)</argsstring>
+        <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>percentage</name>
         <qualifiedname>scifir::percentage::percentage</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -263,17 +263,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="32" column="10" bodyfile="special_units/percentage.cpp" bodystart="183" bodyend="194"/>
+        <location file="special_units/percentage.hpp" line="32" column="10" bodyfile="special_units/percentage.cpp" bodystart="154" bodyend="165"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a31c71486e326d711955a2fe598d115ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1ac3da7fdb1b7df99c912b8fef1a7ae572" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
         <definition>percentage &amp; scifir::percentage::operator=</definition>
-        <argsstring>(const percentage &amp;)</argsstring>
+        <argsstring>(const percentage &amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::percentage::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -281,17 +281,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="34" column="12" bodyfile="special_units/percentage.cpp" bodystart="196" bodyend="200"/>
+        <location file="special_units/percentage.hpp" line="34" column="12" bodyfile="special_units/percentage.cpp" bodystart="167" bodyend="171"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a8bed46a23ee3b420e9617677ddd9f4d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a5d784189257cbd105ec47dfaeb7c06c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
         <definition>percentage &amp; scifir::percentage::operator=</definition>
-        <argsstring>(percentage &amp;&amp;)</argsstring>
+        <argsstring>(percentage &amp;&amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::percentage::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;&amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -299,17 +299,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="35" column="12" bodyfile="special_units/percentage.cpp" bodystart="202" bodyend="206"/>
+        <location file="special_units/percentage.hpp" line="35" column="12" bodyfile="special_units/percentage.cpp" bodystart="173" bodyend="177"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a2a3e86e049f5cbcef12bc58d3607abed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1af0535ce3870fb035058cfdccd1d6816c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
         <definition>percentage &amp; scifir::percentage::operator=</definition>
-        <argsstring>(float)</argsstring>
+        <argsstring>(float new_value)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::percentage::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-          <defname>x</defname>
+          <declname>new_value</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -317,17 +317,71 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="36" column="12" bodyfile="special_units/percentage.cpp" bodystart="208" bodyend="212"/>
+        <location file="special_units/percentage.hpp" line="36" column="12" bodyfile="special_units/percentage.cpp" bodystart="179" bodyend="183"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a5b4a8bc6c3d710d25dde1f6bb9ec4717" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a67043cb05dd2934f15eaa090cee61c21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
         <definition>percentage &amp; scifir::percentage::operator=</definition>
-        <argsstring>(const string &amp;)</argsstring>
+        <argsstring>(double new_value)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::percentage::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="special_units/percentage.hpp" line="37" column="12" bodyfile="special_units/percentage.cpp" bodystart="185" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1percentage_1abec5befaa64c16f466e9b542421fbef7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
+        <definition>percentage &amp; scifir::percentage::operator=</definition>
+        <argsstring>(long double new_value)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::percentage::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="special_units/percentage.hpp" line="38" column="12" bodyfile="special_units/percentage.cpp" bodystart="191" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1percentage_1a456f383883f9b9db1270009f66e5dc9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
+        <definition>percentage &amp; scifir::percentage::operator=</definition>
+        <argsstring>(int new_value)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::percentage::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="special_units/percentage.hpp" line="39" column="12" bodyfile="special_units/percentage.cpp" bodystart="197" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1percentage_1acad958cf807bfe6eda3868f6842f089d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
+        <definition>percentage &amp; scifir::percentage::operator=</definition>
+        <argsstring>(const string &amp;init_percentage)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::percentage::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_percentage</defname>
+          <declname>init_percentage</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -335,17 +389,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="37" column="12" bodyfile="special_units/percentage.cpp" bodystart="214" bodyend="265"/>
+        <location file="special_units/percentage.hpp" line="40" column="12" bodyfile="special_units/percentage.cpp" bodystart="203" bodyend="207"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a339a64a354941d768a8a8e6e56988040" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1af429a976f5083bb40726479f4b8dff2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
         <definition>percentage &amp; scifir::percentage::operator=</definition>
-        <argsstring>(const scalar_unit &amp;)</argsstring>
+        <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::percentage::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -353,7 +407,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="38" column="12" bodyfile="special_units/percentage.cpp" bodystart="267" bodyend="278"/>
+        <location file="special_units/percentage.hpp" line="41" column="12" bodyfile="special_units/percentage.cpp" bodystart="209" bodyend="221"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1percentage_1a64ba3202f386c17dde5605465857ed75" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
@@ -367,7 +421,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="40" column="10" bodyfile="special_units/percentage.hpp" bodystart="40" bodyend="43"/>
+        <location file="special_units/percentage.hpp" line="43" column="10" bodyfile="special_units/percentage.hpp" bodystart="43" bodyend="46"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &amp;</type>
@@ -381,17 +435,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="45" column="20" bodyfile="special_units/percentage.hpp" bodystart="45" bodyend="48"/>
+        <location file="special_units/percentage.hpp" line="48" column="20" bodyfile="special_units/percentage.hpp" bodystart="48" bodyend="51"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1ab0979515863c4888cd21fa1b76edac44" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a997703d062db4bd8372c8f42b38ab0db" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref></type>
         <definition>percentage scifir::percentage::operator+</definition>
-        <argsstring>(const percentage &amp;) const</argsstring>
+        <argsstring>(const percentage &amp;x) const</argsstring>
         <name>operator+</name>
         <qualifiedname>scifir::percentage::operator+</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -399,17 +453,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="50" column="12" bodyfile="special_units/percentage.cpp" bodystart="280" bodyend="283"/>
+        <location file="special_units/percentage.hpp" line="53" column="12" bodyfile="special_units/percentage.cpp" bodystart="223" bodyend="226"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1afae7595a001816ac1eb5193c17a86817" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a0063f46fae523dde05a08ff773aa0759" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref></type>
         <definition>percentage scifir::percentage::operator-</definition>
-        <argsstring>(const percentage &amp;) const</argsstring>
+        <argsstring>(const percentage &amp;x) const</argsstring>
         <name>operator-</name>
         <qualifiedname>scifir::percentage::operator-</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -417,17 +471,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="51" column="12" bodyfile="special_units/percentage.cpp" bodystart="285" bodyend="288"/>
+        <location file="special_units/percentage.hpp" line="54" column="12" bodyfile="special_units/percentage.cpp" bodystart="228" bodyend="231"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1ada19dacc59195b7b481c58a83e68f880" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1ae1299386921e23b131a480c60313075c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref></type>
         <definition>percentage scifir::percentage::operator*</definition>
-        <argsstring>(const percentage &amp;) const</argsstring>
+        <argsstring>(const percentage &amp;x) const</argsstring>
         <name>operator*</name>
         <qualifiedname>scifir::percentage::operator*</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -435,17 +489,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="52" column="12" bodyfile="special_units/percentage.cpp" bodystart="290" bodyend="293"/>
+        <location file="special_units/percentage.hpp" line="55" column="12" bodyfile="special_units/percentage.cpp" bodystart="233" bodyend="236"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a04e82131cbb9f5efff63f73b7b3f00dd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a2e068414854cad2217c5629c1136ebe2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref></type>
         <definition>percentage scifir::percentage::operator/</definition>
-        <argsstring>(const percentage &amp;) const</argsstring>
+        <argsstring>(const percentage &amp;x) const</argsstring>
         <name>operator/</name>
         <qualifiedname>scifir::percentage::operator/</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -453,17 +507,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="53" column="12" bodyfile="special_units/percentage.cpp" bodystart="295" bodyend="298"/>
+        <location file="special_units/percentage.hpp" line="56" column="12" bodyfile="special_units/percentage.cpp" bodystart="238" bodyend="241"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a53a34053a710700b0685d960b3166837" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a415833910907612760930697acb7cabf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::percentage::operator+=</definition>
-        <argsstring>(const percentage &amp;)</argsstring>
+        <argsstring>(const percentage &amp;x)</argsstring>
         <name>operator+=</name>
         <qualifiedname>scifir::percentage::operator+=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -471,17 +525,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="54" column="6" bodyfile="special_units/percentage.cpp" bodystart="300" bodyend="303"/>
+        <location file="special_units/percentage.hpp" line="57" column="6" bodyfile="special_units/percentage.cpp" bodystart="243" bodyend="246"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a4c1cc834a78209f8637eede39bb65706" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1aed6d83ca9b41e280179470adbf729842" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::percentage::operator-=</definition>
-        <argsstring>(const percentage &amp;)</argsstring>
+        <argsstring>(const percentage &amp;x)</argsstring>
         <name>operator-=</name>
         <qualifiedname>scifir::percentage::operator-=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -489,17 +543,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="55" column="6" bodyfile="special_units/percentage.cpp" bodystart="305" bodyend="308"/>
+        <location file="special_units/percentage.hpp" line="58" column="6" bodyfile="special_units/percentage.cpp" bodystart="248" bodyend="251"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a20075b2e6a82ff6f0251f11ec6903e21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a154bffef5ed6e8cb63bcb39c9be4bcfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::percentage::operator*=</definition>
-        <argsstring>(const percentage &amp;)</argsstring>
+        <argsstring>(const percentage &amp;x)</argsstring>
         <name>operator*=</name>
         <qualifiedname>scifir::percentage::operator*=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -507,17 +561,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="56" column="6" bodyfile="special_units/percentage.cpp" bodystart="310" bodyend="313"/>
+        <location file="special_units/percentage.hpp" line="59" column="6" bodyfile="special_units/percentage.cpp" bodystart="253" bodyend="256"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1acdf4588daf1f43f9ebfa25da0b5c2973" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a6c10cbe35b0236c4b549ac5bc4585212" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::percentage::operator/=</definition>
-        <argsstring>(const percentage &amp;)</argsstring>
+        <argsstring>(const percentage &amp;x)</argsstring>
         <name>operator/=</name>
         <qualifiedname>scifir::percentage::operator/=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -525,9 +579,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="57" column="6" bodyfile="special_units/percentage.cpp" bodystart="315" bodyend="318"/>
+        <location file="special_units/percentage.hpp" line="60" column="6" bodyfile="special_units/percentage.cpp" bodystart="258" bodyend="261"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1adac8f6627ac4a15c688a153ee0334c33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1ae618bce66176de9d3fe1e957a0caeaa9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -539,12 +593,12 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::percentage::operator=</definition>
-        <argsstring>(T y)</argsstring>
+        <argsstring>(T x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::percentage::operator=</qualifiedname>
         <param>
           <type>T</type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -552,9 +606,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="60" column="6" bodyfile="special_units/percentage.hpp" bodystart="60" bodyend="63"/>
+        <location file="special_units/percentage.hpp" line="63" column="6" bodyfile="special_units/percentage.hpp" bodystart="63" bodyend="66"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a95c99d7a15e7e9c5a42edd9e4a3dee1c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a8226163901e8cc0938e65275aa1bd866" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -566,12 +620,12 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref></type>
         <definition>percentage scifir::percentage::operator+</definition>
-        <argsstring>(T y) const</argsstring>
+        <argsstring>(T x) const</argsstring>
         <name>operator+</name>
         <qualifiedname>scifir::percentage::operator+</qualifiedname>
         <param>
           <type>T</type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -579,9 +633,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="66" column="12" bodyfile="special_units/percentage.hpp" bodystart="66" bodyend="69"/>
+        <location file="special_units/percentage.hpp" line="69" column="12" bodyfile="special_units/percentage.hpp" bodystart="69" bodyend="72"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1ad18e1f88014cacbff88309c6ff099eb3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1aa2c7b90ae7a2c8e13455d58b629c9437" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -593,12 +647,12 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref></type>
         <definition>percentage scifir::percentage::operator-</definition>
-        <argsstring>(T y) const</argsstring>
+        <argsstring>(T x) const</argsstring>
         <name>operator-</name>
         <qualifiedname>scifir::percentage::operator-</qualifiedname>
         <param>
           <type>T</type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -606,9 +660,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="72" column="12" bodyfile="special_units/percentage.hpp" bodystart="72" bodyend="75"/>
+        <location file="special_units/percentage.hpp" line="75" column="12" bodyfile="special_units/percentage.hpp" bodystart="75" bodyend="78"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a94a7dafa7b24547d9a12b04b6e564db1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a44bc5cb70594fa5c455ba2a1d95f8ff6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -620,12 +674,12 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
         <definition>float scifir::percentage::operator*</definition>
-        <argsstring>(T y) const</argsstring>
+        <argsstring>(T x) const</argsstring>
         <name>operator*</name>
         <qualifiedname>scifir::percentage::operator*</qualifiedname>
         <param>
           <type>T</type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -633,9 +687,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="78" column="7" bodyfile="special_units/percentage.hpp" bodystart="78" bodyend="81"/>
+        <location file="special_units/percentage.hpp" line="81" column="7" bodyfile="special_units/percentage.hpp" bodystart="81" bodyend="84"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1ab05f37111c057e1714f592646e38ee31" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1acf02cbac75ad3b05102da26e4658b951" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -647,12 +701,12 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
         <definition>float scifir::percentage::operator/</definition>
-        <argsstring>(T y) const</argsstring>
+        <argsstring>(T x) const</argsstring>
         <name>operator/</name>
         <qualifiedname>scifir::percentage::operator/</qualifiedname>
         <param>
           <type>T</type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -660,9 +714,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="84" column="7" bodyfile="special_units/percentage.hpp" bodystart="84" bodyend="87"/>
+        <location file="special_units/percentage.hpp" line="87" column="7" bodyfile="special_units/percentage.hpp" bodystart="87" bodyend="90"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1af8a689931b4ecc92e13f0f5df5766f53" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a32ec16c589336fda397e779f421d863e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -674,12 +728,12 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::percentage::operator+=</definition>
-        <argsstring>(T y)</argsstring>
+        <argsstring>(T x)</argsstring>
         <name>operator+=</name>
         <qualifiedname>scifir::percentage::operator+=</qualifiedname>
         <param>
           <type>T</type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -687,9 +741,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="90" column="6" bodyfile="special_units/percentage.hpp" bodystart="90" bodyend="93"/>
+        <location file="special_units/percentage.hpp" line="93" column="6" bodyfile="special_units/percentage.hpp" bodystart="93" bodyend="96"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a3b3236f66a7090cc036dc5a980b096ca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a5899f233d6c7bb9d364bec5bab09bdb5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -701,12 +755,12 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::percentage::operator-=</definition>
-        <argsstring>(T y)</argsstring>
+        <argsstring>(T x)</argsstring>
         <name>operator-=</name>
         <qualifiedname>scifir::percentage::operator-=</qualifiedname>
         <param>
           <type>T</type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -714,9 +768,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="96" column="6" bodyfile="special_units/percentage.hpp" bodystart="96" bodyend="99"/>
+        <location file="special_units/percentage.hpp" line="99" column="6" bodyfile="special_units/percentage.hpp" bodystart="99" bodyend="102"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a535be3245e6ec3c7b6916d6f4732f651" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a050f53ae43b117fec94385ddcfcaafac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -728,12 +782,12 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::percentage::operator*=</definition>
-        <argsstring>(T y)</argsstring>
+        <argsstring>(T x)</argsstring>
         <name>operator*=</name>
         <qualifiedname>scifir::percentage::operator*=</qualifiedname>
         <param>
           <type>T</type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -741,9 +795,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="102" column="6" bodyfile="special_units/percentage.hpp" bodystart="102" bodyend="105"/>
+        <location file="special_units/percentage.hpp" line="105" column="6" bodyfile="special_units/percentage.hpp" bodystart="105" bodyend="108"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1adec5094b25814070daaaaeb7c2416417" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1a4f2549463e30f02b2ffc70a624ec7cfa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -755,12 +809,12 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::percentage::operator/=</definition>
-        <argsstring>(T y)</argsstring>
+        <argsstring>(T x)</argsstring>
         <name>operator/=</name>
         <qualifiedname>scifir::percentage::operator/=</qualifiedname>
         <param>
           <type>T</type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -768,7 +822,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="108" column="6" bodyfile="special_units/percentage.hpp" bodystart="108" bodyend="111"/>
+        <location file="special_units/percentage.hpp" line="111" column="6" bodyfile="special_units/percentage.hpp" bodystart="111" bodyend="114"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1percentage_1addccf7ec453b14abc08f41c0c749b2c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
@@ -782,7 +836,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="113" column="12" bodyfile="special_units/percentage.cpp" bodystart="320" bodyend="324"/>
+        <location file="special_units/percentage.hpp" line="116" column="12" bodyfile="special_units/percentage.cpp" bodystart="263" bodyend="267"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1percentage_1a650475402efd37dfeaaafd4339eae577" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref></type>
@@ -799,7 +853,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="114" column="12" bodyfile="special_units/percentage.cpp" bodystart="326" bodyend="331"/>
+        <location file="special_units/percentage.hpp" line="117" column="12" bodyfile="special_units/percentage.cpp" bodystart="269" bodyend="274"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1percentage_1aecbfdd6b63d0dd993056347042063f85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref> &amp;</type>
@@ -813,7 +867,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="115" column="12" bodyfile="special_units/percentage.cpp" bodystart="333" bodyend="337"/>
+        <location file="special_units/percentage.hpp" line="118" column="12" bodyfile="special_units/percentage.cpp" bodystart="276" bodyend="280"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1percentage_1a994b72fe7e2e4f8d620c1046dd55f693" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1percentage" kindref="compound">percentage</ref></type>
@@ -830,17 +884,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="116" column="12" bodyfile="special_units/percentage.cpp" bodystart="339" bodyend="344"/>
+        <location file="special_units/percentage.hpp" line="119" column="12" bodyfile="special_units/percentage.cpp" bodystart="282" bodyend="287"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a381bb45a7f3b18d56be437dbab12f4f7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1ad02e3d967e0188ff8012f37c9403e1ca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scifir::percentage::operator*</definition>
-        <argsstring>(const scalar_unit &amp;) const</argsstring>
+        <argsstring>(const scalar_unit &amp;x) const</argsstring>
         <name>operator*</name>
         <qualifiedname>scifir::percentage::operator*</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -848,17 +902,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="118" column="13" bodyfile="special_units/percentage.cpp" bodystart="346" bodyend="349"/>
+        <location file="special_units/percentage.hpp" line="121" column="13" bodyfile="special_units/percentage.cpp" bodystart="289" bodyend="292"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1aadd8204724fa40d9899d7ca831dcd7f3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1percentage_1aa3489f063b146327995e69721d8b9d6b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scifir::percentage::operator/</definition>
-        <argsstring>(const scalar_unit &amp;) const</argsstring>
+        <argsstring>(const scalar_unit &amp;x) const</argsstring>
         <name>operator/</name>
         <qualifiedname>scifir::percentage::operator/</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -866,7 +920,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="119" column="13" bodyfile="special_units/percentage.cpp" bodystart="351" bodyend="354"/>
+        <location file="special_units/percentage.hpp" line="122" column="13" bodyfile="special_units/percentage.cpp" bodystart="294" bodyend="297"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1percentage_1aff54f2d08cc05e3f5fd3aa5b374b3ed8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
@@ -880,7 +934,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="121" column="7" bodyfile="special_units/percentage.cpp" bodystart="356" bodyend="359"/>
+        <location file="special_units/percentage.hpp" line="124" column="7" bodyfile="special_units/percentage.cpp" bodystart="299" bodyend="302"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1percentage_1a295c00367e72dc3e70800da792086373" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
@@ -894,49 +948,26 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="123" column="7" bodyfile="special_units/percentage.cpp" bodystart="361" bodyend="364"/>
+        <location file="special_units/percentage.hpp" line="126" column="7" bodyfile="special_units/percentage.cpp" bodystart="304" bodyend="307"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1aa7b9241fd38fe58761598687c2afecd7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-        <definition>float scifir::percentage::get_ppb</definition>
-        <argsstring>() const</argsstring>
-        <name>get_ppb</name>
-        <qualifiedname>scifir::percentage::get_ppb</qualifiedname>
+      <memberdef kind="function" id="classscifir_1_1percentage_1adbea0c300e66fdf2d82721583de0f7a1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <definition>string scifir::percentage::display_percentage</definition>
+        <argsstring>(int number_of_decimals=2) const</argsstring>
+        <name>display_percentage</name>
+        <qualifiedname>scifir::percentage::display_percentage</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>number_of_decimals</declname>
+          <defval>2</defval>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="124" column="7" bodyfile="special_units/percentage.cpp" bodystart="366" bodyend="369"/>
-      </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a4aefd4280cfc9f25f2ff7cf367ef64b0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-        <definition>float scifir::percentage::get_ppt</definition>
-        <argsstring>() const</argsstring>
-        <name>get_ppt</name>
-        <qualifiedname>scifir::percentage::get_ppt</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="special_units/percentage.hpp" line="125" column="7" bodyfile="special_units/percentage.cpp" bodystart="371" bodyend="374"/>
-      </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a30f341f9f9b90f5ac9ecfff47af64211" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-        <definition>float scifir::percentage::get_ppq</definition>
-        <argsstring>() const</argsstring>
-        <name>get_ppq</name>
-        <qualifiedname>scifir::percentage::get_ppq</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="special_units/percentage.hpp" line="126" column="7" bodyfile="special_units/percentage.cpp" bodystart="376" bodyend="379"/>
+        <location file="special_units/percentage.hpp" line="131" column="8" bodyfile="special_units/percentage.cpp" bodystart="324" bodyend="329"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1percentage_1a28516c470ce03a0c3a4c7c384480fc85" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
@@ -950,109 +981,86 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="128" column="8" bodyfile="special_units/percentage.cpp" bodystart="381" bodyend="386"/>
+        <location file="special_units/percentage.hpp" line="132" column="8" bodyfile="special_units/percentage.cpp" bodystart="331" bodyend="336"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a4c78d21bb1029aff07d5976e0f957d6b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
-        <definition>string scifir::percentage::display_ppb</definition>
-        <argsstring>() const</argsstring>
-        <name>display_ppb</name>
-        <qualifiedname>scifir::percentage::display_ppb</qualifiedname>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classscifir_1_1percentage_1ae59bbcaab856dd15c9918e26aadecb43" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::percentage::initialize_from_string</definition>
+        <argsstring>(const string &amp;init_percentage)</argsstring>
+        <name>initialize_from_string</name>
+        <qualifiedname>scifir::percentage::initialize_from_string</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_percentage</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/percentage.hpp" line="129" column="8" bodyfile="special_units/percentage.cpp" bodystart="388" bodyend="393"/>
-      </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1a58f36233045fa09bdd43d8a2e713b42b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
-        <definition>string scifir::percentage::display_ppt</definition>
-        <argsstring>() const</argsstring>
-        <name>display_ppt</name>
-        <qualifiedname>scifir::percentage::display_ppt</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="special_units/percentage.hpp" line="130" column="8" bodyfile="special_units/percentage.cpp" bodystart="395" bodyend="400"/>
-      </memberdef>
-      <memberdef kind="function" id="classscifir_1_1percentage_1acc3badb3d60ce955b3fbc6f82df47d28" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
-        <definition>string scifir::percentage::display_ppq</definition>
-        <argsstring>() const</argsstring>
-        <name>display_ppq</name>
-        <qualifiedname>scifir::percentage::display_ppq</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="special_units/percentage.hpp" line="131" column="8" bodyfile="special_units/percentage.cpp" bodystart="402" bodyend="407"/>
+        <location file="special_units/percentage.hpp" line="140" column="6" bodyfile="special_units/percentage.cpp" bodystart="359" bodyend="417"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="special_units/percentage.hpp" line="17" column="1" bodyfile="special_units/percentage.hpp" bodystart="18" bodyend="136"/>
+    <location file="special_units/percentage.hpp" line="17" column="1" bodyfile="special_units/percentage.hpp" bodystart="18" bodyend="142"/>
     <listofallmembers>
-      <member refid="classscifir_1_1percentage_1a4c78d21bb1029aff07d5976e0f957d6b" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>display_ppb</name></member>
+      <member refid="classscifir_1_1percentage_1adbea0c300e66fdf2d82721583de0f7a1" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>display_percentage</name></member>
       <member refid="classscifir_1_1percentage_1a28516c470ce03a0c3a4c7c384480fc85" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>display_ppm</name></member>
-      <member refid="classscifir_1_1percentage_1acc3badb3d60ce955b3fbc6f82df47d28" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>display_ppq</name></member>
-      <member refid="classscifir_1_1percentage_1a58f36233045fa09bdd43d8a2e713b42b" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>display_ppt</name></member>
       <member refid="classscifir_1_1percentage_1aff54f2d08cc05e3f5fd3aa5b374b3ed8" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>get_factor</name></member>
-      <member refid="classscifir_1_1percentage_1aa7b9241fd38fe58761598687c2afecd7" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>get_ppb</name></member>
       <member refid="classscifir_1_1percentage_1a295c00367e72dc3e70800da792086373" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>get_ppm</name></member>
-      <member refid="classscifir_1_1percentage_1a30f341f9f9b90f5ac9ecfff47af64211" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>get_ppq</name></member>
-      <member refid="classscifir_1_1percentage_1a4aefd4280cfc9f25f2ff7cf367ef64b0" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>get_ppt</name></member>
       <member refid="classscifir_1_1percentage_1a3bff25faccd76a10dd9d24e0d9448e8c" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>get_value</name></member>
+      <member refid="classscifir_1_1percentage_1ae59bbcaab856dd15c9918e26aadecb43" prot="private" virt="non-virtual"><scope>scifir::percentage</scope><name>initialize_from_string</name></member>
       <member refid="classscifir_1_1percentage_1a64ba3202f386c17dde5605465857ed75" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator float</name></member>
-      <member refid="classscifir_1_1percentage_1ada19dacc59195b7b481c58a83e68f880" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1percentage_1a94a7dafa7b24547d9a12b04b6e564db1" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1percentage_1a381bb45a7f3b18d56be437dbab12f4f7" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1percentage_1a20075b2e6a82ff6f0251f11ec6903e21" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator*=</name></member>
-      <member refid="classscifir_1_1percentage_1a535be3245e6ec3c7b6916d6f4732f651" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator*=</name></member>
-      <member refid="classscifir_1_1percentage_1ab0979515863c4888cd21fa1b76edac44" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator+</name></member>
-      <member refid="classscifir_1_1percentage_1a95c99d7a15e7e9c5a42edd9e4a3dee1c" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1percentage_1ae1299386921e23b131a480c60313075c" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator*</name></member>
+      <member refid="classscifir_1_1percentage_1a44bc5cb70594fa5c455ba2a1d95f8ff6" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator*</name></member>
+      <member refid="classscifir_1_1percentage_1ad02e3d967e0188ff8012f37c9403e1ca" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator*</name></member>
+      <member refid="classscifir_1_1percentage_1a154bffef5ed6e8cb63bcb39c9be4bcfe" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator*=</name></member>
+      <member refid="classscifir_1_1percentage_1a050f53ae43b117fec94385ddcfcaafac" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator*=</name></member>
+      <member refid="classscifir_1_1percentage_1a997703d062db4bd8372c8f42b38ab0db" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1percentage_1a8226163901e8cc0938e65275aa1bd866" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator+</name></member>
       <member refid="classscifir_1_1percentage_1addccf7ec453b14abc08f41c0c749b2c4" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator++</name></member>
       <member refid="classscifir_1_1percentage_1a650475402efd37dfeaaafd4339eae577" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator++</name></member>
-      <member refid="classscifir_1_1percentage_1a53a34053a710700b0685d960b3166837" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1percentage_1af8a689931b4ecc92e13f0f5df5766f53" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1percentage_1afae7595a001816ac1eb5193c17a86817" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator-</name></member>
-      <member refid="classscifir_1_1percentage_1ad18e1f88014cacbff88309c6ff099eb3" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1percentage_1a415833910907612760930697acb7cabf" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator+=</name></member>
+      <member refid="classscifir_1_1percentage_1a32ec16c589336fda397e779f421d863e" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator+=</name></member>
+      <member refid="classscifir_1_1percentage_1a0063f46fae523dde05a08ff773aa0759" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1percentage_1aa2c7b90ae7a2c8e13455d58b629c9437" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator-</name></member>
       <member refid="classscifir_1_1percentage_1aecbfdd6b63d0dd993056347042063f85" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator--</name></member>
       <member refid="classscifir_1_1percentage_1a994b72fe7e2e4f8d620c1046dd55f693" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator--</name></member>
-      <member refid="classscifir_1_1percentage_1a4c1cc834a78209f8637eede39bb65706" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1percentage_1a3b3236f66a7090cc036dc5a980b096ca" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1percentage_1a04e82131cbb9f5efff63f73b7b3f00dd" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1percentage_1ab05f37111c057e1714f592646e38ee31" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1percentage_1aadd8204724fa40d9899d7ca831dcd7f3" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1percentage_1acdf4588daf1f43f9ebfa25da0b5c2973" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator/=</name></member>
-      <member refid="classscifir_1_1percentage_1adec5094b25814070daaaaeb7c2416417" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator/=</name></member>
-      <member refid="classscifir_1_1percentage_1a31c71486e326d711955a2fe598d115ac" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1percentage_1a8bed46a23ee3b420e9617677ddd9f4d7" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1percentage_1a2a3e86e049f5cbcef12bc58d3607abed" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1percentage_1a5b4a8bc6c3d710d25dde1f6bb9ec4717" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1percentage_1a339a64a354941d768a8a8e6e56988040" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1percentage_1adac8f6627ac4a15c688a153ee0334c33" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1percentage_1aed6d83ca9b41e280179470adbf729842" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator-=</name></member>
+      <member refid="classscifir_1_1percentage_1a5899f233d6c7bb9d364bec5bab09bdb5" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator-=</name></member>
+      <member refid="classscifir_1_1percentage_1a2e068414854cad2217c5629c1136ebe2" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator/</name></member>
+      <member refid="classscifir_1_1percentage_1acf02cbac75ad3b05102da26e4658b951" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator/</name></member>
+      <member refid="classscifir_1_1percentage_1aa3489f063b146327995e69721d8b9d6b" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator/</name></member>
+      <member refid="classscifir_1_1percentage_1a6c10cbe35b0236c4b549ac5bc4585212" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator/=</name></member>
+      <member refid="classscifir_1_1percentage_1a4f2549463e30f02b2ffc70a624ec7cfa" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator/=</name></member>
+      <member refid="classscifir_1_1percentage_1ac3da7fdb1b7df99c912b8fef1a7ae572" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1percentage_1a5d784189257cbd105ec47dfaeb7c06c2" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1percentage_1af0535ce3870fb035058cfdccd1d6816c" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1percentage_1a67043cb05dd2934f15eaa090cee61c21" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1percentage_1abec5befaa64c16f466e9b542421fbef7" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1percentage_1a456f383883f9b9db1270009f66e5dc9a" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1percentage_1acad958cf807bfe6eda3868f6842f089d" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1percentage_1af429a976f5083bb40726479f4b8dff2d" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1percentage_1ae618bce66176de9d3fe1e957a0caeaa9" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>operator=</name></member>
       <member refid="classscifir_1_1percentage_1a18948f7da73b52f27daa92954c3234ef" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
-      <member refid="classscifir_1_1percentage_1a2a562445037b2fe5d0ed5d0d7dc42377" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
-      <member refid="classscifir_1_1percentage_1a61bf969f17c1d9af773e5641277a9e11" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
-      <member refid="classscifir_1_1percentage_1abc5a21e8c33864be2be524601d5f4cb6" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
-      <member refid="classscifir_1_1percentage_1ab239c73f7462da0b222c440911ec9c1d" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
-      <member refid="classscifir_1_1percentage_1ab405b44bf7f23d266dd5ff08fc6de539" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
-      <member refid="classscifir_1_1percentage_1a8d6d92a350f666fafd038202c1a71438" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
-      <member refid="classscifir_1_1percentage_1a19517e666c83aa123de48331e10e0e9f" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
-      <member refid="classscifir_1_1percentage_1a556e85e3c672618f09206d793d6bc73b" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
-      <member refid="classscifir_1_1percentage_1a6546c5ba3761b4b1170b4d418c677538" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
-      <member refid="classscifir_1_1percentage_1ab7f6644f596931ce18b2d8364f64dca7" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
-      <member refid="classscifir_1_1percentage_1acca8180a4c6bacd2b14261ed67e68360" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
-      <member refid="classscifir_1_1percentage_1a543dcfc12f0b0f3e62e2aa4d4321d9f7" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
+      <member refid="classscifir_1_1percentage_1a2c01f02d4b74d48fba8bd27bd4976ce5" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
+      <member refid="classscifir_1_1percentage_1a1710685f83c6dfb22cf0027590d47090" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
+      <member refid="classscifir_1_1percentage_1aca3d6e3ba0960825b161cc8dddf91db9" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
+      <member refid="classscifir_1_1percentage_1af1ca132169724c44756948e65c4eb7fa" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
+      <member refid="classscifir_1_1percentage_1aa1e8fca665495f8383a647d333954275" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
+      <member refid="classscifir_1_1percentage_1a8f83b25ea8c690d92bc8e25deef77bba" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
+      <member refid="classscifir_1_1percentage_1a0e557b96be6e32d2d7adf39a03cf57cf" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
+      <member refid="classscifir_1_1percentage_1a37056f1da6c4ccafc426aa3b1676c6ea" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
+      <member refid="classscifir_1_1percentage_1a36876d08e5d4ff4b01bacaa2ece7c632" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
+      <member refid="classscifir_1_1percentage_1ae637c964c5674c6cc33c5e26e8bfa452" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
+      <member refid="classscifir_1_1percentage_1a3c5f810ae0131c660db073954a6722cd" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
+      <member refid="classscifir_1_1percentage_1a2a28cc4a3b5a788b37133fd25d5ee7da" prot="public" virt="non-virtual"><scope>scifir::percentage</scope><name>percentage</name></member>
       <member refid="classscifir_1_1percentage_1a8a6359416b116e57affb296949c11b21" prot="private" virt="non-virtual"><scope>scifir::percentage</scope><name>value</name></member>
     </listofallmembers>
   </compounddef>

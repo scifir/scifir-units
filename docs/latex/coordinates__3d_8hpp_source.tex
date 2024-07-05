@@ -9,763 +9,924 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../meca\_number/angle.hpp"{}}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../units/unit\_basic.hpp"{}}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../predefined\_units/physics\_units.hpp"{}}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cmath>}}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }scifir}
-\DoxyCodeLine{00016\ \{}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T\ =\ length>}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}}
-\DoxyCodeLine{00019\ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}()\ :\ x(),y(),z()}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y),z(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z)}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})\ :\ x(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x)),y(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y)),z(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z))}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}}),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}}),z(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}});}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}})\ :\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}()}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}});}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y),z(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.z)}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}})\ :\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}()}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\ values;}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.front()\ ==\ \textcolor{charliteral}{'('})}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.erase(0,1);}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.back()\ ==\ \textcolor{charliteral}{')'})}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.erase(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.size()-\/1,1);}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::split(values,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}},boost::is\_any\_of(\textcolor{stringliteral}{"{},"{}}));}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ ==\ 3)}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[0]))}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[1]))}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_angle(values[2]))}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]),T(values[2]));}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[1]))}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[2]))}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(T(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[2]));}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(T(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]),T(values[2]));}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_angle(values[2]))}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(T(values[0]),T(values[1]),T(values[2]));}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x;}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y;}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z;}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x);}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y);}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z);}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00114\ }
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x;}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y;}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.z;}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../util/types.hpp"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }scifir}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T\ =\ length>}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}()\ :\ x(),y(),z()}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y),z(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})\ :\ x(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x)),y(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y)),z(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z))}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}}),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}}),z(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}});}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}})\ :\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}()}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}});}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y),z(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.z)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})\ :\ x(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x)),y(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y)),z(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.z))}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}})\ :\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}()}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initialize\_from\_string(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.z;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.z);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ operator=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}})}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initialize\_from\_string(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ T\ get\_p()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00099\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt(scifir::pow(x,2)\ +\ scifir::pow(y,2));}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_theta()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00104\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::atan(\textcolor{keywordtype}{float}(y/x));}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ T\ get\_r()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00109\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt(scifir::pow(x,2)\ +\ scifir::pow(y,2)\ +\ scifir::pow(z,2));}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_phi()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00114\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(scifir::acos\_grade(\textcolor{keywordtype}{float}(z/scifir::sqrt(scifir::pow(x,2)\ +\ scifir::pow(y,2)\ +\ scifir::pow(z,2)))));}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_latitude()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00119\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::asin(\textcolor{keywordtype}{float}(z/T(6317.0f,\textcolor{stringliteral}{"{}km"{}})));}
 \DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00122\ }
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ T\ get\_p()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_longitude()\textcolor{keyword}{\ const}}
 \DoxyCodeLine{00124\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt(scifir::pow(x,2)\ +\ scifir::pow(y,2));}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::atan(\textcolor{keywordtype}{float}(y/x));}
 \DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00127\ }
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_theta()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ T\ get\_altitude()\textcolor{keyword}{\ const}}
 \DoxyCodeLine{00129\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::atan(\textcolor{keywordtype}{float}(y/x));}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ T();}
 \DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00132\ }
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ T\ get\_r()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00134\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt(scifir::pow(x,2)\ +\ scifir::pow(y,2)\ +\ scifir::pow(z,2));}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00137\ }
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_phi()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00139\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(scifir::acos\_grade(\textcolor{keywordtype}{float}(z/scifir::sqrt(scifir::pow(x,2)\ +\ scifir::pow(y,2)\ +\ scifir::pow(z,2)))));}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00142\ }
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_latitude()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00144\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::asin(\textcolor{keywordtype}{float}(z/T(6317,\textcolor{stringliteral}{"{}km"{}})));}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}}.change\_dimensions(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}});}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}));}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}));}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
 \DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00147\ }
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_longitude()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00149\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::atan(\textcolor{keywordtype}{float}(y/x));}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00152\ }
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ T\ get\_altitude()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00154\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ T();}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00157\ }
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00164\ }
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}}.change\_dimensions(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}});}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}));}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}));}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00172\ }
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}));}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}));}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}));}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00179\ }
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}})}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}})\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}}));}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}}));}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}}));}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00186\ }
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rotate\_in\_x(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ =\ y;}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ =\ z;}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00194\ }
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rotate\_in\_y(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ =\ x;}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ =\ z;}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00202\ }
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rotate\_in\_z(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ =\ x;}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ =\ y;}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00210\ }
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{displacement\_3d}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}})}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.x\_projection();}
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.y\_projection();}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.z\_projection();}
-\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00217\ }
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
-\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00224\ }
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}}.change\_dimensions(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}});}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}));}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}));}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00232\ }
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}));}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}));}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}));}
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00239\ }
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ T\ distance\_to\_origin()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00241\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt(scifir::pow(x,2)\ +\ scifir::pow(y,2)\ +\ scifir::pow(z,2));}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00244\ }
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_cylindrical()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00246\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
-\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ get\_p()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_theta()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ z\ <<\ \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}));}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}));}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}));}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}})}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}})\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}}));}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}}));}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}}));}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rotate\_in\_x(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ =\ y;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ =\ z;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rotate\_in\_y(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ =\ x;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ =\ z;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rotate\_in\_z(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ =\ x;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ =\ y;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{displacement\_3d}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}})}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.x\_projection();}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.y\_projection();}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.z\_projection();}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}}.change\_dimensions(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}});}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}));}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}));}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}));}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}));}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}}));}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ T\ distance\_to\_origin()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00216\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt(scifir::pow(x,2)\ +\ scifir::pow(y,2)\ +\ scifir::pow(z,2));}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_cartesian()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00221\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ x\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ y\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ z\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_cylindrical()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00228\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ get\_p()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_theta()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ z\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_spherical()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00235\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ get\_r()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_theta()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_phi()\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_geographical()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00242\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ get\_latitude()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_longitude()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_altitude()\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ T\ x;}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ T\ y;}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ T\ z;}
 \DoxyCodeLine{00251\ }
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_spherical()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00253\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
-\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ get\_r()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_theta()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_phi()\ <<\ \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00258\ }
-\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_geographical()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00260\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
-\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ get\_latitude()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_longitude()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_altitude()\ <<\ \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
-\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00265\ }
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ T\ x;}
-\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ T\ y;}
-\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ T\ z;}
-\DoxyCodeLine{00269\ \ \ \ \ \};}
-\DoxyCodeLine{00270\ }
-\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keyword}{template}<>}
-\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}<\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}>}
-\DoxyCodeLine{00273\ \ \ \ \ \{}
-\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}()\ :\ x(),y(),z()}
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00277\ }
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y),z(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z)}
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00280\ }
-\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})\ :\ x(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x)),y(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y)),z(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z))}
-\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00283\ }
-\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}}),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}}),z(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
-\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00286\ }
-\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
-\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}});}
-\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00291\ }
-\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})}
-\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
-\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00296\ }
-\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}})\ :\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}()}
-\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}});}
-\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initialize\_from\_string(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}})}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\ values;}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.front()\ ==\ \textcolor{charliteral}{'('})}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.erase(0,1);}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.back()\ ==\ \textcolor{charliteral}{')'})}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.erase(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.size()-\/1,1);}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::split(values,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}},boost::is\_any\_of(\textcolor{stringliteral}{"{},"{}}));}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ ==\ 3)}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[0]))}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[1]))}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_angle(values[2]))}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]),T(values[2]));}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[1]))}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[2]))}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(T(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[2]));}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(T(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]),T(values[2]));}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_angle(values[2]))}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(T(values[0]),T(values[1]),T(values[2]));}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00300\ \ \ \ \ \};}
 \DoxyCodeLine{00301\ }
-\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y),z(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.z)}
-\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00304\ }
-\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}})\ :\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}()}
-\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\ values;}
-\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.front()\ ==\ \textcolor{charliteral}{'('})}
-\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.erase(0,1);}
-\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.back()\ ==\ \textcolor{charliteral}{')'})}
-\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.erase(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.size()-\/1,1);}
-\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::split(values,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}},boost::is\_any\_of(\textcolor{stringliteral}{"{},"{}}));}
-\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ ==\ 3)}
-\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[0]))}
-\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[1]))}
-\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_angle(values[2]))}
-\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[2]));}
-\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[1]))}
-\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[2]))}
-\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[2]));}
-\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[2]));}
-\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_angle(values[2]))}
-\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[0]),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[1]),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[2]));}
-\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00352\ }
-\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})}
-\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x;}
-\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y;}
-\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z;}
-\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00360\ }
-\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})}
-\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x);}
-\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y);}
-\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z);}
-\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00368\ }
-\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})}
-\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x;}
-\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y;}
-\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.z;}
-\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00376\ }
-\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ get\_p()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00378\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)));}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}<\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}>}
+\DoxyCodeLine{00304\ \ \ \ \ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}()\ :\ x(),y(),z()}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y),z(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z)}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})\ :\ x(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x)),y(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y)),z(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z))}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}}),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}}),z(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}});}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}})\ :\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}()}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}});}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y),z(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.z)}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<float>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})\ :\ x(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x)),y(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y)),z(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.z))}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}})\ :\ \mbox{\hyperlink{classscifir_1_1coordinates__3d}{coordinates\_3d}}()}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initialize\_from\_string(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}});}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x;}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y;}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z;}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x);}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y);}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.z);}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x;}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y;}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.z;}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<float>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x);}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y);}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.z);}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&\ operator=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}})}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initialize\_from\_string(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}});}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
 \DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00381\ }
-\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_theta()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ get\_p()\textcolor{keyword}{\ const}}
 \DoxyCodeLine{00383\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::atan(\textcolor{keywordtype}{float}(y/x));}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)));}
 \DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00386\ }
-\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ get\_r()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_theta()\textcolor{keyword}{\ const}}
 \DoxyCodeLine{00388\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)\ +\ std::pow(z,2)));}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::atan(\textcolor{keywordtype}{float}(y/x));}
 \DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00391\ }
-\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_phi()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ get\_r()\textcolor{keyword}{\ const}}
 \DoxyCodeLine{00393\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(scifir::acos\_grade(\textcolor{keywordtype}{float}(z/std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)\ +\ std::pow(z,2)))));}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)\ +\ std::pow(z,2)));}
 \DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00396\ }
-\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_latitude()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_phi()\textcolor{keyword}{\ const}}
 \DoxyCodeLine{00398\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::asin(z/6317);}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(scifir::acos\_grade(\textcolor{keywordtype}{float}(z/std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)\ +\ std::pow(z,2)))));}
 \DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00401\ }
-\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_longitude()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_latitude()\textcolor{keyword}{\ const}}
 \DoxyCodeLine{00403\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::atan(\textcolor{keywordtype}{float}(y/x));}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::asin(z/6317);}
 \DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00406\ }
-\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ get\_altitude()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_longitude()\textcolor{keyword}{\ const}}
 \DoxyCodeLine{00408\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}();}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::atan(\textcolor{keywordtype}{float}(y/x));}
 \DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00411\ }
-\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
-\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
-\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
-\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
-\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00418\ }
-\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
-\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
-\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00425\ }
-\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})}
-\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
-\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
-\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
-\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00432\ }
-\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}})}
-\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}})\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}});}
-\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}});}
-\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}});}
-\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00439\ }
-\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rotate\_in\_x(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
-\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ =\ y;}
-\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ =\ z;}
-\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00447\ }
-\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rotate\_in\_y(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
-\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ =\ x;}
-\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ =\ z;}
-\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00455\ }
-\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rotate\_in\_z(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
-\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ =\ x;}
-\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ =\ y;}
-\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00463\ }
-\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{displacement\_3d}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}})}
-\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.x\_projection());}
-\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.y\_projection());}
-\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.z\_projection());}
-\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00470\ }
-\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
-\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
-\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
-\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
-\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00477\ }
-\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
-\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
-\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00484\ }
-\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})}
-\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
-\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
-\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
-\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00491\ }
-\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distance\_to\_origin()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00493\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)\ +\ std::pow(z,2)));}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ get\_altitude()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00413\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}();}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}})}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}})\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}});}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_longitude}});}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_altitude}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_latitude}});}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rotate\_in\_x(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ =\ y;}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ =\ z;}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rotate\_in\_y(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ =\ x;}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ =\ z;}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{z\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00460\ }
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rotate\_in\_z(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ =\ x;}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ =\ y;}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{displacement\_3d}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}})}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.x\_projection());}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.y\_projection());}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.z\_projection());}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00482\ }
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}})}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_z}};}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}})}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_phi}});}
 \DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00496\ }
-\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_cylindrical()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distance\_to\_origin()\textcolor{keyword}{\ const}}
 \DoxyCodeLine{00498\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
-\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ get\_p()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_theta()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ z\ <<\ \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
-\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00503\ }
-\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_spherical()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00505\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
-\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ get\_r()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_theta()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_phi()\ <<\ \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
-\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00510\ }
-\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_geographical()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00512\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
-\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ get\_latitude()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_longitude()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_altitude()\ <<\ \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
-\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00517\ }
-\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x;}
-\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y;}
-\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ z;}
-\DoxyCodeLine{00521\ \ \ \ \ \};}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)\ +\ std::pow(z,2)));}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_cartesian()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00503\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ display\_float(x)\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ display\_float(y)\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ display\_float(z)\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_cylindrical()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00510\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ display\_float(get\_p())\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_theta()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ display\_float(z)\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00515\ }
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_spherical()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00517\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ display\_float(get\_r())\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_theta()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_phi()\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00522\ }
-\DoxyCodeLine{00523\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00524\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ x)}
-\DoxyCodeLine{00525\ \ \ \ \ \{}
-\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
-\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ x.x\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ x.y\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ x.z\ <<\ \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
-\DoxyCodeLine{00529\ \ \ \ \ \}}
-\DoxyCodeLine{00530\ }
-\DoxyCodeLine{00531\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00532\ \ \ \ \ T\ distance(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ y)}
-\DoxyCodeLine{00533\ \ \ \ \ \{}
-\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt(scifir::pow(x.x\ -\/\ y.x,2)\ +\ scifir::pow(x.y\ -\/\ y.y,2)\ +\ scifir::pow(x.z\ -\/\ y.z,2));}
-\DoxyCodeLine{00535\ \ \ \ \ \}}
-\DoxyCodeLine{00536\ }
-\DoxyCodeLine{00537\ \ \ \ \ \textcolor{keywordtype}{float}\ distance(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&);}
-\DoxyCodeLine{00538\ }
-\DoxyCodeLine{00539\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00540\ \ \ \ \ T\ distance(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<T>}}\&\ y)}
-\DoxyCodeLine{00541\ \ \ \ \ \{}
-\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt(scifir::pow(x.x\ -\/\ y.x,2)\ +\ scifir::pow(x.y\ -\/\ y.y,2)\ +\ scifir::pow(x.z\ -\/\ y.z,2));}
-\DoxyCodeLine{00543\ \ \ \ \ \}}
-\DoxyCodeLine{00544\ }
-\DoxyCodeLine{00545\ \ \ \ \ \textcolor{keywordtype}{float}\ distance(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<float>}}\&);}
-\DoxyCodeLine{00546\ }
-\DoxyCodeLine{00547\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00548\ \ \ \ \ T\ distance(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ y)}
-\DoxyCodeLine{00549\ \ \ \ \ \{}
-\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt(scifir::pow(x.x\ -\/\ y.x,2)\ +\ scifir::pow(x.y\ -\/\ y.y,2)\ +\ scifir::pow(x.z\ -\/\ y.z,2));}
-\DoxyCodeLine{00551\ \ \ \ \ \}}
-\DoxyCodeLine{00552\ }
-\DoxyCodeLine{00553\ \ \ \ \ \textcolor{keywordtype}{float}\ distance(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_3d<float>}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<float>}}\&);}
-\DoxyCodeLine{00554\ }
-\DoxyCodeLine{00555\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cartesian\_3d\_to\_cylindrical\_r(\textcolor{keywordtype}{float}\ x,\textcolor{keywordtype}{float}\ y,\textcolor{keywordtype}{float}\ z)}
-\DoxyCodeLine{00556\ \ \ \ \ \{}
-\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)));}
-\DoxyCodeLine{00558\ \ \ \ \ \}}
-\DoxyCodeLine{00559\ }
-\DoxyCodeLine{00560\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cartesian\_3d\_to\_cylindrical\_theta(\textcolor{keywordtype}{float}\ x,\textcolor{keywordtype}{float}\ y,\textcolor{keywordtype}{float}\ z)}
-\DoxyCodeLine{00561\ \ \ \ \ \{}
-\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::atan\_grade(y\ /\ x);}
-\DoxyCodeLine{00563\ \ \ \ \ \}}
-\DoxyCodeLine{00564\ }
-\DoxyCodeLine{00565\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cartesian\_3d\_to\_cylindrical\_z(\textcolor{keywordtype}{float}\ x,\textcolor{keywordtype}{float}\ y,\textcolor{keywordtype}{float}\ z)}
-\DoxyCodeLine{00566\ \ \ \ \ \{}
-\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
-\DoxyCodeLine{00568\ \ \ \ \ \}}
-\DoxyCodeLine{00569\ }
-\DoxyCodeLine{00570\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cartesian\_3d\_to\_spherical\_r(\textcolor{keywordtype}{float}\ x,\textcolor{keywordtype}{float}\ y,\textcolor{keywordtype}{float}\ z)}
-\DoxyCodeLine{00571\ \ \ \ \ \{}
-\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)\ +\ std::pow(z,2)));}
-\DoxyCodeLine{00573\ \ \ \ \ \}}
-\DoxyCodeLine{00574\ }
-\DoxyCodeLine{00575\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cartesian\_3d\_to\_spherical\_theta(\textcolor{keywordtype}{float}\ x,\textcolor{keywordtype}{float}\ y,\textcolor{keywordtype}{float}\ z)}
-\DoxyCodeLine{00576\ \ \ \ \ \{}
-\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::atan\_grade(y\ /\ x);}
-\DoxyCodeLine{00578\ \ \ \ \ \}}
-\DoxyCodeLine{00579\ }
-\DoxyCodeLine{00580\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cartesian\_3d\_to\_spherical\_phi(\textcolor{keywordtype}{float}\ x,\textcolor{keywordtype}{float}\ y,\textcolor{keywordtype}{float}\ z)}
-\DoxyCodeLine{00581\ \ \ \ \ \{}
-\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(scifir::acos\_grade(\textcolor{keywordtype}{float}(z\ /\ \textcolor{keywordtype}{float}(std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)\ +\ std::pow(z,2))))));}
-\DoxyCodeLine{00583\ \ \ \ \ \}}
-\DoxyCodeLine{00584\ }
-\DoxyCodeLine{00585\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ spherical\_to\_cartesian\_3d\_x(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle1}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle2}})}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_geographical()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00524\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ get\_latitude()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_longitude()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ display\_float(get\_altitude())\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x;}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y;}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ z;}
+\DoxyCodeLine{00533\ }
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initialize\_from\_string(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}})}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\ values;}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.front()\ ==\ \textcolor{charliteral}{'('})}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.erase(0,1);}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.back()\ ==\ \textcolor{charliteral}{')'})}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.erase(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}}.size()-\/1,1);}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::split(values,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_coordinates\_3d}},boost::is\_any\_of(\textcolor{stringliteral}{"{},"{}}));}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ ==\ 3)}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[0]))}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[1]))}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_angle(values[2]))}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[2]));}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[1]))}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[2]))}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[2]));}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[2]));}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_angle(values[2]))}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[0]),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[1]),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[2]));}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00582\ \ \ \ \ \};}
+\DoxyCodeLine{00583\ }
+\DoxyCodeLine{00584\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00585\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\&\ x)}
 \DoxyCodeLine{00586\ \ \ \ \ \{}
-\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle1}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle2}});}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x.display\_cartesian();}
 \DoxyCodeLine{00588\ \ \ \ \ \}}
 \DoxyCodeLine{00589\ }
-\DoxyCodeLine{00590\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ spherical\_to\_cartesian\_3d\_y(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle1}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle2}})}
-\DoxyCodeLine{00591\ \ \ \ \ \{}
-\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle1}})\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle2}});}
-\DoxyCodeLine{00593\ \ \ \ \ \}}
-\DoxyCodeLine{00594\ }
-\DoxyCodeLine{00595\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ spherical\_to\_cartesian\_3d\_z(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle1}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle2}})}
-\DoxyCodeLine{00596\ \ \ \ \ \{}
-\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle2}});}
-\DoxyCodeLine{00598\ \ \ \ \ \}}
+\DoxyCodeLine{00590\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ coordinates\_3d<float>\&\ x);}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00592\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00593\ \ \ \ \ T\ distance(\textcolor{keyword}{const}\ coordinates\_3d<T>\&\ x,\textcolor{keyword}{const}\ coordinates\_3d<U>\&\ y)}
+\DoxyCodeLine{00594\ \ \ \ \ \{}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt(scifir::pow(x.x\ -\/\ y.x,2)\ +\ scifir::pow(x.y\ -\/\ y.y,2)\ +\ scifir::pow(x.z\ -\/\ y.z,2));}
+\DoxyCodeLine{00596\ \ \ \ \ \}}
+\DoxyCodeLine{00597\ }
+\DoxyCodeLine{00598\ \ \ \ \ \textcolor{keywordtype}{float}\ distance(\textcolor{keyword}{const}\ coordinates\_3d<float>\&\ x,\textcolor{keyword}{const}\ coordinates\_3d<float>\&\ y);}
 \DoxyCodeLine{00599\ }
-\DoxyCodeLine{00600\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ spherical\_to\_cylindrical\_r(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle1}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle2}})}
-\DoxyCodeLine{00601\ \ \ \ \ \{}
-\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle2}});}
-\DoxyCodeLine{00603\ \ \ \ \ \}}
-\DoxyCodeLine{00604\ }
-\DoxyCodeLine{00605\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ spherical\_to\_cylindrical\_theta(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle1}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle2}})}
-\DoxyCodeLine{00606\ \ \ \ \ \{}
-\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle1}}.get\_value();}
-\DoxyCodeLine{00608\ \ \ \ \ \}}
-\DoxyCodeLine{00609\ }
-\DoxyCodeLine{00610\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ spherical\_to\_cylindrical\_z(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle1}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle2}})}
-\DoxyCodeLine{00611\ \ \ \ \ \{}
-\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{angle2}});}
-\DoxyCodeLine{00613\ \ \ \ \ \}}
-\DoxyCodeLine{00614\ }
-\DoxyCodeLine{00615\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cylindrical\_to\_cartesian\_3d\_x(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1angle}{angle}},\ \textcolor{keywordtype}{float}\ z)}
-\DoxyCodeLine{00616\ \ \ \ \ \{}
-\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1angle}{angle}});}
-\DoxyCodeLine{00618\ \ \ \ \ \}}
-\DoxyCodeLine{00619\ }
-\DoxyCodeLine{00620\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cylindrical\_to\_cartesian\_3d\_y(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1angle}{angle}},\ \textcolor{keywordtype}{float}\ z)}
-\DoxyCodeLine{00621\ \ \ \ \ \{}
-\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1angle}{angle}});}
-\DoxyCodeLine{00623\ \ \ \ \ \}}
-\DoxyCodeLine{00624\ }
-\DoxyCodeLine{00625\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cylindrical\_to\_cartesian\_3d\_z(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{r}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1angle}{angle}},\ \textcolor{keywordtype}{float}\ z)}
-\DoxyCodeLine{00626\ \ \ \ \ \{}
-\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
-\DoxyCodeLine{00628\ \ \ \ \ \}}
-\DoxyCodeLine{00629\ }
-\DoxyCodeLine{00630\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cylindrical\_to\_spherical\_r(\textcolor{keywordtype}{float}\ p,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1angle}{angle}},\ \textcolor{keywordtype}{float}\ z)}
-\DoxyCodeLine{00631\ \ \ \ \ \{}
-\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(p,2)\ +\ std::pow(z,2)));}
-\DoxyCodeLine{00633\ \ \ \ \ \}}
-\DoxyCodeLine{00634\ }
-\DoxyCodeLine{00635\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cylindrical\_to\_spherical\_theta(\textcolor{keywordtype}{float}\ p,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1angle}{angle}},\ \textcolor{keywordtype}{float}\ z)}
-\DoxyCodeLine{00636\ \ \ \ \ \{}
-\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}.get\_value();}
+\DoxyCodeLine{00600\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00601\ \ \ \ \ T\ distance(\textcolor{keyword}{const}\ coordinates\_3d<T>\&\ x,\textcolor{keyword}{const}\ point\_3d<U>\&\ y)}
+\DoxyCodeLine{00602\ \ \ \ \ \{}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt(scifir::pow(x.x\ -\/\ y.x,2)\ +\ scifir::pow(x.y\ -\/\ y.y,2)\ +\ scifir::pow(x.z\ -\/\ y.z,2));}
+\DoxyCodeLine{00604\ \ \ \ \ \}}
+\DoxyCodeLine{00605\ }
+\DoxyCodeLine{00606\ \ \ \ \ \textcolor{keywordtype}{float}\ distance(\textcolor{keyword}{const}\ coordinates\_3d<float>\&\ x,\textcolor{keyword}{const}\ point\_3d<float>\&\ y);}
+\DoxyCodeLine{00607\ }
+\DoxyCodeLine{00608\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00609\ \ \ \ \ T\ distance(\textcolor{keyword}{const}\ point\_3d<T>\&\ x,\textcolor{keyword}{const}\ coordinates\_3d<U>\&\ y)}
+\DoxyCodeLine{00610\ \ \ \ \ \{}
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt(scifir::pow(x.x\ -\/\ y.x,2)\ +\ scifir::pow(x.y\ -\/\ y.y,2)\ +\ scifir::pow(x.z\ -\/\ y.z,2));}
+\DoxyCodeLine{00612\ \ \ \ \ \}}
+\DoxyCodeLine{00613\ }
+\DoxyCodeLine{00614\ \ \ \ \ \textcolor{keywordtype}{float}\ distance(\textcolor{keyword}{const}\ point\_3d<float>\&\ x,\textcolor{keyword}{const}\ coordinates\_3d<float>\&\ y);}
+\DoxyCodeLine{00615\ }
+\DoxyCodeLine{00616\ \ \ \ \ \textcolor{keyword}{inline}\ scalar\_unit\ cartesian\_3d\_to\_cylindrical\_p(\textcolor{keyword}{const}\ scalar\_unit\&\ x,scalar\_unit\ y,\textcolor{keyword}{const}\ scalar\_unit\&\ z)}
+\DoxyCodeLine{00617\ \ \ \ \ \{}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ y.change\_dimensions(x);}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scalar\_unit(std::sqrt(std::pow(\textcolor{keywordtype}{float}(x),2)\ +\ std::pow(\textcolor{keywordtype}{float}(y),2)),x.get\_dimensions());}
+\DoxyCodeLine{00620\ \ \ \ \ \}}
+\DoxyCodeLine{00621\ }
+\DoxyCodeLine{00622\ \ \ \ \ \textcolor{keyword}{inline}\ angle\ cartesian\_3d\_to\_cylindrical\_theta(\textcolor{keyword}{const}\ scalar\_unit\&\ x,scalar\_unit\ y,\textcolor{keyword}{const}\ scalar\_unit\&\ z)}
+\DoxyCodeLine{00623\ \ \ \ \ \{}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ y.change\_dimensions(x);}
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ angle(scifir::atan\_grade(\textcolor{keywordtype}{float}(y)\ /\ \textcolor{keywordtype}{float}(x)));}
+\DoxyCodeLine{00626\ \ \ \ \ \}}
+\DoxyCodeLine{00627\ }
+\DoxyCodeLine{00628\ \ \ \ \ \textcolor{keyword}{inline}\ scalar\_unit\ cartesian\_3d\_to\_cylindrical\_z(\textcolor{keyword}{const}\ scalar\_unit\&\ x,\textcolor{keyword}{const}\ scalar\_unit\&\ y,\textcolor{keyword}{const}\ scalar\_unit\&\ z)}
+\DoxyCodeLine{00629\ \ \ \ \ \{}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
+\DoxyCodeLine{00631\ \ \ \ \ \}}
+\DoxyCodeLine{00632\ }
+\DoxyCodeLine{00633\ \ \ \ \ \textcolor{keyword}{inline}\ scalar\_unit\ cartesian\_3d\_to\_spherical\_r(\textcolor{keyword}{const}\ scalar\_unit\&\ x,scalar\_unit\ y,scalar\_unit\ z)}
+\DoxyCodeLine{00634\ \ \ \ \ \{}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ y.change\_dimensions(x);}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ z.change\_dimensions(x);}
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scalar\_unit(std::sqrt(std::pow(\textcolor{keywordtype}{float}(x),2)\ +\ std::pow(\textcolor{keywordtype}{float}(y),2)\ +\ std::pow(\textcolor{keywordtype}{float}(z),2)),x.get\_dimensions());}
 \DoxyCodeLine{00638\ \ \ \ \ \}}
 \DoxyCodeLine{00639\ }
-\DoxyCodeLine{00640\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cylindrical\_to\_spherical\_phi(\textcolor{keywordtype}{float}\ p,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1angle}{angle}},\ \textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00640\ \ \ \ \ \textcolor{keyword}{inline}\ angle\ cartesian\_3d\_to\_spherical\_theta(\textcolor{keyword}{const}\ scalar\_unit\&\ x,scalar\_unit\ y,\textcolor{keyword}{const}\ scalar\_unit\&\ z)}
 \DoxyCodeLine{00641\ \ \ \ \ \{}
-\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::atan\_grade(p\ /\ z);}
-\DoxyCodeLine{00643\ \ \ \ \ \}}
-\DoxyCodeLine{00644\ \}}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ y.change\_dimensions(x);}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ angle(scifir::atan\_grade(\textcolor{keywordtype}{float}(y)\ /\ \textcolor{keywordtype}{float}(x)));}
+\DoxyCodeLine{00644\ \ \ \ \ \}}
 \DoxyCodeLine{00645\ }
-\DoxyCodeLine{00646\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00647\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ y)}
-\DoxyCodeLine{00648\ \{}
-\DoxyCodeLine{00649\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.x\ ==\ y.x\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ x.y\ ==\ y.y\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ x.z\ ==\ y.z)}
-\DoxyCodeLine{00650\ \ \ \ \ \{}
-\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00652\ \ \ \ \ \}}
-\DoxyCodeLine{00653\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00646\ \ \ \ \ \textcolor{keyword}{inline}\ angle\ cartesian\_3d\_to\_spherical\_phi(\textcolor{keyword}{const}\ scalar\_unit\&\ x,scalar\_unit\ y,scalar\_unit\ z)}
+\DoxyCodeLine{00647\ \ \ \ \ \{}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ y.change\_dimensions(x);}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ z.change\_dimensions(x);}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ angle(scifir::acos\_grade(\textcolor{keywordtype}{float}(z)\ /\ \textcolor{keywordtype}{float}(std::sqrt(std::pow(\textcolor{keywordtype}{float}(x),2)\ +\ std::pow(\textcolor{keywordtype}{float}(y),2)\ +\ std::pow(\textcolor{keywordtype}{float}(z),2)))));}
+\DoxyCodeLine{00651\ \ \ \ \ \}}
+\DoxyCodeLine{00652\ }
+\DoxyCodeLine{00653\ \ \ \ \ \textcolor{keyword}{inline}\ scalar\_unit\ spherical\_to\_cartesian\_3d\_x(\textcolor{keyword}{const}\ scalar\_unit\&\ r,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keyword}{const}\ angle\&\ phi)}
 \DoxyCodeLine{00654\ \ \ \ \ \{}
-\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r\ *\ scifir::cos(theta)\ *\ scifir::sin(phi);}
 \DoxyCodeLine{00656\ \ \ \ \ \}}
-\DoxyCodeLine{00657\ \}}
-\DoxyCodeLine{00658\ }
-\DoxyCodeLine{00659\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00660\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ y)}
-\DoxyCodeLine{00661\ \{}
-\DoxyCodeLine{00662\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00663\ \}}
-\DoxyCodeLine{00664\ }
-\DoxyCodeLine{00665\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00666\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_3d<T>}}\&\ y)}
-\DoxyCodeLine{00667\ \{}
-\DoxyCodeLine{00668\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.x\ ==\ y.x\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ x.y\ ==\ y.y\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ x.z\ ==\ y.z)}
+\DoxyCodeLine{00657\ }
+\DoxyCodeLine{00658\ \ \ \ \ \textcolor{keyword}{inline}\ scalar\_unit\ spherical\_to\_cartesian\_3d\_y(\textcolor{keyword}{const}\ scalar\_unit\&\ r,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keyword}{const}\ angle\&\ phi)}
+\DoxyCodeLine{00659\ \ \ \ \ \{}
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r\ *\ scifir::sin(theta)\ *\ scifir::sin(phi);}
+\DoxyCodeLine{00661\ \ \ \ \ \}}
+\DoxyCodeLine{00662\ }
+\DoxyCodeLine{00663\ \ \ \ \ \textcolor{keyword}{inline}\ scalar\_unit\ spherical\_to\_cartesian\_3d\_z(\textcolor{keyword}{const}\ scalar\_unit\&\ r,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keyword}{const}\ angle\&\ phi)}
+\DoxyCodeLine{00664\ \ \ \ \ \{}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r\ *\ scifir::cos(phi);}
+\DoxyCodeLine{00666\ \ \ \ \ \}}
+\DoxyCodeLine{00667\ }
+\DoxyCodeLine{00668\ \ \ \ \ \textcolor{keyword}{inline}\ scalar\_unit\ spherical\_to\_cylindrical\_p(\textcolor{keyword}{const}\ scalar\_unit\&\ r,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keyword}{const}\ angle\&\ phi)}
 \DoxyCodeLine{00669\ \ \ \ \ \{}
-\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r\ *\ scifir::sin(phi);}
 \DoxyCodeLine{00671\ \ \ \ \ \}}
-\DoxyCodeLine{00672\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00673\ \ \ \ \ \{}
-\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00675\ \ \ \ \ \}}
-\DoxyCodeLine{00676\ \}}
+\DoxyCodeLine{00672\ }
+\DoxyCodeLine{00673\ \ \ \ \ \textcolor{keyword}{inline}\ angle\ spherical\_to\_cylindrical\_theta(\textcolor{keyword}{const}\ scalar\_unit\&\ r,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keyword}{const}\ angle\&\ phi)}
+\DoxyCodeLine{00674\ \ \ \ \ \{}
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ theta;}
+\DoxyCodeLine{00676\ \ \ \ \ \}}
 \DoxyCodeLine{00677\ }
-\DoxyCodeLine{00678\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00679\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_3d<T>}}\&\ y)}
-\DoxyCodeLine{00680\ \{}
-\DoxyCodeLine{00681\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00682\ \}}
-\DoxyCodeLine{00683\ }
-\DoxyCodeLine{00684\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00685\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ y)}
-\DoxyCodeLine{00686\ \{}
-\DoxyCodeLine{00687\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.x\ ==\ y.x\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ x.y\ ==\ y.y\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ x.z\ ==\ y.z)}
-\DoxyCodeLine{00688\ \ \ \ \ \{}
-\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00690\ \ \ \ \ \}}
-\DoxyCodeLine{00691\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00692\ \ \ \ \ \{}
-\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00694\ \ \ \ \ \}}
-\DoxyCodeLine{00695\ \}}
-\DoxyCodeLine{00696\ }
-\DoxyCodeLine{00697\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00698\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\ y)}
-\DoxyCodeLine{00699\ \{}
-\DoxyCodeLine{00700\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00701\ \}}
-\DoxyCodeLine{00702\ }
-\DoxyCodeLine{00703\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00704\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ y)}
-\DoxyCodeLine{00705\ \{}
-\DoxyCodeLine{00706\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coordinates}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}(y);}
-\DoxyCodeLine{00707\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coordinates}});}
-\DoxyCodeLine{00708\ \}}
-\DoxyCodeLine{00709\ }
-\DoxyCodeLine{00710\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00711\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ y)}
-\DoxyCodeLine{00712\ \{}
-\DoxyCodeLine{00713\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00714\ \}}
-\DoxyCodeLine{00715\ }
-\DoxyCodeLine{00716\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00717\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ ==}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ y)}
-\DoxyCodeLine{00718\ \{}
-\DoxyCodeLine{00719\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_3d<T>}}(x);}
-\DoxyCodeLine{00720\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}\ ==\ y);}
-\DoxyCodeLine{00721\ \}}
-\DoxyCodeLine{00722\ }
-\DoxyCodeLine{00723\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00724\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ !=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ y)}
-\DoxyCodeLine{00725\ \{}
-\DoxyCodeLine{00726\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00727\ \}}
-\DoxyCodeLine{00728\ }
-\DoxyCodeLine{00729\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00730\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +=}}(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ y)}
-\DoxyCodeLine{00731\ \{}
-\DoxyCodeLine{00732\ \ \ \ \ x\ +=\ to\_string(y);}
-\DoxyCodeLine{00733\ \}}
+\DoxyCodeLine{00678\ \ \ \ \ \textcolor{keyword}{inline}\ scalar\_unit\ spherical\_to\_cylindrical\_z(\textcolor{keyword}{const}\ scalar\_unit\&\ r,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keyword}{const}\ angle\&\ phi)}
+\DoxyCodeLine{00679\ \ \ \ \ \{}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r\ *\ scifir::cos(phi);}
+\DoxyCodeLine{00681\ \ \ \ \ \}}
+\DoxyCodeLine{00682\ }
+\DoxyCodeLine{00683\ \ \ \ \ \textcolor{keyword}{inline}\ scalar\_unit\ cylindrical\_to\_cartesian\_3d\_x(\textcolor{keyword}{const}\ scalar\_unit\&\ p,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keyword}{const}\ scalar\_unit\&\ z)}
+\DoxyCodeLine{00684\ \ \ \ \ \{}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p\ *\ scifir::cos(theta);}
+\DoxyCodeLine{00686\ \ \ \ \ \}}
+\DoxyCodeLine{00687\ }
+\DoxyCodeLine{00688\ \ \ \ \ \textcolor{keyword}{inline}\ scalar\_unit\ cylindrical\_to\_cartesian\_3d\_y(\textcolor{keyword}{const}\ scalar\_unit\&\ p,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keyword}{const}\ scalar\_unit\&\ z)}
+\DoxyCodeLine{00689\ \ \ \ \ \{}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p\ *\ scifir::sin(theta);}
+\DoxyCodeLine{00691\ \ \ \ \ \}}
+\DoxyCodeLine{00692\ }
+\DoxyCodeLine{00693\ \ \ \ \ \textcolor{keyword}{inline}\ scalar\_unit\ cylindrical\_to\_cartesian\_3d\_z(\textcolor{keyword}{const}\ scalar\_unit\&\ p,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keyword}{const}\ scalar\_unit\&\ z)}
+\DoxyCodeLine{00694\ \ \ \ \ \{}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
+\DoxyCodeLine{00696\ \ \ \ \ \}}
+\DoxyCodeLine{00697\ }
+\DoxyCodeLine{00698\ \ \ \ \ \textcolor{keyword}{inline}\ scalar\_unit\ cylindrical\_to\_spherical\_r(\textcolor{keyword}{const}\ scalar\_unit\&\ p,\textcolor{keyword}{const}\ angle\&\ theta,scalar\_unit\ z)}
+\DoxyCodeLine{00699\ \ \ \ \ \{}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ z.change\_dimensions(p);}
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scalar\_unit(std::sqrt(std::pow(\textcolor{keywordtype}{float}(p),2)\ +\ std::pow(\textcolor{keywordtype}{float}(z),2)),p.get\_dimensions());}
+\DoxyCodeLine{00702\ \ \ \ \ \}}
+\DoxyCodeLine{00703\ }
+\DoxyCodeLine{00704\ \ \ \ \ \textcolor{keyword}{inline}\ angle\ cylindrical\_to\_spherical\_theta(\textcolor{keyword}{const}\ scalar\_unit\&\ p,\textcolor{keyword}{const}\ angle\&\ theta,\textcolor{keyword}{const}\ scalar\_unit\&\ z)}
+\DoxyCodeLine{00705\ \ \ \ \ \{}
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ theta;}
+\DoxyCodeLine{00707\ \ \ \ \ \}}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00709\ \ \ \ \ \textcolor{keyword}{inline}\ angle\ cylindrical\_to\_spherical\_phi(\textcolor{keyword}{const}\ scalar\_unit\&\ p,\textcolor{keyword}{const}\ angle\&\ theta,scalar\_unit\ z)}
+\DoxyCodeLine{00710\ \ \ \ \ \{}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ z.change\_dimensions(p);}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ angle(scifir::atan\_grade(\textcolor{keywordtype}{float}(p)\ /\ \textcolor{keywordtype}{float}(z)));}
+\DoxyCodeLine{00713\ \ \ \ \ \}}
+\DoxyCodeLine{00714\ }
+\DoxyCodeLine{00715\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cartesian\_3d\_to\_cylindrical\_p(\textcolor{keywordtype}{float}\ x,\textcolor{keywordtype}{float}\ y,\textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00716\ \ \ \ \ \{}
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ float(std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)));}
+\DoxyCodeLine{00718\ \ \ \ \ \}}
+\DoxyCodeLine{00719\ }
+\DoxyCodeLine{00720\ \ \ \ \ \textcolor{keyword}{inline}\ angle\ cartesian\_3d\_to\_cylindrical\_theta(\textcolor{keywordtype}{float}\ x,\textcolor{keywordtype}{float}\ y,\textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00721\ \ \ \ \ \{}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ angle(scifir::atan\_grade(y\ /\ x));}
+\DoxyCodeLine{00723\ \ \ \ \ \}}
+\DoxyCodeLine{00724\ }
+\DoxyCodeLine{00725\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cartesian\_3d\_to\_cylindrical\_z(\textcolor{keywordtype}{float}\ x,\textcolor{keywordtype}{float}\ y,\textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00726\ \ \ \ \ \{}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
+\DoxyCodeLine{00728\ \ \ \ \ \}}
+\DoxyCodeLine{00729\ }
+\DoxyCodeLine{00730\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cartesian\_3d\_to\_spherical\_r(\textcolor{keywordtype}{float}\ x,\textcolor{keywordtype}{float}\ y,\textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00731\ \ \ \ \ \{}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ float(std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)\ +\ std::pow(z,2)));}
+\DoxyCodeLine{00733\ \ \ \ \ \}}
 \DoxyCodeLine{00734\ }
-\DoxyCodeLine{00735\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00736\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ y)}
-\DoxyCodeLine{00737\ \{}
-\DoxyCodeLine{00738\ \ \ \ \ \textcolor{keywordflow}{return}\ x\ +\ to\_string(y);}
-\DoxyCodeLine{00739\ \}}
-\DoxyCodeLine{00740\ }
-\DoxyCodeLine{00741\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00742\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ y)}
-\DoxyCodeLine{00743\ \{}
-\DoxyCodeLine{00744\ \ \ \ \ \textcolor{keywordflow}{return}\ to\_string(x)\ +\ y;}
-\DoxyCodeLine{00745\ \}}
-\DoxyCodeLine{00746\ }
-\DoxyCodeLine{00747\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00748\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostream}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ <<\ }}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostream}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{os}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x)}
-\DoxyCodeLine{00749\ \{}
-\DoxyCodeLine{00750\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{os}}\ <<\ to\_string(x);}
-\DoxyCodeLine{00751\ \}}
-\DoxyCodeLine{00752\ }
-\DoxyCodeLine{00753\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00754\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{istream}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ >>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{istream}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{is}},\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x)}
-\DoxyCodeLine{00755\ \{}
-\DoxyCodeLine{00756\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
-\DoxyCodeLine{00757\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{is}}.getline(a,\ 256);}
-\DoxyCodeLine{00758\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{b}}(a);}
-\DoxyCodeLine{00759\ \ \ \ \ boost::trim(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{b}});}
-\DoxyCodeLine{00760\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\ c(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{b}});}
-\DoxyCodeLine{00761\ \ \ \ \ x\ =\ c;}
-\DoxyCodeLine{00762\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{is}};}
-\DoxyCodeLine{00763\ \}}
+\DoxyCodeLine{00735\ \ \ \ \ \textcolor{keyword}{inline}\ angle\ cartesian\_3d\_to\_spherical\_theta(\textcolor{keywordtype}{float}\ x,\textcolor{keywordtype}{float}\ y,\textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00736\ \ \ \ \ \{}
+\DoxyCodeLine{00737\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ angle(scifir::atan\_grade(y\ /\ x));}
+\DoxyCodeLine{00738\ \ \ \ \ \}}
+\DoxyCodeLine{00739\ }
+\DoxyCodeLine{00740\ \ \ \ \ \textcolor{keyword}{inline}\ angle\ cartesian\_3d\_to\_spherical\_phi(\textcolor{keywordtype}{float}\ x,\textcolor{keywordtype}{float}\ y,\textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00741\ \ \ \ \ \{}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ angle(scifir::acos\_grade(z\ /\ \textcolor{keywordtype}{float}(std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)\ +\ std::pow(z,2)))));}
+\DoxyCodeLine{00743\ \ \ \ \ \}}
+\DoxyCodeLine{00744\ }
+\DoxyCodeLine{00745\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ spherical\_to\_cartesian\_3d\_x(\textcolor{keywordtype}{float}\ r,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keyword}{const}\ angle\&\ phi)}
+\DoxyCodeLine{00746\ \ \ \ \ \{}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r\ *\ scifir::cos(theta)\ *\ scifir::sin(phi);}
+\DoxyCodeLine{00748\ \ \ \ \ \}}
+\DoxyCodeLine{00749\ }
+\DoxyCodeLine{00750\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ spherical\_to\_cartesian\_3d\_y(\textcolor{keywordtype}{float}\ r,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keyword}{const}\ angle\&\ phi)}
+\DoxyCodeLine{00751\ \ \ \ \ \{}
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r\ *\ scifir::sin(theta)\ *\ scifir::sin(phi);}
+\DoxyCodeLine{00753\ \ \ \ \ \}}
+\DoxyCodeLine{00754\ }
+\DoxyCodeLine{00755\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ spherical\_to\_cartesian\_3d\_z(\textcolor{keywordtype}{float}\ r,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keyword}{const}\ angle\&\ phi)}
+\DoxyCodeLine{00756\ \ \ \ \ \{}
+\DoxyCodeLine{00757\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r\ *\ scifir::cos(phi);}
+\DoxyCodeLine{00758\ \ \ \ \ \}}
+\DoxyCodeLine{00759\ }
+\DoxyCodeLine{00760\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ spherical\_to\_cylindrical\_p(\textcolor{keywordtype}{float}\ r,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keyword}{const}\ angle\&\ phi)}
+\DoxyCodeLine{00761\ \ \ \ \ \{}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r\ *\ scifir::sin(phi);}
+\DoxyCodeLine{00763\ \ \ \ \ \}}
 \DoxyCodeLine{00764\ }
-\DoxyCodeLine{00765\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_COORDINATES\_COORDINATES\_3D\_HPP\_INCLUDED}}
+\DoxyCodeLine{00765\ \ \ \ \ \textcolor{keyword}{inline}\ angle\ spherical\_to\_cylindrical\_theta(\textcolor{keywordtype}{float}\ r,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keyword}{const}\ angle\&\ phi)}
+\DoxyCodeLine{00766\ \ \ \ \ \{}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ theta;}
+\DoxyCodeLine{00768\ \ \ \ \ \}}
+\DoxyCodeLine{00769\ }
+\DoxyCodeLine{00770\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ spherical\_to\_cylindrical\_z(\textcolor{keywordtype}{float}\ r,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keyword}{const}\ angle\&\ phi)}
+\DoxyCodeLine{00771\ \ \ \ \ \{}
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r\ *\ scifir::cos(phi);}
+\DoxyCodeLine{00773\ \ \ \ \ \}}
+\DoxyCodeLine{00774\ }
+\DoxyCodeLine{00775\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cylindrical\_to\_cartesian\_3d\_x(\textcolor{keywordtype}{float}\ p,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00776\ \ \ \ \ \{}
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p\ *\ scifir::cos(theta);}
+\DoxyCodeLine{00778\ \ \ \ \ \}}
+\DoxyCodeLine{00779\ }
+\DoxyCodeLine{00780\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cylindrical\_to\_cartesian\_3d\_y(\textcolor{keywordtype}{float}\ p,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00781\ \ \ \ \ \{}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p\ *\ scifir::sin(theta);}
+\DoxyCodeLine{00783\ \ \ \ \ \}}
+\DoxyCodeLine{00784\ }
+\DoxyCodeLine{00785\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cylindrical\_to\_cartesian\_3d\_z(\textcolor{keywordtype}{float}\ p,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00786\ \ \ \ \ \{}
+\DoxyCodeLine{00787\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
+\DoxyCodeLine{00788\ \ \ \ \ \}}
+\DoxyCodeLine{00789\ }
+\DoxyCodeLine{00790\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ cylindrical\_to\_spherical\_r(\textcolor{keywordtype}{float}\ p,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00791\ \ \ \ \ \{}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ float(std::sqrt(std::pow(p,2)\ +\ std::pow(z,2)));}
+\DoxyCodeLine{00793\ \ \ \ \ \}}
+\DoxyCodeLine{00794\ }
+\DoxyCodeLine{00795\ \ \ \ \ \textcolor{keyword}{inline}\ angle\ cylindrical\_to\_spherical\_theta(\textcolor{keywordtype}{float}\ p,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00796\ \ \ \ \ \{}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ theta;}
+\DoxyCodeLine{00798\ \ \ \ \ \}}
+\DoxyCodeLine{00799\ }
+\DoxyCodeLine{00800\ \ \ \ \ \textcolor{keyword}{inline}\ angle\ cylindrical\_to\_spherical\_phi(\textcolor{keywordtype}{float}\ p,\textcolor{keyword}{const}\ angle\&\ theta,\ \textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00801\ \ \ \ \ \{}
+\DoxyCodeLine{00802\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ angle(scifir::atan\_grade(p\ /\ z));}
+\DoxyCodeLine{00803\ \ \ \ \ \}}
+\DoxyCodeLine{00804\ \}}
+\DoxyCodeLine{00805\ }
+\DoxyCodeLine{00806\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00807\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<U>}}\&\ y)}
+\DoxyCodeLine{00808\ \{}
+\DoxyCodeLine{00809\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.x\ ==\ y.x\ and\ x.y\ ==\ y.y\ and\ x.z\ ==\ y.z)}
+\DoxyCodeLine{00810\ \ \ \ \ \{}
+\DoxyCodeLine{00811\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00812\ \ \ \ \ \}}
+\DoxyCodeLine{00813\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00814\ \ \ \ \ \{}
+\DoxyCodeLine{00815\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00816\ \ \ \ \ \}}
+\DoxyCodeLine{00817\ \}}
+\DoxyCodeLine{00818\ }
+\DoxyCodeLine{00819\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00820\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<U>}}\&\ y)}
+\DoxyCodeLine{00821\ \{}
+\DoxyCodeLine{00822\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{00823\ \}}
+\DoxyCodeLine{00824\ }
+\DoxyCodeLine{00825\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00826\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_3d<U>}}\&\ y)}
+\DoxyCodeLine{00827\ \{}
+\DoxyCodeLine{00828\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.x\ ==\ y.x\ and\ x.y\ ==\ y.y\ and\ x.z\ ==\ y.z)}
+\DoxyCodeLine{00829\ \ \ \ \ \{}
+\DoxyCodeLine{00830\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00831\ \ \ \ \ \}}
+\DoxyCodeLine{00832\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00833\ \ \ \ \ \{}
+\DoxyCodeLine{00834\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00835\ \ \ \ \ \}}
+\DoxyCodeLine{00836\ \}}
+\DoxyCodeLine{00837\ }
+\DoxyCodeLine{00838\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00839\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_3d<U>}}\&\ y)}
+\DoxyCodeLine{00840\ \{}
+\DoxyCodeLine{00841\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{00842\ \}}
+\DoxyCodeLine{00843\ }
+\DoxyCodeLine{00844\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00845\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<U>}}\&\ y)}
+\DoxyCodeLine{00846\ \{}
+\DoxyCodeLine{00847\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.x\ ==\ y.x\ and\ x.y\ ==\ y.y\ and\ x.z\ ==\ y.z)}
+\DoxyCodeLine{00848\ \ \ \ \ \{}
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00850\ \ \ \ \ \}}
+\DoxyCodeLine{00851\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00852\ \ \ \ \ \{}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00854\ \ \ \ \ \}}
+\DoxyCodeLine{00855\ \}}
+\DoxyCodeLine{00856\ }
+\DoxyCodeLine{00857\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00858\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<U>}}\ y)}
+\DoxyCodeLine{00859\ \{}
+\DoxyCodeLine{00860\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{00861\ \}}
+\DoxyCodeLine{00862\ }
+\DoxyCodeLine{00863\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00864\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_coordinates\_3d)}
+\DoxyCodeLine{00865\ \{}
+\DoxyCodeLine{00866\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\ y(init\_coordinates\_3d);}
+\DoxyCodeLine{00867\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
+\DoxyCodeLine{00868\ \}}
+\DoxyCodeLine{00869\ }
+\DoxyCodeLine{00870\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00871\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_coordinates\_3d)}
+\DoxyCodeLine{00872\ \{}
+\DoxyCodeLine{00873\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_coordinates\_3d);}
+\DoxyCodeLine{00874\ \}}
+\DoxyCodeLine{00875\ }
+\DoxyCodeLine{00876\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00877\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_coordinates\_3d,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x)}
+\DoxyCodeLine{00878\ \{}
+\DoxyCodeLine{00879\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\ y(init\_coordinates\_3d);}
+\DoxyCodeLine{00880\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
+\DoxyCodeLine{00881\ \}}
+\DoxyCodeLine{00882\ }
+\DoxyCodeLine{00883\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00884\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_coordinates\_3d,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x)}
+\DoxyCodeLine{00885\ \{}
+\DoxyCodeLine{00886\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_coordinates\_3d\ ==\ x);}
+\DoxyCodeLine{00887\ \}}
+\DoxyCodeLine{00888\ }
+\DoxyCodeLine{00889\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00890\ \textcolor{keywordtype}{void}\ operator\ +=(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ y)}
+\DoxyCodeLine{00891\ \{}
+\DoxyCodeLine{00892\ \ \ \ \ x\ +=\ to\_string(y);}
+\DoxyCodeLine{00893\ \}}
+\DoxyCodeLine{00894\ }
+\DoxyCodeLine{00895\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00896\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ y)}
+\DoxyCodeLine{00897\ \{}
+\DoxyCodeLine{00898\ \ \ \ \ \textcolor{keywordflow}{return}\ x\ +\ to\_string(y);}
+\DoxyCodeLine{00899\ \}}
+\DoxyCodeLine{00900\ }
+\DoxyCodeLine{00901\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00902\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ y)}
+\DoxyCodeLine{00903\ \{}
+\DoxyCodeLine{00904\ \ \ \ \ \textcolor{keywordflow}{return}\ to\_string(x)\ +\ y;}
+\DoxyCodeLine{00905\ \}}
+\DoxyCodeLine{00906\ }
+\DoxyCodeLine{00907\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00908\ ostream\&\ operator\ <<(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x)}
+\DoxyCodeLine{00909\ \{}
+\DoxyCodeLine{00910\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ to\_string(x);}
+\DoxyCodeLine{00911\ \}}
+\DoxyCodeLine{00912\ }
+\DoxyCodeLine{00913\ ostream\&\ operator\ <<(ostream\&\ os,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<float>}}\&\ x);}
+\DoxyCodeLine{00914\ }
+\DoxyCodeLine{00915\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00916\ istream\&\ operator\ >>(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}\&\ x)}
+\DoxyCodeLine{00917\ \{}
+\DoxyCodeLine{00918\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
+\DoxyCodeLine{00919\ \ \ \ \ is.getline(a,\ 256);}
+\DoxyCodeLine{00920\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
+\DoxyCodeLine{00921\ \ \ \ \ boost::trim(b);}
+\DoxyCodeLine{00922\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_3d<T>}}(b);}
+\DoxyCodeLine{00923\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{00924\ \}}
+\DoxyCodeLine{00925\ }
+\DoxyCodeLine{00926\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_COORDINATES\_COORDINATES\_3D\_HPP\_INCLUDED}}
 
 \end{DoxyCode}

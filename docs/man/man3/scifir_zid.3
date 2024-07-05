@@ -10,19 +10,40 @@ scifir::zid
 
 .in +1c
 .ti -1c
-.RI "\fBzid\fP (\fBconst\fP \fBzid\fP &)"
+.RI "\fBzid\fP (\fBconst\fP \fBzid\fP &x)"
 .br
 .ti -1c
-.RI "\fBzid\fP (\fBzid\fP &&)"
+.RI "\fBzid\fP (\fBzid\fP &&x)"
 .br
 .ti -1c
-.RI "\fBzid\fP (\fBconst\fP \fBstring\fP &)"
+.RI "\fBzid\fP (\fBconst\fP \fBscifir::aid\fP &\fBnew_aid\fP, \fBconst\fP \fBstring\fP &\fBnew_country\fP, \fBconst\fP vector< \fBstring\fP > &\fBnew_regions\fP, \fBconst\fP \fBstring\fP &\fBnew_zone\fP)"
 .br
 .ti -1c
-.RI "\fBzid\fP & \fBoperator=\fP (\fBconst\fP \fBzid\fP &)"
+.RI "\fBzid\fP (\fBconst\fP \fBscifir::aid\fP &\fBnew_aid\fP, \fBconst\fP \fBstring\fP &\fBinit_zid\fP)"
 .br
 .ti -1c
-.RI "\fBzid\fP & \fBoperator=\fP (\fBzid\fP &&)"
+.RI "\fBzid\fP (\fBconst\fP \fBstring\fP &\fBinit_zid_full\fP)"
+.br
+.ti -1c
+.RI "\fBzid\fP & \fBoperator=\fP (\fBconst\fP \fBzid\fP &x)"
+.br
+.ti -1c
+.RI "\fBzid\fP & \fBoperator=\fP (\fBzid\fP &&x)"
+.br
+.ti -1c
+.RI "\fBzid\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_zid_full\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBhas_no_country\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBhas_unknown_country\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBdisplay\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBpartial_display\fP () \fBconst\fP"
 .br
 .in -1c
 .SS "Public Attributes"

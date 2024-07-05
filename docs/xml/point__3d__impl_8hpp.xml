@@ -6,7 +6,7 @@
     <includes refid="coordinates__3d_8hpp" local="yes">../coordinates/coordinates_3d.hpp</includes>
     <includedby refid="units_8hpp" local="yes">units.hpp</includedby>
     <incdepgraph>
-      <node id="34">
+      <node id="35">
         <label>../coordinates/coordinates_3d.hpp</label>
         <link refid="coordinates__3d_8hpp_source"/>
         <childnode refid="2" relation="include">
@@ -16,6 +16,8 @@
         <childnode refid="31" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
@@ -91,6 +93,8 @@
         </childnode>
         <childnode refid="31" relation="include">
         </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
         <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
@@ -101,7 +105,7 @@
         <link refid="point__3d__impl_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
       </node>
       <node id="5">
@@ -268,6 +272,12 @@
         <childnode refid="20" relation="include">
         </childnode>
       </node>
+      <node id="34">
+        <label>../util/types.hpp</label>
+        <link refid="types_8hpp_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
       <node id="12">
         <label>algorithm</label>
       </node>
@@ -353,20 +363,33 @@
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">scifir</highlight></codeline>
 <codeline lineno="11"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1point__3d" kindref="compound">point_3d&lt;T&gt;::point_3d</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_3d&lt;T&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>)<sp/>:<sp/>x(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.x),y(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.y),z(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.z)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>point_3d&lt;T&gt;::point_3d(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_3d&lt;T&gt;&amp;<sp/>x_coordinates)<sp/>:<sp/>x(x_coordinates.x),y(x_coordinates.y),z(x_coordinates.z)</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">point_3d&lt;T&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1point__3d" kindref="compound">point_3d&lt;T&gt;::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">coordinates_3d&lt;T&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>)</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.x;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.y;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_coordinates</ref>.z;</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_TOPOLOGY_POINT_3D_IMPL_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>point_3d&lt;T&gt;::point_3d(coordinates_3d&lt;T&gt;&amp;&amp;<sp/>x_coordinates)<sp/>:<sp/>x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z))</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>point_3d&lt;T&gt;&amp;<sp/>point_3d&lt;T&gt;::operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>coordinates_3d&lt;T&gt;&amp;<sp/>x_coordinates)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>x_coordinates.x;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>x_coordinates.y;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/>x_coordinates.z;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>point_3d&lt;T&gt;&amp;<sp/>point_3d&lt;T&gt;::operator=(coordinates_3d&lt;T&gt;&amp;&amp;<sp/>x_coordinates)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>std::move(x_coordinates.x);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>std::move(x_coordinates.y);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/>std::move(x_coordinates.z);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_TOPOLOGY_POINT_3D_IMPL_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="topology/point_3d_impl.hpp"/>
   </compounddef>

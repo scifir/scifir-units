@@ -74,7 +74,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://github.com/scifir/scifir-units/actions/workflows/cmake.yml"><img src="https://github.com/scifir/scifir-units/actions/workflows/cmake.yml/badge.svg" alt="Linux build status" style="pointer-events: none;" class="inline"/></a></p>
-<p>Welcome! The <b>Scifir Collection</b> is a set of scientific libraries for developing <b>laboratory machines</b> and <b>scientific inventions</b>. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!</p>
+<p>Welcome! The <b>Scifir Collection</b> is a set of scientific libraries, written in <b>C++</b>, for developing <b>laboratory machines</b> and <b>scientific inventions</b>. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!</p>
 <p>The Scifir Collection is under development, but the units are already released. Molecules aren't, but they will by ready soon!</p>
 <p><b>scifir-units</b> includes units with dimensions to use, then it's unneeded to care about having the proper dimensions and prefixes when developing scientific software, you can instantiate any value you have on the machine, without performing operations with a calculator first to convert the units to a common prefix. Learn how to use them at the <a href="https://github.com/scifir/scifir-units/wiki">Wiki</a>. It's been developed under <b>C++20</b> and uses <b>cmake</b> as build automation tool. It's available for <b>Linux distributions</b> and <b>Windows</b>.</p>
 <p>The <b>current version</b> of scifir-units is the <b>beta-version-2.0</b>. The version 1.0 has never been released because the version 2.0 was better by a great extent. The version 2.0 includes a better inheritance system and a wide simplification of all the programming of the library and, then, a better compilation and a saving of RAM for each instantiation of each class. Because of that reason, the version 2.0 has been preferred over the version 1.0.</p>
@@ -232,22 +232,22 @@ Class list</h2>
 <p>The meca numbers are special numbers that don't behave exactly like an scalar unit:</p>
 <ul>
 <li>angle.</li>
-<li>complex_number.</li>
-<li>lab_number.</li>
+<li>complex_number&lt;T&gt;.</li>
+<li>lab_number&lt;T&gt;.</li>
 </ul>
 <p>The coordinates classes handle position in space. The point classes also handle position in space. Coordinates are used for positions and points are intended for more stationary cases, like for example vertex of triangles that form a 3D model.</p>
 <ul>
-<li>coordinates_1d.</li>
-<li>coordinates_2d.</li>
-<li>coordinates_2dr.</li>
-<li>coordinates_3d.</li>
-<li>coordinates_3dr.</li>
-<li>coordinates_nd.</li>
-<li>coordinates_ndr.</li>
-<li>point_1d.</li>
-<li>point_2d.</li>
-<li>point_3d.</li>
-<li>point_nd.</li>
+<li>coordinates_1d&lt;T&gt;.</li>
+<li>coordinates_2d&lt;T&gt;.</li>
+<li>coordinates_2dr&lt;T&gt;.</li>
+<li>coordinates_3d&lt;T&gt;.</li>
+<li>coordinates_3dr&lt;T&gt;.</li>
+<li>coordinates_nd&lt;T&gt;.</li>
+<li>coordinates_ndr&lt;T&gt;.</li>
+<li>point_1d&lt;T&gt;.</li>
+<li>point_2d&lt;T&gt;.</li>
+<li>point_3d&lt;T&gt;.</li>
+<li>point_nd&lt;T&gt;.</li>
 <li>direction.</li>
 </ul>
 <p>The special unit classes handle special cases of values:</p>
@@ -259,9 +259,9 @@ Class list</h2>
 <li>pH.</li>
 <li>pOH.</li>
 <li>pixel.</li>
-<li>size_2d.</li>
-<li>size_3d.</li>
-<li>size_nd.</li>
+<li>size_2d&lt;T&gt;.</li>
+<li>size_3d&lt;T&gt;.</li>
+<li>size_nd&lt;T&gt;.</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md22"></a>
 Data conventions</h2>
@@ -280,7 +280,7 @@ Data conventions</h2>
 </ul>
 <p>The conventions for storing informatic data are the following:</p>
 <ul>
-<li><b>Ips:</b> Store the ip, as is written.</li>
+<li><b>Ip addresses:</b> Store the ip, as is written.</li>
 <li><b>Computers:</b> Store computers by their model name, canonicalized.</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md23"></a>
@@ -288,13 +288,22 @@ Consumption of memory</h2>
 <p>The scalar_unit and vector unit classes, vector_unid_2d, vector_unid_3d and vector_unit_nd size more than a single float, which uses 4 bytes, but don't size a big amount and so, they can be used in great quantities for any purpose, cause they are very lightweight.</p>
 <p>The angle class uses only 4 bytes, and works perfectly fine, very similar to a normal float. Then, you can use it freely every time you need to do calculations that need angles.</p>
 <h1><a class="anchor" id="autotoc_md24"></a>
+Use cases</h1>
+<h2><a class="anchor" id="autotoc_md25"></a>
+Technologies for inventions</h2>
+<p>scifir-units can be used for any project that needs units of measurement, vectors, coordinates, and related calculations. It's primary intended to program <b>scientific inventions</b>, <b>laboratory machines</b>, <b>electronic devices</b> and <b>medical devices</b> (medical devices that need a software, not any medical device). In this section it's explained how to build those devices, in order to be known how to create all the project, and not only how to use scifir-units.</p>
+<p>To create the electronic circuit of any electronic device, being it a scientific invention, a laboratory machine, a medical device or of other type, you can use <b>KiCad</b>. The electronic circuit is then printed using the file created with KiCad. For the operating system, you can use <b>FreeRTOS</b>, <b>FreeBSD</b>, or even create a custom linux distribution with <b>Linux From Scratch</b>. For the GUI of the software of the invention to run inside this operating system, you can use <b>GTK+</b>, <b>wxWidgets</b> or <b>Qt</b>. The inventions not always use a GUI, they can work just with analog buttons or a LCD display. It's with this software where you can use scifir-units to do the calculations the software requires.</p>
+<p>To build a desktop application that connects remotely with the invention, use also GTK+, wxWidgets or Qt to build the GUI. You can use as communication technology <b>bluetooth</b>, <b>wifi direct</b> (which is a wifi peer-to-peer) or <b>usb</b>.</p>
+<p>Also, to add 3D to the software, you can use <b>OpenGL</b>. To do plots, use <b>matplot++</b>, <b>gnuplot</b> or <b>GNU plotutils</b>. Obviously, to store output from the software, you can use <b>YAML</b> or <b>XML</b>. To work with XML inside C++ you can use <b>rapidxml</b>, <b>tinyxml</b> or <b>libxml2</b>. To work with YAML you can use <b>yaml-cpp</b>. Use <b>conf</b> for configuration files, the library of it is <b>libconfig</b>. To send messages between different servers/daemons that are run inside the invention, you can use <b>dbus</b>. To handle large amounts of data, you can use a simple database, like <b>SQLite</b>, with <b>SQLiteCPP</b>.</p>
+<p>From the graphics part, you can use <b>SVG++</b> to work with SVG files. To add GPS to the invention, you can use <b>gpsd</b>. To do the translation of the software, use <b>gettext</b>.</p>
+<h1><a class="anchor" id="autotoc_md26"></a>
 Core functionalities</h1>
 <p>All the classes of scifir-units are inside the <b>namespace scifir</b>, as with all libraries of the <b>Scifir Collection</b>. So, to use any of this classes, like angle, you have to type any of the following codes:</p>
 <div class="fragment"><div class="line"><span class="keyword">using namespace </span>scifir; <span class="comment">// Maybe this is usually the better choice</span></div>
 <div class="line"><a class="code hl_class" href="classscifir_1_1angle.html">scifir::angle</a> a; <span class="comment">// You can use the namespace directly</span></div>
 <div class="ttc" id="aclassscifir_1_1angle_html"><div class="ttname"><a href="classscifir_1_1angle.html">scifir::angle</a></div><div class="ttdef"><b>Definition</b> angle.hpp:28</div></div>
 </div><!-- fragment --><p>All the example code presented here is written assuming you know this namespace scifir.</p>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
 Initialization strings</h2>
 <p>All the unit classes, and also the other related classes of this library, can be constructed with what is called here an <b>initialization string</b>. An initialization string is an string used to instantiate the class, and it's also used when converting the class to an string for any purpose (like printing it on the screen).</p>
 <p>The initialization strings are the following:</p>
@@ -317,13 +326,13 @@ Initialization strings</h2>
 <li><b>coordinates_ndr</b>: "1 m,7 m,5 m,8 m;32° 56° 78°" or "(1 m,7 m,5 m,8 m;32° 56° 78°)"</li>
 </ul>
 <p>In order to store units inside a file an initialization string should be used. For any purpose, when converting some of those classes to an string, the string initialization has to be always used.</p>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2><a class="anchor" id="autotoc_md28"></a>
 Space</h2>
 <p>Inside scifir-units the space can be measured with float or with length. Secondarily, any scalar_unit can be used as measure of space, because inside science there are modelings of imaginary spaces, where the length is not used. Because of that reason, all coordinates and point classes are template classes that accept floats or scalar_unit classes.</p>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md29"></a>
 Dimensions</h2>
 <p>Inside scifir-units a <b>basic dimension</b> is a dimension considered basic under the SI system of units. Different to that, a <b>simple dimension</b> is a dimension without any derived dimension. That's, it's a dimension that's not an abbreviation of two or more other dimensions.</p>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 Angle</h2>
 <p>An angle object manages angles. It stores angles in grades, rather than in radians. It can be initialized to any grade between 0 and 360 (without including 360, cause this is identical to 0 in meaning), and any initialization that's not inside this range of values gets automatically converted inside it, to his equivalent value between the range.</p>
 <p>An example of use of angle is the following:</p>
@@ -365,7 +374,7 @@ Angle</h2>
 <div class="line">x.invert(); <span class="comment">// Inverts the angle, the orientation described by this angle points now in the opposite direction</span></div>
 <div class="line"><span class="keywordtype">float</span> y = <a class="code hl_class" href="classscifir_1_1coordinates__1d.html">float</a>(x); <span class="comment">// Angles can be converted to float</span></div>
 <div class="ttc" id="aclassscifir_1_1coordinates__1d_html"><div class="ttname"><a href="classscifir_1_1coordinates__1d.html">scifir::coordinates_1d</a></div><div class="ttdef"><b>Definition</b> coordinates_1d.hpp:18</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md29"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md31"></a>
 Scalar units</h2>
 <p>Scalar units and vector units are the central objects of scifir-units. They store a value and a set of dimensions, as units on science do. Scalar units are just normal values, while vector units have a value and a direction to which the vector points to.</p>
 <p>Scalar units can operate with other scalar units, as well as with numeric primitive types. Functions like abs(), sqrt() and to_string() are supported. They have functions to operate with strings, and functions to operate with streams.</p>
@@ -466,7 +475,7 @@ Scalar units</h2>
 <td class="markdownTableBodyNone">Memo   </td><td class="markdownTableBodyNone">memo   </td><td class="markdownTableBodyNone">Measures the size occupied by a memory inside the brain of an animal, including human brains. Created by Ismael Correa, it's not an official basic dimension of the SI system of units   </td></tr>
 </table>
 <p>There are also derived dimensions of those basic dimensions, which are documented in the reference. Yet, you should memorize all those basic dimensions.</p>
-<h2><a class="anchor" id="autotoc_md30"></a>
+<h2><a class="anchor" id="autotoc_md32"></a>
 Vector units in 2D</h2>
 <p>Vector units in 2D allow to do calculations for lab machines and simulations of physics and other areas of science in 2 dimensions. They inherit scalar_unit, and additional to his member-variables they include the member-variable theta, of class angle (described above).</p>
 <p>An example of use of it is the following:</p>
@@ -532,8 +541,8 @@ Vector units in 2D</h2>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classscifir_1_1vector__unit__2d.html">vector_unit_2d</a> a;</div>
 <div class="line"><a class="code hl_class" href="classscifir_1_1coordinates__1d.html">cin</a> &gt;&gt; a; <span class="comment">// Initializes a with the string given to cin</span></div>
-<div class="ttc" id="aclassscifir_1_1vector__unit__2d_html"><div class="ttname"><a href="classscifir_1_1vector__unit__2d.html">scifir::vector_unit_2d</a></div><div class="ttdef"><b>Definition</b> vector_unit_2d.hpp:57</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md31"></a>
+<div class="ttc" id="aclassscifir_1_1vector__unit__2d_html"><div class="ttname"><a href="classscifir_1_1vector__unit__2d.html">scifir::vector_unit_2d</a></div><div class="ttdef"><b>Definition</b> vector_unit_2d.hpp:56</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md33"></a>
 Vector units in 3D</h2>
 <p>Vector units in 3D are the most useful vectorial units. They allow to do all the simulations of physics and any other area of science in 3D, which is the most common scenario. To work, they have, as vector_unit_2d, a value, dimensions, and an angle theta, but they include the angle phi. So, they work as spherical coordinates, having cartesian projections for each axis. The class vector_unit_3d inherits from scalar_unit, as vector_unit_2d, but not from vector_unit_2d, evading math errors that would be derived from that, because 2D and 3D dimensions are not mathematically equivalent in 2D (when projecting the x and y axis there appears the angle phi on the equations for the 3D cases).</p>
 <p>An example of use is the following:</p>
@@ -602,8 +611,8 @@ Vector units in 3D</h2>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classscifir_1_1vector__unit__3d.html">vector_unit_3d</a> a;</div>
 <div class="line"><a class="code hl_class" href="classscifir_1_1coordinates__1d.html">cin</a> &gt;&gt; a; <span class="comment">// Initializes a with the string given to cin</span></div>
-<div class="ttc" id="aclassscifir_1_1vector__unit__3d_html"><div class="ttname"><a href="classscifir_1_1vector__unit__3d.html">scifir::vector_unit_3d</a></div><div class="ttdef"><b>Definition</b> vector_unit_3d.hpp:74</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md32"></a>
+<div class="ttc" id="aclassscifir_1_1vector__unit__3d_html"><div class="ttname"><a href="classscifir_1_1vector__unit__3d.html">scifir::vector_unit_3d</a></div><div class="ttdef"><b>Definition</b> vector_unit_3d.hpp:73</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md34"></a>
 Vector units in ND</h2>
 <p>Vector units in ND are very interesting vector units. They allow to operate in ND, which means, inside scifir-units, that the dimensions can be changed. ND allows to operate in 1D, 2D, 3D and more dimensions at the same time. The way they allow that is with a vector&lt;angle&gt; member-variable, which allows to control the angles of the n dimensions were the vector operates. For 2D it has one angle, as vector_unit_2d, and for 3D it has two angles, as vector_unit_3d. For 1D it doesn't has any angle.</p>
 <p>An example of use is the following:</p>
@@ -678,8 +687,8 @@ Vector units in ND</h2>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classscifir_1_1vector__unit__nd.html">vector_unit_nd</a> a;</div>
 <div class="line"><a class="code hl_class" href="classscifir_1_1coordinates__1d.html">cin</a> &gt;&gt; a; <span class="comment">// Initializes a with the string given to cin</span></div>
-<div class="ttc" id="aclassscifir_1_1vector__unit__nd_html"><div class="ttname"><a href="classscifir_1_1vector__unit__nd.html">scifir::vector_unit_nd</a></div><div class="ttdef"><b>Definition</b> vector_unit_nd.hpp:62</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md33"></a>
+<div class="ttc" id="aclassscifir_1_1vector__unit__nd_html"><div class="ttname"><a href="classscifir_1_1vector__unit__nd.html">scifir::vector_unit_nd</a></div><div class="ttdef"><b>Definition</b> vector_unit_nd.hpp:61</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md35"></a>
 Coordinates and points in 1D</h2>
 <p>Coordinates in 1D allow to move any object, particle, solid or immaterial, through a 1D space. The coordinates_1d class has been implemented as a template class, allowing to use any scalar_unit, or, also, a single float. Any scalar_unit can be used, because then coordinates_1d allows to move in dimensions different than length, as dimensions on some science-fiction speculations are (because on some science-fiction ideas, a dimension can be anything).</p>
 <p>point_1d is equivalent in functionality as coordinates_1d, it has the same member-variables and functions, its intended use is to be an abstract point in 1D, rather than a position in 1D (as coordinates_1d are).</p>
@@ -715,7 +724,7 @@ Coordinates and points in 1D</h2>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classscifir_1_1coordinates__1d.html">cout</a> &lt;&lt; x; <span class="comment">// coordinates_1d can be printed to cout</span></div>
 <div class="line"><a class="code hl_class" href="classscifir_1_1coordinates__1d.html">cin</a> &gt;&gt; x; <span class="comment">// coordinates_1d can be initialized through cin</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md34"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md36"></a>
 Coordinates and points in 2D</h2>
 <p>coordinates_2d class allows to create software with positions in 2D. It has a very similar interface to coordinates_1d, it's initialized with an string of the form "1 m,2 m" or "(1 m,2 m)" because the character '(' can be present or not. It's, as coordinates_1d, a template class, and can then specify coordinates of any scalar_unit (usually, length), or with a float, if there's no unit that represents adequately the coordinates, or if it's needed to save some memory (because the float is lighter than a unit in his consumption of memory).</p>
 <p>coordinates_2d can be used as cartesian and as polar coordinates at the same time. It has x and y as member-variables, which can be of the type of any scalar_unit or a float. When working with polar coordinates, the calculations are stored as x and y, that's, as cartesian coordinates, but when accessing it, with functions like get_p() and get_theta(), they give the values in polar coordinates. Then, at the same time, coordinates_2d behave as cartesian and as polar coordinates, by storing the values only once, not two times. Then, coordinates_2d is like a dual object, it contains cartesian_2d and polar_coordinates inside.</p>
@@ -760,7 +769,7 @@ Coordinates and points in 2D</h2>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classscifir_1_1coordinates__1d.html">cout</a> &lt;&lt; x; <span class="comment">// coordinates_2d can be printed to cout</span></div>
 <div class="line"><a class="code hl_class" href="classscifir_1_1coordinates__1d.html">cin</a> &gt;&gt; x; <span class="comment">// coordinates_2d can be initialized through cin</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md35"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md37"></a>
 Coordinates and points in 3D</h2>
 <p>coordinates_3d class allows to work with positions in 3D. Its initialization string is of the form "10 m,5 m,3 m", or of the form "(10 m,5 m,3 m)".</p>
 <p>coordinates_3d can be used as cartesian coordinates, as cylindrical coordinates, as spherical coordinates and as geographical coordinates at the same time. It has x, y and z as member-variables, which can be of the type of any scalar_unit or a float. When working with coordinates different than cartesian coordinates, the calculations are stored as x, y and z, that's, as cartesian coordinates, but when accessing it, with functions like get_p(), get_theta() and get_r(), they give the values in the other coordinates systems. Then, at the same time, coordinates_3d behave as cartesian, cylindrical, spherical and geographical coordinates, by storing the values only once, not various times. Then, coordinates_3d is like a multiple object, it contains cartesian_3d_coordinates, cylindrical_coordinates, spherical_coordinates and geographical_coordinates inside.</p>
@@ -817,23 +826,23 @@ Coordinates and points in 3D</h2>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classscifir_1_1coordinates__1d.html">cout</a> &lt;&lt; x; <span class="comment">// coordinates_3d can be printed to cout</span></div>
 <div class="line"><a class="code hl_class" href="classscifir_1_1coordinates__1d.html">cin</a> &gt;&gt; x; <span class="comment">// coordinates_3d can be initialized through cin</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md36"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md38"></a>
 AID and ZID</h2>
 <p>An <b>AID</b>, acronym of <b>Astronomycal ID</b>, is an identifier of an astronomical object, like planets, moons, galaxies, stars, and any other astronomical object.</p>
 <p>A <b>ZID</b>, acronym of <b>Zone ID</b>, is an identifier of a zone, like a region, a district, a store, a lake, a country, and any other zone. A zone is defined here as any closed surface that can be drawn over an astronomycal object. A ZID is composed of the AID of which the zone pertains, and the zone itself.</p>
-<h2><a class="anchor" id="autotoc_md37"></a>
+<h2><a class="anchor" id="autotoc_md39"></a>
 percentage</h2>
 <p>The <b>percentage</b> class represents percentages, they calculate the factor of the percentage and automatically, when operating with numeric types, calculate the percentage of that number.</p>
-<h2><a class="anchor" id="autotoc_md38"></a>
+<h2><a class="anchor" id="autotoc_md40"></a>
 pixel</h2>
 <p>The <b>pixel</b> class represents pixels, which are the squares that compose screens. It can be used to calculate distance over pixels instead of distances of physical lengths, which is a need of some digital applications.</p>
-<h2><a class="anchor" id="autotoc_md39"></a>
+<h2><a class="anchor" id="autotoc_md41"></a>
 pH and pOH</h2>
 <p>The <b>pH</b> class allows to work with pH, which is used inside chemistry software to store data about pH. The <b>pOH</b> class is the counterpart of the pH class, and is not commonly needed, but it can be used if the pH class is not being useful for some reason, and if instead the pOH class is useful. The pH class should always be <b>prefered</b> to be used over the pOH class, and that last should be used <b>only</b> if the pH class is not properly solving the needs.</p>
-<h2><a class="anchor" id="autotoc_md40"></a>
+<h2><a class="anchor" id="autotoc_md42"></a>
 Sizes in 2D, 3D and ND</h2>
 <p>The <b>size_2d</b> class allows to store the data of the width and height of an object in length classes. The <b>size_3d</b> allows to store the data of the width, the height and the depth of an object in length classes. The <b>size_nd</b> class allows to store lengths corresponding to the dimension of an object in a variable number of dimensions.</p>
-<h1><a class="anchor" id="autotoc_md41"></a>
+<h1><a class="anchor" id="autotoc_md43"></a>
 Internals</h1>
 <p>Internally, the library has some important mechanisms important to be known by a serious developer. Those important mechanisms are described here, in order to avoid the developer to read the code of the library and learn every detail.</p>
 <p>The first important mechanism to describe is the static storage of custom dimensions. This storage is static, meaning that every time a unit of a dimension not registered is created, this storage is the one used, instead of the name being stored inside the instance. With that behavior, when instantiating a big amount of dimensions, a big amount of memory is saved. To refer to the static storage it's used the char symbol[3] of the dimension class, which uses only 3 bytes instead of the bytes the full dimension name would use. Then, each instance of a dimension class, given that static storage, uses only 6 bytes of memory.</p>

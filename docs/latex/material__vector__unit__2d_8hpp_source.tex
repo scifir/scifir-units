@@ -61,22 +61,22 @@
 \DoxyCodeLine{00057\ \}}
 \DoxyCodeLine{00058\ }
 \DoxyCodeLine{00059\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
-\DoxyCodeLine{00060\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostream}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ <<}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostream}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{os}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::material\_vector\_unit\_2d<T,U>}}\&\ x)}
+\DoxyCodeLine{00060\ ostream\&\ operator\ <<(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::material\_vector\_unit\_2d<T,U>}}\&\ x)}
 \DoxyCodeLine{00061\ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{os}}\ <<\ to\_string(x);}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{os}};}
+\DoxyCodeLine{00062\ \ \ \ \ os\ <<\ to\_string(x);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
 \DoxyCodeLine{00064\ \}}
 \DoxyCodeLine{00065\ }
 \DoxyCodeLine{00066\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
-\DoxyCodeLine{00067\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{istream}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ >>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{istream}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{is}},\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::material\_vector\_unit\_2d<T,U>}}\&\ x)}
+\DoxyCodeLine{00067\ istream\&\ operator\ >>(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::material\_vector\_unit\_2d<T,U>}}\&\ x)}
 \DoxyCodeLine{00068\ \{}
 \DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
-\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{is}}.getline(a,\ 256);}
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{b}}(a);}
-\DoxyCodeLine{00072\ \ \ \ \ boost::trim(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{b}});}
-\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ c(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{b}});}
+\DoxyCodeLine{00070\ \ \ \ \ is.getline(a,\ 256);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
+\DoxyCodeLine{00072\ \ \ \ \ boost::trim(b);}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ c(b);}
 \DoxyCodeLine{00074\ \ \ \ \ x\ =\ c;}
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{is}};}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
 \DoxyCodeLine{00076\ \}}
 \DoxyCodeLine{00077\ }
 \DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_MATERIAL\_VECTOR\_UNIT\_2D\_HPP\_INCLUDED}}

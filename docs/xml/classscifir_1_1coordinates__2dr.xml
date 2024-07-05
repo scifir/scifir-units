@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="206" column="3" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="206" bodyend="-1"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="208" column="3" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="208" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1coordinates__2dr_1a66e384329e282aeac52a66e70be08d2d" prot="public" static="no" mutable="no">
         <type>T</type>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="207" column="3" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="207" bodyend="-1"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="209" column="3" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="209" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1coordinates__2dr_1a17a3e742edb7ae45a3635f46eb93fd31" prot="public" static="no" mutable="no">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
@@ -49,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="208" column="7" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="208" bodyend="-1"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="210" column="7" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="210" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -177,6 +177,28 @@
         </inbodydescription>
         <location file="coordinates/coordinates_2dr.hpp" line="38" column="10" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="38" bodyend="39"/>
       </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1ac373cb74dac07286abff4c55929bc7f7" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::coordinates_2dr&lt; T &gt;::coordinates_2dr</definition>
+        <argsstring>(scifir::point_2d&lt; T &gt; &amp;&amp;new_point, const angle &amp;new_theta)</argsstring>
+        <name>coordinates_2dr</name>
+        <qualifiedname>scifir::coordinates_2dr::coordinates_2dr</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1point__2d" kindref="compound">scifir::point_2d</ref>&lt; T &gt; &amp;&amp;</type>
+          <declname>new_point</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_theta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_2dr.hpp" line="41" column="10" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="41" bodyend="42"/>
+      </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a2e902c4def53ff9dee81c2ec7c46c194" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
         <definition>scifir::coordinates_2dr&lt; T &gt;::coordinates_2dr</definition>
@@ -197,16 +219,38 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="41" column="10" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="41" bodyend="42"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="44" column="10" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="44" bodyend="45"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1addbc14ff05e0e533df32e9fe5f027e02" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a7637fb9272df0e80f91f9a0002df0779" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
         <definition>scifir::coordinates_2dr&lt; T &gt;::coordinates_2dr</definition>
-        <argsstring>(string init_coordinates_2dr)</argsstring>
+        <argsstring>(scifir::coordinates_2d&lt; T &gt; &amp;&amp;new_coordinates, const angle &amp;new_theta)</argsstring>
         <name>coordinates_2dr</name>
         <qualifiedname>scifir::coordinates_2dr::coordinates_2dr</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+          <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">scifir::coordinates_2d</ref>&lt; T &gt; &amp;&amp;</type>
+          <declname>new_coordinates</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1angle" kindref="compound">angle</ref> &amp;</type>
+          <declname>new_theta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_2dr.hpp" line="47" column="10" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="47" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a3ba49c04aefc25b74dab2f2a839e6e47" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::coordinates_2dr&lt; T &gt;::coordinates_2dr</definition>
+        <argsstring>(const string &amp;init_coordinates_2dr)</argsstring>
+        <name>coordinates_2dr</name>
+        <qualifiedname>scifir::coordinates_2dr::coordinates_2dr</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
           <declname>init_coordinates_2dr</declname>
         </param>
         <briefdescription>
@@ -215,7 +259,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="44" column="10" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="44" bodyend="78"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="50" column="10" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="50" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a90608ea02e157daa299aadd28bbbceac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__2dr" kindref="compound">coordinates_2dr</ref>&lt; T &gt; &amp;</type>
@@ -233,7 +277,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="80" column="17" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="80" bodyend="86"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="55" column="17" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="55" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1ae0463a801c7f4c99bffe2640fc3f82ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__2dr" kindref="compound">coordinates_2dr</ref>&lt; T &gt; &amp;</type>
@@ -251,7 +295,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="88" column="17" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="88" bodyend="94"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="63" column="17" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="63" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1ac66b16ae71280577916f251e22a3ebb0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__2dr" kindref="compound">coordinates_2dr</ref>&lt; T &gt; &amp;</type>
@@ -269,7 +313,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="96" column="17" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="96" bodyend="101"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="71" column="17" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="71" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a69863b4755eb19e22d4366825feb0cd0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__2dr" kindref="compound">coordinates_2dr</ref>&lt; T &gt; &amp;</type>
+        <definition>coordinates_2dr&lt; T &gt; &amp; scifir::coordinates_2dr&lt; T &gt;::operator=</definition>
+        <argsstring>(point_2d&lt; T &gt; &amp;&amp;x_point)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::coordinates_2dr::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1point__2d" kindref="compound">point_2d</ref>&lt; T &gt; &amp;&amp;</type>
+          <declname>x_point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_2dr.hpp" line="78" column="17" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="78" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a197042d88723c9a1d61b34d7eed3be9d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__2dr" kindref="compound">coordinates_2dr</ref>&lt; T &gt; &amp;</type>
@@ -287,7 +349,43 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="103" column="17" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="103" bodyend="108"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="85" column="17" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="85" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a31e059856a638a8ea9ae5d6dc2ae1b1e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__2dr" kindref="compound">coordinates_2dr</ref>&lt; T &gt; &amp;</type>
+        <definition>coordinates_2dr&lt; T &gt; &amp; scifir::coordinates_2dr&lt; T &gt;::operator=</definition>
+        <argsstring>(coordinates_2d&lt; T &gt; &amp;&amp;x_coordinates)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::coordinates_2dr::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; T &gt; &amp;&amp;</type>
+          <declname>x_coordinates</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_2dr.hpp" line="92" column="17" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="92" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a1566bd5fb3101ee73e67e5c94f647f50" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__2dr" kindref="compound">coordinates_2dr</ref>&lt; T &gt; &amp;</type>
+        <definition>coordinates_2dr&lt; T &gt; &amp; scifir::coordinates_2dr&lt; T &gt;::operator=</definition>
+        <argsstring>(const string &amp;init_coordinates_2dr)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::coordinates_2dr::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_coordinates_2dr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_2dr.hpp" line="99" column="17" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="99" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1aeedb465bb049da7e64ef9483a191eef5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>T</type>
@@ -301,7 +399,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="110" column="3" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="110" bodyend="113"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="105" column="3" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="105" bodyend="108"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a1c93b567007495c350b6d5fccb6c88fe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
@@ -315,7 +413,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="115" column="7" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="115" bodyend="118"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="110" column="7" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="110" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a6aa92bdef9cd1f187a7ef192617e3f8e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -333,7 +431,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="120" column="6" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="120" bodyend="154"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="115" column="6" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="115" bodyend="149"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a6767b2eaa56a6a5383d00bee7102f4b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -355,7 +453,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="156" column="6" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="156" bodyend="160"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="151" column="6" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="151" bodyend="155"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a6fcee79ad47dc1297b0e2a06eb7ebf62" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -377,7 +475,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="162" column="6" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="162" bodyend="166"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="157" column="6" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="157" bodyend="161"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1aedaf2f176835f1dea61ce35f8418b04b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -395,7 +493,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="168" column="6" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="168" bodyend="174"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="163" column="6" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="163" bodyend="169"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a773acf4dcfff053adb5beb3e8e7505a7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -413,7 +511,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="176" column="6" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="176" bodyend="180"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="171" column="6" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="171" bodyend="175"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a09a41e6c67edc86bc3bb965edc393dc2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -435,7 +533,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="182" column="6" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="182" bodyend="186"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="177" column="6" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="177" bodyend="181"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1ab36491f4c358bba77ef3db6c6db4a53d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -457,7 +555,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="188" column="6" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="188" bodyend="192"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="183" column="6" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="183" bodyend="187"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a9428ab6062227e0217450b4b53f100d4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>T</type>
@@ -471,7 +569,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="194" column="3" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="194" bodyend="197"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="189" column="3" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="189" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a84a5d9548553fe8bea41aa56b2541fbf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <definition>string scifir::coordinates_2dr&lt; T &gt;::display_cartesian</definition>
+        <argsstring>() const</argsstring>
+        <name>display_cartesian</name>
+        <qualifiedname>scifir::coordinates_2dr::display_cartesian</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_2dr.hpp" line="194" column="8" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="194" bodyend="199"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1aa394e3cc2b4fb65c6d0f7c2de727bd20" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
@@ -485,7 +597,27 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="coordinates/coordinates_2dr.hpp" line="199" column="8" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="199" bodyend="204"/>
+        <location file="coordinates/coordinates_2dr.hpp" line="201" column="8" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="201" bodyend="206"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classscifir_1_1coordinates__2dr_1a4f2f8065c45a86822b3c60c2bfc28fce" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::coordinates_2dr&lt; T &gt;::initialize_from_string</definition>
+        <argsstring>(string init_coordinates_2dr)</argsstring>
+        <name>initialize_from_string</name>
+        <qualifiedname>scifir::coordinates_2dr::initialize_from_string</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+          <declname>init_coordinates_2dr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="coordinates/coordinates_2dr.hpp" line="213" column="6" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="213" bodyend="247"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -505,7 +637,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="coordinates/coordinates_2dr.hpp" line="18" column="1" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="19" bodyend="209"/>
+    <location file="coordinates/coordinates_2dr.hpp" line="18" column="1" bodyfile="coordinates/coordinates_2dr.hpp" bodystart="19" bodyend="248"/>
     <listofallmembers>
       <member refid="classscifir_1_1coordinates__2dr_1a6a79690ae156f9eaa01e1f449e6c9c51" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>coordinates_2dr</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1a5d7464eed31335e73eba1e79f2e722c7" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>coordinates_2dr</name></member>
@@ -513,19 +645,26 @@
       <member refid="classscifir_1_1coordinates__2dr_1a00df042e81de9e524190ddca8ecd4292" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>coordinates_2dr</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1a53cd39f40aa368dbf9c149d12e03a8b3" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>coordinates_2dr</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1a8a360745fac53b2955dbfc7a2727b1ed" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>coordinates_2dr</name></member>
+      <member refid="classscifir_1_1coordinates__2dr_1ac373cb74dac07286abff4c55929bc7f7" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>coordinates_2dr</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1a2e902c4def53ff9dee81c2ec7c46c194" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>coordinates_2dr</name></member>
-      <member refid="classscifir_1_1coordinates__2dr_1addbc14ff05e0e533df32e9fe5f027e02" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>coordinates_2dr</name></member>
+      <member refid="classscifir_1_1coordinates__2dr_1a7637fb9272df0e80f91f9a0002df0779" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>coordinates_2dr</name></member>
+      <member refid="classscifir_1_1coordinates__2dr_1a3ba49c04aefc25b74dab2f2a839e6e47" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>coordinates_2dr</name></member>
+      <member refid="classscifir_1_1coordinates__2dr_1a84a5d9548553fe8bea41aa56b2541fbf" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>display_cartesian</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1aa394e3cc2b4fb65c6d0f7c2de727bd20" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>display_polar</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1a9428ab6062227e0217450b4b53f100d4" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>distance_to_origin</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1aeedb465bb049da7e64ef9483a191eef5" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>get_p</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1a1c93b567007495c350b6d5fccb6c88fe" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>get_polar_theta</name></member>
+      <member refid="classscifir_1_1coordinates__2dr_1a4f2f8065c45a86822b3c60c2bfc28fce" prot="private" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>initialize_from_string</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1a773acf4dcfff053adb5beb3e8e7505a7" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>move</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1a09a41e6c67edc86bc3bb965edc393dc2" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>move</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1ab36491f4c358bba77ef3db6c6db4a53d" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>move</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1a90608ea02e157daa299aadd28bbbceac" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>operator=</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1ae0463a801c7f4c99bffe2640fc3f82ef" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>operator=</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1ac66b16ae71280577916f251e22a3ebb0" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1coordinates__2dr_1a69863b4755eb19e22d4366825feb0cd0" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>operator=</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1a197042d88723c9a1d61b34d7eed3be9d" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1coordinates__2dr_1a31e059856a638a8ea9ae5d6dc2ae1b1e" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1coordinates__2dr_1a1566bd5fb3101ee73e67e5c94f647f50" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>operator=</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1a6aa92bdef9cd1f187a7ef192617e3f8e" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>point_to</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1aedaf2f176835f1dea61ce35f8418b04b" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>rotate</name></member>
       <member refid="classscifir_1_1coordinates__2dr_1a6767b2eaa56a6a5383d00bee7102f4b0" prot="public" virt="non-virtual"><scope>scifir::coordinates_2dr</scope><name>set_position</name></member>

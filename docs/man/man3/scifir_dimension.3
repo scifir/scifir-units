@@ -10,35 +10,35 @@ scifir::dimension
 
 .in +1c
 .ti -1c
-.RI "enum \fBtype\fP : int8_t { \fBnone\fP, \fBm\fP, \fBradian\fP, \fBsteradian\fP, \fBs\fP, \fBg\fP, \fBC\fP, \fBK\fP, \fBmol\fP, \fBcd\fP, \fBB\fP, \fBHz\fP, \fBN\fP, \fBPa\fP, \fBJ\fP, \fBW\fP, \fBA\fP, \fBV\fP, \fBF\fP, \fBOhm\fP, \fBS\fP, \fBWb\fP, \fBT\fP, \fBH\fP, \fBlm\fP, \fBlx\fP, \fBBq\fP, \fBGy\fP, \fBSv\fP, \fBkat\fP, \fBangstrom\fP, \fBL\fP, \fBminute\fP, \fBh\fP, \fBd\fP, \fBAU\fP, \fBpc\fP, \fBeV\fP, \fBDa\fP, \fBamu\fP, \fBbarn\fP, \fBM\fP, \fBparticles\fP, \fBcustom\fP, \fBcustom_basic\fP, \fBcustom_full_symbol\fP, \fBmoney\fP, \fBpixel\fP, \fBmemo\fP }"
+.RI "enum \fBtype\fP : int8_t { \fBNONE\fP, \fBm\fP, \fBgrade\fP, \fBradian\fP, \fBsteradian\fP, \fBs\fP, \fBg\fP, \fBC\fP, \fBK\fP, \fBmol\fP, \fBcd\fP, \fBB\fP, \fBHz\fP, \fBN\fP, \fBPa\fP, \fBJ\fP, \fBW\fP, \fBA\fP, \fBV\fP, \fBF\fP, \fBOhm\fP, \fBS\fP, \fBWb\fP, \fBT\fP, \fBH\fP, \fBlm\fP, \fBlx\fP, \fBBq\fP, \fBGy\fP, \fBSv\fP, \fBkat\fP, \fBangstrom\fP, \fBL\fP, \fBminute\fP, \fBh\fP, \fBd\fP, \fBly\fP, \fBAU\fP, \fBpc\fP, \fBeV\fP, \fBDa\fP, \fBamu\fP, \fBbarn\fP, \fBM\fP, \fBparticles\fP, \fBcustom\fP, \fBcustom_basic\fP, \fBcustom_full_symbol\fP, \fBmoney\fP, \fBpixel\fP, \fBmemo\fP }"
 .br
 .ti -1c
-.RI "enum \fBsign\fP : int8_t { \fBNO_SIGN\fP, \fBPOSITIVE\fP, \fBNEGATIVE\fP }"
+.RI "enum \fBposition\fP : int8_t { \fBNO_POSITION\fP, \fBNUMERATOR\fP, \fBDENOMINATOR\fP }"
 .br
 .in -1c
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
-.RI "\fBdimension\fP (\fBconst\fP \fBdimension\fP &)"
+.RI "\fBdimension\fP (\fBconst\fP \fBdimension\fP &x)"
 .br
 .ti -1c
-.RI "\fBdimension\fP (\fBdimension\fP &&)"
+.RI "\fBdimension\fP (\fBdimension\fP &&x)"
 .br
 .ti -1c
-.RI "\fBdimension\fP (dimension::type, scifir::prefix::type, dimension::sign)"
+.RI "\fBdimension\fP (dimension::type \fBnew_dimension_type\fP, scifir::prefix::type \fBnew_prefix\fP, dimension::position \fBnew_sign\fP)"
 .br
 .ti -1c
-.RI "\fBdimension\fP (dimension::type, \fBconst\fP \fBscifir::prefix\fP &, dimension::sign)"
+.RI "\fBdimension\fP (dimension::type \fBnew_dimension_type\fP, \fBconst\fP \fBscifir::prefix\fP &\fBnew_prefix\fP, dimension::position \fBnew_sign\fP)"
 .br
 .ti -1c
-.RI "\fBdimension\fP (\fBconst\fP \fBstring\fP &, dimension::sign)"
+.RI "\fBdimension\fP (\fBconst\fP \fBstring\fP &\fBinit_dimension\fP, dimension::position \fBnew_sign\fP)"
 .br
 .ti -1c
-.RI "\fBdimension\fP & \fBoperator=\fP (\fBconst\fP \fBdimension\fP &)"
+.RI "\fBdimension\fP & \fBoperator=\fP (\fBconst\fP \fBdimension\fP &x)"
 .br
 .ti -1c
-.RI "\fBdimension\fP & \fBoperator=\fP (\fBdimension\fP &&)"
+.RI "\fBdimension\fP & \fBoperator=\fP (\fBdimension\fP &&x)"
 .br
 .ti -1c
 .RI "\fBstring\fP \fBget_name\fP () \fBconst\fP"
@@ -51,6 +51,9 @@ scifir::dimension
 .br
 .ti -1c
 .RI "\fBlong\fP \fBdouble\fP \fBprefix_math\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBlong\fP \fBdouble\fP \fBprefix_math\fP (\fBconst\fP \fBprefix\fP &\fBx_prefix\fP) \fBconst\fP"
 .br
 .ti -1c
 .RI "\fBbool\fP \fBis_simple_dimension\fP () \fBconst\fP"
@@ -91,7 +94,7 @@ scifir::dimension
 .RI "dimension::type \fBdimension_type\fP"
 .br
 .ti -1c
-.RI "dimension::sign \fBdimension_sign\fP"
+.RI "dimension::position \fBdimension_sign\fP"
 .br
 .ti -1c
 .RI "\fBchar\fP \fBsymbol\fP [3]"

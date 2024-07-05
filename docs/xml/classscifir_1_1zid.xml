@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="24" column="13" bodyfile="special_units/zid.hpp" bodystart="24" bodyend="-1"/>
+        <location file="special_units/zid.hpp" line="33" column="13" bodyfile="special_units/zid.hpp" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1zid_1a312733eaed75956e815a5422e70b6d5d" prot="public" static="no" mutable="no">
         <type>vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &gt;</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="25" column="8" bodyfile="special_units/zid.hpp" bodystart="25" bodyend="-1"/>
+        <location file="special_units/zid.hpp" line="34" column="8" bodyfile="special_units/zid.hpp" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1zid_1a3202ef05c7c725b58e0e413e329fd590" prot="public" static="no" mutable="no">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="26" column="8" bodyfile="special_units/zid.hpp" bodystart="26" bodyend="-1"/>
+        <location file="special_units/zid.hpp" line="35" column="8" bodyfile="special_units/zid.hpp" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1zid_1a3ef65cf7878c83b2222c2daf6f5f3f36" prot="public" static="no" mutable="no">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="27" column="8" bodyfile="special_units/zid.hpp" bodystart="27" bodyend="-1"/>
+        <location file="special_units/zid.hpp" line="36" column="8" bodyfile="special_units/zid.hpp" bodystart="36" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -73,17 +73,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="16" column="1" bodyfile="special_units/zid.cpp" bodystart="11" bodyend="12"/>
+        <location file="special_units/zid.hpp" line="16" column="1" bodyfile="special_units/zid.cpp" bodystart="12" bodyend="13"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1zid_1a34bab9ef9c47452ff13f35270f78e6bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1zid_1a1946b1fd42cbbe0b2764ff9bb7922cd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::zid::zid</definition>
-        <argsstring>(const zid &amp;)</argsstring>
+        <argsstring>(const zid &amp;x)</argsstring>
         <name>zid</name>
         <qualifiedname>scifir::zid::zid</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1zid" kindref="compound">zid</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -91,17 +91,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="17" column="1" bodyfile="special_units/zid.cpp" bodystart="14" bodyend="15"/>
+        <location file="special_units/zid.hpp" line="17" column="1" bodyfile="special_units/zid.cpp" bodystart="15" bodyend="16"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1zid_1a5fbf9ce2bacc7fb7c1befcc9cc172cd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1zid_1a42b1578b6c42c7662b648e34df7a1c08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::zid::zid</definition>
-        <argsstring>(zid &amp;&amp;)</argsstring>
+        <argsstring>(zid &amp;&amp;x)</argsstring>
         <name>zid</name>
         <qualifiedname>scifir::zid::zid</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1zid" kindref="compound">zid</ref> &amp;&amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -109,17 +109,69 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="18" column="1" bodyfile="special_units/zid.cpp" bodystart="17" bodyend="18"/>
+        <location file="special_units/zid.hpp" line="18" column="1" bodyfile="special_units/zid.cpp" bodystart="18" bodyend="19"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1zid_1af173e828b97e9e26a8a42ca304f48571" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1zid_1a2dd6a90683a044ff7e6ec19a5d1ddf09" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::zid::zid</definition>
-        <argsstring>(const string &amp;)</argsstring>
+        <argsstring>(const scifir::aid &amp;new_aid, const string &amp;new_country, const vector&lt; string &gt; &amp;new_regions, const string &amp;new_zone)</argsstring>
+        <name>zid</name>
+        <qualifiedname>scifir::zid::zid</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref> &amp;</type>
+          <declname>new_aid</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>new_country</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &gt; &amp;</type>
+          <declname>new_regions</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>new_zone</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="special_units/zid.hpp" line="19" column="10" bodyfile="special_units/zid.cpp" bodystart="21" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1zid_1a61aef7cc19022cde59e1f1c69a1d558b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::zid::zid</definition>
+        <argsstring>(const scifir::aid &amp;new_aid, const string &amp;init_zid)</argsstring>
+        <name>zid</name>
+        <qualifiedname>scifir::zid::zid</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref> &amp;</type>
+          <declname>new_aid</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_zid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="special_units/zid.hpp" line="20" column="10" bodyfile="special_units/zid.cpp" bodystart="24" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1zid_1a0a847289f85663f415cf896342620ae1" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::zid::zid</definition>
+        <argsstring>(const string &amp;init_zid_full)</argsstring>
         <name>zid</name>
         <qualifiedname>scifir::zid::zid</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_zid</defname>
+          <declname>init_zid_full</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -127,17 +179,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="19" column="10" bodyfile="special_units/zid.cpp" bodystart="20" bodyend="37"/>
+        <location file="special_units/zid.hpp" line="21" column="10" bodyfile="special_units/zid.cpp" bodystart="46" bodyend="49"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1zid_1a00b0a84256ead3c173948bbb86c06238" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1zid_1a9d6b62154c3fffa6e10bd7a4f8d9a03c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1zid" kindref="compound">zid</ref> &amp;</type>
         <definition>zid &amp; scifir::zid::operator=</definition>
-        <argsstring>(const zid &amp;)</argsstring>
+        <argsstring>(const zid &amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::zid::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1zid" kindref="compound">zid</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -145,17 +197,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="21" column="5" bodyfile="special_units/zid.cpp" bodystart="39" bodyend="45"/>
+        <location file="special_units/zid.hpp" line="23" column="5" bodyfile="special_units/zid.cpp" bodystart="51" bodyend="58"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1zid_1a26e365e28ff166b267983dfb401d5f34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1zid_1af08f3d603646b58a48d49cb5168c0a17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1zid" kindref="compound">zid</ref> &amp;</type>
         <definition>zid &amp; scifir::zid::operator=</definition>
-        <argsstring>(zid &amp;&amp;)</argsstring>
+        <argsstring>(zid &amp;&amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::zid::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1zid" kindref="compound">zid</ref> &amp;&amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -163,7 +215,101 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="22" column="5" bodyfile="special_units/zid.cpp" bodystart="47" bodyend="53"/>
+        <location file="special_units/zid.hpp" line="24" column="5" bodyfile="special_units/zid.cpp" bodystart="60" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1zid_1a5c6bfce663777ea298e25c3fc1592ae8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1zid" kindref="compound">zid</ref> &amp;</type>
+        <definition>zid &amp; scifir::zid::operator=</definition>
+        <argsstring>(const string &amp;init_zid_full)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::zid::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_zid_full</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="special_units/zid.hpp" line="25" column="5" bodyfile="special_units/zid.cpp" bodystart="69" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1zid_1a22ea002ba3cd88eaf33fe807e15bdbf8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <definition>bool scifir::zid::has_no_country</definition>
+        <argsstring>() const</argsstring>
+        <name>has_no_country</name>
+        <qualifiedname>scifir::zid::has_no_country</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="special_units/zid.hpp" line="27" column="6" bodyfile="special_units/zid.cpp" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1zid_1a954f08f912dd187108588aacbc5ad3c2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <definition>bool scifir::zid::has_unknown_country</definition>
+        <argsstring>() const</argsstring>
+        <name>has_unknown_country</name>
+        <qualifiedname>scifir::zid::has_unknown_country</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="special_units/zid.hpp" line="28" column="6" bodyfile="special_units/zid.cpp" bodystart="80" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1zid_1abb2467d428ccaa5ad0ad8be47f8a35cd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <definition>string scifir::zid::display</definition>
+        <argsstring>() const</argsstring>
+        <name>display</name>
+        <qualifiedname>scifir::zid::display</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="special_units/zid.hpp" line="30" column="8" bodyfile="special_units/zid.cpp" bodystart="85" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1zid_1ad9af6fe963a20b2f1afd43cac25c33e1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <definition>string scifir::zid::partial_display</definition>
+        <argsstring>() const</argsstring>
+        <name>partial_display</name>
+        <qualifiedname>scifir::zid::partial_display</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="special_units/zid.hpp" line="31" column="8" bodyfile="special_units/zid.cpp" bodystart="104" bodyend="121"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classscifir_1_1zid_1af59da9725af73b58fa85058665a94957" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::zid::initialize_from_string</definition>
+        <argsstring>(const string &amp;init_zid_full)</argsstring>
+        <name>initialize_from_string</name>
+        <qualifiedname>scifir::zid::initialize_from_string</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_zid_full</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="special_units/zid.hpp" line="39" column="6" bodyfile="special_units/zid.cpp" bodystart="123" bodyend="169"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -183,17 +329,25 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="special_units/zid.hpp" line="13" column="1" bodyfile="special_units/zid.hpp" bodystart="14" bodyend="28"/>
+    <location file="special_units/zid.hpp" line="13" column="1" bodyfile="special_units/zid.hpp" bodystart="14" bodyend="40"/>
     <listofallmembers>
       <member refid="classscifir_1_1zid_1a64c51e9d7f9bfed4a45b463d8b45116b" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>aid</name></member>
       <member refid="classscifir_1_1zid_1a3202ef05c7c725b58e0e413e329fd590" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>country</name></member>
-      <member refid="classscifir_1_1zid_1a00b0a84256ead3c173948bbb86c06238" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1zid_1a26e365e28ff166b267983dfb401d5f34" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1zid_1abb2467d428ccaa5ad0ad8be47f8a35cd" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>display</name></member>
+      <member refid="classscifir_1_1zid_1a22ea002ba3cd88eaf33fe807e15bdbf8" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>has_no_country</name></member>
+      <member refid="classscifir_1_1zid_1a954f08f912dd187108588aacbc5ad3c2" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>has_unknown_country</name></member>
+      <member refid="classscifir_1_1zid_1af59da9725af73b58fa85058665a94957" prot="private" virt="non-virtual"><scope>scifir::zid</scope><name>initialize_from_string</name></member>
+      <member refid="classscifir_1_1zid_1a9d6b62154c3fffa6e10bd7a4f8d9a03c" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1zid_1af08f3d603646b58a48d49cb5168c0a17" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1zid_1a5c6bfce663777ea298e25c3fc1592ae8" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1zid_1ad9af6fe963a20b2f1afd43cac25c33e1" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>partial_display</name></member>
       <member refid="classscifir_1_1zid_1a312733eaed75956e815a5422e70b6d5d" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>regions</name></member>
       <member refid="classscifir_1_1zid_1a3373cd61f91001d2fbd0d41906f73921" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>zid</name></member>
-      <member refid="classscifir_1_1zid_1a34bab9ef9c47452ff13f35270f78e6bc" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>zid</name></member>
-      <member refid="classscifir_1_1zid_1a5fbf9ce2bacc7fb7c1befcc9cc172cd0" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>zid</name></member>
-      <member refid="classscifir_1_1zid_1af173e828b97e9e26a8a42ca304f48571" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>zid</name></member>
+      <member refid="classscifir_1_1zid_1a1946b1fd42cbbe0b2764ff9bb7922cd9" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>zid</name></member>
+      <member refid="classscifir_1_1zid_1a42b1578b6c42c7662b648e34df7a1c08" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>zid</name></member>
+      <member refid="classscifir_1_1zid_1a2dd6a90683a044ff7e6ec19a5d1ddf09" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>zid</name></member>
+      <member refid="classscifir_1_1zid_1a61aef7cc19022cde59e1f1c69a1d558b" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>zid</name></member>
+      <member refid="classscifir_1_1zid_1a0a847289f85663f415cf896342620ae1" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>zid</name></member>
       <member refid="classscifir_1_1zid_1a3ef65cf7878c83b2222c2daf6f5f3f36" prot="public" virt="non-virtual"><scope>scifir::zid</scope><name>zone</name></member>
     </listofallmembers>
   </compounddef>

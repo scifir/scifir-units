@@ -22,40 +22,52 @@ scifir::coordinates_ndr< float >
 .RI "\fBcoordinates_ndr\fP (\fBconst\fP vector< \fBfloat\fP > &\fBnew_values\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP)"
+.RI "\fBcoordinates_ndr\fP (\fBfloat\fP \fBnew_x\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP, \fBconst\fP \fBfloat\fP &\fBnew_y\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.RI "\fBcoordinates_ndr\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBfloat\fP &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_polar_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.RI "\fBcoordinates_ndr\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_polar_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP, \fBconst\fP \fBfloat\fP &\fBnew_y\fP, \fBconst\fP \fBfloat\fP &\fBnew_z\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBcoordinates_ndr\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP, \fBfloat\fP \fBnew_z\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBfloat\fP &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_cylindrical_theta\fP, \fBconst\fP \fBfloat\fP &\fBnew_z\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBcoordinates_ndr\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_cylindrical_theta\fP, \fBfloat\fP \fBnew_z\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBfloat\fP &\fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_spherical_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_spherical_phi\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBcoordinates_ndr\fP (\fBfloat\fP \fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_spherical_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_spherical_phi\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBangle\fP &\fBnew_latitude\fP, \fBconst\fP \fBangle\fP &\fBnew_longitude\fP, \fBconst\fP \fBfloat\fP &\fBnew_altitude\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBangle\fP &\fBnew_latitude\fP, \fBconst\fP \fBangle\fP &\fBnew_longitude\fP, \fBfloat\fP \fBnew_altitude\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
 .br
 .ti -1c
 .RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBpoint_nd\fP< \fBfloat\fP > &\fBnew_point\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
 .br
 .ti -1c
+.RI "\fBcoordinates_ndr\fP (\fBpoint_nd\fP< \fBfloat\fP > &&\fBnew_point\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.br
+.ti -1c
 .RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBpoint_nd\fP< \fBfloat\fP > &\fBnew_point\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_ndr\fP (\fBpoint_nd\fP< \fBfloat\fP > &&\fBnew_point\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
 .br
 .ti -1c
 .RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBcoordinates_nd\fP< \fBfloat\fP > &\fBnew_coordinates\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
 .br
 .ti -1c
+.RI "\fBcoordinates_ndr\fP (\fBcoordinates_nd\fP< \fBfloat\fP > &&\fBnew_coordinates\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.br
+.ti -1c
 .RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBcoordinates_nd\fP< \fBfloat\fP > &\fBnew_coordinates\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_ndr\fP (\fBstring\fP \fBinit_coordinates_ndr\fP)"
+.RI "\fBcoordinates_ndr\fP (\fBcoordinates_nd\fP< \fBfloat\fP > &&\fBnew_coordinates\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_ndr\fP)"
 .br
 .ti -1c
 .RI "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBcoordinates_ndr\fP< \fBfloat\fP > &\fBx_coordinates\fP)"
@@ -67,7 +79,16 @@ scifir::coordinates_ndr< float >
 .RI "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBpoint_nd\fP< \fBfloat\fP > &\fBx_point\fP)"
 .br
 .ti -1c
+.RI "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBpoint_nd\fP< \fBfloat\fP > &&\fBx_point\fP)"
+.br
+.ti -1c
 .RI "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBcoordinates_nd\fP< \fBfloat\fP > &\fBx_coordinates\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBcoordinates_nd\fP< \fBfloat\fP > &&\fBx_coordinates\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_ndr\fP)"
 .br
 .ti -1c
 .RI "\fBbool\fP \fBis_nd\fP (\fBunsigned\fP \fBint\fP \fBi\fP) \fBconst\fP"
@@ -76,10 +97,10 @@ scifir::coordinates_ndr< float >
 .RI "\fBint\fP \fBget_nd\fP () \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBchange_nd\fP (\fBunsigned\fP \fBint\fP \fBi\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_values\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
+.RI "\fBvoid\fP \fBchange_nd\fP (\fBconst\fP vector< \fBfloat\fP > &\fBnew_values\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_angles\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBchange_nd\fP (\fBunsigned\fP \fBint\fP \fBi\fP, \fBconst\fP vector< \fBfloat\fP > &\fBnew_values\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBvoid\fP \fBchange_nd\fP (\fBconst\fP vector< \fBfloat\fP > &\fBnew_values\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
 .br
 .ti -1c
 .RI "\fBconst\fP vector< \fBfloat\fP > & \fBget_values\fP () \fBconst\fP"
@@ -133,67 +154,76 @@ scifir::coordinates_ndr< float >
 .RI "\fBvoid\fP \fBpoint_to\fP (direction::name x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP)"
+.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_x\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP, \fBconst\fP \fBfloat\fP &\fBnew_y\fP)"
+.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBfloat\fP &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP, \fBconst\fP \fBfloat\fP &\fBnew_y\fP, \fBconst\fP \fBfloat\fP &\fBnew_z\fP)"
+.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP, \fBfloat\fP \fBnew_z\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBfloat\fP &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBfloat\fP &\fBnew_z\fP)"
+.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBfloat\fP \fBnew_z\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBfloat\fP &\fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBangle\fP &\fBnew_latitude\fP, \fBconst\fP \fBangle\fP &\fBnew_longitude\fP, \fBconst\fP \fBfloat\fP &\fBnew_altitude\fP)"
+.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBangle\fP &\fBnew_latitude\fP, \fBconst\fP \fBangle\fP &\fBnew_longitude\fP, \fBfloat\fP \fBnew_altitude\fP)"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP vector< \fBfloat\fP > &\fBnew_values\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBrotate\fP (\fBint\fP \fBdimension_number\fP, \fBint\fP \fBaxis\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.RI "\fBvoid\fP \fBrotate_in_2d\fP (\fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP)"
+.RI "\fBvoid\fP \fBrotate_in_3d\fP (\fBint\fP \fBaxis\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_x\fP)"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBdisplacement_2d\fP &\fBx_displacement\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP, \fBconst\fP \fBfloat\fP &\fBnew_y\fP)"
+.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBfloat\fP &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBdisplacement_3d\fP &\fBx_displacement\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP, \fBconst\fP \fBfloat\fP &\fBnew_y\fP, \fBconst\fP \fBfloat\fP &\fBnew_z\fP)"
+.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP, \fBfloat\fP \fBnew_z\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBfloat\fP &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBfloat\fP &\fBnew_z\fP)"
+.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBfloat\fP \fBnew_z\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBfloat\fP &\fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
+.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_r\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP, \fBconst\fP \fBangle\fP &\fBnew_phi\fP)"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBdisplacement_nd\fP &\fBx_displacement\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBfloat\fP &\fBnew_r\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
+.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_r\fP, \fBconst\fP vector< \fBangle\fP > &\fBnew_angles\fP)"
 .br
 .ti -1c
 .RI "\fBfloat\fP \fBdistance_to_origin\fP () \fBconst\fP"
 .br
 .ti -1c
+.RI "\fBstring\fP \fBdisplay_cartesian_2d\fP () \fBconst\fP"
+.br
+.ti -1c
 .RI "\fBstring\fP \fBdisplay_polar\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBdisplay_cartesian_3d\fP () \fBconst\fP"
 .br
 .ti -1c
 .RI "\fBstring\fP \fBdisplay_cylindrical\fP () \fBconst\fP"
@@ -203,23 +233,6 @@ scifir::coordinates_ndr< float >
 .br
 .ti -1c
 .RI "\fBstring\fP \fBdisplay_geographical\fP () \fBconst\fP"
-.br
-.in -1c
-.SS "Public Attributes"
-
-.in +1c
-.ti -1c
-.RI "vector< \fBfloat\fP > \fBvalues\fP"
-.br
-.ti -1c
-.RI "vector< \fBangle\fP > \fBangles\fP"
-.br
-.in -1c
-.SS "Static Public Attributes"
-
-.in +1c
-.ti -1c
-.RI "\fBstatic\fP \fBfloat\fP \fBno_value\fP = 0"
 .br
 .in -1c
 

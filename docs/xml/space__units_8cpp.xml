@@ -32,7 +32,7 @@
         </childnode>
         <childnode refid="33" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -66,15 +66,19 @@
         <link refid="size__2d_8hpp_source"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
         <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="34">
+      <node id="35">
         <label>../special_units/size_3d.hpp</label>
         <link refid="size__3d_8hpp_source"/>
         <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
@@ -261,6 +265,12 @@
         <childnode refid="19" relation="include">
         </childnode>
       </node>
+      <node id="34">
+        <label>../util/types.hpp</label>
+        <link refid="types_8hpp_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
       <node id="11">
         <label>algorithm</label>
       </node>
@@ -334,27 +344,27 @@
 <codeline lineno="10"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(area,</highlight><highlight class="stringliteral">&quot;m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>area::area(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_2d&lt;length&gt;</ref>&amp;<sp/>x)<sp/>:<sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>()</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>area::area(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>size_2d&lt;length&gt;&amp;<sp/>x)<sp/>:<sp/>scalar_unit()</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">length</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_height</ref><sp/>=<sp/>x.height;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_height</ref>.change_dimensions(x.width);</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>=<sp/>x.width<sp/>*<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_height</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/>x_height<sp/>=<sp/>x.height;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_height.change_dimensions(x.width);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>=<sp/>x.width<sp/>*<sp/>x_height;</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(volume,</highlight><highlight class="stringliteral">&quot;m3&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>volume::volume(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;length&gt;</ref>&amp;<sp/>x)<sp/>:<sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>()</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>volume::volume(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>size_3d&lt;length&gt;&amp;<sp/>x)<sp/>:<sp/>scalar_unit()</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">length</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_height</ref><sp/>=<sp/>x.height;</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">length</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_depth</ref><sp/>=<sp/>x.depth;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_height</ref>.change_dimensions(x.width);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_depth</ref>.change_dimensions(x.width);</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>=<sp/>x.width<sp/>*<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_height</ref><sp/>*<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_depth</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/>x_height<sp/>=<sp/>x.height;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/>x_depth<sp/>=<sp/>x.depth;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_height.change_dimensions(x.width);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_depth.change_dimensions(x.width);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>=<sp/>x.width<sp/>*<sp/>x_height<sp/>*<sp/>x_depth;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">volume_4d</ref>,</highlight><highlight class="stringliteral">&quot;m4&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(volume_4d,</highlight><highlight class="stringliteral">&quot;m4&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">curvature</ref>,</highlight><highlight class="stringliteral">&quot;1/m&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(curvature,</highlight><highlight class="stringliteral">&quot;1/m&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="34"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="predefined_units/space_units.cpp"/>

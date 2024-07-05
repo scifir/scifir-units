@@ -7,8 +7,8 @@
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int8_t</ref></type>
         <name>type</name>
         <qualifiedname>scifir::dimension::type</qualifiedname>
-        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbac8a94140e11a195e2ca38e9862d4ad09" prot="public">
-          <name>none</name>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba0746ff0d9c5c3a726f1a3d0300b7a4ed" prot="public">
+          <name>NONE</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -16,6 +16,13 @@
         </enumvalue>
         <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba3ee1e0f6a85a67dce4a1c09f01e2c9c7" prot="public">
           <name>m</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad6c0ae707ede84a6b92174ca9b392b3f" prot="public">
+          <name>grade</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -252,6 +259,13 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba7a67e2f38936f370ec05123b37c51e50" prot="public">
+          <name>ly</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <enumvalue id="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba51636d7b44e8002a2df55216e728e421" prot="public">
           <name>AU</name>
           <briefdescription>
@@ -358,26 +372,26 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="31" column="1" bodyfile="units/dimension.hpp" bodystart="32" bodyend="34"/>
       </memberdef>
-      <memberdef kind="enum" id="classscifir_1_1dimension_1aa9bd3ebc2bce23e7d083fbe0daef6a85" prot="public" static="no" strong="no">
+      <memberdef kind="enum" id="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42a" prot="public" static="no" strong="no">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int8_t</ref></type>
-        <name>sign</name>
-        <qualifiedname>scifir::dimension::sign</qualifiedname>
-        <enumvalue id="classscifir_1_1dimension_1aa9bd3ebc2bce23e7d083fbe0daef6a85a156b4287aabe2725baa07abc29649f90" prot="public">
-          <name>NO_SIGN</name>
+        <name>position</name>
+        <qualifiedname>scifir::dimension::position</qualifiedname>
+        <enumvalue id="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aa96ba9e5aa7f5db3925455b97e07010e3" prot="public">
+          <name>NO_POSITION</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1aa9bd3ebc2bce23e7d083fbe0daef6a85a0418c7cb61d289d71fad61023d950639" prot="public">
-          <name>POSITIVE</name>
+        <enumvalue id="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aacb86e7508c6829a6b65a5a07ad18beb7" prot="public">
+          <name>NUMERATOR</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classscifir_1_1dimension_1aa9bd3ebc2bce23e7d083fbe0daef6a85ac9f47f586eb8e85e8f45155b2723a5c9" prot="public">
-          <name>NEGATIVE</name>
+        <enumvalue id="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aa5f7f521cd909b87f6b7747fcf2d39ce8" prot="public">
+          <name>DENOMINATOR</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -405,7 +419,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="63" column="16" bodyfile="units/dimension.hpp" bodystart="63" bodyend="-1"/>
+        <location file="units/dimension.hpp" line="62" column="16" bodyfile="units/dimension.hpp" bodystart="62" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1dimension_1ac08ab515fd4f392075352134d9f46517" prot="public" static="no" mutable="no">
         <type>dimension::type</type>
@@ -419,11 +433,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="64" column="17" bodyfile="units/dimension.hpp" bodystart="64" bodyend="-1"/>
+        <location file="units/dimension.hpp" line="63" column="17" bodyfile="units/dimension.hpp" bodystart="63" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classscifir_1_1dimension_1ac71d5f3c29a126657f64c4551e596050" prot="public" static="no" mutable="no">
-        <type>dimension::sign</type>
-        <definition>dimension::sign scifir::dimension::dimension_sign</definition>
+      <memberdef kind="variable" id="classscifir_1_1dimension_1a7c2bd8eaebee581289efe69d0aef9464" prot="public" static="no" mutable="no">
+        <type>dimension::position</type>
+        <definition>dimension::position scifir::dimension::dimension_sign</definition>
         <argsstring></argsstring>
         <name>dimension_sign</name>
         <qualifiedname>scifir::dimension::dimension_sign</qualifiedname>
@@ -433,7 +447,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="65" column="17" bodyfile="units/dimension.hpp" bodystart="65" bodyend="-1"/>
+        <location file="units/dimension.hpp" line="64" column="21" bodyfile="units/dimension.hpp" bodystart="64" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1dimension_1a7bfd16bfb8a3f44035d05a3377c04656" prot="public" static="no" mutable="no">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">char</ref></type>
@@ -447,7 +461,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="66" column="6" bodyfile="units/dimension.hpp" bodystart="66" bodyend="-1"/>
+        <location file="units/dimension.hpp" line="65" column="6" bodyfile="units/dimension.hpp" bodystart="65" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-static-attrib">
@@ -464,7 +478,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="156" column="12" bodyfile="units/dimension.hpp" bodystart="156" bodyend="-1"/>
+        <location file="units/dimension.hpp" line="155" column="12" bodyfile="units/dimension.hpp" bodystart="155" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1dimension_1aa9324596c50526bab5b142122dc02c49" prot="private" static="yes" mutable="no">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">map</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref>, <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &gt;</type>
@@ -479,7 +493,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="157" column="12" bodyfile="units/dimension.hpp" bodystart="157" bodyend="-1"/>
+        <location file="units/dimension.hpp" line="156" column="12" bodyfile="units/dimension.hpp" bodystart="156" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1dimension_1a55d272747e9394e95ec714e25f6fa9d8" prot="private" static="yes" mutable="no">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
@@ -494,7 +508,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="158" column="12" bodyfile="units/dimension.hpp" bodystart="158" bodyend="-1"/>
+        <location file="units/dimension.hpp" line="157" column="12" bodyfile="units/dimension.hpp" bodystart="157" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1dimension_1a820166609b11724ffc5e5b5376f02342" prot="private" static="yes" mutable="no">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">set</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &gt;</type>
@@ -509,7 +523,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="159" column="12" bodyfile="units/dimension.hpp" bodystart="159" bodyend="-1"/>
+        <location file="units/dimension.hpp" line="158" column="12" bodyfile="units/dimension.hpp" bodystart="158" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -527,14 +541,15 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="38" column="1" bodyfile="units/dimension.cpp" bodystart="23" bodyend="24"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1ae6ac4c776c24c251e95fcba1d1b8657f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1dimension_1a2f8ad34d7754e8af75db62592fce8040" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::dimension::dimension</definition>
-        <argsstring>(const dimension &amp;)</argsstring>
+        <argsstring>(const dimension &amp;x)</argsstring>
         <name>dimension</name>
         <qualifiedname>scifir::dimension::dimension</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -544,14 +559,15 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="39" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1afe0af315906a0fdd72c649ae44b3fff2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1dimension_1af7a65ca2a8db277c6ace714c0743e130" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::dimension::dimension</definition>
-        <argsstring>(dimension &amp;&amp;)</argsstring>
+        <argsstring>(dimension &amp;&amp;x)</argsstring>
         <name>dimension</name>
         <qualifiedname>scifir::dimension::dimension</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;&amp;</type>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -561,23 +577,23 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="40" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1aac39421adc73b9884111ec4d1be85ef5" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1dimension_1a7817c55516353aa4c3b5fd753c1fada4" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::dimension::dimension</definition>
-        <argsstring>(dimension::type, scifir::prefix::type, dimension::sign)</argsstring>
+        <argsstring>(dimension::type new_dimension_type, scifir::prefix::type new_prefix, dimension::position new_sign)</argsstring>
         <name>dimension</name>
         <qualifiedname>scifir::dimension::dimension</qualifiedname>
         <param>
           <type>dimension::type</type>
-          <defname>new_dimension_type</defname>
+          <declname>new_dimension_type</declname>
         </param>
         <param>
           <type>scifir::prefix::type</type>
-          <defname>new_prefix</defname>
+          <declname>new_prefix</declname>
         </param>
         <param>
-          <type>dimension::sign</type>
-          <defname>new_sign</defname>
+          <type>dimension::position</type>
+          <declname>new_sign</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -587,23 +603,23 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="41" column="10" bodyfile="units/dimension.cpp" bodystart="48" bodyend="49"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1a3bcb8ec82eb321efb8da8a274e15e988" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1dimension_1a083328dce72fff8b8d1663a7ddb5fbc0" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::dimension::dimension</definition>
-        <argsstring>(dimension::type, const scifir::prefix &amp;, dimension::sign)</argsstring>
+        <argsstring>(dimension::type new_dimension_type, const scifir::prefix &amp;new_prefix, dimension::position new_sign)</argsstring>
         <name>dimension</name>
         <qualifiedname>scifir::dimension::dimension</qualifiedname>
         <param>
           <type>dimension::type</type>
-          <defname>new_dimension_type</defname>
+          <declname>new_dimension_type</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1prefix" kindref="compound">scifir::prefix</ref> &amp;</type>
-          <defname>new_prefix</defname>
+          <declname>new_prefix</declname>
         </param>
         <param>
-          <type>dimension::sign</type>
-          <defname>new_sign</defname>
+          <type>dimension::position</type>
+          <declname>new_sign</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -613,19 +629,19 @@
         </inbodydescription>
         <location file="units/dimension.hpp" line="42" column="10" bodyfile="units/dimension.cpp" bodystart="51" bodyend="52"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1ae7e01579505c9e96c5d382b37e213ee3" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1dimension_1ac6f3d78d39989c41df7d997b98288c3f" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::dimension::dimension</definition>
-        <argsstring>(const string &amp;, dimension::sign)</argsstring>
+        <argsstring>(const string &amp;init_dimension, dimension::position new_sign)</argsstring>
         <name>dimension</name>
         <qualifiedname>scifir::dimension::dimension</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_dimension</defname>
+          <declname>init_dimension</declname>
         </param>
         <param>
-          <type>dimension::sign</type>
-          <defname>new_sign</defname>
+          <type>dimension::position</type>
+          <declname>new_sign</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -633,30 +649,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="43" column="10" bodyfile="units/dimension.cpp" bodystart="54" bodyend="273"/>
+        <location file="units/dimension.hpp" line="43" column="10" bodyfile="units/dimension.cpp" bodystart="54" bodyend="281"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1a09655f036904edb3ca032f3b8e0f44f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>scifir::dimension::~dimension</definition>
-        <argsstring>()</argsstring>
-        <name>~dimension</name>
-        <qualifiedname>scifir::dimension::~dimension</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="units/dimension.hpp" line="45" column="1" bodyfile="units/dimension.cpp" bodystart="275" bodyend="278"/>
-      </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1a348a8dcea14d7cb65e1bc54bc54acd2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1dimension_1a8ce25fd81b3cb3476da56557cc7ed74c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
         <definition>dimension &amp; scifir::dimension::operator=</definition>
-        <argsstring>(const dimension &amp;)</argsstring>
+        <argsstring>(const dimension &amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::dimension::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -664,16 +667,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="47" column="11"/>
+        <location file="units/dimension.hpp" line="45" column="11"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1dimension_1a3d3aa50b1228d74b4046a7c7b44f9748" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1dimension_1af47c63fbf5b38eb3b93160d58e49a02e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
         <definition>dimension &amp; scifir::dimension::operator=</definition>
-        <argsstring>(dimension &amp;&amp;)</argsstring>
+        <argsstring>(dimension &amp;&amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::dimension::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;&amp;</type>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -681,7 +685,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="48" column="11"/>
+        <location file="units/dimension.hpp" line="46" column="11"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1dimension_1acc91dc0871ed7b4ea53d456ddd76432a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
@@ -695,7 +699,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="50" column="8" bodyfile="units/dimension.cpp" bodystart="318" bodyend="422"/>
+        <location file="units/dimension.hpp" line="48" column="8" bodyfile="units/dimension.cpp" bodystart="321" bodyend="429"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1dimension_1a183a0598a8fa71a5be70460dbf039d9d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
@@ -709,7 +713,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="51" column="8" bodyfile="units/dimension.cpp" bodystart="424" bodyend="538"/>
+        <location file="units/dimension.hpp" line="49" column="8" bodyfile="units/dimension.cpp" bodystart="431" bodyend="554"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1dimension_1a8618abfdcd67be2f677de2fd5bab3ffe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
@@ -723,7 +727,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="52" column="13" bodyfile="units/dimension.cpp" bodystart="540" bodyend="644"/>
+        <location file="units/dimension.hpp" line="50" column="13" bodyfile="units/dimension.cpp" bodystart="556" bodyend="664"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1dimension_1af185d8d42aa2cfcf396f5b90d34a9f7c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
@@ -737,7 +741,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="53" column="13" bodyfile="units/dimension.cpp" bodystart="646" bodyend="649"/>
+        <location file="units/dimension.hpp" line="51" column="13" bodyfile="units/dimension.cpp" bodystart="666" bodyend="669"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1dimension_1a7652621ccb07137367c93f7b4b0f82be" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+        <definition>long double scifir::dimension::prefix_math</definition>
+        <argsstring>(const prefix &amp;x_prefix) const</argsstring>
+        <name>prefix_math</name>
+        <qualifiedname>scifir::dimension::prefix_math</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1prefix" kindref="compound">prefix</ref> &amp;</type>
+          <declname>x_prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/dimension.hpp" line="52" column="13" bodyfile="units/dimension.cpp" bodystart="671" bodyend="681"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1dimension_1a364c74c6fca013618c363126d32ab203" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
@@ -751,7 +773,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="55" column="6" bodyfile="units/dimension.cpp" bodystart="651" bodyend="755"/>
+        <location file="units/dimension.hpp" line="54" column="6" bodyfile="units/dimension.cpp" bodystart="683" bodyend="791"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1dimension_1a5332dc5feb3942e33644dd81ef131772" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
@@ -765,7 +787,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="56" column="6" bodyfile="units/dimension.cpp" bodystart="757" bodyend="861"/>
+        <location file="units/dimension.hpp" line="55" column="6" bodyfile="units/dimension.cpp" bodystart="793" bodyend="901"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1dimension_1a8c56be1126721255410d7ae9ffebbd66" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
@@ -779,7 +801,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="57" column="6" bodyfile="units/dimension.cpp" bodystart="863" bodyend="866"/>
+        <location file="units/dimension.hpp" line="56" column="6" bodyfile="units/dimension.cpp" bodystart="903" bodyend="906"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1dimension_1abbb3e89b508150798110c3b27ecb0a6b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt;</type>
@@ -793,7 +815,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="59" column="8" bodyfile="units/dimension.cpp" bodystart="868" bodyend="1094"/>
+        <location file="units/dimension.hpp" line="58" column="8" bodyfile="units/dimension.cpp" bodystart="908" bodyend="1140"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1dimension_1aace9b9b916e5e9c1037685bd17340fae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -807,7 +829,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="61" column="6" bodyfile="units/dimension.cpp" bodystart="1096" bodyend="1106"/>
+        <location file="units/dimension.hpp" line="60" column="6" bodyfile="units/dimension.cpp" bodystart="1142" bodyend="1152"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-func">
@@ -831,7 +853,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="68" column="13" bodyfile="units/dimension.hpp" bodystart="68" bodyend="74"/>
+        <location file="units/dimension.hpp" line="67" column="13" bodyfile="units/dimension.hpp" bodystart="67" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1dimension_1aed662b0cb0da957737eddaddbaaa5192" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">char</ref> *</type>
@@ -849,7 +871,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="76" column="13" bodyfile="units/dimension.hpp" bodystart="76" bodyend="132"/>
+        <location file="units/dimension.hpp" line="75" column="13" bodyfile="units/dimension.hpp" bodystart="75" bodyend="131"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1dimension_1a1d5cb847a8286d1ccbc4194849b7b676" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
@@ -867,7 +889,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/dimension.hpp" line="134" column="15" bodyfile="units/dimension.hpp" bodystart="134" bodyend="153"/>
+        <location file="units/dimension.hpp" line="133" column="15" bodyfile="units/dimension.hpp" bodystart="133" bodyend="152"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -887,7 +909,7 @@
         <link refid="classscifir_1_1prefix"/>
       </node>
     </collaborationgraph>
-    <location file="units/dimension.hpp" line="28" column="1" bodyfile="units/dimension.hpp" bodystart="29" bodyend="160"/>
+    <location file="units/dimension.hpp" line="28" column="1" bodyfile="units/dimension.hpp" bodystart="29" bodyend="159"/>
     <listofallmembers>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad133a0df68a14a52b6ecbfbb8065ed32" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>A</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba43546ef403f062e50368eb66c7f883b2" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>amu</name></member>
@@ -906,13 +928,14 @@
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba7aa910575755b3327b0e21faec32c22e" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>custom_full_symbol</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba15d8d0a20e6e9c94ff955cd2454055f6" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>d</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbaec0a4aeb09bbe8d0e7446bf43cb0f44b" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>Da</name></member>
+      <member refid="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aa5f7f521cd909b87f6b7747fcf2d39ce8" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>DENOMINATOR</name></member>
       <member refid="classscifir_1_1dimension_1ae1c538b135e5d594e0c694d6fe5611af" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
-      <member refid="classscifir_1_1dimension_1ae6ac4c776c24c251e95fcba1d1b8657f" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
-      <member refid="classscifir_1_1dimension_1afe0af315906a0fdd72c649ae44b3fff2" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
-      <member refid="classscifir_1_1dimension_1aac39421adc73b9884111ec4d1be85ef5" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
-      <member refid="classscifir_1_1dimension_1a3bcb8ec82eb321efb8da8a274e15e988" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
-      <member refid="classscifir_1_1dimension_1ae7e01579505c9e96c5d382b37e213ee3" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
-      <member refid="classscifir_1_1dimension_1ac71d5f3c29a126657f64c4551e596050" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension_sign</name></member>
+      <member refid="classscifir_1_1dimension_1a2f8ad34d7754e8af75db62592fce8040" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
+      <member refid="classscifir_1_1dimension_1af7a65ca2a8db277c6ace714c0743e130" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
+      <member refid="classscifir_1_1dimension_1a7817c55516353aa4c3b5fd753c1fada4" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
+      <member refid="classscifir_1_1dimension_1a083328dce72fff8b8d1663a7ddb5fbc0" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
+      <member refid="classscifir_1_1dimension_1ac6f3d78d39989c41df7d997b98288c3f" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension</name></member>
+      <member refid="classscifir_1_1dimension_1a7c2bd8eaebee581289efe69d0aef9464" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension_sign</name></member>
       <member refid="classscifir_1_1dimension_1ac08ab515fd4f392075352134d9f46517" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>dimension_type</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba90f4f3d0c1afd0f53c911a41c0747853" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>eV</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba2c0ca25e881f311dc9c4249552b86e21" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>F</name></member>
@@ -923,6 +946,7 @@
       <member refid="classscifir_1_1dimension_1a1d5cb847a8286d1ccbc4194849b7b676" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>get_full_symbol</name></member>
       <member refid="classscifir_1_1dimension_1acc91dc0871ed7b4ea53d456ddd76432a" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>get_name</name></member>
       <member refid="classscifir_1_1dimension_1a183a0598a8fa71a5be70460dbf039d9d" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>get_symbol</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad6c0ae707ede84a6b92174ca9b392b3f" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>grade</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba55ee28f25670250226e79fa521df017d" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>Gy</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba0432aa967bb3b6d3f29209431042c706" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>H</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba1132803a841a4d0793b2a446fe5e06e5" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>h</name></member>
@@ -937,6 +961,7 @@
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbafccf430a248174ba0453cf635915a72f" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>L</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab439b886fe9d0335531a24748337671f" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>lm</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbaf687b6eaf06116663bf10fe3161b7d8b" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>lx</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba7a67e2f38936f370ec05123b37c51e50" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>ly</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba09c9fc1bf78c98a7ef4cd7ca681bf1e2" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>M</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba3ee1e0f6a85a67dce4a1c09f01e2c9c7" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>m</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab15ca3956bf9435bc467ea786cd04bf9" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>memo</name></member>
@@ -944,24 +969,24 @@
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba9e7bc2b89e4c6bd4b4fa9137d5dbc7a6" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>mol</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba24f50ae11e83227dd59d242ba2f4c8ff" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>money</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbada162a2bf0aae4c1c1a7a5d3b392f7d4" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>N</name></member>
-      <member refid="classscifir_1_1dimension_1aa9bd3ebc2bce23e7d083fbe0daef6a85ac9f47f586eb8e85e8f45155b2723a5c9" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>NEGATIVE</name></member>
-      <member refid="classscifir_1_1dimension_1aa9bd3ebc2bce23e7d083fbe0daef6a85a156b4287aabe2725baa07abc29649f90" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>NO_SIGN</name></member>
-      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbac8a94140e11a195e2ca38e9862d4ad09" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>none</name></member>
+      <member refid="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aa96ba9e5aa7f5db3925455b97e07010e3" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>NO_POSITION</name></member>
+      <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba0746ff0d9c5c3a726f1a3d0300b7a4ed" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>NONE</name></member>
+      <member refid="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42aacb86e7508c6829a6b65a5a07ad18beb7" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>NUMERATOR</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad870bf7275c53d257065bea242b5a471" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>Ohm</name></member>
-      <member refid="classscifir_1_1dimension_1a348a8dcea14d7cb65e1bc54bc54acd2a" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1dimension_1a3d3aa50b1228d74b4046a7c7b44f9748" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1dimension_1a8ce25fd81b3cb3476da56557cc7ed74c" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1dimension_1af47c63fbf5b38eb3b93160d58e49a02e" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>operator=</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad384b88e38dec33f38c70e4ecac5cc90" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>Pa</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbad8c5fea857da0928b5359ff0e2359c8f" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>particles</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba842813110e94383b6c4a008dfdde523e" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>pc</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba308a5945a7421b7a1438f8ca9ed157e2" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>pixel</name></member>
-      <member refid="classscifir_1_1dimension_1aa9bd3ebc2bce23e7d083fbe0daef6a85a0418c7cb61d289d71fad61023d950639" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>POSITIVE</name></member>
+      <member refid="classscifir_1_1dimension_1a0c5cc98c4cc5074dc6d68b9d36aff42a" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>position</name></member>
       <member refid="classscifir_1_1dimension_1aa69c7afee780da0c32fe00a891827ffa" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>prefix</name></member>
       <member refid="classscifir_1_1dimension_1af185d8d42aa2cfcf396f5b90d34a9f7c" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>prefix_math</name></member>
+      <member refid="classscifir_1_1dimension_1a7652621ccb07137367c93f7b4b0f82be" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>prefix_math</name></member>
       <member refid="classscifir_1_1dimension_1a820166609b11724ffc5e5b5376f02342" prot="private" virt="non-virtual"><scope>scifir::dimension</scope><name>prefixes_options</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba155f1a68a6bd9d4cfb7376f4dbcb38e2" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>radian</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba550b3c8f08b4a7fe4d3f52ae6679e53e" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>S</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbab7081010542c35107fd753dd2611734d" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>s</name></member>
-      <member refid="classscifir_1_1dimension_1aa9bd3ebc2bce23e7d083fbe0daef6a85" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>sign</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba6975a95a363145b5ce70fcc623a740e3" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>steradian</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba0211b0783277afad2aa3a974a7b1d97b" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>Sv</name></member>
       <member refid="classscifir_1_1dimension_1a7bfd16bfb8a3f44035d05a3377c04656" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>symbol</name></member>
@@ -971,7 +996,6 @@
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba5e3845aae4d42c18c680b3c07ee64f5e" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>V</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fbada9ccc349f5311acf67b1efc32f3fceb" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>W</name></member>
       <member refid="classscifir_1_1dimension_1a7159ee72510ebcc26ee93da8900fb9fba524e3d9a0d74fea5c38c8b00804357b7" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>Wb</name></member>
-      <member refid="classscifir_1_1dimension_1a09655f036904edb3ca032f3b8e0f44f4" prot="public" virt="non-virtual"><scope>scifir::dimension</scope><name>~dimension</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

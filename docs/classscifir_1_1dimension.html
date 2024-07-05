@@ -97,99 +97,101 @@ Collaboration diagram for scifir::dimension:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a7159ee72510ebcc26ee93da8900fb9fb" id="r_a7159ee72510ebcc26ee93da8900fb9fb"><td class="memItemLeft" align="right" valign="top"><a id="a7159ee72510ebcc26ee93da8900fb9fb" name="a7159ee72510ebcc26ee93da8900fb9fb"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>type</b> : int8_t { <br />
-&#160;&#160;<b>none</b>
+&#160;&#160;<b>NONE</b>
 , <b>m</b>
+, <b>grade</b>
 , <b>radian</b>
-, <b>steradian</b>
 , <br />
-&#160;&#160;<b>s</b>
+&#160;&#160;<b>steradian</b>
+, <b>s</b>
 , <b>g</b>
 , <b>C</b>
-, <b>K</b>
 , <br />
-&#160;&#160;<b>mol</b>
+&#160;&#160;<b>K</b>
+, <b>mol</b>
 , <b>cd</b>
 , <b>B</b>
-, <b>Hz</b>
 , <br />
-&#160;&#160;<b>N</b>
+&#160;&#160;<b>Hz</b>
+, <b>N</b>
 , <b>Pa</b>
 , <b>J</b>
-, <b>W</b>
 , <br />
-&#160;&#160;<b>A</b>
+&#160;&#160;<b>W</b>
+, <b>A</b>
 , <b>V</b>
 , <b>F</b>
-, <b>Ohm</b>
 , <br />
-&#160;&#160;<b>S</b>
+&#160;&#160;<b>Ohm</b>
+, <b>S</b>
 , <b>Wb</b>
 , <b>T</b>
-, <b>H</b>
 , <br />
-&#160;&#160;<b>lm</b>
+&#160;&#160;<b>H</b>
+, <b>lm</b>
 , <b>lx</b>
 , <b>Bq</b>
-, <b>Gy</b>
 , <br />
-&#160;&#160;<b>Sv</b>
+&#160;&#160;<b>Gy</b>
+, <b>Sv</b>
 , <b>kat</b>
 , <b>angstrom</b>
-, <b>L</b>
 , <br />
-&#160;&#160;<b>minute</b>
+&#160;&#160;<b>L</b>
+, <b>minute</b>
 , <b>h</b>
 , <b>d</b>
+, <br />
+&#160;&#160;<b>ly</b>
 , <b>AU</b>
-, <br />
-&#160;&#160;<b>pc</b>
+, <b>pc</b>
 , <b>eV</b>
-, <b>Da</b>
+, <br />
+&#160;&#160;<b>Da</b>
 , <b>amu</b>
-, <br />
-&#160;&#160;<b>barn</b>
+, <b>barn</b>
 , <b>M</b>
-, <b>particles</b>
+, <br />
+&#160;&#160;<b>particles</b>
 , <b>custom</b>
-, <br />
-&#160;&#160;<b>custom_basic</b>
+, <b>custom_basic</b>
 , <b>custom_full_symbol</b>
-, <b>money</b>
-, <b>pixel</b>
 , <br />
-&#160;&#160;<b>memo</b>
+&#160;&#160;<b>money</b>
+, <b>pixel</b>
+, <b>memo</b>
 <br />
  }</td></tr>
 <tr class="separator:a7159ee72510ebcc26ee93da8900fb9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9bd3ebc2bce23e7d083fbe0daef6a85" id="r_aa9bd3ebc2bce23e7d083fbe0daef6a85"><td class="memItemLeft" align="right" valign="top"><a id="aa9bd3ebc2bce23e7d083fbe0daef6a85" name="aa9bd3ebc2bce23e7d083fbe0daef6a85"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>sign</b> : int8_t { <b>NO_SIGN</b>
-, <b>POSITIVE</b>
-, <b>NEGATIVE</b>
+<tr class="memitem:a0c5cc98c4cc5074dc6d68b9d36aff42a" id="r_a0c5cc98c4cc5074dc6d68b9d36aff42a"><td class="memItemLeft" align="right" valign="top"><a id="a0c5cc98c4cc5074dc6d68b9d36aff42a" name="a0c5cc98c4cc5074dc6d68b9d36aff42a"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>position</b> : int8_t { <b>NO_POSITION</b>
+, <b>NUMERATOR</b>
+, <b>DENOMINATOR</b>
  }</td></tr>
-<tr class="separator:aa9bd3ebc2bce23e7d083fbe0daef6a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a0c5cc98c4cc5074dc6d68b9d36aff42a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae6ac4c776c24c251e95fcba1d1b8657f" id="r_ae6ac4c776c24c251e95fcba1d1b8657f"><td class="memItemLeft" align="right" valign="top"><a id="ae6ac4c776c24c251e95fcba1d1b8657f" name="ae6ac4c776c24c251e95fcba1d1b8657f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b> (<a class="el" href="classscifir_1_1coordinates__1d.html">const</a> <a class="el" href="classscifir_1_1dimension.html">dimension</a> &amp;)</td></tr>
-<tr class="separator:ae6ac4c776c24c251e95fcba1d1b8657f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe0af315906a0fdd72c649ae44b3fff2" id="r_afe0af315906a0fdd72c649ae44b3fff2"><td class="memItemLeft" align="right" valign="top"><a id="afe0af315906a0fdd72c649ae44b3fff2" name="afe0af315906a0fdd72c649ae44b3fff2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b> (<a class="el" href="classscifir_1_1dimension.html">dimension</a> &amp;&amp;)</td></tr>
-<tr class="separator:afe0af315906a0fdd72c649ae44b3fff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac39421adc73b9884111ec4d1be85ef5" id="r_aac39421adc73b9884111ec4d1be85ef5"><td class="memItemLeft" align="right" valign="top"><a id="aac39421adc73b9884111ec4d1be85ef5" name="aac39421adc73b9884111ec4d1be85ef5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b> (dimension::type, scifir::prefix::type, dimension::sign)</td></tr>
-<tr class="separator:aac39421adc73b9884111ec4d1be85ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bcb8ec82eb321efb8da8a274e15e988" id="r_a3bcb8ec82eb321efb8da8a274e15e988"><td class="memItemLeft" align="right" valign="top"><a id="a3bcb8ec82eb321efb8da8a274e15e988" name="a3bcb8ec82eb321efb8da8a274e15e988"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b> (dimension::type, <a class="el" href="classscifir_1_1coordinates__1d.html">const</a> <a class="el" href="classscifir_1_1prefix.html">scifir::prefix</a> &amp;, dimension::sign)</td></tr>
-<tr class="separator:a3bcb8ec82eb321efb8da8a274e15e988"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7e01579505c9e96c5d382b37e213ee3" id="r_ae7e01579505c9e96c5d382b37e213ee3"><td class="memItemLeft" align="right" valign="top"><a id="ae7e01579505c9e96c5d382b37e213ee3" name="ae7e01579505c9e96c5d382b37e213ee3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b> (<a class="el" href="classscifir_1_1coordinates__1d.html">const</a> <a class="el" href="classscifir_1_1coordinates__1d.html">string</a> &amp;, dimension::sign)</td></tr>
-<tr class="separator:ae7e01579505c9e96c5d382b37e213ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a348a8dcea14d7cb65e1bc54bc54acd2a" id="r_a348a8dcea14d7cb65e1bc54bc54acd2a"><td class="memItemLeft" align="right" valign="top"><a id="a348a8dcea14d7cb65e1bc54bc54acd2a" name="a348a8dcea14d7cb65e1bc54bc54acd2a"></a>
-<a class="el" href="classscifir_1_1dimension.html">dimension</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classscifir_1_1coordinates__1d.html">const</a> <a class="el" href="classscifir_1_1dimension.html">dimension</a> &amp;)</td></tr>
-<tr class="separator:a348a8dcea14d7cb65e1bc54bc54acd2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d3aa50b1228d74b4046a7c7b44f9748" id="r_a3d3aa50b1228d74b4046a7c7b44f9748"><td class="memItemLeft" align="right" valign="top"><a id="a3d3aa50b1228d74b4046a7c7b44f9748" name="a3d3aa50b1228d74b4046a7c7b44f9748"></a>
-<a class="el" href="classscifir_1_1dimension.html">dimension</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classscifir_1_1dimension.html">dimension</a> &amp;&amp;)</td></tr>
-<tr class="separator:a3d3aa50b1228d74b4046a7c7b44f9748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f8ad34d7754e8af75db62592fce8040" id="r_a2f8ad34d7754e8af75db62592fce8040"><td class="memItemLeft" align="right" valign="top"><a id="a2f8ad34d7754e8af75db62592fce8040" name="a2f8ad34d7754e8af75db62592fce8040"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b> (<a class="el" href="classscifir_1_1coordinates__1d.html">const</a> <a class="el" href="classscifir_1_1dimension.html">dimension</a> &amp;x)</td></tr>
+<tr class="separator:a2f8ad34d7754e8af75db62592fce8040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a65ca2a8db277c6ace714c0743e130" id="r_af7a65ca2a8db277c6ace714c0743e130"><td class="memItemLeft" align="right" valign="top"><a id="af7a65ca2a8db277c6ace714c0743e130" name="af7a65ca2a8db277c6ace714c0743e130"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b> (<a class="el" href="classscifir_1_1dimension.html">dimension</a> &amp;&amp;x)</td></tr>
+<tr class="separator:af7a65ca2a8db277c6ace714c0743e130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7817c55516353aa4c3b5fd753c1fada4" id="r_a7817c55516353aa4c3b5fd753c1fada4"><td class="memItemLeft" align="right" valign="top"><a id="a7817c55516353aa4c3b5fd753c1fada4" name="a7817c55516353aa4c3b5fd753c1fada4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b> (dimension::type <a class="el" href="classscifir_1_1coordinates__1d.html">new_dimension_type</a>, scifir::prefix::type <a class="el" href="classscifir_1_1coordinates__1d.html">new_prefix</a>, dimension::position <a class="el" href="classscifir_1_1coordinates__1d.html">new_sign</a>)</td></tr>
+<tr class="separator:a7817c55516353aa4c3b5fd753c1fada4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a083328dce72fff8b8d1663a7ddb5fbc0" id="r_a083328dce72fff8b8d1663a7ddb5fbc0"><td class="memItemLeft" align="right" valign="top"><a id="a083328dce72fff8b8d1663a7ddb5fbc0" name="a083328dce72fff8b8d1663a7ddb5fbc0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b> (dimension::type <a class="el" href="classscifir_1_1coordinates__1d.html">new_dimension_type</a>, <a class="el" href="classscifir_1_1coordinates__1d.html">const</a> <a class="el" href="classscifir_1_1prefix.html">scifir::prefix</a> &amp;<a class="el" href="classscifir_1_1coordinates__1d.html">new_prefix</a>, dimension::position <a class="el" href="classscifir_1_1coordinates__1d.html">new_sign</a>)</td></tr>
+<tr class="separator:a083328dce72fff8b8d1663a7ddb5fbc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6f3d78d39989c41df7d997b98288c3f" id="r_ac6f3d78d39989c41df7d997b98288c3f"><td class="memItemLeft" align="right" valign="top"><a id="ac6f3d78d39989c41df7d997b98288c3f" name="ac6f3d78d39989c41df7d997b98288c3f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b> (<a class="el" href="classscifir_1_1coordinates__1d.html">const</a> <a class="el" href="classscifir_1_1coordinates__1d.html">string</a> &amp;<a class="el" href="classscifir_1_1coordinates__1d.html">init_dimension</a>, dimension::position <a class="el" href="classscifir_1_1coordinates__1d.html">new_sign</a>)</td></tr>
+<tr class="separator:ac6f3d78d39989c41df7d997b98288c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ce25fd81b3cb3476da56557cc7ed74c" id="r_a8ce25fd81b3cb3476da56557cc7ed74c"><td class="memItemLeft" align="right" valign="top"><a id="a8ce25fd81b3cb3476da56557cc7ed74c" name="a8ce25fd81b3cb3476da56557cc7ed74c"></a>
+<a class="el" href="classscifir_1_1dimension.html">dimension</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classscifir_1_1coordinates__1d.html">const</a> <a class="el" href="classscifir_1_1dimension.html">dimension</a> &amp;x)</td></tr>
+<tr class="separator:a8ce25fd81b3cb3476da56557cc7ed74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af47c63fbf5b38eb3b93160d58e49a02e" id="r_af47c63fbf5b38eb3b93160d58e49a02e"><td class="memItemLeft" align="right" valign="top"><a id="af47c63fbf5b38eb3b93160d58e49a02e" name="af47c63fbf5b38eb3b93160d58e49a02e"></a>
+<a class="el" href="classscifir_1_1dimension.html">dimension</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classscifir_1_1dimension.html">dimension</a> &amp;&amp;x)</td></tr>
+<tr class="separator:af47c63fbf5b38eb3b93160d58e49a02e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc91dc0871ed7b4ea53d456ddd76432a" id="r_acc91dc0871ed7b4ea53d456ddd76432a"><td class="memItemLeft" align="right" valign="top"><a id="acc91dc0871ed7b4ea53d456ddd76432a" name="acc91dc0871ed7b4ea53d456ddd76432a"></a>
 <a class="el" href="classscifir_1_1coordinates__1d.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_name</b> () <a class="el" href="classscifir_1_1coordinates__1d.html">const</a></td></tr>
 <tr class="separator:acc91dc0871ed7b4ea53d456ddd76432a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,6 +204,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af185d8d42aa2cfcf396f5b90d34a9f7c" id="r_af185d8d42aa2cfcf396f5b90d34a9f7c"><td class="memItemLeft" align="right" valign="top"><a id="af185d8d42aa2cfcf396f5b90d34a9f7c" name="af185d8d42aa2cfcf396f5b90d34a9f7c"></a>
 <a class="el" href="classscifir_1_1coordinates__1d.html">long</a> <a class="el" href="classscifir_1_1coordinates__1d.html">double</a>&#160;</td><td class="memItemRight" valign="bottom"><b>prefix_math</b> () <a class="el" href="classscifir_1_1coordinates__1d.html">const</a></td></tr>
 <tr class="separator:af185d8d42aa2cfcf396f5b90d34a9f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7652621ccb07137367c93f7b4b0f82be" id="r_a7652621ccb07137367c93f7b4b0f82be"><td class="memItemLeft" align="right" valign="top"><a id="a7652621ccb07137367c93f7b4b0f82be" name="a7652621ccb07137367c93f7b4b0f82be"></a>
+<a class="el" href="classscifir_1_1coordinates__1d.html">long</a> <a class="el" href="classscifir_1_1coordinates__1d.html">double</a>&#160;</td><td class="memItemRight" valign="bottom"><b>prefix_math</b> (<a class="el" href="classscifir_1_1coordinates__1d.html">const</a> <a class="el" href="classscifir_1_1prefix.html">prefix</a> &amp;<a class="el" href="classscifir_1_1coordinates__1d.html">x_prefix</a>) <a class="el" href="classscifir_1_1coordinates__1d.html">const</a></td></tr>
+<tr class="separator:a7652621ccb07137367c93f7b4b0f82be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a364c74c6fca013618c363126d32ab203" id="r_a364c74c6fca013618c363126d32ab203"><td class="memItemLeft" align="right" valign="top"><a id="a364c74c6fca013618c363126d32ab203" name="a364c74c6fca013618c363126d32ab203"></a>
 <a class="el" href="classscifir_1_1coordinates__1d.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>is_simple_dimension</b> () <a class="el" href="classscifir_1_1coordinates__1d.html">const</a></td></tr>
 <tr class="separator:a364c74c6fca013618c363126d32ab203"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -238,9 +243,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ac08ab515fd4f392075352134d9f46517" id="r_ac08ab515fd4f392075352134d9f46517"><td class="memItemLeft" align="right" valign="top"><a id="ac08ab515fd4f392075352134d9f46517" name="ac08ab515fd4f392075352134d9f46517"></a>
 dimension::type&#160;</td><td class="memItemRight" valign="bottom"><b>dimension_type</b></td></tr>
 <tr class="separator:ac08ab515fd4f392075352134d9f46517"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac71d5f3c29a126657f64c4551e596050" id="r_ac71d5f3c29a126657f64c4551e596050"><td class="memItemLeft" align="right" valign="top"><a id="ac71d5f3c29a126657f64c4551e596050" name="ac71d5f3c29a126657f64c4551e596050"></a>
-dimension::sign&#160;</td><td class="memItemRight" valign="bottom"><b>dimension_sign</b></td></tr>
-<tr class="separator:ac71d5f3c29a126657f64c4551e596050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c2bd8eaebee581289efe69d0aef9464" id="r_a7c2bd8eaebee581289efe69d0aef9464"><td class="memItemLeft" align="right" valign="top"><a id="a7c2bd8eaebee581289efe69d0aef9464" name="a7c2bd8eaebee581289efe69d0aef9464"></a>
+dimension::position&#160;</td><td class="memItemRight" valign="bottom"><b>dimension_sign</b></td></tr>
+<tr class="separator:a7c2bd8eaebee581289efe69d0aef9464"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bfd16bfb8a3f44035d05a3377c04656" id="r_a7bfd16bfb8a3f44035d05a3377c04656"><td class="memItemLeft" align="right" valign="top"><a id="a7bfd16bfb8a3f44035d05a3377c04656" name="a7bfd16bfb8a3f44035d05a3377c04656"></a>
 <a class="el" href="classscifir_1_1coordinates__1d.html">char</a>&#160;</td><td class="memItemRight" valign="bottom"><b>symbol</b> [3]</td></tr>
 <tr class="separator:a7bfd16bfb8a3f44035d05a3377c04656"><td class="memSeparator" colspan="2">&#160;</td></tr>

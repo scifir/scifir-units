@@ -2,7 +2,7 @@ var indexSectionsWithContent =
 {
   0: "123abcdfilmnopstuvwz",
   1: "acdilmpstvz",
-  2: "cilnstu"
+  2: "cdilnstu"
 };
 
 var indexSectionNames =

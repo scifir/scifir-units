@@ -4,7 +4,7 @@
 \Hypertarget{index_md_README}%
  \href{https://github.com/scifir/scifir-units/actions/workflows/cmake.yml}{\texttt{ }}
 
-Welcome! The {\bfseries{Scifir Collection}} is a set of scientific libraries for developing {\bfseries{laboratory machines}} and {\bfseries{scientific inventions}}. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
+Welcome! The {\bfseries{Scifir Collection}} is a set of scientific libraries, written in {\bfseries{C++}}, for developing {\bfseries{laboratory machines}} and {\bfseries{scientific inventions}}. It provides units, molecules, among other features, to allow developers of scientific software to develop their software and firmware easily. Enjoy!
 
 The Scifir Collection is under development, but the units are already released. Molecules aren\textquotesingle{}t, but they will by ready soon!
 
@@ -232,25 +232,25 @@ The meca numbers are special numbers that don\textquotesingle{}t behave exactly 
 
 \begin{DoxyItemize}
 \item angle.
-\item complex\+\_\+number.
-\item lab\+\_\+number.
+\item complex\+\_\+number$<$\+T$>$.
+\item lab\+\_\+number$<$\+T$>$.
 \end{DoxyItemize}
 
 The coordinates classes handle position in space. The point classes also handle position in space. Coordinates are used for positions and points are intended for more stationary cases, like for example vertex of triangles that form a 3D model.
 
 
 \begin{DoxyItemize}
-\item coordinates\+\_\+1d.
-\item coordinates\+\_\+2d.
-\item coordinates\+\_\+2dr.
-\item coordinates\+\_\+3d.
-\item coordinates\+\_\+3dr.
-\item coordinates\+\_\+nd.
-\item coordinates\+\_\+ndr.
-\item point\+\_\+1d.
-\item point\+\_\+2d.
-\item point\+\_\+3d.
-\item point\+\_\+nd.
+\item coordinates\+\_\+1d$<$\+T$>$.
+\item coordinates\+\_\+2d$<$\+T$>$.
+\item coordinates\+\_\+2dr$<$\+T$>$.
+\item coordinates\+\_\+3d$<$\+T$>$.
+\item coordinates\+\_\+3dr$<$\+T$>$.
+\item coordinates\+\_\+nd$<$\+T$>$.
+\item coordinates\+\_\+ndr$<$\+T$>$.
+\item point\+\_\+1d$<$\+T$>$.
+\item point\+\_\+2d$<$\+T$>$.
+\item point\+\_\+3d$<$\+T$>$.
+\item point\+\_\+nd$<$\+T$>$.
 \item direction.
 \end{DoxyItemize}
 
@@ -265,9 +265,9 @@ The special unit classes handle special cases of values\+:
 \item pH.
 \item p\+OH.
 \item pixel.
-\item size\+\_\+2d.
-\item size\+\_\+3d.
-\item size\+\_\+nd.
+\item size\+\_\+2d$<$\+T$>$.
+\item size\+\_\+3d$<$\+T$>$.
+\item size\+\_\+nd$<$\+T$>$.
 \end{DoxyItemize}\hypertarget{index_autotoc_md22}{}\doxysubsection{\texorpdfstring{Data conventions}{Data conventions}}\label{index_autotoc_md22}
 It\textquotesingle{}s mandatory to follow the {\bfseries{data conventions}} of Scifir when using scifir-\/units, which is used not only for this library but also for every Scifir project. The data conventions of Scifir allow to handle data easy without multiple interpretations of the meaning of any value, because it doesn\textquotesingle{}t has ambiguities.
 
@@ -290,12 +290,22 @@ The conventions for storing informatic data are the following\+:
 
 
 \begin{DoxyItemize}
-\item {\bfseries{Ips\+:}} Store the ip, as is written.
+\item {\bfseries{Ip addresses\+:}} Store the ip, as is written.
 \item {\bfseries{Computers\+:}} Store computers by their model name, canonicalized.
 \end{DoxyItemize}\hypertarget{index_autotoc_md23}{}\doxysubsection{\texorpdfstring{Consumption of memory}{Consumption of memory}}\label{index_autotoc_md23}
 The scalar\+\_\+unit and vector unit classes, vector\+\_\+unid\+\_\+2d, vector\+\_\+unid\+\_\+3d and vector\+\_\+unit\+\_\+nd size more than a single float, which uses 4 bytes, but don\textquotesingle{}t size a big amount and so, they can be used in great quantities for any purpose, cause they are very lightweight.
 
-The angle class uses only 4 bytes, and works perfectly fine, very similar to a normal float. Then, you can use it freely every time you need to do calculations that need angles.\hypertarget{index_autotoc_md24}{}\doxysection{\texorpdfstring{Core functionalities}{Core functionalities}}\label{index_autotoc_md24}
+The angle class uses only 4 bytes, and works perfectly fine, very similar to a normal float. Then, you can use it freely every time you need to do calculations that need angles.\hypertarget{index_autotoc_md24}{}\doxysection{\texorpdfstring{Use cases}{Use cases}}\label{index_autotoc_md24}
+\hypertarget{index_autotoc_md25}{}\doxysubsection{\texorpdfstring{Technologies for inventions}{Technologies for inventions}}\label{index_autotoc_md25}
+scifir-\/units can be used for any project that needs units of measurement, vectors, coordinates, and related calculations. It\textquotesingle{}s primary intended to program {\bfseries{scientific inventions}}, {\bfseries{laboratory machines}}, {\bfseries{electronic devices}} and {\bfseries{medical devices}} (medical devices that need a software, not any medical device). In this section it\textquotesingle{}s explained how to build those devices, in order to be known how to create all the project, and not only how to use scifir-\/units.
+
+To create the electronic circuit of any electronic device, being it a scientific invention, a laboratory machine, a medical device or of other type, you can use {\bfseries{Ki\+Cad}}. The electronic circuit is then printed using the file created with Ki\+Cad. For the operating system, you can use {\bfseries{Free\+RTOS}}, {\bfseries{Free\+BSD}}, or even create a custom linux distribution with {\bfseries{Linux From Scratch}}. For the GUI of the software of the invention to run inside this operating system, you can use {\bfseries{GTK+}}, {\bfseries{wx\+Widgets}} or {\bfseries{Qt}}. The inventions not always use a GUI, they can work just with analog buttons or a LCD display. It\textquotesingle{}s with this software where you can use scifir-\/units to do the calculations the software requires.
+
+To build a desktop application that connects remotely with the invention, use also GTK+, wx\+Widgets or Qt to build the GUI. You can use as communication technology {\bfseries{bluetooth}}, {\bfseries{wifi direct}} (which is a wifi peer-\/to-\/peer) or {\bfseries{usb}}.
+
+Also, to add 3D to the software, you can use {\bfseries{Open\+GL}}. To do plots, use {\bfseries{matplot++}}, {\bfseries{gnuplot}} or {\bfseries{GNU plotutils}}. Obviously, to store output from the software, you can use {\bfseries{YAML}} or {\bfseries{XML}}. To work with XML inside C++ you can use {\bfseries{rapidxml}}, {\bfseries{tinyxml}} or {\bfseries{libxml2}}. To work with YAML you can use {\bfseries{yaml-\/cpp}}. Use {\bfseries{conf}} for configuration files, the library of it is {\bfseries{libconfig}}. To send messages between different servers/daemons that are run inside the invention, you can use {\bfseries{dbus}}. To handle large amounts of data, you can use a simple database, like {\bfseries{SQLite}}, with {\bfseries{SQLite\+CPP}}.
+
+From the graphics part, you can use {\bfseries{SVG++}} to work with SVG files. To add GPS to the invention, you can use {\bfseries{gpsd}}. To do the translation of the software, use {\bfseries{gettext}}.\hypertarget{index_autotoc_md26}{}\doxysection{\texorpdfstring{Core functionalities}{Core functionalities}}\label{index_autotoc_md26}
 All the classes of scifir-\/units are inside the {\bfseries{namespace scifir}}, as with all libraries of the {\bfseries{Scifir Collection}}. So, to use any of this classes, like angle, you have to type any of the following codes\+:
 
 
@@ -306,7 +316,7 @@ All the classes of scifir-\/units are inside the {\bfseries{namespace scifir}}, 
 \end{DoxyCode}
 
 
-All the example code presented here is written assuming you know this namespace scifir.\hypertarget{index_autotoc_md25}{}\doxysubsection{\texorpdfstring{Initialization strings}{Initialization strings}}\label{index_autotoc_md25}
+All the example code presented here is written assuming you know this namespace scifir.\hypertarget{index_autotoc_md27}{}\doxysubsection{\texorpdfstring{Initialization strings}{Initialization strings}}\label{index_autotoc_md27}
 All the unit classes, and also the other related classes of this library, can be constructed with what is called here an {\bfseries{initialization string}}. An initialization string is an string used to instantiate the class, and it\textquotesingle{}s also used when converting the class to an string for any purpose (like printing it on the screen).
 
 The initialization strings are the following\+:
@@ -331,9 +341,9 @@ The initialization strings are the following\+:
 \item {\bfseries{coordinates\+\_\+ndr}}\+: "{}1 m,7 m,5 m,8 m;32° 56° 78°"{} or "{}(1 m,7 m,5 m,8 m;32° 56° 78°)"{}
 \end{DoxyItemize}
 
-In order to store units inside a file an initialization string should be used. For any purpose, when converting some of those classes to an string, the string initialization has to be always used.\hypertarget{index_autotoc_md26}{}\doxysubsection{\texorpdfstring{Space}{Space}}\label{index_autotoc_md26}
-Inside scifir-\/units the space can be measured with float or with length. Secondarily, any scalar\+\_\+unit can be used as measure of space, because inside science there are modelings of imaginary spaces, where the length is not used. Because of that reason, all coordinates and point classes are template classes that accept floats or scalar\+\_\+unit classes.\hypertarget{index_autotoc_md27}{}\doxysubsection{\texorpdfstring{Dimensions}{Dimensions}}\label{index_autotoc_md27}
-Inside scifir-\/units a {\bfseries{basic dimension}} is a dimension considered basic under the SI system of units. Different to that, a {\bfseries{simple dimension}} is a dimension without any derived dimension. That\textquotesingle{}s, it\textquotesingle{}s a dimension that\textquotesingle{}s not an abbreviation of two or more other dimensions.\hypertarget{index_autotoc_md28}{}\doxysubsection{\texorpdfstring{Angle}{Angle}}\label{index_autotoc_md28}
+In order to store units inside a file an initialization string should be used. For any purpose, when converting some of those classes to an string, the string initialization has to be always used.\hypertarget{index_autotoc_md28}{}\doxysubsection{\texorpdfstring{Space}{Space}}\label{index_autotoc_md28}
+Inside scifir-\/units the space can be measured with float or with length. Secondarily, any scalar\+\_\+unit can be used as measure of space, because inside science there are modelings of imaginary spaces, where the length is not used. Because of that reason, all coordinates and point classes are template classes that accept floats or scalar\+\_\+unit classes.\hypertarget{index_autotoc_md29}{}\doxysubsection{\texorpdfstring{Dimensions}{Dimensions}}\label{index_autotoc_md29}
+Inside scifir-\/units a {\bfseries{basic dimension}} is a dimension considered basic under the SI system of units. Different to that, a {\bfseries{simple dimension}} is a dimension without any derived dimension. That\textquotesingle{}s, it\textquotesingle{}s a dimension that\textquotesingle{}s not an abbreviation of two or more other dimensions.\hypertarget{index_autotoc_md30}{}\doxysubsection{\texorpdfstring{Angle}{Angle}}\label{index_autotoc_md30}
 An angle object manages angles. It stores angles in grades, rather than in radians. It can be initialized to any grade between 0 and 360 (without including 360, cause this is identical to 0 in meaning), and any initialization that\textquotesingle{}s not inside this range of values gets automatically converted inside it, to his equivalent value between the range.
 
 An example of use of angle is the following\+:
@@ -379,7 +389,7 @@ An example of use of angle is the following\+:
 \DoxyCodeLine{\textcolor{keywordtype}{float}\ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(x);\ \textcolor{comment}{//\ Angles\ can\ be\ converted\ to\ float}}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md29}{}\doxysubsection{\texorpdfstring{Scalar units}{Scalar units}}\label{index_autotoc_md29}
+\hypertarget{index_autotoc_md31}{}\doxysubsection{\texorpdfstring{Scalar units}{Scalar units}}\label{index_autotoc_md31}
 Scalar units and vector units are the central objects of scifir-\/units. They store a value and a set of dimensions, as units on science do. Scalar units are just normal values, while vector units have a value and a direction to which the vector points to.
 
 Scalar units can operate with other scalar units, as well as with numeric primitive types. Functions like abs(), sqrt() and to\+\_\+string() are supported. They have functions to operate with strings, and functions to operate with streams.
@@ -485,7 +495,7 @@ Memo   &memo   &Measures the size occupied by a memory inside the brain of an an
 \end{longtabu}
 
 
-There are also derived dimensions of those basic dimensions, which are documented in the reference. Yet, you should memorize all those basic dimensions.\hypertarget{index_autotoc_md30}{}\doxysubsection{\texorpdfstring{Vector units in 2D}{Vector units in 2D}}\label{index_autotoc_md30}
+There are also derived dimensions of those basic dimensions, which are documented in the reference. Yet, you should memorize all those basic dimensions.\hypertarget{index_autotoc_md32}{}\doxysubsection{\texorpdfstring{Vector units in 2D}{Vector units in 2D}}\label{index_autotoc_md32}
 Vector units in 2D allow to do calculations for lab machines and simulations of physics and other areas of science in 2 dimensions. They inherit scalar\+\_\+unit, and additional to his member-\/variables they include the member-\/variable theta, of class angle (described above).
 
 An example of use of it is the following\+:
@@ -556,7 +566,7 @@ An example of use of it is the following\+:
 \DoxyCodeLine{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{cin}}\ >>\ a;\ \textcolor{comment}{//\ Initializes\ a\ with\ the\ string\ given\ to\ cin}}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md31}{}\doxysubsection{\texorpdfstring{Vector units in 3D}{Vector units in 3D}}\label{index_autotoc_md31}
+\hypertarget{index_autotoc_md33}{}\doxysubsection{\texorpdfstring{Vector units in 3D}{Vector units in 3D}}\label{index_autotoc_md33}
 Vector units in 3D are the most useful vectorial units. They allow to do all the simulations of physics and any other area of science in 3D, which is the most common scenario. To work, they have, as vector\+\_\+unit\+\_\+2d, a value, dimensions, and an angle theta, but they include the angle phi. So, they work as spherical coordinates, having cartesian projections for each axis. The class vector\+\_\+unit\+\_\+3d inherits from scalar\+\_\+unit, as vector\+\_\+unit\+\_\+2d, but not from vector\+\_\+unit\+\_\+2d, evading math errors that would be derived from that, because 2D and 3D dimensions are not mathematically equivalent in 2D (when projecting the x and y axis there appears the angle phi on the equations for the 3D cases).
 
 An example of use is the following\+:
@@ -630,7 +640,7 @@ An example of use is the following\+:
 \DoxyCodeLine{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{cin}}\ >>\ a;\ \textcolor{comment}{//\ Initializes\ a\ with\ the\ string\ given\ to\ cin}}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md32}{}\doxysubsection{\texorpdfstring{Vector units in ND}{Vector units in ND}}\label{index_autotoc_md32}
+\hypertarget{index_autotoc_md34}{}\doxysubsection{\texorpdfstring{Vector units in ND}{Vector units in ND}}\label{index_autotoc_md34}
 Vector units in ND are very interesting vector units. They allow to operate in ND, which means, inside scifir-\/units, that the dimensions can be changed. ND allows to operate in 1D, 2D, 3D and more dimensions at the same time. The way they allow that is with a vector$<$angle$>$ member-\/variable, which allows to control the angles of the n dimensions were the vector operates. For 2D it has one angle, as vector\+\_\+unit\+\_\+2d, and for 3D it has two angles, as vector\+\_\+unit\+\_\+3d. For 1D it doesn\textquotesingle{}t has any angle.
 
 An example of use is the following\+:
@@ -710,7 +720,7 @@ An example of use is the following\+:
 \DoxyCodeLine{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{cin}}\ >>\ a;\ \textcolor{comment}{//\ Initializes\ a\ with\ the\ string\ given\ to\ cin}}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md33}{}\doxysubsection{\texorpdfstring{Coordinates and points in 1D}{Coordinates and points in 1D}}\label{index_autotoc_md33}
+\hypertarget{index_autotoc_md35}{}\doxysubsection{\texorpdfstring{Coordinates and points in 1D}{Coordinates and points in 1D}}\label{index_autotoc_md35}
 Coordinates in 1D allow to move any object, particle, solid or immaterial, through a 1D space. The coordinates\+\_\+1d class has been implemented as a template class, allowing to use any scalar\+\_\+unit, or, also, a single float. Any scalar\+\_\+unit can be used, because then coordinates\+\_\+1d allows to move in dimensions different than length, as dimensions on some science-\/fiction speculations are (because on some science-\/fiction ideas, a dimension can be anything).
 
 point\+\_\+1d is equivalent in functionality as coordinates\+\_\+1d, it has the same member-\/variables and functions, its intended use is to be an abstract point in 1D, rather than a position in 1D (as coordinates\+\_\+1d are).
@@ -752,7 +762,7 @@ An example of use of coordinates\+\_\+1d is the following\+:
 \DoxyCodeLine{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{cin}}\ >>\ x;\ \textcolor{comment}{//\ coordinates\_1d\ can\ be\ initialized\ through\ cin}}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md34}{}\doxysubsection{\texorpdfstring{Coordinates and points in 2D}{Coordinates and points in 2D}}\label{index_autotoc_md34}
+\hypertarget{index_autotoc_md36}{}\doxysubsection{\texorpdfstring{Coordinates and points in 2D}{Coordinates and points in 2D}}\label{index_autotoc_md36}
 coordinates\+\_\+2d class allows to create software with positions in 2D. It has a very similar interface to coordinates\+\_\+1d, it\textquotesingle{}s initialized with an string of the form "{}1 m,2 m"{} or "{}(1 m,2 m)"{} because the character \textquotesingle{}(\textquotesingle{} can be present or not. It\textquotesingle{}s, as coordinates\+\_\+1d, a template class, and can then specify coordinates of any scalar\+\_\+unit (usually, length), or with a float, if there\textquotesingle{}s no unit that represents adequately the coordinates, or if it\textquotesingle{}s needed to save some memory (because the float is lighter than a unit in his consumption of memory).
 
 coordinates\+\_\+2d can be used as cartesian and as polar coordinates at the same time. It has x and y as member-\/variables, which can be of the type of any scalar\+\_\+unit or a float. When working with polar coordinates, the calculations are stored as x and y, that\textquotesingle{}s, as cartesian coordinates, but when accessing it, with functions like get\+\_\+p() and get\+\_\+theta(), they give the values in polar coordinates. Then, at the same time, coordinates\+\_\+2d behave as cartesian and as polar coordinates, by storing the values only once, not two times. Then, coordinates\+\_\+2d is like a dual object, it contains cartesian\+\_\+2d and polar\+\_\+coordinates inside.
@@ -803,7 +813,7 @@ point\+\_\+2d is equivalent to coordinates\+\_\+2d, it\textquotesingle{}s intend
 \DoxyCodeLine{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{cin}}\ >>\ x;\ \textcolor{comment}{//\ coordinates\_2d\ can\ be\ initialized\ through\ cin}}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md35}{}\doxysubsection{\texorpdfstring{Coordinates and points in 3D}{Coordinates and points in 3D}}\label{index_autotoc_md35}
+\hypertarget{index_autotoc_md37}{}\doxysubsection{\texorpdfstring{Coordinates and points in 3D}{Coordinates and points in 3D}}\label{index_autotoc_md37}
 coordinates\+\_\+3d class allows to work with positions in 3D. Its initialization string is of the form "{}10 m,5 m,3 m"{}, or of the form "{}(10 m,5 m,3 m)"{}.
 
 coordinates\+\_\+3d can be used as cartesian coordinates, as cylindrical coordinates, as spherical coordinates and as geographical coordinates at the same time. It has x, y and z as member-\/variables, which can be of the type of any scalar\+\_\+unit or a float. When working with coordinates different than cartesian coordinates, the calculations are stored as x, y and z, that\textquotesingle{}s, as cartesian coordinates, but when accessing it, with functions like get\+\_\+p(), get\+\_\+theta() and get\+\_\+r(), they give the values in the other coordinates systems. Then, at the same time, coordinates\+\_\+3d behave as cartesian, cylindrical, spherical and geographical coordinates, by storing the values only once, not various times. Then, coordinates\+\_\+3d is like a multiple object, it contains cartesian\+\_\+3d\+\_\+coordinates, cylindrical\+\_\+coordinates, spherical\+\_\+coordinates and geographical\+\_\+coordinates inside.
@@ -866,14 +876,14 @@ point\+\_\+3d is equivalent to coordinates\+\_\+3d, it change of name but not on
 \DoxyCodeLine{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{cin}}\ >>\ x;\ \textcolor{comment}{//\ coordinates\_3d\ can\ be\ initialized\ through\ cin}}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md36}{}\doxysubsection{\texorpdfstring{AID and ZID}{AID and ZID}}\label{index_autotoc_md36}
+\hypertarget{index_autotoc_md38}{}\doxysubsection{\texorpdfstring{AID and ZID}{AID and ZID}}\label{index_autotoc_md38}
 An {\bfseries{AID}}, acronym of {\bfseries{Astronomycal ID}}, is an identifier of an astronomical object, like planets, moons, galaxies, stars, and any other astronomical object.
 
-A {\bfseries{ZID}}, acronym of {\bfseries{Zone ID}}, is an identifier of a zone, like a region, a district, a store, a lake, a country, and any other zone. A zone is defined here as any closed surface that can be drawn over an astronomycal object. A ZID is composed of the AID of which the zone pertains, and the zone itself.\hypertarget{index_autotoc_md37}{}\doxysubsection{\texorpdfstring{percentage}{percentage}}\label{index_autotoc_md37}
-The {\bfseries{percentage}} class represents percentages, they calculate the factor of the percentage and automatically, when operating with numeric types, calculate the percentage of that number.\hypertarget{index_autotoc_md38}{}\doxysubsection{\texorpdfstring{pixel}{pixel}}\label{index_autotoc_md38}
-The {\bfseries{pixel}} class represents pixels, which are the squares that compose screens. It can be used to calculate distance over pixels instead of distances of physical lengths, which is a need of some digital applications.\hypertarget{index_autotoc_md39}{}\doxysubsection{\texorpdfstring{p\+H and p\+OH}{pH and pOH}}\label{index_autotoc_md39}
-The {\bfseries{pH}} class allows to work with pH, which is used inside chemistry software to store data about pH. The {\bfseries{p\+OH}} class is the counterpart of the pH class, and is not commonly needed, but it can be used if the pH class is not being useful for some reason, and if instead the p\+OH class is useful. The pH class should always be {\bfseries{prefered}} to be used over the p\+OH class, and that last should be used {\bfseries{only}} if the pH class is not properly solving the needs.\hypertarget{index_autotoc_md40}{}\doxysubsection{\texorpdfstring{Sizes in 2\+D, 3\+D and ND}{Sizes in 2D, 3D and ND}}\label{index_autotoc_md40}
-The {\bfseries{size\+\_\+2d}} class allows to store the data of the width and height of an object in length classes. The {\bfseries{size\+\_\+3d}} allows to store the data of the width, the height and the depth of an object in length classes. The {\bfseries{size\+\_\+nd}} class allows to store lengths corresponding to the dimension of an object in a variable number of dimensions.\hypertarget{index_autotoc_md41}{}\doxysection{\texorpdfstring{Internals}{Internals}}\label{index_autotoc_md41}
+A {\bfseries{ZID}}, acronym of {\bfseries{Zone ID}}, is an identifier of a zone, like a region, a district, a store, a lake, a country, and any other zone. A zone is defined here as any closed surface that can be drawn over an astronomycal object. A ZID is composed of the AID of which the zone pertains, and the zone itself.\hypertarget{index_autotoc_md39}{}\doxysubsection{\texorpdfstring{percentage}{percentage}}\label{index_autotoc_md39}
+The {\bfseries{percentage}} class represents percentages, they calculate the factor of the percentage and automatically, when operating with numeric types, calculate the percentage of that number.\hypertarget{index_autotoc_md40}{}\doxysubsection{\texorpdfstring{pixel}{pixel}}\label{index_autotoc_md40}
+The {\bfseries{pixel}} class represents pixels, which are the squares that compose screens. It can be used to calculate distance over pixels instead of distances of physical lengths, which is a need of some digital applications.\hypertarget{index_autotoc_md41}{}\doxysubsection{\texorpdfstring{p\+H and p\+OH}{pH and pOH}}\label{index_autotoc_md41}
+The {\bfseries{pH}} class allows to work with pH, which is used inside chemistry software to store data about pH. The {\bfseries{p\+OH}} class is the counterpart of the pH class, and is not commonly needed, but it can be used if the pH class is not being useful for some reason, and if instead the p\+OH class is useful. The pH class should always be {\bfseries{prefered}} to be used over the p\+OH class, and that last should be used {\bfseries{only}} if the pH class is not properly solving the needs.\hypertarget{index_autotoc_md42}{}\doxysubsection{\texorpdfstring{Sizes in 2\+D, 3\+D and ND}{Sizes in 2D, 3D and ND}}\label{index_autotoc_md42}
+The {\bfseries{size\+\_\+2d}} class allows to store the data of the width and height of an object in length classes. The {\bfseries{size\+\_\+3d}} allows to store the data of the width, the height and the depth of an object in length classes. The {\bfseries{size\+\_\+nd}} class allows to store lengths corresponding to the dimension of an object in a variable number of dimensions.\hypertarget{index_autotoc_md43}{}\doxysection{\texorpdfstring{Internals}{Internals}}\label{index_autotoc_md43}
 Internally, the library has some important mechanisms important to be known by a serious developer. Those important mechanisms are described here, in order to avoid the developer to read the code of the library and learn every detail.
 
 The first important mechanism to describe is the static storage of custom dimensions. This storage is static, meaning that every time a unit of a dimension not registered is created, this storage is the one used, instead of the name being stored inside the instance. With that behavior, when instantiating a big amount of dimensions, a big amount of memory is saved. To refer to the static storage it\textquotesingle{}s used the char symbol\mbox{[}3\mbox{]} of the dimension class, which uses only 3 bytes instead of the bytes the full dimension name would use. Then, each instance of a dimension class, given that static storage, uses only 6 bytes of memory.

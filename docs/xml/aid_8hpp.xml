@@ -46,10 +46,10 @@
     <innerclass refid="classscifir_1_1aid" prot="public">scifir::aid</innerclass>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
     <sectiondef kind="func">
-      <memberdef kind="function" id="aid_8hpp_1a7ab466cf4d83e41daa49e958201658c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="aid_8hpp_1a117bfc9be21dfb8739b69b40767d59b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator==</definition>
-        <argsstring>(const scifir::aid &amp;, const scifir::aid &amp;)</argsstring>
+        <argsstring>(const scifir::aid &amp;x, const scifir::aid &amp;y)</argsstring>
         <name>operator==</name>
         <param>
           <type>const <ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref> &amp;</type>
@@ -65,12 +65,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/aid.hpp" line="42" column="6" bodyfile="special_units/aid.cpp" bodystart="467" bodyend="477" declfile="special_units/aid.hpp" declline="42" declcolumn="6"/>
+        <location file="special_units/aid.hpp" line="56" column="6" bodyfile="special_units/aid.cpp" bodystart="542" bodyend="552" declfile="special_units/aid.hpp" declline="56" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="aid_8hpp_1aa977086066f8137d2307e014cbf71e10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="aid_8hpp_1a9c9de3dc61c98293ea70f228301f116a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator!=</definition>
-        <argsstring>(const scifir::aid &amp;, const scifir::aid &amp;)</argsstring>
+        <argsstring>(const scifir::aid &amp;x, const scifir::aid &amp;y)</argsstring>
         <name>operator!=</name>
         <param>
           <type>const <ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref> &amp;</type>
@@ -86,12 +86,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/aid.hpp" line="43" column="6" bodyfile="special_units/aid.cpp" bodystart="479" bodyend="482" declfile="special_units/aid.hpp" declline="43" declcolumn="6"/>
+        <location file="special_units/aid.hpp" line="57" column="6" bodyfile="special_units/aid.cpp" bodystart="554" bodyend="557" declfile="special_units/aid.hpp" declline="57" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="aid_8hpp_1abbf48f53e5988967d47c03c92222901b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="aid_8hpp_1ab9e73deb53ceb30fdc7dca8be88761f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator==</definition>
-        <argsstring>(const scifir::aid &amp;, const string &amp;)</argsstring>
+        <argsstring>(const scifir::aid &amp;x, const string &amp;init_aid)</argsstring>
         <name>operator==</name>
         <param>
           <type>const <ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref> &amp;</type>
@@ -99,7 +99,7 @@
         </param>
         <param>
           <type>const string &amp;</type>
-          <declname>y</declname>
+          <declname>init_aid</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -107,12 +107,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/aid.hpp" line="45" column="6" bodyfile="special_units/aid.cpp" bodystart="484" bodyend="488" declfile="special_units/aid.hpp" declline="45" declcolumn="6"/>
+        <location file="special_units/aid.hpp" line="59" column="6" bodyfile="special_units/aid.cpp" bodystart="559" bodyend="563" declfile="special_units/aid.hpp" declline="59" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="aid_8hpp_1a44e01a5c66bf3a617ac4203980bddf4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="aid_8hpp_1a47f837ac16c0400228c163ca00d3a7a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator!=</definition>
-        <argsstring>(const scifir::aid &amp;, const string &amp;)</argsstring>
+        <argsstring>(const scifir::aid &amp;x, const string &amp;init_aid)</argsstring>
         <name>operator!=</name>
         <param>
           <type>const <ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref> &amp;</type>
@@ -120,7 +120,7 @@
         </param>
         <param>
           <type>const string &amp;</type>
-          <declname>y</declname>
+          <declname>init_aid</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -128,20 +128,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/aid.hpp" line="46" column="6" bodyfile="special_units/aid.cpp" bodystart="490" bodyend="493" declfile="special_units/aid.hpp" declline="46" declcolumn="6"/>
+        <location file="special_units/aid.hpp" line="60" column="6" bodyfile="special_units/aid.cpp" bodystart="565" bodyend="568" declfile="special_units/aid.hpp" declline="60" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="aid_8hpp_1a44c5cd1fe8d28c34358da85f1d805e9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="aid_8hpp_1a520d1e4326a294d64f90e220e2e9db6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator==</definition>
-        <argsstring>(const string &amp;, const scifir::aid &amp;)</argsstring>
+        <argsstring>(const string &amp;init_aid, const scifir::aid &amp;x)</argsstring>
         <name>operator==</name>
         <param>
           <type>const string &amp;</type>
-          <declname>x</declname>
+          <declname>init_aid</declname>
         </param>
         <param>
           <type>const <ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref> &amp;</type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -149,20 +149,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/aid.hpp" line="48" column="6" bodyfile="special_units/aid.cpp" bodystart="495" bodyend="499" declfile="special_units/aid.hpp" declline="48" declcolumn="6"/>
+        <location file="special_units/aid.hpp" line="62" column="6" bodyfile="special_units/aid.cpp" bodystart="570" bodyend="574" declfile="special_units/aid.hpp" declline="62" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="aid_8hpp_1a529fc5bf6b31c8300f5490e55f173181" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="aid_8hpp_1a74bdcae2a65c8d1d9c23a461b2701bcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator!=</definition>
-        <argsstring>(const string &amp;, const scifir::aid &amp;)</argsstring>
+        <argsstring>(const string &amp;init_aid, const scifir::aid &amp;x)</argsstring>
         <name>operator!=</name>
         <param>
           <type>const string &amp;</type>
-          <declname>x</declname>
+          <declname>init_aid</declname>
         </param>
         <param>
           <type>const <ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref> &amp;</type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -170,12 +170,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/aid.hpp" line="49" column="6" bodyfile="special_units/aid.cpp" bodystart="501" bodyend="504" declfile="special_units/aid.hpp" declline="49" declcolumn="6"/>
+        <location file="special_units/aid.hpp" line="63" column="6" bodyfile="special_units/aid.cpp" bodystart="576" bodyend="579" declfile="special_units/aid.hpp" declline="63" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="aid_8hpp_1a84a438b8ea1bfcfe72e97c92344ff1e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="aid_8hpp_1a694208c04b83fe017e7e35ea8e37bb64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void operator+=</definition>
-        <argsstring>(string &amp;, const scifir::aid &amp;)</argsstring>
+        <argsstring>(string &amp;x, const scifir::aid &amp;y)</argsstring>
         <name>operator+=</name>
         <param>
           <type>string &amp;</type>
@@ -191,12 +191,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/aid.hpp" line="51" column="6" bodyfile="special_units/aid.cpp" bodystart="506" bodyend="511" declfile="special_units/aid.hpp" declline="51" declcolumn="6"/>
+        <location file="special_units/aid.hpp" line="65" column="6" bodyfile="special_units/aid.cpp" bodystart="581" bodyend="586" declfile="special_units/aid.hpp" declline="65" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="aid_8hpp_1ac64d472ac7f7ea7f7cfaa50bec6dbbbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="aid_8hpp_1af3452a3436468014f134c87c4d4a392f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>string</type>
         <definition>string operator+</definition>
-        <argsstring>(const string &amp;, const scifir::aid &amp;)</argsstring>
+        <argsstring>(const string &amp;x, const scifir::aid &amp;y)</argsstring>
         <name>operator+</name>
         <param>
           <type>const string &amp;</type>
@@ -212,12 +212,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/aid.hpp" line="52" column="8" bodyfile="special_units/aid.cpp" bodystart="513" bodyend="519" declfile="special_units/aid.hpp" declline="52" declcolumn="8"/>
+        <location file="special_units/aid.hpp" line="66" column="8" bodyfile="special_units/aid.cpp" bodystart="588" bodyend="594" declfile="special_units/aid.hpp" declline="66" declcolumn="8"/>
       </memberdef>
-      <memberdef kind="function" id="aid_8hpp_1ab6d527931d9dcb857d03f753fc41dfbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="aid_8hpp_1ad79839ef6dcb890f8a88be76b6e56f1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>string</type>
         <definition>string operator+</definition>
-        <argsstring>(const scifir::aid &amp;, const string &amp;)</argsstring>
+        <argsstring>(const scifir::aid &amp;y, const string &amp;x)</argsstring>
         <name>operator+</name>
         <param>
           <type>const <ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref> &amp;</type>
@@ -233,12 +233,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/aid.hpp" line="53" column="8" bodyfile="special_units/aid.cpp" bodystart="521" bodyend="527" declfile="special_units/aid.hpp" declline="53" declcolumn="8"/>
+        <location file="special_units/aid.hpp" line="67" column="8" bodyfile="special_units/aid.cpp" bodystart="596" bodyend="602" declfile="special_units/aid.hpp" declline="67" declcolumn="8"/>
       </memberdef>
-      <memberdef kind="function" id="aid_8hpp_1ad00484775260bab74760e177114f0ad8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="aid_8hpp_1abe7aa95f12b86951be90fc7620842f98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ostream &amp;</type>
         <definition>ostream &amp; operator&lt;&lt;</definition>
-        <argsstring>(ostream &amp;, const scifir::aid &amp;)</argsstring>
+        <argsstring>(ostream &amp;os, const scifir::aid &amp;x)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
           <type>ostream &amp;</type>
@@ -254,12 +254,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/aid.hpp" line="55" column="1" bodyfile="special_units/aid.cpp" bodystart="529" bodyend="532" declfile="special_units/aid.hpp" declline="55" declcolumn="1"/>
+        <location file="special_units/aid.hpp" line="69" column="1" bodyfile="special_units/aid.cpp" bodystart="604" bodyend="607" declfile="special_units/aid.hpp" declline="69" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="aid_8hpp_1a670e3a18a8abe6e79bc514d50b0de8c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="aid_8hpp_1a4f669aba5577e21cc4019e2eee922414" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>istream &amp;</type>
         <definition>istream &amp; operator&gt;&gt;</definition>
-        <argsstring>(istream &amp;, scifir::aid &amp;)</argsstring>
+        <argsstring>(istream &amp;is, scifir::aid &amp;x)</argsstring>
         <name>operator&gt;&gt;</name>
         <param>
           <type>istream &amp;</type>
@@ -275,7 +275,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/aid.hpp" line="56" column="9" bodyfile="special_units/aid.cpp" bodystart="534" bodyend="543" declfile="special_units/aid.hpp" declline="56" declcolumn="9"/>
+        <location file="special_units/aid.hpp" line="70" column="9" bodyfile="special_units/aid.cpp" bodystart="609" bodyend="617" declfile="special_units/aid.hpp" declline="70" declcolumn="9"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -301,46 +301,60 @@
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>type<sp/>:<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int8_t</ref><sp/>{NONE,UNIVERSE,GALAXY,SOLAR_SYSTEM,PLANET,STAR,ASTEROID,MOON,METEOR};</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>();</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>&amp;);</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>(<ref refid="classscifir_1_1aid" kindref="compound">aid</ref>&amp;&amp;);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>astronomical_body&amp;);</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>aid::type&amp;,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>(<ref refid="classscifir_1_1aid" kindref="compound">aid</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>astronomical_body&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">predefined_astronomical_body</ref>);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_universe</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_galaxy</ref>);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_universe</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_galaxy</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_solar_system</ref>);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>aid::type&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_astronomical_type</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_universe</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_galaxy</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_solar_system</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_astronomical_body</ref>);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_aid</ref>);</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>&amp;);</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>&amp;<sp/>operator=(<ref refid="classscifir_1_1aid" kindref="compound">aid</ref>&amp;&amp;);</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>universe;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>galaxy;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>solar_system;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>astronomical_body;</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aid::type<sp/>astronomical_type;</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>to_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>&amp;);</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>to_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>aid::type&amp;);</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>aid::type<sp/>create_astronomical_type(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
-<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;);</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;);</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;);</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator =</ref>(<ref refid="classscifir_1_1aid" kindref="compound">aid</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_aid</ref>);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>has_unknown_universe()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>has_unknown_galaxy()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>has_unknown_solar_system()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>has_unknown_planet()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>has_unknown_moon()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>has_unknown_star()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>has_unknown_asteroid()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>display()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>universe;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>galaxy;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>solar_system;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>astronomical_body;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aid::type<sp/>astronomical_type;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initialize_from_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_aid</ref>);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>+=(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;);</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>operator<sp/>+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;);</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>operator<sp/>+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal">ostream&amp;<sp/>operator<sp/>&lt;&lt;(ostream&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;);</highlight></codeline>
-<codeline lineno="56"><highlight class="normal">istream&amp;<sp/>operator<sp/>&gt;&gt;(istream&amp;,<sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;);</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_SPECIAL_UNITS_AID_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>to_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>to_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>aid::type&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>aid::type<sp/>create_astronomical_type(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">astronomical_type_abbreviation</ref>);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_aid);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_aid);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_aid,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_aid,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>+=(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>operator<sp/>+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>operator<sp/>+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">ostream&amp;<sp/>operator<sp/>&lt;&lt;(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">istream&amp;<sp/>operator<sp/>&gt;&gt;(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_SPECIAL_UNITS_AID_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="special_units/aid.hpp"/>
   </compounddef>

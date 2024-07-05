@@ -21,7 +21,7 @@
 \DoxyCodeLine{00017\ }
 \DoxyCodeLine{00018\ \ \ \ \ SCALAR\_UNIT\_HPP\_BEGIN(time\_duration);}
 \DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ time\_duration(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ time\_duration(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_time);}
 \DoxyCodeLine{00021\ }
 \DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ std::chrono::seconds()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00023\ }
@@ -66,18 +66,18 @@
 \DoxyCodeLine{00062\ }
 \DoxyCodeLine{00063\ \ \ \ \ SCALAR\_UNIT\_HPP\_BEGIN(mass);}
 \DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ mass(\textcolor{keyword}{const}\ percentage\&,\textcolor{keyword}{const}\ mass\&);}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ mass(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{00067\ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ mass(\textcolor{keyword}{const}\ percentage\&\ new\_percentage,\textcolor{keyword}{const}\ mass\&\ new\_mass);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ mass(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_percentage,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_mass);}
+\DoxyCodeLine{00067\ }
 \DoxyCodeLine{00068\ \ \ \ \ SCALAR\_UNIT\_HPP\_END();}
-\DoxyCodeLine{00069\ \ \ \ \ }
+\DoxyCodeLine{00069\ }
 \DoxyCodeLine{00070\ \ \ \ \ SCALAR\_UNIT\_HPP(charge);}
 \DoxyCodeLine{00071\ \ \ \ \ SCALAR\_UNIT\_HPP(temperature);}
 \DoxyCodeLine{00072\ }
 \DoxyCodeLine{00073\ \ \ \ \ SCALAR\_UNIT\_HPP\_BEGIN(mole);}
 \DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ mole(\textcolor{keyword}{const}\ percentage\&,\textcolor{keyword}{const}\ mole\&);}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ mole(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ mole(\textcolor{keyword}{const}\ percentage\&\ new\_percentage,\textcolor{keyword}{const}\ mole\&\ new\_mole);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ mole(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_percentage,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_mole);}
 \DoxyCodeLine{00077\ }
 \DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ number\_of\_particles()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00079\ \ \ \ \ SCALAR\_UNIT\_HPP\_END();}

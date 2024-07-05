@@ -16,7 +16,13 @@ scifir::lab_number< T >
 .RI "\fBlab_number\fP (\fBlab_number\fP< T > &&x)"
 .br
 .ti -1c
-.RI "\fBlab_number\fP (T x, T y)"
+.RI "\fBlab_number\fP (\fBconst\fP T &x, \fBconst\fP T &y)"
+.br
+.ti -1c
+.RI "\fBlab_number\fP (\fBconst\fP \fBstring\fP &x, \fBconst\fP \fBstring\fP &y)"
+.br
+.ti -1c
+.RI "\fBlab_number\fP (\fBconst\fP \fBstring\fP &\fBinit_lab_number\fP)"
 .br
 .ti -1c
 .RI "\fBlab_number\fP< T > & \fBoperator=\fP (\fBconst\fP \fBlab_number\fP< T > &x)"
@@ -31,28 +37,16 @@ scifir::lab_number< T >
 .RI "\fBlab_number\fP< T > \fBoperator\-\fP (\fBconst\fP \fBlab_number\fP< T > &x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBlab_number\fP< T > \fBoperator*\fP (\fBconst\fP \fBlab_number\fP< T > &x) \fBconst\fP"
+.RI "template<\fBtypename\fP \fBU\fP > \fBlab_number\fP< \fBscalar_unit\fP > \fBoperator*\fP (\fBconst\fP \fBlab_number\fP< \fBU\fP > &x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBlab_number\fP< T > \fBoperator/\fP (\fBconst\fP \fBlab_number\fP< T > &x) \fBconst\fP"
-.br
-.ti -1c
-.RI "\fBlab_number\fP< T > \fBoperator^\fP (\fBconst\fP \fBlab_number\fP< T > &x) \fBconst\fP"
+.RI "template<\fBtypename\fP \fBU\fP > \fBlab_number\fP< \fBscalar_unit\fP > \fBoperator/\fP (\fBconst\fP \fBlab_number\fP< \fBU\fP > &x) \fBconst\fP"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBlab_number\fP< T > &x)"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBoperator\-=\fP (\fBconst\fP \fBlab_number\fP< T > &x)"
-.br
-.ti -1c
-.RI "\fBvoid\fP \fBoperator*=\fP (\fBconst\fP \fBlab_number\fP< T > &x)"
-.br
-.ti -1c
-.RI "\fBvoid\fP \fBoperator/=\fP (\fBconst\fP \fBlab_number\fP< T > &x)"
-.br
-.ti -1c
-.RI "\fBvoid\fP \fBoperator^=\fP (\fBconst\fP \fBlab_number\fP< T > &x)"
 .br
 .ti -1c
 .RI "\fBstring\fP \fBdisplay\fP (\fBint\fP \fBnumber_of_decimals\fP=2) \fBconst\fP"

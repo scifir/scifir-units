@@ -218,7 +218,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/direction.hpp" line="31" column="17" bodyfile="topology/direction.hpp" bodystart="31" bodyend="-1"/>
+        <location file="topology/direction.hpp" line="32" column="17" bodyfile="topology/direction.hpp" bodystart="32" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -236,15 +236,15 @@
         </inbodydescription>
         <location file="topology/direction.hpp" line="19" column="1" bodyfile="topology/direction.cpp" bodystart="11" bodyend="12"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1direction_1a754cbffd39a962a1884a689dec62984e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1direction_1aa32c39856a146edf449611bdbefd081a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::direction::direction</definition>
-        <argsstring>(const direction &amp;)</argsstring>
+        <argsstring>(const direction &amp;x)</argsstring>
         <name>direction</name>
         <qualifiedname>scifir::direction::direction</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1direction" kindref="compound">direction</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -254,15 +254,15 @@
         </inbodydescription>
         <location file="topology/direction.hpp" line="20" column="1" bodyfile="topology/direction.cpp" bodystart="14" bodyend="15"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1direction_1a6002c3eb9dc29459fd5112fab7a0f29f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1direction_1a3b8539a7f8a3e412a0cfc9435bf1b5ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::direction::direction</definition>
-        <argsstring>(direction &amp;&amp;)</argsstring>
+        <argsstring>(direction &amp;&amp;x)</argsstring>
         <name>direction</name>
         <qualifiedname>scifir::direction::direction</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1direction" kindref="compound">direction</ref> &amp;&amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -272,15 +272,15 @@
         </inbodydescription>
         <location file="topology/direction.hpp" line="21" column="1" bodyfile="topology/direction.cpp" bodystart="17" bodyend="18"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1direction_1a3056c34d9a11b33beda6e5537a88f950" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1direction_1add59983cce38ca07c7fb92d9c4f686eb" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::direction::direction</definition>
-        <argsstring>(direction::name)</argsstring>
+        <argsstring>(direction::name new_direction)</argsstring>
         <name>direction</name>
         <qualifiedname>scifir::direction::direction</qualifiedname>
         <param>
           <type>direction::name</type>
-          <defname>new_direction</defname>
+          <declname>new_direction</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -290,15 +290,15 @@
         </inbodydescription>
         <location file="topology/direction.hpp" line="22" column="10" bodyfile="topology/direction.cpp" bodystart="20" bodyend="21"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1direction_1a20878bec2dc16d848c94fd193633e01a" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1direction_1a9b1933aa99679b859cd91ab9976b51c9" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::direction::direction</definition>
-        <argsstring>(const string &amp;)</argsstring>
+        <argsstring>(const string &amp;init_direction)</argsstring>
         <name>direction</name>
         <qualifiedname>scifir::direction::direction</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>new_direction</defname>
+          <declname>init_direction</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -308,15 +308,15 @@
         </inbodydescription>
         <location file="topology/direction.hpp" line="23" column="10" bodyfile="topology/direction.cpp" bodystart="23" bodyend="24"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1direction_1a339ae22b4b81ace85b786a3cf6d5fb0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::direction::operator=</definition>
-        <argsstring>(const direction &amp;)</argsstring>
+      <memberdef kind="function" id="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1direction" kindref="compound">direction</ref> &amp;</type>
+        <definition>direction &amp; scifir::direction::operator=</definition>
+        <argsstring>(const direction &amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::direction::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1direction" kindref="compound">direction</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -324,17 +324,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/direction.hpp" line="25" column="6" bodyfile="topology/direction.cpp" bodystart="26" bodyend="29"/>
+        <location file="topology/direction.hpp" line="25" column="11" bodyfile="topology/direction.cpp" bodystart="26" bodyend="30"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1direction_1a18d5c0c5f8a28ef600afaf9fda5ef887" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::direction::operator=</definition>
-        <argsstring>(direction &amp;&amp;)</argsstring>
+      <memberdef kind="function" id="classscifir_1_1direction_1ac82f07e487b1892dcefddd6a85088d51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1direction" kindref="compound">direction</ref> &amp;</type>
+        <definition>direction &amp; scifir::direction::operator=</definition>
+        <argsstring>(direction &amp;&amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::direction::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1direction" kindref="compound">direction</ref> &amp;&amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -342,17 +342,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/direction.hpp" line="26" column="6" bodyfile="topology/direction.cpp" bodystart="31" bodyend="34"/>
+        <location file="topology/direction.hpp" line="26" column="11" bodyfile="topology/direction.cpp" bodystart="32" bodyend="36"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1direction_1a709066ad405f8f0e338aaae6c3296e90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::direction::operator=</definition>
-        <argsstring>(direction::name)</argsstring>
+      <memberdef kind="function" id="classscifir_1_1direction_1a58cfd0340b81faaa47a668b79ca2a7f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1direction" kindref="compound">direction</ref> &amp;</type>
+        <definition>direction &amp; scifir::direction::operator=</definition>
+        <argsstring>(direction::name new_direction)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::direction::operator=</qualifiedname>
         <param>
           <type>direction::name</type>
-          <defname>new_direction</defname>
+          <declname>new_direction</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -360,7 +360,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/direction.hpp" line="27" column="6" bodyfile="topology/direction.cpp" bodystart="36" bodyend="39"/>
+        <location file="topology/direction.hpp" line="27" column="11" bodyfile="topology/direction.cpp" bodystart="38" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1direction_1a451683371c4836e046ba24b027c6a1b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1direction" kindref="compound">direction</ref> &amp;</type>
+        <definition>direction &amp; scifir::direction::operator=</definition>
+        <argsstring>(const string &amp;init_direction)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::direction::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_direction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="topology/direction.hpp" line="28" column="11" bodyfile="topology/direction.cpp" bodystart="44" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1direction_1a16c2b4878a6ac2bdd7225e52c2dfc6ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -374,24 +392,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="topology/direction.hpp" line="29" column="6" bodyfile="topology/direction.cpp" bodystart="41" bodyend="44"/>
+        <location file="topology/direction.hpp" line="30" column="6" bodyfile="topology/direction.cpp" bodystart="50" bodyend="53"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="topology/direction.hpp" line="14" column="1" bodyfile="topology/direction.hpp" bodystart="15" bodyend="32"/>
+    <location file="topology/direction.hpp" line="14" column="1" bodyfile="topology/direction.hpp" bodystart="15" bodyend="33"/>
     <listofallmembers>
       <member refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a6f375fea0f3d26c57072608359d509dc" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>BACK</name></member>
       <member refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a98f9679e7fcaa201ea32ecad8be036b8" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>BOTTOM</name></member>
       <member refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319af9efb3ea2745425d431a0171b134d8ec" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>BOTTOM_BACK</name></member>
       <member refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319acc5900251cd00271c33ea49e71c0586d" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>BOTTOM_FRONT</name></member>
       <member refid="classscifir_1_1direction_1a59875b32b2b8b82b58fed56b28f294e3" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>direction</name></member>
-      <member refid="classscifir_1_1direction_1a754cbffd39a962a1884a689dec62984e" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>direction</name></member>
-      <member refid="classscifir_1_1direction_1a6002c3eb9dc29459fd5112fab7a0f29f" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>direction</name></member>
-      <member refid="classscifir_1_1direction_1a3056c34d9a11b33beda6e5537a88f950" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>direction</name></member>
-      <member refid="classscifir_1_1direction_1a20878bec2dc16d848c94fd193633e01a" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>direction</name></member>
+      <member refid="classscifir_1_1direction_1aa32c39856a146edf449611bdbefd081a" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>direction</name></member>
+      <member refid="classscifir_1_1direction_1a3b8539a7f8a3e412a0cfc9435bf1b5ef" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>direction</name></member>
+      <member refid="classscifir_1_1direction_1add59983cce38ca07c7fb92d9c4f686eb" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>direction</name></member>
+      <member refid="classscifir_1_1direction_1a9b1933aa99679b859cd91ab9976b51c9" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>direction</name></member>
       <member refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a3abb69462df2b2c0241c781d3701ecea" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>FRONT</name></member>
       <member refid="classscifir_1_1direction_1a16c2b4878a6ac2bdd7225e52c2dfc6ff" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>invert</name></member>
       <member refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319aeb4f3e61e6fafa6c467b82ee242eb51c" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>LEFT</name></member>
@@ -405,9 +423,10 @@
       <member refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319ae972f247233b7808a4d00ee49904065b" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>LEFT_TOP_FRONT</name></member>
       <member refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>name</name></member>
       <member refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319ae81470f38b5ec641cb6204c70738bd3a" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>NONE</name></member>
-      <member refid="classscifir_1_1direction_1a339ae22b4b81ace85b786a3cf6d5fb0d" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1direction_1a18d5c0c5f8a28ef600afaf9fda5ef887" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1direction_1a709066ad405f8f0e338aaae6c3296e90" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1direction_1a521ad429a1acfa71b2f2d35c90938486" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1direction_1ac82f07e487b1892dcefddd6a85088d51" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1direction_1a58cfd0340b81faaa47a668b79ca2a7f4" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1direction_1a451683371c4836e046ba24b027c6a1b6" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>operator=</name></member>
       <member refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319ae8f2b1d045628d57b4b8c562d2ebfc02" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>RIGHT</name></member>
       <member refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319a8ee62fbd05c5583d1b24d4c31c2d7023" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>RIGHT_BACK</name></member>
       <member refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319af550920f7123c3d59dc0b0372733220f" prot="public" virt="non-virtual"><scope>scifir::direction</scope><name>RIGHT_BOTTOM</name></member>

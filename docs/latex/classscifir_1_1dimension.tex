@@ -14,98 +14,100 @@ Collaboration diagram for scifir\+::dimension\+:\nopagebreak
 \item 
 \Hypertarget{classscifir_1_1dimension_a7159ee72510ebcc26ee93da8900fb9fb}\label{classscifir_1_1dimension_a7159ee72510ebcc26ee93da8900fb9fb} 
 enum {\bfseries type} \+: int8\+\_\+t \{ \newline
-{\bfseries none}
+{\bfseries NONE}
 , {\bfseries m}
+, {\bfseries grade}
 , {\bfseries radian}
-, {\bfseries steradian}
 , \newline
-{\bfseries s}
+{\bfseries steradian}
+, {\bfseries s}
 , {\bfseries g}
 , {\bfseries C}
-, {\bfseries K}
 , \newline
-{\bfseries mol}
+{\bfseries K}
+, {\bfseries mol}
 , {\bfseries cd}
 , {\bfseries B}
-, {\bfseries Hz}
 , \newline
-{\bfseries N}
+{\bfseries Hz}
+, {\bfseries N}
 , {\bfseries Pa}
 , {\bfseries J}
-, {\bfseries W}
 , \newline
-{\bfseries A}
+{\bfseries W}
+, {\bfseries A}
 , {\bfseries V}
 , {\bfseries F}
-, {\bfseries Ohm}
 , \newline
-{\bfseries S}
+{\bfseries Ohm}
+, {\bfseries S}
 , {\bfseries Wb}
 , {\bfseries T}
-, {\bfseries H}
 , \newline
-{\bfseries lm}
+{\bfseries H}
+, {\bfseries lm}
 , {\bfseries lx}
 , {\bfseries Bq}
-, {\bfseries Gy}
 , \newline
-{\bfseries Sv}
+{\bfseries Gy}
+, {\bfseries Sv}
 , {\bfseries kat}
 , {\bfseries angstrom}
-, {\bfseries L}
 , \newline
-{\bfseries minute}
+{\bfseries L}
+, {\bfseries minute}
 , {\bfseries h}
 , {\bfseries d}
+, \newline
+{\bfseries ly}
 , {\bfseries AU}
-, \newline
-{\bfseries pc}
+, {\bfseries pc}
 , {\bfseries eV}
-, {\bfseries Da}
+, \newline
+{\bfseries Da}
 , {\bfseries amu}
-, \newline
-{\bfseries barn}
+, {\bfseries barn}
 , {\bfseries M}
-, {\bfseries particles}
+, \newline
+{\bfseries particles}
 , {\bfseries custom}
-, \newline
-{\bfseries custom\+\_\+basic}
+, {\bfseries custom\+\_\+basic}
 , {\bfseries custom\+\_\+full\+\_\+symbol}
-, {\bfseries money}
-, {\bfseries pixel}
 , \newline
-{\bfseries memo}
+{\bfseries money}
+, {\bfseries pixel}
+, {\bfseries memo}
  \}
 \item 
-\Hypertarget{classscifir_1_1dimension_aa9bd3ebc2bce23e7d083fbe0daef6a85}\label{classscifir_1_1dimension_aa9bd3ebc2bce23e7d083fbe0daef6a85} 
-enum {\bfseries sign} \+: int8\+\_\+t \{ {\bfseries NO\+\_\+\+SIGN}
-, {\bfseries POSITIVE}
-, {\bfseries NEGATIVE}
+\Hypertarget{classscifir_1_1dimension_a0c5cc98c4cc5074dc6d68b9d36aff42a}\label{classscifir_1_1dimension_a0c5cc98c4cc5074dc6d68b9d36aff42a} 
+enum {\bfseries position} \+: int8\+\_\+t \{ {\bfseries NO\+\_\+\+POSITION}
+, {\bfseries NUMERATOR}
+, {\bfseries DENOMINATOR}
  \}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classscifir_1_1dimension_ae6ac4c776c24c251e95fcba1d1b8657f}\label{classscifir_1_1dimension_ae6ac4c776c24c251e95fcba1d1b8657f} 
-{\bfseries dimension} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} \&)
+\Hypertarget{classscifir_1_1dimension_a2f8ad34d7754e8af75db62592fce8040}\label{classscifir_1_1dimension_a2f8ad34d7754e8af75db62592fce8040} 
+{\bfseries dimension} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} \&x)
 \item 
-\Hypertarget{classscifir_1_1dimension_afe0af315906a0fdd72c649ae44b3fff2}\label{classscifir_1_1dimension_afe0af315906a0fdd72c649ae44b3fff2} 
-{\bfseries dimension} (\mbox{\hyperlink{classscifir_1_1dimension}{dimension}} \&\&)
+\Hypertarget{classscifir_1_1dimension_af7a65ca2a8db277c6ace714c0743e130}\label{classscifir_1_1dimension_af7a65ca2a8db277c6ace714c0743e130} 
+{\bfseries dimension} (\mbox{\hyperlink{classscifir_1_1dimension}{dimension}} \&\&x)
 \item 
-\Hypertarget{classscifir_1_1dimension_aac39421adc73b9884111ec4d1be85ef5}\label{classscifir_1_1dimension_aac39421adc73b9884111ec4d1be85ef5} 
-{\bfseries dimension} (dimension\+::type, scifir\+::prefix\+::type, dimension\+::sign)
+\Hypertarget{classscifir_1_1dimension_a7817c55516353aa4c3b5fd753c1fada4}\label{classscifir_1_1dimension_a7817c55516353aa4c3b5fd753c1fada4} 
+{\bfseries dimension} (dimension\+::type \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+dimension\+\_\+type}}, scifir\+::prefix\+::type \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+prefix}}, dimension\+::position \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+sign}})
 \item 
-\Hypertarget{classscifir_1_1dimension_a3bcb8ec82eb321efb8da8a274e15e988}\label{classscifir_1_1dimension_a3bcb8ec82eb321efb8da8a274e15e988} 
-{\bfseries dimension} (dimension\+::type, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&, dimension\+::sign)
+\Hypertarget{classscifir_1_1dimension_a083328dce72fff8b8d1663a7ddb5fbc0}\label{classscifir_1_1dimension_a083328dce72fff8b8d1663a7ddb5fbc0} 
+{\bfseries dimension} (dimension\+::type \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+dimension\+\_\+type}}, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+prefix}}, dimension\+::position \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+sign}})
 \item 
-\Hypertarget{classscifir_1_1dimension_ae7e01579505c9e96c5d382b37e213ee3}\label{classscifir_1_1dimension_ae7e01579505c9e96c5d382b37e213ee3} 
-{\bfseries dimension} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&, dimension\+::sign)
+\Hypertarget{classscifir_1_1dimension_ac6f3d78d39989c41df7d997b98288c3f}\label{classscifir_1_1dimension_ac6f3d78d39989c41df7d997b98288c3f} 
+{\bfseries dimension} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+dimension}}, dimension\+::position \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\+\_\+sign}})
 \item 
-\Hypertarget{classscifir_1_1dimension_a348a8dcea14d7cb65e1bc54bc54acd2a}\label{classscifir_1_1dimension_a348a8dcea14d7cb65e1bc54bc54acd2a} 
-\mbox{\hyperlink{classscifir_1_1dimension}{dimension}} \& {\bfseries operator=} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} \&)
+\Hypertarget{classscifir_1_1dimension_a8ce25fd81b3cb3476da56557cc7ed74c}\label{classscifir_1_1dimension_a8ce25fd81b3cb3476da56557cc7ed74c} 
+\mbox{\hyperlink{classscifir_1_1dimension}{dimension}} \& {\bfseries operator=} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} \&x)
 \item 
-\Hypertarget{classscifir_1_1dimension_a3d3aa50b1228d74b4046a7c7b44f9748}\label{classscifir_1_1dimension_a3d3aa50b1228d74b4046a7c7b44f9748} 
-\mbox{\hyperlink{classscifir_1_1dimension}{dimension}} \& {\bfseries operator=} (\mbox{\hyperlink{classscifir_1_1dimension}{dimension}} \&\&)
+\Hypertarget{classscifir_1_1dimension_af47c63fbf5b38eb3b93160d58e49a02e}\label{classscifir_1_1dimension_af47c63fbf5b38eb3b93160d58e49a02e} 
+\mbox{\hyperlink{classscifir_1_1dimension}{dimension}} \& {\bfseries operator=} (\mbox{\hyperlink{classscifir_1_1dimension}{dimension}} \&\&x)
 \item 
 \Hypertarget{classscifir_1_1dimension_acc91dc0871ed7b4ea53d456ddd76432a}\label{classscifir_1_1dimension_acc91dc0871ed7b4ea53d456ddd76432a} 
 \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} {\bfseries get\+\_\+name} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
@@ -118,6 +120,9 @@ enum {\bfseries sign} \+: int8\+\_\+t \{ {\bfseries NO\+\_\+\+SIGN}
 \item 
 \Hypertarget{classscifir_1_1dimension_af185d8d42aa2cfcf396f5b90d34a9f7c}\label{classscifir_1_1dimension_af185d8d42aa2cfcf396f5b90d34a9f7c} 
 \mbox{\hyperlink{classscifir_1_1coordinates__1d}{long}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} {\bfseries prefix\+\_\+math} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\item 
+\Hypertarget{classscifir_1_1dimension_a7652621ccb07137367c93f7b4b0f82be}\label{classscifir_1_1dimension_a7652621ccb07137367c93f7b4b0f82be} 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{long}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} {\bfseries prefix\+\_\+math} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\+\_\+prefix}}) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
 \item 
 \Hypertarget{classscifir_1_1dimension_a364c74c6fca013618c363126d32ab203}\label{classscifir_1_1dimension_a364c74c6fca013618c363126d32ab203} 
 \mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} {\bfseries is\+\_\+simple\+\_\+dimension} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
@@ -155,8 +160,8 @@ vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ {\bfseries 
 \Hypertarget{classscifir_1_1dimension_ac08ab515fd4f392075352134d9f46517}\label{classscifir_1_1dimension_ac08ab515fd4f392075352134d9f46517} 
 dimension\+::type {\bfseries dimension\+\_\+type}
 \item 
-\Hypertarget{classscifir_1_1dimension_ac71d5f3c29a126657f64c4551e596050}\label{classscifir_1_1dimension_ac71d5f3c29a126657f64c4551e596050} 
-dimension\+::sign {\bfseries dimension\+\_\+sign}
+\Hypertarget{classscifir_1_1dimension_a7c2bd8eaebee581289efe69d0aef9464}\label{classscifir_1_1dimension_a7c2bd8eaebee581289efe69d0aef9464} 
+dimension\+::position {\bfseries dimension\+\_\+sign}
 \item 
 \Hypertarget{classscifir_1_1dimension_a7bfd16bfb8a3f44035d05a3377c04656}\label{classscifir_1_1dimension_a7bfd16bfb8a3f44035d05a3377c04656} 
 \mbox{\hyperlink{classscifir_1_1coordinates__1d}{char}} {\bfseries symbol} \mbox{[}3\mbox{]}

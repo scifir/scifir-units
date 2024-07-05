@@ -20,7 +20,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="154" column="3" bodyfile="meca_number/complex_number.hpp" bodystart="154" bodyend="-1"/>
+        <location file="meca_number/complex_number.hpp" line="169" column="3" bodyfile="meca_number/complex_number.hpp" bodystart="169" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1complex__number_1a071915bbab93da99f83b500ed89f2c0f" prot="public" static="no" mutable="no">
         <type>T</type>
@@ -34,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="155" column="3" bodyfile="meca_number/complex_number.hpp" bodystart="155" bodyend="-1"/>
+        <location file="meca_number/complex_number.hpp" line="170" column="3" bodyfile="meca_number/complex_number.hpp" bodystart="170" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="20" column="1" bodyfile="meca_number/complex_number.hpp" bodystart="20" bodyend="21"/>
+        <location file="meca_number/complex_number.hpp" line="22" column="1" bodyfile="meca_number/complex_number.hpp" bodystart="22" bodyend="23"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1complex__number_1a8429239a112a685c37f4a54676c1c098" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="23" column="1" bodyfile="meca_number/complex_number.hpp" bodystart="23" bodyend="24"/>
+        <location file="meca_number/complex_number.hpp" line="25" column="1" bodyfile="meca_number/complex_number.hpp" bodystart="25" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1complex__number_1abb6fa22a6b84469b6aa9d4732e4c00e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -86,20 +86,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="26" column="1" bodyfile="meca_number/complex_number.hpp" bodystart="26" bodyend="27"/>
+        <location file="meca_number/complex_number.hpp" line="28" column="1" bodyfile="meca_number/complex_number.hpp" bodystart="28" bodyend="29"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1complex__number_1a90da6927896375f54fd23f19990c1f3b" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1complex__number_1ae9cb3fd997818a0ea7c2e9530c88a42d" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
         <definition>scifir::complex_number&lt; T &gt;::complex_number</definition>
-        <argsstring>(T x, T y)</argsstring>
+        <argsstring>(const T &amp;x, const T &amp;y)</argsstring>
         <name>complex_number</name>
         <qualifiedname>scifir::complex_number::complex_number</qualifiedname>
         <param>
-          <type>T</type>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type>T</type>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T &amp;</type>
           <declname>y</declname>
         </param>
         <briefdescription>
@@ -108,7 +108,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="29" column="10" bodyfile="meca_number/complex_number.hpp" bodystart="29" bodyend="30"/>
+        <location file="meca_number/complex_number.hpp" line="31" column="10" bodyfile="meca_number/complex_number.hpp" bodystart="31" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1complex__number_1a3bba9cc38e2792461012d37a5a68819c" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>scifir::complex_number&lt; T &gt;::complex_number</definition>
+        <argsstring>(const string &amp;x, const string &amp;y)</argsstring>
+        <name>complex_number</name>
+        <qualifiedname>scifir::complex_number::complex_number</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="meca_number/complex_number.hpp" line="34" column="10" bodyfile="meca_number/complex_number.hpp" bodystart="34" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1complex__number_1a284e7ecbf88e3d89ecfa877b6d46ef32" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
@@ -126,7 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="32" column="10" bodyfile="meca_number/complex_number.hpp" bodystart="32" bodyend="59"/>
+        <location file="meca_number/complex_number.hpp" line="37" column="10" bodyfile="meca_number/complex_number.hpp" bodystart="37" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1complex__number_1a51c3da2fc7bc8b926f273b50271d0e22" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; T &gt; &amp;</type>
@@ -144,7 +166,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="61" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="61" bodyend="66"/>
+        <location file="meca_number/complex_number.hpp" line="70" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="70" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1complex__number_1a40a089dad2e5a7e9d62f3cbb11ba2a5a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; T &gt; &amp;</type>
@@ -162,7 +184,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="68" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="68" bodyend="73"/>
+        <location file="meca_number/complex_number.hpp" line="77" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="77" bodyend="82"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1complex__number_1a8df9bcbaecde5e61b88d94671bb4f791" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; T &gt;</type>
@@ -180,7 +202,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="75" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="75" bodyend="78"/>
+        <location file="meca_number/complex_number.hpp" line="84" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="84" bodyend="87"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1complex__number_1ab275e95df7118724cb25dd8de7b66d5e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; T &gt;</type>
@@ -198,16 +220,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="80" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="80" bodyend="83"/>
+        <location file="meca_number/complex_number.hpp" line="89" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="89" bodyend="92"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1complex__number_1a30029016af77bad97be4e51f4e09aea9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; T &gt;</type>
-        <definition>complex_number&lt; T &gt; scifir::complex_number&lt; T &gt;::operator*</definition>
-        <argsstring>(const complex_number&lt; T &gt; &amp;x) const</argsstring>
+      <memberdef kind="function" id="classscifir_1_1complex__number_1af1bc5975a76e3a7ff1549b6629a4ec49" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &gt;</type>
+        <definition>complex_number&lt; scalar_unit &gt; scifir::complex_number&lt; T &gt;::operator*</definition>
+        <argsstring>(const complex_number&lt; U &gt; &amp;x) const</argsstring>
         <name>operator*</name>
         <qualifiedname>scifir::complex_number::operator*</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; T &gt; &amp;</type>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref> &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -216,16 +243,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="85" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="85" bodyend="88"/>
+        <location file="meca_number/complex_number.hpp" line="95" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="95" bodyend="98"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1complex__number_1a018e45e9bd961006e8b2433046215ca8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; T &gt;</type>
-        <definition>complex_number&lt; T &gt; scifir::complex_number&lt; T &gt;::operator/</definition>
-        <argsstring>(const complex_number&lt; T &gt; &amp;x) const</argsstring>
+      <memberdef kind="function" id="classscifir_1_1complex__number_1a0f73596af57eb83952303d9096093819" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &gt;</type>
+        <definition>complex_number&lt; scalar_unit &gt; scifir::complex_number&lt; T &gt;::operator/</definition>
+        <argsstring>(const complex_number&lt; U &gt; &amp;x) const</argsstring>
         <name>operator/</name>
         <qualifiedname>scifir::complex_number::operator/</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; T &gt; &amp;</type>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref> &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -234,7 +266,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="90" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="90" bodyend="95"/>
+        <location file="meca_number/complex_number.hpp" line="101" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="101" bodyend="106"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1complex__number_1ade75b91648d6c8cbb58a0232440175eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -252,7 +284,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="97" column="6" bodyfile="meca_number/complex_number.hpp" bodystart="97" bodyend="101"/>
+        <location file="meca_number/complex_number.hpp" line="108" column="6" bodyfile="meca_number/complex_number.hpp" bodystart="108" bodyend="112"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1complex__number_1a9986323ec1c9b1825d5f645c2a2c020d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -270,43 +302,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="103" column="6" bodyfile="meca_number/complex_number.hpp" bodystart="103" bodyend="107"/>
-      </memberdef>
-      <memberdef kind="function" id="classscifir_1_1complex__number_1a8eb89c7f7843404699d0b22604a8563e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::complex_number&lt; T &gt;::operator*=</definition>
-        <argsstring>(const complex_number&lt; T &gt; &amp;x)</argsstring>
-        <name>operator*=</name>
-        <qualifiedname>scifir::complex_number::operator*=</qualifiedname>
-        <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; T &gt; &amp;</type>
-          <declname>x</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="109" column="6" bodyfile="meca_number/complex_number.hpp" bodystart="109" bodyend="113"/>
-      </memberdef>
-      <memberdef kind="function" id="classscifir_1_1complex__number_1a5c7138aff9a56061e71f0e3ab118d4c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::complex_number&lt; T &gt;::operator/=</definition>
-        <argsstring>(const complex_number&lt; T &gt; &amp;x)</argsstring>
-        <name>operator/=</name>
-        <qualifiedname>scifir::complex_number::operator/=</qualifiedname>
-        <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; T &gt; &amp;</type>
-          <declname>x</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="115" column="6" bodyfile="meca_number/complex_number.hpp" bodystart="115" bodyend="119"/>
+        <location file="meca_number/complex_number.hpp" line="114" column="6" bodyfile="meca_number/complex_number.hpp" bodystart="114" bodyend="118"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1complex__number_1aaa8470da942e5965370ef1362c98c39e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; T &gt;</type>
@@ -320,7 +316,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="121" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="121" bodyend="124"/>
+        <location file="meca_number/complex_number.hpp" line="120" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="120" bodyend="123"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1complex__number_1aa857513de09aa842fb9209cc61b404bf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>T</type>
@@ -334,7 +330,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="126" column="3" bodyfile="meca_number/complex_number.hpp" bodystart="126" bodyend="129"/>
+        <location file="meca_number/complex_number.hpp" line="125" column="3" bodyfile="meca_number/complex_number.hpp" bodystart="125" bodyend="128"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1complex__number_1a93c2ae019df1d2ddad89b6a82249958b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
@@ -348,11 +344,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="131" column="7" bodyfile="meca_number/complex_number.hpp" bodystart="131" bodyend="145"/>
+        <location file="meca_number/complex_number.hpp" line="130" column="7" bodyfile="meca_number/complex_number.hpp" bodystart="130" bodyend="144"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1complex__number_1afef59ef76952d9d39e7594ab3a74addc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; T &gt;</type>
-        <definition>complex_number&lt; T &gt; scifir::complex_number&lt; T &gt;::get_reciprocal</definition>
+      <memberdef kind="function" id="classscifir_1_1complex__number_1a3af867461a1cd5e9e1c8a7e3be4c8c07" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1complex__number" kindref="compound">complex_number</ref>&lt; <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &gt;</type>
+        <definition>complex_number&lt; scalar_unit &gt; scifir::complex_number&lt; T &gt;::get_reciprocal</definition>
         <argsstring>() const</argsstring>
         <name>get_reciprocal</name>
         <qualifiedname>scifir::complex_number::get_reciprocal</qualifiedname>
@@ -362,33 +358,52 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="meca_number/complex_number.hpp" line="147" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="147" bodyend="152"/>
+        <location file="meca_number/complex_number.hpp" line="146" column="16" bodyfile="meca_number/complex_number.hpp" bodystart="146" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1complex__number_1a4f37a685b85713c4ae36d05dd1bb5340" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <definition>string scifir::complex_number&lt; T &gt;::display</definition>
+        <argsstring>(int number_of_decimals=2) const</argsstring>
+        <name>display</name>
+        <qualifiedname>scifir::complex_number::display</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>number_of_decimals</declname>
+          <defval>2</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="meca_number/complex_number.hpp" line="153" column="8" bodyfile="meca_number/complex_number.hpp" bodystart="153" bodyend="167"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="meca_number/complex_number.hpp" line="17" column="1" bodyfile="meca_number/complex_number.hpp" bodystart="18" bodyend="156"/>
+    <location file="meca_number/complex_number.hpp" line="19" column="1" bodyfile="meca_number/complex_number.hpp" bodystart="20" bodyend="171"/>
     <listofallmembers>
       <member refid="classscifir_1_1complex__number_1ae824ee086a067ead2305da9fc068b394" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>complex_number</name></member>
       <member refid="classscifir_1_1complex__number_1a8429239a112a685c37f4a54676c1c098" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>complex_number</name></member>
       <member refid="classscifir_1_1complex__number_1abb6fa22a6b84469b6aa9d4732e4c00e6" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>complex_number</name></member>
-      <member refid="classscifir_1_1complex__number_1a90da6927896375f54fd23f19990c1f3b" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>complex_number</name></member>
+      <member refid="classscifir_1_1complex__number_1ae9cb3fd997818a0ea7c2e9530c88a42d" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>complex_number</name></member>
+      <member refid="classscifir_1_1complex__number_1a3bba9cc38e2792461012d37a5a68819c" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>complex_number</name></member>
       <member refid="classscifir_1_1complex__number_1a284e7ecbf88e3d89ecfa877b6d46ef32" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>complex_number</name></member>
+      <member refid="classscifir_1_1complex__number_1a4f37a685b85713c4ae36d05dd1bb5340" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>display</name></member>
       <member refid="classscifir_1_1complex__number_1a93c2ae019df1d2ddad89b6a82249958b" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>get_argument</name></member>
       <member refid="classscifir_1_1complex__number_1aaa8470da942e5965370ef1362c98c39e" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>get_conjugate</name></member>
       <member refid="classscifir_1_1complex__number_1aa857513de09aa842fb9209cc61b404bf" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>get_r</name></member>
-      <member refid="classscifir_1_1complex__number_1afef59ef76952d9d39e7594ab3a74addc" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>get_reciprocal</name></member>
+      <member refid="classscifir_1_1complex__number_1a3af867461a1cd5e9e1c8a7e3be4c8c07" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>get_reciprocal</name></member>
       <member refid="classscifir_1_1complex__number_1a071915bbab93da99f83b500ed89f2c0f" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>imaginary</name></member>
-      <member refid="classscifir_1_1complex__number_1a30029016af77bad97be4e51f4e09aea9" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1complex__number_1a8eb89c7f7843404699d0b22604a8563e" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>operator*=</name></member>
+      <member refid="classscifir_1_1complex__number_1af1bc5975a76e3a7ff1549b6629a4ec49" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>operator*</name></member>
       <member refid="classscifir_1_1complex__number_1a8df9bcbaecde5e61b88d94671bb4f791" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>operator+</name></member>
       <member refid="classscifir_1_1complex__number_1ade75b91648d6c8cbb58a0232440175eb" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>operator+=</name></member>
       <member refid="classscifir_1_1complex__number_1ab275e95df7118724cb25dd8de7b66d5e" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>operator-</name></member>
       <member refid="classscifir_1_1complex__number_1a9986323ec1c9b1825d5f645c2a2c020d" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1complex__number_1a018e45e9bd961006e8b2433046215ca8" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1complex__number_1a5c7138aff9a56061e71f0e3ab118d4c8" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>operator/=</name></member>
+      <member refid="classscifir_1_1complex__number_1a0f73596af57eb83952303d9096093819" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>operator/</name></member>
       <member refid="classscifir_1_1complex__number_1a51c3da2fc7bc8b926f273b50271d0e22" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>operator=</name></member>
       <member refid="classscifir_1_1complex__number_1a40a089dad2e5a7e9d62f3cbb11ba2a5a" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>operator=</name></member>
       <member refid="classscifir_1_1complex__number_1aa6b5eed50f89c30ce2a228453739012b" prot="public" virt="non-virtual"><scope>scifir::complex_number</scope><name>real</name></member>

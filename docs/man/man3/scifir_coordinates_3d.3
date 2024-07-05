@@ -31,7 +31,10 @@ scifir::coordinates_3d< T >
 .RI "\fBcoordinates_3d\fP (\fBconst\fP \fBpoint_3d\fP< T > &\fBx_point\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_3d\fP (\fBstring\fP \fBinit_coordinates_3d\fP)"
+.RI "\fBcoordinates_3d\fP (\fBpoint_3d\fP< T > &&\fBx_point\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_3d\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_3d\fP)"
 .br
 .ti -1c
 .RI "\fBcoordinates_3d\fP< T > & \fBoperator=\fP (\fBconst\fP \fBcoordinates_3d\fP< T > &\fBx_coordinates\fP)"
@@ -41,6 +44,12 @@ scifir::coordinates_3d< T >
 .br
 .ti -1c
 .RI "\fBcoordinates_3d\fP< T > & \fBoperator=\fP (\fBconst\fP \fBpoint_3d\fP< T > &\fBx_point\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_3d\fP< T > & \fBoperator=\fP (\fBpoint_3d\fP< T > &&\fBx_point\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_3d\fP< T > & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_3d\fP)"
 .br
 .ti -1c
 .RI "T \fBget_p\fP () \fBconst\fP"
@@ -98,6 +107,9 @@ scifir::coordinates_3d< T >
 .br
 .ti -1c
 .RI "T \fBdistance_to_origin\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBdisplay_cartesian\fP () \fBconst\fP"
 .br
 .ti -1c
 .RI "\fBstring\fP \fBdisplay_cylindrical\fP () \fBconst\fP"

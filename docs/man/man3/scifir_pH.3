@@ -10,34 +10,34 @@ scifir::pH
 
 .in +1c
 .ti -1c
-.RI "\fBpH\fP (\fBconst\fP \fBpH\fP &)"
+.RI "\fBpH\fP (\fBconst\fP \fBpH\fP &x)"
 .br
 .ti -1c
-.RI "\fBpH\fP (\fBpH\fP &&)"
+.RI "\fBpH\fP (\fBpH\fP &&x)"
 .br
 .ti -1c
-.RI "\fBpH\fP (\fBfloat\fP)"
+.RI "\fBpH\fP (\fBfloat\fP \fBnew_value\fP)"
 .br
 .ti -1c
-.RI "\fBpH\fP (\fBconst\fP \fBstring\fP &)"
+.RI "\fBpH\fP (\fBconst\fP \fBstring\fP &\fBinit_pH\fP)"
 .br
 .ti -1c
-.RI "\fBpH\fP (\fBconst\fP \fBscalar_unit\fP &)"
+.RI "\fBpH\fP (\fBconst\fP \fBscalar_unit\fP &x)"
 .br
 .ti -1c
-.RI "\fBpH\fP & \fBoperator=\fP (\fBconst\fP \fBpH\fP &)"
+.RI "\fBpH\fP & \fBoperator=\fP (\fBconst\fP \fBpH\fP &x)"
 .br
 .ti -1c
-.RI "\fBpH\fP & \fBoperator=\fP (\fBpH\fP &&)"
+.RI "\fBpH\fP & \fBoperator=\fP (\fBpH\fP &&x)"
 .br
 .ti -1c
-.RI "\fBpH\fP & \fBoperator=\fP (\fBfloat\fP)"
+.RI "\fBpH\fP & \fBoperator=\fP (\fBfloat\fP \fBnew_value\fP)"
 .br
 .ti -1c
-.RI "\fBpH\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &)"
+.RI "\fBpH\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_pH\fP)"
 .br
 .ti -1c
-.RI "\fBpH\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &)"
+.RI "\fBpH\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &x)"
 .br
 .ti -1c
 .RI "\fBoperator float\fP () \fBconst\fP"
@@ -46,28 +46,28 @@ scifir::pH
 .RI "\fBconst\fP \fBfloat\fP & \fBget_value\fP () \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBpH\fP \fBoperator+\fP (\fBconst\fP \fBpH\fP &) \fBconst\fP"
+.RI "\fBpH\fP \fBoperator+\fP (\fBconst\fP \fBpH\fP &x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBpH\fP \fBoperator\-\fP (\fBconst\fP \fBpH\fP &) \fBconst\fP"
+.RI "\fBpH\fP \fBoperator\-\fP (\fBconst\fP \fBpH\fP &x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBpH\fP &)"
+.RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBpH\fP &x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator\-=\fP (\fBconst\fP \fBpH\fP &)"
+.RI "\fBvoid\fP \fBoperator\-=\fP (\fBconst\fP \fBpH\fP &x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpH\fP \fBoperator+\fP (T y) \fBconst\fP"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpH\fP \fBoperator+\fP (T x) \fBconst\fP"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpH\fP \fBoperator\-\fP (T y) \fBconst\fP"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBpH\fP \fBoperator\-\fP (T x) \fBconst\fP"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator+=\fP (T y)"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator+=\fP (T x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator\-=\fP (T y)"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator\-=\fP (T x)"
 .br
 .ti -1c
 .RI "\fBpH\fP & \fBoperator++\fP ()"
@@ -100,7 +100,7 @@ scifir::pH
 .RI "\fBbool\fP \fBis_neutral\fP () \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay\fP (\fBint\fP=2) \fBconst\fP"
+.RI "\fBstring\fP \fBdisplay\fP (\fBint\fP \fBnumber_of_decimals\fP=2) \fBconst\fP"
 .br
 .in -1c
 

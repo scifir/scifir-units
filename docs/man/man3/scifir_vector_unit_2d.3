@@ -12,97 +12,115 @@ Inherits \fBscifir::scalar_unit\fP\&.
 
 .in +1c
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBconst\fP \fBvector_unit_2d\fP &)"
+.RI "\fBvector_unit_2d\fP (\fBconst\fP \fBvector_unit_2d\fP &x)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBvector_unit_2d\fP &&)"
+.RI "\fBvector_unit_2d\fP (\fBvector_unit_2d\fP &&x)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBfloat\fP, \fBconst\fP \fBstring\fP &, \fBfloat\fP)"
+.RI "\fBvector_unit_2d\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBfloat\fP \fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBfloat\fP, \fBconst\fP \fBstring\fP &, \fBconst\fP \fBangle\fP &)"
+.RI "\fBvector_unit_2d\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBdouble\fP, \fBconst\fP \fBstring\fP &, \fBfloat\fP)"
+.RI "\fBvector_unit_2d\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBfloat\fP \fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBdouble\fP, \fBconst\fP \fBstring\fP &, \fBconst\fP \fBangle\fP &)"
+.RI "\fBvector_unit_2d\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBlong\fP \fBdouble\fP, \fBconst\fP \fBstring\fP &, \fBfloat\fP)"
+.RI "\fBvector_unit_2d\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBfloat\fP \fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBlong\fP \fBdouble\fP, \fBconst\fP \fBstring\fP &, \fBconst\fP \fBangle\fP &)"
+.RI "\fBvector_unit_2d\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBfloat\fP, \fBconst\fP vector< \fBdimension\fP > &, \fBfloat\fP)"
+.RI "\fBvector_unit_2d\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBfloat\fP \fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBfloat\fP, \fBconst\fP vector< \fBdimension\fP > &, \fBconst\fP \fBangle\fP &)"
+.RI "\fBvector_unit_2d\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBdouble\fP, \fBconst\fP vector< \fBdimension\fP > &, \fBfloat\fP)"
+.RI "\fBvector_unit_2d\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBfloat\fP \fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBdouble\fP, \fBconst\fP vector< \fBdimension\fP > &, \fBconst\fP \fBangle\fP &)"
+.RI "\fBvector_unit_2d\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBlong\fP \fBdouble\fP, \fBconst\fP vector< \fBdimension\fP > &, \fBfloat\fP)"
+.RI "\fBvector_unit_2d\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBfloat\fP \fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBlong\fP \fBdouble\fP, \fBconst\fP vector< \fBdimension\fP > &, \fBconst\fP \fBangle\fP &)"
+.RI "\fBvector_unit_2d\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBconst\fP \fBscalar_unit\fP &, \fBfloat\fP)"
+.RI "\fBvector_unit_2d\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBfloat\fP \fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBconst\fP \fBscalar_unit\fP &, \fBconst\fP \fBangle\fP &)"
+.RI "\fBvector_unit_2d\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBconst\fP \fBstring\fP &, \fBfloat\fP)"
+.RI "\fBvector_unit_2d\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBfloat\fP \fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBconst\fP \fBstring\fP &, \fBconst\fP \fBangle\fP &)"
+.RI "\fBvector_unit_2d\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP (\fBconst\fP \fBstring\fP &)"
+.RI "\fBvector_unit_2d\fP (\fBconst\fP \fBscalar_unit\fP &x, \fBfloat\fP \fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP & \fBoperator=\fP (\fBconst\fP \fBvector_unit_2d\fP &)"
+.RI "\fBvector_unit_2d\fP (\fBconst\fP \fBscalar_unit\fP &x, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP & \fBoperator=\fP (\fBvector_unit_2d\fP &&)"
+.RI "\fBvector_unit_2d\fP (\fBconst\fP \fBstring\fP &\fBinit_scalar\fP, \fBfloat\fP \fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &)"
+.RI "\fBvector_unit_2d\fP (\fBconst\fP \fBstring\fP &\fBinit_scalar\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP & \fBoperator=\fP (\fBscalar_unit\fP &&)"
+.RI "\fBvector_unit_2d\fP (\fBconst\fP \fBstring\fP &\fBinit_vector_2d\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBpoint_to\fP (direction::name)"
+.RI "\fBvector_unit_2d\fP & \fBoperator=\fP (\fBconst\fP \fBvector_unit_2d\fP &x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBvector_unit_2d\fP &)"
+.RI "\fBvector_unit_2d\fP & \fBoperator=\fP (\fBvector_unit_2d\fP &&x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator\-=\fP (\fBvector_unit_2d\fP)"
+.RI "\fBvector_unit_2d\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &x)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP \fBoperator+\fP (\fBconst\fP \fBvector_unit_2d\fP &) \fBconst\fP"
+.RI "\fBvector_unit_2d\fP & \fBoperator=\fP (\fBscalar_unit\fP &&x)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP \fBoperator\-\fP (\fBvector_unit_2d\fP) \fBconst\fP"
+.RI "\fBvector_unit_2d\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_vector_2d\fP)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP \fBoperator*\fP (\fBconst\fP \fBscalar_unit\fP &) \fBconst\fP"
+.RI "\fBbool\fP \fBoperator==\fP (\fBvector_unit_2d\fP x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP \fBoperator/\fP (\fBconst\fP \fBscalar_unit\fP &) \fBconst\fP"
+.RI "\fBvoid\fP \fBpoint_to\fP (direction::name x)"
 .br
 .ti -1c
-.RI "\fBvector_unit_2d\fP \fBoperator^\fP (\fBconst\fP \fBscalar_unit\fP &) \fBconst\fP"
+.RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBvector_unit_2d\fP &x)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBoperator\-=\fP (\fBvector_unit_2d\fP x)"
+.br
+.ti -1c
+.RI "\fBvector_unit_2d\fP \fBoperator+\fP (\fBconst\fP \fBvector_unit_2d\fP &x) \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBvector_unit_2d\fP \fBoperator\-\fP (\fBvector_unit_2d\fP x) \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBvector_unit_2d\fP \fBoperator*\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBvector_unit_2d\fP \fBoperator/\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBvector_unit_2d\fP \fBoperator^\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
 .br
 .ti -1c
 .RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvector_unit_2d\fP \fBoperator+\fP (\fBU\fP x) \fBconst\fP"
@@ -120,16 +138,16 @@ Inherits \fBscifir::scalar_unit\fP\&.
 .RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<is_integer_number<U>::value>::type> \fBvector_unit_2d\fP \fBoperator^\fP (\fBU\fP x) \fBconst\fP"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP \fBoperator+=\fP (\fBU\fP y)"
+.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP \fBoperator+=\fP (\fBU\fP x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP \fBoperator\-=\fP (\fBU\fP y)"
+.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP \fBoperator\-=\fP (\fBU\fP x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP \fBoperator*=\fP (\fBU\fP y)"
+.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP \fBoperator*=\fP (\fBU\fP x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP \fBoperator/=\fP (\fBU\fP y)"
+.RI "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP \fBoperator/=\fP (\fBU\fP x)"
 .br
 .ti -1c
 .RI "\fBscalar_unit\fP \fBx_projection\fP () \fBconst\fP"
@@ -141,101 +159,113 @@ Inherits \fBscifir::scalar_unit\fP\&.
 .RI "\fBvoid\fP \fBinvert\fP ()"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBvectorial_display\fP (\fBint\fP=2) \fBconst\fP"
+.RI "\fBstring\fP \fBvectorial_display\fP (\fBint\fP \fBnumber_of_decimals\fP=2) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBvectorial_derived_display\fP (\fBint\fP=2) \fBconst\fP"
+.RI "\fBstring\fP \fBvectorial_derived_display\fP (\fBint\fP \fBnumber_of_decimals\fP=2) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBvectorial_custom_display\fP (\fBconst\fP \fBstring\fP &, \fBint\fP=2) \fBconst\fP"
+.RI "\fBstring\fP \fBvectorial_custom_display\fP (\fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBint\fP \fBnumber_of_decimals\fP=2) \fBconst\fP"
 .br
 .in -1c
 
 Public Member Functions inherited from \fBscifir::scalar_unit\fP
 .in +1c
 .ti -1c
-.RI "\fBscalar_unit\fP (\fBconst\fP \fBscalar_unit\fP &)"
+.RI "\fBscalar_unit\fP (\fBconst\fP \fBscalar_unit\fP &x)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP (\fBscalar_unit\fP &&)"
+.RI "\fBscalar_unit\fP (\fBscalar_unit\fP &&x)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP (\fBfloat\fP, \fBconst\fP \fBstring\fP &)"
+.RI "\fBscalar_unit\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP (\fBdouble\fP, \fBconst\fP \fBstring\fP &)"
+.RI "\fBscalar_unit\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP (\fBlong\fP \fBdouble\fP, \fBconst\fP \fBstring\fP &)"
+.RI "\fBscalar_unit\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP (\fBfloat\fP, \fBconst\fP vector< \fBdimension\fP > &)"
+.RI "\fBscalar_unit\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP (\fBdouble\fP, \fBconst\fP vector< \fBdimension\fP > &)"
+.RI "\fBscalar_unit\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP (\fBlong\fP \fBdouble\fP, \fBconst\fP vector< \fBdimension\fP > &)"
+.RI "\fBscalar_unit\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP (\fBconst\fP \fBstring\fP &)"
+.RI "\fBscalar_unit\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &)"
+.RI "\fBscalar_unit\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP & \fBoperator=\fP (\fBscalar_unit\fP &&)"
+.RI "\fBscalar_unit\fP (\fBconst\fP \fBstring\fP &\fBinit_scalar\fP)"
+.br
+.ti -1c
+.RI "\fBscalar_unit\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.br
+.ti -1c
+.RI "\fBscalar_unit\fP & \fBoperator=\fP (\fBscalar_unit\fP &&x)"
+.br
+.ti -1c
+.RI "\fBscalar_unit\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_scalar\fP)"
 .br
 .ti -1c
 .RI "\fBoperator float\fP () \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBoperator+\fP (\fBscalar_unit\fP) \fBconst\fP"
+.RI "\fBbool\fP \fBoperator==\fP (\fBscalar_unit\fP x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBoperator\-\fP (\fBscalar_unit\fP) \fBconst\fP"
+.RI "\fBscalar_unit\fP \fBoperator+\fP (\fBscalar_unit\fP x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBoperator*\fP (\fBscalar_unit\fP) \fBconst\fP"
+.RI "\fBscalar_unit\fP \fBoperator\-\fP (\fBscalar_unit\fP x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBoperator/\fP (\fBscalar_unit\fP) \fBconst\fP"
+.RI "\fBscalar_unit\fP \fBoperator*\fP (\fBscalar_unit\fP x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBscalar_unit\fP \fBoperator^\fP (\fBconst\fP \fBscalar_unit\fP &) \fBconst\fP"
+.RI "\fBscalar_unit\fP \fBoperator/\fP (\fBscalar_unit\fP x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator+=\fP (\fBscalar_unit\fP)"
+.RI "\fBscalar_unit\fP \fBoperator^\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator\-=\fP (\fBscalar_unit\fP)"
+.RI "\fBvoid\fP \fBoperator+=\fP (\fBscalar_unit\fP x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator+\fP (\fBconst\fP T y) \fBconst\fP"
+.RI "\fBvoid\fP \fBoperator\-=\fP (\fBscalar_unit\fP x)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator\-\fP (\fBconst\fP T y) \fBconst\fP"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator+\fP (T y) \fBconst\fP"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator*\fP (\fBconst\fP T y) \fBconst\fP"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator\-\fP (T y) \fBconst\fP"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator/\fP (\fBconst\fP T y) \fBconst\fP"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator*\fP (T y) \fBconst\fP"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<is_integer_number<T>::value>::type> \fBscalar_unit\fP \fBoperator^\fP (\fBconst\fP T y) \fBconst\fP"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator/\fP (T y) \fBconst\fP"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator+=\fP (\fBconst\fP T y)"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<is_integer_number<T>::value>::type> \fBscalar_unit\fP \fBoperator^\fP (T y) \fBconst\fP"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator\-=\fP (\fBconst\fP T y)"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator+=\fP (T y)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator*=\fP (\fBconst\fP T y)"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator\-=\fP (T y)"
 .br
 .ti -1c
-.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator/=\fP (\fBconst\fP T y)"
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator*=\fP (T y)"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator/=\fP (T y)"
 .br
 .ti -1c
 .RI "\fBscalar_unit\fP & \fBoperator++\fP ()"
@@ -250,16 +280,16 @@ Public Member Functions inherited from \fBscifir::scalar_unit\fP
 .RI "\fBscalar_unit\fP & \fBoperator\-\-\fP (\fBint\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBchange_dimensions\fP (\fBconst\fP \fBstring\fP &)"
+.RI "\fBvoid\fP \fBchange_dimensions\fP (\fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBchange_dimensions\fP (\fBconst\fP \fBscalar_unit\fP &)"
+.RI "\fBvoid\fP \fBchange_dimensions\fP (\fBconst\fP \fBscalar_unit\fP &x)"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBhas_dimensions\fP (\fBconst\fP \fBstring\fP &) \fBconst\fP"
+.RI "\fBbool\fP \fBhas_dimensions\fP (\fBconst\fP \fBstring\fP &\fBinit_dimensions\fP) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBhas_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &) \fBconst\fP"
+.RI "\fBbool\fP \fBhas_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &\fBx_dimensions\fP) \fBconst\fP"
 .br
 .ti -1c
 .RI "\fBbool\fP \fBhas_dimensions\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
@@ -280,13 +310,13 @@ Public Member Functions inherited from \fBscifir::scalar_unit\fP
 .RI "\fBconst\fP \fBfloat\fP & \fBget_value\fP () \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBdisplay\fP (\fBint\fP=2, \fBbool\fP=\fBfalse\fP, \fBbool\fP=\fBfalse\fP) \fBconst\fP"
+.RI "\fBstring\fP \fBdisplay\fP (\fBint\fP \fBnumber_of_decimals\fP=2, \fBbool\fP \fBwith_brackets\fP=\fBfalse\fP, \fBbool\fP \fBuse_close_prefix\fP=\fBfalse\fP) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBderived_display\fP (\fBint\fP=2, \fBbool\fP=\fBfalse\fP, \fBbool\fP=\fBfalse\fP) \fBconst\fP"
+.RI "\fBstring\fP \fBderived_display\fP (\fBint\fP \fBnumber_of_decimals\fP=2, \fBbool\fP \fBwith_brackets\fP=\fBfalse\fP, \fBbool\fP \fBuse_close_prefix\fP=\fBfalse\fP) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBstring\fP \fBcustom_display\fP (\fBconst\fP \fBstring\fP &, \fBint\fP=2, \fBbool\fP=\fBfalse\fP) \fBconst\fP"
+.RI "\fBstring\fP \fBcustom_display\fP (\fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBint\fP \fBnumber_of_decimals\fP=2, \fBbool\fP \fBwith_brackets\fP=\fBfalse\fP) \fBconst\fP"
 .br
 .in -1c
 .SS "Static Public Member Functions"
@@ -309,13 +339,13 @@ Public Member Functions inherited from \fBscifir::scalar_unit\fP
 Protected Member Functions inherited from \fBscifir::scalar_unit\fP
 .in +1c
 .ti -1c
-.RI "\fBvoid\fP \fBadd_dimension\fP (\fBconst\fP \fBdimension\fP &)"
+.RI "\fBvoid\fP \fBadd_dimension\fP (\fBconst\fP \fBdimension\fP &\fBnew_dimension\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBremove_dimension\fP (\fBconst\fP \fBdimension\fP &)"
+.RI "\fBvoid\fP \fBremove_dimension\fP (\fBconst\fP \fBdimension\fP &\fBold_dimension\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_from_string\fP (\fBconst\fP \fBstring\fP &)"
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_scalar\fP)"
 .br
 .in -1c
 

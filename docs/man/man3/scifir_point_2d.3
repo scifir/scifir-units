@@ -22,10 +22,13 @@ scifir::point_2d< T >
 .RI "\fBpoint_2d\fP (\fBconst\fP T &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
-.RI "\fBpoint_2d\fP (\fBconst\fP \fBscifir::coordinates_2d\fP< T > &\fBnew_coordinates\fP)"
+.RI "\fBpoint_2d\fP (\fBconst\fP \fBscifir::coordinates_2d\fP< T > &\fBx_coordinates\fP)"
 .br
 .ti -1c
-.RI "\fBpoint_2d\fP (\fBstring\fP \fBinit_point_2d\fP)"
+.RI "\fBpoint_2d\fP (\fBscifir::coordinates_2d\fP< T > &&\fBx_coordinates\fP)"
+.br
+.ti -1c
+.RI "\fBpoint_2d\fP (\fBconst\fP \fBstring\fP &\fBinit_point_2d\fP)"
 .br
 .ti -1c
 .RI "\fBpoint_2d\fP< T > & \fBoperator=\fP (\fBconst\fP \fBpoint_2d\fP< T > &\fBx_point\fP)"
@@ -35,6 +38,12 @@ scifir::point_2d< T >
 .br
 .ti -1c
 .RI "\fBpoint_2d\fP< T > & \fBoperator=\fP (\fBconst\fP \fBcoordinates_2d\fP< T > &)"
+.br
+.ti -1c
+.RI "\fBpoint_2d\fP< T > & \fBoperator=\fP (\fBcoordinates_2d\fP< T > &&)"
+.br
+.ti -1c
+.RI "\fBpoint_2d\fP< T > & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_point_2d\fP)"
 .br
 .ti -1c
 .RI "T \fBget_p\fP () \fBconst\fP"
@@ -62,6 +71,9 @@ scifir::point_2d< T >
 .br
 .ti -1c
 .RI "T \fBdistance_to_origin\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBdisplay_cartesian\fP () \fBconst\fP"
 .br
 .ti -1c
 .RI "\fBstring\fP \fBdisplay_polar\fP () \fBconst\fP"

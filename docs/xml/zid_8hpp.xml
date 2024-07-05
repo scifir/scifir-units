@@ -51,10 +51,10 @@
     <innerclass refid="classscifir_1_1zid" prot="public">scifir::zid</innerclass>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
     <sectiondef kind="func">
-      <memberdef kind="function" id="zid_8hpp_1aa998cacd6c424bed55ba1f407d3bc376" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="zid_8hpp_1a093a778c207548419656659944a46ac4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator==</definition>
-        <argsstring>(const scifir::zid &amp;, const scifir::zid &amp;)</argsstring>
+        <argsstring>(const scifir::zid &amp;x, const scifir::zid &amp;y)</argsstring>
         <name>operator==</name>
         <param>
           <type>const <ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref> &amp;</type>
@@ -70,12 +70,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="33" column="6" bodyfile="special_units/zid.cpp" bodystart="68" bodyend="92" declfile="special_units/zid.hpp" declline="33" declcolumn="6"/>
+        <location file="special_units/zid.hpp" line="45" column="6" bodyfile="special_units/zid.cpp" bodystart="177" bodyend="208" declfile="special_units/zid.hpp" declline="45" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="zid_8hpp_1a02444bee244e84c4625714e346b34e5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="zid_8hpp_1aec3ac19e273a8f4792aa19975d46d5bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator!=</definition>
-        <argsstring>(const scifir::zid &amp;, const scifir::zid &amp;)</argsstring>
+        <argsstring>(const scifir::zid &amp;x, const scifir::zid &amp;y)</argsstring>
         <name>operator!=</name>
         <param>
           <type>const <ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref> &amp;</type>
@@ -91,12 +91,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="34" column="6" bodyfile="special_units/zid.cpp" bodystart="94" bodyend="97" declfile="special_units/zid.hpp" declline="34" declcolumn="6"/>
+        <location file="special_units/zid.hpp" line="46" column="6" bodyfile="special_units/zid.cpp" bodystart="210" bodyend="213" declfile="special_units/zid.hpp" declline="46" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="zid_8hpp_1a61694d54b7e8db9ef0d944ffdc7e1759" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="zid_8hpp_1aa59d8c03955794abaec412d34ee50110" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator==</definition>
-        <argsstring>(const scifir::zid &amp;, const string &amp;)</argsstring>
+        <argsstring>(const scifir::zid &amp;x, const string &amp;init_zid_full)</argsstring>
         <name>operator==</name>
         <param>
           <type>const <ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref> &amp;</type>
@@ -104,7 +104,7 @@
         </param>
         <param>
           <type>const string &amp;</type>
-          <declname>y</declname>
+          <declname>init_zid_full</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -112,12 +112,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="36" column="6" bodyfile="special_units/zid.cpp" bodystart="99" bodyend="103" declfile="special_units/zid.hpp" declline="36" declcolumn="6"/>
+        <location file="special_units/zid.hpp" line="48" column="6" bodyfile="special_units/zid.cpp" bodystart="215" bodyend="219" declfile="special_units/zid.hpp" declline="48" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="zid_8hpp_1a8795cdf775ba07a36b9d6cff85f3dbfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="zid_8hpp_1a0c84efd3e3893b3331380c7aada89306" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator!=</definition>
-        <argsstring>(const scifir::zid &amp;, const string &amp;)</argsstring>
+        <argsstring>(const scifir::zid &amp;x, const string &amp;init_zid_full)</argsstring>
         <name>operator!=</name>
         <param>
           <type>const <ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref> &amp;</type>
@@ -125,7 +125,7 @@
         </param>
         <param>
           <type>const string &amp;</type>
-          <declname>y</declname>
+          <declname>init_zid_full</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -133,20 +133,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="37" column="6" bodyfile="special_units/zid.cpp" bodystart="105" bodyend="108" declfile="special_units/zid.hpp" declline="37" declcolumn="6"/>
+        <location file="special_units/zid.hpp" line="49" column="6" bodyfile="special_units/zid.cpp" bodystart="221" bodyend="224" declfile="special_units/zid.hpp" declline="49" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="zid_8hpp_1abb3d4a784eaa1ede156726bbd6dae592" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="zid_8hpp_1afdb2451e9204dfe1db539d3b7015c35c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator==</definition>
-        <argsstring>(const string &amp;, const scifir::zid &amp;)</argsstring>
+        <argsstring>(const string &amp;init_zid_full, const scifir::zid &amp;x)</argsstring>
         <name>operator==</name>
         <param>
           <type>const string &amp;</type>
-          <declname>x</declname>
+          <declname>init_zid_full</declname>
         </param>
         <param>
           <type>const <ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref> &amp;</type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -154,20 +154,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="39" column="6" bodyfile="special_units/zid.cpp" bodystart="110" bodyend="114" declfile="special_units/zid.hpp" declline="39" declcolumn="6"/>
+        <location file="special_units/zid.hpp" line="51" column="6" bodyfile="special_units/zid.cpp" bodystart="226" bodyend="230" declfile="special_units/zid.hpp" declline="51" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="zid_8hpp_1a2490a1cf78e07ce4d2826172c9ea625c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="zid_8hpp_1a40c4d7f2051ffd77cda6729cce214976" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator!=</definition>
-        <argsstring>(const string &amp;, const scifir::zid &amp;)</argsstring>
+        <argsstring>(const string &amp;init_zid_full, const scifir::zid &amp;x)</argsstring>
         <name>operator!=</name>
         <param>
           <type>const string &amp;</type>
-          <declname>x</declname>
+          <declname>init_zid_full</declname>
         </param>
         <param>
           <type>const <ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref> &amp;</type>
-          <declname>y</declname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -175,12 +175,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="40" column="6" bodyfile="special_units/zid.cpp" bodystart="116" bodyend="119" declfile="special_units/zid.hpp" declline="40" declcolumn="6"/>
+        <location file="special_units/zid.hpp" line="52" column="6" bodyfile="special_units/zid.cpp" bodystart="232" bodyend="235" declfile="special_units/zid.hpp" declline="52" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="zid_8hpp_1a05d56f6a32a3dbc191dc7d8e529fa313" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="zid_8hpp_1a8172c8995c736ca5bd751e29b788c80b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void operator+=</definition>
-        <argsstring>(string &amp;, const scifir::zid &amp;)</argsstring>
+        <argsstring>(string &amp;x, const scifir::zid &amp;y)</argsstring>
         <name>operator+=</name>
         <param>
           <type>string &amp;</type>
@@ -196,12 +196,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="42" column="6" bodyfile="special_units/zid.cpp" bodystart="121" bodyend="126" declfile="special_units/zid.hpp" declline="42" declcolumn="6"/>
+        <location file="special_units/zid.hpp" line="54" column="6" bodyfile="special_units/zid.cpp" bodystart="237" bodyend="242" declfile="special_units/zid.hpp" declline="54" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="zid_8hpp_1afce754fb6585cafe10ce5aec341809b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="zid_8hpp_1ab1cad86185890407265a6af3b0275bc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>string</type>
         <definition>string operator+</definition>
-        <argsstring>(const string &amp;, const scifir::zid &amp;)</argsstring>
+        <argsstring>(const string &amp;x, const scifir::zid &amp;y)</argsstring>
         <name>operator+</name>
         <param>
           <type>const string &amp;</type>
@@ -217,12 +217,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="43" column="8" bodyfile="special_units/zid.cpp" bodystart="128" bodyend="134" declfile="special_units/zid.hpp" declline="43" declcolumn="8"/>
+        <location file="special_units/zid.hpp" line="55" column="8" bodyfile="special_units/zid.cpp" bodystart="244" bodyend="250" declfile="special_units/zid.hpp" declline="55" declcolumn="8"/>
       </memberdef>
-      <memberdef kind="function" id="zid_8hpp_1aa5aa76a9aa7a05f1abae483024b52378" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="zid_8hpp_1a9404a9e73eeea7ef6240c04d1357d020" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>string</type>
         <definition>string operator+</definition>
-        <argsstring>(const scifir::zid &amp;, const string &amp;)</argsstring>
+        <argsstring>(const scifir::zid &amp;y, const string &amp;x)</argsstring>
         <name>operator+</name>
         <param>
           <type>const <ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref> &amp;</type>
@@ -238,12 +238,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="44" column="8" bodyfile="special_units/zid.cpp" bodystart="136" bodyend="142" declfile="special_units/zid.hpp" declline="44" declcolumn="8"/>
+        <location file="special_units/zid.hpp" line="56" column="8" bodyfile="special_units/zid.cpp" bodystart="252" bodyend="258" declfile="special_units/zid.hpp" declline="56" declcolumn="8"/>
       </memberdef>
-      <memberdef kind="function" id="zid_8hpp_1a537bbb5d72ef0e9447c04b2c537667d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="zid_8hpp_1a2c06ffaf34cda3c37a5616423b4a15ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ostream &amp;</type>
         <definition>ostream &amp; operator&lt;&lt;</definition>
-        <argsstring>(ostream &amp;, const scifir::zid &amp;)</argsstring>
+        <argsstring>(ostream &amp;os, const scifir::zid &amp;x)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
           <type>ostream &amp;</type>
@@ -259,12 +259,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="46" column="1" bodyfile="special_units/zid.cpp" bodystart="144" bodyend="147" declfile="special_units/zid.hpp" declline="46" declcolumn="1"/>
+        <location file="special_units/zid.hpp" line="58" column="1" bodyfile="special_units/zid.cpp" bodystart="260" bodyend="263" declfile="special_units/zid.hpp" declline="58" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="zid_8hpp_1a4ca1899859a90d33ecd524f00b3ddd96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="zid_8hpp_1a0bd7ef119f4e1870ffb481c3a5321902" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>istream &amp;</type>
         <definition>istream &amp; operator&gt;&gt;</definition>
-        <argsstring>(istream &amp;, scifir::zid &amp;)</argsstring>
+        <argsstring>(istream &amp;is, scifir::zid &amp;x)</argsstring>
         <name>operator&gt;&gt;</name>
         <param>
           <type>istream &amp;</type>
@@ -280,7 +280,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="special_units/zid.hpp" line="47" column="9" bodyfile="special_units/zid.cpp" bodystart="149" bodyend="158" declfile="special_units/zid.hpp" declline="47" declcolumn="9"/>
+        <location file="special_units/zid.hpp" line="59" column="9" bodyfile="special_units/zid.cpp" bodystart="265" bodyend="273" declfile="special_units/zid.hpp" declline="59" declcolumn="9"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -304,39 +304,51 @@
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>();</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;);</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>(<ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;&amp;);</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;);</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/>operator=(<ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;&amp;);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>;</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">vector&lt;string&gt;</ref><sp/>regions;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>country;</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>zone;</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>(<ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_aid</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_country</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">vector&lt;string&gt;</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_regions</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_zone</ref>);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_aid</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_zid</ref>);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_zid_full</ref>);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator =</ref>(<ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator =</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_zid_full</ref>);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>has_no_country()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>has_unknown_country()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>to_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>display()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>partial_display()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;);</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;);</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1aid" kindref="compound">scifir::aid</ref><sp/><ref refid="classscifir_1_1aid" kindref="compound">aid</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">vector&lt;string&gt;</ref><sp/>regions;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>country;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>zone;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initialize_from_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_zid_full</ref>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>+=(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;);</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>operator<sp/>+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;);</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>operator<sp/>+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;);</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal">ostream&amp;<sp/>operator<sp/>&lt;&lt;(ostream&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal">istream&amp;<sp/>operator<sp/>&gt;&gt;(istream&amp;,<sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;);</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_SPECIAL_UNITS_ZID_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>to_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">zid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_zid_full);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_zid_full);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_zid_full,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_zid_full,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>+=(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>operator<sp/>+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>operator<sp/>+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">ostream&amp;<sp/>operator<sp/>&lt;&lt;(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">istream&amp;<sp/>operator<sp/>&gt;&gt;(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1zid" kindref="compound">scifir::zid</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_SPECIAL_UNITS_ZID_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="special_units/zid.hpp"/>
   </compounddef>

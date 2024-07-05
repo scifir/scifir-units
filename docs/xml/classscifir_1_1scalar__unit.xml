@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="198" column="8" bodyfile="units/scalar_unit.hpp" bodystart="198" bodyend="-1"/>
+        <location file="units/scalar_unit.hpp" line="203" column="8" bodyfile="units/scalar_unit.hpp" bodystart="203" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1scalar__unit_1af1e3a220f55d66f5bb27ab6dfa84c632" prot="protected" static="no" mutable="no">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="199" column="7" bodyfile="units/scalar_unit.hpp" bodystart="199" bodyend="-1"/>
+        <location file="units/scalar_unit.hpp" line="204" column="7" bodyfile="units/scalar_unit.hpp" bodystart="204" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -50,15 +50,15 @@
         </inbodydescription>
         <location file="units/scalar_unit.hpp" line="81" column="1" bodyfile="units/scalar_unit.cpp" bodystart="23" bodyend="24"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1af5216813417816260ebe01e51195d74f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1ab89b028a2e344c1cd62b1cb49ff7a92c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::scalar_unit::scalar_unit</definition>
-        <argsstring>(const scalar_unit &amp;)</argsstring>
+        <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>scalar_unit</name>
         <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -68,15 +68,15 @@
         </inbodydescription>
         <location file="units/scalar_unit.hpp" line="82" column="1" bodyfile="units/scalar_unit.cpp" bodystart="26" bodyend="27"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a926fad376793fefcfda09c71a43c7b0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a2c60c79ed8b911b51f1b3431a102cda5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::scalar_unit::scalar_unit</definition>
-        <argsstring>(scalar_unit &amp;&amp;)</argsstring>
+        <argsstring>(scalar_unit &amp;&amp;x)</argsstring>
         <name>scalar_unit</name>
         <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;&amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -86,19 +86,19 @@
         </inbodydescription>
         <location file="units/scalar_unit.hpp" line="83" column="1" bodyfile="units/scalar_unit.cpp" bodystart="29" bodyend="30"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1ad6c7d0c43bd2113048e3515719c32164" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a6534c793900bb3d3ec7d7df6c6e620b6" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::scalar_unit::scalar_unit</definition>
-        <argsstring>(float, const string &amp;)</argsstring>
+        <argsstring>(float new_value, const string &amp;init_dimensions)</argsstring>
         <name>scalar_unit</name>
         <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-          <defname>new_value</defname>
+          <declname>new_value</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_dimensions</defname>
+          <declname>init_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -108,19 +108,19 @@
         </inbodydescription>
         <location file="units/scalar_unit.hpp" line="84" column="10" bodyfile="units/scalar_unit.cpp" bodystart="32" bodyend="33"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a166ba9531851b6017f45798246e984c9" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a3ec66e006930ee8ecf3510fed0ced5f5" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::scalar_unit::scalar_unit</definition>
-        <argsstring>(double, const string &amp;)</argsstring>
+        <argsstring>(double new_value, const string &amp;init_dimensions)</argsstring>
         <name>scalar_unit</name>
         <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
-          <defname>new_value</defname>
+          <declname>new_value</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_dimensions</defname>
+          <declname>init_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -130,19 +130,19 @@
         </inbodydescription>
         <location file="units/scalar_unit.hpp" line="85" column="10" bodyfile="units/scalar_unit.cpp" bodystart="35" bodyend="36"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a5a666567f8c0783b0be278911a8da435" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a04e818cc54fc33342d62aba88da198c2" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::scalar_unit::scalar_unit</definition>
-        <argsstring>(long double, const string &amp;)</argsstring>
+        <argsstring>(long double new_value, const string &amp;init_dimensions)</argsstring>
         <name>scalar_unit</name>
         <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
-          <defname>new_value</defname>
+          <declname>new_value</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_dimensions</defname>
+          <declname>init_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -152,19 +152,19 @@
         </inbodydescription>
         <location file="units/scalar_unit.hpp" line="86" column="10" bodyfile="units/scalar_unit.cpp" bodystart="38" bodyend="39"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a53864997d7b4e251260069eac6ffb3ca" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a91f7f7d47084e468fdee9440ab51cf1e" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::scalar_unit::scalar_unit</definition>
-        <argsstring>(float, const vector&lt; dimension &gt; &amp;)</argsstring>
+        <argsstring>(int new_value, const string &amp;init_dimensions)</argsstring>
         <name>scalar_unit</name>
         <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-          <defname>new_value</defname>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>new_value</declname>
         </param>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
-          <defname>new_dimensions</defname>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -174,19 +174,19 @@
         </inbodydescription>
         <location file="units/scalar_unit.hpp" line="87" column="10" bodyfile="units/scalar_unit.cpp" bodystart="41" bodyend="42"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a8019338691279bf0d0b9a3887d3fdb5c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a7859b5685704328c9e876fba89c69c20" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::scalar_unit::scalar_unit</definition>
-        <argsstring>(double, const vector&lt; dimension &gt; &amp;)</argsstring>
+        <argsstring>(float new_value, const vector&lt; dimension &gt; &amp;new_dimensions)</argsstring>
         <name>scalar_unit</name>
         <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
-          <defname>new_value</defname>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
+          <declname>new_value</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
-          <defname>new_dimensions</defname>
+          <declname>new_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -196,19 +196,19 @@
         </inbodydescription>
         <location file="units/scalar_unit.hpp" line="88" column="10" bodyfile="units/scalar_unit.cpp" bodystart="44" bodyend="45"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1ab8e7a7df3619e3d74ab1991c2ee0e2ea" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a22622caa696487e08ccb2fa9e0f64107" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::scalar_unit::scalar_unit</definition>
-        <argsstring>(long double, const vector&lt; dimension &gt; &amp;)</argsstring>
+        <argsstring>(double new_value, const vector&lt; dimension &gt; &amp;new_dimensions)</argsstring>
         <name>scalar_unit</name>
         <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
-          <defname>new_value</defname>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
-          <defname>new_dimensions</defname>
+          <declname>new_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -218,15 +218,59 @@
         </inbodydescription>
         <location file="units/scalar_unit.hpp" line="89" column="10" bodyfile="units/scalar_unit.cpp" bodystart="47" bodyend="48"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a46cf27440aa4714d68076ede0ae1a1fd" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a7487c672fd9d31f08abb3d7d7c2b3f18" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>scifir::scalar_unit::scalar_unit</definition>
-        <argsstring>(const string &amp;)</argsstring>
+        <argsstring>(long double new_value, const vector&lt; dimension &gt; &amp;new_dimensions)</argsstring>
+        <name>scalar_unit</name>
+        <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">long</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">double</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <declname>new_dimensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/scalar_unit.hpp" line="90" column="10" bodyfile="units/scalar_unit.cpp" bodystart="50" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a8a22b2fe2afa56d71d72cfd6f462f343" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::scalar_unit::scalar_unit</definition>
+        <argsstring>(int new_value, const vector&lt; dimension &gt; &amp;new_dimensions)</argsstring>
+        <name>scalar_unit</name>
+        <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
+          <declname>new_dimensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/scalar_unit.hpp" line="91" column="10" bodyfile="units/scalar_unit.cpp" bodystart="53" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a8805acbb0e474f299ae077862cc312e7" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scifir::scalar_unit::scalar_unit</definition>
+        <argsstring>(const string &amp;init_scalar)</argsstring>
         <name>scalar_unit</name>
         <qualifiedname>scifir::scalar_unit::scalar_unit</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_scalar</defname>
+          <declname>init_scalar</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -234,17 +278,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="90" column="10" bodyfile="units/scalar_unit.cpp" bodystart="50" bodyend="54"/>
+        <location file="units/scalar_unit.hpp" line="92" column="10" bodyfile="units/scalar_unit.cpp" bodystart="56" bodyend="60"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1ad3846d3dd83359e04bffb49ecf6b9631" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1ae804368b4e6c4940e39f170dfe2a5c52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
         <definition>scalar_unit &amp; scifir::scalar_unit::operator=</definition>
-        <argsstring>(const scalar_unit &amp;)</argsstring>
+        <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::scalar_unit::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -252,17 +296,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="92" column="13" bodyfile="units/scalar_unit.cpp" bodystart="56" bodyend="68"/>
+        <location file="units/scalar_unit.hpp" line="94" column="13" bodyfile="units/scalar_unit.cpp" bodystart="62" bodyend="74"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a4616365af180b03070f237575dcf1b79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1ad2bc7e9f7e79b73a76431a36ba71e306" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
         <definition>scalar_unit &amp; scifir::scalar_unit::operator=</definition>
-        <argsstring>(scalar_unit &amp;&amp;)</argsstring>
+        <argsstring>(scalar_unit &amp;&amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::scalar_unit::operator=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;&amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -270,7 +314,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="93" column="13" bodyfile="units/scalar_unit.cpp" bodystart="70" bodyend="82"/>
+        <location file="units/scalar_unit.hpp" line="95" column="13" bodyfile="units/scalar_unit.cpp" bodystart="76" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1aca18144b1b0f365519f09fb4ae49f4dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
+        <definition>scalar_unit &amp; scifir::scalar_unit::operator=</definition>
+        <argsstring>(const string &amp;init_scalar)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::scalar_unit::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_scalar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/scalar_unit.hpp" line="96" column="13" bodyfile="units/scalar_unit.cpp" bodystart="90" bodyend="94"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1acab38ee2d23c051283285f08b9cac2c1" prot="public" static="no" const="yes" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -284,17 +346,35 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="95" column="10" bodyfile="units/scalar_unit.cpp" bodystart="84" bodyend="87"/>
+        <location file="units/scalar_unit.hpp" line="98" column="10" bodyfile="units/scalar_unit.cpp" bodystart="96" bodyend="99"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a0ac0f8c43b2dea473b9e74b9ec510aa0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a77abc5702f3e6a0df005a4a12d281b05" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
+        <definition>bool scifir::scalar_unit::operator==</definition>
+        <argsstring>(scalar_unit x) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>scifir::scalar_unit::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/scalar_unit.hpp" line="100" column="6" bodyfile="units/scalar_unit.cpp" bodystart="101" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1af34f5d9608d82039cb118a45c7adbdd4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scifir::scalar_unit::operator+</definition>
-        <argsstring>(scalar_unit) const</argsstring>
+        <argsstring>(scalar_unit x) const</argsstring>
         <name>operator+</name>
         <qualifiedname>scifir::scalar_unit::operator+</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -302,17 +382,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="97" column="13" bodyfile="units/scalar_unit.cpp" bodystart="89" bodyend="103"/>
+        <location file="units/scalar_unit.hpp" line="102" column="13" bodyfile="units/scalar_unit.cpp" bodystart="114" bodyend="128"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a6c5f227e788c24feb0f82a0041a3ff91" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1aaa86f3d182021b17b880b404e075ff4f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scifir::scalar_unit::operator-</definition>
-        <argsstring>(scalar_unit) const</argsstring>
+        <argsstring>(scalar_unit x) const</argsstring>
         <name>operator-</name>
         <qualifiedname>scifir::scalar_unit::operator-</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -320,17 +400,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="98" column="13" bodyfile="units/scalar_unit.cpp" bodystart="105" bodyend="119"/>
+        <location file="units/scalar_unit.hpp" line="103" column="13" bodyfile="units/scalar_unit.cpp" bodystart="130" bodyend="144"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1ada6156aec98a6c56065f0cc774e8a7a7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a329d34994d4acf60210c6d794f70653e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scifir::scalar_unit::operator*</definition>
-        <argsstring>(scalar_unit) const</argsstring>
+        <argsstring>(scalar_unit x) const</argsstring>
         <name>operator*</name>
         <qualifiedname>scifir::scalar_unit::operator*</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -338,17 +418,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="99" column="13" bodyfile="units/scalar_unit.cpp" bodystart="121" bodyend="127"/>
+        <location file="units/scalar_unit.hpp" line="104" column="13" bodyfile="units/scalar_unit.cpp" bodystart="146" bodyend="152"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a2de981aa756ea61334717a4b290446d2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a0f5687f5407c49376f8139286fb8108c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scifir::scalar_unit::operator/</definition>
-        <argsstring>(scalar_unit) const</argsstring>
+        <argsstring>(scalar_unit x) const</argsstring>
         <name>operator/</name>
         <qualifiedname>scifir::scalar_unit::operator/</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -356,17 +436,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="100" column="13" bodyfile="units/scalar_unit.cpp" bodystart="129" bodyend="135"/>
+        <location file="units/scalar_unit.hpp" line="105" column="13" bodyfile="units/scalar_unit.cpp" bodystart="154" bodyend="160"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a270acdbabc8e07dc8e937448dced103e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a1b7f556e2280f4dda3de379c46a7db5a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scifir::scalar_unit::operator^</definition>
-        <argsstring>(const scalar_unit &amp;) const</argsstring>
+        <argsstring>(const scalar_unit &amp;x) const</argsstring>
         <name>operator^</name>
         <qualifiedname>scifir::scalar_unit::operator^</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -374,17 +454,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="101" column="13" bodyfile="units/scalar_unit.cpp" bodystart="137" bodyend="148"/>
+        <location file="units/scalar_unit.hpp" line="106" column="13" bodyfile="units/scalar_unit.cpp" bodystart="162" bodyend="173"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a5abaecf2a19c1d5a0bca214f0c1b55f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a3c5b90d093e8cd6c15fe32fd6f9aa77f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::scalar_unit::operator+=</definition>
-        <argsstring>(scalar_unit)</argsstring>
+        <argsstring>(scalar_unit x)</argsstring>
         <name>operator+=</name>
         <qualifiedname>scifir::scalar_unit::operator+=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -392,17 +472,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="102" column="6" bodyfile="units/scalar_unit.cpp" bodystart="150" bodyend="159"/>
+        <location file="units/scalar_unit.hpp" line="107" column="6" bodyfile="units/scalar_unit.cpp" bodystart="175" bodyend="184"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1aa38e580247e28f32f744094e3a3ddf95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1ae22b4b57bbb6ab2ac8173c1cf5f7a5e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::scalar_unit::operator-=</definition>
-        <argsstring>(scalar_unit)</argsstring>
+        <argsstring>(scalar_unit x)</argsstring>
         <name>operator-=</name>
         <qualifiedname>scifir::scalar_unit::operator-=</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -410,9 +490,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="103" column="6" bodyfile="units/scalar_unit.cpp" bodystart="161" bodyend="170"/>
+        <location file="units/scalar_unit.hpp" line="108" column="6" bodyfile="units/scalar_unit.cpp" bodystart="186" bodyend="195"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a05b93fe8c1ae6b47f457c5bfd7a65e60" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a3a646369c40d046343636e69cac739fc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -424,11 +504,11 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scifir::scalar_unit::operator+</definition>
-        <argsstring>(const T y) const</argsstring>
+        <argsstring>(T y) const</argsstring>
         <name>operator+</name>
         <qualifiedname>scifir::scalar_unit::operator+</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T</type>
+          <type>T</type>
           <declname>y</declname>
         </param>
         <briefdescription>
@@ -437,9 +517,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="106" column="13" bodyfile="units/scalar_unit.hpp" bodystart="106" bodyend="111"/>
+        <location file="units/scalar_unit.hpp" line="111" column="13" bodyfile="units/scalar_unit.hpp" bodystart="111" bodyend="116"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a020d08f5344018f5f17dd86e59b33ac2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a3b4775b30dd9e07d022dd691135e98ed" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -451,11 +531,11 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scifir::scalar_unit::operator-</definition>
-        <argsstring>(const T y) const</argsstring>
+        <argsstring>(T y) const</argsstring>
         <name>operator-</name>
         <qualifiedname>scifir::scalar_unit::operator-</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T</type>
+          <type>T</type>
           <declname>y</declname>
         </param>
         <briefdescription>
@@ -464,9 +544,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="114" column="13" bodyfile="units/scalar_unit.hpp" bodystart="114" bodyend="119"/>
+        <location file="units/scalar_unit.hpp" line="119" column="13" bodyfile="units/scalar_unit.hpp" bodystart="119" bodyend="124"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a76638cb2e1edb72efe75e985fcf8b923" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a41d09ddac49e6c3c783468cc387681af" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -478,11 +558,11 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scifir::scalar_unit::operator*</definition>
-        <argsstring>(const T y) const</argsstring>
+        <argsstring>(T y) const</argsstring>
         <name>operator*</name>
         <qualifiedname>scifir::scalar_unit::operator*</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T</type>
+          <type>T</type>
           <declname>y</declname>
         </param>
         <briefdescription>
@@ -491,9 +571,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="122" column="13" bodyfile="units/scalar_unit.hpp" bodystart="122" bodyend="127"/>
+        <location file="units/scalar_unit.hpp" line="127" column="13" bodyfile="units/scalar_unit.hpp" bodystart="127" bodyend="132"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a186c0df0fe96b3da6e45cb4e580cf455" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a6c7befde1f4bb1ed08817dff3adb13f7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -505,11 +585,11 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scifir::scalar_unit::operator/</definition>
-        <argsstring>(const T y) const</argsstring>
+        <argsstring>(T y) const</argsstring>
         <name>operator/</name>
         <qualifiedname>scifir::scalar_unit::operator/</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T</type>
+          <type>T</type>
           <declname>y</declname>
         </param>
         <briefdescription>
@@ -518,9 +598,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="130" column="13" bodyfile="units/scalar_unit.hpp" bodystart="130" bodyend="135"/>
+        <location file="units/scalar_unit.hpp" line="135" column="13" bodyfile="units/scalar_unit.hpp" bodystart="135" bodyend="140"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a871cfaa2684c085ca2dcc75acc8f3fdc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a53c5f6d3f946b7361ff19b4aacad4b65" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -532,11 +612,11 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref></type>
         <definition>scalar_unit scifir::scalar_unit::operator^</definition>
-        <argsstring>(const T y) const</argsstring>
+        <argsstring>(T y) const</argsstring>
         <name>operator^</name>
         <qualifiedname>scifir::scalar_unit::operator^</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T</type>
+          <type>T</type>
           <declname>y</declname>
         </param>
         <briefdescription>
@@ -545,9 +625,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="138" column="13" bodyfile="units/scalar_unit.hpp" bodystart="138" bodyend="141"/>
+        <location file="units/scalar_unit.hpp" line="143" column="13" bodyfile="units/scalar_unit.hpp" bodystart="143" bodyend="146"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a118fcc15617a867f55e5b05a301e687c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1ab92fdf13cdd566edb88804d6abf4894c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -559,11 +639,11 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::scalar_unit::operator+=</definition>
-        <argsstring>(const T y)</argsstring>
+        <argsstring>(T y)</argsstring>
         <name>operator+=</name>
         <qualifiedname>scifir::scalar_unit::operator+=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T</type>
+          <type>T</type>
           <declname>y</declname>
         </param>
         <briefdescription>
@@ -572,9 +652,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="144" column="6" bodyfile="units/scalar_unit.hpp" bodystart="144" bodyend="147"/>
+        <location file="units/scalar_unit.hpp" line="149" column="6" bodyfile="units/scalar_unit.hpp" bodystart="149" bodyend="152"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a2f9328b2e6bd1114c144eb6267651dad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a337edf5896b9f05abde7fe8bcd71588c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -586,11 +666,11 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::scalar_unit::operator-=</definition>
-        <argsstring>(const T y)</argsstring>
+        <argsstring>(T y)</argsstring>
         <name>operator-=</name>
         <qualifiedname>scifir::scalar_unit::operator-=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T</type>
+          <type>T</type>
           <declname>y</declname>
         </param>
         <briefdescription>
@@ -599,9 +679,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="150" column="6" bodyfile="units/scalar_unit.hpp" bodystart="150" bodyend="153"/>
+        <location file="units/scalar_unit.hpp" line="155" column="6" bodyfile="units/scalar_unit.hpp" bodystart="155" bodyend="158"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1af82ffc4bfd5f62118ea38ed5376ba093" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1aa3d5f3ab5a33da028a7a4ca6126ac018" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -613,11 +693,11 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::scalar_unit::operator*=</definition>
-        <argsstring>(const T y)</argsstring>
+        <argsstring>(T y)</argsstring>
         <name>operator*=</name>
         <qualifiedname>scifir::scalar_unit::operator*=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T</type>
+          <type>T</type>
           <declname>y</declname>
         </param>
         <briefdescription>
@@ -626,9 +706,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="156" column="6" bodyfile="units/scalar_unit.hpp" bodystart="156" bodyend="159"/>
+        <location file="units/scalar_unit.hpp" line="161" column="6" bodyfile="units/scalar_unit.hpp" bodystart="161" bodyend="164"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a156e0918dadd06776e73c4fcf3b16576" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1afa7f6d6fbb4f94882e976cc569b1d62b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -640,11 +720,11 @@
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::scalar_unit::operator/=</definition>
-        <argsstring>(const T y)</argsstring>
+        <argsstring>(T y)</argsstring>
         <name>operator/=</name>
         <qualifiedname>scifir::scalar_unit::operator/=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> T</type>
+          <type>T</type>
           <declname>y</declname>
         </param>
         <briefdescription>
@@ -653,7 +733,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="162" column="6" bodyfile="units/scalar_unit.hpp" bodystart="162" bodyend="165"/>
+        <location file="units/scalar_unit.hpp" line="167" column="6" bodyfile="units/scalar_unit.hpp" bodystart="167" bodyend="170"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1af36b7d319844aad7f838a71aced338f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
@@ -667,7 +747,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="167" column="13" bodyfile="units/scalar_unit.cpp" bodystart="172" bodyend="176"/>
+        <location file="units/scalar_unit.hpp" line="172" column="13" bodyfile="units/scalar_unit.cpp" bodystart="197" bodyend="201"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1ad4a110c3c13cf37db7329e70266a4ed7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
@@ -684,7 +764,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="168" column="13" bodyfile="units/scalar_unit.cpp" bodystart="178" bodyend="183"/>
+        <location file="units/scalar_unit.hpp" line="173" column="13" bodyfile="units/scalar_unit.cpp" bodystart="203" bodyend="208"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a180b89f1bb61a2d38175f2ceb408632d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
@@ -698,7 +778,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="169" column="13" bodyfile="units/scalar_unit.cpp" bodystart="185" bodyend="189"/>
+        <location file="units/scalar_unit.hpp" line="174" column="13" bodyfile="units/scalar_unit.cpp" bodystart="210" bodyend="214"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a1b069d8e8f353795ff9ea007ae7399eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
@@ -715,17 +795,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="170" column="13" bodyfile="units/scalar_unit.cpp" bodystart="191" bodyend="196"/>
+        <location file="units/scalar_unit.hpp" line="175" column="13" bodyfile="units/scalar_unit.cpp" bodystart="216" bodyend="221"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1ab58286c5045e63e2ca90571306626724" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a994687b147289403e4a993344f768e64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::scalar_unit::change_dimensions</definition>
-        <argsstring>(const string &amp;)</argsstring>
+        <argsstring>(const string &amp;init_dimensions)</argsstring>
         <name>change_dimensions</name>
         <qualifiedname>scifir::scalar_unit::change_dimensions</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>new_dimensions_str</defname>
+          <declname>init_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -733,17 +813,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="172" column="6" bodyfile="units/scalar_unit.cpp" bodystart="198" bodyend="238"/>
+        <location file="units/scalar_unit.hpp" line="177" column="6" bodyfile="units/scalar_unit.cpp" bodystart="223" bodyend="263"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1ac64621e7969dfc9aea0c12dd6ee048b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1ae7d76f1d37b44e675d5ba313c9d95fb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::scalar_unit::change_dimensions</definition>
-        <argsstring>(const scalar_unit &amp;)</argsstring>
+        <argsstring>(const scalar_unit &amp;x)</argsstring>
         <name>change_dimensions</name>
         <qualifiedname>scifir::scalar_unit::change_dimensions</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref> &amp;</type>
-          <defname>x</defname>
+          <declname>x</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -751,17 +831,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="173" column="6" bodyfile="units/scalar_unit.cpp" bodystart="240" bodyend="279"/>
+        <location file="units/scalar_unit.hpp" line="178" column="6" bodyfile="units/scalar_unit.cpp" bodystart="265" bodyend="304"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a04899eed4d05a6267b1b44e832cc4d57" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1ad65df774f292c9a466e6f44127c1485c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
         <definition>bool scifir::scalar_unit::has_dimensions</definition>
-        <argsstring>(const string &amp;) const</argsstring>
+        <argsstring>(const string &amp;init_dimensions) const</argsstring>
         <name>has_dimensions</name>
         <qualifiedname>scifir::scalar_unit::has_dimensions</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>dimension_structure</defname>
+          <declname>init_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -769,17 +849,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="174" column="6" bodyfile="units/scalar_unit.cpp" bodystart="281" bodyend="285"/>
+        <location file="units/scalar_unit.hpp" line="179" column="6" bodyfile="units/scalar_unit.cpp" bodystart="306" bodyend="310"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a1a2a12f475dc032f277bd577fd9b975d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a5d88ebeac2c66b3fbaff69a5a8aeb387" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
         <definition>bool scifir::scalar_unit::has_dimensions</definition>
-        <argsstring>(const vector&lt; dimension &gt; &amp;) const</argsstring>
+        <argsstring>(const vector&lt; dimension &gt; &amp;x_dimensions) const</argsstring>
         <name>has_dimensions</name>
         <qualifiedname>scifir::scalar_unit::has_dimensions</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
-          <defname>x_dimensions</defname>
+          <declname>x_dimensions</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -787,7 +867,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="175" column="6" bodyfile="units/scalar_unit.cpp" bodystart="287" bodyend="290"/>
+        <location file="units/scalar_unit.hpp" line="180" column="6" bodyfile="units/scalar_unit.cpp" bodystart="312" bodyend="315"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a7edbf723398b8acd1a84669b1c3be30c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
@@ -805,7 +885,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="176" column="6" bodyfile="units/scalar_unit.cpp" bodystart="292" bodyend="295"/>
+        <location file="units/scalar_unit.hpp" line="181" column="6" bodyfile="units/scalar_unit.cpp" bodystart="317" bodyend="320"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1ae4b941ec3823e325a9d7290a56d4c226" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
@@ -819,7 +899,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="177" column="6" bodyfile="units/scalar_unit.cpp" bodystart="297" bodyend="308"/>
+        <location file="units/scalar_unit.hpp" line="182" column="6" bodyfile="units/scalar_unit.cpp" bodystart="322" bodyend="333"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a8c84a2ee69d730d6667b7103396730bd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
@@ -833,7 +913,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="178" column="8" bodyfile="units/scalar_unit.cpp" bodystart="310" bodyend="343"/>
+        <location file="units/scalar_unit.hpp" line="183" column="8" bodyfile="units/scalar_unit.cpp" bodystart="335" bodyend="338"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1a49a18cc0d9347e017f2d13f1ce97889b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt;</type>
@@ -847,7 +927,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="181" column="8" bodyfile="units/scalar_unit.cpp" bodystart="350" bodyend="353"/>
+        <location file="units/scalar_unit.hpp" line="186" column="8" bodyfile="units/scalar_unit.cpp" bodystart="345" bodyend="348"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1ac7a640edca2e933bc19a6194cb522204" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> vector&lt; <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &gt; &amp;</type>
@@ -861,7 +941,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="183" column="21" bodyfile="units/scalar_unit.hpp" bodystart="183" bodyend="186"/>
+        <location file="units/scalar_unit.hpp" line="188" column="21" bodyfile="units/scalar_unit.hpp" bodystart="188" bodyend="191"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1scalar__unit_1aef86fe20676b9a14120270e6bb6c49b1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref> &amp;</type>
@@ -875,27 +955,27 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="188" column="20" bodyfile="units/scalar_unit.hpp" bodystart="188" bodyend="191"/>
+        <location file="units/scalar_unit.hpp" line="193" column="20" bodyfile="units/scalar_unit.hpp" bodystart="193" bodyend="196"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1ad160d04f5ea534a9c81142a5efd652a0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a5da2eba7a064be5ac532d36e2aeb865d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
         <definition>string scifir::scalar_unit::display</definition>
-        <argsstring>(int=2, bool=false, bool=false) const</argsstring>
+        <argsstring>(int number_of_decimals=2, bool with_brackets=false, bool use_close_prefix=false) const</argsstring>
         <name>display</name>
         <qualifiedname>scifir::scalar_unit::display</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
-          <defname>number_of_decimals</defname>
+          <declname>number_of_decimals</declname>
           <defval>2</defval>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
-          <defname>with_brackets</defname>
+          <declname>with_brackets</declname>
           <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">false</ref></defval>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
-          <defname>use_close_prefix</defname>
+          <declname>use_close_prefix</declname>
           <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">false</ref></defval>
         </param>
         <briefdescription>
@@ -904,27 +984,27 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="193" column="8" bodyfile="units/scalar_unit.cpp" bodystart="355" bodyend="382"/>
+        <location file="units/scalar_unit.hpp" line="198" column="8" bodyfile="units/scalar_unit.cpp" bodystart="350" bodyend="377"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1ab6c6f9368db3f6b066c7aae5d7d1245f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1aa19d314f836ae7cc5a5d55611e56e01a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
         <definition>string scifir::scalar_unit::derived_display</definition>
-        <argsstring>(int=2, bool=false, bool=false) const</argsstring>
+        <argsstring>(int number_of_decimals=2, bool with_brackets=false, bool use_close_prefix=false) const</argsstring>
         <name>derived_display</name>
         <qualifiedname>scifir::scalar_unit::derived_display</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
-          <defname>number_of_decimals</defname>
+          <declname>number_of_decimals</declname>
           <defval>2</defval>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
-          <defname>with_brackets</defname>
+          <declname>with_brackets</declname>
           <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">false</ref></defval>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
-          <defname>use_close_prefix</defname>
+          <declname>use_close_prefix</declname>
           <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">false</ref></defval>
         </param>
         <briefdescription>
@@ -933,26 +1013,26 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="194" column="8" bodyfile="units/scalar_unit.cpp" bodystart="384" bodyend="404"/>
+        <location file="units/scalar_unit.hpp" line="199" column="8" bodyfile="units/scalar_unit.cpp" bodystart="379" bodyend="399"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1acfcf1821b6b0dbb4a05915d66f610833" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a8530221b5e65bda1fcd706c571de15f5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
         <definition>string scifir::scalar_unit::custom_display</definition>
-        <argsstring>(const string &amp;, int=2, bool=false) const</argsstring>
+        <argsstring>(const string &amp;init_dimensions, int number_of_decimals=2, bool with_brackets=false) const</argsstring>
         <name>custom_display</name>
         <qualifiedname>scifir::scalar_unit::custom_display</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>new_dimensions_str</defname>
+          <declname>init_dimensions</declname>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
-          <defname>number_of_decimals</defname>
+          <declname>number_of_decimals</declname>
           <defval>2</defval>
         </param>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">bool</ref></type>
-          <defname>with_brackets</defname>
+          <declname>with_brackets</declname>
           <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">false</ref></defval>
         </param>
         <briefdescription>
@@ -961,19 +1041,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="195" column="8" bodyfile="units/scalar_unit.cpp" bodystart="406" bodyend="477"/>
+        <location file="units/scalar_unit.hpp" line="200" column="8" bodyfile="units/scalar_unit.cpp" bodystart="401" bodyend="472"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1aadfdf56e7df6a99627fd468bd3c02ba1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a0fe440745fb805824daf53e9ae66e810" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::scalar_unit::add_dimension</definition>
-        <argsstring>(const dimension &amp;)</argsstring>
+        <argsstring>(const dimension &amp;new_dimension)</argsstring>
         <name>add_dimension</name>
         <qualifiedname>scifir::scalar_unit::add_dimension</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
-          <defname>new_dimension</defname>
+          <declname>new_dimension</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -981,17 +1061,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="201" column="6" bodyfile="units/scalar_unit.cpp" bodystart="479" bodyend="491"/>
+        <location file="units/scalar_unit.hpp" line="206" column="6" bodyfile="units/scalar_unit.cpp" bodystart="474" bodyend="486"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a2fec577682ea5238f05e1927fb92cb33" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a1d9a11f3d4c951cb55917288767d3feb" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
         <definition>void scifir::scalar_unit::remove_dimension</definition>
-        <argsstring>(const dimension &amp;)</argsstring>
+        <argsstring>(const dimension &amp;old_dimension)</argsstring>
         <name>remove_dimension</name>
         <qualifiedname>scifir::scalar_unit::remove_dimension</qualifiedname>
         <param>
           <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1dimension" kindref="compound">dimension</ref> &amp;</type>
-          <defname>old_dimension</defname>
+          <declname>old_dimension</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -999,17 +1079,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="202" column="6" bodyfile="units/scalar_unit.cpp" bodystart="493" bodyend="505"/>
+        <location file="units/scalar_unit.hpp" line="207" column="6" bodyfile="units/scalar_unit.cpp" bodystart="488" bodyend="500"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a00a73942f2517b827e9df38e870f138c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1scalar__unit_1a384a954bbef22c559d213179142cc687" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
-        <definition>void scifir::scalar_unit::set_from_string</definition>
-        <argsstring>(const string &amp;)</argsstring>
-        <name>set_from_string</name>
-        <qualifiedname>scifir::scalar_unit::set_from_string</qualifiedname>
+        <definition>void scifir::scalar_unit::initialize_from_string</definition>
+        <argsstring>(string init_scalar)</argsstring>
+        <name>initialize_from_string</name>
+        <qualifiedname>scifir::scalar_unit::initialize_from_string</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
-          <defname>init_scalar</defname>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+          <declname>init_scalar</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -1017,7 +1097,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/scalar_unit.hpp" line="203" column="6" bodyfile="units/scalar_unit.cpp" bodystart="507" bodyend="540"/>
+        <location file="units/scalar_unit.hpp" line="208" column="6" bodyfile="units/scalar_unit.cpp" bodystart="502" bodyend="535"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -1048,58 +1128,62 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="units/scalar_unit.hpp" line="78" column="1" bodyfile="units/scalar_unit.hpp" bodystart="79" bodyend="204"/>
+    <location file="units/scalar_unit.hpp" line="78" column="1" bodyfile="units/scalar_unit.hpp" bodystart="79" bodyend="209"/>
     <listofallmembers>
-      <member refid="classscifir_1_1scalar__unit_1aadfdf56e7df6a99627fd468bd3c02ba1" prot="protected" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>add_dimension</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ab58286c5045e63e2ca90571306626724" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>change_dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ac64621e7969dfc9aea0c12dd6ee048b8" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>change_dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1acfcf1821b6b0dbb4a05915d66f610833" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>custom_display</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ab6c6f9368db3f6b066c7aae5d7d1245f" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>derived_display</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a0fe440745fb805824daf53e9ae66e810" prot="protected" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>add_dimension</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a994687b147289403e4a993344f768e64" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>change_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ae7d76f1d37b44e675d5ba313c9d95fb8" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>change_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a8530221b5e65bda1fcd706c571de15f5" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>custom_display</name></member>
+      <member refid="classscifir_1_1scalar__unit_1aa19d314f836ae7cc5a5d55611e56e01a" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>derived_display</name></member>
       <member refid="classscifir_1_1scalar__unit_1a47854a88ee4cacf7099c756e111b198d" prot="protected" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ad160d04f5ea534a9c81142a5efd652a0" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>display</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a5da2eba7a064be5ac532d36e2aeb865d" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>display</name></member>
       <member refid="classscifir_1_1scalar__unit_1a8c84a2ee69d730d6667b7103396730bd" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>display_dimensions</name></member>
       <member refid="classscifir_1_1scalar__unit_1a49a18cc0d9347e017f2d13f1ce97889b" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>get_derived_dimensions</name></member>
       <member refid="classscifir_1_1scalar__unit_1ac7a640edca2e933bc19a6194cb522204" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>get_dimensions</name></member>
       <member refid="classscifir_1_1scalar__unit_1aef86fe20676b9a14120270e6bb6c49b1" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>get_value</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a04899eed4d05a6267b1b44e832cc4d57" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>has_dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a1a2a12f475dc032f277bd577fd9b975d" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>has_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ad65df774f292c9a466e6f44127c1485c" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>has_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a5d88ebeac2c66b3fbaff69a5a8aeb387" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>has_dimensions</name></member>
       <member refid="classscifir_1_1scalar__unit_1a7edbf723398b8acd1a84669b1c3be30c" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>has_dimensions</name></member>
       <member refid="classscifir_1_1scalar__unit_1ae4b941ec3823e325a9d7290a56d4c226" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>has_empty_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a384a954bbef22c559d213179142cc687" prot="protected" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>initialize_from_string</name></member>
       <member refid="classscifir_1_1scalar__unit_1acab38ee2d23c051283285f08b9cac2c1" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator float</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ada6156aec98a6c56065f0cc774e8a7a7" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a76638cb2e1edb72efe75e985fcf8b923" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1scalar__unit_1af82ffc4bfd5f62118ea38ed5376ba093" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator*=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a0ac0f8c43b2dea473b9e74b9ec510aa0" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator+</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a05b93fe8c1ae6b47f457c5bfd7a65e60" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a329d34994d4acf60210c6d794f70653e" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator*</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a41d09ddac49e6c3c783468cc387681af" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator*</name></member>
+      <member refid="classscifir_1_1scalar__unit_1aa3d5f3ab5a33da028a7a4ca6126ac018" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator*=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1af34f5d9608d82039cb118a45c7adbdd4" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a3a646369c40d046343636e69cac739fc" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator+</name></member>
       <member refid="classscifir_1_1scalar__unit_1af36b7d319844aad7f838a71aced338f4" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator++</name></member>
       <member refid="classscifir_1_1scalar__unit_1ad4a110c3c13cf37db7329e70266a4ed7" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator++</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a5abaecf2a19c1d5a0bca214f0c1b55f2" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a118fcc15617a867f55e5b05a301e687c" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a6c5f227e788c24feb0f82a0041a3ff91" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator-</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a020d08f5344018f5f17dd86e59b33ac2" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a3c5b90d093e8cd6c15fe32fd6f9aa77f" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator+=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ab92fdf13cdd566edb88804d6abf4894c" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator+=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1aaa86f3d182021b17b880b404e075ff4f" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a3b4775b30dd9e07d022dd691135e98ed" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator-</name></member>
       <member refid="classscifir_1_1scalar__unit_1a180b89f1bb61a2d38175f2ceb408632d" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator--</name></member>
       <member refid="classscifir_1_1scalar__unit_1a1b069d8e8f353795ff9ea007ae7399eb" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator--</name></member>
-      <member refid="classscifir_1_1scalar__unit_1aa38e580247e28f32f744094e3a3ddf95" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a2f9328b2e6bd1114c144eb6267651dad" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a2de981aa756ea61334717a4b290446d2" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a186c0df0fe96b3da6e45cb4e580cf455" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a156e0918dadd06776e73c4fcf3b16576" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator/=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ad3846d3dd83359e04bffb49ecf6b9631" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a4616365af180b03070f237575dcf1b79" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a270acdbabc8e07dc8e937448dced103e" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator^</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a871cfaa2684c085ca2dcc75acc8f3fdc" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator^</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a2fec577682ea5238f05e1927fb92cb33" prot="protected" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>remove_dimension</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ae22b4b57bbb6ab2ac8173c1cf5f7a5e1" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator-=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a337edf5896b9f05abde7fe8bcd71588c" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator-=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a0f5687f5407c49376f8139286fb8108c" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator/</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a6c7befde1f4bb1ed08817dff3adb13f7" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator/</name></member>
+      <member refid="classscifir_1_1scalar__unit_1afa7f6d6fbb4f94882e976cc569b1d62b" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator/=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ae804368b4e6c4940e39f170dfe2a5c52" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ad2bc7e9f7e79b73a76431a36ba71e306" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1aca18144b1b0f365519f09fb4ae49f4dc" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a77abc5702f3e6a0df005a4a12d281b05" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator==</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a1b7f556e2280f4dda3de379c46a7db5a" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator^</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a53c5f6d3f946b7361ff19b4aacad4b65" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>operator^</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a1d9a11f3d4c951cb55917288767d3feb" prot="protected" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>remove_dimension</name></member>
       <member refid="classscifir_1_1scalar__unit_1a8ecd0310f82a51bfcc87b2aa892375b9" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1af5216813417816260ebe01e51195d74f" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a926fad376793fefcfda09c71a43c7b0b" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ad6c7d0c43bd2113048e3515719c32164" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a166ba9531851b6017f45798246e984c9" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a5a666567f8c0783b0be278911a8da435" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a53864997d7b4e251260069eac6ffb3ca" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a8019338691279bf0d0b9a3887d3fdb5c" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ab8e7a7df3619e3d74ab1991c2ee0e2ea" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a46cf27440aa4714d68076ede0ae1a1fd" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a00a73942f2517b827e9df38e870f138c" prot="protected" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>set_from_string</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ab89b028a2e344c1cd62b1cb49ff7a92c" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a2c60c79ed8b911b51f1b3431a102cda5" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a6534c793900bb3d3ec7d7df6c6e620b6" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a3ec66e006930ee8ecf3510fed0ced5f5" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a04e818cc54fc33342d62aba88da198c2" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a91f7f7d47084e468fdee9440ab51cf1e" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a7859b5685704328c9e876fba89c69c20" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a22622caa696487e08ccb2fa9e0f64107" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a7487c672fd9d31f08abb3d7d7c2b3f18" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a8a22b2fe2afa56d71d72cfd6f462f343" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a8805acbb0e474f299ae077862cc312e7" prot="public" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>scalar_unit</name></member>
       <member refid="classscifir_1_1scalar__unit_1af1e3a220f55d66f5bb27ab6dfa84c632" prot="protected" virt="non-virtual"><scope>scifir::scalar_unit</scope><name>value</name></member>
     </listofallmembers>
   </compounddef>

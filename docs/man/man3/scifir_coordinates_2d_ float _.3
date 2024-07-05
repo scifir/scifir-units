@@ -16,16 +16,19 @@ scifir::coordinates_2d< float >
 .RI "\fBcoordinates_2d\fP (\fBcoordinates_2d\fP< \fBfloat\fP > &&\fBx_coordinates\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_2d\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP, \fBconst\fP \fBfloat\fP &\fBnew_y\fP)"
+.RI "\fBcoordinates_2d\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_2d\fP (\fBconst\fP \fBfloat\fP &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.RI "\fBcoordinates_2d\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
 .RI "\fBcoordinates_2d\fP (\fBconst\fP \fBscifir::point_2d\fP< \fBfloat\fP > &\fBnew_point\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_2d\fP (\fBstring\fP \fBinit_coordinates_2d\fP)"
+.RI "\fBcoordinates_2d\fP (\fBscifir::point_2d\fP< \fBfloat\fP > &&\fBnew_point\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_2d\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_2d\fP)"
 .br
 .ti -1c
 .RI "\fBcoordinates_2d\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBcoordinates_2d\fP< \fBfloat\fP > &\fBx_coordinates\fP)"
@@ -37,16 +40,22 @@ scifir::coordinates_2d< float >
 .RI "\fBcoordinates_2d\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBpoint_2d\fP< \fBfloat\fP > &\fBx_point\fP)"
 .br
 .ti -1c
+.RI "\fBcoordinates_2d\fP< \fBfloat\fP > & \fBoperator=\fP (\fBpoint_2d\fP< \fBfloat\fP > &&\fBx_point\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_2d\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_2d\fP)"
+.br
+.ti -1c
 .RI "\fBfloat\fP \fBget_p\fP () \fBconst\fP"
 .br
 .ti -1c
 .RI "\fBangle\fP \fBget_theta\fP () \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP, \fBconst\fP \fBfloat\fP &\fBnew_y\fP)"
+.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBfloat\fP &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBrotate\fP (\fBconst\fP \fBangle\fP &\fBx_angle\fP)"
@@ -55,13 +64,16 @@ scifir::coordinates_2d< float >
 .RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBdisplacement_2d\fP &\fBx_displacement\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP, \fBconst\fP \fBfloat\fP &\fBnew_y\fP)"
+.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBfloat\fP &\fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
+.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBnew_p\fP, \fBconst\fP \fBangle\fP &\fBnew_theta\fP)"
 .br
 .ti -1c
 .RI "\fBfloat\fP \fBdistance_to_origin\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBdisplay_cartesian\fP () \fBconst\fP"
 .br
 .ti -1c
 .RI "\fBstring\fP \fBdisplay_polar\fP () \fBconst\fP"

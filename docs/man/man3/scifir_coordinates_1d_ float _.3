@@ -16,13 +16,16 @@ scifir::coordinates_1d< float >
 .RI "\fBcoordinates_1d\fP (\fBcoordinates_1d\fP< \fBfloat\fP > &&\fBx_coordinates\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_1d\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP)"
+.RI "\fBcoordinates_1d\fP (\fBfloat\fP \fBnew_x\fP)"
 .br
 .ti -1c
 .RI "\fBcoordinates_1d\fP (\fBconst\fP \fBpoint_1d\fP< \fBfloat\fP > &\fBnew_point\fP)"
 .br
 .ti -1c
-.RI "\fBcoordinates_1d\fP (\fBstring\fP \fBinit_coordinates_1d\fP)"
+.RI "\fBcoordinates_1d\fP (\fBpoint_1d\fP< \fBfloat\fP > &&\fBnew_point\fP)"
+.br
+.ti -1c
+.RI "\fBcoordinates_1d\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_1d\fP)"
 .br
 .ti -1c
 .RI "\fBcoordinates_1d\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBcoordinates_1d\fP< \fBfloat\fP > &\fBx_coordinates\fP)"
@@ -34,13 +37,22 @@ scifir::coordinates_1d< float >
 .RI "\fBcoordinates_1d\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBpoint_1d\fP< \fBfloat\fP > &\fBx_point\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP \fBfloat\fP &\fBnew_x\fP)"
+.RI "\fBcoordinates_1d\fP< \fBfloat\fP > & \fBoperator=\fP (\fBpoint_1d\fP< \fBfloat\fP > &&\fBx_point\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBmove\fP (\fBconst\fP \fBfloat\fP &\fBx_value\fP)"
+.RI "\fBcoordinates_1d\fP< \fBfloat\fP > & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_coordinates_1d\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_x\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmove\fP (\fBfloat\fP \fBx_value\fP)"
 .br
 .ti -1c
 .RI "\fBfloat\fP \fBdistance_to_origin\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBdisplay_cartesian\fP () \fBconst\fP"
 .br
 .in -1c
 .SS "Public Attributes"

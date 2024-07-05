@@ -19,10 +19,13 @@ scifir::point_1d< T >
 .RI "\fBpoint_1d\fP (\fBconst\fP T &\fBnew_x\fP)"
 .br
 .ti -1c
-.RI "\fBpoint_1d\fP (\fBconst\fP \fBcoordinates_1d\fP< T > &)"
+.RI "\fBpoint_1d\fP (\fBconst\fP \fBcoordinates_1d\fP< T > &\fBx_coordinates\fP)"
 .br
 .ti -1c
-.RI "\fBpoint_1d\fP (\fBstring\fP \fBinit_point_1d\fP)"
+.RI "\fBpoint_1d\fP (\fBcoordinates_1d\fP< T > &&\fBx_coordinates\fP)"
+.br
+.ti -1c
+.RI "\fBpoint_1d\fP (\fBconst\fP \fBstring\fP &\fBinit_point_1d\fP)"
 .br
 .ti -1c
 .RI "\fBpoint_1d\fP< T > & \fBoperator=\fP (\fBconst\fP \fBpoint_1d\fP< T > &\fBx_point\fP)"
@@ -34,6 +37,12 @@ scifir::point_1d< T >
 .RI "\fBpoint_1d\fP< T > & \fBoperator=\fP (\fBconst\fP \fBcoordinates_1d\fP< T > &)"
 .br
 .ti -1c
+.RI "\fBpoint_1d\fP< T > & \fBoperator=\fP (\fBcoordinates_1d\fP< T > &&)"
+.br
+.ti -1c
+.RI "\fBpoint_1d\fP< T > & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_point_1d\fP)"
+.br
+.ti -1c
 .RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP T &\fBnew_x\fP)"
 .br
 .ti -1c
@@ -41,6 +50,9 @@ scifir::point_1d< T >
 .br
 .ti -1c
 .RI "T \fBdistance_to_origin\fP () \fBconst\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBdisplay_cartesian\fP () \fBconst\fP"
 .br
 .in -1c
 .SS "Public Attributes"

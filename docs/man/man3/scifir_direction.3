@@ -17,25 +17,28 @@ scifir::direction
 
 .in +1c
 .ti -1c
-.RI "\fBdirection\fP (\fBconst\fP \fBdirection\fP &)"
+.RI "\fBdirection\fP (\fBconst\fP \fBdirection\fP &x)"
 .br
 .ti -1c
-.RI "\fBdirection\fP (\fBdirection\fP &&)"
+.RI "\fBdirection\fP (\fBdirection\fP &&x)"
 .br
 .ti -1c
-.RI "\fBdirection\fP (direction::name)"
+.RI "\fBdirection\fP (direction::name \fBnew_direction\fP)"
 .br
 .ti -1c
-.RI "\fBdirection\fP (\fBconst\fP \fBstring\fP &)"
+.RI "\fBdirection\fP (\fBconst\fP \fBstring\fP &\fBinit_direction\fP)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator=\fP (\fBconst\fP \fBdirection\fP &)"
+.RI "\fBdirection\fP & \fBoperator=\fP (\fBconst\fP \fBdirection\fP &x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator=\fP (\fBdirection\fP &&)"
+.RI "\fBdirection\fP & \fBoperator=\fP (\fBdirection\fP &&x)"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBoperator=\fP (direction::name)"
+.RI "\fBdirection\fP & \fBoperator=\fP (direction::name \fBnew_direction\fP)"
+.br
+.ti -1c
+.RI "\fBdirection\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_direction\fP)"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBinvert\fP ()"

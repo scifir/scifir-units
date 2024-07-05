@@ -17,22 +17,22 @@ scifir::prefix
 
 .in +1c
 .ti -1c
-.RI "\fBprefix\fP (\fBconst\fP \fBprefix\fP &)"
+.RI "\fBprefix\fP (\fBconst\fP \fBprefix\fP &x)"
 .br
 .ti -1c
-.RI "\fBprefix\fP (\fBprefix\fP &&)"
+.RI "\fBprefix\fP (\fBprefix\fP &&x)"
 .br
 .ti -1c
-.RI "\fBprefix\fP (prefix::type)"
+.RI "\fBprefix\fP (prefix::type \fBnew_type\fP)"
 .br
 .ti -1c
-.RI "\fBprefix\fP (\fBconst\fP \fBstring\fP &)"
+.RI "\fBprefix\fP (\fBconst\fP \fBstring\fP &\fBnew_type\fP)"
 .br
 .ti -1c
-.RI "\fBprefix\fP & \fBoperator=\fP (\fBconst\fP \fBprefix\fP &)"
+.RI "\fBprefix\fP & \fBoperator=\fP (\fBconst\fP \fBprefix\fP &x)"
 .br
 .ti -1c
-.RI "\fBprefix\fP & \fBoperator=\fP (\fBprefix\fP &&)"
+.RI "\fBprefix\fP & \fBoperator=\fP (\fBprefix\fP &&x)"
 .br
 .ti -1c
 .RI "\fBint\fP \fBget_conversion_factor\fP () \fBconst\fP"
@@ -44,7 +44,7 @@ scifir::prefix
 .RI "\fBstring\fP \fBget_symbol\fP () \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBbool\fP \fBoperator<\fP (\fBconst\fP \fBscifir::prefix\fP &) \fBconst\fP"
+.RI "\fBbool\fP \fBoperator<\fP (\fBconst\fP \fBscifir::prefix\fP &x) \fBconst\fP"
 .br
 .in -1c
 .SS "Public Attributes"

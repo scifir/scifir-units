@@ -20,36 +20,36 @@
 \DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ type\ :\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int8\_t}}\ \{no\_prefix,Y,Z,E,P,T,G,M,k,h,da,d,c,m,u,n,p,f,a,z,y\};}
 \DoxyCodeLine{00017\ }
 \DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}();}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&);}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}(\mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\&);}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}(prefix::type);}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ x);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}(\mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\&\ x);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}(prefix::type\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_type}});}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_type}});}
 \DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&);}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\&);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ x);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\&\ x);}
 \DoxyCodeLine{00026\ }
 \DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ get\_conversion\_factor()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ get\_name()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ get\_symbol()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00032\ }
 \DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ prefix::type\ prefix\_type;}
 \DoxyCodeLine{00034\ \ \ \ \ \};}
 \DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ prefix::type\ prefix\_string(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
+\DoxyCodeLine{00036\ \ \ \ \ prefix::type\ prefix\_string(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x);}
 \DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\ closest\_prefix(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&,\textcolor{keywordtype}{int});}
-\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\ create\_prefix\_by\_factor(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\ closest\_prefix(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{actual\_prefix}},\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{actual\_scale}});}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\ create\_prefix\_by\_factor(\textcolor{keywordtype}{int}\ factor);}
 \DoxyCodeLine{00040\ \}}
 \DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&);}
-\DoxyCodeLine{00043\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&);}
-\DoxyCodeLine{00044\ \textcolor{keywordtype}{bool}\ operator\ <=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&);}
-\DoxyCodeLine{00045\ \textcolor{keywordtype}{bool}\ operator\ >(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&);}
-\DoxyCodeLine{00046\ \textcolor{keywordtype}{bool}\ operator\ >=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ y);}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ y);}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{bool}\ operator\ <=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ y);}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{bool}\ operator\ >(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ y);}
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{bool}\ operator\ >=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ y);}
 \DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ ostream\&\ operator\ <<(ostream\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&);}
+\DoxyCodeLine{00048\ ostream\&\ operator\ <<(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x);}
 \DoxyCodeLine{00049\ }
 \DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_PREFIX\_HPP\_INCLUDED}}
 
