@@ -1,0 +1,314 @@
+/** \class scifir::scalar_unit
+* \brief Class that allows to create scalar units.
+
+* scalar_unit is a class that allows to have a scalar unit, which is composed of a value and one or more dimensions. All dimensions of the SI system of units are supported, and also all of its abbreviations. The abbreviations can be converted to its derived dimensions, too. scalar_unit classes have operators with all numeric types, and have operators with themselves. They can be displayed by its dimensions, its derived dimensions, or any custom combination of dimensions. When they change dimensions, like, for example, from meters to kilometers, their numeric value is changed accordingly.
+
+* \fn scalar_unit::scalar_unit()
+* \brief Default constructor, the value is 0 and the dimensions are empty.
+
+* \fn scalar_unit::scalar_unit(const scalar_unit& x)
+* \brief Copy constructor, copies the value and the dimensions.
+* \param x scalar_unit to be copied.
+
+* \fn scalar_unit::scalar_unit(scalar_unit&& x)
+* \brief Move constructor, moves the value and the dimensions.
+* \param x scalar_unit to be moved.
+
+* \fn scalar_unit::scalar_unit(float new_value, const string& init_dimensions)
+* \brief Creates a new scalar_unit with the value and with the dimensions specified in the string.
+
+* \fn scalar_unit::scalar_unit(double new_value, const string& init_dimensions)
+* \brief Creates a new scalar_unit, the double is casted to a float.
+
+* \fn scalar_unit::scalar_unit(long double new_value, const string& init_dimensions)
+* \brief Creates a new scalar_unit, the long double is casted to a float.
+
+* \fn scalar_unit::scalar_unit(int new_value, const string& init_dimensions)
+* \brief Creates a new scalar_unit, the int is casted to a float.
+
+* \fn scalar_unit::scalar_unit(float new_value, const vector<dimension>& new_dimensions)
+* \brief Creates a new scalar_unit with the value given and copying the dimensions
+
+* \fn scalar_unit::scalar_unit(double new_value, const vector<dimension>& new_dimensions)
+* \brief Creates a new scalar_unit, the double is casted to a float, the dimensions are copied.
+
+* \fn scalar_unit::scalar_unit(long double new_value, const vector<dimension>& new_dimensions)
+* \brief Creates a new scalar_unit, the long double is casted to a float, the dimensions are copied.
+
+* \fn scalar_unit::scalar_unit(int new_value, const vector<dimension>& new_dimensions)
+* \brief Creates a new scalar_unit, the int is casted to a float, the dimensions are copied.
+
+* \fn scalar_unit::scalar_unit(const string& init_scalar)
+* \brief Creates a new scalar_unit, the initialization string specifies both the value and the dimensions.
+
+* \fn scalar_unit& scalar_unit::operator =(const scalar_unit& x)
+* \brief Copy assignment, it assigns a copy of the scalar_unit.
+
+* \fn scalar_unit& scalar_unit::operator =(scalar_unit&& x)
+* \brief Move assignment, it moves the scalar_unit.
+
+* \fn scalar_unit& scalar_unit::operator =(const string& init_scalar)
+* \brief Assignment with an initialization string, the value and the dimensions are both specified.
+
+* \fn scalar_unit::operator float() const
+* \brief Cast the scalar_unit to their float equivalent, it discards the dimensions and copies the value to a float.
+
+* \fn bool scalar_unit::operator ==(scalar_unit x) const
+* \brief Comparison operator, two scalar_unit classes are considered equivalent if they have the same value given the same dimensions.
+
+* \fn scalar_unit scalar_unit::operator +(scalar_unit x) const
+* \brief Addition operator, it sums two scalar_unit classes, their dimensions are changed to be equal first. If the basic dimensions are different, it returns an empty scalar_unit class.
+
+* \fn scalar_unit scalar_unit::operator -(scalar_unit x) const
+* \brief Substraction operator, it substracts one scalar_unit from the other, their dimensions are changed to be equal first. If the basic dimensions are different, it returns an empty scalar_unit class.
+
+* \fn scalar_unit scalar_unit::operator *(scalar_unit x) const
+* \brief Multiplication operator, it multiplies two scalar_unit classes, their dimensions are also multiplied.
+
+* \fn scalar_unit scalar_unit::operator /(scalar_unit x) const
+* \brief Division operator, it divides one scalar_unit class with the other, their dimensions are also divided.
+
+* \fn scalar_unit scalar_unit::operator ^(const scalar_unit &x) const
+* \brief Power operator, it powers a scalar_unit class with another, if that second scalar_unit class, which is the exponent, as empty dimensions. If the exponent doesn't has empty dimensions it returns an empty scalar_unit class.
+
+* \fn void scalar_unit::operator+=(scalar_unit x)
+* \brief Addition operator, it adds a scalar_unit class to another, by converting their dimensions to be equal first. If their basic dimensions are different, it doesn't sums to the value.
+
+* \fn void scalar_unit::operator-=(scalar_unit x)
+* \brief Substraction operator, it substracts a scalar_unit class to another, by converting their dimensions to be equal first. If their basic dimensions are different, it doesn't substracts to the value.
+
+* \fn scalar_unit scalar_unit::operator+(T y) const
+* \brief Addition operator, it sums the numeric type to the value, independent of the dimensions.
+
+* \fn scalar_unit scalar_unit::operator-(T y) const
+* \brief Substraction operator, it substracts the numeric type to the value, independent of the dimensions.
+
+* \fn scalar_unit scalar_unit::operator*(T y) const
+* \brief Multiplication operator, it multiplies the numeric type with the value, independent of the dimensions.
+
+* \fn scalar_unit scalar_unit::operator/(T y) const
+* \brief Division operator, it divides the value with the numeric type, independent of the dimensions.
+
+* \fn scalar_unit scalar_unit::operator^(T y) const
+* \brief Power operator, it powers the value with the numeric type, independent of the dimensions.
+
+* \fn void scalar_unit::operator+=(T y)
+* \brief Addition operator, it adds the numeric type to the value, independent of the dimensions.
+
+* \fn void scalar_unit::operator-=(T y)
+* \brief Substraction operator, it substracts the numeric type to the value, independent of the dimensions.
+
+* \fn void scalar_unit::operator*=(T y)
+* \brief Multiplication operator, it multiplies the numeric type to the value, independent of the dimensions.
+
+* \fn void scalar_unit::operator/=(T y)
+* \brief Division operator, it divides the numeric type to the value, independent of the dimensions.
+
+* \fn scalar_unit& scalar_unit::operator++()
+* \brief Increment operator, it increases the value by one.
+
+* \fn scalar_unit& scalar_unit::operator++(int)
+* \brief Increment operator, it increases the value by one.
+
+* \fn scalar_unit& scalar_unit::operator--()
+* \brief Decrement operator, it decreases the value by one.
+
+* \fn scalar_unit& scalar_unit::operator--(int)
+* \brief Decrement operator, it decreases the value by one.
+
+* \fn void scalar_unit::change_dimensions(const string& init_dimensions)
+* \brief Changes the dimensions to the dimensions specified by the initialization string of dimensions.
+
+* \fn void scalar_unit::change_dimensions(const scalar_unit& x)
+* \brief Changes the dimensions to the same dimensions of the scalar_unit.
+
+* \fn bool scalar_unit::has_dimensions(const string& init_dimensions) const
+* \brief Checks if the basic dimensions are the same as the initialization string of dimensions.
+
+* \fn bool scalar_unit::has_dimensions(const vector<dimension>& x_dimensions) const
+* \brief Checks if the basic dimensions are the same as some set of dimensions.
+
+* \fn bool scalar_unit::has_dimensions(const scalar_unit& x) const
+* \brief Checks if the basic dimensions are the same as other scalar_unit.
+
+* \fn bool scalar_unit::has_empty_dimensions() const
+* \brief Checks if there aren't basic dimensions.
+
+* \fn string scalar_unit::display_dimensions() const
+* \brief Generates an string of the dimensions of the scalar_unit, with the same format as the initialization string of dimensions.
+
+* \fn vector<dimension> scalar_unit::get_derived_dimensions() const
+* \brief Generates a set of the derived dimensions of the dimensions of the scalar_unit.
+
+* \fn const vector<dimension>& scalar_unit::get_dimensions() const
+* \brief Read-only getter of the dimensions.
+
+* \fn const float& scalar_unit::get_value() const
+* \brief Read-only getter of the value.
+
+* \fn string scalar_unit::display(int number_of_decimals=2, bool with_brackets=false, bool use_close_prefix=false) const
+* \brief Generates an string of the scalar_unit, with the value and the dimensions. The dimensions can be enclosed by brackets, and the value can be set to have the closest prefix.
+
+* \fn string scalar_unit::derived_display(int number_of_decimals=2, bool with_brackets=false, bool use_close_prefix=false) const
+* \brief Generates an string of the scalar_unit, with all dimensions converted to their derived counterpart.
+
+* \fn string scalar_unit::custom_display(const string& init_dimensions, int number_of_decimals=2, bool with_brackets=false) const
+* \brief Generates an string of the scalar_unit, with the dimensions changed to any set of dimensions, specified by an initialization string of dimensions.
+
+* \fn void scalar_unit::add_dimension(const dimension& new_dimension)
+* \brief Internal function. It adds a dimension, changing the value according to the conversion factor of the added dimension and the prefix.
+
+* \fn void scalar_unit::remove_dimension(const dimension& old_dimension)
+* \brief Internal function. It removes a dimension, changing the value according to the conversion factor of the removed dimension and the prefix.
+
+* \fn void scalar_unit::initialize_from_string(string init_scalar)
+* \brief Internal function. It sets the value and the dimensions of the scalar_unit to the value and dimensions specified by the initialization string of scalar_unit.
+
+* \var scalar_unit::dimensions
+* \brief Dimensions of the scalar_unit. They can be basic dimensions or abbreviations.
+
+* \var scalar_unit::value
+* \brief Value of the scalar_unit. It changes automatically when the dimensions change.
+
+* \defgroup scalar_unit_functions
+
+* \namespace scifir
+* \brief The namespace scifir contains all scifir-units, excepting the string literals, which are outside.
+
+* \fn string scifir::to_string(const scalar_unit& x)
+* \brief Generates an string from the scalar_unit, it uses the display of the scalar_unit with 2 decimals, without brackets and without a close prefix.
+* \param x scalar_unit to generate the string.
+
+* \fn bool scifir::is_scalar_unit(const string& init_scalar)
+* \brief Checks if an string is an initialization string of a scalar_unit.
+* \param init_scalar string to check. It must be an initialization string of a scalar_unit to return true.
+
+* \fn float scifir::abs(const scalar_unit& x)
+* \brief Returns the absolute value of the scalar_unit, without dimensions.
+
+* \fn scalar_unit scifir::pow(const scalar_unit& x,int exponent)
+* \brief Exponentiates a scalar_unit to some numeric type, the dimensions are also exponentiated.
+
+* \fn scalar_unit scifir::sqrt(const scalar_unit& x)
+* \brief Square root of a scalar_unit, it squares the dimensions too.
+
+* \fn scalar_unit scifir::sqrt_nth(const scalar_unit& x, int index)
+* \brief Nth root of a scalar_unit to any numeric value, it squares the dimensions too.
+
+* \fn scifir::scalar_unit operator +(const T& y,const scifir::scalar_unit& x)
+* \brief Sums a numeric type y with an scalar_unit x, returns that result as a new scalar_unit with the same dimensions of x.
+
+* \fn scifir::scalar_unit operator -(const T& y,const scifir::scalar_unit& x)
+* \brief Substracts a scalar_unit x to a numeric type y, returns that result as a new scalar_unit with the same dimensions of x.
+
+* \fn scifir::scalar_unit operator *(const T& y,const scifir::scalar_unit& x)
+* \brief Multiplies a numeric type y with an scalar_unit x, returns that result as a new scalar_unit with the same dimensions of x.
+
+* \fn scifir::scalar_unit operator /(const T& y,const scifir::scalar_unit& x)
+* \brief Divides a numeric type y with an scalar_unit x, returns that result as a new scalar_unit with the same dimensions of x.
+
+* \fn float operator ^(const T& x, const scifir::scalar_unit& y)
+* \brief Exponentiates a numeric type x with a scalar_unit y, only if that scalar_unit as empty dimensions, returns a float as the result of the calculation.
+
+* \fn bool operator !=(const scifir::scalar_unit& x, scifir::scalar_unit y)
+* \brief Returns true if two scalar_unit classes doesn't have the same value when changed to same dimensions. If their basic dimensions are different, it returns false.
+
+* \fn bool operator <(const scifir::scalar_unit& x, const scifir::scalar_unit& y)
+* \brief Returns true if x has a lower value than y, compared with the same dimensions. If their dimensions are not equal, they are changed to be equal in order to do the comparison.
+
+* \fn bool operator >(const scifir::scalar_unit& x, const scifir::scalar_unit& y)
+* \brief Returns true if x has a greather value than y, compared with the same dimensions. If their dimensions are not equal, they are changed to be equal in order to do the comparison.
+
+* \fn bool operator <=(const scifir::scalar_unit& x, const scifir::scalar_unit& y)
+* \brief Returns true if x has a lower or equal value than y, compared with the same dimensions. If their dimensions are not equal, they are changed to be equal in order to do the comparison.
+
+* \fn bool operator >=(const scifir::scalar_unit& x, const scifir::scalar_unit& y)
+* \brief Returns true if x has a greather or equal value than y, compared with the same dimensions. If their dimensions are not equal, they are changed to be equal in order to do the comparison.
+
+* \fn bool operator ==(const scifir::scalar_unit& x, const string& init_scalar)
+* \brief Returns true if x is equal to the scalar_unit initialized with the string being compared. The display() function is not used, and so the values are compared with all its decimal numbers.
+
+* \fn bool operator !=(const scifir::scalar_unit& x, const string& init_scalar)
+* \brief Returns true if x is not equal to the scalar_unit initialized with the string being compared. The display() function is not used, and so the values are compared with all its decimal numbers.
+
+* \fn bool operator <(const scifir::scalar_unit& x, const string& init_scalar)
+* \brief Returns true if x is lower than the scalar_unit initialized with the string being compared.
+
+* \fn bool operator >(const scifir::scalar_unit& x, const string& init_scalar)
+* \brief Returns true if x is greather than the scalar_unit initialized with the string being compared.
+
+* \fn bool operator <=(const scifir::scalar_unit& x, const string& init_scalar)
+* \brief Returns true if x is lower or equal to the scalar_unit initialized with the string being compared.
+
+* \fn bool operator >=(const scifir::scalar_unit& x, const string& init_scalar)
+* \brief Returns true if x is greather or equal to the scalar_unit initialized with the string being compared.
+
+* \fn bool operator ==(const string& init_scalar, const scifir::scalar_unit& x)
+* \brief Returns true if x is equal to the scalar_unit initialized with the string being compared. The display() function is not used, and so the values are compared with all its decimal numbers.
+
+* \fn bool operator !=(const string& init_scalar, const scifir::scalar_unit& x)
+* \brief Returns true if x is not equal to the scalar_unit initialized with the string being compared. The display() function is not used, and so the values are compared with all its decimal numbers.
+
+* \fn bool operator <(const string& init_scalar, const scifir::scalar_unit& x)
+* \brief Returns true if x is greather than the scalar_unit initialized with the string being compared.
+
+* \fn bool operator >(const string& init_scalar, const scifir::scalar_unit& x)
+* \brief Returns true if x is lower than the scalar_unit initialized with the string being compared.
+
+* \fn bool operator <=(const string& init_scalar, const scifir::scalar_unit& x)
+* \brief Returns true if x is greather or equal to the scalar_unit initialized with the string being compared.
+
+* \fn bool operator >=(const string& init_scalar, const scifir::scalar_unit& x)
+* \brief Returns true if x is lower or equal to the scalar_unit initialized with the string being compared.
+
+* \fn bool operator ==(const T& x, const scifir::scalar_unit& y)
+* \brief Returns true if the value of the scalar_unit is equal to the numeric type, ignoring the dimensions.
+
+* \fn bool operator !=(const T& x, const scifir::scalar_unit& y)
+* \brief Returns true if the value of the scalar_unit is not equal to the numeric type, ignoring the dimensions.
+
+* \fn bool operator <(const T& x, const scifir::scalar_unit& y)
+* \brief Returns true if the value of y is greather than the numeric type, ignoring the dimensions.
+
+* \fn bool operator >(const T& x, const scifir::scalar_unit& y)
+* \brief Returns true if the value of y is lower than the numeric type, ignoring the dimensions.
+
+* \fn bool operator <=(const T& x, const scifir::scalar_unit& y)
+* \brief Returns true if the value of y is lower or equal than the numeric type, ignoring the dimensions.
+
+* \fn bool operator >=(const T& x, const scifir::scalar_unit& y)
+* \brief Returns true if the value of y is equal or greather than the numeric type, ignoring the dimensions.
+
+* \fn bool operator ==(const scifir::scalar_unit& x, const T& y)
+* \brief Returns true if the value of the scalar_unit is equal to the numeric type, ignoring the dimensions.
+
+* \fn bool operator !=(const scifir::scalar_unit& x, const T& y)
+* \brief Returns true if the value of the scalar_unit is not equal to the numeric type, ignoring the dimensions.
+
+* \fn bool operator <(const scifir::scalar_unit& x,const T& y)
+* \brief Returns true if the value of x is lower than the numeric type, ignoring the dimensions.
+
+* \fn bool operator >(const scifir::scalar_unit& x,const T& y)
+* \brief Returns true if the value of x is greather than the numeric type, ignoring the dimensions.
+
+* \fn bool operator <=(const scifir::scalar_unit& x,const T& y)
+* \brief Returns true if the value of x is lower or equal than the numeric type, ignoring the dimensions.
+
+* \fn bool operator >=(const scifir::scalar_unit& x,const T& y)
+* \brief Returns true if the value of x is equal or greather than the numeric type, ignoring the dimensions.
+
+* \fn void operator +=(string& x, const scifir::scalar_unit& y)
+* \brief Adds the scalar_unit y converted to string to the string x.
+
+* \fn string operator +(const string& x, const scifir::scalar_unit& y)
+* \brief Concatenates the string x with the string representation of the scalar_unit y.
+
+* \fn string operator +(const scifir::scalar_unit& y, const string& x)
+* \brief Concatenates the string x with the string representation of the scalar_unit y.
+
+* \fn ostream& operator <<(ostream& os, const scifir::scalar_unit& x)
+* \brief Adds the string representation of the scalar_unit x to an ostream os.
+
+* \fn istream& operator >>(istream& is, scifir::scalar_unit& x)
+* \brief Allows that an istream is initializes by string an scalar_unit x.
+*/

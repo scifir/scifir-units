@@ -303,6 +303,54 @@ Also, to add 3D to the software, you can use **OpenGL**. To do plots, use **matp
 
 From the graphics part, you can use **SVG++** to work with SVG files. To add GPS to the invention, you can use **gpsd**. To do the translation of the software, use **gettext**.
 
+### Electronic devices
+
+All scientific inventions and medical machines are electronic devices with more components. So, it's first needed to know electronics. An electronic device is composed of an **electronic circuit**, a **microcontroller**, **electronic sensors**, **output devices**, **electronic motors**, an **operating system**, and the **software of the device** (called **firmware**).
+
+The **electronic circuit** connects all the different components and parts of the electronic device, and supplies energy and/or communication signals to each component.
+
+The **microcontroller** executes the software, and sends then signals to one or more electronic component.
+
+The **electronic sensors** measure properties of the environment and send them to the microcontroller, being it able then to read them.
+
+The **output devices** display the output data of the software in some form or another, it can be visual (the monitor), auditive (the speakers), etc.
+
+The **electronic motors** can be powered and controlled by the electronic circuit, and allow to control the movement, like for example the movement of the molecules through a tube.
+
+The **operating system** is the software that handles the processes of the microcontrollers, and executes one process or another, or more than one process at the same time. Good operating systems for electronic devices are **FreeBSD** and **FreeRTOS**.
+
+The **firmware** is the software of the electronic device, it's usually executed inside an operating system, but it can be executed without an operating system too.
+
+### Laboratory machines
+
+A laboratory machine, additional to all the components of electronic devices, contains too output devices and/or input devices that allow to control and get data about the matter, which can be molecules, solids, gases, liquids, cells, or even exotic matter.
+
+Laboratory machines in which to use units are, for example, **NMR spectroscopes**, **IR spectroscopes**, **DNA sequencers**, **Gas chromatographs**. **DNA synthesizers**, a possible scientific invention present in the projects of Scifir, can also be benefited of units. **Printers at nanoscale**, which are essential for **nanotechnology**, are programmed easier, too, with units.
+
+### Scientific inventions
+
+A scientific invention different than a laboratory machine is done similar to those machines. Then, scientific inventions also need electronic components that handle matter. A usual different with laboratory machines is that the inventions usually need other parts too, like for example **spaceships**, which need more mechanical components than the common laboratory machine. Despite that difference, to develop a laboratory machine is similar than to develop any scientific invention.
+
+### Medical devices
+
+A medical device usually controls the flow of some substance, or needs high precision for the position of some part of the machine, and for those purposes scifir-units helps.
+
+Important medical devices which can be benefited with measurement of units are devices of **robotic surgery**, **heart-lung machines**, **mechanical ventilators**, **anesthesic machines**, **lasik machines**, **x-ray machines**, **magnetic resonance imaging machines**, **ultrasound machines**, **tomography machines**.
+
+Other simple devices as **pressure monitor**, **heart rate monitor** and **electrocardiograms** are also improved with units.
+
+### Robotics
+
+**Robotics** is the branch of science, mainly of informatics, whose subject of study are the robots. A **robotist** is a scientist specialized in robotics.
+
+A robot is built with electronics, apart from the components listed previously, it needs a **visual sensor**, a **microphone**, a **speaker**, a **temperature sensor**. It can have also a **sensor of molecules**, in order to have a simulation of the **sense of odor**. In order to build the human shape (or animal shape), you must know **machining**, and use **molds**, the **milling machine** and/or the **lathe** to build each part. For some robotic parts, you can use **carbon fiber**.
+
+All components of robots frequently need at least scalar units, if not also vector units, like for example the visual sensor or the microphone, and so you can use scifir-units inside your robotics projects.
+
+Inside Scifir, it's called **Universal Robotics** an idea of Ismael Correa which consists of robots that can share essentially any part with the other robot. For that purpose, too, scifir-units is useful.
+
+Each component of a robot, being a sensor or a removable part, should be programmed as an independent server inside the operating system of the robot. In that way, it can be restarted, and changed, without modifying the other parts. Then, the visual sensor, the speaker and the temperature sensor, should all be different servers inside the same OS.
+
 ## Core functionalities
 
 All the classes of scifir-units are inside the **namespace scifir**, as with all libraries of the **Scifir Collection**. So, to use any of this classes, like angle, you have to type any of the following codes:
