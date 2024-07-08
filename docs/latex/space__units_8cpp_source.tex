@@ -1,0 +1,40 @@
+\doxysection{space\+\_\+units.\+cpp}
+\hypertarget{space__units_8cpp_source}{}\label{space__units_8cpp_source}\index{predefined\_units/space\_units.cpp@{predefined\_units/space\_units.cpp}}
+\mbox{\hyperlink{space__units_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{space__units_8hpp}{./space\_units.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}../units/unit\_basic.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../special\_units/size\_2d.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}../special\_units/size\_3d.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00007}00007\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacescifir}{scifir}}}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00011}\mbox{\hyperlink{namespacescifir_a316e5acb7928e82ef65ce1d2be7052c3}{00011}}\ \ \ \ \ \mbox{\hyperlink{scalar__unit_8hpp_a48bd90c088a02ab6e4f599383a5009c3}{SCALAR\_UNIT\_CPP}}(\mbox{\hyperlink{namespacescifir_a5d7071e9b105c05f7e4d5e278a71673e}{area}},\textcolor{stringliteral}{"{}m2"{}});}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00013}\mbox{\hyperlink{namespacescifir_a5d7071e9b105c05f7e4d5e278a71673e}{00013}}\ \ \ \ \ area::area(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{size\_2d<length>}}\&\ x)\ :\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}()}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{length}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_height}}\ =\ x.height;}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_height}}.change\_dimensions(x.width);}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ *\textcolor{keyword}{this}\ =\ x.width\ *\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_height}};}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00020}\mbox{\hyperlink{namespacescifir_afd959adc8d468f85c922b0c52e5dcc06}{00020}}\ \ \ \ \ \mbox{\hyperlink{scalar__unit_8hpp_a48bd90c088a02ab6e4f599383a5009c3}{SCALAR\_UNIT\_CPP}}(volume,\textcolor{stringliteral}{"{}m3"{}});}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00022}\mbox{\hyperlink{namespacescifir_a262599906f4976119a8afba442877b46}{00022}}\ \ \ \ \ volume::volume(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{size\_3d<length>}}\&\ x)\ :\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}()}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{length}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_height}}\ =\ x.height;}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{length}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_depth}}\ =\ x.depth;}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_height}}.change\_dimensions(x.width);}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_depth}}.change\_dimensions(x.width);}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ *\textcolor{keyword}{this}\ =\ x.width\ *\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_height}}\ *\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_depth}};}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00031}\mbox{\hyperlink{namespacescifir_a4e30b1f67194ebf6e846d5e8ec80d44a}{00031}}\ \ \ \ \ \mbox{\hyperlink{scalar__unit_8hpp_a48bd90c088a02ab6e4f599383a5009c3}{SCALAR\_UNIT\_CPP}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{volume\_4d}},\textcolor{stringliteral}{"{}m4"{}});}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00033}\mbox{\hyperlink{namespacescifir_a36cc074e482afe1e2e7151f9f3fd3c15}{00033}}\ \ \ \ \ \mbox{\hyperlink{scalar__unit_8hpp_a48bd90c088a02ab6e4f599383a5009c3}{SCALAR\_UNIT\_CPP}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{curvature}},\textcolor{stringliteral}{"{}1/m"{}});}
+\DoxyCodeLine{\Hypertarget{space__units_8cpp_source_l00034}00034\ \}}
+
+\end{DoxyCode}

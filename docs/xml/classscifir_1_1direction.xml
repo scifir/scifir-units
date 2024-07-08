@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classscifir_1_1direction" kind="class" language="C++" prot="public">
     <compoundname>scifir::direction</compoundname>
+    <includes refid="direction_8hpp" local="no">direction.hpp</includes>
     <sectiondef kind="public-type">
       <memberdef kind="enum" id="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" prot="public" static="no" strong="no">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int8_t</ref></type>
@@ -207,7 +208,7 @@
     </sectiondef>
     <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classscifir_1_1direction_1ab53ccba15d542980abc6e137d65b1e92" prot="public" static="no" mutable="no">
-        <type>direction::name</type>
+        <type><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref></type>
         <definition>direction::name scifir::direction::value</definition>
         <argsstring></argsstring>
         <name>value</name>
@@ -279,7 +280,7 @@
         <name>direction</name>
         <qualifiedname>scifir::direction::direction</qualifiedname>
         <param>
-          <type>direction::name</type>
+          <type><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref></type>
           <declname>new_direction</declname>
         </param>
         <briefdescription>
@@ -351,7 +352,7 @@
         <name>operator=</name>
         <qualifiedname>scifir::direction::operator=</qualifiedname>
         <param>
-          <type>direction::name</type>
+          <type><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref></type>
           <declname>new_direction</declname>
         </param>
         <briefdescription>

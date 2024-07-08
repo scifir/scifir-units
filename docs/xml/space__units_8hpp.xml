@@ -14,7 +14,7 @@
     <incdepgraph>
       <node id="22">
         <label>../meca_number/angle.hpp</label>
-        <link refid="angle_8hpp_source"/>
+        <link refid="angle_8hpp"/>
         <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
@@ -40,7 +40,7 @@
       </node>
       <node id="30">
         <label>../special_units/percentage.hpp</label>
-        <link refid="percentage_8hpp_source"/>
+        <link refid="percentage_8hpp"/>
         <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
@@ -56,13 +56,13 @@
       </node>
       <node id="23">
         <label>../topology/constants.hpp</label>
-        <link refid="constants_8hpp_source"/>
+        <link refid="constants_8hpp"/>
         <childnode refid="24" relation="include">
         </childnode>
       </node>
       <node id="25">
         <label>../topology/direction.hpp</label>
-        <link refid="direction_8hpp_source"/>
+        <link refid="direction_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -72,7 +72,7 @@
       </node>
       <node id="3">
         <label>../units/dimension.hpp</label>
-        <link refid="dimension_8hpp_source"/>
+        <link refid="dimension_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
@@ -100,7 +100,7 @@
       </node>
       <node id="4">
         <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp_source"/>
+        <link refid="prefix_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -112,7 +112,7 @@
       </node>
       <node id="2">
         <label>../units/scalar_unit.hpp</label>
-        <link refid="scalar__unit_8hpp_source"/>
+        <link refid="scalar__unit_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
@@ -136,7 +136,7 @@
       </node>
       <node id="29">
         <label>../units/unit_basic.hpp</label>
-        <link refid="unit__basic_8hpp_source"/>
+        <link refid="unit__basic_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
@@ -152,7 +152,7 @@
       </node>
       <node id="21">
         <label>../units/vector_unit_2d.hpp</label>
-        <link refid="vector__unit__2d_8hpp_source"/>
+        <link refid="vector__unit__2d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
@@ -170,7 +170,7 @@
       </node>
       <node id="20">
         <label>../units/vector_unit_3d.hpp</label>
-        <link refid="vector__unit__3d_8hpp_source"/>
+        <link refid="vector__unit__3d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
@@ -202,7 +202,7 @@
       </node>
       <node id="26">
         <label>../units/vector_unit_nd.hpp</label>
-        <link refid="vector__unit__nd_8hpp_source"/>
+        <link refid="vector__unit__nd_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
@@ -230,7 +230,7 @@
       </node>
       <node id="17">
         <label>../util/is_number.hpp</label>
-        <link refid="is__number_8hpp_source"/>
+        <link refid="is__number_8hpp"/>
         <childnode refid="18" relation="include">
         </childnode>
       </node>
@@ -290,46 +290,80 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="2">
+        <label>predefined_units/space_units.cpp</label>
+        <link refid="space__units_8cpp"/>
+      </node>
       <node id="1">
         <label>predefined_units/space_units.hpp</label>
         <link refid="space__units_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>special_units/size_2d.cpp</label>
+        <link refid="size__2d_8cpp"/>
+      </node>
+      <node id="3">
+        <label>special_units/size_2d.hpp</label>
+        <link refid="size__2d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
       </node>
-      <node id="2">
-        <label>special_units/size_2d.hpp</label>
-        <link refid="size__2d_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
+      <node id="7">
+        <label>special_units/size_3d.cpp</label>
+        <link refid="size__3d_8cpp"/>
       </node>
-      <node id="4">
+      <node id="6">
         <label>special_units/size_3d.hpp</label>
-        <link refid="size__3d_8hpp_source"/>
-        <childnode refid="3" relation="include">
+        <link refid="size__3d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>special_units/size_nd.cpp</label>
+        <link refid="size__nd_8cpp"/>
+      </node>
+      <node id="8">
+        <label>special_units/size_nd.hpp</label>
+        <link refid="size__nd_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
       <node id="5">
-        <label>special_units/size_nd.hpp</label>
-        <link refid="size__nd_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
         <label>units.hpp</label>
-        <link refid="units_8hpp_source"/>
+        <link refid="units_8hpp"/>
       </node>
-      <node id="6">
+      <node id="11">
+        <label>units/unit_abbreviation.cpp</label>
+        <link refid="unit__abbreviation_8cpp"/>
+      </node>
+      <node id="10">
         <label>units/unit_abbreviation.hpp</label>
-        <link refid="unit__abbreviation_8hpp_source"/>
-        <childnode refid="3" relation="include">
+        <link refid="unit__abbreviation_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -348,7 +382,7 @@
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">scifir</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacescifir" kindref="compound">scifir</ref></highlight></codeline>
 <codeline lineno="11"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">size_2d;</highlight></codeline>
@@ -356,21 +390,21 @@
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">size_3d;</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP_BEGIN(area);</highlight></codeline>
+<codeline lineno="18" refid="namespacescifir_1a4dd210af3d564eac0992f3ea784c0bf3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1abdac9beb140b6e7bdd3160342f20a856" kindref="member">SCALAR_UNIT_HPP_BEGIN</ref>(<ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">area</ref>);</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>area(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>size_2d&lt;length&gt;&amp;);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">area</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_2d&lt;length&gt;</ref>&amp;);</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP_END();</highlight></codeline>
+<codeline lineno="22" refid="namespacescifir_1a472ded6918aa1c5681b05cab4a39d07b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacescifir_1a472ded6918aa1c5681b05cab4a39d07b" kindref="member">SCALAR_UNIT_HPP_END</ref>();</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP_BEGIN(volume);</highlight></codeline>
+<codeline lineno="24" refid="namespacescifir_1ab35e6529f744d9ecd75b9ab675c3ed30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1abdac9beb140b6e7bdd3160342f20a856" kindref="member">SCALAR_UNIT_HPP_BEGIN</ref>(<ref refid="namespacescifir_1a262599906f4976119a8afba442877b46" kindref="member">volume</ref>);</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>volume(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>size_3d&lt;length&gt;&amp;);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a262599906f4976119a8afba442877b46" kindref="member">volume</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;length&gt;</ref>&amp;);</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP_END();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacescifir_1a472ded6918aa1c5681b05cab4a39d07b" kindref="member">SCALAR_UNIT_HPP_END</ref>();</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(volume_4d);</highlight></codeline>
+<codeline lineno="30" refid="namespacescifir_1a3370b2be0db8080f52e3a619b246e44d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">volume_4d</ref>);</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(curvature);</highlight></codeline>
+<codeline lineno="32" refid="namespacescifir_1aae115407248396554cb3e764d46393cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">curvature</ref>);</highlight></codeline>
 <codeline lineno="33"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_PREDEFINED_UNITS_SPACE_UNITS_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>

@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classscifir_1_1aid" kind="class" language="C++" prot="public">
     <compoundname>scifir::aid</compoundname>
+    <includes refid="aid_8hpp" local="no">aid.hpp</includes>
     <sectiondef kind="public-type">
       <memberdef kind="enum" id="classscifir_1_1aid_1aef81e5d08382b7a56fe5f99f00417be6" prot="public" static="no" strong="no">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int8_t</ref></type>
@@ -137,7 +138,7 @@
         <location file="special_units/aid.hpp" line="44" column="8" bodyfile="special_units/aid.hpp" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1aid_1a51ecd4e0fbeb2342a9bfb9b4dbededbe" prot="public" static="no" mutable="no">
-        <type>aid::type</type>
+        <type><ref refid="classscifir_1_1aid_1aef81e5d08382b7a56fe5f99f00417be6" kindref="member">aid::type</ref></type>
         <definition>aid::type scifir::aid::astronomical_type</definition>
         <argsstring></argsstring>
         <name>astronomical_type</name>
@@ -209,7 +210,7 @@
         <name>aid</name>
         <qualifiedname>scifir::aid::aid</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> astronomical_body &amp;</type>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="namespacescifir_1a20683521b4e3fde1fac96fee7ca39e36" kindref="member">astronomical_body</ref> &amp;</type>
           <declname>predefined_astronomical_body</declname>
         </param>
         <briefdescription>
@@ -275,7 +276,7 @@
         <name>aid</name>
         <qualifiedname>scifir::aid::aid</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> aid::type &amp;</type>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1aid_1aef81e5d08382b7a56fe5f99f00417be6" kindref="member">aid::type</ref> &amp;</type>
           <declname>new_astronomical_type</declname>
         </param>
         <param>

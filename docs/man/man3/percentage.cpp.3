@@ -1,0 +1,303 @@
+.TH "special_units/percentage.cpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+special_units/percentage.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&./percentage\&.hpp'\fP
+.br
+\fC#include '\&.\&./util/types\&.hpp'\fP
+.br
+\fC#include 'boost/algorithm/string\&.hpp'\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <string>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscifir\fP"
+.br
+.RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBpercentage\fP &x)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBscifir::is_percentage\fP (\fBconst\fP \fBstring\fP &\fBinit_percentage\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::scalar_unit\fP \fBoperator*\fP (const \fBscifir::scalar_unit\fP &x, const \fBscifir::percentage\fP &y)"
+.br
+.ti -1c
+.RI "\fBscifir::scalar_unit\fP \fBoperator/\fP (const \fBscifir::scalar_unit\fP &x, const \fBscifir::percentage\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::percentage\fP &x, const \fBscifir::percentage\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::percentage\fP &x, const \fBscifir::percentage\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBscifir::percentage\fP &x, const \fBscifir::percentage\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBscifir::percentage\fP &x, const \fBscifir::percentage\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBscifir::percentage\fP &x, const \fBscifir::percentage\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBscifir::percentage\fP &x, const \fBscifir::percentage\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::percentage\fP &x, const string &init_percentage)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::percentage\fP &x, const string &init_percentage)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const string &init_percentage, const \fBscifir::percentage\fP &x)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const string &init_percentage, const \fBscifir::percentage\fP &x)"
+.br
+.ti -1c
+.RI "void \fBoperator+=\fP (string &x, const \fBscifir::percentage\fP &y)"
+.br
+.ti -1c
+.RI "string \fBoperator+\fP (const string &x, const \fBscifir::percentage\fP &y)"
+.br
+.ti -1c
+.RI "string \fBoperator+\fP (const \fBscifir::percentage\fP &y, const string &x)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::percentage\fP &x)"
+.br
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, \fBscifir::percentage\fP &x)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "bool operator!= (const \fBscifir::percentage\fP & x, const \fBscifir::percentage\fP & y)"
+
+.PP
+Definition at line \fB496\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+497 {
+498     return !(x == y);
+499 }
+.fi
+
+.SS "bool operator!= (const \fBscifir::percentage\fP & x, const string & init_percentage)"
+
+.PP
+Definition at line \fB541\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+542 {
+543     return !(x == init_percentage);
+544 }
+.fi
+
+.SS "bool operator!= (const string & init_percentage, const \fBscifir::percentage\fP & x)"
+
+.PP
+Definition at line \fB552\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+553 {
+554     return !(init_percentage == x);
+555 }
+.fi
+
+.SS "\fBscifir::scalar_unit\fP operator* (const \fBscifir::scalar_unit\fP & x, const \fBscifir::percentage\fP & y)"
+
+.PP
+Definition at line \fB474\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+475 {
+476     return x * y\&.get_factor();
+477 }
+.fi
+
+.SS "string operator+ (const \fBscifir::percentage\fP & y, const string & x)"
+
+.PP
+Definition at line \fB572\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+573 {
+574     ostringstream output;
+575     output << y;
+576     output << x;
+577     return output\&.str();
+578 }
+.fi
+
+.SS "string operator+ (const string & x, const \fBscifir::percentage\fP & y)"
+
+.PP
+Definition at line \fB564\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+565 {
+566     ostringstream output;
+567     output << x;
+568     output << y;
+569     return output\&.str();
+570 }
+.fi
+
+.SS "void operator+= (string & x, const \fBscifir::percentage\fP & y)"
+
+.PP
+Definition at line \fB557\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+558 {
+559     ostringstream output;
+560     output << y;
+561     x += output\&.str();
+562 }
+.fi
+
+.SS "\fBscifir::scalar_unit\fP operator/ (const \fBscifir::scalar_unit\fP & x, const \fBscifir::percentage\fP & y)"
+
+.PP
+Definition at line \fB479\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+480 {
+481     return x / y\&.get_factor();
+482 }
+.fi
+
+.SS "bool operator< (const \fBscifir::percentage\fP & x, const \fBscifir::percentage\fP & y)"
+
+.PP
+Definition at line \fB501\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+502 {
+503     if(x\&.get_value() < y\&.get_value())
+504     {
+505         return true;
+506     }
+507     else
+508     {
+509         return false;
+510     }
+511 }
+.fi
+
+.SS "ostream & operator<< (ostream & os, const \fBscifir::percentage\fP & x)"
+
+.PP
+Definition at line \fB580\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+581 {
+582     return os << to_string(x);
+583 }
+.fi
+
+.SS "bool operator<= (const \fBscifir::percentage\fP & x, const \fBscifir::percentage\fP & y)"
+
+.PP
+Definition at line \fB525\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+526 {
+527     return !(x > y);
+528 }
+.fi
+
+.SS "bool operator== (const \fBscifir::percentage\fP & x, const \fBscifir::percentage\fP & y)"
+
+.PP
+Definition at line \fB484\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+485 {
+486     if(x\&.get_value() == y\&.get_value())
+487     {
+488         return true;
+489     }
+490     else
+491     {
+492         return false;
+493     }
+494 }
+.fi
+
+.SS "bool operator== (const \fBscifir::percentage\fP & x, const string & init_percentage)"
+
+.PP
+Definition at line \fB535\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+536 {
+537     scifir::percentage y = scifir::percentage(init_percentage);
+538     return (x == y);
+539 }
+.fi
+
+.SS "bool operator== (const string & init_percentage, const \fBscifir::percentage\fP & x)"
+
+.PP
+Definition at line \fB546\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+547 {
+548     scifir::percentage y = scifir::percentage(init_percentage);
+549     return (x == y);
+550 }
+.fi
+
+.SS "bool operator> (const \fBscifir::percentage\fP & x, const \fBscifir::percentage\fP & y)"
+
+.PP
+Definition at line \fB513\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+514 {
+515     if(x\&.get_value() > y\&.get_value())
+516     {
+517         return true;
+518     }
+519     else
+520     {
+521         return false;
+522     }
+523 }
+.fi
+
+.SS "bool operator>= (const \fBscifir::percentage\fP & x, const \fBscifir::percentage\fP & y)"
+
+.PP
+Definition at line \fB530\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+531 {
+532     return !(x < y);
+533 }
+.fi
+
+.SS "istream & operator>> (istream & is, \fBscifir::percentage\fP & x)"
+
+.PP
+Definition at line \fB585\fP of file \fBpercentage\&.cpp\fP\&..PP
+.nf
+586 {
+587     char a[256];
+588     is\&.getline(a, 256);
+589     string b(a);
+590     boost::trim(b);
+591     x = scifir::percentage(b);
+592     return is;
+593 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

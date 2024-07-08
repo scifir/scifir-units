@@ -1,0 +1,215 @@
+.TH "special_units/size_nd.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+special_units/size_nd.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./predefined_units/space_units\&.hpp'\fP
+.br
+\fC#include '\&.\&./util/types\&.hpp'\fP
+.br
+\fC#include 'boost/algorithm/string\&.hpp'\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <vector>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBscifir::size_nd< T >\fP"
+.br
+.ti -1c
+.RI "class \fBscifir::size_nd< float >\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscifir\fP"
+.br
+.RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<\fBtypename\fP T > \fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBsize_nd\fP< T > &x)"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBsize_nd\fP< \fBfloat\fP > &x)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBoperator==\fP (const \fBscifir::size_nd\fP< T > &x, const \fBscifir::size_nd\fP< T > &y)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBoperator!=\fP (const \fBscifir::size_nd\fP< T > &x, const \fBscifir::size_nd\fP< T > &y)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBoperator==\fP (const \fBscifir::size_nd\fP< T > &x, const string &init_size_nd)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBoperator!=\fP (const \fBscifir::size_nd\fP< T > &x, const string &init_size_nd)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBoperator==\fP (const string &init_size_nd, const \fBscifir::size_nd\fP< T > &x)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBoperator!=\fP (const string &init_size_nd, const \fBscifir::size_nd\fP< T > &x)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBoperator+=\fP (string &x, const \fBscifir::size_nd\fP< T > &y)"
+.br
+.ti -1c
+.RI "template<typename T > string \fBoperator+\fP (const string &x, const \fBscifir::size_nd\fP< T > &y)"
+.br
+.ti -1c
+.RI "template<typename T > string \fBoperator+\fP (const \fBscifir::size_nd\fP< T > &x, const string &y)"
+.br
+.ti -1c
+.RI "template<typename T > ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::size_nd\fP< T > &x)"
+.br
+.ti -1c
+.RI "template<typename T > istream & \fBoperator>>\fP (istream &is, \fBscifir::size_nd\fP< T > &x)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T > bool operator!= (const \fBscifir::size_nd\fP< T > & x, const \fBscifir::size_nd\fP< T > & y)"
+
+.PP
+Definition at line \fB361\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+362 {
+363     return !(x == y);
+364 }
+.fi
+
+.SS "template<typename T > bool operator!= (const \fBscifir::size_nd\fP< T > & x, const string & init_size_nd)"
+
+.PP
+Definition at line \fB374\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+375 {
+376     return !(x == init_size_nd);
+377 }
+.fi
+
+.SS "template<typename T > bool operator!= (const string & init_size_nd, const \fBscifir::size_nd\fP< T > & x)"
+
+.PP
+Definition at line \fB387\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+388 {
+389     return !(init_size_nd == x);
+390 }
+.fi
+
+.SS "template<typename T > string operator+ (const \fBscifir::size_nd\fP< T > & x, const string & y)"
+
+.PP
+Definition at line \fB405\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+406 {
+407     return to_string(x) + y;
+408 }
+.fi
+
+.SS "template<typename T > string operator+ (const string & x, const \fBscifir::size_nd\fP< T > & y)"
+
+.PP
+Definition at line \fB399\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+400 {
+401     return x + to_string(y);
+402 }
+.fi
+
+.SS "template<typename T > void operator+= (string & x, const \fBscifir::size_nd\fP< T > & y)"
+
+.PP
+Definition at line \fB393\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+394 {
+395     x += to_string(y);
+396 }
+.fi
+
+.SS "template<typename T > ostream & operator<< (ostream & os, const \fBscifir::size_nd\fP< T > & x)"
+
+.PP
+Definition at line \fB411\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+412 {
+413     return os << to_string(x);
+414 }
+.fi
+
+.SS "template<typename T > bool operator== (const \fBscifir::size_nd\fP< T > & x, const \fBscifir::size_nd\fP< T > & y)"
+
+.PP
+Definition at line \fB341\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+342 {
+343     if (x\&.get_nd() == y\&.get_nd())
+344     {
+345         for (int i = 0; i < x\&.widths\&.size(); i++)
+346         {
+347             if (x\&.widths[i] != y\&.widths[i])
+348             {
+349                 return false;
+350             }
+351         }
+352         return true;
+353     }
+354     else
+355     {
+356         return false;
+357     }
+358 }
+.fi
+
+.SS "template<typename T > bool operator== (const \fBscifir::size_nd\fP< T > & x, const string & init_size_nd)"
+
+.PP
+Definition at line \fB367\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+368 {
+369     scifir::size_nd<T> y(init_size_nd);
+370     return (x == y);
+371 }
+.fi
+
+.SS "template<typename T > bool operator== (const string & init_size_nd, const \fBscifir::size_nd\fP< T > & x)"
+
+.PP
+Definition at line \fB380\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+381 {
+382     scifir::size_nd<T> y(init_size_nd);
+383     return (x == y);
+384 }
+.fi
+
+.SS "template<typename T > istream & operator>> (istream & is, \fBscifir::size_nd\fP< T > & x)"
+
+.PP
+Definition at line \fB417\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+418 {
+419     char a[256];
+420     is\&.getline(a, 256);
+421     string b(a);
+422     x = scifir::size_nd<T>(b);
+423     return is;
+424 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

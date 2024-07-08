@@ -1,0 +1,249 @@
+.TH "units/vector_unit_nd.cpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+units/vector_unit_nd.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&./vector_unit_nd\&.hpp'\fP
+.br
+\fC#include '\&.\&./coordinates/coordinates_2d\&.hpp'\fP
+.br
+\fC#include '\&.\&./coordinates/coordinates_3d\&.hpp'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscifir\fP"
+.br
+.RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBvector_unit_nd\fP &x)"
+.br
+.ti -1c
+.RI "\fBscalar_unit\fP \fBscifir::norm\fP (\fBconst\fP \fBvector_unit_nd\fP &x)"
+.br
+.ti -1c
+.RI "\fBvector_unit_nd\fP \fBscifir::sqrt\fP (\fBconst\fP \fBvector_unit_nd\fP &x)"
+.br
+.ti -1c
+.RI "\fBvector_unit_nd\fP \fBscifir::sqrt_nth\fP (\fBconst\fP \fBvector_unit_nd\fP &x, \fBint\fP index)"
+.br
+.ti -1c
+.RI "\fBscalar_unit\fP \fBscifir::dot_product\fP (\fBconst\fP \fBvector_unit_nd\fP &x, \fBconst\fP \fBvector_unit_nd\fP &y)"
+.br
+.ti -1c
+.RI "\fBvector_unit_nd\fP \fBscifir::cross_product\fP (\fBconst\fP \fBvector_unit_nd\fP &x, \fBconst\fP \fBvector_unit_nd\fP &y)"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBscifir::angle_between\fP (\fBconst\fP \fBvector_unit_nd\fP &x, \fBconst\fP \fBvector_unit_nd\fP &y)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBscifir::same_nd\fP (\fBconst\fP \fBvector_unit_nd\fP &x, \fBconst\fP \fBvector_unit_nd\fP &y)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBscifir::same_direction\fP (\fBconst\fP \fBvector_unit_nd\fP &x, \fBconst\fP \fBvector_unit_nd\fP &y)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBscifir::parallel\fP (\fBconst\fP \fBvector_unit_nd\fP &x, \fBconst\fP \fBvector_unit_nd\fP &y)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBscifir::orthogonal\fP (\fBconst\fP \fBvector_unit_nd\fP &x, \fBconst\fP \fBvector_unit_nd\fP &y)"
+.br
+.ti -1c
+.RI "\fBscifir::vector_unit_nd\fP \fBoperator*\fP (const \fBscifir::scalar_unit\fP &x, const \fBscifir::vector_unit_nd\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::vector_unit_nd\fP &x, const \fBscifir::vector_unit_nd\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::vector_unit_nd\fP &x, const string &init_vector_nd)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::vector_unit_nd\fP &x, const string &init_vector_nd)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const string &init_vector_nd, const \fBscifir::vector_unit_nd\fP &x)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const string &init_vector_nd, const \fBscifir::vector_unit_nd\fP &x)"
+.br
+.ti -1c
+.RI "void \fBoperator+=\fP (string &x, const \fBscifir::vector_unit_nd\fP &y)"
+.br
+.ti -1c
+.RI "string \fBoperator+\fP (const string &x, const \fBscifir::vector_unit_nd\fP &y)"
+.br
+.ti -1c
+.RI "string \fBoperator+\fP (const \fBscifir::vector_unit_nd\fP &y, const string &x)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::vector_unit_nd\fP &x)"
+.br
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, \fBscifir::vector_unit_nd\fP &x)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "bool operator!= (const \fBscifir::vector_unit_nd\fP & x, const \fBscifir::vector_unit_nd\fP & y)"
+
+.PP
+Definition at line \fB899\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+.nf
+900 {
+901     return !(x == y);
+902 }
+.fi
+
+.SS "bool operator!= (const \fBscifir::vector_unit_nd\fP & x, const string & init_vector_nd)"
+
+.PP
+Definition at line \fB910\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+.nf
+911 {
+912     return !(x == init_vector_nd);
+913 }
+.fi
+
+.SS "bool operator!= (const string & init_vector_nd, const \fBscifir::vector_unit_nd\fP & x)"
+
+.PP
+Definition at line \fB921\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+.nf
+922 {
+923     return !(init_vector_nd == x);
+924 }
+.fi
+
+.SS "\fBscifir::vector_unit_nd\fP operator* (const \fBscifir::scalar_unit\fP & x, const \fBscifir::vector_unit_nd\fP & y)"
+
+.PP
+Definition at line \fB877\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+.nf
+878 {
+879     long double new_value = y\&.get_value() * x\&.get_value();
+880     vector<scifir::dimension> new_dimensions = multiply_dimensions(y\&.get_dimensions(), x\&.get_dimensions(),new_value);
+881     if(y\&.is_nd(1))
+882     {
+883         return scifir::vector_unit_nd(float(new_value), new_dimensions);
+884     }
+885     else if(y\&.is_nd(2))
+886     {
+887         return scifir::vector_unit_nd(float(new_value), new_dimensions, {y\&.angles[0]});
+888     }
+889     else if(y\&.is_nd(3))
+890     {
+891         return scifir::vector_unit_nd(float(new_value), new_dimensions, {y\&.angles[0], y\&.angles[1]});
+892     }
+893     else
+894     {
+895         return scifir::vector_unit_nd(float(new_value), new_dimensions, y\&.angles);
+896     }
+897 }
+.fi
+
+.SS "string operator+ (const \fBscifir::vector_unit_nd\fP & y, const string & x)"
+
+.PP
+Definition at line \fB941\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+.nf
+942 {
+943     ostringstream output;
+944     output << y;
+945     output << x;
+946     return output\&.str();
+947 }
+.fi
+
+.SS "string operator+ (const string & x, const \fBscifir::vector_unit_nd\fP & y)"
+
+.PP
+Definition at line \fB933\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+.nf
+934 {
+935     ostringstream output;
+936     output << x;
+937     output << y;
+938     return output\&.str();
+939 }
+.fi
+
+.SS "void operator+= (string & x, const \fBscifir::vector_unit_nd\fP & y)"
+
+.PP
+Definition at line \fB926\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+.nf
+927 {
+928     ostringstream output;
+929     output << y;
+930     x += output\&.str();
+931 }
+.fi
+
+.SS "ostream & operator<< (ostream & os, const \fBscifir::vector_unit_nd\fP & x)"
+
+.PP
+Definition at line \fB949\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+.nf
+950 {
+951     ostringstream angles_text;
+952     if (!x\&.is_nd(1))
+953     {
+954         for(const auto& x_angle : x\&.angles)
+955         {
+956             angles_text << " ";
+957             angles_text << x_angle;
+958         }
+959     }
+960     return os << x\&.get_value() << " " << x\&.display_dimensions() << angles_text\&.str();
+961 }
+.fi
+
+.SS "bool operator== (const \fBscifir::vector_unit_nd\fP & x, const string & init_vector_nd)"
+
+.PP
+Definition at line \fB904\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+.nf
+905 {
+906     scifir::vector_unit_nd y(init_vector_nd);
+907     return (x == y);
+908 }
+.fi
+
+.SS "bool operator== (const string & init_vector_nd, const \fBscifir::vector_unit_nd\fP & x)"
+
+.PP
+Definition at line \fB915\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+.nf
+916 {
+917     scifir::vector_unit_nd y(init_vector_nd);
+918     return (y == x);
+919 }
+.fi
+
+.SS "istream & operator>> (istream & is, \fBscifir::vector_unit_nd\fP & x)"
+
+.PP
+Definition at line \fB963\fP of file \fBvector_unit_nd\&.cpp\fP\&..PP
+.nf
+964 {
+965     char a[256];
+966     is\&.getline(a, 256);
+967     string b(a);
+968     boost::trim(b);
+969     x = scifir::vector_unit_nd(b);
+970     return is;
+971 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['z_5fprojection_0',['z_projection',['../classscifir_1_1vector__unit__3d.html#a1a50e9547b2350b7000e4be99940d2a9',1,'scifir::vector_unit_3d::z_projection()'],['../classscifir_1_1vector__unit__nd.html#ada70b23bb80c068edbf29b790b59cf34',1,'scifir::vector_unit_nd::z_projection()']]],
+  ['zid_1',['zid',['../classscifir_1_1zid.html#a3373cd61f91001d2fbd0d41906f73921',1,'scifir::zid::zid()'],['../classscifir_1_1zid.html#a1946b1fd42cbbe0b2764ff9bb7922cd9',1,'scifir::zid::zid(const zid &amp;x)'],['../classscifir_1_1zid.html#a42b1578b6c42c7662b648e34df7a1c08',1,'scifir::zid::zid(zid &amp;&amp;x)'],['../classscifir_1_1zid.html#a2dd6a90683a044ff7e6ec19a5d1ddf09',1,'scifir::zid::zid(const scifir::aid &amp;new_aid, const string &amp;new_country, const vector&lt; string &gt; &amp;new_regions, const string &amp;new_zone)'],['../classscifir_1_1zid.html#a61aef7cc19022cde59e1f1c69a1d558b',1,'scifir::zid::zid(const scifir::aid &amp;new_aid, const string &amp;init_zid)'],['../classscifir_1_1zid.html#a0a847289f85663f415cf896342620ae1',1,'scifir::zid::zid(const string &amp;init_zid_full)']]]
+];

@@ -6,9 +6,14 @@ scifir::size_2d< float >
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <size_2d\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBsize_2d\fP ()"
+.br
 .ti -1c
 .RI "\fBsize_2d\fP (\fBconst\fP \fBsize_2d\fP< \fBfloat\fP > &x)"
 .br
@@ -62,6 +67,203 @@ scifir::size_2d< float >
 .RI "\fBfloat\fP \fBheight\fP"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBconst\fP \fBstring\fP &\fBinit_size_2d\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB112\fP of file \fBsize_2d\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBscifir::size_2d\fP< \fBfloat\fP >::size_2d ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB115\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+115                       : width(),height()
+116             {}
+.fi
+
+.SS "\fBscifir::size_2d\fP< \fBfloat\fP >::size_2d (\fBconst\fP \fBsize_2d\fP< \fBfloat\fP > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB118\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+118                                              : width(x\&.width),height(x\&.height)
+119             {}
+.fi
+
+.SS "\fBscifir::size_2d\fP< \fBfloat\fP >::size_2d (\fBsize_2d\fP< \fBfloat\fP > && x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB121\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+121                                         : width(std::move(x\&.width)),height(std::move(x\&.height))
+122             {}
+.fi
+
+.SS "\fBscifir::size_2d\fP< \fBfloat\fP >::size_2d (\fBconst\fP \fBfloat\fP & new_width, \fBconst\fP \fBfloat\fP & new_height)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB124\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+124                                                                              : width(new_width),height(new_height)
+125             {}
+.fi
+
+.SS "\fBscifir::size_2d\fP< \fBfloat\fP >::size_2d (\fBconst\fP \fBstring\fP & new_width, \fBconst\fP \fBstring\fP & new_height)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB127\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+127                                                                                : width(stof(new_width)),height(stof(new_height))
+128             {}
+.fi
+
+.SS "\fBscifir::size_2d\fP< \fBfloat\fP >::size_2d (\fBconst\fP \fBstring\fP & init_size_2d)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB130\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+130                                                          : size_2d()
+131             {
+132                 initialize_from_string(init_size_2d);
+133             }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBstring\fP \fBscifir::size_2d\fP< \fBfloat\fP >::display () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB182\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+183             {
+184                 ostringstream output;
+185                 output << display_float(width,2) << " * " << display_float(height,2);
+186                 return output\&.str();
+187             }
+.fi
+
+.SS "\fBfloat\fP \fBscifir::size_2d\fP< \fBfloat\fP >::get_area () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB177\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+178             {
+179                 return width * height;
+180             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::size_2d\fP< \fBfloat\fP >::initialize_from_string (\fBconst\fP \fBstring\fP & init_size_2d)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB193\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+194             {
+195                 vector<string> widths;
+196                 boost::split(widths,init_size_2d,boost::is_any_of("*"));
+197                 if (widths\&.size() == 2)
+198                 {
+199                     boost::trim(widths[0]);
+200                     boost::trim(widths[1]);
+201                     width = stof(widths[0]);
+202                     height = stof(widths[1]);
+203                 }
+204             }
+.fi
+
+.SS "\fBsize_2d\fP< \fBfloat\fP > \fBscifir::size_2d\fP< \fBfloat\fP >::operator+ (\fBconst\fP \fBsize_2d\fP< \fBfloat\fP > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB155\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+156             {
+157                 return size_2d<float>(width + x\&.width,height + x\&.height);
+158             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::size_2d\fP< \fBfloat\fP >::operator+= (\fBconst\fP \fBsize_2d\fP< \fBfloat\fP > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB165\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+166             {
+167                 width += x\&.width;
+168                 height += x\&.height;
+169             }
+.fi
+
+.SS "\fBsize_2d\fP< \fBfloat\fP > \fBscifir::size_2d\fP< \fBfloat\fP >::operator\- (\fBconst\fP \fBsize_2d\fP< \fBfloat\fP > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB160\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+161             {
+162                 return size_2d<float>(width \- x\&.width,height \- x\&.height);
+163             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::size_2d\fP< \fBfloat\fP >::operator\-= (\fBconst\fP \fBsize_2d\fP< \fBfloat\fP > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB171\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+172             {
+173                 width \-= x\&.width;
+174                 height \-= x\&.height;
+175             }
+.fi
+
+.SS "\fBsize_2d\fP< \fBfloat\fP > & \fBscifir::size_2d\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBsize_2d\fP< \fBfloat\fP > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB135\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+136             {
+137                 width = x\&.width;
+138                 height = x\&.height;
+139                 return *this;
+140             }
+.fi
+
+.SS "\fBsize_2d\fP< \fBfloat\fP > & \fBscifir::size_2d\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBstring\fP & init_size_2d)\fC [inline]\fP"
+
+.PP
+Definition at line \fB149\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+150             {
+151                 initialize_from_string(init_size_2d);
+152                 return *this;
+153             }
+.fi
+
+.SS "\fBsize_2d\fP< \fBfloat\fP > & \fBscifir::size_2d\fP< \fBfloat\fP >::operator= (\fBsize_2d\fP< \fBfloat\fP > && x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB142\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+143             {
+144                 width = std::move(x\&.width);
+145                 height = std::move(x\&.height);
+146                 return *this;
+147             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBfloat\fP \fBscifir::size_2d\fP< \fBfloat\fP >::height"
+
+.PP
+Definition at line \fB190\fP of file \fBsize_2d\&.hpp\fP\&.
+.SS "\fBfloat\fP \fBscifir::size_2d\fP< \fBfloat\fP >::width"
+
+.PP
+Definition at line \fB189\fP of file \fBsize_2d\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

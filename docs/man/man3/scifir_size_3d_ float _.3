@@ -6,9 +6,14 @@ scifir::size_3d< float >
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <size_3d\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBsize_3d\fP ()"
+.br
 .ti -1c
 .RI "\fBsize_3d\fP (\fBconst\fP \fBsize_3d\fP< \fBfloat\fP > &x)"
 .br
@@ -65,6 +70,213 @@ scifir::size_3d< float >
 .RI "\fBfloat\fP \fBdepth\fP"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBconst\fP \fBstring\fP &\fBinit_size_3d\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB119\fP of file \fBsize_3d\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBscifir::size_3d\fP< \fBfloat\fP >::size_3d ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB122\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+122                       : width(),height(),depth()
+123             {}
+.fi
+
+.SS "\fBscifir::size_3d\fP< \fBfloat\fP >::size_3d (\fBconst\fP \fBsize_3d\fP< \fBfloat\fP > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB125\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+125                                              : width(x\&.width),height(x\&.height),depth(x\&.depth)
+126             {}
+.fi
+
+.SS "\fBscifir::size_3d\fP< \fBfloat\fP >::size_3d (\fBsize_3d\fP< \fBfloat\fP > && x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB128\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+128                                         : width(std::move(x\&.width)),height(std::move(x\&.height)),depth(std::move(x\&.depth))
+129             {}
+.fi
+
+.SS "\fBscifir::size_3d\fP< \fBfloat\fP >::size_3d (\fBconst\fP \fBfloat\fP & new_width, \fBconst\fP \fBfloat\fP & new_height, \fBconst\fP \fBfloat\fP & new_depth)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB131\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+131                                                                                                     : width(new_width),height(new_height),depth(new_depth)
+132             {}
+.fi
+
+.SS "\fBscifir::size_3d\fP< \fBfloat\fP >::size_3d (\fBconst\fP \fBstring\fP & new_width, \fBconst\fP \fBstring\fP & new_height, \fBconst\fP \fBstring\fP & new_depth)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB134\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+134                                                                                                        : width(stof(new_width)),height(stof(new_height)),depth(stof(new_depth))
+135             {}
+.fi
+
+.SS "\fBscifir::size_3d\fP< \fBfloat\fP >::size_3d (\fBconst\fP \fBstring\fP & init_size_3d)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB137\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+137                                                          : size_3d()
+138             {
+139                 initialize_from_string(init_size_3d);
+140             }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBstring\fP \fBscifir::size_3d\fP< \fBfloat\fP >::display () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB193\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+194             {
+195                 ostringstream output;
+196                 output << display_float(width,2) << " * " << display_float(height,2) << " * " << display_float(depth,2);
+197                 return output\&.str();
+198             }
+.fi
+
+.SS "\fBfloat\fP \fBscifir::size_3d\fP< \fBfloat\fP >::get_volume () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB188\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+189             {
+190                 return width * height * depth;
+191             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::size_3d\fP< \fBfloat\fP >::initialize_from_string (\fBconst\fP \fBstring\fP & init_size_3d)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB205\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+206             {
+207                 vector<string> widths;
+208                 boost::split(widths,init_size_3d,boost::is_any_of("*"));
+209                 if (widths\&.size() == 3)
+210                 {
+211                     boost::trim(widths[0]);
+212                     boost::trim(widths[1]);
+213                     boost::trim(widths[2]);
+214                     width = stof(widths[0]);
+215                     height = stof(widths[1]);
+216                     depth = stof(widths[2]);
+217                 }
+218             }
+.fi
+
+.SS "\fBsize_3d\fP< \fBfloat\fP > \fBscifir::size_3d\fP< \fBfloat\fP >::operator+ (\fBconst\fP \fBsize_3d\fP< \fBfloat\fP > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB164\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+165             {
+166                 return size_3d<float>(width + x\&.width,height + x\&.height,depth + x\&.depth);
+167             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::size_3d\fP< \fBfloat\fP >::operator+= (\fBconst\fP \fBsize_3d\fP< \fBfloat\fP > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB174\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+175             {
+176                 width += x\&.width;
+177                 height += x\&.height;
+178                 depth += x\&.depth;
+179             }
+.fi
+
+.SS "\fBsize_3d\fP< \fBfloat\fP > \fBscifir::size_3d\fP< \fBfloat\fP >::operator\- (\fBconst\fP \fBsize_3d\fP< \fBfloat\fP > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB169\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+170             {
+171                 return size_3d<float>(width \- x\&.width,height \- x\&.height,depth \- x\&.depth);
+172             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::size_3d\fP< \fBfloat\fP >::operator\-= (\fBconst\fP \fBsize_3d\fP< \fBfloat\fP > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB181\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+182             {
+183                 width \-= x\&.width;
+184                 height \-= x\&.height;
+185                 depth \-= x\&.depth;
+186             }
+.fi
+
+.SS "\fBsize_3d\fP< \fBfloat\fP > & \fBscifir::size_3d\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBsize_3d\fP< \fBfloat\fP > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB142\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+143             {
+144                 width = x\&.width;
+145                 height = x\&.height;
+146                 depth = x\&.depth;
+147                 return *this;
+148             }
+.fi
+
+.SS "\fBsize_3d\fP< \fBfloat\fP > & \fBscifir::size_3d\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBstring\fP & init_size_3d)\fC [inline]\fP"
+
+.PP
+Definition at line \fB158\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+159             {
+160                 initialize_from_string(init_size_3d);
+161                 return *this;
+162             }
+.fi
+
+.SS "\fBsize_3d\fP< \fBfloat\fP > & \fBscifir::size_3d\fP< \fBfloat\fP >::operator= (\fBsize_3d\fP< \fBfloat\fP > && x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB150\fP of file \fBsize_3d\&.hpp\fP\&..PP
+.nf
+151             {
+152                 width = std::move(x\&.width);
+153                 height = std::move(x\&.height);
+154                 depth = std::move(x\&.depth);
+155                 return *this;
+156             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBfloat\fP \fBscifir::size_3d\fP< \fBfloat\fP >::depth"
+
+.PP
+Definition at line \fB202\fP of file \fBsize_3d\&.hpp\fP\&.
+.SS "\fBfloat\fP \fBscifir::size_3d\fP< \fBfloat\fP >::height"
+
+.PP
+Definition at line \fB201\fP of file \fBsize_3d\&.hpp\fP\&.
+.SS "\fBfloat\fP \fBscifir::size_3d\fP< \fBfloat\fP >::width"
+
+.PP
+Definition at line \fB200\fP of file \fBsize_3d\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

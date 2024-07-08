@@ -21,7 +21,7 @@
     <incdepgraph>
       <node id="21">
         <label>../meca_number/angle.hpp</label>
-        <link refid="angle_8hpp_source"/>
+        <link refid="angle_8hpp"/>
         <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
@@ -49,7 +49,7 @@
       </node>
       <node id="30">
         <label>../special_units/percentage.hpp</label>
-        <link refid="percentage_8hpp_source"/>
+        <link refid="percentage_8hpp"/>
         <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
@@ -65,13 +65,13 @@
       </node>
       <node id="22">
         <label>../topology/constants.hpp</label>
-        <link refid="constants_8hpp_source"/>
+        <link refid="constants_8hpp"/>
         <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="24">
         <label>../topology/direction.hpp</label>
-        <link refid="direction_8hpp_source"/>
+        <link refid="direction_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -81,7 +81,7 @@
       </node>
       <node id="3">
         <label>../units/dimension.hpp</label>
-        <link refid="dimension_8hpp_source"/>
+        <link refid="dimension_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
@@ -109,7 +109,7 @@
       </node>
       <node id="4">
         <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp_source"/>
+        <link refid="prefix_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -121,7 +121,7 @@
       </node>
       <node id="2">
         <label>../units/scalar_unit.hpp</label>
-        <link refid="scalar__unit_8hpp_source"/>
+        <link refid="scalar__unit_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
@@ -145,7 +145,7 @@
       </node>
       <node id="29">
         <label>../units/unit_basic.hpp</label>
-        <link refid="unit__basic_8hpp_source"/>
+        <link refid="unit__basic_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
@@ -161,7 +161,7 @@
       </node>
       <node id="20">
         <label>../units/vector_unit_2d.hpp</label>
-        <link refid="vector__unit__2d_8hpp_source"/>
+        <link refid="vector__unit__2d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
@@ -179,7 +179,7 @@
       </node>
       <node id="25">
         <label>../units/vector_unit_3d.hpp</label>
-        <link refid="vector__unit__3d_8hpp_source"/>
+        <link refid="vector__unit__3d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
@@ -211,7 +211,7 @@
       </node>
       <node id="26">
         <label>../units/vector_unit_nd.hpp</label>
-        <link refid="vector__unit__nd_8hpp_source"/>
+        <link refid="vector__unit__nd_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
@@ -239,7 +239,7 @@
       </node>
       <node id="17">
         <label>../util/is_number.hpp</label>
-        <link refid="is__number_8hpp_source"/>
+        <link refid="is__number_8hpp"/>
         <childnode refid="18" relation="include">
         </childnode>
       </node>
@@ -299,173 +299,279 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="3">
+        <label>coordinates/coordinates_1d.cpp</label>
+        <link refid="coordinates__1d_8cpp"/>
+      </node>
       <node id="2">
         <label>coordinates/coordinates_1d.hpp</label>
-        <link refid="coordinates__1d_8hpp_source"/>
+        <link refid="coordinates__1d_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-      </node>
-      <node id="5">
-        <label>coordinates/coordinates_2d.hpp</label>
-        <link refid="coordinates__2d_8hpp_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
+      </node>
+      <node id="8">
+        <label>coordinates/coordinates_2d.cpp</label>
+        <link refid="coordinates__2d_8cpp"/>
+      </node>
+      <node id="7">
+        <label>coordinates/coordinates_2d.hpp</label>
+        <link refid="coordinates__2d_8hpp"/>
         <childnode refid="8" relation="include">
         </childnode>
-      </node>
-      <node id="6">
-        <label>coordinates/coordinates_2dr.hpp</label>
-        <link refid="coordinates__2dr_8hpp_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>coordinates/coordinates_3d.hpp</label>
-        <link refid="coordinates__3d_8hpp_source"/>
-        <childnode refid="10" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
-      </node>
-      <node id="10">
-        <label>coordinates/coordinates_3dr.hpp</label>
-        <link refid="coordinates__3dr_8hpp_source"/>
-        <childnode refid="4" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-      </node>
-      <node id="12">
-        <label>coordinates/coordinates_nd.hpp</label>
-        <link refid="coordinates__nd_8hpp_source"/>
         <childnode refid="13" relation="include">
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
-      <node id="13">
-        <label>coordinates/coordinates_ndr.hpp</label>
-        <link refid="coordinates__ndr_8hpp_source"/>
-        <childnode refid="4" relation="include">
+      <node id="10">
+        <label>coordinates/coordinates_2dr.cpp</label>
+        <link refid="coordinates__2dr_8cpp"/>
+      </node>
+      <node id="9">
+        <label>coordinates/coordinates_2dr.hpp</label>
+        <link refid="coordinates__2dr_8hpp"/>
+        <childnode refid="10" relation="include">
         </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>coordinates/coordinates_3d.cpp</label>
+        <link refid="coordinates__3d_8cpp"/>
+      </node>
+      <node id="16">
+        <label>coordinates/coordinates_3d.hpp</label>
+        <link refid="coordinates__3d_8hpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>coordinates/coordinates_3dr.cpp</label>
+        <link refid="coordinates__3dr_8cpp"/>
+      </node>
+      <node id="18">
+        <label>coordinates/coordinates_3dr.hpp</label>
+        <link refid="coordinates__3dr_8hpp"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>coordinates/coordinates_nd.cpp</label>
+        <link refid="coordinates__nd_8cpp"/>
+      </node>
+      <node id="23">
+        <label>coordinates/coordinates_nd.hpp</label>
+        <link refid="coordinates__nd_8hpp"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>coordinates/coordinates_ndr.cpp</label>
+        <link refid="coordinates__ndr_8cpp"/>
+      </node>
+      <node id="25">
+        <label>coordinates/coordinates_ndr.hpp</label>
+        <link refid="coordinates__ndr_8hpp"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>predefined_units/physics_units.cpp</label>
+        <link refid="physics__units_8cpp"/>
       </node>
       <node id="1">
         <label>predefined_units/physics_units.hpp</label>
         <link refid="physics__units_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="29" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
         </childnode>
       </node>
-      <node id="15">
+      <node id="4">
+        <label>topology/point_1d.cpp</label>
+        <link refid="point__1d_8cpp"/>
+      </node>
+      <node id="30">
         <label>topology/point_1d.hpp</label>
-        <link refid="point__1d_8hpp_source"/>
+        <link refid="point__1d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-      </node>
-      <node id="3">
-        <label>topology/point_1d_impl.hpp</label>
-        <link refid="point__1d__impl_8hpp_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>topology/point_2d.hpp</label>
-        <link refid="point__2d_8hpp_source"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
       </node>
-      <node id="7">
-        <label>topology/point_2d_impl.hpp</label>
-        <link refid="point__2d__impl_8hpp_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="17">
-        <label>topology/point_3d.hpp</label>
-        <link refid="point__3d_8hpp_source"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
+      <node id="5">
+        <label>topology/point_1d_impl.hpp</label>
+        <link refid="point__1d__impl_8hpp"/>
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="11">
-        <label>topology/point_3d_impl.hpp</label>
-        <link refid="point__3d__impl_8hpp_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
+        <label>topology/point_2d.cpp</label>
+        <link refid="point__2d_8cpp"/>
       </node>
-      <node id="18">
-        <label>topology/point_nd.hpp</label>
-        <link refid="point__nd_8hpp_source"/>
+      <node id="31">
+        <label>topology/point_2d.hpp</label>
+        <link refid="point__2d_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+      </node>
+      <node id="12">
+        <label>topology/point_2d_impl.hpp</label>
+        <link refid="point__2d__impl_8hpp"/>
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+      </node>
+      <node id="20">
+        <label>topology/point_3d.cpp</label>
+        <link refid="point__3d_8cpp"/>
+      </node>
+      <node id="32">
+        <label>topology/point_3d.hpp</label>
+        <link refid="point__3d_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>topology/point_3d_impl.hpp</label>
+        <link refid="point__3d__impl_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>topology/point_nd.cpp</label>
+        <link refid="point__nd_8cpp"/>
+      </node>
+      <node id="33">
+        <label>topology/point_nd.hpp</label>
+        <link refid="point__nd_8hpp"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>topology/point_nd_impl.hpp</label>
+        <link refid="point__nd__impl_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>units.hpp</label>
+        <link refid="units_8hpp"/>
+      </node>
+      <node id="13">
+        <label>units/material_vector_unit_2d.hpp</label>
+        <link refid="material__vector__unit__2d_8hpp"/>
+      </node>
+      <node id="35">
+        <label>units/unit_abbreviation.cpp</label>
+        <link refid="unit__abbreviation_8cpp"/>
+      </node>
+      <node id="34">
+        <label>units/unit_abbreviation.hpp</label>
+        <link refid="unit__abbreviation_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
         </childnode>
       </node>
       <node id="14">
-        <label>topology/point_nd_impl.hpp</label>
-        <link refid="point__nd__impl_8hpp_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
+        <label>units/vector_unit_2d.cpp</label>
+        <link refid="vector__unit__2d_8cpp"/>
       </node>
-      <node id="4">
-        <label>units.hpp</label>
-        <link refid="units_8hpp_source"/>
+      <node id="22">
+        <label>units/vector_unit_3d.cpp</label>
+        <link refid="vector__unit__3d_8cpp"/>
       </node>
-      <node id="8">
-        <label>units/material_vector_unit_2d.hpp</label>
-        <link refid="material__vector__unit__2d_8hpp_source"/>
-      </node>
-      <node id="19">
-        <label>units/unit_abbreviation.hpp</label>
-        <link refid="unit__abbreviation_8hpp_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
+      <node id="15">
+        <label>units/vector_unit_nd.cpp</label>
+        <link refid="vector__unit__nd_8cpp"/>
       </node>
     </invincdepgraph>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
@@ -484,89 +590,89 @@
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">scifir</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacescifir" kindref="compound">scifir</ref></highlight></codeline>
 <codeline lineno="12"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>KINEMATICS</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_2D_HPP(displacement);</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_3D_HPP(displacement);</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_ND_HPP(displacement);</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(velocity);</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(acceleration);</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(jerk);</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(snap);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(angular_velocity);</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(angular_acceleration);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(angular_momentum);</highlight></codeline>
+<codeline lineno="14" refid="namespacescifir_1a634938bccd5358ea24c8785f94b55e5c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__2d_8hpp_1acb3982558481721777eaae0344d9679d" kindref="member">VECTOR_UNIT_2D_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">displacement</ref>);</highlight></codeline>
+<codeline lineno="15" refid="namespacescifir_1a5329db1765d874acd27db497c81bb9b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1aa8221e4dd2ee9cb41e53866cd3f97111" kindref="member">VECTOR_UNIT_3D_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">displacement</ref>);</highlight></codeline>
+<codeline lineno="16" refid="namespacescifir_1a77da407df2ce8660ca8e2b9eb9f18fb7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__nd_8hpp_1a846dfb88db3906bf6598833c8259ffed" kindref="member">VECTOR_UNIT_ND_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">displacement</ref>);</highlight></codeline>
+<codeline lineno="17" refid="namespacescifir_1ae25d6a9fd8eaa5b8515b96d50bb6715e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">velocity</ref>);</highlight></codeline>
+<codeline lineno="18" refid="namespacescifir_1a29f9eb47ab4531db9972cca9ab53f18f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">acceleration</ref>);</highlight></codeline>
+<codeline lineno="19" refid="namespacescifir_1a1486fd017982e0d04308b4c6d2fd33cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">jerk</ref>);</highlight></codeline>
+<codeline lineno="20" refid="namespacescifir_1aecf911ef3ab6050ce8d1f2590c2c45ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">snap</ref>);</highlight></codeline>
+<codeline lineno="21" refid="namespacescifir_1ad438327a9d5c7e458785abf9ab62f0a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">angular_velocity</ref>);</highlight></codeline>
+<codeline lineno="22" refid="namespacescifir_1aef974dcc9b8bf9a25444ca7b4959e4de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">angular_acceleration</ref>);</highlight></codeline>
+<codeline lineno="23" refid="namespacescifir_1acbe9b7ca13fa40a4370418de05d84540" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">angular_momentum</ref>);</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>DYNAMICS</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(impulse);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(force);</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(torque);</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(pressure);</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(surface_tension);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(stiffness);</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(moment_of_inertia);</highlight></codeline>
+<codeline lineno="26" refid="namespacescifir_1a4c9c17db6349114324c1d4c77afd5e5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">impulse</ref>);</highlight></codeline>
+<codeline lineno="27" refid="namespacescifir_1a932c2c9bfdf0aa2d50a3d6cdef0dc467" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">force</ref>);</highlight></codeline>
+<codeline lineno="28" refid="namespacescifir_1a799b0deb74bdf85343e7a32f8ebffcae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">torque</ref>);</highlight></codeline>
+<codeline lineno="29" refid="namespacescifir_1a5cb3d22d0d8a90cd4c13e22c7e2cad0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">pressure</ref>);</highlight></codeline>
+<codeline lineno="30" refid="namespacescifir_1ad97b50512ed11524a6e8d8dc3cf1cf5e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">surface_tension</ref>);</highlight></codeline>
+<codeline lineno="31" refid="namespacescifir_1a70aef4083c8d854e613bd0db68218e16" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">stiffness</ref>);</highlight></codeline>
+<codeline lineno="32" refid="namespacescifir_1a423b137b51d9fb33afdc68738d2037e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">moment_of_inertia</ref>);</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ELECTRICITY</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(electric_current);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(voltage);</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(electric_displacement_field);<sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>vector_field</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(electric_charge_density);</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(electric_current_density);</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(electric_field_strength);</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(electron_mobility);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(inductance);</highlight></codeline>
+<codeline lineno="35" refid="namespacescifir_1a03b1ce3cca2fbb5b92e53c5cd6108099" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electric_current</ref>);</highlight></codeline>
+<codeline lineno="36" refid="namespacescifir_1a55445a719d3ec4b1bc2bd073f47a5eeb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">voltage</ref>);</highlight></codeline>
+<codeline lineno="37" refid="namespacescifir_1a05bd111daa9b5cbe6da51a88a87f2db9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electric_displacement_field</ref>);<sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>vector_field</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="namespacescifir_1a2c01f05aefc6a8195c470b3464389a01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electric_charge_density</ref>);</highlight></codeline>
+<codeline lineno="39" refid="namespacescifir_1ae13a8d1ab43044b279925ac398753b3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electric_current_density</ref>);</highlight></codeline>
+<codeline lineno="40" refid="namespacescifir_1a2488adc931497041925f21bd1981d005" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electric_field_strength</ref>);</highlight></codeline>
+<codeline lineno="41" refid="namespacescifir_1a193bba3dc5c7fe35c92f1bc172845d16" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electron_mobility</ref>);</highlight></codeline>
+<codeline lineno="42" refid="namespacescifir_1ad599735406567745b79176d53871d004" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">inductance</ref>);</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>FLUID<sp/>DYNAMICS</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(volumetric_flow);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(diffusion_coefficient);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(compressibility);</highlight></codeline>
+<codeline lineno="45" refid="namespacescifir_1a391d969a9c46e96e9bcd5b68c1c2142a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">volumetric_flow</ref>);</highlight></codeline>
+<codeline lineno="46" refid="namespacescifir_1a6140171ea121003e03cf105f4d00d366" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">diffusion_coefficient</ref>);</highlight></codeline>
+<codeline lineno="47" refid="namespacescifir_1a09a9a72731c31d66d4bd21e920904411" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">compressibility</ref>);</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>MAGNETISM</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(polarization_density);<sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>vector_field</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(magnetic_permeability);<sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>vector_field</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(magnetization);<sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>vector_field</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(magnetic_flux);</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(magnetic_strength);<sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>vector_field</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(magnetic_moment);</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(magnetic_reluctance);</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(magnetic_vector_potential);<sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>vector_field</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(magnetic_rigidity);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(magnetomotive_force);</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(magnetic_susceptibility);</highlight></codeline>
+<codeline lineno="50" refid="namespacescifir_1a5901a550e0f83c984ef4b8ac00a86d2b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">polarization_density</ref>);<sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>vector_field</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="namespacescifir_1a76ac0b28d6655e3f9d917a551edc3fb3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_permeability</ref>);<sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>vector_field</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="namespacescifir_1aefdea2b69e373f119f1f7c140178bbb2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetization</ref>);<sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>vector_field</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="namespacescifir_1ab9c262323f90c1ff2d841cbe31946094" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_flux</ref>);</highlight></codeline>
+<codeline lineno="54" refid="namespacescifir_1aa729ae9af423e72c8a7ef61d92dee185" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_strength</ref>);<sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>vector_field</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="namespacescifir_1a8bedf6f84ffb978d5c3935f597368516" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_moment</ref>);</highlight></codeline>
+<codeline lineno="56" refid="namespacescifir_1a7895f739fea891d91fe63ffdfaea9e60" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_reluctance</ref>);</highlight></codeline>
+<codeline lineno="57" refid="namespacescifir_1ac89efc216eb6de93d4274cbe08081b0c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_vector_potential</ref>);<sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>vector_field</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="namespacescifir_1af2c5e3ea80d63571ad7e3404b0ad8f2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_rigidity</ref>);</highlight></codeline>
+<codeline lineno="59" refid="namespacescifir_1a56aad8816bc2117cebdebd2c3f543b43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetomotive_force</ref>);</highlight></codeline>
+<codeline lineno="60" refid="namespacescifir_1a282552712dd8811bfbef6b25c4eb2883" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">magnetic_susceptibility</ref>);</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>OPTICS</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(optical_power);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(luminance);</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(illuminance);</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(luminous_flux);</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(luminous_energy);</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(luminous_exposure);</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(luminous_efficacy);</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(ionizing_radiation);</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(absorbed_dose);</highlight></codeline>
+<codeline lineno="63" refid="namespacescifir_1a9ef633d3957e941b99e81517714e0d24" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">optical_power</ref>);</highlight></codeline>
+<codeline lineno="64" refid="namespacescifir_1a54ed4799bf1400832842b89fc4694ac3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">luminance</ref>);</highlight></codeline>
+<codeline lineno="65" refid="namespacescifir_1ae61082b72aff92bb4feed851efa2823b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">illuminance</ref>);</highlight></codeline>
+<codeline lineno="66" refid="namespacescifir_1a07931057bb2a571d4c370ce50622af91" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">luminous_flux</ref>);</highlight></codeline>
+<codeline lineno="67" refid="namespacescifir_1aad79a19a8d7aba4b8a8ba6cf9a6b9eb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">luminous_energy</ref>);</highlight></codeline>
+<codeline lineno="68" refid="namespacescifir_1aa11327cce16932e00f2a8ef86a0a2f4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">luminous_exposure</ref>);</highlight></codeline>
+<codeline lineno="69" refid="namespacescifir_1a2cebbcc5c98beca9e6f5313f5c2df291" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">luminous_efficacy</ref>);</highlight></codeline>
+<codeline lineno="70" refid="namespacescifir_1ab459be3450c8e164ab5305982211c6d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">ionizing_radiation</ref>);</highlight></codeline>
+<codeline lineno="71" refid="namespacescifir_1a951c21b6fef38ee3627e2ee9e9aba96e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">absorbed_dose</ref>);</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"></highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>THERMODYNAMICS</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(energy);</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(action);</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(power);</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(power_density);</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(enthalpy);</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(entropy);</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(heat_capacity);</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(heat_flux_density);</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(thermal_conductivity);</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(thermal_diffusivity);</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(thermal_resistance);</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(thermal_expansion_coefficient);</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(temperature_gradient);</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(energy_flux_density);</highlight></codeline>
+<codeline lineno="74" refid="namespacescifir_1a66c2e6879d1e8ee6911382676ee00009" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">energy</ref>);</highlight></codeline>
+<codeline lineno="75" refid="namespacescifir_1a45b09c42c91b294ae9d06b650df51c6e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">action</ref>);</highlight></codeline>
+<codeline lineno="76" refid="namespacescifir_1ab655f96238ff74a26a6a9b4eedaad506" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">power</ref>);</highlight></codeline>
+<codeline lineno="77" refid="namespacescifir_1a41f0f92d4d018148ebea3ab397633967" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">power_density</ref>);</highlight></codeline>
+<codeline lineno="78" refid="namespacescifir_1a48f6e289026c24510dfc7a1f5d1ace76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">enthalpy</ref>);</highlight></codeline>
+<codeline lineno="79" refid="namespacescifir_1a84b507588732eecd75ba3868301aaa98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">entropy</ref>);</highlight></codeline>
+<codeline lineno="80" refid="namespacescifir_1a60dfb1adaa789b08008d4867330bbdcf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">heat_capacity</ref>);</highlight></codeline>
+<codeline lineno="81" refid="namespacescifir_1a9b674a4111405833063a5b66a3f08991" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">heat_flux_density</ref>);</highlight></codeline>
+<codeline lineno="82" refid="namespacescifir_1ab20e421f1594865c5ebee1205b26f7c6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">thermal_conductivity</ref>);</highlight></codeline>
+<codeline lineno="83" refid="namespacescifir_1ae8adc3065de90350ca700f93848acee4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">thermal_diffusivity</ref>);</highlight></codeline>
+<codeline lineno="84" refid="namespacescifir_1a33b7f3006e130e92ed1237b247d55cfd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">thermal_resistance</ref>);</highlight></codeline>
+<codeline lineno="85" refid="namespacescifir_1a267bc60cb47226bdd082e8823ab91478" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">thermal_expansion_coefficient</ref>);</highlight></codeline>
+<codeline lineno="86" refid="namespacescifir_1a3d88f98405313ca2760f06a07b422637" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">temperature_gradient</ref>);</highlight></codeline>
+<codeline lineno="87" refid="namespacescifir_1a9be615a80e5d12d529e27a3038753991" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">energy_flux_density</ref>);</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>WAVES</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(wavenumber);</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(frequency);</highlight></codeline>
+<codeline lineno="90" refid="namespacescifir_1ac45b02e7d828e6dbf85e0f5b0eabc8fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">wavenumber</ref>);</highlight></codeline>
+<codeline lineno="91" refid="namespacescifir_1ad250c1f12801043257dbbe04948249e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">frequency</ref>);</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>length<sp/>wavelength;</highlight></codeline>
+<codeline lineno="93" refid="namespacescifir_1af9264eb6497586d15cc3fa361c136707" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">length</ref><sp/><ref refid="namespacescifir_1af9264eb6497586d15cc3fa361c136707" kindref="member">wavelength</ref>;</highlight></codeline>
 <codeline lineno="94"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"></highlight></codeline>
 <codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_PREDEFINED_UNITS_KINEMATICS_UNITS_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>

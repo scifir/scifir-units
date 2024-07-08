@@ -1,0 +1,141 @@
+.TH "units/dimension.cpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+units/dimension.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&./dimension\&.hpp'\fP
+.br
+\fC#include '\&.\&./topology/constants\&.hpp'\fP
+.br
+\fC#include 'boost/algorithm/string\&.hpp'\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <set>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <utility>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscifir\fP"
+.br
+.RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBdimension\fP &x)"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP vector< \fBdimension\fP > &\fBx_dimensions\fP, \fBbool\fP \fBwith_brackets\fP)"
+.br
+.ti -1c
+.RI "vector< \fBdimension\fP > \fBscifir::create_dimensions\fP (\fBstring\fP \fBinit_dimensions\fP)"
+.br
+.ti -1c
+.RI "vector< \fBdimension\fP > \fBscifir::create_derived_dimensions\fP (\fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
+.br
+.ti -1c
+.RI "vector< \fBdimension\fP > \fBscifir::create_derived_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &x)"
+.br
+.ti -1c
+.RI "vector< \fBdimension\fP > \fBscifir::create_derived_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &x, \fBlong\fP \fBdouble\fP &value)"
+.br
+.ti -1c
+.RI "vector< \fBdimension\fP > \fBscifir::multiply_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &x, \fBconst\fP vector< \fBdimension\fP > &y)"
+.br
+.ti -1c
+.RI "vector< \fBdimension\fP > \fBscifir::multiply_dimensions\fP (vector< \fBdimension\fP > x, \fBconst\fP vector< \fBdimension\fP > &y, \fBlong\fP \fBdouble\fP &value)"
+.br
+.ti -1c
+.RI "vector< \fBdimension\fP > \fBscifir::divide_dimensions\fP (vector< \fBdimension\fP > x, \fBconst\fP vector< \fBdimension\fP > &y, \fBlong\fP \fBdouble\fP &value)"
+.br
+.ti -1c
+.RI "vector< \fBdimension\fP > \fBscifir::square_dimensions\fP (vector< \fBdimension\fP > x, \fBlong\fP \fBdouble\fP &value, \fBint\fP index)"
+.br
+.ti -1c
+.RI "vector< \fBdimension\fP > \fBscifir::power_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &x, \fBint\fP \fBexponent\fP)"
+.br
+.ti -1c
+.RI "vector< \fBdimension\fP > \fBscifir::normalize_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &x)"
+.br
+.ti -1c
+.RI "vector< \fBdimension\fP > \fBscifir::normalize_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &x, \fBlong\fP \fBdouble\fP &value)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBscifir::common_dimension\fP (\fBconst\fP \fBdimension\fP &x, \fBconst\fP \fBdimension\fP &y)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBscifir::equal_dimensions\fP (\fBconst\fP \fBstring\fP &\fBinit_dimensions_x\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions_y\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBscifir::equal_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &x, \fBconst\fP vector< \fBdimension\fP > &y)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBscifir::equal_dimensions_and_prefixes\fP (\fBconst\fP vector< \fBdimension\fP > &x, \fBconst\fP vector< \fBdimension\fP > &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::dimension\fP &x, const \fBscifir::dimension\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::dimension\fP &x, const \fBscifir::dimension\fP &y)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::dimension\fP &x)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "bool operator!= (const \fBscifir::dimension\fP & x, const \fBscifir::dimension\fP & y)"
+
+.PP
+Definition at line \fB1741\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+1742 {
+1743     return !(x == y);
+1744 }
+.fi
+
+.SS "ostream & operator<< (ostream & os, const \fBscifir::dimension\fP & x)"
+
+.PP
+Definition at line \fB1746\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+1747 {
+1748     return os << x\&.prefix\&.get_symbol() << x\&.get_symbol();
+1749 }
+.fi
+
+.SS "bool operator== (const \fBscifir::dimension\fP & x, const \fBscifir::dimension\fP & y)"
+
+.PP
+Definition at line \fB1729\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+1730 {
+1731     if (x\&.dimension_type == y\&.dimension_type and x\&.dimension_sign == y\&.dimension_sign)
+1732     {
+1733         return true;
+1734     }
+1735     else
+1736     {
+1737         return false;
+1738     }
+1739 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

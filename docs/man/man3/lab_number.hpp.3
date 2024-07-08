@@ -1,0 +1,209 @@
+.TH "meca_number/lab_number.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+meca_number/lab_number.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./util/is_number\&.hpp'\fP
+.br
+\fC#include '\&.\&./util/types\&.hpp'\fP
+.br
+\fC#include '\&.\&./units/scalar_unit\&.hpp'\fP
+.br
+\fC#include 'boost/algorithm/string\&.hpp'\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <string>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBscifir::lab_number< T >\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscifir\fP"
+.br
+.RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<\fBtypename\fP T > \fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBlab_number\fP< T > &x)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBscifir::is_lab_number\fP (\fBconst\fP \fBstring\fP &\fBinit_lab_number\fP)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > bool \fBoperator==\fP (const \fBscifir::lab_number\fP< T > &x, const \fBscifir::lab_number\fP< U > &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > bool \fBoperator!=\fP (const \fBscifir::lab_number\fP< T > &x, const \fBscifir::lab_number\fP< U > &y)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBoperator==\fP (const \fBscifir::lab_number\fP< T > &x, const string &init_lab_number)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBoperator!=\fP (const \fBscifir::lab_number\fP< T > &x, const string &init_lab_number)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBoperator==\fP (const string &init_lab_number, const \fBscifir::lab_number\fP< T > &x)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBoperator!=\fP (const string &init_lab_number, const \fBscifir::lab_number\fP< T > &x)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBoperator+=\fP (string &x, const \fBscifir::lab_number\fP< T > &y)"
+.br
+.ti -1c
+.RI "template<typename T > string \fBoperator+\fP (const string &x, const \fBscifir::lab_number\fP< T > &y)"
+.br
+.ti -1c
+.RI "template<typename T > string \fBoperator+\fP (const \fBscifir::lab_number\fP< T > &x, const string &y)"
+.br
+.ti -1c
+.RI "template<typename T > ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::lab_number\fP< T > &x)"
+.br
+.ti -1c
+.RI "template<typename T > istream & \fBoperator>>\fP (istream &is, \fBscifir::lab_number\fP< T > &x)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T , typename U > bool operator!= (const \fBscifir::lab_number\fP< T > & x, const \fBscifir::lab_number\fP< U > & y)"
+
+.PP
+Definition at line \fB132\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+133 {
+134     return !(x == y);
+135 }
+.fi
+
+.SS "template<typename T > bool operator!= (const \fBscifir::lab_number\fP< T > & x, const string & init_lab_number)"
+
+.PP
+Definition at line \fB145\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+146 {
+147     return !(x == init_lab_number);
+148 }
+.fi
+
+.SS "template<typename T > bool operator!= (const string & init_lab_number, const \fBscifir::lab_number\fP< T > & x)"
+
+.PP
+Definition at line \fB158\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+159 {
+160     return !(init_lab_number == x);
+161 }
+.fi
+
+.SS "template<typename T > string operator+ (const \fBscifir::lab_number\fP< T > & x, const string & y)"
+
+.PP
+Definition at line \fB176\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+177 {
+178     return to_string(x) + y;
+179 }
+.fi
+
+.SS "template<typename T > string operator+ (const string & x, const \fBscifir::lab_number\fP< T > & y)"
+
+.PP
+Definition at line \fB170\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+171 {
+172     return x + to_string(y);
+173 }
+.fi
+
+.SS "template<typename T > void operator+= (string & x, const \fBscifir::lab_number\fP< T > & y)"
+
+.PP
+Definition at line \fB164\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+165 {
+166     x += to_string(y);
+167 }
+.fi
+
+.SS "template<typename T > ostream & operator<< (ostream & os, const \fBscifir::lab_number\fP< T > & x)"
+
+.PP
+Definition at line \fB182\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+183 {
+184     return os << to_string(x);
+185 }
+.fi
+
+.SS "template<typename T , typename U > bool operator== (const \fBscifir::lab_number\fP< T > & x, const \fBscifir::lab_number\fP< U > & y)"
+
+.PP
+Definition at line \fB119\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+120 {
+121     if (x\&.value == y\&.value and x\&.error_value == y\&.error_value)
+122     {
+123         return true;
+124     }
+125     else
+126     {
+127         return false;
+128     }
+129 }
+.fi
+
+.SS "template<typename T > bool operator== (const \fBscifir::lab_number\fP< T > & x, const string & init_lab_number)"
+
+.PP
+Definition at line \fB138\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+139 {
+140     scifir::lab_number<T> y(init_lab_number);
+141     return (x == y);
+142 }
+.fi
+
+.SS "template<typename T > bool operator== (const string & init_lab_number, const \fBscifir::lab_number\fP< T > & x)"
+
+.PP
+Definition at line \fB151\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+152 {
+153     scifir::lab_number<T> y(init_lab_number);
+154     return (x == y);
+155 }
+.fi
+
+.SS "template<typename T > istream & operator>> (istream & is, \fBscifir::lab_number\fP< T > & x)"
+
+.PP
+Definition at line \fB188\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+189 {
+190     char a[256];
+191     is\&.getline(a, 256);
+192     string b(a);
+193     x = scifir::lab_number<T>(b);
+194     return is;
+195 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

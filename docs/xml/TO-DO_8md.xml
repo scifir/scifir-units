@@ -11,10 +11,20 @@
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>NUMBER<sp/>OF<sp/>TODOS:<sp/>52</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">//<sp/>BUGS<sp/>AND<sp/>SIMILAR<sp/>PROBLEMS<sp/>(4)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>MATERIAL_VECTOR_UNIT<sp/>(1)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>operator==<sp/>and<sp/>operator!=</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>is_lab_number()<sp/>function</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>the<sp/>possibility<sp/>of<sp/>using<sp/>different<sp/>template<sp/>parameters<sp/>for<sp/>the<sp/>comparison<sp/>operators<sp/>of<sp/>coordinates<sp/>and<sp/>point<sp/>classes</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TENSORS<sp/>(2)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>display<sp/>functions<sp/>without<sp/>new<sp/>lines<sp/>and<sp/>other<sp/>equivalents<sp/>with<sp/>new<sp/>lines,<sp/>they<sp/>should<sp/>allow<sp/>to<sp/>display<sp/>like<sp/>the<sp/>other<sp/>units<sp/>related<sp/>to<sp/>dimensions</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>operator*,<sp/>cross_product(),<sp/>dot_product(),<sp/>hadamard_product()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>TRAJECTORY<sp/>AND<sp/>PARAMETERIZATION</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>think<sp/>if<sp/>to<sp/>add<sp/>here<sp/>the<sp/>trajectory<sp/>and<sp/>te<sp/>parameterization</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>BUGS<sp/>AND<sp/>SIMILAR<sp/>PROBLEMS<sp/>(3)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>complex_number&lt;&gt;<sp/>and<sp/>lab_number&lt;&gt;<sp/>should<sp/>work<sp/>with<sp/>scalar_unit<sp/>class<sp/>as<sp/>template<sp/>parameter</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>angle<sp/>class<sp/>should<sp/>allow<sp/>with<sp/>an<sp/>enum<sp/>value<sp/>of<sp/>RADIAN<sp/>to<sp/>initialize<sp/>by<sp/>radians<sp/>instead<sp/>of<sp/>by<sp/>grades,<sp/>which<sp/>is<sp/>the<sp/>default<sp/>behaviour</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>light<sp/>units<sp/>somewhere</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>display_double()<sp/>and<sp/>display_long_double()<sp/>functions<sp/>of<sp/>types.cpp</highlight></codeline>
 <codeline></codeline>
@@ -62,24 +72,27 @@
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>verify<sp/>the<sp/>titles<sp/>of<sp/>sections<sp/>of<sp/>tests<sp/>of<sp/>units,<sp/>meca_number<sp/>and<sp/>special_units</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>test<sp/>of<sp/>unit<sp/>basic<sp/>classes</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">//<sp/>DOCUMENTATION<sp/>(25)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>DOCUMENTATION<sp/>(23)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>create<sp/>all<sp/>the<sp/>dox<sp/>files<sp/>of<sp/>the<sp/>library</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>thinking<sp/>behind<sp/>the<sp/>geographic<sp/>coordinates<sp/>of<sp/>allowing<sp/>to<sp/>change<sp/>planet.<sp/>By<sp/>default<sp/>it&apos;s<sp/>the<sp/>Earth</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TOOD:<sp/>document<sp/>that<sp/>angle<sp/>always<sp/>uses<sp/>grades</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>use<sp/>of<sp/>special<sp/>characters<sp/>in<sp/>prefixes</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>special<sp/>characters<sp/>in<sp/>vector<sp/>units</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>special<sp/>character<sp/>in<sp/>angle<sp/>class</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>coordinates<sp/>for<sp/>the<sp/>universe,<sp/>publish<sp/>that<sp/>too<sp/>as<sp/>an<sp/>standard<sp/>inside<sp/>scifir</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>example<sp/>of<sp/>use<sp/>cases<sp/>(laboratory<sp/>machines,medical<sp/>devices,robotics)</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>how<sp/>to<sp/>create<sp/>scientific<sp/>inventions<sp/>in<sp/>the<sp/>library,<sp/>how<sp/>to<sp/>create<sp/>laboratory<sp/>machines<sp/>and<sp/>how<sp/>to<sp/>create<sp/>medical<sp/>devices</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>how<sp/>to<sp/>use<sp/>the<sp/>library<sp/>for<sp/>robots</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>check<sp/>what<sp/>to<sp/>do<sp/>with<sp/>the<sp/>libraries<sp/>of<sp/>ISOs<sp/>and<sp/>document<sp/>them<sp/>inside<sp/>the<sp/>README.md<sp/>file.<sp/>If<sp/>there<sp/>isn&apos;t<sp/>a<sp/>library<sp/>of<sp/>ISOs,<sp/>decide<sp/>if<sp/>to<sp/>create<sp/>one</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>reference<sp/>books<sp/>related<sp/>to<sp/>the<sp/>physics,<sp/>chemistry,<sp/>biology<sp/>or<sp/>math<sp/>implemented</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>explain<sp/>the<sp/>custom<sp/>dimensions<sp/>in<sp/>the<sp/>file<sp/>README.md</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>display<sp/>as<sp/>plain<sp/>text<sp/>the<sp/>&lt;T&gt;<sp/>inside<sp/>the<sp/>md<sp/>file</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>configure<sp/>the<sp/>use<sp/>of<sp/>dox<sp/>files</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>the<sp/>file<sp/>Doxyfile.in<sp/>to<sp/>the<sp/>master<sp/>branch</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>special<sp/>initialization<sp/>of<sp/>mass<sp/>and<sp/>mole<sp/>with<sp/>percentage</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>demonstration<sp/>of<sp/>why<sp/>a<sp/>number<sp/>or<sp/>a<sp/>scalar<sp/>unit<sp/>divided<sp/>by<sp/>a<sp/>vector<sp/>should<sp/>give<sp/>a<sp/>vector,<sp/>explaining<sp/>that<sp/>it&apos;s<sp/>the<sp/>reverse<sp/>as<sp/>the<sp/>multiplication</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>use<sp/>of<sp/>the<sp/>custom_display<sp/>&quot;sci&quot;</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>think<sp/>on<sp/>the<sp/>different<sp/>cases<sp/>of<sp/>use<sp/>of<sp/>coordinates<sp/>and<sp/>document<sp/>them,<sp/>including<sp/>the<sp/>use<sp/>of<sp/>an<sp/>origin</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>mention<sp/>the<sp/>WGS<sp/>in<sp/>the<sp/>part<sp/>of<sp/>coordinates</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>use<sp/>of<sp/>fabs()<sp/>and<sp/>display()<sp/>to<sp/>compare<sp/>values<sp/>of<sp/>units</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>special<sp/>initialization<sp/>of<sp/>mass<sp/>and<sp/>mole<sp/>with<sp/>percentage</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>initialization<sp/>of<sp/>lab_number&lt;&gt;<sp/>inside<sp/>README.md<sp/>file</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>the<sp/>summary<sp/>sheet<sp/>somewhere</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>&quot;Things<sp/>to<sp/>remember&quot;<sp/>section,<sp/>which<sp/>explains<sp/>the<sp/>use<sp/>of<sp/>the<sp/>degree<sp/>for<sp/>vector_unit_nd<sp/>instead<sp/>of<sp/>the<sp/>other<sp/>two<sp/>cases,<sp/>the<sp/>use<sp/>of<sp/>fabs,<sp/>the<sp/>use<sp/>of<sp/>display<sp/>that<sp/>doesn&apos;t<sp/>displays<sp/>all<sp/>decimals</highlight></codeline>
@@ -95,7 +108,7 @@
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>write<sp/>an<sp/>specification<sp/>of<sp/>scifir-units<sp/>to<sp/>be<sp/>implemented<sp/>in<sp/>any<sp/>programming<sp/>language.<sp/>Write<sp/>there<sp/>too<sp/>the<sp/>generic<sp/>method<sp/>for<sp/>writing<sp/>bindings<sp/>which<sp/>is<sp/>to<sp/>maintain<sp/>all<sp/>function<sp/>names<sp/>and<sp/>classnames<sp/>equal,<sp/>changing<sp/>only<sp/>their<sp/>spelling<sp/>to<sp/>snake-case<sp/>or<sp/>camel-case<sp/>as<sp/>used<sp/>in<sp/>the<sp/>programming<sp/>language,<sp/>and<sp/>also<sp/>document<sp/>equivalencies<sp/>like<sp/>using<sp/>static<sp/>methods<sp/>in<sp/>Java<sp/>inside<sp/>a<sp/>class<sp/>instead<sp/>of<sp/>normal<sp/>functions<sp/>in<sp/>C++.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">//<sp/>COORDINATES<sp/>AND<sp/>POINTS<sp/>(4)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>COORDINATES<sp/>AND<sp/>POINTS<sp/>(5)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>coordinates_3d::origin()<sp/>to<sp/>allow<sp/>to<sp/>initialize<sp/>with<sp/>an<sp/>origin<sp/>(another<sp/>coordinates<sp/>class<sp/>of<sp/>the<sp/>same<sp/>type),<sp/>it&apos;s<sp/>specially<sp/>useful<sp/>for<sp/>geographic<sp/>coordinates</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>the<sp/>case<sp/>when<sp/>the<sp/>initialization<sp/>string<sp/>contains<sp/>only<sp/>the<sp/>character<sp/>&apos;,&apos;,<sp/>without<sp/>a<sp/>value,<sp/>has<sp/>to<sp/>initialize<sp/>to<sp/>zero</highlight></codeline>
@@ -161,15 +174,13 @@
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>think<sp/>if<sp/>to<sp/>add<sp/>another<sp/>concentration<sp/>class,<sp/>the<sp/>previous<sp/>one<sp/>has<sp/>been<sp/>deprecated</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>move<sp/>cas_number<sp/>to<sp/>the<sp/>library<sp/>of<sp/>scifir-info,<sp/>or<sp/>even<sp/>to<sp/>another<sp/>category</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">//<sp/>MECA<sp/>NUMBERS<sp/>(3)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>MECA<sp/>NUMBERS<sp/>(1)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>the<sp/>allowed<sp/>typenames<sp/>to<sp/>lab_number,<sp/>and<sp/>don&apos;t<sp/>accept<sp/>any<sp/>other<sp/>type</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>function<sp/>is_lab_number()</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>initialization<sp/>of<sp/>lab_number<sp/>inside<sp/>README.md<sp/>file</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">//<sp/>SPECIAL<sp/>UNITS<sp/>-<sp/>EXTRA<sp/>(5)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>SPECIAL<sp/>UNITS<sp/>-<sp/>EXTRA<sp/>(7)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>ip<sp/>class?<sp/>check<sp/>networking<sp/>libraries<sp/>of<sp/>C++<sp/>and<sp/>decide<sp/>if<sp/>to<sp/>add<sp/>it<sp/>here</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>nutrition_information</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>Class<sp/>for<sp/>geographical<sp/>position<sp/>including<sp/>ZID<sp/>and<sp/>coordinates_3d</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>class<sp/>for<sp/>geographical<sp/>position<sp/>including<sp/>ZID<sp/>and<sp/>coordinates_3d</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>maybe<sp/>pixel<sp/>should<sp/>be<sp/>called<sp/>pixel_length</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>think<sp/>if<sp/>to<sp/>add<sp/>a<sp/>default<sp/>case<sp/>for<sp/>the<sp/>none<sp/>value<sp/>of<sp/>aid<sp/>and<sp/>for<sp/>the<sp/>none<sp/>value<sp/>of<sp/>zid</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>functions<sp/>is_aid()<sp/>and<sp/>is_zid()</highlight></codeline>
@@ -183,13 +194,6 @@
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>pixel_color&lt;&gt;.<sp/>Use<sp/>monochrome_pixel,<sp/>truecolor_pixel,<sp/>etc,<sp/>as<sp/>typedefs<sp/>of<sp/>pixel_color&lt;&gt;</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>complex_number&lt;&gt;<sp/>should<sp/>have<sp/>trigonometric<sp/>functions<sp/>for<sp/>complex<sp/>numbers</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>maybe<sp/>create<sp/>a<sp/>mesh_3d<sp/>class,<sp/>or<sp/>vector&lt;point_3d&lt;&gt;&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">//<sp/>MATERIAL_VECTOR_UNIT<sp/>(1)</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>operator==<sp/>and<sp/>operator!=</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">//<sp/>TENSORS<sp/>(2)</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>display<sp/>functions<sp/>without<sp/>new<sp/>lines<sp/>and<sp/>other<sp/>equivalents<sp/>with<sp/>new<sp/>lines,<sp/>they<sp/>should<sp/>allow<sp/>to<sp/>display<sp/>like<sp/>the<sp/>other<sp/>units<sp/>related<sp/>to<sp/>dimensions</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>operator*,<sp/>cross_product(),<sp/>dot_product(),<sp/>hadamard_product()</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>PREDEFINED<sp/>PHYSICS<sp/>UNITS<sp/>(4)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>electric_field<sp/>which<sp/>calculates<sp/>based<sp/>on<sp/>coulomb<sp/>charges</highlight></codeline>

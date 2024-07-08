@@ -10,7 +10,7 @@
     <incdepgraph>
       <node id="22">
         <label>../meca_number/angle.hpp</label>
-        <link refid="angle_8hpp_source"/>
+        <link refid="angle_8hpp"/>
         <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
@@ -34,13 +34,13 @@
       </node>
       <node id="23">
         <label>../topology/constants.hpp</label>
-        <link refid="constants_8hpp_source"/>
+        <link refid="constants_8hpp"/>
         <childnode refid="24" relation="include">
         </childnode>
       </node>
       <node id="25">
         <label>../topology/direction.hpp</label>
-        <link refid="direction_8hpp_source"/>
+        <link refid="direction_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -50,7 +50,7 @@
       </node>
       <node id="3">
         <label>../units/dimension.hpp</label>
-        <link refid="dimension_8hpp_source"/>
+        <link refid="dimension_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
@@ -78,7 +78,7 @@
       </node>
       <node id="4">
         <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp_source"/>
+        <link refid="prefix_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -90,7 +90,7 @@
       </node>
       <node id="2">
         <label>../units/scalar_unit.hpp</label>
-        <link refid="scalar__unit_8hpp_source"/>
+        <link refid="scalar__unit_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
@@ -114,7 +114,7 @@
       </node>
       <node id="21">
         <label>../units/vector_unit_2d.hpp</label>
-        <link refid="vector__unit__2d_8hpp_source"/>
+        <link refid="vector__unit__2d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
@@ -132,7 +132,7 @@
       </node>
       <node id="20">
         <label>../units/vector_unit_3d.hpp</label>
-        <link refid="vector__unit__3d_8hpp_source"/>
+        <link refid="vector__unit__3d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
@@ -164,7 +164,7 @@
       </node>
       <node id="26">
         <label>../units/vector_unit_nd.hpp</label>
-        <link refid="vector__unit__nd_8hpp_source"/>
+        <link refid="vector__unit__nd_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
@@ -192,7 +192,7 @@
       </node>
       <node id="17">
         <label>../util/is_number.hpp</label>
-        <link refid="is__number_8hpp_source"/>
+        <link refid="is__number_8hpp"/>
         <childnode refid="18" relation="include">
         </childnode>
       </node>
@@ -249,6 +249,10 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="2">
+        <label>predefined_units/radiometry_units.cpp</label>
+        <link refid="radiometry__units_8cpp"/>
+      </node>
       <node id="1">
         <label>predefined_units/radiometry_units.hpp</label>
         <link refid="radiometry__units_8hpp"/>
@@ -256,15 +260,23 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-      </node>
-      <node id="2">
-        <label>units.hpp</label>
-        <link refid="units_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
       <node id="3">
+        <label>units.hpp</label>
+        <link refid="units_8hpp"/>
+      </node>
+      <node id="5">
+        <label>units/unit_abbreviation.cpp</label>
+        <link refid="unit__abbreviation_8cpp"/>
+      </node>
+      <node id="4">
         <label>units/unit_abbreviation.hpp</label>
-        <link refid="unit__abbreviation_8hpp_source"/>
-        <childnode refid="2" relation="include">
+        <link refid="unit__abbreviation_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -282,17 +294,17 @@
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">scifir</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacescifir" kindref="compound">scifir</ref></highlight></codeline>
 <codeline lineno="10"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(radioactivity);</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(irradiance);</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(radiant_exposure);</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(radiant_intensity);</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(spectral_intensity);</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(radiance);</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(spectral_radiance);</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(radiant_flux);</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(spectral_flux);</highlight></codeline>
+<codeline lineno="11" refid="namespacescifir_1a024799e17a6c4ce56cdba96ca9b14d2e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">radioactivity</ref>);</highlight></codeline>
+<codeline lineno="12" refid="namespacescifir_1ac15a8286c62215c7ef0b0b15f6e960a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">irradiance</ref>);</highlight></codeline>
+<codeline lineno="13" refid="namespacescifir_1a39027a03c2f88e9f5c500e33b1b77a92" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">radiant_exposure</ref>);</highlight></codeline>
+<codeline lineno="14" refid="namespacescifir_1a8f7daf8ed364caaba17bfc51886c6405" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">radiant_intensity</ref>);</highlight></codeline>
+<codeline lineno="15" refid="namespacescifir_1a301c92868d977f1b0bb3367690fb4110" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">spectral_intensity</ref>);</highlight></codeline>
+<codeline lineno="16" refid="namespacescifir_1a7a57a35a5f016ce894cd8b8cb8ac506a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">radiance</ref>);</highlight></codeline>
+<codeline lineno="17" refid="namespacescifir_1a76f3f5a14abed3e4081e3bfcc3da6413" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">spectral_radiance</ref>);</highlight></codeline>
+<codeline lineno="18" refid="namespacescifir_1a726a4e4dcaaab941900c0fe5f7adb771" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">radiant_flux</ref>);</highlight></codeline>
+<codeline lineno="19" refid="namespacescifir_1a5fd140f17c179516044c11496fad157a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">spectral_flux</ref>);</highlight></codeline>
 <codeline lineno="20"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_PREDEFINED_UNITS_RADIOMETRY_UNITS_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>

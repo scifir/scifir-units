@@ -1,0 +1,461 @@
+.TH "special_units/pH.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+special_units/pH.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./util/is_number\&.hpp'\fP
+.br
+\fC#include '\&.\&./units/scalar_unit\&.hpp'\fP
+.br
+\fC#include '\&.\&./predefined_units/chemistry_units\&.hpp'\fP
+.br
+\fC#include 'boost/math/constants/constants\&.hpp'\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include <string>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBscifir::pH\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscifir\fP"
+.br
+.RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBpH\fP &x)"
+.br
+.ti -1c
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBscifir::pH\fP \fBoperator+\fP (T x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBscifir::pH\fP \fBoperator\-\fP (T x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool \fBoperator==\fP (T x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool \fBoperator!=\fP (T x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool \fBoperator<\fP (T x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool \fBoperator>\fP (T x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool \fBoperator<=\fP (T x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool \fBoperator>=\fP (T x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool \fBoperator==\fP (const \fBscifir::pH\fP &y, T x)"
+.br
+.ti -1c
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool \fBoperator!=\fP (const \fBscifir::pH\fP &y, T x)"
+.br
+.ti -1c
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool \fBoperator<\fP (const \fBscifir::pH\fP &y, T x)"
+.br
+.ti -1c
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool \fBoperator>\fP (const \fBscifir::pH\fP &y, T x)"
+.br
+.ti -1c
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool \fBoperator<=\fP (const \fBscifir::pH\fP &y, T x)"
+.br
+.ti -1c
+.RI "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool \fBoperator>=\fP (const \fBscifir::pH\fP &y, T x)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::pH\fP &x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::pH\fP &x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBscifir::pH\fP &x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBscifir::pH\fP &x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBscifir::pH\fP &x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBscifir::pH\fP &x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::pH\fP &x, const string &init_pH)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::pH\fP &x, const string &init_pH)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const string &init_pH, const \fBscifir::pH\fP &x)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const string &init_pH, const \fBscifir::pH\fP &x)"
+.br
+.ti -1c
+.RI "void \fBoperator+=\fP (string &x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "string \fBoperator+\fP (const string &x, const \fBscifir::pH\fP &y)"
+.br
+.ti -1c
+.RI "string \fBoperator+\fP (const \fBscifir::pH\fP &y, const string &x)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::pH\fP &x)"
+.br
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, \fBscifir::pH\fP &x)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "bool operator!= (const \fBscifir::pH\fP & x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB218\fP of file \fBpH\&.cpp\fP\&..PP
+.nf
+219 {
+220     return !(x == y);
+221 }
+.fi
+
+.SS "bool operator!= (const \fBscifir::pH\fP & x, const string & init_pH)"
+
+.PP
+Definition at line \fB263\fP of file \fBpH\&.cpp\fP\&..PP
+.nf
+264 {
+265     return !(x == y);
+266 }
+.fi
+
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator!= (const \fBscifir::pH\fP & y, T x)"
+
+.PP
+Definition at line \fB155\fP of file \fBpH\&.hpp\fP\&..PP
+.nf
+156 {
+157     return (x != y\&.get_value());
+158 }
+.fi
+
+.SS "bool operator!= (const string & init_pH, const \fBscifir::pH\fP & x)"
+
+.PP
+Definition at line \fB274\fP of file \fBpH\&.cpp\fP\&..PP
+.nf
+275 {
+276     return !(x == y);
+277 }
+.fi
+
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator!= (T x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB119\fP of file \fBpH\&.hpp\fP\&..PP
+.nf
+120 {
+121     return (x != y\&.get_value());
+122 }
+.fi
+
+.SS "string operator+ (const \fBscifir::pH\fP & y, const string & x)"
+
+.PP
+Definition at line \fB294\fP of file \fBpH\&.cpp\fP\&..PP
+.nf
+295 {
+296     ostringstream output;
+297     output << y;
+298     output << x;
+299     return output\&.str();
+300 }
+.fi
+
+.SS "string operator+ (const string & x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB286\fP of file \fBpH\&.cpp\fP\&..PP
+.nf
+287 {
+288     ostringstream output;
+289     output << x;
+290     output << y;
+291     return output\&.str();
+292 }
+.fi
+
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBscifir::pH\fP operator+ (T x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB101\fP of file \fBpH\&.hpp\fP\&..PP
+.nf
+102 {
+103     return scifir::pH(x + y\&.get_value());
+104 }
+.fi
+
+.SS "void operator+= (string & x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB279\fP of file \fBpH\&.cpp\fP\&..PP
+.nf
+280 {
+281     ostringstream output;
+282     output << y;
+283     x += output\&.str();
+284 }
+.fi
+
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> \fBscifir::pH\fP operator\- (T x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB107\fP of file \fBpH\&.hpp\fP\&..PP
+.nf
+108 {
+109     return scifir::pH(x \- y\&.get_value());
+110 }
+.fi
+
+.SS "bool operator< (const \fBscifir::pH\fP & x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB223\fP of file \fBpH\&.cpp\fP\&..PP
+.nf
+224 {
+225     if(x\&.get_value() < y\&.get_value())
+226     {
+227         return true;
+228     }
+229     else
+230     {
+231         return false;
+232     }
+233 }
+.fi
+
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator< (const \fBscifir::pH\fP & y, T x)"
+
+.PP
+Definition at line \fB161\fP of file \fBpH\&.hpp\fP\&..PP
+.nf
+162 {
+163     return (y\&.get_value() < x);
+164 }
+.fi
+
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator< (T x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB125\fP of file \fBpH\&.hpp\fP\&..PP
+.nf
+126 {
+127     return (x < y\&.get_value());
+128 }
+.fi
+
+.SS "ostream & operator<< (ostream & os, const \fBscifir::pH\fP & x)"
+
+.PP
+Definition at line \fB302\fP of file \fBpH\&.cpp\fP\&..PP
+.nf
+303 {
+304     return os << to_string(x);
+305 }
+.fi
+
+.SS "bool operator<= (const \fBscifir::pH\fP & x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB247\fP of file \fBpH\&.cpp\fP\&..PP
+.nf
+248 {
+249     return !(x > y);
+250 }
+.fi
+
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator<= (const \fBscifir::pH\fP & y, T x)"
+
+.PP
+Definition at line \fB173\fP of file \fBpH\&.hpp\fP\&..PP
+.nf
+174 {
+175     return (y\&.get_value() <= x);
+176 }
+.fi
+
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator<= (T x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB137\fP of file \fBpH\&.hpp\fP\&..PP
+.nf
+138 {
+139     return (x <= y\&.get_value());
+140 }
+.fi
+
+.SS "bool operator== (const \fBscifir::pH\fP & x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB206\fP of file \fBpH\&.cpp\fP\&..PP
+.nf
+207 {
+208     if(x\&.get_value() == y\&.get_value())
+209     {
+210         return true;
+211     }
+212     else
+213     {
+214         return false;
+215     }
+216 }
+.fi
+
+.SS "bool operator== (const \fBscifir::pH\fP & x, const string & init_pH)"
+
+.PP
+Definition at line \fB257\fP of file \fBpH\&.cpp\fP\&..PP
+.nf
+258 {
+259     scifir::pH y_pH = scifir::pH(y);
+260     return (x == y_pH);
+261 }
+.fi
+
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator== (const \fBscifir::pH\fP & y, T x)"
+
+.PP
+Definition at line \fB149\fP of file \fBpH\&.hpp\fP\&..PP
+.nf
+150 {
+151     return (x == y\&.get_value());
+152 }
+.fi
+
+.SS "bool operator== (const string & init_pH, const \fBscifir::pH\fP & x)"
+
+.PP
+Definition at line \fB268\fP of file \fBpH\&.cpp\fP\&..PP
+.nf
+269 {
+270     scifir::pH x_pH = scifir::pH(x);
+271     return (x_pH == y);
+272 }
+.fi
+
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator== (T x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB113\fP of file \fBpH\&.hpp\fP\&..PP
+.nf
+114 {
+115     return (x == y\&.get_value());
+116 }
+.fi
+
+.SS "bool operator> (const \fBscifir::pH\fP & x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB235\fP of file \fBpH\&.cpp\fP\&..PP
+.nf
+236 {
+237     if(x\&.get_value() > y\&.get_value())
+238     {
+239         return true;
+240     }
+241     else
+242     {
+243         return false;
+244     }
+245 }
+.fi
+
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator> (const \fBscifir::pH\fP & y, T x)"
+
+.PP
+Definition at line \fB167\fP of file \fBpH\&.hpp\fP\&..PP
+.nf
+168 {
+169     return (y\&.get_value() > x);
+170 }
+.fi
+
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator> (T x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB131\fP of file \fBpH\&.hpp\fP\&..PP
+.nf
+132 {
+133     return (x > y\&.get_value());
+134 }
+.fi
+
+.SS "bool operator>= (const \fBscifir::pH\fP & x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB252\fP of file \fBpH\&.cpp\fP\&..PP
+.nf
+253 {
+254     return !(x < y);
+255 }
+.fi
+
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator>= (const \fBscifir::pH\fP & y, T x)"
+
+.PP
+Definition at line \fB179\fP of file \fBpH\&.hpp\fP\&..PP
+.nf
+180 {
+181     return (y\&.get_value() >= x);
+182 }
+.fi
+
+.SS "template<typename T , typename  = typename enable_if<scifir::is_number<T>::value>::type> bool operator>= (T x, const \fBscifir::pH\fP & y)"
+
+.PP
+Definition at line \fB143\fP of file \fBpH\&.hpp\fP\&..PP
+.nf
+144 {
+145     return (x >= y\&.get_value());
+146 }
+.fi
+
+.SS "istream & operator>> (istream & is, \fBscifir::pH\fP & x)"
+
+.PP
+Definition at line \fB307\fP of file \fBpH\&.cpp\fP\&..PP
+.nf
+308 {
+309     char a[256];
+310     is\&.getline(a, 256);
+311     string b(a);
+312     boost::trim(b);
+313     x = scifir::pH(b);
+314     return is;
+315 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

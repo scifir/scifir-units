@@ -6,9 +6,14 @@ scifir::coordinates_2dr< float >
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <coordinates_2dr\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBcoordinates_2dr\fP ()"
+.br
 .ti -1c
 .RI "\fBcoordinates_2dr\fP (\fBconst\fP \fBcoordinates_2dr\fP< \fBfloat\fP > &\fBx_coordinates\fP)"
 .br
@@ -64,7 +69,7 @@ scifir::coordinates_2dr< float >
 .RI "\fBangle\fP \fBget_polar_theta\fP () \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBpoint_to\fP (direction::name x)"
+.RI "\fBvoid\fP \fBpoint_to\fP (\fBdirection::name\fP \fBx\fP)"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_x\fP, \fBfloat\fP \fBnew_y\fP)"
@@ -107,6 +112,417 @@ scifir::coordinates_2dr< float >
 .RI "\fBangle\fP \fBtheta\fP"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_coordinates_2dr\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB251\fP of file \fBcoordinates_2dr\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBscifir::coordinates_2dr\fP< \fBfloat\fP >::coordinates_2dr ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB254\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+254                               : x(),y(),theta()
+255             {}
+.fi
+
+.SS "\fBscifir::coordinates_2dr\fP< \fBfloat\fP >::coordinates_2dr (\fBconst\fP \fBcoordinates_2dr\fP< \fBfloat\fP > & x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB257\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+257                                                                          : x(x_coordinates\&.x),y(x_coordinates\&.y),theta(x_coordinates\&.theta)
+258             {}
+.fi
+
+.SS "\fBscifir::coordinates_2dr\fP< \fBfloat\fP >::coordinates_2dr (\fBcoordinates_2dr\fP< \fBfloat\fP > && x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB260\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+260                                                                     : x(std::move(x_coordinates\&.x)),y(std::move(x_coordinates\&.y)),theta(std::move(x_coordinates\&.theta))
+261             {}
+.fi
+
+.SS "\fBscifir::coordinates_2dr\fP< \fBfloat\fP >::coordinates_2dr (\fBfloat\fP new_x, \fBfloat\fP new_y, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB263\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+263                                                                                      : x(new_x),y(new_y),theta(new_theta)
+264             {}
+.fi
+
+.SS "\fBscifir::coordinates_2dr\fP< \fBfloat\fP >::coordinates_2dr (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_polar_theta, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB266\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+266                                                                                                       : x(),y(),theta(new_theta)
+267             {
+268                 set_position(new_p,new_polar_theta);
+269             }
+.fi
+
+.SS "\fBscifir::coordinates_2dr\fP< \fBfloat\fP >::coordinates_2dr (\fBconst\fP \fBscifir::point_2d\fP< \fBfloat\fP > & new_point, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB271\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+271                                                                                                     : x(new_point\&.x),y(new_point\&.y),theta(new_theta)
+272             {}
+.fi
+
+.SS "\fBscifir::coordinates_2dr\fP< \fBfloat\fP >::coordinates_2dr (\fBscifir::point_2d\fP< \fBfloat\fP > && new_point, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB274\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+274                                                                                                : x(std::move(new_point\&.x)),y(std::move(new_point\&.y)),theta(new_theta)
+275             {}
+.fi
+
+.SS "\fBscifir::coordinates_2dr\fP< \fBfloat\fP >::coordinates_2dr (\fBconst\fP \fBscifir::coordinates_2d\fP< \fBfloat\fP > & new_point, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB277\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+277                                                                                                           : x(new_point\&.x),y(new_point\&.y),theta(new_theta)
+278             {}
+.fi
+
+.SS "\fBscifir::coordinates_2dr\fP< \fBfloat\fP >::coordinates_2dr (\fBscifir::coordinates_2d\fP< \fBfloat\fP > && new_point, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB280\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+280                                                                                                      : x(std::move(new_point\&.x)),y(std::move(new_point\&.y)),theta(new_theta)
+281             {}
+.fi
+
+.SS "\fBscifir::coordinates_2dr\fP< \fBfloat\fP >::coordinates_2dr (\fBconst\fP \fBstring\fP & init_coordinates_2dr)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB283\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+283                                                                          : coordinates_2dr()
+284             {
+285                 initialize_from_string(init_coordinates_2dr);
+286             }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBstring\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::display_cartesian () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB427\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+428             {
+429                 ostringstream out;
+430                 out << "(" << display_float(x) << "," << display_float(y) << ";" << theta << ")";
+431                 return out\&.str();
+432             }
+.fi
+
+.SS "\fBstring\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::display_polar () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB434\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+435             {
+436                 ostringstream out;
+437                 out << "(" << display_float(get_p()) << "," << get_polar_theta() << ";" << theta << ")";
+438                 return out\&.str();
+439             }
+.fi
+
+.SS "\fBfloat\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::distance_to_origin () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB422\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+423             {
+424                 return float(std::sqrt(std::pow(x,2) + std::pow(y,2)));
+425             }
+.fi
+
+.SS "\fBfloat\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::get_p () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB338\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+339             {
+340                 return float(std::sqrt(std::pow(x,2) + std::pow(y,2)));
+341             }
+.fi
+
+.SS "\fBangle\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::get_polar_theta () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB343\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+344             {
+345                 return angle(radian_to_grade(std::atan2(y,x)));
+346             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::initialize_from_string (\fBstring\fP init_coordinates_2dr)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB446\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+447             {
+448                 vector<string> init_coordinates;
+449                 vector<string> init_values;
+450                 vector<string> init_angles;
+451                 if (init_coordinates_2dr\&.front() == '(')
+452                 {
+453                     init_coordinates_2dr\&.erase(0,1);
+454                 }
+455                 if (init_coordinates_2dr\&.back() == ')')
+456                 {
+457                     init_coordinates_2dr\&.erase(init_coordinates_2dr\&.size()\-1,1);
+458                 }
+459                 boost::split(init_coordinates,init_coordinates_2dr,boost::is_any_of(";"));
+460                 if (init_coordinates\&.size() > 0)
+461                 {
+462                     boost::split(init_values,init_coordinates[0],boost::is_any_of(","));
+463                 }
+464                 if (init_coordinates\&.size() > 1)
+465                 {
+466                     boost::split(init_angles,init_coordinates[1],boost::is_any_of(","));
+467                 }
+468                 if (init_values\&.size() == 2 and init_angles\&.size() == 1)
+469                 {
+470                     if (is_angle(init_values[1]))
+471                     {
+472                         set_position(stof(init_values[0]),angle(init_values[1]));
+473                     }
+474                     else
+475                     {
+476                         set_position(stof(init_values[0]),stof(init_values[1]));
+477                     }
+478                     theta = angle(init_angles[0]);
+479                 }
+480             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::move (\fBconst\fP \fBdisplacement_2d\fP & x_displacement)\fC [inline]\fP"
+
+.PP
+Definition at line \fB404\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+405             {
+406                 x += float(x_displacement\&.x_projection());
+407                 y += float(x_displacement\&.y_projection());
+408             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::move (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB416\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+417             {
+418                 x += new_p * scifir::cos(new_theta);
+419                 y += new_p * scifir::sin(new_theta);
+420             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::move (\fBfloat\fP new_x, \fBfloat\fP new_y)\fC [inline]\fP"
+
+.PP
+Definition at line \fB410\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+411             {
+412                 x += new_x;
+413                 y += new_y;
+414             }
+.fi
+
+.SS "\fBcoordinates_2dr\fP< \fBfloat\fP > & \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBcoordinates_2d\fP< \fBfloat\fP > & x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB318\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+319             {
+320                 x = x_coordinates\&.x;
+321                 y = x_coordinates\&.y;
+322                 return *this;
+323             }
+.fi
+
+.SS "\fBcoordinates_2dr\fP< \fBfloat\fP > & \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBcoordinates_2dr\fP< \fBfloat\fP > & x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB288\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+289             {
+290                 x = x_coordinates\&.x;
+291                 y = x_coordinates\&.y;
+292                 theta = x_coordinates\&.theta;
+293                 return *this;
+294             }
+.fi
+
+.SS "\fBcoordinates_2dr\fP< \fBfloat\fP > & \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBpoint_2d\fP< \fBfloat\fP > & x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB304\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+305             {
+306                 x = x_point\&.x;
+307                 y = x_point\&.y;
+308                 return *this;
+309             }
+.fi
+
+.SS "\fBcoordinates_2dr\fP< \fBfloat\fP > & \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBstring\fP & init_coordinates_2dr)\fC [inline]\fP"
+
+.PP
+Definition at line \fB332\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+333             {
+334                 initialize_from_string(init_coordinates_2dr);
+335                 return *this;
+336             }
+.fi
+
+.SS "\fBcoordinates_2dr\fP< \fBfloat\fP > & \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::operator= (\fBcoordinates_2d\fP< \fBfloat\fP > && x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB325\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+326             {
+327                 x = std::move(x_coordinates\&.x);
+328                 y = std::move(x_coordinates\&.y);
+329                 return *this;
+330             }
+.fi
+
+.SS "\fBcoordinates_2dr\fP< \fBfloat\fP > & \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::operator= (\fBcoordinates_2dr\fP< \fBfloat\fP > && x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB296\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+297             {
+298                 x = std::move(x_coordinates\&.x);
+299                 y = std::move(x_coordinates\&.y);
+300                 theta = std::move(x_coordinates\&.theta);
+301                 return *this;
+302             }
+.fi
+
+.SS "\fBcoordinates_2dr\fP< \fBfloat\fP > & \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::operator= (\fBpoint_2d\fP< \fBfloat\fP > && x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB311\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+312             {
+313                 x = std::move(x_point\&.x);
+314                 y = std::move(x_point\&.y);
+315                 return *this;
+316             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::point_to (\fBdirection::name\fP x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB348\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+349             {
+350                 if (x == direction::LEFT)
+351                 {
+352                     theta = 180\&.0f;
+353                 }
+354                 else if(x == direction::RIGHT)
+355                 {
+356                     theta = 0\&.0f;
+357                 }
+358                 else if(x == direction::TOP)
+359                 {
+360                     theta = 90\&.0f;
+361                 }
+362                 else if(x == direction::BOTTOM)
+363                 {
+364                     theta = 270\&.0f;
+365                 }
+366                 else if(x == direction::LEFT_TOP)
+367                 {
+368                     theta = 135\&.0f;
+369                 }
+370                 else if(x == direction::RIGHT_TOP)
+371                 {
+372                     theta = 45\&.0f;
+373                 }
+374                 else if(x == direction::RIGHT_BOTTOM)
+375                 {
+376                     theta = 315\&.0f;
+377                 }
+378                 else if(x == direction::LEFT_BOTTOM)
+379                 {
+380                     theta = 225\&.0f;
+381                 }
+382             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::rotate (\fBconst\fP \fBangle\fP & x_angle)\fC [inline]\fP"
+
+.PP
+Definition at line \fB396\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+397             {
+398                 float x_coord = x;
+399                 float y_coord = y;
+400                 x = x_coord * scifir::cos(x_angle) \- y_coord * scifir::sin(x_angle);
+401                 y = x_coord * scifir::sin(x_angle) + y_coord * scifir::cos(x_angle);
+402             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB390\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+391             {
+392                 x = new_p * scifir::cos(new_theta);
+393                 y = new_p * scifir::sin(new_theta);
+394             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_x, \fBfloat\fP new_y)\fC [inline]\fP"
+
+.PP
+Definition at line \fB384\fP of file \fBcoordinates_2dr\&.hpp\fP\&..PP
+.nf
+385             {
+386                 x = new_x;
+387                 y = new_y;
+388             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBangle\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::theta"
+
+.PP
+Definition at line \fB443\fP of file \fBcoordinates_2dr\&.hpp\fP\&.
+.SS "\fBfloat\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::x"
+
+.PP
+Definition at line \fB441\fP of file \fBcoordinates_2dr\&.hpp\fP\&.
+.SS "\fBfloat\fP \fBscifir::coordinates_2dr\fP< \fBfloat\fP >::y"
+
+.PP
+Definition at line \fB442\fP of file \fBcoordinates_2dr\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

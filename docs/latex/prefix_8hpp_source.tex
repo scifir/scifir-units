@@ -1,56 +1,56 @@
 \doxysection{prefix.\+hpp}
 \hypertarget{prefix_8hpp_source}{}\label{prefix_8hpp_source}\index{units/prefix.hpp@{units/prefix.hpp}}
-
+\mbox{\hyperlink{prefix_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_UNITS\_PREFIX\_HPP\_INCLUDED}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_UNITS\_PREFIX\_HPP\_INCLUDED}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <map>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }scifir}
-\DoxyCodeLine{00012\ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1prefix}{prefix}}}
-\DoxyCodeLine{00014\ \ \ \ \ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ type\ :\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int8\_t}}\ \{no\_prefix,Y,Z,E,P,T,G,M,k,h,da,d,c,m,u,n,p,f,a,z,y\};}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}();}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ x);}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}(\mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\&\ x);}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}(prefix::type\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_type}});}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_type}});}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ x);}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\&\ x);}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ get\_conversion\_factor()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ get\_name()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ get\_symbol()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ prefix::type\ prefix\_type;}
-\DoxyCodeLine{00034\ \ \ \ \ \};}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ prefix::type\ prefix\_string(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x);}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\ closest\_prefix(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{actual\_prefix}},\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{actual\_scale}});}
-\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\ create\_prefix\_by\_factor(\textcolor{keywordtype}{int}\ factor);}
-\DoxyCodeLine{00040\ \}}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ y);}
-\DoxyCodeLine{00043\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ y);}
-\DoxyCodeLine{00044\ \textcolor{keywordtype}{bool}\ operator\ <=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ y);}
-\DoxyCodeLine{00045\ \textcolor{keywordtype}{bool}\ operator\ >(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ y);}
-\DoxyCodeLine{00046\ \textcolor{keywordtype}{bool}\ operator\ >=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ y);}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ ostream\&\ operator\ <<(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x);}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_PREFIX\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_UNITS\_PREFIX\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_UNITS\_PREFIX\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00009}00009\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00011}00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacescifir}{scifir}}}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00013}\mbox{\hyperlink{classscifir_1_1prefix}{00013}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1prefix}{prefix}}}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00016}\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a778c1e6feabbbec6c0ffe2e72a017c68}{00016}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}{type}}\ :\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int8\_t}}\ \{\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af18b58f5d0d47b8e025fca6da3c3ad76}{no\_prefix}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aca97f0f948087a2246288bdb6a06c5de}{Y}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae455c88a8e8ea6a662962f4086016f60}{Z}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a383a69a3a0cdbe459d1b326fc8b099d8}{E}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abd7bdad580d91cae26bbd9f34b6c4c99}{P}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aba3c90cd5e4c53916c765e7aae9d9eaf}{T}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a33671302876150a9e78310a4d43dd34f}{G}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aeaab6fe29001c5667be658891c8bc7d8}{M}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a0661967e6a43b8cdd943abe1f0e24088}{k}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad997a0a1da6dd47bf05e2668d2a78f65}{h}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ae4d6a1a513aecb8cdd407df74b3bc8e8}{da}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5aed1a823b22c849bdc9d482c5bf5ae42b}{d}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a603986ae66d99be85405110f8938036b}{c}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5abf69e117ea8e5b52c3ff7c6a9defdf28}{m}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a974a243f720d3741a68876d39d94a5ce}{u}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a08f92d1bc74ae479f58312b156cd3d35}{n}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5af4dde8ff3477cdf6409eccf2c7c324c4}{p}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a79260a31dafe8bb45a288bf45938ac01}{f}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5a778c1e6feabbbec6c0ffe2e72a017c68}{a}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ac27636593ec360abbfa1711d28856217}{z}},\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5ad8e182e4bf6c05b130666ef5a9b2c8f0}{y}}\};}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix_aa4fa5c6b2b9c6902748b0d921eef84f8}{prefix}}();}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix_aa4fa5c6b2b9c6902748b0d921eef84f8}{prefix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix_aa4fa5c6b2b9c6902748b0d921eef84f8}{prefix}}(\mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\&\ x);}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1prefix_aa4fa5c6b2b9c6902748b0d921eef84f8}{prefix}}(\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}{prefix::type}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_type}});}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1prefix_aa4fa5c6b2b9c6902748b0d921eef84f8}{prefix}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_type}});}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ \mbox{\hyperlink{classscifir_1_1prefix_a0b9d5c30b77d71216588983bd3c97a14}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ \mbox{\hyperlink{classscifir_1_1prefix_a0b9d5c30b77d71216588983bd3c97a14}{operator=}}(\mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\&\ x);}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1prefix_a6d301253dc9b0c6cde92116da0b84e34}{get\_conversion\_factor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1prefix_ab89ed3da9e955f242437b69ed4756294}{get\_name}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1prefix_adceb7b20c962d582c949849446827fad}{get\_symbol}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1prefix_a8deabe803a98512e9ffced9f36fb5536}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00033}\mbox{\hyperlink{classscifir_1_1prefix_a37950f2bbe97c44f0d5372aea2b7b33a}{00033}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}{prefix::type}}\ \mbox{\hyperlink{classscifir_1_1prefix_a37950f2bbe97c44f0d5372aea2b7b33a}{prefix\_type}};}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00034}00034\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}{prefix::type}}\ \mbox{\hyperlink{namespacescifir_a2a2cc2c1b3a35da9fc1fff749a93a6f9}{prefix\_string}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x);}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\ \mbox{\hyperlink{namespacescifir_a381054e3832331d799d484dfccd7d10a}{closest\_prefix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{actual\_prefix}},\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{actual\_scale}});}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1prefix}{prefix}}\ \mbox{\hyperlink{namespacescifir_af91b178f2d049a8313dbc40c87615dec}{create\_prefix\_by\_factor}}(\textcolor{keywordtype}{int}\ factor);}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00042}00042\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{prefix_8hpp_afe6cee98641049908e4670f4710e9503}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00043}00043\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{prefix_8hpp_a51bf6bd00bc9943067753b04e3210546}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00044}00044\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{prefix_8hpp_a5b7915a259118db56693d9873a2beb12}{operator\ <=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00045}00045\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{prefix_8hpp_ab37ebad8bc87d57073af631f38524b73}{operator\ >}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00046}00046\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{prefix_8hpp_a5e9c72a6d17821e1b2113410cf12f88f}{operator\ >=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00048}00048\ ostream\&\ \mbox{\hyperlink{prefix_8hpp_ad09c156ae992f80dd7c4206b64e1dfc3}{operator\ <<}}(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1prefix}{scifir::prefix}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{prefix_8hpp_source_l00050}00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_PREFIX\_HPP\_INCLUDED}}
 
 \end{DoxyCode}

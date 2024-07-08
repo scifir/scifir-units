@@ -1,547 +1,547 @@
 \doxysection{scalar\+\_\+unit.\+hpp}
 \hypertarget{scalar__unit_8hpp_source}{}\label{scalar__unit_8hpp_source}\index{units/scalar\_unit.hpp@{units/scalar\_unit.hpp}}
-
+\mbox{\hyperlink{scalar__unit_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_UNITS\_SCALAR\_UNIT\_HPP\_INCLUDED}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_UNITS\_SCALAR\_UNIT\_HPP\_INCLUDED}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../units/dimension.hpp"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../units/prefix.hpp"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../util/is\_number.hpp"{}}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <cmath>}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <map>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <sstream>}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string\_view>}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ SCALAR\_UNIT\_HPP\_BEGIN(name)\ class\ name\ :\ public\ scalar\_unit\ \(\backslash\)}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \ \ \ \{\ \ \ \(\backslash\)}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ public:\ \(\backslash\)}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::scalar\_unit;\ \(\backslash\)}}
-\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name();\ \(\backslash\)}}
-\DoxyCodeLine{00021\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name(const\ scalar\_unit\&);\ \(\backslash\)}}
-\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name(scalar\_unit\&\&);\ \(\backslash\)}}
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::operator=;\ \(\backslash\)}}
-\DoxyCodeLine{00024\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::operator+=;\ \(\backslash\)}}
-\DoxyCodeLine{00025\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::operator-\/=}}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ SCALAR\_UNIT\_HPP\_END()\ \(\backslash\)}}
-\DoxyCodeLine{00028\ \textcolor{preprocessor}{\(\backslash\)}}
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ public:\ \(\backslash\)}}
-\DoxyCodeLine{00030\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ static\ const\ string\ dimensions\_match;\ \(\backslash\)}}
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ static\ const\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}}
-\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \ \ \}}}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ SCALAR\_UNIT\_HPP(name)\ class\ name\ :\ public\ scalar\_unit\ \(\backslash\)}}
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\ \ \ \ \{\ \ \ \(\backslash\)}}
-\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ public:\ \(\backslash\)}}
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::scalar\_unit;\ \(\backslash\)}}
-\DoxyCodeLine{00038\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name();\ \(\backslash\)}}
-\DoxyCodeLine{00039\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name(const\ scalar\_unit\&);\ \(\backslash\)}}
-\DoxyCodeLine{00040\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name(scalar\_unit\&\&);\ \(\backslash\)}}
-\DoxyCodeLine{00041\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::operator=;\ \(\backslash\)}}
-\DoxyCodeLine{00042\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::operator+=;\ \(\backslash\)}}
-\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::operator-\/=;\ \(\backslash\)}}
-\DoxyCodeLine{00044\ \textcolor{preprocessor}{\(\backslash\)}}
-\DoxyCodeLine{00045\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ static\ const\ string\ dimensions\_match;\ \(\backslash\)}}
-\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ static\ const\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}}
-\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ \ \ \}}}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ SCALAR\_UNIT\_CPP(name,init\_dimensions)\ name::name()\ :\ scalar\_unit()\ \{\ \(\backslash\)}}
-\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ scalar\_unit::dimensions\ =\ name::real\_dimensions;\ \(\backslash\)}}
-\DoxyCodeLine{00051\ \textcolor{preprocessor}{\}\ \(\backslash\)}}
-\DoxyCodeLine{00052\ \textcolor{preprocessor}{\(\backslash\)}}
-\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ \ \ name::name(const\ scalar\_unit\&\ x)\ \(\backslash\)}}
-\DoxyCodeLine{00054\ \textcolor{preprocessor}{\ \ \ \ \{\ \(\backslash\)}}
-\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ (x.has\_dimensions(name::real\_dimensions))\ \(\backslash\)}}
-\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{\ \(\backslash\)}}
-\DoxyCodeLine{00057\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ x.get\_value();\ \(\backslash\)}}
-\DoxyCodeLine{00058\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ dimensions\ =\ x.get\_dimensions();\ \(\backslash\)}}
-\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \(\backslash\)}}
-\DoxyCodeLine{00060\ \textcolor{preprocessor}{\ \ \ \ \}\ \(\backslash\)}}
-\DoxyCodeLine{00061\ \textcolor{preprocessor}{\(\backslash\)}}
-\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ \ \ name::name(scalar\_unit\&\&\ x)\ \(\backslash\)}}
-\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ \ \ \{\ \(\backslash\)}}
-\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ (x.has\_dimensions(name::real\_dimensions))\ \(\backslash\)}}
-\DoxyCodeLine{00065\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{\ \(\backslash\)}}
-\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ std::move(x.get\_value());\ \(\backslash\)}}
-\DoxyCodeLine{00067\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ dimensions\ =\ std::move(x.get\_dimensions());\ \(\backslash\)}}
-\DoxyCodeLine{00068\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \(\backslash\)}}
-\DoxyCodeLine{00069\ \textcolor{preprocessor}{\ \ \ \ \}\ \(\backslash\)}}
-\DoxyCodeLine{00070\ \textcolor{preprocessor}{\(\backslash\)}}
-\DoxyCodeLine{00071\ \textcolor{preprocessor}{const\ string\ name::dimensions\_match\ =\ init\_dimensions;\ \(\backslash\)}}
-\DoxyCodeLine{00072\ \textcolor{preprocessor}{const\ vector<dimension>\ name::real\_dimensions\ =\ create\_derived\_dimensions(init\_dimensions)}}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \textcolor{keyword}{namespace\ }scifir}
-\DoxyCodeLine{00077\ \{}
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}}
-\DoxyCodeLine{00079\ \ \ \ \ \{}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}();}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\&\ x);}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}});}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}});}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}});}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}});}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_scalar}});}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\&\ x);}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_scalar}});}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00099\ }
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ ==}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ \string^}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +=}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x);}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/=}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x);}
-\DoxyCodeLine{00109\ }
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(T\ y)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00112\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x\ =\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ y;}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/}}(T\ y)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00120\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x\ =\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ -\/=\ y;}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *}}(T\ y)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00128\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x\ =\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ *=\ y;}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /}}(T\ y)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00136\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x\ =\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ /=\ y;}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00141\ }
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<is\_integer\_number<T>::value}}>::type>}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ \string^}}(T\ y)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00144\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(std::pow(get\_value(),y),power\_dimensions(get\_dimensions(),y));}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00147\ }
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +=}}(T\ y)}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ +=\ y;}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/=}}(T\ y)}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ -\/=\ y;}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00159\ }
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *=}}(T\ y)}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ *=\ y;}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /=}}(T\ y)}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ /=\ y;}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00171\ }
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ ++}}();}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ ++}}(\textcolor{keywordtype}{int});}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/-\/}}();}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/-\/}}(\textcolor{keywordtype}{int});}
-\DoxyCodeLine{00176\ }
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ change\_dimensions(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ change\_dimensions(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_dimensions(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}})\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_dimensions(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_dimensions}})\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_dimensions(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_empty\_dimensions()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_dimensions()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00184\ }
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//string\ get\_dimensions\_match()\ const;}}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\ get\_derived\_dimensions()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ get\_dimensions()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00189\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dimensions;}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00192\ }
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ get\_value()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00194\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00197\ }
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2\ ,\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{with\_brackets}}\ =\ \textcolor{keyword}{false},\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{use\_close\_prefix}}\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ derived\_display(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2,\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{with\_brackets}}\ =\ \textcolor{keyword}{false},\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{use\_close\_prefix}}\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ custom\_display(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2,\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{with\_brackets}}\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00201\ }
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\ dimensions;}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ value;}
-\DoxyCodeLine{00205\ }
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ add\_dimension(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimension}});}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ remove\_dimension(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{old\_dimension}});}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initialize\_from\_string(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_scalar}});}
-\DoxyCodeLine{00209\ \ \ \ \ \};}
-\DoxyCodeLine{00210\ }
-\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_scalar\_unit(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_scalar}});}
-\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{float}\ abs(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00214\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ pow(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x,\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{exponent}});}
-\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ sqrt(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ sqrt\_nth(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x,\ \textcolor{keywordtype}{int}\ index);}
-\DoxyCodeLine{00217\ }
-\DoxyCodeLine{00218\ \ \ \ \ \textcolor{comment}{/*constexpr\ bool\ is\_valid\_scalar\_unit(const\ char*\ x\_init)}}
-\DoxyCodeLine{00219\ \textcolor{comment}{\ \ \ \ \{}}
-\DoxyCodeLine{00220\ \textcolor{comment}{\ \ \ \ \ \ \ \ string\_view\ x\ =\ x\_init;}}
-\DoxyCodeLine{00221\ \textcolor{comment}{\ \ \ \ \ \ \ \ bool\ dot\_present\ =\ false;}}
-\DoxyCodeLine{00222\ \textcolor{comment}{\ \ \ \ \ \ \ \ bool\ e\_present\ =\ false;}}
-\DoxyCodeLine{00223\ \textcolor{comment}{\ \ \ \ \ \ \ \ int\ current\_pos\ =\ 0;}}
-\DoxyCodeLine{00224\ \textcolor{comment}{\ \ \ \ \ \ \ \ int\ e\_present\_pos\ =\ 0;}}
-\DoxyCodeLine{00225\ \textcolor{comment}{\ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ x.length();\ i++)}}
-\DoxyCodeLine{00226\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00227\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (x[i]\ ==\ '\ ')}}
-\DoxyCodeLine{00228\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00229\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (e\_present\ and\ ((e\_present\_pos\ +\ 1)\ ==\ i))}}
-\DoxyCodeLine{00230\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00231\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
-\DoxyCodeLine{00232\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00233\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_pos\ =\ i;}}
-\DoxyCodeLine{00234\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;}}
-\DoxyCodeLine{00235\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00236\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (e\_present\ ==\ false)}}
-\DoxyCodeLine{00237\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00238\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (x[i]\ ==\ '.')}}
-\DoxyCodeLine{00239\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00240\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (dot\_present)}}
-\DoxyCodeLine{00241\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00242\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
-\DoxyCodeLine{00243\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00244\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
-\DoxyCodeLine{00245\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00246\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dot\_present\ =\ true;}}
-\DoxyCodeLine{00247\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00248\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00249\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (x[i]\ ==\ 'e'\ or\ x[i]\ ==\ 'E')}}
-\DoxyCodeLine{00250\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00251\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e\_present\ =\ true;}}
-\DoxyCodeLine{00252\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e\_present\_pos\ =\ i;}}
-\DoxyCodeLine{00253\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue;}}
-\DoxyCodeLine{00254\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00255\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (x[i]\ ==\ '*')}}
-\DoxyCodeLine{00256\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00257\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!(x.substr(i\ +\ 1,3)\ ==\ "{}10\string^"{}))}}
-\DoxyCodeLine{00258\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00259\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
-\DoxyCodeLine{00260\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00261\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
-\DoxyCodeLine{00262\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00263\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e\_present\ =\ true;}}
-\DoxyCodeLine{00264\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ 3;}}
-\DoxyCodeLine{00265\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e\_present\_pos\ =\ i;}}
-\DoxyCodeLine{00266\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue;}}
-\DoxyCodeLine{00267\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00268\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00269\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (!isdigit(x[i]))}}
-\DoxyCodeLine{00270\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00271\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
-\DoxyCodeLine{00272\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00273\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (i\ ==\ (x.length()\ -\/\ 1))}}
-\DoxyCodeLine{00274\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00275\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
-\DoxyCodeLine{00276\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00277\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00278\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ else}}
-\DoxyCodeLine{00279\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00280\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!isdigit(x[i]))}}
-\DoxyCodeLine{00281\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00282\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
-\DoxyCodeLine{00283\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00284\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00285\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00286\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (current\_pos\ ==\ (x.length()\ -\/\ 1))}}
-\DoxyCodeLine{00287\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00288\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
-\DoxyCodeLine{00289\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00290\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (current\_pos\ ==\ 0)}}
-\DoxyCodeLine{00291\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00292\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
-\DoxyCodeLine{00293\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00294\ \textcolor{comment}{\ \ \ \ \ \ \ \ vector<string\_view>\ values\ =\ x\ |\ std::ranges::split(x,"{}/"{})\ |\ std::ranges::to<std::vector>();}}
-\DoxyCodeLine{00295\ \textcolor{comment}{//\ \ \ \ \ \ boost::split(values,x.substr(current\_pos),boost::is\_any\_of("{}/"{}));}}
-\DoxyCodeLine{00296\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (values.size()\ ==\ 1)}}
-\DoxyCodeLine{00297\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00298\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ vector<string\_view>\ subvalues;}}
-\DoxyCodeLine{00299\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ boost::split(subvalues,values[0],boost::is\_any\_of("{}*"{}));}}
-\DoxyCodeLine{00300\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ for\ (string\_view\&\ x\_subvalue\ :\ subvalues)}}
-\DoxyCodeLine{00301\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00302\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::trim(x\_subvalue);}}
-\DoxyCodeLine{00303\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bool\ number\_present\ =\ false;}}
-\DoxyCodeLine{00304\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ x\_subvalue.length();\ i++)}}
-\DoxyCodeLine{00305\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00306\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (number\_present\ ==\ false)}}
-\DoxyCodeLine{00307\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00308\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (isdigit(x\_subvalue[i]))}}
-\DoxyCodeLine{00309\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00310\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ number\_present\ =\ true;}}
-\DoxyCodeLine{00311\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue;}}
-\DoxyCodeLine{00312\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00313\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (!isalpha(x\_subvalue[i]))}}
-\DoxyCodeLine{00314\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00315\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
-\DoxyCodeLine{00316\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00317\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00318\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
-\DoxyCodeLine{00319\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00320\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!isdigit(x\_subvalue[i]))}}
-\DoxyCodeLine{00321\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00322\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
-\DoxyCodeLine{00323\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00324\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00325\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00326\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00327\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ return\ true;}}
-\DoxyCodeLine{00328\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00329\ \textcolor{comment}{\ \ \ \ \ \ \ \ else\ if\ (values.size()\ ==\ 2)}}
-\DoxyCodeLine{00330\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00331\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (values[0]\ !=\ "{}1"{})}}
-\DoxyCodeLine{00332\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00333\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<string\_view>\ subvalues;}}
-\DoxyCodeLine{00334\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::split(subvalues,values[0],boost::is\_any\_of("{}*"{}));}}
-\DoxyCodeLine{00335\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (string\_view\&\ x\_subvalue\ :\ subvalues)}}
-\DoxyCodeLine{00336\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00337\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::trim(x\_subvalue);}}
-\DoxyCodeLine{00338\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bool\ number\_present\ =\ false;}}
-\DoxyCodeLine{00339\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ x\_subvalue.length();\ i++)}}
-\DoxyCodeLine{00340\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00341\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (number\_present\ ==\ false)}}
-\DoxyCodeLine{00342\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00343\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (isdigit(x\_subvalue[i]))}}
-\DoxyCodeLine{00344\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00345\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ number\_present\ =\ true;}}
-\DoxyCodeLine{00346\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue;}}
-\DoxyCodeLine{00347\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00348\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (!isalpha(x\_subvalue[i]))}}
-\DoxyCodeLine{00349\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00350\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
-\DoxyCodeLine{00351\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00352\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00353\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
-\DoxyCodeLine{00354\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00355\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!isdigit(x\_subvalue[i]))}}
-\DoxyCodeLine{00356\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00357\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
-\DoxyCodeLine{00358\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00359\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00360\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00361\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00362\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00363\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ vector<string\_view>\ subvalues\_denominator;}}
-\DoxyCodeLine{00364\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ boost::split(subvalues\_denominator,values[1],boost::is\_any\_of("{}*"{}));}}
-\DoxyCodeLine{00365\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ for\ (string\_view\&\ x\_subvalue\ :\ subvalues\_denominator)}}
-\DoxyCodeLine{00366\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00367\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::trim(x\_subvalue);}}
-\DoxyCodeLine{00368\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bool\ number\_present\ =\ false;}}
-\DoxyCodeLine{00369\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ x\_subvalue.length();\ i++)}}
-\DoxyCodeLine{00370\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00371\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (number\_present\ ==\ false)}}
-\DoxyCodeLine{00372\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00373\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (isdigit(x\_subvalue[i]))}}
-\DoxyCodeLine{00374\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00375\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ number\_present\ =\ true;}}
-\DoxyCodeLine{00376\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue;}}
-\DoxyCodeLine{00377\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00378\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (!isalpha(x\_subvalue[i]))}}
-\DoxyCodeLine{00379\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00380\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
-\DoxyCodeLine{00381\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00382\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00383\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
-\DoxyCodeLine{00384\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00385\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!isdigit(x\_subvalue[i]))}}
-\DoxyCodeLine{00386\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{00387\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
-\DoxyCodeLine{00388\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00389\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00390\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00391\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00392\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ return\ true;}}
-\DoxyCodeLine{00393\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{00394\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ false;}}
-\DoxyCodeLine{00395\ \textcolor{comment}{\ \ \ \ \}*/}}
-\DoxyCodeLine{00396\ \}}
-\DoxyCodeLine{00397\ }
-\DoxyCodeLine{00398\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00399\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ operator\ +(\textcolor{keyword}{const}\ T\&\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x)}
-\DoxyCodeLine{00400\ \{}
-\DoxyCodeLine{00401\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ z\ =\ x;}
-\DoxyCodeLine{00402\ \ \ \ \ z\ +=\ y;}
-\DoxyCodeLine{00403\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
-\DoxyCodeLine{00404\ \}}
-\DoxyCodeLine{00405\ }
-\DoxyCodeLine{00406\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00407\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ operator\ -\/(\textcolor{keyword}{const}\ T\&\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x)}
-\DoxyCodeLine{00408\ \{}
-\DoxyCodeLine{00409\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ z\ =\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}((\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double})y,x.get\_dimensions());}
-\DoxyCodeLine{00410\ \ \ \ \ z\ -\/=\ x;}
-\DoxyCodeLine{00411\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
-\DoxyCodeLine{00412\ \}}
-\DoxyCodeLine{00413\ }
-\DoxyCodeLine{00414\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00415\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ operator\ *(\textcolor{keyword}{const}\ T\&\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x)}
-\DoxyCodeLine{00416\ \{}
-\DoxyCodeLine{00417\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ z\ =\ x;}
-\DoxyCodeLine{00418\ \ \ \ \ z\ *=\ y;}
-\DoxyCodeLine{00419\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
-\DoxyCodeLine{00420\ \}}
-\DoxyCodeLine{00421\ }
-\DoxyCodeLine{00422\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00423\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ operator\ /(\textcolor{keyword}{const}\ T\&\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x)}
-\DoxyCodeLine{00424\ \{}
-\DoxyCodeLine{00425\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ z\ =\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}((\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double})y,vector<scifir::dimension>());}
-\DoxyCodeLine{00426\ \ \ \ \ \textcolor{keywordflow}{return}\ z\ /\ x;}
-\DoxyCodeLine{00427\ \}}
-\DoxyCodeLine{00428\ }
-\DoxyCodeLine{00429\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00430\ \textcolor{keywordtype}{float}\ operator\ \string^(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y)}
-\DoxyCodeLine{00431\ \{}
-\DoxyCodeLine{00432\ \ \ \ \ \textcolor{keywordflow}{if}(y.has\_empty\_dimensions())}
-\DoxyCodeLine{00433\ \ \ \ \ \{}
-\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::pow(x,\ y.get\_value());}
-\DoxyCodeLine{00435\ \ \ \ \ \}}
-\DoxyCodeLine{00436\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00437\ \ \ \ \ \{}
-\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00439\ \ \ \ \ \}}
-\DoxyCodeLine{00440\ \}}
-\DoxyCodeLine{00441\ }
-\DoxyCodeLine{00442\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ y);}
-\DoxyCodeLine{00443\ \textcolor{keywordtype}{bool}\ operator\ <(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y);}
-\DoxyCodeLine{00444\ \textcolor{keywordtype}{bool}\ operator\ >(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y);}
-\DoxyCodeLine{00445\ \textcolor{keywordtype}{bool}\ operator\ <=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y);}
-\DoxyCodeLine{00446\ \textcolor{keywordtype}{bool}\ operator\ >=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y);}
-\DoxyCodeLine{00447\ }
-\DoxyCodeLine{00448\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar);}
-\DoxyCodeLine{00449\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar);}
-\DoxyCodeLine{00450\ \textcolor{keywordtype}{bool}\ operator\ <(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar);}
-\DoxyCodeLine{00451\ \textcolor{keywordtype}{bool}\ operator\ >(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar);}
-\DoxyCodeLine{00452\ \textcolor{keywordtype}{bool}\ operator\ <=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar);}
-\DoxyCodeLine{00453\ \textcolor{keywordtype}{bool}\ operator\ >=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar);}
-\DoxyCodeLine{00454\ }
-\DoxyCodeLine{00455\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00456\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00457\ \textcolor{keywordtype}{bool}\ operator\ <(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00458\ \textcolor{keywordtype}{bool}\ operator\ >(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00459\ \textcolor{keywordtype}{bool}\ operator\ <=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00460\ \textcolor{keywordtype}{bool}\ operator\ >=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00461\ }
-\DoxyCodeLine{00462\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00463\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y)}
-\DoxyCodeLine{00464\ \{}
-\DoxyCodeLine{00465\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.get\_value());}
-\DoxyCodeLine{00466\ \}}
-\DoxyCodeLine{00467\ }
-\DoxyCodeLine{00468\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00469\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y)}
-\DoxyCodeLine{00470\ \{}
-\DoxyCodeLine{00471\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00472\ \}}
-\DoxyCodeLine{00473\ }
-\DoxyCodeLine{00474\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00475\ \textcolor{keywordtype}{bool}\ operator\ <(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y)}
-\DoxyCodeLine{00476\ \{}
-\DoxyCodeLine{00477\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <\ y.get\_value());}
-\DoxyCodeLine{00478\ \}}
-\DoxyCodeLine{00479\ }
-\DoxyCodeLine{00480\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00481\ \textcolor{keywordtype}{bool}\ operator\ >(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y)}
-\DoxyCodeLine{00482\ \{}
-\DoxyCodeLine{00483\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >\ y.get\_value());}
-\DoxyCodeLine{00484\ \}}
-\DoxyCodeLine{00485\ }
-\DoxyCodeLine{00486\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00487\ \textcolor{keywordtype}{bool}\ operator\ <=(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y)}
-\DoxyCodeLine{00488\ \{}
-\DoxyCodeLine{00489\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <=\ y.get\_value());}
-\DoxyCodeLine{00490\ \}}
-\DoxyCodeLine{00491\ }
-\DoxyCodeLine{00492\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00493\ \textcolor{keywordtype}{bool}\ operator\ >=(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y)}
-\DoxyCodeLine{00494\ \{}
-\DoxyCodeLine{00495\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >=\ y.get\_value());}
-\DoxyCodeLine{00496\ \}}
-\DoxyCodeLine{00497\ }
-\DoxyCodeLine{00498\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00499\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ T\&\ y)}
-\DoxyCodeLine{00500\ \{}
-\DoxyCodeLine{00501\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.get\_value()\ ==\ y);}
-\DoxyCodeLine{00502\ \}}
-\DoxyCodeLine{00503\ }
-\DoxyCodeLine{00504\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00505\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ T\&\ y)}
-\DoxyCodeLine{00506\ \{}
-\DoxyCodeLine{00507\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00508\ \}}
-\DoxyCodeLine{00509\ }
-\DoxyCodeLine{00510\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00511\ \textcolor{keywordtype}{bool}\ operator\ <(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\textcolor{keyword}{const}\ T\&\ y)}
-\DoxyCodeLine{00512\ \{}
-\DoxyCodeLine{00513\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.get\_value()\ <\ y);}
-\DoxyCodeLine{00514\ \}}
-\DoxyCodeLine{00515\ }
-\DoxyCodeLine{00516\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00517\ \textcolor{keywordtype}{bool}\ operator\ >(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\textcolor{keyword}{const}\ T\&\ y)}
-\DoxyCodeLine{00518\ \{}
-\DoxyCodeLine{00519\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.get\_value()\ >\ y);}
-\DoxyCodeLine{00520\ \}}
-\DoxyCodeLine{00521\ }
-\DoxyCodeLine{00522\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00523\ \textcolor{keywordtype}{bool}\ operator\ <=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\textcolor{keyword}{const}\ T\&\ y)}
-\DoxyCodeLine{00524\ \{}
-\DoxyCodeLine{00525\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.get\_value()\ <=\ y);}
-\DoxyCodeLine{00526\ \}}
-\DoxyCodeLine{00527\ }
-\DoxyCodeLine{00528\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00529\ \textcolor{keywordtype}{bool}\ operator\ >=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\textcolor{keyword}{const}\ T\&\ y)}
-\DoxyCodeLine{00530\ \{}
-\DoxyCodeLine{00531\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.get\_value()\ >=\ y);}
-\DoxyCodeLine{00532\ \}}
-\DoxyCodeLine{00533\ }
-\DoxyCodeLine{00534\ \textcolor{keywordtype}{void}\ operator\ +=(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y);}
-\DoxyCodeLine{00535\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y);}
-\DoxyCodeLine{00536\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x);}
-\DoxyCodeLine{00537\ }
-\DoxyCodeLine{00538\ ostream\&\ operator\ <<(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00539\ istream\&\ operator\ >>(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00540\ }
-\DoxyCodeLine{00541\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_SCALAR\_UNIT\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_UNITS\_SCALAR\_UNIT\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_UNITS\_SCALAR\_UNIT\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../units/dimension.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}../units/prefix.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}../util/is\_number.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00016}\mbox{\hyperlink{scalar__unit_8hpp_abdac9beb140b6e7bdd3160342f20a856}{00016}}\ \textcolor{preprocessor}{\#define\ SCALAR\_UNIT\_HPP\_BEGIN(name)\ class\ name\ :\ public\ scalar\_unit\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\ \ \ \ \{\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ public:\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::scalar\_unit;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name();\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name(const\ scalar\_unit\&);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name(scalar\_unit\&\&);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::operator=;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::operator+=;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::operator-\/=}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00027}\mbox{\hyperlink{scalar__unit_8hpp_a4b546c5529612ff4159a2f1ac4d58af9}{00027}}\ \textcolor{preprocessor}{\#define\ SCALAR\_UNIT\_HPP\_END()\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00028}00028\ \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00029}00029\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ public:\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00030}00030\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ static\ const\ string\ dimensions\_match;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00031}00031\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ static\ const\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00032}00032\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00034}\mbox{\hyperlink{scalar__unit_8hpp_ab2113e04286d6bffb113bb62617c0cec}{00034}}\ \textcolor{preprocessor}{\#define\ SCALAR\_UNIT\_HPP(name)\ class\ name\ :\ public\ scalar\_unit\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00035}00035\ \textcolor{preprocessor}{\ \ \ \ \{\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00036}00036\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ public:\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00037}00037\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::scalar\_unit;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00038}00038\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name();\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00039}00039\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name(const\ scalar\_unit\&);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00040}00040\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name(scalar\_unit\&\&);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00041}00041\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::operator=;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00042}00042\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::operator+=;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00043}00043\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ scalar\_unit::operator-\/=;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00044}00044\ \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00045}00045\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ static\ const\ string\ dimensions\_match;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00046}00046\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ static\ const\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00047}00047\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00049}\mbox{\hyperlink{scalar__unit_8hpp_a48bd90c088a02ab6e4f599383a5009c3}{00049}}\ \textcolor{preprocessor}{\#define\ SCALAR\_UNIT\_CPP(name,init\_dimensions)\ name::name()\ :\ scalar\_unit()\ \{\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00050}00050\ \textcolor{preprocessor}{\ \ \ \ scalar\_unit::dimensions\ =\ name::real\_dimensions;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00051}00051\ \textcolor{preprocessor}{\}\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00052}00052\ \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00053}00053\ \textcolor{preprocessor}{\ \ \ \ name::name(const\ scalar\_unit\&\ x)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00054}00054\ \textcolor{preprocessor}{\ \ \ \ \{\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00055}00055\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ (x.has\_dimensions(name::real\_dimensions))\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00056}00056\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00057}00057\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ x.get\_value();\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00058}00058\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ dimensions\ =\ x.get\_dimensions();\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00059}00059\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00060}00060\ \textcolor{preprocessor}{\ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00061}00061\ \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00062}00062\ \textcolor{preprocessor}{\ \ \ \ name::name(scalar\_unit\&\&\ x)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00063}00063\ \textcolor{preprocessor}{\ \ \ \ \{\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00064}00064\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ (x.has\_dimensions(name::real\_dimensions))\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00065}00065\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00066}00066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ std::move(x.get\_value());\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00067}00067\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ dimensions\ =\ std::move(x.get\_dimensions());\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00068}00068\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00069}00069\ \textcolor{preprocessor}{\ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00070}00070\ \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00071}00071\ \textcolor{preprocessor}{const\ string\ name::dimensions\_match\ =\ init\_dimensions;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00072}00072\ \textcolor{preprocessor}{const\ vector<dimension>\ name::real\_dimensions\ =\ create\_derived\_dimensions(init\_dimensions)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00074}00074\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00076}00076\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacescifir}{scifir}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00077}00077\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00078}\mbox{\hyperlink{classscifir_1_1scalar__unit}{00078}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00079}00079\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab03d02ba63c30297b9739929659b38d5}{scalar\_unit}}();}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab03d02ba63c30297b9739929659b38d5}{scalar\_unit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab03d02ba63c30297b9739929659b38d5}{scalar\_unit}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab03d02ba63c30297b9739929659b38d5}{scalar\_unit}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab03d02ba63c30297b9739929659b38d5}{scalar\_unit}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab03d02ba63c30297b9739929659b38d5}{scalar\_unit}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab03d02ba63c30297b9739929659b38d5}{scalar\_unit}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab03d02ba63c30297b9739929659b38d5}{scalar\_unit}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab03d02ba63c30297b9739929659b38d5}{scalar\_unit}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab03d02ba63c30297b9739929659b38d5}{scalar\_unit}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab03d02ba63c30297b9739929659b38d5}{scalar\_unit}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab03d02ba63c30297b9739929659b38d5}{scalar\_unit}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_scalar}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a352ba4c9e26f2c644803b5ed51fe0de4}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a352ba4c9e26f2c644803b5ed51fe0de4}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a352ba4c9e26f2c644803b5ed51fe0de4}{operator\ =}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_scalar}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a40e2dec78deafcf4c6ae24129a11fd5c}{operator\ ==}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a7aeafdb65fe4ab246c83c59b51efc731}{operator\ +}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a8897df8c59682cf3fe28e2fe52bc2519}{operator\ -\/}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a35658ee94f8a802aaa02188acf289d13}{operator\ *}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a49db9492e36cfbde204ec4234888ad14}{operator\ /}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_afcba006cc5ecf0423ed028c2254c0104}{operator\ \string^}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_abbaf4dd62c32f8d16a6aaa1363430fd5}{operator\ +=}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_acd9a736b50d0a914e043fc97b9323e90}{operator\ -\/=}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00111}\mbox{\hyperlink{classscifir_1_1scalar__unit_ac395d00e4b4abaeb037d75bd83a068c4}{00111}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a7aeafdb65fe4ab246c83c59b51efc731}{operator\ +}}(T\ y)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00112}00112\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ y;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00119}\mbox{\hyperlink{classscifir_1_1scalar__unit_a5277a3985d9aa59cb23a2f4c461f3c30}{00119}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a8897df8c59682cf3fe28e2fe52bc2519}{operator\ -\/}}(T\ y)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00120}00120\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ -\/=\ y;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00127}\mbox{\hyperlink{classscifir_1_1scalar__unit_a9b250120739fca9c027ea3929f31a555}{00127}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a35658ee94f8a802aaa02188acf289d13}{operator\ *}}(T\ y)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00128}00128\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ *=\ y;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00135}\mbox{\hyperlink{classscifir_1_1scalar__unit_a597ee369782cd285beec1a76f9794792}{00135}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a49db9492e36cfbde204ec4234888ad14}{operator\ /}}(T\ y)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00136}00136\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ /=\ y;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<is\_integer\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00143}\mbox{\hyperlink{classscifir_1_1scalar__unit_a1e7a6b741716f2a06116808cbc5b22a8}{00143}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_afcba006cc5ecf0423ed028c2254c0104}{operator\ \string^}}(T\ y)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00144}00144\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab03d02ba63c30297b9739929659b38d5}{scalar\_unit}}(std::pow(\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}(),y),\mbox{\hyperlink{namespacescifir_ae7853fedb943915449a496bc373fc449}{power\_dimensions}}(\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}(),y));}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00149}\mbox{\hyperlink{classscifir_1_1scalar__unit_a0d1abb8fa0e6feb7486033c4bc97bbe4}{00149}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_abbaf4dd62c32f8d16a6aaa1363430fd5}{operator\ +=}}(T\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit_a64eba8849b847bbca056fb0e8bd45c39}{value}}\ +=\ y;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00155}\mbox{\hyperlink{classscifir_1_1scalar__unit_a17928a033e3292fea8ae8f4d087cac56}{00155}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_acd9a736b50d0a914e043fc97b9323e90}{operator\ -\/=}}(T\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit_a64eba8849b847bbca056fb0e8bd45c39}{value}}\ -\/=\ y;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00161}\mbox{\hyperlink{classscifir_1_1scalar__unit_a0b7780e065e19c2bbb3b918b0581ba27}{00161}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a0b7780e065e19c2bbb3b918b0581ba27}{operator\ *=}}(T\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit_a64eba8849b847bbca056fb0e8bd45c39}{value}}\ *=\ y;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00167}\mbox{\hyperlink{classscifir_1_1scalar__unit_ab2e5d01cbd910afdad116d6c06739409}{00167}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab2e5d01cbd910afdad116d6c06739409}{operator\ /=}}(T\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit_a64eba8849b847bbca056fb0e8bd45c39}{value}}\ /=\ y;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a7c2b17b498e1afd1110c4f3a0b76e7b1}{operator\ ++}}();}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a7c2b17b498e1afd1110c4f3a0b76e7b1}{operator\ ++}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a1ffcae0b6dceb9b188b0f3f0698a8aa8}{operator\ -\/-\/}}();}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a1ffcae0b6dceb9b188b0f3f0698a8aa8}{operator\ -\/-\/}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_aaf48aa357423e1f65044190c27053657}{change\_dimensions}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_aaf48aa357423e1f65044190c27053657}{change\_dimensions}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a4c076490a43430ad72b9443bb2d68fb7}{has\_dimensions}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a4c076490a43430ad72b9443bb2d68fb7}{has\_dimensions}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_dimensions}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a4c076490a43430ad72b9443bb2d68fb7}{has\_dimensions}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a0b736b31c71a1240704cda3300a45039}{has\_empty\_dimensions}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a14efad80e22f77b77b3b82de4c0c72ca}{display\_dimensions}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//string\ get\_dimensions\_match()\ const;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a266c61f83787ad59fbd8fe9741c522c6}{get\_derived\_dimensions}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00188}\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{00188}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00189}00189\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a31051a01340ebcb0d2616491a41e3857}{dimensions}};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00193}\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{00193}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00194}00194\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a64eba8849b847bbca056fb0e8bd45c39}{value}};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a5cec374081c39d864a7c3267b6edad09}{display}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2\ ,\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{with\_brackets}}\ =\ \textcolor{keyword}{false},\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{use\_close\_prefix}}\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_aacf2082b3224a8ded5798a0f1727b8a9}{derived\_display}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2,\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{with\_brackets}}\ =\ \textcolor{keyword}{false},\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{use\_close\_prefix}}\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_acc46b7f3e73c08b61e4528bc3331fc60}{custom\_display}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2,\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{with\_brackets}}\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00203}\mbox{\hyperlink{classscifir_1_1scalar__unit_a31051a01340ebcb0d2616491a41e3857}{00203}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a31051a01340ebcb0d2616491a41e3857}{dimensions}};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00204}\mbox{\hyperlink{classscifir_1_1scalar__unit_a64eba8849b847bbca056fb0e8bd45c39}{00204}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a64eba8849b847bbca056fb0e8bd45c39}{value}};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a28dc39e25122213c5d61cd56a260ef7b}{add\_dimension}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimension}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_ad78ee83a39d1d8a846545f4b3ff6339b}{remove\_dimension}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{old\_dimension}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_a05dcfa5468b6d3700ec90bc60bc3f26e}{initialize\_from\_string}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_scalar}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00209}00209\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00211}00211\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00212}00212\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacescifir_a35eaaedc7d36d386d328c0422e08863e}{is\_scalar\_unit}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_scalar}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00213}00213\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespacescifir_a0fca35769fd130e4f6303660a24e6c83}{abs}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00214}00214\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{namespacescifir_a44533727ef4f03e8303664cdd665c2bc}{pow}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x,\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{exponent}});}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00215}00215\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{namespacescifir_adeff4b825414d35ce963977f181f1b5c}{sqrt}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00216}00216\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{namespacescifir_a0b02e4d82f1d2253f6901264ff11ca38}{sqrt\_nth}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x,\ \textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00218}00218\ \ \ \ \ \textcolor{comment}{/*constexpr\ bool\ is\_valid\_scalar\_unit(const\ char*\ x\_init)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00219}00219\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00220}00220\ \textcolor{comment}{\ \ \ \ \ \ \ \ string\_view\ x\ =\ x\_init;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00221}00221\ \textcolor{comment}{\ \ \ \ \ \ \ \ bool\ dot\_present\ =\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00222}00222\ \textcolor{comment}{\ \ \ \ \ \ \ \ bool\ e\_present\ =\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00223}00223\ \textcolor{comment}{\ \ \ \ \ \ \ \ int\ current\_pos\ =\ 0;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00224}00224\ \textcolor{comment}{\ \ \ \ \ \ \ \ int\ e\_present\_pos\ =\ 0;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00225}00225\ \textcolor{comment}{\ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ x.length();\ i++)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00226}00226\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00227}00227\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (x[i]\ ==\ '\ ')}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00228}00228\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00229}00229\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (e\_present\ and\ ((e\_present\_pos\ +\ 1)\ ==\ i))}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00230}00230\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00231}00231\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00232}00232\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00233}00233\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_pos\ =\ i;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00234}00234\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00235}00235\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00236}00236\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (e\_present\ ==\ false)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00237}00237\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00238}00238\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (x[i]\ ==\ '.')}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00239}00239\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00240}00240\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (dot\_present)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00241}00241\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00242}00242\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00243}00243\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00244}00244\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00245}00245\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00246}00246\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dot\_present\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00247}00247\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00248}00248\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00249}00249\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (x[i]\ ==\ 'e'\ or\ x[i]\ ==\ 'E')}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00250}00250\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00251}00251\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e\_present\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00252}00252\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e\_present\_pos\ =\ i;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00253}00253\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00254}00254\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00255}00255\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (x[i]\ ==\ '*')}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00256}00256\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00257}00257\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!(x.substr(i\ +\ 1,3)\ ==\ "{}10\string^"{}))}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00258}00258\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00259}00259\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00260}00260\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00261}00261\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00262}00262\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00263}00263\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e\_present\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00264}00264\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ 3;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00265}00265\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e\_present\_pos\ =\ i;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00266}00266\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00267}00267\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00268}00268\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00269}00269\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (!isdigit(x[i]))}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00270}00270\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00271}00271\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00272}00272\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00273}00273\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (i\ ==\ (x.length()\ -\/\ 1))}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00274}00274\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00275}00275\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00276}00276\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00277}00277\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00278}00278\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00279}00279\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00280}00280\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!isdigit(x[i]))}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00281}00281\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00282}00282\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00283}00283\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00284}00284\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00285}00285\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00286}00286\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (current\_pos\ ==\ (x.length()\ -\/\ 1))}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00287}00287\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00288}00288\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00289}00289\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00290}00290\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (current\_pos\ ==\ 0)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00291}00291\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00292}00292\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00293}00293\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00294}00294\ \textcolor{comment}{\ \ \ \ \ \ \ \ vector<string\_view>\ values\ =\ x\ |\ std::ranges::split(x,"{}/"{})\ |\ std::ranges::to<std::vector>();}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00295}00295\ \textcolor{comment}{//\ \ \ \ \ \ boost::split(values,x.substr(current\_pos),boost::is\_any\_of("{}/"{}));}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00296}00296\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (values.size()\ ==\ 1)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00297}00297\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00298}00298\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ vector<string\_view>\ subvalues;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00299}00299\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ boost::split(subvalues,values[0],boost::is\_any\_of("{}*"{}));}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00300}00300\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ for\ (string\_view\&\ x\_subvalue\ :\ subvalues)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00301}00301\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00302}00302\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::trim(x\_subvalue);}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00303}00303\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bool\ number\_present\ =\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00304}00304\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ x\_subvalue.length();\ i++)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00305}00305\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00306}00306\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (number\_present\ ==\ false)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00307}00307\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00308}00308\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (isdigit(x\_subvalue[i]))}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00309}00309\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00310}00310\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ number\_present\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00311}00311\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00312}00312\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00313}00313\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (!isalpha(x\_subvalue[i]))}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00314}00314\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00315}00315\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00316}00316\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00317}00317\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00318}00318\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00319}00319\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00320}00320\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!isdigit(x\_subvalue[i]))}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00321}00321\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00322}00322\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00323}00323\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00324}00324\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00325}00325\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00326}00326\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00327}00327\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ return\ true;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00328}00328\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00329}00329\ \textcolor{comment}{\ \ \ \ \ \ \ \ else\ if\ (values.size()\ ==\ 2)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00330}00330\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00331}00331\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (values[0]\ !=\ "{}1"{})}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00332}00332\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00333}00333\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<string\_view>\ subvalues;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00334}00334\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::split(subvalues,values[0],boost::is\_any\_of("{}*"{}));}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00335}00335\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (string\_view\&\ x\_subvalue\ :\ subvalues)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00336}00336\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00337}00337\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::trim(x\_subvalue);}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00338}00338\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bool\ number\_present\ =\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00339}00339\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ x\_subvalue.length();\ i++)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00340}00340\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00341}00341\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (number\_present\ ==\ false)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00342}00342\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00343}00343\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (isdigit(x\_subvalue[i]))}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00344}00344\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00345}00345\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ number\_present\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00346}00346\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00347}00347\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00348}00348\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (!isalpha(x\_subvalue[i]))}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00349}00349\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00350}00350\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00351}00351\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00352}00352\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00353}00353\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00354}00354\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00355}00355\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!isdigit(x\_subvalue[i]))}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00356}00356\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00357}00357\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00358}00358\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00359}00359\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00360}00360\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00361}00361\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00362}00362\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00363}00363\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ vector<string\_view>\ subvalues\_denominator;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00364}00364\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ boost::split(subvalues\_denominator,values[1],boost::is\_any\_of("{}*"{}));}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00365}00365\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ for\ (string\_view\&\ x\_subvalue\ :\ subvalues\_denominator)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00366}00366\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00367}00367\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::trim(x\_subvalue);}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00368}00368\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bool\ number\_present\ =\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00369}00369\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ x\_subvalue.length();\ i++)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00370}00370\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00371}00371\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (number\_present\ ==\ false)}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00372}00372\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00373}00373\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (isdigit(x\_subvalue[i]))}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00374}00374\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00375}00375\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ number\_present\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00376}00376\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00377}00377\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00378}00378\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (!isalpha(x\_subvalue[i]))}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00379}00379\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00380}00380\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00381}00381\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00382}00382\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00383}00383\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00384}00384\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00385}00385\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!isdigit(x\_subvalue[i]))}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00386}00386\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00387}00387\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00388}00388\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00389}00389\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00390}00390\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00391}00391\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00392}00392\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ return\ true;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00393}00393\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00394}00394\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00395}00395\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00396}00396\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00398}00398\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00399}\mbox{\hyperlink{scalar__unit_8hpp_a30a19fad111411d38258af3008ca9b41}{00399}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ \mbox{\hyperlink{scalar__unit_8hpp_a30a19fad111411d38258af3008ca9b41}{operator\ +}}(\textcolor{keyword}{const}\ T\&\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00400}00400\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00401}00401\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ z\ =\ x;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00402}00402\ \ \ \ \ z\ +=\ y;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00403}00403\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00404}00404\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00406}00406\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00407}\mbox{\hyperlink{scalar__unit_8hpp_a3b487fab0e390b323b92dd9ec840291e}{00407}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ \mbox{\hyperlink{scalar__unit_8hpp_a3b487fab0e390b323b92dd9ec840291e}{operator\ -\/}}(\textcolor{keyword}{const}\ T\&\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00408}00408\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00409}00409\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ z\ =\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}((\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double})y,x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}());}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00410}00410\ \ \ \ \ z\ -\/=\ x;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00411}00411\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00412}00412\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00413}00413\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00414}00414\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00415}\mbox{\hyperlink{scalar__unit_8hpp_a47c4d5ad55999baf2f2514d76ffec0d8}{00415}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ \mbox{\hyperlink{scalar__unit_8hpp_a47c4d5ad55999baf2f2514d76ffec0d8}{operator\ *}}(\textcolor{keyword}{const}\ T\&\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00416}00416\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00417}00417\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ z\ =\ x;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00418}00418\ \ \ \ \ z\ *=\ y;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00419}00419\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00420}00420\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00421}00421\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00422}00422\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00423}\mbox{\hyperlink{scalar__unit_8hpp_a184ffa9b3e830e4135621aff28ffb1d9}{00423}}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ \mbox{\hyperlink{scalar__unit_8hpp_a184ffa9b3e830e4135621aff28ffb1d9}{operator\ /}}(\textcolor{keyword}{const}\ T\&\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00424}00424\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00425}00425\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ z\ =\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}((\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double})y,vector<scifir::dimension>());}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00426}00426\ \ \ \ \ \textcolor{keywordflow}{return}\ z\ /\ x;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00427}00427\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00428}00428\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00429}00429\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00430}\mbox{\hyperlink{scalar__unit_8hpp_a79c29d03395b3095b504b304189d7c30}{00430}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{scalar__unit_8hpp_a79c29d03395b3095b504b304189d7c30}{operator\ \string^}}(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00431}00431\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00432}00432\ \ \ \ \ \textcolor{keywordflow}{if}(y.\mbox{\hyperlink{classscifir_1_1scalar__unit_a0b736b31c71a1240704cda3300a45039}{has\_empty\_dimensions}}())}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00433}00433\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00434}00434\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::pow(x,\ y.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00435}00435\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00436}00436\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00437}00437\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00438}00438\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00439}00439\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00440}00440\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00441}00441\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00442}00442\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_ab3981bf2329e8722c88fd6f30663b9a7}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00443}00443\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_aecd33c43cfa361b9fad1bb32ea275275}{operator\ <}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00444}00444\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_a8ae998c77ea9c5a0384a3868d5ba598a}{operator\ >}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00445}00445\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_a14e8cb6a29ab10d0ef366fe11772b61b}{operator\ <=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00446}00446\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_af440af220f69b5a4fb573695990a1497}{operator\ >=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00447}00447\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00448}00448\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_ac5414d960d326f17e277b52da0172ff3}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00449}00449\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_ab3981bf2329e8722c88fd6f30663b9a7}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00450}00450\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_aecd33c43cfa361b9fad1bb32ea275275}{operator\ <}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00451}00451\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_a8ae998c77ea9c5a0384a3868d5ba598a}{operator\ >}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00452}00452\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_a14e8cb6a29ab10d0ef366fe11772b61b}{operator\ <=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00453}00453\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_af440af220f69b5a4fb573695990a1497}{operator\ >=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00454}00454\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00455}00455\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_ac5414d960d326f17e277b52da0172ff3}{operator\ ==}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00456}00456\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_ab3981bf2329e8722c88fd6f30663b9a7}{operator\ !=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00457}00457\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_aecd33c43cfa361b9fad1bb32ea275275}{operator\ <}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00458}00458\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_a8ae998c77ea9c5a0384a3868d5ba598a}{operator\ >}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00459}00459\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_a14e8cb6a29ab10d0ef366fe11772b61b}{operator\ <=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00460}00460\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_af440af220f69b5a4fb573695990a1497}{operator\ >=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00461}00461\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00462}00462\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00463}\mbox{\hyperlink{scalar__unit_8hpp_a24b4ac648aaa4d7097491b7841190c0a}{00463}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_ac5414d960d326f17e277b52da0172ff3}{operator\ ==}}(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00464}00464\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00465}00465\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00466}00466\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00467}00467\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00468}00468\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00469}\mbox{\hyperlink{scalar__unit_8hpp_a8006199c1d3b3d07b191987f49d380d2}{00469}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_ab3981bf2329e8722c88fd6f30663b9a7}{operator\ !=}}(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00470}00470\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00471}00471\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00472}00472\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00473}00473\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00474}00474\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00475}\mbox{\hyperlink{scalar__unit_8hpp_a8f4c759fe69c729f9e03cdb8823aceab}{00475}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_aecd33c43cfa361b9fad1bb32ea275275}{operator\ <}}(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00476}00476\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00477}00477\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <\ y.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00478}00478\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00479}00479\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00480}00480\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00481}\mbox{\hyperlink{scalar__unit_8hpp_ab4940b2177aa6a656fd9f5bb75afc8b7}{00481}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_a8ae998c77ea9c5a0384a3868d5ba598a}{operator\ >}}(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00482}00482\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00483}00483\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >\ y.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00484}00484\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00485}00485\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00486}00486\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00487}\mbox{\hyperlink{scalar__unit_8hpp_a194430b85a11e5ecf837863ef553e5be}{00487}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_a14e8cb6a29ab10d0ef366fe11772b61b}{operator\ <=}}(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00488}00488\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00489}00489\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <=\ y.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00490}00490\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00491}00491\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00492}00492\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00493}\mbox{\hyperlink{scalar__unit_8hpp_a5c7facc07d77001e06f268f4077f26fb}{00493}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_af440af220f69b5a4fb573695990a1497}{operator\ >=}}(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00494}00494\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00495}00495\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >=\ y.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00496}00496\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00497}00497\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00498}00498\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00499}\mbox{\hyperlink{scalar__unit_8hpp_a0b45d0d73d413a449e2bad8884a4298e}{00499}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_ac5414d960d326f17e277b52da0172ff3}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ T\&\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00500}00500\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00501}00501\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}()\ ==\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00502}00502\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00503}00503\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00504}00504\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00505}\mbox{\hyperlink{scalar__unit_8hpp_add2e8fb8b0344ba0ceb9984aecaf85d0}{00505}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_ab3981bf2329e8722c88fd6f30663b9a7}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ T\&\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00506}00506\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00507}00507\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00508}00508\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00509}00509\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00510}00510\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00511}\mbox{\hyperlink{scalar__unit_8hpp_a7907e963fe1f17b425941f1531d86f23}{00511}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_aecd33c43cfa361b9fad1bb32ea275275}{operator\ <}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\textcolor{keyword}{const}\ T\&\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00512}00512\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00513}00513\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}()\ <\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00514}00514\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00515}00515\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00516}00516\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00517}\mbox{\hyperlink{scalar__unit_8hpp_a4eadae30bbb0e9287c0e4b922e970f8b}{00517}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_a8ae998c77ea9c5a0384a3868d5ba598a}{operator\ >}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\textcolor{keyword}{const}\ T\&\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00518}00518\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00519}00519\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}()\ >\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00520}00520\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00521}00521\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00522}00522\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00523}\mbox{\hyperlink{scalar__unit_8hpp_a07b14eb9751fb6f2fe73e92517aa6157}{00523}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_a14e8cb6a29ab10d0ef366fe11772b61b}{operator\ <=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\textcolor{keyword}{const}\ T\&\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00524}00524\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00525}00525\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}()\ <=\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00526}00526\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00527}00527\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00528}00528\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00529}\mbox{\hyperlink{scalar__unit_8hpp_a05f056f9e6c7b1d3cf12787e0a7c99ce}{00529}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scalar__unit_8hpp_af440af220f69b5a4fb573695990a1497}{operator\ >=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\textcolor{keyword}{const}\ T\&\ y)}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00530}00530\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00531}00531\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}()\ >=\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00532}00532\ \}}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00533}00533\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00534}00534\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{scalar__unit_8hpp_abf3b2cc85b8e6d6eee349a5bc5ac5451}{operator\ +=}}(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00535}00535\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{scalar__unit_8hpp_a30a19fad111411d38258af3008ca9b41}{operator\ +}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00536}00536\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{scalar__unit_8hpp_a30a19fad111411d38258af3008ca9b41}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00537}00537\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00538}00538\ ostream\&\ \mbox{\hyperlink{scalar__unit_8hpp_ab8b595d4b8668b470fc798467f717f90}{operator\ <<}}(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00539}00539\ istream\&\ \mbox{\hyperlink{scalar__unit_8hpp_a87b187747bd139fdc1ac5607f6b0ca50}{operator\ >>}}(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00540}00540\ }
+\DoxyCodeLine{\Hypertarget{scalar__unit_8hpp_source_l00541}00541\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_SCALAR\_UNIT\_HPP\_INCLUDED}}
 
 \end{DoxyCode}

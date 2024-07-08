@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['lab_5fnumber_0',['lab_number',['../classscifir_1_1lab__number.html#a7a9a83ef6d51f55e30477f1101b73037',1,'scifir::lab_number::lab_number()'],['../classscifir_1_1lab__number.html#a3253ee657dbe92a1d1ef86cc04a3db86',1,'scifir::lab_number::lab_number(const lab_number&lt; T &gt; &amp;x)'],['../classscifir_1_1lab__number.html#aa3c6996e9a044e34d835e41829ee6648',1,'scifir::lab_number::lab_number(lab_number&lt; T &gt; &amp;&amp;x)'],['../classscifir_1_1lab__number.html#a8684fac1201417ca1f6d09d27df967ee',1,'scifir::lab_number::lab_number(const T &amp;x, const T &amp;y)'],['../classscifir_1_1lab__number.html#a28b2ad50f1b21c5025370a51a42af5c1',1,'scifir::lab_number::lab_number(const string &amp;x, const string &amp;y)'],['../classscifir_1_1lab__number.html#aa8cfcfa3ae0d44c0bbe51ea80fa01798',1,'scifir::lab_number::lab_number(const string &amp;init_lab_number)']]]
+];

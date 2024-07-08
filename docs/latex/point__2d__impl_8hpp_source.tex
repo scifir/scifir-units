@@ -1,43 +1,43 @@
 \doxysection{point\+\_\+2d\+\_\+impl.\+hpp}
 \hypertarget{point__2d__impl_8hpp_source}{}\label{point__2d__impl_8hpp_source}\index{topology/point\_2d\_impl.hpp@{topology/point\_2d\_impl.hpp}}
-
+\mbox{\hyperlink{point__2d__impl_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_2D\_IMPL\_HPP\_INCLUDED}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_2D\_IMPL\_HPP\_INCLUDED}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../topology/point\_2d.hpp"{}}}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../coordinates/coordinates\_2d.hpp"{}}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }scifir}
-\DoxyCodeLine{00011\ \{}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00013\ \ \ \ \ point\_2d<T>::point\_2d(\textcolor{keyword}{const}\ coordinates\_2d<T>\&\ x\_coordinates)\ :\ x(x\_coordinates.x),y(x\_coordinates.y)}
-\DoxyCodeLine{00014\ \ \ \ \ \{\}}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00017\ \ \ \ \ point\_2d<T>::point\_2d(coordinates\_2d<T>\&\&\ x\_coordinates)\ :\ x(std::move(x\_coordinates.x)),y(std::move(x\_coordinates.y))}
-\DoxyCodeLine{00018\ \ \ \ \ \{\}}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00021\ \ \ \ \ point\_2d<T>\&\ point\_2d<T>::operator=(\textcolor{keyword}{const}\ coordinates\_2d<T>\&\ x\_coordinates)}
-\DoxyCodeLine{00022\ \ \ \ \ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ x\ =\ x\_coordinates.x;}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ y\ =\ x\_coordinates.y;}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00026\ \ \ \ \ \}}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00029\ \ \ \ \ point\_2d<T>\&\ point\_2d<T>::operator=(coordinates\_2d<T>\&\&\ x\_coordinates)}
-\DoxyCodeLine{00030\ \ \ \ \ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ x\ =\ std::move(x\_coordinates.x);}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ y\ =\ std::move(x\_coordinates.y);}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00034\ \ \ \ \ \}}
-\DoxyCodeLine{00035\ \}}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_2D\_IMPL\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_2D\_IMPL\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_2D\_IMPL\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../topology/point\_2d.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}../coordinates/coordinates\_2d.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00008}00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacescifir}{scifir}}}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00013}\mbox{\hyperlink{classscifir_1_1point__2d_ad0f84adcdef51030227301f3a4e34a7f}{00013}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a6a7113ba1c75995ba45b5bc8f441a103}{point\_2d<T>::point\_2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y)}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00014}00014\ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00017}\mbox{\hyperlink{classscifir_1_1point__2d_a196ea3910459569f2ba341e914813b7e}{00017}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a6a7113ba1c75995ba45b5bc8f441a103}{point\_2d<T>::point\_2d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})\ :\ x(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.x)),y(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y))}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00018}00018\ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00021}\mbox{\hyperlink{classscifir_1_1point__2d_ae15b825fed9c2c86bfc2e9879624b47c}{00021}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1point__2d_a329d206dff1207edaf5deee48fdc35e3}{point\_2d<T>::operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d_a4d69d622e18fc50173184e26a22c1274}{x}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.\mbox{\hyperlink{classscifir_1_1coordinates__1d_a4d69d622e18fc50173184e26a22c1274}{x}};}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y;}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00029}\mbox{\hyperlink{classscifir_1_1point__2d_a2feafac222993aff1b65858eb3db420f}{00029}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1point__2d_a329d206dff1207edaf5deee48fdc35e3}{point\_2d<T>::operator=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d_a4d69d622e18fc50173184e26a22c1274}{x}}\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.\mbox{\hyperlink{classscifir_1_1coordinates__1d_a4d69d622e18fc50173184e26a22c1274}{x}});}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ y\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.y);}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{point__2d__impl_8hpp_source_l00037}00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_2D\_IMPL\_HPP\_INCLUDED}}
 
 \end{DoxyCode}

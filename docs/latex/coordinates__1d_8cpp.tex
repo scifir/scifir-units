@@ -1,0 +1,50 @@
+\doxysection{coordinates/coordinates\+\_\+1d.cpp File Reference}
+\hypertarget{coordinates__1d_8cpp}{}\label{coordinates__1d_8cpp}\index{coordinates/coordinates\_1d.cpp@{coordinates/coordinates\_1d.cpp}}
+{\ttfamily \#include "{}./coordinates\+\_\+1d.\+hpp"{}}\newline
+{\ttfamily \#include "{}../util/types.\+hpp"{}}\newline
+Include dependency graph for coordinates\+\_\+1d.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{coordinates__1d_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+\begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\+\_\+1d}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&x)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_a5b44128227fa8f95625e0f4d51f3b783}{scifir\+::distance}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\+\_\+1d}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\+\_\+1d}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_a4a7283524ab5ed4f2a37f9c355f8083a}{scifir\+::distance}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\+\_\+1d}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1point__1d}{point\+\_\+1d}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_a71d2c6e2318c40f532b0289cc6e04898}{scifir\+::distance}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1point__1d}{point\+\_\+1d}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\+\_\+1d}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&y)
+\item 
+ostream \& \mbox{\hyperlink{coordinates__1d_8cpp_ad4adafda9a0a853d2821f0cc10db00b4}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir\+::coordinates\+\_\+1d}}$<$ float $>$ \&x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{coordinates__1d_8cpp_ad4adafda9a0a853d2821f0cc10db00b4}\label{coordinates__1d_8cpp_ad4adafda9a0a853d2821f0cc10db00b4} 
+\index{coordinates\_1d.cpp@{coordinates\_1d.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!coordinates\_1d.cpp@{coordinates\_1d.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir\+::coordinates\+\_\+1d}}$<$ float $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__1d_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{coordinates__1d_8cpp_source}{coordinates\+\_\+1d.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{scifir::to\_string}}(x);}
+\DoxyCodeLine{00032\ \}}
+
+\end{DoxyCode}

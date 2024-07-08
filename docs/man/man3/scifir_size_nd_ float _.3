@@ -6,9 +6,14 @@ scifir::size_nd< float >
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <size_nd\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBsize_nd\fP ()"
+.br
 .ti -1c
 .RI "\fBsize_nd\fP (\fBconst\fP \fBsize_nd\fP< \fBfloat\fP > &x)"
 .br
@@ -65,6 +70,271 @@ scifir::size_nd< float >
 .RI "vector< \fBfloat\fP > \fBwidths\fP"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBconst\fP \fBstring\fP &\fBinit_size_nd\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB175\fP of file \fBsize_nd\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBscifir::size_nd\fP< \fBfloat\fP >::size_nd ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB178\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+178                       : widths()
+179             {}
+.fi
+
+.SS "\fBscifir::size_nd\fP< \fBfloat\fP >::size_nd (\fBconst\fP \fBsize_nd\fP< \fBfloat\fP > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB181\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+181                                              : widths(x\&.widths)
+182             {}
+.fi
+
+.SS "\fBscifir::size_nd\fP< \fBfloat\fP >::size_nd (\fBsize_nd\fP< \fBfloat\fP > && x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB184\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+184                                         : widths(std::move(x\&.widths))
+185             {}
+.fi
+
+.SS "\fBscifir::size_nd\fP< \fBfloat\fP >::size_nd (\fBconst\fP vector< \fBfloat\fP > & new_widths)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB187\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+187                                                               : widths(new_widths)
+188             {}
+.fi
+
+.SS "\fBscifir::size_nd\fP< \fBfloat\fP >::size_nd (\fBconst\fP vector< \fBstring\fP > & new_widths)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB190\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+190                                                                : widths()
+191             {
+192                 for (const string& new_width : new_widths)
+193                 {
+194                     widths\&.push_back(stof(new_width));
+195                 }
+196             }
+.fi
+
+.SS "\fBscifir::size_nd\fP< \fBfloat\fP >::size_nd (\fBconst\fP \fBstring\fP & init_size_nd)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB198\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+198                                                          : size_nd()
+199             {
+200                 initialize_from_string(init_size_nd);
+201             }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBstring\fP \fBscifir::size_nd\fP< \fBfloat\fP >::display () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB297\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+298             {
+299                 if (widths\&.size() > 0)
+300                 {
+301                     ostringstream output;
+302                     output << display_float(widths[0],2);
+303                     for (unsigned int i = 1; i < widths\&.size(); i++)
+304                     {
+305                         output << " * " << display_float(widths[i],2);
+306                     }
+307                     return output\&.str();
+308                 }
+309                 else
+310                 {
+311                     return "[empty]";
+312                 }
+313             }
+.fi
+
+.SS "\fBint\fP \fBscifir::size_nd\fP< \fBfloat\fP >::get_nd () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB226\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+227             {
+228                 return int(widths\&.size());
+229             }
+.fi
+
+.SS "\fBfloat\fP \fBscifir::size_nd\fP< \fBfloat\fP >::get_volume_nd () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB287\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+288             {
+289                 float new_value = 1;
+290                 for (unsigned int i = 0; i < widths\&.size(); i++)
+291                 {
+292                     new_value *= widths[i];
+293                 }
+294                 return new_value;
+295             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::size_nd\fP< \fBfloat\fP >::initialize_from_string (\fBconst\fP \fBstring\fP & init_size_nd)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB318\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+319             {
+320                 widths\&.clear();
+321                 vector<string> new_widths;
+322                 boost::split(new_widths,init_size_nd,boost::is_any_of("*"));
+323                 for (string& new_width : new_widths)
+324                 {
+325                     boost::trim(new_width);
+326                     widths\&.push_back(stof(new_width));
+327                 }
+328             }
+.fi
+
+.SS "\fBbool\fP \fBscifir::size_nd\fP< \fBfloat\fP >::is_nd (\fBunsigned\fP \fBint\fP i) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB221\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+222             {
+223                 return widths\&.size() == i;
+224             }
+.fi
+
+.SS "\fBsize_nd\fP< \fBfloat\fP > \fBscifir::size_nd\fP< \fBfloat\fP >::operator+ (\fBconst\fP \fBsize_nd\fP< \fBfloat\fP > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB231\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+232             {
+233                 if (get_nd() == x\&.get_nd())
+234                 {
+235                     vector<float> new_widths = widths;
+236                     for (unsigned int i = 0; i < new_widths\&.size(); i++)
+237                     {
+238                         new_widths[i] += x\&.widths[i];
+239                     }
+240                     return size_nd<float>(new_widths);
+241                 }
+242                 else
+243                 {
+244                     return size_nd<float>();
+245                 }
+246             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::size_nd\fP< \fBfloat\fP >::operator+= (\fBconst\fP \fBsize_nd\fP< \fBfloat\fP > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB265\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+266             {
+267                 if (get_nd() == x\&.get_nd())
+268                 {
+269                     for (unsigned int i = 0; i < widths\&.size(); i++)
+270                     {
+271                         widths[i] += x\&.widths[i];
+272                     }
+273                 }
+274             }
+.fi
+
+.SS "\fBsize_nd\fP< \fBfloat\fP > \fBscifir::size_nd\fP< \fBfloat\fP >::operator\- (\fBconst\fP \fBsize_nd\fP< \fBfloat\fP > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB248\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+249             {
+250                 if (get_nd() == x\&.get_nd())
+251                 {
+252                     vector<float> new_widths = widths;
+253                     for (unsigned int i = 0; i < new_widths\&.size(); i++)
+254                     {
+255                         new_widths[i] \-= x\&.widths[i];
+256                     }
+257                     return size_nd<float>(new_widths);
+258                 }
+259                 else
+260                 {
+261                     return size_nd<float>();
+262                 }
+263             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::size_nd\fP< \fBfloat\fP >::operator\-= (\fBconst\fP \fBsize_nd\fP< \fBfloat\fP > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB276\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+277             {
+278                 if (get_nd() == x\&.get_nd())
+279                 {
+280                     for (unsigned int i = 0; i < widths\&.size(); i++)
+281                     {
+282                         widths[i] \-= x\&.widths[i];
+283                     }
+284                 }
+285             }
+.fi
+
+.SS "\fBsize_nd\fP< \fBfloat\fP > & \fBscifir::size_nd\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBsize_nd\fP< \fBfloat\fP > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB203\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+204             {
+205                 widths = x\&.widths;
+206                 return *this;
+207             }
+.fi
+
+.SS "\fBsize_nd\fP< \fBfloat\fP > & \fBscifir::size_nd\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBstring\fP & init_size_nd)\fC [inline]\fP"
+
+.PP
+Definition at line \fB215\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+216             {
+217                 initialize_from_string(init_size_nd);
+218                 return *this;
+219             }
+.fi
+
+.SS "\fBsize_nd\fP< \fBfloat\fP > & \fBscifir::size_nd\fP< \fBfloat\fP >::operator= (\fBsize_nd\fP< \fBfloat\fP > && x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB209\fP of file \fBsize_nd\&.hpp\fP\&..PP
+.nf
+210             {
+211                 widths = std::move(x\&.widths);
+212                 return *this;
+213             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "vector<\fBfloat\fP> \fBscifir::size_nd\fP< \fBfloat\fP >::widths"
+
+.PP
+Definition at line \fB315\fP of file \fBsize_nd\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

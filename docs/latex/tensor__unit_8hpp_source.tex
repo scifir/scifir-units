@@ -1,298 +1,298 @@
 \doxysection{tensor\+\_\+unit.\+hpp}
 \hypertarget{tensor__unit_8hpp_source}{}\label{tensor__unit_8hpp_source}\index{units/tensor\_unit.hpp@{units/tensor\_unit.hpp}}
-
+\mbox{\hyperlink{tensor__unit_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_UNITS\_TENSOR\_UNIT\_HPP\_INCLUDED}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_UNITS\_TENSOR\_UNIT\_HPP\_INCLUDED}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}./scalar\_unit.hpp"{}}}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }scifir}
-\DoxyCodeLine{00011\ \{}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}}
-\DoxyCodeLine{00014\ \ \ \ \ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ type\ \{\ SCALAR,\ VECTOR,\ MATRIX\ \};}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}()\ :\ values()}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}\&\ x)\ :\ values(x.values)}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}(\mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}\&\&\ x)\ :\ values(std::move(x.values))}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}(\textcolor{keyword}{const}\ vector<\mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<T>}}>\&\ x)\ :\ values()}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ :\ values()}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x)\ :\ values()}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\_unit\_3d}}\&\ x)\ :\ values()}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x)\ :\ values()}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}\&\ x)}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values\ =\ x.values;}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}\&\&\ x)}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values\ =\ std::move(x.values);}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ get\_dimension()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00055\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ >\ 0)}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ ==\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ values[0].size()\ ==\ 1)}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (values.size()\ ==\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ values[0].size()\ >\ 1)}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values[0].\mbox{\hyperlink{classscifir_1_1coordinates__1d}{size}}()\ ==\ 1)}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 3;}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ tensor\_unit::type\ get\_type()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00085\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ >\ 0)}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ ==\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ values[0].size()\ ==\ 1)}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tensor\_unit::SCALAR;}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (values.size()\ ==\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ values[0].size()\ >\ 1)}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tensor\_unit::VECTOR;}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values[0].\mbox{\hyperlink{classscifir_1_1coordinates__1d}{size}}()\ ==\ 1)}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tensor\_unit::VECTOR;}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tensor\_unit::MATRIX;}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00113\ }
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_scalar()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00115\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ ==\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ values[0].size()\ ==\ 1)}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_vector()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00127\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((values.size()\ ==\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ values[0].size()\ >\ 1)\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{or}}\ (values.size()\ >\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ values[0].size()\ ==\ 1))}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00137\ }
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_matrix()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00139\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ >\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ values[0].size()\ >\ 1)}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00149\ }
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}\ operator+(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<U>}}\&\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00152\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tensor\_unit::type\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ =\ get\_type();}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tensor\_unit::type\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ =\ x.get\_type();}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ ==\ tensor\_unit::SCALAR\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ ==\ tensor\_unit::SCALAR)}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_scalar}}\ =\ values[0][0]\ +\ x.values[0][0];}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_scalar}});}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ ==\ tensor\_unit::VECTOR\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ ==\ tensor\_unit::VECTOR)}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ ==\ x.values.size())}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<vector<scalar\_unit>}}>\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}();}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}.push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<scalar\_unit>}}());}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ =\ 0;\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ <\ values.size();\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}++)}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ values[0][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}]\ +\ x.values[0][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}];}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}[0].push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}});}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}();}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ ==\ tensor\_unit::MATRIX\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ ==\ tensor\_unit::MATRIX)}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ ==\ x.values.size()\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ values[0].size()\ ==\ x.values[0].size())}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<vector<scalar\_unit>}}>\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}();}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ =\ 0;\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ <\ values.size();\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}++)}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}.push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<scalar\_unit>}}());}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}\ =\ 0;\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}\ <\ values[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}].size();\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}++)}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ values[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}]\ +\ x.values[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}];}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}].push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}});}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}();}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}();}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00204\ }
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}\ operator-\/(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<U>}}\&\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00207\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tensor\_unit::type\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ =\ get\_type();}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tensor\_unit::type\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ =\ x.get\_type();}
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ ==\ tensor\_unit::SCALAR\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ ==\ tensor\_unit::SCALAR)}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_scalar}}\ =\ values[0][0]\ -\/\ x.values[0][0];}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_scalar}});}
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ ==\ tensor\_unit::VECTOR\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ ==\ tensor\_unit::VECTOR)}
-\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ ==\ x.values.size())}
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<vector<scalar\_unit>}}>\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}();}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}.push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<scalar\_unit>}}());}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ =\ 0;\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ <\ values.size();\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}++)}
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ values[0][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}]\ -\/\ x.values[0][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}];}
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}[0].push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}});}
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}();}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ ==\ tensor\_unit::MATRIX\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ ==\ tensor\_unit::MATRIX)}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ ==\ x.values.size()\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ values[0].size()\ ==\ x.values[0].size())}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<vector<scalar\_unit>}}>\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}();}
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ =\ 0;\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ <\ values.size();\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}++)}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}.push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<scalar\_unit>}}());}
-\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}\ =\ 0;\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}\ <\ values[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}].size();\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}++)}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ values[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}]\ -\/\ x.values[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}];}
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}].push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}});}
-\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}();}
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}();}
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00259\ }
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<vector<T>}}>\ values;}
-\DoxyCodeLine{00261\ \ \ \ \ \};}
-\DoxyCodeLine{00262\ }
-\DoxyCodeLine{00263\ \ \ \ \ \textcolor{comment}{//\ tensor\_unit<scalar\_unit>\ broadcast()}}
-\DoxyCodeLine{00264\ \}}
-\DoxyCodeLine{00265\ }
-\DoxyCodeLine{00266\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
-\DoxyCodeLine{00267\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::tensor\_unit<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::tensor\_unit<U>}}\&\ y)}
-\DoxyCodeLine{00268\ \{}
-\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordflow}{if}\ ((x.values.size()\ !=\ y.values.size())\ or\ (x.values[0].size()\ !=\ y.values[0].size()))}
-\DoxyCodeLine{00270\ \ \ \ \ \{}
-\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00272\ \ \ \ \ \}}
-\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ x.values.size();\ i++)}
-\DoxyCodeLine{00274\ \ \ \ \ \{}
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ x.values[i].size();\ j++)}
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.values[i][j]\ !=\ y.values[i][j])}
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00282\ \ \ \ \ \}}
-\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00284\ \}}
-\DoxyCodeLine{00285\ }
-\DoxyCodeLine{00286\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
-\DoxyCodeLine{00287\ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::tensor\_unit<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::tensor\_unit<U>}}\&\ y)}
-\DoxyCodeLine{00288\ \{}
-\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00290\ \}}
-\DoxyCodeLine{00291\ }
-\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_TENSOR\_UNIT\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_UNITS\_TENSOR\_UNIT\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_UNITS\_TENSOR\_UNIT\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{scalar__unit_8hpp}{./scalar\_unit.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00008}00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacescifir}{scifir}}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00013}\mbox{\hyperlink{classscifir_1_1tensor__unit}{00013}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00016}\mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5a4d5d10bdaff5d0a111f406924eea46d6}{00016}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5}{type}}\ \{\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5a4030fe47968e868191ddb848eb651c3b}{SCALAR}},\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5afceaf795cdc2795a1a4a0ed8604064c1}{VECTOR}},\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5a4d5d10bdaff5d0a111f406924eea46d6}{MATRIX}}\ \};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00018}\mbox{\hyperlink{classscifir_1_1tensor__unit_a4fbfe3a83d3af782b164012006092fda}{00018}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit_a4fbfe3a83d3af782b164012006092fda}{tensor\_unit}}()\ :\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}()}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00021}\mbox{\hyperlink{classscifir_1_1tensor__unit_a499a3e3322d302836e49f1adedd14104}{00021}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit_a499a3e3322d302836e49f1adedd14104}{tensor\_unit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}\&\ x)\ :\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}(x.\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}})}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00024}\mbox{\hyperlink{classscifir_1_1tensor__unit_a4bb64b2aba80418ab04c724c1f051a5d}{00024}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit_a4bb64b2aba80418ab04c724c1f051a5d}{tensor\_unit}}(\mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}\&\&\ x)\ :\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}(std::move(x.\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}))}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00027}\mbox{\hyperlink{classscifir_1_1tensor__unit_a1898e0e183efa8e0d6890f91827c642a}{00027}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a1898e0e183efa8e0d6890f91827c642a}{tensor\_unit}}(\textcolor{keyword}{const}\ vector<\mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<T>}}>\&\ x)\ :\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}()}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00030}\mbox{\hyperlink{classscifir_1_1tensor__unit_a4ec1470e8c8436b15fef10518f230caa}{00030}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a4ec1470e8c8436b15fef10518f230caa}{tensor\_unit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ :\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}()}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00033}\mbox{\hyperlink{classscifir_1_1tensor__unit_afc1ed112daa558f762632a7a95b7b44a}{00033}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_afc1ed112daa558f762632a7a95b7b44a}{tensor\_unit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x)\ :\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}()}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00036}\mbox{\hyperlink{classscifir_1_1tensor__unit_a9646ef2a00f5fe2808c9f159379f0d1d}{00036}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a9646ef2a00f5fe2808c9f159379f0d1d}{tensor\_unit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__3d}{vector\_unit\_3d}}\&\ x)\ :\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}()}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00039}\mbox{\hyperlink{classscifir_1_1tensor__unit_adfdb65a8bc3505d78d4b1a9a0f17084b}{00039}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_adfdb65a8bc3505d78d4b1a9a0f17084b}{tensor\_unit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\_unit\_nd}}\&\ x)\ :\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}()}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00042}\mbox{\hyperlink{classscifir_1_1tensor__unit_aa8c19210f952f0ae5b0be206f73b9710}{00042}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1tensor__unit_aa8c19210f952f0ae5b0be206f73b9710}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}\ =\ x.\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00048}\mbox{\hyperlink{classscifir_1_1tensor__unit_a796e63f8c1b2349e7a3ab60e30a187c1}{00048}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}\&\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a796e63f8c1b2349e7a3ab60e30a187c1}{operator=}}(\mbox{\hyperlink{classscifir_1_1tensor__unit}{tensor\_unit}}\&\&\ x)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}\ =\ std::move(x.values);}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00054}\mbox{\hyperlink{classscifir_1_1tensor__unit_afd2de93f23b20f21a414361aece21ff3}{00054}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_afd2de93f23b20f21a414361aece21ff3}{get\_dimension}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00055}00055\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size()\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size()\ ==\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0].size()\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size()\ ==\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0].size()\ >\ 1)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0].\mbox{\hyperlink{classscifir_1_1coordinates__1d}{size}}()\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 3;}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00084}\mbox{\hyperlink{classscifir_1_1tensor__unit_a464893c2ef1f599dc5c6ece573d1235c}{00084}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5}{tensor\_unit::type}}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a464893c2ef1f599dc5c6ece573d1235c}{get\_type}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00085}00085\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size()\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size()\ ==\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0].size()\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5a4030fe47968e868191ddb848eb651c3b}{tensor\_unit::SCALAR}};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size()\ ==\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0].size()\ >\ 1)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5afceaf795cdc2795a1a4a0ed8604064c1}{tensor\_unit::VECTOR}};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0].\mbox{\hyperlink{classscifir_1_1coordinates__1d}{size}}()\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5afceaf795cdc2795a1a4a0ed8604064c1}{tensor\_unit::VECTOR}};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5a4d5d10bdaff5d0a111f406924eea46d6}{tensor\_unit::MATRIX}};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00114}\mbox{\hyperlink{classscifir_1_1tensor__unit_a2888fbaaa2890d3551fa746d5851bd25}{00114}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a2888fbaaa2890d3551fa746d5851bd25}{is\_scalar}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00115}00115\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size()\ ==\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0].size()\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00126}\mbox{\hyperlink{classscifir_1_1tensor__unit_aa01e92b7562bf04e9d5376b9a0bc7a44}{00126}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_aa01e92b7562bf04e9d5376b9a0bc7a44}{is\_vector}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00127}00127\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size()\ ==\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0].size()\ >\ 1)\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{or}}\ (\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size()\ >\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0].size()\ ==\ 1))}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00138}\mbox{\hyperlink{classscifir_1_1tensor__unit_a471648b4d7cdc18edbf47e0aee51b5f3}{00138}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a471648b4d7cdc18edbf47e0aee51b5f3}{is\_matrix}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00139}00139\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size()\ >\ 1\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0].size()\ >\ 1)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00151}\mbox{\hyperlink{classscifir_1_1tensor__unit_a7de0fba30ce28194debefa0e66c90fba}{00151}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a7de0fba30ce28194debefa0e66c90fba}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<U>}}\&\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00152}00152\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5}{tensor\_unit::type}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ =\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a464893c2ef1f599dc5c6ece573d1235c}{get\_type}}();}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5}{tensor\_unit::type}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ =\ x.get\_type();}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ ==\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5a4030fe47968e868191ddb848eb651c3b}{tensor\_unit::SCALAR}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ ==\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5a4030fe47968e868191ddb848eb651c3b}{tensor\_unit::SCALAR}})}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_scalar}}\ =\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0][0]\ +\ x.values[0][0];}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_scalar}});}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ ==\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5afceaf795cdc2795a1a4a0ed8604064c1}{tensor\_unit::VECTOR}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ ==\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5afceaf795cdc2795a1a4a0ed8604064c1}{tensor\_unit::VECTOR}})}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size()\ ==\ x.values.size())}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<vector<scalar\_unit>}}>\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}();}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}.push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<scalar\_unit>}}());}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ =\ 0;\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ <\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size();\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}++)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}]\ +\ x.values[0][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}];}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}[0].push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}});}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}();}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ ==\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5a4d5d10bdaff5d0a111f406924eea46d6}{tensor\_unit::MATRIX}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ ==\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5a4d5d10bdaff5d0a111f406924eea46d6}{tensor\_unit::MATRIX}})}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size()\ ==\ x.values.size()\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0].size()\ ==\ x.values[0].size())}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<vector<scalar\_unit>}}>\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}();}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ =\ 0;\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ <\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size();\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}++)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}.push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<scalar\_unit>}}());}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}\ =\ 0;\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}\ <\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}].size();\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}++)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}]\ +\ x.values[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}];}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}].push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}});}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}();}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}();}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00206}\mbox{\hyperlink{classscifir_1_1tensor__unit_a037553f63c1d8fbdcfcad4e10eb91dd6}{00206}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a037553f63c1d8fbdcfcad4e10eb91dd6}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<U>}}\&\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00207}00207\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5}{tensor\_unit::type}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ =\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a464893c2ef1f599dc5c6ece573d1235c}{get\_type}}();}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5}{tensor\_unit::type}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ =\ x.get\_type();}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ ==\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5a4030fe47968e868191ddb848eb651c3b}{tensor\_unit::SCALAR}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ ==\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5a4030fe47968e868191ddb848eb651c3b}{tensor\_unit::SCALAR}})}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_scalar}}\ =\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0][0]\ -\/\ x.values[0][0];}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_scalar}});}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ ==\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5afceaf795cdc2795a1a4a0ed8604064c1}{tensor\_unit::VECTOR}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ ==\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5afceaf795cdc2795a1a4a0ed8604064c1}{tensor\_unit::VECTOR}})}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size()\ ==\ x.values.size())}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<vector<scalar\_unit>}}>\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}();}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}.push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<scalar\_unit>}}());}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ =\ 0;\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ <\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size();\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}++)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}]\ -\/\ x.values[0][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}];}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}[0].push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}});}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}();}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{this\_type}}\ ==\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5a4d5d10bdaff5d0a111f406924eea46d6}{tensor\_unit::MATRIX}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_type}}\ ==\ \mbox{\hyperlink{classscifir_1_1tensor__unit_a3e46edb429c30cda179940a559acb3e5a4d5d10bdaff5d0a111f406924eea46d6}{tensor\_unit::MATRIX}})}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size()\ ==\ x.values.size()\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[0].size()\ ==\ x.values[0].size())}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<vector<scalar\_unit>}}>\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}();}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ =\ 0;\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ <\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}.size();\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}++)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}.push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<scalar\_unit>}}());}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}\ =\ 0;\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}\ <\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}].size();\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}++)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}}[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}]\ -\/\ x.values[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}][\mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}];}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}}[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}].push\_back(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_values}});}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}();}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{tensor\_unit<scalar\_unit>}}();}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00260}\mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{00260}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<vector<T>}}>\ \mbox{\hyperlink{classscifir_1_1tensor__unit_ade8c976f0c7b3d4199b242d09393494e}{values}};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00261}00261\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00263}00263\ \ \ \ \ \textcolor{comment}{//\ tensor\_unit<scalar\_unit>\ broadcast()}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00264}00264\ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00266}00266\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00267}\mbox{\hyperlink{tensor__unit_8hpp_a44062c5d86762bc59e4c5aa17df44705}{00267}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{tensor__unit_8hpp_a44062c5d86762bc59e4c5aa17df44705}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::tensor\_unit<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::tensor\_unit<U>}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00268}00268\ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00269}00269\ \ \ \ \ \textcolor{keywordflow}{if}\ ((x.values.size()\ !=\ y.values.size())\ or\ (x.values[0].size()\ !=\ y.values[0].size()))}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00270}00270\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00272}00272\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00273}00273\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ x.values.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00274}00274\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ x.values[i].size();\ j++)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.values[i][j]\ !=\ y.values[i][j])}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00282}00282\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00283}00283\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00284}00284\ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00286}00286\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00287}\mbox{\hyperlink{tensor__unit_8hpp_a85efcda72cc551ceea228a4709ed0b6e}{00287}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{tensor__unit_8hpp_a85efcda72cc551ceea228a4709ed0b6e}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::tensor\_unit<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::tensor\_unit<U>}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00288}00288\ \{}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00289}00289\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00290}00290\ \}}
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{tensor__unit_8hpp_source_l00292}00292\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_TENSOR\_UNIT\_HPP\_INCLUDED}}
 
 \end{DoxyCode}

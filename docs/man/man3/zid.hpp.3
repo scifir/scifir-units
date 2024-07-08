@@ -1,0 +1,228 @@
+.TH "special_units/zid.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+special_units/zid.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./special_units/aid\&.hpp'\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <vector>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBscifir::zid\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscifir\fP"
+.br
+.RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBzid\fP &x)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::zid\fP &x, const \fBscifir::zid\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::zid\fP &x, const \fBscifir::zid\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::zid\fP &x, const string &init_zid_full)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::zid\fP &x, const string &init_zid_full)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const string &init_zid_full, const \fBscifir::zid\fP &x)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const string &init_zid_full, const \fBscifir::zid\fP &x)"
+.br
+.ti -1c
+.RI "void \fBoperator+=\fP (string &x, const \fBscifir::zid\fP &y)"
+.br
+.ti -1c
+.RI "string \fBoperator+\fP (const string &x, const \fBscifir::zid\fP &y)"
+.br
+.ti -1c
+.RI "string \fBoperator+\fP (const \fBscifir::zid\fP &y, const string &x)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::zid\fP &x)"
+.br
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, \fBscifir::zid\fP &x)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "bool operator!= (const \fBscifir::zid\fP & x, const \fBscifir::zid\fP & y)"
+
+.PP
+Definition at line \fB210\fP of file \fBzid\&.cpp\fP\&..PP
+.nf
+211 {
+212     return !(x == y);
+213 }
+.fi
+
+.SS "bool operator!= (const \fBscifir::zid\fP & x, const string & init_zid_full)"
+
+.PP
+Definition at line \fB221\fP of file \fBzid\&.cpp\fP\&..PP
+.nf
+222 {
+223     return !(x == init_zid_full);
+224 }
+.fi
+
+.SS "bool operator!= (const string & init_zid_full, const \fBscifir::zid\fP & x)"
+
+.PP
+Definition at line \fB232\fP of file \fBzid\&.cpp\fP\&..PP
+.nf
+233 {
+234     return !(init_zid_full == x);
+235 }
+.fi
+
+.SS "string operator+ (const \fBscifir::zid\fP & y, const string & x)"
+
+.PP
+Definition at line \fB252\fP of file \fBzid\&.cpp\fP\&..PP
+.nf
+253 {
+254     ostringstream output;
+255     output << y;
+256     output << x;
+257     return output\&.str();
+258 }
+.fi
+
+.SS "string operator+ (const string & x, const \fBscifir::zid\fP & y)"
+
+.PP
+Definition at line \fB244\fP of file \fBzid\&.cpp\fP\&..PP
+.nf
+245 {
+246     ostringstream output;
+247     output << x;
+248     output << y;
+249     return output\&.str();
+250 }
+.fi
+
+.SS "void operator+= (string & x, const \fBscifir::zid\fP & y)"
+
+.PP
+Definition at line \fB237\fP of file \fBzid\&.cpp\fP\&..PP
+.nf
+238 {
+239     ostringstream output;
+240     output << y;
+241     x += output\&.str();
+242 }
+.fi
+
+.SS "ostream & operator<< (ostream & os, const \fBscifir::zid\fP & x)"
+
+.PP
+Definition at line \fB260\fP of file \fBzid\&.cpp\fP\&..PP
+.nf
+261 {
+262     return os << to_string(x);
+263 }
+.fi
+
+.SS "bool operator== (const \fBscifir::zid\fP & x, const \fBscifir::zid\fP & y)"
+
+.PP
+Definition at line \fB177\fP of file \fBzid\&.cpp\fP\&..PP
+.nf
+178 {
+179     if (x\&.aid == y\&.aid)
+180     {
+181         if (x\&.country == y\&.country)
+182         {
+183             for (unsigned int i = 0; i < x\&.regions\&.size(); i++)
+184             {
+185                 if (x\&.regions[i] != y\&.regions[i])
+186                 {
+187                     return false;
+188                 }
+189             }
+190             if (x\&.zone == y\&.zone)
+191             {
+192                 return true;
+193             }
+194             else
+195             {
+196                 return false;
+197             }
+198         }
+199         else
+200         {
+201             return false;
+202         }
+203     }
+204     else
+205     {
+206         return false;
+207     }
+208 }
+.fi
+
+.SS "bool operator== (const \fBscifir::zid\fP & x, const string & init_zid_full)"
+
+.PP
+Definition at line \fB215\fP of file \fBzid\&.cpp\fP\&..PP
+.nf
+216 {
+217     scifir::zid y = scifir::zid(init_zid_full);
+218     return (x == y);
+219 }
+.fi
+
+.SS "bool operator== (const string & init_zid_full, const \fBscifir::zid\fP & x)"
+
+.PP
+Definition at line \fB226\fP of file \fBzid\&.cpp\fP\&..PP
+.nf
+227 {
+228     scifir::zid y = scifir::zid(init_zid_full);
+229     return (x == y);
+230 }
+.fi
+
+.SS "istream & operator>> (istream & is, \fBscifir::zid\fP & x)"
+
+.PP
+Definition at line \fB265\fP of file \fBzid\&.cpp\fP\&..PP
+.nf
+266 {
+267     char a[256];
+268     is\&.getline(a, 256);
+269     string b(a);
+270     boost::trim(b);
+271     x = scifir::zid(b);
+272     return is;
+273 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

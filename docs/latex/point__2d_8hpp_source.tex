@@ -1,417 +1,417 @@
 \doxysection{point\+\_\+2d.\+hpp}
 \hypertarget{point__2d_8hpp_source}{}\label{point__2d_8hpp_source}\index{topology/point\_2d.hpp@{topology/point\_2d.hpp}}
-
+\mbox{\hyperlink{point__2d_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_2D\_HPP\_INCLUDED}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_2D\_HPP\_INCLUDED}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../predefined\_units/physics\_units.hpp"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../units/unit\_basic.hpp"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../util/types.hpp"{}}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }scifir}
-\DoxyCodeLine{00013\ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }coordinates\_2d;}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T\ =\ length>}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}}
-\DoxyCodeLine{00019\ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}()\ :\ x(),y()}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y)}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})\ :\ x(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x)),y(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y))}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}}),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00032\ \ \ \ \ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_2d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}});}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_2d<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}});}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}})\ :\ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}()}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initialize\_from\_string(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}});}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x;}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y;}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x);}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y);}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<T>}}\&);}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<T>}}\&\&);}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ operator=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}})}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initialize\_from\_string(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}});}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ T\ get\_p()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00072\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt(scifir::pow(x,2)\ +\ scifir::pow(y,2));}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_theta()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00077\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(radian\_to\_grade(std::atan2(y.get\_value(),x.get\_value())));}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}));}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}));}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00092\ }
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rotate(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ =\ x;}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ =\ y;}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00100\ }
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{displacement\_2d}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}})}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.x\_projection();}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.y\_projection();}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00112\ }
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00118\ }
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ T\ distance\_to\_origin()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00120\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt(scifir::pow(x,2)\ +\ scifir::pow(y,2));}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_cartesian()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00125\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ x\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ y\ <<\ \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00130\ }
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_polar()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00132\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ get\_p()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_theta()\ <<\ \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00137\ }
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ T\ x;}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ T\ y;}
-\DoxyCodeLine{00140\ }
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initialize\_from\_string(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}})}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\ values;}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.front()\ ==\ \textcolor{charliteral}{'('})}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.erase(0,1);}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.back()\ ==\ \textcolor{charliteral}{')'})}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.erase(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.size()-\/1,1);}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::split(values,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}},boost::is\_any\_of(\textcolor{stringliteral}{"{},"{}}));}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ ==\ 2)}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[1]))}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{length}}(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]));}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{length}}(values[0]),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{length}}(values[1]));}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00166\ \ \ \ \ \};}
-\DoxyCodeLine{00167\ }
-\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{template}<>}
-\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}<\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}>}
-\DoxyCodeLine{00170\ \ \ \ \ \{}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}()\ :\ x(),y()}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00174\ }
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y)}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00177\ }
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})\ :\ x(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x)),y(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y))}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00180\ }
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})\ :\ x(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}}),y(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00183\ \ \ \ \ }
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00188\ }
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}});}
-\DoxyCodeLine{00190\ }
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<float>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}});}
-\DoxyCodeLine{00192\ }
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}})\ :\ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}()}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initialize\_from\_string(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}});}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00197\ }
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x;}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y;}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00204\ }
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.x);}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y);}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00211\ }
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}});}
-\DoxyCodeLine{00213\ }
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<float>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}});}
-\DoxyCodeLine{00215\ }
-\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\ operator=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}})}
-\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initialize\_from\_string(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}});}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00221\ }
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ get\_p()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00223\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)));}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00226\ }
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_theta()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00228\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(radian\_to\_grade(std::atan2(y,x)));}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00231\ }
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00237\ }
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_position(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00243\ }
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rotate(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ =\ x;}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ =\ y;}
-\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00251\ }
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{displacement\_2d}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}})}
-\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.x\_projection());}
-\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.y\_projection());}
-\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00257\ }
-\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
-\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
-\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
-\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00263\ }
-\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})}
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::cos(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ scifir::sin(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00269\ }
-\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distance\_to\_origin()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00271\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(x,2)\ +\ std::pow(y,2)));}
-\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00274\ }
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_cartesian()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00276\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ display\_float(x)\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ display\_float(y)\ <<\ \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
-\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00281\ }
-\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_polar()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00283\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
-\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ display\_float(get\_p(),2)\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ get\_theta()\ <<\ \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
-\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00288\ }
-\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x;}
-\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y;}
-\DoxyCodeLine{00291\ }
-\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initialize\_from\_string(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}})}
-\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\ values;}
-\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.front()\ ==\ \textcolor{charliteral}{'('})}
-\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.erase(0,1);}
-\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.back()\ ==\ \textcolor{charliteral}{')'})}
-\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.erase(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.size()-\/1,1);}
-\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::split(values,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}},boost::is\_any\_of(\textcolor{stringliteral}{"{},"{}}));}
-\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ ==\ 2)}
-\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_angle(values[1]))}
-\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]));}
-\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_position(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[0]),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[1]));}
-\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00317\ \ \ \ \ \};}
-\DoxyCodeLine{00318\ }
-\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ x)}
-\DoxyCodeLine{00321\ \ \ \ \ \{}
-\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x.display\_cartesian();}
-\DoxyCodeLine{00323\ \ \ \ \ \}}
-\DoxyCodeLine{00324\ }
-\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ point\_2d<float>\&\ x);}
-\DoxyCodeLine{00326\ }
-\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
-\DoxyCodeLine{00328\ \ \ \ \ T\ distance(\textcolor{keyword}{const}\ point\_2d<T>\&\ x,\textcolor{keyword}{const}\ point\_2d<U>\&\ y)}
-\DoxyCodeLine{00329\ \ \ \ \ \{}
-\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt(scifir::pow(x.x\ -\/\ y.x,2)\ +\ scifir::pow(x.y\ -\/\ y.y,2));}
-\DoxyCodeLine{00331\ \ \ \ \ \}}
-\DoxyCodeLine{00332\ }
-\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordtype}{float}\ distance(\textcolor{keyword}{const}\ point\_2d<float>\&\ x,\textcolor{keyword}{const}\ point\_2d<float>\&\ y);}
-\DoxyCodeLine{00334\ \}}
-\DoxyCodeLine{00335\ }
-\DoxyCodeLine{00336\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
-\DoxyCodeLine{00337\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<U>}}\&\ y)}
-\DoxyCodeLine{00338\ \{}
-\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.x\ ==\ y.x\ and\ x.y\ ==\ y.y);}
-\DoxyCodeLine{00340\ \}}
-\DoxyCodeLine{00341\ }
-\DoxyCodeLine{00342\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
-\DoxyCodeLine{00343\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<U>}}\&\ y)}
-\DoxyCodeLine{00344\ \{}
-\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00346\ \}}
-\DoxyCodeLine{00347\ }
-\DoxyCodeLine{00348\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00349\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_point\_2d)}
-\DoxyCodeLine{00350\ \{}
-\DoxyCodeLine{00351\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\ y(init\_point\_2d);}
-\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00353\ \}}
-\DoxyCodeLine{00354\ }
-\DoxyCodeLine{00355\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00356\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_point\_2d)}
-\DoxyCodeLine{00357\ \{}
-\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_point\_2d);}
-\DoxyCodeLine{00359\ \}}
-\DoxyCodeLine{00360\ }
-\DoxyCodeLine{00361\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00362\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_point\_2d,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x)}
-\DoxyCodeLine{00363\ \{}
-\DoxyCodeLine{00364\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\ y(init\_point\_2d);}
-\DoxyCodeLine{00365\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
-\DoxyCodeLine{00366\ \}}
-\DoxyCodeLine{00367\ }
-\DoxyCodeLine{00368\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00369\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_point\_2d,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x)}
-\DoxyCodeLine{00370\ \{}
-\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_point\_2d\ ==\ x);}
-\DoxyCodeLine{00372\ \}}
-\DoxyCodeLine{00373\ }
-\DoxyCodeLine{00374\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00375\ \textcolor{keywordtype}{void}\ operator\ +=(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ y)}
-\DoxyCodeLine{00376\ \{}
-\DoxyCodeLine{00377\ \ \ \ \ x\ +=\ to\_string(y);}
-\DoxyCodeLine{00378\ \}}
-\DoxyCodeLine{00379\ }
-\DoxyCodeLine{00380\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00381\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ y)}
-\DoxyCodeLine{00382\ \{}
-\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keywordflow}{return}\ x\ +\ to\_string(y);}
-\DoxyCodeLine{00384\ \}}
-\DoxyCodeLine{00385\ }
-\DoxyCodeLine{00386\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00387\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ y)}
-\DoxyCodeLine{00388\ \{}
-\DoxyCodeLine{00389\ \ \ \ \ \textcolor{keywordflow}{return}\ to\_string(x)\ +\ y;}
-\DoxyCodeLine{00390\ \}}
-\DoxyCodeLine{00391\ }
-\DoxyCodeLine{00392\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00393\ ostream\&\ operator\ <<(ostream\&\ os,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x)}
-\DoxyCodeLine{00394\ \{}
-\DoxyCodeLine{00395\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ to\_string(x);}
-\DoxyCodeLine{00396\ \}}
-\DoxyCodeLine{00397\ }
-\DoxyCodeLine{00398\ ostream\&\ operator\ <<(ostream\&\ os,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<float>}}\&\ x);}
-\DoxyCodeLine{00399\ }
-\DoxyCodeLine{00400\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00401\ istream\&\ operator\ >>(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x)}
-\DoxyCodeLine{00402\ \{}
-\DoxyCodeLine{00403\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
-\DoxyCodeLine{00404\ \ \ \ \ is.getline(a,\ 256);}
-\DoxyCodeLine{00405\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
-\DoxyCodeLine{00406\ \ \ \ \ boost::trim(b);}
-\DoxyCodeLine{00407\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}(b);}
-\DoxyCodeLine{00408\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
-\DoxyCodeLine{00409\ \}}
-\DoxyCodeLine{00410\ }
-\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_2D\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_2D\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_2D\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../predefined\_units/physics\_units.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}../units/unit\_basic.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}../util/types.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00010}00010\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00012}00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacescifir}{scifir}}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{class\ }coordinates\_2d;}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T\ =\ length>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00018}\mbox{\hyperlink{classscifir_1_1point__2d}{00018}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00021}\mbox{\hyperlink{classscifir_1_1point__2d_a6a7113ba1c75995ba45b5bc8f441a103}{00021}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a6a7113ba1c75995ba45b5bc8f441a103}{point\_2d}}()\ :\ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}(),\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}()}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00024}\mbox{\hyperlink{classscifir_1_1point__2d_a22a62e88851e5ea5e480b05f68cba1e6}{00024}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a22a62e88851e5ea5e480b05f68cba1e6}{point\_2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})\ :\ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.\mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}),\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00027}\mbox{\hyperlink{classscifir_1_1point__2d_ad38e392fc479bd808227f18405b5b295}{00027}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ad38e392fc479bd808227f18405b5b295}{point\_2d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})\ :\ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}(std::\mbox{\hyperlink{classscifir_1_1point__2d_a4c15c721b02b49a1c9411a7b7125ab4b}{move}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.\mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}})),\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}(std::\mbox{\hyperlink{classscifir_1_1point__2d_a4c15c721b02b49a1c9411a7b7125ab4b}{move}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}))}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00030}\mbox{\hyperlink{classscifir_1_1point__2d_ac17ad95e301a1dbe7f72d50c698146c0}{00030}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d_ac17ad95e301a1dbe7f72d50c698146c0}{point\_2d}}(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})\ :\ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}}),\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00032}00032\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00033}\mbox{\hyperlink{classscifir_1_1point__2d_a8d1c22c354c58597fda3f7a52cfcfc29}{00033}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1c22c354c58597fda3f7a52cfcfc29}{point\_2d}}(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a59c5f988a50f764a7fbccebcda5407e2}{set\_position}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d_a6a7113ba1c75995ba45b5bc8f441a103}{point\_2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_2d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d_a6a7113ba1c75995ba45b5bc8f441a103}{point\_2d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_2d<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00042}\mbox{\hyperlink{classscifir_1_1point__2d_a07260d04e44544a087489342f2b29611}{00042}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d_a07260d04e44544a087489342f2b29611}{point\_2d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}})\ :\ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}()}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ac84657314a3af97e1387a3a9081605ca}{initialize\_from\_string}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00047}\mbox{\hyperlink{classscifir_1_1point__2d_a329d206dff1207edaf5deee48fdc35e3}{00047}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1point__2d_a329d206dff1207edaf5deee48fdc35e3}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.\mbox{\hyperlink{classscifir_1_1coordinates__1d_a4d69d622e18fc50173184e26a22c1274}{x}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y;}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00054}\mbox{\hyperlink{classscifir_1_1point__2d_a0e96f57cbefeec47ed3548697cccb615}{00054}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1point__2d_a0e96f57cbefeec47ed3548697cccb615}{operator=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.\mbox{\hyperlink{classscifir_1_1coordinates__1d_a4d69d622e18fc50173184e26a22c1274}{x}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1point__2d_a329d206dff1207edaf5deee48fdc35e3}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<T>}}\&);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1point__2d_a329d206dff1207edaf5deee48fdc35e3}{operator=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<T>}}\&\&);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00065}\mbox{\hyperlink{classscifir_1_1point__2d_a61ea556dfcf115ca8f39f2726b009a7f}{00065}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ \mbox{\hyperlink{classscifir_1_1point__2d_a61ea556dfcf115ca8f39f2726b009a7f}{operator=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ac84657314a3af97e1387a3a9081605ca}{initialize\_from\_string}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00071}\mbox{\hyperlink{classscifir_1_1point__2d_ab495f2dc0ef3945902f7779536239605}{00071}}\ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1point__2d_ab495f2dc0ef3945902f7779536239605}{get\_p}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00072}00072\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacescifir_adeff4b825414d35ce963977f181f1b5c}{scifir::sqrt}}(\mbox{\hyperlink{namespacescifir_a44533727ef4f03e8303664cdd665c2bc}{scifir::pow}}(\mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}},2)\ +\ \mbox{\hyperlink{namespacescifir_a44533727ef4f03e8303664cdd665c2bc}{scifir::pow}}(\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}},2));}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00076}\mbox{\hyperlink{classscifir_1_1point__2d_ac45bb82808a26f7daca07e812a43f145}{00076}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ \mbox{\hyperlink{classscifir_1_1point__2d_ac45bb82808a26f7daca07e812a43f145}{get\_theta}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00077}00077\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(\mbox{\hyperlink{namespacescifir_acb875290bc71514ed24892a956635afb}{radian\_to\_grade}}(std::atan2(\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}.get\_value(),\mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}.get\_value())));}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00081}\mbox{\hyperlink{classscifir_1_1point__2d_a59c5f988a50f764a7fbccebcda5407e2}{00081}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1point__2d_a59c5f988a50f764a7fbccebcda5407e2}{set\_position}}(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00087}\mbox{\hyperlink{classscifir_1_1point__2d_afc28308a38ac5ccc4ca9c92aa37fe893}{00087}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1point__2d_afc28308a38ac5ccc4ca9c92aa37fe893}{set\_position}}(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ \mbox{\hyperlink{namespacescifir_a36d6ffb762d9c276b4229a2bedf3bca9}{scifir::cos}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}));}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ =\ T(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ \mbox{\hyperlink{namespacescifir_ad3b92cdb628eeec991c326c1727fdd9e}{scifir::sin}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}));}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00093}\mbox{\hyperlink{classscifir_1_1point__2d_a69ba6a2d03b0617d2fc1ccf0429c8c03}{00093}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1point__2d_a69ba6a2d03b0617d2fc1ccf0429c8c03}{rotate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ =\ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ =\ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ \mbox{\hyperlink{namespacescifir_a36d6ffb762d9c276b4229a2bedf3bca9}{scifir::cos}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ \mbox{\hyperlink{namespacescifir_ad3b92cdb628eeec991c326c1727fdd9e}{scifir::sin}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ \mbox{\hyperlink{namespacescifir_ad3b92cdb628eeec991c326c1727fdd9e}{scifir::sin}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ \mbox{\hyperlink{namespacescifir_a36d6ffb762d9c276b4229a2bedf3bca9}{scifir::cos}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00101}\mbox{\hyperlink{classscifir_1_1point__2d_a4c15c721b02b49a1c9411a7b7125ab4b}{00101}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1point__2d_a4c15c721b02b49a1c9411a7b7125ab4b}{move}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{displacement\_2d}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.x\_projection();}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.y\_projection();}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00107}\mbox{\hyperlink{classscifir_1_1point__2d_a953161cb3794606050087caaede20d21}{00107}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1point__2d_a953161cb3794606050087caaede20d21}{move}}(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00113}\mbox{\hyperlink{classscifir_1_1point__2d_ab72a64f0fc2507ba51df88bfb6c4204a}{00113}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1point__2d_ab72a64f0fc2507ba51df88bfb6c4204a}{move}}(\textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ \mbox{\hyperlink{namespacescifir_a36d6ffb762d9c276b4229a2bedf3bca9}{scifir::cos}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ \mbox{\hyperlink{namespacescifir_ad3b92cdb628eeec991c326c1727fdd9e}{scifir::sin}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00119}\mbox{\hyperlink{classscifir_1_1point__2d_a9b74ce7fd9831f09a563499c47b365c7}{00119}}\ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1point__2d_a9b74ce7fd9831f09a563499c47b365c7}{distance\_to\_origin}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00120}00120\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacescifir_adeff4b825414d35ce963977f181f1b5c}{scifir::sqrt}}(\mbox{\hyperlink{namespacescifir_a44533727ef4f03e8303664cdd665c2bc}{scifir::pow}}(\mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}},2)\ +\ \mbox{\hyperlink{namespacescifir_a44533727ef4f03e8303664cdd665c2bc}{scifir::pow}}(\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}},2));}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00124}\mbox{\hyperlink{classscifir_1_1point__2d_af42bd43fe630252eef3940f29ff4d7b4}{00124}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1point__2d_af42bd43fe630252eef3940f29ff4d7b4}{display\_cartesian}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00125}00125\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00131}\mbox{\hyperlink{classscifir_1_1point__2d_ab24bb8de10d8dc1a803b2836a355308a}{00131}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1point__2d_ab24bb8de10d8dc1a803b2836a355308a}{display\_polar}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00132}00132\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ \mbox{\hyperlink{classscifir_1_1point__2d_ab495f2dc0ef3945902f7779536239605}{get\_p}}()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ \mbox{\hyperlink{classscifir_1_1point__2d_ac45bb82808a26f7daca07e812a43f145}{get\_theta}}()\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00138}\mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{00138}}\ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00139}\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{00139}}\ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00142}\mbox{\hyperlink{classscifir_1_1point__2d_ac84657314a3af97e1387a3a9081605ca}{00142}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1point__2d_ac84657314a3af97e1387a3a9081605ca}{initialize\_from\_string}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\ values;}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.front()\ ==\ \textcolor{charliteral}{'('})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.erase(0,1);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.back()\ ==\ \textcolor{charliteral}{')'})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.erase(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.size()-\/1,1);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::split(values,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}},boost::is\_any\_of(\textcolor{stringliteral}{"{},"{}}));}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespacescifir_af5a4683671f496fe4aaa2d378c81d0b1}{is\_angle}}(values[1]))}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a59c5f988a50f764a7fbccebcda5407e2}{set\_position}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{length}}(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]));}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a59c5f988a50f764a7fbccebcda5407e2}{set\_position}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{length}}(values[0]),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{length}}(values[1]));}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00166}00166\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00168}00168\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00169}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4}{00169}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}<\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00170}00170\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00172}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a91bb0cd3cad43dc98f4720b917b39df9}{00172}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a91bb0cd3cad43dc98f4720b917b39df9}{point\_2d}}()\ :\ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}(),\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}()}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00175}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a9f21a18da7967689cdeb5da3f0beebd3}{00175}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a9f21a18da7967689cdeb5da3f0beebd3}{point\_2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})\ :\ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.\mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}),\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00178}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a283ec210d401ce646f5e31a6f3218046}{00178}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a283ec210d401ce646f5e31a6f3218046}{point\_2d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})\ :\ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}(std::\mbox{\hyperlink{classscifir_1_1point__2d_a4c15c721b02b49a1c9411a7b7125ab4b}{move}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.\mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}})),\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}(std::\mbox{\hyperlink{classscifir_1_1point__2d_a4c15c721b02b49a1c9411a7b7125ab4b}{move}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}))}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00181}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a9ddfc564a8acaeb443122f62bdfebcc9}{00181}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a9ddfc564a8acaeb443122f62bdfebcc9}{point\_2d}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})\ :\ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}}),\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00183}00183\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00184}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a7f1348e3369d1c7ed1ca55b0bfa7e9c4}{00184}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a7f1348e3369d1c7ed1ca55b0bfa7e9c4}{point\_2d}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a59c5f988a50f764a7fbccebcda5407e2}{set\_position}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d_a6a7113ba1c75995ba45b5bc8f441a103}{point\_2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d_a6a7113ba1c75995ba45b5bc8f441a103}{point\_2d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<float>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00193}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_ad6c5f1ca57f66b4733ba7596b3bcf648}{00193}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_ad6c5f1ca57f66b4733ba7596b3bcf648}{point\_2d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}})\ :\ \mbox{\hyperlink{classscifir_1_1point__2d}{point\_2d}}()}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ac84657314a3af97e1387a3a9081605ca}{initialize\_from\_string}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00198}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a75f27ffab445e52cfce0533df88bfb3c}{00198}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a75f27ffab445e52cfce0533df88bfb3c}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.\mbox{\hyperlink{classscifir_1_1coordinates__1d_a4d69d622e18fc50173184e26a22c1274}{x}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y;}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00205}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a4fbb46483463217777a10791005bd504}{00205}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a4fbb46483463217777a10791005bd504}{operator=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.\mbox{\hyperlink{classscifir_1_1coordinates__1d_a4d69d622e18fc50173184e26a22c1274}{x}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_point}}.y);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1point__2d_a329d206dff1207edaf5deee48fdc35e3}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1point__2d_a329d206dff1207edaf5deee48fdc35e3}{operator=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_2d<float>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00216}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a64803e43446bb6997cc1ececf43c3a0a}{00216}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<float>}}\&\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a64803e43446bb6997cc1ececf43c3a0a}{operator=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ac84657314a3af97e1387a3a9081605ca}{initialize\_from\_string}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00222}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a9e70a185bb29e4b43d5bd7d749253587}{00222}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a9e70a185bb29e4b43d5bd7d749253587}{get\_p}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00223}00223\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(\mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}},2)\ +\ std::pow(\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}},2)));}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00227}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_ae16cff1c0cf34016ce1ca7c9ad183b71}{00227}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_ae16cff1c0cf34016ce1ca7c9ad183b71}{get\_theta}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00228}00228\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(\mbox{\hyperlink{namespacescifir_acb875290bc71514ed24892a956635afb}{radian\_to\_grade}}(std::atan2(\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}},\mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}})));}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00232}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a692086ec3e8ad0c6af266d02a6978ea3}{00232}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a692086ec3e8ad0c6af266d02a6978ea3}{set\_position}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00238}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a44d783f03b84cee39668f3ee2f0e1af6}{00238}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a44d783f03b84cee39668f3ee2f0e1af6}{set\_position}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ \mbox{\hyperlink{namespacescifir_a36d6ffb762d9c276b4229a2bedf3bca9}{scifir::cos}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ \mbox{\hyperlink{namespacescifir_ad3b92cdb628eeec991c326c1727fdd9e}{scifir::sin}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00244}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a46e738972a79fa50f52880f1f3f84adb}{00244}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a46e738972a79fa50f52880f1f3f84adb}{rotate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ =\ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ =\ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ \mbox{\hyperlink{namespacescifir_a36d6ffb762d9c276b4229a2bedf3bca9}{scifir::cos}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ -\/\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ \mbox{\hyperlink{namespacescifir_ad3b92cdb628eeec991c326c1727fdd9e}{scifir::sin}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coord}}\ *\ \mbox{\hyperlink{namespacescifir_ad3b92cdb628eeec991c326c1727fdd9e}{scifir::sin}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}})\ +\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{y\_coord}}\ *\ \mbox{\hyperlink{namespacescifir_a36d6ffb762d9c276b4229a2bedf3bca9}{scifir::cos}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_angle}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00252}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a5c4d41d69220e7529e2a42ea17f7c206}{00252}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a5c4d41d69220e7529e2a42ea17f7c206}{move}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{displacement\_2d}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.x\_projection());}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_displacement}}.y\_projection());}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00258}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a7b0ed972b697298391ea4147f9cecd91}{00258}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a7b0ed972b697298391ea4147f9cecd91}{move}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00263}00263\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00264}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a813ebec82d3119c75342b4473f6e1876}{00264}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a813ebec82d3119c75342b4473f6e1876}{move}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}}\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ \mbox{\hyperlink{namespacescifir_a36d6ffb762d9c276b4229a2bedf3bca9}{scifir::cos}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}}\ +=\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_p}}\ *\ \mbox{\hyperlink{namespacescifir_ad3b92cdb628eeec991c326c1727fdd9e}{scifir::sin}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00270}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a75f0b4581743118243cea0645b508c9f}{00270}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a75f0b4581743118243cea0645b508c9f}{distance\_to\_origin}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00271}00271\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(\mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}},2)\ +\ std::pow(\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}},2)));}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00275}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a16f8ed56b83fbb63ec094978b8e93994}{00275}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a16f8ed56b83fbb63ec094978b8e93994}{display\_cartesian}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00276}00276\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ \mbox{\hyperlink{namespacescifir_a6fc5f876bdd1abb1118fc73288152eb0}{display\_float}}(\mbox{\hyperlink{classscifir_1_1point__2d_ae6a8265d8de1321967e525717e14d2f6}{x}})\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ \mbox{\hyperlink{namespacescifir_a6fc5f876bdd1abb1118fc73288152eb0}{display\_float}}(\mbox{\hyperlink{classscifir_1_1point__2d_a8d1d898fa4b7856bfa89eaf105dadeea}{y}})\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00282}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_add91f15b53f14253a3bb0984b5e76c32}{00282}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_add91f15b53f14253a3bb0984b5e76c32}{display\_polar}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00283}00283\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ \mbox{\hyperlink{namespacescifir_a6fc5f876bdd1abb1118fc73288152eb0}{display\_float}}(\mbox{\hyperlink{classscifir_1_1point__2d_ab495f2dc0ef3945902f7779536239605}{get\_p}}(),2)\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ \mbox{\hyperlink{classscifir_1_1point__2d_ac45bb82808a26f7daca07e812a43f145}{get\_theta}}()\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00288}00288\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00289}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_ad962dac24836d45d0d25b1a21c0b291d}{00289}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_ad962dac24836d45d0d25b1a21c0b291d}{x}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00290}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a71dcc61ed749c4378035419cfcd5372d}{00290}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a71dcc61ed749c4378035419cfcd5372d}{y}};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00292}00292\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00293}\mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a0be923ae3e445431aac38eb7a49f2677}{00293}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1point__2d_3_01float_01_4_a0be923ae3e445431aac38eb7a49f2677}{initialize\_from\_string}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\ values;}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.front()\ ==\ \textcolor{charliteral}{'('})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.erase(0,1);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.back()\ ==\ \textcolor{charliteral}{')'})}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.erase(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}}.size()-\/1,1);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::split(values,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_point\_2d}},boost::is\_any\_of(\textcolor{stringliteral}{"{},"{}}));}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespacescifir_af5a4683671f496fe4aaa2d378c81d0b1}{is\_angle}}(values[1]))}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a59c5f988a50f764a7fbccebcda5407e2}{set\_position}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[0]),\mbox{\hyperlink{classscifir_1_1angle}{angle}}(values[1]));}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__2d_a59c5f988a50f764a7fbccebcda5407e2}{set\_position}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[0]),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{stof}}(values[1]));}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00317}00317\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00318}00318\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00319}00319\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00320}\mbox{\hyperlink{namespacescifir_a24ad1919eb105d2d4a743470ed0dc7cc}{00320}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00321}00321\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x.\mbox{\hyperlink{classscifir_1_1coordinates__1d_a489517850723c3862339dfae71a19276}{display\_cartesian}}();}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00323}00323\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00324}00324\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00325}00325\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(\textcolor{keyword}{const}\ point\_2d<float>\&\ x);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00326}00326\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00327}00327\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00328}\mbox{\hyperlink{namespacescifir_a8dcfd059ba390c1618e08f9c74ddc0c0}{00328}}\ \ \ \ \ T\ \mbox{\hyperlink{namespacescifir_a5b44128227fa8f95625e0f4d51f3b783}{distance}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_2d<U>}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00329}00329\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacescifir_adeff4b825414d35ce963977f181f1b5c}{scifir::sqrt}}(\mbox{\hyperlink{namespacescifir_a44533727ef4f03e8303664cdd665c2bc}{scifir::pow}}(x.\mbox{\hyperlink{classscifir_1_1coordinates__1d_a4d69d622e18fc50173184e26a22c1274}{x}}\ -\/\ y.\mbox{\hyperlink{classscifir_1_1coordinates__1d_a4d69d622e18fc50173184e26a22c1274}{x}},2)\ +\ \mbox{\hyperlink{namespacescifir_a44533727ef4f03e8303664cdd665c2bc}{scifir::pow}}(x.y\ -\/\ y.y,2));}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00331}00331\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00332}00332\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00333}00333\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespacescifir_a5b44128227fa8f95625e0f4d51f3b783}{distance}}(\textcolor{keyword}{const}\ point\_2d<float>\&\ x,\textcolor{keyword}{const}\ point\_2d<float>\&\ y);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00334}00334\ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00335}00335\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00336}00336\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00337}\mbox{\hyperlink{point__2d_8hpp_a30a395f4aa03e742920f32dd9629a49d}{00337}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{point__2d_8hpp_a30a395f4aa03e742920f32dd9629a49d}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<U>}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00338}00338\ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00339}00339\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.\mbox{\hyperlink{classscifir_1_1coordinates__1d_a4d69d622e18fc50173184e26a22c1274}{x}}\ ==\ y.\mbox{\hyperlink{classscifir_1_1coordinates__1d_a4d69d622e18fc50173184e26a22c1274}{x}}\ and\ x.y\ ==\ y.y);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00340}00340\ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00341}00341\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00342}00342\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00343}\mbox{\hyperlink{point__2d_8hpp_afb32a13452555df5f377009e8ea0e91b}{00343}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{point__2d_8hpp_afb32a13452555df5f377009e8ea0e91b}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<U>}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00344}00344\ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00345}00345\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00346}00346\ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00348}00348\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00349}\mbox{\hyperlink{point__2d_8hpp_a607c066813bbccb1015af3b0addf4eaf}{00349}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{point__2d_8hpp_a30a395f4aa03e742920f32dd9629a49d}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_point\_2d)}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00350}00350\ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00351}00351\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\ y(init\_point\_2d);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00352}00352\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00353}00353\ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00354}00354\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00355}00355\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00356}\mbox{\hyperlink{point__2d_8hpp_ab33bde2209f3f582192a84fd0d96ec76}{00356}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{point__2d_8hpp_afb32a13452555df5f377009e8ea0e91b}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_point\_2d)}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00357}00357\ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00358}00358\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_point\_2d);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00359}00359\ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00360}00360\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00361}00361\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00362}\mbox{\hyperlink{point__2d_8hpp_a250b21a62cb710d4a24df8a5f7fb663b}{00362}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{point__2d_8hpp_a30a395f4aa03e742920f32dd9629a49d}{operator\ ==}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_point\_2d,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00363}00363\ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00364}00364\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\ y(init\_point\_2d);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00365}00365\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00366}00366\ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00367}00367\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00368}00368\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00369}\mbox{\hyperlink{point__2d_8hpp_a452bbd1eafcfa6d7da31d9df2585320d}{00369}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{point__2d_8hpp_afb32a13452555df5f377009e8ea0e91b}{operator\ !=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_point\_2d,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00370}00370\ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00371}00371\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_point\_2d\ ==\ x);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00372}00372\ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00373}00373\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00374}00374\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00375}\mbox{\hyperlink{point__2d_8hpp_a62ae4586e08fb572a01846c6fad67edc}{00375}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{point__2d_8hpp_a62ae4586e08fb572a01846c6fad67edc}{operator\ +=}}(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00376}00376\ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00377}00377\ \ \ \ \ x\ +=\ to\_string(y);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00378}00378\ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00379}00379\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00380}00380\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00381}\mbox{\hyperlink{point__2d_8hpp_a672b4457f199af7d5f4bb1bfd0c3e05a}{00381}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{point__2d_8hpp_a672b4457f199af7d5f4bb1bfd0c3e05a}{operator\ +}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00382}00382\ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00383}00383\ \ \ \ \ \textcolor{keywordflow}{return}\ x\ +\ to\_string(y);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00384}00384\ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00385}00385\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00386}00386\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00387}\mbox{\hyperlink{point__2d_8hpp_ab2614839ad580849ed0b7ed7456447c7}{00387}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{point__2d_8hpp_a672b4457f199af7d5f4bb1bfd0c3e05a}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ y)}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00388}00388\ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00389}00389\ \ \ \ \ \textcolor{keywordflow}{return}\ to\_string(x)\ +\ y;}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00390}00390\ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00391}00391\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00392}00392\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00393}\mbox{\hyperlink{point__2d_8hpp_af587c08fd48b417617bf353cacc295ec}{00393}}\ ostream\&\ \mbox{\hyperlink{point__2d_8hpp_af587c08fd48b417617bf353cacc295ec}{operator\ <<}}(ostream\&\ os,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00394}00394\ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00395}00395\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ to\_string(x);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00396}00396\ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00398}00398\ ostream\&\ \mbox{\hyperlink{point__2d_8hpp_af587c08fd48b417617bf353cacc295ec}{operator\ <<}}(ostream\&\ os,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<float>}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00399}00399\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00400}00400\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00401}\mbox{\hyperlink{point__2d_8hpp_afcc291eb61a93375e2ff61a8c06ce66e}{00401}}\ istream\&\ \mbox{\hyperlink{point__2d_8hpp_afcc291eb61a93375e2ff61a8c06ce66e}{operator\ >>}}(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00402}00402\ \{}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00403}00403\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00404}00404\ \ \ \ \ is.getline(a,\ 256);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00405}00405\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00406}00406\ \ \ \ \ boost::trim(b);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00407}00407\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::point\_2d<T>}}(b);}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00408}00408\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00409}00409\ \}}
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00410}00410\ }
+\DoxyCodeLine{\Hypertarget{point__2d_8hpp_source_l00411}00411\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_2D\_HPP\_INCLUDED}}
 
 \end{DoxyCode}

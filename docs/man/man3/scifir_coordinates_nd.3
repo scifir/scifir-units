@@ -6,9 +6,14 @@ scifir::coordinates_nd< T >
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <coordinates_nd\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBcoordinates_nd\fP ()"
+.br
 .ti -1c
 .RI "\fBcoordinates_nd\fP (\fBconst\fP \fBcoordinates_nd\fP< T > &x)"
 .br
@@ -179,6 +184,840 @@ scifir::coordinates_nd< T >
 .RI "vector< T > \fBvalues\fP"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_coordinates_nd\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<\fBtypename\fP T = length>
+.br
+class scifir::coordinates_nd< T >"
+.PP
+Definition at line \fB18\fP of file \fBcoordinates_nd\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_nd\fP< T >::coordinates_nd ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB21\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+21                              : values()
+22             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_nd\fP< T >::coordinates_nd (\fBconst\fP \fBcoordinates_nd\fP< T > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB24\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+24                                                        : values(x\&.values)
+25             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_nd\fP< T >::coordinates_nd (\fBcoordinates_nd\fP< T > && x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB27\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+27                                                   : values(std::move(x\&.values))
+28             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_nd\fP< T >::coordinates_nd (\fBconst\fP vector< T > & new_values)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB30\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+30                                                                  : values(new_values)
+31             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_nd\fP< T >::coordinates_nd (\fBconst\fP T & new_x)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB33\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+33                                                     : values()
+34             {
+35                 values\&.push_back(new_x);
+36             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_nd\fP< T >::coordinates_nd (\fBconst\fP T & new_x, \fBconst\fP T & new_y)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB38\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+38                                                                    : values()
+39             {
+40                 values\&.push_back(new_x);
+41                 values\&.push_back(new_y);
+42             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_nd\fP< T >::coordinates_nd (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB44\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+44                                                                            : values()
+45             {
+46                 set_position(new_p,new_theta);
+47             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_nd\fP< T >::coordinates_nd (\fBconst\fP T & new_x, \fBconst\fP T & new_y, \fBconst\fP T & new_z)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB49\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+49                                                                                   : values()
+50             {
+51                 values\&.push_back(new_x);
+52                 values\&.push_back(new_y);
+53                 values\&.push_back(new_z);
+54             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_nd\fP< T >::coordinates_nd (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta, T new_z)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB56\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+56                                                                                    : values()
+57             {
+58                 set_position(new_p,new_theta,new_z);
+59             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_nd\fP< T >::coordinates_nd (\fBconst\fP T & new_r, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB61\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+61                                                                                                 : values()
+62             {
+63                 set_position(new_r,new_theta,new_phi);
+64             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_nd\fP< T >::coordinates_nd (\fBconst\fP \fBangle\fP & new_latitude, \fBconst\fP \fBangle\fP & new_longitude, \fBconst\fP T & new_altitude)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB66\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+66                                                                                                                 : values()
+67             {
+68                 set_position(new_latitude,new_longitude,new_altitude);
+69             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_nd\fP< T >::coordinates_nd (\fBconst\fP \fBpoint_nd\fP< T > & new_point)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB71\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+71                                                                   : values(new_point\&.values)
+72             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_nd\fP< T >::coordinates_nd (\fBpoint_nd\fP< T > && new_point)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB74\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+74                                                              : values(std::move(new_point\&.values))
+75             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_nd\fP< T >::coordinates_nd (\fBconst\fP \fBstring\fP & init_coordinates_nd)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB77\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+77                                                                        : values()
+78             {
+79                 initialize_from_string(init_coordinates_nd);
+80             }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_nd\fP< T >::display_cartesian_2d () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB386\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+387             {
+388                 if (values\&.size() == 2)
+389                 {
+390                     ostringstream out;
+391                     out << "(" << values[0] << "," << values[1] << ")";
+392                     return out\&.str();
+393                 }
+394                 else
+395                 {
+396                     return "[no\-2d]";
+397                 }
+398             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_nd\fP< T >::display_cartesian_3d () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB414\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+415             {
+416                 if (values\&.size() == 3)
+417                 {
+418                     ostringstream out;
+419                     out << "(" << values[0] << "," << values[1] << "," << values[2] << ")";
+420                     return out\&.str();
+421                 }
+422                 else
+423                 {
+424                     return "[no\-3d]";
+425                 }
+426             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_nd\fP< T >::display_cylindrical () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB428\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+429             {
+430                 if (values\&.size() == 3)
+431                 {
+432                     ostringstream out;
+433                     out << "(" << get_p() << "," << get_theta() << "," << values[2] << ")";
+434                     return out\&.str();
+435                 }
+436                 else
+437                 {
+438                     return "[no\-3d]";
+439                 }
+440             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_nd\fP< T >::display_geographical () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB456\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+457             {
+458                 if (values\&.size() == 3)
+459                 {
+460                     ostringstream out;
+461                     out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ")";
+462                     return out\&.str();
+463                 }
+464                 else
+465                 {
+466                     return "[no\-3d]";
+467                 }
+468             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_nd\fP< T >::display_polar () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB400\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+401             {
+402                 if (values\&.size() == 2)
+403                 {
+404                     ostringstream out;
+405                     out << "(" << get_p() << "," << get_theta() << ")";
+406                     return out\&.str();
+407                 }
+408                 else
+409                 {
+410                     return "[no\-2d]";
+411                 }
+412             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_nd\fP< T >::display_spherical () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB442\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+443             {
+444                 if (values\&.size() == 3)
+445                 {
+446                     ostringstream out;
+447                     out << "(" << get_r() << "," << get_theta() << "," << get_phi() << ")";
+448                     return out\&.str();
+449                 }
+450                 else
+451                 {
+452                     return "[no\-3d]";
+453                 }
+454             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_nd\fP< T >::distance_to_origin () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB376\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+377             {
+378                 scalar_unit x_T = scalar_unit(0\&.0f,"m2");
+379                 for (int i = 0; i < values\&.size(); i++)
+380                 {
+381                     x_T += scifir::pow(values[i],2);
+382                 }
+383                 return scifir::sqrt(x_T);
+384             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_nd\fP< T >::get_altitude () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB180\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+181             {
+182                 return T();
+183             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::coordinates_nd\fP< T >::get_latitude () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB170\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+171             {
+172                 return scifir::asin(float(values[2]/T(6317,"km")));
+173             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::coordinates_nd\fP< T >::get_longitude () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB175\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+176             {
+177                 return scifir::atan(float(values[1]/values[0]));
+178             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBint\fP \fBscifir::coordinates_nd\fP< T >::get_nd () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB117\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+118             {
+119                 return values\&.size();
+120             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_nd\fP< T >::get_p () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB122\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+123             {
+124                 if (get_nd() == 2 or get_nd() == 3)
+125                 {
+126                     return scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2));
+127                 }
+128                 else
+129                 {
+130                     return T();
+131                 }
+132             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::coordinates_nd\fP< T >::get_phi () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB158\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+159             {
+160                 if (get_nd() == 3)
+161                 {
+162                     return angle(scifir::acos_grade(float(values[2]/scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2)))));
+163                 }
+164                 else
+165                 {
+166                     return angle();
+167                 }
+168             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_nd\fP< T >::get_r () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB146\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+147             {
+148                 if (get_nd() == 2 or get_nd() == 3)
+149                 {
+150                     return scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2));
+151                 }
+152                 else
+153                 {
+154                     return T();
+155                 }
+156             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::coordinates_nd\fP< T >::get_theta () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB134\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+135             {
+136                 if (get_nd() == 2 or get_nd() == 3)
+137                 {
+138                     return angle(scifir::atan_grade(float(values[1]/values[0])));
+139                 }
+140                 else
+141                 {
+142                     return angle();
+143                 }
+144             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::initialize_from_string (\fBstring\fP init_coordinates_nd)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB473\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+474             {
+475                 vector<string> init_values;
+476                 if (init_coordinates_nd\&.front() == '(')
+477                 {
+478                     init_coordinates_nd\&.erase(0,1);
+479                 }
+480                 if (init_coordinates_nd\&.back() == ')')
+481                 {
+482                     init_coordinates_nd\&.erase(init_coordinates_nd\&.size()\-1,1);
+483                 }
+484                 boost::split(init_values,init_coordinates_nd,boost::is_any_of(","));
+485                 if (init_values\&.size() == 2)
+486                 {
+487                     if (is_angle(init_values[1]))
+488                     {
+489                         set_position(T(init_values[0]),angle(init_values[1]));
+490                     }
+491                     else
+492                     {
+493                         set_position(T(init_values[0]),T(init_values[1]));
+494                     }
+495                 }
+496                 else if (init_values\&.size() == 3)
+497                 {
+498                     if (is_angle(init_values[0]))
+499                     {
+500                         if (is_angle(init_values[1]))
+501                         {
+502                             if (!is_angle(init_values[2]))
+503                             {
+504                                 set_position(angle(init_values[0]),angle(init_values[1]),T(init_values[2]));
+505                             }
+506                         }
+507                     }
+508                     else
+509                     {
+510                         if (is_angle(init_values[1]))
+511                         {
+512                             if (is_angle(init_values[2]))
+513                             {
+514                                 set_position(T(init_values[0]),angle(init_values[1]),angle(init_values[2]));
+515                             }
+516                             else
+517                             {
+518                                 set_position(T(init_values[0]),angle(init_values[1]),T(init_values[2]));
+519                             }
+520                         }
+521                         else
+522                         {
+523                             if (!is_angle(init_values[2]))
+524                             {
+525                                 set_position(T(init_values[0]),T(init_values[1]),T(init_values[2]));
+526                             }
+527                         }
+528                     }
+529                 }
+530                 else
+531                 {
+532                     for (const string& x_value : init_values)
+533                     {
+534                         values\&.push_back(T(x_value));
+535                     }
+536                 }
+537             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBbool\fP \fBscifir::coordinates_nd\fP< T >::is_nd (\fBint\fP i) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB112\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+113             {
+114                 return values\&.size() == i;
+115             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::move (\fBconst\fP \fBdisplacement_2d\fP & x_displacement)\fC [inline]\fP"
+
+.PP
+Definition at line \fB291\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+292             {
+293                 if (values\&.size() == 2)
+294                 {
+295                     values[0] += x_displacement\&.x_projection();
+296                     values[1] += x_displacement\&.y_projection();
+297                 }
+298             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::move (\fBconst\fP \fBdisplacement_3d\fP & x_displacement)\fC [inline]\fP"
+
+.PP
+Definition at line \fB318\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+319             {
+320                 if (values\&.size() == 3)
+321                 {
+322                     values[0] += x_displacement\&.x_projection();
+323                     values[1] += x_displacement\&.y_projection();
+324                     values[2] += x_displacement\&.z_projection();
+325                 }
+326             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::move (\fBconst\fP \fBdisplacement_nd\fP & x_displacement)\fC [inline]\fP"
+
+.PP
+Definition at line \fB359\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+360             {
+361                 if (x_displacement\&.get_nd() == get_nd())
+362                 {
+363                     for (int i = 0; i < x_displacement\&.get_nd(); i++)
+364                     {
+365                         values[i] += x_displacement\&.n_projection(i);
+366                     }
+367                 }
+368             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::move (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB309\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+310             {
+311                 if (values\&.size() == 2)
+312                 {
+313                     values[0] += new_p * scifir::cos(new_theta);
+314                     values[1] += new_p * scifir::sin(new_theta);
+315                 }
+316             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::move (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta, T new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB338\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+339             {
+340                 if (values\&.size() == 3)
+341                 {
+342                     new_z\&.change_dimensions(new_p);
+343                     values[0] += T(new_p * scifir::cos(new_theta));
+344                     values[1] += T(new_p * scifir::sin(new_theta));
+345                     values[2] += new_z;
+346                 }
+347             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::move (\fBconst\fP T & new_r, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP"
+
+.PP
+Definition at line \fB349\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+350             {
+351                 if (values\&.size() == 3)
+352                 {
+353                     values[0] += T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
+354                     values[1] += T(new_r * scifir::sin(new_theta) * scifir::sin(new_phi));
+355                     values[2] += T(new_r * scifir::cos(new_phi));
+356                 }
+357             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::move (\fBconst\fP T & new_r, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP"
+
+.PP
+Definition at line \fB370\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+371             {
+372                 displacement_nd x_displacement = displacement_nd(new_r,new_angles);
+373                 move(x_displacement);
+374             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::move (\fBconst\fP T & new_x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB283\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+284             {
+285                 if (values\&.size() == 1)
+286                 {
+287                     values[0] += new_x;
+288                 }
+289             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::move (\fBconst\fP T & new_x, \fBconst\fP T & new_y)\fC [inline]\fP"
+
+.PP
+Definition at line \fB300\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+301             {
+302                 if (values\&.size() == 2)
+303                 {
+304                     values[0] += new_x;
+305                     values[1] += new_y;
+306                 }
+307             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::move (\fBconst\fP T & new_x, \fBconst\fP T & new_y, \fBconst\fP T & new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB328\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+329             {
+330                 if (values\&.size() == 3)
+331                 {
+332                     values[0] += new_x;
+333                     values[1] += new_y;
+334                     values[2] += new_z;
+335                 }
+336             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_nd\fP< T > & \fBscifir::coordinates_nd\fP< T >::operator= (\fBconst\fP \fBcoordinates_nd\fP< T > & x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB82\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+83             {
+84                 values = x_coordinates\&.values;
+85                 return *this;
+86             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_nd\fP< T > & \fBscifir::coordinates_nd\fP< T >::operator= (\fBconst\fP \fBpoint_nd\fP< T > & x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB94\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+95             {
+96                 values = x_point\&.values;
+97                 return *this;
+98             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_nd\fP< T > & \fBscifir::coordinates_nd\fP< T >::operator= (\fBconst\fP \fBstring\fP & init_coordinates_nd)\fC [inline]\fP"
+
+.PP
+Definition at line \fB106\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+107             {
+108                 initialize_from_string(init_coordinates_nd);
+109                 return *this;
+110             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_nd\fP< T > & \fBscifir::coordinates_nd\fP< T >::operator= (\fBcoordinates_nd\fP< T > && x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB88\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+89             {
+90                 values = std::move(x_coordinates\&.values);
+91                 return *this;
+92             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_nd\fP< T > & \fBscifir::coordinates_nd\fP< T >::operator= (\fBpoint_nd\fP< T > && x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB100\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+101             {
+102                 values = std::move(x_point\&.values);
+103                 return *this;
+104             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::rotate_in_2d (\fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB244\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+245             {
+246                 if (get_nd() == 2)
+247                 {
+248                     T x_coord = values[0];
+249                     T y_coord = values[1];
+250                     values[0] = x_coord * scifir::cos(new_theta) \- y_coord * scifir::sin(new_theta);
+251                     values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
+252                 }
+253             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::rotate_in_3d (\fBint\fP axis, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB255\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+256             {
+257                 if (get_nd() == 3)
+258                 {
+259                     if (axis == 1)
+260                     {
+261                         T y_coord = values[1];
+262                         T z_coord = values[2];
+263                         values[1] = y_coord * scifir::cos(new_theta) \- z_coord * scifir::sin(new_theta);
+264                         values[2] = y_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
+265                     }
+266                     else if (axis == 2)
+267                     {
+268                         T x_coord = values[0];
+269                         T z_coord = values[2];
+270                         values[0] = x_coord * scifir::cos(new_theta) \- z_coord * scifir::sin(new_theta);
+271                         values[2] = x_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
+272                     }
+273                     else if (axis == 3)
+274                     {
+275                         T x_coord = values[0];
+276                         T y_coord = values[1];
+277                         values[0] = x_coord * scifir::cos(new_theta) \- y_coord * scifir::sin(new_theta);
+278                         values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
+279                     }
+280                 }
+281             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::set_position (\fBconst\fP \fBangle\fP & new_latitude, \fBconst\fP \fBangle\fP & new_longitude, \fBconst\fP T & new_altitude)\fC [inline]\fP"
+
+.PP
+Definition at line \fB230\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+231             {
+232                 values\&.clear();
+233                 values\&.push_back(T(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude)));
+234                 values\&.push_back(T(new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude)));
+235                 values\&.push_back(T(new_altitude * scifir::sin(new_latitude)));
+236             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::set_position (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB198\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+199             {
+200                 values\&.clear();
+201                 values\&.push_back(T(new_p * scifir::cos(new_theta)));
+202                 values\&.push_back(T(new_p * scifir::sin(new_theta)));
+203             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::set_position (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta, T new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB213\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+214             {
+215                 values\&.clear();
+216                 new_z\&.change_dimensions(new_p);
+217                 values\&.push_back(T(new_p * scifir::cos(new_theta)));
+218                 values\&.push_back(T(new_p * scifir::sin(new_theta)));
+219                 values\&.push_back(new_z);
+220             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::set_position (\fBconst\fP T & new_r, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP"
+
+.PP
+Definition at line \fB222\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+223             {
+224                 values\&.clear();
+225                 values\&.push_back(T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi)));
+226                 values\&.push_back(T(new_r * scifir::sin(new_theta) * scifir::sin(new_phi)));
+227                 values\&.push_back(T(new_r * scifir::cos(new_phi)));
+228             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::set_position (\fBconst\fP T & new_x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB185\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+186             {
+187                 values\&.clear();
+188                 values\&.push_back(new_x);
+189             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::set_position (\fBconst\fP T & new_x, \fBconst\fP T & new_y)\fC [inline]\fP"
+
+.PP
+Definition at line \fB191\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+192             {
+193                 values\&.clear();
+194                 values\&.push_back(new_x);
+195                 values\&.push_back(new_y);
+196             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::set_position (\fBconst\fP T & new_x, \fBconst\fP T & new_y, \fBconst\fP T & new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB205\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+206             {
+207                 values\&.clear();
+208                 values\&.push_back(new_x);
+209                 values\&.push_back(new_y);
+210                 values\&.push_back(new_z);
+211             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_nd\fP< T >::set_position (\fBconst\fP vector< T > & new_values)\fC [inline]\fP"
+
+.PP
+Definition at line \fB238\fP of file \fBcoordinates_nd\&.hpp\fP\&..PP
+.nf
+239             {
+240                 values\&.clear();
+241                 values = new_values;
+242             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> vector<T> \fBscifir::coordinates_nd\fP< T >::values"
+
+.PP
+Definition at line \fB470\fP of file \fBcoordinates_nd\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

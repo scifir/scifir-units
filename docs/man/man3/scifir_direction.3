@@ -6,6 +6,8 @@ scifir::direction
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <direction\&.hpp>\fP
 .SS "Public Types"
 
 .in +1c
@@ -17,13 +19,16 @@ scifir::direction
 
 .in +1c
 .ti -1c
+.RI "\fBdirection\fP ()"
+.br
+.ti -1c
 .RI "\fBdirection\fP (\fBconst\fP \fBdirection\fP &x)"
 .br
 .ti -1c
 .RI "\fBdirection\fP (\fBdirection\fP &&x)"
 .br
 .ti -1c
-.RI "\fBdirection\fP (direction::name \fBnew_direction\fP)"
+.RI "\fBdirection\fP (\fBdirection::name\fP \fBnew_direction\fP)"
 .br
 .ti -1c
 .RI "\fBdirection\fP (\fBconst\fP \fBstring\fP &\fBinit_direction\fP)"
@@ -35,7 +40,7 @@ scifir::direction
 .RI "\fBdirection\fP & \fBoperator=\fP (\fBdirection\fP &&x)"
 .br
 .ti -1c
-.RI "\fBdirection\fP & \fBoperator=\fP (direction::name \fBnew_direction\fP)"
+.RI "\fBdirection\fP & \fBoperator=\fP (\fBdirection::name\fP \fBnew_direction\fP)"
 .br
 .ti -1c
 .RI "\fBdirection\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_direction\fP)"
@@ -48,9 +53,188 @@ scifir::direction
 
 .in +1c
 .ti -1c
-.RI "direction::name \fBvalue\fP"
+.RI "\fBdirection::name\fP \fBvalue\fP"
 .br
 .in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB14\fP of file \fBdirection\&.hpp\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "\fBenum\fP \fBscifir::direction::name\fP : \fBint8_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINONE \fP\fP
+.TP
+\fB\fILEFT \fP\fP
+.TP
+\fB\fIRIGHT \fP\fP
+.TP
+\fB\fITOP \fP\fP
+.TP
+\fB\fIBOTTOM \fP\fP
+.TP
+\fB\fIFRONT \fP\fP
+.TP
+\fB\fIBACK \fP\fP
+.TP
+\fB\fILEFT_TOP \fP\fP
+.TP
+\fB\fILEFT_BOTTOM \fP\fP
+.TP
+\fB\fIRIGHT_TOP \fP\fP
+.TP
+\fB\fIRIGHT_BOTTOM \fP\fP
+.TP
+\fB\fILEFT_FRONT \fP\fP
+.TP
+\fB\fILEFT_BACK \fP\fP
+.TP
+\fB\fIRIGHT_FRONT \fP\fP
+.TP
+\fB\fIRIGHT_BACK \fP\fP
+.TP
+\fB\fITOP_FRONT \fP\fP
+.TP
+\fB\fITOP_BACK \fP\fP
+.TP
+\fB\fIBOTTOM_FRONT \fP\fP
+.TP
+\fB\fIBOTTOM_BACK \fP\fP
+.TP
+\fB\fILEFT_TOP_FRONT \fP\fP
+.TP
+\fB\fILEFT_TOP_BACK \fP\fP
+.TP
+\fB\fILEFT_BOTTOM_FRONT \fP\fP
+.TP
+\fB\fILEFT_BOTTOM_BACK \fP\fP
+.TP
+\fB\fIRIGHT_TOP_FRONT \fP\fP
+.TP
+\fB\fIRIGHT_TOP_BACK \fP\fP
+.TP
+\fB\fIRIGHT_BOTTOM_FRONT \fP\fP
+.TP
+\fB\fIRIGHT_BOTTOM_BACK \fP\fP
+.PP
+Definition at line \fB17\fP of file \fBdirection\&.hpp\fP\&..PP
+.nf
+17 : int8_t {NONE, LEFT, RIGHT, TOP, BOTTOM, FRONT, BACK, LEFT_TOP, LEFT_BOTTOM, RIGHT_TOP, RIGHT_BOTTOM, LEFT_FRONT, LEFT_BACK, RIGHT_FRONT, RIGHT_BACK, TOP_FRONT, TOP_BACK, BOTTOM_FRONT, BOTTOM_BACK, LEFT_TOP_FRONT, LEFT_TOP_BACK, LEFT_BOTTOM_FRONT, LEFT_BOTTOM_BACK, RIGHT_TOP_FRONT, RIGHT_TOP_BACK, RIGHT_BOTTOM_FRONT, RIGHT_BOTTOM_BACK};
+.fi
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "scifir::direction::direction ()"
+
+.PP
+Definition at line \fB11\fP of file \fBdirection\&.cpp\fP\&..PP
+.nf
+11                          : value(direction::NONE)
+12     {}
+.fi
+
+.SS "scifir::direction::direction (\fBconst\fP \fBdirection\fP & x)"
+
+.PP
+Definition at line \fB14\fP of file \fBdirection\&.cpp\fP\&..PP
+.nf
+14                                            : direction(x\&.value)
+15     {}
+.fi
+
+.SS "scifir::direction::direction (\fBdirection\fP && x)"
+
+.PP
+Definition at line \fB17\fP of file \fBdirection\&.cpp\fP\&..PP
+.nf
+17                                       : direction(std::move(x\&.value))
+18     {}
+.fi
+
+.SS "scifir::direction::direction (\fBdirection::name\fP new_direction)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB20\fP of file \fBdirection\&.cpp\fP\&..PP
+.nf
+20                                                     : value(new_direction)
+21     {}
+.fi
+
+.SS "scifir::direction::direction (\fBconst\fP \fBstring\fP & init_direction)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB23\fP of file \fBdirection\&.cpp\fP\&..PP
+.nf
+23                                                      : value(create_direction(init_direction))
+24     {}
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBvoid\fP scifir::direction::invert ()"
+
+.PP
+Definition at line \fB50\fP of file \fBdirection\&.cpp\fP\&..PP
+.nf
+51     {
+52         value = scifir::invert(value);
+53     }
+.fi
+
+.SS "\fBdirection\fP & scifir::direction::operator= (\fBconst\fP \fBdirection\fP & x)"
+
+.PP
+Definition at line \fB26\fP of file \fBdirection\&.cpp\fP\&..PP
+.nf
+27     {
+28         value = x\&.value;
+29         return *this;
+30     }
+.fi
+
+.SS "\fBdirection\fP & scifir::direction::operator= (\fBconst\fP \fBstring\fP & init_direction)"
+
+.PP
+Definition at line \fB44\fP of file \fBdirection\&.cpp\fP\&..PP
+.nf
+45     {
+46         value = create_direction(init_direction);
+47         return *this;
+48     }
+.fi
+
+.SS "\fBdirection\fP & scifir::direction::operator= (\fBdirection\fP && x)"
+
+.PP
+Definition at line \fB32\fP of file \fBdirection\&.cpp\fP\&..PP
+.nf
+33     {
+34         value = std::move(x\&.value);
+35         return *this;
+36     }
+.fi
+
+.SS "\fBdirection\fP & scifir::direction::operator= (\fBdirection::name\fP new_direction)"
+
+.PP
+Definition at line \fB38\fP of file \fBdirection\&.cpp\fP\&..PP
+.nf
+39     {
+40         value = new_direction;
+41         return *this;
+42     }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBdirection::name\fP scifir::direction::value"
+
+.PP
+Definition at line \fB32\fP of file \fBdirection\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

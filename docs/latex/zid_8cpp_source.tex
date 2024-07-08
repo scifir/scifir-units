@@ -1,0 +1,279 @@
+\doxysection{zid.\+cpp}
+\hypertarget{zid_8cpp_source}{}\label{zid_8cpp_source}\index{special\_units/zid.cpp@{special\_units/zid.cpp}}
+\mbox{\hyperlink{zid_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{zid_8hpp}{./zid.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}boost/algorithm/string.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00008}00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacescifir}{scifir}}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00012}\mbox{\hyperlink{classscifir_1_1zid_a3373cd61f91001d2fbd0d41906f73921}{00012}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3373cd61f91001d2fbd0d41906f73921}{zid::zid}}()\ :\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(),regions(),country(),zone()}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00013}00013\ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00015}\mbox{\hyperlink{classscifir_1_1zid_a1946b1fd42cbbe0b2764ff9bb7922cd9}{00015}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3373cd61f91001d2fbd0d41906f73921}{zid::zid}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\ x)\ :\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(x.\mbox{\hyperlink{classscifir_1_1aid}{aid}}),regions(x.regions),country(x.country),zone(x.zone)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00016}00016\ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00018}\mbox{\hyperlink{classscifir_1_1zid_a42b1578b6c42c7662b648e34df7a1c08}{00018}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3373cd61f91001d2fbd0d41906f73921}{zid::zid}}(\mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\&\ x)\ :\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(std::move(x.\mbox{\hyperlink{classscifir_1_1aid}{aid}})),regions(std::move(x.regions)),country(std::move(x.country)),zone(std::move(x.zone))}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00019}00019\ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00021}\mbox{\hyperlink{classscifir_1_1zid_a2dd6a90683a044ff7e6ec19a5d1ddf09}{00021}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3373cd61f91001d2fbd0d41906f73921}{zid::zid}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_aid}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_country}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_regions}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_zone}})\ :\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_aid}}),country(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_country}}),regions(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_regions}}),zone(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_zone}})}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00022}00022\ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00024}\mbox{\hyperlink{classscifir_1_1zid_a61aef7cc19022cde59e1f1c69a1d558b}{00024}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3373cd61f91001d2fbd0d41906f73921}{zid::zid}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_aid}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid}})\ :\ \mbox{\hyperlink{classscifir_1_1aid}{aid}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_aid}}),regions(),country(),zone()}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid}}\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\ values;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ boost::split(values,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid}},boost::is\_any\_of(\textcolor{stringliteral}{"{}:"{}}));}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}}\ =\ values[0];}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ >\ 2)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{total\_for\_values}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}(values.size())\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ =\ 1;\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ <\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{total\_for\_values}};\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}++)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}}.push\_back(values[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}]);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ >=\ 2)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3ef65cf7878c83b2222c2daf6f5f3f36}{zone}}\ =\ values.back();}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00046}\mbox{\hyperlink{classscifir_1_1zid_a0a847289f85663f415cf896342620ae1}{00046}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3373cd61f91001d2fbd0d41906f73921}{zid::zid}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid\_full}})\ :\ \mbox{\hyperlink{classscifir_1_1zid}{zid}}()}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_af59da9725af73b58fa85058665a94957}{initialize\_from\_string}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid\_full}});}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00051}\mbox{\hyperlink{classscifir_1_1zid_a9d6b62154c3fffa6e10bd7a4f8d9a03c}{00051}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\ \mbox{\hyperlink{classscifir_1_1zid_a9d6b62154c3fffa6e10bd7a4f8d9a03c}{zid::operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00052}00052\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{aid}}\ =\ x.\mbox{\hyperlink{classscifir_1_1zid_a64c51e9d7f9bfed4a45b463d8b45116b}{aid}};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}}\ =\ x.\mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}}\ =\ x.\mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3ef65cf7878c83b2222c2daf6f5f3f36}{zone}}\ =\ x.\mbox{\hyperlink{classscifir_1_1zid_a3ef65cf7878c83b2222c2daf6f5f3f36}{zone}};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00060}\mbox{\hyperlink{classscifir_1_1zid_af08f3d603646b58a48d49cb5168c0a17}{00060}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\ \mbox{\hyperlink{classscifir_1_1zid_a9d6b62154c3fffa6e10bd7a4f8d9a03c}{zid::operator\ =}}(\mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\&\ x)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{aid}}\ =\ std::move(x.aid);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}}\ =\ std::move(x.regions);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}}\ =\ std::move(x.country);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3ef65cf7878c83b2222c2daf6f5f3f36}{zone}}\ =\ std::move(x.zone);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00069}\mbox{\hyperlink{classscifir_1_1zid_a5c6bfce663777ea298e25c3fc1592ae8}{00069}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\ \mbox{\hyperlink{classscifir_1_1zid_a9d6b62154c3fffa6e10bd7a4f8d9a03c}{zid::operator\ =}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid\_full}})}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00070}00070\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_af59da9725af73b58fa85058665a94957}{initialize\_from\_string}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid\_full}});}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00075}\mbox{\hyperlink{classscifir_1_1zid_a22ea002ba3cd88eaf33fe807e15bdbf8}{00075}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1zid_a22ea002ba3cd88eaf33fe807e15bdbf8}{zid::has\_no\_country}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00076}00076\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}}\ ==\ \textcolor{stringliteral}{"{}no-\/country"{}});}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00080}\mbox{\hyperlink{classscifir_1_1zid_a954f08f912dd187108588aacbc5ad3c2}{00080}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1zid_a954f08f912dd187108588aacbc5ad3c2}{zid::has\_unknown\_country}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00081}00081\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}}\ ==\ \textcolor{stringliteral}{"{}unknown-\/country"{}});}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00085}\mbox{\hyperlink{classscifir_1_1zid_abb2467d428ccaa5ad0ad8be47f8a35cd}{00085}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1zid_abb2467d428ccaa5ad0ad8be47f8a35cd}{zid::display}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00086}00086\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}}\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(\mbox{\hyperlink{classscifir_1_1aid}{aid}})\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}}\ <<\ \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_region}}\ :\ \mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}})}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_region}}\ <<\ \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \mbox{\hyperlink{classscifir_1_1zid_a3ef65cf7878c83b2222c2daf6f5f3f36}{zone}};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00104}\mbox{\hyperlink{classscifir_1_1zid_ad9af6fe963a20b2f1afd43cac25c33e1}{00104}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1zid_ad9af6fe963a20b2f1afd43cac25c33e1}{zid::partial\_display}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00105}00105\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}}\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}}\ <<\ \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_region}}\ :\ \mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}})}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_region}}\ <<\ \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \mbox{\hyperlink{classscifir_1_1zid_a3ef65cf7878c83b2222c2daf6f5f3f36}{zone}};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00121}00121\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00123}\mbox{\hyperlink{classscifir_1_1zid_af59da9725af73b58fa85058665a94957}{00123}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1zid_af59da9725af73b58fa85058665a94957}{zid::initialize\_from\_string}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid\_full}})}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00124}00124\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid\_full}}\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_whitespaces}}\ =\ std::count(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid\_full}}.begin(),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid\_full}}.end(),\textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{last\_whitespace}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid\_full}}.find\_last\_of(\textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_whitespaces}}\ ==\ 2\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{or}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_whitespaces}}\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_aid}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid\_full}}.substr(0,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{last\_whitespace}});}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid\_full}}.substr(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{last\_whitespace}}\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1aid}{aid}}\ =\ \mbox{\hyperlink{classscifir_1_1aid}{scifir::aid}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_aid}});}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\ values;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::split(values,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid}},boost::is\_any\_of(\textcolor{stringliteral}{"{}:"{}}));}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}}\ =\ values[0];}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ >\ 2)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{total\_for\_values}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}(values.size())\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ =\ 1;\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ <\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{total\_for\_values}};\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}++)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}}.push\_back(values[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}]);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ >=\ 2)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3ef65cf7878c83b2222c2daf6f5f3f36}{zone}}\ =\ values.back();}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_whitespaces}}\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\ values;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::split(values,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_zid\_full}},boost::is\_any\_of(\textcolor{stringliteral}{"{}:"{}}));}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}}\ =\ values[0];}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ >\ 2)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{total\_for\_values}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}(values.size())\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ =\ 1;\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}\ <\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{total\_for\_values}};\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}++)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}}.push\_back(values[\mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}]);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ >=\ 2)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid_a3ef65cf7878c83b2222c2daf6f5f3f36}{zone}}\ =\ values.back();}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00169}00169\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00171}\mbox{\hyperlink{namespacescifir_a4202fe607b159e40982128774853ed94}{00171}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{zid}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00172}00172\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x.\mbox{\hyperlink{classscifir_1_1zid_abb2467d428ccaa5ad0ad8be47f8a35cd}{display}}();}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00174}00174\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00175}00175\ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00177}\mbox{\hyperlink{zid_8cpp_a093a778c207548419656659944a46ac4}{00177}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{zid_8cpp_a093a778c207548419656659944a46ac4}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00178}00178\ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00179}00179\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.\mbox{\hyperlink{classscifir_1_1zid_a64c51e9d7f9bfed4a45b463d8b45116b}{aid}}\ ==\ y.\mbox{\hyperlink{classscifir_1_1zid_a64c51e9d7f9bfed4a45b463d8b45116b}{aid}})}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00180}00180\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.\mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}}\ ==\ y.\mbox{\hyperlink{classscifir_1_1zid_a3202ef05c7c725b58e0e413e329fd590}{country}})}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ x.\mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}}.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.\mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}}[i]\ !=\ y.\mbox{\hyperlink{classscifir_1_1zid_a312733eaed75956e815a5422e70b6d5d}{regions}}[i])}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.\mbox{\hyperlink{classscifir_1_1zid_a3ef65cf7878c83b2222c2daf6f5f3f36}{zone}}\ ==\ y.\mbox{\hyperlink{classscifir_1_1zid_a3ef65cf7878c83b2222c2daf6f5f3f36}{zone}})}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00203}00203\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00204}00204\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00205}00205\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00207}00207\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00208}00208\ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00210}\mbox{\hyperlink{zid_8cpp_aec3ac19e273a8f4792aa19975d46d5bc}{00210}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{zid_8cpp_aec3ac19e273a8f4792aa19975d46d5bc}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00211}00211\ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00212}00212\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00213}00213\ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00215}\mbox{\hyperlink{zid_8cpp_aa59d8c03955794abaec412d34ee50110}{00215}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{zid_8cpp_a093a778c207548419656659944a46ac4}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_zid\_full)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00216}00216\ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00217}00217\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\ y\ =\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}(init\_zid\_full);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00218}00218\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00219}00219\ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00221}\mbox{\hyperlink{zid_8cpp_a0c84efd3e3893b3331380c7aada89306}{00221}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{zid_8cpp_aec3ac19e273a8f4792aa19975d46d5bc}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_zid\_full)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00222}00222\ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_zid\_full);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00224}00224\ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00226}\mbox{\hyperlink{zid_8cpp_afdb2451e9204dfe1db539d3b7015c35c}{00226}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{zid_8cpp_a093a778c207548419656659944a46ac4}{operator\ ==}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_zid\_full,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00227}00227\ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00228}00228\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\ y\ =\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}(init\_zid\_full);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00229}00229\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00230}00230\ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00232}\mbox{\hyperlink{zid_8cpp_a40c4d7f2051ffd77cda6729cce214976}{00232}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{zid_8cpp_aec3ac19e273a8f4792aa19975d46d5bc}{operator\ !=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_zid\_full,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00233}00233\ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00234}00234\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_zid\_full\ ==\ x);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00235}00235\ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00237}\mbox{\hyperlink{zid_8cpp_a8172c8995c736ca5bd751e29b788c80b}{00237}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{zid_8cpp_a8172c8995c736ca5bd751e29b788c80b}{operator\ +=}}(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00238}00238\ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00239}00239\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00240}00240\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00241}00241\ \ \ \ \ x\ +=\ output.str();}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00242}00242\ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00244}\mbox{\hyperlink{zid_8cpp_ab1cad86185890407265a6af3b0275bc1}{00244}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{zid_8cpp_ab1cad86185890407265a6af3b0275bc1}{operator\ +}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00245}00245\ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00246}00246\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00247}00247\ \ \ \ \ output\ <<\ x;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00248}00248\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00249}00249\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00250}00250\ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00252}\mbox{\hyperlink{zid_8cpp_a9404a9e73eeea7ef6240c04d1357d020}{00252}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{zid_8cpp_ab1cad86185890407265a6af3b0275bc1}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00253}00253\ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00254}00254\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00255}00255\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00256}00256\ \ \ \ \ output\ <<\ x;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00257}00257\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00258}00258\ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00260}\mbox{\hyperlink{zid_8cpp_a2c06ffaf34cda3c37a5616423b4a15ac}{00260}}\ ostream\&\ \mbox{\hyperlink{zid_8cpp_a2c06ffaf34cda3c37a5616423b4a15ac}{operator\ <<}}(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00261}00261\ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00262}00262\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ to\_string(x);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00263}00263\ \}}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00265}\mbox{\hyperlink{zid_8cpp_a0bd7ef119f4e1870ffb481c3a5321902}{00265}}\ istream\&\ \mbox{\hyperlink{zid_8cpp_a0bd7ef119f4e1870ffb481c3a5321902}{operator\ >>}}(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00266}00266\ \{}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00267}00267\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00268}00268\ \ \ \ \ is.getline(a,\ 256);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00269}00269\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00270}00270\ \ \ \ \ boost::trim(b);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00271}00271\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1zid}{scifir::zid}}(b);}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00272}00272\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{\Hypertarget{zid_8cpp_source_l00273}00273\ \}}
+
+\end{DoxyCode}

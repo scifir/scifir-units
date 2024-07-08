@@ -1,0 +1,280 @@
+\doxysection{meca\+\_\+number/complex\+\_\+number.hpp File Reference}
+\hypertarget{complex__number_8hpp}{}\label{complex__number_8hpp}\index{meca\_number/complex\_number.hpp@{meca\_number/complex\_number.hpp}}
+{\ttfamily \#include "{}../meca\+\_\+number/angle.\+hpp"{}}\newline
+{\ttfamily \#include "{}../util/is\+\_\+number.\+hpp"{}}\newline
+{\ttfamily \#include "{}../units/scalar\+\_\+unit.\+hpp"{}}\newline
+{\ttfamily \#include "{}../util/types.\+hpp"{}}\newline
+{\ttfamily \#include "{}boost/algorithm/string.\+hpp"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for complex\+\_\+number.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex__number_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{complex__number_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+\begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T $>$ }\\\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_aaa5f898193180977eaaf32ff616e513b}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1complex__number}{complex\+\_\+number}}$<$ T $>$ \&x)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_aa28fb8e3c6aa92108db7faac70b47f61}{scifir\+::is\+\_\+complex}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+complex\+\_\+number}})
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T $>$ }\\T \mbox{\hyperlink{namespacescifir_a0fca35769fd130e4f6303660a24e6c83}{scifir\+::abs}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1complex__number}{complex\+\_\+number}}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T $>$ }\\\mbox{\hyperlink{classscifir_1_1complex__number}{complex\+\_\+number}}$<$ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} $>$ \mbox{\hyperlink{namespacescifir_ae122052d469fc30579a29477792dd336}{scifir\+::sqrt}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1complex__number}{complex\+\_\+number}}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{complex__number_8hpp_ac2ec2283a01952fdd6f8eaec3ac9d1bb}{operator==}} (const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ U $>$ \&y)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{complex__number_8hpp_a07ea54b50109d2506dfefd281c036e23}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ U $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{complex__number_8hpp_ae188a34becb7c731347601af1d604af1}{operator==}} (const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&x, const string \&init\+\_\+complex\+\_\+number)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{complex__number_8hpp_ad65ccea37cdc03b75db974f6afbc6ded}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&x, const string \&init\+\_\+complex\+\_\+number)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{complex__number_8hpp_a9956b594bad1df8d41b40b65306f1f4f}{operator==}} (const string \&init\+\_\+complex\+\_\+number, const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{complex__number_8hpp_a11a900cd15c0a4bc2f3bfb1186aa7893}{operator!=}} (const string \&init\+\_\+complex\+\_\+number, const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{complex__number_8hpp_ac45c87f5734a4d1f3d29774a8505e7dd}{operator+=}} (string \&x, const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\string \mbox{\hyperlink{complex__number_8hpp_ae8f6568d0f78ecd6922589c7c8c11b3c}{operator+}} (const string \&x, const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\string \mbox{\hyperlink{complex__number_8hpp_a62d0c85cbc370f78604e951de6caede9}{operator+}} (const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&x, const string \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\ostream \& \mbox{\hyperlink{complex__number_8hpp_a329afa184709c1be2a6e4abcfff5102e}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\istream \& \mbox{\hyperlink{complex__number_8hpp_a19197f8911030321c39013dc3a8e7498}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{complex__number_8hpp_a07ea54b50109d2506dfefd281c036e23}\label{complex__number_8hpp_a07ea54b50109d2506dfefd281c036e23} 
+\index{complex\_number.hpp@{complex\_number.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!complex\_number.hpp@{complex\_number.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ U $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{complex__number_8hpp_source_l00229}{229}} of file \mbox{\hyperlink{complex__number_8hpp_source}{complex\+\_\+number.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00230\ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{00232\ \}}
+
+\end{DoxyCode}
+\Hypertarget{complex__number_8hpp_ad65ccea37cdc03b75db974f6afbc6ded}\label{complex__number_8hpp_ad65ccea37cdc03b75db974f6afbc6ded} 
+\index{complex\_number.hpp@{complex\_number.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!complex\_number.hpp@{complex\_number.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&}]{x,  }\item[{const string \&}]{init\+\_\+complex\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{complex__number_8hpp_source_l00241}{241}} of file \mbox{\hyperlink{complex__number_8hpp_source}{complex\+\_\+number.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00242\ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_complex\_number);}
+\DoxyCodeLine{00244\ \}}
+
+\end{DoxyCode}
+\Hypertarget{complex__number_8hpp_a11a900cd15c0a4bc2f3bfb1186aa7893}\label{complex__number_8hpp_a11a900cd15c0a4bc2f3bfb1186aa7893} 
+\index{complex\_number.hpp@{complex\_number.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!complex\_number.hpp@{complex\_number.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+complex\+\_\+number,  }\item[{const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{complex__number_8hpp_source_l00253}{253}} of file \mbox{\hyperlink{complex__number_8hpp_source}{complex\+\_\+number.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00254\ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_complex\_number\ ==\ x);}
+\DoxyCodeLine{00256\ \}}
+
+\end{DoxyCode}
+\Hypertarget{complex__number_8hpp_a62d0c85cbc370f78604e951de6caede9}\label{complex__number_8hpp_a62d0c85cbc370f78604e951de6caede9} 
+\index{complex\_number.hpp@{complex\_number.hpp}!operator+@{operator+}}
+\index{operator+@{operator+}!complex\_number.hpp@{complex\_number.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+string operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&}]{x,  }\item[{const string \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{complex__number_8hpp_source_l00271}{271}} of file \mbox{\hyperlink{complex__number_8hpp_source}{complex\+\_\+number.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00272\ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x)\ +\ y;}
+\DoxyCodeLine{00274\ \}}
+
+\end{DoxyCode}
+\Hypertarget{complex__number_8hpp_ae8f6568d0f78ecd6922589c7c8c11b3c}\label{complex__number_8hpp_ae8f6568d0f78ecd6922589c7c8c11b3c} 
+\index{complex\_number.hpp@{complex\_number.hpp}!operator+@{operator+}}
+\index{operator+@{operator+}!complex\_number.hpp@{complex\_number.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+string operator+ (\begin{DoxyParamCaption}\item[{const string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{complex__number_8hpp_source_l00265}{265}} of file \mbox{\hyperlink{complex__number_8hpp_source}{complex\+\_\+number.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00266\ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordflow}{return}\ x\ +\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(y);}
+\DoxyCodeLine{00268\ \}}
+
+\end{DoxyCode}
+\Hypertarget{complex__number_8hpp_ac45c87f5734a4d1f3d29774a8505e7dd}\label{complex__number_8hpp_ac45c87f5734a4d1f3d29774a8505e7dd} 
+\index{complex\_number.hpp@{complex\_number.hpp}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!complex\_number.hpp@{complex\_number.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void operator+= (\begin{DoxyParamCaption}\item[{string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{complex__number_8hpp_source_l00259}{259}} of file \mbox{\hyperlink{complex__number_8hpp_source}{complex\+\_\+number.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00260\ \{}
+\DoxyCodeLine{00261\ \ \ \ \ x\ +=\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(y);}
+\DoxyCodeLine{00262\ \}}
+
+\end{DoxyCode}
+\Hypertarget{complex__number_8hpp_a329afa184709c1be2a6e4abcfff5102e}\label{complex__number_8hpp_a329afa184709c1be2a6e4abcfff5102e} 
+\index{complex\_number.hpp@{complex\_number.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!complex\_number.hpp@{complex\_number.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{complex__number_8hpp_source_l00277}{277}} of file \mbox{\hyperlink{complex__number_8hpp_source}{complex\+\_\+number.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00278\ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x);}
+\DoxyCodeLine{00280\ \}}
+
+\end{DoxyCode}
+\Hypertarget{complex__number_8hpp_ac2ec2283a01952fdd6f8eaec3ac9d1bb}\label{complex__number_8hpp_ac2ec2283a01952fdd6f8eaec3ac9d1bb} 
+\index{complex\_number.hpp@{complex\_number.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!complex\_number.hpp@{complex\_number.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ U $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{complex__number_8hpp_source_l00216}{216}} of file \mbox{\hyperlink{complex__number_8hpp_source}{complex\+\_\+number.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00217\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.real\ ==\ y.real\ and\ x.imaginary\ ==\ y.imaginary)}
+\DoxyCodeLine{00219\ \ \ \ \ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00221\ \ \ \ \ \}}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00223\ \ \ \ \ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00225\ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \}}
+
+\end{DoxyCode}
+\Hypertarget{complex__number_8hpp_ae188a34becb7c731347601af1d604af1}\label{complex__number_8hpp_ae188a34becb7c731347601af1d604af1} 
+\index{complex\_number.hpp@{complex\_number.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!complex\_number.hpp@{complex\_number.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&}]{x,  }\item[{const string \&}]{init\+\_\+complex\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{complex__number_8hpp_source_l00235}{235}} of file \mbox{\hyperlink{complex__number_8hpp_source}{complex\+\_\+number.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00236\ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}(init\_complex\_number));}
+\DoxyCodeLine{00238\ \}}
+
+\end{DoxyCode}
+\Hypertarget{complex__number_8hpp_a9956b594bad1df8d41b40b65306f1f4f}\label{complex__number_8hpp_a9956b594bad1df8d41b40b65306f1f4f} 
+\index{complex\_number.hpp@{complex\_number.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!complex\_number.hpp@{complex\_number.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+complex\+\_\+number,  }\item[{const \mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{complex__number_8hpp_source_l00247}{247}} of file \mbox{\hyperlink{complex__number_8hpp_source}{complex\+\_\+number.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00248\ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}(init\_complex\_number)\ ==\ x);}
+\DoxyCodeLine{00250\ \}}
+
+\end{DoxyCode}
+\Hypertarget{complex__number_8hpp_a19197f8911030321c39013dc3a8e7498}\label{complex__number_8hpp_a19197f8911030321c39013dc3a8e7498} 
+\index{complex\_number.hpp@{complex\_number.hpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!complex\_number.hpp@{complex\_number.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1complex__number}{scifir\+::complex\+\_\+number}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{complex__number_8hpp_source_l00283}{283}} of file \mbox{\hyperlink{complex__number_8hpp_source}{complex\+\_\+number.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00284\ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
+\DoxyCodeLine{00286\ \ \ \ \ is.getline(a,\ 256);}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
+\DoxyCodeLine{00288\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}(b);}
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{00290\ \}}
+
+\end{DoxyCode}

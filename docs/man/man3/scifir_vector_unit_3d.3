@@ -7,10 +7,15 @@ scifir::vector_unit_3d
 .br
 .PP
 .PP
+\fC#include <vector_unit_3d\&.hpp>\fP
+.PP
 Inherits \fBscifir::scalar_unit\fP\&.
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBvector_unit_3d\fP ()"
+.br
 .ti -1c
 .RI "\fBvector_unit_3d\fP (\fBconst\fP \fBvector_unit_3d\fP &x)"
 .br
@@ -99,7 +104,7 @@ Inherits \fBscifir::scalar_unit\fP\&.
 .RI "\fBbool\fP \fBoperator==\fP (\fBvector_unit_3d\fP x) \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBpoint_to\fP (direction::name x)"
+.RI "\fBvoid\fP \fBpoint_to\fP (\fBdirection::name\fP x)"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBoperator+=\fP (\fBconst\fP \fBvector_unit_3d\fP &x)"
@@ -175,152 +180,205 @@ Inherits \fBscifir::scalar_unit\fP\&.
 Public Member Functions inherited from \fBscifir::scalar_unit\fP
 .in +1c
 .ti -1c
+.RI "\fBscalar_unit\fP ()"
+.br
+.RI "Default constructor, the value is 0 and the dimensions are empty\&. "
+.ti -1c
 .RI "\fBscalar_unit\fP (\fBconst\fP \fBscalar_unit\fP &x)"
 .br
+.RI "Copy constructor, copies the value and the dimensions\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP (\fBscalar_unit\fP &&x)"
 .br
+.RI "Move constructor, moves the value and the dimensions\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
 .br
+.RI "Creates a new \fBscalar_unit\fP with the value and with the dimensions specified in the string\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
 .br
+.RI "Creates a new \fBscalar_unit\fP, the double is casted to a float\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
 .br
+.RI "Creates a new \fBscalar_unit\fP, the long double is casted to a float\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
 .br
+.RI "Creates a new \fBscalar_unit\fP, the int is casted to a float\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP (\fBfloat\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
 .br
+.RI "Creates a new \fBscalar_unit\fP with the value given and copying the dimensions\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP (\fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
 .br
+.RI "Creates a new \fBscalar_unit\fP, the double is casted to a float, the dimensions are copied\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP (\fBlong\fP \fBdouble\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
 .br
+.RI "Creates a new \fBscalar_unit\fP, the long double is casted to a float, the dimensions are copied\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP (\fBint\fP \fBnew_value\fP, \fBconst\fP vector< \fBdimension\fP > &\fBnew_dimensions\fP)"
 .br
+.RI "Creates a new \fBscalar_unit\fP, the int is casted to a float, the dimensions are copied\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP (\fBconst\fP \fBstring\fP &\fBinit_scalar\fP)"
 .br
+.RI "Creates a new \fBscalar_unit\fP, the initialization string specifies both the value and the dimensions\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP & \fBoperator=\fP (\fBconst\fP \fBscalar_unit\fP &x)"
 .br
+.RI "Copy assignment, it assigns a copy of the \fBscalar_unit\fP\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP & \fBoperator=\fP (\fBscalar_unit\fP &&x)"
 .br
+.RI "Move assignment, it moves the \fBscalar_unit\fP\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP & \fBoperator=\fP (\fBconst\fP \fBstring\fP &\fBinit_scalar\fP)"
 .br
+.RI "Assignment with an initialization string, the value and the dimensions are both specified\&. "
 .ti -1c
 .RI "\fBoperator float\fP () \fBconst\fP"
 .br
+.RI "Cast the \fBscalar_unit\fP to their float equivalent, it discards the dimensions and copies the value to a float\&. "
 .ti -1c
 .RI "\fBbool\fP \fBoperator==\fP (\fBscalar_unit\fP x) \fBconst\fP"
 .br
+.RI "Comparison operator, two \fBscalar_unit\fP classes are considered equivalent if they have the same value given the same dimensions\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP \fBoperator+\fP (\fBscalar_unit\fP x) \fBconst\fP"
 .br
+.RI "Addition operator, it sums two \fBscalar_unit\fP classes, their dimensions are changed to be equal first\&. If the basic dimensions are different, it returns an empty \fBscalar_unit\fP class\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP \fBoperator\-\fP (\fBscalar_unit\fP x) \fBconst\fP"
 .br
+.RI "Substraction operator, it substracts one \fBscalar_unit\fP from the other, their dimensions are changed to be equal first\&. If the basic dimensions are different, it returns an empty \fBscalar_unit\fP class\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP \fBoperator*\fP (\fBscalar_unit\fP x) \fBconst\fP"
 .br
+.RI "Multiplication operator, it multiplies two \fBscalar_unit\fP classes, their dimensions are also multiplied\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP \fBoperator/\fP (\fBscalar_unit\fP x) \fBconst\fP"
 .br
+.RI "Division operator, it divides one \fBscalar_unit\fP class with the other, their dimensions are also divided\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP \fBoperator^\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
 .br
+.RI "Power operator, it powers a \fBscalar_unit\fP class with another, if that second \fBscalar_unit\fP class, which is the exponent, as empty dimensions\&. If the exponent doesn't has empty dimensions it returns an empty \fBscalar_unit\fP class\&. "
 .ti -1c
 .RI "\fBvoid\fP \fBoperator+=\fP (\fBscalar_unit\fP x)"
 .br
+.RI "Addition operator, it adds a \fBscalar_unit\fP class to another, by converting their dimensions to be equal first\&. If their basic dimensions are different, it doesn't sums to the value\&. "
 .ti -1c
 .RI "\fBvoid\fP \fBoperator\-=\fP (\fBscalar_unit\fP x)"
 .br
+.RI "Substraction operator, it substracts a \fBscalar_unit\fP class to another, by converting their dimensions to be equal first\&. If their basic dimensions are different, it doesn't substracts to the value\&. "
 .ti -1c
 .RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator+\fP (T y) \fBconst\fP"
 .br
+.RI "Addition operator, it sums the numeric type to the value, independent of the dimensions\&. "
 .ti -1c
 .RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator\-\fP (T y) \fBconst\fP"
 .br
+.RI "Substraction operator, it substracts the numeric type to the value, independent of the dimensions\&. "
 .ti -1c
 .RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator*\fP (T y) \fBconst\fP"
 .br
+.RI "Multiplication operator, it multiplies the numeric type with the value, independent of the dimensions\&. "
 .ti -1c
 .RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBscalar_unit\fP \fBoperator/\fP (T y) \fBconst\fP"
 .br
+.RI "Division operator, it divides the value with the numeric type, independent of the dimensions\&. "
 .ti -1c
 .RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<is_integer_number<T>::value>::type> \fBscalar_unit\fP \fBoperator^\fP (T y) \fBconst\fP"
 .br
+.RI "Power operator, it powers the value with the numeric type, independent of the dimensions\&. "
 .ti -1c
 .RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator+=\fP (T y)"
 .br
+.RI "Addition operator, it adds the numeric type to the value, independent of the dimensions\&. "
 .ti -1c
 .RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator\-=\fP (T y)"
 .br
+.RI "Substraction operator, it substracts the numeric type to the value, independent of the dimensions\&. "
 .ti -1c
 .RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator*=\fP (T y)"
 .br
+.RI "Multiplication operator, it multiplies the numeric type to the value, independent of the dimensions\&. "
 .ti -1c
 .RI "template<\fBtypename\fP T , \fBtypename\fP  = typename enable_if<scifir::is_number<T>::value>::type> \fBvoid\fP \fBoperator/=\fP (T y)"
 .br
+.RI "Division operator, it divides the numeric type to the value, independent of the dimensions\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP & \fBoperator++\fP ()"
 .br
+.RI "Increment operator, it increases the value by one\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP & \fBoperator++\fP (\fBint\fP)"
 .br
+.RI "Increment operator, it increases the value by one\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP & \fBoperator\-\-\fP ()"
 .br
+.RI "Decrement operator, it decreases the value by one\&. "
 .ti -1c
 .RI "\fBscalar_unit\fP & \fBoperator\-\-\fP (\fBint\fP)"
 .br
+.RI "Decrement operator, it decreases the value by one\&. "
 .ti -1c
 .RI "\fBvoid\fP \fBchange_dimensions\fP (\fBconst\fP \fBstring\fP &\fBinit_dimensions\fP)"
 .br
+.RI "Changes the dimensions to the dimensions specified by the initialization string of dimensions\&. "
 .ti -1c
 .RI "\fBvoid\fP \fBchange_dimensions\fP (\fBconst\fP \fBscalar_unit\fP &x)"
 .br
+.RI "Changes the dimensions to the same dimensions of the \fBscalar_unit\fP\&. "
 .ti -1c
 .RI "\fBbool\fP \fBhas_dimensions\fP (\fBconst\fP \fBstring\fP &\fBinit_dimensions\fP) \fBconst\fP"
 .br
+.RI "Checks if the basic dimensions are the same as the initialization string of dimensions\&. "
 .ti -1c
 .RI "\fBbool\fP \fBhas_dimensions\fP (\fBconst\fP vector< \fBdimension\fP > &\fBx_dimensions\fP) \fBconst\fP"
 .br
+.RI "Checks if the basic dimensions are the same as some set of dimensions\&. "
 .ti -1c
 .RI "\fBbool\fP \fBhas_dimensions\fP (\fBconst\fP \fBscalar_unit\fP &x) \fBconst\fP"
 .br
+.RI "Checks if the basic dimensions are the same as other \fBscalar_unit\fP\&. "
 .ti -1c
 .RI "\fBbool\fP \fBhas_empty_dimensions\fP () \fBconst\fP"
 .br
+.RI "Checks if there aren't basic dimensions\&. "
 .ti -1c
 .RI "\fBstring\fP \fBdisplay_dimensions\fP () \fBconst\fP"
 .br
+.RI "Generates an string of the dimensions of the \fBscalar_unit\fP, with the same format as the initialization string of dimensions\&. "
 .ti -1c
 .RI "vector< \fBdimension\fP > \fBget_derived_dimensions\fP () \fBconst\fP"
 .br
+.RI "Generates a set of the derived dimensions of the dimensions of the \fBscalar_unit\fP\&. "
 .ti -1c
 .RI "\fBconst\fP vector< \fBdimension\fP > & \fBget_dimensions\fP () \fBconst\fP"
 .br
+.RI "Read-only getter of the dimensions\&. "
 .ti -1c
 .RI "\fBconst\fP \fBfloat\fP & \fBget_value\fP () \fBconst\fP"
 .br
+.RI "Read-only getter of the value\&. "
 .ti -1c
 .RI "\fBstring\fP \fBdisplay\fP (\fBint\fP \fBnumber_of_decimals\fP=2, \fBbool\fP \fBwith_brackets\fP=\fBfalse\fP, \fBbool\fP \fBuse_close_prefix\fP=\fBfalse\fP) \fBconst\fP"
 .br
+.RI "Generates an string of the \fBscalar_unit\fP, with the value and the dimensions\&. The dimensions can be enclosed by brackets, and the value can be set to have the closest prefix\&. "
 .ti -1c
 .RI "\fBstring\fP \fBderived_display\fP (\fBint\fP \fBnumber_of_decimals\fP=2, \fBbool\fP \fBwith_brackets\fP=\fBfalse\fP, \fBbool\fP \fBuse_close_prefix\fP=\fBfalse\fP) \fBconst\fP"
 .br
+.RI "Generates an string of the \fBscalar_unit\fP, with all dimensions converted to their derived counterpart\&. "
 .ti -1c
 .RI "\fBstring\fP \fBcustom_display\fP (\fBconst\fP \fBstring\fP &\fBinit_dimensions\fP, \fBint\fP \fBnumber_of_decimals\fP=2, \fBbool\fP \fBwith_brackets\fP=\fBfalse\fP) \fBconst\fP"
 .br
+.RI "Generates an string of the \fBscalar_unit\fP, with the dimensions changed to any set of dimensions, specified by an initialization string of dimensions\&. "
 .in -1c
 .SS "Static Public Member Functions"
 
@@ -342,6 +400,13 @@ Public Member Functions inherited from \fBscifir::scalar_unit\fP
 .RI "\fBangle\fP \fBphi\fP"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_vector_3d\fP)"
+.br
+.in -1c
 .SS "Additional Inherited Members"
 
 
@@ -350,12 +415,15 @@ Protected Member Functions inherited from \fBscifir::scalar_unit\fP
 .ti -1c
 .RI "\fBvoid\fP \fBadd_dimension\fP (\fBconst\fP \fBdimension\fP &\fBnew_dimension\fP)"
 .br
+.RI "Internal function\&. It adds a dimension, changing the value according to the conversion factor of the added dimension and the prefix\&. "
 .ti -1c
 .RI "\fBvoid\fP \fBremove_dimension\fP (\fBconst\fP \fBdimension\fP &\fBold_dimension\fP)"
 .br
+.RI "Internal function\&. It removes a dimension, changing the value according to the conversion factor of the removed dimension and the prefix\&. "
 .ti -1c
 .RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_scalar\fP)"
 .br
+.RI "Internal function\&. It sets the value and the dimensions of the \fBscalar_unit\fP to the value and dimensions specified by the initialization string of \fBscalar_unit\fP\&. "
 .in -1c
 
 Protected Attributes inherited from \fBscifir::scalar_unit\fP
@@ -363,10 +431,788 @@ Protected Attributes inherited from \fBscifir::scalar_unit\fP
 .ti -1c
 .RI "vector< \fBdimension\fP > \fBdimensions\fP"
 .br
+.RI "Dimensions of the \fBscalar_unit\fP\&. They can be basic dimensions or abbreviations\&. "
 .ti -1c
 .RI "\fBfloat\fP \fBvalue\fP"
 .br
+.RI "Value of the \fBscalar_unit\fP\&. It changes automatically when the dimensions change\&. "
 .in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB72\fP of file \fBvector_unit_3d\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "scifir::vector_unit_3d::vector_unit_3d ()"
+
+.PP
+Definition at line \fB10\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+10                                    : scalar_unit(),theta(),phi()
+11     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBconst\fP \fBvector_unit_3d\fP & x)"
+
+.PP
+Definition at line \fB13\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+13                                                           : scalar_unit(x),theta(x\&.theta),phi(x\&.phi)
+14     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBvector_unit_3d\fP && x)"
+
+.PP
+Definition at line \fB16\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+16                                                      : scalar_unit(std::move(x)),theta(std::move(x\&.theta)),phi(std::move(x\&.phi))
+17     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBfloat\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBfloat\fP new_theta, \fBfloat\fP new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB19\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+19                                                                                                               : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+20     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBfloat\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB22\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+22                                                                                                                             : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+23     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBdouble\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBfloat\fP new_theta, \fBfloat\fP new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB25\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+25                                                                                                                : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+26     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBdouble\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB28\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+28                                                                                                                              : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+29     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBlong\fP \fBdouble\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBfloat\fP new_theta, \fBfloat\fP new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB31\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+31                                                                                                                     : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+32     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBlong\fP \fBdouble\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB34\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+34                                                                                                                                   : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+35     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBint\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBfloat\fP new_theta, \fBfloat\fP new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB37\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+37                                                                                                             : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+38     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBint\fP new_value, \fBconst\fP \fBstring\fP & init_dimensions, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB40\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+40                                                                                                                           : scalar_unit(new_value,init_dimensions),theta(new_theta),phi(new_phi)
+41     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBfloat\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBfloat\fP new_theta, \fBfloat\fP new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB43\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+43                                                                                                                         : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+44     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBfloat\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB46\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+46                                                                                                                                       : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+47     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBdouble\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBfloat\fP new_theta, \fBfloat\fP new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB49\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+49                                                                                                                          : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+50     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBdouble\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB52\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+52                                                                                                                                        : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+53     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBlong\fP \fBdouble\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBfloat\fP new_theta, \fBfloat\fP new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB55\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+55                                                                                                                               : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+56     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBlong\fP \fBdouble\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB58\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+58                                                                                                                                             : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+59     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBint\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBfloat\fP new_theta, \fBfloat\fP new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB61\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+61                                                                                                                       : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+62     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBint\fP new_value, \fBconst\fP vector< \fBdimension\fP > & new_dimensions, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB64\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+64                                                                                                                                     : scalar_unit(new_value,new_dimensions),theta(new_theta),phi(new_phi)
+65     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBconst\fP \fBscalar_unit\fP & x, \fBfloat\fP new_theta, \fBfloat\fP new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB67\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+67                                                                                      : scalar_unit(x),theta(new_theta),phi(new_phi)
+68     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBconst\fP \fBscalar_unit\fP & x, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB70\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+70                                                                                                    : scalar_unit(x),theta(new_theta),phi(new_phi)
+71     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBconst\fP \fBstring\fP & init_scalar, \fBfloat\fP new_theta, \fBfloat\fP new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB73\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+73                                                                                           : scalar_unit(init_scalar),theta(new_theta),phi(new_phi)
+74     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBconst\fP \fBstring\fP & init_scalar, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB76\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+76                                                                                                         : scalar_unit(init_scalar),theta(new_theta),phi(new_phi)
+77     {}
+.fi
+
+.SS "scifir::vector_unit_3d::vector_unit_3d (\fBconst\fP \fBstring\fP & init_vector_3d)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB79\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+79                                                                : vector_unit_3d()
+80     {
+81         vector_unit_3d::initialize_from_string(init_vector_3d);
+82     }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBstatic\fP \fBvector_unit_3d\fP scifir::vector_unit_3d::cartesian_3d (\fBconst\fP \fBstring\fP & new_dimensions, \fBfloat\fP new_x, \fBfloat\fP new_y, \fBfloat\fP new_z)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line \fB100\fP of file \fBvector_unit_3d\&.hpp\fP\&..PP
+.nf
+101             {
+102                 float new_value = float(std::sqrt(std::pow(new_x,2) + std::pow(new_y,2) + std::pow(new_z,2)));
+103                 float new_theta = scifir::atan_grade(new_y / new_x);
+104                 float new_phi = scifir::acos_grade(new_z / new_value);
+105                 return vector_unit_3d(new_value,new_dimensions,angle(new_theta),angle(new_phi));
+106             }
+.fi
+
+.SS "\fBstatic\fP \fBvector_unit_3d\fP scifir::vector_unit_3d::cylindrical (\fBconst\fP \fBstring\fP & new_dimensions, \fBfloat\fP new_p, \fBangle\fP new_theta, \fBfloat\fP new_z)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line \fB108\fP of file \fBvector_unit_3d\&.hpp\fP\&..PP
+.nf
+109             {
+110                 float new_value = float(std::sqrt(std::pow(new_p,2) + std::pow(new_z,2)));
+111                 float new_phi = scifir::atan_grade(new_p / new_z);
+112                 return vector_unit_3d(new_value,new_dimensions,new_theta,angle(new_phi));
+113             }
+.fi
+
+.SS "\fBvoid\fP scifir::vector_unit_3d::initialize_from_string (\fBstring\fP init_vector_3d)\fC [private]\fP"
+
+.PP
+Definition at line \fB414\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+415     {
+416         vector<string> values;
+417         boost::split(values,init_vector_3d,boost::is_any_of(" "));
+418         if (values\&.size() == 4)
+419         {
+420             scalar_unit::initialize_from_string(values[0] + " " + values[1]);
+421             theta = angle(values[2]);
+422             phi = angle(values[3]);
+423         }
+424     }
+.fi
+
+.SS "\fBvoid\fP scifir::vector_unit_3d::invert ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB220\fP of file \fBvector_unit_3d\&.hpp\fP\&..PP
+.nf
+221             {
+222                 theta\&.invert();
+223                 phi = 180\&.0f \- phi;
+224             }
+.fi
+
+.SS "\fBvector_unit_3d\fP scifir::vector_unit_3d::operator* (\fBconst\fP \fBscalar_unit\fP & x) const"
+
+.PP
+Definition at line \fB332\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+333     {
+334         long double new_value = scalar_unit::value * x\&.get_value();
+335         vector<dimension> new_dimensions = multiply_dimensions(get_dimensions(), x\&.get_dimensions(),new_value);
+336         return vector_unit_3d(float(new_value), new_dimensions, theta, phi);
+337     }
+.fi
+
+.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvector_unit_3d\fP scifir::vector_unit_3d::operator* (\fBU\fP x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB152\fP of file \fBvector_unit_3d\&.hpp\fP\&..PP
+.nf
+153             {
+154                 vector_unit_3d y = *this;
+155                 y *= x;
+156                 return y;
+157             }
+.fi
+
+.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP scifir::vector_unit_3d::operator*= (\fBU\fP x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB186\fP of file \fBvector_unit_3d\&.hpp\fP\&..PP
+.nf
+187             {
+188                 scalar_unit::value *= std::abs(x);
+189                 if(x < 0)
+190                 {
+191                     invert();
+192                 }
+193             }
+.fi
+
+.SS "\fBvector_unit_3d\fP scifir::vector_unit_3d::operator+ (\fBconst\fP \fBvector_unit_3d\fP & x) const"
+
+.PP
+Definition at line \fB295\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+296     {
+297         if (has_dimensions(x))
+298         {
+299             float new_x = float(x_projection() + x\&.x_projection());
+300             float new_y = float(y_projection() + x\&.y_projection());
+301             float new_z = float(z_projection() + x\&.z_projection());
+302             float new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
+303             angle new_theta = angle(cartesian_3d_to_spherical_theta(new_x, new_y, new_z));
+304             angle new_phi = angle(cartesian_3d_to_spherical_phi(new_x, new_y, new_z));
+305             return vector_unit_3d(new_value,get_dimensions(),new_theta,new_phi);
+306         }
+307         else
+308         {
+309             return vector_unit_3d();
+310         }
+311     }
+.fi
+
+.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvector_unit_3d\fP scifir::vector_unit_3d::operator+ (\fBU\fP x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB136\fP of file \fBvector_unit_3d\&.hpp\fP\&..PP
+.nf
+137             {
+138                 vector_unit_3d y = *this;
+139                 y += x;
+140                 return y;
+141             }
+.fi
+
+.SS "\fBvoid\fP scifir::vector_unit_3d::operator+= (\fBconst\fP \fBvector_unit_3d\fP & x)"
+
+.PP
+Definition at line \fB265\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+266     {
+267         if(has_dimensions(x))
+268         {
+269             float new_x = float(x_projection() + x\&.x_projection());
+270             float new_y = float(y_projection() + x\&.y_projection());
+271             float new_z = float(z_projection() + x\&.z_projection());
+272             scalar_unit::value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
+273             theta = angle(cartesian_3d_to_spherical_theta(new_x, new_y, new_z));
+274             phi = angle(cartesian_3d_to_spherical_phi(new_x, new_y, new_z));
+275         }
+276         else
+277         {
+278             cerr << "Cannot sum vectors of different dimensions" << endl;
+279         }
+280     }
+.fi
+
+.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP scifir::vector_unit_3d::operator+= (\fBU\fP x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB174\fP of file \fBvector_unit_3d\&.hpp\fP\&..PP
+.nf
+175             {
+176                 scalar_unit::value += x;
+177             }
+.fi
+
+.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvector_unit_3d\fP scifir::vector_unit_3d::operator\- (\fBU\fP x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB144\fP of file \fBvector_unit_3d\&.hpp\fP\&..PP
+.nf
+145             {
+146                 vector_unit_3d y = *this;
+147                 y \-= x;
+148                 return y;
+149             }
+.fi
+
+.SS "\fBvector_unit_3d\fP scifir::vector_unit_3d::operator\- (\fBvector_unit_3d\fP x) const"
+
+.PP
+Definition at line \fB313\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+314     {
+315         if (has_dimensions(x))
+316         {
+317             x\&.invert();
+318             float new_x = float(x_projection() + x\&.x_projection());
+319             float new_y = float(y_projection() + x\&.y_projection());
+320             float new_z = float(z_projection() + x\&.z_projection());
+321             float new_value = cartesian_3d_to_spherical_r(new_x, new_y, new_z);
+322             angle new_theta = angle(cartesian_3d_to_spherical_theta(new_x, new_y, new_z));
+323             angle new_phi = angle(cartesian_3d_to_spherical_phi(new_x, new_y, new_z));
+324             return vector_unit_3d(new_value,get_dimensions(),new_theta,new_phi);
+325         }
+326         else
+327         {
+328             return vector_unit_3d();
+329         }
+330     }
+.fi
+
+.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP scifir::vector_unit_3d::operator\-= (\fBU\fP x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB180\fP of file \fBvector_unit_3d\&.hpp\fP\&..PP
+.nf
+181             {
+182                 scalar_unit::value \-= x;
+183             }
+.fi
+
+.SS "\fBvoid\fP scifir::vector_unit_3d::operator\-= (\fBvector_unit_3d\fP x)"
+
+.PP
+Definition at line \fB282\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+283     {
+284         if(has_dimensions(x))
+285         {
+286             x\&.invert();
+287             *this += x;
+288         }
+289         else
+290         {
+291             cerr << "Cannot substract vectors of different dimensions" << endl;
+292         }
+293     }
+.fi
+
+.SS "\fBvector_unit_3d\fP scifir::vector_unit_3d::operator/ (\fBconst\fP \fBscalar_unit\fP & x) const"
+
+.PP
+Definition at line \fB339\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+340     {
+341         long double new_value = scalar_unit::value / x\&.get_value();
+342         vector<dimension> new_dimensions = divide_dimensions(get_dimensions(), x\&.get_dimensions(),new_value);
+343         return vector_unit_3d(float(new_value), new_dimensions, theta, phi);
+344     }
+.fi
+
+.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvector_unit_3d\fP scifir::vector_unit_3d::operator/ (\fBU\fP x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB160\fP of file \fBvector_unit_3d\&.hpp\fP\&..PP
+.nf
+161             {
+162                 vector_unit_3d y = *this;
+163                 y /= x;
+164                 return y;
+165             }
+.fi
+
+.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<scifir::is_number<U>::value>::type> \fBvoid\fP scifir::vector_unit_3d::operator/= (\fBU\fP x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB196\fP of file \fBvector_unit_3d\&.hpp\fP\&..PP
+.nf
+197             {
+198                 scalar_unit::value /= std::abs(x);
+199                 if(x < 0)
+200                 {
+201                     invert();
+202                 }
+203             }
+.fi
+
+.SS "\fBvector_unit_3d\fP & scifir::vector_unit_3d::operator= (\fBconst\fP \fBscalar_unit\fP & x)"
+
+.PP
+Definition at line \fB100\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+101     {
+102         scalar_unit::operator=(x);
+103         return *this;
+104     }
+.fi
+
+.SS "\fBvector_unit_3d\fP & scifir::vector_unit_3d::operator= (\fBconst\fP \fBstring\fP & init_vector_3d)"
+
+.PP
+Definition at line \fB112\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+113     {
+114         vector_unit_3d::initialize_from_string(init_vector_3d);
+115         return *this;
+116     }
+.fi
+
+.SS "\fBvector_unit_3d\fP & scifir::vector_unit_3d::operator= (\fBconst\fP \fBvector_unit_3d\fP & x)"
+
+.PP
+Definition at line \fB84\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+85     {
+86         scalar_unit::operator=(x);
+87         theta = x\&.theta;
+88         phi = x\&.phi;
+89         return *this;
+90     }
+.fi
+
+.SS "\fBvector_unit_3d\fP & scifir::vector_unit_3d::operator= (\fBscalar_unit\fP && x)"
+
+.PP
+Definition at line \fB106\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+107     {
+108         scalar_unit::operator=(std::move(x));
+109         return *this;
+110     }
+.fi
+
+.SS "\fBvector_unit_3d\fP & scifir::vector_unit_3d::operator= (\fBvector_unit_3d\fP && x)"
+
+.PP
+Definition at line \fB92\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+93     {
+94         scalar_unit::operator=(std::move(x));
+95         theta = std::move(x\&.theta);
+96         phi = std::move(x\&.phi);
+97         return *this;
+98     }
+.fi
+
+.SS "\fBbool\fP scifir::vector_unit_3d::operator== (\fBscifir::vector_unit_3d\fP x) const"
+
+.PP
+Definition at line \fB118\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+119     {
+120         x\&.change_dimensions(*this);
+121         if(get_value() == x\&.get_value() and scifir::same_direction(*this,x) and has_dimensions(x))
+122         {
+123             return true;
+124         }
+125         else
+126         {
+127             return false;
+128         }
+129     }
+.fi
+
+.SS "\fBvector_unit_3d\fP scifir::vector_unit_3d::operator^ (\fBconst\fP \fBscalar_unit\fP & x) const"
+
+.PP
+Definition at line \fB346\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+347     {
+348         if(x\&.has_empty_dimensions())
+349         {
+350             scalar_unit new_unit = scalar_unit::operator^(x);
+351             return vector_unit_3d(new_unit, theta, phi);
+352         }
+353         else
+354         {
+355             cerr << "Cannot power with as exponent a unit with dimensions" << endl;
+356             return vector_unit_3d();
+357         }
+358     }
+.fi
+
+.SS "template<\fBtypename\fP \fBU\fP , \fBtypename\fP  = typename enable_if<is_integer_number<U>::value>::type> \fBvector_unit_3d\fP scifir::vector_unit_3d::operator^ (\fBU\fP x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB168\fP of file \fBvector_unit_3d\&.hpp\fP\&..PP
+.nf
+169             {
+170                 return vector_unit_3d(std::pow(get_value(),x),power_dimensions(get_dimensions(),x),theta,phi);
+171             }
+.fi
+
+.SS "\fBvoid\fP scifir::vector_unit_3d::point_to (\fBdirection::name\fP x)"
+
+.PP
+Definition at line \fB131\fP of file \fBvector_unit_3d\&.cpp\fP\&..PP
+.nf
+132     {
+133         if (x == direction::LEFT)
+134         {
+135             theta = 270\&.0f;
+136             phi = 90\&.0f;
+137         }
+138         else if(x == direction::RIGHT)
+139         {
+140             theta = 90\&.0f;
+141             phi = 90\&.0f;
+142         }
+143         else if(x == direction::TOP)
+144         {
+145             theta = 0\&.0f;
+146             phi = 0\&.0f;
+147         }
+148         else if(x == direction::BOTTOM)
+149         {
+150             theta = 0\&.0f;
+151             phi = 180\&.0f;
+152         }
+153         else if(x == direction::LEFT_TOP)
+154         {
+155             theta = 270\&.0f;
+156             phi = 45\&.0f;
+157         }
+158         else if(x == direction::RIGHT_TOP)
+159         {
+160             theta = 90\&.0f;
+161             phi = 45\&.0f;
+162         }
+163         else if(x == direction::RIGHT_BOTTOM)
+164         {
+165             theta = 90\&.0f;
+166             phi = 135\&.0f;
+167         }
+168         else if(x == direction::LEFT_BOTTOM)
+169         {
+170             theta = 270\&.0f;
+171             phi = 135\&.0f;
+172         }
+173         else if(x == direction::FRONT)
+174         {
+175             theta = 0\&.0f;
+176             phi = 90\&.0f;
+177         }
+178         else if(x == direction::BACK)
+179         {
+180             theta = 180\&.0f;
+181             phi = 90\&.0f;
+182         }
+183         else if(x == direction::LEFT_FRONT)
+184         {
+185             theta = 315\&.0f;
+186             phi = 90\&.0f;
+187         }
+188         else if(x == direction::RIGHT_FRONT)
+189         {
+190             theta = 45\&.0f;
+191             phi = 90\&.0f;
+192         }
+193         else if(x == direction::TOP_FRONT)
+194         {
+195             theta = 0\&.0f;
+196             phi = 45\&.0f;
+197         }
+198         else if(x == direction::BOTTOM_FRONT)
+199         {
+200             theta = 0\&.0f;
+201             phi = 135\&.0f;
+202         }
+203         else if(x == direction::LEFT_BACK)
+204         {
+205             theta = 225\&.0f;
+206             phi = 90\&.0f;
+207         }
+208         else if(x == direction::RIGHT_BACK)
+209         {
+210             theta = 135\&.0f;
+211             phi = 90\&.0f;
+212         }
+213         else if(x == direction::TOP_BACK)
+214         {
+215             theta = 180\&.0f;
+216             phi = 45\&.0f;
+217         }
+218         else if(x == direction::BOTTOM_BACK)
+219         {
+220             theta = 180\&.0f;
+221             phi = 135\&.0f;
+222         }
+223         else if(x == direction::LEFT_TOP_FRONT)
+224         {
+225             theta = 315\&.0f;
+226             phi = 45\&.0f;
+227         }
+228         else if(x == direction::RIGHT_TOP_FRONT)
+229         {
+230             theta = 45\&.0f;
+231             phi = 45\&.0f;
+232         }
+233         else if(x == direction::LEFT_BOTTOM_FRONT)
+234         {
+235             theta = 315\&.0f;
+236             phi = 135\&.0f;
+237         }
+238         else if(x == direction::RIGHT_BOTTOM_FRONT)
+239         {
+240             theta = 45\&.0f;
+241             phi = 135\&.0f;
+242         }
+243         else if(x == direction::LEFT_TOP_BACK)
+244         {
+245             theta = 225\&.0f;
+246             phi = 45\&.0f;
+247         }
+248         else if(x == direction::RIGHT_TOP_BACK)
+249         {
+250             theta = 135\&.0f;
+251             phi = 45\&.0f;
+252         }
+253         else if(x == direction::LEFT_BOTTOM_BACK)
+254         {
+255             theta = 225\&.0f;
+256             phi = 135\&.0f;
+257         }
+258         else if(x == direction::RIGHT_BOTTOM_BACK)
+259         {
+260             theta = 135\&.0f;
+261             phi = 135\&.0f;
+262         }
+263     }
+.fi
+
+.SS "\fBstring\fP scifir::vector_unit_3d::vectorial_custom_display (\fBconst\fP \fBstring\fP & init_dimensions, \fBint\fP number_of_decimals = \fC2\fP) const"
+
+.SS "\fBstring\fP scifir::vector_unit_3d::vectorial_derived_display (\fBint\fP number_of_decimals = \fC2\fP) const"
+
+.SS "\fBstring\fP scifir::vector_unit_3d::vectorial_display (\fBint\fP number_of_decimals = \fC2\fP) const"
+
+.SS "\fBscalar_unit\fP scifir::vector_unit_3d::x_projection () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB205\fP of file \fBvector_unit_3d\&.hpp\fP\&..PP
+.nf
+206             {
+207                 return scalar_unit(scalar_unit::value * scifir::cos(theta) * scifir::sin(phi),get_dimensions());
+208             }
+.fi
+
+.SS "\fBscalar_unit\fP scifir::vector_unit_3d::y_projection () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB210\fP of file \fBvector_unit_3d\&.hpp\fP\&..PP
+.nf
+211             {
+212                 return scalar_unit(scalar_unit::value * scifir::sin(theta) * scifir::sin(phi),get_dimensions());
+213             }
+.fi
+
+.SS "\fBscalar_unit\fP scifir::vector_unit_3d::z_projection () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB215\fP of file \fBvector_unit_3d\&.hpp\fP\&..PP
+.nf
+216             {
+217                 return scalar_unit(scalar_unit::value * scifir::cos(phi),get_dimensions());
+218             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBangle\fP scifir::vector_unit_3d::phi"
+
+.PP
+Definition at line \fB231\fP of file \fBvector_unit_3d\&.hpp\fP\&.
+.SS "\fBangle\fP scifir::vector_unit_3d::theta"
+
+.PP
+Definition at line \fB230\fP of file \fBvector_unit_3d\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

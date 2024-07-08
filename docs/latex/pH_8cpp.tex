@@ -1,0 +1,352 @@
+\doxysection{special\+\_\+units/pH.cpp File Reference}
+\hypertarget{pH_8cpp}{}\label{pH_8cpp}\index{special\_units/pH.cpp@{special\_units/pH.cpp}}
+{\ttfamily \#include "{}./p\+H.\+hpp"{}}\newline
+{\ttfamily \#include "{}./p\+OH.\+hpp"{}}\newline
+{\ttfamily \#include "{}../util/types.\+hpp"{}}\newline
+{\ttfamily \#include "{}boost/algorithm/string.\+hpp"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for p\+H.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pH_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+\begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a36aa7f5753b8f2cb722548bc3b1196a7}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1pH}{pH}} \&x)
+\item 
+bool \mbox{\hyperlink{pH_8cpp_a1fbdb0ce3c2bfd460a5e0396a85e30b2}{operator==}} (const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&x, const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&y)
+\item 
+bool \mbox{\hyperlink{pH_8cpp_af83719b28d7c4f17fd592b986e3ca904}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&x, const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&y)
+\item 
+bool \mbox{\hyperlink{pH_8cpp_a753c0e39e63468512e34db511edb8e34}{operator$<$}} (const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&x, const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&y)
+\item 
+bool \mbox{\hyperlink{pH_8cpp_a29f33b2bf98d79d056565580e4624aff}{operator$>$}} (const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&x, const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&y)
+\item 
+bool \mbox{\hyperlink{pH_8cpp_a8ff9e4b7433b047138573613c517522e}{operator$<$=}} (const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&x, const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&y)
+\item 
+bool \mbox{\hyperlink{pH_8cpp_ac6631ce1cc03f9caa84db67608e010ca}{operator$>$=}} (const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&x, const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&y)
+\item 
+bool \mbox{\hyperlink{pH_8cpp_a4733f7406c33964c2b601094b0e715c5}{operator==}} (const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&x, const string \&y)
+\item 
+bool \mbox{\hyperlink{pH_8cpp_a709553d3583166c9ef394ae02b3fd4f1}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&x, const string \&y)
+\item 
+bool \mbox{\hyperlink{pH_8cpp_adfa1e7d47091bdef1a4f52cabeb9810c}{operator==}} (const string \&x, const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&y)
+\item 
+bool \mbox{\hyperlink{pH_8cpp_a00e39b3828e2157b9954a67c4523f53d}{operator!=}} (const string \&x, const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&y)
+\item 
+void \mbox{\hyperlink{pH_8cpp_ae22a745734145f79d903919d8d91c462}{operator+=}} (string \&x, const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&y)
+\item 
+string \mbox{\hyperlink{pH_8cpp_a6464de3fc1f7caf9ce8b325e5955c10b}{operator+}} (const string \&x, const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&y)
+\item 
+string \mbox{\hyperlink{pH_8cpp_ae6b36649a57bb28ffca7639553557e0d}{operator+}} (const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&y, const string \&x)
+\item 
+ostream \& \mbox{\hyperlink{pH_8cpp_a8f6f948f9d44522e49ad349fdbc7fcc6}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&x)
+\item 
+istream \& \mbox{\hyperlink{pH_8cpp_a33d016b037e2e6dc116eaf345ea37ce1}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pH_8cpp_af83719b28d7c4f17fd592b986e3ca904}\label{pH_8cpp_af83719b28d7c4f17fd592b986e3ca904} 
+\index{pH.cpp@{pH.cpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!pH.cpp@{pH.cpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pH_8cpp_source_l00218}{218}} of file \mbox{\hyperlink{pH_8cpp_source}{p\+H.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00219\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{00221\ \}}
+
+\end{DoxyCode}
+\Hypertarget{pH_8cpp_a709553d3583166c9ef394ae02b3fd4f1}\label{pH_8cpp_a709553d3583166c9ef394ae02b3fd4f1} 
+\index{pH.cpp@{pH.cpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!pH.cpp@{pH.cpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{x,  }\item[{const string \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pH_8cpp_source_l00263}{263}} of file \mbox{\hyperlink{pH_8cpp_source}{p\+H.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00264\ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{00266\ \}}
+
+\end{DoxyCode}
+\Hypertarget{pH_8cpp_a00e39b3828e2157b9954a67c4523f53d}\label{pH_8cpp_a00e39b3828e2157b9954a67c4523f53d} 
+\index{pH.cpp@{pH.cpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!pH.cpp@{pH.cpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pH_8cpp_source_l00274}{274}} of file \mbox{\hyperlink{pH_8cpp_source}{p\+H.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00275\ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{00277\ \}}
+
+\end{DoxyCode}
+\Hypertarget{pH_8cpp_ae6b36649a57bb28ffca7639553557e0d}\label{pH_8cpp_ae6b36649a57bb28ffca7639553557e0d} 
+\index{pH.cpp@{pH.cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!pH.cpp@{pH.cpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{y,  }\item[{const string \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pH_8cpp_source_l00294}{294}} of file \mbox{\hyperlink{pH_8cpp_source}{p\+H.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00295\ \{}
+\DoxyCodeLine{00296\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00297\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{00298\ \ \ \ \ output\ <<\ x;}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
+\DoxyCodeLine{00300\ \}}
+
+\end{DoxyCode}
+\Hypertarget{pH_8cpp_a6464de3fc1f7caf9ce8b325e5955c10b}\label{pH_8cpp_a6464de3fc1f7caf9ce8b325e5955c10b} 
+\index{pH.cpp@{pH.cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!pH.cpp@{pH.cpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string operator+ (\begin{DoxyParamCaption}\item[{const string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pH_8cpp_source_l00286}{286}} of file \mbox{\hyperlink{pH_8cpp_source}{p\+H.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00287\ \{}
+\DoxyCodeLine{00288\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00289\ \ \ \ \ output\ <<\ x;}
+\DoxyCodeLine{00290\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
+\DoxyCodeLine{00292\ \}}
+
+\end{DoxyCode}
+\Hypertarget{pH_8cpp_ae22a745734145f79d903919d8d91c462}\label{pH_8cpp_ae22a745734145f79d903919d8d91c462} 
+\index{pH.cpp@{pH.cpp}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!pH.cpp@{pH.cpp}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily void operator+= (\begin{DoxyParamCaption}\item[{string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pH_8cpp_source_l00279}{279}} of file \mbox{\hyperlink{pH_8cpp_source}{p\+H.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00280\ \{}
+\DoxyCodeLine{00281\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00282\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{00283\ \ \ \ \ x\ +=\ output.str();}
+\DoxyCodeLine{00284\ \}}
+
+\end{DoxyCode}
+\Hypertarget{pH_8cpp_a753c0e39e63468512e34db511edb8e34}\label{pH_8cpp_a753c0e39e63468512e34db511edb8e34} 
+\index{pH.cpp@{pH.cpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!pH.cpp@{pH.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pH_8cpp_source_l00223}{223}} of file \mbox{\hyperlink{pH_8cpp_source}{p\+H.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00224\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1pH_a57bf5e87402d778ed7bc0ada69866650}{get\_value}}()\ <\ y.\mbox{\hyperlink{classscifir_1_1pH_a57bf5e87402d778ed7bc0ada69866650}{get\_value}}())}
+\DoxyCodeLine{00226\ \ \ \ \ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00228\ \ \ \ \ \}}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00230\ \ \ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00232\ \ \ \ \ \}}
+\DoxyCodeLine{00233\ \}}
+
+\end{DoxyCode}
+\Hypertarget{pH_8cpp_a8f6f948f9d44522e49ad349fdbc7fcc6}\label{pH_8cpp_a8f6f948f9d44522e49ad349fdbc7fcc6} 
+\index{pH.cpp@{pH.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!pH.cpp@{pH.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pH_8cpp_source_l00302}{302}} of file \mbox{\hyperlink{pH_8cpp_source}{p\+H.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00303\ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x);}
+\DoxyCodeLine{00305\ \}}
+
+\end{DoxyCode}
+\Hypertarget{pH_8cpp_a8ff9e4b7433b047138573613c517522e}\label{pH_8cpp_a8ff9e4b7433b047138573613c517522e} 
+\index{pH.cpp@{pH.cpp}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!pH.cpp@{pH.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pH_8cpp_source_l00247}{247}} of file \mbox{\hyperlink{pH_8cpp_source}{p\+H.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00248\ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ >\ y);}
+\DoxyCodeLine{00250\ \}}
+
+\end{DoxyCode}
+\Hypertarget{pH_8cpp_a1fbdb0ce3c2bfd460a5e0396a85e30b2}\label{pH_8cpp_a1fbdb0ce3c2bfd460a5e0396a85e30b2} 
+\index{pH.cpp@{pH.cpp}!operator==@{operator==}}
+\index{operator==@{operator==}!pH.cpp@{pH.cpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pH_8cpp_source_l00206}{206}} of file \mbox{\hyperlink{pH_8cpp_source}{p\+H.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00207\ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1pH_a57bf5e87402d778ed7bc0ada69866650}{get\_value}}()\ ==\ y.\mbox{\hyperlink{classscifir_1_1pH_a57bf5e87402d778ed7bc0ada69866650}{get\_value}}())}
+\DoxyCodeLine{00209\ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00211\ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00213\ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00215\ \ \ \ \ \}}
+\DoxyCodeLine{00216\ \}}
+
+\end{DoxyCode}
+\Hypertarget{pH_8cpp_a4733f7406c33964c2b601094b0e715c5}\label{pH_8cpp_a4733f7406c33964c2b601094b0e715c5} 
+\index{pH.cpp@{pH.cpp}!operator==@{operator==}}
+\index{operator==@{operator==}!pH.cpp@{pH.cpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{x,  }\item[{const string \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pH_8cpp_source_l00257}{257}} of file \mbox{\hyperlink{pH_8cpp_source}{p\+H.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00258\ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pH}{scifir::pH}}\ y\_pH\ =\ \mbox{\hyperlink{classscifir_1_1pH}{scifir::pH}}(y);}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y\_pH);}
+\DoxyCodeLine{00261\ \}}
+
+\end{DoxyCode}
+\Hypertarget{pH_8cpp_adfa1e7d47091bdef1a4f52cabeb9810c}\label{pH_8cpp_adfa1e7d47091bdef1a4f52cabeb9810c} 
+\index{pH.cpp@{pH.cpp}!operator==@{operator==}}
+\index{operator==@{operator==}!pH.cpp@{pH.cpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pH_8cpp_source_l00268}{268}} of file \mbox{\hyperlink{pH_8cpp_source}{p\+H.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00269\ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pH}{scifir::pH}}\ x\_pH\ =\ \mbox{\hyperlink{classscifir_1_1pH}{scifir::pH}}(x);}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\_pH\ ==\ y);}
+\DoxyCodeLine{00272\ \}}
+
+\end{DoxyCode}
+\Hypertarget{pH_8cpp_a29f33b2bf98d79d056565580e4624aff}\label{pH_8cpp_a29f33b2bf98d79d056565580e4624aff} 
+\index{pH.cpp@{pH.cpp}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!pH.cpp@{pH.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pH_8cpp_source_l00235}{235}} of file \mbox{\hyperlink{pH_8cpp_source}{p\+H.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00236\ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1pH_a57bf5e87402d778ed7bc0ada69866650}{get\_value}}()\ >\ y.\mbox{\hyperlink{classscifir_1_1pH_a57bf5e87402d778ed7bc0ada69866650}{get\_value}}())}
+\DoxyCodeLine{00238\ \ \ \ \ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00240\ \ \ \ \ \}}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00242\ \ \ \ \ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00244\ \ \ \ \ \}}
+\DoxyCodeLine{00245\ \}}
+
+\end{DoxyCode}
+\Hypertarget{pH_8cpp_ac6631ce1cc03f9caa84db67608e010ca}\label{pH_8cpp_ac6631ce1cc03f9caa84db67608e010ca} 
+\index{pH.cpp@{pH.cpp}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!pH.cpp@{pH.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily bool operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pH_8cpp_source_l00252}{252}} of file \mbox{\hyperlink{pH_8cpp_source}{p\+H.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00253\ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ <\ y);}
+\DoxyCodeLine{00255\ \}}
+
+\end{DoxyCode}
+\Hypertarget{pH_8cpp_a33d016b037e2e6dc116eaf345ea37ce1}\label{pH_8cpp_a33d016b037e2e6dc116eaf345ea37ce1} 
+\index{pH.cpp@{pH.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!pH.cpp@{pH.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1pH}{scifir\+::pH}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pH_8cpp_source_l00307}{307}} of file \mbox{\hyperlink{pH_8cpp_source}{p\+H.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00308\ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
+\DoxyCodeLine{00310\ \ \ \ \ is.getline(a,\ 256);}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
+\DoxyCodeLine{00312\ \ \ \ \ boost::trim(b);}
+\DoxyCodeLine{00313\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1pH}{scifir::pH}}(b);}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{00315\ \}}
+
+\end{DoxyCode}

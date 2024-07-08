@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classscifir_1_1matrix" kind="class" language="C++" prot="public">
     <compoundname>scifir::matrix</compoundname>
+    <includes refid="matrix_8hpp" local="no">matrix.hpp</includes>
     <templateparamlist>
       <param>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
@@ -48,7 +49,7 @@
         </inbodydescription>
         <location file="util/matrix.hpp" line="18" column="1" bodyfile="util/matrix.hpp" bodystart="18" bodyend="19"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1matrix_1a933af7f36352487b137301948fd18f9b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1matrix_1a933af7f36352487b137301948fd18f9b" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
         <definition>scifir::matrix&lt; T, M, N &gt;::matrix</definition>
         <argsstring>(initializer_list&lt; vector&lt; T &gt; &gt; x)</argsstring>
@@ -64,7 +65,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="util/matrix.hpp" line="21" column="1" bodyfile="util/matrix.hpp" bodystart="21" bodyend="43"/>
+        <location file="util/matrix.hpp" line="21" column="10" bodyfile="util/matrix.hpp" bodystart="21" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1matrix_1a457e72a17876ded541c31c5251338e96" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type><ref refid="classscifir_1_1matrix" kindref="compound">matrix</ref>&lt; T, M, N &gt; *</type>

@@ -1,15 +1,13 @@
 var searchData=
 [
-  ['in_201d_0',['Coordinates and points in 1D',['../index.html#autotoc_md35',1,'']]],
-  ['in_202d_1',['in 2d',['../index.html#autotoc_md36',1,'Coordinates and points in 2D'],['../index.html#autotoc_md32',1,'Vector units in 2D']]],
-  ['in_202d_203d_20and_20nd_2',['Sizes in 2D, 3D and ND',['../index.html#autotoc_md42',1,'']]],
-  ['in_203d_3',['in 3d',['../index.html#autotoc_md37',1,'Coordinates and points in 3D'],['../index.html#autotoc_md33',1,'Vector units in 3D']]],
-  ['in_20nd_4',['Vector units in ND',['../index.html#autotoc_md34',1,'']]],
-  ['initialization_20strings_5',['Initialization strings',['../index.html#autotoc_md27',1,'']]],
-  ['installation_6',['installation',['../md_INSTALL.html',1,'Installation'],['../index.html#autotoc_md8',1,'Installation']]],
-  ['internals_7',['Internals',['../index.html#autotoc_md43',1,'']]],
-  ['introduction_8',['Introduction',['../index.html#autotoc_md20',1,'']]],
-  ['inventions_9',['Technologies for inventions',['../index.html#autotoc_md25',1,'']]],
-  ['is_5finteger_5fnumber_10',['is_integer_number',['../structscifir_1_1is__integer__number.html',1,'scifir']]],
-  ['is_5fnumber_11',['is_number',['../structscifir_1_1is__number.html',1,'scifir']]]
+  ['f_0',['f',['../classscifir_1_1prefix.html#afd8baa69668003ed6cc1227eb2a661f5a79260a31dafe8bb45a288bf45938ac01',1,'scifir::prefix::f'],['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba2c0ca25e881f311dc9c4249552b86e21',1,'scifir::dimension::F']]],
+  ['factor_1',['factor',['../classscifir_1_1conversion.html#a2d59d30c69b9590d19b3c40fc5f8f419',1,'scifir::conversion']]],
+  ['feeling_2',['feeling',['../namespacescifir.html#a83fe32b03d40fdd5728b2e413123bee5',1,'scifir']]],
+  ['fly_3',['FLY',['../namespacescifir.html#ad539180dc5ebdc1e9c73339aad091effa327c84b33a8b5e93858289478b0202b4',1,'scifir']]],
+  ['for_20boost_4',['Configuring cmake for boost',['../index.html#autotoc_md10',1,'']]],
+  ['for_20inventions_5',['Technologies for inventions',['../index.html#autotoc_md26',1,'']]],
+  ['front_6',['FRONT',['../classscifir_1_1direction.html#a3f9d1fd5a6c5f61b9fb49c4e56938319a3abb69462df2b2c0241c781d3701ecea',1,'scifir::direction']]],
+  ['full_5fsymbols_7',['full_symbols',['../classscifir_1_1dimension.html#aa9324596c50526bab5b142122dc02c49',1,'scifir::dimension']]],
+  ['functionalities_8',['Core functionalities',['../index.html#autotoc_md32',1,'']]],
+  ['funding_9',['Funding',['../index.html#autotoc_md8',1,'']]]
 ];

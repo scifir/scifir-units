@@ -1,0 +1,329 @@
+.TH "meca_number/angle.cpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+meca_number/angle.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&./angle\&.hpp'\fP
+.br
+\fC#include '\&.\&./util/types\&.hpp'\fP
+.br
+\fC#include 'boost/algorithm/string\&.hpp'\fP
+.br
+\fC#include 'unicode/unistr\&.h'\fP
+.br
+\fC#include 'unicode/uchar\&.h'\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <string>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscifir\fP"
+.br
+.RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBangle\fP &x)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBscifir::is_angle\fP (\fBconst\fP \fBstring\fP &\fBinit_angle\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBscifir::parallel\fP (\fBconst\fP \fBangle\fP &x, \fBconst\fP \fBangle\fP &y)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBscifir::orthogonal\fP (\fBconst\fP \fBangle\fP &x, \fBconst\fP \fBangle\fP &y)"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBscifir::sqrt\fP (\fBconst\fP \fBangle\fP &x)"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBscifir::sqrt_nth\fP (\fBconst\fP \fBangle\fP &x, \fBint\fP index)"
+.br
+.ti -1c
+.RI "\fBfloat\fP \fBscifir::sin\fP (\fBconst\fP \fBangle\fP &x)"
+.br
+.ti -1c
+.RI "\fBfloat\fP \fBscifir::cos\fP (\fBconst\fP \fBangle\fP &x)"
+.br
+.ti -1c
+.RI "\fBfloat\fP \fBscifir::tan\fP (\fBconst\fP \fBangle\fP &x)"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBscifir::asin\fP (\fBfloat\fP x)"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBscifir::acos\fP (\fBfloat\fP x)"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBscifir::atan\fP (\fBfloat\fP x)"
+.br
+.ti -1c
+.RI "\fBfloat\fP \fBscifir::sinh\fP (\fBconst\fP \fBangle\fP &x)"
+.br
+.ti -1c
+.RI "\fBfloat\fP \fBscifir::cosh\fP (\fBconst\fP \fBangle\fP &x)"
+.br
+.ti -1c
+.RI "\fBfloat\fP \fBscifir::tanh\fP (\fBconst\fP \fBangle\fP &x)"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBscifir::asinh\fP (\fBfloat\fP x)"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBscifir::acosh\fP (\fBfloat\fP x)"
+.br
+.ti -1c
+.RI "\fBangle\fP \fBscifir::atanh\fP (\fBfloat\fP x)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::angle\fP &x, const \fBscifir::angle\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::angle\fP &x, const \fBscifir::angle\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBscifir::angle\fP &x, const \fBscifir::angle\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBscifir::angle\fP &x, const \fBscifir::angle\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBscifir::angle\fP &x, const \fBscifir::angle\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBscifir::angle\fP &x, const \fBscifir::angle\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::angle\fP &x, const string &init_angle)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::angle\fP &x, const string &init_angle)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const string &init_angle, const \fBscifir::angle\fP &x)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const string &init_angle, const \fBscifir::angle\fP &x)"
+.br
+.ti -1c
+.RI "void \fBoperator+=\fP (string &x, const \fBscifir::angle\fP &y)"
+.br
+.ti -1c
+.RI "string \fBoperator+\fP (const string &x, const \fBscifir::angle\fP &y)"
+.br
+.ti -1c
+.RI "string \fBoperator+\fP (const \fBscifir::angle\fP &y, const string &x)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::angle\fP &x)"
+.br
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, \fBscifir::angle\fP &x)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "bool operator!= (const \fBscifir::angle\fP & x, const \fBscifir::angle\fP & y)"
+
+.PP
+Definition at line \fB387\fP of file \fBangle\&.cpp\fP\&..PP
+.nf
+388 {
+389     return !(x == y);
+390 }
+.fi
+
+.SS "bool operator!= (const \fBscifir::angle\fP & x, const string & init_angle)"
+
+.PP
+Definition at line \fB432\fP of file \fBangle\&.cpp\fP\&..PP
+.nf
+433 {
+434     return !(x == init_angle);
+435 }
+.fi
+
+.SS "bool operator!= (const string & init_angle, const \fBscifir::angle\fP & x)"
+
+.PP
+Definition at line \fB443\fP of file \fBangle\&.cpp\fP\&..PP
+.nf
+444 {
+445     return !(init_angle == x);
+446 }
+.fi
+
+.SS "string operator+ (const \fBscifir::angle\fP & y, const string & x)"
+
+.PP
+Definition at line \fB463\fP of file \fBangle\&.cpp\fP\&..PP
+.nf
+464 {
+465     ostringstream output;
+466     output << y;
+467     output << x;
+468     return output\&.str();
+469 }
+.fi
+
+.SS "string operator+ (const string & x, const \fBscifir::angle\fP & y)"
+
+.PP
+Definition at line \fB455\fP of file \fBangle\&.cpp\fP\&..PP
+.nf
+456 {
+457     ostringstream output;
+458     output << x;
+459     output << y;
+460     return output\&.str();
+461 }
+.fi
+
+.SS "void operator+= (string & x, const \fBscifir::angle\fP & y)"
+
+.PP
+Definition at line \fB448\fP of file \fBangle\&.cpp\fP\&..PP
+.nf
+449 {
+450     ostringstream output;
+451     output << y;
+452     x += output\&.str();
+453 }
+.fi
+
+.SS "bool operator< (const \fBscifir::angle\fP & x, const \fBscifir::angle\fP & y)"
+
+.PP
+Definition at line \fB392\fP of file \fBangle\&.cpp\fP\&..PP
+.nf
+393 {
+394     if(x\&.get_value() < y\&.get_value())
+395     {
+396         return true;
+397     }
+398     else
+399     {
+400         return false;
+401     }
+402 }
+.fi
+
+.SS "ostream & operator<< (ostream & os, const \fBscifir::angle\fP & x)"
+
+.PP
+Definition at line \fB471\fP of file \fBangle\&.cpp\fP\&..PP
+.nf
+472 {
+473     return os << to_string(x);
+474 }
+.fi
+
+.SS "bool operator<= (const \fBscifir::angle\fP & x, const \fBscifir::angle\fP & y)"
+
+.PP
+Definition at line \fB416\fP of file \fBangle\&.cpp\fP\&..PP
+.nf
+417 {
+418     return !(x > y);
+419 }
+.fi
+
+.SS "bool operator== (const \fBscifir::angle\fP & x, const \fBscifir::angle\fP & y)"
+
+.PP
+Definition at line \fB375\fP of file \fBangle\&.cpp\fP\&..PP
+.nf
+376 {
+377     if(x\&.get_value() == y\&.get_value())
+378     {
+379         return true;
+380     }
+381     else
+382     {
+383         return false;
+384     }
+385 }
+.fi
+
+.SS "bool operator== (const \fBscifir::angle\fP & x, const string & init_angle)"
+
+.PP
+Definition at line \fB426\fP of file \fBangle\&.cpp\fP\&..PP
+.nf
+427 {
+428     scifir::angle y = scifir::angle(init_angle);
+429     return (x == y);
+430 }
+.fi
+
+.SS "bool operator== (const string & init_angle, const \fBscifir::angle\fP & x)"
+
+.PP
+Definition at line \fB437\fP of file \fBangle\&.cpp\fP\&..PP
+.nf
+438 {
+439     scifir::angle y = scifir::angle(init_angle);
+440     return (x == y);
+441 }
+.fi
+
+.SS "bool operator> (const \fBscifir::angle\fP & x, const \fBscifir::angle\fP & y)"
+
+.PP
+Definition at line \fB404\fP of file \fBangle\&.cpp\fP\&..PP
+.nf
+405 {
+406     if(x\&.get_value() > y\&.get_value())
+407     {
+408         return true;
+409     }
+410     else
+411     {
+412         return false;
+413     }
+414 }
+.fi
+
+.SS "bool operator>= (const \fBscifir::angle\fP & x, const \fBscifir::angle\fP & y)"
+
+.PP
+Definition at line \fB421\fP of file \fBangle\&.cpp\fP\&..PP
+.nf
+422 {
+423     return !(x < y);
+424 }
+.fi
+
+.SS "istream & operator>> (istream & is, \fBscifir::angle\fP & x)"
+
+.PP
+Definition at line \fB476\fP of file \fBangle\&.cpp\fP\&..PP
+.nf
+477 {
+478     char a[256];
+479     is\&.getline(a, 256);
+480     string b(a);
+481     boost::trim(b);
+482     x = scifir::angle(b);
+483     return is;
+484 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

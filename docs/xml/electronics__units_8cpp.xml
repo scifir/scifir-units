@@ -6,7 +6,7 @@
     <incdepgraph>
       <node id="23">
         <label>../meca_number/angle.hpp</label>
-        <link refid="angle_8hpp_source"/>
+        <link refid="angle_8hpp"/>
         <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
@@ -28,7 +28,7 @@
       </node>
       <node id="2">
         <label>./electronics_units.hpp</label>
-        <link refid="electronics__units_8hpp_source"/>
+        <link refid="electronics__units_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
@@ -36,13 +36,13 @@
       </node>
       <node id="24">
         <label>../topology/constants.hpp</label>
-        <link refid="constants_8hpp_source"/>
+        <link refid="constants_8hpp"/>
         <childnode refid="25" relation="include">
         </childnode>
       </node>
       <node id="26">
         <label>../topology/direction.hpp</label>
-        <link refid="direction_8hpp_source"/>
+        <link refid="direction_8hpp"/>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
@@ -52,7 +52,7 @@
       </node>
       <node id="4">
         <label>../units/dimension.hpp</label>
-        <link refid="dimension_8hpp_source"/>
+        <link refid="dimension_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
@@ -80,7 +80,7 @@
       </node>
       <node id="5">
         <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp_source"/>
+        <link refid="prefix_8hpp"/>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
@@ -92,7 +92,7 @@
       </node>
       <node id="3">
         <label>../units/scalar_unit.hpp</label>
-        <link refid="scalar__unit_8hpp_source"/>
+        <link refid="scalar__unit_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
@@ -116,7 +116,7 @@
       </node>
       <node id="22">
         <label>../units/vector_unit_2d.hpp</label>
-        <link refid="vector__unit__2d_8hpp_source"/>
+        <link refid="vector__unit__2d_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
@@ -134,7 +134,7 @@
       </node>
       <node id="21">
         <label>../units/vector_unit_3d.hpp</label>
-        <link refid="vector__unit__3d_8hpp_source"/>
+        <link refid="vector__unit__3d_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
@@ -166,7 +166,7 @@
       </node>
       <node id="27">
         <label>../units/vector_unit_nd.hpp</label>
-        <link refid="vector__unit__nd_8hpp_source"/>
+        <link refid="vector__unit__nd_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
@@ -194,7 +194,7 @@
       </node>
       <node id="18">
         <label>../util/is_number.hpp</label>
-        <link refid="is__number_8hpp_source"/>
+        <link refid="is__number_8hpp"/>
         <childnode refid="19" relation="include">
         </childnode>
       </node>
@@ -256,20 +256,20 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;./electronics_units.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="electronics__units_8hpp" kindref="compound">./electronics_units.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">scifir</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacescifir" kindref="compound">scifir</ref></highlight></codeline>
 <codeline lineno="6"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(electrical_conductivity,</highlight><highlight class="stringliteral">&quot;A2*s3/kg*m3&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(resistance,</highlight><highlight class="stringliteral">&quot;kg*m2/A2*s3&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(electric_conductance,</highlight><highlight class="stringliteral">&quot;A2*s3/kg*m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(capacitance,</highlight><highlight class="stringliteral">&quot;A2*s4/m2*kg&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(permittivity,</highlight><highlight class="stringliteral">&quot;A2*s4/kg*m3&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(resistivity,</highlight><highlight class="stringliteral">&quot;kg*m3/A2*s3&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(linear_charge_density,</highlight><highlight class="stringliteral">&quot;A*s/m&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(frequency_drift,</highlight><highlight class="stringliteral">&quot;1/s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="7" refid="namespacescifir_1a91afeb5e791892aad0079a978c7341f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electrical_conductivity</ref>,</highlight><highlight class="stringliteral">&quot;A2*s3/kg*m3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="8" refid="namespacescifir_1a836444954ee37bd50f890a484a04765b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">resistance</ref>,</highlight><highlight class="stringliteral">&quot;kg*m2/A2*s3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="9" refid="namespacescifir_1a30917fb0e36e090d2181de15bc360512" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electric_conductance</ref>,</highlight><highlight class="stringliteral">&quot;A2*s3/kg*m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="10" refid="namespacescifir_1a9bdef7e3453f44b67bf1cf8c1fbc8c44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">capacitance</ref>,</highlight><highlight class="stringliteral">&quot;A2*s4/m2*kg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11" refid="namespacescifir_1a396da9caaabf475aee932a9db76b4136" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">permittivity</ref>,</highlight><highlight class="stringliteral">&quot;A2*s4/kg*m3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="12" refid="namespacescifir_1af938a7dd8a7156a3885664c4728a1985" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">resistivity</ref>,</highlight><highlight class="stringliteral">&quot;kg*m3/A2*s3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="13" refid="namespacescifir_1aaceefba8de1f41eb7c15c3196615e6c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">linear_charge_density</ref>,</highlight><highlight class="stringliteral">&quot;A*s/m&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14" refid="namespacescifir_1a0f17540dc432f662fce14805da15b5ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">frequency_drift</ref>,</highlight><highlight class="stringliteral">&quot;1/s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="15"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="predefined_units/electronics_units.cpp"/>

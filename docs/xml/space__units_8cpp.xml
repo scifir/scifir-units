@@ -9,7 +9,7 @@
     <incdepgraph>
       <node id="23">
         <label>../meca_number/angle.hpp</label>
-        <link refid="angle_8hpp_source"/>
+        <link refid="angle_8hpp"/>
         <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
@@ -37,7 +37,7 @@
       </node>
       <node id="2">
         <label>./space_units.hpp</label>
-        <link refid="space__units_8hpp_source"/>
+        <link refid="space__units_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
@@ -47,7 +47,7 @@
       </node>
       <node id="31">
         <label>../special_units/percentage.hpp</label>
-        <link refid="percentage_8hpp_source"/>
+        <link refid="percentage_8hpp"/>
         <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
@@ -63,7 +63,7 @@
       </node>
       <node id="33">
         <label>../special_units/size_2d.hpp</label>
-        <link refid="size__2d_8hpp_source"/>
+        <link refid="size__2d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="34" relation="include">
@@ -75,7 +75,7 @@
       </node>
       <node id="35">
         <label>../special_units/size_3d.hpp</label>
-        <link refid="size__3d_8hpp_source"/>
+        <link refid="size__3d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="34" relation="include">
@@ -87,13 +87,13 @@
       </node>
       <node id="24">
         <label>../topology/constants.hpp</label>
-        <link refid="constants_8hpp_source"/>
+        <link refid="constants_8hpp"/>
         <childnode refid="25" relation="include">
         </childnode>
       </node>
       <node id="26">
         <label>../topology/direction.hpp</label>
-        <link refid="direction_8hpp_source"/>
+        <link refid="direction_8hpp"/>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
@@ -103,7 +103,7 @@
       </node>
       <node id="4">
         <label>../units/dimension.hpp</label>
-        <link refid="dimension_8hpp_source"/>
+        <link refid="dimension_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
@@ -131,7 +131,7 @@
       </node>
       <node id="5">
         <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp_source"/>
+        <link refid="prefix_8hpp"/>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
@@ -143,7 +143,7 @@
       </node>
       <node id="3">
         <label>../units/scalar_unit.hpp</label>
-        <link refid="scalar__unit_8hpp_source"/>
+        <link refid="scalar__unit_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
@@ -167,7 +167,7 @@
       </node>
       <node id="30">
         <label>../units/unit_basic.hpp</label>
-        <link refid="unit__basic_8hpp_source"/>
+        <link refid="unit__basic_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
@@ -183,7 +183,7 @@
       </node>
       <node id="22">
         <label>../units/vector_unit_2d.hpp</label>
-        <link refid="vector__unit__2d_8hpp_source"/>
+        <link refid="vector__unit__2d_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
@@ -201,7 +201,7 @@
       </node>
       <node id="21">
         <label>../units/vector_unit_3d.hpp</label>
-        <link refid="vector__unit__3d_8hpp_source"/>
+        <link refid="vector__unit__3d_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
@@ -233,7 +233,7 @@
       </node>
       <node id="27">
         <label>../units/vector_unit_nd.hpp</label>
-        <link refid="vector__unit__nd_8hpp_source"/>
+        <link refid="vector__unit__nd_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
@@ -261,13 +261,13 @@
       </node>
       <node id="18">
         <label>../util/is_number.hpp</label>
-        <link refid="is__number_8hpp_source"/>
+        <link refid="is__number_8hpp"/>
         <childnode refid="19" relation="include">
         </childnode>
       </node>
       <node id="34">
         <label>../util/types.hpp</label>
-        <link refid="types_8hpp_source"/>
+        <link refid="types_8hpp"/>
         <childnode refid="9" relation="include">
         </childnode>
       </node>
@@ -332,7 +332,7 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;./space_units.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="space__units_8hpp" kindref="compound">./space_units.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../units/unit_basic.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../special_units/size_2d.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
@@ -340,31 +340,31 @@
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">scifir</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacescifir" kindref="compound">scifir</ref></highlight></codeline>
 <codeline lineno="10"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(area,</highlight><highlight class="stringliteral">&quot;m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11" refid="namespacescifir_1a316e5acb7928e82ef65ce1d2be7052c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">area</ref>,</highlight><highlight class="stringliteral">&quot;m2&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>area::area(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>size_2d&lt;length&gt;&amp;<sp/>x)<sp/>:<sp/>scalar_unit()</highlight></codeline>
+<codeline lineno="13" refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>area::area(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_2d&lt;length&gt;</ref>&amp;<sp/>x)<sp/>:<sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>()</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/>x_height<sp/>=<sp/>x.height;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_height.change_dimensions(x.width);</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>=<sp/>x.width<sp/>*<sp/>x_height;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">length</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_height</ref><sp/>=<sp/>x.height;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_height</ref>.change_dimensions(x.width);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>=<sp/>x.width<sp/>*<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_height</ref>;</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(volume,</highlight><highlight class="stringliteral">&quot;m3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="20" refid="namespacescifir_1afd959adc8d468f85c922b0c52e5dcc06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(volume,</highlight><highlight class="stringliteral">&quot;m3&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>volume::volume(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>size_3d&lt;length&gt;&amp;<sp/>x)<sp/>:<sp/>scalar_unit()</highlight></codeline>
+<codeline lineno="22" refid="namespacescifir_1a262599906f4976119a8afba442877b46" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>volume::volume(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">size_3d&lt;length&gt;</ref>&amp;<sp/>x)<sp/>:<sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>()</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/>x_height<sp/>=<sp/>x.height;</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/>x_depth<sp/>=<sp/>x.depth;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_height.change_dimensions(x.width);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_depth.change_dimensions(x.width);</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>=<sp/>x.width<sp/>*<sp/>x_height<sp/>*<sp/>x_depth;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">length</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_height</ref><sp/>=<sp/>x.height;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">length</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_depth</ref><sp/>=<sp/>x.depth;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_height</ref>.change_dimensions(x.width);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_depth</ref>.change_dimensions(x.width);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>=<sp/>x.width<sp/>*<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_height</ref><sp/>*<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">x_depth</ref>;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(volume_4d,</highlight><highlight class="stringliteral">&quot;m4&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31" refid="namespacescifir_1a4e30b1f67194ebf6e846d5e8ec80d44a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">volume_4d</ref>,</highlight><highlight class="stringliteral">&quot;m4&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_CPP(curvature,</highlight><highlight class="stringliteral">&quot;1/m&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33" refid="namespacescifir_1a36cc074e482afe1e2e7151f9f3fd3c15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1a48bd90c088a02ab6e4f599383a5009c3" kindref="member">SCALAR_UNIT_CPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">curvature</ref>,</highlight><highlight class="stringliteral">&quot;1/m&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="34"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="predefined_units/space_units.cpp"/>

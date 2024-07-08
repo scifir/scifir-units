@@ -1,0 +1,597 @@
+\doxysection{units/scalar\+\_\+unit.cpp File Reference}
+\hypertarget{scalar__unit_8cpp}{}\label{scalar__unit_8cpp}\index{units/scalar\_unit.cpp@{units/scalar\_unit.cpp}}
+{\ttfamily \#include "{}./scalar\+\_\+unit.\+hpp"{}}\newline
+{\ttfamily \#include "{}./conversion.\+hpp"{}}\newline
+{\ttfamily \#include "{}./unit\+\_\+basic.\+hpp"{}}\newline
+{\ttfamily \#include "{}./prefix.\+hpp"{}}\newline
+{\ttfamily \#include "{}../util/types.\+hpp"{}}\newline
+{\ttfamily \#include "{}boost/algorithm/string/erase.\+hpp"{}}\newline
+{\ttfamily \#include "{}boost/algorithm/string.\+hpp"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for scalar\+\_\+unit.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scalar__unit_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+\begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a162eb483608d8201ae14d447a571e492}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&x)
+\begin{DoxyCompactList}\small\item\em Generates an string from the \doxylink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}, it uses the display of the \doxylink{classscifir_1_1scalar__unit}{scalar\+\_\+unit} with 2 decimals, without brackets and without a close prefix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_a35eaaedc7d36d386d328c0422e08863e}{scifir\+::is\+\_\+scalar\+\_\+unit}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+scalar}})
+\begin{DoxyCompactList}\small\item\em Checks if an string is an initialization string of a \doxylink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_aa381f8345620eaa27dea409a955a40e5}{scifir\+::abs}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&x)
+\begin{DoxyCompactList}\small\item\em Returns the absolute value of the \doxylink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}, without dimensions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \mbox{\hyperlink{namespacescifir_a44533727ef4f03e8303664cdd665c2bc}{scifir\+::pow}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{exponent}})
+\begin{DoxyCompactList}\small\item\em Exponentiates a \doxylink{classscifir_1_1scalar__unit}{scalar\+\_\+unit} to some numeric type, the dimensions are also exponentiated. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \mbox{\hyperlink{namespacescifir_aac7b9861a78646a61ffbbfc705c5d733}{scifir\+::sqrt}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&x)
+\begin{DoxyCompactList}\small\item\em Square root of a \doxylink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}, it squares the dimensions too. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \mbox{\hyperlink{namespacescifir_aa5ebf30c05a300d3f908402d52f2e4ab}{scifir\+::sqrt\+\_\+nth}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} index)
+\begin{DoxyCompactList}\small\item\em Nth root of a \doxylink{classscifir_1_1scalar__unit}{scalar\+\_\+unit} to any numeric value, it squares the dimensions too. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_ab3981bf2329e8722c88fd6f30663b9a7}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} y)
+\begin{DoxyCompactList}\small\item\em Returns true if two scalar\+\_\+unit classes doesn\textquotesingle{}t have the same value when changed to same dimensions. If their basic dimensions are different, it returns false. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_aecd33c43cfa361b9fad1bb32ea275275}{operator$<$}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&y)
+\begin{DoxyCompactList}\small\item\em Returns true if x has a lower value than y, compared with the same dimensions. If their dimensions are not equal, they are changed to be equal in order to do the comparison. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_a8ae998c77ea9c5a0384a3868d5ba598a}{operator$>$}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&y)
+\begin{DoxyCompactList}\small\item\em Returns true if x has a greather value than y, compared with the same dimensions. If their dimensions are not equal, they are changed to be equal in order to do the comparison. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_a14e8cb6a29ab10d0ef366fe11772b61b}{operator$<$=}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&y)
+\begin{DoxyCompactList}\small\item\em Returns true if x has a lower or equal value than y, compared with the same dimensions. If their dimensions are not equal, they are changed to be equal in order to do the comparison. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_af440af220f69b5a4fb573695990a1497}{operator$>$=}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&y)
+\begin{DoxyCompactList}\small\item\em Returns true if x has a greather or equal value than y, compared with the same dimensions. If their dimensions are not equal, they are changed to be equal in order to do the comparison. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_ac5414d960d326f17e277b52da0172ff3}{operator==}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const string \&init\+\_\+scalar)
+\begin{DoxyCompactList}\small\item\em Returns true if x is equal to the scalar\+\_\+unit initialized with the string being compared. The display() function is not used, and so the values are compared with all its decimal numbers. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_a53259a9b8130c12748dd1201849173b6}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const string \&init\+\_\+scalar)
+\begin{DoxyCompactList}\small\item\em Returns true if x is not equal to the scalar\+\_\+unit initialized with the string being compared. The display() function is not used, and so the values are compared with all its decimal numbers. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_a7a965da7fb27999d7b938febc80468d3}{operator$<$}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const string \&init\+\_\+scalar)
+\begin{DoxyCompactList}\small\item\em Returns true if x is lower than the scalar\+\_\+unit initialized with the string being compared. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_aeba31ee00fdb887423ba560dae6592c0}{operator$>$}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const string \&init\+\_\+scalar)
+\begin{DoxyCompactList}\small\item\em Returns true if x is greather than the scalar\+\_\+unit initialized with the string being compared. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_a1cd148e02ec62f276baf87433e6b6b23}{operator$<$=}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const string \&init\+\_\+scalar)
+\begin{DoxyCompactList}\small\item\em Returns true if x is lower or equal to the scalar\+\_\+unit initialized with the string being compared. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_aa1f2569f21e1b2ffa398f5495c7f5618}{operator$>$=}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const string \&init\+\_\+scalar)
+\begin{DoxyCompactList}\small\item\em Returns true if x is greather or equal to the scalar\+\_\+unit initialized with the string being compared. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_ae01b2310dbdc855e8d7ecfc20c58b17a}{operator==}} (const string \&init\+\_\+scalar, const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x)
+\begin{DoxyCompactList}\small\item\em Returns true if x is equal to the scalar\+\_\+unit initialized with the string being compared. The display() function is not used, and so the values are compared with all its decimal numbers. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_afd2579b802b1ef399493004970be981f}{operator!=}} (const string \&init\+\_\+scalar, const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x)
+\begin{DoxyCompactList}\small\item\em Returns true if x is not equal to the scalar\+\_\+unit initialized with the string being compared. The display() function is not used, and so the values are compared with all its decimal numbers. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_a57c8f14169d935c49b2d8613720b993d}{operator$<$}} (const string \&init\+\_\+scalar, const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x)
+\begin{DoxyCompactList}\small\item\em Returns true if x is greather than the scalar\+\_\+unit initialized with the string being compared. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_aa88c20c4e949ac4517c2d42b512a1a33}{operator$>$}} (const string \&init\+\_\+scalar, const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x)
+\begin{DoxyCompactList}\small\item\em Returns true if x is lower than the scalar\+\_\+unit initialized with the string being compared. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_a3883cac911f1446703ec68b31432932d}{operator$<$=}} (const string \&init\+\_\+scalar, const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x)
+\begin{DoxyCompactList}\small\item\em Returns true if x is greather or equal to the scalar\+\_\+unit initialized with the string being compared. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{scalar__unit_8cpp_a7cf9896a7234ea2b7c3fc4f77c108959}{operator$>$=}} (const string \&init\+\_\+scalar, const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x)
+\begin{DoxyCompactList}\small\item\em Returns true if x is lower or equal to the scalar\+\_\+unit initialized with the string being compared. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{scalar__unit_8cpp_abf3b2cc85b8e6d6eee349a5bc5ac5451}{operator+=}} (string \&x, const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&y)
+\begin{DoxyCompactList}\small\item\em Adds the scalar\+\_\+unit y converted to string to the string x. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{scalar__unit_8cpp_aa78fe07ae130c1549d7f94572dc8a939}{operator+}} (const string \&x, const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&y)
+\begin{DoxyCompactList}\small\item\em Concatenates the string x with the string representation of the scalar\+\_\+unit y. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{scalar__unit_8cpp_aba7d121d3042773f1d35c83bac6d6819}{operator+}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&y, const string \&x)
+\begin{DoxyCompactList}\small\item\em Concatenates the string x with the string representation of the scalar\+\_\+unit y. \end{DoxyCompactList}\item 
+ostream \& \mbox{\hyperlink{scalar__unit_8cpp_ab8b595d4b8668b470fc798467f717f90}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x)
+\begin{DoxyCompactList}\small\item\em Adds the string representation of the scalar\+\_\+unit x to an ostream os. \end{DoxyCompactList}\item 
+istream \& \mbox{\hyperlink{scalar__unit_8cpp_a87b187747bd139fdc1ac5607f6b0ca50}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x)
+\begin{DoxyCompactList}\small\item\em Allows that an istream is initializes by string an scalar\+\_\+unit x. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{scalar__unit_8cpp_a53259a9b8130c12748dd1201849173b6}\label{scalar__unit_8cpp_a53259a9b8130c12748dd1201849173b6} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const string \&}]{init\+\_\+scalar }\end{DoxyParamCaption})}
+
+
+
+Returns true if x is not equal to the scalar\+\_\+unit initialized with the string being compared. The display() function is not used, and so the values are compared with all its decimal numbers. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00804}{804}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00805\ \{}
+\DoxyCodeLine{00806\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_scalar);}
+\DoxyCodeLine{00807\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_ab3981bf2329e8722c88fd6f30663b9a7}\label{scalar__unit_8cpp_ab3981bf2329e8722c88fd6f30663b9a7} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{\mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}}}]{y }\end{DoxyParamCaption})}
+
+
+
+Returns true if two scalar\+\_\+unit classes doesn\textquotesingle{}t have the same value when changed to same dimensions. If their basic dimensions are different, it returns false. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00747}{747}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00748\ \{}
+\DoxyCodeLine{00749\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{00750\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_afd2579b802b1ef399493004970be981f}\label{scalar__unit_8cpp_afd2579b802b1ef399493004970be981f} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+scalar,  }\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Returns true if x is not equal to the scalar\+\_\+unit initialized with the string being compared. The display() function is not used, and so the values are compared with all its decimal numbers. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00836}{836}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00837\ \{}
+\DoxyCodeLine{00838\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ init\_scalar);}
+\DoxyCodeLine{00839\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_aba7d121d3042773f1d35c83bac6d6819}\label{scalar__unit_8cpp_aba7d121d3042773f1d35c83bac6d6819} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{y,  }\item[{const string \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Concatenates the string x with the string representation of the scalar\+\_\+unit y. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00878}{878}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00879\ \{}
+\DoxyCodeLine{00880\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00881\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{00882\ \ \ \ \ output\ <<\ x;}
+\DoxyCodeLine{00883\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
+\DoxyCodeLine{00884\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_aa78fe07ae130c1549d7f94572dc8a939}\label{scalar__unit_8cpp_aa78fe07ae130c1549d7f94572dc8a939} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string operator+ (\begin{DoxyParamCaption}\item[{const string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Concatenates the string x with the string representation of the scalar\+\_\+unit y. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00870}{870}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00871\ \{}
+\DoxyCodeLine{00872\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00873\ \ \ \ \ output\ <<\ x;}
+\DoxyCodeLine{00874\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{00875\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
+\DoxyCodeLine{00876\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_abf3b2cc85b8e6d6eee349a5bc5ac5451}\label{scalar__unit_8cpp_abf3b2cc85b8e6d6eee349a5bc5ac5451} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily void operator+= (\begin{DoxyParamCaption}\item[{string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Adds the scalar\+\_\+unit y converted to string to the string x. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00863}{863}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00864\ \{}
+\DoxyCodeLine{00865\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00866\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{00867\ \ \ \ \ x\ +=\ output.str();}
+\DoxyCodeLine{00868\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_aecd33c43cfa361b9fad1bb32ea275275}\label{scalar__unit_8cpp_aecd33c43cfa361b9fad1bb32ea275275} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Returns true if x has a lower value than y, compared with the same dimensions. If their dimensions are not equal, they are changed to be equal in order to do the comparison. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00752}{752}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00753\ \{}
+\DoxyCodeLine{00754\ \ \ \ \ \textcolor{keywordflow}{if}(!x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a4c076490a43430ad72b9443bb2d68fb7}{has\_dimensions}}(y))}
+\DoxyCodeLine{00755\ \ \ \ \ \{}
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00757\ \ \ \ \ \}}
+\DoxyCodeLine{00758\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ z\ =\ x;}
+\DoxyCodeLine{00759\ \ \ \ \ z.\mbox{\hyperlink{classscifir_1_1scalar__unit_aaf48aa357423e1f65044190c27053657}{change\_dimensions}}(y);}
+\DoxyCodeLine{00760\ \ \ \ \ \textcolor{keywordflow}{if}(z.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}()\ <\ y.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}())}
+\DoxyCodeLine{00761\ \ \ \ \ \{}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00763\ \ \ \ \ \}}
+\DoxyCodeLine{00764\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00765\ \ \ \ \ \{}
+\DoxyCodeLine{00766\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00767\ \ \ \ \ \}}
+\DoxyCodeLine{00768\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_a7a965da7fb27999d7b938febc80468d3}\label{scalar__unit_8cpp_a7a965da7fb27999d7b938febc80468d3} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const string \&}]{init\+\_\+scalar }\end{DoxyParamCaption})}
+
+
+
+Returns true if x is lower than the scalar\+\_\+unit initialized with the string being compared. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00809}{809}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00810\ \{}
+\DoxyCodeLine{00811\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ y(init\_scalar);}
+\DoxyCodeLine{00812\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <\ y);}
+\DoxyCodeLine{00813\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_a57c8f14169d935c49b2d8613720b993d}\label{scalar__unit_8cpp_a57c8f14169d935c49b2d8613720b993d} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+scalar,  }\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Returns true if x is greather than the scalar\+\_\+unit initialized with the string being compared. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00841}{841}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00842\ \{}
+\DoxyCodeLine{00843\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ y(init\_scalar);}
+\DoxyCodeLine{00844\ \ \ \ \ \textcolor{keywordflow}{return}\ (y\ <\ x);}
+\DoxyCodeLine{00845\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_ab8b595d4b8668b470fc798467f717f90}\label{scalar__unit_8cpp_ab8b595d4b8668b470fc798467f717f90} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Adds the string representation of the scalar\+\_\+unit x to an ostream os. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00886}{886}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00887\ \{}
+\DoxyCodeLine{00888\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x);}
+\DoxyCodeLine{00889\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_a14e8cb6a29ab10d0ef366fe11772b61b}\label{scalar__unit_8cpp_a14e8cb6a29ab10d0ef366fe11772b61b} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Returns true if x has a lower or equal value than y, compared with the same dimensions. If their dimensions are not equal, they are changed to be equal in order to do the comparison. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00788}{788}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00789\ \{}
+\DoxyCodeLine{00790\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ >\ y);}
+\DoxyCodeLine{00791\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_a1cd148e02ec62f276baf87433e6b6b23}\label{scalar__unit_8cpp_a1cd148e02ec62f276baf87433e6b6b23} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const string \&}]{init\+\_\+scalar }\end{DoxyParamCaption})}
+
+
+
+Returns true if x is lower or equal to the scalar\+\_\+unit initialized with the string being compared. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00821}{821}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00822\ \{}
+\DoxyCodeLine{00823\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ >\ init\_scalar);}
+\DoxyCodeLine{00824\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_a3883cac911f1446703ec68b31432932d}\label{scalar__unit_8cpp_a3883cac911f1446703ec68b31432932d} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool operator$<$= (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+scalar,  }\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Returns true if x is greather or equal to the scalar\+\_\+unit initialized with the string being compared. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00853}{853}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00854\ \{}
+\DoxyCodeLine{00855\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_scalar\ >\ x);}
+\DoxyCodeLine{00856\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_ac5414d960d326f17e277b52da0172ff3}\label{scalar__unit_8cpp_ac5414d960d326f17e277b52da0172ff3} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator==@{operator==}}
+\index{operator==@{operator==}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const string \&}]{init\+\_\+scalar }\end{DoxyParamCaption})}
+
+
+
+Returns true if x is equal to the scalar\+\_\+unit initialized with the string being compared. The display() function is not used, and so the values are compared with all its decimal numbers. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00798}{798}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00799\ \{}
+\DoxyCodeLine{00800\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ y(init\_scalar);}
+\DoxyCodeLine{00801\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
+\DoxyCodeLine{00802\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_ae01b2310dbdc855e8d7ecfc20c58b17a}\label{scalar__unit_8cpp_ae01b2310dbdc855e8d7ecfc20c58b17a} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator==@{operator==}}
+\index{operator==@{operator==}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+scalar,  }\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Returns true if x is equal to the scalar\+\_\+unit initialized with the string being compared. The display() function is not used, and so the values are compared with all its decimal numbers. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00831}{831}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00832\ \{}
+\DoxyCodeLine{00833\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ init\_scalar);}
+\DoxyCodeLine{00834\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_a8ae998c77ea9c5a0384a3868d5ba598a}\label{scalar__unit_8cpp_a8ae998c77ea9c5a0384a3868d5ba598a} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Returns true if x has a greather value than y, compared with the same dimensions. If their dimensions are not equal, they are changed to be equal in order to do the comparison. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00770}{770}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00771\ \{}
+\DoxyCodeLine{00772\ \ \ \ \ \textcolor{keywordflow}{if}(!x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a4c076490a43430ad72b9443bb2d68fb7}{has\_dimensions}}(y))}
+\DoxyCodeLine{00773\ \ \ \ \ \{}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00775\ \ \ \ \ \}}
+\DoxyCodeLine{00776\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ z\ =\ x;}
+\DoxyCodeLine{00777\ \ \ \ \ z.\mbox{\hyperlink{classscifir_1_1scalar__unit_aaf48aa357423e1f65044190c27053657}{change\_dimensions}}(y);}
+\DoxyCodeLine{00778\ \ \ \ \ \textcolor{keywordflow}{if}(z.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}()\ >\ y.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}())}
+\DoxyCodeLine{00779\ \ \ \ \ \{}
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00781\ \ \ \ \ \}}
+\DoxyCodeLine{00782\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00783\ \ \ \ \ \{}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00785\ \ \ \ \ \}}
+\DoxyCodeLine{00786\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_aeba31ee00fdb887423ba560dae6592c0}\label{scalar__unit_8cpp_aeba31ee00fdb887423ba560dae6592c0} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const string \&}]{init\+\_\+scalar }\end{DoxyParamCaption})}
+
+
+
+Returns true if x is greather than the scalar\+\_\+unit initialized with the string being compared. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00815}{815}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00816\ \{}
+\DoxyCodeLine{00817\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ y(init\_scalar);}
+\DoxyCodeLine{00818\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >\ y);}
+\DoxyCodeLine{00819\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_aa88c20c4e949ac4517c2d42b512a1a33}\label{scalar__unit_8cpp_aa88c20c4e949ac4517c2d42b512a1a33} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool operator$>$ (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+scalar,  }\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Returns true if x is lower than the scalar\+\_\+unit initialized with the string being compared. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00847}{847}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00848\ \{}
+\DoxyCodeLine{00849\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ y(init\_scalar);}
+\DoxyCodeLine{00850\ \ \ \ \ \textcolor{keywordflow}{return}\ (y\ >\ x);}
+\DoxyCodeLine{00851\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_af440af220f69b5a4fb573695990a1497}\label{scalar__unit_8cpp_af440af220f69b5a4fb573695990a1497} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Returns true if x has a greather or equal value than y, compared with the same dimensions. If their dimensions are not equal, they are changed to be equal in order to do the comparison. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00793}{793}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00794\ \{}
+\DoxyCodeLine{00795\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ <\ y);}
+\DoxyCodeLine{00796\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_aa1f2569f21e1b2ffa398f5495c7f5618}\label{scalar__unit_8cpp_aa1f2569f21e1b2ffa398f5495c7f5618} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const string \&}]{init\+\_\+scalar }\end{DoxyParamCaption})}
+
+
+
+Returns true if x is greather or equal to the scalar\+\_\+unit initialized with the string being compared. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00826}{826}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00827\ \{}
+\DoxyCodeLine{00828\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ <\ init\_scalar);}
+\DoxyCodeLine{00829\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_a7cf9896a7234ea2b7c3fc4f77c108959}\label{scalar__unit_8cpp_a7cf9896a7234ea2b7c3fc4f77c108959} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool operator$>$= (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+scalar,  }\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Returns true if x is lower or equal to the scalar\+\_\+unit initialized with the string being compared. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00858}{858}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00859\ \{}
+\DoxyCodeLine{00860\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_scalar\ <\ x);}
+\DoxyCodeLine{00861\ \}}
+
+\end{DoxyCode}
+\Hypertarget{scalar__unit_8cpp_a87b187747bd139fdc1ac5607f6b0ca50}\label{scalar__unit_8cpp_a87b187747bd139fdc1ac5607f6b0ca50} 
+\index{scalar\_unit.cpp@{scalar\_unit.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!scalar\_unit.cpp@{scalar\_unit.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Allows that an istream is initializes by string an scalar\+\_\+unit x. 
+
+
+
+Definition at line \mbox{\hyperlink{scalar__unit_8cpp_source_l00891}{891}} of file \mbox{\hyperlink{scalar__unit_8cpp_source}{scalar\+\_\+unit.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00892\ \{}
+\DoxyCodeLine{00893\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
+\DoxyCodeLine{00894\ \ \ \ \ is.getline(a,\ 256);}
+\DoxyCodeLine{00895\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
+\DoxyCodeLine{00896\ \ \ \ \ boost::trim(b);}
+\DoxyCodeLine{00897\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}(b);}
+\DoxyCodeLine{00898\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{00899\ \}}
+
+\end{DoxyCode}

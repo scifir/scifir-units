@@ -3,6 +3,7 @@
   <compounddef id="classscifir_1_1vector__unit__3d" kind="class" language="C++" prot="public">
     <compoundname>scifir::vector_unit_3d</compoundname>
     <basecompoundref refid="classscifir_1_1scalar__unit" prot="public" virt="non-virtual">scifir::scalar_unit</basecompoundref>
+    <includes refid="vector__unit__3d_8hpp" local="no">vector_unit_3d.hpp</includes>
     <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classscifir_1_1vector__unit__3d_1a70b25d4709874f44f1c99d2330cec56f" prot="public" static="no" mutable="no">
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
@@ -801,7 +802,7 @@
         <name>point_to</name>
         <qualifiedname>scifir::vector_unit_3d::point_to</qualifiedname>
         <param>
-          <type>direction::name</type>
+          <type><ref refid="classscifir_1_1direction_1a3f9d1fd5a6c5f61b9fb49c4e56938319" kindref="member">direction::name</ref></type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -945,7 +946,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
@@ -972,7 +973,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
@@ -999,7 +1000,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
@@ -1026,7 +1027,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
@@ -1053,7 +1054,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__integer__number" kindref="compound">is_integer_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__integer__number" kindref="compound">is_integer_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1vector__unit__3d" kindref="compound">vector_unit_3d</ref></type>
@@ -1080,7 +1081,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -1107,7 +1108,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -1134,7 +1135,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -1161,7 +1162,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;<ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref>&gt;<ref refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -1419,85 +1420,85 @@
     </collaborationgraph>
     <location file="units/vector_unit_3d.hpp" line="72" column="1" bodyfile="units/vector_unit_3d.hpp" bodystart="73" bodyend="235"/>
     <listofallmembers>
-      <member refid="classscifir_1_1scalar__unit_1a0fe440745fb805824daf53e9ae66e810" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>add_dimension</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a28dc39e25122213c5d61cd56a260ef7b" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>add_dimension</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a22c160b0cd0ff032181f350ea28eba79" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>cartesian_3d</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a994687b147289403e4a993344f768e64" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>change_dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ae7d76f1d37b44e675d5ba313c9d95fb8" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>change_dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a8530221b5e65bda1fcd706c571de15f5" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>custom_display</name></member>
+      <member refid="classscifir_1_1scalar__unit_1aaf48aa357423e1f65044190c27053657" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>change_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1adda2fd58d0782bb244251760978c853d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>change_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1acc46b7f3e73c08b61e4528bc3331fc60" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>custom_display</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a96cc7e17061444a5d4463a7efb5278ca" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>cylindrical</name></member>
-      <member refid="classscifir_1_1scalar__unit_1aa19d314f836ae7cc5a5d55611e56e01a" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>derived_display</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a47854a88ee4cacf7099c756e111b198d" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a5da2eba7a064be5ac532d36e2aeb865d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>display</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a8c84a2ee69d730d6667b7103396730bd" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>display_dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a49a18cc0d9347e017f2d13f1ce97889b" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>get_derived_dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ac7a640edca2e933bc19a6194cb522204" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>get_dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1aef86fe20676b9a14120270e6bb6c49b1" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>get_value</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ad65df774f292c9a466e6f44127c1485c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>has_dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a5d88ebeac2c66b3fbaff69a5a8aeb387" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>has_dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a7edbf723398b8acd1a84669b1c3be30c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>has_dimensions</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ae4b941ec3823e325a9d7290a56d4c226" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>has_empty_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1aacf2082b3224a8ded5798a0f1727b8a9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>derived_display</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a31051a01340ebcb0d2616491a41e3857" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a5cec374081c39d864a7c3267b6edad09" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>display</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a14efad80e22f77b77b3b82de4c0c72ca" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>display_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a266c61f83787ad59fbd8fe9741c522c6" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>get_derived_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a39ed9ef8729a155b1a54ab848e8576c0" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>get_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1aeb2d34ea9de078b70babda80182e677a" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>get_value</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a4c076490a43430ad72b9443bb2d68fb7" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>has_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a08e62ce3092e91269286dda5b8178869" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>has_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a83084c8cac8d4a018891588d2eded5fa" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>has_dimensions</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a0b736b31c71a1240704cda3300a45039" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>has_empty_dimensions</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1ab7eef0715d724ed15a90b2f0dd837b3f" prot="private" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>initialize_from_string</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a787a747b7c787a08f17c186660744bd3" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>invert</name></member>
-      <member refid="classscifir_1_1scalar__unit_1acab38ee2d23c051283285f08b9cac2c1" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator float</name></member>
+      <member refid="classscifir_1_1scalar__unit_1aff58f1afa3fe9f5b034a7acf1e04c141" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator float</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a2ced821e1b89e0e61f16d95dd737dd98" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator*</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1ac95d6ea01857abe6fff089e1692a91d4" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a329d34994d4acf60210c6d794f70653e" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator*</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a41d09ddac49e6c3c783468cc387681af" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator*</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a35658ee94f8a802aaa02188acf289d13" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator*</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a9b250120739fca9c027ea3929f31a555" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator*</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1afe0ec9814d521d005cf7d20c93b75cad" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator*=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1aa3d5f3ab5a33da028a7a4ca6126ac018" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator*=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a0b7780e065e19c2bbb3b918b0581ba27" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator*=</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1ab1f8ecdcec05c43705fc733ea466fca9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator+</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a854a9648981966ba25e08f0c4fe495a8" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator+</name></member>
-      <member refid="classscifir_1_1scalar__unit_1af34f5d9608d82039cb118a45c7adbdd4" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator+</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a3a646369c40d046343636e69cac739fc" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator+</name></member>
-      <member refid="classscifir_1_1scalar__unit_1af36b7d319844aad7f838a71aced338f4" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator++</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ad4a110c3c13cf37db7329e70266a4ed7" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator++</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a7aeafdb65fe4ab246c83c59b51efc731" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ac395d00e4b4abaeb037d75bd83a068c4" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator+</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a7c2b17b498e1afd1110c4f3a0b76e7b1" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator++</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a1ef5e9e16ffeb5990f253f617885c8aa" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator++</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1aeb9247d9725c2b50fdba4873c8b1a41c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator+=</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a1cd4133b9c3eb81e6b0eda0caa36ad1f" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a3c5b90d093e8cd6c15fe32fd6f9aa77f" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator+=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ab92fdf13cdd566edb88804d6abf4894c" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator+=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1abbaf4dd62c32f8d16a6aaa1363430fd5" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator+=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a0d1abb8fa0e6feb7486033c4bc97bbe4" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator+=</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a99afa2d3bdb0d950955cd071e2ff5621" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator-</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a02f7c0d477b04a7401294b429e1dfa1e" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator-</name></member>
-      <member refid="classscifir_1_1scalar__unit_1aaa86f3d182021b17b880b404e075ff4f" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator-</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a3b4775b30dd9e07d022dd691135e98ed" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator-</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a180b89f1bb61a2d38175f2ceb408632d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator--</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a1b069d8e8f353795ff9ea007ae7399eb" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator--</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a8897df8c59682cf3fe28e2fe52bc2519" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a5277a3985d9aa59cb23a2f4c461f3c30" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator-</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a1ffcae0b6dceb9b188b0f3f0698a8aa8" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator--</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a04f488f4b0a5d6bf423221c250f2e663" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator--</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1aa4c3b20b6c577a3db2635016b59ebedb" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator-=</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1ad1a040b4df16156dcf99d52e82606b04" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ae22b4b57bbb6ab2ac8173c1cf5f7a5e1" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator-=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a337edf5896b9f05abde7fe8bcd71588c" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator-=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1acd9a736b50d0a914e043fc97b9323e90" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator-=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a17928a033e3292fea8ae8f4d087cac56" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator-=</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1ac18f21d86844cbc5c33f445fe0743efa" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator/</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a0e0a309267ba5945c537240be84bcd7a" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a0f5687f5407c49376f8139286fb8108c" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator/</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a6c7befde1f4bb1ed08817dff3adb13f7" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator/</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a49db9492e36cfbde204ec4234888ad14" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator/</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a597ee369782cd285beec1a76f9794792" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator/</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a368b2720a7dbaa01d6b36114c7da800d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator/=</name></member>
-      <member refid="classscifir_1_1scalar__unit_1afa7f6d6fbb4f94882e976cc569b1d62b" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator/=</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ab2e5d01cbd910afdad116d6c06739409" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator/=</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1ae779101ec798944a9d5c18ccbf57d634" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator=</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1ad77d172e61045f216da9b8f3f8063e48" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator=</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a1f11005128fb2ffb6499961019826113" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator=</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1afc097c08aadee6a2e80a3e1d0e727ea6" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator=</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a8cd071505fcae0b8d7cd07cc606a7d4c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator=</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a6bdd0e37d9d006ab3cb929135021d58b" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator==</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a77abc5702f3e6a0df005a4a12d281b05" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator==</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a40e2dec78deafcf4c6ae24129a11fd5c" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator==</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a4dffdcc7cdcf89f495678e9035f3b65d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator^</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1ab280246ec6cc8ee41b5f703aad883e85" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>operator^</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a53c5f6d3f946b7361ff19b4aacad4b65" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator^</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a1e7a6b741716f2a06116808cbc5b22a8" prot="public" virt="non-virtual" ambiguityscope="scifir::scalar_unit::"><scope>scifir::vector_unit_3d</scope><name>operator^</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a90099d68c23025849f059f10d2be4217" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>phi</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a85d69dbbab62fa2ad7eae51ea34aef86" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>point_to</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a1d9a11f3d4c951cb55917288767d3feb" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>remove_dimension</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a8ecd0310f82a51bfcc87b2aa892375b9" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1ab89b028a2e344c1cd62b1cb49ff7a92c" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a2c60c79ed8b911b51f1b3431a102cda5" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a6534c793900bb3d3ec7d7df6c6e620b6" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a3ec66e006930ee8ecf3510fed0ced5f5" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a04e818cc54fc33342d62aba88da198c2" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a91f7f7d47084e468fdee9440ab51cf1e" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a7859b5685704328c9e876fba89c69c20" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a22622caa696487e08ccb2fa9e0f64107" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a7487c672fd9d31f08abb3d7d7c2b3f18" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a8a22b2fe2afa56d71d72cfd6f462f343" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
-      <member refid="classscifir_1_1scalar__unit_1a8805acbb0e474f299ae077862cc312e7" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ad78ee83a39d1d8a846545f4b3ff6339b" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>remove_dimension</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ab03d02ba63c30297b9739929659b38d5" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1afc354cb981dec3a98c2fe5070ec136b8" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ad24d9f352319e37086c5ef7c4e268f66" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a2620c8c54e21675cbf3e06b83a2bb911" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a786bed5f99bbbb1c76ed67078984c8cc" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ad73c0ecc552ae1691f20b80c9cd9b835" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1ac8dd1f791316917205b10d9d667c1b40" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a60713bc43513df643c10575b618958cb" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a17a613a60e6b4100bd634f3bc9c88b3d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a915f798451bbdaec8a2682a7aaae3bc0" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1aba1312368355c9e321cf2963ad05153b" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a53116c89f3815a1ade42cc335ef043f3" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>scalar_unit</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a70b25d4709874f44f1c99d2330cec56f" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>theta</name></member>
-      <member refid="classscifir_1_1scalar__unit_1af1e3a220f55d66f5bb27ab6dfa84c632" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>value</name></member>
+      <member refid="classscifir_1_1scalar__unit_1a64eba8849b847bbca056fb0e8bd45c39" prot="protected" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>value</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1af6d531f8562636587bc107dae2009c54" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1a07d2e5e1cf5f452943158bdd664b3f02" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>
       <member refid="classscifir_1_1vector__unit__3d_1ad2241097e08233510641a57558120c8d" prot="public" virt="non-virtual"><scope>scifir::vector_unit_3d</scope><name>vector_unit_3d</name></member>

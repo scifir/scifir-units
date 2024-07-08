@@ -1,63 +1,63 @@
 \doxysection{units.\+hpp}
-\hypertarget{units_8hpp_source}{}\label{units_8hpp_source}
+\hypertarget{units_8hpp_source}{}\label{units_8hpp_source}\mbox{\hyperlink{units_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_UNITS\_HPP\_INCLUDED}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_UNITS\_HPP\_INCLUDED}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}units/units/prefix.hpp"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}units/units/dimension.hpp"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}units/units/scalar\_unit.hpp"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}units/meca\_number/angle.hpp"{}}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}units/units/vector\_unit\_2d.hpp"{}}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}units/units/vector\_unit\_3d.hpp"{}}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}units/units/vector\_unit\_nd.hpp"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}units/units/unit\_basic.hpp"{}}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}units/units/unit\_abbreviation.hpp"{}}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}units/predefined\_units/astronomy\_units.hpp"{}}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}units/predefined\_units/electronics\_units.hpp"{}}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}units/predefined\_units/physics\_units.hpp"{}}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}units/predefined\_units/space\_units.hpp"{}}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}units/predefined\_units/radiometry\_units.hpp"{}}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}units/predefined\_units/informatics\_units.hpp"{}}}
-\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}units/predefined\_units/chemistry\_units.hpp"{}}}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}units/topology/direction.hpp"{}}}
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}units/topology/point\_1d.hpp"{}}}
-\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}units/topology/point\_2d.hpp"{}}}
-\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}units/topology/point\_3d.hpp"{}}}
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}units/topology/point\_nd.hpp"{}}}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}units/coordinates/coordinates\_1d.hpp"{}}}
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}units/coordinates/coordinates\_2d.hpp"{}}}
-\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}units/coordinates/coordinates\_2dr.hpp"{}}}
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}units/coordinates/coordinates\_3d.hpp"{}}}
-\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}units/coordinates/coordinates\_3dr.hpp"{}}}
-\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}units/coordinates/coordinates\_nd.hpp"{}}}
-\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}units/coordinates/coordinates\_ndr.hpp"{}}}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}units/topology/point\_1d\_impl.hpp"{}}}
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}units/topology/point\_2d\_impl.hpp"{}}}
-\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}units/topology/point\_3d\_impl.hpp"{}}}
-\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}units/topology/point\_nd\_impl.hpp"{}}}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}units/special\_units/aid.hpp"{}}}
-\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}units/special\_units/color.hpp"{}}}
-\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}units/special\_units/percentage.hpp"{}}}
-\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ "{}units/special\_units/pH.hpp"{}}}
-\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ "{}units/special\_units/pixel.hpp"{}}}
-\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ "{}units/special\_units/pOH.hpp"{}}}
-\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}units/special\_units/size\_2d.hpp"{}}}
-\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ "{}units/special\_units/size\_3d.hpp"{}}}
-\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ "{}units/special\_units/size\_nd.hpp"{}}}
-\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ "{}units/special\_units/zid.hpp"{}}}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ "{}units/meca\_number/lab\_number.hpp"{}}}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ "{}units/util/matrix.hpp"{}}}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_UNITS\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_UNITS\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{prefix_8hpp}{units/units/prefix.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dimension_8hpp}{units/units/dimension.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{scalar__unit_8hpp}{units/units/scalar\_unit.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{angle_8hpp}{units/meca\_number/angle.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector__unit__2d_8hpp}{units/units/vector\_unit\_2d.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector__unit__3d_8hpp}{units/units/vector\_unit\_3d.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector__unit__nd_8hpp}{units/units/vector\_unit\_nd.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{unit__basic_8hpp}{units/units/unit\_basic.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{unit__abbreviation_8hpp}{units/units/unit\_abbreviation.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{astronomy__units_8hpp}{units/predefined\_units/astronomy\_units.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{electronics__units_8hpp}{units/predefined\_units/electronics\_units.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{physics__units_8hpp}{units/predefined\_units/physics\_units.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{space__units_8hpp}{units/predefined\_units/space\_units.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{radiometry__units_8hpp}{units/predefined\_units/radiometry\_units.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{informatics__units_8hpp}{units/predefined\_units/informatics\_units.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{chemistry__units_8hpp}{units/predefined\_units/chemistry\_units.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{direction_8hpp}{units/topology/direction.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{point__1d_8hpp}{units/topology/point\_1d.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{point__2d_8hpp}{units/topology/point\_2d.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{point__3d_8hpp}{units/topology/point\_3d.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00026}00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{point__nd_8hpp}{units/topology/point\_nd.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{coordinates__1d_8hpp}{units/coordinates/coordinates\_1d.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{coordinates__2d_8hpp}{units/coordinates/coordinates\_2d.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{coordinates__2dr_8hpp}{units/coordinates/coordinates\_2dr.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{coordinates__3d_8hpp}{units/coordinates/coordinates\_3d.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{coordinates__3dr_8hpp}{units/coordinates/coordinates\_3dr.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{coordinates__nd_8hpp}{units/coordinates/coordinates\_nd.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00034}00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{coordinates__ndr_8hpp}{units/coordinates/coordinates\_ndr.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00036}00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{point__1d__impl_8hpp}{units/topology/point\_1d\_impl.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00037}00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{point__2d__impl_8hpp}{units/topology/point\_2d\_impl.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00038}00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{point__3d__impl_8hpp}{units/topology/point\_3d\_impl.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00039}00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{point__nd__impl_8hpp}{units/topology/point\_nd\_impl.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00041}00041\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{aid_8hpp}{units/special\_units/aid.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00042}00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{color_8hpp}{units/special\_units/color.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00043}00043\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{percentage_8hpp}{units/special\_units/percentage.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00044}00044\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pH_8hpp}{units/special\_units/pH.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00045}00045\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pixel_8hpp}{units/special\_units/pixel.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00046}00046\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pOH_8hpp}{units/special\_units/pOH.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00047}00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{size__2d_8hpp}{units/special\_units/size\_2d.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00048}00048\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{size__3d_8hpp}{units/special\_units/size\_3d.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00049}00049\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{size__nd_8hpp}{units/special\_units/size\_nd.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00050}00050\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{zid_8hpp}{units/special\_units/zid.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00052}00052\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lab__number_8hpp}{units/meca\_number/lab\_number.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00054}00054\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{matrix_8hpp}{units/util/matrix.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00056}00056\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{units_8hpp_source_l00058}00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_HPP\_INCLUDED}}
 
 \end{DoxyCode}

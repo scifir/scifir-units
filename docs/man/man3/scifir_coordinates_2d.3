@@ -6,9 +6,14 @@ scifir::coordinates_2d< T >
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <coordinates_2d\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBcoordinates_2d\fP ()"
+.br
 .ti -1c
 .RI "\fBcoordinates_2d\fP (\fBconst\fP \fBcoordinates_2d\fP< T > &\fBx_coordinates\fP)"
 .br
@@ -89,6 +94,321 @@ scifir::coordinates_2d< T >
 .RI "T \fBy\fP"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_coordinates_2d\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<\fBtypename\fP T = length>
+.br
+class scifir::coordinates_2d< T >"
+.PP
+Definition at line \fB17\fP of file \fBcoordinates_2d\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_2d\fP< T >::coordinates_2d ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB20\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+20                              : x(),y()
+21             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_2d\fP< T >::coordinates_2d (\fBconst\fP \fBcoordinates_2d\fP< T > & x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB23\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+23                                                                    : x(x_coordinates\&.x),y(x_coordinates\&.y)
+24             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_2d\fP< T >::coordinates_2d (\fBcoordinates_2d\fP< T > && x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB26\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+26                                                               : x(std::move(x_coordinates\&.x)),y(std::move(x_coordinates\&.y))
+27             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_2d\fP< T >::coordinates_2d (\fBconst\fP T & new_x, \fBconst\fP T & new_y)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB29\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+29                                                                    : x(new_x),y(new_y)
+30             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_2d\fP< T >::coordinates_2d (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB32\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+33             {
+34                 set_position(new_p,new_theta);
+35             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_2d\fP< T >::coordinates_2d (\fBconst\fP \fBscifir::point_2d\fP< T > & new_point)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB37\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+37                                                                         : x(new_point\&.x),y(new_point\&.y)
+38             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_2d\fP< T >::coordinates_2d (\fBscifir::point_2d\fP< T > && new_point)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB40\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+40                                                                    : x(std::move(new_point\&.x)),y(std::move(new_point\&.y))
+41             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_2d\fP< T >::coordinates_2d (\fBconst\fP \fBstring\fP & init_coordinates_2d)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB43\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+43                                                                        : coordinates_2d()
+44             {
+45                 initialize_from_string(init_coordinates_2d);
+46             }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_2d\fP< T >::display_cartesian () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB135\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+136             {
+137                 ostringstream out;
+138                 out << "(" << x << "," << y << ")";
+139                 return out\&.str();
+140             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_2d\fP< T >::display_polar () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB142\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+143             {
+144                 ostringstream out;
+145                 out << "(" << get_p() << "," << get_theta() << ")";
+146                 return out\&.str();
+147             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_2d\fP< T >::distance_to_origin () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB130\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+131             {
+132                 return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2));
+133             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_2d\fP< T >::get_p () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB82\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+83             {
+84                 return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2));
+85             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::coordinates_2d\fP< T >::get_theta () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB87\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+88             {
+89                 return angle(radian_to_grade(std::atan2(y\&.get_value(),x\&.get_value())));
+90             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_2d\fP< T >::initialize_from_string (\fBstring\fP init_coordinates_2d)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB153\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+154             {
+155                 vector<string> values;
+156                 if (init_coordinates_2d\&.front() == '(')
+157                 {
+158                     init_coordinates_2d\&.erase(0,1);
+159                 }
+160                 if (init_coordinates_2d\&.back() == ')')
+161                 {
+162                     init_coordinates_2d\&.erase(init_coordinates_2d\&.size()\-1,1);
+163                 }
+164                 boost::split(values,init_coordinates_2d,boost::is_any_of(","));
+165                 if (values\&.size() == 2)
+166                 {
+167                     if (is_angle(values[1]))
+168                     {
+169                         set_position(T(values[0]),angle(values[1]));
+170                     }
+171                     else
+172                     {
+173                         set_position(T(values[0]),T(values[1]));
+174                     }
+175                 }
+176             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_2d\fP< T >::move (\fBconst\fP \fBdisplacement_2d\fP & x_displacement)\fC [inline]\fP"
+
+.PP
+Definition at line \fB112\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+113             {
+114                 x += x_displacement\&.x_projection();
+115                 y += x_displacement\&.y_projection();
+116             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_2d\fP< T >::move (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB124\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+125             {
+126                 x += new_p * scifir::cos(new_theta);
+127                 y += new_p * scifir::sin(new_theta);
+128             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_2d\fP< T >::move (\fBconst\fP T & new_x, \fBconst\fP T & new_y)\fC [inline]\fP"
+
+.PP
+Definition at line \fB118\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+119             {
+120                 x += new_x;
+121                 y += new_y;
+122             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_2d\fP< T > & \fBscifir::coordinates_2d\fP< T >::operator= (\fBconst\fP \fBcoordinates_2d\fP< T > & x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB48\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+49             {
+50                 x = x_coordinates\&.x;
+51                 y = x_coordinates\&.y;
+52                 return *this;
+53             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_2d\fP< T > & \fBscifir::coordinates_2d\fP< T >::operator= (\fBconst\fP \fBpoint_2d\fP< T > & x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB62\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+63             {
+64                 x = x_point\&.x;
+65                 y = x_point\&.y;
+66                 return *this;
+67             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_2d\fP< T > & \fBscifir::coordinates_2d\fP< T >::operator= (\fBconst\fP \fBstring\fP & init_coordinates_2d)\fC [inline]\fP"
+
+.PP
+Definition at line \fB76\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+77             {
+78                 initialize_from_string(init_coordinates_2d);
+79                 return *this;
+80             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_2d\fP< T > & \fBscifir::coordinates_2d\fP< T >::operator= (\fBcoordinates_2d\fP< T > && x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB55\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+56             {
+57                 x = std::move(x_coordinates\&.x);
+58                 y = std::move(x_coordinates\&.y);
+59                 return *this;
+60             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_2d\fP< T > & \fBscifir::coordinates_2d\fP< T >::operator= (\fBpoint_2d\fP< T > && x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB69\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+70             {
+71                 x = std::move(x_point\&.x);
+72                 y = std::move(x_point\&.y);
+73                 return *this;
+74             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_2d\fP< T >::rotate (\fBconst\fP \fBangle\fP & x_angle)\fC [inline]\fP"
+
+.PP
+Definition at line \fB104\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+105             {
+106                 T x_coord = x;
+107                 T y_coord = y;
+108                 x = x_coord * scifir::cos(x_angle) \- y_coord * scifir::sin(x_angle);
+109                 y = x_coord * scifir::sin(x_angle) + y_coord * scifir::cos(x_angle);
+110             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_2d\fP< T >::set_position (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB98\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+99             {
+100                 x = T(new_p * scifir::cos(new_theta));
+101                 y = T(new_p * scifir::sin(new_theta));
+102             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_2d\fP< T >::set_position (\fBconst\fP T & new_x, \fBconst\fP T & new_y)\fC [inline]\fP"
+
+.PP
+Definition at line \fB92\fP of file \fBcoordinates_2d\&.hpp\fP\&..PP
+.nf
+93             {
+94                 x = new_x;
+95                 y = new_y;
+96             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_2d\fP< T >::x"
+
+.PP
+Definition at line \fB149\fP of file \fBcoordinates_2d\&.hpp\fP\&.
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_2d\fP< T >::y"
+
+.PP
+Definition at line \fB150\fP of file \fBcoordinates_2d\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

@@ -1,0 +1,283 @@
+.TH "special_units/pixel.cpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+special_units/pixel.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&./pixel\&.hpp'\fP
+.br
+\fC#include '\&.\&./util/types\&.hpp'\fP
+.br
+\fC#include 'boost/algorithm/string\&.hpp'\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <string>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscifir\fP"
+.br
+.RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBpixel\fP &x)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBscifir::is_pixel\fP (\fBconst\fP \fBstring\fP &\fBinit_pixel\fP)"
+.br
+.ti -1c
+.RI "\fBpixel\fP \fBscifir::sqrt\fP (\fBconst\fP \fBpixel\fP &x)"
+.br
+.ti -1c
+.RI "\fBpixel\fP \fBscifir::sqrt_nth\fP (\fBconst\fP \fBpixel\fP &x, \fBint\fP index)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::pixel\fP &x, const \fBscifir::pixel\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::pixel\fP &x, const \fBscifir::pixel\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBscifir::pixel\fP &x, const \fBscifir::pixel\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBscifir::pixel\fP &x, const \fBscifir::pixel\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBscifir::pixel\fP &x, const \fBscifir::pixel\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBscifir::pixel\fP &x, const \fBscifir::pixel\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::pixel\fP &x, const string &init_pixel)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::pixel\fP &x, const string &init_pixel)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const string &init_pixel, const \fBscifir::pixel\fP &x)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const string &init_pixel, const \fBscifir::pixel\fP &x)"
+.br
+.ti -1c
+.RI "void \fBoperator+=\fP (string &x, const \fBscifir::pixel\fP &y)"
+.br
+.ti -1c
+.RI "string \fBoperator+\fP (const string &x, const \fBscifir::pixel\fP &y)"
+.br
+.ti -1c
+.RI "string \fBoperator+\fP (const \fBscifir::pixel\fP &y, const string &x)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::pixel\fP &x)"
+.br
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, \fBscifir::pixel\fP &x)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "bool operator!= (const \fBscifir::pixel\fP & x, const \fBscifir::pixel\fP & y)"
+
+.PP
+Definition at line \fB251\fP of file \fBpixel\&.cpp\fP\&..PP
+.nf
+252 {
+253     return !(x == y);
+254 }
+.fi
+
+.SS "bool operator!= (const \fBscifir::pixel\fP & x, const string & init_pixel)"
+
+.PP
+Definition at line \fB296\fP of file \fBpixel\&.cpp\fP\&..PP
+.nf
+297 {
+298     return !(x == init_pixel);
+299 }
+.fi
+
+.SS "bool operator!= (const string & init_pixel, const \fBscifir::pixel\fP & x)"
+
+.PP
+Definition at line \fB307\fP of file \fBpixel\&.cpp\fP\&..PP
+.nf
+308 {
+309     return !(init_pixel == x);
+310 }
+.fi
+
+.SS "string operator+ (const \fBscifir::pixel\fP & y, const string & x)"
+
+.PP
+Definition at line \fB327\fP of file \fBpixel\&.cpp\fP\&..PP
+.nf
+328 {
+329     ostringstream output;
+330     output << y;
+331     output << x;
+332     return output\&.str();
+333 }
+.fi
+
+.SS "string operator+ (const string & x, const \fBscifir::pixel\fP & y)"
+
+.PP
+Definition at line \fB319\fP of file \fBpixel\&.cpp\fP\&..PP
+.nf
+320 {
+321     ostringstream output;
+322     output << x;
+323     output << y;
+324     return output\&.str();
+325 }
+.fi
+
+.SS "void operator+= (string & x, const \fBscifir::pixel\fP & y)"
+
+.PP
+Definition at line \fB312\fP of file \fBpixel\&.cpp\fP\&..PP
+.nf
+313 {
+314     ostringstream output;
+315     output << y;
+316     x += output\&.str();
+317 }
+.fi
+
+.SS "bool operator< (const \fBscifir::pixel\fP & x, const \fBscifir::pixel\fP & y)"
+
+.PP
+Definition at line \fB256\fP of file \fBpixel\&.cpp\fP\&..PP
+.nf
+257 {
+258     if(x\&.get_value() < y\&.get_value())
+259     {
+260         return true;
+261     }
+262     else
+263     {
+264         return false;
+265     }
+266 }
+.fi
+
+.SS "ostream & operator<< (ostream & os, const \fBscifir::pixel\fP & x)"
+
+.PP
+Definition at line \fB335\fP of file \fBpixel\&.cpp\fP\&..PP
+.nf
+336 {
+337     return os << to_string(x);
+338 }
+.fi
+
+.SS "bool operator<= (const \fBscifir::pixel\fP & x, const \fBscifir::pixel\fP & y)"
+
+.PP
+Definition at line \fB280\fP of file \fBpixel\&.cpp\fP\&..PP
+.nf
+281 {
+282     return !(x > y);
+283 }
+.fi
+
+.SS "bool operator== (const \fBscifir::pixel\fP & x, const \fBscifir::pixel\fP & y)"
+
+.PP
+Definition at line \fB239\fP of file \fBpixel\&.cpp\fP\&..PP
+.nf
+240 {
+241     if(x\&.get_value() == y\&.get_value())
+242     {
+243         return true;
+244     }
+245     else
+246     {
+247         return false;
+248     }
+249 }
+.fi
+
+.SS "bool operator== (const \fBscifir::pixel\fP & x, const string & init_pixel)"
+
+.PP
+Definition at line \fB290\fP of file \fBpixel\&.cpp\fP\&..PP
+.nf
+291 {
+292     scifir::pixel y = scifir::pixel(init_pixel);
+293     return (x == y);
+294 }
+.fi
+
+.SS "bool operator== (const string & init_pixel, const \fBscifir::pixel\fP & x)"
+
+.PP
+Definition at line \fB301\fP of file \fBpixel\&.cpp\fP\&..PP
+.nf
+302 {
+303     scifir::pixel y = scifir::pixel(init_pixel);
+304     return (y == x);
+305 }
+.fi
+
+.SS "bool operator> (const \fBscifir::pixel\fP & x, const \fBscifir::pixel\fP & y)"
+
+.PP
+Definition at line \fB268\fP of file \fBpixel\&.cpp\fP\&..PP
+.nf
+269 {
+270     if(x\&.get_value() > y\&.get_value())
+271     {
+272         return true;
+273     }
+274     else
+275     {
+276         return false;
+277     }
+278 }
+.fi
+
+.SS "bool operator>= (const \fBscifir::pixel\fP & x, const \fBscifir::pixel\fP & y)"
+
+.PP
+Definition at line \fB285\fP of file \fBpixel\&.cpp\fP\&..PP
+.nf
+286 {
+287     return !(x < y);
+288 }
+.fi
+
+.SS "istream & operator>> (istream & is, \fBscifir::pixel\fP & x)"
+
+.PP
+Definition at line \fB340\fP of file \fBpixel\&.cpp\fP\&..PP
+.nf
+341 {
+342     char a[256];
+343     is\&.getline(a, 256);
+344     string b(a);
+345     boost::trim(b);
+346     x = scifir::pixel(b);
+347     return is;
+348 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

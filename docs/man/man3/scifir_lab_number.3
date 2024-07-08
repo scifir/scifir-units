@@ -6,9 +6,14 @@ scifir::lab_number< T >
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <lab_number\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBlab_number\fP ()"
+.br
 .ti -1c
 .RI "\fBlab_number\fP (\fBconst\fP \fBlab_number\fP< T > &x)"
 .br
@@ -62,6 +67,189 @@ scifir::lab_number< T >
 .RI "T \fBerror_value\fP"
 .br
 .in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<\fBtypename\fP T>
+.br
+class scifir::lab_number< T >"
+.PP
+Definition at line \fB19\fP of file \fBlab_number\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<\fBtypename\fP T > \fBscifir::lab_number\fP< T >::lab_number ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB22\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+22                          : value(),error_value()
+23             {}
+.fi
+
+.SS "template<\fBtypename\fP T > \fBscifir::lab_number\fP< T >::lab_number (\fBconst\fP \fBlab_number\fP< T > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB25\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+25                                                : value(x\&.value),error_value(x\&.error_value)
+26             {}
+.fi
+
+.SS "template<\fBtypename\fP T > \fBscifir::lab_number\fP< T >::lab_number (\fBlab_number\fP< T > && x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB28\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+28                                           : value(std::move(x\&.value)),error_value(std::move(x\&.error_value))
+29             {}
+.fi
+
+.SS "template<\fBtypename\fP T > \fBscifir::lab_number\fP< T >::lab_number (\fBconst\fP T & x, \fBconst\fP T & y)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB31\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+31                                                        : value(x),error_value(y)
+32             {}
+.fi
+
+.SS "template<\fBtypename\fP T > \fBscifir::lab_number\fP< T >::lab_number (\fBconst\fP \fBstring\fP & x, \fBconst\fP \fBstring\fP & y)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB34\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+34                                                                  : value(x),error_value(y)
+35             {}
+.fi
+
+.SS "template<\fBtypename\fP T > \fBscifir::lab_number\fP< T >::lab_number (\fBconst\fP \fBstring\fP & init_lab_number)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB37\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+38             {
+39                 vector<string> values;
+40                 boost::split(values,init_lab_number,boost::is_any_of("+\-,\\u00B1"));
+41                 if (values\&.size() == 3)
+42                 {
+43                     boost::trim(values[0]);
+44                     boost::trim(values[2]);
+45                     value = T(values[0]);
+46                     error_value = T(values[2]);
+47                 }
+48             }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<\fBtypename\fP T > \fBstring\fP \fBscifir::lab_number\fP< T >::display (\fBint\fP number_of_decimals = \fC2\fP) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB98\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+99             {
+100                 ostringstream output;
+101                 output << value\&.display(number_of_decimals) << " \\u00B1 " << error_value\&.display(number_of_decimals);
+102                 return output\&.str();
+103             }
+.fi
+
+.SS "template<\fBtypename\fP T > template<\fBtypename\fP \fBU\fP > \fBlab_number\fP< \fBscalar_unit\fP > \fBscifir::lab_number\fP< T >::operator* (\fBconst\fP \fBlab_number\fP< \fBU\fP > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB75\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+76             {
+77                 return lab_number<scalar_unit>(value * x\&.value,error_value * x\&.error_value);
+78             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBlab_number\fP< T > \fBscifir::lab_number\fP< T >::operator+ (\fBconst\fP \fBlab_number\fP< T > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB64\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+65             {
+66                 return lab_number<T>(value + x\&.value,error_value + x\&.error_value);
+67             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBvoid\fP \fBscifir::lab_number\fP< T >::operator+= (\fBconst\fP \fBlab_number\fP< T > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB86\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+87             {
+88                 value += x\&.value;
+89                 error_value += x\&.error_value;
+90             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBlab_number\fP< T > \fBscifir::lab_number\fP< T >::operator\- (\fBconst\fP \fBlab_number\fP< T > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB69\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+70             {
+71                 return lab_number<T>(value \- x\&.value,error_value \- x\&.error_value);
+72             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBvoid\fP \fBscifir::lab_number\fP< T >::operator\-= (\fBconst\fP \fBlab_number\fP< T > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB92\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+93             {
+94                 value \-= x\&.value;
+95                 error_value \-= x\&.error_value;
+96             }
+.fi
+
+.SS "template<\fBtypename\fP T > template<\fBtypename\fP \fBU\fP > \fBlab_number\fP< \fBscalar_unit\fP > \fBscifir::lab_number\fP< T >::operator/ (\fBconst\fP \fBlab_number\fP< \fBU\fP > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB81\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+82             {
+83                 return lab_number<scalar_unit>(value / x\&.value,error_value / x\&.error_value);
+84             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBlab_number\fP< T > & \fBscifir::lab_number\fP< T >::operator= (\fBconst\fP \fBlab_number\fP< T > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB50\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+51             {
+52                 value = x\&.value;
+53                 error_value = x\&.error_value;
+54                 return *this;
+55             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBlab_number\fP< T > & \fBscifir::lab_number\fP< T >::operator= (\fBlab_number\fP< T > && x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB57\fP of file \fBlab_number\&.hpp\fP\&..PP
+.nf
+58             {
+59                 value = std::move(x\&.value);
+60                 error_value = std::move(x\&.error_value);
+61                 return *this;
+62             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<\fBtypename\fP T > T \fBscifir::lab_number\fP< T >::error_value"
+
+.PP
+Definition at line \fB106\fP of file \fBlab_number\&.hpp\fP\&.
+.SS "template<\fBtypename\fP T > T \fBscifir::lab_number\fP< T >::value"
+
+.PP
+Definition at line \fB105\fP of file \fBlab_number\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

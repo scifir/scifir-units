@@ -1,0 +1,474 @@
+.TH "units/scalar_unit.cpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+units/scalar_unit.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&./scalar_unit\&.hpp'\fP
+.br
+\fC#include '\&./conversion\&.hpp'\fP
+.br
+\fC#include '\&./unit_basic\&.hpp'\fP
+.br
+\fC#include '\&./prefix\&.hpp'\fP
+.br
+\fC#include '\&.\&./util/types\&.hpp'\fP
+.br
+\fC#include 'boost/algorithm/string/erase\&.hpp'\fP
+.br
+\fC#include 'boost/algorithm/string\&.hpp'\fP
+.br
+\fC#include <algorithm>\fP
+.br
+\fC#include <cctype>\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <map>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <string>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscifir\fP"
+.br
+.RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.br
+.RI "Generates an string from the \fBscalar_unit\fP, it uses the display of the \fBscalar_unit\fP with 2 decimals, without brackets and without a close prefix\&. "
+.ti -1c
+.RI "\fBbool\fP \fBscifir::is_scalar_unit\fP (\fBconst\fP \fBstring\fP &\fBinit_scalar\fP)"
+.br
+.RI "Checks if an string is an initialization string of a \fBscalar_unit\fP\&. "
+.ti -1c
+.RI "\fBfloat\fP \fBscifir::abs\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.br
+.RI "Returns the absolute value of the \fBscalar_unit\fP, without dimensions\&. "
+.ti -1c
+.RI "\fBscalar_unit\fP \fBscifir::pow\fP (\fBconst\fP \fBscalar_unit\fP &x, \fBint\fP \fBexponent\fP)"
+.br
+.RI "Exponentiates a \fBscalar_unit\fP to some numeric type, the dimensions are also exponentiated\&. "
+.ti -1c
+.RI "\fBscalar_unit\fP \fBscifir::sqrt\fP (\fBconst\fP \fBscalar_unit\fP &x)"
+.br
+.RI "Square root of a \fBscalar_unit\fP, it squares the dimensions too\&. "
+.ti -1c
+.RI "\fBscalar_unit\fP \fBscifir::sqrt_nth\fP (\fBconst\fP \fBscalar_unit\fP &x, \fBint\fP index)"
+.br
+.RI "Nth root of a \fBscalar_unit\fP to any numeric value, it squares the dimensions too\&. "
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::scalar_unit\fP &x, \fBscifir::scalar_unit\fP y)"
+.br
+.RI "Returns true if two scalar_unit classes doesn't have the same value when changed to same dimensions\&. If their basic dimensions are different, it returns false\&. "
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBscifir::scalar_unit\fP &x, const \fBscifir::scalar_unit\fP &y)"
+.br
+.RI "Returns true if x has a lower value than y, compared with the same dimensions\&. If their dimensions are not equal, they are changed to be equal in order to do the comparison\&. "
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBscifir::scalar_unit\fP &x, const \fBscifir::scalar_unit\fP &y)"
+.br
+.RI "Returns true if x has a greather value than y, compared with the same dimensions\&. If their dimensions are not equal, they are changed to be equal in order to do the comparison\&. "
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBscifir::scalar_unit\fP &x, const \fBscifir::scalar_unit\fP &y)"
+.br
+.RI "Returns true if x has a lower or equal value than y, compared with the same dimensions\&. If their dimensions are not equal, they are changed to be equal in order to do the comparison\&. "
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBscifir::scalar_unit\fP &x, const \fBscifir::scalar_unit\fP &y)"
+.br
+.RI "Returns true if x has a greather or equal value than y, compared with the same dimensions\&. If their dimensions are not equal, they are changed to be equal in order to do the comparison\&. "
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::scalar_unit\fP &x, const string &init_scalar)"
+.br
+.RI "Returns true if x is equal to the scalar_unit initialized with the string being compared\&. The display() function is not used, and so the values are compared with all its decimal numbers\&. "
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::scalar_unit\fP &x, const string &init_scalar)"
+.br
+.RI "Returns true if x is not equal to the scalar_unit initialized with the string being compared\&. The display() function is not used, and so the values are compared with all its decimal numbers\&. "
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBscifir::scalar_unit\fP &x, const string &init_scalar)"
+.br
+.RI "Returns true if x is lower than the scalar_unit initialized with the string being compared\&. "
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBscifir::scalar_unit\fP &x, const string &init_scalar)"
+.br
+.RI "Returns true if x is greather than the scalar_unit initialized with the string being compared\&. "
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBscifir::scalar_unit\fP &x, const string &init_scalar)"
+.br
+.RI "Returns true if x is lower or equal to the scalar_unit initialized with the string being compared\&. "
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBscifir::scalar_unit\fP &x, const string &init_scalar)"
+.br
+.RI "Returns true if x is greather or equal to the scalar_unit initialized with the string being compared\&. "
+.ti -1c
+.RI "bool \fBoperator==\fP (const string &init_scalar, const \fBscifir::scalar_unit\fP &x)"
+.br
+.RI "Returns true if x is equal to the scalar_unit initialized with the string being compared\&. The display() function is not used, and so the values are compared with all its decimal numbers\&. "
+.ti -1c
+.RI "bool \fBoperator!=\fP (const string &init_scalar, const \fBscifir::scalar_unit\fP &x)"
+.br
+.RI "Returns true if x is not equal to the scalar_unit initialized with the string being compared\&. The display() function is not used, and so the values are compared with all its decimal numbers\&. "
+.ti -1c
+.RI "bool \fBoperator<\fP (const string &init_scalar, const \fBscifir::scalar_unit\fP &x)"
+.br
+.RI "Returns true if x is greather than the scalar_unit initialized with the string being compared\&. "
+.ti -1c
+.RI "bool \fBoperator>\fP (const string &init_scalar, const \fBscifir::scalar_unit\fP &x)"
+.br
+.RI "Returns true if x is lower than the scalar_unit initialized with the string being compared\&. "
+.ti -1c
+.RI "bool \fBoperator<=\fP (const string &init_scalar, const \fBscifir::scalar_unit\fP &x)"
+.br
+.RI "Returns true if x is greather or equal to the scalar_unit initialized with the string being compared\&. "
+.ti -1c
+.RI "bool \fBoperator>=\fP (const string &init_scalar, const \fBscifir::scalar_unit\fP &x)"
+.br
+.RI "Returns true if x is lower or equal to the scalar_unit initialized with the string being compared\&. "
+.ti -1c
+.RI "void \fBoperator+=\fP (string &x, const \fBscifir::scalar_unit\fP &y)"
+.br
+.RI "Adds the scalar_unit y converted to string to the string x\&. "
+.ti -1c
+.RI "string \fBoperator+\fP (const string &x, const \fBscifir::scalar_unit\fP &y)"
+.br
+.RI "Concatenates the string x with the string representation of the scalar_unit y\&. "
+.ti -1c
+.RI "string \fBoperator+\fP (const \fBscifir::scalar_unit\fP &y, const string &x)"
+.br
+.RI "Concatenates the string x with the string representation of the scalar_unit y\&. "
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::scalar_unit\fP &x)"
+.br
+.RI "Adds the string representation of the scalar_unit x to an ostream os\&. "
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, \fBscifir::scalar_unit\fP &x)"
+.br
+.RI "Allows that an istream is initializes by string an scalar_unit x\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "bool operator!= (const \fBscifir::scalar_unit\fP & x, const string & init_scalar)"
+
+.PP
+Returns true if x is not equal to the scalar_unit initialized with the string being compared\&. The display() function is not used, and so the values are compared with all its decimal numbers\&. 
+.PP
+Definition at line \fB804\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+805 {
+806     return !(x == init_scalar);
+807 }
+.fi
+
+.SS "bool operator!= (const \fBscifir::scalar_unit\fP & x, \fBscifir::scalar_unit\fP y)"
+
+.PP
+Returns true if two scalar_unit classes doesn't have the same value when changed to same dimensions\&. If their basic dimensions are different, it returns false\&. 
+.PP
+Definition at line \fB747\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+748 {
+749     return !(x == y);
+750 }
+.fi
+
+.SS "bool operator!= (const string & init_scalar, const \fBscifir::scalar_unit\fP & x)"
+
+.PP
+Returns true if x is not equal to the scalar_unit initialized with the string being compared\&. The display() function is not used, and so the values are compared with all its decimal numbers\&. 
+.PP
+Definition at line \fB836\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+837 {
+838     return (x != init_scalar);
+839 }
+.fi
+
+.SS "string operator+ (const \fBscifir::scalar_unit\fP & y, const string & x)"
+
+.PP
+Concatenates the string x with the string representation of the scalar_unit y\&. 
+.PP
+Definition at line \fB878\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+879 {
+880     ostringstream output;
+881     output << y;
+882     output << x;
+883     return output\&.str();
+884 }
+.fi
+
+.SS "string operator+ (const string & x, const \fBscifir::scalar_unit\fP & y)"
+
+.PP
+Concatenates the string x with the string representation of the scalar_unit y\&. 
+.PP
+Definition at line \fB870\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+871 {
+872     ostringstream output;
+873     output << x;
+874     output << y;
+875     return output\&.str();
+876 }
+.fi
+
+.SS "void operator+= (string & x, const \fBscifir::scalar_unit\fP & y)"
+
+.PP
+Adds the scalar_unit y converted to string to the string x\&. 
+.PP
+Definition at line \fB863\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+864 {
+865     ostringstream output;
+866     output << y;
+867     x += output\&.str();
+868 }
+.fi
+
+.SS "bool operator< (const \fBscifir::scalar_unit\fP & x, const \fBscifir::scalar_unit\fP & y)"
+
+.PP
+Returns true if x has a lower value than y, compared with the same dimensions\&. If their dimensions are not equal, they are changed to be equal in order to do the comparison\&. 
+.PP
+Definition at line \fB752\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+753 {
+754     if(!x\&.has_dimensions(y))
+755     {
+756         return false;
+757     }
+758     scifir::scalar_unit z = x;
+759     z\&.change_dimensions(y);
+760     if(z\&.get_value() < y\&.get_value())
+761     {
+762         return true;
+763     }
+764     else
+765     {
+766         return false;
+767     }
+768 }
+.fi
+
+.SS "bool operator< (const \fBscifir::scalar_unit\fP & x, const string & init_scalar)"
+
+.PP
+Returns true if x is lower than the scalar_unit initialized with the string being compared\&. 
+.PP
+Definition at line \fB809\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+810 {
+811     scifir::scalar_unit y(init_scalar);
+812     return (x < y);
+813 }
+.fi
+
+.SS "bool operator< (const string & init_scalar, const \fBscifir::scalar_unit\fP & x)"
+
+.PP
+Returns true if x is greather than the scalar_unit initialized with the string being compared\&. 
+.PP
+Definition at line \fB841\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+842 {
+843     scifir::scalar_unit y(init_scalar);
+844     return (y < x);
+845 }
+.fi
+
+.SS "ostream & operator<< (ostream & os, const \fBscifir::scalar_unit\fP & x)"
+
+.PP
+Adds the string representation of the scalar_unit x to an ostream os\&. 
+.PP
+Definition at line \fB886\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+887 {
+888     return os << to_string(x);
+889 }
+.fi
+
+.SS "bool operator<= (const \fBscifir::scalar_unit\fP & x, const \fBscifir::scalar_unit\fP & y)"
+
+.PP
+Returns true if x has a lower or equal value than y, compared with the same dimensions\&. If their dimensions are not equal, they are changed to be equal in order to do the comparison\&. 
+.PP
+Definition at line \fB788\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+789 {
+790     return !(x > y);
+791 }
+.fi
+
+.SS "bool operator<= (const \fBscifir::scalar_unit\fP & x, const string & init_scalar)"
+
+.PP
+Returns true if x is lower or equal to the scalar_unit initialized with the string being compared\&. 
+.PP
+Definition at line \fB821\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+822 {
+823     return !(x > init_scalar);
+824 }
+.fi
+
+.SS "bool operator<= (const string & init_scalar, const \fBscifir::scalar_unit\fP & x)"
+
+.PP
+Returns true if x is greather or equal to the scalar_unit initialized with the string being compared\&. 
+.PP
+Definition at line \fB853\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+854 {
+855     return !(init_scalar > x);
+856 }
+.fi
+
+.SS "bool operator== (const \fBscifir::scalar_unit\fP & x, const string & init_scalar)"
+
+.PP
+Returns true if x is equal to the scalar_unit initialized with the string being compared\&. The display() function is not used, and so the values are compared with all its decimal numbers\&. 
+.PP
+Definition at line \fB798\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+799 {
+800     scifir::scalar_unit y(init_scalar);
+801     return (x == y);
+802 }
+.fi
+
+.SS "bool operator== (const string & init_scalar, const \fBscifir::scalar_unit\fP & x)"
+
+.PP
+Returns true if x is equal to the scalar_unit initialized with the string being compared\&. The display() function is not used, and so the values are compared with all its decimal numbers\&. 
+.PP
+Definition at line \fB831\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+832 {
+833     return (x == init_scalar);
+834 }
+.fi
+
+.SS "bool operator> (const \fBscifir::scalar_unit\fP & x, const \fBscifir::scalar_unit\fP & y)"
+
+.PP
+Returns true if x has a greather value than y, compared with the same dimensions\&. If their dimensions are not equal, they are changed to be equal in order to do the comparison\&. 
+.PP
+Definition at line \fB770\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+771 {
+772     if(!x\&.has_dimensions(y))
+773     {
+774         return false;
+775     }
+776     scifir::scalar_unit z = x;
+777     z\&.change_dimensions(y);
+778     if(z\&.get_value() > y\&.get_value())
+779     {
+780         return true;
+781     }
+782     else
+783     {
+784         return false;
+785     }
+786 }
+.fi
+
+.SS "bool operator> (const \fBscifir::scalar_unit\fP & x, const string & init_scalar)"
+
+.PP
+Returns true if x is greather than the scalar_unit initialized with the string being compared\&. 
+.PP
+Definition at line \fB815\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+816 {
+817     scifir::scalar_unit y(init_scalar);
+818     return (x > y);
+819 }
+.fi
+
+.SS "bool operator> (const string & init_scalar, const \fBscifir::scalar_unit\fP & x)"
+
+.PP
+Returns true if x is lower than the scalar_unit initialized with the string being compared\&. 
+.PP
+Definition at line \fB847\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+848 {
+849     scifir::scalar_unit y(init_scalar);
+850     return (y > x);
+851 }
+.fi
+
+.SS "bool operator>= (const \fBscifir::scalar_unit\fP & x, const \fBscifir::scalar_unit\fP & y)"
+
+.PP
+Returns true if x has a greather or equal value than y, compared with the same dimensions\&. If their dimensions are not equal, they are changed to be equal in order to do the comparison\&. 
+.PP
+Definition at line \fB793\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+794 {
+795     return !(x < y);
+796 }
+.fi
+
+.SS "bool operator>= (const \fBscifir::scalar_unit\fP & x, const string & init_scalar)"
+
+.PP
+Returns true if x is greather or equal to the scalar_unit initialized with the string being compared\&. 
+.PP
+Definition at line \fB826\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+827 {
+828     return !(x < init_scalar);
+829 }
+.fi
+
+.SS "bool operator>= (const string & init_scalar, const \fBscifir::scalar_unit\fP & x)"
+
+.PP
+Returns true if x is lower or equal to the scalar_unit initialized with the string being compared\&. 
+.PP
+Definition at line \fB858\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+859 {
+860     return !(init_scalar < x);
+861 }
+.fi
+
+.SS "istream & operator>> (istream & is, \fBscifir::scalar_unit\fP & x)"
+
+.PP
+Allows that an istream is initializes by string an scalar_unit x\&. 
+.PP
+Definition at line \fB891\fP of file \fBscalar_unit\&.cpp\fP\&..PP
+.nf
+892 {
+893     char a[256];
+894     is\&.getline(a, 256);
+895     string b(a);
+896     boost::trim(b);
+897     x = scifir::scalar_unit(b);
+898     return is;
+899 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

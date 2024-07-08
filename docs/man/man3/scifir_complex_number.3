@@ -6,9 +6,14 @@ scifir::complex_number< T >
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <complex_number\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBcomplex_number\fP ()"
+.br
 .ti -1c
 .RI "\fBcomplex_number\fP (\fBconst\fP \fBcomplex_number\fP< T > &x)"
 .br
@@ -74,6 +79,273 @@ scifir::complex_number< T >
 .RI "T \fBimaginary\fP"
 .br
 .in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<\fBtypename\fP T>
+.br
+class scifir::complex_number< T >"
+.PP
+Definition at line \fB19\fP of file \fBcomplex_number\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<\fBtypename\fP T > \fBscifir::complex_number\fP< T >::complex_number ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB22\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+22                              : real(),imaginary()
+23             {}
+.fi
+
+.SS "template<\fBtypename\fP T > \fBscifir::complex_number\fP< T >::complex_number (\fBconst\fP \fBcomplex_number\fP< T > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB25\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+25                                                        : real(x\&.real),imaginary(x\&.imaginary)
+26             {}
+.fi
+
+.SS "template<\fBtypename\fP T > \fBscifir::complex_number\fP< T >::complex_number (\fBcomplex_number\fP< T > && x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB28\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+28                                                   : real(std::move(x\&.real)),imaginary(std::move(x\&.imaginary))
+29             {}
+.fi
+
+.SS "template<\fBtypename\fP T > \fBscifir::complex_number\fP< T >::complex_number (\fBconst\fP T & x, \fBconst\fP T & y)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB31\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+31                                                            : real(x),imaginary(y)
+32             {}
+.fi
+
+.SS "template<\fBtypename\fP T > \fBscifir::complex_number\fP< T >::complex_number (\fBconst\fP \fBstring\fP & x, \fBconst\fP \fBstring\fP & y)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB34\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+34                                                                      : real(x),imaginary(y)
+35             {}
+.fi
+
+.SS "template<\fBtypename\fP T > \fBscifir::complex_number\fP< T >::complex_number (\fBconst\fP \fBstring\fP & init_complex_number)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB37\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+38             {
+39                 if (init_complex_number\&.find("+") != string::npos or init_complex_number\&.find("\-") != string::npos)
+40                 {
+41                     vector<string> numbers;
+42                     boost::split(numbers,init_complex_number,boost::is_any_of("+\-"));
+43                     if (numbers\&.size() == 2)
+44                     {
+45                         boost::trim(numbers[0]);
+46                         boost::trim(numbers[1]);
+47                         if (numbers[1]\&.substr(numbers[1]\&.length() \- 3) == "(i)")
+48                         {
+49                             real = scalar_unit(numbers[0]);
+50                             imaginary = scalar_unit(numbers[1]\&.substr(0,numbers[1]\&.length() \- 3));
+51                             if (init_complex_number\&.find("\-") != string::npos)
+52                             {
+53                                 imaginary *= \-1;
+54                             }
+55                         }
+56                         else
+57                         {
+58                             real = T();
+59                             imaginary = T();
+60                         }
+61                     }
+62                 }
+63                 else
+64                 {
+65                     real = T();
+66                     imaginary = T();
+67                 }
+68             }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<\fBtypename\fP T > \fBstring\fP \fBscifir::complex_number\fP< T >::display (\fBint\fP number_of_decimals = \fC2\fP) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB153\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+154             {
+155                 ostringstream output;
+156                 output << real\&.display(number_of_decimals);
+157                 if (imaginary >= 0)
+158                 {
+159                     output << " + ";
+160                 }
+161                 else
+162                 {
+163                     output << " \- ";
+164                 }
+165                 output << display_float(std::abs(imaginary\&.get_value()),number_of_decimals) << " " << imaginary\&.display_dimensions() << "(i)";
+166                 return output\&.str();
+167             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBangle\fP \fBscifir::complex_number\fP< T >::get_argument () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB130\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+131             {
+132                 if (imaginary != 0 and real > 0)
+133                 {
+134                     return angle(2 * scifir::atan(float(imaginary / (real + (scifir::sqrt((real^2) + (imaginary^2)))))));
+135                 }
+136                 else if (real < 0 and imaginary == 0)
+137                 {
+138                     return angle(180\&.0f);
+139                 }
+140                 else
+141                 {
+142                     return angle();
+143                 }
+144             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBcomplex_number\fP< T > \fBscifir::complex_number\fP< T >::get_conjugate () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB120\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+121             {
+122                 return complex_number<T>(real,imaginary * \-1);
+123             }
+.fi
+
+.SS "template<\fBtypename\fP T > T \fBscifir::complex_number\fP< T >::get_r () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB125\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+126             {
+127                 return scifir::sqrt((real^2) + (imaginary^2));
+128             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBcomplex_number\fP< \fBscalar_unit\fP > \fBscifir::complex_number\fP< T >::get_reciprocal () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB146\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+147             {
+148                 scalar_unit new_real = real / ((real^2) + (imaginary^2));
+149                 scalar_unit new_imaginary = (\-1 * imaginary) / ((real^2) + (imaginary^2));
+150                 return complex_number<scalar_unit>(new_real,new_imaginary);
+151             }
+.fi
+
+.SS "template<\fBtypename\fP T > template<\fBtypename\fP \fBU\fP > \fBcomplex_number\fP< \fBscalar_unit\fP > \fBscifir::complex_number\fP< T >::operator* (\fBconst\fP \fBcomplex_number\fP< \fBU\fP > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB95\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+96             {
+97                 return complex_number<scalar_unit>(real * x\&.real \- imaginary * x\&.imaginary,real * x\&.imaginary + imaginary * x\&.real);
+98             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBcomplex_number\fP< T > \fBscifir::complex_number\fP< T >::operator+ (\fBconst\fP \fBcomplex_number\fP< T > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB84\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+85             {
+86                 return complex_number<T>(real + x\&.real,imaginary + x\&.imaginary);
+87             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBvoid\fP \fBscifir::complex_number\fP< T >::operator+= (\fBconst\fP \fBcomplex_number\fP< T > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB108\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+109             {
+110                 real += x\&.real;
+111                 imaginary += x\&.imaginary;
+112             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBcomplex_number\fP< T > \fBscifir::complex_number\fP< T >::operator\- (\fBconst\fP \fBcomplex_number\fP< T > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB89\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+90             {
+91                 return complex_number<T>(real \- x\&.real,imaginary \- x\&.imaginary);
+92             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBvoid\fP \fBscifir::complex_number\fP< T >::operator\-= (\fBconst\fP \fBcomplex_number\fP< T > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB114\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+115             {
+116                 real \-= x\&.real;
+117                 imaginary \-= x\&.imaginary;
+118             }
+.fi
+
+.SS "template<\fBtypename\fP T > template<\fBtypename\fP \fBU\fP > \fBcomplex_number\fP< \fBscalar_unit\fP > \fBscifir::complex_number\fP< T >::operator/ (\fBconst\fP \fBcomplex_number\fP< \fBU\fP > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB101\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+102             {
+103                 scalar_unit new_real = (real * x\&.real + x\&.imaginary * imaginary) / ((real^2) + (imaginary^2));
+104                 scalar_unit new_imaginary = (x\&.imaginary * real \- x\&.real * imaginary) / ((real^2) + (imaginary^2));
+105                 return complex_number<scalar_unit>(new_real,new_imaginary);
+106             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBcomplex_number\fP< T > & \fBscifir::complex_number\fP< T >::operator= (\fBcomplex_number\fP< T > && x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB77\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+78             {
+79                 real = std::move(x\&.real);
+80                 imaginary = std::move(x\&.imaginary);
+81                 return *this;
+82             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBcomplex_number\fP< T > & \fBscifir::complex_number\fP< T >::operator= (\fBconst\fP \fBcomplex_number\fP< T > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB70\fP of file \fBcomplex_number\&.hpp\fP\&..PP
+.nf
+71             {
+72                 real = x\&.real;
+73                 imaginary = x\&.imaginary;
+74                 return *this;
+75             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<\fBtypename\fP T > T \fBscifir::complex_number\fP< T >::imaginary"
+
+.PP
+Definition at line \fB170\fP of file \fBcomplex_number\&.hpp\fP\&.
+.SS "template<\fBtypename\fP T > T \fBscifir::complex_number\fP< T >::real"
+
+.PP
+Definition at line \fB169\fP of file \fBcomplex_number\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

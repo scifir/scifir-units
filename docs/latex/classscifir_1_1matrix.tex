@@ -1,64 +1,618 @@
 \doxysection{scifir\+::matrix\texorpdfstring{$<$}{<} T, M, N \texorpdfstring{$>$}{>} Class Template Reference}
 \hypertarget{classscifir_1_1matrix}{}\label{classscifir_1_1matrix}\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+
+
+{\ttfamily \#include $<$matrix.\+hpp$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classscifir_1_1matrix_a933af7f36352487b137301948fd18f9b}\label{classscifir_1_1matrix_a933af7f36352487b137301948fd18f9b} 
-{\bfseries matrix} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{initializer\+\_\+list}}$<$ vector$<$ T $>$ $>$ x)
+\mbox{\hyperlink{classscifir_1_1matrix_ae9a6f954052f227f67eac65dcdc8f5f6}{matrix}} ()
 \item 
-\Hypertarget{classscifir_1_1matrix_a457e72a17876ded541c31c5251338e96}\label{classscifir_1_1matrix_a457e72a17876ded541c31c5251338e96} 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{virtual}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \texorpdfstring{$\ast$}{*} {\bfseries clone} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\mbox{\hyperlink{classscifir_1_1matrix_a933af7f36352487b137301948fd18f9b}{matrix}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{initializer\+\_\+list}}$<$ vector$<$ T $>$ $>$ x)
 \item 
-\Hypertarget{classscifir_1_1matrix_aaf593964a6daa6b2d9ff9341f5014724}\label{classscifir_1_1matrix_aaf593964a6daa6b2d9ff9341f5014724} 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} {\bfseries row\+\_\+size} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{virtual}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classscifir_1_1matrix_a457e72a17876ded541c31c5251338e96}{clone}} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
 \item 
-\Hypertarget{classscifir_1_1matrix_a51f70b483779be5047a15687cb0a46c7}\label{classscifir_1_1matrix_a51f70b483779be5047a15687cb0a46c7} 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} {\bfseries column\+\_\+size} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1matrix_aaf593964a6daa6b2d9ff9341f5014724}{row\+\_\+size}} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
 \item 
-\Hypertarget{classscifir_1_1matrix_af6b1f529d588f7357713e6b2ee3464f5}\label{classscifir_1_1matrix_af6b1f529d588f7357713e6b2ee3464f5} 
-\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, 1, N $>$ {\bfseries row} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1matrix_a51f70b483779be5047a15687cb0a46c7}{column\+\_\+size}} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
 \item 
-\Hypertarget{classscifir_1_1matrix_aa94b47dde53d0c6375362f1910e9a641}\label{classscifir_1_1matrix_aa94b47dde53d0c6375362f1910e9a641} 
-\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, 1 $>$ {\bfseries column} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, 1, N $>$ \mbox{\hyperlink{classscifir_1_1matrix_af6b1f529d588f7357713e6b2ee3464f5}{row}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
 \item 
-\Hypertarget{classscifir_1_1matrix_ace0dbc90ea17ecbdf9bfb2540dcf3158}\label{classscifir_1_1matrix_ace0dbc90ea17ecbdf9bfb2540dcf3158} 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} T \& {\bfseries operator()} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, 1 $>$ \mbox{\hyperlink{classscifir_1_1matrix_aa94b47dde53d0c6375362f1910e9a641}{column}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
 \item 
-\Hypertarget{classscifir_1_1matrix_ac8e907c79afb5b629e668c20dfc12c9a}\label{classscifir_1_1matrix_ac8e907c79afb5b629e668c20dfc12c9a} 
-T \& {\bfseries operator()} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}})
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} T \& \mbox{\hyperlink{classscifir_1_1matrix_ace0dbc90ea17ecbdf9bfb2540dcf3158}{operator()}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
 \item 
-\Hypertarget{classscifir_1_1matrix_a5c29921bc7850fc6feddd591a51a8ca6}\label{classscifir_1_1matrix_a5c29921bc7850fc6feddd591a51a8ca6} 
-\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ {\bfseries operator+} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \&x)
+T \& \mbox{\hyperlink{classscifir_1_1matrix_ac8e907c79afb5b629e668c20dfc12c9a}{operator()}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}})
 \item 
-\Hypertarget{classscifir_1_1matrix_ab500541e5d709aa7e0dbbead6c6d010f}\label{classscifir_1_1matrix_ab500541e5d709aa7e0dbbead6c6d010f} 
-\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ {\bfseries operator-\/} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \&x)
+\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \mbox{\hyperlink{classscifir_1_1matrix_a5c29921bc7850fc6feddd591a51a8ca6}{operator+}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \&x)
 \item 
-\Hypertarget{classscifir_1_1matrix_abaab80e17d1facd9ce8799127170763e}\label{classscifir_1_1matrix_abaab80e17d1facd9ce8799127170763e} 
-{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N2$>$ }\\\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, N, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{N2}} $>$ {\bfseries operator\texorpdfstring{$\ast$}{*}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, N, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{N2}} $>$ \&x)
+\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \mbox{\hyperlink{classscifir_1_1matrix_ab500541e5d709aa7e0dbbead6c6d010f}{operator-\/}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \&x)
 \item 
-\Hypertarget{classscifir_1_1matrix_a1475eec503c6c9f77b4455bb7322ab0d}\label{classscifir_1_1matrix_a1475eec503c6c9f77b4455bb7322ab0d} 
-{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$is\+\_\+integer\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ {\bfseries operator\texorpdfstring{$^\wedge$}{\string^}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} x)
+{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N2$>$ }\\\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, N, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{N2}} $>$ \mbox{\hyperlink{classscifir_1_1matrix_abaab80e17d1facd9ce8799127170763e}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, N, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{N2}} $>$ \&x)
 \item 
-\Hypertarget{classscifir_1_1matrix_afc5ecec3434dcd9688830c003797e6cc}\label{classscifir_1_1matrix_afc5ecec3434dcd9688830c003797e6cc} 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} {\bfseries operator+=} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \&x)
+{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$is\+\_\+integer\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \mbox{\hyperlink{classscifir_1_1matrix_a1475eec503c6c9f77b4455bb7322ab0d}{operator\texorpdfstring{$^\wedge$}{\string^}}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} x)
 \item 
-\Hypertarget{classscifir_1_1matrix_a96e897f2ae5b6328722bff62fcdfc3e5}\label{classscifir_1_1matrix_a96e897f2ae5b6328722bff62fcdfc3e5} 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} {\bfseries operator-\/=} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \&x)
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1matrix_afc5ecec3434dcd9688830c003797e6cc}{operator+=}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \&x)
 \item 
-\Hypertarget{classscifir_1_1matrix_adcd780a7c399b7591067c8548c2ff230}\label{classscifir_1_1matrix_adcd780a7c399b7591067c8548c2ff230} 
-{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$is\+\_\+integer\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} {\bfseries operator\texorpdfstring{$^\wedge$}{\string^}=} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} x)
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1matrix_a96e897f2ae5b6328722bff62fcdfc3e5}{operator-\/=}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \&x)
 \item 
-\Hypertarget{classscifir_1_1matrix_ad678e0366e162015beda2399e22e8555}\label{classscifir_1_1matrix_ad678e0366e162015beda2399e22e8555} 
-\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, N, M $>$ {\bfseries t} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$is\+\_\+integer\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1matrix_adcd780a7c399b7591067c8548c2ff230}{operator\texorpdfstring{$^\wedge$}{\string^}=}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} x)
 \item 
-\Hypertarget{classscifir_1_1matrix_a52a8d6159277aea92e9d9b7d78e66a29}\label{classscifir_1_1matrix_a52a8d6159277aea92e9d9b7d78e66a29} 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} {\bfseries is\+\_\+square} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, N, M $>$ \mbox{\hyperlink{classscifir_1_1matrix_ad678e0366e162015beda2399e22e8555}{t}} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
 \item 
-\Hypertarget{classscifir_1_1matrix_a0c868e503472d409cd5a7ce1a1ea59d1}\label{classscifir_1_1matrix_a0c868e503472d409cd5a7ce1a1ea59d1} 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} {\bfseries is\+\_\+diagonal} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{classscifir_1_1matrix_a52a8d6159277aea92e9d9b7d78e66a29}{is\+\_\+square}} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{classscifir_1_1matrix_a0c868e503472d409cd5a7ce1a1ea59d1}{is\+\_\+diagonal}} () \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{classscifir_1_1matrix_ab7e757f6d272a6178bb13ef2673332ef}{outside\+\_\+row\+\_\+limits}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{classscifir_1_1matrix_a7998c211e46afaeb9671bfd2afd0fb6c}{outside\+\_\+column\+\_\+limits}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{classscifir_1_1matrix_a95c9a574eb6c5af2138de6cf2b2a18de}{outside\+\_\+limits}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{i}}, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{j}}) \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ vector$<$ T $>$ $>$ \mbox{\hyperlink{classscifir_1_1matrix_afab761b195a20c218b6cf2bbfb9a35f7}{data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$\newline
+class scifir\+::matrix$<$ T, M, N $>$}
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classscifir_1_1matrix_ae9a6f954052f227f67eac65dcdc8f5f6}\label{classscifir_1_1matrix_ae9a6f954052f227f67eac65dcdc8f5f6} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classscifir_1_1matrix_afab761b195a20c218b6cf2bbfb9a35f7}{data}}(vector<vector<T>>(M,\ vector<T>(N))) }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_a933af7f36352487b137301948fd18f9b}\label{classscifir_1_1matrix_a933af7f36352487b137301948fd18f9b} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{initializer\+\_\+list}}$<$ vector$<$ T $>$ $>$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00021}{21}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classscifir_1_1matrix_ae9a6f954052f227f67eac65dcdc8f5f6}{matrix}}() }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x.size()\ !=\ M)}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classscifir_1_1matrix_aa94b47dde53d0c6375362f1910e9a641}{column}}\ :\ x)}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classscifir_1_1matrix_aa94b47dde53d0c6375362f1910e9a641}{column}}.size()\ !=\ N)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classscifir_1_1matrix_aa94b47dde53d0c6375362f1910e9a641}{column}}\ :\ x)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ N;\ j++)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1matrix_afab761b195a20c218b6cf2bbfb9a35f7}{data}}[i][j]\ =\ \mbox{\hyperlink{classscifir_1_1matrix_aa94b47dde53d0c6375362f1910e9a641}{column}}[j];}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classscifir_1_1matrix_a457e72a17876ded541c31c5251338e96}\label{classscifir_1_1matrix_a457e72a17876ded541c31c5251338e96} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!clone@{clone}}
+\index{clone@{clone}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{virtual}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ matrix<T,\ M,\ N>(\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const\ }matrix<T,\ M,\ N>\&\textcolor{keyword}{>}(*\textcolor{keyword}{this}));}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_aa94b47dde53d0c6375362f1910e9a641}\label{classscifir_1_1matrix_aa94b47dde53d0c6375362f1910e9a641} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!column@{column}}
+\index{column@{column}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{column()}{column()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, 1 $>$ \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::column (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00074}{74}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1matrix_a7998c211e46afaeb9671bfd2afd0fb6c}{outside\_column\_limits}}(j))}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ matrix<T,M,1>();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matrix<T,M,1>\ x\ =\ matrix<T,M,1>();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ M;\ i++)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x(i\ +\ 1,1)\ =\ \mbox{\hyperlink{classscifir_1_1matrix_afab761b195a20c218b6cf2bbfb9a35f7}{data}}[i][j\ -\/\ 1];}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(x);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_a51f70b483779be5047a15687cb0a46c7}\label{classscifir_1_1matrix_a51f70b483779be5047a15687cb0a46c7} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!column\_size@{column\_size}}
+\index{column\_size@{column\_size}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{column\_size()}{column\_size()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::column\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00055}{55}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ N;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_a0c868e503472d409cd5a7ce1a1ea59d1}\label{classscifir_1_1matrix_a0c868e503472d409cd5a7ce1a1ea59d1} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!is\_diagonal@{is\_diagonal}}
+\index{is\_diagonal@{is\_diagonal}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{is\_diagonal()}{is\_diagonal()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::is\+\_\+diagonal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00211}{211}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ M;\ i++)}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ N;\ j++)}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ !=\ j\ and\ \mbox{\hyperlink{classscifir_1_1matrix_afab761b195a20c218b6cf2bbfb9a35f7}{data}}[i][j]\ !=\ 0)}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_a52a8d6159277aea92e9d9b7d78e66a29}\label{classscifir_1_1matrix_a52a8d6159277aea92e9d9b7d78e66a29} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!is\_square@{is\_square}}
+\index{is\_square@{is\_square}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{is\_square()}{is\_square()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::is\+\_\+square (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00199}{199}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(M\ ==\ N)}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_ac8e907c79afb5b629e668c20dfc12c9a}\label{classscifir_1_1matrix_ac8e907c79afb5b629e668c20dfc12c9a} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+T \& \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{i,  }\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00097}{97}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1matrix_a95c9a574eb6c5af2138de6cf2b2a18de}{outside\_limits}}(i,j))}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ T();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1matrix_afab761b195a20c218b6cf2bbfb9a35f7}{data}}[i\ -\/\ 1][j\ -\/\ 1];}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_ace0dbc90ea17ecbdf9bfb2540dcf3158}\label{classscifir_1_1matrix_ace0dbc90ea17ecbdf9bfb2540dcf3158} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} T \& \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{i,  }\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00088}{88}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1matrix_a95c9a574eb6c5af2138de6cf2b2a18de}{outside\_limits}}(i,j))}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ T();}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1matrix_afab761b195a20c218b6cf2bbfb9a35f7}{data}}[i\ -\/\ 1][j\ -\/\ 1];}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_abaab80e17d1facd9ce8799127170763e}\label{classscifir_1_1matrix_abaab80e17d1facd9ce8799127170763e} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N2$>$ \\
+\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, N, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{N2}} $>$ \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, N, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{N2}} $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00121}{121}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matrix<T,\ N,\ N2>\ new\_matrix\ =\ matrix<T,\ N,\ N2>();}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ M;\ i++)}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ N2;\ j++)}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ a\ =\ 0;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ N;\ k++)}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ +=\ \mbox{\hyperlink{classscifir_1_1matrix_afab761b195a20c218b6cf2bbfb9a35f7}{data}}[i][k]\ *\ x(k\ +\ 1,j\ +\ 1);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\_matrix(i\ +\ 1,j\ +\ 1)\ =\ a;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ move(new\_matrix);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_a5c29921bc7850fc6feddd591a51a8ca6}\label{classscifir_1_1matrix_a5c29921bc7850fc6feddd591a51a8ca6} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00106}{106}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matrix<T,\ M,\ N>\ y\ =\ *\mbox{\hyperlink{classscifir_1_1matrix_a457e72a17876ded541c31c5251338e96}{clone}}();}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ x;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(y);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_afc5ecec3434dcd9688830c003797e6cc}\label{classscifir_1_1matrix_afc5ecec3434dcd9688830c003797e6cc} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00147}{147}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ M;\ i++)}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ N;\ j++)}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1matrix_afab761b195a20c218b6cf2bbfb9a35f7}{data}}[i][j]\ +=\ x(i\ +\ 1,j\ +\ 1);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_ab500541e5d709aa7e0dbbead6c6d010f}\label{classscifir_1_1matrix_ab500541e5d709aa7e0dbbead6c6d010f} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00113}{113}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matrix<T,\ M,\ N>\ y\ =\ *\mbox{\hyperlink{classscifir_1_1matrix_a457e72a17876ded541c31c5251338e96}{clone}}();}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ -\/=\ x;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(y);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_a96e897f2ae5b6328722bff62fcdfc3e5}\label{classscifir_1_1matrix_a96e897f2ae5b6328722bff62fcdfc3e5} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00158}{158}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ M;\ i++)}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ N;\ j++)}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1matrix_afab761b195a20c218b6cf2bbfb9a35f7}{data}}[i][j]\ -\/=\ x(i\ +\ 1,j\ +\ 1);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_a1475eec503c6c9f77b4455bb7322ab0d}\label{classscifir_1_1matrix_a1475eec503c6c9f77b4455bb7322ab0d} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}()}{operator\string^()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$is\+\_\+integer\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, M, N $>$ \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::operator\texorpdfstring{$^\wedge$}{\string^} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00140}{140}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matrix<T,\ M,\ N>\ y\ =\ *\mbox{\hyperlink{classscifir_1_1matrix_a457e72a17876ded541c31c5251338e96}{clone}}();}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ \string^=\ x;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ move(y);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_adcd780a7c399b7591067c8548c2ff230}\label{classscifir_1_1matrix_adcd780a7c399b7591067c8548c2ff230} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!operator\texorpdfstring{$^\wedge$}{\string^}=@{operator\texorpdfstring{$^\wedge$}{\string^}=}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}=@{operator\texorpdfstring{$^\wedge$}{\string^}=}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}=()}{operator\string^=()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}}  = typename enable\+\_\+if$<$is\+\_\+integer\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{void}} \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::operator\texorpdfstring{$^\wedge$}{\string^}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00170}{170}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matrix<T,M,N>\ new\_data\ =\ *\mbox{\hyperlink{classscifir_1_1matrix_a457e72a17876ded541c31c5251338e96}{clone}}();}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 2;\ i\ <=\ x;\ i++)}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\_data\ =\ (new\_data\ *\ (*this));}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ M;\ i++)}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ N;\ j++)}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1matrix_afab761b195a20c218b6cf2bbfb9a35f7}{data}}[i][j]\ =\ new\_data(i\ +\ 1,j\ +\ 1);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_a7998c211e46afaeb9671bfd2afd0fb6c}\label{classscifir_1_1matrix_a7998c211e46afaeb9671bfd2afd0fb6c} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!outside\_column\_limits@{outside\_column\_limits}}
+\index{outside\_column\_limits@{outside\_column\_limits}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{outside\_column\_limits()}{outside\_column\_limits()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::outside\+\_\+column\+\_\+limits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00238}{238}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ 1\ or\ i\ >\ N)}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_a95c9a574eb6c5af2138de6cf2b2a18de}\label{classscifir_1_1matrix_a95c9a574eb6c5af2138de6cf2b2a18de} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!outside\_limits@{outside\_limits}}
+\index{outside\_limits@{outside\_limits}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{outside\_limits()}{outside\_limits()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::outside\+\_\+limits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{i,  }\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00247}{247}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1matrix_ab7e757f6d272a6178bb13ef2673332ef}{outside\_row\_limits}}(i)\ or\ \mbox{\hyperlink{classscifir_1_1matrix_a7998c211e46afaeb9671bfd2afd0fb6c}{outside\_column\_limits}}(j))}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_ab7e757f6d272a6178bb13ef2673332ef}\label{classscifir_1_1matrix_ab7e757f6d272a6178bb13ef2673332ef} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!outside\_row\_limits@{outside\_row\_limits}}
+\index{outside\_row\_limits@{outside\_row\_limits}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{outside\_row\_limits()}{outside\_row\_limits()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::outside\+\_\+row\+\_\+limits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00229}{229}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ 1\ or\ i\ >\ M)}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_af6b1f529d588f7357713e6b2ee3464f5}\label{classscifir_1_1matrix_af6b1f529d588f7357713e6b2ee3464f5} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!row@{row}}
+\index{row@{row}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{row()}{row()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, 1, N $>$ \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1matrix_ab7e757f6d272a6178bb13ef2673332ef}{outside\_row\_limits}}(i))}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ matrix<T,1,N>();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matrix<T,1,N>\ x\ =\ matrix<T,1,N>();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ N;\ j++)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x(1,j\ +\ 1)\ =\ \mbox{\hyperlink{classscifir_1_1matrix_afab761b195a20c218b6cf2bbfb9a35f7}{data}}[i\ -\/\ 1][j];}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(x);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_aaf593964a6daa6b2d9ff9341f5014724}\label{classscifir_1_1matrix_aaf593964a6daa6b2d9ff9341f5014724} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!row\_size@{row\_size}}
+\index{row\_size@{row\_size}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{row\_size()}{row\_size()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::row\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ M;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classscifir_1_1matrix_ad678e0366e162015beda2399e22e8555}\label{classscifir_1_1matrix_ad678e0366e162015beda2399e22e8555} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!t@{t}}
+\index{t@{t}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{t()}{t()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+\mbox{\hyperlink{classscifir_1_1matrix}{matrix}}$<$ T, N, M $>$ \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00186}{186}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matrix<T,\ N,\ M>\ new\_data\ =\ matrix<T,\ N,\ M>();}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ M;\ i++)}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ N;\ j++)}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\_data(j\ +\ 1,i\ +\ 1)\ =\ \mbox{\hyperlink{classscifir_1_1matrix_afab761b195a20c218b6cf2bbfb9a35f7}{data}}[i][j];}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ move(new\_data);}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classscifir_1_1matrix_afab761b195a20c218b6cf2bbfb9a35f7}\label{classscifir_1_1matrix_afab761b195a20c218b6cf2bbfb9a35f7} 
+\index{scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}!data@{data}}
+\index{data@{data}!scifir::matrix$<$ T, M, N $>$@{scifir::matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} M, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} N$>$ \\
+vector$<$vector$<$T$>$ $>$ \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00227}{227}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-util/matrix.\+hpp\end{DoxyCompactItemize}
+util/\mbox{\hyperlink{matrix_8hpp}{matrix.\+hpp}}\end{DoxyCompactItemize}

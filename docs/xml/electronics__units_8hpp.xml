@@ -10,7 +10,7 @@
     <incdepgraph>
       <node id="22">
         <label>../meca_number/angle.hpp</label>
-        <link refid="angle_8hpp_source"/>
+        <link refid="angle_8hpp"/>
         <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
@@ -34,13 +34,13 @@
       </node>
       <node id="23">
         <label>../topology/constants.hpp</label>
-        <link refid="constants_8hpp_source"/>
+        <link refid="constants_8hpp"/>
         <childnode refid="24" relation="include">
         </childnode>
       </node>
       <node id="25">
         <label>../topology/direction.hpp</label>
-        <link refid="direction_8hpp_source"/>
+        <link refid="direction_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -50,7 +50,7 @@
       </node>
       <node id="3">
         <label>../units/dimension.hpp</label>
-        <link refid="dimension_8hpp_source"/>
+        <link refid="dimension_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
@@ -78,7 +78,7 @@
       </node>
       <node id="4">
         <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp_source"/>
+        <link refid="prefix_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -90,7 +90,7 @@
       </node>
       <node id="2">
         <label>../units/scalar_unit.hpp</label>
-        <link refid="scalar__unit_8hpp_source"/>
+        <link refid="scalar__unit_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
@@ -114,7 +114,7 @@
       </node>
       <node id="21">
         <label>../units/vector_unit_2d.hpp</label>
-        <link refid="vector__unit__2d_8hpp_source"/>
+        <link refid="vector__unit__2d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
@@ -132,7 +132,7 @@
       </node>
       <node id="20">
         <label>../units/vector_unit_3d.hpp</label>
-        <link refid="vector__unit__3d_8hpp_source"/>
+        <link refid="vector__unit__3d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
@@ -164,7 +164,7 @@
       </node>
       <node id="26">
         <label>../units/vector_unit_nd.hpp</label>
-        <link refid="vector__unit__nd_8hpp_source"/>
+        <link refid="vector__unit__nd_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
@@ -192,7 +192,7 @@
       </node>
       <node id="17">
         <label>../util/is_number.hpp</label>
-        <link refid="is__number_8hpp_source"/>
+        <link refid="is__number_8hpp"/>
         <childnode refid="18" relation="include">
         </childnode>
       </node>
@@ -249,6 +249,10 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="2">
+        <label>predefined_units/electronics_units.cpp</label>
+        <link refid="electronics__units_8cpp"/>
+      </node>
       <node id="1">
         <label>predefined_units/electronics_units.hpp</label>
         <link refid="electronics__units_8hpp"/>
@@ -256,15 +260,23 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-      </node>
-      <node id="2">
-        <label>units.hpp</label>
-        <link refid="units_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
       <node id="3">
+        <label>units.hpp</label>
+        <link refid="units_8hpp"/>
+      </node>
+      <node id="5">
+        <label>units/unit_abbreviation.cpp</label>
+        <link refid="unit__abbreviation_8cpp"/>
+      </node>
+      <node id="4">
         <label>units/unit_abbreviation.hpp</label>
-        <link refid="unit__abbreviation_8hpp_source"/>
-        <childnode refid="2" relation="include">
+        <link refid="unit__abbreviation_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -282,16 +294,16 @@
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">scifir</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacescifir" kindref="compound">scifir</ref></highlight></codeline>
 <codeline lineno="10"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(electrical_conductivity);</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(resistance);</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(electric_conductance);</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(capacitance);</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(permittivity);</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(resistivity);</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(linear_charge_density);</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(frequency_drift);</highlight></codeline>
+<codeline lineno="11" refid="namespacescifir_1a30a3ab1c1639029ed888bb7f81569ec0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electrical_conductivity</ref>);</highlight></codeline>
+<codeline lineno="12" refid="namespacescifir_1a6c5f039c6c1aecd44967928289f18e4b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">resistance</ref>);</highlight></codeline>
+<codeline lineno="13" refid="namespacescifir_1a890026520992f085421f13f13b5fd9ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">electric_conductance</ref>);</highlight></codeline>
+<codeline lineno="14" refid="namespacescifir_1ade0473af66220fb8cfd14a80ab43f043" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">capacitance</ref>);</highlight></codeline>
+<codeline lineno="15" refid="namespacescifir_1ac64e4f0f9c285a524a55dc30735dd844" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">permittivity</ref>);</highlight></codeline>
+<codeline lineno="16" refid="namespacescifir_1a7e8e6851ed502d002614ef26f733b530" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">resistivity</ref>);</highlight></codeline>
+<codeline lineno="17" refid="namespacescifir_1a68c49a2257a64946321723e2ab9c68ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">linear_charge_density</ref>);</highlight></codeline>
+<codeline lineno="18" refid="namespacescifir_1a05ef0d5cbaa02a70786ba02def3c4fe7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">frequency_drift</ref>);</highlight></codeline>
 <codeline lineno="19"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_PREDEFINED_UNITS_HARDWARE_UNITS_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>

@@ -1,0 +1,231 @@
+.TH "predefined_units/physics_units.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+predefined_units/physics_units.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./units/scalar_unit\&.hpp'\fP
+.br
+\fC#include '\&.\&./units/vector_unit_2d\&.hpp'\fP
+.br
+\fC#include '\&.\&./units/vector_unit_3d\&.hpp'\fP
+.br
+\fC#include '\&.\&./units/unit_basic\&.hpp'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscifir\fP"
+.br
+.RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "\fBtypedef\fP \fBlength\fP \fBscifir::wavelength\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_2D_HPP\fP (\fBdisplacement\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_3D_HPP\fP (\fBdisplacement\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_ND_HPP\fP (\fBdisplacement\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBvelocity\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBacceleration\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBjerk\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBsnap\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBangular_velocity\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBangular_acceleration\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBangular_momentum\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBimpulse\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBforce\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBtorque\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBpressure\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBsurface_tension\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBstiffness\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBmoment_of_inertia\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBelectric_current\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBvoltage\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBelectric_displacement_field\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBelectric_charge_density\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBelectric_current_density\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBelectric_field_strength\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBelectron_mobility\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBinductance\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBvolumetric_flow\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBdiffusion_coefficient\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBcompressibility\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBpolarization_density\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBmagnetic_permeability\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBmagnetization\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBmagnetic_flux\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBmagnetic_strength\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBmagnetic_moment\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBmagnetic_reluctance\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBmagnetic_vector_potential\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBmagnetic_rigidity\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBmagnetomotive_force\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBmagnetic_susceptibility\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBoptical_power\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBluminance\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBilluminance\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBluminous_flux\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBluminous_energy\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBluminous_exposure\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBluminous_efficacy\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBionizing_radiation\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBabsorbed_dose\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBenergy\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBaction\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBpower\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBpower_density\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBenthalpy\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBentropy\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBheat_capacity\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBheat_flux_density\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBthermal_conductivity\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBthermal_diffusivity\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBthermal_resistance\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBthermal_expansion_coefficient\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::VECTOR_UNIT_HPP\fP (\fBtemperature_gradient\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBenergy_flux_density\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBwavenumber\fP)"
+.br
+.ti -1c
+.RI "\fBscifir::SCALAR_UNIT_HPP\fP (\fBfrequency\fP)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

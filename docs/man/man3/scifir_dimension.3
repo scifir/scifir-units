@@ -6,6 +6,8 @@ scifir::dimension
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <dimension\&.hpp>\fP
 .SS "Public Types"
 
 .in +1c
@@ -20,19 +22,22 @@ scifir::dimension
 
 .in +1c
 .ti -1c
+.RI "\fBdimension\fP ()"
+.br
+.ti -1c
 .RI "\fBdimension\fP (\fBconst\fP \fBdimension\fP &x)"
 .br
 .ti -1c
 .RI "\fBdimension\fP (\fBdimension\fP &&x)"
 .br
 .ti -1c
-.RI "\fBdimension\fP (dimension::type \fBnew_dimension_type\fP, scifir::prefix::type \fBnew_prefix\fP, dimension::position \fBnew_sign\fP)"
+.RI "\fBdimension\fP (\fBdimension::type\fP \fBnew_dimension_type\fP, \fBscifir::prefix::type\fP \fBnew_prefix\fP, \fBdimension::position\fP \fBnew_sign\fP)"
 .br
 .ti -1c
-.RI "\fBdimension\fP (dimension::type \fBnew_dimension_type\fP, \fBconst\fP \fBscifir::prefix\fP &\fBnew_prefix\fP, dimension::position \fBnew_sign\fP)"
+.RI "\fBdimension\fP (\fBdimension::type\fP \fBnew_dimension_type\fP, \fBconst\fP \fBscifir::prefix\fP &\fBnew_prefix\fP, \fBdimension::position\fP \fBnew_sign\fP)"
 .br
 .ti -1c
-.RI "\fBdimension\fP (\fBconst\fP \fBstring\fP &\fBinit_dimension\fP, dimension::position \fBnew_sign\fP)"
+.RI "\fBdimension\fP (\fBconst\fP \fBstring\fP &\fBinit_dimension\fP, \fBdimension::position\fP \fBnew_sign\fP)"
 .br
 .ti -1c
 .RI "\fBdimension\fP & \fBoperator=\fP (\fBconst\fP \fBdimension\fP &x)"
@@ -91,15 +96,1461 @@ scifir::dimension
 .RI "\fBscifir::prefix\fP \fBprefix\fP"
 .br
 .ti -1c
-.RI "dimension::type \fBdimension_type\fP"
+.RI "\fBdimension::type\fP \fBdimension_type\fP"
 .br
 .ti -1c
-.RI "dimension::position \fBdimension_sign\fP"
+.RI "\fBdimension::position\fP \fBdimension_sign\fP"
 .br
 .ti -1c
 .RI "\fBchar\fP \fBsymbol\fP [3]"
 .br
 .in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstatic\fP \fBmap\fP< \fBstring\fP, vector< \fBdimension\fP > > \fBbase_dimensions\fP = \fBmap\fP<\fBstring\fP,vector<\fBdimension\fP>>()"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBmap\fP< \fBint\fP, \fBstring\fP > \fBfull_symbols\fP = \fBmap\fP<\fBint\fP,\fBstring\fP>()"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBint\fP \fBtotal_full_symbols\fP = 0"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBset\fP< \fBstring\fP > \fBprefixes_options\fP {'Y', 'Z', 'E', 'P', 'T', 'G', 'M', 'k', 'h', 'd', 'c', 'm', '\\u00B5', 'u', 'n', 'p', 'f', 'a', 'z', 'y'}"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB28\fP of file \fBdimension\&.hpp\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "\fBenum\fP \fBscifir::dimension::position\fP : \fBint8_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINO_POSITION \fP\fP
+.TP
+\fB\fINUMERATOR \fP\fP
+.TP
+\fB\fIDENOMINATOR \fP\fP
+.PP
+Definition at line \fB36\fP of file \fBdimension\&.hpp\fP\&..PP
+.nf
+36 : int8_t {NO_POSITION, NUMERATOR, DENOMINATOR};
+.fi
+
+.SS "\fBenum\fP \fBscifir::dimension::type\fP : \fBint8_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINONE \fP\fP
+.TP
+\fB\fIm \fP\fP
+.TP
+\fB\fIgrade \fP\fP
+.TP
+\fB\fIradian \fP\fP
+.TP
+\fB\fIsteradian \fP\fP
+.TP
+\fB\fIs \fP\fP
+.TP
+\fB\fIg \fP\fP
+.TP
+\fB\fIC \fP\fP
+.TP
+\fB\fIK \fP\fP
+.TP
+\fB\fImol \fP\fP
+.TP
+\fB\fIcd \fP\fP
+.TP
+\fB\fIB \fP\fP
+.TP
+\fB\fIHz \fP\fP
+.TP
+\fB\fIN \fP\fP
+.TP
+\fB\fIPa \fP\fP
+.TP
+\fB\fIJ \fP\fP
+.TP
+\fB\fIW \fP\fP
+.TP
+\fB\fIA \fP\fP
+.TP
+\fB\fIV \fP\fP
+.TP
+\fB\fIF \fP\fP
+.TP
+\fB\fIOhm \fP\fP
+.TP
+\fB\fIS \fP\fP
+.TP
+\fB\fIWb \fP\fP
+.TP
+\fB\fIT \fP\fP
+.TP
+\fB\fIH \fP\fP
+.TP
+\fB\fIlm \fP\fP
+.TP
+\fB\fIlx \fP\fP
+.TP
+\fB\fIBq \fP\fP
+.TP
+\fB\fIGy \fP\fP
+.TP
+\fB\fISv \fP\fP
+.TP
+\fB\fIkat \fP\fP
+.TP
+\fB\fIangstrom \fP\fP
+.TP
+\fB\fIL \fP\fP
+.TP
+\fB\fIminute \fP\fP
+.TP
+\fB\fIh \fP\fP
+.TP
+\fB\fId \fP\fP
+.TP
+\fB\fIly \fP\fP
+.TP
+\fB\fIAU \fP\fP
+.TP
+\fB\fIpc \fP\fP
+.TP
+\fB\fIeV \fP\fP
+.TP
+\fB\fIDa \fP\fP
+.TP
+\fB\fIamu \fP\fP
+.TP
+\fB\fIbarn \fP\fP
+.TP
+\fB\fIM \fP\fP
+.TP
+\fB\fIparticles \fP\fP
+.TP
+\fB\fIcustom \fP\fP
+.TP
+\fB\fIcustom_basic \fP\fP
+.TP
+\fB\fIcustom_full_symbol \fP\fP
+.TP
+\fB\fImoney \fP\fP
+.TP
+\fB\fIpixel \fP\fP
+.TP
+\fB\fImemo \fP\fP
+.PP
+Definition at line \fB31\fP of file \fBdimension\&.hpp\fP\&..PP
+.nf
+32             {
+33                 NONE, m, grade, radian, steradian, s, g, C, K, mol, cd, B, Hz, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, L, minute, h, d, ly, AU, pc, eV, Da, amu, barn, M, particles, custom, custom_basic, custom_full_symbol, money, pixel, memo
+34             };
+.fi
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "scifir::dimension::dimension ()"
+
+.PP
+Definition at line \fB23\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+23                          : prefix(),dimension_type(dimension::NONE),dimension_sign(dimension::NO_POSITION),symbol()
+24     {}
+.fi
+
+.SS "scifir::dimension::dimension (\fBconst\fP \fBdimension\fP & x)"
+
+.SS "scifir::dimension::dimension (\fBdimension\fP && x)"
+
+.SS "scifir::dimension::dimension (\fBdimension::type\fP new_dimension_type, \fBscifir::prefix::type\fP new_prefix, \fBdimension::position\fP new_sign)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB48\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+48                                                                                                                 : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
+49     {}
+.fi
+
+.SS "scifir::dimension::dimension (\fBdimension::type\fP new_dimension_type, \fBconst\fP \fBscifir::prefix\fP & new_prefix, \fBdimension::position\fP new_sign)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB51\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+51                                                                                                                    : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
+52     {}
+.fi
+
+.SS "scifir::dimension::dimension (\fBconst\fP \fBstring\fP & init_dimension, \fBdimension::position\fP new_sign)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB54\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+54                                                                                 : prefix(),dimension_type(dimension::NONE),dimension_sign(new_sign),symbol()
+55     {
+56         string dimension_name;
+57         string prefix_name;
+58         if(dimension::prefixes_options\&.count(init_dimension\&.substr(0,1)) and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Pa" and init_dimension\&.substr(0,2) != "da" and init_dimension\&.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "h" and init_dimension != "d" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo")
+59         {
+60             prefix_name = init_dimension\&.substr(0,1);
+61             dimension_name = init_dimension\&.substr(1);
+62         }
+63         else if(init_dimension\&.substr(0,2) == "da")
+64         {
+65             prefix_name = "da";
+66             dimension_name = init_dimension\&.substr(2);
+67         }
+68         else
+69         {
+70             prefix_name = "";
+71             dimension_name = init_dimension;
+72         }
+73         prefix = scifir::prefix(prefix_name);
+74         if(dimension_name == "m")
+75         {
+76             dimension_type = dimension::m;
+77         }
+78         else if(dimension_name == "grade")
+79         {
+80             dimension_type = dimension::grade;
+81         }
+82         else if(dimension_name == "rad")
+83         {
+84             dimension_type = dimension::radian;
+85         }
+86         else if(dimension_name == "sr")
+87         {
+88             dimension_type = dimension::steradian;
+89         }
+90         else if(dimension_name == "s")
+91         {
+92             dimension_type = dimension::s;
+93         }
+94         else if(dimension_name == "g")
+95         {
+96             dimension_type = dimension::g;
+97         }
+98         else if(dimension_name == "C")
+99         {
+100             dimension_type = dimension::C;
+101         }
+102         else if(dimension_name == "K")
+103         {
+104             dimension_type = dimension::K;
+105         }
+106         else if(dimension_name == "mol")
+107         {
+108             dimension_type = dimension::mol;
+109         }
+110         else if(dimension_name == "cd")
+111         {
+112             dimension_type = dimension::cd;
+113         }
+114         else if(dimension_name == "B")
+115         {
+116             dimension_type = dimension::B;
+117         }
+118         else if(dimension_name == "Hz")
+119         {
+120             dimension_type = dimension::Hz;
+121         }
+122         else if(dimension_name == "N")
+123         {
+124             dimension_type = dimension::N;
+125         }
+126         else if(dimension_name == "Pa")
+127         {
+128             dimension_type = dimension::Pa;
+129         }
+130         else if(dimension_name == "J")
+131         {
+132             dimension_type = dimension::J;
+133         }
+134         else if(dimension_name == "W")
+135         {
+136             dimension_type = dimension::W;
+137         }
+138         else if(dimension_name == "A")
+139         {
+140             dimension_type = dimension::A;
+141         }
+142         else if(dimension_name == "V")
+143         {
+144             dimension_type = dimension::V;
+145         }
+146         else if(dimension_name == "F")
+147         {
+148             dimension_type = dimension::F;
+149         }
+150         else if(dimension_name == "ohm" or dimension_name == "Ohm"/* or dimension_name == U"\\U000003A9"*/)
+151         {
+152             dimension_type = dimension::Ohm;
+153         }
+154         else if(dimension_name == "S")
+155         {
+156             dimension_type = dimension::S;
+157         }
+158         else if(dimension_name == "Wb")
+159         {
+160             dimension_type = dimension::Wb;
+161         }
+162         else if(dimension_name == "T")
+163         {
+164             dimension_type = dimension::T;
+165         }
+166         else if(dimension_name == "H")
+167         {
+168             dimension_type = dimension::H;
+169         }
+170         else if(dimension_name == "lm")
+171         {
+172             dimension_type = dimension::lm;
+173         }
+174         else if(dimension_name == "lx")
+175         {
+176             dimension_type = dimension::lx;
+177         }
+178         else if(dimension_name == "Bq")
+179         {
+180             dimension_type = dimension::Bq;
+181         }
+182         else if(dimension_name == "Gy")
+183         {
+184             dimension_type = dimension::Gy;
+185         }
+186         else if(dimension_name == "Sv")
+187         {
+188             dimension_type = dimension::Sv;
+189         }
+190         else if(dimension_name == "kat")
+191         {
+192             dimension_type = dimension::kat;
+193         }
+194         else if(dimension_name == "angstrom" or u32string(dimension_name\&.begin(),dimension_name\&.end()) == U"\\U0000212B")
+195         {
+196             dimension_type = dimension::angstrom;
+197         }
+198         else if(dimension_name == "L")
+199         {
+200             dimension_type = dimension::L;
+201         }
+202         else if(dimension_name == "min")
+203         {
+204             dimension_type = dimension::minute;
+205         }
+206         else if(dimension_name == "h")
+207         {
+208             dimension_type = dimension::h;
+209         }
+210         else if(dimension_name == "d")
+211         {
+212             dimension_type = dimension::d;
+213         }
+214         else if(dimension_name == "ly")
+215         {
+216             dimension_type = dimension::ly;
+217         }
+218         else if(dimension_name == "AU")
+219         {
+220             dimension_type = dimension::AU;
+221         }
+222         else if(dimension_name == "pc")
+223         {
+224             dimension_type = dimension::pc;
+225         }
+226         else if(dimension_name == "eV")
+227         {
+228             dimension_type = dimension::eV;
+229         }
+230         else if(dimension_name == "Da")
+231         {
+232             dimension_type = dimension::Da;
+233         }
+234         else if(dimension_name == "amu")
+235         {
+236             dimension_type = dimension::amu;
+237         }
+238         else if(dimension_name == "barn")
+239         {
+240             dimension_type = dimension::barn;
+241         }
+242         else if(dimension_name == "M")
+243         {
+244             dimension_type = dimension::M;
+245         }
+246         else if(dimension_name == "particles")
+247         {
+248             dimension_type = dimension::particles;
+249         }
+250         else if(dimension_name == "money")
+251         {
+252             dimension_type = dimension::money;
+253         }
+254         else if(dimension_name == "px")
+255         {
+256             dimension_type = dimension::pixel;
+257         }
+258         else if(dimension_name == "memo")
+259         {
+260             dimension_type = dimension::memo;
+261         }
+262         else if(dimension_name == "")
+263         {
+264             dimension_type = dimension::NONE;
+265         }
+266         else
+267         {
+268             prefix = scifir::prefix(prefix::no_prefix);
+269             if (init_dimension\&.size() > 3)
+270             {
+271                 string symbol_abreviation = dimension::create_full_symbol(init_dimension);
+272                 symbol_abreviation\&.copy(symbol, init_dimension\&.length());
+273                 dimension_type = dimension::custom_full_symbol;
+274             }
+275             else
+276             {
+277                 init_dimension\&.copy(symbol, init_dimension\&.length());
+278                 dimension_type = dimension::custom;
+279             }
+280         }
+281     }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBstatic\fP \fBvoid\fP scifir::dimension::create_custom_dimension (\fBconst\fP \fBstring\fP & new_symbol, \fBconst\fP \fBstring\fP & init_dimensions)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line \fB67\fP of file \fBdimension\&.hpp\fP\&..PP
+.nf
+68             {
+69                 if (dimension::base_dimensions\&.count(new_symbol) == 0)
+70                 {
+71                     dimension::base_dimensions[new_symbol] = create_derived_dimensions(init_dimensions);
+72                 }
+73             }
+.fi
+
+.SS "\fBstatic\fP \fBchar\fP * scifir::dimension::create_full_symbol (\fBconst\fP \fBstring\fP & full_symbol)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line \fB75\fP of file \fBdimension\&.hpp\fP\&..PP
+.nf
+76             {
+77                 char symbol_abbreviation[3] = "";
+78                 total_full_symbols++;
+79                 if (total_full_symbols <= 255)
+80                 {
+81                     if (total_full_symbols <= 32)
+82                     {
+83                         total_full_symbols = 33;
+84                     }
+85                     symbol_abbreviation[0] = char(total_full_symbols);
+86                     symbol_abbreviation[1] = '\\n';
+87                     symbol_abbreviation[2] = '\\n';
+88                 }
+89                 else if (total_full_symbols <= 65535)
+90                 {
+91                     int char_code1 = (total_full_symbols / 256);
+92                     if (char_code1 <= 32)
+93                     {
+94                         char_code1 = 33;
+95                     }
+96                     symbol_abbreviation[0] += char(char_code1);
+97                     int closest_number = int(floor(total_full_symbols / 256\&.0)) * 256;
+98                     int char_code2 = total_full_symbols \- closest_number;
+99                     if (char_code2 <= 32)
+100                     {
+101                         char_code2 = 33;
+102                     }
+103                     symbol_abbreviation[1] += char(char_code2);
+104                     symbol_abbreviation[2] = '\\n';
+105                 }
+106                 else
+107                 {
+108                     int char_code1 = (total_full_symbols / 65536);
+109                     if (char_code1 <= 32)
+110                     {
+111                         char_code1 = 33;
+112                     }
+113                     symbol_abbreviation[0] += char(char_code1);
+114                     int closest_number = int(floor(total_full_symbols / 65536\&.0)) * 65536;
+115                     int char_code2 = total_full_symbols \- closest_number;
+116                     if (char_code2 <= 32)
+117                     {
+118                         char_code2 = 33;
+119                     }
+120                     symbol_abbreviation[1] += char(char_code2);
+121                     int closest_number2 = int(floor(total_full_symbols / 256\&.0)) * 256;
+122                     int char_code3 = total_full_symbols \- closest_number2;
+123                     if (char_code3 <= 32)
+124                     {
+125                         char_code3 = 33;
+126                     }
+127                     symbol_abbreviation[2] += char(char_code3);
+128                 }
+129                 full_symbols[total_full_symbols] = full_symbol;
+130                 return new char[3]{symbol_abbreviation[0],symbol_abbreviation[1],symbol_abbreviation[2]};
+131             }
+.fi
+
+.SS "vector< \fBdimension\fP > scifir::dimension::get_basic_dimensions () const"
+
+.PP
+Definition at line \fB908\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+909     {
+910         vector<dimension> basic_dimensions = vector<dimension>();
+911         switch (dimension_type)
+912         {
+913             case dimension::NONE:
+914                 basic_dimensions\&.push_back(dimension(dimension::NONE,prefix::no_prefix,dimension::NUMERATOR));
+915                 break;
+916             case dimension::m:
+917                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+918                 break;
+919             case dimension::grade:
+920                 basic_dimensions\&.push_back(dimension(dimension::radian,prefix::no_prefix,dimension::NUMERATOR));
+921                 break;
+922             case dimension::radian:
+923                 basic_dimensions\&.push_back(dimension(dimension::radian,prefix::no_prefix,dimension::NUMERATOR));
+924                 break;
+925             case dimension::steradian:
+926                 basic_dimensions\&.push_back(dimension(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR));
+927                 break;
+928             case dimension::s:
+929                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
+930                 break;
+931             case dimension::g:
+932                 basic_dimensions\&.push_back(dimension(dimension::g,prefix::no_prefix,dimension::NUMERATOR));
+933                 break;
+934             case dimension::C:
+935                 basic_dimensions\&.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+936                 break;
+937             case dimension::K:
+938                 basic_dimensions\&.push_back(dimension(dimension::K,prefix::no_prefix,dimension::NUMERATOR));
+939                 break;
+940             case dimension::mol:
+941                 basic_dimensions\&.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR));
+942                 break;
+943             case dimension::cd:
+944                 basic_dimensions\&.push_back(dimension(dimension::cd,prefix::no_prefix,dimension::NUMERATOR));
+945                 break;
+946             case dimension::B:
+947                 basic_dimensions\&.push_back(dimension(dimension::B,prefix::no_prefix,dimension::NUMERATOR));
+948                 break;
+949             case dimension::Hz:
+950                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+951                 break;
+952             case dimension::N:
+953                 basic_dimensions\&.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+954                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+955                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+956                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+957                 break;
+958             case dimension::Pa:
+959                 basic_dimensions\&.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+960                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+961                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+962                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+963                 break;
+964             case dimension::J:
+965                 basic_dimensions\&.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+966                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+967                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+968                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+969                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+970                 break;
+971             case dimension::W:
+972                 basic_dimensions\&.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+973                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+974                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+975                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+976                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+977                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+978                 break;
+979             case dimension::A:
+980                 basic_dimensions\&.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+981                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+982                 break;
+983             case dimension::V:
+984                 basic_dimensions\&.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+985                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+986                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+987                 basic_dimensions\&.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+988                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+989                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+990                 break;
+991             case dimension::F:
+992                 basic_dimensions\&.push_back(dimension(dimension::g,prefix::k,dimension::DENOMINATOR));
+993                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+994                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+995                 basic_dimensions\&.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+996                 basic_dimensions\&.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+997                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
+998                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
+999                 break;
+1000             case dimension::Ohm:
+1001                 basic_dimensions\&.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+1002                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1003                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1004                 basic_dimensions\&.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+1005                 basic_dimensions\&.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+1006                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+1007                 break;
+1008             case dimension::S:
+1009                 basic_dimensions\&.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+1010                 basic_dimensions\&.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+1011                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
+1012                 basic_dimensions\&.push_back(dimension(dimension::g,prefix::k,dimension::DENOMINATOR));
+1013                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+1014                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+1015                 break;
+1016             case dimension::Wb:
+1017                 basic_dimensions\&.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+1018                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1019                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1020                 basic_dimensions\&.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+1021                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+1022                 break;
+1023             case dimension::T:
+1024                 basic_dimensions\&.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+1025                 basic_dimensions\&.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+1026                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+1027                 break;
+1028             case dimension::H:
+1029                 basic_dimensions\&.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+1030                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1031                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1032                 basic_dimensions\&.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+1033                 basic_dimensions\&.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+1034                 break;
+1035             case dimension::lm:
+1036                 basic_dimensions\&.push_back(dimension(dimension::cd,prefix::no_prefix,dimension::NUMERATOR));
+1037                 basic_dimensions\&.push_back(dimension(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR));
+1038                 break;
+1039             case dimension::lx:
+1040                 basic_dimensions\&.push_back(dimension(dimension::cd,prefix::no_prefix,dimension::NUMERATOR));
+1041                 basic_dimensions\&.push_back(dimension(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR));
+1042                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+1043                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+1044                 break;
+1045             case dimension::Bq:
+1046                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+1047                 break;
+1048             case dimension::Gy:
+1049                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1050                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1051                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+1052                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+1053                 break;
+1054             case dimension::Sv:
+1055                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1056                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1057                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+1058                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+1059                 break;
+1060             case dimension::kat:
+1061                 basic_dimensions\&.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR));
+1062                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+1063                 break;
+1064             case dimension::angstrom:
+1065                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1066                 break;
+1067             case dimension::L:
+1068                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1069                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1070                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1071                 break;
+1072             case dimension::minute:
+1073                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
+1074                 break;
+1075             case dimension::h:
+1076                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
+1077                 break;
+1078             case dimension::d:
+1079                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
+1080                 break;
+1081             case dimension::ly:
+1082                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1083                 break;
+1084             case dimension::AU:
+1085                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1086                 break;
+1087             case dimension::pc:
+1088                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1089                 break;
+1090             case dimension::eV:
+1091                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1092                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1093                 basic_dimensions\&.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+1094                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+1095                 basic_dimensions\&.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+1096                 break;
+1097             case dimension::Da:
+1098                 basic_dimensions\&.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+1099                 break;
+1100             case dimension::amu:
+1101                 basic_dimensions\&.push_back(dimension(dimension::g,prefix::no_prefix,dimension::NUMERATOR));
+1102                 break;
+1103             case dimension::barn:
+1104                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1105                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1106                 break;
+1107             case dimension::M:
+1108                 basic_dimensions\&.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR));
+1109                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+1110                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+1111                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+1112                 break;
+1113             case dimension::particles:
+1114                 basic_dimensions\&.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR));
+1115                 break;
+1116             case dimension::custom:
+1117             {
+1118                 return dimension::base_dimensions[symbol];
+1119             }
+1120             case dimension::custom_basic:
+1121             {
+1122                 basic_dimensions\&.push_back(*this);
+1123                 break;
+1124             }
+1125             case dimension::custom_full_symbol:
+1126             {
+1127                 return dimension::base_dimensions[dimension::get_full_symbol(symbol)];
+1128             }
+1129             case dimension::money:
+1130                 basic_dimensions\&.push_back(dimension(dimension::money,prefix::no_prefix,dimension::NUMERATOR));
+1131                 break;
+1132             case dimension::pixel:
+1133                 basic_dimensions\&.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+1134                 break;
+1135             case dimension::memo:
+1136                 basic_dimensions\&.push_back(dimension(dimension::memo,prefix::no_prefix,dimension::NUMERATOR));
+1137                 break;
+1138         }
+1139         return basic_dimensions;
+1140     }
+.fi
+
+.SS "\fBlong\fP \fBdouble\fP scifir::dimension::get_conversion_factor () const"
+
+.PP
+Definition at line \fB556\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+557     {
+558         switch(dimension_type)
+559         {
+560             case dimension::NONE:
+561                 return 1\&.0l;
+562             case dimension::m:
+563                 return 1\&.0l;
+564             case dimension::grade:
+565                 return PI / 180\&.0l;
+566             case dimension::radian:
+567                 return 1\&.0l;
+568             case dimension::steradian:
+569                 return 1\&.0l;
+570             case dimension::g:
+571                 return 1\&.0l;
+572             case dimension::s:
+573                 return 1\&.0l;
+574             case dimension::C:
+575                 return 1\&.0l;
+576             case dimension::K:
+577                 return 1\&.0l;
+578             case dimension::mol:
+579                 return 1\&.0l;
+580             case dimension::cd:
+581                 return 1\&.0l;
+582             case dimension::B:
+583                 return 1\&.0l;
+584             case dimension::Hz:
+585                 return 1\&.0l;
+586             case dimension::N:
+587                 return 1\&.0l;
+588             case dimension::Pa:
+589                 return 1\&.0l;
+590             case dimension::J:
+591                 return 1\&.0l;
+592             case dimension::W:
+593                 return 1\&.0l;
+594             case dimension::A:
+595                 return 1\&.0l;
+596             case dimension::V:
+597                 return 1\&.0l;
+598             case dimension::F:
+599                 return 1;
+600             case dimension::Ohm:
+601                 return 1\&.0l;
+602             case dimension::S:
+603                 return 1\&.0l;
+604             case dimension::Wb:
+605                 return 1\&.0l;
+606             case dimension::T:
+607                 return 1\&.0l;
+608             case dimension::H:
+609                 return 1\&.0l;
+610             case dimension::lm:
+611                 return 1\&.0l;
+612             case dimension::lx:
+613                 return 1\&.0l;
+614             case dimension::Bq:
+615                 return 1\&.0l;
+616             case dimension::Gy:
+617                 return 1\&.0l;
+618             case dimension::Sv:
+619                 return 1\&.0l;
+620             case dimension::kat:
+621                 return 1\&.0l;
+622             case dimension::angstrom:
+623                 return 1\&.0l;
+624             case dimension::L:
+625                 return 1\&.0l;
+626             case dimension::minute:
+627                 return 60l;
+628             case dimension::h:
+629                 return 3600l;
+630             case dimension::d:
+631                 return 86400l;
+632             case dimension::ly:
+633                 return 9\&.4607379375591e15;
+634             case dimension::AU:
+635                 return 149597870700\&.0l;
+636             case dimension::pc:
+637                 return 30856775814913673\&.0l;
+638             case dimension::eV:
+639                 return 0\&.0000000000000000001602176634l;
+640             case dimension::Da:
+641                 return 0\&.00000000000000000000000000166053886l;
+642             case dimension::amu:
+643                 return 0\&.00000000000000000000000000166053886l;
+644             case dimension::barn:
+645                 return 0\&.0000000000000000000000000001l;
+646             case dimension::M:
+647                 return 1\&.0l;
+648             case dimension::particles:
+649                 return 1\&.0l/AVOGADRO_CONSTANT;
+650             case dimension::custom:
+651                 return 1\&.0l;
+652             case dimension::custom_basic:
+653                 return 1\&.0l;
+654             case dimension::custom_full_symbol:
+655                 return 1\&.0l;
+656             case dimension::money:
+657                 return 1\&.0l;
+658             case dimension::pixel:
+659                 return 0\&.00026l;
+660             case dimension::memo:
+661                 return 1\&.0l;
+662         }
+663         return 1\&.0l;
+664     }
+.fi
+
+.SS "\fBstatic\fP \fBstring\fP scifir::dimension::get_full_symbol (\fBconst\fP \fBchar\fP * x_symbol)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line \fB133\fP of file \fBdimension\&.hpp\fP\&..PP
+.nf
+134             {
+135                 int symbol_code;
+136                 if (x_symbol[1] == '\\n')
+137                 {
+138                     symbol_code = int(x_symbol[0]);
+139                 }
+140                 else if (x_symbol[2] == '\\n')
+141                 {
+142                     symbol_code = int(x_symbol[0]) * 256;
+143                     symbol_code += int(x_symbol[1]);
+144                 }
+145                 else
+146                 {
+147                     symbol_code = int(x_symbol[0]) * 65536;
+148                     symbol_code += int(x_symbol[1]) * 256;
+149                     symbol_code += int(x_symbol[2]);
+150                 }
+151                 return full_symbols[symbol_code];
+152             }
+.fi
+
+.SS "\fBstring\fP scifir::dimension::get_name () const"
+
+.PP
+Definition at line \fB321\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+322     {
+323         switch(dimension_type)
+324         {
+325             case dimension::NONE:
+326                 return "empty";
+327             case dimension::m:
+328                 return "meter";
+329             case dimension::grade:
+330                 return "grade";
+331             case dimension::radian:
+332                 return "radian";
+333             case dimension::steradian:
+334                 return "steradian";
+335             case dimension::s:
+336                 return "second";
+337             case dimension::g:
+338                 return "gram";
+339             case dimension::C:
+340                 return "coulomb";
+341             case dimension::K:
+342                 return "kelvin";
+343             case dimension::mol:
+344                 return "mole";
+345             case dimension::cd:
+346                 return "candela";
+347             case dimension::B:
+348                 return "byte";
+349             case dimension::Hz:
+350                 return "hertz";
+351             case dimension::N:
+352                 return "newton";
+353             case dimension::Pa:
+354                 return "pascal";
+355             case dimension::J:
+356                 return "joule";
+357             case dimension::W:
+358                 return "watt";
+359             case dimension::A:
+360                 return "ampere";
+361             case dimension::V:
+362                 return "volt";
+363             case dimension::F:
+364                 return "faraday";
+365             case dimension::Ohm:
+366                 return "ohm";
+367             case dimension::S:
+368                 return "siemens";
+369             case dimension::Wb:
+370                 return "weber";
+371             case dimension::T:
+372                 return "tesla";
+373             case dimension::H:
+374                 return "henry";
+375             case dimension::lm:
+376                 return "lumen";
+377             case dimension::lx:
+378                 return "lux";
+379             case dimension::Bq:
+380                 return "becquerel";
+381             case dimension::Gy:
+382                 return "gray";
+383             case dimension::Sv:
+384                 return "sievert";
+385             case dimension::kat:
+386                 return "katal";
+387             case dimension::angstrom:
+388                 return "angstrom";
+389             case dimension::L:
+390                 return "liter";
+391             case dimension::minute:
+392                 return "minute";
+393             case dimension::h:
+394                 return "hour";
+395             case dimension::d:
+396                 return "day";
+397             case dimension::ly:
+398                 return "light year";
+399             case dimension::AU:
+400                 return "astronomical unit";
+401             case dimension::pc:
+402                 return "parsec";
+403             case dimension::eV:
+404                 return "electronvolt";
+405             case dimension::Da:
+406                 return "dalton";
+407             case dimension::amu:
+408                 return "atomic mass unit";
+409             case dimension::barn:
+410                 return "barn";
+411             case dimension::M:
+412                 return "molarity";
+413             case dimension::particles:
+414                 return "particles";
+415             case dimension::custom:
+416                 return "custom\-dimension";
+417             case dimension::custom_basic:
+418                 return "custom\-basic";
+419             case dimension::custom_full_symbol:
+420                 return "custom\-full\-symbol";
+421             case dimension::money:
+422                 return "money";
+423             case dimension::pixel:
+424                 return "pixel";
+425             case dimension::memo:
+426                 return "memo";
+427         }
+428         return "";
+429     }
+.fi
+
+.SS "\fBstring\fP scifir::dimension::get_symbol () const"
+
+.PP
+Definition at line \fB431\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+432     {
+433         switch(dimension_type)
+434         {
+435             case dimension::NONE:
+436                 return "empty";
+437             case dimension::m:
+438                 return "m";
+439 #ifdef IS_UNIX
+440             case dimension::grade:
+441                 return "\\U000003B8";
+442 #elif IS_WINDOWS
+443             case dimension::grade:
+444                 return "\\U03B8";
+445 #endif
+446             case dimension::radian:
+447                 return "rad";
+448             case dimension::steradian:
+449                 return "sr";
+450             case dimension::s:
+451                 return "s";
+452             case dimension::g:
+453                 return "g";
+454             case dimension::C:
+455                 return "C";
+456             case dimension::K:
+457                 return "K";
+458             case dimension::mol:
+459                 return "mol";
+460             case dimension::cd:
+461                 return "cd";
+462             case dimension::B:
+463                 return "B";
+464             case dimension::Hz:
+465                 return "Hz";
+466             case dimension::N:
+467                 return "N";
+468             case dimension::Pa:
+469                 return "Pa";
+470             case dimension::J:
+471                 return "J";
+472             case dimension::W:
+473                 return "W";
+474             case dimension::A:
+475                 return "A";
+476             case dimension::V:
+477                 return "V";
+478             case dimension::F:
+479                 return "F";
+480 #ifdef IS_UNIX
+481             case dimension::Ohm:
+482                 return "\\U000003A9";
+483 #elif IS_WINDOWS
+484             case dimension::Ohm:
+485                 return "\\U03A9";
+486 #endif
+487             case dimension::S:
+488                 return "S";
+489             case dimension::Wb:
+490                 return "Wb";
+491             case dimension::T:
+492                 return "T";
+493             case dimension::H:
+494                 return "H";
+495             case dimension::lm:
+496                 return "lm";
+497             case dimension::lx:
+498                 return "lx";
+499             case dimension::Bq:
+500                 return "Bq";
+501             case dimension::Gy:
+502                 return "Gy";
+503             case dimension::Sv:
+504                 return "Sv";
+505             case dimension::kat:
+506                 return "kat";
+507 #ifdef IS_UNIX
+508             case dimension::angstrom:
+509                 return "\\U0000212B";
+510 #elif IS_WINDOWS
+511             case dimension::angstrom:
+512                 return "\\U212B";
+513 #endif
+514             case dimension::L:
+515                 return "L";
+516             case dimension::minute:
+517                 return "min";
+518             case dimension::h:
+519                 return "h";
+520             case dimension::d:
+521                 return "d";
+522             case dimension::ly:
+523                 return "ly";
+524             case dimension::AU:
+525                 return "AU";
+526             case dimension::pc:
+527                 return "pc";
+528             case dimension::eV:
+529                 return "eV";
+530             case dimension::Da:
+531                 return "Da";
+532             case dimension::amu:
+533                 return "amu";
+534             case dimension::barn:
+535                 return "barn";
+536             case dimension::M:
+537                 return "M";
+538             case dimension::particles:
+539                 return "particles";
+540             case dimension::custom:
+541                 return string("")\&.assign(symbol, symbol + 3);
+542             case dimension::custom_basic:
+543                 return "custom\-basic";
+544             case dimension::custom_full_symbol:
+545                 return dimension::get_full_symbol(symbol);
+546             case dimension::money:
+547                 return "money";
+548             case dimension::pixel:
+549                 return "px";
+550             case dimension::memo:
+551                 return "memo";
+552         }
+553         return "";
+554     }
+.fi
+
+.SS "\fBvoid\fP scifir::dimension::invert ()"
+
+.PP
+Definition at line \fB1142\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+1143     {
+1144         if (dimension_sign == dimension::NUMERATOR)
+1145         {
+1146             dimension_sign = dimension::DENOMINATOR;
+1147         }
+1148         else
+1149         {
+1150             dimension_sign = dimension::NUMERATOR;
+1151         }
+1152     }
+.fi
+
+.SS "\fBbool\fP scifir::dimension::is_basic_dimension () const"
+
+.PP
+Definition at line \fB793\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+794     {
+795         switch(dimension_type)
+796         {
+797             case dimension::NONE:
+798                 return true;
+799             case dimension::m:
+800                 return true;
+801             case dimension::grade:
+802                 return true;
+803             case dimension::radian:
+804                 return true;
+805             case dimension::steradian:
+806                 return true;
+807             case dimension::g:
+808                 return true;
+809             case dimension::s:
+810                 return true;
+811             case dimension::C:
+812                 return true;
+813             case dimension::K:
+814                 return true;
+815             case dimension::mol:
+816                 return true;
+817             case dimension::cd:
+818                 return true;
+819             case dimension::B:
+820                 return true;
+821             case dimension::Hz:
+822                 return false;
+823             case dimension::N:
+824                 return false;
+825             case dimension::Pa:
+826                 return false;
+827             case dimension::J:
+828                 return false;
+829             case dimension::W:
+830                 return false;
+831             case dimension::A:
+832                 return false;
+833             case dimension::V:
+834                 return false;
+835             case dimension::F:
+836                 return false;
+837             case dimension::Ohm:
+838                 return false;
+839             case dimension::S:
+840                 return false;
+841             case dimension::Wb:
+842                 return false;
+843             case dimension::T:
+844                 return false;
+845             case dimension::H:
+846                 return false;
+847             case dimension::lm:
+848                 return false;
+849             case dimension::lx:
+850                 return false;
+851             case dimension::Bq:
+852                 return false;
+853             case dimension::Gy:
+854                 return false;
+855             case dimension::Sv:
+856                 return false;
+857             case dimension::kat:
+858                 return false;
+859             case dimension::angstrom:
+860                 return false;
+861             case dimension::L:
+862                 return false;
+863             case dimension::minute:
+864                 return false;
+865             case dimension::h:
+866                 return false;
+867             case dimension::d:
+868                 return false;
+869             case dimension::ly:
+870                 return false;
+871             case dimension::AU:
+872                 return false;
+873             case dimension::pc:
+874                 return false;
+875             case dimension::eV:
+876                 return false;
+877             case dimension::Da:
+878                 return false;
+879             case dimension::amu:
+880                 return false;
+881             case dimension::barn:
+882                 return false;
+883             case dimension::M:
+884                 return false;
+885             case dimension::particles:
+886                 return false;
+887             case dimension::custom:
+888                 return false;
+889             case dimension::custom_basic:
+890                 return true;
+891             case dimension::custom_full_symbol:
+892                 return false;
+893             case dimension::money:
+894                 return true;
+895             case dimension::pixel:
+896                 return false;
+897             case dimension::memo:
+898                 return true;
+899         }
+900         return true;
+901     }
+.fi
+
+.SS "\fBbool\fP scifir::dimension::is_derived_dimension () const"
+
+.PP
+Definition at line \fB903\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+904     {
+905         return !is_basic_dimension();
+906     }
+.fi
+
+.SS "\fBbool\fP scifir::dimension::is_simple_dimension () const"
+
+.PP
+Definition at line \fB683\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+684     {
+685         switch(dimension_type)
+686         {
+687             case dimension::NONE:
+688                 return true;
+689             case dimension::m:
+690                 return true;
+691             case dimension::grade:
+692                 return true;
+693             case dimension::radian:
+694                 return true;
+695             case dimension::steradian:
+696                 return true;
+697             case dimension::g:
+698                 return true;
+699             case dimension::s:
+700                 return true;
+701             case dimension::C:
+702                 return true;
+703             case dimension::K:
+704                 return true;
+705             case dimension::mol:
+706                 return true;
+707             case dimension::cd:
+708                 return true;
+709             case dimension::B:
+710                 return true;
+711             case dimension::Hz:
+712                 return true;
+713             case dimension::N:
+714                 return false;
+715             case dimension::Pa:
+716                 return false;
+717             case dimension::J:
+718                 return false;
+719             case dimension::W:
+720                 return false;
+721             case dimension::A:
+722                 return true;
+723             case dimension::V:
+724                 return false;
+725             case dimension::F:
+726                 return false;
+727             case dimension::Ohm:
+728                 return false;
+729             case dimension::S:
+730                 return false;
+731             case dimension::Wb:
+732                 return false;
+733             case dimension::T:
+734                 return false;
+735             case dimension::H:
+736                 return false;
+737             case dimension::lm:
+738                 return false;
+739             case dimension::lx:
+740                 return false;
+741             case dimension::Bq:
+742                 return true;
+743             case dimension::Gy:
+744                 return false;
+745             case dimension::Sv:
+746                 return false;
+747             case dimension::kat:
+748                 return false;
+749             case dimension::angstrom:
+750                 return true;
+751             case dimension::L:
+752                 return false;
+753             case dimension::minute:
+754                 return true;
+755             case dimension::h:
+756                 return true;
+757             case dimension::d:
+758                 return true;
+759             case dimension::ly:
+760                 return true;
+761             case dimension::AU:
+762                 return true;
+763             case dimension::pc:
+764                 return true;
+765             case dimension::eV:
+766                 return false;
+767             case dimension::Da:
+768                 return true;
+769             case dimension::amu:
+770                 return true;
+771             case dimension::barn:
+772                 return false;
+773             case dimension::M:
+774                 return false;
+775             case dimension::particles:
+776                 return true;
+777             case dimension::custom:
+778                 return false;
+779             case dimension::custom_basic:
+780                 return true;
+781             case dimension::custom_full_symbol:
+782                 return false;
+783             case dimension::money:
+784                 return true;
+785             case dimension::pixel:
+786                 return true;
+787             case dimension::memo:
+788                 return true;
+789         }
+790         return false;
+791     }
+.fi
+
+.SS "\fBdimension\fP & scifir::dimension::operator= (\fBconst\fP \fBdimension\fP & x)"
+
+.SS "\fBdimension\fP & scifir::dimension::operator= (\fBdimension\fP && x)"
+
+.SS "\fBlong\fP \fBdouble\fP scifir::dimension::prefix_math () const"
+
+.PP
+Definition at line \fB666\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+667     {
+668         return prefix_math(prefix);
+669     }
+.fi
+
+.SS "\fBlong\fP \fBdouble\fP scifir::dimension::prefix_math (\fBconst\fP \fBprefix\fP & x_prefix) const"
+
+.PP
+Definition at line \fB671\fP of file \fBdimension\&.cpp\fP\&..PP
+.nf
+672     {
+673         if (dimension_type == dimension::B)
+674         {
+675             return std::pow(1024, x_prefix\&.get_conversion_factor() / 3);
+676         }
+677         else
+678         {
+679             return std::pow(10, x_prefix\&.get_conversion_factor());
+680         }
+681     }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBmap\fP< \fBstring\fP, vector< \fBdimension\fP > > scifir::dimension::base_dimensions = \fBmap\fP<\fBstring\fP,vector<\fBdimension\fP>>()\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB155\fP of file \fBdimension\&.hpp\fP\&.
+.SS "\fBdimension::position\fP scifir::dimension::dimension_sign"
+
+.PP
+Definition at line \fB64\fP of file \fBdimension\&.hpp\fP\&.
+.SS "\fBdimension::type\fP scifir::dimension::dimension_type"
+
+.PP
+Definition at line \fB63\fP of file \fBdimension\&.hpp\fP\&.
+.SS "\fBmap\fP< \fBint\fP, \fBstring\fP > scifir::dimension::full_symbols = \fBmap\fP<\fBint\fP,\fBstring\fP>()\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB156\fP of file \fBdimension\&.hpp\fP\&.
+.SS "\fBscifir::prefix\fP scifir::dimension::prefix"
+
+.PP
+Definition at line \fB62\fP of file \fBdimension\&.hpp\fP\&.
+.SS "\fBset\fP< \fBstring\fP > scifir::dimension::prefixes_options {'Y', 'Z', 'E', 'P', 'T', 'G', 'M', 'k', 'h', 'd', 'c', 'm', '\\u00B5', 'u', 'n', 'p', 'f', 'a', 'z', 'y'}\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB158\fP of file \fBdimension\&.hpp\fP\&.
+.SS "\fBchar\fP scifir::dimension::symbol[3]"
+
+.PP
+Definition at line \fB65\fP of file \fBdimension\&.hpp\fP\&.
+.SS "\fBint\fP scifir::dimension::total_full_symbols = 0\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB157\fP of file \fBdimension\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

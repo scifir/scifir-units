@@ -1,41 +1,41 @@
 \doxysection{point\+\_\+nd\+\_\+impl.\+hpp}
 \hypertarget{point__nd__impl_8hpp_source}{}\label{point__nd__impl_8hpp_source}\index{topology/point\_nd\_impl.hpp@{topology/point\_nd\_impl.hpp}}
-
+\mbox{\hyperlink{point__nd__impl_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_ND\_IMPL\_HPP\_INCLUDED}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_ND\_IMPL\_HPP\_INCLUDED}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../topology/point\_nd.hpp"{}}}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../coordinates/coordinates\_nd.hpp"{}}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }scifir}
-\DoxyCodeLine{00011\ \{}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00013\ \ \ \ \ point\_nd<T>::point\_nd(\textcolor{keyword}{const}\ coordinates\_nd<T>\&\ x\_coordinates)\ :\ values(x\_coordinates.values)}
-\DoxyCodeLine{00014\ \ \ \ \ \{\}}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00017\ \ \ \ \ point\_nd<T>::point\_nd(coordinates\_nd<T>\&\&\ x\_coordinates)\ :\ values(std::move(x\_coordinates.values))}
-\DoxyCodeLine{00018\ \ \ \ \ \{\}}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00021\ \ \ \ \ point\_nd<T>\&\ point\_nd<T>::operator=(\textcolor{keyword}{const}\ coordinates\_nd<T>\&\ x\_coordinates)}
-\DoxyCodeLine{00022\ \ \ \ \ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ values\ =\ x\_coordinates.values;}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00025\ \ \ \ \ \}}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00028\ \ \ \ \ point\_nd<T>\&\ point\_nd<T>::operator=(coordinates\_nd<T>\&\&\ x\_coordinates)}
-\DoxyCodeLine{00029\ \ \ \ \ \{}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ values\ =\ std::move(x\_coordinates.values);}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00032\ \ \ \ \ \}}
-\DoxyCodeLine{00033\ \}}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_ND\_IMPL\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_ND\_IMPL\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_ND\_IMPL\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../topology/point\_nd.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}../coordinates/coordinates\_nd.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00008}00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacescifir}{scifir}}}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00013}\mbox{\hyperlink{classscifir_1_1point__nd_ad2f061a3fa0a9dd94397aa98dbe8bed1}{00013}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__nd_adc452bb0f5eeabd48abd6c55ba988dfa}{point\_nd<T>::point\_nd}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_nd<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})\ :\ values(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.values)}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00014}00014\ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00017}\mbox{\hyperlink{classscifir_1_1point__nd_adcc679c35e6ff2b54f5ec2af1970e97b}{00017}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1point__nd_adc452bb0f5eeabd48abd6c55ba988dfa}{point\_nd<T>::point\_nd}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_nd<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})\ :\ values(std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.values))}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00018}00018\ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00021}\mbox{\hyperlink{classscifir_1_1point__nd_a7176081dc4db487e175fd337fb923ba2}{00021}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_nd<T>}}\&\ \mbox{\hyperlink{classscifir_1_1point__nd_a156a1307b2434bfcefa24fdd856681d1}{point\_nd<T>::operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_nd<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ values\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.values;}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00028}\mbox{\hyperlink{classscifir_1_1point__nd_a6b2e73dfb566303a6520afdbb74cb5fd}{00028}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{point\_nd<T>}}\&\ \mbox{\hyperlink{classscifir_1_1point__nd_a156a1307b2434bfcefa24fdd856681d1}{point\_nd<T>::operator=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{coordinates\_nd<T>}}\&\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}})}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00029}00029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ values\ =\ std::move(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\_coordinates}}.values);}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{point__nd__impl_8hpp_source_l00035}00035\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_TOPOLOGY\_POINT\_ND\_IMPL\_HPP\_INCLUDED}}
 
 \end{DoxyCode}

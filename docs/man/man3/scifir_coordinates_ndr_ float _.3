@@ -6,9 +6,14 @@ scifir::coordinates_ndr< float >
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <coordinates_ndr\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBcoordinates_ndr\fP ()"
+.br
 .ti -1c
 .RI "\fBcoordinates_ndr\fP (\fBconst\fP \fBcoordinates_ndr\fP< \fBfloat\fP > &x)"
 .br
@@ -151,7 +156,7 @@ scifir::coordinates_ndr< float >
 .RI "\fBfloat\fP \fBget_altitude\fP () \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBpoint_to\fP (direction::name x)"
+.RI "\fBvoid\fP \fBpoint_to\fP (\fBdirection::name\fP x)"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBset_position\fP (\fBfloat\fP \fBnew_x\fP)"
@@ -235,6 +240,1505 @@ scifir::coordinates_ndr< float >
 .RI "\fBstring\fP \fBdisplay_geographical\fP () \fBconst\fP"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_coordinates_ndr\fP)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "vector< \fBfloat\fP > \fBvalues\fP"
+.br
+.ti -1c
+.RI "vector< \fBangle\fP > \fBangles\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstatic\fP \fBfloat\fP \fBno_value\fP = 0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB1087\fP of file \fBcoordinates_ndr\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB1090\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1090                               : values(),angles()
+1091             {}
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP \fBcoordinates_ndr\fP< \fBfloat\fP > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1093\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1093                                                              : values(),angles()
+1094             {
+1095                 if (x\&.values\&.size() == (x\&.angles\&.size() + 1))
+1096                 {
+1097                     values = x\&.values;
+1098                     angles = x\&.angles;
+1099                 }
+1100             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBcoordinates_ndr\fP< \fBfloat\fP > && x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1102\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1102                                                         : values(),angles()
+1103             {
+1104                 if (x\&.values\&.size() == (x\&.angles\&.size() + 1))
+1105                 {
+1106                     values = std::move(x\&.values);
+1107                     angles = std::move(x\&.angles);
+1108                 }
+1109             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP vector< \fBfloat\fP > & new_values, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1111\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1111                                                                                                       : values(),angles()
+1112             {
+1113                 if (new_values\&.size() == (new_angles\&.size() + 1))
+1114                 {
+1115                     values = new_values;
+1116                     for(const float& x_angle : new_angles)
+1117                     {
+1118                         angles\&.push_back(angle(x_angle));
+1119                     }
+1120                 }
+1121             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP vector< \fBfloat\fP > & new_values, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1123\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1123                                                                                                       : values(),angles()
+1124             {
+1125                 if (new_values\&.size() == (new_angles\&.size() + 1))
+1126                 {
+1127                     values = new_values;
+1128                     angles = new_angles;
+1129                 }
+1130             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBfloat\fP new_x)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1132\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1132                                                   : values(),angles()
+1133             {
+1134                 values\&.push_back(new_x);
+1135             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBfloat\fP new_x, \fBfloat\fP new_y, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1137\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1137                                                                                      : values(),angles()
+1138             {
+1139                 values\&.push_back(new_x);
+1140                 values\&.push_back(new_y);
+1141                 angles\&.push_back(new_theta);
+1142             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_polar_theta, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1144\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1144                                                                                                       : values(),angles()
+1145             {
+1146                 values\&.push_back(new_p * scifir::cos(new_polar_theta));
+1147                 values\&.push_back(new_p * scifir::sin(new_polar_theta));
+1148                 angles\&.push_back(new_theta);
+1149             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBfloat\fP new_x, \fBfloat\fP new_y, \fBfloat\fP new_z, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1151\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1151                                                                                                                       : values(),angles()
+1152             {
+1153                 values\&.push_back(new_x);
+1154                 values\&.push_back(new_y);
+1155                 values\&.push_back(new_z);
+1156                 angles\&.push_back(new_theta);
+1157                 angles\&.push_back(new_phi);
+1158             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_cylindrical_theta, \fBfloat\fP new_z, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1160\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1160                                                                                                                                              : values(),angles()
+1161             {
+1162                 values\&.push_back(new_p * scifir::cos(new_cylindrical_theta));
+1163                 values\&.push_back(new_p * scifir::sin(new_cylindrical_theta));
+1164                 values\&.push_back(new_z);
+1165                 angles\&.push_back(new_theta);
+1166                 angles\&.push_back(new_phi);
+1167             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBfloat\fP new_r, \fBconst\fP \fBangle\fP & new_spherical_theta, \fBconst\fP \fBangle\fP & new_spherical_phi, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1169\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1169                                                                                                                                                               : values(),angles()
+1170             {
+1171                 values\&.push_back(new_r * scifir::cos(new_spherical_theta) * scifir::sin(new_spherical_phi));
+1172                 values\&.push_back(new_r * scifir::sin(new_spherical_theta) * scifir::sin(new_spherical_phi));
+1173                 values\&.push_back(new_r * scifir::cos(new_spherical_phi));
+1174                 angles\&.push_back(new_theta);
+1175                 angles\&.push_back(new_phi);
+1176             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP \fBangle\fP & new_latitude, \fBconst\fP \fBangle\fP & new_longitude, \fBfloat\fP new_altitude, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1178\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1178                                                                                                                                                           : values(),angles()
+1179             {
+1180                 values\&.push_back(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude));
+1181                 values\&.push_back(new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude));
+1182                 values\&.push_back(new_altitude * scifir::sin(new_latitude));
+1183                 angles\&.push_back(new_theta);
+1184                 angles\&.push_back(new_phi);
+1185             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP \fBpoint_nd\fP< \fBfloat\fP > & new_point, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1187\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1187                                                                                                        : values(),angles()
+1188             {
+1189                 if (new_point\&.values\&.size() == (new_angles\&.size() + 1))
+1190                 {
+1191                     values = new_point\&.values;
+1192                     for(const float& x_angle : new_angles)
+1193                     {
+1194                         angles\&.push_back(angle(x_angle));
+1195                     }
+1196                 }
+1197             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBpoint_nd\fP< \fBfloat\fP > && new_point, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1199\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1199                                                                                                   : values(),angles()
+1200             {
+1201                 if (new_point\&.values\&.size() == (new_angles\&.size() + 1))
+1202                 {
+1203                     values = std::move(new_point\&.values);
+1204                     for(const float& x_angle : new_angles)
+1205                     {
+1206                         angles\&.push_back(angle(x_angle));
+1207                     }
+1208                 }
+1209             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP \fBpoint_nd\fP< \fBfloat\fP > & new_point, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1211\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1211                                                                                                        : values(),angles()
+1212             {
+1213                 if (new_point\&.values\&.size() == (new_angles\&.size() + 1))
+1214                 {
+1215                     values = new_point\&.values;
+1216                     angles = new_angles;
+1217                 }
+1218             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBpoint_nd\fP< \fBfloat\fP > && new_point, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1220\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1220                                                                                                   : values(),angles()
+1221             {
+1222                 if (new_point\&.values\&.size() == (new_angles\&.size() + 1))
+1223                 {
+1224                     values = std::move(new_point\&.values);
+1225                     angles = new_angles;
+1226                 }
+1227             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP \fBcoordinates_nd\fP< \fBfloat\fP > & new_coordinates, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1229\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1229                                                                                                                    : values(),angles()
+1230             {
+1231                 if (new_coordinates\&.values\&.size() == (new_angles\&.size() + 1))
+1232                 {
+1233                     values = new_coordinates\&.values;
+1234                     for(const float& x_angle : new_angles)
+1235                     {
+1236                         angles\&.push_back(angle(x_angle));
+1237                     }
+1238                 }
+1239             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBcoordinates_nd\fP< \fBfloat\fP > && new_coordinates, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1241\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1241                                                                                                               : values(),angles()
+1242             {
+1243                 if (new_coordinates\&.values\&.size() == (new_angles\&.size() + 1))
+1244                 {
+1245                     values = std::move(new_coordinates\&.values);
+1246                     for(const float& x_angle : new_angles)
+1247                     {
+1248                         angles\&.push_back(angle(x_angle));
+1249                     }
+1250                 }
+1251             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP \fBcoordinates_nd\fP< \fBfloat\fP > & new_coordinates, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1253\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1253                                                                                                                    : values(),angles()
+1254             {
+1255                 if (new_coordinates\&.values\&.size() == (new_angles\&.size() + 1))
+1256                 {
+1257                     values = new_coordinates\&.values;
+1258                     angles = new_angles;
+1259                 }
+1260             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBcoordinates_nd\fP< \fBfloat\fP > && new_coordinates, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1262\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1262                                                                                                               : values(),angles()
+1263             {
+1264                 if (new_coordinates\&.values\&.size() == (new_angles\&.size() + 1))
+1265                 {
+1266                     values = std::move(new_coordinates\&.values);
+1267                     angles = new_angles;
+1268                 }
+1269             }
+.fi
+
+.SS "\fBscifir::coordinates_ndr\fP< \fBfloat\fP >::coordinates_ndr (\fBconst\fP \fBstring\fP & init_coordinates_ndr)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB1271\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1271                                                                          : values(),angles()
+1272             {
+1273                 initialize_from_string(init_coordinates_ndr);
+1274             }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::change_nd (\fBconst\fP vector< \fBfloat\fP > & new_values, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1361\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1362             {
+1363                 if (new_values\&.size() == (new_angles\&.size() + 1))
+1364                 {
+1365                     values = new_values;
+1366                     angles = new_angles;
+1367                 }
+1368             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::change_nd (\fBconst\fP vector< \fBfloat\fP > & new_values, \fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1348\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1349             {
+1350                 if (new_values\&.size() == (new_angles\&.size() + 1))
+1351                 {
+1352                     values = new_values;
+1353                     angles\&.clear();
+1354                     for(const float& x_angle : new_angles)
+1355                     {
+1356                         angles\&.push_back(angle(x_angle));
+1357                     }
+1358                 }
+1359             }
+.fi
+
+.SS "\fBstring\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::display_cartesian_2d () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1928\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1929             {
+1930                 if (values\&.size() == 2 and angles\&.size() == 1)
+1931                 {
+1932                     ostringstream out;
+1933                     out << "(";
+1934                     if (get_nd() == 2)
+1935                     {
+1936                         out << display_float(values[0]) << "," << display_float(values[1]) << ";" << angles[0];
+1937                     }
+1938                     out << ")";
+1939                     return out\&.str();
+1940                 }
+1941                 else
+1942                 {
+1943                     return "[no\-2d]";
+1944                 }
+1945             }
+.fi
+
+.SS "\fBstring\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::display_cartesian_3d () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1966\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1967             {
+1968                 if (values\&.size() == 3 and angles\&.size() == 2)
+1969                 {
+1970                     ostringstream out;
+1971                     out << "(";
+1972                     if (get_nd() == 3)
+1973                     {
+1974                         out << display_float(values[0]) << "," << display_float(values[1]) << "," << display_float(values[2]) << ";" << angles[0] << "," << angles[1];
+1975                     }
+1976                     out << ")";
+1977                     return out\&.str();
+1978                 }
+1979                 else
+1980                 {
+1981                     return "[no\-3d]";
+1982                 }
+1983             }
+.fi
+
+.SS "\fBstring\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::display_cylindrical () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1985\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1986             {
+1987                 if (values\&.size() == 3 and angles\&.size() == 2)
+1988                 {
+1989                     ostringstream out;
+1990                     out << "(";
+1991                     if (get_nd() == 3)
+1992                     {
+1993                         out << display_float(get_p()) << "," << get_spherical_theta() << "," << display_float(values[2]) << ";" << angles[0] << "," << angles[1];
+1994                     }
+1995                     out << ")";
+1996                     return out\&.str();
+1997                 }
+1998                 else
+1999                 {
+2000                     return "[no\-3d]";
+2001                 }
+2002             }
+.fi
+
+.SS "\fBstring\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::display_geographical () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB2023\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2024             {
+2025                 if (values\&.size() == 3 and angles\&.size() == 2)
+2026                 {
+2027                     ostringstream out;
+2028                     out << "(";
+2029                     if (get_nd() == 3)
+2030                     {
+2031                         out << get_latitude() << "," << get_longitude() << "," << display_float(get_altitude()) << ";" << angles[0] << "," << angles[1];
+2032                     }
+2033                     out << ")";
+2034                     return out\&.str();
+2035                 }
+2036                 else
+2037                 {
+2038                     return "[no\-3d]";
+2039                 }
+2040             }
+.fi
+
+.SS "\fBstring\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::display_polar () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1947\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1948             {
+1949                 if (values\&.size() == 2 and angles\&.size() == 1)
+1950                 {
+1951                     ostringstream out;
+1952                     out << "(";
+1953                     if (get_nd() == 2)
+1954                     {
+1955                         out << display_float(get_p()) << "," << get_spherical_theta() << ";" << angles[0];
+1956                     }
+1957                     out << ")";
+1958                     return out\&.str();
+1959                 }
+1960                 else
+1961                 {
+1962                     return "[no\-2d]";
+1963                 }
+1964             }
+.fi
+
+.SS "\fBstring\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::display_spherical () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB2004\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2005             {
+2006                 if (values\&.size() == 3 and angles\&.size() == 2)
+2007                 {
+2008                     ostringstream out;
+2009                     out << "(";
+2010                     if (get_nd() == 3)
+2011                     {
+2012                         out << display_float(get_r()) << "," << get_spherical_theta() << "," << get_spherical_phi() << ";" << angles[0] << "," << angles[1];
+2013                     }
+2014                     out << ")";
+2015                     return out\&.str();
+2016                 }
+2017                 else
+2018                 {
+2019                     return "[no\-3d]";
+2020                 }
+2021             }
+.fi
+
+.SS "\fBfloat\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::distance_to_origin () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1918\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1919             {
+1920                 float x_T = 0;
+1921                 for (unsigned int i = 0; i < values\&.size(); i++)
+1922                 {
+1923                     x_T += float(std::pow(values[i],2));
+1924                 }
+1925                 return std::sqrt(x_T);
+1926             }
+.fi
+
+.SS "\fBfloat\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_altitude () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1514\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1515             {
+1516                 return float();
+1517             }
+.fi
+
+.SS "\fBangle\fP & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_angle (\fBunsigned\fP \fBint\fP i)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1444\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1445             {
+1446                 if (i < (values\&.size() \- 1))
+1447                 {
+1448                     return angles[i];
+1449                 }
+1450                 else
+1451                 {
+1452                     return coordinates_ndr_no_angle;
+1453                 }
+1454             }
+.fi
+
+.SS "\fBconst\fP \fBangle\fP & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_angle (\fBunsigned\fP \fBint\fP i) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1432\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1433             {
+1434                 if (i < (values\&.size() \- 1))
+1435                 {
+1436                     return angles[i];
+1437                 }
+1438                 else
+1439                 {
+1440                     return coordinates_ndr_no_angle;
+1441                 }
+1442             }
+.fi
+
+.SS "\fBconst\fP vector< \fBangle\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_angles () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1407\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1408             {
+1409                 return angles;
+1410             }
+.fi
+
+.SS "\fBangle\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_latitude () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1504\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1505             {
+1506                 return scifir::asin(float(values[2]/6317));
+1507             }
+.fi
+
+.SS "\fBangle\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_longitude () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1509\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1510             {
+1511                 return scifir::atan(float(values[1]/values[0]));
+1512             }
+.fi
+
+.SS "\fBint\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_nd () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1343\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1344             {
+1345                 return values\&.size();
+1346             }
+.fi
+
+.SS "\fBfloat\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_p () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1456\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1457             {
+1458                 if (get_nd() == 2 or get_nd() == 3)
+1459                 {
+1460                     return float(std::sqrt(std::pow(values[0],2) + std::pow(values[1],2)));
+1461                 }
+1462                 else
+1463                 {
+1464                     return float();
+1465                 }
+1466             }
+.fi
+
+.SS "\fBfloat\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_r () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1480\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1481             {
+1482                 if (get_nd() == 2 or get_nd() == 3)
+1483                 {
+1484                     return float(std::sqrt(std::pow(values[0],2) + std::pow(values[1],2) + std::pow(values[2],2)));
+1485                 }
+1486                 else
+1487                 {
+1488                     return float();
+1489                 }
+1490             }
+.fi
+
+.SS "\fBangle\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_spherical_phi () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1492\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1493             {
+1494                 if (get_nd() == 3)
+1495                 {
+1496                     return angle(scifir::acos_grade(float(values[2]/std::sqrt(std::pow(values[0],2) + std::pow(values[1],2) + std::pow(values[2],2)))));
+1497                 }
+1498                 else
+1499                 {
+1500                     return angle();
+1501                 }
+1502             }
+.fi
+
+.SS "\fBangle\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_spherical_theta () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1468\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1469             {
+1470                 if (get_nd() == 2 or get_nd() == 3)
+1471                 {
+1472                     return angle(scifir::atan_grade(float(values[1]/values[0])));
+1473                 }
+1474                 else
+1475                 {
+1476                     return angle();
+1477                 }
+1478             }
+.fi
+
+.SS "\fBfloat\fP & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_value (\fBunsigned\fP \fBint\fP i)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1395\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1396             {
+1397                 if (i < (values\&.size()))
+1398                 {
+1399                     return values[i];
+1400                 }
+1401                 else
+1402                 {
+1403                     return no_value;
+1404                 }
+1405             }
+.fi
+
+.SS "\fBconst\fP \fBfloat\fP & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_value (\fBunsigned\fP \fBint\fP i) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1383\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1384             {
+1385                 if (i < (values\&.size()))
+1386                 {
+1387                     return values[i];
+1388                 }
+1389                 else
+1390                 {
+1391                     return no_value;
+1392                 }
+1393             }
+.fi
+
+.SS "\fBconst\fP vector< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::get_values () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1370\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1371             {
+1372                 return values;
+1373             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::initialize_from_string (\fBstring\fP init_coordinates_ndr)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB2047\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2048             {
+2049                 vector<string> init_coordinates;
+2050                 vector<string> init_values;
+2051                 vector<string> init_angles;
+2052                 if (init_coordinates_ndr\&.front() == '(')
+2053                 {
+2054                     init_coordinates_ndr\&.erase(0,1);
+2055                 }
+2056                 if (init_coordinates_ndr\&.back() == ')')
+2057                 {
+2058                     init_coordinates_ndr\&.erase(init_coordinates_ndr\&.size()\-1,1);
+2059                 }
+2060                 boost::split(init_coordinates,init_coordinates_ndr,boost::is_any_of(";"));
+2061                 if (init_coordinates\&.size() > 0)
+2062                 {
+2063                     boost::split(init_values,init_coordinates[0],boost::is_any_of(","));
+2064                 }
+2065                 if (init_coordinates\&.size() > 1)
+2066                 {
+2067                     boost::split(init_angles,init_coordinates[1],boost::is_any_of(","));
+2068                 }
+2069                 if (init_values\&.size() == 2 and init_angles\&.size() == 1)
+2070                 {
+2071                     if (is_angle(init_values[1]))
+2072                     {
+2073                         values\&.push_back(stof(init_values[0]) * scifir::cos(angle(init_values[1])));
+2074                         values\&.push_back(stof(init_values[0]) * scifir::sin(angle(init_values[1])));
+2075                     }
+2076                     else
+2077                     {
+2078                         values\&.push_back(stof(init_values[0]));
+2079                         values\&.push_back(stof(init_values[1]));
+2080                     }
+2081                     angles\&.push_back(angle(init_angles[0]));
+2082                 }
+2083                 else if (init_values\&.size() == 3 and init_angles\&.size() == 2)
+2084                 {
+2085                     if (is_angle(init_values[0]))
+2086                     {
+2087                         if (is_angle(init_values[1]))
+2088                         {
+2089                             if (!is_angle(init_values[2]))
+2090                             {
+2091                                 values\&.push_back(stof(init_values[2]) * scifir::cos(angle(init_values[0])) * scifir::cos(angle(init_values[1])));
+2092                                 values\&.push_back(stof(init_values[2]) * scifir::cos(angle(init_values[0])) * scifir::sin(angle(init_values[1])));
+2093                                 values\&.push_back(stof(init_values[2]) * scifir::sin(angle(init_values[0])));
+2094                             }
+2095                         }
+2096                     }
+2097                     else
+2098                     {
+2099                         if (is_angle(init_values[1]))
+2100                         {
+2101                             if (is_angle(init_values[2]))
+2102                             {
+2103                                 values\&.push_back(stof(init_values[0]) * scifir::cos(angle(init_values[1])) * scifir::sin(angle(init_values[2])));
+2104                                 values\&.push_back(stof(init_values[0]) * scifir::sin(angle(init_values[1])) * scifir::sin(angle(init_values[2])));
+2105                                 values\&.push_back(stof(init_values[0]) * scifir::cos(angle(init_values[2])));
+2106                             }
+2107                             else
+2108                             {
+2109                                 values\&.push_back(stof(init_values[0]) * scifir::cos(angle(init_values[1])));
+2110                                 values\&.push_back(stof(init_values[0]) * scifir::sin(angle(init_values[1])));
+2111                                 values\&.push_back(stof(init_values[2]));
+2112                             }
+2113                         }
+2114                         else
+2115                         {
+2116                             if (!is_angle(init_values[2]))
+2117                             {
+2118                                 values\&.push_back(stof(init_values[0]));
+2119                                 values\&.push_back(stof(init_values[1]));
+2120                                 values\&.push_back(stof(init_values[2]));
+2121                             }
+2122                         }
+2123                     }
+2124                     angles\&.push_back(angle(init_angles[0]));
+2125                     angles\&.push_back(angle(init_angles[1]));
+2126                 }
+2127                 else
+2128                 {
+2129                     if (init_values\&.size() == (init_angles\&.size() + 1))
+2130                     {
+2131                         for (int i = 0; i < init_values\&.size(); i++)
+2132                         {
+2133                             values\&.push_back(stof(init_values[i]));
+2134                         }
+2135                         for (int i = 0; i < init_angles\&.size(); i++)
+2136                         {
+2137                             angles\&.push_back(angle(init_angles[i]));
+2138                         }
+2139                     }
+2140                 }
+2141             }
+.fi
+
+.SS "\fBbool\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::is_nd (\fBunsigned\fP \fBint\fP i) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1338\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1339             {
+1340                 return values\&.size() == i;
+1341             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBconst\fP \fBdisplacement_2d\fP & x_displacement)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1834\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1835             {
+1836                 if (values\&.size() == 2 and angles\&.size() == 1)
+1837                 {
+1838                     values[0] += float(x_displacement\&.x_projection());
+1839                     values[1] += float(x_displacement\&.y_projection());
+1840                 }
+1841             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBconst\fP \fBdisplacement_3d\fP & x_displacement)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1861\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1862             {
+1863                 if (values\&.size() == 3 and angles\&.size() == 2)
+1864                 {
+1865                     values[0] += float(x_displacement\&.x_projection());
+1866                     values[1] += float(x_displacement\&.y_projection());
+1867                     values[2] += float(x_displacement\&.z_projection());
+1868                 }
+1869             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBconst\fP \fBdisplacement_nd\fP & x_displacement)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1901\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1902             {
+1903                 if (x_displacement\&.get_nd() == get_nd())
+1904                 {
+1905                     for (int i = 0; i < x_displacement\&.get_nd(); i++)
+1906                     {
+1907                         values[i] += float(x_displacement\&.n_projection(i));
+1908                     }
+1909                 }
+1910             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1852\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1853             {
+1854                 if (values\&.size() == 2 and angles\&.size() == 1)
+1855                 {
+1856                     values[0] += new_p * scifir::cos(new_theta);
+1857                     values[1] += new_p * scifir::sin(new_theta);
+1858                 }
+1859             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_theta, \fBfloat\fP new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1881\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1882             {
+1883                 if (values\&.size() == 3 and angles\&.size() == 2)
+1884                 {
+1885                     values[0] += new_p * scifir::cos(new_theta);
+1886                     values[1] += new_p * scifir::sin(new_theta);
+1887                     values[2] += new_z;
+1888                 }
+1889             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBfloat\fP new_r, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1891\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1892             {
+1893                 if (values\&.size() == 3 and angles\&.size() == 2)
+1894                 {
+1895                     values[0] += new_r * scifir::cos(new_theta) * scifir::sin(new_phi);
+1896                     values[1] += new_r * scifir::sin(new_theta) * scifir::sin(new_phi);
+1897                     values[2] += new_r * scifir::cos(new_phi);
+1898                 }
+1899             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBfloat\fP new_r, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1912\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1913             {
+1914                 displacement_nd x_displacement = displacement_nd(new_r,"m",new_angles);
+1915                 move(x_displacement);
+1916             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBfloat\fP new_x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1826\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1827             {
+1828                 if (values\&.size() == 1 and angles\&.size() == 0)
+1829                 {
+1830                     values[0] += new_x;
+1831                 }
+1832             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBfloat\fP new_x, \fBfloat\fP new_y)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1843\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1844             {
+1845                 if (values\&.size() == 2 and angles\&.size() == 1)
+1846                 {
+1847                     values[0] += new_x;
+1848                     values[1] += new_y;
+1849                 }
+1850             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::move (\fBfloat\fP new_x, \fBfloat\fP new_y, \fBfloat\fP new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1871\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1872             {
+1873                 if (values\&.size() == 3 and angles\&.size() == 2)
+1874                 {
+1875                     values[0] += new_x;
+1876                     values[1] += new_y;
+1877                     values[2] += new_z;
+1878                 }
+1879             }
+.fi
+
+.SS "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBcoordinates_nd\fP< \fBfloat\fP > & x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1314\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1315             {
+1316                 if (x_coordinates\&.values\&.size() == (angles\&.size() + 1))
+1317                 {
+1318                     values = x_coordinates\&.values;
+1319                 }
+1320                 return *this;
+1321             }
+.fi
+
+.SS "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBcoordinates_ndr\fP< \fBfloat\fP > & x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1276\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1277             {
+1278                 if (x_coordinates\&.values\&.size() == (x_coordinates\&.angles\&.size() + 1))
+1279                 {
+1280                     values = x_coordinates\&.values;
+1281                     angles = x_coordinates\&.angles;
+1282                 }
+1283                 return *this;
+1284             }
+.fi
+
+.SS "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBpoint_nd\fP< \fBfloat\fP > & x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1296\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1297             {
+1298                 if (x_point\&.values\&.size() == (angles\&.size() + 1))
+1299                 {
+1300                     values = x_point\&.values;
+1301                 }
+1302                 return *this;
+1303             }
+.fi
+
+.SS "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBstring\fP & init_coordinates_ndr)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1332\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1333             {
+1334                 initialize_from_string(init_coordinates_ndr);
+1335                 return *this;
+1336             }
+.fi
+
+.SS "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::operator= (\fBcoordinates_nd\fP< \fBfloat\fP > && x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1323\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1324             {
+1325                 if (x_coordinates\&.values\&.size() == (angles\&.size() + 1))
+1326                 {
+1327                     values = std::move(x_coordinates\&.values);
+1328                 }
+1329                 return *this;
+1330             }
+.fi
+
+.SS "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::operator= (\fBcoordinates_ndr\fP< \fBfloat\fP > && x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1286\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1287             {
+1288                 if (x_coordinates\&.values\&.size() == (x_coordinates\&.angles\&.size() + 1))
+1289                 {
+1290                     values = std::move(x_coordinates\&.values);
+1291                     angles = std::move(x_coordinates\&.angles);
+1292                 }
+1293                 return *this;
+1294             }
+.fi
+
+.SS "\fBcoordinates_ndr\fP< \fBfloat\fP > & \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::operator= (\fBpoint_nd\fP< \fBfloat\fP > && x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1305\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1306             {
+1307                 if (x_point\&.values\&.size() == (angles\&.size() + 1))
+1308                 {
+1309                     values = std::move(x_point\&.values);
+1310                 }
+1311                 return *this;
+1312             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::point_to (\fBdirection::name\fP x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1519\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1520             {
+1521                 if (is_nd(1))
+1522                 {
+1523                     if (x == direction::LEFT)
+1524                     {
+1525                         if (values[0] > 0)
+1526                         {
+1527                             values[0] *= \-1;
+1528                         }
+1529                     }
+1530                     else if(x == direction::RIGHT)
+1531                     {
+1532                         if (values[0] < 0)
+1533                         {
+1534                             values[0] *= \-1;
+1535                         }
+1536                     }
+1537                 }
+1538                 else if (is_nd(2))
+1539                 {
+1540                     if (x == direction::LEFT)
+1541                     {
+1542                         angles[0] = 180\&.0f;
+1543                     }
+1544                     else if(x == direction::RIGHT)
+1545                     {
+1546                         angles[0] = 0\&.0f;
+1547                     }
+1548                     else if(x == direction::TOP)
+1549                     {
+1550                         angles[0] = 90\&.0f;
+1551                     }
+1552                     else if(x == direction::BOTTOM)
+1553                     {
+1554                         angles[0] = 270\&.0f;
+1555                     }
+1556                     else if(x == direction::LEFT_TOP)
+1557                     {
+1558                         angles[0] = 135\&.0f;
+1559                     }
+1560                     else if(x == direction::RIGHT_TOP)
+1561                     {
+1562                         angles[0] = 45\&.0f;
+1563                     }
+1564                     else if(x == direction::RIGHT_BOTTOM)
+1565                     {
+1566                         angles[0] = 315\&.0f;
+1567                     }
+1568                     else if(x == direction::LEFT_BOTTOM)
+1569                     {
+1570                         angles[0] = 225\&.0f;
+1571                     }
+1572                 }
+1573                 else if (is_nd(3))
+1574                 {
+1575                     if (x == direction::LEFT)
+1576                     {
+1577                         angles[0] = 270\&.0f;
+1578                         angles[1] = 90\&.0f;
+1579                     }
+1580                     else if(x == direction::RIGHT)
+1581                     {
+1582                         angles[0] = 90\&.0f;
+1583                         angles[1] = 90\&.0f;
+1584                     }
+1585                     else if(x == direction::TOP)
+1586                     {
+1587                         angles[0] = 0\&.0f;
+1588                         angles[1] = 0\&.0f;
+1589                     }
+1590                     else if(x == direction::BOTTOM)
+1591                     {
+1592                         angles[0] = 0\&.0f;
+1593                         angles[1] = 180\&.0f;
+1594                     }
+1595                     else if(x == direction::LEFT_TOP)
+1596                     {
+1597                         angles[0] = 270\&.0f;
+1598                         angles[1] = 45\&.0f;
+1599                     }
+1600                     else if(x == direction::RIGHT_TOP)
+1601                     {
+1602                         angles[0] = 90\&.0f;
+1603                         angles[1] = 45\&.0f;
+1604                     }
+1605                     else if(x == direction::RIGHT_BOTTOM)
+1606                     {
+1607                         angles[0] = 90\&.0f;
+1608                         angles[1] = 135\&.0f;
+1609                     }
+1610                     else if(x == direction::LEFT_BOTTOM)
+1611                     {
+1612                         angles[0] = 270\&.0f;
+1613                         angles[1] = 135\&.0f;
+1614                     }
+1615                     else if(x == direction::FRONT)
+1616                     {
+1617                         angles[0] = 0\&.0f;
+1618                         angles[1] = 90\&.0f;
+1619                     }
+1620                     else if(x == direction::BACK)
+1621                     {
+1622                         angles[0] = 180\&.0f;
+1623                         angles[1] = 90\&.0f;
+1624                     }
+1625                     else if(x == direction::LEFT_FRONT)
+1626                     {
+1627                         angles[0] = 315\&.0f;
+1628                         angles[1] = 90\&.0f;
+1629                     }
+1630                     else if(x == direction::RIGHT_FRONT)
+1631                     {
+1632                         angles[0] = 45\&.0f;
+1633                         angles[1] = 90\&.0f;
+1634                     }
+1635                     else if(x == direction::TOP_FRONT)
+1636                     {
+1637                         angles[0] = 0\&.0f;
+1638                         angles[1] = 45\&.0f;
+1639                     }
+1640                     else if(x == direction::BOTTOM_FRONT)
+1641                     {
+1642                         angles[0] = 0\&.0f;
+1643                         angles[1] = 135\&.0f;
+1644                     }
+1645                     else if(x == direction::LEFT_BACK)
+1646                     {
+1647                         angles[0] = 225\&.0f;
+1648                         angles[1] = 90\&.0f;
+1649                     }
+1650                     else if(x == direction::RIGHT_BACK)
+1651                     {
+1652                         angles[0] = 135\&.0f;
+1653                         angles[1] = 90\&.0f;
+1654                     }
+1655                     else if(x == direction::TOP_BACK)
+1656                     {
+1657                         angles[0] = 180\&.0f;
+1658                         angles[1] = 45\&.0f;
+1659                     }
+1660                     else if(x == direction::BOTTOM_BACK)
+1661                     {
+1662                         angles[0] = 180\&.0f;
+1663                         angles[1] = 135\&.0f;
+1664                     }
+1665                     else if(x == direction::LEFT_TOP_FRONT)
+1666                     {
+1667                         angles[0] = 315\&.0f;
+1668                         angles[1] = 45\&.0f;
+1669                     }
+1670                     else if(x == direction::RIGHT_TOP_FRONT)
+1671                     {
+1672                         angles[0] = 45\&.0f;
+1673                         angles[1] = 45\&.0f;
+1674                     }
+1675                     else if(x == direction::LEFT_BOTTOM_FRONT)
+1676                     {
+1677                         angles[0] = 315\&.0f;
+1678                         angles[1] = 135\&.0f;
+1679                     }
+1680                     else if(x == direction::RIGHT_BOTTOM_FRONT)
+1681                     {
+1682                         angles[0] = 45\&.0f;
+1683                         angles[1] = 135\&.0f;
+1684                     }
+1685                     else if(x == direction::LEFT_TOP_BACK)
+1686                     {
+1687                         angles[0] = 225\&.0f;
+1688                         angles[1] = 45\&.0f;
+1689                     }
+1690                     else if(x == direction::RIGHT_TOP_BACK)
+1691                     {
+1692                         angles[0] = 135\&.0f;
+1693                         angles[1] = 45\&.0f;
+1694                     }
+1695                     else if(x == direction::LEFT_BOTTOM_BACK)
+1696                     {
+1697                         angles[0] = 225\&.0f;
+1698                         angles[1] = 135\&.0f;
+1699                     }
+1700                     else if(x == direction::RIGHT_BOTTOM_BACK)
+1701                     {
+1702                         angles[0] = 135\&.0f;
+1703                         angles[1] = 135\&.0f;
+1704                     }
+1705                 }
+1706             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::rotate_in_2d (\fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1787\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1788             {
+1789                 if (get_nd() == 2)
+1790                 {
+1791                     float x_coord = values[0];
+1792                     float y_coord = values[1];
+1793                     values[0] = x_coord * scifir::cos(new_theta) \- y_coord * scifir::sin(new_theta);
+1794                     values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
+1795                 }
+1796             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::rotate_in_3d (\fBint\fP axis, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1798\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1799             {
+1800                 if (get_nd() == 3)
+1801                 {
+1802                     if (axis == 1)
+1803                     {
+1804                         float y_coord = values[1];
+1805                         float z_coord = values[2];
+1806                         values[1] = y_coord * scifir::cos(new_theta) \- z_coord * scifir::sin(new_theta);
+1807                         values[2] = y_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
+1808                     }
+1809                     else if (axis == 2)
+1810                     {
+1811                         float x_coord = values[0];
+1812                         float z_coord = values[2];
+1813                         values[0] = x_coord * scifir::cos(new_theta) \- z_coord * scifir::sin(new_theta);
+1814                         values[2] = x_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
+1815                     }
+1816                     else if (axis == 3)
+1817                     {
+1818                         float x_coord = values[0];
+1819                         float y_coord = values[1];
+1820                         values[0] = x_coord * scifir::cos(new_theta) \- y_coord * scifir::sin(new_theta);
+1821                         values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
+1822                     }
+1823                 }
+1824             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_angles (\fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1424\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1425             {
+1426                 if (values\&.size() == (new_angles\&.size() + 1))
+1427                 {
+1428                     angles = new_angles;
+1429                 }
+1430             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_angles (\fBconst\fP vector< \fBfloat\fP > & new_angles)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1412\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1413             {
+1414                 if (values\&.size() == (new_angles\&.size() + 1))
+1415                 {
+1416                     angles\&.clear();
+1417                     for(const float& x_angle : new_angles)
+1418                     {
+1419                         angles\&.push_back(angle(x_angle));
+1420                     }
+1421                 }
+1422             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBconst\fP \fBangle\fP & new_latitude, \fBconst\fP \fBangle\fP & new_longitude, \fBfloat\fP new_altitude)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1770\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1771             {
+1772                 if (values\&.size() == 3 and angles\&.size() == 2)
+1773                 {
+1774                     values\&.clear();
+1775                     values\&.push_back(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude));
+1776                     values\&.push_back(new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude));
+1777                     values\&.push_back(new_altitude * scifir::sin(new_latitude));
+1778                 }
+1779             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBconst\fP vector< \fBfloat\fP > & new_values)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1781\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1782             {
+1783                 values\&.clear();
+1784                 values = new_values;
+1785             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1727\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1728             {
+1729                 if (values\&.size() == 2 and angles\&.size() == 1)
+1730                 {
+1731                     values\&.clear();
+1732                     values\&.push_back(new_p * scifir::cos(new_theta));
+1733                     values\&.push_back(new_p * scifir::sin(new_theta));
+1734                 }
+1735             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_theta, \fBfloat\fP new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1748\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1749             {
+1750                 if (values\&.size() == 3 and angles\&.size() == 2)
+1751                 {
+1752                     values\&.clear();
+1753                     values\&.push_back(new_p * scifir::cos(new_theta));
+1754                     values\&.push_back(new_p * scifir::sin(new_theta));
+1755                     values\&.push_back(new_z);
+1756                 }
+1757             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_r, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1759\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1760             {
+1761                 if (values\&.size() == 3 and angles\&.size() == 2)
+1762                 {
+1763                     values\&.clear();
+1764                     values\&.push_back(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
+1765                     values\&.push_back(new_r * scifir::sin(new_theta) * scifir::sin(new_phi));
+1766                     values\&.push_back(new_r * scifir::cos(new_phi));
+1767                 }
+1768             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1708\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1709             {
+1710                 if (values\&.size() == 1 and angles\&.size() == 0)
+1711                 {
+1712                     values\&.clear();
+1713                     values\&.push_back(new_x);
+1714                 }
+1715             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_x, \fBfloat\fP new_y)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1717\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1718             {
+1719                 if (values\&.size() == 2 and angles\&.size() == 1)
+1720                 {
+1721                     values\&.clear();
+1722                     values\&.push_back(new_x);
+1723                     values\&.push_back(new_y);
+1724                 }
+1725             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_x, \fBfloat\fP new_y, \fBfloat\fP new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1737\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1738             {
+1739                 if (values\&.size() == 3 and angles\&.size() == 2)
+1740                 {
+1741                     values\&.clear();
+1742                     values\&.push_back(new_x);
+1743                     values\&.push_back(new_y);
+1744                     values\&.push_back(new_z);
+1745                 }
+1746             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::set_values (\fBconst\fP vector< \fBfloat\fP > & new_values)\fC [inline]\fP"
+
+.PP
+Definition at line \fB1375\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+1376             {
+1377                 if (values\&.size() == new_values\&.size())
+1378                 {
+1379                     values = new_values;
+1380                 }
+1381             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "vector<\fBangle\fP> \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::angles\fC [private]\fP"
+
+.PP
+Definition at line \fB2044\fP of file \fBcoordinates_ndr\&.hpp\fP\&.
+.SS "\fBfloat\fP \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::no_value = 0\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB2045\fP of file \fBcoordinates_ndr\&.hpp\fP\&.
+.SS "vector<\fBfloat\fP> \fBscifir::coordinates_ndr\fP< \fBfloat\fP >::values\fC [private]\fP"
+
+.PP
+Definition at line \fB2043\fP of file \fBcoordinates_ndr\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

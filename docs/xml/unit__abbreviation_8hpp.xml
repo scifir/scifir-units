@@ -15,7 +15,7 @@
     <incdepgraph>
       <node id="28">
         <label>../meca_number/angle.hpp</label>
-        <link refid="angle_8hpp_source"/>
+        <link refid="angle_8hpp"/>
         <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
@@ -31,13 +31,13 @@
       </node>
       <node id="36">
         <label>../predefined_units/chemistry_units.hpp</label>
-        <link refid="chemistry__units_8hpp_source"/>
+        <link refid="chemistry__units_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
       <node id="25">
         <label>../predefined_units/electronics_units.hpp</label>
-        <link refid="electronics__units_8hpp_source"/>
+        <link refid="electronics__units_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
@@ -45,7 +45,7 @@
       </node>
       <node id="33">
         <label>../predefined_units/physics_units.hpp</label>
-        <link refid="physics__units_8hpp_source"/>
+        <link refid="physics__units_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
@@ -57,7 +57,7 @@
       </node>
       <node id="34">
         <label>../predefined_units/radiometry_units.hpp</label>
-        <link refid="radiometry__units_8hpp_source"/>
+        <link refid="radiometry__units_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
@@ -65,7 +65,7 @@
       </node>
       <node id="35">
         <label>../predefined_units/space_units.hpp</label>
-        <link refid="space__units_8hpp_source"/>
+        <link refid="space__units_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
@@ -75,7 +75,7 @@
       </node>
       <node id="21">
         <label>../special_units/percentage.hpp</label>
-        <link refid="percentage_8hpp_source"/>
+        <link refid="percentage_8hpp"/>
         <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
@@ -91,13 +91,13 @@
       </node>
       <node id="22">
         <label>../topology/constants.hpp</label>
-        <link refid="constants_8hpp_source"/>
+        <link refid="constants_8hpp"/>
         <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="29">
         <label>../topology/direction.hpp</label>
-        <link refid="direction_8hpp_source"/>
+        <link refid="direction_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -107,7 +107,7 @@
       </node>
       <node id="3">
         <label>../units/dimension.hpp</label>
-        <link refid="dimension_8hpp_source"/>
+        <link refid="dimension_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
@@ -135,7 +135,7 @@
       </node>
       <node id="4">
         <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp_source"/>
+        <link refid="prefix_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -147,7 +147,7 @@
       </node>
       <node id="2">
         <label>../units/scalar_unit.hpp</label>
-        <link refid="scalar__unit_8hpp_source"/>
+        <link refid="scalar__unit_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
@@ -191,7 +191,7 @@
       </node>
       <node id="20">
         <label>../units/unit_basic.hpp</label>
-        <link refid="unit__basic_8hpp_source"/>
+        <link refid="unit__basic_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
@@ -207,7 +207,7 @@
       </node>
       <node id="27">
         <label>../units/vector_unit_2d.hpp</label>
-        <link refid="vector__unit__2d_8hpp_source"/>
+        <link refid="vector__unit__2d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="28" relation="include">
@@ -225,7 +225,7 @@
       </node>
       <node id="26">
         <label>../units/vector_unit_3d.hpp</label>
-        <link refid="vector__unit__3d_8hpp_source"/>
+        <link refid="vector__unit__3d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
@@ -257,7 +257,7 @@
       </node>
       <node id="30">
         <label>../units/vector_unit_nd.hpp</label>
-        <link refid="vector__unit__nd_8hpp_source"/>
+        <link refid="vector__unit__nd_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="28" relation="include">
@@ -285,7 +285,7 @@
       </node>
       <node id="17">
         <label>../util/is_number.hpp</label>
-        <link refid="is__number_8hpp_source"/>
+        <link refid="is__number_8hpp"/>
         <childnode refid="18" relation="include">
         </childnode>
       </node>
@@ -347,12 +347,18 @@
     <invincdepgraph>
       <node id="2">
         <label>units.hpp</label>
-        <link refid="units_8hpp_source"/>
+        <link refid="units_8hpp"/>
+      </node>
+      <node id="3">
+        <label>units/unit_abbreviation.cpp</label>
+        <link refid="unit__abbreviation_8cpp"/>
       </node>
       <node id="1">
         <label>units/unit_abbreviation.hpp</label>
         <link refid="unit__abbreviation_8hpp"/>
         <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -7141,7 +7147,7 @@
         <location file="units/unit_abbreviation.hpp" line="433" column="16" bodyfile="units/unit_abbreviation.cpp" bodystart="2000" bodyend="2003" declfile="units/unit_abbreviation.hpp" declline="433" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a98de748d2f63986a911bb418074077a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::volume</type>
+        <type><ref refid="namespacescifir_1a262599906f4976119a8afba442877b46" kindref="member">scifir::volume</ref></type>
         <definition>scifir::volume operator&quot;&quot;_L</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_L</name>
@@ -7158,7 +7164,7 @@
         <location file="units/unit_abbreviation.hpp" line="435" column="16" bodyfile="units/unit_abbreviation.cpp" bodystart="2005" bodyend="2008" declfile="units/unit_abbreviation.hpp" declline="435" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a6541855b8e1fccf49cb08297dacd8ece" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::volume</type>
+        <type><ref refid="namespacescifir_1a262599906f4976119a8afba442877b46" kindref="member">scifir::volume</ref></type>
         <definition>scifir::volume operator&quot;&quot;_mL</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_mL</name>
@@ -7175,7 +7181,7 @@
         <location file="units/unit_abbreviation.hpp" line="436" column="16" bodyfile="units/unit_abbreviation.cpp" bodystart="2010" bodyend="2013" declfile="units/unit_abbreviation.hpp" declline="436" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1ab6e3abc6e62da3a65641b9c66396d1d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::time_duration</type>
+        <type><ref refid="namespacescifir_1a06c59d253ec6ae5c6403f4e27fb34d08" kindref="member">scifir::time_duration</ref></type>
         <definition>scifir::time_duration operator&quot;&quot;_min</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_min</name>
@@ -7192,7 +7198,7 @@
         <location file="units/unit_abbreviation.hpp" line="438" column="23" bodyfile="units/unit_abbreviation.cpp" bodystart="2015" bodyend="2018" declfile="units/unit_abbreviation.hpp" declline="438" declcolumn="23"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a70352e0fd8033b17c45974e63c54e03d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::time_duration</type>
+        <type><ref refid="namespacescifir_1a06c59d253ec6ae5c6403f4e27fb34d08" kindref="member">scifir::time_duration</ref></type>
         <definition>scifir::time_duration operator&quot;&quot;_hour</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_hour</name>
@@ -7209,7 +7215,7 @@
         <location file="units/unit_abbreviation.hpp" line="439" column="23" bodyfile="units/unit_abbreviation.cpp" bodystart="2020" bodyend="2023" declfile="units/unit_abbreviation.hpp" declline="439" declcolumn="23"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a94e901b3f91f5a2b767e3bb835e14436" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::time_duration</type>
+        <type><ref refid="namespacescifir_1a06c59d253ec6ae5c6403f4e27fb34d08" kindref="member">scifir::time_duration</ref></type>
         <definition>scifir::time_duration operator&quot;&quot;_day</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_day</name>
@@ -8297,7 +8303,7 @@
         <location file="units/unit_abbreviation.hpp" line="506" column="16" bodyfile="units/unit_abbreviation.cpp" bodystart="2340" bodyend="2343" declfile="units/unit_abbreviation.hpp" declline="506" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a06641395d40b1faed00425ce82328954" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::mass</type>
+        <type><ref refid="namespacescifir_1ac2859804351a1fd7d227da45f6a3fba0" kindref="member">scifir::mass</ref></type>
         <definition>scifir::mass operator&quot;&quot;_Da</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_Da</name>
@@ -8314,7 +8320,7 @@
         <location file="units/unit_abbreviation.hpp" line="508" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2345" bodyend="2348" declfile="units/unit_abbreviation.hpp" declline="508" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a277184c3663a0b415ad2a41c9e7c7b6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::mass</type>
+        <type><ref refid="namespacescifir_1ac2859804351a1fd7d227da45f6a3fba0" kindref="member">scifir::mass</ref></type>
         <definition>scifir::mass operator&quot;&quot;_amu</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_amu</name>
@@ -8331,7 +8337,7 @@
         <location file="units/unit_abbreviation.hpp" line="510" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2350" bodyend="2353" declfile="units/unit_abbreviation.hpp" declline="510" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1ad55f9980e53dabf74f95642bfd6e1cf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_Yb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_Yb</name>
@@ -8348,7 +8354,7 @@
         <location file="units/unit_abbreviation.hpp" line="512" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2355" bodyend="2358" declfile="units/unit_abbreviation.hpp" declline="512" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1aad31940776142d309e7f3e8e06dd61cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_Zb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_Zb</name>
@@ -8365,7 +8371,7 @@
         <location file="units/unit_abbreviation.hpp" line="513" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2360" bodyend="2363" declfile="units/unit_abbreviation.hpp" declline="513" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a350cf78290795ef65db09af6fc558386" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_Eb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_Eb</name>
@@ -8382,7 +8388,7 @@
         <location file="units/unit_abbreviation.hpp" line="514" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2365" bodyend="2368" declfile="units/unit_abbreviation.hpp" declline="514" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a371ed0680d885b0ae6727dd4d7bd7847" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_Pb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_Pb</name>
@@ -8399,7 +8405,7 @@
         <location file="units/unit_abbreviation.hpp" line="515" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2370" bodyend="2373" declfile="units/unit_abbreviation.hpp" declline="515" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a99ef7e6d84c81670759771d9e8726407" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_Tb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_Tb</name>
@@ -8416,7 +8422,7 @@
         <location file="units/unit_abbreviation.hpp" line="516" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2375" bodyend="2378" declfile="units/unit_abbreviation.hpp" declline="516" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a204971fee387ec89370b9822bdb679a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_Gb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_Gb</name>
@@ -8433,7 +8439,7 @@
         <location file="units/unit_abbreviation.hpp" line="517" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2380" bodyend="2383" declfile="units/unit_abbreviation.hpp" declline="517" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a3ecabfb3d1b9c0916a0df2e7f4af91f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_Mb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_Mb</name>
@@ -8450,7 +8456,7 @@
         <location file="units/unit_abbreviation.hpp" line="518" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2385" bodyend="2388" declfile="units/unit_abbreviation.hpp" declline="518" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a47b59a63a8e3226f6647fd459166d086" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_kb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_kb</name>
@@ -8467,7 +8473,7 @@
         <location file="units/unit_abbreviation.hpp" line="519" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2390" bodyend="2393" declfile="units/unit_abbreviation.hpp" declline="519" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a0b169ab21b1716719915c7f82ae9b219" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_hb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_hb</name>
@@ -8484,7 +8490,7 @@
         <location file="units/unit_abbreviation.hpp" line="520" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2395" bodyend="2398" declfile="units/unit_abbreviation.hpp" declline="520" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1afc8b5c1887101e72d372f13f11910fcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_dab</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_dab</name>
@@ -8501,7 +8507,7 @@
         <location file="units/unit_abbreviation.hpp" line="521" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2400" bodyend="2403" declfile="units/unit_abbreviation.hpp" declline="521" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1ac0db97e7171f01b2dd0d3e2ee800f434" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_b</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_b</name>
@@ -8518,7 +8524,7 @@
         <location file="units/unit_abbreviation.hpp" line="522" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2405" bodyend="2408" declfile="units/unit_abbreviation.hpp" declline="522" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a952dfded3ed846c156b5fac965934ed8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_db</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_db</name>
@@ -8535,7 +8541,7 @@
         <location file="units/unit_abbreviation.hpp" line="523" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2410" bodyend="2413" declfile="units/unit_abbreviation.hpp" declline="523" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a4cdd33709664f7851a71c4565b49e3e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_cb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_cb</name>
@@ -8552,7 +8558,7 @@
         <location file="units/unit_abbreviation.hpp" line="524" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2415" bodyend="2418" declfile="units/unit_abbreviation.hpp" declline="524" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a9545dc2b338ed915fc0b2831ce01ec9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_mb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_mb</name>
@@ -8569,7 +8575,7 @@
         <location file="units/unit_abbreviation.hpp" line="525" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2420" bodyend="2423" declfile="units/unit_abbreviation.hpp" declline="525" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1aa62708274c339e8150d21be49c823c4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_ub</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_ub</name>
@@ -8586,7 +8592,7 @@
         <location file="units/unit_abbreviation.hpp" line="526" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2425" bodyend="2428" declfile="units/unit_abbreviation.hpp" declline="526" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a7258ee0e1fc134d23e55ff847f75f901" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_nb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_nb</name>
@@ -8603,7 +8609,7 @@
         <location file="units/unit_abbreviation.hpp" line="527" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2430" bodyend="2433" declfile="units/unit_abbreviation.hpp" declline="527" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a5f81b3e949ff8197ed82d2d685dd1175" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_pb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_pb</name>
@@ -8620,7 +8626,7 @@
         <location file="units/unit_abbreviation.hpp" line="528" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2435" bodyend="2438" declfile="units/unit_abbreviation.hpp" declline="528" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a63a1c1e4afe7030f77a4d7572cba4f80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_fb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_fb</name>
@@ -8637,7 +8643,7 @@
         <location file="units/unit_abbreviation.hpp" line="529" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2440" bodyend="2443" declfile="units/unit_abbreviation.hpp" declline="529" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a912232cf00b8a6673badde16d91cd1d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_ab</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_ab</name>
@@ -8654,7 +8660,7 @@
         <location file="units/unit_abbreviation.hpp" line="530" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2445" bodyend="2448" declfile="units/unit_abbreviation.hpp" declline="530" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1ae159f61db5758f4cef6e28440c2e5bbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_zb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_zb</name>
@@ -8671,7 +8677,7 @@
         <location file="units/unit_abbreviation.hpp" line="531" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="2450" bodyend="2453" declfile="units/unit_abbreviation.hpp" declline="531" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1ad1daf7d7f51fd16cfec914b0a78f9898" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_yb</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_yb</name>
@@ -9045,7 +9051,7 @@
         <location file="units/unit_abbreviation.hpp" line="554" column="18" bodyfile="units/unit_abbreviation.cpp" bodystart="2560" bodyend="2563" declfile="units/unit_abbreviation.hpp" declline="554" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a4e5a2b293b226381493e22ced2f87dad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::mole</type>
+        <type><ref refid="namespacescifir_1aab5df33f61de66994fe010f2f0b0c961" kindref="member">scifir::mole</ref></type>
         <definition>scifir::mole operator&quot;&quot;_particles</definition>
         <argsstring>(unsigned long long int)</argsstring>
         <name>operator&quot;&quot;_particles</name>
@@ -15862,7 +15868,7 @@
         <location file="units/unit_abbreviation.hpp" line="980" column="16" bodyfile="units/unit_abbreviation.cpp" bodystart="4585" bodyend="4588" declfile="units/unit_abbreviation.hpp" declline="980" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a8925d0d07dc33138fc20bb69831e0b29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::volume</type>
+        <type><ref refid="namespacescifir_1a262599906f4976119a8afba442877b46" kindref="member">scifir::volume</ref></type>
         <definition>scifir::volume operator&quot;&quot;_L</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_L</name>
@@ -15879,7 +15885,7 @@
         <location file="units/unit_abbreviation.hpp" line="982" column="16" bodyfile="units/unit_abbreviation.cpp" bodystart="4590" bodyend="4593" declfile="units/unit_abbreviation.hpp" declline="982" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1aec6b43e563455a28d7f119b7cde153a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::volume</type>
+        <type><ref refid="namespacescifir_1a262599906f4976119a8afba442877b46" kindref="member">scifir::volume</ref></type>
         <definition>scifir::volume operator&quot;&quot;_mL</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_mL</name>
@@ -15896,7 +15902,7 @@
         <location file="units/unit_abbreviation.hpp" line="983" column="16" bodyfile="units/unit_abbreviation.cpp" bodystart="4595" bodyend="4598" declfile="units/unit_abbreviation.hpp" declline="983" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a856f4bd5e40542bbecc75aa317262b84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::time_duration</type>
+        <type><ref refid="namespacescifir_1a06c59d253ec6ae5c6403f4e27fb34d08" kindref="member">scifir::time_duration</ref></type>
         <definition>scifir::time_duration operator&quot;&quot;_min</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_min</name>
@@ -15913,7 +15919,7 @@
         <location file="units/unit_abbreviation.hpp" line="985" column="23" bodyfile="units/unit_abbreviation.cpp" bodystart="4600" bodyend="4603" declfile="units/unit_abbreviation.hpp" declline="985" declcolumn="23"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1ae183932f0bad2c3f6d6c00922c4e8ecc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::time_duration</type>
+        <type><ref refid="namespacescifir_1a06c59d253ec6ae5c6403f4e27fb34d08" kindref="member">scifir::time_duration</ref></type>
         <definition>scifir::time_duration operator&quot;&quot;_hour</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_hour</name>
@@ -15930,7 +15936,7 @@
         <location file="units/unit_abbreviation.hpp" line="987" column="23" bodyfile="units/unit_abbreviation.cpp" bodystart="4605" bodyend="4608" declfile="units/unit_abbreviation.hpp" declline="987" declcolumn="23"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a08bc2e9f4fe0907c87a13b5142ae6823" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::time_duration</type>
+        <type><ref refid="namespacescifir_1a06c59d253ec6ae5c6403f4e27fb34d08" kindref="member">scifir::time_duration</ref></type>
         <definition>scifir::time_duration operator&quot;&quot;_day</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_day</name>
@@ -17018,7 +17024,7 @@
         <location file="units/unit_abbreviation.hpp" line="1055" column="16" bodyfile="units/unit_abbreviation.cpp" bodystart="4925" bodyend="4928" declfile="units/unit_abbreviation.hpp" declline="1055" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1aa6594407f904974bdc05d61d9d818cd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::mass</type>
+        <type><ref refid="namespacescifir_1ac2859804351a1fd7d227da45f6a3fba0" kindref="member">scifir::mass</ref></type>
         <definition>scifir::mass operator&quot;&quot;_Da</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_Da</name>
@@ -17035,7 +17041,7 @@
         <location file="units/unit_abbreviation.hpp" line="1057" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="4930" bodyend="4933" declfile="units/unit_abbreviation.hpp" declline="1057" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1ab7471c8b3fa5a24495017b3880525d2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::mass</type>
+        <type><ref refid="namespacescifir_1ac2859804351a1fd7d227da45f6a3fba0" kindref="member">scifir::mass</ref></type>
         <definition>scifir::mass operator&quot;&quot;_amu</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_amu</name>
@@ -17052,7 +17058,7 @@
         <location file="units/unit_abbreviation.hpp" line="1059" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="4935" bodyend="4938" declfile="units/unit_abbreviation.hpp" declline="1059" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a01457c52e98c35b5f8fde9d0c168f108" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_Yb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_Yb</name>
@@ -17069,7 +17075,7 @@
         <location file="units/unit_abbreviation.hpp" line="1061" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="4940" bodyend="4943" declfile="units/unit_abbreviation.hpp" declline="1061" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1aaa09d39e5515249ef881b3466d76955b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_Zb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_Zb</name>
@@ -17086,7 +17092,7 @@
         <location file="units/unit_abbreviation.hpp" line="1062" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="4945" bodyend="4948" declfile="units/unit_abbreviation.hpp" declline="1062" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a7798dc12430c30f093da9fcc9b66d0b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_Eb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_Eb</name>
@@ -17103,7 +17109,7 @@
         <location file="units/unit_abbreviation.hpp" line="1063" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="4950" bodyend="4953" declfile="units/unit_abbreviation.hpp" declline="1063" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1adb08968d37416780289d82de7ccb359a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_Pb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_Pb</name>
@@ -17120,7 +17126,7 @@
         <location file="units/unit_abbreviation.hpp" line="1064" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="4955" bodyend="4958" declfile="units/unit_abbreviation.hpp" declline="1064" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1afa7132e8c055800360c762f42c32ccd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_Tb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_Tb</name>
@@ -17137,7 +17143,7 @@
         <location file="units/unit_abbreviation.hpp" line="1065" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="4960" bodyend="4963" declfile="units/unit_abbreviation.hpp" declline="1065" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a9f942a483dc41e1fcd1e4ec8d20fb01f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_Gb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_Gb</name>
@@ -17154,7 +17160,7 @@
         <location file="units/unit_abbreviation.hpp" line="1066" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="4965" bodyend="4968" declfile="units/unit_abbreviation.hpp" declline="1066" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a8936b766a81a6c9591cd17e54c884c45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_Mb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_Mb</name>
@@ -17171,7 +17177,7 @@
         <location file="units/unit_abbreviation.hpp" line="1067" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="4970" bodyend="4973" declfile="units/unit_abbreviation.hpp" declline="1067" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a5d73f5245d52e829ed6eaca5fe9f2d52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_kb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_kb</name>
@@ -17188,7 +17194,7 @@
         <location file="units/unit_abbreviation.hpp" line="1068" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="4975" bodyend="4978" declfile="units/unit_abbreviation.hpp" declline="1068" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a163da69b355c874d3770d9eeef5e5d01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_hb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_hb</name>
@@ -17205,7 +17211,7 @@
         <location file="units/unit_abbreviation.hpp" line="1069" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="4980" bodyend="4983" declfile="units/unit_abbreviation.hpp" declline="1069" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1aebbc3d2de77e2fda184ab01b39cf024b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_dab</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_dab</name>
@@ -17222,7 +17228,7 @@
         <location file="units/unit_abbreviation.hpp" line="1070" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="4985" bodyend="4988" declfile="units/unit_abbreviation.hpp" declline="1070" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a1e674b4d1375c77eb77d3a0777239446" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_b</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_b</name>
@@ -17239,7 +17245,7 @@
         <location file="units/unit_abbreviation.hpp" line="1071" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="4990" bodyend="4993" declfile="units/unit_abbreviation.hpp" declline="1071" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1aca1b435b79bdfb1a09144945e3e5274e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_db</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_db</name>
@@ -17256,7 +17262,7 @@
         <location file="units/unit_abbreviation.hpp" line="1072" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="4995" bodyend="4998" declfile="units/unit_abbreviation.hpp" declline="1072" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a1188bf38f7936a092adc32ec3e8fe8d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_cb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_cb</name>
@@ -17273,7 +17279,7 @@
         <location file="units/unit_abbreviation.hpp" line="1073" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="5000" bodyend="5003" declfile="units/unit_abbreviation.hpp" declline="1073" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1ae247320da7dd5b8e83e9e9dff7dccb68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_mb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_mb</name>
@@ -17290,7 +17296,7 @@
         <location file="units/unit_abbreviation.hpp" line="1074" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="5005" bodyend="5008" declfile="units/unit_abbreviation.hpp" declline="1074" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a769d0c28c0fc5751ca489bf1a96a9735" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_ub</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_ub</name>
@@ -17307,7 +17313,7 @@
         <location file="units/unit_abbreviation.hpp" line="1075" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="5010" bodyend="5013" declfile="units/unit_abbreviation.hpp" declline="1075" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a09a12aba5adcfa9e3f3426aa6ac3d522" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_nb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_nb</name>
@@ -17324,7 +17330,7 @@
         <location file="units/unit_abbreviation.hpp" line="1076" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="5015" bodyend="5018" declfile="units/unit_abbreviation.hpp" declline="1076" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1ab8557d71c26c2ca94c3b1645ce4266bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_pb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_pb</name>
@@ -17341,7 +17347,7 @@
         <location file="units/unit_abbreviation.hpp" line="1077" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="5020" bodyend="5023" declfile="units/unit_abbreviation.hpp" declline="1077" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a2e158171577377e010d33979a7b2850b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_fb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_fb</name>
@@ -17358,7 +17364,7 @@
         <location file="units/unit_abbreviation.hpp" line="1078" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="5025" bodyend="5028" declfile="units/unit_abbreviation.hpp" declline="1078" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1aa4fb85fdb52b50662e5b58b4da5f3f26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_ab</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_ab</name>
@@ -17375,7 +17381,7 @@
         <location file="units/unit_abbreviation.hpp" line="1079" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="5030" bodyend="5033" declfile="units/unit_abbreviation.hpp" declline="1079" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a1951424ff2e89ee110077c4cd89c63d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_zb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_zb</name>
@@ -17392,7 +17398,7 @@
         <location file="units/unit_abbreviation.hpp" line="1080" column="14" bodyfile="units/unit_abbreviation.cpp" bodystart="5035" bodyend="5038" declfile="units/unit_abbreviation.hpp" declline="1080" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="unit__abbreviation_8hpp_1a37dd1e058707b0b0f145510f73ef93d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>scifir::area</type>
+        <type><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref></type>
         <definition>scifir::area operator&quot;&quot;_yb</definition>
         <argsstring>(long double)</argsstring>
         <name>operator&quot;&quot;_yb</name>
@@ -18222,12 +18228,12 @@
 <codeline lineno="432"><highlight class="normal"></highlight></codeline>
 <codeline lineno="433"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::length</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_angstrom(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="434"><highlight class="normal"></highlight></codeline>
-<codeline lineno="435"><highlight class="normal">scifir::volume<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_L(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="436"><highlight class="normal">scifir::volume<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_mL(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><ref refid="namespacescifir_1a262599906f4976119a8afba442877b46" kindref="member">scifir::volume</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_L(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><ref refid="namespacescifir_1a262599906f4976119a8afba442877b46" kindref="member">scifir::volume</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_mL(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="437"><highlight class="normal"></highlight></codeline>
-<codeline lineno="438"><highlight class="normal">scifir::time_duration<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_min(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="439"><highlight class="normal">scifir::time_duration<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_hour(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="440"><highlight class="normal">scifir::time_duration<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_day(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><ref refid="namespacescifir_1a06c59d253ec6ae5c6403f4e27fb34d08" kindref="member">scifir::time_duration</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_min(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><ref refid="namespacescifir_1a06c59d253ec6ae5c6403f4e27fb34d08" kindref="member">scifir::time_duration</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_hour(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><ref refid="namespacescifir_1a06c59d253ec6ae5c6403f4e27fb34d08" kindref="member">scifir::time_duration</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_day(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="441"><highlight class="normal"></highlight></codeline>
 <codeline lineno="442"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::length</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_YAU(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="443"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::length</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_ZAU(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
@@ -18295,31 +18301,31 @@
 <codeline lineno="505"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::energy</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_zeV(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="506"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::energy</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_yeV(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="507"><highlight class="normal"></highlight></codeline>
-<codeline lineno="508"><highlight class="normal">scifir::mass<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Da(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><ref refid="namespacescifir_1ac2859804351a1fd7d227da45f6a3fba0" kindref="member">scifir::mass</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Da(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="509"><highlight class="normal"></highlight></codeline>
-<codeline lineno="510"><highlight class="normal">scifir::mass<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_amu(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><ref refid="namespacescifir_1ac2859804351a1fd7d227da45f6a3fba0" kindref="member">scifir::mass</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_amu(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="511"><highlight class="normal"></highlight></codeline>
-<codeline lineno="512"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Yb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="513"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Zb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="514"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Eb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="515"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Pb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="516"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Tb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="517"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Gb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="518"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Mb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="519"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_kb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="520"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_hb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="521"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_dab(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="522"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_b(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="523"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_db(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="524"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_cb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="525"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_mb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="526"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_ub(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="527"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_nb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="528"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_pb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="529"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_fb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="530"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_ab(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="531"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_zb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="532"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_yb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Yb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Zb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Eb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Pb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Tb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Gb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Mb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_kb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_hb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_dab(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_b(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_db(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_cb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_mb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_ub(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_nb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_pb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_fb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_ab(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_zb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_yb(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="533"><highlight class="normal"></highlight></codeline>
 <codeline lineno="534"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::molarity</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_YM(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="535"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::molarity</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_ZM(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
@@ -18343,7 +18349,7 @@
 <codeline lineno="553"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::molarity</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_zM(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="554"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::molarity</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_yM(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="555"><highlight class="normal"></highlight></codeline>
-<codeline lineno="556"><highlight class="normal">scifir::mole<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_particles(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><ref refid="namespacescifir_1aab5df33f61de66994fe010f2f0b0c961" kindref="member">scifir::mole</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_particles(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="557"><highlight class="normal"><ref refid="classscifir_1_1percentage" kindref="compound">scifir::percentage</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_ppm(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="558"><highlight class="normal"></highlight><highlight class="comment">/*scifir::percentage<sp/>operator&quot;&quot;<sp/>_ppb(unsigned<sp/>long<sp/>long<sp/>int);</highlight></codeline>
 <codeline lineno="559"><highlight class="comment">scifir::percentage<sp/>operator&quot;&quot;<sp/>_ppt(unsigned<sp/>long<sp/>long<sp/>int);</highlight></codeline>
@@ -18769,14 +18775,14 @@
 <codeline lineno="979"><highlight class="normal"></highlight></codeline>
 <codeline lineno="980"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::length</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_angstrom(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="981"><highlight class="normal"></highlight></codeline>
-<codeline lineno="982"><highlight class="normal">scifir::volume<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_L(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="983"><highlight class="normal">scifir::volume<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_mL(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="982"><highlight class="normal"><ref refid="namespacescifir_1a262599906f4976119a8afba442877b46" kindref="member">scifir::volume</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_L(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="983"><highlight class="normal"><ref refid="namespacescifir_1a262599906f4976119a8afba442877b46" kindref="member">scifir::volume</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_mL(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="984"><highlight class="normal"></highlight></codeline>
-<codeline lineno="985"><highlight class="normal">scifir::time_duration<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_min(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="985"><highlight class="normal"><ref refid="namespacescifir_1a06c59d253ec6ae5c6403f4e27fb34d08" kindref="member">scifir::time_duration</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_min(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="986"><highlight class="normal"></highlight></codeline>
-<codeline lineno="987"><highlight class="normal">scifir::time_duration<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_hour(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="987"><highlight class="normal"><ref refid="namespacescifir_1a06c59d253ec6ae5c6403f4e27fb34d08" kindref="member">scifir::time_duration</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_hour(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="988"><highlight class="normal"></highlight></codeline>
-<codeline lineno="989"><highlight class="normal">scifir::time_duration<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_day(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="989"><highlight class="normal"><ref refid="namespacescifir_1a06c59d253ec6ae5c6403f4e27fb34d08" kindref="member">scifir::time_duration</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_day(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="990"><highlight class="normal"></highlight></codeline>
 <codeline lineno="991"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::length</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_YAU(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="992"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::length</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_ZAU(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
@@ -18844,31 +18850,31 @@
 <codeline lineno="1054"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::energy</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_zeV(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1055"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::energy</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_yeV(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1056"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1057"><highlight class="normal">scifir::mass<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Da(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1057"><highlight class="normal"><ref refid="namespacescifir_1ac2859804351a1fd7d227da45f6a3fba0" kindref="member">scifir::mass</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Da(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1058"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1059"><highlight class="normal">scifir::mass<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_amu(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1059"><highlight class="normal"><ref refid="namespacescifir_1ac2859804351a1fd7d227da45f6a3fba0" kindref="member">scifir::mass</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_amu(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1060"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1061"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Yb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1062"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Zb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1063"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Eb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1064"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Pb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1065"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Tb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1066"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Gb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1067"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Mb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1068"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_kb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1069"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_hb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1070"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_dab(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1071"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_b(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1072"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_db(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1073"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_cb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1074"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_mb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1075"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_ub(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1076"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_nb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1077"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_pb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1078"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_fb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1079"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_ab(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1080"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_zb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1081"><highlight class="normal">scifir::area<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_yb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1061"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Yb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1062"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Zb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1063"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Eb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1064"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Pb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1065"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Tb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1066"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Gb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1067"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_Mb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1068"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_kb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1069"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_hb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1070"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_dab(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1071"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_b(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1072"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_db(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1073"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_cb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1074"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_mb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1075"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_ub(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1076"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_nb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1077"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_pb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1078"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_fb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1079"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_ab(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1080"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_zb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1081"><highlight class="normal"><ref refid="namespacescifir_1a5d7071e9b105c05f7e4d5e278a71673e" kindref="member">scifir::area</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_yb(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1082"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1083"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::molarity</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_YM(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1084"><highlight class="normal"><ref refid="classscifir_1_1coordinates__1d" kindref="compound">scifir::molarity</ref><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>_ZM(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>

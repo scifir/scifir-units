@@ -8,7 +8,7 @@ var searchData=
   ['coordinates_5f1d_3c_20float_20_3e_5',['coordinates_1d&lt; float &gt;',['../classscifir_1_1coordinates__1d_3_01float_01_4.html',1,'scifir']]],
   ['coordinates_5f2d_6',['coordinates_2d',['../classscifir_1_1coordinates__2d.html',1,'scifir']]],
   ['coordinates_5f2d_3c_20float_20_3e_7',['coordinates_2d&lt; float &gt;',['../classscifir_1_1coordinates__2d_3_01float_01_4.html',1,'scifir']]],
-  ['coordinates_5f2d_3c_20u_20_3e_8',['coordinates_2d&lt; U &gt;',['../classscifir_1_1coordinates__2d.html',1,'scifir']]],
+  ['coordinates_5f2d_3c_20length_20_3e_8',['coordinates_2d&lt; length &gt;',['../classscifir_1_1coordinates__2d.html',1,'scifir']]],
   ['coordinates_5f2dr_9',['coordinates_2dr',['../classscifir_1_1coordinates__2dr.html',1,'scifir']]],
   ['coordinates_5f2dr_3c_20float_20_3e_10',['coordinates_2dr&lt; float &gt;',['../classscifir_1_1coordinates__2dr_3_01float_01_4.html',1,'scifir']]],
   ['coordinates_5f3d_11',['coordinates_3d',['../classscifir_1_1coordinates__3d.html',1,'scifir']]],

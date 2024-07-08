@@ -1,0 +1,128 @@
+\doxysection{units/dimension.cpp File Reference}
+\hypertarget{dimension_8cpp}{}\label{dimension_8cpp}\index{units/dimension.cpp@{units/dimension.cpp}}
+{\ttfamily \#include "{}./dimension.\+hpp"{}}\newline
+{\ttfamily \#include "{}../topology/constants.\+hpp"{}}\newline
+{\ttfamily \#include "{}boost/algorithm/string.\+hpp"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+Include dependency graph for dimension.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dimension_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+\begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a6c21d2cea78200614f18b622353107e7}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} \&x)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a557363b7a10710912ab38e165fd0edc6}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{x\+\_\+dimensions}}, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{with\+\_\+brackets}})
+\item 
+vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \mbox{\hyperlink{namespacescifir_ad77c9b3ae4d91a132e77ad8e4661224b}{scifir\+::create\+\_\+dimensions}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+dimensions}})
+\item 
+vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \mbox{\hyperlink{namespacescifir_ad696791ef9fa1f8d1694f54e6a38dace}{scifir\+::create\+\_\+derived\+\_\+dimensions}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+dimensions}})
+\item 
+vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \mbox{\hyperlink{namespacescifir_a0f90c73b2a1f2ae72261cb3207b45080}{scifir\+::create\+\_\+derived\+\_\+dimensions}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \&x)
+\item 
+vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \mbox{\hyperlink{namespacescifir_a263b3ab8fc90fecf46ef6c301bf5e1d3}{scifir\+::create\+\_\+derived\+\_\+dimensions}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{long}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} \&value)
+\item 
+vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \mbox{\hyperlink{namespacescifir_a9ffe4ce909247f67cb6d4a4eebf64be1}{scifir\+::multiply\+\_\+dimensions}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \&y)
+\item 
+vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \mbox{\hyperlink{namespacescifir_ae32c2ccb58bdf3d93e5b99d6fe6e8d7a}{scifir\+::multiply\+\_\+dimensions}} (vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \&y, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{long}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} \&value)
+\item 
+vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \mbox{\hyperlink{namespacescifir_a1808c16c674ea62eafdc3a11d6c36ced}{scifir\+::divide\+\_\+dimensions}} (vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \&y, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{long}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} \&value)
+\item 
+vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \mbox{\hyperlink{namespacescifir_a13252603bc99464f4e634df31843359e}{scifir\+::square\+\_\+dimensions}} (vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{long}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} \&value, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} index)
+\item 
+vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \mbox{\hyperlink{namespacescifir_ae7853fedb943915449a496bc373fc449}{scifir\+::power\+\_\+dimensions}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{exponent}})
+\item 
+vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \mbox{\hyperlink{namespacescifir_a503193573c348273ad5d92d7beb7d2c8}{scifir\+::normalize\+\_\+dimensions}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \&x)
+\item 
+vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \mbox{\hyperlink{namespacescifir_a67c98c6e8bbbc3e804b3557b241af988}{scifir\+::normalize\+\_\+dimensions}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{long}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} \&value)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_a2af58146086330c07bc3cff3be84846d}{scifir\+::common\+\_\+dimension}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_a15dfe9120515ec46dc7719711692d20e}{scifir\+::equal\+\_\+dimensions}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+dimensions\+\_\+x}}, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+dimensions\+\_\+y}})
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_a91acb188ac570f1040af83a7fb2dc729}{scifir\+::equal\+\_\+dimensions}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_a29f58131200a5c37acf2f4dec9ce2638}{scifir\+::equal\+\_\+dimensions\+\_\+and\+\_\+prefixes}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \&y)
+\item 
+bool \mbox{\hyperlink{dimension_8cpp_ad9e841406777a1fea38fb28cea57389f}{operator==}} (const \mbox{\hyperlink{classscifir_1_1dimension}{scifir\+::dimension}} \&x, const \mbox{\hyperlink{classscifir_1_1dimension}{scifir\+::dimension}} \&y)
+\item 
+bool \mbox{\hyperlink{dimension_8cpp_a5c30455d0fa9fee726e71169d0aabf33}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1dimension}{scifir\+::dimension}} \&x, const \mbox{\hyperlink{classscifir_1_1dimension}{scifir\+::dimension}} \&y)
+\item 
+ostream \& \mbox{\hyperlink{dimension_8cpp_abc50d99420bb7f0f9e67e70b6820e3af}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1dimension}{scifir\+::dimension}} \&x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dimension_8cpp_a5c30455d0fa9fee726e71169d0aabf33}\label{dimension_8cpp_a5c30455d0fa9fee726e71169d0aabf33} 
+\index{dimension.cpp@{dimension.cpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!dimension.cpp@{dimension.cpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1dimension}{scifir\+::dimension}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1dimension}{scifir\+::dimension}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dimension_8cpp_source_l01741}{1741}} of file \mbox{\hyperlink{dimension_8cpp_source}{dimension.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01742\ \{}
+\DoxyCodeLine{01743\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{01744\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dimension_8cpp_abc50d99420bb7f0f9e67e70b6820e3af}\label{dimension_8cpp_abc50d99420bb7f0f9e67e70b6820e3af} 
+\index{dimension.cpp@{dimension.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!dimension.cpp@{dimension.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1dimension}{scifir\+::dimension}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dimension_8cpp_source_l01746}{1746}} of file \mbox{\hyperlink{dimension_8cpp_source}{dimension.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01747\ \{}
+\DoxyCodeLine{01748\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ x.\mbox{\hyperlink{classscifir_1_1dimension_aa69c7afee780da0c32fe00a891827ffa}{prefix}}.\mbox{\hyperlink{classscifir_1_1prefix_adceb7b20c962d582c949849446827fad}{get\_symbol}}()\ <<\ x.\mbox{\hyperlink{classscifir_1_1dimension_a183a0598a8fa71a5be70460dbf039d9d}{get\_symbol}}();}
+\DoxyCodeLine{01749\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dimension_8cpp_ad9e841406777a1fea38fb28cea57389f}\label{dimension_8cpp_ad9e841406777a1fea38fb28cea57389f} 
+\index{dimension.cpp@{dimension.cpp}!operator==@{operator==}}
+\index{operator==@{operator==}!dimension.cpp@{dimension.cpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1dimension}{scifir\+::dimension}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1dimension}{scifir\+::dimension}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dimension_8cpp_source_l01729}{1729}} of file \mbox{\hyperlink{dimension_8cpp_source}{dimension.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01730\ \{}
+\DoxyCodeLine{01731\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.\mbox{\hyperlink{classscifir_1_1dimension_ac08ab515fd4f392075352134d9f46517}{dimension\_type}}\ ==\ y.\mbox{\hyperlink{classscifir_1_1dimension_ac08ab515fd4f392075352134d9f46517}{dimension\_type}}\ and\ x.\mbox{\hyperlink{classscifir_1_1dimension_a7c2bd8eaebee581289efe69d0aef9464}{dimension\_sign}}\ ==\ y.\mbox{\hyperlink{classscifir_1_1dimension_a7c2bd8eaebee581289efe69d0aef9464}{dimension\_sign}})}
+\DoxyCodeLine{01732\ \ \ \ \ \{}
+\DoxyCodeLine{01733\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01734\ \ \ \ \ \}}
+\DoxyCodeLine{01735\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{01736\ \ \ \ \ \{}
+\DoxyCodeLine{01737\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01738\ \ \ \ \ \}}
+\DoxyCodeLine{01739\ \}}
+
+\end{DoxyCode}

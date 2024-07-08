@@ -1,298 +1,298 @@
 \doxysection{complex\+\_\+number.\+hpp}
 \hypertarget{complex__number_8hpp_source}{}\label{complex__number_8hpp_source}\index{meca\_number/complex\_number.hpp@{meca\_number/complex\_number.hpp}}
-
+\mbox{\hyperlink{complex__number_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_MECA\_NUMBER\_COMPLEX\_NUMBER\_HPP\_INCLUDED}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_MECA\_NUMBER\_COMPLEX\_NUMBER\_HPP\_INCLUDED}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../meca\_number/angle.hpp"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../util/is\_number.hpp"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../units/scalar\_unit.hpp"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../util/types.hpp"{}}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}boost/algorithm/string.hpp"{}}}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cmath>}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }scifir}
-\DoxyCodeLine{00017\ \{}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1complex__number}{complex\_number}}}
-\DoxyCodeLine{00020\ \ \ \ \ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number}{complex\_number}}()\ :\ real(),imaginary()}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number}{complex\_number}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)\ :\ real(x.real),imaginary(x.imaginary)}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number}{complex\_number}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\&\ x)\ :\ real(std::move(x.real)),imaginary(std::move(x.imaginary))}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1complex__number}{complex\_number}}(\textcolor{keyword}{const}\ T\&\ x,\textcolor{keyword}{const}\ T\&\ y)\ :\ real(x),imaginary(y)}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1complex__number}{complex\_number}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ y)\ :\ real(x),imaginary(y)}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1complex__number}{complex\_number}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_complex\_number}})}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_complex\_number}}.find(\textcolor{stringliteral}{"{}+"{}})\ !=\ string::npos\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{or}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_complex\_number}}.find(\textcolor{stringliteral}{"{}-\/"{}})\ !=\ string::npos)}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}};}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::split(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_complex\_number}},boost::is\_any\_of(\textcolor{stringliteral}{"{}+-\/"{}}));}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}.size()\ ==\ 2)}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::trim(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}[0]);}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::trim(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}[1]);}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}[1].\mbox{\hyperlink{classscifir_1_1coordinates__1d}{substr}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}[1].\mbox{\hyperlink{classscifir_1_1coordinates__1d}{length}}()\ -\/\ 3)\ ==\ \textcolor{stringliteral}{"{}(i)"{}})}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ real\ =\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}[0]);}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imaginary\ =\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}[1].\mbox{\hyperlink{classscifir_1_1coordinates__1d}{substr}}(0,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}[1].\mbox{\hyperlink{classscifir_1_1coordinates__1d}{length}}()\ -\/\ 3));}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_complex\_number}}.find(\textcolor{stringliteral}{"{}-\/"{}})\ !=\ string::npos)}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imaginary\ *=\ -\/1;}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ real\ =\ T();}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imaginary\ =\ T();}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ real\ =\ T();}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imaginary\ =\ T();}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ real\ =\ x.real;}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imaginary\ =\ x.imaginary;}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\&\ x)}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ real\ =\ std::move(x.real);}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imaginary\ =\ std::move(x.imaginary);}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00085\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}(real\ +\ x.real,imaginary\ +\ x.imaginary);}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00090\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}(real\ -\/\ x.real,imaginary\ -\/\ x.imaginary);}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<scalar\_unit>}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<U>}}\&\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00096\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<scalar\_unit>}}(real\ *\ x.real\ -\/\ imaginary\ *\ x.imaginary,real\ *\ x.imaginary\ +\ imaginary\ *\ x.real);}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00099\ }
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<scalar\_unit>}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<U>}}\&\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00102\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_real}}\ =\ (real\ *\ x.real\ +\ x.imaginary\ *\ imaginary)\ /\ ((real\string^2)\ +\ (imaginary\string^2));}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_imaginary}}\ =\ (x.imaginary\ *\ real\ -\/\ x.real\ *\ imaginary)\ /\ ((real\string^2)\ +\ (imaginary\string^2));}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_real}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_imaginary}});}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ real\ +=\ x.real;}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imaginary\ +=\ x.imaginary;}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00113\ }
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ real\ -\/=\ x.real;}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imaginary\ -\/=\ x.imaginary;}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00119\ }
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\ get\_conjugate()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00121\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}(real,imaginary\ *\ -\/1);}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00124\ }
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ T\ get\_r()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00126\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt((real\string^2)\ +\ (imaginary\string^2));}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00129\ }
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ get\_argument()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00131\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imaginary\ !=\ 0\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ real\ >\ 0)}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(2\ *\ scifir::atan(\textcolor{keywordtype}{float}(imaginary\ /\ (real\ +\ (scifir::sqrt((real\string^2)\ +\ (imaginary\string^2)))))));}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (real\ <\ 0\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ imaginary\ ==\ 0)}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(180.0f);}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}();}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00145\ }
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<scalar\_unit>}}\ get\_reciprocal()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00147\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_real}}\ =\ real\ /\ ((real\string^2)\ +\ (imaginary\string^2));}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_imaginary}}\ =\ (-\/1\ *\ imaginary)\ /\ ((real\string^2)\ +\ (imaginary\string^2));}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_real}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_imaginary}});}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00152\ }
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00154\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}};}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}\ <<\ real.display(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}});}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imaginary\ >=\ 0)}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}\ <<\ \textcolor{stringliteral}{"{}\ +\ "{}};}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}};}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}\ <<\ display\_float(std::abs(imaginary.get\_value()),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}})\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ imaginary.display\_dimensions()\ <<\ \textcolor{stringliteral}{"{}(i)"{}};}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}.str();}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00168\ }
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ T\ real;}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ T\ imaginary;}
-\DoxyCodeLine{00171\ \ \ \ \ \};}
-\DoxyCodeLine{00172\ }
-\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)}
-\DoxyCodeLine{00175\ \ \ \ \ \{}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x.display(2);}
-\DoxyCodeLine{00177\ \ \ \ \ \}}
-\DoxyCodeLine{00178\ }
-\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_complex(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_complex\_number);}
-\DoxyCodeLine{00180\ }
-\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00182\ \ \ \ \ T\ abs(\textcolor{keyword}{const}\ complex\_number<T>\&\ x)}
-\DoxyCodeLine{00183\ \ \ \ \ \{}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scifir::sqrt((x.real\string^2)\ +\ (x.imaginary\string^2));}
-\DoxyCodeLine{00185\ \ \ \ \ \}}
-\DoxyCodeLine{00186\ }
-\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00188\ \ \ \ \ complex\_number<scalar\_unit>\ sqrt(\textcolor{keyword}{const}\ complex\_number<T>\&\ x)}
-\DoxyCodeLine{00189\ \ \ \ \ \{}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sgn\_value;}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.imaginary\ >\ 0)}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ sgn\_value\ =\ 1;}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (x.imaginary\ <\ 0)}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ sgn\_value\ =\ -\/1;}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ sgn\_value\ =\ 0;}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ scalar\_unit\ new\_real\ =\ scifir::sqrt(x.real\ +\ scifir::sqrt((x.real\string^2)\ +\ (x.imaginary\string^2)));}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ scalar\_unit\ new\_imaginary\ =\ sgn\_value\ *\ scifir::sqrt(((-\/1)\ *\ x.real\ +\ scifir::sqrt((x.real\string^2)\ +\ (x.imaginary\string^2)))\ /\ 2);}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ complex\_number<scalar\_unit>(new\_real,new\_imaginary);}
-\DoxyCodeLine{00206\ \ \ \ \ \}}
-\DoxyCodeLine{00207\ }
-\DoxyCodeLine{00208\ \ \ \ \ \textcolor{comment}{/*template<typename\ T>}}
-\DoxyCodeLine{00209\ \textcolor{comment}{\ \ \ \ T\ sin(complex\_number<T>\ x)}}
-\DoxyCodeLine{00210\ \textcolor{comment}{\ \ \ \ \{}}
-\DoxyCodeLine{00211\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ std::sin(float(x.real));}}
-\DoxyCodeLine{00212\ \textcolor{comment}{\ \ \ \ \}*/}}
-\DoxyCodeLine{00213\ \}}
-\DoxyCodeLine{00214\ }
-\DoxyCodeLine{00215\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
-\DoxyCodeLine{00216\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<U>}}\&\ y)}
-\DoxyCodeLine{00217\ \{}
-\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.real\ ==\ y.real\ and\ x.imaginary\ ==\ y.imaginary)}
-\DoxyCodeLine{00219\ \ \ \ \ \{}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00221\ \ \ \ \ \}}
-\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00223\ \ \ \ \ \{}
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00225\ \ \ \ \ \}}
-\DoxyCodeLine{00226\ \}}
-\DoxyCodeLine{00227\ }
-\DoxyCodeLine{00228\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
-\DoxyCodeLine{00229\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<U>}}\&\ y)}
-\DoxyCodeLine{00230\ \{}
-\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
-\DoxyCodeLine{00232\ \}}
-\DoxyCodeLine{00233\ }
-\DoxyCodeLine{00234\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00235\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_complex\_number)}
-\DoxyCodeLine{00236\ \{}
-\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}(init\_complex\_number));}
-\DoxyCodeLine{00238\ \}}
-\DoxyCodeLine{00239\ }
-\DoxyCodeLine{00240\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00241\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_complex\_number)}
-\DoxyCodeLine{00242\ \{}
-\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_complex\_number);}
-\DoxyCodeLine{00244\ \}}
-\DoxyCodeLine{00245\ }
-\DoxyCodeLine{00246\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00247\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_complex\_number,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x)}
-\DoxyCodeLine{00248\ \{}
-\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}(init\_complex\_number)\ ==\ x);}
-\DoxyCodeLine{00250\ \}}
-\DoxyCodeLine{00251\ }
-\DoxyCodeLine{00252\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00253\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_complex\_number,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x)}
-\DoxyCodeLine{00254\ \{}
-\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_complex\_number\ ==\ x);}
-\DoxyCodeLine{00256\ \}}
-\DoxyCodeLine{00257\ }
-\DoxyCodeLine{00258\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00259\ \textcolor{keywordtype}{void}\ operator\ +=(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ y)}
-\DoxyCodeLine{00260\ \{}
-\DoxyCodeLine{00261\ \ \ \ \ x\ +=\ to\_string(y);}
-\DoxyCodeLine{00262\ \}}
-\DoxyCodeLine{00263\ }
-\DoxyCodeLine{00264\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00265\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ y)}
-\DoxyCodeLine{00266\ \{}
-\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordflow}{return}\ x\ +\ to\_string(y);}
-\DoxyCodeLine{00268\ \}}
-\DoxyCodeLine{00269\ }
-\DoxyCodeLine{00270\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00271\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ y)}
-\DoxyCodeLine{00272\ \{}
-\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordflow}{return}\ to\_string(x)\ +\ y;}
-\DoxyCodeLine{00274\ \}}
-\DoxyCodeLine{00275\ }
-\DoxyCodeLine{00276\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00277\ ostream\&\ operator\ <<(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x)}
-\DoxyCodeLine{00278\ \{}
-\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ to\_string(x);}
-\DoxyCodeLine{00280\ \}}
-\DoxyCodeLine{00281\ }
-\DoxyCodeLine{00282\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00283\ istream\&\ operator\ >>(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x)}
-\DoxyCodeLine{00284\ \{}
-\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
-\DoxyCodeLine{00286\ \ \ \ \ is.getline(a,\ 256);}
-\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
-\DoxyCodeLine{00288\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}(b);}
-\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
-\DoxyCodeLine{00290\ \}}
-\DoxyCodeLine{00291\ }
-\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_MECA\_NUMBER\_COMPLEX\_NUMBER\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_MECA\_NUMBER\_COMPLEX\_NUMBER\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_MECA\_NUMBER\_COMPLEX\_NUMBER\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../meca\_number/angle.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}../util/is\_number.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}../units/scalar\_unit.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}../util/types.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}boost/algorithm/string.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00014}00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00016}00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacescifir}{scifir}}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00019}\mbox{\hyperlink{classscifir_1_1complex__number}{00019}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1complex__number}{complex\_number}}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00022}\mbox{\hyperlink{classscifir_1_1complex__number_ae824ee086a067ead2305da9fc068b394}{00022}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_ae824ee086a067ead2305da9fc068b394}{complex\_number}}()\ :\ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}(),\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}()}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00025}\mbox{\hyperlink{classscifir_1_1complex__number_a8429239a112a685c37f4a54676c1c098}{00025}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_a8429239a112a685c37f4a54676c1c098}{complex\_number}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)\ :\ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}(x.\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}),\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}(x.\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}})}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00028}\mbox{\hyperlink{classscifir_1_1complex__number_abb6fa22a6b84469b6aa9d4732e4c00e6}{00028}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_abb6fa22a6b84469b6aa9d4732e4c00e6}{complex\_number}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\&\ x)\ :\ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}(std::move(x.\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}})),\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}(std::move(x.\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}))}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00031}\mbox{\hyperlink{classscifir_1_1complex__number_ae9cb3fd997818a0ea7c2e9530c88a42d}{00031}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1complex__number_ae9cb3fd997818a0ea7c2e9530c88a42d}{complex\_number}}(\textcolor{keyword}{const}\ T\&\ x,\textcolor{keyword}{const}\ T\&\ y)\ :\ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}(x),\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}(y)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00034}\mbox{\hyperlink{classscifir_1_1complex__number_a3bba9cc38e2792461012d37a5a68819c}{00034}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1complex__number_a3bba9cc38e2792461012d37a5a68819c}{complex\_number}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ y)\ :\ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}(x),\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}(y)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00037}\mbox{\hyperlink{classscifir_1_1complex__number_a284e7ecbf88e3d89ecfa877b6d46ef32}{00037}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1complex__number_a284e7ecbf88e3d89ecfa877b6d46ef32}{complex\_number}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_complex\_number}})}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_complex\_number}}.find(\textcolor{stringliteral}{"{}+"{}})\ !=\ string::npos\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{or}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_complex\_number}}.find(\textcolor{stringliteral}{"{}-\/"{}})\ !=\ string::npos)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<string>}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}};}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::split(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_complex\_number}},boost::is\_any\_of(\textcolor{stringliteral}{"{}+-\/"{}}));}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}.size()\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::trim(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}[0]);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::trim(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}[1]);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}[1].\mbox{\hyperlink{classscifir_1_1coordinates__1d}{substr}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}[1].\mbox{\hyperlink{classscifir_1_1coordinates__1d}{length}}()\ -\/\ 3)\ ==\ \textcolor{stringliteral}{"{}(i)"{}})}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ =\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}[0]);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ =\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}[1].\mbox{\hyperlink{classscifir_1_1coordinates__1d}{substr}}(0,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{numbers}}[1].\mbox{\hyperlink{classscifir_1_1coordinates__1d}{length}}()\ -\/\ 3));}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_complex\_number}}.find(\textcolor{stringliteral}{"{}-\/"{}})\ !=\ string::npos)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ *=\ -\/1;}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ =\ T();}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ =\ T();}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ =\ T();}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ =\ T();}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00070}\mbox{\hyperlink{classscifir_1_1complex__number_a51c3da2fc7bc8b926f273b50271d0e22}{00070}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ \mbox{\hyperlink{classscifir_1_1complex__number_a51c3da2fc7bc8b926f273b50271d0e22}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ =\ x.real;}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ =\ x.imaginary;}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00077}\mbox{\hyperlink{classscifir_1_1complex__number_a40a089dad2e5a7e9d62f3cbb11ba2a5a}{00077}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ \mbox{\hyperlink{classscifir_1_1complex__number_a51c3da2fc7bc8b926f273b50271d0e22}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\&\ x)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ =\ std::move(x.real);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ =\ std::move(x.imaginary);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00084}\mbox{\hyperlink{classscifir_1_1complex__number_a8df9bcbaecde5e61b88d94671bb4f791}{00084}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\ \mbox{\hyperlink{classscifir_1_1complex__number_a8df9bcbaecde5e61b88d94671bb4f791}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00085}00085\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}(\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ +\ x.real,\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ +\ x.imaginary);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00089}\mbox{\hyperlink{classscifir_1_1complex__number_ab275e95df7118724cb25dd8de7b66d5e}{00089}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\ \mbox{\hyperlink{classscifir_1_1complex__number_ab275e95df7118724cb25dd8de7b66d5e}{operator\ -\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00090}00090\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}(\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ -\/\ x.real,\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ -\/\ x.imaginary);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00095}\mbox{\hyperlink{classscifir_1_1complex__number_af1bc5975a76e3a7ff1549b6629a4ec49}{00095}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<scalar\_unit>}}\ \mbox{\hyperlink{classscifir_1_1complex__number_af1bc5975a76e3a7ff1549b6629a4ec49}{operator\ *}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<U>}}\&\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00096}00096\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ *\ x.real\ -\/\ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ *\ x.imaginary,\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ *\ x.imaginary\ +\ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ *\ x.real);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00101}\mbox{\hyperlink{classscifir_1_1complex__number_a0f73596af57eb83952303d9096093819}{00101}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<scalar\_unit>}}\ \mbox{\hyperlink{classscifir_1_1complex__number_a0f73596af57eb83952303d9096093819}{operator\ /}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<U>}}\&\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00102}00102\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_real}}\ =\ (\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ *\ x.real\ +\ x.imaginary\ *\ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}})\ /\ ((\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\string^2)\ +\ (\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\string^2));}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_imaginary}}\ =\ (x.imaginary\ *\ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ -\/\ x.real\ *\ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}})\ /\ ((\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\string^2)\ +\ (\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\string^2));}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_real}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_imaginary}});}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00108}\mbox{\hyperlink{classscifir_1_1complex__number_ade75b91648d6c8cbb58a0232440175eb}{00108}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1complex__number_ade75b91648d6c8cbb58a0232440175eb}{operator\ +=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ +=\ x.real;}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ +=\ x.imaginary;}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00114}\mbox{\hyperlink{classscifir_1_1complex__number_a9986323ec1c9b1825d5f645c2a2c020d}{00114}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1complex__number_a9986323ec1c9b1825d5f645c2a2c020d}{operator\ -\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ -\/=\ x.real;}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ -\/=\ x.imaginary;}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00120}\mbox{\hyperlink{classscifir_1_1complex__number_aaa8470da942e5965370ef1362c98c39e}{00120}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\ \mbox{\hyperlink{classscifir_1_1complex__number_aaa8470da942e5965370ef1362c98c39e}{get\_conjugate}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00121}00121\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}(\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}},\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ *\ -\/1);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00125}\mbox{\hyperlink{classscifir_1_1complex__number_aa857513de09aa842fb9209cc61b404bf}{00125}}\ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1complex__number_aa857513de09aa842fb9209cc61b404bf}{get\_r}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00126}00126\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacescifir_adeff4b825414d35ce963977f181f1b5c}{scifir::sqrt}}((\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\string^2)\ +\ (\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\string^2));}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00130}\mbox{\hyperlink{classscifir_1_1complex__number_a93c2ae019df1d2ddad89b6a82249958b}{00130}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ \mbox{\hyperlink{classscifir_1_1complex__number_a93c2ae019df1d2ddad89b6a82249958b}{get\_argument}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00131}00131\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ !=\ 0\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(2\ *\ \mbox{\hyperlink{namespacescifir_a6238e1d28db776a5d6497d463cc18a24}{scifir::atan}}(\textcolor{keywordtype}{float}(\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ /\ (\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ +\ (\mbox{\hyperlink{namespacescifir_adeff4b825414d35ce963977f181f1b5c}{scifir::sqrt}}((\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\string^2)\ +\ (\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\string^2)))))));}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ <\ 0\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{and}}\ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}(180.0f);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}();}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00146}\mbox{\hyperlink{classscifir_1_1complex__number_a3af867461a1cd5e9e1c8a7e3be4c8c07}{00146}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<scalar\_unit>}}\ \mbox{\hyperlink{classscifir_1_1complex__number_a3af867461a1cd5e9e1c8a7e3be4c8c07}{get\_reciprocal}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00147}00147\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_real}}\ =\ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\ /\ ((\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\string^2)\ +\ (\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\string^2));}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_imaginary}}\ =\ (-\/1\ *\ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}})\ /\ ((\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}\string^2)\ +\ (\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\string^2));}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_real}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_imaginary}});}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00153}\mbox{\hyperlink{classscifir_1_1complex__number_a4f37a685b85713c4ae36d05dd1bb5340}{00153}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1complex__number_a4f37a685b85713c4ae36d05dd1bb5340}{display}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00154}00154\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}};}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}\ <<\ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}}.display(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}});}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}\ >=\ 0)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}\ <<\ \textcolor{stringliteral}{"{}\ +\ "{}};}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}};}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}\ <<\ \mbox{\hyperlink{namespacescifir_a6fc5f876bdd1abb1118fc73288152eb0}{display\_float}}(std::abs(\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}.get\_value()),\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}})\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}}.display\_dimensions()\ <<\ \textcolor{stringliteral}{"{}(i)"{}};}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}.str();}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00169}\mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{00169}}\ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1complex__number_aa6b5eed50f89c30ce2a228453739012b}{real}};}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00170}\mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{00170}}\ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classscifir_1_1complex__number_a071915bbab93da99f83b500ed89f2c0f}{imaginary}};}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00171}00171\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00173}00173\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00174}\mbox{\hyperlink{namespacescifir_aaa5f898193180977eaaf32ff616e513b}{00174}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00175}00175\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x.display(2);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00177}00177\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00179}00179\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacescifir_aa28fb8e3c6aa92108db7faac70b47f61}{is\_complex}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_complex\_number);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00181}00181\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00182}\mbox{\hyperlink{namespacescifir_a0fca35769fd130e4f6303660a24e6c83}{00182}}\ \ \ \ \ T\ \mbox{\hyperlink{namespacescifir_a0fca35769fd130e4f6303660a24e6c83}{abs}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00183}00183\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacescifir_adeff4b825414d35ce963977f181f1b5c}{scifir::sqrt}}((x.real\string^2)\ +\ (x.imaginary\string^2));}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00185}00185\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00187}00187\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00188}\mbox{\hyperlink{namespacescifir_ae122052d469fc30579a29477792dd336}{00188}}\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<scalar\_unit>}}\ \mbox{\hyperlink{namespacescifir_adeff4b825414d35ce963977f181f1b5c}{sqrt}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<T>}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00189}00189\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{sgn\_value}};}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.imaginary\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{sgn\_value}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (x.imaginary\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{sgn\_value}}\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{sgn\_value}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_real}}\ =\ \mbox{\hyperlink{namespacescifir_adeff4b825414d35ce963977f181f1b5c}{scifir::sqrt}}(x.real\ +\ \mbox{\hyperlink{namespacescifir_adeff4b825414d35ce963977f181f1b5c}{scifir::sqrt}}((x.real\string^2)\ +\ (x.imaginary\string^2)));}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_imaginary}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{sgn\_value}}\ *\ \mbox{\hyperlink{namespacescifir_adeff4b825414d35ce963977f181f1b5c}{scifir::sqrt}}(((-\/1)\ *\ x.real\ +\ \mbox{\hyperlink{namespacescifir_adeff4b825414d35ce963977f181f1b5c}{scifir::sqrt}}((x.real\string^2)\ +\ (x.imaginary\string^2)))\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{complex\_number<scalar\_unit>}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_real}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_imaginary}});}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00206}00206\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00208}00208\ \ \ \ \ \textcolor{comment}{/*template<typename\ T>}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00209}00209\ \textcolor{comment}{\ \ \ \ T\ sin(complex\_number<T>\ x)}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00210}00210\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00211}00211\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ std::sin(float(x.real));}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00212}00212\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00213}00213\ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00215}00215\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00216}\mbox{\hyperlink{complex__number_8hpp_ac2ec2283a01952fdd6f8eaec3ac9d1bb}{00216}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{complex__number_8hpp_ac2ec2283a01952fdd6f8eaec3ac9d1bb}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<U>}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00217}00217\ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00218}00218\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.real\ ==\ y.real\ and\ x.imaginary\ ==\ y.imaginary)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00219}00219\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00221}00221\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00222}00222\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00223}00223\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00225}00225\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00226}00226\ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00228}00228\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00229}\mbox{\hyperlink{complex__number_8hpp_a07ea54b50109d2506dfefd281c036e23}{00229}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{complex__number_8hpp_a07ea54b50109d2506dfefd281c036e23}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<U>}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00230}00230\ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00231}00231\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00232}00232\ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00234}00234\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00235}\mbox{\hyperlink{complex__number_8hpp_ae188a34becb7c731347601af1d604af1}{00235}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{complex__number_8hpp_ac2ec2283a01952fdd6f8eaec3ac9d1bb}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_complex\_number)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00236}00236\ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00237}00237\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}(init\_complex\_number));}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00238}00238\ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00240}00240\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00241}\mbox{\hyperlink{complex__number_8hpp_ad65ccea37cdc03b75db974f6afbc6ded}{00241}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{complex__number_8hpp_a07ea54b50109d2506dfefd281c036e23}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_complex\_number)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00242}00242\ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00243}00243\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_complex\_number);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00244}00244\ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00245}00245\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00246}00246\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00247}\mbox{\hyperlink{complex__number_8hpp_a9956b594bad1df8d41b40b65306f1f4f}{00247}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{complex__number_8hpp_ac2ec2283a01952fdd6f8eaec3ac9d1bb}{operator\ ==}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_complex\_number,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00248}00248\ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00249}00249\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}(init\_complex\_number)\ ==\ x);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00250}00250\ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00252}00252\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00253}\mbox{\hyperlink{complex__number_8hpp_a11a900cd15c0a4bc2f3bfb1186aa7893}{00253}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{complex__number_8hpp_a07ea54b50109d2506dfefd281c036e23}{operator\ !=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_complex\_number,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00254}00254\ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00255}00255\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_complex\_number\ ==\ x);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00256}00256\ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00258}00258\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00259}\mbox{\hyperlink{complex__number_8hpp_ac45c87f5734a4d1f3d29774a8505e7dd}{00259}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{complex__number_8hpp_ac45c87f5734a4d1f3d29774a8505e7dd}{operator\ +=}}(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00260}00260\ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00261}00261\ \ \ \ \ x\ +=\ to\_string(y);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00262}00262\ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00263}00263\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00264}00264\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00265}\mbox{\hyperlink{complex__number_8hpp_ae8f6568d0f78ecd6922589c7c8c11b3c}{00265}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{complex__number_8hpp_ae8f6568d0f78ecd6922589c7c8c11b3c}{operator\ +}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00266}00266\ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00267}00267\ \ \ \ \ \textcolor{keywordflow}{return}\ x\ +\ to\_string(y);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00268}00268\ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00270}00270\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00271}\mbox{\hyperlink{complex__number_8hpp_a62d0c85cbc370f78604e951de6caede9}{00271}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{complex__number_8hpp_ae8f6568d0f78ecd6922589c7c8c11b3c}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ y)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00272}00272\ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00273}00273\ \ \ \ \ \textcolor{keywordflow}{return}\ to\_string(x)\ +\ y;}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00274}00274\ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00276}00276\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00277}\mbox{\hyperlink{complex__number_8hpp_a329afa184709c1be2a6e4abcfff5102e}{00277}}\ ostream\&\ \mbox{\hyperlink{complex__number_8hpp_a329afa184709c1be2a6e4abcfff5102e}{operator\ <<}}(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00278}00278\ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00279}00279\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ to\_string(x);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00280}00280\ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00282}00282\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00283}\mbox{\hyperlink{complex__number_8hpp_a19197f8911030321c39013dc3a8e7498}{00283}}\ istream\&\ \mbox{\hyperlink{complex__number_8hpp_a19197f8911030321c39013dc3a8e7498}{operator\ >>}}(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00284}00284\ \{}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00285}00285\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00286}00286\ \ \ \ \ is.getline(a,\ 256);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00287}00287\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00288}00288\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::complex\_number<T>}}(b);}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00289}00289\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00290}00290\ \}}
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{complex__number_8hpp_source_l00292}00292\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_MECA\_NUMBER\_COMPLEX\_NUMBER\_HPP\_INCLUDED}}
 
 \end{DoxyCode}

@@ -36,13 +36,13 @@
       </node>
       <node id="2">
         <label>../topology/constants.hpp</label>
-        <link refid="constants_8hpp_source"/>
+        <link refid="constants_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="7">
         <label>../units/dimension.hpp</label>
-        <link refid="dimension_8hpp_source"/>
+        <link refid="dimension_8hpp"/>
         <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
@@ -70,7 +70,7 @@
       </node>
       <node id="8">
         <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp_source"/>
+        <link refid="prefix_8hpp"/>
         <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
@@ -82,7 +82,7 @@
       </node>
       <node id="6">
         <label>../units/scalar_unit.hpp</label>
-        <link refid="scalar__unit_8hpp_source"/>
+        <link refid="scalar__unit_8hpp"/>
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
@@ -106,7 +106,7 @@
       </node>
       <node id="4">
         <label>../util/is_number.hpp</label>
-        <link refid="is__number_8hpp_source"/>
+        <link refid="is__number_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
@@ -157,286 +157,456 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="10">
+      <node id="19">
+        <label>coordinates/coordinates_1d.cpp</label>
+        <link refid="coordinates__1d_8cpp"/>
+      </node>
+      <node id="18">
         <label>coordinates/coordinates_1d.hpp</label>
-        <link refid="coordinates__1d_8hpp_source"/>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>coordinates/coordinates_2d.hpp</label>
-        <link refid="coordinates__2d_8hpp_source"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>coordinates/coordinates_2dr.hpp</label>
-        <link refid="coordinates__2dr_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>coordinates/coordinates_3d.hpp</label>
-        <link refid="coordinates__3d_8hpp_source"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>coordinates/coordinates_3dr.hpp</label>
-        <link refid="coordinates__3dr_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>coordinates/coordinates_nd.hpp</label>
-        <link refid="coordinates__nd_8hpp_source"/>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>coordinates/coordinates_ndr.hpp</label>
-        <link refid="coordinates__ndr_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>meca_number/angle.hpp</label>
-        <link refid="angle_8hpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>meca_number/complex_number.hpp</label>
-        <link refid="complex__number_8hpp_source"/>
-      </node>
-      <node id="24">
-        <label>predefined_units/astronomy_units.hpp</label>
-        <link refid="astronomy__units_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="25">
-        <label>predefined_units/electronics_units.hpp</label>
-        <link refid="electronics__units_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>predefined_units/physics_units.hpp</label>
-        <link refid="physics__units_8hpp_source"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
+        <link refid="coordinates__1d_8hpp"/>
         <childnode refid="19" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="26">
-        <label>predefined_units/radiometry_units.hpp</label>
-        <link refid="radiometry__units_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>predefined_units/space_units.hpp</label>
-        <link refid="space__units_8hpp_source"/>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="28">
-        <label>special_units/size_2d.hpp</label>
-        <link refid="size__2d_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="29">
-        <label>special_units/size_3d.hpp</label>
-        <link refid="size__3d_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="30">
-        <label>special_units/size_nd.hpp</label>
-        <link refid="size__nd_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="18">
-        <label>topology/point_1d.hpp</label>
-        <link refid="point__1d_8hpp_source"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>topology/point_1d_impl.hpp</label>
-        <link refid="point__1d__impl_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="19">
-        <label>topology/point_2d.hpp</label>
-        <link refid="point__2d_8hpp_source"/>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>topology/point_2d_impl.hpp</label>
-        <link refid="point__2d__impl_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>topology/point_3d.hpp</label>
-        <link refid="point__3d_8hpp_source"/>
         <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>topology/point_3d_impl.hpp</label>
-        <link refid="point__3d__impl_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="21">
-        <label>topology/point_nd.hpp</label>
-        <link refid="point__nd_8hpp_source"/>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="17">
-        <label>topology/point_nd_impl.hpp</label>
-        <link refid="point__nd__impl_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>units.hpp</label>
-        <link refid="units_8hpp_source"/>
-      </node>
-      <node id="14">
-        <label>units/material_vector_unit_2d.hpp</label>
-        <link refid="material__vector__unit__2d_8hpp_source"/>
-      </node>
-      <node id="22">
-        <label>units/unit_abbreviation.hpp</label>
-        <link refid="unit__abbreviation_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>units/vector_unit_2d.hpp</label>
-        <link refid="vector__unit__2d_8hpp_source"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="23">
-        <label>units/vector_unit_3d.hpp</label>
-        <link refid="vector__unit__3d_8hpp_source"/>
+        <label>coordinates/coordinates_2d.cpp</label>
+        <link refid="coordinates__2d_8cpp"/>
+      </node>
+      <node id="22">
+        <label>coordinates/coordinates_2d.hpp</label>
+        <link refid="coordinates__2d_8hpp"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
         <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
         </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>coordinates/coordinates_2dr.cpp</label>
+        <link refid="coordinates__2dr_8cpp"/>
+      </node>
+      <node id="2">
+        <label>coordinates/coordinates_2dr.hpp</label>
+        <link refid="coordinates__2dr_8hpp"/>
         <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>coordinates/coordinates_3d.cpp</label>
+        <link refid="coordinates__3d_8cpp"/>
+      </node>
+      <node id="5">
+        <label>coordinates/coordinates_3d.hpp</label>
+        <link refid="coordinates__3d_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>coordinates/coordinates_3dr.cpp</label>
+        <link refid="coordinates__3dr_8cpp"/>
+      </node>
+      <node id="7">
+        <label>coordinates/coordinates_3dr.hpp</label>
+        <link refid="coordinates__3dr_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>coordinates/coordinates_nd.cpp</label>
+        <link refid="coordinates__nd_8cpp"/>
+      </node>
+      <node id="28">
+        <label>coordinates/coordinates_nd.hpp</label>
+        <link refid="coordinates__nd_8hpp"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="31">
-        <label>units/vector_unit_nd.hpp</label>
-        <link refid="vector__unit__nd_8hpp_source"/>
-        <childnode refid="3" relation="include">
+        <label>coordinates/coordinates_ndr.cpp</label>
+        <link refid="coordinates__ndr_8cpp"/>
+      </node>
+      <node id="30">
+        <label>coordinates/coordinates_ndr.hpp</label>
+        <link refid="coordinates__ndr_8hpp"/>
+        <childnode refid="31" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>meca_number/angle.cpp</label>
+        <link refid="angle_8cpp"/>
+      </node>
+      <node id="1">
+        <label>meca_number/angle.hpp</label>
+        <link refid="angle_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>meca_number/complex_number.cpp</label>
+        <link refid="complex__number_8cpp"/>
+      </node>
+      <node id="14">
+        <label>meca_number/complex_number.hpp</label>
+        <link refid="complex__number_8hpp"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>predefined_units/astronomy_units.cpp</label>
+        <link refid="astronomy__units_8cpp"/>
+      </node>
+      <node id="42">
+        <label>predefined_units/astronomy_units.hpp</label>
+        <link refid="astronomy__units_8hpp"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>predefined_units/electronics_units.cpp</label>
+        <link refid="electronics__units_8cpp"/>
+      </node>
+      <node id="44">
+        <label>predefined_units/electronics_units.hpp</label>
+        <link refid="electronics__units_8hpp"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>predefined_units/physics_units.cpp</label>
+        <link refid="physics__units_8cpp"/>
+      </node>
+      <node id="17">
+        <label>predefined_units/physics_units.hpp</label>
+        <link refid="physics__units_8hpp"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>predefined_units/radiometry_units.cpp</label>
+        <link refid="radiometry__units_8cpp"/>
+      </node>
+      <node id="46">
+        <label>predefined_units/radiometry_units.hpp</label>
+        <link refid="radiometry__units_8hpp"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>predefined_units/space_units.cpp</label>
+        <link refid="space__units_8cpp"/>
+      </node>
+      <node id="48">
+        <label>predefined_units/space_units.hpp</label>
+        <link refid="space__units_8hpp"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>special_units/size_2d.cpp</label>
+        <link refid="size__2d_8cpp"/>
+      </node>
+      <node id="50">
+        <label>special_units/size_2d.hpp</label>
+        <link refid="size__2d_8hpp"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>special_units/size_3d.cpp</label>
+        <link refid="size__3d_8cpp"/>
+      </node>
+      <node id="52">
+        <label>special_units/size_3d.hpp</label>
+        <link refid="size__3d_8hpp"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>special_units/size_nd.cpp</label>
+        <link refid="size__nd_8cpp"/>
+      </node>
+      <node id="54">
+        <label>special_units/size_nd.hpp</label>
+        <link refid="size__nd_8hpp"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>topology/point_1d.cpp</label>
+        <link refid="point__1d_8cpp"/>
+      </node>
+      <node id="35">
+        <label>topology/point_1d.hpp</label>
+        <link refid="point__1d_8hpp"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>topology/point_1d_impl.hpp</label>
+        <link refid="point__1d__impl_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>topology/point_2d.cpp</label>
+        <link refid="point__2d_8cpp"/>
+      </node>
+      <node id="36">
+        <label>topology/point_2d.hpp</label>
+        <link refid="point__2d_8hpp"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>topology/point_2d_impl.hpp</label>
+        <link refid="point__2d__impl_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>topology/point_3d.cpp</label>
+        <link refid="point__3d_8cpp"/>
+      </node>
+      <node id="37">
+        <label>topology/point_3d.hpp</label>
+        <link refid="point__3d_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>topology/point_3d_impl.hpp</label>
+        <link refid="point__3d__impl_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>topology/point_nd.cpp</label>
+        <link refid="point__nd_8cpp"/>
+      </node>
+      <node id="38">
+        <label>topology/point_nd.hpp</label>
+        <link refid="point__nd_8hpp"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>topology/point_nd_impl.hpp</label>
+        <link refid="point__nd__impl_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>units.hpp</label>
+        <link refid="units_8hpp"/>
+      </node>
+      <node id="26">
+        <label>units/material_vector_unit_2d.hpp</label>
+        <link refid="material__vector__unit__2d_8hpp"/>
+      </node>
+      <node id="40">
+        <label>units/unit_abbreviation.cpp</label>
+        <link refid="unit__abbreviation_8cpp"/>
+      </node>
+      <node id="39">
+        <label>units/unit_abbreviation.hpp</label>
+        <link refid="unit__abbreviation_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>units/vector_unit_2d.cpp</label>
+        <link refid="vector__unit__2d_8cpp"/>
+      </node>
+      <node id="16">
+        <label>units/vector_unit_2d.hpp</label>
+        <link refid="vector__unit__2d_8hpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>units/vector_unit_3d.cpp</label>
+        <link refid="vector__unit__3d_8cpp"/>
+      </node>
+      <node id="41">
+        <label>units/vector_unit_3d.hpp</label>
+        <link refid="vector__unit__3d_8hpp"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>units/vector_unit_nd.cpp</label>
+        <link refid="vector__unit__nd_8cpp"/>
+      </node>
+      <node id="56">
+        <label>units/vector_unit_nd.hpp</label>
+        <link refid="vector__unit__nd_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -1288,329 +1458,329 @@
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">scifir</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacescifir" kindref="compound">scifir</ref></highlight></codeline>
 <codeline lineno="16"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>radian_to_grade(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
+<codeline lineno="17" refid="namespacescifir_1acb875290bc71514ed24892a956635afb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1acb875290bc71514ed24892a956635afb" kindref="member">radian_to_grade</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x<sp/>*<sp/>180.0f<sp/>/<sp/>PI;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x<sp/>*<sp/>180.0f<sp/>/<sp/><ref refid="namespacescifir_1aba6ebba65e0f0326f9bf57eaba1351ba" kindref="member">PI</ref>;</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>grade_to_radian(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
+<codeline lineno="22" refid="namespacescifir_1a1ab2a3eb607941d5b2519da7382540ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a1ab2a3eb607941d5b2519da7382540ba" kindref="member">grade_to_radian</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x<sp/>*<sp/>PI<sp/>/<sp/>180.0f;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x<sp/>*<sp/><ref refid="namespacescifir_1aba6ebba65e0f0326f9bf57eaba1351ba" kindref="member">PI</ref><sp/>/<sp/>180.0f;</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27" refid="classscifir_1_1angle" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>();</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>(<ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_angle</ref>);</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" kindref="member">angle</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" kindref="member">angle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" kindref="member">angle</ref>(<ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" kindref="member">angle</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" kindref="member">angle</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" kindref="member">angle</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" kindref="member">angle</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" kindref="member">angle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_angle</ref>);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" kindref="member">angle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>operator=(<ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>operator=(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_angle</ref>);</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1angle_1a57e62f9c321f6864195d1fb6bb7cbc4d" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1angle_1a57e62f9c321f6864195d1fb6bb7cbc4d" kindref="member">operator=</ref>(<ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1angle_1a57e62f9c321f6864195d1fb6bb7cbc4d" kindref="member">operator=</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1angle_1a57e62f9c321f6864195d1fb6bb7cbc4d" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_angle</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1angle_1a57e62f9c321f6864195d1fb6bb7cbc4d" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1scalar__unit" kindref="compound">scalar_unit</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="46" refid="classscifir_1_1angle_1a56283b82a3dd8f71212bcfbe040a62f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="47"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>(value);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>(<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>);</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>get_value()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="51" refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="52"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator -</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator *</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator /</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator ^</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator +=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator -=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator *=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator /=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator ^=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1angle_1aeb8b8bcb20f46bb47f557fe2d356df1a" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1angle_1a050446b4fa277444f95f1d069e139a17" kindref="member">operator -</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1angle_1a062e381e2f6f78713c8e07fa74fdc8f4" kindref="member">operator *</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1angle_1aac7d61310d1d7ba483bba1504b1e2725" kindref="member">operator /</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1angle_1a018ddeef5a138422b2ee7c602688da85" kindref="member">operator ^</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1a0ea46f05ced211a6c89d1aa9a3508171" kindref="member">operator +=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1a7e81004ba9897e0607bacfe156410b88" kindref="member">operator -=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1a14bf7aed7303247d2166b5619f9a6777" kindref="member">operator *=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1aa677506e6c1de245e90fd6de6d681f34" kindref="member">operator /=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1a270692c7ced80eb091d193a68bfe063c" kindref="member">operator ^=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator =</ref>(T<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>)</highlight></codeline>
+<codeline lineno="68" refid="classscifir_1_1angle_1ad47fbc165c2771187a23714f64c37fe0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1a57e62f9c321f6864195d1fb6bb7cbc4d" kindref="member">operator =</ref>(T<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>)</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>normalize_value();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref><sp/>=<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_value</ref>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle_1a92290e7a3b1806470e55ead162f012f1" kindref="member">normalize_value</ref>();</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"></highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator +</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="75" refid="classscifir_1_1angle_1af1a0b2043c14e50d4471a03808f812c6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1angle_1aeb8b8bcb20f46bb47f557fe2d356df1a" kindref="member">operator +</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="76"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>(value<sp/>+<sp/>x);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" kindref="member">angle</ref>(<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref><sp/>+<sp/>x);</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"></highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator -</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="81" refid="classscifir_1_1angle_1af331f35b29c55719d2187a7d65c36025" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1angle_1a050446b4fa277444f95f1d069e139a17" kindref="member">operator -</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="82"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>(value<sp/>-<sp/>x);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" kindref="member">angle</ref>(<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref><sp/>-<sp/>x);</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator *</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="87" refid="classscifir_1_1angle_1a580bb02e8a80fc26d84efb7967fbec56" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1angle_1a062e381e2f6f78713c8e07fa74fdc8f4" kindref="member">operator *</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="88"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>(value<sp/>*<sp/>x);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" kindref="member">angle</ref>(<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref><sp/>*<sp/>x);</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"></highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator /</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="93" refid="classscifir_1_1angle_1a1c45515c33467f73900dc018e346860d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1angle_1aac7d61310d1d7ba483bba1504b1e2725" kindref="member">operator /</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="94"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>(value<sp/>/<sp/>x);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" kindref="member">angle</ref>(<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref><sp/>/<sp/>x);</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"></highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator ^</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="99" refid="classscifir_1_1angle_1aaec67828caba34b87964960243e351bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1angle_1a018ddeef5a138422b2ee7c602688da85" kindref="member">operator ^</ref>(T<sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="100"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>(std::pow(value,<sp/>x));</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1aa45df1d6206b6c400493853953db8c62" kindref="member">angle</ref>(std::pow(<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>,<sp/>x));</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"></highlight></codeline>
 <codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator +=</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="105" refid="classscifir_1_1angle_1ac18da16234c449eb4932addec7301292" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1a0ea46f05ced211a6c89d1aa9a3508171" kindref="member">operator +=</ref>(T<sp/>x)</highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>+=<sp/>x;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>normalize_value();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref><sp/>+=<sp/>x;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle_1a92290e7a3b1806470e55ead162f012f1" kindref="member">normalize_value</ref>();</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"></highlight></codeline>
 <codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator -=</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="112" refid="classscifir_1_1angle_1ae4d9570eb178dda7e1afdc92fc843d23" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1a7e81004ba9897e0607bacfe156410b88" kindref="member">operator -=</ref>(T<sp/>x)</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>-=<sp/>x;</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>normalize_value();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref><sp/>-=<sp/>x;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle_1a92290e7a3b1806470e55ead162f012f1" kindref="member">normalize_value</ref>();</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"></highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator *=</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="119" refid="classscifir_1_1angle_1adf6afd81dcc9151caaed819cb8c54ffc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1a14bf7aed7303247d2166b5619f9a6777" kindref="member">operator *=</ref>(T<sp/>x)</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>*=<sp/>x;</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>normalize_value();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref><sp/>*=<sp/>x;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle_1a92290e7a3b1806470e55ead162f012f1" kindref="member">normalize_value</ref>();</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"></highlight></codeline>
 <codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator /=</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="126" refid="classscifir_1_1angle_1a07dd1540554a8aaeec8be28414ae0fdf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1aa677506e6c1de245e90fd6de6d681f34" kindref="member">operator /=</ref>(T<sp/>x)</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>/=<sp/>x;</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>normalize_value();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref><sp/>/=<sp/>x;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle_1a92290e7a3b1806470e55ead162f012f1" kindref="member">normalize_value</ref>();</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"></highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">template&lt;typename T, typename = typename enable_if&lt;scifir::is_number&lt;T&gt;::value</ref>&gt;::type&gt;</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">operator ^=</ref>(T<sp/>x)</highlight></codeline>
+<codeline lineno="133" refid="classscifir_1_1angle_1a0e24aeb55b619bb39ea6f83dbfaba385" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1a270692c7ced80eb091d193a68bfe063c" kindref="member">operator ^=</ref>(T<sp/>x)</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>=<sp/>std::pow(value,<sp/>x);</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>normalize_value();</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref><sp/>=<sp/>std::pow(<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>,<sp/>x);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle_1a92290e7a3b1806470e55ead162f012f1" kindref="member">normalize_value</ref>();</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>operator++();</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/>operator++(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>operator--();</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/>operator--(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1angle_1a511ad114fe3feb22650961027bea453e" kindref="member">operator++</ref>();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1angle_1a511ad114fe3feb22650961027bea453e" kindref="member">operator++</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/><ref refid="classscifir_1_1angle_1a1774b30a6e5643c5f37dfa9b8d3fe791" kindref="member">operator--</ref>();</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="classscifir_1_1angle_1a1774b30a6e5643c5f37dfa9b8d3fe791" kindref="member">operator--</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"></highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>invert();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1ace0d6e31f63c9c375ca18124a75b08bd" kindref="member">invert</ref>();</highlight></codeline>
 <codeline lineno="145"><highlight class="normal"></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>display(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">number_of_decimals</ref><sp/>=<sp/>2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1ac80e26981e194771bd9f833f8c5d1f9a" kindref="member">display</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">number_of_decimals</ref><sp/>=<sp/>2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>get_grade()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="148" refid="classscifir_1_1angle_1a23c090d4d89ec0f6f920c7f6c7646e48" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1a23c090d4d89ec0f6f920c7f6c7646e48" kindref="member">get_grade</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="149"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"></highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>get_radian()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="153" refid="classscifir_1_1angle_1aae89eb053da66e9e8a5b940b4ec5e011" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1aae89eb053da66e9e8a5b940b4ec5e011" kindref="member">get_radian</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="154"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>grade_to_radian(value);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a1ab2a3eb607941d5b2519da7382540ba" kindref="member">grade_to_radian</ref>(<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>);</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="157"><highlight class="normal"></highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
+<codeline lineno="159" refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"></highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>normalize_value();</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initialize_from_string(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_angle</ref>);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1a92290e7a3b1806470e55ead162f012f1" kindref="member">normalize_value</ref>();</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle_1a4fe977fb634b4f37fa55717d7acd6cfb" kindref="member">initialize_from_string</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_angle</ref>);</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"></highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>to_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_angle(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_angle</ref>);</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>parallel(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>orthogonal(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a421182d5f93abcbbaeadc7c14112bdd5" kindref="member">to_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1af5a4683671f496fe4aaa2d378c81d0b1" kindref="member">is_angle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">init_angle</ref>);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1ae4beaddada9427f8c7a53e3381c5b796" kindref="member">parallel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a3ea95ad2c4137768f1e541e77db8a97a" kindref="member">orthogonal</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>y);</highlight></codeline>
 <codeline lineno="169"><highlight class="normal"></highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/>sqrt(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/>sqrt_nth(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="namespacescifir_1adeff4b825414d35ce963977f181f1b5c" kindref="member">sqrt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="namespacescifir_1a0b02e4d82f1d2253f6901264ff11ca38" kindref="member">sqrt_nth</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"></highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>sin(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>cos(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>tan(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/>asin(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/>acos(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/>atan(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>sinh(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>cosh(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>tanh(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/>asinh(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/>acosh(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/>atanh(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1ad3b92cdb628eeec991c326c1727fdd9e" kindref="member">sin</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a36d6ffb762d9c276b4229a2bedf3bca9" kindref="member">cos</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1af04388d6eae86667f93b8f8b347b92f4" kindref="member">tan</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="namespacescifir_1a1f303936f1ea7ec91375b8d707a51a90" kindref="member">asin</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="namespacescifir_1ad107726d553b98dd1061fa75b7f9cc60" kindref="member">acos</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="namespacescifir_1a6238e1d28db776a5d6497d463cc18a24" kindref="member">atan</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a4707b4683c6bef04243c9affcdbe0a63" kindref="member">sinh</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a770ad7122728e4dfa85221c2c372e54c" kindref="member">cosh</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a3f2de7afed6fb51c22c9b81346a6642c" kindref="member">tanh</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="namespacescifir_1ac003e3c2113237706f4c4c50164a4024" kindref="member">asinh</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="namespacescifir_1a83266adde7a9639563d4ab6ae9090a7a" kindref="member">acosh</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1angle" kindref="compound">angle</ref><sp/><ref refid="namespacescifir_1acb80729ddcfa267023fefe9d39abac38" kindref="member">atanh</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
 <codeline lineno="185"><highlight class="normal"></highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>asin_grade(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
+<codeline lineno="186" refid="namespacescifir_1a6461914f5055daf6492d116126e74d55" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a6461914f5055daf6492d116126e74d55" kindref="member">asin_grade</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
 <codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>radian_to_grade(std::asin(x));</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1acb875290bc71514ed24892a956635afb" kindref="member">radian_to_grade</ref>(std::asin(x));</highlight></codeline>
 <codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="190"><highlight class="normal"></highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>acos_grade(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
+<codeline lineno="191" refid="namespacescifir_1aa8db9e933de432ea65f7f41ef2b99e0c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1aa8db9e933de432ea65f7f41ef2b99e0c" kindref="member">acos_grade</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>radian_to_grade(std::acos(x));</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1acb875290bc71514ed24892a956635afb" kindref="member">radian_to_grade</ref>(std::acos(x));</highlight></codeline>
 <codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"></highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>atan_grade(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
+<codeline lineno="196" refid="namespacescifir_1ab26866c5f85571fb48783ebee102d01d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1ab26866c5f85571fb48783ebee102d01d" kindref="member">atan_grade</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
 <codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>radian_to_grade(std::atan(x));</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1acb875290bc71514ed24892a956635afb" kindref="member">radian_to_grade</ref>(std::atan(x));</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"></highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>asinh_grade(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
+<codeline lineno="201" refid="namespacescifir_1af0c9433bbb798d0d48cea30847a17925" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1af0c9433bbb798d0d48cea30847a17925" kindref="member">asinh_grade</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
 <codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>radian_to_grade(std::asinh(x));</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1acb875290bc71514ed24892a956635afb" kindref="member">radian_to_grade</ref>(std::asinh(x));</highlight></codeline>
 <codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="205"><highlight class="normal"></highlight></codeline>
-<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>acosh_grade(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
+<codeline lineno="206" refid="namespacescifir_1a0cf2b5498c31442be9452ae103faf3e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a0cf2b5498c31442be9452ae103faf3e0" kindref="member">acosh_grade</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>radian_to_grade(std::acosh(x));</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1acb875290bc71514ed24892a956635afb" kindref="member">radian_to_grade</ref>(std::acosh(x));</highlight></codeline>
 <codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="210"><highlight class="normal"></highlight></codeline>
-<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>atanh_grade(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
+<codeline lineno="211" refid="namespacescifir_1a856fa6916a5c045acc422a08ef19bd19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1a856fa6916a5c045acc422a08ef19bd19" kindref="member">atanh_grade</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
 <codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>radian_to_grade(std::atanh(x));</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacescifir_1acb875290bc71514ed24892a956635afb" kindref="member">radian_to_grade</ref>(std::atanh(x));</highlight></codeline>
 <codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="215"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="216"><highlight class="normal"></highlight></codeline>
 <codeline lineno="217"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="218"><highlight class="normal"><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref><sp/>operator<sp/>+(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="218" refid="angle_8hpp_1a24405fc1fdf065543346a4b96efc737f" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref><sp/><ref refid="angle_8hpp_1a24405fc1fdf065543346a4b96efc737f" kindref="member">operator +</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="219"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>(x<sp/>+<sp/>y.get_value());</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>(x<sp/>+<sp/>y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="221"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="222"><highlight class="normal"></highlight></codeline>
 <codeline lineno="223"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="224"><highlight class="normal"><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref><sp/>operator<sp/>-(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="224" refid="angle_8hpp_1a0962f28ca147b65932f14efcba2d6456" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref><sp/><ref refid="angle_8hpp_1a0962f28ca147b65932f14efcba2d6456" kindref="member">operator -</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="225"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>(x<sp/>-<sp/>y.get_value());</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>(x<sp/>-<sp/>y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="227"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="228"><highlight class="normal"></highlight></codeline>
 <codeline lineno="229"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="230"><highlight class="normal"><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref><sp/>operator<sp/>*(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="230" refid="angle_8hpp_1ac3b72e0356c0f211031603d2f6fcce21" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref><sp/><ref refid="angle_8hpp_1ac3b72e0356c0f211031603d2f6fcce21" kindref="member">operator *</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="231"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>(x<sp/>*<sp/>y.get_value());</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>(x<sp/>*<sp/>y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="233"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="234"><highlight class="normal"></highlight></codeline>
 <codeline lineno="235"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="236"><highlight class="normal"><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref><sp/>operator<sp/>/(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="236" refid="angle_8hpp_1a59c4fb09633884237c429669e1a00599" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref><sp/><ref refid="angle_8hpp_1a59c4fb09633884237c429669e1a00599" kindref="member">operator /</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="237"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>(x<sp/>/<sp/>y.get_value());</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>(x<sp/>/<sp/>y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="239"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="240"><highlight class="normal"></highlight></codeline>
 <codeline lineno="241"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="242"><highlight class="normal"><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref><sp/>operator<sp/>^(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="242" refid="angle_8hpp_1a1dc90f302050f4f63fac2eb49b60f431" refkind="member"><highlight class="normal"><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref><sp/><ref refid="angle_8hpp_1a1dc90f302050f4f63fac2eb49b60f431" kindref="member">operator ^</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="243"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>(pow(x,<sp/>y.get_value()));</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>(pow(x,<sp/>y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>()));</highlight></codeline>
 <codeline lineno="245"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="246"><highlight class="normal"></highlight></codeline>
 <codeline lineno="247"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="248"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="248" refid="angle_8hpp_1af0536e61a5aa61b01e4b261b0366f667" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1af0536e61a5aa61b01e4b261b0366f667" kindref="member">operator ==</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="249"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.get_value());</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="251"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"></highlight></codeline>
 <codeline lineno="253"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="254"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="254" refid="angle_8hpp_1ae1d2f1bedcb72ef5fc0bfced4316ecc2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1ae1d2f1bedcb72ef5fc0bfced4316ecc2" kindref="member">operator !=</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="255"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.get_value());</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="257"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="258"><highlight class="normal"></highlight></codeline>
 <codeline lineno="259"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="260"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>&lt;(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="260" refid="angle_8hpp_1add64f0c17e44e287024623f2f0209a9e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1add64f0c17e44e287024623f2f0209a9e" kindref="member">operator &lt;</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="261"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;<sp/>y.get_value());</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;<sp/>y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="263"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="264"><highlight class="normal"></highlight></codeline>
 <codeline lineno="265"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="266"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>&gt;(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="266" refid="angle_8hpp_1aac64783c181a770b790e577dcf8d531d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1aac64783c181a770b790e577dcf8d531d" kindref="member">operator &gt;</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="267"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;<sp/>y.get_value());</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;<sp/>y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="269"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="270"><highlight class="normal"></highlight></codeline>
 <codeline lineno="271"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="272"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>&lt;=(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="272" refid="angle_8hpp_1a777abbd039cbbb7470ca1252962a85d7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1a777abbd039cbbb7470ca1252962a85d7" kindref="member">operator &lt;=</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="273"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;=<sp/>y.get_value());</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&lt;=<sp/>y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="275"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="276"><highlight class="normal"></highlight></codeline>
 <codeline lineno="277"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="278"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>&gt;=(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="278" refid="angle_8hpp_1a1f1de769691bb494d02de921059d06b9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1a1f1de769691bb494d02de921059d06b9" kindref="member">operator &gt;=</ref>(T<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="279"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;=<sp/>y.get_value());</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>&gt;=<sp/>y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="281"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="282"><highlight class="normal"></highlight></codeline>
 <codeline lineno="283"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="284"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
+<codeline lineno="284" refid="angle_8hpp_1acb5bc28ff191c4a072d78a56b2c509f2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1af0536e61a5aa61b01e4b261b0366f667" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="285"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.get_value());</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="287"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="288"><highlight class="normal"></highlight></codeline>
 <codeline lineno="289"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="290"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
+<codeline lineno="290" refid="angle_8hpp_1ab4f3e92470c478bd3c6ac1f8311361e4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1ae1d2f1bedcb72ef5fc0bfced4316ecc2" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="291"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.get_value());</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(x<sp/>!=<sp/>y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>());</highlight></codeline>
 <codeline lineno="293"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="294"><highlight class="normal"></highlight></codeline>
 <codeline lineno="295"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="296"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>&lt;(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
+<codeline lineno="296" refid="angle_8hpp_1a3663ec48daf70f254b09ec57cea30d22" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1add64f0c17e44e287024623f2f0209a9e" kindref="member">operator &lt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="297"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.get_value()<sp/>&lt;<sp/>x);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>()<sp/>&lt;<sp/>x);</highlight></codeline>
 <codeline lineno="299"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="300"><highlight class="normal"></highlight></codeline>
 <codeline lineno="301"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="302"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>&gt;(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
+<codeline lineno="302" refid="angle_8hpp_1a368478a0c68650f34ec7bf36783c460e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1aac64783c181a770b790e577dcf8d531d" kindref="member">operator &gt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="303"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.get_value()<sp/>&gt;<sp/>x);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>()<sp/>&gt;<sp/>x);</highlight></codeline>
 <codeline lineno="305"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="306"><highlight class="normal"></highlight></codeline>
 <codeline lineno="307"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="308"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>&lt;=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
+<codeline lineno="308" refid="angle_8hpp_1a35d2363989efff6a928cb48a7592209a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1a777abbd039cbbb7470ca1252962a85d7" kindref="member">operator &lt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="309"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.get_value()<sp/>&lt;=<sp/>x);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>()<sp/>&lt;=<sp/>x);</highlight></codeline>
 <codeline lineno="311"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="312"><highlight class="normal"></highlight></codeline>
 <codeline lineno="313"><highlight class="normal">template&lt;typename<sp/>T,<sp/>typename<sp/>=<sp/>typename<sp/>enable_if&lt;scifir::is_number&lt;T&gt;::value&gt;::type&gt;</highlight></codeline>
-<codeline lineno="314"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>&gt;=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
+<codeline lineno="314" refid="angle_8hpp_1a004b28327bddcb78dd7df84f1d381d78" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1a1f1de769691bb494d02de921059d06b9" kindref="member">operator &gt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y,<sp/>T<sp/>x)</highlight></codeline>
 <codeline lineno="315"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.get_value()<sp/>&gt;=<sp/>x);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(y.<ref refid="classscifir_1_1angle_1a61e436c1eb66a6ed10924e641a4a4ba3" kindref="member">get_value</ref>()<sp/>&gt;=<sp/>x);</highlight></codeline>
 <codeline lineno="317"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="318"><highlight class="normal"></highlight></codeline>
-<codeline lineno="319"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="320"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="321"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>&lt;(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="322"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>&gt;(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="323"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>&lt;=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="324"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>&gt;=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1af0536e61a5aa61b01e4b261b0366f667" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1ae1d2f1bedcb72ef5fc0bfced4316ecc2" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1add64f0c17e44e287024623f2f0209a9e" kindref="member">operator &lt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1aac64783c181a770b790e577dcf8d531d" kindref="member">operator &gt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1a777abbd039cbbb7470ca1252962a85d7" kindref="member">operator &lt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1a1f1de769691bb494d02de921059d06b9" kindref="member">operator &gt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
 <codeline lineno="325"><highlight class="normal"></highlight></codeline>
-<codeline lineno="326"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_angle);</highlight></codeline>
-<codeline lineno="327"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_angle);</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1af0536e61a5aa61b01e4b261b0366f667" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_angle);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1ae1d2f1bedcb72ef5fc0bfced4316ecc2" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_angle);</highlight></codeline>
 <codeline lineno="328"><highlight class="normal"></highlight></codeline>
-<codeline lineno="329"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_angle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="330"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_angle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1af0536e61a5aa61b01e4b261b0366f667" kindref="member">operator ==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_angle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1ae1d2f1bedcb72ef5fc0bfced4316ecc2" kindref="member">operator !=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>init_angle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="331"><highlight class="normal"></highlight></codeline>
-<codeline lineno="332"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator<sp/>+=(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="333"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>operator<sp/>+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
-<codeline lineno="334"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>operator<sp/>+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1af5134978a1a12312809a2b7d552618a8" kindref="member">operator +=</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1a24405fc1fdf065543346a4b96efc737f" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="angle_8hpp_1a24405fc1fdf065543346a4b96efc737f" kindref="member">operator +</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="335"><highlight class="normal"></highlight></codeline>
-<codeline lineno="336"><highlight class="normal">ostream&amp;<sp/>operator<sp/>&lt;&lt;(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x);</highlight></codeline>
-<codeline lineno="337"><highlight class="normal">istream&amp;<sp/>operator<sp/>&gt;&gt;(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="336"><highlight class="normal">ostream&amp;<sp/><ref refid="angle_8hpp_1a758611aa7ceee457df3ea3f38b0b45ef" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x);</highlight></codeline>
+<codeline lineno="337"><highlight class="normal">istream&amp;<sp/><ref refid="angle_8hpp_1a007692097861c15724bc7cea58ce071c" kindref="member">operator &gt;&gt;</ref>(istream&amp;<sp/>is,<sp/><ref refid="classscifir_1_1angle" kindref="compound">scifir::angle</ref>&amp;<sp/>x);</highlight></codeline>
 <codeline lineno="338"><highlight class="normal"></highlight></codeline>
 <codeline lineno="339"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_MECA_NUMBER_ANGLE_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>

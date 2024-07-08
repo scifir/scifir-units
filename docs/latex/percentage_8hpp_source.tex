@@ -1,273 +1,273 @@
 \doxysection{percentage.\+hpp}
 \hypertarget{percentage_8hpp_source}{}\label{percentage_8hpp_source}\index{special\_units/percentage.hpp@{special\_units/percentage.hpp}}
-
+\mbox{\hyperlink{percentage_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_PERCENTAGE\_HPP\_INCLUDED}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_PERCENTAGE\_HPP\_INCLUDED}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../topology/constants.hpp"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../util/is\_number.hpp"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../units/scalar\_unit.hpp"{}}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}boost/math/constants/constants.hpp"{}}}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <cmath>}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }scifir}
-\DoxyCodeLine{00016\ \{}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1percentage}{percentage}}}
-\DoxyCodeLine{00018\ \ \ \ \ \{}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}();}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x);}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}(\mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\&\ x);}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_percentage}});}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x);}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\&\ x);}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_percentage}});}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00044\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(value);}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ get\_value()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00049\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x);}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x);}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x);}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x);}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(T\ x)}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ =\ x;}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(T\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00070\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}(value\ +\ x);}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/}}(T\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00076\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}(value\ -\/\ x);}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *}}(T\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00082\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(value\ *\ x\ /\ 100);}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /}}(T\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00088\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(value\ /\ (100\ *\ x));}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +=}}(T\ x)}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ +=\ x;}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/=}}(T\ x)}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ -\/=\ x;}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00103\ }
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *=}}(T\ x)}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ *=\ x;}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00109\ }
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /=}}(T\ x)}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ /=\ x;}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00115\ }
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ operator++();}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ operator++(\textcolor{keywordtype}{int});}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ operator-\/-\/();}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ operator-\/-\/(\textcolor{keywordtype}{int});}
-\DoxyCodeLine{00120\ }
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ get\_factor()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ get\_ppm()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*float\ get\_ppb()\ const;}}
-\DoxyCodeLine{00128\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ float\ get\_ppt()\ const;}}
-\DoxyCodeLine{00129\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ float\ get\_ppq()\ const;*/}}
-\DoxyCodeLine{00130\ }
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_percentage(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display\_ppm()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*string\ display\_ppb()\ const;}}
-\DoxyCodeLine{00134\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ string\ display\_ppt()\ const;}}
-\DoxyCodeLine{00135\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ string\ display\_ppq()\ const;*/}}
-\DoxyCodeLine{00136\ }
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ value;}
-\DoxyCodeLine{00139\ }
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initialize\_from\_string(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_percentage}});}
-\DoxyCodeLine{00141\ }
-\DoxyCodeLine{00142\ \ \ \ \ \};}
-\DoxyCodeLine{00143\ }
-\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x);}
-\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_percentage(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_percentage}});}
-\DoxyCodeLine{00146\ \}}
-\DoxyCodeLine{00147\ }
-\DoxyCodeLine{00148\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00149\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\ operator\ +(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
-\DoxyCodeLine{00150\ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}(x\ +\ y.get\_value());}
-\DoxyCodeLine{00152\ \}}
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00154\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00155\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\ operator\ -\/(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
-\DoxyCodeLine{00156\ \{}
-\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}(x\ -\/\ y.get\_value());}
-\DoxyCodeLine{00158\ \}}
-\DoxyCodeLine{00159\ }
-\DoxyCodeLine{00160\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00161\ \textcolor{keywordtype}{float}\ operator\ *(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
-\DoxyCodeLine{00162\ \{}
-\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordflow}{return}\ float(x\ *\ y.get\_value()\ /\ 100);}
-\DoxyCodeLine{00164\ \}}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00166\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00167\ \textcolor{keywordtype}{float}\ operator\ /(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
-\DoxyCodeLine{00168\ \{}
-\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{return}\ float(100\ *\ x\ /\ y.get\_value());}
-\DoxyCodeLine{00170\ \}}
-\DoxyCodeLine{00171\ }
-\DoxyCodeLine{00172\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00173\ \textcolor{keywordtype}{bool}\ operator\ ==(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
-\DoxyCodeLine{00174\ \{}
-\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.get\_value());}
-\DoxyCodeLine{00176\ \}}
-\DoxyCodeLine{00177\ }
-\DoxyCodeLine{00178\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00179\ \textcolor{keywordtype}{bool}\ operator\ !=(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
-\DoxyCodeLine{00180\ \{}
-\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ y.get\_value());}
-\DoxyCodeLine{00182\ \}}
-\DoxyCodeLine{00183\ }
-\DoxyCodeLine{00184\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00185\ \textcolor{keywordtype}{bool}\ operator\ <(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
-\DoxyCodeLine{00186\ \{}
-\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <\ y.get\_value());}
-\DoxyCodeLine{00188\ \}}
-\DoxyCodeLine{00189\ }
-\DoxyCodeLine{00190\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00191\ \textcolor{keywordtype}{bool}\ operator\ >(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
-\DoxyCodeLine{00192\ \{}
-\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >\ y.get\_value());}
-\DoxyCodeLine{00194\ \}}
-\DoxyCodeLine{00195\ }
-\DoxyCodeLine{00196\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00197\ \textcolor{keywordtype}{bool}\ operator\ <=(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
-\DoxyCodeLine{00198\ \{}
-\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <=\ y.get\_value());}
-\DoxyCodeLine{00200\ \}}
-\DoxyCodeLine{00201\ }
-\DoxyCodeLine{00202\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00203\ \textcolor{keywordtype}{bool}\ operator\ >=(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
-\DoxyCodeLine{00204\ \{}
-\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >=\ y.get\_value());}
-\DoxyCodeLine{00206\ \}}
-\DoxyCodeLine{00207\ }
-\DoxyCodeLine{00208\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00209\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y,\ T\ x)}
-\DoxyCodeLine{00210\ \{}
-\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.get\_value());}
-\DoxyCodeLine{00212\ \}}
-\DoxyCodeLine{00213\ }
-\DoxyCodeLine{00214\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00215\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y,\ T\ x)}
-\DoxyCodeLine{00216\ \{}
-\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ y.get\_value());}
-\DoxyCodeLine{00218\ \}}
-\DoxyCodeLine{00219\ }
-\DoxyCodeLine{00220\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00221\ \textcolor{keywordtype}{bool}\ operator\ <(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y,\ T\ x)}
-\DoxyCodeLine{00222\ \{}
-\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.get\_value()\ <\ x);}
-\DoxyCodeLine{00224\ \}}
-\DoxyCodeLine{00225\ }
-\DoxyCodeLine{00226\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00227\ \textcolor{keywordtype}{bool}\ operator\ >(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y,\ T\ x)}
-\DoxyCodeLine{00228\ \{}
-\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.get\_value()\ >\ x);}
-\DoxyCodeLine{00230\ \}}
-\DoxyCodeLine{00231\ }
-\DoxyCodeLine{00232\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00233\ \textcolor{keywordtype}{bool}\ operator\ <=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y,\ T\ x)}
-\DoxyCodeLine{00234\ \{}
-\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.get\_value()\ <=\ x);}
-\DoxyCodeLine{00236\ \}}
-\DoxyCodeLine{00237\ }
-\DoxyCodeLine{00238\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00239\ \textcolor{keywordtype}{bool}\ operator\ >=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y,\ T\ x)}
-\DoxyCodeLine{00240\ \{}
-\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.get\_value()\ >=\ x);}
-\DoxyCodeLine{00242\ \}}
-\DoxyCodeLine{00243\ }
-\DoxyCodeLine{00244\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ operator\ *(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
-\DoxyCodeLine{00245\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ operator\ /(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
-\DoxyCodeLine{00246\ }
-\DoxyCodeLine{00247\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
-\DoxyCodeLine{00248\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
-\DoxyCodeLine{00249\ \textcolor{keywordtype}{bool}\ operator\ <(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
-\DoxyCodeLine{00250\ \textcolor{keywordtype}{bool}\ operator\ >(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
-\DoxyCodeLine{00251\ \textcolor{keywordtype}{bool}\ operator\ <=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
-\DoxyCodeLine{00252\ \textcolor{keywordtype}{bool}\ operator\ >=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
-\DoxyCodeLine{00253\ }
-\DoxyCodeLine{00254\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_percentage);}
-\DoxyCodeLine{00255\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_percentage);}
-\DoxyCodeLine{00256\ }
-\DoxyCodeLine{00257\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_percentage,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x);}
-\DoxyCodeLine{00258\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_percentage,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x);}
-\DoxyCodeLine{00259\ }
-\DoxyCodeLine{00260\ \textcolor{keywordtype}{void}\ operator\ +=(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
-\DoxyCodeLine{00261\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
-\DoxyCodeLine{00262\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x);}
-\DoxyCodeLine{00263\ }
-\DoxyCodeLine{00264\ ostream\&\ operator\ <<(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x);}
-\DoxyCodeLine{00265\ istream\&\ operator\ >>(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x);}
-\DoxyCodeLine{00266\ }
-\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_PERCENTAGE\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_PERCENTAGE\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_PERCENTAGE\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../topology/constants.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}../util/is\_number.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}../units/scalar\_unit.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}boost/math/constants/constants.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00013}00013\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00015}00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacescifir}{scifir}}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00017}\mbox{\hyperlink{classscifir_1_1percentage}{00017}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1percentage}{percentage}}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}();}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_percentage}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1percentage_ac3da7fdb1b7df99c912b8fef1a7ae572}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1percentage_ac3da7fdb1b7df99c912b8fef1a7ae572}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1percentage_ac3da7fdb1b7df99c912b8fef1a7ae572}{operator\ =}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1percentage_ac3da7fdb1b7df99c912b8fef1a7ae572}{operator\ =}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1percentage_ac3da7fdb1b7df99c912b8fef1a7ae572}{operator\ =}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1percentage_ac3da7fdb1b7df99c912b8fef1a7ae572}{operator\ =}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1percentage_ac3da7fdb1b7df99c912b8fef1a7ae572}{operator\ =}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_percentage}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1percentage_ac3da7fdb1b7df99c912b8fef1a7ae572}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00043}\mbox{\hyperlink{classscifir_1_1percentage_a64ba3202f386c17dde5605465857ed75}{00043}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00044}00044\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00048}\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{00048}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00049}00049\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}};}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ \mbox{\hyperlink{classscifir_1_1percentage_a997703d062db4bd8372c8f42b38ab0db}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ \mbox{\hyperlink{classscifir_1_1percentage_a0063f46fae523dde05a08ff773aa0759}{operator\ -\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ \mbox{\hyperlink{classscifir_1_1percentage_ae1299386921e23b131a480c60313075c}{operator\ *}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ \mbox{\hyperlink{classscifir_1_1percentage_a2e068414854cad2217c5629c1136ebe2}{operator\ /}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1percentage_a415833910907612760930697acb7cabf}{operator\ +=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1percentage_aed6d83ca9b41e280179470adbf729842}{operator\ -\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1percentage_a154bffef5ed6e8cb63bcb39c9be4bcfe}{operator\ *=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1percentage_a6c10cbe35b0236c4b549ac5bc4585212}{operator\ /=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00063}\mbox{\hyperlink{classscifir_1_1percentage_ae618bce66176de9d3fe1e957a0caeaa9}{00063}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1percentage_ac3da7fdb1b7df99c912b8fef1a7ae572}{operator\ =}}(T\ x)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ =\ x;}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00069}\mbox{\hyperlink{classscifir_1_1percentage_a8226163901e8cc0938e65275aa1bd866}{00069}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ \mbox{\hyperlink{classscifir_1_1percentage_a997703d062db4bd8372c8f42b38ab0db}{operator\ +}}(T\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00070}00070\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ +\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00075}\mbox{\hyperlink{classscifir_1_1percentage_aa2c7b90ae7a2c8e13455d58b629c9437}{00075}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ \mbox{\hyperlink{classscifir_1_1percentage_a0063f46fae523dde05a08ff773aa0759}{operator\ -\/}}(T\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00076}00076\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage_a18948f7da73b52f27daa92954c3234ef}{percentage}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ -\/\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00081}\mbox{\hyperlink{classscifir_1_1percentage_a44bc5cb70594fa5c455ba2a1d95f8ff6}{00081}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1percentage_ae1299386921e23b131a480c60313075c}{operator\ *}}(T\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00082}00082\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ *\ x\ /\ 100);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00087}\mbox{\hyperlink{classscifir_1_1percentage_acf02cbac75ad3b05102da26e4658b951}{00087}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1percentage_a2e068414854cad2217c5629c1136ebe2}{operator\ /}}(T\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00088}00088\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ /\ (100\ *\ x));}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00093}\mbox{\hyperlink{classscifir_1_1percentage_a32ec16c589336fda397e779f421d863e}{00093}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1percentage_a415833910907612760930697acb7cabf}{operator\ +=}}(T\ x)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ +=\ x;}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00099}\mbox{\hyperlink{classscifir_1_1percentage_a5899f233d6c7bb9d364bec5bab09bdb5}{00099}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1percentage_aed6d83ca9b41e280179470adbf729842}{operator\ -\/=}}(T\ x)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ -\/=\ x;}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00105}\mbox{\hyperlink{classscifir_1_1percentage_a050f53ae43b117fec94385ddcfcaafac}{00105}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1percentage_a154bffef5ed6e8cb63bcb39c9be4bcfe}{operator\ *=}}(T\ x)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ *=\ x;}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00111}\mbox{\hyperlink{classscifir_1_1percentage_a4f2549463e30f02b2ffc70a624ec7cfa}{00111}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1percentage_a6c10cbe35b0236c4b549ac5bc4585212}{operator\ /=}}(T\ x)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}}\ /=\ x;}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1percentage_addccf7ec453b14abc08f41c0c749b2c4}{operator++}}();}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ \mbox{\hyperlink{classscifir_1_1percentage_addccf7ec453b14abc08f41c0c749b2c4}{operator++}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ \mbox{\hyperlink{classscifir_1_1percentage_aecbfdd6b63d0dd993056347042063f85}{operator-\/-\/}}();}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\ \mbox{\hyperlink{classscifir_1_1percentage_aecbfdd6b63d0dd993056347042063f85}{operator-\/-\/}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1percentage_ae1299386921e23b131a480c60313075c}{operator\ *}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1percentage_a2e068414854cad2217c5629c1136ebe2}{operator\ /}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1percentage_aff54f2d08cc05e3f5fd3aa5b374b3ed8}{get\_factor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1percentage_a295c00367e72dc3e70800da792086373}{get\_ppm}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*float\ get\_ppb()\ const;}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00128}00128\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ float\ get\_ppt()\ const;}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00129}00129\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ float\ get\_ppq()\ const;*/}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1percentage_adbea0c300e66fdf2d82721583de0f7a1}{display\_percentage}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1percentage_a28516c470ce03a0c3a4c7c384480fc85}{display\_ppm}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*string\ display\_ppb()\ const;}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00134}00134\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ string\ display\_ppt()\ const;}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00135}00135\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ string\ display\_ppq()\ const;*/}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00138}\mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{00138}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1percentage_a8a6359416b116e57affb296949c11b21}{value}};}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1percentage_ae59bbcaab856dd15c9918e26aadecb43}{initialize\_from\_string}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_percentage}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00142}00142\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00144}00144\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{percentage}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00145}00145\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacescifir_acab1cb8bce8abe8946add3aee1f193b8}{is\_percentage}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_percentage}});}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00146}00146\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00148}00148\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00149}\mbox{\hyperlink{percentage_8hpp_a81f154358d49660f1b1a96953d15efd0}{00149}}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\ \mbox{\hyperlink{percentage_8hpp_a81f154358d49660f1b1a96953d15efd0}{operator\ +}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00150}00150\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}(x\ +\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00152}00152\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00154}00154\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00155}\mbox{\hyperlink{percentage_8hpp_a66007c9d37b55e53c242333331e87ba5}{00155}}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\ \mbox{\hyperlink{percentage_8hpp_a66007c9d37b55e53c242333331e87ba5}{operator\ -\/}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00156}00156\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00157}00157\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}(x\ -\/\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00158}00158\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00160}00160\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00161}\mbox{\hyperlink{percentage_8hpp_a2409cfb487e9ecac210e9d8fe8f37f71}{00161}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{percentage_8hpp_a2409cfb487e9ecac210e9d8fe8f37f71}{operator\ *}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00162}00162\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00163}00163\ \ \ \ \ \textcolor{keywordflow}{return}\ float(x\ *\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}()\ /\ 100);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00164}00164\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00166}00166\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00167}\mbox{\hyperlink{percentage_8hpp_ab27024a0e63bbcd0edc59d37776fa03a}{00167}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{percentage_8hpp_ab27024a0e63bbcd0edc59d37776fa03a}{operator\ /}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00168}00168\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00169}00169\ \ \ \ \ \textcolor{keywordflow}{return}\ float(100\ *\ x\ /\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00170}00170\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00172}00172\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00173}\mbox{\hyperlink{percentage_8hpp_afa982eb3fef5c3edd8243966221615ec}{00173}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_afa982eb3fef5c3edd8243966221615ec}{operator\ ==}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00174}00174\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00175}00175\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00176}00176\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00178}00178\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00179}\mbox{\hyperlink{percentage_8hpp_a568a364e20ead0b160cc24cbc8d830fa}{00179}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a568a364e20ead0b160cc24cbc8d830fa}{operator\ !=}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00180}00180\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00181}00181\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00182}00182\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00184}00184\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00185}\mbox{\hyperlink{percentage_8hpp_a574de9dce20427d48f6ca1d8584a6240}{00185}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a574de9dce20427d48f6ca1d8584a6240}{operator\ <}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00186}00186\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00187}00187\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00188}00188\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00190}00190\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00191}\mbox{\hyperlink{percentage_8hpp_a6b415c5b5748baa98dbefbb396ae89e8}{00191}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a6b415c5b5748baa98dbefbb396ae89e8}{operator\ >}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00192}00192\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00193}00193\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00194}00194\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00196}00196\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00197}\mbox{\hyperlink{percentage_8hpp_a73ff3192ba19ac41efbfd8f398f5f366}{00197}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a73ff3192ba19ac41efbfd8f398f5f366}{operator\ <=}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00198}00198\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00199}00199\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <=\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00200}00200\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00202}00202\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00203}\mbox{\hyperlink{percentage_8hpp_a7e6310928460a5719b50651fc2be3eac}{00203}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a7e6310928460a5719b50651fc2be3eac}{operator\ >=}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00204}00204\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00205}00205\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >=\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00206}00206\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00208}00208\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00209}\mbox{\hyperlink{percentage_8hpp_a51a03af2f765b23243eb5f5b3bc45d10}{00209}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_afa982eb3fef5c3edd8243966221615ec}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y,\ T\ x)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00210}00210\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00211}00211\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00212}00212\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00214}00214\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00215}\mbox{\hyperlink{percentage_8hpp_ae4af34c0815f69a37ccad4d5126a0156}{00215}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a568a364e20ead0b160cc24cbc8d830fa}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y,\ T\ x)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00216}00216\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00217}00217\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00218}00218\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00220}00220\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00221}\mbox{\hyperlink{percentage_8hpp_a5b4169ad95e6dcf61f61fdef31fb7bd7}{00221}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a574de9dce20427d48f6ca1d8584a6240}{operator\ <}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y,\ T\ x)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00222}00222\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}()\ <\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00224}00224\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00226}00226\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00227}\mbox{\hyperlink{percentage_8hpp_a3a5ded7241759a378378c435b20681ae}{00227}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a6b415c5b5748baa98dbefbb396ae89e8}{operator\ >}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y,\ T\ x)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00228}00228\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00229}00229\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}()\ >\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00230}00230\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00232}00232\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00233}\mbox{\hyperlink{percentage_8hpp_ad7fa29b48fb1e1df6e4af91a6e499b04}{00233}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a73ff3192ba19ac41efbfd8f398f5f366}{operator\ <=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y,\ T\ x)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00234}00234\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00235}00235\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}()\ <=\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00236}00236\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00238}00238\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00239}\mbox{\hyperlink{percentage_8hpp_a2be04c40c9a65dba308f2b45d16de926}{00239}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a7e6310928460a5719b50651fc2be3eac}{operator\ >=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y,\ T\ x)}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00240}00240\ \{}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00241}00241\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}()\ >=\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00242}00242\ \}}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00244}00244\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ \mbox{\hyperlink{percentage_8hpp_a2409cfb487e9ecac210e9d8fe8f37f71}{operator\ *}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00245}00245\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\ \mbox{\hyperlink{percentage_8hpp_ab27024a0e63bbcd0edc59d37776fa03a}{operator\ /}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00247}00247\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_afa982eb3fef5c3edd8243966221615ec}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00248}00248\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a568a364e20ead0b160cc24cbc8d830fa}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00249}00249\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a574de9dce20427d48f6ca1d8584a6240}{operator\ <}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00250}00250\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a6b415c5b5748baa98dbefbb396ae89e8}{operator\ >}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00251}00251\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a73ff3192ba19ac41efbfd8f398f5f366}{operator\ <=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00252}00252\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a7e6310928460a5719b50651fc2be3eac}{operator\ >=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00254}00254\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_afa982eb3fef5c3edd8243966221615ec}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_percentage);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00255}00255\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a568a364e20ead0b160cc24cbc8d830fa}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_percentage);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00257}00257\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_afa982eb3fef5c3edd8243966221615ec}{operator\ ==}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_percentage,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00258}00258\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{percentage_8hpp_a568a364e20ead0b160cc24cbc8d830fa}{operator\ !=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_percentage,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00260}00260\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{percentage_8hpp_aca1d7475494064cd88fec5085fd4d5d1}{operator\ +=}}(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00261}00261\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{percentage_8hpp_a81f154358d49660f1b1a96953d15efd0}{operator\ +}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00262}00262\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{percentage_8hpp_a81f154358d49660f1b1a96953d15efd0}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00263}00263\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00264}00264\ ostream\&\ \mbox{\hyperlink{percentage_8hpp_ababed7d7960d3fd02d45a9a3eab36be3}{operator\ <<}}(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00265}00265\ istream\&\ \mbox{\hyperlink{percentage_8hpp_aebb6e808ff148cbf1258cfdf572f126d}{operator\ >>}}(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00266}00266\ }
+\DoxyCodeLine{\Hypertarget{percentage_8hpp_source_l00267}00267\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_PERCENTAGE\_HPP\_INCLUDED}}
 
 \end{DoxyCode}

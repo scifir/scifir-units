@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['s_0',['s',['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fbab7081010542c35107fd753dd2611734d',1,'scifir::dimension::s'],['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba550b3c8f08b4a7fe4d3f52ae6679e53e',1,'scifir::dimension::S']]],
+  ['sad_1',['SAD',['../namespacescifir.html#a689c4e163ef96d7d5dad93dce859d2c6ab9f50ca01f59b01d4aaa9cc3c0bad9f1',1,'scifir']]],
+  ['sadness_2',['SADNESS',['../namespacescifir.html#a83fe32b03d40fdd5728b2e413123bee5a88c5374457f277ea4810aee2b1cec9ab',1,'scifir']]],
+  ['saturn_3',['SATURN',['../namespacescifir.html#a20683521b4e3fde1fac96fee7ca39e36a6348a2fa6ef4beea63a4d72567dc0b6f',1,'scifir']]],
+  ['scalar_4',['SCALAR',['../classscifir_1_1tensor__unit.html#a3e46edb429c30cda179940a559acb3e5a4030fe47968e868191ddb848eb651c3b',1,'scifir::tensor_unit']]],
+  ['scared_5',['SCARED',['../namespacescifir.html#a689c4e163ef96d7d5dad93dce859d2c6a1da69b25f731c8683350c79051f02411',1,'scifir']]],
+  ['sedna_6',['SEDNA',['../namespacescifir.html#a20683521b4e3fde1fac96fee7ca39e36a9d2f52d81eecc5518a067b6701d050b8',1,'scifir']]],
+  ['sick_7',['SICK',['../namespacescifir.html#af67b1c36abc4fa5927cda202ec598749ab1de57a076206eae4b4e1c032b93c88f',1,'scifir']]],
+  ['sick_5fand_5fdamaged_8',['SICK_AND_DAMAGED',['../namespacescifir.html#af67b1c36abc4fa5927cda202ec598749a25bf0287da2cb730c4903f0a3ce2ca7f',1,'scifir']]],
+  ['sleep_9',['SLEEP',['../namespacescifir.html#a10fb03b0e70b3cd9e77661757a2ec705ab32bd403b93dc6deffdab7af55e82596',1,'scifir']]],
+  ['solar_5fsystem_10',['solar_system',['../classscifir_1_1aid.html#aef81e5d08382b7a56fe5f99f00417be6ad6e0eea56d0d0fbcda83bc9fcfaa4bbd',1,'scifir::aid::SOLAR_SYSTEM'],['../namespacescifir.html#a20683521b4e3fde1fac96fee7ca39e36af939a59fce021a04108244d0e58db065',1,'scifir::SOLAR_SYSTEM']]],
+  ['sound_11',['SOUND',['../namespacescifir.html#ac18481f3c66f9d73be63595a15353fb2af54e4b43b21580e967d29a9b7e735953',1,'scifir']]],
+  ['star_12',['STAR',['../classscifir_1_1aid.html#aef81e5d08382b7a56fe5f99f00417be6a282e540d54b95c6f35c91bcef65a826a',1,'scifir::aid']]],
+  ['steradian_13',['steradian',['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba6975a95a363145b5ce70fcc623a740e3',1,'scifir::dimension']]],
+  ['still_14',['still',['../namespacescifir.html#ad539180dc5ebdc1e9c73339aad091effa8b572d218013b9626d59e6a2b38f18b6',1,'scifir::STILL'],['../namespacescifir.html#a32a33e512264a46ffb4e2846e1ca53e7a8b572d218013b9626d59e6a2b38f18b6',1,'scifir::STILL']]],
+  ['sun_15',['SUN',['../namespacescifir.html#a20683521b4e3fde1fac96fee7ca39e36a9034a19b67bd4853d7cba104d62e0828',1,'scifir']]],
+  ['sv_16',['Sv',['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fba0211b0783277afad2aa3a974a7b1d97b',1,'scifir::dimension']]],
+  ['swim_17',['SWIM',['../namespacescifir.html#ad539180dc5ebdc1e9c73339aad091effa03b8271feadf6d6d8669b00982853848',1,'scifir']]]
+];

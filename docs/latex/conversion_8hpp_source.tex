@@ -1,44 +1,44 @@
 \doxysection{conversion.\+hpp}
 \hypertarget{conversion_8hpp_source}{}\label{conversion_8hpp_source}\index{units/conversion.hpp@{units/conversion.hpp}}
-
+\mbox{\hyperlink{conversion_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_UNITS\_CONVERSION\_HPP\_INCLUDED}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_UNITS\_CONVERSION\_HPP\_INCLUDED}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../units/dimension.hpp"{}}}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }scifir}
-\DoxyCodeLine{00011\ \{}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1conversion}{conversion}}}
-\DoxyCodeLine{00013\ \ \ \ \ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1conversion}{conversion}}();}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1conversion}{conversion}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_unit\_to}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_factor}});}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1conversion}{conversion}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_unit\_to}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_factor}});}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1conversion}{conversion}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_unit\_to}},\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_factor}});}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\&\ get\_factor()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00021\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ factor;}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ get\_unit\_to()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00026\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ unit\_to;}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ unit\_to;}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ factor;}
-\DoxyCodeLine{00033\ \ \ \ \ \};}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{map<string,\ conversion>}}\ get\_conversion;}
-\DoxyCodeLine{00036\ \}}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_CONVERSION\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_UNITS\_CONVERSION\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_UNITS\_CONVERSION\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../units/dimension.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00008}00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacescifir}{scifir}}}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00012}\mbox{\hyperlink{classscifir_1_1conversion}{00012}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1conversion}{conversion}}}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1conversion_accd934a3ecd35a2a4f2d01b714de8b74}{conversion}}();}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1conversion_accd934a3ecd35a2a4f2d01b714de8b74}{conversion}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_unit\_to}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_factor}});}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1conversion_accd934a3ecd35a2a4f2d01b714de8b74}{conversion}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_unit\_to}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_factor}});}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1conversion_accd934a3ecd35a2a4f2d01b714de8b74}{conversion}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_unit\_to}},\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_factor}});}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00020}\mbox{\hyperlink{classscifir_1_1conversion_a26c934c434343280071cf47e38b139d8}{00020}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{classscifir_1_1conversion_a26c934c434343280071cf47e38b139d8}{get\_factor}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00021}00021\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1conversion_a2d59d30c69b9590d19b3c40fc5f8f419}{factor}};}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00025}\mbox{\hyperlink{classscifir_1_1conversion_a0822b806a115ee21e1c5d1a785af8868}{00025}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1conversion_a0822b806a115ee21e1c5d1a785af8868}{get\_unit\_to}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00026}00026\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1conversion_a2fe2660535d03add9457e74ed66617d7}{unit\_to}};}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00031}\mbox{\hyperlink{classscifir_1_1conversion_a2fe2660535d03add9457e74ed66617d7}{00031}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1conversion_a2fe2660535d03add9457e74ed66617d7}{unit\_to}};}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00032}\mbox{\hyperlink{classscifir_1_1conversion_a2d59d30c69b9590d19b3c40fc5f8f419}{00032}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1conversion_a2d59d30c69b9590d19b3c40fc5f8f419}{factor}};}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00033}00033\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{map<string,\ conversion>}}\ \mbox{\hyperlink{namespacescifir_a7cc97e15d82cd4bb47e27606f980b1ac}{get\_conversion}};}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{conversion_8hpp_source_l00038}00038\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_CONVERSION\_HPP\_INCLUDED}}
 
 \end{DoxyCode}

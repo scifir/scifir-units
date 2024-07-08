@@ -1,0 +1,117 @@
+.TH "units/prefix.cpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+units/prefix.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&./prefix\&.hpp'\fP
+.br
+\fC#include <iostream>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscifir\fP"
+.br
+.RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBprefix::type\fP \fBscifir::prefix_string\fP (\fBconst\fP \fBstring\fP &x)"
+.br
+.ti -1c
+.RI "\fBprefix\fP \fBscifir::closest_prefix\fP (\fBconst\fP \fBprefix\fP &\fBactual_prefix\fP, \fBint\fP \fBactual_scale\fP)"
+.br
+.ti -1c
+.RI "\fBprefix\fP \fBscifir::create_prefix_by_factor\fP (\fBint\fP factor)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::prefix\fP &x, const \fBscifir::prefix\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::prefix\fP &x, const \fBscifir::prefix\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBscifir::prefix\fP &x, const \fBscifir::prefix\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBscifir::prefix\fP &x, const \fBscifir::prefix\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBscifir::prefix\fP &x, const \fBscifir::prefix\fP &y)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::prefix\fP &x)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "bool operator!= (const \fBscifir::prefix\fP & x, const \fBscifir::prefix\fP & y)"
+
+.PP
+Definition at line \fB385\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+386 {
+387     return !(x == y);
+388 }
+.fi
+
+.SS "ostream & operator<< (ostream & os, const \fBscifir::prefix\fP & x)"
+
+.PP
+Definition at line \fB405\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+406 {
+407     return os << x\&.get_symbol();
+408 }
+.fi
+
+.SS "bool operator<= (const \fBscifir::prefix\fP & x, const \fBscifir::prefix\fP & y)"
+
+.PP
+Definition at line \fB390\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+391 {
+392     return (x\&.get_conversion_factor() <= y\&.get_conversion_factor());
+393 }
+.fi
+
+.SS "bool operator== (const \fBscifir::prefix\fP & x, const \fBscifir::prefix\fP & y)"
+
+.PP
+Definition at line \fB380\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+381 {
+382     return (x\&.get_conversion_factor() == y\&.get_conversion_factor());
+383 }
+.fi
+
+.SS "bool operator> (const \fBscifir::prefix\fP & x, const \fBscifir::prefix\fP & y)"
+
+.PP
+Definition at line \fB395\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+396 {
+397     return (x\&.get_conversion_factor() > y\&.get_conversion_factor());
+398 }
+.fi
+
+.SS "bool operator>= (const \fBscifir::prefix\fP & x, const \fBscifir::prefix\fP & y)"
+
+.PP
+Definition at line \fB400\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+401 {
+402     return (x\&.get_conversion_factor() >= y\&.get_conversion_factor());
+403 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

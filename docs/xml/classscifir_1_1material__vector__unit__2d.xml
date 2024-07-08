@@ -2,12 +2,14 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classscifir_1_1material__vector__unit__2d" kind="class" language="C++" prot="public">
     <compoundname>scifir::material_vector_unit_2d</compoundname>
+    <includes refid="material__vector__unit__2d_8hpp" local="no">material_vector_unit_2d.hpp</includes>
     <templateparamlist>
       <param>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> T</type>
       </param>
       <param>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref></type>
+        <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">length</ref></defval>
       </param>
     </templateparamlist>
     <sectiondef kind="public-attrib">
@@ -23,7 +25,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/material_vector_unit_2d.hpp" line="46" column="15" bodyfile="units/material_vector_unit_2d.hpp" bodystart="46" bodyend="-1"/>
+        <location file="units/material_vector_unit_2d.hpp" line="76" column="15" bodyfile="units/material_vector_unit_2d.hpp" bodystart="76" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classscifir_1_1material__vector__unit__2d_1aaa6956ee952b40913172521a9b64c2b3" prot="public" static="no" mutable="no">
         <type><ref refid="classscifir_1_1coordinates__2d" kindref="compound">coordinates_2d</ref>&lt; <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref> &gt;</type>
@@ -37,7 +39,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/material_vector_unit_2d.hpp" line="47" column="28" bodyfile="units/material_vector_unit_2d.hpp" bodystart="47" bodyend="-1"/>
+        <location file="units/material_vector_unit_2d.hpp" line="77" column="28" bodyfile="units/material_vector_unit_2d.hpp" bodystart="77" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -53,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/material_vector_unit_2d.hpp" line="17" column="13" bodyfile="units/material_vector_unit_2d.hpp" bodystart="17" bodyend="18"/>
+        <location file="units/material_vector_unit_2d.hpp" line="18" column="13" bodyfile="units/material_vector_unit_2d.hpp" bodystart="18" bodyend="19"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1material__vector__unit__2d_1aa2b03af224e056959d94189d9a542c33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -71,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/material_vector_unit_2d.hpp" line="20" column="13" bodyfile="units/material_vector_unit_2d.hpp" bodystart="20" bodyend="21"/>
+        <location file="units/material_vector_unit_2d.hpp" line="21" column="13" bodyfile="units/material_vector_unit_2d.hpp" bodystart="21" bodyend="22"/>
       </memberdef>
       <memberdef kind="function" id="classscifir_1_1material__vector__unit__2d_1a8cd86831f46de007e552ab7ef959ed5a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -89,9 +91,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/material_vector_unit_2d.hpp" line="23" column="13" bodyfile="units/material_vector_unit_2d.hpp" bodystart="23" bodyend="24"/>
+        <location file="units/material_vector_unit_2d.hpp" line="24" column="13" bodyfile="units/material_vector_unit_2d.hpp" bodystart="24" bodyend="25"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1material__vector__unit__2d_1a317ddf9a4092b499477b88119bb002d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1material__vector__unit__2d_1a317ddf9a4092b499477b88119bb002d3" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
         <definition>scifir::material_vector_unit_2d&lt; T, U &gt;::material_vector_unit_2d</definition>
         <argsstring>(const T &amp;x_vector, const coordinates_2d&lt; U &gt; &amp;x_coordinates)</argsstring>
@@ -111,9 +113,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/material_vector_unit_2d.hpp" line="26" column="13" bodyfile="units/material_vector_unit_2d.hpp" bodystart="26" bodyend="27"/>
+        <location file="units/material_vector_unit_2d.hpp" line="27" column="22" bodyfile="units/material_vector_unit_2d.hpp" bodystart="27" bodyend="28"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1material__vector__unit__2d_1a4152758a44a0dc9af20b21462758d227" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classscifir_1_1material__vector__unit__2d_1a4152758a44a0dc9af20b21462758d227" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
         <definition>scifir::material_vector_unit_2d&lt; T, U &gt;::material_vector_unit_2d</definition>
         <argsstring>(const string &amp;init_material_vector_unit_2d)</argsstring>
@@ -129,16 +131,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/material_vector_unit_2d.hpp" line="29" column="13" bodyfile="units/material_vector_unit_2d.hpp" bodystart="29" bodyend="30"/>
+        <location file="units/material_vector_unit_2d.hpp" line="30" column="22" bodyfile="units/material_vector_unit_2d.hpp" bodystart="30" bodyend="33"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1material__vector__unit__2d_1a867fc961592cb9f68899e2801dbf5fb8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1material__vector__unit__2d" kindref="compound">material_vector_unit_2d</ref> &amp;</type>
-        <definition>material_vector_unit_2d &amp; scifir::material_vector_unit_2d&lt; T, U &gt;::operator=</definition>
-        <argsstring>(const material_vector_unit_2d &amp;x)</argsstring>
+      <memberdef kind="function" id="classscifir_1_1material__vector__unit__2d_1af50e8ccbaa86ebc11dd95ff5db3e3a86" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1material__vector__unit__2d" kindref="compound">material_vector_unit_2d</ref>&lt; T, <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref> &gt; &amp;</type>
+        <definition>material_vector_unit_2d&lt; T, U &gt; &amp; scifir::material_vector_unit_2d&lt; T, U &gt;::operator=</definition>
+        <argsstring>(const material_vector_unit_2d&lt; T, U &gt; &amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::material_vector_unit_2d::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1material__vector__unit__2d" kindref="compound">material_vector_unit_2d</ref> &amp;</type>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1material__vector__unit__2d" kindref="compound">material_vector_unit_2d</ref>&lt; T, <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref> &gt; &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -147,16 +149,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/material_vector_unit_2d.hpp" line="32" column="37" bodyfile="units/material_vector_unit_2d.hpp" bodystart="32" bodyend="37"/>
+        <location file="units/material_vector_unit_2d.hpp" line="35" column="37" bodyfile="units/material_vector_unit_2d.hpp" bodystart="35" bodyend="40"/>
       </memberdef>
-      <memberdef kind="function" id="classscifir_1_1material__vector__unit__2d_1a003247a4a8580d0b1f04b54525df154d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classscifir_1_1material__vector__unit__2d" kindref="compound">material_vector_unit_2d</ref> &amp;</type>
-        <definition>material_vector_unit_2d &amp; scifir::material_vector_unit_2d&lt; T, U &gt;::operator=</definition>
-        <argsstring>(material_vector_unit_2d &amp;&amp;x)</argsstring>
+      <memberdef kind="function" id="classscifir_1_1material__vector__unit__2d_1ae7f3a9c847dce4f3df5a6b992410c998" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1material__vector__unit__2d" kindref="compound">material_vector_unit_2d</ref>&lt; T, <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref> &gt; &amp;</type>
+        <definition>material_vector_unit_2d&lt; T, U &gt; &amp; scifir::material_vector_unit_2d&lt; T, U &gt;::operator=</definition>
+        <argsstring>(material_vector_unit_2d&lt; T, U &gt; &amp;&amp;x)</argsstring>
         <name>operator=</name>
         <qualifiedname>scifir::material_vector_unit_2d::operator=</qualifiedname>
         <param>
-          <type><ref refid="classscifir_1_1material__vector__unit__2d" kindref="compound">material_vector_unit_2d</ref> &amp;&amp;</type>
+          <type><ref refid="classscifir_1_1material__vector__unit__2d" kindref="compound">material_vector_unit_2d</ref>&lt; T, <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref> &gt; &amp;&amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -165,7 +167,106 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="units/material_vector_unit_2d.hpp" line="39" column="37" bodyfile="units/material_vector_unit_2d.hpp" bodystart="39" bodyend="44"/>
+        <location file="units/material_vector_unit_2d.hpp" line="42" column="37" bodyfile="units/material_vector_unit_2d.hpp" bodystart="42" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1material__vector__unit__2d_1a73531a6fc63b76bb6ae87edd4f2e2ce8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1material__vector__unit__2d" kindref="compound">material_vector_unit_2d</ref>&lt; T, <ref refid="classscifir_1_1coordinates__1d" kindref="compound">U</ref> &gt; &amp;</type>
+        <definition>material_vector_unit_2d&lt; T, U &gt; &amp; scifir::material_vector_unit_2d&lt; T, U &gt;::operator=</definition>
+        <argsstring>(const string &amp;init_material_vector_unit_2d)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>scifir::material_vector_unit_2d::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_material_vector_unit_2d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/material_vector_unit_2d.hpp" line="49" column="37" bodyfile="units/material_vector_unit_2d.hpp" bodystart="49" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1material__vector__unit__2d_1af6d1fc46b199e4d9303c6fa41a1942a2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <definition>string scifir::material_vector_unit_2d&lt; T, U &gt;::vectorial_display</definition>
+        <argsstring>(int number_of_decimals=2) const</argsstring>
+        <name>vectorial_display</name>
+        <qualifiedname>scifir::material_vector_unit_2d::vectorial_display</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>number_of_decimals</declname>
+          <defval>2</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/material_vector_unit_2d.hpp" line="55" column="20" bodyfile="units/material_vector_unit_2d.hpp" bodystart="55" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1material__vector__unit__2d_1a49fd7dfb21983b383b4b508ebfb581d3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <definition>string scifir::material_vector_unit_2d&lt; T, U &gt;::vectorial_derived_display</definition>
+        <argsstring>(int number_of_decimals=2) const</argsstring>
+        <name>vectorial_derived_display</name>
+        <qualifiedname>scifir::material_vector_unit_2d::vectorial_derived_display</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>number_of_decimals</declname>
+          <defval>2</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/material_vector_unit_2d.hpp" line="62" column="20" bodyfile="units/material_vector_unit_2d.hpp" bodystart="62" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classscifir_1_1material__vector__unit__2d_1a3b1badbbbf160a72d05065f13a6b5636" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+        <definition>string scifir::material_vector_unit_2d&lt; T, U &gt;::vectorial_custom_display</definition>
+        <argsstring>(const string &amp;init_dimensions, int number_of_decimals=2) const</argsstring>
+        <name>vectorial_custom_display</name>
+        <qualifiedname>scifir::material_vector_unit_2d::vectorial_custom_display</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">const</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref> &amp;</type>
+          <declname>init_dimensions</declname>
+        </param>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int</ref></type>
+          <declname>number_of_decimals</declname>
+          <defval>2</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/material_vector_unit_2d.hpp" line="69" column="20" bodyfile="units/material_vector_unit_2d.hpp" bodystart="69" bodyend="74"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classscifir_1_1material__vector__unit__2d_1acb222979b4196800a5858be175cac817" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
+        <definition>void scifir::material_vector_unit_2d&lt; T, U &gt;::initialize_from_string</definition>
+        <argsstring>(string init_material_vector_unit_2d)</argsstring>
+        <name>initialize_from_string</name>
+        <qualifiedname>scifir::material_vector_unit_2d::initialize_from_string</qualifiedname>
+        <param>
+          <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">string</ref></type>
+          <declname>init_material_vector_unit_2d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="units/material_vector_unit_2d.hpp" line="80" column="6" bodyfile="units/material_vector_unit_2d.hpp" bodystart="80" bodyend="89"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -174,7 +275,7 @@
     </detaileddescription>
     <collaborationgraph>
       <node id="2">
-        <label>scifir::coordinates_2d&lt; U &gt;</label>
+        <label>scifir::coordinates_2d&lt; length &gt;</label>
         <link refid="classscifir_1_1coordinates__2d"/>
       </node>
       <node id="1">
@@ -185,17 +286,22 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="units/material_vector_unit_2d.hpp" line="14" column="5" bodyfile="units/material_vector_unit_2d.hpp" bodystart="15" bodyend="48"/>
+    <location file="units/material_vector_unit_2d.hpp" line="15" column="5" bodyfile="units/material_vector_unit_2d.hpp" bodystart="16" bodyend="90"/>
     <listofallmembers>
       <member refid="classscifir_1_1material__vector__unit__2d_1aaa6956ee952b40913172521a9b64c2b3" prot="public" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>coordinates</name></member>
+      <member refid="classscifir_1_1material__vector__unit__2d_1acb222979b4196800a5858be175cac817" prot="private" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>initialize_from_string</name></member>
       <member refid="classscifir_1_1material__vector__unit__2d_1aafc9c4932c8bfb4ca38f9650de7c622d" prot="public" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>material_vector_unit_2d</name></member>
       <member refid="classscifir_1_1material__vector__unit__2d_1aa2b03af224e056959d94189d9a542c33" prot="public" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>material_vector_unit_2d</name></member>
       <member refid="classscifir_1_1material__vector__unit__2d_1a8cd86831f46de007e552ab7ef959ed5a" prot="public" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>material_vector_unit_2d</name></member>
       <member refid="classscifir_1_1material__vector__unit__2d_1a317ddf9a4092b499477b88119bb002d3" prot="public" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>material_vector_unit_2d</name></member>
       <member refid="classscifir_1_1material__vector__unit__2d_1a4152758a44a0dc9af20b21462758d227" prot="public" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>material_vector_unit_2d</name></member>
-      <member refid="classscifir_1_1material__vector__unit__2d_1a867fc961592cb9f68899e2801dbf5fb8" prot="public" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>operator=</name></member>
-      <member refid="classscifir_1_1material__vector__unit__2d_1a003247a4a8580d0b1f04b54525df154d" prot="public" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1material__vector__unit__2d_1af50e8ccbaa86ebc11dd95ff5db3e3a86" prot="public" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1material__vector__unit__2d_1ae7f3a9c847dce4f3df5a6b992410c998" prot="public" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>operator=</name></member>
+      <member refid="classscifir_1_1material__vector__unit__2d_1a73531a6fc63b76bb6ae87edd4f2e2ce8" prot="public" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>operator=</name></member>
       <member refid="classscifir_1_1material__vector__unit__2d_1aed5f4fe6780b5287bf91657af10ca185" prot="public" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>vector</name></member>
+      <member refid="classscifir_1_1material__vector__unit__2d_1a3b1badbbbf160a72d05065f13a6b5636" prot="public" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>vectorial_custom_display</name></member>
+      <member refid="classscifir_1_1material__vector__unit__2d_1a49fd7dfb21983b383b4b508ebfb581d3" prot="public" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>vectorial_derived_display</name></member>
+      <member refid="classscifir_1_1material__vector__unit__2d_1af6d1fc46b199e4d9303c6fa41a1942a2" prot="public" virt="non-virtual"><scope>scifir::material_vector_unit_2d</scope><name>vectorial_display</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

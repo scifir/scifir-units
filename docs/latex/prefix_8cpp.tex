@@ -1,0 +1,143 @@
+\doxysection{units/prefix.cpp File Reference}
+\hypertarget{prefix_8cpp}{}\label{prefix_8cpp}\index{units/prefix.cpp@{units/prefix.cpp}}
+{\ttfamily \#include "{}./prefix.\+hpp"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for prefix.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{prefix_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+\begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscifir_1_1prefix_afd8baa69668003ed6cc1227eb2a661f5}{prefix\+::type}} \mbox{\hyperlink{namespacescifir_a2a2cc2c1b3a35da9fc1fff749a93a6f9}{scifir\+::prefix\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&x)
+\item 
+\mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \mbox{\hyperlink{namespacescifir_a381054e3832331d799d484dfccd7d10a}{scifir\+::closest\+\_\+prefix}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{actual\+\_\+prefix}}, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{actual\+\_\+scale}})
+\item 
+\mbox{\hyperlink{classscifir_1_1prefix}{prefix}} \mbox{\hyperlink{namespacescifir_af91b178f2d049a8313dbc40c87615dec}{scifir\+::create\+\_\+prefix\+\_\+by\+\_\+factor}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} factor)
+\item 
+bool \mbox{\hyperlink{prefix_8cpp_afe6cee98641049908e4670f4710e9503}{operator==}} (const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&x, const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&y)
+\item 
+bool \mbox{\hyperlink{prefix_8cpp_a51bf6bd00bc9943067753b04e3210546}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&x, const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&y)
+\item 
+bool \mbox{\hyperlink{prefix_8cpp_a5b7915a259118db56693d9873a2beb12}{operator$<$=}} (const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&x, const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&y)
+\item 
+bool \mbox{\hyperlink{prefix_8cpp_ab37ebad8bc87d57073af631f38524b73}{operator$>$}} (const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&x, const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&y)
+\item 
+bool \mbox{\hyperlink{prefix_8cpp_a5e9c72a6d17821e1b2113410cf12f88f}{operator$>$=}} (const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&x, const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&y)
+\item 
+ostream \& \mbox{\hyperlink{prefix_8cpp_ad09c156ae992f80dd7c4206b64e1dfc3}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{prefix_8cpp_a51bf6bd00bc9943067753b04e3210546}\label{prefix_8cpp_a51bf6bd00bc9943067753b04e3210546} 
+\index{prefix.cpp@{prefix.cpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prefix.cpp@{prefix.cpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00385}{385}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00386\ \{}
+\DoxyCodeLine{00387\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{00388\ \}}
+
+\end{DoxyCode}
+\Hypertarget{prefix_8cpp_ad09c156ae992f80dd7c4206b64e1dfc3}\label{prefix_8cpp_ad09c156ae992f80dd7c4206b64e1dfc3} 
+\index{prefix.cpp@{prefix.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prefix.cpp@{prefix.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00405}{405}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00406\ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ x.\mbox{\hyperlink{classscifir_1_1prefix_adceb7b20c962d582c949849446827fad}{get\_symbol}}();}
+\DoxyCodeLine{00408\ \}}
+
+\end{DoxyCode}
+\Hypertarget{prefix_8cpp_a5b7915a259118db56693d9873a2beb12}\label{prefix_8cpp_a5b7915a259118db56693d9873a2beb12} 
+\index{prefix.cpp@{prefix.cpp}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!prefix.cpp@{prefix.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00390}{390}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00391\ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.\mbox{\hyperlink{classscifir_1_1prefix_a6d301253dc9b0c6cde92116da0b84e34}{get\_conversion\_factor}}()\ <=\ y.\mbox{\hyperlink{classscifir_1_1prefix_a6d301253dc9b0c6cde92116da0b84e34}{get\_conversion\_factor}}());}
+\DoxyCodeLine{00393\ \}}
+
+\end{DoxyCode}
+\Hypertarget{prefix_8cpp_afe6cee98641049908e4670f4710e9503}\label{prefix_8cpp_afe6cee98641049908e4670f4710e9503} 
+\index{prefix.cpp@{prefix.cpp}!operator==@{operator==}}
+\index{operator==@{operator==}!prefix.cpp@{prefix.cpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00380}{380}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00381\ \{}
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.\mbox{\hyperlink{classscifir_1_1prefix_a6d301253dc9b0c6cde92116da0b84e34}{get\_conversion\_factor}}()\ ==\ y.\mbox{\hyperlink{classscifir_1_1prefix_a6d301253dc9b0c6cde92116da0b84e34}{get\_conversion\_factor}}());}
+\DoxyCodeLine{00383\ \}}
+
+\end{DoxyCode}
+\Hypertarget{prefix_8cpp_ab37ebad8bc87d57073af631f38524b73}\label{prefix_8cpp_ab37ebad8bc87d57073af631f38524b73} 
+\index{prefix.cpp@{prefix.cpp}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!prefix.cpp@{prefix.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00395}{395}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00396\ \{}
+\DoxyCodeLine{00397\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.\mbox{\hyperlink{classscifir_1_1prefix_a6d301253dc9b0c6cde92116da0b84e34}{get\_conversion\_factor}}()\ >\ y.\mbox{\hyperlink{classscifir_1_1prefix_a6d301253dc9b0c6cde92116da0b84e34}{get\_conversion\_factor}}());}
+\DoxyCodeLine{00398\ \}}
+
+\end{DoxyCode}
+\Hypertarget{prefix_8cpp_a5e9c72a6d17821e1b2113410cf12f88f}\label{prefix_8cpp_a5e9c72a6d17821e1b2113410cf12f88f} 
+\index{prefix.cpp@{prefix.cpp}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!prefix.cpp@{prefix.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily bool operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1prefix}{scifir\+::prefix}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{prefix_8cpp_source_l00400}{400}} of file \mbox{\hyperlink{prefix_8cpp_source}{prefix.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00401\ \{}
+\DoxyCodeLine{00402\ \ \ \ \ \textcolor{keywordflow}{return}\ (x.\mbox{\hyperlink{classscifir_1_1prefix_a6d301253dc9b0c6cde92116da0b84e34}{get\_conversion\_factor}}()\ >=\ y.\mbox{\hyperlink{classscifir_1_1prefix_a6d301253dc9b0c6cde92116da0b84e34}{get\_conversion\_factor}}());}
+\DoxyCodeLine{00403\ \}}
+
+\end{DoxyCode}

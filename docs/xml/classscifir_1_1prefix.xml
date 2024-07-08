@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classscifir_1_1prefix" kind="class" language="C++" prot="public">
     <compoundname>scifir::prefix</compoundname>
+    <includes refid="prefix_8hpp" local="no">prefix.hpp</includes>
     <sectiondef kind="public-type">
       <memberdef kind="enum" id="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5" prot="public" static="no" strong="no">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">int8_t</ref></type>
@@ -165,7 +166,7 @@
     </sectiondef>
     <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classscifir_1_1prefix_1a37950f2bbe97c44f0d5372aea2b7b33a" prot="public" static="no" mutable="no">
-        <type>prefix::type</type>
+        <type><ref refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5" kindref="member">prefix::type</ref></type>
         <definition>prefix::type scifir::prefix::prefix_type</definition>
         <argsstring></argsstring>
         <name>prefix_type</name>
@@ -237,7 +238,7 @@
         <name>prefix</name>
         <qualifiedname>scifir::prefix::prefix</qualifiedname>
         <param>
-          <type>prefix::type</type>
+          <type><ref refid="classscifir_1_1prefix_1afd8baa69668003ed6cc1227eb2a661f5" kindref="member">prefix::type</ref></type>
           <declname>new_type</declname>
         </param>
         <briefdescription>

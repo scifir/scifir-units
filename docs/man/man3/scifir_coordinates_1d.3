@@ -6,9 +6,14 @@ scifir::coordinates_1d< T >
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <coordinates_1d\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBcoordinates_1d\fP ()"
+.br
 .ti -1c
 .RI "\fBcoordinates_1d\fP (\fBconst\fP \fBcoordinates_1d\fP< T > &\fBx_coordinates\fP)"
 .br
@@ -62,6 +67,211 @@ scifir::coordinates_1d< T >
 .RI "T \fBx\fP"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_coordinates_1d\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<\fBtypename\fP T = length>
+.br
+class scifir::coordinates_1d< T >"
+.PP
+Definition at line \fB17\fP of file \fBcoordinates_1d\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_1d\fP< T >::coordinates_1d ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB20\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+20                              : x()
+21             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_1d\fP< T >::coordinates_1d (\fBconst\fP \fBcoordinates_1d\fP< T > & x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB23\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+23                                                                    : x(x_coordinates\&.x)
+24             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_1d\fP< T >::coordinates_1d (\fBcoordinates_1d\fP< T > && x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB26\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+26                                                               : x(std::move(x_coordinates\&.x))
+27             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_1d\fP< T >::coordinates_1d (\fBconst\fP T & new_x)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB29\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+29                                                     : x(new_x)
+30             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_1d\fP< T >::coordinates_1d (\fBconst\fP \fBpoint_1d\fP< T > & new_point)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB32\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+32                                                                   : x(new_point\&.x)
+33             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_1d\fP< T >::coordinates_1d (\fBpoint_1d\fP< T > && new_point)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB35\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+35                                                              : x(std::move(new_point\&.x))
+36             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_1d\fP< T >::coordinates_1d (\fBconst\fP \fBstring\fP & init_coordinates_1d)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB38\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+38                                                                        : coordinates_1d()
+39             {
+40                 initialize_from_string(init_coordinates_1d);
+41             }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_1d\fP< T >::display_cartesian () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB88\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+89             {
+90                 ostringstream out;
+91                 out << "(" << x <<  ")";
+92                 return out\&.str();
+93             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_1d\fP< T >::distance_to_origin () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB83\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+84             {
+85                 return T(std::abs(x\&.get_value()),x\&.get_dimensions());
+86             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_1d\fP< T >::initialize_from_string (\fBstring\fP init_coordinates_1d)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB98\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+99             {
+100                 if (init_coordinates_1d\&.front() == '(')
+101                 {
+102                     init_coordinates_1d\&.erase(0,1);
+103                 }
+104                 if (init_coordinates_1d\&.back() == ')')
+105                 {
+106                     init_coordinates_1d\&.erase(init_coordinates_1d\&.size()\-1,1);
+107                 }
+108                 x = T(init_coordinates_1d);
+109             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_1d\fP< T >::move (\fBconst\fP T & x_value)\fC [inline]\fP"
+
+.PP
+Definition at line \fB78\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+79             {
+80                 x += x_value;
+81             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_1d\fP< T > & \fBscifir::coordinates_1d\fP< T >\fB::operator\fP= (\fBconst\fP \fBcoordinates_1d\fP< T > & x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB43\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+44             {
+45                 x = x_coordinates\&.x;
+46                 return *this;
+47             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_1d\fP< T > & \fBscifir::coordinates_1d\fP< T >\fB::operator\fP= (\fBconst\fP \fBpoint_1d\fP< T > & x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB55\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+56             {
+57                 x = x_point\&.x;
+58                 return *this;
+59             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_1d\fP< T > & \fBscifir::coordinates_1d\fP< T >\fB::operator\fP= (\fBconst\fP \fBstring\fP & init_coordinates_1d)\fC [inline]\fP"
+
+.PP
+Definition at line \fB67\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+68             {
+69                 initialize_from_string(init_coordinates_1d);
+70                 return *this;
+71             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_1d\fP< T > & \fBscifir::coordinates_1d\fP< T >\fB::operator\fP= (\fBcoordinates_1d\fP< T > && x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB49\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+50             {
+51                 x = std::move(x_coordinates\&.x);
+52                 return *this;
+53             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_1d\fP< T > & \fBscifir::coordinates_1d\fP< T >\fB::operator\fP= (\fBpoint_1d\fP< T > && x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB61\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+62             {
+63                 x = std::move(x_point\&.x);
+64                 return *this;
+65             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_1d\fP< T >::set_position (\fBconst\fP T & new_x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB73\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+74             {
+75                 x = new_x;
+76             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_1d\fP< T >::x"
+
+.PP
+Definition at line \fB95\fP of file \fBcoordinates_1d\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

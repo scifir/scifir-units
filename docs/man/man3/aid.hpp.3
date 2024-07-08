@@ -1,0 +1,218 @@
+.TH "special_units/aid.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+special_units/aid.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cstdint>\fP
+.br
+\fC#include <string>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBscifir::aid\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscifir\fP"
+.br
+.RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBscifir::astronomical_body\fP : int8_t { \fBscifir::NONE\fP, \fBscifir::MILKY_WAY\fP, \fBscifir::ANDROMEDA\fP, \fBscifir::SOLAR_SYSTEM\fP, \fBscifir::SUN\fP, \fBscifir::MOON\fP, \fBscifir::MERCURY\fP, \fBscifir::VENUS\fP, \fBscifir::EARTH\fP, \fBscifir::MARS\fP, \fBscifir::JUPITER\fP, \fBscifir::SATURN\fP, \fBscifir::URANUS\fP, \fBscifir::NEPTUNE\fP, \fBscifir::CERES\fP, \fBscifir::ORCUS\fP, \fBscifir::PLUTO\fP, \fBscifir::HAUMEA\fP, \fBscifir::QUAOAR\fP, \fBscifir::MAKEMAKE\fP, \fBscifir::GONGGONG\fP, \fBscifir::ERIS\fP, \fBscifir::SEDNA\fP, \fBscifir::IO\fP, \fBscifir::EUROPA\fP, \fBscifir::GANYMEDE\fP, \fBscifir::CALLISTO\fP, \fBscifir::MIMAS\fP, \fBscifir::ENCELADUS\fP, \fBscifir::TETHYS\fP, \fBscifir::DIONE\fP, \fBscifir::RHEA\fP, \fBscifir::TITAN\fP, \fBscifir::IAPETUS\fP, \fBscifir::MIRANDA\fP, \fBscifir::ARIEL\fP, \fBscifir::UMBRIEL\fP, \fBscifir::TITANIA\fP, \fBscifir::OBERON\fP, \fBscifir::TRITON\fP, \fBscifir::CHARON\fP, \fBscifir::DYSNOMIA\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBaid\fP &x)"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBaid::type\fP &x)"
+.br
+.ti -1c
+.RI "\fBaid::type\fP \fBscifir::create_astronomical_type\fP (\fBconst\fP \fBstring\fP &\fBastronomical_type_abbreviation\fP)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::aid\fP &x, const \fBscifir::aid\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::aid\fP &x, const \fBscifir::aid\fP &y)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBscifir::aid\fP &x, const string &init_aid)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBscifir::aid\fP &x, const string &init_aid)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const string &init_aid, const \fBscifir::aid\fP &x)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const string &init_aid, const \fBscifir::aid\fP &x)"
+.br
+.ti -1c
+.RI "void \fBoperator+=\fP (string &x, const \fBscifir::aid\fP &y)"
+.br
+.ti -1c
+.RI "string \fBoperator+\fP (const string &x, const \fBscifir::aid\fP &y)"
+.br
+.ti -1c
+.RI "string \fBoperator+\fP (const \fBscifir::aid\fP &y, const string &x)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::aid\fP &x)"
+.br
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, \fBscifir::aid\fP &x)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "bool operator!= (const \fBscifir::aid\fP & x, const \fBscifir::aid\fP & y)"
+
+.PP
+Definition at line \fB554\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+555 {
+556     return !(x == y);
+557 }
+.fi
+
+.SS "bool operator!= (const \fBscifir::aid\fP & x, const string & init_aid)"
+
+.PP
+Definition at line \fB565\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+566 {
+567     return !(x == init_aid);
+568 }
+.fi
+
+.SS "bool operator!= (const string & init_aid, const \fBscifir::aid\fP & x)"
+
+.PP
+Definition at line \fB576\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+577 {
+578     return !(init_aid == x);
+579 }
+.fi
+
+.SS "string operator+ (const \fBscifir::aid\fP & y, const string & x)"
+
+.PP
+Definition at line \fB596\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+597 {
+598     ostringstream output;
+599     output << y;
+600     output << x;
+601     return output\&.str();
+602 }
+.fi
+
+.SS "string operator+ (const string & x, const \fBscifir::aid\fP & y)"
+
+.PP
+Definition at line \fB588\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+589 {
+590     ostringstream output;
+591     output << x;
+592     output << y;
+593     return output\&.str();
+594 }
+.fi
+
+.SS "void operator+= (string & x, const \fBscifir::aid\fP & y)"
+
+.PP
+Definition at line \fB581\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+582 {
+583     ostringstream output;
+584     output << y;
+585     x += output\&.str();
+586 }
+.fi
+
+.SS "ostream & operator<< (ostream & os, const \fBscifir::aid\fP & x)"
+
+.PP
+Definition at line \fB604\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+605 {
+606     return os << to_string(x);
+607 }
+.fi
+
+.SS "bool operator== (const \fBscifir::aid\fP & x, const \fBscifir::aid\fP & y)"
+
+.PP
+Definition at line \fB542\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+543 {
+544     if(x\&.universe == y\&.universe and x\&.galaxy == y\&.galaxy and x\&.solar_system == y\&.solar_system and x\&.astronomical_body == y\&.astronomical_body)
+545     {
+546         return true;
+547     }
+548     else
+549     {
+550         return false;
+551     }
+552 }
+.fi
+
+.SS "bool operator== (const \fBscifir::aid\fP & x, const string & init_aid)"
+
+.PP
+Definition at line \fB559\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+560 {
+561     scifir::aid y = scifir::aid(init_aid);
+562     return (x == y);
+563 }
+.fi
+
+.SS "bool operator== (const string & init_aid, const \fBscifir::aid\fP & x)"
+
+.PP
+Definition at line \fB570\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+571 {
+572     scifir::aid y = scifir::aid(init_aid);
+573     return (x == y);
+574 }
+.fi
+
+.SS "istream & operator>> (istream & is, \fBscifir::aid\fP & x)"
+
+.PP
+Definition at line \fB609\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+610 {
+611     char a[256];
+612     is\&.getline(a, 256);
+613     string b(a);
+614     boost::trim(b);
+615     x = scifir::aid(b);
+616     return is;
+617 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

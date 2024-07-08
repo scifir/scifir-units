@@ -14,7 +14,7 @@
       </node>
       <node id="3">
         <label>../units/dimension.hpp</label>
-        <link refid="dimension_8hpp_source"/>
+        <link refid="dimension_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
@@ -42,7 +42,7 @@
       </node>
       <node id="4">
         <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp_source"/>
+        <link refid="prefix_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -54,7 +54,7 @@
       </node>
       <node id="2">
         <label>../units/scalar_unit.hpp</label>
-        <link refid="scalar__unit_8hpp_source"/>
+        <link refid="scalar__unit_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
@@ -78,7 +78,7 @@
       </node>
       <node id="17">
         <label>../util/is_number.hpp</label>
-        <link refid="is__number_8hpp_source"/>
+        <link refid="is__number_8hpp"/>
         <childnode refid="18" relation="include">
         </childnode>
       </node>
@@ -126,15 +126,21 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="2">
+        <label>predefined_units/informatics_units.cpp</label>
+        <link refid="informatics__units_8cpp"/>
+      </node>
       <node id="1">
         <label>predefined_units/informatics_units.hpp</label>
         <link refid="informatics__units_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
-      <node id="2">
+      <node id="3">
         <label>units.hpp</label>
-        <link refid="units_8hpp_source"/>
+        <link refid="units_8hpp"/>
       </node>
     </invincdepgraph>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
@@ -150,9 +156,9 @@
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">scifir</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacescifir" kindref="compound">scifir</ref></highlight></codeline>
 <codeline lineno="9"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>SCALAR_UNIT_HPP(transfer_speed);</highlight></codeline>
+<codeline lineno="10" refid="namespacescifir_1a53d2fffc42db9d7bb3ef67a97beb2a56" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scalar__unit_8hpp_1ab2113e04286d6bffb113bb62617c0cec" kindref="member">SCALAR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">transfer_speed</ref>);</highlight></codeline>
 <codeline lineno="11"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_PREDEFINED_UNITS_INFORMATICS_UNITS_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>

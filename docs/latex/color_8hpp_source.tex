@@ -1,68 +1,68 @@
 \doxysection{color.\+hpp}
 \hypertarget{color_8hpp_source}{}\label{color_8hpp_source}\index{special\_units/color.hpp@{special\_units/color.hpp}}
-
+\mbox{\hyperlink{color_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_COLOR\_HPP\_INCLUDED}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_COLOR\_HPP\_INCLUDED}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <sstream>}}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }scifir}
-\DoxyCodeLine{00010\ \{}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1color}{color}}}
-\DoxyCodeLine{00012\ \ \ \ \ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1color}{color}}();}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1color}{color}}(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int},\textcolor{keywordtype}{int},\textcolor{keywordtype}{int}\ =\ 255);}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ get\_red()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00018\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ red;}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ get\_green()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00023\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ green;}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ get\_blue()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00028\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ blue;}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ get\_alpha()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00033\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ alpha;}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ is\_opaque()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00038\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (alpha\ ==\ 255);}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ is\_transparent()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00043\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (alpha\ <\ 255);}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ is\_full\_transparent()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00048\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (alpha\ ==\ 0);}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ red;}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ blue;}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ green;}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ alpha;}
-\DoxyCodeLine{00057\ \ \ \ \ \};}
-\DoxyCodeLine{00058\ \}}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ ostream\&\ operator\ <<(ostream\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1color}{scifir::color}}\&);}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_COLOR\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_COLOR\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_COLOR\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00007}00007\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacescifir}{scifir}}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00011}\mbox{\hyperlink{classscifir_1_1color}{00011}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1color}{color}}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1color_a4bcb5421430baa41f609231dfb963839}{color}}();}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1color_a4bcb5421430baa41f609231dfb963839}{color}}(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int},\textcolor{keywordtype}{int},\textcolor{keywordtype}{int}\ =\ 255);}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00017}\mbox{\hyperlink{classscifir_1_1color_a5dcc9d2526000f7ba5b55782a74967f8}{00017}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \mbox{\hyperlink{classscifir_1_1color_a5dcc9d2526000f7ba5b55782a74967f8}{get\_red}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00018}00018\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1color_ae09ff0a9170822e990e11ee1936e4fbe}{red}};}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00022}\mbox{\hyperlink{classscifir_1_1color_a07aab1a1b516f8f11632eb8c98f99700}{00022}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \mbox{\hyperlink{classscifir_1_1color_a07aab1a1b516f8f11632eb8c98f99700}{get\_green}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00023}00023\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1color_acef93b9122d6013e1b67f290bf537225}{green}};}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00027}\mbox{\hyperlink{classscifir_1_1color_a2518aa9b3b720fc7f21a5a4b4ffe3c6a}{00027}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \mbox{\hyperlink{classscifir_1_1color_a2518aa9b3b720fc7f21a5a4b4ffe3c6a}{get\_blue}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00028}00028\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1color_a31c2a90e4accda723a5829d6f198b7bd}{blue}};}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00032}\mbox{\hyperlink{classscifir_1_1color_a112b42c121bf0bf9033c0e94aef6f0ba}{00032}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \mbox{\hyperlink{classscifir_1_1color_a112b42c121bf0bf9033c0e94aef6f0ba}{get\_alpha}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00033}00033\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1color_a54982b1f4039f13be8f8f5e68c5ea4c2}{alpha}};}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00037}\mbox{\hyperlink{classscifir_1_1color_a8a35549adc5e1f9ee0c8e546a52f44ed}{00037}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1color_a8a35549adc5e1f9ee0c8e546a52f44ed}{is\_opaque}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00038}00038\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classscifir_1_1color_a54982b1f4039f13be8f8f5e68c5ea4c2}{alpha}}\ ==\ 255);}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00042}\mbox{\hyperlink{classscifir_1_1color_ae3577bc74ff73518cd289e595bec20b4}{00042}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1color_ae3577bc74ff73518cd289e595bec20b4}{is\_transparent}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00043}00043\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classscifir_1_1color_a54982b1f4039f13be8f8f5e68c5ea4c2}{alpha}}\ <\ 255);}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00047}\mbox{\hyperlink{classscifir_1_1color_a24ff6d8c85e700d1f7b585afd105ae76}{00047}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1color_a24ff6d8c85e700d1f7b585afd105ae76}{is\_full\_transparent}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00048}00048\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classscifir_1_1color_a54982b1f4039f13be8f8f5e68c5ea4c2}{alpha}}\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00053}\mbox{\hyperlink{classscifir_1_1color_ae09ff0a9170822e990e11ee1936e4fbe}{00053}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1color_ae09ff0a9170822e990e11ee1936e4fbe}{red}};}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00054}\mbox{\hyperlink{classscifir_1_1color_a31c2a90e4accda723a5829d6f198b7bd}{00054}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1color_a31c2a90e4accda723a5829d6f198b7bd}{blue}};}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00055}\mbox{\hyperlink{classscifir_1_1color_acef93b9122d6013e1b67f290bf537225}{00055}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1color_acef93b9122d6013e1b67f290bf537225}{green}};}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00056}\mbox{\hyperlink{classscifir_1_1color_a54982b1f4039f13be8f8f5e68c5ea4c2}{00056}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1color_a54982b1f4039f13be8f8f5e68c5ea4c2}{alpha}};}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00057}00057\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00060}00060\ ostream\&\ \mbox{\hyperlink{color_8hpp_aeb33ef45fdf691c8b9d6683d133d6d13}{operator\ <<}}(ostream\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1color}{scifir::color}}\&);}
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{color_8hpp_source_l00062}00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_COLOR\_HPP\_INCLUDED}}
 
 \end{DoxyCode}

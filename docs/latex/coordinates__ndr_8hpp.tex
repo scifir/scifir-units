@@ -1,0 +1,544 @@
+\doxysection{coordinates/coordinates\+\_\+ndr.hpp File Reference}
+\hypertarget{coordinates__ndr_8hpp}{}\label{coordinates__ndr_8hpp}\index{coordinates/coordinates\_ndr.hpp@{coordinates/coordinates\_ndr.hpp}}
+{\ttfamily \#include "{}../coordinates/coordinates\+\_\+nd.\+hpp"{}}\newline
+{\ttfamily \#include "{}../topology/point\+\_\+nd.\+hpp"{}}\newline
+{\ttfamily \#include "{}../predefined\+\_\+units/physics\+\_\+units.\+hpp"{}}\newline
+{\ttfamily \#include "{}../units/unit\+\_\+basic.\+hpp"{}}\newline
+{\ttfamily \#include "{}../util/types.\+hpp"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for coordinates\+\_\+ndr.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{coordinates__ndr_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{coordinates__ndr_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classscifir_1_1coordinates__ndr_3_01float_01_4}{scifir\+::coordinates\+\_\+ndr$<$ float $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+\begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T $>$ }\\\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a79b64629018bbaf5471365feca65271e}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{coordinates\+\_\+ndr}}$<$ T $>$ \&x)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a8fd6269d50e300d53e8e170728978958}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{coordinates\+\_\+ndr}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&x)
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} $>$ }\\T \mbox{\hyperlink{namespacescifir_a997636001524c08f46b5e6bfe279aaed}{scifir\+::distance}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{coordinates\+\_\+ndr}}$<$ T $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{coordinates\+\_\+ndr}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} $>$ \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_a884db074daf47f348ddf972412d3f8c1}{scifir\+::distance}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{coordinates\+\_\+ndr}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{coordinates\+\_\+ndr}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&y)
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} $>$ }\\T \mbox{\hyperlink{namespacescifir_a5c0fb597aa5afa1d1c5da1a3415c53eb}{scifir\+::distance}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{coordinates\+\_\+ndr}}$<$ T $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__nd}{coordinates\+\_\+nd}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} $>$ \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_a8ba6d8785daa8b93b7bae4dca20908f5}{scifir\+::distance}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{coordinates\+\_\+ndr}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__nd}{coordinates\+\_\+nd}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&y)
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} $>$ }\\T \mbox{\hyperlink{namespacescifir_abc8e1fa36829b7c08d10ae898f5c9213}{scifir\+::distance}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__nd}{coordinates\+\_\+nd}}$<$ T $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{coordinates\+\_\+ndr}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} $>$ \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_aa512df8c49d4ddd959f436c6eb424fb5}{scifir\+::distance}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__nd}{coordinates\+\_\+nd}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{coordinates\+\_\+ndr}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&y)
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} $>$ }\\T \mbox{\hyperlink{namespacescifir_aaabec4097398c8f3a86891e74eb19205}{scifir\+::distance}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{coordinates\+\_\+ndr}}$<$ T $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1point__nd}{point\+\_\+nd}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} $>$ \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_a3140e04af422dc72a2bb04fef235d1fd}{scifir\+::distance}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{coordinates\+\_\+ndr}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1point__nd}{point\+\_\+nd}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&y)
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T , \mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} $>$ }\\T \mbox{\hyperlink{namespacescifir_afba54dc22906396fbd1a9dfb66164ca0}{scifir\+::distance}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1point__nd}{point\+\_\+nd}}$<$ T $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{coordinates\+\_\+ndr}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}} $>$ \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \mbox{\hyperlink{namespacescifir_abf5849759bd2e3794a1d8ea4ed993884}{scifir\+::distance}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1point__nd}{point\+\_\+nd}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{coordinates\+\_\+ndr}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&y)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{coordinates__ndr_8hpp_aa118e1dc70985944529573ab6d5e3807}{operator==}} (const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ U $>$ \&y)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{coordinates__ndr_8hpp_a9d47daa71e62b7c64fc20fc96b667563}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ U $>$ \&y)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{coordinates__ndr_8hpp_ab28b8f9c54269088fe1faf4699d57afb}{operator==}} (const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1coordinates__nd}{scifir\+::coordinates\+\_\+nd}}$<$ U $>$ \&y)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{coordinates__ndr_8hpp_af74d9e0e5eaa27277204cd2a6ccf375a}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1coordinates__nd}{scifir\+::coordinates\+\_\+nd}}$<$ U $>$ \&y)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{coordinates__ndr_8hpp_a2c00f7952f0496d9758972697ebdc90e}{operator==}} (const \mbox{\hyperlink{classscifir_1_1coordinates__nd}{scifir\+::coordinates\+\_\+nd}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ U $>$ \&y)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{coordinates__ndr_8hpp_a568a561fbc616c23236ec68ac141e4ab}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1coordinates__nd}{scifir\+::coordinates\+\_\+nd}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ U $>$ \&y)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{coordinates__ndr_8hpp_aa79abb4d5495e390d3738ebdd8cc4e7a}{operator==}} (const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1point__nd}{scifir\+::point\+\_\+nd}}$<$ U $>$ \&y)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{coordinates__ndr_8hpp_ac45fd8961b5a98a687fd42c3cd4807a9}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1point__nd}{scifir\+::point\+\_\+nd}}$<$ U $>$ \&y)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{coordinates__ndr_8hpp_a7599caac4bc4ce832eb1c604c9222761}{operator==}} (const \mbox{\hyperlink{classscifir_1_1point__nd}{scifir\+::point\+\_\+nd}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ U $>$ \&y)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{coordinates__ndr_8hpp_af0f7fad2790253445fa5634558f562b5}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1point__nd}{scifir\+::point\+\_\+nd}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ U $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{coordinates__ndr_8hpp_a6b1c06190d06daaa9bd2d19639580d07}{operator==}} (const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&x, const string \&init\+\_\+coordinates\+\_\+ndr)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{coordinates__ndr_8hpp_a57ccf915dc690e456b1fa2d510596432}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&x, const string \&init\+\_\+coordinates\+\_\+ndr)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{coordinates__ndr_8hpp_abc3b5aaf5912b2efe736b47d5b654341}{operator==}} (const string \&init\+\_\+coordinates\+\_\+ndr, const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{coordinates__ndr_8hpp_a2e5c10e678715db87b81656bb980eafb}{operator!=}} (const string \&init\+\_\+coordinates\+\_\+ndr, const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{coordinates__ndr_8hpp_a1264ba023937c48803a945d66b1fbe93}{operator+=}} (string \&x, const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\string \mbox{\hyperlink{coordinates__ndr_8hpp_acf2483be18f091aefa0043d6d7eacc95}{operator+}} (const string \&x, const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\string \mbox{\hyperlink{coordinates__ndr_8hpp_a0a4719119427ec6375bbbacd6766a376}{operator+}} (const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&x, const string \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\ostream \& \mbox{\hyperlink{coordinates__ndr_8hpp_ab733a0f5371a316c09fdfb458d480f75}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&x)
+\item 
+ostream \& \mbox{\hyperlink{coordinates__ndr_8hpp_a9fe0efd3ae26e4636b1f6bd4a5f9f0b7}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ float $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\istream \& \mbox{\hyperlink{coordinates__ndr_8hpp_a14409741d403a862b7ea588d1f30b62b}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{coordinates__ndr_8hpp_a568a561fbc616c23236ec68ac141e4ab}\label{coordinates__ndr_8hpp_a568a561fbc616c23236ec68ac141e4ab} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__nd}{scifir\+::coordinates\+\_\+nd}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ U $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02359}{2359}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02360\ \{}
+\DoxyCodeLine{02361\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{02362\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_af74d9e0e5eaa27277204cd2a6ccf375a}\label{coordinates__ndr_8hpp_af74d9e0e5eaa27277204cd2a6ccf375a} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__nd}{scifir\+::coordinates\+\_\+nd}}$<$ U $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02333}{2333}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02334\ \{}
+\DoxyCodeLine{02335\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{02336\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_a9d47daa71e62b7c64fc20fc96b667563}\label{coordinates__ndr_8hpp_a9d47daa71e62b7c64fc20fc96b667563} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ U $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02307}{2307}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02308\ \{}
+\DoxyCodeLine{02309\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{02310\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_ac45fd8961b5a98a687fd42c3cd4807a9}\label{coordinates__ndr_8hpp_ac45fd8961b5a98a687fd42c3cd4807a9} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1point__nd}{scifir\+::point\+\_\+nd}}$<$ U $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02385}{2385}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02386\ \{}
+\DoxyCodeLine{02387\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{02388\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_a57ccf915dc690e456b1fa2d510596432}\label{coordinates__ndr_8hpp_a57ccf915dc690e456b1fa2d510596432} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&}]{x,  }\item[{const string \&}]{init\+\_\+coordinates\+\_\+ndr }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02424}{2424}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02425\ \{}
+\DoxyCodeLine{02426\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_coordinates\_ndr);}
+\DoxyCodeLine{02427\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_af0f7fad2790253445fa5634558f562b5}\label{coordinates__ndr_8hpp_af0f7fad2790253445fa5634558f562b5} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1point__nd}{scifir\+::point\+\_\+nd}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ U $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02411}{2411}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02412\ \{}
+\DoxyCodeLine{02413\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{02414\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_a2e5c10e678715db87b81656bb980eafb}\label{coordinates__ndr_8hpp_a2e5c10e678715db87b81656bb980eafb} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+coordinates\+\_\+ndr,  }\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02437}{2437}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02438\ \{}
+\DoxyCodeLine{02439\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_coordinates\_ndr\ ==\ x);}
+\DoxyCodeLine{02440\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_a0a4719119427ec6375bbbacd6766a376}\label{coordinates__ndr_8hpp_a0a4719119427ec6375bbbacd6766a376} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator+@{operator+}}
+\index{operator+@{operator+}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+string operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&}]{x,  }\item[{const string \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02455}{2455}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02456\ \{}
+\DoxyCodeLine{02457\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x)\ +\ y;}
+\DoxyCodeLine{02458\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_acf2483be18f091aefa0043d6d7eacc95}\label{coordinates__ndr_8hpp_acf2483be18f091aefa0043d6d7eacc95} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator+@{operator+}}
+\index{operator+@{operator+}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+string operator+ (\begin{DoxyParamCaption}\item[{const string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02449}{2449}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02450\ \{}
+\DoxyCodeLine{02451\ \ \ \ \ \textcolor{keywordflow}{return}\ x\ +\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(y);}
+\DoxyCodeLine{02452\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_a1264ba023937c48803a945d66b1fbe93}\label{coordinates__ndr_8hpp_a1264ba023937c48803a945d66b1fbe93} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void operator+= (\begin{DoxyParamCaption}\item[{string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02443}{2443}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02444\ \{}
+\DoxyCodeLine{02445\ \ \ \ \ x\ +=\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(y);}
+\DoxyCodeLine{02446\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_a9fe0efd3ae26e4636b1f6bd4a5f9f0b7}\label{coordinates__ndr_8hpp_a9fe0efd3ae26e4636b1f6bd4a5f9f0b7} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ float $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8cpp_source_l00134}{134}} of file \mbox{\hyperlink{coordinates__ndr_8cpp_source}{coordinates\+\_\+ndr.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00135\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{scifir::to\_string}}(x);}
+\DoxyCodeLine{00137\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_ab733a0f5371a316c09fdfb458d480f75}\label{coordinates__ndr_8hpp_ab733a0f5371a316c09fdfb458d480f75} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02461}{2461}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02462\ \{}
+\DoxyCodeLine{02463\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x);}
+\DoxyCodeLine{02464\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_a2c00f7952f0496d9758972697ebdc90e}\label{coordinates__ndr_8hpp_a2c00f7952f0496d9758972697ebdc90e} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__nd}{scifir\+::coordinates\+\_\+nd}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ U $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02339}{2339}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02340\ \{}
+\DoxyCodeLine{02341\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.values.size()\ ==\ y.get\_values().size())}
+\DoxyCodeLine{02342\ \ \ \ \ \{}
+\DoxyCodeLine{02343\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0\ ;\ i\ <\ x.values.size();\ i++)}
+\DoxyCodeLine{02344\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{02345\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.values[i]\ !=\ y.get\_value(i))}
+\DoxyCodeLine{02346\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{02347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{02348\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{02349\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{02350\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{02351\ \ \ \ \ \}}
+\DoxyCodeLine{02352\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{02353\ \ \ \ \ \{}
+\DoxyCodeLine{02354\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{02355\ \ \ \ \ \}}
+\DoxyCodeLine{02356\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_ab28b8f9c54269088fe1faf4699d57afb}\label{coordinates__ndr_8hpp_ab28b8f9c54269088fe1faf4699d57afb} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__nd}{scifir\+::coordinates\+\_\+nd}}$<$ U $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02313}{2313}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02314\ \{}
+\DoxyCodeLine{02315\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.get\_values().size()\ ==\ y.values.size())}
+\DoxyCodeLine{02316\ \ \ \ \ \{}
+\DoxyCodeLine{02317\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0\ ;\ i\ <\ x.get\_values().size();\ i++)}
+\DoxyCodeLine{02318\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{02319\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.get\_value(i)\ !=\ y.values[i])}
+\DoxyCodeLine{02320\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{02321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{02322\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{02323\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{02324\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{02325\ \ \ \ \ \}}
+\DoxyCodeLine{02326\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{02327\ \ \ \ \ \{}
+\DoxyCodeLine{02328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{02329\ \ \ \ \ \}}
+\DoxyCodeLine{02330\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_aa118e1dc70985944529573ab6d5e3807}\label{coordinates__ndr_8hpp_aa118e1dc70985944529573ab6d5e3807} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ U $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02287}{2287}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02288\ \{}
+\DoxyCodeLine{02289\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ x.get\_values().size();\ i++)}
+\DoxyCodeLine{02290\ \ \ \ \ \{}
+\DoxyCodeLine{02291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.get\_value(i)\ !=\ y.get\_value(i))}
+\DoxyCodeLine{02292\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{02293\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{02294\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{02295\ \ \ \ \ \}}
+\DoxyCodeLine{02296\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ x.get\_angles().size();\ i++)}
+\DoxyCodeLine{02297\ \ \ \ \ \{}
+\DoxyCodeLine{02298\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.get\_angle(i)\ !=\ y.get\_angle(i))}
+\DoxyCodeLine{02299\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{02300\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{02301\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{02302\ \ \ \ \ \}}
+\DoxyCodeLine{02303\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{02304\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_aa79abb4d5495e390d3738ebdd8cc4e7a}\label{coordinates__ndr_8hpp_aa79abb4d5495e390d3738ebdd8cc4e7a} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1point__nd}{scifir\+::point\+\_\+nd}}$<$ U $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02365}{2365}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02366\ \{}
+\DoxyCodeLine{02367\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.get\_values().size()\ ==\ y.values.size())}
+\DoxyCodeLine{02368\ \ \ \ \ \{}
+\DoxyCodeLine{02369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0\ ;\ i\ <\ x.get\_values().size();\ i++)}
+\DoxyCodeLine{02370\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{02371\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.get\_value(i)\ !=\ y.values[i])}
+\DoxyCodeLine{02372\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{02373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{02374\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{02375\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{02376\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{02377\ \ \ \ \ \}}
+\DoxyCodeLine{02378\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{02379\ \ \ \ \ \{}
+\DoxyCodeLine{02380\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{02381\ \ \ \ \ \}}
+\DoxyCodeLine{02382\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_a6b1c06190d06daaa9bd2d19639580d07}\label{coordinates__ndr_8hpp_a6b1c06190d06daaa9bd2d19639580d07} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&}]{x,  }\item[{const string \&}]{init\+\_\+coordinates\+\_\+ndr }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02417}{2417}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02418\ \{}
+\DoxyCodeLine{02419\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_ndr<T>}}\ y(init\_coordinates\_ndr);}
+\DoxyCodeLine{02420\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
+\DoxyCodeLine{02421\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_a7599caac4bc4ce832eb1c604c9222761}\label{coordinates__ndr_8hpp_a7599caac4bc4ce832eb1c604c9222761} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1point__nd}{scifir\+::point\+\_\+nd}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ U $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02391}{2391}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02392\ \{}
+\DoxyCodeLine{02393\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.values.size()\ ==\ y.get\_values().size())}
+\DoxyCodeLine{02394\ \ \ \ \ \{}
+\DoxyCodeLine{02395\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0\ ;\ i\ <\ x.values.size();\ i++)}
+\DoxyCodeLine{02396\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{02397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.values[i]\ !=\ y.get\_value(i))}
+\DoxyCodeLine{02398\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{02399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{02400\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{02401\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{02402\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{02403\ \ \ \ \ \}}
+\DoxyCodeLine{02404\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{02405\ \ \ \ \ \{}
+\DoxyCodeLine{02406\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{02407\ \ \ \ \ \}}
+\DoxyCodeLine{02408\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_abc3b5aaf5912b2efe736b47d5b654341}\label{coordinates__ndr_8hpp_abc3b5aaf5912b2efe736b47d5b654341} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+coordinates\+\_\+ndr,  }\item[{const \mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02430}{2430}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02431\ \{}
+\DoxyCodeLine{02432\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_ndr<T>}}\ y(init\_coordinates\_ndr);}
+\DoxyCodeLine{02433\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
+\DoxyCodeLine{02434\ \}}
+
+\end{DoxyCode}
+\Hypertarget{coordinates__ndr_8hpp_a14409741d403a862b7ea588d1f30b62b}\label{coordinates__ndr_8hpp_a14409741d403a862b7ea588d1f30b62b} 
+\index{coordinates\_ndr.hpp@{coordinates\_ndr.hpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!coordinates\_ndr.hpp@{coordinates\_ndr.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1coordinates__ndr}{scifir\+::coordinates\+\_\+ndr}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{coordinates__ndr_8hpp_source_l02469}{2469}} of file \mbox{\hyperlink{coordinates__ndr_8hpp_source}{coordinates\+\_\+ndr.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02470\ \{}
+\DoxyCodeLine{02471\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
+\DoxyCodeLine{02472\ \ \ \ \ is.getline(a,\ 256);}
+\DoxyCodeLine{02473\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
+\DoxyCodeLine{02474\ \ \ \ \ boost::trim(b);}
+\DoxyCodeLine{02475\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::coordinates\_ndr<T>}}(b);}
+\DoxyCodeLine{02476\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{02477\ \}}
+
+\end{DoxyCode}

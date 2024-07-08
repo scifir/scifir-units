@@ -1,0 +1,277 @@
+\doxysection{special\+\_\+units/size\+\_\+2d.hpp File Reference}
+\hypertarget{size__2d_8hpp}{}\label{size__2d_8hpp}\index{special\_units/size\_2d.hpp@{special\_units/size\_2d.hpp}}
+{\ttfamily \#include "{}../predefined\+\_\+units/space\+\_\+units.\+hpp"{}}\newline
+{\ttfamily \#include "{}../util/types.\+hpp"{}}\newline
+{\ttfamily \#include "{}boost/algorithm/string.\+hpp"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for size\+\_\+2d.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{size__2d_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{size__2d_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classscifir_1_1size__2d_3_01float_01_4}{scifir\+::size\+\_\+2d$<$ float $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+\begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classscifir_1_1coordinates__1d}{typename}} T $>$ }\\\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a9bc295a9231111f93e0779a42d1d1828}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1size__2d}{size\+\_\+2d}}$<$ T $>$ \&x)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a92bc66df8690c20f8133e3d83be2ba13}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1size__2d}{size\+\_\+2d}}$<$ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{size__2d_8hpp_a0a10f105320129304f56fa8af39dec47}{operator==}} (const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{size__2d_8hpp_af0ec7709aa7ed2582ab47068d5807803}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{size__2d_8hpp_a7881440280930e13675efa25b11f4088}{operator==}} (const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&x, const string \&init\+\_\+size\+\_\+2d)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{size__2d_8hpp_ad40676c5e04a997d12973e29ba2a7915}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&x, const string \&init\+\_\+size\+\_\+2d)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{size__2d_8hpp_a8faa6702225fcee39f9ed7560e2073a9}{operator==}} (const string \&init\+\_\+size\+\_\+2d, const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{size__2d_8hpp_a6f509e1f8023909fd0b009a076a734c9}{operator!=}} (const string \&init\+\_\+size\+\_\+2d, const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{size__2d_8hpp_a419ee8bf5200073127688196e5c0f1ee}{operator+=}} (string \&x, const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\string \mbox{\hyperlink{size__2d_8hpp_a54b72afd354e9c8ca57759ee7e415db4}{operator+}} (const string \&x, const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\string \mbox{\hyperlink{size__2d_8hpp_a376af89485d1f12bf3d820c51feed042}{operator+}} (const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&x, const string \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\ostream \& \mbox{\hyperlink{size__2d_8hpp_a74f5b85cbbe69bc4ebb84a679d98d80d}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\istream \& \mbox{\hyperlink{size__2d_8hpp_abeddadc4ba2d10187678684dc5de1c08}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{size__2d_8hpp_af0ec7709aa7ed2582ab47068d5807803}\label{size__2d_8hpp_af0ec7709aa7ed2582ab47068d5807803} 
+\index{size\_2d.hpp@{size\_2d.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!size\_2d.hpp@{size\_2d.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{size__2d_8hpp_source_l00230}{230}} of file \mbox{\hyperlink{size__2d_8hpp_source}{size\+\_\+2d.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00231\ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{00233\ \}}
+
+\end{DoxyCode}
+\Hypertarget{size__2d_8hpp_ad40676c5e04a997d12973e29ba2a7915}\label{size__2d_8hpp_ad40676c5e04a997d12973e29ba2a7915} 
+\index{size\_2d.hpp@{size\_2d.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!size\_2d.hpp@{size\_2d.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&}]{x,  }\item[{const string \&}]{init\+\_\+size\+\_\+2d }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{size__2d_8hpp_source_l00243}{243}} of file \mbox{\hyperlink{size__2d_8hpp_source}{size\+\_\+2d.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00244\ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_size\_2d);}
+\DoxyCodeLine{00246\ \}}
+
+\end{DoxyCode}
+\Hypertarget{size__2d_8hpp_a6f509e1f8023909fd0b009a076a734c9}\label{size__2d_8hpp_a6f509e1f8023909fd0b009a076a734c9} 
+\index{size\_2d.hpp@{size\_2d.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!size\_2d.hpp@{size\_2d.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+size\+\_\+2d,  }\item[{const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{size__2d_8hpp_source_l00256}{256}} of file \mbox{\hyperlink{size__2d_8hpp_source}{size\+\_\+2d.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00257\ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_size\_2d\ ==\ x);}
+\DoxyCodeLine{00259\ \}}
+
+\end{DoxyCode}
+\Hypertarget{size__2d_8hpp_a376af89485d1f12bf3d820c51feed042}\label{size__2d_8hpp_a376af89485d1f12bf3d820c51feed042} 
+\index{size\_2d.hpp@{size\_2d.hpp}!operator+@{operator+}}
+\index{operator+@{operator+}!size\_2d.hpp@{size\_2d.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+string operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&}]{x,  }\item[{const string \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{size__2d_8hpp_source_l00274}{274}} of file \mbox{\hyperlink{size__2d_8hpp_source}{size\+\_\+2d.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00275\ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x)\ +\ y;}
+\DoxyCodeLine{00277\ \}}
+
+\end{DoxyCode}
+\Hypertarget{size__2d_8hpp_a54b72afd354e9c8ca57759ee7e415db4}\label{size__2d_8hpp_a54b72afd354e9c8ca57759ee7e415db4} 
+\index{size\_2d.hpp@{size\_2d.hpp}!operator+@{operator+}}
+\index{operator+@{operator+}!size\_2d.hpp@{size\_2d.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+string operator+ (\begin{DoxyParamCaption}\item[{const string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{size__2d_8hpp_source_l00268}{268}} of file \mbox{\hyperlink{size__2d_8hpp_source}{size\+\_\+2d.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00269\ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordflow}{return}\ x\ +\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(y);}
+\DoxyCodeLine{00271\ \}}
+
+\end{DoxyCode}
+\Hypertarget{size__2d_8hpp_a419ee8bf5200073127688196e5c0f1ee}\label{size__2d_8hpp_a419ee8bf5200073127688196e5c0f1ee} 
+\index{size\_2d.hpp@{size\_2d.hpp}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!size\_2d.hpp@{size\_2d.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void operator+= (\begin{DoxyParamCaption}\item[{string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{size__2d_8hpp_source_l00262}{262}} of file \mbox{\hyperlink{size__2d_8hpp_source}{size\+\_\+2d.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00263\ \{}
+\DoxyCodeLine{00264\ \ \ \ \ x\ +=\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(y);}
+\DoxyCodeLine{00265\ \}}
+
+\end{DoxyCode}
+\Hypertarget{size__2d_8hpp_a74f5b85cbbe69bc4ebb84a679d98d80d}\label{size__2d_8hpp_a74f5b85cbbe69bc4ebb84a679d98d80d} 
+\index{size\_2d.hpp@{size\_2d.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!size\_2d.hpp@{size\_2d.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{size__2d_8hpp_source_l00280}{280}} of file \mbox{\hyperlink{size__2d_8hpp_source}{size\+\_\+2d.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00281\ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x);}
+\DoxyCodeLine{00283\ \}}
+
+\end{DoxyCode}
+\Hypertarget{size__2d_8hpp_a0a10f105320129304f56fa8af39dec47}\label{size__2d_8hpp_a0a10f105320129304f56fa8af39dec47} 
+\index{size\_2d.hpp@{size\_2d.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!size\_2d.hpp@{size\_2d.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{size__2d_8hpp_source_l00217}{217}} of file \mbox{\hyperlink{size__2d_8hpp_source}{size\+\_\+2d.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00218\ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordflow}{if}\ (x.width\ ==\ y.width\ and\ x.height\ ==\ y.height)}
+\DoxyCodeLine{00220\ \ \ \ \ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00224\ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00226\ \ \ \ \ \}}
+\DoxyCodeLine{00227\ \}}
+
+\end{DoxyCode}
+\Hypertarget{size__2d_8hpp_a7881440280930e13675efa25b11f4088}\label{size__2d_8hpp_a7881440280930e13675efa25b11f4088} 
+\index{size\_2d.hpp@{size\_2d.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!size\_2d.hpp@{size\_2d.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&}]{x,  }\item[{const string \&}]{init\+\_\+size\+\_\+2d }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{size__2d_8hpp_source_l00236}{236}} of file \mbox{\hyperlink{size__2d_8hpp_source}{size\+\_\+2d.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00237\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::size\_2d<T>}}\ y(init\_size\_2d);}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
+\DoxyCodeLine{00240\ \}}
+
+\end{DoxyCode}
+\Hypertarget{size__2d_8hpp_a8faa6702225fcee39f9ed7560e2073a9}\label{size__2d_8hpp_a8faa6702225fcee39f9ed7560e2073a9} 
+\index{size\_2d.hpp@{size\_2d.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!size\_2d.hpp@{size\_2d.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+size\+\_\+2d,  }\item[{const \mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{size__2d_8hpp_source_l00249}{249}} of file \mbox{\hyperlink{size__2d_8hpp_source}{size\+\_\+2d.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00250\ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::size\_2d<T>}}\ y(init\_size\_2d);}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
+\DoxyCodeLine{00253\ \}}
+
+\end{DoxyCode}
+\Hypertarget{size__2d_8hpp_abeddadc4ba2d10187678684dc5de1c08}\label{size__2d_8hpp_abeddadc4ba2d10187678684dc5de1c08} 
+\index{size\_2d.hpp@{size\_2d.hpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!size\_2d.hpp@{size\_2d.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1size__2d}{scifir\+::size\+\_\+2d}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{size__2d_8hpp_source_l00286}{286}} of file \mbox{\hyperlink{size__2d_8hpp_source}{size\+\_\+2d.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00287\ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
+\DoxyCodeLine{00289\ \ \ \ \ is.getline(a,\ 256);}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
+\DoxyCodeLine{00291\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{scifir::size\_2d<T>}}(b);}
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{00293\ \}}
+
+\end{DoxyCode}

@@ -1,211 +1,211 @@
 \doxysection{p\+OH.\+hpp}
 \hypertarget{pOH_8hpp_source}{}\label{pOH_8hpp_source}\index{special\_units/pOH.hpp@{special\_units/pOH.hpp}}
-
+\mbox{\hyperlink{pOH_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_POH\_HPP\_INCLUDED}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_POH\_HPP\_INCLUDED}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../util/is\_number.hpp"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../units/scalar\_unit.hpp"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../predefined\_units/chemistry\_units.hpp"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../special\_units/pH.hpp"{}}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}boost/math/constants/constants.hpp"{}}}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cmath>}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }scifir}
-\DoxyCodeLine{00017\ \{}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1pOH}{pOH}}}
-\DoxyCodeLine{00019\ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}();}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ x);}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}(\mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\&\ x);}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_pOH}});}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ x);}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ operator=(\mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\&\ x);}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ operator=(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ operator=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_pOH}});}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00035\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(value);}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ get\_value()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00040\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ x);}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ x);}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(T\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00051\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}(value\ +\ x);}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/}}(T\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00057\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}(value\ -\/\ x);}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +=}}(T\ x)}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ +=\ x;}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ normalize\_value();}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/=}}(T\ x)}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ -\/=\ x;}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ normalize\_value();}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ operator++();}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\ operator++(\textcolor{keywordtype}{int});}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ operator-\/-\/();}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\ operator-\/-\/(\textcolor{keywordtype}{int});}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{molarity}}\ get\_H()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{molarity}}\ get\_OH()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pH}{pH}}\ get\_pH()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_acidic()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_basic()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_neutral()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ display(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ value;}
-\DoxyCodeLine{00092\ }
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ normalize\_value();}
-\DoxyCodeLine{00094\ \ \ \ \ \};}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ x);}
-\DoxyCodeLine{00097\ \}}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00099\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00100\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\ operator\ +(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
-\DoxyCodeLine{00101\ \{}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}(x\ +\ y.get\_value());}
-\DoxyCodeLine{00103\ \}}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00105\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00106\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\ operator\ -\/(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
-\DoxyCodeLine{00107\ \{}
-\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}(x\ -\/\ y.get\_value());}
-\DoxyCodeLine{00109\ \}}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00111\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00112\ \textcolor{keywordtype}{bool}\ operator\ ==(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
-\DoxyCodeLine{00113\ \{}
-\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.get\_value());}
-\DoxyCodeLine{00115\ \}}
-\DoxyCodeLine{00116\ }
-\DoxyCodeLine{00117\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00118\ \textcolor{keywordtype}{bool}\ operator\ !=(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
-\DoxyCodeLine{00119\ \{}
-\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ y.get\_value());}
-\DoxyCodeLine{00121\ \}}
-\DoxyCodeLine{00122\ }
-\DoxyCodeLine{00123\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00124\ \textcolor{keywordtype}{bool}\ operator\ <(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
-\DoxyCodeLine{00125\ \{}
-\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <\ y.get\_value());}
-\DoxyCodeLine{00127\ \}}
-\DoxyCodeLine{00128\ }
-\DoxyCodeLine{00129\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00130\ \textcolor{keywordtype}{bool}\ operator\ >(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
-\DoxyCodeLine{00131\ \{}
-\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >\ y.get\_value());}
-\DoxyCodeLine{00133\ \}}
-\DoxyCodeLine{00134\ }
-\DoxyCodeLine{00135\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00136\ \textcolor{keywordtype}{bool}\ operator\ <=(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
-\DoxyCodeLine{00137\ \{}
-\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <=\ y.get\_value());}
-\DoxyCodeLine{00139\ \}}
-\DoxyCodeLine{00140\ }
-\DoxyCodeLine{00141\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00142\ \textcolor{keywordtype}{bool}\ operator\ >=(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
-\DoxyCodeLine{00143\ \{}
-\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >=\ y.get\_value());}
-\DoxyCodeLine{00145\ \}}
-\DoxyCodeLine{00146\ }
-\DoxyCodeLine{00147\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00148\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y,\ T\ x)}
-\DoxyCodeLine{00149\ \{}
-\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.get\_value());}
-\DoxyCodeLine{00151\ \}}
-\DoxyCodeLine{00152\ }
-\DoxyCodeLine{00153\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00154\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y,\ T\ x)}
-\DoxyCodeLine{00155\ \{}
-\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ y.get\_value());}
-\DoxyCodeLine{00157\ \}}
-\DoxyCodeLine{00158\ }
-\DoxyCodeLine{00159\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00160\ \textcolor{keywordtype}{bool}\ operator\ <(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y,\ T\ x)}
-\DoxyCodeLine{00161\ \{}
-\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.get\_value()\ <\ x);}
-\DoxyCodeLine{00163\ \}}
-\DoxyCodeLine{00164\ }
-\DoxyCodeLine{00165\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00166\ \textcolor{keywordtype}{bool}\ operator\ >(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y,\ T\ x)}
-\DoxyCodeLine{00167\ \{}
-\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.get\_value()\ >\ x);}
-\DoxyCodeLine{00169\ \}}
-\DoxyCodeLine{00170\ }
-\DoxyCodeLine{00171\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00172\ \textcolor{keywordtype}{bool}\ operator\ <=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y,\ T\ x)}
-\DoxyCodeLine{00173\ \{}
-\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.get\_value()\ <=\ x);}
-\DoxyCodeLine{00175\ \}}
-\DoxyCodeLine{00176\ }
-\DoxyCodeLine{00177\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00178\ \textcolor{keywordtype}{bool}\ operator\ >=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y,\ T\ x)}
-\DoxyCodeLine{00179\ \{}
-\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.get\_value()\ >=\ x);}
-\DoxyCodeLine{00181\ \}}
-\DoxyCodeLine{00182\ }
-\DoxyCodeLine{00183\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
-\DoxyCodeLine{00184\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
-\DoxyCodeLine{00185\ \textcolor{keywordtype}{bool}\ operator\ <(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
-\DoxyCodeLine{00186\ \textcolor{keywordtype}{bool}\ operator\ >(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
-\DoxyCodeLine{00187\ \textcolor{keywordtype}{bool}\ operator\ <=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
-\DoxyCodeLine{00188\ \textcolor{keywordtype}{bool}\ operator\ >=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
-\DoxyCodeLine{00189\ }
-\DoxyCodeLine{00190\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_pOH);}
-\DoxyCodeLine{00191\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_pOH);}
-\DoxyCodeLine{00192\ }
-\DoxyCodeLine{00193\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_pOH,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x);}
-\DoxyCodeLine{00194\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_pOH,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x);}
-\DoxyCodeLine{00195\ }
-\DoxyCodeLine{00196\ \textcolor{keywordtype}{void}\ operator\ +=(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
-\DoxyCodeLine{00197\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
-\DoxyCodeLine{00198\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x);}
-\DoxyCodeLine{00199\ }
-\DoxyCodeLine{00200\ ostream\&\ operator\ <<(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x);}
-\DoxyCodeLine{00201\ istream\&\ operator\ >>(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x);}
-\DoxyCodeLine{00202\ }
-\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_POH\_HPP\_INCLUDED}}
-\DoxyCodeLine{00204\ }
-\DoxyCodeLine{00205\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_POH\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_POH\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../util/is\_number.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}../units/scalar\_unit.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}../predefined\_units/chemistry\_units.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}../special\_units/pH.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}boost/math/constants/constants.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00014}00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00016}00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacescifir}{scifir}}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00018}\mbox{\hyperlink{classscifir_1_1pOH}{00018}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1pOH}{pOH}}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH_a6085b23cffe72314de9c5ef4efe09dbc}{pOH}}();}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH_a6085b23cffe72314de9c5ef4efe09dbc}{pOH}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH_a6085b23cffe72314de9c5ef4efe09dbc}{pOH}}(\mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\&\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1pOH_a6085b23cffe72314de9c5ef4efe09dbc}{pOH}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1pOH_a6085b23cffe72314de9c5ef4efe09dbc}{pOH}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_pOH}});}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1pOH_a6085b23cffe72314de9c5ef4efe09dbc}{pOH}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ \mbox{\hyperlink{classscifir_1_1pOH_a18e4e82bb711ba0058fba44a295bcebc}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ \mbox{\hyperlink{classscifir_1_1pOH_a18e4e82bb711ba0058fba44a295bcebc}{operator=}}(\mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\&\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ \mbox{\hyperlink{classscifir_1_1pOH_a18e4e82bb711ba0058fba44a295bcebc}{operator=}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}});}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ \mbox{\hyperlink{classscifir_1_1pOH_a18e4e82bb711ba0058fba44a295bcebc}{operator=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_pOH}});}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ \mbox{\hyperlink{classscifir_1_1pOH_a18e4e82bb711ba0058fba44a295bcebc}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00034}\mbox{\hyperlink{classscifir_1_1pOH_ac97bb607f4815a7ade736e715b8efe86}{00034}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00035}00035\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(\mbox{\hyperlink{classscifir_1_1pOH_a8e1d20f56906a021b1d528e27f1e79c9}{value}});}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00039}\mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{00039}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{get\_value}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00040}00040\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1pOH_a8e1d20f56906a021b1d528e27f1e79c9}{value}};}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\ \mbox{\hyperlink{classscifir_1_1pOH_ad8de37c6d1f0c1d46051b38b113930ca}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\ \mbox{\hyperlink{classscifir_1_1pOH_a934af7c0c144a19ef57dbd4a17edb196}{operator\ -\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1pOH_a21c9959c00ac0b410659b77f00aa3e90}{operator\ +=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1pOH_aef279fef3c42ea2688503c58ed3dbbde}{operator\ -\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00050}\mbox{\hyperlink{classscifir_1_1pOH_ac0889e20567b6fa1da58e800858c4d5a}{00050}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\ \mbox{\hyperlink{classscifir_1_1pOH_ad8de37c6d1f0c1d46051b38b113930ca}{operator\ +}}(T\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00051}00051\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1pOH_a6085b23cffe72314de9c5ef4efe09dbc}{pOH}}(\mbox{\hyperlink{classscifir_1_1pOH_a8e1d20f56906a021b1d528e27f1e79c9}{value}}\ +\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00056}\mbox{\hyperlink{classscifir_1_1pOH_a87fad57d338ed52f0e94c59117661d46}{00056}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\ \mbox{\hyperlink{classscifir_1_1pOH_a934af7c0c144a19ef57dbd4a17edb196}{operator\ -\/}}(T\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00057}00057\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1pOH_a6085b23cffe72314de9c5ef4efe09dbc}{pOH}}(\mbox{\hyperlink{classscifir_1_1pOH_a8e1d20f56906a021b1d528e27f1e79c9}{value}}\ -\/\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00062}\mbox{\hyperlink{classscifir_1_1pOH_acd8a53406487e9943ea2487da643b80f}{00062}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1pOH_a21c9959c00ac0b410659b77f00aa3e90}{operator\ +=}}(T\ x)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH_a8e1d20f56906a021b1d528e27f1e79c9}{value}}\ +=\ x;}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH_aa7340eacc658bbcbb64d6d83c51c00eb}{normalize\_value}}();}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00069}\mbox{\hyperlink{classscifir_1_1pOH_a18ee63da43a3d57aec96c9ef54112064}{00069}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1pOH_aef279fef3c42ea2688503c58ed3dbbde}{operator\ -\/=}}(T\ x)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH_a8e1d20f56906a021b1d528e27f1e79c9}{value}}\ -\/=\ x;}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH_aa7340eacc658bbcbb64d6d83c51c00eb}{normalize\_value}}();}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ \mbox{\hyperlink{classscifir_1_1pOH_a5bb17ebfb0a3a85c442fe06c912e934a}{operator++}}();}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\ \mbox{\hyperlink{classscifir_1_1pOH_a5bb17ebfb0a3a85c442fe06c912e934a}{operator++}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ \mbox{\hyperlink{classscifir_1_1pOH_a6b3e67b32d09171b101a08355a036e72}{operator-\/-\/}}();}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\ \mbox{\hyperlink{classscifir_1_1pOH_a6b3e67b32d09171b101a08355a036e72}{operator-\/-\/}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{molarity}}\ \mbox{\hyperlink{classscifir_1_1pOH_a7516ab963dd847628426a2066436a568}{get\_H}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{molarity}}\ \mbox{\hyperlink{classscifir_1_1pOH_a7c34e408b3f94ca8886abc527e3bff88}{get\_OH}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1pH}{pH}}\ \mbox{\hyperlink{classscifir_1_1pOH_a570b2b81d7ff3b5266b0b8f465641d9b}{get\_pH}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1pOH_a0d1114f7850c96ce61dc75cc24a9cecd}{is\_acidic}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1pOH_aa431e0e2f13ad662825d655968cefcfb}{is\_basic}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1pOH_a807bcfa98c1ca77b18a13387bbb5140d}{is\_neutral}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1pOH_a613ab0d061e018898e976a39c334e76e}{display}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00091}\mbox{\hyperlink{classscifir_1_1pOH_a8e1d20f56906a021b1d528e27f1e79c9}{00091}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1pOH_a8e1d20f56906a021b1d528e27f1e79c9}{value}};}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1pOH_aa7340eacc658bbcbb64d6d83c51c00eb}{normalize\_value}}();}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00094}00094\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{pOH}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00097}00097\ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00099}00099\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00100}\mbox{\hyperlink{pOH_8hpp_a8f4f38079730738231468ae7ff8a72dd}{00100}}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\ \mbox{\hyperlink{pOH_8hpp_a8f4f38079730738231468ae7ff8a72dd}{operator\ +}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00101}00101\ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}(x\ +\ y.\mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00103}00103\ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00105}00105\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00106}\mbox{\hyperlink{pOH_8hpp_acea744d9da57ed9cbb827cb929cdda78}{00106}}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\ \mbox{\hyperlink{pOH_8hpp_acea744d9da57ed9cbb827cb929cdda78}{operator\ -\/}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00107}00107\ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00108}00108\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}(x\ -\/\ y.\mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00109}00109\ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00111}00111\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00112}\mbox{\hyperlink{pOH_8hpp_a00c100ff73398f0f75c2503834cf1d45}{00112}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a00c100ff73398f0f75c2503834cf1d45}{operator\ ==}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00113}00113\ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.\mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00115}00115\ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00117}00117\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00118}\mbox{\hyperlink{pOH_8hpp_a70bdcc3f7f34e8bc494503214b1d0c69}{00118}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a70bdcc3f7f34e8bc494503214b1d0c69}{operator\ !=}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00119}00119\ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ y.\mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00121}00121\ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00123}00123\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00124}\mbox{\hyperlink{pOH_8hpp_a17a215ba20fb8ff2ed9720b7a7cb2fec}{00124}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a17a215ba20fb8ff2ed9720b7a7cb2fec}{operator\ <}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00125}00125\ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00126}00126\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <\ y.\mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00127}00127\ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00129}00129\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00130}\mbox{\hyperlink{pOH_8hpp_acf65b75aa4d1db02eb91f1ea84b0f020}{00130}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_acf65b75aa4d1db02eb91f1ea84b0f020}{operator\ >}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00131}00131\ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >\ y.\mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00133}00133\ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00135}00135\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00136}\mbox{\hyperlink{pOH_8hpp_a72ac790b4ba89d6c41b35c5727d9aaef}{00136}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a72ac790b4ba89d6c41b35c5727d9aaef}{operator\ <=}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00137}00137\ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00138}00138\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <=\ y.\mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00139}00139\ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00141}00141\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00142}\mbox{\hyperlink{pOH_8hpp_af1f1be18183b2404445fbd4816a1803b}{00142}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_af1f1be18183b2404445fbd4816a1803b}{operator\ >=}}(T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00143}00143\ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00144}00144\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >=\ y.\mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00145}00145\ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00147}00147\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00148}\mbox{\hyperlink{pOH_8hpp_a96e12f2ba7250ba69f167db0cc0b016c}{00148}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a00c100ff73398f0f75c2503834cf1d45}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y,\ T\ x)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00149}00149\ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00150}00150\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.\mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00151}00151\ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00153}00153\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00154}\mbox{\hyperlink{pOH_8hpp_a17682e3c98df9fbd1c460c1f2e638c53}{00154}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a70bdcc3f7f34e8bc494503214b1d0c69}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y,\ T\ x)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00155}00155\ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ y.\mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{get\_value}}());}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00157}00157\ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00159}00159\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00160}\mbox{\hyperlink{pOH_8hpp_a92a46ce7ccb01650e50dc468dcc9d9ad}{00160}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a17a215ba20fb8ff2ed9720b7a7cb2fec}{operator\ <}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y,\ T\ x)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00161}00161\ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00162}00162\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{get\_value}}()\ <\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00163}00163\ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00165}00165\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00166}\mbox{\hyperlink{pOH_8hpp_aa61463ff2fe4962d16820ded9796c59d}{00166}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_acf65b75aa4d1db02eb91f1ea84b0f020}{operator\ >}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y,\ T\ x)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00167}00167\ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00168}00168\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{get\_value}}()\ >\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00169}00169\ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00171}00171\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00172}\mbox{\hyperlink{pOH_8hpp_a8f960610febb1748d426e08059137931}{00172}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a72ac790b4ba89d6c41b35c5727d9aaef}{operator\ <=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y,\ T\ x)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00173}00173\ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00174}00174\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{get\_value}}()\ <=\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00175}00175\ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00177}00177\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00178}\mbox{\hyperlink{pOH_8hpp_a7ae1ae9ea84f9a6dd0865c5b9dba4cf1}{00178}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_af1f1be18183b2404445fbd4816a1803b}{operator\ >=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y,\ T\ x)}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00179}00179\ \{}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00180}00180\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1pOH_aee8138108e08fd93edfe8c868bb46496}{get\_value}}()\ >=\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00181}00181\ \}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00183}00183\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a00c100ff73398f0f75c2503834cf1d45}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00184}00184\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a70bdcc3f7f34e8bc494503214b1d0c69}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00185}00185\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a17a215ba20fb8ff2ed9720b7a7cb2fec}{operator\ <}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00186}00186\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_acf65b75aa4d1db02eb91f1ea84b0f020}{operator\ >}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00187}00187\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a72ac790b4ba89d6c41b35c5727d9aaef}{operator\ <=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00188}00188\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_af1f1be18183b2404445fbd4816a1803b}{operator\ >=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00190}00190\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a00c100ff73398f0f75c2503834cf1d45}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_pOH);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00191}00191\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a70bdcc3f7f34e8bc494503214b1d0c69}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_pOH);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00193}00193\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a00c100ff73398f0f75c2503834cf1d45}{operator\ ==}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_pOH,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00194}00194\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pOH_8hpp_a70bdcc3f7f34e8bc494503214b1d0c69}{operator\ !=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_pOH,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00196}00196\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pOH_8hpp_a5e3540b638ec24253cc235f1c9e38e42}{operator\ +=}}(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00197}00197\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{pOH_8hpp_a8f4f38079730738231468ae7ff8a72dd}{operator\ +}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00198}00198\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{pOH_8hpp_a8f4f38079730738231468ae7ff8a72dd}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00200}00200\ ostream\&\ \mbox{\hyperlink{pOH_8hpp_aa0469d993d7242a09d1ed2f4571be777}{operator\ <<}}(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00201}00201\ istream\&\ \mbox{\hyperlink{pOH_8hpp_a70d0262352bb4db91cf3f17d81e55045}{operator\ >>}}(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1pOH}{scifir::pOH}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00203}00203\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_SPECIAL\_UNITS\_POH\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{pOH_8hpp_source_l00205}00205\ }
 
 \end{DoxyCode}

@@ -6,9 +6,14 @@ scifir::conversion
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <conversion\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBconversion\fP ()"
+.br
 .ti -1c
 .RI "\fBconversion\fP (\fBconst\fP \fBstring\fP &\fBnew_unit_to\fP, \fBfloat\fP \fBnew_factor\fP)"
 .br
@@ -25,6 +30,89 @@ scifir::conversion
 .RI "\fBconst\fP \fBstring\fP & \fBget_unit_to\fP () \fBconst\fP"
 .br
 .in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstring\fP \fBunit_to\fP"
+.br
+.ti -1c
+.RI "\fBlong\fP \fBdouble\fP \fBfactor\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB12\fP of file \fBconversion\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "scifir::conversion::conversion ()"
+
+.PP
+Definition at line \fB10\fP of file \fBconversion\&.cpp\fP\&..PP
+.nf
+10                            : unit_to(),factor()
+11     {}
+.fi
+
+.SS "scifir::conversion::conversion (\fBconst\fP \fBstring\fP & new_unit_to, \fBfloat\fP new_factor)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB13\fP of file \fBconversion\&.cpp\fP\&..PP
+.nf
+13                                                                       : unit_to(new_unit_to),factor((long double)new_factor)
+14     {}
+.fi
+
+.SS "scifir::conversion::conversion (\fBconst\fP \fBstring\fP & new_unit_to, \fBdouble\fP new_factor)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB16\fP of file \fBconversion\&.cpp\fP\&..PP
+.nf
+16                                                                        : unit_to(new_unit_to),factor((long double)new_factor)
+17     {}
+.fi
+
+.SS "scifir::conversion::conversion (\fBconst\fP \fBstring\fP & new_unit_to, \fBlong\fP \fBdouble\fP new_factor)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB19\fP of file \fBconversion\&.cpp\fP\&..PP
+.nf
+19                                                                             : unit_to(new_unit_to),factor(new_factor)
+20     {}
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBconst\fP \fBlong\fP \fBdouble\fP & scifir::conversion::get_factor () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB20\fP of file \fBconversion\&.hpp\fP\&..PP
+.nf
+21             {
+22                 return factor;
+23             }
+.fi
+
+.SS "\fBconst\fP \fBstring\fP & scifir::conversion::get_unit_to () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB25\fP of file \fBconversion\&.hpp\fP\&..PP
+.nf
+26             {
+27                 return unit_to;
+28             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBlong\fP \fBdouble\fP scifir::conversion::factor\fC [private]\fP"
+
+.PP
+Definition at line \fB32\fP of file \fBconversion\&.hpp\fP\&.
+.SS "\fBstring\fP scifir::conversion::unit_to\fC [private]\fP"
+
+.PP
+Definition at line \fB31\fP of file \fBconversion\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

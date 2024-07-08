@@ -6,9 +6,14 @@ scifir::coordinates_3dr< T >
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <coordinates_3dr\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBcoordinates_3dr\fP ()"
+.br
 .ti -1c
 .RI "\fBcoordinates_3dr\fP (\fBconst\fP \fBcoordinates_3dr\fP< T > &\fBx_coordinates\fP)"
 .br
@@ -85,7 +90,7 @@ scifir::coordinates_3dr< T >
 .RI "T \fBget_altitude\fP () \fBconst\fP"
 .br
 .ti -1c
-.RI "\fBvoid\fP \fBpoint_to\fP (direction::name x)"
+.RI "\fBvoid\fP \fBpoint_to\fP (\fBdirection::name\fP \fBx\fP)"
 .br
 .ti -1c
 .RI "\fBvoid\fP \fBset_position\fP (\fBconst\fP T &\fBnew_x\fP, \fBconst\fP T &\fBnew_y\fP, \fBconst\fP T &\fBnew_z\fP)"
@@ -155,6 +160,725 @@ scifir::coordinates_3dr< T >
 .RI "\fBangle\fP \fBphi\fP"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_coordinates_3dr\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<\fBtypename\fP T = length>
+.br
+class scifir::coordinates_3dr< T >"
+.PP
+Definition at line \fB18\fP of file \fBcoordinates_3dr\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3dr\fP< T >::coordinates_3dr ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB21\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+21                               : x(),y(),z(),theta(),phi()
+22             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3dr\fP< T >::coordinates_3dr (\fBconst\fP \fBcoordinates_3dr\fP< T > & x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB24\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+24                                                                      : x(x_coordinates\&.x),y(x_coordinates\&.y),z(x_coordinates\&.z),theta(x_coordinates\&.theta),phi(x_coordinates\&.phi)
+25             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3dr\fP< T >::coordinates_3dr (\fBcoordinates_3dr\fP< T > && x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB27\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+27                                                                 : x(std::move(x_coordinates\&.x)),y(std::move(x_coordinates\&.y)),z(std::move(x_coordinates\&.z)),theta(std::move(x_coordinates\&.theta)),phi(std::move(x_coordinates\&.phi))
+28             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3dr\fP< T >::coordinates_3dr (\fBconst\fP T & new_x, \fBconst\fP T & new_y, \fBconst\fP T & new_z, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB30\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+30                                                                                                                                : x(new_x),y(new_y),z(new_z),theta(new_theta),phi(new_phi)
+31             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3dr\fP< T >::coordinates_3dr (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_cylindrical_theta, T new_z, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB33\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+33                                                                                                                                             : x(),y(),z(),theta(new_theta),phi(new_phi)
+34             {
+35                 set_position(new_p,new_cylindrical_theta,new_z);
+36             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3dr\fP< T >::coordinates_3dr (\fBconst\fP T & new_r, \fBconst\fP \fBangle\fP & new_spherical_theta, \fBconst\fP \fBangle\fP & new_spherical_phi, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB38\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+38                                                                                                                                                                  : x(),y(),z(),theta(new_theta),phi(new_phi)
+39             {
+40                 set_position(new_r,new_spherical_theta,new_spherical_phi);
+41             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3dr\fP< T >::coordinates_3dr (\fBconst\fP \fBangle\fP & new_latitude, \fBconst\fP \fBangle\fP & new_longitude, \fBconst\fP T & new_altitude, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB43\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+43                                                                                                                                                              : x(),y(),z(),theta(new_theta),phi(new_phi)
+44             {
+45                 set_position(new_latitude,new_longitude,new_altitude);
+46             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3dr\fP< T >::coordinates_3dr (\fBconst\fP \fBpoint_3d\fP< T > & x_point, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB48\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+48                                                                                                              : x(x_point\&.x),y(x_point\&.y),z(x_point\&.z),theta(new_theta),phi(new_phi)
+49             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3dr\fP< T >::coordinates_3dr (\fBpoint_3d\fP< T > && x_point, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB51\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+51                                                                                                         : x(std::move(x_point\&.x)),y(std::move(x_point\&.y)),z(std::move(x_point\&.z)),theta(new_theta),phi(new_phi)
+52             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3dr\fP< T >::coordinates_3dr (\fBconst\fP \fBcoordinates_3d\fP< T > & x_coordinates, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB54\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+54                                                                                                                          : x(x_coordinates\&.x),y(x_coordinates\&.y),z(x_coordinates\&.z),theta(new_theta),phi(new_phi)
+55             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3dr\fP< T >::coordinates_3dr (\fBcoordinates_3d\fP< T > && x_coordinates, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB57\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+57                                                                                                                     : x(std::move(x_coordinates\&.x)),y(std::move(x_coordinates\&.y)),z(std::move(x_coordinates\&.z)),theta(new_theta),phi(new_phi)
+58             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::coordinates_3dr\fP< T >::coordinates_3dr (\fBconst\fP \fBstring\fP & init_coordinates_3dr)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB60\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+60                                                                          : coordinates_3dr()
+61             {
+62                 initialize_from_string(init_coordinates_3dr);
+63             }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_3dr\fP< T >::display_cartesian () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB379\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+380             {
+381                 ostringstream out;
+382                 out << "(" << x << "," << y << "," << z << ";" << theta << "," << phi << ")";
+383                 return out\&.str();
+384             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_3dr\fP< T >::display_cylindrical () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB386\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+387             {
+388                 ostringstream out;
+389                 out << "(" << get_p() << "," << get_spherical_theta() << "," << z << ";" << theta << "," << phi << ")";
+390                 return out\&.str();
+391             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_3dr\fP< T >::display_geographical () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB400\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+401             {
+402                 ostringstream out;
+403                 out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ";" << theta << "," << phi << ")";
+404                 return out\&.str();
+405             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::coordinates_3dr\fP< T >::display_spherical () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB393\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+394             {
+395                 ostringstream out;
+396                 out << "(" << get_r() << "," << get_spherical_theta() << "," << get_spherical_phi() << ";" << theta << "," << phi << ")";
+397                 return out\&.str();
+398             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_3dr\fP< T >::distance_to_origin () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB374\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+375             {
+376                 return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2));
+377             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_3dr\fP< T >::get_altitude () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB153\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+154             {
+155                 return T();
+156             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::coordinates_3dr\fP< T >::get_latitude () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB143\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+144             {
+145                 return scifir::asin(float(z/T(6317,"km")));
+146             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::coordinates_3dr\fP< T >::get_longitude () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB148\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+149             {
+150                 return scifir::atan(float(y/x));
+151             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_3dr\fP< T >::get_p () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB123\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+124             {
+125                 return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2));
+126             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_3dr\fP< T >::get_r () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB133\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+134             {
+135                 return scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2));
+136             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::coordinates_3dr\fP< T >::get_spherical_phi () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB138\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+139             {
+140                 return angle(scifir::acos_grade(float(z/scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)))));
+141             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::coordinates_3dr\fP< T >::get_spherical_theta () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB128\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+129             {
+130                 return scifir::atan(float(y/x));
+131             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3dr\fP< T >::initialize_from_string (\fBstring\fP init_coordinates_3dr)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB414\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+415             {
+416                 vector<string> init_coordinates;
+417                 vector<string> init_values;
+418                 vector<string> init_angles;
+419                 if (init_coordinates_3dr\&.front() == '(')
+420                 {
+421                     init_coordinates_3dr\&.erase(0,1);
+422                 }
+423                 if (init_coordinates_3dr\&.back() == ')')
+424                 {
+425                     init_coordinates_3dr\&.erase(init_coordinates_3dr\&.size()\-1,1);
+426                 }
+427                 boost::split(init_coordinates,init_coordinates_3dr,boost::is_any_of(";"));
+428                 if (init_coordinates\&.size() > 0)
+429                 {
+430                     boost::split(init_values,init_coordinates[0],boost::is_any_of(","));
+431                 }
+432                 if (init_coordinates\&.size() > 1)
+433                 {
+434                     boost::split(init_angles,init_coordinates[1],boost::is_any_of(","));
+435                 }
+436                 if (init_values\&.size() == 3 and init_angles\&.size() == 2)
+437                 {
+438                     if (is_angle(init_values[0]))
+439                     {
+440                         if (is_angle(init_values[1]))
+441                         {
+442                             if (!is_angle(init_values[2]))
+443                             {
+444                                 set_position(angle(init_values[0]),angle(init_values[1]),T(init_values[2]));
+445                             }
+446                         }
+447                     }
+448                     else
+449                     {
+450                         if (is_angle(init_values[1]))
+451                         {
+452                             if (is_angle(init_values[2]))
+453                             {
+454                                 set_position(T(init_values[0]),angle(init_values[1]),angle(init_values[2]));
+455                             }
+456                             else
+457                             {
+458                                 set_position(T(init_values[0]),angle(init_values[1]),T(init_values[2]));
+459                             }
+460                         }
+461                         else
+462                         {
+463                             if (!is_angle(init_values[2]))
+464                             {
+465                                 set_position(T(init_values[0]),T(init_values[1]),T(init_values[2]));
+466                             }
+467                         }
+468                     }
+469                     theta = angle(init_angles[0]);
+470                     phi = angle(init_angles[1]);
+471                 }
+472             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3dr\fP< T >::move (\fBconst\fP \fBdisplacement_3d\fP & x_displacement)\fC [inline]\fP"
+
+.PP
+Definition at line \fB345\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+346             {
+347                 x += x_displacement\&.x_projection();
+348                 y += x_displacement\&.y_projection();
+349                 z += x_displacement\&.z_projection();
+350             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3dr\fP< T >::move (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta, T new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB359\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+360             {
+361                 new_z\&.change_dimensions(new_p);
+362                 x += T(new_p * scifir::cos(new_theta));
+363                 y += T(new_p * scifir::sin(new_theta));
+364                 z += new_z;
+365             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3dr\fP< T >::move (\fBconst\fP T & new_r, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP"
+
+.PP
+Definition at line \fB367\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+368             {
+369                 x += T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
+370                 y += T(new_r * scifir::sin(new_theta) * scifir::sin(new_phi));
+371                 z += T(new_r * scifir::cos(new_phi));
+372             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3dr\fP< T >::move (\fBconst\fP T & new_x, \fBconst\fP T & new_y, \fBconst\fP T & new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB352\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+353             {
+354                 x += new_x;
+355                 y += new_y;
+356                 z += new_z;
+357             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_3dr\fP< T > & \fBscifir::coordinates_3dr\fP< T >::operator= (\fBconst\fP \fBcoordinates_3d\fP< T > & x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB101\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+102             {
+103                 x = x_coordinates\&.x;
+104                 y = x_coordinates\&.y;
+105                 z = x_coordinates\&.z;
+106                 return *this;
+107             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_3dr\fP< T > & \fBscifir::coordinates_3dr\fP< T >::operator= (\fBconst\fP \fBcoordinates_3dr\fP< T > & x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB65\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+66             {
+67                 x = x_coordinates\&.x;
+68                 y = x_coordinates\&.y;
+69                 z = x_coordinates\&.z;
+70                 theta = x_coordinates\&.theta;
+71                 phi = x_coordinates\&.phi;
+72                 return *this;
+73             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_3dr\fP< T > & \fBscifir::coordinates_3dr\fP< T >::operator= (\fBconst\fP \fBpoint_3d\fP< T > & x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB85\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+86             {
+87                 x = x_point\&.x;
+88                 y = x_point\&.y;
+89                 z = x_point\&.z;
+90                 return *this;
+91             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_3dr\fP< T > & \fBscifir::coordinates_3dr\fP< T >::operator= (\fBconst\fP \fBstring\fP & init_coordinates_3dr)\fC [inline]\fP"
+
+.PP
+Definition at line \fB117\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+118             {
+119                 initialize_from_string(init_coordinates_3dr);
+120                 return *this;
+121             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_3dr\fP< T > & \fBscifir::coordinates_3dr\fP< T >::operator= (\fBcoordinates_3d\fP< T > && x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB109\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+110             {
+111                 x = std::move(x_coordinates\&.x);
+112                 y = std::move(x_coordinates\&.y);
+113                 z = std::move(x_coordinates\&.z);
+114                 return *this;
+115             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_3dr\fP< T > & \fBscifir::coordinates_3dr\fP< T >::operator= (\fBcoordinates_3dr\fP< T > && x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB75\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+76             {
+77                 x = std::move(x_coordinates\&.x);
+78                 y = std::move(x_coordinates\&.y);
+79                 z = std::move(x_coordinates\&.z);
+80                 theta = std::move(x_coordinates\&.theta);
+81                 phi = std::move(x_coordinates\&.phi);
+82                 return *this;
+83             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBcoordinates_3dr\fP< T > & \fBscifir::coordinates_3dr\fP< T >::operator= (\fBpoint_3d\fP< T > && x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB93\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+94             {
+95                 x = std::move(x_point\&.x);
+96                 y = std::move(x_point\&.y);
+97                 z = std::move(x_point\&.z);
+98                 return *this;
+99             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3dr\fP< T >::point_to (\fBdirection::name\fP x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB158\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+159             {
+160                 if (x == direction::LEFT)
+161                 {
+162                     theta = 270\&.0f;
+163                     phi = 90\&.0f;
+164                 }
+165                 else if(x == direction::RIGHT)
+166                 {
+167                     theta = 90\&.0f;
+168                     phi = 90\&.0f;
+169                 }
+170                 else if(x == direction::TOP)
+171                 {
+172                     theta = 0\&.0f;
+173                     phi = 0\&.0f;
+174                 }
+175                 else if(x == direction::BOTTOM)
+176                 {
+177                     theta = 0\&.0f;
+178                     phi = 180\&.0f;
+179                 }
+180                 else if(x == direction::LEFT_TOP)
+181                 {
+182                     theta = 270\&.0f;
+183                     phi = 45\&.0f;
+184                 }
+185                 else if(x == direction::RIGHT_TOP)
+186                 {
+187                     theta = 90\&.0f;
+188                     phi = 45\&.0f;
+189                 }
+190                 else if(x == direction::RIGHT_BOTTOM)
+191                 {
+192                     theta = 90\&.0f;
+193                     phi = 135\&.0f;
+194                 }
+195                 else if(x == direction::LEFT_BOTTOM)
+196                 {
+197                     theta = 270\&.0f;
+198                     phi = 135\&.0f;
+199                 }
+200                 else if(x == direction::FRONT)
+201                 {
+202                     theta = 0\&.0f;
+203                     phi = 90\&.0f;
+204                 }
+205                 else if(x == direction::BACK)
+206                 {
+207                     theta = 180\&.0f;
+208                     phi = 90\&.0f;
+209                 }
+210                 else if(x == direction::LEFT_FRONT)
+211                 {
+212                     theta = 315\&.0f;
+213                     phi = 90\&.0f;
+214                 }
+215                 else if(x == direction::RIGHT_FRONT)
+216                 {
+217                     theta = 45\&.0f;
+218                     phi = 90\&.0f;
+219                 }
+220                 else if(x == direction::TOP_FRONT)
+221                 {
+222                     theta = 0\&.0f;
+223                     phi = 45\&.0f;
+224                 }
+225                 else if(x == direction::BOTTOM_FRONT)
+226                 {
+227                     theta = 0\&.0f;
+228                     phi = 135\&.0f;
+229                 }
+230                 else if(x == direction::LEFT_BACK)
+231                 {
+232                     theta = 225\&.0f;
+233                     phi = 90\&.0f;
+234                 }
+235                 else if(x == direction::RIGHT_BACK)
+236                 {
+237                     theta = 135\&.0f;
+238                     phi = 90\&.0f;
+239                 }
+240                 else if(x == direction::TOP_BACK)
+241                 {
+242                     theta = 180\&.0f;
+243                     phi = 45\&.0f;
+244                 }
+245                 else if(x == direction::BOTTOM_BACK)
+246                 {
+247                     theta = 180\&.0f;
+248                     phi = 135\&.0f;
+249                 }
+250                 else if(x == direction::LEFT_TOP_FRONT)
+251                 {
+252                     theta = 315\&.0f;
+253                     phi = 45\&.0f;
+254                 }
+255                 else if(x == direction::RIGHT_TOP_FRONT)
+256                 {
+257                     theta = 45\&.0f;
+258                     phi = 45\&.0f;
+259                 }
+260                 else if(x == direction::LEFT_BOTTOM_FRONT)
+261                 {
+262                     theta = 315\&.0f;
+263                     phi = 135\&.0f;
+264                 }
+265                 else if(x == direction::RIGHT_BOTTOM_FRONT)
+266                 {
+267                     theta = 45\&.0f;
+268                     phi = 135\&.0f;
+269                 }
+270                 else if(x == direction::LEFT_TOP_BACK)
+271                 {
+272                     theta = 225\&.0f;
+273                     phi = 45\&.0f;
+274                 }
+275                 else if(x == direction::RIGHT_TOP_BACK)
+276                 {
+277                     theta = 135\&.0f;
+278                     phi = 45\&.0f;
+279                 }
+280                 else if(x == direction::LEFT_BOTTOM_BACK)
+281                 {
+282                     theta = 225\&.0f;
+283                     phi = 135\&.0f;
+284                 }
+285                 else if(x == direction::RIGHT_BOTTOM_BACK)
+286                 {
+287                     theta = 135\&.0f;
+288                     phi = 135\&.0f;
+289                 }
+290             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3dr\fP< T >::rotate_in_x (\fBconst\fP \fBangle\fP & x_angle)\fC [inline]\fP"
+
+.PP
+Definition at line \fB321\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+322             {
+323                 T y_coord = y;
+324                 T z_coord = z;
+325                 y = y_coord * scifir::cos(x_angle) \- z_coord * scifir::sin(x_angle);
+326                 z = y_coord * scifir::sin(x_angle) + z_coord * scifir::cos(x_angle);
+327             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3dr\fP< T >::rotate_in_y (\fBconst\fP \fBangle\fP & x_angle)\fC [inline]\fP"
+
+.PP
+Definition at line \fB329\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+330             {
+331                 T x_coord = x;
+332                 T z_coord = z;
+333                 x = x_coord * scifir::cos(x_angle) \- z_coord * scifir::sin(x_angle);
+334                 z = x_coord * scifir::sin(x_angle) + z_coord * scifir::cos(x_angle);
+335             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3dr\fP< T >::rotate_in_z (\fBconst\fP \fBangle\fP & x_angle)\fC [inline]\fP"
+
+.PP
+Definition at line \fB337\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+338             {
+339                 T x_coord = x;
+340                 T y_coord = y;
+341                 x = x_coord * scifir::cos(x_angle) \- y_coord * scifir::sin(x_angle);
+342                 y = x_coord * scifir::sin(x_angle) + y_coord * scifir::cos(x_angle);
+343             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3dr\fP< T >::set_position (\fBconst\fP \fBangle\fP & new_latitude, \fBconst\fP \fBangle\fP & new_longitude, \fBconst\fP T & new_altitude)\fC [inline]\fP"
+
+.PP
+Definition at line \fB314\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+315             {
+316                 x = T(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude));
+317                 y = T(new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude));
+318                 z = T(new_altitude * scifir::sin(new_latitude));
+319             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3dr\fP< T >::set_position (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta, T new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB299\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+300             {
+301                 new_z\&.change_dimensions(new_p);
+302                 x = T(new_p * scifir::cos(new_theta));
+303                 y = T(new_p * scifir::sin(new_theta));
+304                 z = new_z;
+305             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3dr\fP< T >::set_position (\fBconst\fP T & new_r, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP"
+
+.PP
+Definition at line \fB307\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+308             {
+309                 x = T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
+310                 y = T(new_r * scifir::sin(new_theta) * scifir::sin(new_phi));
+311                 z = T(new_r * scifir::cos(new_phi));
+312             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::coordinates_3dr\fP< T >::set_position (\fBconst\fP T & new_x, \fBconst\fP T & new_y, \fBconst\fP T & new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB292\fP of file \fBcoordinates_3dr\&.hpp\fP\&..PP
+.nf
+293             {
+294                 x = new_x;
+295                 y = new_y;
+296                 z = new_z;
+297             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::coordinates_3dr\fP< T >::phi"
+
+.PP
+Definition at line \fB411\fP of file \fBcoordinates_3dr\&.hpp\fP\&.
+.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::coordinates_3dr\fP< T >::theta"
+
+.PP
+Definition at line \fB410\fP of file \fBcoordinates_3dr\&.hpp\fP\&.
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_3dr\fP< T >::x"
+
+.PP
+Definition at line \fB407\fP of file \fBcoordinates_3dr\&.hpp\fP\&.
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_3dr\fP< T >::y"
+
+.PP
+Definition at line \fB408\fP of file \fBcoordinates_3dr\&.hpp\fP\&.
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::coordinates_3dr\fP< T >::z"
+
+.PP
+Definition at line \fB409\fP of file \fBcoordinates_3dr\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

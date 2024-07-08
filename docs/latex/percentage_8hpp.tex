@@ -1,0 +1,723 @@
+\doxysection{special\+\_\+units/percentage.hpp File Reference}
+\hypertarget{percentage_8hpp}{}\label{percentage_8hpp}\index{special\_units/percentage.hpp@{special\_units/percentage.hpp}}
+{\ttfamily \#include "{}../topology/constants.\+hpp"{}}\newline
+{\ttfamily \#include "{}../util/is\+\_\+number.\+hpp"{}}\newline
+{\ttfamily \#include "{}../units/scalar\+\_\+unit.\+hpp"{}}\newline
+{\ttfamily \#include "{}boost/math/constants/constants.\+hpp"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for percentage.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{percentage_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{percentage_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+\begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a31893a8051570f4961ff4ec9a419c851}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1percentage}{percentage}} \&x)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_acab1cb8bce8abe8946add3aee1f193b8}{scifir\+::is\+\_\+percentage}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&\mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\+\_\+percentage}})
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \mbox{\hyperlink{percentage_8hpp_a81f154358d49660f1b1a96953d15efd0}{operator+}} (T x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \mbox{\hyperlink{percentage_8hpp_a66007c9d37b55e53c242333331e87ba5}{operator-\/}} (T x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\float \mbox{\hyperlink{percentage_8hpp_a2409cfb487e9ecac210e9d8fe8f37f71}{operator\texorpdfstring{$\ast$}{*}}} (T x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\float \mbox{\hyperlink{percentage_8hpp_ab27024a0e63bbcd0edc59d37776fa03a}{operator/}} (T x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{percentage_8hpp_afa982eb3fef5c3edd8243966221615ec}{operator==}} (T x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{percentage_8hpp_a568a364e20ead0b160cc24cbc8d830fa}{operator!=}} (T x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{percentage_8hpp_a574de9dce20427d48f6ca1d8584a6240}{operator$<$}} (T x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{percentage_8hpp_a6b415c5b5748baa98dbefbb396ae89e8}{operator$>$}} (T x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{percentage_8hpp_a73ff3192ba19ac41efbfd8f398f5f366}{operator$<$=}} (T x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{percentage_8hpp_a7e6310928460a5719b50651fc2be3eac}{operator$>$=}} (T x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{percentage_8hpp_a51a03af2f765b23243eb5f5b3bc45d10}{operator==}} (const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y, T x)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{percentage_8hpp_ae4af34c0815f69a37ccad4d5126a0156}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y, T x)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{percentage_8hpp_a5b4169ad95e6dcf61f61fdef31fb7bd7}{operator$<$}} (const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y, T x)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{percentage_8hpp_a3a5ded7241759a378378c435b20681ae}{operator$>$}} (const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y, T x)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{percentage_8hpp_ad7fa29b48fb1e1df6e4af91a6e499b04}{operator$<$=}} (const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y, T x)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\bool \mbox{\hyperlink{percentage_8hpp_a2be04c40c9a65dba308f2b45d16de926}{operator$>$=}} (const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y, T x)
+\item 
+\mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \mbox{\hyperlink{percentage_8hpp_aed57323fc5a09522f5de5547b2bdbd61}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \mbox{\hyperlink{percentage_8hpp_ac374e9f61dfa39ac74eba10ea58024bb}{operator/}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+bool \mbox{\hyperlink{percentage_8hpp_a11bae7a49331c9cb2ea9d88b85a68834}{operator==}} (const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+bool \mbox{\hyperlink{percentage_8hpp_a3f0dd45499cf23ca6529bd2a5743387d}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+bool \mbox{\hyperlink{percentage_8hpp_a36b532254f7dcb06fc7b4fd8e0abc983}{operator$<$}} (const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+bool \mbox{\hyperlink{percentage_8hpp_aecc2a9b74352d6684d443e67b5ed189b}{operator$>$}} (const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+bool \mbox{\hyperlink{percentage_8hpp_ac96e6b3da426f6fd8e99e5256139bb37}{operator$<$=}} (const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+bool \mbox{\hyperlink{percentage_8hpp_afd585d9ac19daf5bd309cd0f72c7e48e}{operator$>$=}} (const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+bool \mbox{\hyperlink{percentage_8hpp_ab0e975f0b4116280542e459f2f22d1c0}{operator==}} (const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&x, const string \&init\+\_\+percentage)
+\item 
+bool \mbox{\hyperlink{percentage_8hpp_afb656428378acc338b9e5148933483eb}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&x, const string \&init\+\_\+percentage)
+\item 
+bool \mbox{\hyperlink{percentage_8hpp_a06cda1228cab7ed2fbf45344666f81e0}{operator==}} (const string \&init\+\_\+percentage, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&x)
+\item 
+bool \mbox{\hyperlink{percentage_8hpp_a1606375bd47d706bc818ed6606b72907}{operator!=}} (const string \&init\+\_\+percentage, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&x)
+\item 
+void \mbox{\hyperlink{percentage_8hpp_aca1d7475494064cd88fec5085fd4d5d1}{operator+=}} (string \&x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+string \mbox{\hyperlink{percentage_8hpp_a29b3ec6917531dd25d30de6b1e87fc95}{operator+}} (const string \&x, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y)
+\item 
+string \mbox{\hyperlink{percentage_8hpp_aefa99cbb53117bea7135b341b1d66c9c}{operator+}} (const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&y, const string \&x)
+\item 
+ostream \& \mbox{\hyperlink{percentage_8hpp_ababed7d7960d3fd02d45a9a3eab36be3}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&x)
+\item 
+istream \& \mbox{\hyperlink{percentage_8hpp_aebb6e808ff148cbf1258cfdf572f126d}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{percentage_8hpp_a3f0dd45499cf23ca6529bd2a5743387d}\label{percentage_8hpp_a3f0dd45499cf23ca6529bd2a5743387d} 
+\index{percentage.hpp@{percentage.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00496}{496}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00497\ \{}
+\DoxyCodeLine{00498\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{00499\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_afb656428378acc338b9e5148933483eb}\label{percentage_8hpp_afb656428378acc338b9e5148933483eb} 
+\index{percentage.hpp@{percentage.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{x,  }\item[{const string \&}]{init\+\_\+percentage }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00541}{541}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00542\ \{}
+\DoxyCodeLine{00543\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_percentage);}
+\DoxyCodeLine{00544\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_ae4af34c0815f69a37ccad4d5126a0156}\label{percentage_8hpp_ae4af34c0815f69a37ccad4d5126a0156} 
+\index{percentage.hpp@{percentage.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y,  }\item[{T}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00215}{215}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00216\ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{00218\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a1606375bd47d706bc818ed6606b72907}\label{percentage_8hpp_a1606375bd47d706bc818ed6606b72907} 
+\index{percentage.hpp@{percentage.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+percentage,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00552}{552}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00553\ \{}
+\DoxyCodeLine{00554\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_percentage\ ==\ x);}
+\DoxyCodeLine{00555\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a568a364e20ead0b160cc24cbc8d830fa}\label{percentage_8hpp_a568a364e20ead0b160cc24cbc8d830fa} 
+\index{percentage.hpp@{percentage.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00179}{179}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00180\ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{00182\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_aed57323fc5a09522f5de5547b2bdbd61}\label{percentage_8hpp_aed57323fc5a09522f5de5547b2bdbd61} 
+\index{percentage.hpp@{percentage.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00474}{474}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00475\ \{}
+\DoxyCodeLine{00476\ \ \ \ \ \textcolor{keywordflow}{return}\ x\ *\ y.\mbox{\hyperlink{classscifir_1_1percentage_aff54f2d08cc05e3f5fd3aa5b374b3ed8}{get\_factor}}();}
+\DoxyCodeLine{00477\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a2409cfb487e9ecac210e9d8fe8f37f71}\label{percentage_8hpp_a2409cfb487e9ecac210e9d8fe8f37f71} 
+\index{percentage.hpp@{percentage.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+float operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00161}{161}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00162\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordflow}{return}\ float(x\ *\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}()\ /\ 100);}
+\DoxyCodeLine{00164\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_aefa99cbb53117bea7135b341b1d66c9c}\label{percentage_8hpp_aefa99cbb53117bea7135b341b1d66c9c} 
+\index{percentage.hpp@{percentage.hpp}!operator+@{operator+}}
+\index{operator+@{operator+}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily string operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y,  }\item[{const string \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00572}{572}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00573\ \{}
+\DoxyCodeLine{00574\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00575\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{00576\ \ \ \ \ output\ <<\ x;}
+\DoxyCodeLine{00577\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
+\DoxyCodeLine{00578\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a29b3ec6917531dd25d30de6b1e87fc95}\label{percentage_8hpp_a29b3ec6917531dd25d30de6b1e87fc95} 
+\index{percentage.hpp@{percentage.hpp}!operator+@{operator+}}
+\index{operator+@{operator+}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily string operator+ (\begin{DoxyParamCaption}\item[{const string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00564}{564}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00565\ \{}
+\DoxyCodeLine{00566\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00567\ \ \ \ \ output\ <<\ x;}
+\DoxyCodeLine{00568\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{00569\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
+\DoxyCodeLine{00570\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a81f154358d49660f1b1a96953d15efd0}\label{percentage_8hpp_a81f154358d49660f1b1a96953d15efd0} 
+\index{percentage.hpp@{percentage.hpp}!operator+@{operator+}}
+\index{operator+@{operator+}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+\mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} operator+ (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00149}{149}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00150\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}(x\ +\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{00152\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_aca1d7475494064cd88fec5085fd4d5d1}\label{percentage_8hpp_aca1d7475494064cd88fec5085fd4d5d1} 
+\index{percentage.hpp@{percentage.hpp}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily void operator+= (\begin{DoxyParamCaption}\item[{string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00557}{557}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00558\ \{}
+\DoxyCodeLine{00559\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00560\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{00561\ \ \ \ \ x\ +=\ output.str();}
+\DoxyCodeLine{00562\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a66007c9d37b55e53c242333331e87ba5}\label{percentage_8hpp_a66007c9d37b55e53c242333331e87ba5} 
+\index{percentage.hpp@{percentage.hpp}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+\mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} operator-\/ (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00155}{155}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00156\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}(x\ -\/\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{00158\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_ac374e9f61dfa39ac74eba10ea58024bb}\label{percentage_8hpp_ac374e9f61dfa39ac74eba10ea58024bb} 
+\index{percentage.hpp@{percentage.hpp}!operator/@{operator/}}
+\index{operator/@{operator/}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00479}{479}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00480\ \{}
+\DoxyCodeLine{00481\ \ \ \ \ \textcolor{keywordflow}{return}\ x\ /\ y.\mbox{\hyperlink{classscifir_1_1percentage_aff54f2d08cc05e3f5fd3aa5b374b3ed8}{get\_factor}}();}
+\DoxyCodeLine{00482\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_ab27024a0e63bbcd0edc59d37776fa03a}\label{percentage_8hpp_ab27024a0e63bbcd0edc59d37776fa03a} 
+\index{percentage.hpp@{percentage.hpp}!operator/@{operator/}}
+\index{operator/@{operator/}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+float operator/ (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00167}{167}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00168\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{return}\ float(100\ *\ x\ /\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{00170\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a36b532254f7dcb06fc7b4fd8e0abc983}\label{percentage_8hpp_a36b532254f7dcb06fc7b4fd8e0abc983} 
+\index{percentage.hpp@{percentage.hpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00501}{501}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00502\ \{}
+\DoxyCodeLine{00503\ \ \ \ \ \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}()\ <\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}())}
+\DoxyCodeLine{00504\ \ \ \ \ \{}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00506\ \ \ \ \ \}}
+\DoxyCodeLine{00507\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00508\ \ \ \ \ \{}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00510\ \ \ \ \ \}}
+\DoxyCodeLine{00511\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a5b4169ad95e6dcf61f61fdef31fb7bd7}\label{percentage_8hpp_a5b4169ad95e6dcf61f61fdef31fb7bd7} 
+\index{percentage.hpp@{percentage.hpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y,  }\item[{T}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00221}{221}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00222\ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}()\ <\ x);}
+\DoxyCodeLine{00224\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a574de9dce20427d48f6ca1d8584a6240}\label{percentage_8hpp_a574de9dce20427d48f6ca1d8584a6240} 
+\index{percentage.hpp@{percentage.hpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+bool operator$<$ (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00185}{185}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00186\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{00188\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_ababed7d7960d3fd02d45a9a3eab36be3}\label{percentage_8hpp_ababed7d7960d3fd02d45a9a3eab36be3} 
+\index{percentage.hpp@{percentage.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00580}{580}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00581\ \{}
+\DoxyCodeLine{00582\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x);}
+\DoxyCodeLine{00583\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_ac96e6b3da426f6fd8e99e5256139bb37}\label{percentage_8hpp_ac96e6b3da426f6fd8e99e5256139bb37} 
+\index{percentage.hpp@{percentage.hpp}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00525}{525}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00526\ \{}
+\DoxyCodeLine{00527\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ >\ y);}
+\DoxyCodeLine{00528\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_ad7fa29b48fb1e1df6e4af91a6e499b04}\label{percentage_8hpp_ad7fa29b48fb1e1df6e4af91a6e499b04} 
+\index{percentage.hpp@{percentage.hpp}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y,  }\item[{T}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00233}{233}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00234\ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}()\ <=\ x);}
+\DoxyCodeLine{00236\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a73ff3192ba19ac41efbfd8f398f5f366}\label{percentage_8hpp_a73ff3192ba19ac41efbfd8f398f5f366} 
+\index{percentage.hpp@{percentage.hpp}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+bool operator$<$= (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00197}{197}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00198\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ <=\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{00200\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a11bae7a49331c9cb2ea9d88b85a68834}\label{percentage_8hpp_a11bae7a49331c9cb2ea9d88b85a68834} 
+\index{percentage.hpp@{percentage.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00484}{484}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00485\ \{}
+\DoxyCodeLine{00486\ \ \ \ \ \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}()\ ==\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}())}
+\DoxyCodeLine{00487\ \ \ \ \ \{}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00489\ \ \ \ \ \}}
+\DoxyCodeLine{00490\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00491\ \ \ \ \ \{}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00493\ \ \ \ \ \}}
+\DoxyCodeLine{00494\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_ab0e975f0b4116280542e459f2f22d1c0}\label{percentage_8hpp_ab0e975f0b4116280542e459f2f22d1c0} 
+\index{percentage.hpp@{percentage.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{x,  }\item[{const string \&}]{init\+\_\+percentage }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00535}{535}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00536\ \{}
+\DoxyCodeLine{00537\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\ y\ =\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}(init\_percentage);}
+\DoxyCodeLine{00538\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
+\DoxyCodeLine{00539\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a51a03af2f765b23243eb5f5b3bc45d10}\label{percentage_8hpp_a51a03af2f765b23243eb5f5b3bc45d10} 
+\index{percentage.hpp@{percentage.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y,  }\item[{T}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00209}{209}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00210\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{00212\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a06cda1228cab7ed2fbf45344666f81e0}\label{percentage_8hpp_a06cda1228cab7ed2fbf45344666f81e0} 
+\index{percentage.hpp@{percentage.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+percentage,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00546}{546}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00547\ \{}
+\DoxyCodeLine{00548\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}\ y\ =\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}(init\_percentage);}
+\DoxyCodeLine{00549\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
+\DoxyCodeLine{00550\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_afa982eb3fef5c3edd8243966221615ec}\label{percentage_8hpp_afa982eb3fef5c3edd8243966221615ec} 
+\index{percentage.hpp@{percentage.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00173}{173}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00174\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{00176\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_aecc2a9b74352d6684d443e67b5ed189b}\label{percentage_8hpp_aecc2a9b74352d6684d443e67b5ed189b} 
+\index{percentage.hpp@{percentage.hpp}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00513}{513}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00514\ \{}
+\DoxyCodeLine{00515\ \ \ \ \ \textcolor{keywordflow}{if}(x.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}()\ >\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}())}
+\DoxyCodeLine{00516\ \ \ \ \ \{}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00518\ \ \ \ \ \}}
+\DoxyCodeLine{00519\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00520\ \ \ \ \ \{}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00522\ \ \ \ \ \}}
+\DoxyCodeLine{00523\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a3a5ded7241759a378378c435b20681ae}\label{percentage_8hpp_a3a5ded7241759a378378c435b20681ae} 
+\index{percentage.hpp@{percentage.hpp}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y,  }\item[{T}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00227}{227}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00228\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}()\ >\ x);}
+\DoxyCodeLine{00230\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a6b415c5b5748baa98dbefbb396ae89e8}\label{percentage_8hpp_a6b415c5b5748baa98dbefbb396ae89e8} 
+\index{percentage.hpp@{percentage.hpp}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+bool operator$>$ (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00191}{191}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00192\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{00194\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_afd585d9ac19daf5bd309cd0f72c7e48e}\label{percentage_8hpp_afd585d9ac19daf5bd309cd0f72c7e48e} 
+\index{percentage.hpp@{percentage.hpp}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00530}{530}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00531\ \{}
+\DoxyCodeLine{00532\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ <\ y);}
+\DoxyCodeLine{00533\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a2be04c40c9a65dba308f2b45d16de926}\label{percentage_8hpp_a2be04c40c9a65dba308f2b45d16de926} 
+\index{percentage.hpp@{percentage.hpp}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+bool operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y,  }\item[{T}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00239}{239}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00240\ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordflow}{return}\ (y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}()\ >=\ x);}
+\DoxyCodeLine{00242\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_a7e6310928460a5719b50651fc2be3eac}\label{percentage_8hpp_a7e6310928460a5719b50651fc2be3eac} 
+\index{percentage.hpp@{percentage.hpp}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+bool operator$>$= (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8hpp_source_l00203}{203}} of file \mbox{\hyperlink{percentage_8hpp_source}{percentage.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00204\ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >=\ y.\mbox{\hyperlink{classscifir_1_1percentage_a3bff25faccd76a10dd9d24e0d9448e8c}{get\_value}}());}
+\DoxyCodeLine{00206\ \}}
+
+\end{DoxyCode}
+\Hypertarget{percentage_8hpp_aebb6e808ff148cbf1258cfdf572f126d}\label{percentage_8hpp_aebb6e808ff148cbf1258cfdf572f126d} 
+\index{percentage.hpp@{percentage.hpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!percentage.hpp@{percentage.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1percentage}{scifir\+::percentage}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{percentage_8cpp_source_l00585}{585}} of file \mbox{\hyperlink{percentage_8cpp_source}{percentage.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00586\ \{}
+\DoxyCodeLine{00587\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
+\DoxyCodeLine{00588\ \ \ \ \ is.getline(a,\ 256);}
+\DoxyCodeLine{00589\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
+\DoxyCodeLine{00590\ \ \ \ \ boost::trim(b);}
+\DoxyCodeLine{00591\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1percentage}{scifir::percentage}}(b);}
+\DoxyCodeLine{00592\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{00593\ \}}
+
+\end{DoxyCode}

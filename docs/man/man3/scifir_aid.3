@@ -6,6 +6,8 @@ scifir::aid
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <aid\&.hpp>\fP
 .SS "Public Types"
 
 .in +1c
@@ -17,13 +19,16 @@ scifir::aid
 
 .in +1c
 .ti -1c
+.RI "\fBaid\fP ()"
+.br
+.ti -1c
 .RI "\fBaid\fP (\fBconst\fP \fBaid\fP &x)"
 .br
 .ti -1c
 .RI "\fBaid\fP (\fBaid\fP &&x)"
 .br
 .ti -1c
-.RI "\fBaid\fP (\fBconst\fP astronomical_body &\fBpredefined_astronomical_body\fP)"
+.RI "\fBaid\fP (\fBconst\fP \fBastronomical_body\fP &\fBpredefined_astronomical_body\fP)"
 .br
 .ti -1c
 .RI "\fBaid\fP (\fBconst\fP \fBstring\fP &\fBnew_universe\fP, \fBconst\fP \fBstring\fP &\fBnew_galaxy\fP)"
@@ -32,7 +37,7 @@ scifir::aid
 .RI "\fBaid\fP (\fBconst\fP \fBstring\fP &\fBnew_universe\fP, \fBconst\fP \fBstring\fP &\fBnew_galaxy\fP, \fBconst\fP \fBstring\fP &\fBnew_solar_system\fP)"
 .br
 .ti -1c
-.RI "\fBaid\fP (\fBconst\fP aid::type &\fBnew_astronomical_type\fP, \fBconst\fP \fBstring\fP &\fBnew_universe\fP, \fBconst\fP \fBstring\fP &\fBnew_galaxy\fP, \fBconst\fP \fBstring\fP &\fBnew_solar_system\fP, \fBconst\fP \fBstring\fP &\fBnew_astronomical_body\fP)"
+.RI "\fBaid\fP (\fBconst\fP \fBaid::type\fP &\fBnew_astronomical_type\fP, \fBconst\fP \fBstring\fP &\fBnew_universe\fP, \fBconst\fP \fBstring\fP &\fBnew_galaxy\fP, \fBconst\fP \fBstring\fP &\fBnew_solar_system\fP, \fBconst\fP \fBstring\fP &\fBnew_astronomical_body\fP)"
 .br
 .ti -1c
 .RI "\fBaid\fP (\fBconst\fP \fBstring\fP &\fBinit_aid\fP)"
@@ -87,9 +92,347 @@ scifir::aid
 .RI "\fBstring\fP \fBastronomical_body\fP"
 .br
 .ti -1c
-.RI "aid::type \fBastronomical_type\fP"
+.RI "\fBaid::type\fP \fBastronomical_type\fP"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBconst\fP \fBstring\fP &\fBinit_aid\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB13\fP of file \fBaid\&.hpp\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "\fBenum\fP \fBscifir::aid::type\fP : \fBint8_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINONE \fP\fP
+.TP
+\fB\fIUNIVERSE \fP\fP
+.TP
+\fB\fIGALAXY \fP\fP
+.TP
+\fB\fISOLAR_SYSTEM \fP\fP
+.TP
+\fB\fIPLANET \fP\fP
+.TP
+\fB\fISTAR \fP\fP
+.TP
+\fB\fIASTEROID \fP\fP
+.TP
+\fB\fIMOON \fP\fP
+.TP
+\fB\fIMETEOR \fP\fP
+.PP
+Definition at line \fB16\fP of file \fBaid\&.hpp\fP\&..PP
+.nf
+16 : int8_t {NONE,UNIVERSE,GALAXY,SOLAR_SYSTEM,PLANET,STAR,ASTEROID,MOON,METEOR};
+.fi
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "scifir::aid::aid ()"
+
+.PP
+Definition at line \fB13\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+13              : universe(),galaxy(),solar_system(),astronomical_body(),astronomical_type(aid::NONE)
+14     {}
+.fi
+
+.SS "scifir::aid::aid (\fBconst\fP \fBaid\fP & x)"
+
+.PP
+Definition at line \fB16\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+16                          : universe(x\&.universe),galaxy(x\&.galaxy),solar_system(x\&.solar_system),astronomical_body(x\&.astronomical_body),astronomical_type(x\&.astronomical_type)
+17     {}
+.fi
+
+.SS "scifir::aid::aid (\fBaid\fP && x)"
+
+.PP
+Definition at line \fB19\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+19                     : universe(std::move(x\&.universe)),galaxy(std::move(x\&.galaxy)),solar_system(std::move(x\&.solar_system)),astronomical_body(std::move(x\&.astronomical_body)),astronomical_type(std::move(x\&.astronomical_type))
+20     {}
+.fi
+
+.SS "scifir::aid::aid (\fBconst\fP \fBastronomical_body\fP & predefined_astronomical_body)\fC [explicit]\fP"
+
+.SS "scifir::aid::aid (\fBconst\fP \fBstring\fP & new_universe, \fBconst\fP \fBstring\fP & new_galaxy)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB312\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+312                                                                 : universe(new_universe),galaxy(new_galaxy),solar_system(),astronomical_body(),astronomical_type(aid::GALAXY)
+313     {}
+.fi
+
+.SS "scifir::aid::aid (\fBconst\fP \fBstring\fP & new_universe, \fBconst\fP \fBstring\fP & new_galaxy, \fBconst\fP \fBstring\fP & new_solar_system)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB315\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+315                                                                                                : universe(new_universe),galaxy(new_galaxy),solar_system(new_solar_system),astronomical_body(),astronomical_type(aid::SOLAR_SYSTEM)
+316     {}
+.fi
+
+.SS "scifir::aid::aid (\fBconst\fP \fBaid::type\fP & new_astronomical_type, \fBconst\fP \fBstring\fP & new_universe, \fBconst\fP \fBstring\fP & new_galaxy, \fBconst\fP \fBstring\fP & new_solar_system, \fBconst\fP \fBstring\fP & new_astronomical_body)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB318\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+318                                                                                                                                                                         : universe(new_universe),galaxy(new_galaxy),solar_system(new_solar_system),astronomical_body(new_astronomical_body),astronomical_type(new_astronomical_type)
+319     {}
+.fi
+
+.SS "scifir::aid::aid (\fBconst\fP \fBstring\fP & init_aid)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB321\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+321                                    : aid()
+322     {
+323         initialize_from_string(init_aid);
+324     }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBstring\fP scifir::aid::display () const"
+
+.PP
+Definition at line \fB436\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+437     {
+438         if (astronomical_type != aid::NONE)
+439         {
+440             ostringstream out;
+441             out << "(" << to_string(astronomical_type) << ")";
+442             if (astronomical_type == aid::UNIVERSE)
+443             {
+444                 out << universe;
+445             }
+446             else if (astronomical_type == aid::GALAXY)
+447             {
+448                 out << universe << ":" << galaxy;
+449             }
+450             else if (astronomical_type == aid::SOLAR_SYSTEM)
+451             {
+452                 out << universe << ":" << galaxy << ":" << solar_system;
+453             }
+454             else
+455             {
+456                 if (universe != "")
+457                 {
+458                     out << universe << ":";
+459                 }
+460                 out << galaxy << ":" << solar_system << ":" << astronomical_body;
+461             }
+462             return out\&.str();
+463         }
+464         else
+465         {
+466             return "";
+467         }
+468     }
+.fi
+
+.SS "\fBbool\fP scifir::aid::has_unknown_asteroid () const"
+
+.PP
+Definition at line \fB382\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+383     {
+384         return (astronomical_body == "unknown\-asteroid");
+385     }
+.fi
+
+.SS "\fBbool\fP scifir::aid::has_unknown_galaxy () const"
+
+.PP
+Definition at line \fB357\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+358     {
+359         return (galaxy == "unknown\-galaxy");
+360     }
+.fi
+
+.SS "\fBbool\fP scifir::aid::has_unknown_moon () const"
+
+.PP
+Definition at line \fB372\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+373     {
+374         return (astronomical_body == "unknown\-moon");
+375     }
+.fi
+
+.SS "\fBbool\fP scifir::aid::has_unknown_planet () const"
+
+.PP
+Definition at line \fB367\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+368     {
+369         return (astronomical_body == "unknown\-planet");
+370     }
+.fi
+
+.SS "\fBbool\fP scifir::aid::has_unknown_solar_system () const"
+
+.PP
+Definition at line \fB362\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+363     {
+364         return (solar_system == "unknown\-solar\-system");
+365     }
+.fi
+
+.SS "\fBbool\fP scifir::aid::has_unknown_star () const"
+
+.PP
+Definition at line \fB377\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+378     {
+379         return (astronomical_body == "unknown\-star");
+380     }
+.fi
+
+.SS "\fBbool\fP scifir::aid::has_unknown_universe () const"
+
+.PP
+Definition at line \fB352\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+353     {
+354         return (universe == "unknown\-universe");
+355     }
+.fi
+
+.SS "\fBvoid\fP scifir::aid::initialize_from_string (\fBconst\fP \fBstring\fP & init_aid)\fC [private]\fP"
+
+.PP
+Definition at line \fB387\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+388     {
+389         vector<string> values;
+390         boost::split(values,init_aid,boost::is_any_of(":"));
+391         string aid_type;
+392         if (values[0]\&.front() == '(' and isalpha(values[0][1]))
+393         {
+394             if (isalpha(values[0][2]))
+395             {
+396                 astronomical_type = create_astronomical_type(values[0]\&.substr(1,2));
+397                 if (values[0][4] != ' ')
+398                 {
+399                     universe = values[0]\&.substr(4);
+400                 }
+401                 else
+402                 {
+403                     universe = values[0]\&.substr(5);
+404                 }
+405             }
+406             else
+407             {
+408                 astronomical_type = create_astronomical_type(values[0]\&.substr(1,1));
+409                 if (values[0][3] != ' ')
+410                 {
+411                     universe = values[0]\&.substr(3);
+412                 }
+413                 else
+414                 {
+415                     universe = values[0]\&.substr(4);
+416                 }
+417             }
+418             if (values\&.size() == 4)
+419             {
+420                 galaxy = values[1];
+421                 solar_system = values[2];
+422                 astronomical_body = values[3];
+423             }
+424             else if (values\&.size() == 3)
+425             {
+426                 galaxy = values[1];
+427                 solar_system = values[2];
+428             }
+429             else if (values\&.size() == 2)
+430             {
+431                 galaxy = values[1];
+432             }
+433         }
+434     }
+.fi
+
+.SS "\fBaid\fP & scifir::aid::operator= (\fBaid\fP && x)"
+
+.PP
+Definition at line \fB336\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+337     {
+338         universe = std::move(x\&.universe);
+339         galaxy = std::move(x\&.galaxy);
+340         solar_system = std::move(x\&.solar_system);
+341         astronomical_body = std::move(x\&.astronomical_body);
+342         astronomical_type = std::move(x\&.astronomical_type);
+343         return *this;
+344     }
+.fi
+
+.SS "\fBaid\fP & scifir::aid::operator= (\fBconst\fP \fBaid\fP & x)"
+
+.PP
+Definition at line \fB326\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+327     {
+328         universe = x\&.universe;
+329         galaxy = x\&.galaxy;
+330         solar_system = x\&.solar_system;
+331         astronomical_body = x\&.astronomical_body;
+332         astronomical_type = x\&.astronomical_type;
+333         return *this;
+334     }
+.fi
+
+.SS "\fBaid\fP & scifir::aid::operator= (\fBconst\fP \fBstring\fP & init_aid)"
+
+.PP
+Definition at line \fB346\fP of file \fBaid\&.cpp\fP\&..PP
+.nf
+347     {
+348         initialize_from_string(init_aid);
+349         return *this;
+350     }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBstring\fP scifir::aid::astronomical_body"
+
+.PP
+Definition at line \fB44\fP of file \fBaid\&.hpp\fP\&.
+.SS "\fBaid::type\fP scifir::aid::astronomical_type"
+
+.PP
+Definition at line \fB45\fP of file \fBaid\&.hpp\fP\&.
+.SS "\fBstring\fP scifir::aid::galaxy"
+
+.PP
+Definition at line \fB42\fP of file \fBaid\&.hpp\fP\&.
+.SS "\fBstring\fP scifir::aid::solar_system"
+
+.PP
+Definition at line \fB43\fP of file \fBaid\&.hpp\fP\&.
+.SS "\fBstring\fP scifir::aid::universe"
+
+.PP
+Definition at line \fB41\fP of file \fBaid\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

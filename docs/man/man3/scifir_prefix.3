@@ -6,6 +6,8 @@ scifir::prefix
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <prefix\&.hpp>\fP
 .SS "Public Types"
 
 .in +1c
@@ -17,13 +19,16 @@ scifir::prefix
 
 .in +1c
 .ti -1c
+.RI "\fBprefix\fP ()"
+.br
+.ti -1c
 .RI "\fBprefix\fP (\fBconst\fP \fBprefix\fP &x)"
 .br
 .ti -1c
 .RI "\fBprefix\fP (\fBprefix\fP &&x)"
 .br
 .ti -1c
-.RI "\fBprefix\fP (prefix::type \fBnew_type\fP)"
+.RI "\fBprefix\fP (\fBprefix::type\fP \fBnew_type\fP)"
 .br
 .ti -1c
 .RI "\fBprefix\fP (\fBconst\fP \fBstring\fP &\fBnew_type\fP)"
@@ -51,9 +56,319 @@ scifir::prefix
 
 .in +1c
 .ti -1c
-.RI "prefix::type \fBprefix_type\fP"
+.RI "\fBprefix::type\fP \fBprefix_type\fP"
 .br
 .in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB13\fP of file \fBprefix\&.hpp\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "\fBenum\fP \fBscifir::prefix::type\fP : \fBint8_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIno_prefix \fP\fP
+.TP
+\fB\fIY \fP\fP
+.TP
+\fB\fIZ \fP\fP
+.TP
+\fB\fIE \fP\fP
+.TP
+\fB\fIP \fP\fP
+.TP
+\fB\fIT \fP\fP
+.TP
+\fB\fIG \fP\fP
+.TP
+\fB\fIM \fP\fP
+.TP
+\fB\fIk \fP\fP
+.TP
+\fB\fIh \fP\fP
+.TP
+\fB\fIda \fP\fP
+.TP
+\fB\fId \fP\fP
+.TP
+\fB\fIc \fP\fP
+.TP
+\fB\fIm \fP\fP
+.TP
+\fB\fIu \fP\fP
+.TP
+\fB\fIn \fP\fP
+.TP
+\fB\fIp \fP\fP
+.TP
+\fB\fIf \fP\fP
+.TP
+\fB\fIa \fP\fP
+.TP
+\fB\fIz \fP\fP
+.TP
+\fB\fIy \fP\fP
+.PP
+Definition at line \fB16\fP of file \fBprefix\&.hpp\fP\&..PP
+.nf
+16 : int8_t {no_prefix,Y,Z,E,P,T,G,M,k,h,da,d,c,m,u,n,p,f,a,z,y};
+.fi
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "scifir::prefix::prefix ()"
+
+.PP
+Definition at line \fB9\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+9                   : prefix_type(prefix::no_prefix)
+10     {}
+.fi
+
+.SS "scifir::prefix::prefix (\fBconst\fP \fBprefix\fP & x)"
+
+.PP
+Definition at line \fB12\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+12                                   : prefix_type(x\&.prefix_type)
+13     {}
+.fi
+
+.SS "scifir::prefix::prefix (\fBprefix\fP && x)"
+
+.PP
+Definition at line \fB15\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+15                              : prefix_type(std::move(x\&.prefix_type))
+16     {}
+.fi
+
+.SS "scifir::prefix::prefix (\fBprefix::type\fP new_type)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB18\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+18                                       : prefix_type(new_type)
+19     {}
+.fi
+
+.SS "scifir::prefix::prefix (\fBconst\fP \fBstring\fP & new_type)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB21\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+21                                          : prefix_type(prefix_string(new_type))
+22     {}
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBint\fP scifir::prefix::get_conversion_factor () const"
+
+.PP
+Definition at line \fB36\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+37     {
+38         switch (prefix_type)
+39         {
+40             case prefix::Y:
+41                 return 24;
+42             case prefix::Z:
+43                 return 21;
+44             case prefix::E:
+45                 return 18;
+46             case prefix::P:
+47                 return 15;
+48             case prefix::T:
+49                 return 12;
+50             case prefix::G:
+51                 return 9;
+52             case prefix::M:
+53                 return 6;
+54             case prefix::k:
+55                 return 3;
+56             case prefix::h:
+57                 return 2;
+58             case prefix::da:
+59                 return 1;
+60             case prefix::no_prefix:
+61                 return 0;
+62             case prefix::d:
+63                 return \-1;
+64             case prefix::c:
+65                 return \-2;
+66             case prefix::m:
+67                 return \-3;
+68             case prefix::u:
+69                 return \-6;
+70             case prefix::n:
+71                 return \-9;
+72             case prefix::p:
+73                 return \-12;
+74             case prefix::f:
+75                 return \-15;
+76             case prefix::a:
+77                 return \-18;
+78             case prefix::z:
+79                 return \-21;
+80             case prefix::y:
+81                 return \-24;
+82         }
+83         return 0;
+84     }
+.fi
+
+.SS "\fBstring\fP scifir::prefix::get_name () const"
+
+.PP
+Definition at line \fB86\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+87     {
+88         switch (prefix_type)
+89         {
+90             case prefix::Y:
+91                 return "yotta";
+92             case prefix::Z:
+93                 return "zetta";
+94             case prefix::E:
+95                 return "exa";
+96             case prefix::P:
+97                 return "peta";
+98             case prefix::T:
+99                 return "tera";
+100             case prefix::G:
+101                 return "giga";
+102             case prefix::M:
+103                 return "mega";
+104             case prefix::k:
+105                 return "kilo";
+106             case prefix::h:
+107                 return "hecto";
+108             case prefix::da:
+109                 return "deca";
+110             case prefix::no_prefix:
+111                 return "";
+112             case prefix::d:
+113                 return "deci";
+114             case prefix::c:
+115                 return "centi";
+116             case prefix::m:
+117                 return "milli";
+118             case prefix::u:
+119                 return "micro";
+120             case prefix::n:
+121                 return "nano";
+122             case prefix::p:
+123                 return "pico";
+124             case prefix::f:
+125                 return "femto";
+126             case prefix::a:
+127                 return "atto";
+128             case prefix::z:
+129                 return "zepto";
+130             case prefix::y:
+131                 return "yocto";
+132         }
+133         return "";
+134     }
+.fi
+
+.SS "\fBstring\fP scifir::prefix::get_symbol () const"
+
+.PP
+Definition at line \fB136\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+137     {
+138         switch (prefix_type)
+139         {
+140             case prefix::Y:
+141                 return "Y";
+142             case prefix::Z:
+143                 return "Z";
+144             case prefix::E:
+145                 return "E";
+146             case prefix::P:
+147                 return "P";
+148             case prefix::T:
+149                 return "T";
+150             case prefix::G:
+151                 return "G";
+152             case prefix::M:
+153                 return "M";
+154             case prefix::k:
+155                 return "k";
+156             case prefix::h:
+157                 return "h";
+158             case prefix::da:
+159                 return "da";
+160             case prefix::no_prefix:
+161                 return "";
+162             case prefix::d:
+163                 return "d";
+164             case prefix::c:
+165                 return "c";
+166             case prefix::m:
+167                 return "m";
+168             case prefix::u:
+169                 return "\\u00B5";
+170             case prefix::n:
+171                 return "n";
+172             case prefix::p:
+173                 return "p";
+174             case prefix::f:
+175                 return "f";
+176             case prefix::a:
+177                 return "a";
+178             case prefix::z:
+179                 return "z";
+180             case prefix::y:
+181                 return "y";
+182         }
+183         return "";
+184     }
+.fi
+
+.SS "\fBbool\fP scifir::prefix::operator< (\fBconst\fP \fBscifir::prefix\fP & x) const"
+
+.PP
+Definition at line \fB186\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+187     {
+188         return (get_conversion_factor() < x\&.get_conversion_factor());
+189     }
+.fi
+
+.SS "\fBprefix\fP & scifir::prefix::operator= (\fBconst\fP \fBprefix\fP & x)"
+
+.PP
+Definition at line \fB24\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+25     {
+26         prefix_type = x\&.prefix_type;
+27         return *this;
+28     }
+.fi
+
+.SS "\fBprefix\fP & scifir::prefix::operator= (\fBprefix\fP && x)"
+
+.PP
+Definition at line \fB30\fP of file \fBprefix\&.cpp\fP\&..PP
+.nf
+31     {
+32         prefix_type = std::move(x\&.prefix_type);
+33         return *this;
+34     }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBprefix::type\fP scifir::prefix::prefix_type"
+
+.PP
+Definition at line \fB33\fP of file \fBprefix\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

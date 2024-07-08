@@ -1,0 +1,267 @@
+\doxysection{units/vector\+\_\+unit\+\_\+2d.cpp File Reference}
+\hypertarget{vector__unit__2d_8cpp}{}\label{vector__unit__2d_8cpp}\index{units/vector\_unit\_2d.cpp@{units/vector\_unit\_2d.cpp}}
+{\ttfamily \#include "{}./vector\+\_\+unit\+\_\+2d.\+hpp"{}}\newline
+{\ttfamily \#include "{}../coordinates/coordinates\+\_\+2d.\+hpp"{}}\newline
+{\ttfamily \#include "{}../util/types.\+hpp"{}}\newline
+{\ttfamily \#include "{}boost/algorithm/string.\+hpp"{}}\newline
+Include dependency graph for vector\+\_\+unit\+\_\+2d.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vector__unit__2d_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+\begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \mbox{\hyperlink{namespacescifir_accc56ab405831f217868c125f41d18d0}{scifir\+::norm}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\+\_\+unit\+\_\+2d}} \&x)
+\item 
+\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\+\_\+unit\+\_\+2d}} \mbox{\hyperlink{namespacescifir_af0066b26eed63f20591134bd5ba7d140}{scifir\+::sqrt}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\+\_\+unit\+\_\+2d}} \&x)
+\item 
+\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\+\_\+unit\+\_\+2d}} \mbox{\hyperlink{namespacescifir_a2073269e33c6408ba02b2f14b3358d5c}{scifir\+::sqrt\+\_\+nth}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\+\_\+unit\+\_\+2d}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} index)
+\item 
+\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \mbox{\hyperlink{namespacescifir_a732fc05956fd18f78cd0019c5c023b5c}{scifir\+::dot\+\_\+product}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\+\_\+unit\+\_\+2d}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\+\_\+unit\+\_\+2d}} \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1angle}{angle}} \mbox{\hyperlink{namespacescifir_a0a708b03e7faa9893325df448046989c}{scifir\+::angle\+\_\+between}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\+\_\+unit\+\_\+2d}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\+\_\+unit\+\_\+2d}} \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_a0c8de3e3dd65b45ba57dc8e8cf70c214}{scifir\+::same\+\_\+direction}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\+\_\+unit\+\_\+2d}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\+\_\+unit\+\_\+2d}} \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_a40ba1bb26b9754da01fe9ef6b34d8aee}{scifir\+::parallel}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\+\_\+unit\+\_\+2d}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\+\_\+unit\+\_\+2d}} \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_a178f0bea2ceffe06b1a8322b41b9f0b3}{scifir\+::orthogonal}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\+\_\+unit\+\_\+2d}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\+\_\+unit\+\_\+2d}} \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \mbox{\hyperlink{vector__unit__2d_8cpp_a2ae8e8a9e1778d997d383a9cc351b2ec}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&y)
+\item 
+bool \mbox{\hyperlink{vector__unit__2d_8cpp_ab7074eadbf3f68f6dc5fffc915983935}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&x, const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&y)
+\item 
+bool \mbox{\hyperlink{vector__unit__2d_8cpp_a7beb80c4a3dc367661dd40ac75ca8c45}{operator==}} (const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&x, const string \&init\+\_\+vector\+\_\+2d)
+\item 
+bool \mbox{\hyperlink{vector__unit__2d_8cpp_a06df10f5b6a5e4aeba37364026a456fe}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&x, const string \&init\+\_\+vector\+\_\+2d)
+\item 
+bool \mbox{\hyperlink{vector__unit__2d_8cpp_a68f30e517a133a6ffc4031435f2e085e}{operator==}} (const string \&init\+\_\+vector\+\_\+2d, const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&x)
+\item 
+bool \mbox{\hyperlink{vector__unit__2d_8cpp_ae129f3fc0a6a287df5016e0b78638f66}{operator!=}} (const string \&init\+\_\+vector\+\_\+2d, const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&x)
+\item 
+void \mbox{\hyperlink{vector__unit__2d_8cpp_aa9d7a5f47057cf5e212fdc56d9682e86}{operator+=}} (string \&x, const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&y)
+\item 
+string \mbox{\hyperlink{vector__unit__2d_8cpp_a754c583b1b9779aa361162c5c7bc7f56}{operator+}} (const string \&x, const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&y)
+\item 
+string \mbox{\hyperlink{vector__unit__2d_8cpp_a676875dc595f3476971d309bb48f0b93}{operator+}} (const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&y, const string \&x)
+\item 
+ostream \& \mbox{\hyperlink{vector__unit__2d_8cpp_aca0d184f1ac3b4e92c6ca6fa8a66ca89}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&x)
+\item 
+istream \& \mbox{\hyperlink{vector__unit__2d_8cpp_a7d02e223fcca3ec68666c3d62032914d}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{vector__unit__2d_8cpp_ab7074eadbf3f68f6dc5fffc915983935}\label{vector__unit__2d_8cpp_ab7074eadbf3f68f6dc5fffc915983935} 
+\index{vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__2d_8cpp_source_l00373}{373}} of file \mbox{\hyperlink{vector__unit__2d_8cpp_source}{vector\+\_\+unit\+\_\+2d.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00374\ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{00376\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__2d_8cpp_a06df10f5b6a5e4aeba37364026a456fe}\label{vector__unit__2d_8cpp_a06df10f5b6a5e4aeba37364026a456fe} 
+\index{vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&}]{x,  }\item[{const string \&}]{init\+\_\+vector\+\_\+2d }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__2d_8cpp_source_l00384}{384}} of file \mbox{\hyperlink{vector__unit__2d_8cpp_source}{vector\+\_\+unit\+\_\+2d.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00385\ \{}
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_vector\_2d);}
+\DoxyCodeLine{00387\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__2d_8cpp_ae129f3fc0a6a287df5016e0b78638f66}\label{vector__unit__2d_8cpp_ae129f3fc0a6a287df5016e0b78638f66} 
+\index{vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+vector\+\_\+2d,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__2d_8cpp_source_l00395}{395}} of file \mbox{\hyperlink{vector__unit__2d_8cpp_source}{vector\+\_\+unit\+\_\+2d.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00396\ \{}
+\DoxyCodeLine{00397\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_vector\_2d\ ==\ x);}
+\DoxyCodeLine{00398\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__2d_8cpp_a2ae8e8a9e1778d997d383a9cc351b2ec}\label{vector__unit__2d_8cpp_a2ae8e8a9e1778d997d383a9cc351b2ec} 
+\index{vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__2d_8cpp_source_l00366}{366}} of file \mbox{\hyperlink{vector__unit__2d_8cpp_source}{vector\+\_\+unit\+\_\+2d.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00367\ \{}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ new\_value\ =\ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}()\ *\ y.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}();}
+\DoxyCodeLine{00369\ \ \ \ \ vector<scifir::dimension>\ new\_dimensions\ =\ \mbox{\hyperlink{namespacescifir_a9ffe4ce909247f67cb6d4a4eebf64be1}{multiply\_dimensions}}(x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}(),\ y.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}(),new\_value);}
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}(\textcolor{keywordtype}{float}(new\_value),\ new\_dimensions,\ y.\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a30fe14e1861d1d49905e6bc07e941107}{theta}});}
+\DoxyCodeLine{00371\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__2d_8cpp_a676875dc595f3476971d309bb48f0b93}\label{vector__unit__2d_8cpp_a676875dc595f3476971d309bb48f0b93} 
+\index{vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&}]{y,  }\item[{const string \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__2d_8cpp_source_l00415}{415}} of file \mbox{\hyperlink{vector__unit__2d_8cpp_source}{vector\+\_\+unit\+\_\+2d.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00416\ \{}
+\DoxyCodeLine{00417\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00418\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{00419\ \ \ \ \ output\ <<\ x;}
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
+\DoxyCodeLine{00421\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__2d_8cpp_a754c583b1b9779aa361162c5c7bc7f56}\label{vector__unit__2d_8cpp_a754c583b1b9779aa361162c5c7bc7f56} 
+\index{vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string operator+ (\begin{DoxyParamCaption}\item[{const string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__2d_8cpp_source_l00407}{407}} of file \mbox{\hyperlink{vector__unit__2d_8cpp_source}{vector\+\_\+unit\+\_\+2d.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00408\ \{}
+\DoxyCodeLine{00409\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00410\ \ \ \ \ output\ <<\ x;}
+\DoxyCodeLine{00411\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{00412\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
+\DoxyCodeLine{00413\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__2d_8cpp_aa9d7a5f47057cf5e212fdc56d9682e86}\label{vector__unit__2d_8cpp_aa9d7a5f47057cf5e212fdc56d9682e86} 
+\index{vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily void operator+= (\begin{DoxyParamCaption}\item[{string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__2d_8cpp_source_l00400}{400}} of file \mbox{\hyperlink{vector__unit__2d_8cpp_source}{vector\+\_\+unit\+\_\+2d.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00401\ \{}
+\DoxyCodeLine{00402\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00403\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{00404\ \ \ \ \ x\ +=\ output.str();}
+\DoxyCodeLine{00405\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__2d_8cpp_aca0d184f1ac3b4e92c6ca6fa8a66ca89}\label{vector__unit__2d_8cpp_aca0d184f1ac3b4e92c6ca6fa8a66ca89} 
+\index{vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__2d_8cpp_source_l00423}{423}} of file \mbox{\hyperlink{vector__unit__2d_8cpp_source}{vector\+\_\+unit\+\_\+2d.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00424\ \{}
+\DoxyCodeLine{00425\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(x);}
+\DoxyCodeLine{00426\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__2d_8cpp_a7beb80c4a3dc367661dd40ac75ca8c45}\label{vector__unit__2d_8cpp_a7beb80c4a3dc367661dd40ac75ca8c45} 
+\index{vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}!operator==@{operator==}}
+\index{operator==@{operator==}!vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&}]{x,  }\item[{const string \&}]{init\+\_\+vector\+\_\+2d }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__2d_8cpp_source_l00378}{378}} of file \mbox{\hyperlink{vector__unit__2d_8cpp_source}{vector\+\_\+unit\+\_\+2d.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00379\ \{}
+\DoxyCodeLine{00380\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ y(init\_vector\_2d);}
+\DoxyCodeLine{00381\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
+\DoxyCodeLine{00382\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__2d_8cpp_a68f30e517a133a6ffc4031435f2e085e}\label{vector__unit__2d_8cpp_a68f30e517a133a6ffc4031435f2e085e} 
+\index{vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}!operator==@{operator==}}
+\index{operator==@{operator==}!vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+vector\+\_\+2d,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__2d_8cpp_source_l00389}{389}} of file \mbox{\hyperlink{vector__unit__2d_8cpp_source}{vector\+\_\+unit\+\_\+2d.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00390\ \{}
+\DoxyCodeLine{00391\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ y(init\_vector\_2d);}
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keywordflow}{return}\ (y\ ==\ x);}
+\DoxyCodeLine{00393\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__2d_8cpp_a7d02e223fcca3ec68666c3d62032914d}\label{vector__unit__2d_8cpp_a7d02e223fcca3ec68666c3d62032914d} 
+\index{vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!vector\_unit\_2d.cpp@{vector\_unit\_2d.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir\+::vector\+\_\+unit\+\_\+2d}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__2d_8cpp_source_l00428}{428}} of file \mbox{\hyperlink{vector__unit__2d_8cpp_source}{vector\+\_\+unit\+\_\+2d.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00429\ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
+\DoxyCodeLine{00431\ \ \ \ \ is.getline(a,\ 256);}
+\DoxyCodeLine{00432\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
+\DoxyCodeLine{00433\ \ \ \ \ boost::trim(b);}
+\DoxyCodeLine{00434\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}(b);}
+\DoxyCodeLine{00435\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{00436\ \}}
+
+\end{DoxyCode}

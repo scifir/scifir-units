@@ -6,9 +6,14 @@ scifir::point_2d< float >
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <point_2d\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBpoint_2d\fP ()"
+.br
 .ti -1c
 .RI "\fBpoint_2d\fP (\fBconst\fP \fBpoint_2d\fP< \fBfloat\fP > &\fBx_point\fP)"
 .br
@@ -89,6 +94,316 @@ scifir::point_2d< float >
 .RI "\fBfloat\fP \fBy\fP"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_point_2d\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB169\fP of file \fBpoint_2d\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBscifir::point_2d\fP< \fBfloat\fP >::point_2d ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB172\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+172                        : x(),y()
+173             {}
+.fi
+
+.SS "\fBscifir::point_2d\fP< \fBfloat\fP >::point_2d (\fBconst\fP \fBpoint_2d\fP< \fBfloat\fP > & x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB175\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+175                                                      : x(x_point\&.x),y(x_point\&.y)
+176             {}
+.fi
+
+.SS "\fBscifir::point_2d\fP< \fBfloat\fP >::point_2d (\fBpoint_2d\fP< \fBfloat\fP > && x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB178\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+178                                                 : x(std::move(x_point\&.x)),y(std::move(x_point\&.y))
+179             {}
+.fi
+
+.SS "\fBscifir::point_2d\fP< \fBfloat\fP >::point_2d (\fBfloat\fP new_x, \fBfloat\fP new_y)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB181\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+181                                                        : x(new_x),y(new_y)
+182             {}
+.fi
+
+.SS "\fBscifir::point_2d\fP< \fBfloat\fP >::point_2d (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB184\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+185             {
+186                 set_position(new_p,new_theta);
+187             }
+.fi
+
+.SS "\fBscifir::point_2d\fP< \fBfloat\fP >::point_2d (\fBconst\fP \fBcoordinates_2d\fP< \fBfloat\fP > & x_coordinates)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB10\fP of file \fBpoint_2d\&.cpp\fP\&..PP
+.nf
+10                                                                         : x(x_coordinates\&.x),y(x_coordinates\&.y)
+11     {}
+.fi
+
+.SS "\fBscifir::point_2d\fP< \fBfloat\fP >::point_2d (\fBcoordinates_2d\fP< \fBfloat\fP > && x_coordinates)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB13\fP of file \fBpoint_2d\&.cpp\fP\&..PP
+.nf
+13                                                                    : x(std::move(x_coordinates\&.x)),y(std::move(x_coordinates\&.y))
+14     {}
+.fi
+
+.SS "\fBscifir::point_2d\fP< \fBfloat\fP >::point_2d (\fBconst\fP \fBstring\fP & init_point_2d)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB193\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+193                                                            : point_2d()
+194             {
+195                 initialize_from_string(init_point_2d);
+196             }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBstring\fP \fBscifir::point_2d\fP< \fBfloat\fP >::display_cartesian () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB275\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+276             {
+277                 ostringstream out;
+278                 out << "(" << display_float(x) << "," << display_float(y) << ")";
+279                 return out\&.str();
+280             }
+.fi
+
+.SS "\fBstring\fP \fBscifir::point_2d\fP< \fBfloat\fP >::display_polar () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB282\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+283             {
+284                 ostringstream out;
+285                 out << "(" << display_float(get_p(),2) << "," << get_theta() << ")";
+286                 return out\&.str();
+287             }
+.fi
+
+.SS "\fBfloat\fP \fBscifir::point_2d\fP< \fBfloat\fP >::distance_to_origin () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB270\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+271             {
+272                 return float(std::sqrt(std::pow(x,2) + std::pow(y,2)));
+273             }
+.fi
+
+.SS "\fBfloat\fP \fBscifir::point_2d\fP< \fBfloat\fP >::get_p () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB222\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+223             {
+224                 return float(std::sqrt(std::pow(x,2) + std::pow(y,2)));
+225             }
+.fi
+
+.SS "\fBangle\fP \fBscifir::point_2d\fP< \fBfloat\fP >::get_theta () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB227\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+228             {
+229                 return angle(radian_to_grade(std::atan2(y,x)));
+230             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::point_2d\fP< \fBfloat\fP >::initialize_from_string (\fBstring\fP init_point_2d)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB293\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+294             {
+295                 vector<string> values;
+296                 if (init_point_2d\&.front() == '(')
+297                 {
+298                     init_point_2d\&.erase(0,1);
+299                 }
+300                 if (init_point_2d\&.back() == ')')
+301                 {
+302                     init_point_2d\&.erase(init_point_2d\&.size()\-1,1);
+303                 }
+304                 boost::split(values,init_point_2d,boost::is_any_of(","));
+305                 if (values\&.size() == 2)
+306                 {
+307                     if (is_angle(values[1]))
+308                     {
+309                         set_position(stof(values[0]),angle(values[1]));
+310                     }
+311                     else
+312                     {
+313                         set_position(stof(values[0]),stof(values[1]));
+314                     }
+315                 }
+316             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::point_2d\fP< \fBfloat\fP >::move (\fBconst\fP \fBdisplacement_2d\fP & x_displacement)\fC [inline]\fP"
+
+.PP
+Definition at line \fB252\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+253             {
+254                 x += float(x_displacement\&.x_projection());
+255                 y += float(x_displacement\&.y_projection());
+256             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::point_2d\fP< \fBfloat\fP >::move (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB264\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+265             {
+266                 x += new_p * scifir::cos(new_theta);
+267                 y += new_p * scifir::sin(new_theta);
+268             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::point_2d\fP< \fBfloat\fP >::move (\fBfloat\fP new_x, \fBfloat\fP new_y)\fC [inline]\fP"
+
+.PP
+Definition at line \fB258\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+259             {
+260                 x += new_x;
+261                 y += new_y;
+262             }
+.fi
+
+.SS "\fBpoint_2d\fP< \fBfloat\fP > & \fBscifir::point_2d\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBcoordinates_2d\fP< \fBfloat\fP > & x_coordinates)"
+
+.PP
+Definition at line \fB16\fP of file \fBpoint_2d\&.cpp\fP\&..PP
+.nf
+17     {
+18         x = x_coordinates\&.x;
+19         y = x_coordinates\&.y;
+20         return *this;
+21     }
+.fi
+
+.SS "\fBpoint_2d\fP< \fBfloat\fP > & \fBscifir::point_2d\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBpoint_2d\fP< \fBfloat\fP > & x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB198\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+199             {
+200                 x = x_point\&.x;
+201                 y = x_point\&.y;
+202                 return *this;
+203             }
+.fi
+
+.SS "\fBpoint_2d\fP< \fBfloat\fP > & \fBscifir::point_2d\fP< \fBfloat\fP >::operator= (\fBconst\fP \fBstring\fP & init_point_2d)\fC [inline]\fP"
+
+.PP
+Definition at line \fB216\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+217             {
+218                 initialize_from_string(init_point_2d);
+219                 return *this;
+220             }
+.fi
+
+.SS "\fBpoint_2d\fP< \fBfloat\fP > & \fBscifir::point_2d\fP< \fBfloat\fP >::operator= (\fBcoordinates_2d\fP< \fBfloat\fP > && x_coordinates)"
+
+.PP
+Definition at line \fB23\fP of file \fBpoint_2d\&.cpp\fP\&..PP
+.nf
+24     {
+25         x = std::move(x_coordinates\&.x);
+26         y = std::move(x_coordinates\&.y);
+27         return *this;
+28     }
+.fi
+
+.SS "\fBpoint_2d\fP< \fBfloat\fP > & \fBscifir::point_2d\fP< \fBfloat\fP >::operator= (\fBpoint_2d\fP< \fBfloat\fP > && x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB205\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+206             {
+207                 x = std::move(x_point\&.x);
+208                 y = std::move(x_point\&.y);
+209                 return *this;
+210             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::point_2d\fP< \fBfloat\fP >::rotate (\fBconst\fP \fBangle\fP & x_angle)\fC [inline]\fP"
+
+.PP
+Definition at line \fB244\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+245             {
+246                 float x_coord = x;
+247                 float y_coord = y;
+248                 x = x_coord * scifir::cos(x_angle) \- y_coord * scifir::sin(x_angle);
+249                 y = x_coord * scifir::sin(x_angle) + y_coord * scifir::cos(x_angle);
+250             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::point_2d\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB238\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+239             {
+240                 x = new_p * scifir::cos(new_theta);
+241                 y = new_p * scifir::sin(new_theta);
+242             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::point_2d\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_x, \fBfloat\fP new_y)\fC [inline]\fP"
+
+.PP
+Definition at line \fB232\fP of file \fBpoint_2d\&.hpp\fP\&..PP
+.nf
+233             {
+234                 x = new_x;
+235                 y = new_y;
+236             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBfloat\fP \fBscifir::point_2d\fP< \fBfloat\fP >::x"
+
+.PP
+Definition at line \fB289\fP of file \fBpoint_2d\&.hpp\fP\&.
+.SS "\fBfloat\fP \fBscifir::point_2d\fP< \fBfloat\fP >::y"
+
+.PP
+Definition at line \fB290\fP of file \fBpoint_2d\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

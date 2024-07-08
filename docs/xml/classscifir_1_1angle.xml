@@ -2,14 +2,16 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classscifir_1_1angle" kind="class" language="C++" prot="public">
     <compoundname>scifir::angle</compoundname>
+    <includes refid="angle_8hpp" local="no">angle.hpp</includes>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classscifir_1_1angle_1abf0a15a9992815559fdb667439d7b1b4" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" prot="private" static="no" mutable="no">
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">float</ref></type>
-        <definition>float scifir::angle::value</definition>
+        <definition>angle::value</definition>
         <argsstring></argsstring>
         <name>value</name>
         <qualifiedname>scifir::angle::value</qualifiedname>
         <briefdescription>
+<para>Value of the angle. It is stored always in grades. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -482,7 +484,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -509,7 +511,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
@@ -536,7 +538,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
@@ -563,7 +565,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
@@ -590,7 +592,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
@@ -617,7 +619,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1angle" kindref="compound">angle</ref></type>
@@ -644,7 +646,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -671,7 +673,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -698,7 +700,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -725,7 +727,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -752,7 +754,7 @@
           </param>
           <param>
             <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref></type>
-            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;::value&gt;::type</defval>
+            <defval><ref refid="classscifir_1_1coordinates__1d" kindref="compound">typename</ref> <ref refid="classscifir_1_1coordinates__1d" kindref="compound">enable_if</ref>&lt;<ref refid="structscifir_1_1is__number" kindref="compound">scifir::is_number</ref>&lt;T&gt;<ref refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" kindref="member">::value</ref>&gt;::type</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classscifir_1_1coordinates__1d" kindref="compound">void</ref></type>
@@ -931,8 +933,10 @@
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Class that allows to work with angles. </para>
     </briefdescription>
     <detaileddescription>
+<para>angle is a class that allows to work with angles, more in grades than in radians. The value of the angle is always stored inside the class in grades, and it can be get in radians with the to_radian() function. </para>
     </detaileddescription>
     <location file="meca_number/angle.hpp" line="27" column="1" bodyfile="meca_number/angle.hpp" bodystart="28" bodyend="163"/>
     <listofallmembers>
@@ -983,7 +987,7 @@
       <member refid="classscifir_1_1angle_1aaec67828caba34b87964960243e351bd" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator^</name></member>
       <member refid="classscifir_1_1angle_1a270692c7ced80eb091d193a68bfe063c" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator^=</name></member>
       <member refid="classscifir_1_1angle_1a0e24aeb55b619bb39ea6f83dbfaba385" prot="public" virt="non-virtual"><scope>scifir::angle</scope><name>operator^=</name></member>
-      <member refid="classscifir_1_1angle_1abf0a15a9992815559fdb667439d7b1b4" prot="private" virt="non-virtual"><scope>scifir::angle</scope><name>value</name></member>
+      <member refid="classscifir_1_1angle_1a3cafe677d680efd536fad4822885ffc2" prot="private" virt="non-virtual"><scope>scifir::angle</scope><name>value</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

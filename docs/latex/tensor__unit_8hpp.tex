@@ -1,0 +1,82 @@
+\doxysection{units/tensor\+\_\+unit.hpp File Reference}
+\hypertarget{tensor__unit_8hpp}{}\label{tensor__unit_8hpp}\index{units/tensor\_unit.hpp@{units/tensor\_unit.hpp}}
+{\ttfamily \#include "{}./scalar\+\_\+unit.\+hpp"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for tensor\+\_\+unit.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tensor__unit_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classscifir_1_1tensor__unit}{scifir\+::tensor\+\_\+unit$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+\begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{tensor__unit_8hpp_a44062c5d86762bc59e4c5aa17df44705}{operator==}} (const \mbox{\hyperlink{classscifir_1_1tensor__unit}{scifir\+::tensor\+\_\+unit}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1tensor__unit}{scifir\+::tensor\+\_\+unit}}$<$ U $>$ \&y)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{tensor__unit_8hpp_a85efcda72cc551ceea228a4709ed0b6e}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1tensor__unit}{scifir\+::tensor\+\_\+unit}}$<$ T $>$ \&x, const \mbox{\hyperlink{classscifir_1_1tensor__unit}{scifir\+::tensor\+\_\+unit}}$<$ U $>$ \&y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{tensor__unit_8hpp_a85efcda72cc551ceea228a4709ed0b6e}\label{tensor__unit_8hpp_a85efcda72cc551ceea228a4709ed0b6e} 
+\index{tensor\_unit.hpp@{tensor\_unit.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!tensor\_unit.hpp@{tensor\_unit.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1tensor__unit}{scifir\+::tensor\+\_\+unit}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1tensor__unit}{scifir\+::tensor\+\_\+unit}}$<$ U $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{tensor__unit_8hpp_source_l00287}{287}} of file \mbox{\hyperlink{tensor__unit_8hpp_source}{tensor\+\_\+unit.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00288\ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{00290\ \}}
+
+\end{DoxyCode}
+\Hypertarget{tensor__unit_8hpp_a44062c5d86762bc59e4c5aa17df44705}\label{tensor__unit_8hpp_a44062c5d86762bc59e4c5aa17df44705} 
+\index{tensor\_unit.hpp@{tensor\_unit.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!tensor\_unit.hpp@{tensor\_unit.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1tensor__unit}{scifir\+::tensor\+\_\+unit}}$<$ T $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1tensor__unit}{scifir\+::tensor\+\_\+unit}}$<$ U $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{tensor__unit_8hpp_source_l00267}{267}} of file \mbox{\hyperlink{tensor__unit_8hpp_source}{tensor\+\_\+unit.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00268\ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordflow}{if}\ ((x.values.size()\ !=\ y.values.size())\ or\ (x.values[0].size()\ !=\ y.values[0].size()))}
+\DoxyCodeLine{00270\ \ \ \ \ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00272\ \ \ \ \ \}}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ x.values.size();\ i++)}
+\DoxyCodeLine{00274\ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ x.values[i].size();\ j++)}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.values[i][j]\ !=\ y.values[i][j])}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00282\ \ \ \ \ \}}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00284\ \}}
+
+\end{DoxyCode}

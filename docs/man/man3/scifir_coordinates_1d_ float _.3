@@ -6,9 +6,14 @@ scifir::coordinates_1d< float >
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <coordinates_1d\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBcoordinates_1d\fP ()"
+.br
 .ti -1c
 .RI "\fBcoordinates_1d\fP (\fBconst\fP \fBcoordinates_1d\fP< \fBfloat\fP > &\fBx_coordinates\fP)"
 .br
@@ -62,6 +67,206 @@ scifir::coordinates_1d< float >
 .RI "\fBfloat\fP \fBx\fP"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_coordinates_1d\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB113\fP of file \fBcoordinates_1d\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBscifir::coordinates_1d\fP< \fBfloat\fP >::coordinates_1d ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB116\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+116                              : x()
+117             {}
+.fi
+
+.SS "\fBscifir::coordinates_1d\fP< \fBfloat\fP >::coordinates_1d (\fBconst\fP \fBcoordinates_1d\fP< \fBfloat\fP > & x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB119\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+119                                                                        : x(x_coordinates\&.x)
+120             {}
+.fi
+
+.SS "\fBscifir::coordinates_1d\fP< \fBfloat\fP >::coordinates_1d (\fBcoordinates_1d\fP< \fBfloat\fP > && x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB122\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+122                                                                   : x(std::move(x_coordinates\&.x))
+123             {}
+.fi
+
+.SS "\fBscifir::coordinates_1d\fP< \fBfloat\fP >::coordinates_1d (\fBfloat\fP new_x)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB125\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+125                                                  : x(new_x)
+126             {}
+.fi
+
+.SS "\fBscifir::coordinates_1d\fP< \fBfloat\fP >::coordinates_1d (\fBconst\fP \fBpoint_1d\fP< \fBfloat\fP > & new_point)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB128\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+128                                                                       : x(new_point\&.x)
+129             {}
+.fi
+
+.SS "\fBscifir::coordinates_1d\fP< \fBfloat\fP >::coordinates_1d (\fBpoint_1d\fP< \fBfloat\fP > && new_point)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB131\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+131                                                                  : x(std::move(new_point\&.x))
+132             {}
+.fi
+
+.SS "\fBscifir::coordinates_1d\fP< \fBfloat\fP >::coordinates_1d (\fBconst\fP \fBstring\fP & init_coordinates_1d)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB134\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+134                                                                        : coordinates_1d()
+135             {
+136                 initialize_from_string(init_coordinates_1d);
+137             }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBstring\fP \fBscifir::coordinates_1d\fP< \fBfloat\fP >::display_cartesian () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB184\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+185             {
+186                 ostringstream out;
+187                 out << "(" << display_float(x) <<  ")";
+188                 return out\&.str();
+189             }
+.fi
+
+.SS "\fBfloat\fP \fBscifir::coordinates_1d\fP< \fBfloat\fP >::distance_to_origin () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB179\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+180             {
+181                 return float(std::abs(x));
+182             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_1d\fP< \fBfloat\fP >::initialize_from_string (\fBstring\fP init_coordinates_1d)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB194\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+195             {
+196                 if (init_coordinates_1d\&.front() == '(')
+197                 {
+198                     init_coordinates_1d\&.erase(0,1);
+199                 }
+200                 if (init_coordinates_1d\&.back() == ')')
+201                 {
+202                     init_coordinates_1d\&.erase(init_coordinates_1d\&.size()\-1,1);
+203                 }
+204                 x = stof(init_coordinates_1d);
+205             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_1d\fP< \fBfloat\fP >::move (\fBfloat\fP x_value)\fC [inline]\fP"
+
+.PP
+Definition at line \fB174\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+175             {
+176                 x += x_value;
+177             }
+.fi
+
+.SS "\fBcoordinates_1d\fP< \fBfloat\fP > & \fBscifir::coordinates_1d\fP< \fBfloat\fP >\fB::operator\fP= (\fBconst\fP \fBcoordinates_1d\fP< \fBfloat\fP > & x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB139\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+140             {
+141                 x = x_coordinates\&.x;
+142                 return *this;
+143             }
+.fi
+
+.SS "\fBcoordinates_1d\fP< \fBfloat\fP > & \fBscifir::coordinates_1d\fP< \fBfloat\fP >\fB::operator\fP= (\fBconst\fP \fBpoint_1d\fP< \fBfloat\fP > & x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB151\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+152             {
+153                 x = x_point\&.x;
+154                 return *this;
+155             }
+.fi
+
+.SS "\fBcoordinates_1d\fP< \fBfloat\fP > & \fBscifir::coordinates_1d\fP< \fBfloat\fP >\fB::operator\fP= (\fBconst\fP \fBstring\fP & init_coordinates_1d)\fC [inline]\fP"
+
+.PP
+Definition at line \fB163\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+164             {
+165                 initialize_from_string(init_coordinates_1d);
+166                 return *this;
+167             }
+.fi
+
+.SS "\fBcoordinates_1d\fP< \fBfloat\fP > & \fBscifir::coordinates_1d\fP< \fBfloat\fP >\fB::operator\fP= (\fBcoordinates_1d\fP< \fBfloat\fP > && x_coordinates)\fC [inline]\fP"
+
+.PP
+Definition at line \fB145\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+146             {
+147                 x = std::move(x_coordinates\&.x);
+148                 return *this;
+149             }
+.fi
+
+.SS "\fBcoordinates_1d\fP< \fBfloat\fP > & \fBscifir::coordinates_1d\fP< \fBfloat\fP >\fB::operator\fP= (\fBpoint_1d\fP< \fBfloat\fP > && x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB157\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+158             {
+159                 x = std::move(x_point\&.x);
+160                 return *this;
+161             }
+.fi
+
+.SS "\fBvoid\fP \fBscifir::coordinates_1d\fP< \fBfloat\fP >::set_position (\fBfloat\fP new_x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB169\fP of file \fBcoordinates_1d\&.hpp\fP\&..PP
+.nf
+170             {
+171                 x = new_x;
+172             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBfloat\fP \fBscifir::coordinates_1d\fP< \fBfloat\fP >::x"
+
+.PP
+Definition at line \fB191\fP of file \fBcoordinates_1d\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

@@ -1,0 +1,126 @@
+\doxysection{util/matrix.hpp File Reference}
+\hypertarget{matrix_8hpp}{}\label{matrix_8hpp}\index{util/matrix.hpp@{util/matrix.hpp}}
+{\ttfamily \#include "{}../units/scalar\+\_\+unit.\+hpp"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for matrix.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{matrix_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix$<$ T, M, N $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+\begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , int M, int N$>$ }\\bool \mbox{\hyperlink{matrix_8hpp_a65869f857607860e01ad62b5df54d686}{operator==}} (const \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$ \&x, const \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$ \&y)
+\item 
+{\footnotesize template$<$typename T , int M, int N$>$ }\\bool \mbox{\hyperlink{matrix_8hpp_a3dd77f6e0dddb09af0e5de3c490f69ba}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$ \&x, const \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$ \&y)
+\item 
+{\footnotesize template$<$typename T , int M, int N$>$ }\\ostream \& \mbox{\hyperlink{matrix_8hpp_ac0480345313f2de9473143e6d54a88b2}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$ \&x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{matrix_8hpp_a3dd77f6e0dddb09af0e5de3c490f69ba}\label{matrix_8hpp_a3dd77f6e0dddb09af0e5de3c490f69ba} 
+\index{matrix.hpp@{matrix.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename T , int M, int N$>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00275}{275}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00276\ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{00278\ \}}
+
+\end{DoxyCode}
+\Hypertarget{matrix_8hpp_ac0480345313f2de9473143e6d54a88b2}\label{matrix_8hpp_ac0480345313f2de9473143e6d54a88b2} 
+\index{matrix.hpp@{matrix.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$typename T , int M, int N$>$ \\
+ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00281}{281}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00282\ \{}
+\DoxyCodeLine{00283\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00284\ \ \ \ \ output\ <<\ \textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ x.row\_size();\ i++)}
+\DoxyCodeLine{00286\ \ \ \ \ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 1;\ j\ <=\ x.column\_size();\ j++)}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ x(i,\ j);}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(j\ <\ x.column\_size())}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ <\ x.row\_size())}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ endl;}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00299\ \ \ \ \ \}}
+\DoxyCodeLine{00300\ \ \ \ \ output\ <<\ \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ output.str();}
+\DoxyCodeLine{00302\ \}}
+
+\end{DoxyCode}
+\Hypertarget{matrix_8hpp_a65869f857607860e01ad62b5df54d686}\label{matrix_8hpp_a65869f857607860e01ad62b5df54d686} 
+\index{matrix.hpp@{matrix.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename T , int M, int N$>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$ \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1matrix}{scifir\+::matrix}}$<$ T, M, N $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00259}{259}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00260\ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ x.row\_size();\ i++)}
+\DoxyCodeLine{00262\ \ \ \ \ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ x.column\_size();\ j++)}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x(i,j)\ !=\ y(i,j))}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00270\ \ \ \ \ \}}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00272\ \}}
+
+\end{DoxyCode}

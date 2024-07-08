@@ -9,7 +9,7 @@
     <incdepgraph>
       <node id="22">
         <label>../meca_number/angle.hpp</label>
-        <link refid="angle_8hpp_source"/>
+        <link refid="angle_8hpp"/>
         <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
@@ -33,13 +33,13 @@
       </node>
       <node id="23">
         <label>../topology/constants.hpp</label>
-        <link refid="constants_8hpp_source"/>
+        <link refid="constants_8hpp"/>
         <childnode refid="24" relation="include">
         </childnode>
       </node>
       <node id="25">
         <label>../topology/direction.hpp</label>
-        <link refid="direction_8hpp_source"/>
+        <link refid="direction_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -49,7 +49,7 @@
       </node>
       <node id="3">
         <label>../units/dimension.hpp</label>
-        <link refid="dimension_8hpp_source"/>
+        <link refid="dimension_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
@@ -77,7 +77,7 @@
       </node>
       <node id="4">
         <label>../units/prefix.hpp</label>
-        <link refid="prefix_8hpp_source"/>
+        <link refid="prefix_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -89,7 +89,7 @@
       </node>
       <node id="2">
         <label>../units/scalar_unit.hpp</label>
-        <link refid="scalar__unit_8hpp_source"/>
+        <link refid="scalar__unit_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
@@ -113,7 +113,7 @@
       </node>
       <node id="21">
         <label>../units/vector_unit_2d.hpp</label>
-        <link refid="vector__unit__2d_8hpp_source"/>
+        <link refid="vector__unit__2d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
@@ -131,7 +131,7 @@
       </node>
       <node id="20">
         <label>../units/vector_unit_3d.hpp</label>
-        <link refid="vector__unit__3d_8hpp_source"/>
+        <link refid="vector__unit__3d_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
@@ -163,7 +163,7 @@
       </node>
       <node id="26">
         <label>../units/vector_unit_nd.hpp</label>
-        <link refid="vector__unit__nd_8hpp_source"/>
+        <link refid="vector__unit__nd_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
@@ -191,7 +191,7 @@
       </node>
       <node id="17">
         <label>../util/is_number.hpp</label>
-        <link refid="is__number_8hpp_source"/>
+        <link refid="is__number_8hpp"/>
         <childnode refid="18" relation="include">
         </childnode>
       </node>
@@ -248,15 +248,21 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="2">
+        <label>predefined_units/astronomy_units.cpp</label>
+        <link refid="astronomy__units_8cpp"/>
+      </node>
       <node id="1">
         <label>predefined_units/astronomy_units.hpp</label>
         <link refid="astronomy__units_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
-      <node id="2">
+      <node id="3">
         <label>units.hpp</label>
-        <link refid="units_8hpp_source"/>
+        <link refid="units_8hpp"/>
       </node>
     </invincdepgraph>
     <innernamespace refid="namespacescifir">scifir</innernamespace>
@@ -273,9 +279,9 @@
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">scifir</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacescifir" kindref="compound">scifir</ref></highlight></codeline>
 <codeline lineno="10"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>VECTOR_UNIT_HPP(specific_angular_momentum);</highlight></codeline>
+<codeline lineno="11" refid="namespacescifir_1ae3da28a5b01c7f278bd9f3936d3605bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vector__unit__3d_8hpp_1afd0d0f018241895d8203a88fb8768e33" kindref="member">VECTOR_UNIT_HPP</ref>(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">specific_angular_momentum</ref>);</highlight></codeline>
 <codeline lineno="12"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SCIFIR_UNITS_PREDEFINED_UNITS_ASTRONOMY_UNITS_HPP_INCLUDED</highlight><highlight class="normal"></highlight></codeline>

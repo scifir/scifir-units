@@ -1,0 +1,77 @@
+.TH "units/tensor_unit.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+units/tensor_unit.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&./scalar_unit\&.hpp'\fP
+.br
+\fC#include <vector>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBscifir::tensor_unit< T >\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscifir\fP"
+.br
+.RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , typename U > bool \fBoperator==\fP (const \fBscifir::tensor_unit\fP< T > &x, const \fBscifir::tensor_unit\fP< U > &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > bool \fBoperator!=\fP (const \fBscifir::tensor_unit\fP< T > &x, const \fBscifir::tensor_unit\fP< U > &y)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T , typename U > bool operator!= (const \fBscifir::tensor_unit\fP< T > & x, const \fBscifir::tensor_unit\fP< U > & y)"
+
+.PP
+Definition at line \fB287\fP of file \fBtensor_unit\&.hpp\fP\&..PP
+.nf
+288 {
+289     return !(x == y);
+290 }
+.fi
+
+.SS "template<typename T , typename U > bool operator== (const \fBscifir::tensor_unit\fP< T > & x, const \fBscifir::tensor_unit\fP< U > & y)"
+
+.PP
+Definition at line \fB267\fP of file \fBtensor_unit\&.hpp\fP\&..PP
+.nf
+268 {
+269     if ((x\&.values\&.size() != y\&.values\&.size()) or (x\&.values[0]\&.size() != y\&.values[0]\&.size()))
+270     {
+271         return false;
+272     }
+273     for (int i = 0; i < x\&.values\&.size(); i++)
+274     {
+275         for (int j = 0; j < x\&.values[i]\&.size(); j++)
+276         {
+277             if (x\&.values[i][j] != y\&.values[i][j])
+278             {
+279                 return false;
+280             }
+281         }
+282     }
+283     return true;
+284 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

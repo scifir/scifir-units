@@ -6,9 +6,14 @@ scifir::size_2d< T >
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <size_2d\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBsize_2d\fP ()"
+.br
 .ti -1c
 .RI "\fBsize_2d\fP (\fBconst\fP \fBsize_2d\fP< T > &x)"
 .br
@@ -62,6 +67,208 @@ scifir::size_2d< T >
 .RI "T \fBheight\fP"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBconst\fP \fBstring\fP &\fBinit_size_2d\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<\fBtypename\fP T = length>
+.br
+class scifir::size_2d< T >"
+.PP
+Definition at line \fB16\fP of file \fBsize_2d\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> \fBscifir::size_2d\fP< T >::size_2d ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB19\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+19                       : width(),height()
+20             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::size_2d\fP< T >::size_2d (\fBconst\fP \fBsize_2d\fP< T > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB22\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+22                                          : width(x\&.width),height(x\&.height)
+23             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::size_2d\fP< T >::size_2d (\fBsize_2d\fP< T > && x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB25\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+25                                     : width(std::move(x\&.width)),height(std::move(x\&.height))
+26             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::size_2d\fP< T >::size_2d (\fBconst\fP T & new_width, \fBconst\fP T & new_height)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB28\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+28                                                                      : width(new_width),height(new_height)
+29             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::size_2d\fP< T >::size_2d (\fBconst\fP \fBstring\fP & new_width, \fBconst\fP \fBstring\fP & new_height)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB31\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+31                                                                                : width(new_width),height(new_height)
+32             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::size_2d\fP< T >::size_2d (\fBconst\fP \fBstring\fP & init_size_2d)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB34\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+34                                                          : size_2d()
+35             {
+36                 initialize_from_string(init_size_2d);
+37             }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::size_2d\fP< T >::display () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB86\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+87             {
+88                 ostringstream output;
+89                 output << width << " * " << height;
+90                 return output\&.str();
+91             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscalar_unit\fP \fBscifir::size_2d\fP< T >::get_area () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB81\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+82             {
+83                 return scalar_unit(width * height);
+84             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::size_2d\fP< T >::initialize_from_string (\fBconst\fP \fBstring\fP & init_size_2d)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB97\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+98             {
+99                 vector<string> widths;
+100                 boost::split(widths,init_size_2d,boost::is_any_of("*"));
+101                 if (widths\&.size() == 2)
+102                 {
+103                     boost::trim(widths[0]);
+104                     boost::trim(widths[1]);
+105                     width = T(widths[0]);
+106                     height = T(widths[1]);
+107                 }
+108             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBsize_2d\fP< T > \fBscifir::size_2d\fP< T >::operator+ (\fBconst\fP \fBsize_2d\fP< T > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB59\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+60             {
+61                 return size_2d<T>(width + x\&.width,height + x\&.height);
+62             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::size_2d\fP< T >::operator+= (\fBconst\fP \fBsize_2d\fP< T > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB69\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+70             {
+71                 width += x\&.width;
+72                 height += x\&.height;
+73             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBsize_2d\fP< T > \fBscifir::size_2d\fP< T >::operator\- (\fBconst\fP \fBsize_2d\fP< T > & x) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB64\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+65             {
+66                 return size_2d<T>(width \- x\&.width,height \- x\&.height);
+67             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::size_2d\fP< T >::operator\-= (\fBconst\fP \fBsize_2d\fP< T > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB75\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+76             {
+77                 width \-= x\&.width;
+78                 height \-= x\&.height;
+79             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBsize_2d\fP< T > & \fBscifir::size_2d\fP< T >::operator= (\fBconst\fP \fBsize_2d\fP< T > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB39\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+40             {
+41                 width = x\&.width;
+42                 height = x\&.height;
+43                 return *this;
+44             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBsize_2d\fP< T > & \fBscifir::size_2d\fP< T >::operator= (\fBconst\fP \fBstring\fP & init_size_2d)\fC [inline]\fP"
+
+.PP
+Definition at line \fB53\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+54             {
+55                 initialize_from_string(init_size_2d);
+56                 return *this;
+57             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBsize_2d\fP< T > & \fBscifir::size_2d\fP< T >::operator= (\fBsize_2d\fP< T > && x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB46\fP of file \fBsize_2d\&.hpp\fP\&..PP
+.nf
+47             {
+48                 width = std::move(x\&.width);
+49                 height = std::move(x\&.height);
+50                 return *this;
+51             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::size_2d\fP< T >::height"
+
+.PP
+Definition at line \fB94\fP of file \fBsize_2d\&.hpp\fP\&.
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::size_2d\fP< T >::width"
+
+.PP
+Definition at line \fB93\fP of file \fBsize_2d\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

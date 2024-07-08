@@ -1,0 +1,425 @@
+.TH "coordinates/coordinates_ndr.hpp" 3 "Version 2.0.0" "scifir-units" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+coordinates/coordinates_ndr.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./coordinates/coordinates_nd\&.hpp'\fP
+.br
+\fC#include '\&.\&./topology/point_nd\&.hpp'\fP
+.br
+\fC#include '\&.\&./predefined_units/physics_units\&.hpp'\fP
+.br
+\fC#include '\&.\&./units/unit_basic\&.hpp'\fP
+.br
+\fC#include '\&.\&./util/types\&.hpp'\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <vector>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBscifir::coordinates_ndr< T >\fP"
+.br
+.ti -1c
+.RI "class \fBscifir::coordinates_ndr< float >\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscifir\fP"
+.br
+.RI "The namespace scifir contains all scifir-units, excepting the string literals, which are outside\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<\fBtypename\fP T > \fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBcoordinates_ndr\fP< T > &x)"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBscifir::to_string\fP (\fBconst\fP \fBcoordinates_ndr\fP< \fBfloat\fP > &x)"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP \fBU\fP > T \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_ndr\fP< T > &x, \fBconst\fP \fBcoordinates_ndr\fP< \fBU\fP > &y)"
+.br
+.ti -1c
+.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_ndr\fP< \fBfloat\fP > &x, \fBconst\fP \fBcoordinates_ndr\fP< \fBfloat\fP > &y)"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP \fBU\fP > T \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_ndr\fP< T > &x, \fBconst\fP \fBcoordinates_nd\fP< \fBU\fP > &y)"
+.br
+.ti -1c
+.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_ndr\fP< \fBfloat\fP > &x, \fBconst\fP \fBcoordinates_nd\fP< \fBfloat\fP > &y)"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP \fBU\fP > T \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_nd\fP< T > &x, \fBconst\fP \fBcoordinates_ndr\fP< \fBU\fP > &y)"
+.br
+.ti -1c
+.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_nd\fP< \fBfloat\fP > &x, \fBconst\fP \fBcoordinates_ndr\fP< \fBfloat\fP > &y)"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP \fBU\fP > T \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_ndr\fP< T > &x, \fBconst\fP \fBpoint_nd\fP< \fBU\fP > &y)"
+.br
+.ti -1c
+.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBcoordinates_ndr\fP< \fBfloat\fP > &x, \fBconst\fP \fBpoint_nd\fP< \fBfloat\fP > &y)"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP T , \fBtypename\fP \fBU\fP > T \fBscifir::distance\fP (\fBconst\fP \fBpoint_nd\fP< T > &x, \fBconst\fP \fBcoordinates_ndr\fP< \fBU\fP > &y)"
+.br
+.ti -1c
+.RI "\fBfloat\fP \fBscifir::distance\fP (\fBconst\fP \fBpoint_nd\fP< \fBfloat\fP > &x, \fBconst\fP \fBcoordinates_ndr\fP< \fBfloat\fP > &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > bool \fBoperator==\fP (const \fBscifir::coordinates_ndr\fP< T > &x, const \fBscifir::coordinates_ndr\fP< U > &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > bool \fBoperator!=\fP (const \fBscifir::coordinates_ndr\fP< T > &x, const \fBscifir::coordinates_ndr\fP< U > &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > bool \fBoperator==\fP (const \fBscifir::coordinates_ndr\fP< T > &x, const \fBscifir::coordinates_nd\fP< U > &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > bool \fBoperator!=\fP (const \fBscifir::coordinates_ndr\fP< T > &x, const \fBscifir::coordinates_nd\fP< U > &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > bool \fBoperator==\fP (const \fBscifir::coordinates_nd\fP< T > &x, const \fBscifir::coordinates_ndr\fP< U > &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > bool \fBoperator!=\fP (const \fBscifir::coordinates_nd\fP< T > &x, const \fBscifir::coordinates_ndr\fP< U > &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > bool \fBoperator==\fP (const \fBscifir::coordinates_ndr\fP< T > &x, const \fBscifir::point_nd\fP< U > &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > bool \fBoperator!=\fP (const \fBscifir::coordinates_ndr\fP< T > &x, const \fBscifir::point_nd\fP< U > &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > bool \fBoperator==\fP (const \fBscifir::point_nd\fP< T > &x, const \fBscifir::coordinates_ndr\fP< U > &y)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > bool \fBoperator!=\fP (const \fBscifir::point_nd\fP< T > &x, const \fBscifir::coordinates_ndr\fP< U > &y)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBoperator==\fP (const \fBscifir::coordinates_ndr\fP< T > &x, const string &init_coordinates_ndr)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBoperator!=\fP (const \fBscifir::coordinates_ndr\fP< T > &x, const string &init_coordinates_ndr)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBoperator==\fP (const string &init_coordinates_ndr, const \fBscifir::coordinates_ndr\fP< T > &x)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBoperator!=\fP (const string &init_coordinates_ndr, const \fBscifir::coordinates_ndr\fP< T > &x)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBoperator+=\fP (string &x, const \fBscifir::coordinates_ndr\fP< T > &y)"
+.br
+.ti -1c
+.RI "template<typename T > string \fBoperator+\fP (const string &x, const \fBscifir::coordinates_ndr\fP< T > &y)"
+.br
+.ti -1c
+.RI "template<typename T > string \fBoperator+\fP (const \fBscifir::coordinates_ndr\fP< T > &x, const string &y)"
+.br
+.ti -1c
+.RI "template<typename T > ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::coordinates_ndr\fP< T > &x)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const \fBscifir::coordinates_ndr\fP< float > &x)"
+.br
+.ti -1c
+.RI "template<typename T > istream & \fBoperator>>\fP (istream &is, \fBscifir::coordinates_ndr\fP< T > &x)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T , typename U > bool operator!= (const \fBscifir::coordinates_nd\fP< T > & x, const \fBscifir::coordinates_ndr\fP< U > & y)"
+
+.PP
+Definition at line \fB2359\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2360 {
+2361     return !(x == y);
+2362 }
+.fi
+
+.SS "template<typename T , typename U > bool operator!= (const \fBscifir::coordinates_ndr\fP< T > & x, const \fBscifir::coordinates_nd\fP< U > & y)"
+
+.PP
+Definition at line \fB2333\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2334 {
+2335     return !(x == y);
+2336 }
+.fi
+
+.SS "template<typename T , typename U > bool operator!= (const \fBscifir::coordinates_ndr\fP< T > & x, const \fBscifir::coordinates_ndr\fP< U > & y)"
+
+.PP
+Definition at line \fB2307\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2308 {
+2309     return !(x == y);
+2310 }
+.fi
+
+.SS "template<typename T , typename U > bool operator!= (const \fBscifir::coordinates_ndr\fP< T > & x, const \fBscifir::point_nd\fP< U > & y)"
+
+.PP
+Definition at line \fB2385\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2386 {
+2387     return !(x == y);
+2388 }
+.fi
+
+.SS "template<typename T > bool operator!= (const \fBscifir::coordinates_ndr\fP< T > & x, const string & init_coordinates_ndr)"
+
+.PP
+Definition at line \fB2424\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2425 {
+2426     return !(x == init_coordinates_ndr);
+2427 }
+.fi
+
+.SS "template<typename T , typename U > bool operator!= (const \fBscifir::point_nd\fP< T > & x, const \fBscifir::coordinates_ndr\fP< U > & y)"
+
+.PP
+Definition at line \fB2411\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2412 {
+2413     return !(x == y);
+2414 }
+.fi
+
+.SS "template<typename T > bool operator!= (const string & init_coordinates_ndr, const \fBscifir::coordinates_ndr\fP< T > & x)"
+
+.PP
+Definition at line \fB2437\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2438 {
+2439     return !(init_coordinates_ndr == x);
+2440 }
+.fi
+
+.SS "template<typename T > string operator+ (const \fBscifir::coordinates_ndr\fP< T > & x, const string & y)"
+
+.PP
+Definition at line \fB2455\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2456 {
+2457     return to_string(x) + y;
+2458 }
+.fi
+
+.SS "template<typename T > string operator+ (const string & x, const \fBscifir::coordinates_ndr\fP< T > & y)"
+
+.PP
+Definition at line \fB2449\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2450 {
+2451     return x + to_string(y);
+2452 }
+.fi
+
+.SS "template<typename T > void operator+= (string & x, const \fBscifir::coordinates_ndr\fP< T > & y)"
+
+.PP
+Definition at line \fB2443\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2444 {
+2445     x += to_string(y);
+2446 }
+.fi
+
+.SS "ostream & operator<< (ostream & os, const \fBscifir::coordinates_ndr\fP< float > & x)"
+
+.PP
+Definition at line \fB134\fP of file \fBcoordinates_ndr\&.cpp\fP\&..PP
+.nf
+135 {
+136     return os << scifir::to_string(x);
+137 }
+.fi
+
+.SS "template<typename T > ostream & operator<< (ostream & os, const \fBscifir::coordinates_ndr\fP< T > & x)"
+
+.PP
+Definition at line \fB2461\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2462 {
+2463     return os << to_string(x);
+2464 }
+.fi
+
+.SS "template<typename T , typename U > bool operator== (const \fBscifir::coordinates_nd\fP< T > & x, const \fBscifir::coordinates_ndr\fP< U > & y)"
+
+.PP
+Definition at line \fB2339\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2340 {
+2341     if (x\&.values\&.size() == y\&.get_values()\&.size())
+2342     {
+2343         for (int i = 0 ; i < x\&.values\&.size(); i++)
+2344         {
+2345             if (x\&.values[i] != y\&.get_value(i))
+2346             {
+2347                 return false;
+2348             }
+2349         }
+2350         return true;
+2351     }
+2352     else
+2353     {
+2354         return false;
+2355     }
+2356 }
+.fi
+
+.SS "template<typename T , typename U > bool operator== (const \fBscifir::coordinates_ndr\fP< T > & x, const \fBscifir::coordinates_nd\fP< U > & y)"
+
+.PP
+Definition at line \fB2313\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2314 {
+2315     if (x\&.get_values()\&.size() == y\&.values\&.size())
+2316     {
+2317         for (int i = 0 ; i < x\&.get_values()\&.size(); i++)
+2318         {
+2319             if (x\&.get_value(i) != y\&.values[i])
+2320             {
+2321                 return false;
+2322             }
+2323         }
+2324         return true;
+2325     }
+2326     else
+2327     {
+2328         return false;
+2329     }
+2330 }
+.fi
+
+.SS "template<typename T , typename U > bool operator== (const \fBscifir::coordinates_ndr\fP< T > & x, const \fBscifir::coordinates_ndr\fP< U > & y)"
+
+.PP
+Definition at line \fB2287\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2288 {
+2289     for (int i = 0; i < x\&.get_values()\&.size(); i++)
+2290     {
+2291         if (x\&.get_value(i) != y\&.get_value(i))
+2292         {
+2293             return false;
+2294         }
+2295     }
+2296     for (int i = 0; i < x\&.get_angles()\&.size(); i++)
+2297     {
+2298         if (x\&.get_angle(i) != y\&.get_angle(i))
+2299         {
+2300             return false;
+2301         }
+2302     }
+2303     return true;
+2304 }
+.fi
+
+.SS "template<typename T , typename U > bool operator== (const \fBscifir::coordinates_ndr\fP< T > & x, const \fBscifir::point_nd\fP< U > & y)"
+
+.PP
+Definition at line \fB2365\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2366 {
+2367     if (x\&.get_values()\&.size() == y\&.values\&.size())
+2368     {
+2369         for (int i = 0 ; i < x\&.get_values()\&.size(); i++)
+2370         {
+2371             if (x\&.get_value(i) != y\&.values[i])
+2372             {
+2373                 return false;
+2374             }
+2375         }
+2376         return true;
+2377     }
+2378     else
+2379     {
+2380         return false;
+2381     }
+2382 }
+.fi
+
+.SS "template<typename T > bool operator== (const \fBscifir::coordinates_ndr\fP< T > & x, const string & init_coordinates_ndr)"
+
+.PP
+Definition at line \fB2417\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2418 {
+2419     scifir::coordinates_ndr<T> y(init_coordinates_ndr);
+2420     return (x == y);
+2421 }
+.fi
+
+.SS "template<typename T , typename U > bool operator== (const \fBscifir::point_nd\fP< T > & x, const \fBscifir::coordinates_ndr\fP< U > & y)"
+
+.PP
+Definition at line \fB2391\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2392 {
+2393     if (x\&.values\&.size() == y\&.get_values()\&.size())
+2394     {
+2395         for (int i = 0 ; i < x\&.values\&.size(); i++)
+2396         {
+2397             if (x\&.values[i] != y\&.get_value(i))
+2398             {
+2399                 return false;
+2400             }
+2401         }
+2402         return true;
+2403     }
+2404     else
+2405     {
+2406         return false;
+2407     }
+2408 }
+.fi
+
+.SS "template<typename T > bool operator== (const string & init_coordinates_ndr, const \fBscifir::coordinates_ndr\fP< T > & x)"
+
+.PP
+Definition at line \fB2430\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2431 {
+2432     scifir::coordinates_ndr<T> y(init_coordinates_ndr);
+2433     return (x == y);
+2434 }
+.fi
+
+.SS "template<typename T > istream & operator>> (istream & is, \fBscifir::coordinates_ndr\fP< T > & x)"
+
+.PP
+Definition at line \fB2469\fP of file \fBcoordinates_ndr\&.hpp\fP\&..PP
+.nf
+2470 {
+2471     char a[256];
+2472     is\&.getline(a, 256);
+2473     string b(a);
+2474     boost::trim(b);
+2475     x = scifir::coordinates_ndr<T>(b);
+2476     return is;
+2477 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for scifir-units from the source code\&.

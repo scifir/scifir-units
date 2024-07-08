@@ -12,7 +12,7 @@
       </node>
       <node id="2">
         <label>./color.hpp</label>
-        <link refid="color_8hpp_source"/>
+        <link refid="color_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
@@ -54,24 +54,24 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;./color.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="color_8hpp" kindref="compound">./color.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">scifir</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacescifir" kindref="compound">scifir</ref></highlight></codeline>
 <codeline lineno="6"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>color::color()<sp/>:<sp/>red(),blue(),green(),alpha()</highlight></codeline>
+<codeline lineno="7" refid="classscifir_1_1color_1a4bcb5421430baa41f609231dfb963839" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1color_1a4bcb5421430baa41f609231dfb963839" kindref="member">color::color</ref>()<sp/>:<sp/>red(),blue(),green(),alpha()</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>color::color(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_red,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_green,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_blue,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_alpha)<sp/>:<sp/>red(new_red),blue(new_blue),green(new_green),alpha(new_alpha)</highlight></codeline>
+<codeline lineno="11" refid="classscifir_1_1color_1a06d6f54b37c8dc22b0b2c22feb880b5e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classscifir_1_1color_1a4bcb5421430baa41f609231dfb963839" kindref="member">color::color</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_red</ref>,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_green</ref>,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_blue</ref>,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_alpha</ref>)<sp/>:<sp/>red(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_red</ref>),blue(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_blue</ref>),green(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_green</ref>),alpha(<ref refid="classscifir_1_1coordinates__1d" kindref="compound">new_alpha</ref>)</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="14"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal">ostream&amp;<sp/>operator<sp/>&lt;&lt;(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1color" kindref="compound">scifir::color</ref>&amp;<sp/>x)</highlight></codeline>
+<codeline lineno="16" refid="color_8cpp_1afa213c0572317b91010381197adc0e3b" refkind="member"><highlight class="normal">ostream&amp;<sp/><ref refid="color_8cpp_1afa213c0572317b91010381197adc0e3b" kindref="member">operator &lt;&lt;</ref>(ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classscifir_1_1color" kindref="compound">scifir::color</ref>&amp;<sp/>x)</highlight></codeline>
 <codeline lineno="17"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;color(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>x.get_red()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>x.get_green()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>x.get_blue()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>x.get_alpha()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;color(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>x.<ref refid="classscifir_1_1color_1a5dcc9d2526000f7ba5b55782a74967f8" kindref="member">get_red</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>x.<ref refid="classscifir_1_1color_1a07aab1a1b516f8f11632eb8c98f99700" kindref="member">get_green</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>x.<ref refid="classscifir_1_1color_1a2518aa9b3b720fc7f21a5a4b4ffe3c6a" kindref="member">get_blue</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>x.<ref refid="classscifir_1_1color_1a112b42c121bf0bf9033c0e94aef6f0ba" kindref="member">get_alpha</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="19"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="special_units/color.cpp"/>

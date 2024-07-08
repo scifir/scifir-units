@@ -25,7 +25,7 @@
     <value><![CDATA[an]]></value>
     <value><![CDATA[the]]></value>
   </option>
-  <option  id='ALWAYS_DETAILED_SEC' default='yes' type='bool'><value>NO</value></option>
+  <option  id='ALWAYS_DETAILED_SEC' default='no' type='bool'><value>YES</value></option>
   <option  id='INLINE_INHERITED_MEMB' default='yes' type='bool'><value>NO</value></option>
   <option  id='FULL_PATH_NAMES' default='yes' type='bool'><value>YES</value></option>
   <option  id='STRIP_FROM_PATH' default='yes' type='stringlist'>
@@ -67,14 +67,14 @@
   <option  id='LOOKUP_CACHE_SIZE' default='yes' type='int'><value>0</value></option>
   <option  id='NUM_PROC_THREADS' default='yes' type='int'><value>1</value></option>
   <option  id='TIMESTAMP' default='yes' type='string'><value>NO</value></option>
-  <option  id='EXTRACT_ALL' default='yes' type='bool'><value>NO</value></option>
-  <option  id='EXTRACT_PRIVATE' default='yes' type='bool'><value>NO</value></option>
-  <option  id='EXTRACT_PRIV_VIRTUAL' default='yes' type='bool'><value>NO</value></option>
-  <option  id='EXTRACT_PACKAGE' default='yes' type='bool'><value>NO</value></option>
-  <option  id='EXTRACT_STATIC' default='yes' type='bool'><value>NO</value></option>
+  <option  id='EXTRACT_ALL' default='no' type='bool'><value>YES</value></option>
+  <option  id='EXTRACT_PRIVATE' default='no' type='bool'><value>YES</value></option>
+  <option  id='EXTRACT_PRIV_VIRTUAL' default='no' type='bool'><value>YES</value></option>
+  <option  id='EXTRACT_PACKAGE' default='no' type='bool'><value>YES</value></option>
+  <option  id='EXTRACT_STATIC' default='no' type='bool'><value>YES</value></option>
   <option  id='EXTRACT_LOCAL_CLASSES' default='yes' type='bool'><value>YES</value></option>
   <option  id='EXTRACT_LOCAL_METHODS' default='yes' type='bool'><value>NO</value></option>
-  <option  id='EXTRACT_ANON_NSPACES' default='yes' type='bool'><value>NO</value></option>
+  <option  id='EXTRACT_ANON_NSPACES' default='no' type='bool'><value>YES</value></option>
   <option  id='RESOLVE_UNNAMED_PARAMS' default='yes' type='bool'><value>YES</value></option>
   <option  id='HIDE_UNDOC_MEMBERS' default='yes' type='bool'><value>NO</value></option>
   <option  id='HIDE_UNDOC_CLASSES' default='yes' type='bool'><value>NO</value></option>
@@ -129,6 +129,8 @@
     <value><![CDATA[./topology]]></value>
     <value><![CDATA[./units]]></value>
     <value><![CDATA[./util]]></value>
+    <value><![CDATA[./docs/dox/units]]></value>
+    <value><![CDATA[./docs/dox/meca_number]]></value>
   </option>
   <option  id='INPUT_ENCODING' default='yes' type='string'><value><![CDATA[UTF-8]]></value></option>
   <option  id='INPUT_FILE_ENCODING' default='yes' type='stringlist'>
@@ -189,7 +191,6 @@
   <option  id='EXCLUDE' default='no' type='stringlist'>
     <value><![CDATA[./build]]></value>
     <value><![CDATA[./tests]]></value>
-    <value><![CDATA[./docs]]></value>
     <value><![CDATA[./extra]]></value>
   </option>
   <option  id='EXCLUDE_SYMLINKS' default='yes' type='bool'><value>NO</value></option>
@@ -213,8 +214,8 @@
   </option>
   <option  id='USE_MDFILE_AS_MAINPAGE' default='no' type='string'><value><![CDATA[./README.md]]></value></option>
   <option  id='FORTRAN_COMMENT_AFTER' default='yes' type='int'><value>72</value></option>
-  <option  id='SOURCE_BROWSER' default='yes' type='bool'><value>NO</value></option>
-  <option  id='INLINE_SOURCES' default='yes' type='bool'><value>NO</value></option>
+  <option  id='SOURCE_BROWSER' default='no' type='bool'><value>YES</value></option>
+  <option  id='INLINE_SOURCES' default='no' type='bool'><value>YES</value></option>
   <option  id='STRIP_CODE_COMMENTS' default='yes' type='bool'><value>YES</value></option>
   <option  id='REFERENCED_BY_RELATION' default='yes' type='bool'><value>NO</value></option>
   <option  id='REFERENCES_RELATION' default='yes' type='bool'><value>NO</value></option>

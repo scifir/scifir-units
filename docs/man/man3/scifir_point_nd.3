@@ -6,9 +6,14 @@ scifir::point_nd< T >
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <point_nd\&.hpp>\fP
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBpoint_nd\fP ()"
+.br
 .ti -1c
 .RI "\fBpoint_nd\fP (\fBconst\fP \fBpoint_nd\fP< T > &x)"
 .br
@@ -179,6 +184,840 @@ scifir::point_nd< T >
 .RI "vector< T > \fBvalues\fP"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBinitialize_from_string\fP (\fBstring\fP \fBinit_point_nd\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<\fBtypename\fP T = length>
+.br
+class scifir::point_nd< T >"
+.PP
+Definition at line \fB22\fP of file \fBpoint_nd\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> \fBscifir::point_nd\fP< T >::point_nd ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB25\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+25                        : values()
+26             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::point_nd\fP< T >::point_nd (\fBconst\fP \fBpoint_nd\fP< T > & x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB28\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+28                                            : values(x\&.values)
+29             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::point_nd\fP< T >::point_nd (\fBpoint_nd\fP< T > && x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB31\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+31                                       : values(std::move(x\&.values))
+32             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::point_nd\fP< T >::point_nd (\fBconst\fP vector< T > & new_values)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB34\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+34                                                            : values(new_values)
+35             {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::point_nd\fP< T >::point_nd (\fBconst\fP T & new_x)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB37\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+37                                               : values()
+38             {
+39                 values\&.push_back(new_x);
+40             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::point_nd\fP< T >::point_nd (\fBconst\fP T & new_x, \fBconst\fP T & new_y)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB42\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+42                                                              : values()
+43             {
+44                 values\&.push_back(new_x);
+45                 values\&.push_back(new_y);
+46             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::point_nd\fP< T >::point_nd (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB48\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+48                                                                      : values()
+49             {
+50                 set_position(new_p,new_theta);
+51             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::point_nd\fP< T >::point_nd (\fBconst\fP T & new_x, \fBconst\fP T & new_y, \fBconst\fP T & new_z)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB53\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+53                                                                             : values()
+54             {
+55                 values\&.push_back(new_x);
+56                 values\&.push_back(new_y);
+57                 values\&.push_back(new_z);
+58             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::point_nd\fP< T >::point_nd (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta, T new_z)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB60\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+60                                                                              : values()
+61             {
+62                 set_position(new_p,new_theta,new_z);
+63             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::point_nd\fP< T >::point_nd (\fBconst\fP T & new_r, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB65\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+65                                                                                           : values()
+66             {
+67                 set_position(new_r,new_theta,new_phi);
+68             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::point_nd\fP< T >::point_nd (\fBconst\fP \fBangle\fP & new_latitude, \fBconst\fP \fBangle\fP & new_longitude, \fBconst\fP T & new_altitude)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB70\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+70                                                                                                           : values()
+71             {
+72                 set_position(new_latitude,new_longitude,new_altitude);
+73             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBscifir::point_nd\fP< T >::point_nd (\fBconst\fP \fBcoordinates_nd\fP< T > & x_coordinates)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB13\fP of file \fBpoint_nd_impl\&.hpp\fP\&..PP
+.nf
+13                                                                 : values(x_coordinates\&.values)
+14     {}
+.fi
+
+.SS "template<\fBtypename\fP T > \fBscifir::point_nd\fP< T >::point_nd (\fBcoordinates_nd\fP< T > && x_coordinates)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB17\fP of file \fBpoint_nd_impl\&.hpp\fP\&..PP
+.nf
+17                                                            : values(std::move(x_coordinates\&.values))
+18     {}
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBscifir::point_nd\fP< T >::point_nd (\fBconst\fP \fBstring\fP & init_point_nd)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB79\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+79                                                            : values()
+80             {
+81                 initialize_from_string(init_point_nd);
+82             }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::point_nd\fP< T >::display_cartesian_2d () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB380\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+381             {
+382                 if (values\&.size() == 2)
+383                 {
+384                     ostringstream out;
+385                     out << "(" << values[0] << "," << values[1] << ")";
+386                     return out\&.str();
+387                 }
+388                 else
+389                 {
+390                     return "[no\-2d]";
+391                 }
+392             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::point_nd\fP< T >::display_cartesian_3d () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB408\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+409             {
+410                 if (values\&.size() == 3)
+411                 {
+412                     ostringstream out;
+413                     out << "(" << values[0] << "," << values[1] << "," << values[2] << ")";
+414                     return out\&.str();
+415                 }
+416                 else
+417                 {
+418                     return "[no\-3d]";
+419                 }
+420             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::point_nd\fP< T >::display_cylindrical () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB422\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+423             {
+424                 if (values\&.size() == 3)
+425                 {
+426                     ostringstream out;
+427                     out << "(" << get_p() << "," << get_theta() << "," << values[2] << ")";
+428                     return out\&.str();
+429                 }
+430                 else
+431                 {
+432                     return "[no\-3d]";
+433                 }
+434             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::point_nd\fP< T >::display_geographical () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB450\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+451             {
+452                 if (values\&.size() == 3)
+453                 {
+454                     ostringstream out;
+455                     out << "(" << get_latitude() << "," << get_longitude() << "," << get_altitude() << ")";
+456                     return out\&.str();
+457                 }
+458                 else
+459                 {
+460                     return "[no\-3d]";
+461                 }
+462             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::point_nd\fP< T >::display_polar () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB394\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+395             {
+396                 if (values\&.size() == 2)
+397                 {
+398                     ostringstream out;
+399                     out << "(" << get_p() << "," << get_theta() << ")";
+400                     return out\&.str();
+401                 }
+402                 else
+403                 {
+404                     return "[no\-2d]";
+405                 }
+406             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBstring\fP \fBscifir::point_nd\fP< T >::display_spherical () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB436\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+437             {
+438                 if (values\&.size() == 3)
+439                 {
+440                     ostringstream out;
+441                     out << "(" << get_r() << "," << get_theta() << "," << get_phi() << ")";
+442                     return out\&.str();
+443                 }
+444                 else
+445                 {
+446                     return "[no\-3d]";
+447                 }
+448             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::point_nd\fP< T >::distance_to_origin () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB370\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+371             {
+372                 scalar_unit x_T = scalar_unit(0\&.0f,"m2");
+373                 for (int i = 0; i < values\&.size(); i++)
+374                 {
+375                     x_T += scifir::pow(values[i],2);
+376                 }
+377                 return scifir::sqrt(x_T);
+378             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::point_nd\fP< T >::get_altitude () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB174\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+175             {
+176                 return T();
+177             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::point_nd\fP< T >::get_latitude () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB164\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+165             {
+166                 return scifir::asin(float(values[2]/T(6317,"km")));
+167             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::point_nd\fP< T >::get_longitude () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB169\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+170             {
+171                 return scifir::atan(float(values[1]/values[0]));
+172             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBint\fP \fBscifir::point_nd\fP< T >::get_nd () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB111\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+112             {
+113                 return values\&.size();
+114             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::point_nd\fP< T >::get_p () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB116\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+117             {
+118                 if (get_nd() == 2 or get_nd() == 3)
+119                 {
+120                     return scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2));
+121                 }
+122                 else
+123                 {
+124                     return T();
+125                 }
+126             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::point_nd\fP< T >::get_phi () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB152\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+153             {
+154                 if (get_nd() == 3)
+155                 {
+156                     return angle(scifir::acos_grade(float(values[2]/scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2)))));
+157                 }
+158                 else
+159                 {
+160                     return angle();
+161                 }
+162             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> T \fBscifir::point_nd\fP< T >::get_r () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB140\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+141             {
+142                 if (get_nd() == 2 or get_nd() == 3)
+143                 {
+144                     return scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2));
+145                 }
+146                 else
+147                 {
+148                     return T();
+149                 }
+150             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBangle\fP \fBscifir::point_nd\fP< T >::get_theta () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB128\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+129             {
+130                 if (get_nd() == 2 or get_nd() == 3)
+131                 {
+132                     return angle(scifir::atan_grade(float(values[1]/values[0])));
+133                 }
+134                 else
+135                 {
+136                     return angle();
+137                 }
+138             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::initialize_from_string (\fBstring\fP init_point_nd)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line \fB467\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+468             {
+469                 vector<string> init_values;
+470                 if (init_point_nd\&.front() == '(')
+471                 {
+472                     init_point_nd\&.erase(0,1);
+473                 }
+474                 if (init_point_nd\&.back() == ')')
+475                 {
+476                     init_point_nd\&.erase(init_point_nd\&.size()\-1,1);
+477                 }
+478                 boost::split(init_values,init_point_nd,boost::is_any_of(","));
+479                 if (init_values\&.size() == 2)
+480                 {
+481                     if (is_angle(init_values[1]))
+482                     {
+483                         set_position(T(init_values[0]),angle(init_values[1]));
+484                     }
+485                     else
+486                     {
+487                         set_position(T(init_values[0]),T(init_values[1]));
+488                     }
+489                 }
+490                 else if (init_values\&.size() == 3)
+491                 {
+492                     if (is_angle(init_values[0]))
+493                     {
+494                         if (is_angle(init_values[1]))
+495                         {
+496                             if (!is_angle(init_values[2]))
+497                             {
+498                                 set_position(angle(init_values[0]),angle(init_values[1]),T(init_values[2]));
+499                             }
+500                         }
+501                     }
+502                     else
+503                     {
+504                         if (is_angle(init_values[1]))
+505                         {
+506                             if (is_angle(init_values[2]))
+507                             {
+508                                 set_position(T(init_values[0]),angle(init_values[1]),angle(init_values[2]));
+509                             }
+510                             else
+511                             {
+512                                 set_position(T(init_values[0]),angle(init_values[1]),T(init_values[2]));
+513                             }
+514                         }
+515                         else
+516                         {
+517                             if (!is_angle(init_values[2]))
+518                             {
+519                                 set_position(T(init_values[0]),T(init_values[1]),T(init_values[2]));
+520                             }
+521                         }
+522                     }
+523                 }
+524                 else
+525                 {
+526                     for (const string& x_value : init_values)
+527                     {
+528                         values\&.push_back(T(x_value));
+529                     }
+530                 }
+531             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBbool\fP \fBscifir::point_nd\fP< T >::is_nd (\fBint\fP i) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB106\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+107             {
+108                 return values\&.size() == i;
+109             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::move (\fBconst\fP \fBdisplacement_2d\fP & x_displacement)\fC [inline]\fP"
+
+.PP
+Definition at line \fB285\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+286             {
+287                 if (values\&.size() == 2)
+288                 {
+289                     values[0] += x_displacement\&.x_projection();
+290                     values[1] += x_displacement\&.y_projection();
+291                 }
+292             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::move (\fBconst\fP \fBdisplacement_3d\fP & x_displacement)\fC [inline]\fP"
+
+.PP
+Definition at line \fB312\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+313             {
+314                 if (values\&.size() == 3)
+315                 {
+316                     values[0] += x_displacement\&.x_projection();
+317                     values[1] += x_displacement\&.y_projection();
+318                     values[2] += x_displacement\&.z_projection();
+319                 }
+320             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::move (\fBconst\fP \fBdisplacement_nd\fP & x_displacement)\fC [inline]\fP"
+
+.PP
+Definition at line \fB353\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+354             {
+355                 if (x_displacement\&.get_nd() == get_nd())
+356                 {
+357                     for (int i = 0; i < x_displacement\&.get_nd(); i++)
+358                     {
+359                         values[i] += x_displacement\&.n_projection(i);
+360                     }
+361                 }
+362             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::move (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB303\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+304             {
+305                 if (values\&.size() == 2)
+306                 {
+307                     values[0] += new_p * scifir::cos(new_theta);
+308                     values[1] += new_p * scifir::sin(new_theta);
+309                 }
+310             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::move (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta, T new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB332\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+333             {
+334                 if (values\&.size() == 3)
+335                 {
+336                     new_z\&.change_dimensions(new_p);
+337                     values[0] += T(new_p * scifir::cos(new_theta));
+338                     values[1] += T(new_p * scifir::sin(new_theta));
+339                     values[2] += new_z;
+340                 }
+341             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::move (\fBconst\fP T & new_r, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP"
+
+.PP
+Definition at line \fB343\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+344             {
+345                 if (values\&.size() == 3)
+346                 {
+347                     values[0] += T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi));
+348                     values[1] += T(new_r * scifir::sin(new_theta) * scifir::sin(new_phi));
+349                     values[2] += T(new_r * scifir::cos(new_phi));
+350                 }
+351             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::move (\fBconst\fP T & new_r, \fBconst\fP vector< \fBangle\fP > & new_angles)\fC [inline]\fP"
+
+.PP
+Definition at line \fB364\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+365             {
+366                 displacement_nd x_displacement = displacement_nd(new_r,new_angles);
+367                 move(x_displacement);
+368             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::move (\fBconst\fP T & new_x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB277\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+278             {
+279                 if (values\&.size() == 1)
+280                 {
+281                     values[0] += new_x;
+282                 }
+283             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::move (\fBconst\fP T & new_x, \fBconst\fP T & new_y)\fC [inline]\fP"
+
+.PP
+Definition at line \fB294\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+295             {
+296                 if (values\&.size() == 2)
+297                 {
+298                     values[0] += new_x;
+299                     values[1] += new_y;
+300                 }
+301             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::move (\fBconst\fP T & new_x, \fBconst\fP T & new_y, \fBconst\fP T & new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB322\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+323             {
+324                 if (values\&.size() == 3)
+325                 {
+326                     values[0] += new_x;
+327                     values[1] += new_y;
+328                     values[2] += new_z;
+329                 }
+330             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBpoint_nd\fP< T > & \fBscifir::point_nd\fP< T >::operator= (\fBconst\fP \fBcoordinates_nd\fP< T > & x_coordinates)"
+
+.PP
+Definition at line \fB21\fP of file \fBpoint_nd_impl\&.hpp\fP\&..PP
+.nf
+22     {
+23         values = x_coordinates\&.values;
+24         return *this;
+25     }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBpoint_nd\fP< T > & \fBscifir::point_nd\fP< T >::operator= (\fBconst\fP \fBpoint_nd\fP< T > & x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB84\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+85             {
+86                 values = x_point\&.values;
+87                 return *this;
+88             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBpoint_nd\fP< T > & \fBscifir::point_nd\fP< T >::operator= (\fBconst\fP \fBstring\fP & init_point_nd)\fC [inline]\fP"
+
+.PP
+Definition at line \fB100\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+101             {
+102                 initialize_from_string(init_point_nd);
+103                 return *this;
+104             }
+.fi
+
+.SS "template<\fBtypename\fP T > \fBpoint_nd\fP< T > & \fBscifir::point_nd\fP< T >::operator= (\fBcoordinates_nd\fP< T > && x_coordinates)"
+
+.PP
+Definition at line \fB28\fP of file \fBpoint_nd_impl\&.hpp\fP\&..PP
+.nf
+29     {
+30         values = std::move(x_coordinates\&.values);
+31         return *this;
+32     }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBpoint_nd\fP< T > & \fBscifir::point_nd\fP< T >::operator= (\fBpoint_nd\fP< T > && x_point)\fC [inline]\fP"
+
+.PP
+Definition at line \fB90\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+91             {
+92                 values = std::move(x_point\&.values);
+93                 return *this;
+94             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::rotate_in_2d (\fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB238\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+239             {
+240                 if (get_nd() == 2)
+241                 {
+242                     T x_coord = values[0];
+243                     T y_coord = values[1];
+244                     values[0] = x_coord * scifir::cos(new_theta) \- y_coord * scifir::sin(new_theta);
+245                     values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
+246                 }
+247             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::rotate_in_3d (\fBint\fP axis, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB249\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+250             {
+251                 if (get_nd() == 3)
+252                 {
+253                     if (axis == 1)
+254                     {
+255                         T y_coord = values[1];
+256                         T z_coord = values[2];
+257                         values[1] = y_coord * scifir::cos(new_theta) \- z_coord * scifir::sin(new_theta);
+258                         values[2] = y_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
+259                     }
+260                     else if (axis == 2)
+261                     {
+262                         T x_coord = values[0];
+263                         T z_coord = values[2];
+264                         values[0] = x_coord * scifir::cos(new_theta) \- z_coord * scifir::sin(new_theta);
+265                         values[2] = x_coord * scifir::sin(new_theta) + z_coord * scifir::cos(new_theta);
+266                     }
+267                     else if (axis == 3)
+268                     {
+269                         T x_coord = values[0];
+270                         T y_coord = values[1];
+271                         values[0] = x_coord * scifir::cos(new_theta) \- y_coord * scifir::sin(new_theta);
+272                         values[1] = x_coord * scifir::sin(new_theta) + y_coord * scifir::cos(new_theta);
+273                     }
+274                 }
+275             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::set_position (\fBconst\fP \fBangle\fP & new_latitude, \fBconst\fP \fBangle\fP & new_longitude, \fBconst\fP T & new_altitude)\fC [inline]\fP"
+
+.PP
+Definition at line \fB224\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+225             {
+226                 values\&.clear();
+227                 values\&.push_back(T(new_altitude * scifir::cos(new_latitude) * scifir::cos(new_longitude)));
+228                 values\&.push_back(T(new_altitude * scifir::cos(new_latitude) * scifir::sin(new_longitude)));
+229                 values\&.push_back(T(new_altitude * scifir::sin(new_latitude)));
+230             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::set_position (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta)\fC [inline]\fP"
+
+.PP
+Definition at line \fB192\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+193             {
+194                 values\&.clear();
+195                 values\&.push_back(T(new_p * scifir::cos(new_theta)));
+196                 values\&.push_back(T(new_p * scifir::sin(new_theta)));
+197             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::set_position (\fBconst\fP T & new_p, \fBconst\fP \fBangle\fP & new_theta, T new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB207\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+208             {
+209                 values\&.clear();
+210                 new_z\&.change_dimensions(new_p);
+211                 values\&.push_back(T(new_p * scifir::cos(new_theta)));
+212                 values\&.push_back(T(new_p * scifir::sin(new_theta)));
+213                 values\&.push_back(new_z);
+214             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::set_position (\fBconst\fP T & new_r, \fBconst\fP \fBangle\fP & new_theta, \fBconst\fP \fBangle\fP & new_phi)\fC [inline]\fP"
+
+.PP
+Definition at line \fB216\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+217             {
+218                 values\&.clear();
+219                 values\&.push_back(T(new_r * scifir::cos(new_theta) * scifir::sin(new_phi)));
+220                 values\&.push_back(T(new_r * scifir::sin(new_theta) * scifir::sin(new_phi)));
+221                 values\&.push_back(T(new_r * scifir::cos(new_phi)));
+222             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::set_position (\fBconst\fP T & new_x)\fC [inline]\fP"
+
+.PP
+Definition at line \fB179\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+180             {
+181                 values\&.clear();
+182                 values\&.push_back(new_x);
+183             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::set_position (\fBconst\fP T & new_x, \fBconst\fP T & new_y)\fC [inline]\fP"
+
+.PP
+Definition at line \fB185\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+186             {
+187                 values\&.clear();
+188                 values\&.push_back(new_x);
+189                 values\&.push_back(new_y);
+190             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::set_position (\fBconst\fP T & new_x, \fBconst\fP T & new_y, \fBconst\fP T & new_z)\fC [inline]\fP"
+
+.PP
+Definition at line \fB199\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+200             {
+201                 values\&.clear();
+202                 values\&.push_back(new_x);
+203                 values\&.push_back(new_y);
+204                 values\&.push_back(new_z);
+205             }
+.fi
+
+.SS "template<\fBtypename\fP T  = length> \fBvoid\fP \fBscifir::point_nd\fP< T >::set_position (\fBconst\fP vector< T > & new_values)\fC [inline]\fP"
+
+.PP
+Definition at line \fB232\fP of file \fBpoint_nd\&.hpp\fP\&..PP
+.nf
+233             {
+234                 values\&.clear();
+235                 values = new_values;
+236             }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<\fBtypename\fP T  = length> vector<T> \fBscifir::point_nd\fP< T >::values"
+
+.PP
+Definition at line \fB464\fP of file \fBpoint_nd\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

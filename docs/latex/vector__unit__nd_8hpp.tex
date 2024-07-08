@@ -1,0 +1,559 @@
+\doxysection{units/vector\+\_\+unit\+\_\+nd.hpp File Reference}
+\hypertarget{vector__unit__nd_8hpp}{}\label{vector__unit__nd_8hpp}\index{units/vector\_unit\_nd.hpp@{units/vector\_unit\_nd.hpp}}
+{\ttfamily \#include "{}../units/scalar\+\_\+unit.\+hpp"{}}\newline
+{\ttfamily \#include "{}../meca\+\_\+number/angle.\+hpp"{}}\newline
+{\ttfamily \#include "{}../util/is\+\_\+number.\+hpp"{}}\newline
+{\ttfamily \#include "{}../topology/direction.\+hpp"{}}\newline
+{\ttfamily \#include "{}boost/algorithm/string.\+hpp"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for vector\+\_\+unit\+\_\+nd.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vector__unit__nd_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vector__unit__nd_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+\begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{vector__unit__nd_8hpp_a0f029adf5d3c22c40748a5b9f214fe08}{VECTOR\+\_\+\+UNIT\+\_\+\+ND\+\_\+\+HPP\+\_\+\+BEGIN}}(name)
+\item 
+\#define \mbox{\hyperlink{vector__unit__nd_8hpp_ada79e14619a52c0a4a4792f8a94d1516}{VECTOR\+\_\+\+UNIT\+\_\+\+ND\+\_\+\+HPP\+\_\+\+END}}()
+\item 
+\#define \mbox{\hyperlink{vector__unit__nd_8hpp_a846dfb88db3906bf6598833c8259ffed}{VECTOR\+\_\+\+UNIT\+\_\+\+ND\+\_\+\+HPP}}(name)
+\item 
+\#define \mbox{\hyperlink{vector__unit__nd_8hpp_a8b112b299c72903a5d717c83bf16e020}{VECTOR\+\_\+\+UNIT\+\_\+\+ND\+\_\+\+CPP}}(name,  init\+\_\+dimensions)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a19bf81b45dc720d4cf1eff9384a3a855}{scifir\+::to\+\_\+string}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&x)
+\item 
+\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \mbox{\hyperlink{namespacescifir_a45d6e5adcea1a2d1344ad68e14c06ae8}{scifir\+::norm}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&x)
+\item 
+\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \mbox{\hyperlink{namespacescifir_a69f603ae8d0997adaf0012b4e7cc1b80}{scifir\+::sqrt}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&x)
+\item 
+\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \mbox{\hyperlink{namespacescifir_a8518d8b6801fe430b094071fa58ce4ff}{scifir\+::sqrt\+\_\+nth}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} index)
+\item 
+\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\+\_\+unit}} \mbox{\hyperlink{namespacescifir_a67a0a2297e97ae52306dccd1bd4b967f}{scifir\+::dot\+\_\+product}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \mbox{\hyperlink{namespacescifir_aab605a7f24254dcab7ebfd5f68aad0bc}{scifir\+::cross\+\_\+product}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1angle}{angle}} \mbox{\hyperlink{namespacescifir_a3c86387f09e250faab77e37b93e84bb8}{scifir\+::angle\+\_\+between}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_a6329769c05bd5f028a1bd369affcd0c9}{scifir\+::same\+\_\+nd}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_a9b5975992a1a3596759df71fa292d942}{scifir\+::same\+\_\+direction}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_a0990a13516e0cb7a1f0fd7447f79980d}{scifir\+::parallel}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1coordinates__1d}{bool}} \mbox{\hyperlink{namespacescifir_ab49c86a928920a8b3ffb9d0e42dbcbc2}{scifir\+::orthogonal}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&x, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{vector\+\_\+unit\+\_\+nd}} \&y)
+\item 
+\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \mbox{\hyperlink{vector__unit__nd_8hpp_a3f73d61e691fa88f70bc024349be4e2c}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&x, const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&y)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \mbox{\hyperlink{vector__unit__nd_8hpp_a902ecd59a49d7ba26cfaf79a5065579c}{operator+}} (const T y, const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&x)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \mbox{\hyperlink{vector__unit__nd_8hpp_a1cab5a043ea0bcbd69622c0203c97a7d}{operator-\/}} (const T y, const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&x)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \mbox{\hyperlink{vector__unit__nd_8hpp_af3c2e99e9902b15d78d4ad3412c9d051}{operator\texorpdfstring{$\ast$}{*}}} (const T y, const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&x)
+\item 
+{\footnotesize template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \mbox{\hyperlink{vector__unit__nd_8hpp_aab0b79f3c0d67743dcd5c0130aa49612}{operator/}} (const T y, const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&x)
+\item 
+bool \mbox{\hyperlink{vector__unit__nd_8hpp_a0476c5331d917dac56ed6b1f63259b42}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&x, const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&y)
+\item 
+bool \mbox{\hyperlink{vector__unit__nd_8hpp_a24a1a34ec9f8af385a9f3bd2765c114a}{operator==}} (const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&x, const string \&init\+\_\+vector\+\_\+nd)
+\item 
+bool \mbox{\hyperlink{vector__unit__nd_8hpp_a7514b97725772cb20bea86f3055f2bc0}{operator!=}} (const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&x, const string \&init\+\_\+vector\+\_\+nd)
+\item 
+bool \mbox{\hyperlink{vector__unit__nd_8hpp_a4c4048684d4ebfc7da4a39c053ae1c28}{operator==}} (const string \&init\+\_\+vector\+\_\+nd, const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&x)
+\item 
+bool \mbox{\hyperlink{vector__unit__nd_8hpp_a3faf89de66fb26f150fb39c0a3e2ef9f}{operator!=}} (const string \&init\+\_\+vector\+\_\+nd, const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&x)
+\item 
+void \mbox{\hyperlink{vector__unit__nd_8hpp_ab850d99c3a1782c63579c98d68cfb235}{operator+=}} (string \&x, const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&y)
+\item 
+string \mbox{\hyperlink{vector__unit__nd_8hpp_addc603d175579b6e00951c5e4ae0fc60}{operator+}} (const string \&x, const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&y)
+\item 
+string \mbox{\hyperlink{vector__unit__nd_8hpp_ab78d42b393ba10fdd81a46ef286134ff}{operator+}} (const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&y, const string \&x)
+\item 
+ostream \& \mbox{\hyperlink{vector__unit__nd_8hpp_a8252d94e99fa37a000856830e4e0edb0}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&x)
+\item 
+istream \& \mbox{\hyperlink{vector__unit__nd_8hpp_a18016b1a8e9260db3bd2006c9179bd66}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{vector__unit__nd_8hpp_a8b112b299c72903a5d717c83bf16e020}\label{vector__unit__nd_8hpp_a8b112b299c72903a5d717c83bf16e020} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!VECTOR\_UNIT\_ND\_CPP@{VECTOR\_UNIT\_ND\_CPP}}
+\index{VECTOR\_UNIT\_ND\_CPP@{VECTOR\_UNIT\_ND\_CPP}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{VECTOR\_UNIT\_ND\_CPP}{VECTOR\_UNIT\_ND\_CPP}}
+{\footnotesize\ttfamily \#define VECTOR\+\_\+\+UNIT\+\_\+\+ND\+\_\+\+CPP(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{init\+\_\+dimensions }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ name\#\#\_nd::name\#\#\_nd()\ :\ vector\_unit\_nd()\ \{\}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ name\#\#\_nd::name\#\#\_nd(\textcolor{keyword}{const}\ name\#\#\_nd\&\ x)\ :\ vector\_unit\_nd(x)\ \{\}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ name\#\#\_nd::name\#\#\_nd(name\#\#\_nd\&\&\ x)\ :\ vector\_unit\_nd(std::move(x))\ \{\}\ \(\backslash\)}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ name\#\#\_nd::dimensions\_match\ =\ init\_dimensions;\ \(\backslash\)}
+\DoxyCodeLine{\textcolor{keyword}{const}\ vector<dimension>\ name\#\#\_nd::real\_dimensions\ =\ \mbox{\hyperlink{namespacescifir_ad696791ef9fa1f8d1694f54e6a38dace}{create\_derived\_dimensions}}(init\_dimensions)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{vector__unit__nd_8hpp_source}{vector\+\_\+unit\+\_\+nd.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ vector\_unit\_nd()\ \{\}\ \(\backslash\)}
+\DoxyCodeLine{00051\ \ \ \ \ name\#\#\_nd::name\#\#\_nd(\textcolor{keyword}{const}\ name\#\#\_nd\&\ x)\ :\ vector\_unit\_nd(x)\ \{\}\ \(\backslash\)}
+\DoxyCodeLine{00052\ \ \ \ \ name\#\#\_nd::name\#\#\_nd(name\#\#\_nd\&\&\ x)\ :\ vector\_unit\_nd(std::move(x))\ \{\}\ \(\backslash\)}
+\DoxyCodeLine{00053\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ name\#\#\_nd::dimensions\_match\ =\ init\_dimensions;\ \(\backslash\)}
+\DoxyCodeLine{00054\ \textcolor{keyword}{const}\ vector<dimension>\ name\#\#\_nd::real\_dimensions\ =\ \mbox{\hyperlink{namespacescifir_ad696791ef9fa1f8d1694f54e6a38dace}{create\_derived\_dimensions}}(init\_dimensions)}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_a846dfb88db3906bf6598833c8259ffed}\label{vector__unit__nd_8hpp_a846dfb88db3906bf6598833c8259ffed} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!VECTOR\_UNIT\_ND\_HPP@{VECTOR\_UNIT\_ND\_HPP}}
+\index{VECTOR\_UNIT\_ND\_HPP@{VECTOR\_UNIT\_ND\_HPP}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{VECTOR\_UNIT\_ND\_HPP}{VECTOR\_UNIT\_ND\_HPP}}
+{\footnotesize\ttfamily \#define VECTOR\+\_\+\+UNIT\+\_\+\+ND\+\_\+\+HPP(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{class\ }name\#\#\_nd\ :\ \textcolor{keyword}{public}\ vector\_unit\_nd\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \{\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::vector\_unit\_nd;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_nd();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_nd(\textcolor{keyword}{const}\ name\#\#\_nd\&);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_nd(name\#\#\_nd\&\&);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::operator=;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::operator+=;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::operator-\/=;\ \(\backslash\)}
+\DoxyCodeLine{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ dimensions\_match;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{vector__unit__nd_8hpp_source}{vector\+\_\+unit\+\_\+nd.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ vector\_unit\_nd\ \(\backslash\)}
+\DoxyCodeLine{00036\ \ \ \ \ \{\ \ \ \(\backslash\)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \(\backslash\)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::vector\_unit\_nd;\ \(\backslash\)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_nd();\ \(\backslash\)}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_nd(\textcolor{keyword}{const}\ name\#\#\_nd\&);\ \(\backslash\)}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_nd(name\#\#\_nd\&\&);\ \(\backslash\)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::operator=;\ \(\backslash\)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::operator+=;\ \(\backslash\)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::operator-\/=;\ \(\backslash\)}
+\DoxyCodeLine{00045\ \(\backslash\)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ dimensions\_match;\ \(\backslash\)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_a0f029adf5d3c22c40748a5b9f214fe08}\label{vector__unit__nd_8hpp_a0f029adf5d3c22c40748a5b9f214fe08} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!VECTOR\_UNIT\_ND\_HPP\_BEGIN@{VECTOR\_UNIT\_ND\_HPP\_BEGIN}}
+\index{VECTOR\_UNIT\_ND\_HPP\_BEGIN@{VECTOR\_UNIT\_ND\_HPP\_BEGIN}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{VECTOR\_UNIT\_ND\_HPP\_BEGIN}{VECTOR\_UNIT\_ND\_HPP\_BEGIN}}
+{\footnotesize\ttfamily \#define VECTOR\+\_\+\+UNIT\+\_\+\+ND\+\_\+\+HPP\+\_\+\+BEGIN(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{class\ }name\#\#\_nd\ :\ \textcolor{keyword}{public}\ vector\_unit\_nd\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \{\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::vector\_unit\_nd;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_nd();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_nd(\textcolor{keyword}{const}\ name\#\#\_nd\&);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_nd(name\#\#\_nd\&\&);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::operator=;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::operator+=;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::operator-\/=}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8hpp_source_l00019}{19}} of file \mbox{\hyperlink{vector__unit__nd_8hpp_source}{vector\+\_\+unit\+\_\+nd.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ vector\_unit\_nd\ \(\backslash\)}
+\DoxyCodeLine{00020\ \ \ \ \ \{\ \ \ \(\backslash\)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \(\backslash\)}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::vector\_unit\_nd;\ \(\backslash\)}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_nd();\ \(\backslash\)}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_nd(\textcolor{keyword}{const}\ name\#\#\_nd\&);\ \(\backslash\)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_nd(name\#\#\_nd\&\&);\ \(\backslash\)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::operator=;\ \(\backslash\)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::operator+=;\ \(\backslash\)}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }vector\_unit\_nd::operator-\/=}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_ada79e14619a52c0a4a4792f8a94d1516}\label{vector__unit__nd_8hpp_ada79e14619a52c0a4a4792f8a94d1516} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!VECTOR\_UNIT\_ND\_HPP\_END@{VECTOR\_UNIT\_ND\_HPP\_END}}
+\index{VECTOR\_UNIT\_ND\_HPP\_END@{VECTOR\_UNIT\_ND\_HPP\_END}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{VECTOR\_UNIT\_ND\_HPP\_END}{VECTOR\_UNIT\_ND\_HPP\_END}}
+{\footnotesize\ttfamily \#define VECTOR\+\_\+\+UNIT\+\_\+\+ND\+\_\+\+HPP\+\_\+\+END(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ dimensions\_match;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{vector__unit__nd_8hpp_source}{vector\+\_\+unit\+\_\+nd.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \(\backslash\)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ dimensions\_match;\ \(\backslash\)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{vector__unit__nd_8hpp_a0476c5331d917dac56ed6b1f63259b42}\label{vector__unit__nd_8hpp_a0476c5331d917dac56ed6b1f63259b42} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8cpp_source_l00899}{899}} of file \mbox{\hyperlink{vector__unit__nd_8cpp_source}{vector\+\_\+unit\+\_\+nd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00900\ \{}
+\DoxyCodeLine{00901\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{00902\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_a7514b97725772cb20bea86f3055f2bc0}\label{vector__unit__nd_8hpp_a7514b97725772cb20bea86f3055f2bc0} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{x,  }\item[{const string \&}]{init\+\_\+vector\+\_\+nd }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8cpp_source_l00910}{910}} of file \mbox{\hyperlink{vector__unit__nd_8cpp_source}{vector\+\_\+unit\+\_\+nd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00911\ \{}
+\DoxyCodeLine{00912\ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ init\_vector\_nd);}
+\DoxyCodeLine{00913\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_a3faf89de66fb26f150fb39c0a3e2ef9f}\label{vector__unit__nd_8hpp_a3faf89de66fb26f150fb39c0a3e2ef9f} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+vector\+\_\+nd,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8cpp_source_l00921}{921}} of file \mbox{\hyperlink{vector__unit__nd_8cpp_source}{vector\+\_\+unit\+\_\+nd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00922\ \{}
+\DoxyCodeLine{00923\ \ \ \ \ \textcolor{keywordflow}{return}\ !(init\_vector\_nd\ ==\ x);}
+\DoxyCodeLine{00924\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_a3f73d61e691fa88f70bc024349be4e2c}\label{vector__unit__nd_8hpp_a3f73d61e691fa88f70bc024349be4e2c} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir\+::scalar\+\_\+unit}} \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8cpp_source_l00877}{877}} of file \mbox{\hyperlink{vector__unit__nd_8cpp_source}{vector\+\_\+unit\+\_\+nd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00878\ \{}
+\DoxyCodeLine{00879\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ new\_value\ =\ y.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}()\ *\ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}();}
+\DoxyCodeLine{00880\ \ \ \ \ vector<scifir::dimension>\ new\_dimensions\ =\ \mbox{\hyperlink{namespacescifir_a9ffe4ce909247f67cb6d4a4eebf64be1}{multiply\_dimensions}}(y.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}(),\ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}(),new\_value);}
+\DoxyCodeLine{00881\ \ \ \ \ \textcolor{keywordflow}{if}(y.\mbox{\hyperlink{classscifir_1_1vector__unit__nd_a375d5d9e20eee2a10c5fe583fd64b97f}{is\_nd}}(1))}
+\DoxyCodeLine{00882\ \ \ \ \ \{}
+\DoxyCodeLine{00883\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}(\textcolor{keywordtype}{float}(new\_value),\ new\_dimensions);}
+\DoxyCodeLine{00884\ \ \ \ \ \}}
+\DoxyCodeLine{00885\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(y.\mbox{\hyperlink{classscifir_1_1vector__unit__nd_a375d5d9e20eee2a10c5fe583fd64b97f}{is\_nd}}(2))}
+\DoxyCodeLine{00886\ \ \ \ \ \{}
+\DoxyCodeLine{00887\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}(\textcolor{keywordtype}{float}(new\_value),\ new\_dimensions,\ \{y.\mbox{\hyperlink{classscifir_1_1vector__unit__nd_a17eed3849732c0256577450131dda3fc}{angles}}[0]\});}
+\DoxyCodeLine{00888\ \ \ \ \ \}}
+\DoxyCodeLine{00889\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(y.\mbox{\hyperlink{classscifir_1_1vector__unit__nd_a375d5d9e20eee2a10c5fe583fd64b97f}{is\_nd}}(3))}
+\DoxyCodeLine{00890\ \ \ \ \ \{}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}(\textcolor{keywordtype}{float}(new\_value),\ new\_dimensions,\ \{y.\mbox{\hyperlink{classscifir_1_1vector__unit__nd_a17eed3849732c0256577450131dda3fc}{angles}}[0],\ y.\mbox{\hyperlink{classscifir_1_1vector__unit__nd_a17eed3849732c0256577450131dda3fc}{angles}}[1]\});}
+\DoxyCodeLine{00892\ \ \ \ \ \}}
+\DoxyCodeLine{00893\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00894\ \ \ \ \ \{}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}(\textcolor{keywordtype}{float}(new\_value),\ new\_dimensions,\ y.\mbox{\hyperlink{classscifir_1_1vector__unit__nd_a17eed3849732c0256577450131dda3fc}{angles}});}
+\DoxyCodeLine{00896\ \ \ \ \ \}}
+\DoxyCodeLine{00897\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_af3c2e99e9902b15d78d4ad3412c9d051}\label{vector__unit__nd_8hpp_af3c2e99e9902b15d78d4ad3412c9d051} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const T}]{y,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8hpp_source_l00266}{266}} of file \mbox{\hyperlink{vector__unit__nd_8hpp_source}{vector\+\_\+unit\+\_\+nd.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00267\ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ z\ =\ x;}
+\DoxyCodeLine{00269\ \ \ \ \ z\ *=\ y;}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
+\DoxyCodeLine{00271\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_ab78d42b393ba10fdd81a46ef286134ff}\label{vector__unit__nd_8hpp_ab78d42b393ba10fdd81a46ef286134ff} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!operator+@{operator+}}
+\index{operator+@{operator+}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily string operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{y,  }\item[{const string \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8cpp_source_l00941}{941}} of file \mbox{\hyperlink{vector__unit__nd_8cpp_source}{vector\+\_\+unit\+\_\+nd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00942\ \{}
+\DoxyCodeLine{00943\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00944\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{00945\ \ \ \ \ output\ <<\ x;}
+\DoxyCodeLine{00946\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
+\DoxyCodeLine{00947\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_addc603d175579b6e00951c5e4ae0fc60}\label{vector__unit__nd_8hpp_addc603d175579b6e00951c5e4ae0fc60} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!operator+@{operator+}}
+\index{operator+@{operator+}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily string operator+ (\begin{DoxyParamCaption}\item[{const string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8cpp_source_l00933}{933}} of file \mbox{\hyperlink{vector__unit__nd_8cpp_source}{vector\+\_\+unit\+\_\+nd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00934\ \{}
+\DoxyCodeLine{00935\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00936\ \ \ \ \ output\ <<\ x;}
+\DoxyCodeLine{00937\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{00938\ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
+\DoxyCodeLine{00939\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_a902ecd59a49d7ba26cfaf79a5065579c}\label{vector__unit__nd_8hpp_a902ecd59a49d7ba26cfaf79a5065579c} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!operator+@{operator+}}
+\index{operator+@{operator+}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} operator+ (\begin{DoxyParamCaption}\item[{const T}]{y,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8hpp_source_l00252}{252}} of file \mbox{\hyperlink{vector__unit__nd_8hpp_source}{vector\+\_\+unit\+\_\+nd.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00253\ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ z\ =\ x;}
+\DoxyCodeLine{00255\ \ \ \ \ z\ +=\ y;}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
+\DoxyCodeLine{00257\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_ab850d99c3a1782c63579c98d68cfb235}\label{vector__unit__nd_8hpp_ab850d99c3a1782c63579c98d68cfb235} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily void operator+= (\begin{DoxyParamCaption}\item[{string \&}]{x,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8cpp_source_l00926}{926}} of file \mbox{\hyperlink{vector__unit__nd_8cpp_source}{vector\+\_\+unit\+\_\+nd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00927\ \{}
+\DoxyCodeLine{00928\ \ \ \ \ ostringstream\ output;}
+\DoxyCodeLine{00929\ \ \ \ \ output\ <<\ y;}
+\DoxyCodeLine{00930\ \ \ \ \ x\ +=\ output.str();}
+\DoxyCodeLine{00931\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_a1cab5a043ea0bcbd69622c0203c97a7d}\label{vector__unit__nd_8hpp_a1cab5a043ea0bcbd69622c0203c97a7d} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} operator-\/ (\begin{DoxyParamCaption}\item[{const T}]{y,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8hpp_source_l00260}{260}} of file \mbox{\hyperlink{vector__unit__nd_8hpp_source}{vector\+\_\+unit\+\_\+nd.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00261\ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}(y\ -\/\ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}(),x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}(),x.\mbox{\hyperlink{classscifir_1_1vector__unit__nd_a17eed3849732c0256577450131dda3fc}{angles}});}
+\DoxyCodeLine{00263\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_aab0b79f3c0d67743dcd5c0130aa49612}\label{vector__unit__nd_8hpp_aab0b79f3c0d67743dcd5c0130aa49612} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!operator/@{operator/}}
+\index{operator/@{operator/}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily template$<$typename T , typename  = typename enable\+\_\+if$<$scifir\+::is\+\_\+number$<$\+T$>$\+::value$>$\+::type$>$ \\
+\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} operator/ (\begin{DoxyParamCaption}\item[{const T}]{y,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8hpp_source_l00274}{274}} of file \mbox{\hyperlink{vector__unit__nd_8hpp_source}{vector\+\_\+unit\+\_\+nd.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00275\ \{}
+\DoxyCodeLine{00276\ \ \ \ \ vector<scifir::dimension>\ new\_dimensions\ =\ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}();}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classscifir_1_1dimension}{scifir::dimension}}\&\ new\_dimension\ :\ new\_dimensions)}
+\DoxyCodeLine{00278\ \ \ \ \ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ new\_dimension.invert();}
+\DoxyCodeLine{00280\ \ \ \ \ \}}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}(y\ /\ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}(),new\_dimensions,x.\mbox{\hyperlink{classscifir_1_1vector__unit__nd_a17eed3849732c0256577450131dda3fc}{angles}});}
+\DoxyCodeLine{00282\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_a8252d94e99fa37a000856830e4e0edb0}\label{vector__unit__nd_8hpp_a8252d94e99fa37a000856830e4e0edb0} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8cpp_source_l00949}{949}} of file \mbox{\hyperlink{vector__unit__nd_8cpp_source}{vector\+\_\+unit\+\_\+nd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00950\ \{}
+\DoxyCodeLine{00951\ \ \ \ \ ostringstream\ angles\_text;}
+\DoxyCodeLine{00952\ \ \ \ \ \textcolor{keywordflow}{if}\ (!x.\mbox{\hyperlink{classscifir_1_1vector__unit__nd_a375d5d9e20eee2a10c5fe583fd64b97f}{is\_nd}}(1))}
+\DoxyCodeLine{00953\ \ \ \ \ \{}
+\DoxyCodeLine{00954\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ x\_angle\ :\ x.angles)}
+\DoxyCodeLine{00955\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00956\ \ \ \ \ \ \ \ \ \ \ \ \ angles\_text\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00957\ \ \ \ \ \ \ \ \ \ \ \ \ angles\_text\ <<\ x\_angle;}
+\DoxyCodeLine{00958\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00959\ \ \ \ \ \}}
+\DoxyCodeLine{00960\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a14efad80e22f77b77b3b82de4c0c72ca}{display\_dimensions}}()\ <<\ angles\_text.str();}
+\DoxyCodeLine{00961\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_a24a1a34ec9f8af385a9f3bd2765c114a}\label{vector__unit__nd_8hpp_a24a1a34ec9f8af385a9f3bd2765c114a} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{x,  }\item[{const string \&}]{init\+\_\+vector\+\_\+nd }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8cpp_source_l00904}{904}} of file \mbox{\hyperlink{vector__unit__nd_8cpp_source}{vector\+\_\+unit\+\_\+nd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00905\ \{}
+\DoxyCodeLine{00906\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ y(init\_vector\_nd);}
+\DoxyCodeLine{00907\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ y);}
+\DoxyCodeLine{00908\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_a4c4048684d4ebfc7da4a39c053ae1c28}\label{vector__unit__nd_8hpp_a4c4048684d4ebfc7da4a39c053ae1c28} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const string \&}]{init\+\_\+vector\+\_\+nd,  }\item[{const \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8cpp_source_l00915}{915}} of file \mbox{\hyperlink{vector__unit__nd_8cpp_source}{vector\+\_\+unit\+\_\+nd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00916\ \{}
+\DoxyCodeLine{00917\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}\ y(init\_vector\_nd);}
+\DoxyCodeLine{00918\ \ \ \ \ \textcolor{keywordflow}{return}\ (y\ ==\ x);}
+\DoxyCodeLine{00919\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__nd_8hpp_a18016b1a8e9260db3bd2006c9179bd66}\label{vector__unit__nd_8hpp_a18016b1a8e9260db3bd2006c9179bd66} 
+\index{vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!vector\_unit\_nd.hpp@{vector\_unit\_nd.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir\+::vector\+\_\+unit\+\_\+nd}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vector__unit__nd_8cpp_source_l00963}{963}} of file \mbox{\hyperlink{vector__unit__nd_8cpp_source}{vector\+\_\+unit\+\_\+nd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00964\ \{}
+\DoxyCodeLine{00965\ \ \ \ \ \textcolor{keywordtype}{char}\ a[256];}
+\DoxyCodeLine{00966\ \ \ \ \ is.getline(a,\ 256);}
+\DoxyCodeLine{00967\ \ \ \ \ \textcolor{keywordtype}{string}\ b(a);}
+\DoxyCodeLine{00968\ \ \ \ \ boost::trim(b);}
+\DoxyCodeLine{00969\ \ \ \ \ x\ =\ \mbox{\hyperlink{classscifir_1_1vector__unit__nd}{scifir::vector\_unit\_nd}}(b);}
+\DoxyCodeLine{00970\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{00971\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,41 @@
+\doxysection{special\+\_\+units/color.cpp File Reference}
+\hypertarget{color_8cpp}{}\label{color_8cpp}\index{special\_units/color.cpp@{special\_units/color.cpp}}
+{\ttfamily \#include "{}./color.\+hpp"{}}\newline
+Include dependency graph for color.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{color_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacescifir}{scifir}}
+\begin{DoxyCompactList}\small\item\em The namespace scifir contains all scifir-\/units, excepting the string literals, which are outside. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{color_8cpp_afa213c0572317b91010381197adc0e3b}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classscifir_1_1color}{scifir\+::color}} \&x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{color_8cpp_afa213c0572317b91010381197adc0e3b}\label{color_8cpp_afa213c0572317b91010381197adc0e3b} 
+\index{color.cpp@{color.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!color.cpp@{color.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classscifir_1_1color}{scifir\+::color}} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{color_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{color_8cpp_source}{color.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \textcolor{stringliteral}{"{}color("{}}\ <<\ x.\mbox{\hyperlink{classscifir_1_1color_a5dcc9d2526000f7ba5b55782a74967f8}{get\_red}}()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ x.\mbox{\hyperlink{classscifir_1_1color_a07aab1a1b516f8f11632eb8c98f99700}{get\_green}}()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ x.\mbox{\hyperlink{classscifir_1_1color_a2518aa9b3b720fc7f21a5a4b4ffe3c6a}{get\_blue}}()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ x.\mbox{\hyperlink{classscifir_1_1color_a112b42c121bf0bf9033c0e94aef6f0ba}{get\_alpha}}()\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00019\ \}}
+
+\end{DoxyCode}

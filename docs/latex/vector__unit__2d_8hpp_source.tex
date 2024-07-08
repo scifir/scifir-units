@@ -1,272 +1,272 @@
 \doxysection{vector\+\_\+unit\+\_\+2d.\+hpp}
 \hypertarget{vector__unit__2d_8hpp_source}{}\label{vector__unit__2d_8hpp_source}\index{units/vector\_unit\_2d.hpp@{units/vector\_unit\_2d.hpp}}
-
+\mbox{\hyperlink{vector__unit__2d_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_UNITS\_VECTOR\_UNIT\_2D\_HPP\_INCLUDED}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_UNITS\_VECTOR\_UNIT\_2D\_HPP\_INCLUDED}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../units/scalar\_unit.hpp"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../meca\_number/angle.hpp"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../util/is\_number.hpp"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../topology/direction.hpp"{}}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}boost/algorithm/string.hpp"{}}}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ VECTOR\_UNIT\_2D\_HPP\_BEGIN(name)\ class\ name\#\#\_2d\ :\ public\ vector\_unit\_2d\ \(\backslash\)}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ \{\ \ \ \(\backslash\)}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ public:\ \(\backslash\)}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::vector\_unit\_2d;\ \(\backslash\)}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_2d();\ \(\backslash\)}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_2d(const\ name\#\#\_2d\&);\ \(\backslash\)}}
-\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_2d(name\#\#\_2d\&\&);\ \(\backslash\)}}
-\DoxyCodeLine{00021\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::operator=;\ \(\backslash\)}}
-\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::operator+=;\ \(\backslash\)}}
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::operator-\/=}}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ VECTOR\_UNIT\_2D\_HPP\_END()\ public:\ \(\backslash\)}}
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ static\ const\ string\ dimensions\_match;\ \(\backslash\)}}
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ static\ const\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}}
-\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ \ \ \}}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ VECTOR\_UNIT\_2D\_HPP(name)\ class\ name\#\#\_2d\ :\ public\ vector\_unit\_2d\ \(\backslash\)}}
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\ \ \ \ \{\ \ \ \(\backslash\)}}
-\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ public:\ \(\backslash\)}}
-\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::vector\_unit\_2d;\ \(\backslash\)}}
-\DoxyCodeLine{00034\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_2d();\ \(\backslash\)}}
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_2d(const\ name\#\#\_2d\&);\ \(\backslash\)}}
-\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_2d(name\#\#\_2d\&\&);\ \(\backslash\)}}
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::operator=;\ \(\backslash\)}}
-\DoxyCodeLine{00038\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::operator+=;\ \(\backslash\)}}
-\DoxyCodeLine{00039\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::operator-\/=;\ \(\backslash\)}}
-\DoxyCodeLine{00040\ \textcolor{preprocessor}{\(\backslash\)}}
-\DoxyCodeLine{00041\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ static\ const\ string\ dimensions\_match;\ \(\backslash\)}}
-\DoxyCodeLine{00042\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ static\ const\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}}
-\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ \ \ \}}}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ VECTOR\_UNIT\_2D\_CPP(name,init\_dimensions)\ name\#\#\_2d::name\#\#\_2d()\ :\ vector\_unit\_2d()\ \{\}\ \(\backslash\)}}
-\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \ \ name\#\#\_2d::name\#\#\_2d(const\ name\#\#\_2d\&\ x)\ :\ vector\_unit\_2d(x)\ \{\}\ \(\backslash\)}}
-\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ \ \ name\#\#\_2d::name\#\#\_2d(name\#\#\_2d\&\&\ x)\ :\ vector\_unit\_2d(std::move(x))\ \{\}\ \(\backslash\)}}
-\DoxyCodeLine{00048\ \textcolor{preprocessor}{const\ string\ name\#\#\_2d::dimensions\_match\ =\ init\_dimensions;\ \(\backslash\)}}
-\DoxyCodeLine{00049\ \textcolor{preprocessor}{const\ vector<dimension>\ name\#\#\_2d::real\_dimensions\ =\ create\_derived\_dimensions(init\_dimensions)}}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \textcolor{keyword}{namespace\ }scifir}
-\DoxyCodeLine{00054\ \{}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}}
-\DoxyCodeLine{00056\ \ \ \ \ \{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}();}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x);}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\&\ x);}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});\ \textcolor{comment}{//\ Example\ of\ initialization\ (10,"{}N"{},50)}}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});\ \textcolor{comment}{//\ Example\ of\ initialization\ (10,"{}N"{},50ª)}}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});\ \textcolor{comment}{//\ Example\ of\ initialization\ (10,"{}N"{},50)}}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});\ \textcolor{comment}{//\ Example\ of\ initialization\ (10,"{}N"{},50)}}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x,\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_scalar}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_scalar}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_vector\_2d}});\ \textcolor{comment}{//\ Example\ of\ initialization\ string\ "{}1N\ 50º"{}}}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ cartesian\_2d(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},2)\ +\ std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},2)));}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}\ =\ scifir::atan\_grade(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}}\ /\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}});}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\mbox{\hyperlink{classscifir_1_1angle}{angle}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}));}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x);}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\&\ x);}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\&\ x);}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ =}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_vector\_2d}});}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ ==}}(\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ point\_to(direction::name\ x);}
-\DoxyCodeLine{00099\ }
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x);}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/=}}(\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ x);}
-\DoxyCodeLine{00102\ }
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/}}(\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ \string^}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00109\ }
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00112\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ y\ =\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ x;}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00120\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ y\ =\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ -\/=\ x;}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00128\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ y\ =\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ *=\ x;}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00136\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ y\ =\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ /=\ x;}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00141\ }
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<is\_integer\_number<U>::value}}>::type>}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ \string^}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00144\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}(std::pow(get\_value(),x),power\_dimensions(get\_dimensions(),x),theta);}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00147\ }
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ +=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scalar\_unit::value\ +=\ x;}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ -\/=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scalar\_unit::value\ -\/=\ x;}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00159\ }
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ *=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scalar\_unit::value\ *=\ std::abs(x);}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ <\ 0)}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ theta.invert();}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00169\ }
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{operator\ /=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scalar\_unit::value\ /=\ std::abs(x);}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ <\ 0)}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ theta.invert();}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00179\ }
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ x\_projection()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00181\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(scalar\_unit::value\ *\ scifir::cos(theta),get\_dimensions());}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00184\ }
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ y\_projection()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00186\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}(scalar\_unit::value\ *\ scifir::sin(theta),get\_dimensions());}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00189\ }
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ invert()}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ theta.invert();}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00194\ }
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ vectorial\_display(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ vectorial\_derived\_display(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ vectorial\_custom\_display(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00198\ }
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ theta;}
-\DoxyCodeLine{00200\ }
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initialize\_from\_string(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_vector\_2d}});}
-\DoxyCodeLine{00203\ \ \ \ \ \};}
-\DoxyCodeLine{00204\ }
-\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{string}\ to\_string(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x);}
-\DoxyCodeLine{00206\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ norm(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x);}
-\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ sqrt(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x);}
-\DoxyCodeLine{00208\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ sqrt\_nth(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x,\textcolor{keywordtype}{int}\ index);}
-\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ dot\_product(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ y);}
-\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ angle\_between(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ y);}
-\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{bool}\ same\_direction(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ y);}
-\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{bool}\ parallel(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ y);}
-\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{bool}\ orthogonal(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ y);}
-\DoxyCodeLine{00214\ \}}
-\DoxyCodeLine{00215\ }
-\DoxyCodeLine{00216\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ operator\ *(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ y);}
-\DoxyCodeLine{00217\ }
-\DoxyCodeLine{00218\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00219\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ operator\ +(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ x)}
-\DoxyCodeLine{00220\ \{}
-\DoxyCodeLine{00221\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ z\ =\ x;}
-\DoxyCodeLine{00222\ \ \ \ \ z\ +=\ y;}
-\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
-\DoxyCodeLine{00224\ \}}
-\DoxyCodeLine{00225\ }
-\DoxyCodeLine{00226\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00227\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ operator\ -\/(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ x)}
-\DoxyCodeLine{00228\ \{}
-\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}(y\ -\/\ x.get\_value(),x.get\_dimensions(),x.theta);}
-\DoxyCodeLine{00230\ \}}
-\DoxyCodeLine{00231\ }
-\DoxyCodeLine{00232\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00233\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ operator\ *(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ x)}
-\DoxyCodeLine{00234\ \{}
-\DoxyCodeLine{00235\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ z\ =\ x;}
-\DoxyCodeLine{00236\ \ \ \ \ z\ *=\ y;}
-\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
-\DoxyCodeLine{00238\ \}}
-\DoxyCodeLine{00239\ }
-\DoxyCodeLine{00240\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
-\DoxyCodeLine{00241\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ operator\ /(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ x)}
-\DoxyCodeLine{00242\ \{}
-\DoxyCodeLine{00243\ \ \ \ \ vector<scifir::dimension>\ new\_dimensions\ =\ x.get\_dimensions();}
-\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classscifir_1_1dimension}{scifir::dimension}}\&\ new\_dimension\ :\ new\_dimensions)}
-\DoxyCodeLine{00245\ \ \ \ \ \{}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ new\_dimension.invert();}
-\DoxyCodeLine{00247\ \ \ \ \ \}}
-\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}(y\ /\ x.get\_value(),new\_dimensions,x.theta);}
-\DoxyCodeLine{00249\ \}}
-\DoxyCodeLine{00250\ }
-\DoxyCodeLine{00251\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ y);}
-\DoxyCodeLine{00252\ }
-\DoxyCodeLine{00253\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_vector\_2d);}
-\DoxyCodeLine{00254\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_vector\_2d);}
-\DoxyCodeLine{00255\ }
-\DoxyCodeLine{00256\ \textcolor{keywordtype}{bool}\ operator\ ==(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_vector\_2d,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&);}
-\DoxyCodeLine{00257\ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_vector\_2d,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&);}
-\DoxyCodeLine{00258\ }
-\DoxyCodeLine{00259\ \textcolor{keywordtype}{void}\ operator\ +=(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ y);}
-\DoxyCodeLine{00260\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ y);}
-\DoxyCodeLine{00261\ \textcolor{keywordtype}{string}\ operator\ +(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x);}
-\DoxyCodeLine{00262\ }
-\DoxyCodeLine{00263\ ostream\&\ operator\ <<(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ x);}
-\DoxyCodeLine{00264\ istream\&\ operator\ >>(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ x);}
-\DoxyCodeLine{00265\ }
-\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_VECTOR\_UNIT\_2D\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SCIFIR\_UNITS\_UNITS\_VECTOR\_UNIT\_2D\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SCIFIR\_UNITS\_UNITS\_VECTOR\_UNIT\_2D\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../units/scalar\_unit.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}../meca\_number/angle.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}../util/is\_number.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}../topology/direction.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}boost/algorithm/string.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00014}\mbox{\hyperlink{vector__unit__2d_8hpp_a42170f6a536a9bbe43cdad71d6d3933f}{00014}}\ \textcolor{preprocessor}{\#define\ VECTOR\_UNIT\_2D\_HPP\_BEGIN(name)\ class\ name\#\#\_2d\ :\ public\ vector\_unit\_2d\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\ \ \ \ \{\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ public:\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::vector\_unit\_2d;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_2d();\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_2d(const\ name\#\#\_2d\&);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_2d(name\#\#\_2d\&\&);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::operator=;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::operator+=;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::operator-\/=}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00025}\mbox{\hyperlink{vector__unit__2d_8hpp_ab1027ac6a73f1bb38c0d4a2711bae9b4}{00025}}\ \textcolor{preprocessor}{\#define\ VECTOR\_UNIT\_2D\_HPP\_END()\ public:\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00026}00026\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ static\ const\ string\ dimensions\_match;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00027}00027\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ static\ const\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00028}00028\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00030}\mbox{\hyperlink{vector__unit__2d_8hpp_acb3982558481721777eaae0344d9679d}{00030}}\ \textcolor{preprocessor}{\#define\ VECTOR\_UNIT\_2D\_HPP(name)\ class\ name\#\#\_2d\ :\ public\ vector\_unit\_2d\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00031}00031\ \textcolor{preprocessor}{\ \ \ \ \{\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00032}00032\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ public:\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00033}00033\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::vector\_unit\_2d;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00034}00034\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_2d();\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00035}00035\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_2d(const\ name\#\#\_2d\&);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00036}00036\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ name\#\#\_2d(name\#\#\_2d\&\&);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00037}00037\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::operator=;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00038}00038\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::operator+=;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00039}00039\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ using\ vector\_unit\_2d::operator-\/=;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00040}00040\ \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00041}00041\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ static\ const\ string\ dimensions\_match;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00042}00042\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ static\ const\ vector<dimension>\ real\_dimensions;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00043}00043\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00045}\mbox{\hyperlink{vector__unit__2d_8hpp_ae7f9d1df950ca7407875bd404c70f49c}{00045}}\ \textcolor{preprocessor}{\#define\ VECTOR\_UNIT\_2D\_CPP(name,init\_dimensions)\ name\#\#\_2d::name\#\#\_2d()\ :\ vector\_unit\_2d()\ \{\}\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00046}00046\ \textcolor{preprocessor}{\ \ \ \ name\#\#\_2d::name\#\#\_2d(const\ name\#\#\_2d\&\ x)\ :\ vector\_unit\_2d(x)\ \{\}\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00047}00047\ \textcolor{preprocessor}{\ \ \ \ name\#\#\_2d::name\#\#\_2d(name\#\#\_2d\&\&\ x)\ :\ vector\_unit\_2d(std::move(x))\ \{\}\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00048}00048\ \textcolor{preprocessor}{const\ string\ name\#\#\_2d::dimensions\_match\ =\ init\_dimensions;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00049}00049\ \textcolor{preprocessor}{const\ vector<dimension>\ name\#\#\_2d::real\_dimensions\ =\ create\_derived\_dimensions(init\_dimensions)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00051}00051\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00053}00053\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacescifir}{scifir}}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00054}00054\ \{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00055}\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{00055}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00056}00056\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}();}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});\ \textcolor{comment}{//\ Example\ of\ initialization\ (10,"{}N"{},50)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});\ \textcolor{comment}{//\ Example\ of\ initialization\ (10,"{}N"{},50ª)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});\ \textcolor{comment}{//\ Example\ of\ initialization\ (10,"{}N"{},50)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});\ \textcolor{comment}{//\ Example\ of\ initialization\ (10,"{}N"{},50)}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{vector<dimension>}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x,\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_scalar}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_scalar}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_vector\_2d}});\ \textcolor{comment}{//\ Example\ of\ initialization\ string\ "{}1N\ 50º"{}}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00083}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a07e373b19dd644dd5f2a50b03c7af829}{00083}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a07e373b19dd644dd5f2a50b03c7af829}{cartesian\_2d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},\textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}})}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}}\ =\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}}(std::sqrt(std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}},2)\ +\ std::pow(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}},2)));}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}\ =\ \mbox{\hyperlink{namespacescifir_ab26866c5f85571fb48783ebee102d01d}{scifir::atan\_grade}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_y}}\ /\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_x}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_value}},\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_dimensions}},\mbox{\hyperlink{classscifir_1_1angle}{angle}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{new\_theta}}));}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a168ab49d6dedb5bd399a7ac7537deb5e}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a168ab49d6dedb5bd399a7ac7537deb5e}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a168ab49d6dedb5bd399a7ac7537deb5e}{operator\ =}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a168ab49d6dedb5bd399a7ac7537deb5e}{operator\ =}}(\mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a168ab49d6dedb5bd399a7ac7537deb5e}{operator\ =}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_vector\_2d}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a8911a8ef8ca2186381b5f2eb8934f0ae}{operator\ ==}}(\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a202d405ec4efe8e105b2e1eabb050ed7}{point\_to}}(\mbox{\hyperlink{classscifir_1_1direction_a3f9d1fd5a6c5f61b9fb49c4e56938319}{direction::name}}\ x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a040180b3b18ed8778e00d08f28a091bd}{operator\ +=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_aa729124b53b6f5850bcf5f8fe2c6e567}{operator\ -\/=}}(\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a48087760b026954027ae46a1a09b63a5}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a93e5d91920b06e7ba9c0caedb850cd3c}{operator\ -\/}}(\mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a305dbbc4e9609ed938c7b87a5d2af63b}{operator\ *}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a679d2f2546db4fc1359a8d190e6d5b97}{operator\ /}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ab8c695aa4d45964dcdb51aab249c4b79}{operator\ \string^}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\&\ x)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00111}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a7bb41cd99c3246ecca935e9a642345a8}{00111}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a48087760b026954027ae46a1a09b63a5}{operator\ +}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00112}00112\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ y\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ x;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00119}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a067b4fd5f457ed07a163594f0e3991f4}{00119}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a93e5d91920b06e7ba9c0caedb850cd3c}{operator\ -\/}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00120}00120\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ y\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ -\/=\ x;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00127}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a9dbca5e97b2346831125117acc17d10e}{00127}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a305dbbc4e9609ed938c7b87a5d2af63b}{operator\ *}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00128}00128\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ y\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ *=\ x;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00135}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a48fb493c9a2c5990b0723c0a1ca34cfa}{00135}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a679d2f2546db4fc1359a8d190e6d5b97}{operator\ /}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00136}00136\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ y\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ /=\ x;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<is\_integer\_number<U>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00143}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a8b8196d1e5fd01123eee9975faa30fbd}{00143}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ab8c695aa4d45964dcdb51aab249c4b79}{operator\ \string^}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00144}00144\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_ae6e0657b5f795ed9aec61a79438a26d8}{vector\_unit\_2d}}(std::pow(\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}(),x),\mbox{\hyperlink{namespacescifir_ae7853fedb943915449a496bc373fc449}{power\_dimensions}}(\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}(),x),\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a30fe14e1861d1d49905e6bc07e941107}{theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00149}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_aea8def22d2fdd0f93e05d2e2cfa77c02}{00149}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a040180b3b18ed8778e00d08f28a091bd}{operator\ +=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit_a64eba8849b847bbca056fb0e8bd45c39}{scalar\_unit::value}}\ +=\ x;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00155}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_adcb875c10ef45aa8795f02fd03035593}{00155}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_aa729124b53b6f5850bcf5f8fe2c6e567}{operator\ -\/=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit_a64eba8849b847bbca056fb0e8bd45c39}{scalar\_unit::value}}\ -\/=\ x;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00161}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a59d046f3120a7e1db975fee1c8b2eae1}{00161}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a59d046f3120a7e1db975fee1c8b2eae1}{operator\ *=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit_a64eba8849b847bbca056fb0e8bd45c39}{scalar\_unit::value}}\ *=\ std::abs(x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a30fe14e1861d1d49905e6bc07e941107}{theta}}.\mbox{\hyperlink{classscifir_1_1angle_ace0d6e31f63c9c375ca18124a75b08bd}{invert}}();}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{template<typename\ U,\ typename\ =\ typename\ enable\_if<scifir::is\_number<U>::value}}>::type>}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00171}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a1d21a03998ad0ee9061d8331aff6f8c3}{00171}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a1d21a03998ad0ee9061d8331aff6f8c3}{operator\ /=}}(\mbox{\hyperlink{classscifir_1_1coordinates__1d}{U}}\ x)}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit_a64eba8849b847bbca056fb0e8bd45c39}{scalar\_unit::value}}\ /=\ std::abs(x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a30fe14e1861d1d49905e6bc07e941107}{theta}}.\mbox{\hyperlink{classscifir_1_1angle_ace0d6e31f63c9c375ca18124a75b08bd}{invert}}();}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00180}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a6c322e23ba49e7b7bf7478dc51c2d36e}{00180}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a6c322e23ba49e7b7bf7478dc51c2d36e}{x\_projection}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00181}00181\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab03d02ba63c30297b9739929659b38d5}{scalar\_unit}}(\mbox{\hyperlink{classscifir_1_1scalar__unit_a64eba8849b847bbca056fb0e8bd45c39}{scalar\_unit::value}}\ *\ \mbox{\hyperlink{namespacescifir_a36d6ffb762d9c276b4229a2bedf3bca9}{scifir::cos}}(\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a30fe14e1861d1d49905e6bc07e941107}{theta}}),\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}());}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00185}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_abf7fa4c19f437340a7c3a217fe624145}{00185}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_abf7fa4c19f437340a7c3a217fe624145}{y\_projection}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00186}00186\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1scalar__unit_ab03d02ba63c30297b9739929659b38d5}{scalar\_unit}}(\mbox{\hyperlink{classscifir_1_1scalar__unit_a64eba8849b847bbca056fb0e8bd45c39}{scalar\_unit::value}}\ *\ \mbox{\hyperlink{namespacescifir_ad3b92cdb628eeec991c326c1727fdd9e}{scifir::sin}}(\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a30fe14e1861d1d49905e6bc07e941107}{theta}}),\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}());}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00190}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_afa0620bca6cb5609f6cb1d29440ffbf1}{00190}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_afa0620bca6cb5609f6cb1d29440ffbf1}{invert}}()}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a30fe14e1861d1d49905e6bc07e941107}{theta}}.\mbox{\hyperlink{classscifir_1_1angle_ace0d6e31f63c9c375ca18124a75b08bd}{invert}}();}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00195}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_abb4b20585631cd1059a68898e872450e}{00195}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_abb4b20585631cd1059a68898e872450e}{vectorial\_display}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00196}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_aaa396df0414ce3deebb0997cb964ba04}{00196}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_aaa396df0414ce3deebb0997cb964ba04}{vectorial\_derived\_display}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00197}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a3d8adb9eabc0513690bb6c4ade13e0f9}{00197}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a3d8adb9eabc0513690bb6c4ade13e0f9}{vectorial\_custom\_display}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_dimensions}},\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ =\ 2)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00199}\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a30fe14e1861d1d49905e6bc07e941107}{00199}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a30fe14e1861d1d49905e6bc07e941107}{theta}};}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d_a0c4710dd288e49874da5ab054fe7f431}{initialize\_from\_string}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{init\_vector\_2d}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00203}00203\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00205}\mbox{\hyperlink{namespacescifir_a1c22395b3d9929cd1dada3955dc6d7b8}{00205}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{namespacescifir_a421182d5f93abcbbaeadc7c14112bdd5}{to\_string}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00206}00206\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{namespacescifir_accc56ab405831f217868c125f41d18d0}{norm}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00207}00207\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{namespacescifir_adeff4b825414d35ce963977f181f1b5c}{sqrt}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00208}00208\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\ \mbox{\hyperlink{namespacescifir_a0b02e4d82f1d2253f6901264ff11ca38}{sqrt\_nth}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x,\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00209}00209\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scalar\_unit}}\ \mbox{\hyperlink{namespacescifir_a732fc05956fd18f78cd0019c5c023b5c}{dot\_product}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00210}00210\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1angle}{angle}}\ \mbox{\hyperlink{namespacescifir_a0a708b03e7faa9893325df448046989c}{angle\_between}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00211}00211\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacescifir_a0c8de3e3dd65b45ba57dc8e8cf70c214}{same\_direction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00212}00212\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacescifir_ae4beaddada9427f8c7a53e3381c5b796}{parallel}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00213}00213\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacescifir_a3ea95ad2c4137768f1e541e77db8a97a}{orthogonal}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{vector\_unit\_2d}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00214}00214\ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00216}00216\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ \mbox{\hyperlink{vector__unit__2d_8hpp_a2ae8e8a9e1778d997d383a9cc351b2ec}{operator\ *}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1scalar__unit}{scifir::scalar\_unit}}\&\ x,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00218}00218\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00219}\mbox{\hyperlink{vector__unit__2d_8hpp_ac15df444cc7dce7064cc85e27da69da6}{00219}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ \mbox{\hyperlink{vector__unit__2d_8hpp_ac15df444cc7dce7064cc85e27da69da6}{operator\ +}}(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00220}00220\ \{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00221}00221\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ z\ =\ x;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00222}00222\ \ \ \ \ z\ +=\ y;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00224}00224\ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00226}00226\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00227}\mbox{\hyperlink{vector__unit__2d_8hpp_afa24cce357d0ca976449dc0cf3c7a1bb}{00227}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ \mbox{\hyperlink{vector__unit__2d_8hpp_afa24cce357d0ca976449dc0cf3c7a1bb}{operator\ -\/}}(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00228}00228\ \{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00229}00229\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}(y\ -\/\ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}(),x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}(),x.\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a30fe14e1861d1d49905e6bc07e941107}{theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00230}00230\ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00232}00232\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00233}\mbox{\hyperlink{vector__unit__2d_8hpp_aa7dcf05357d45ffb2e38325dbc352b71}{00233}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ \mbox{\hyperlink{vector__unit__2d_8hpp_a2ae8e8a9e1778d997d383a9cc351b2ec}{operator\ *}}(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00234}00234\ \{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00235}00235\ \ \ \ \ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ z\ =\ x;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00236}00236\ \ \ \ \ z\ *=\ y;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00237}00237\ \ \ \ \ \textcolor{keywordflow}{return}\ z;}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00238}00238\ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00240}00240\ template<typename\ T,\ typename\ =\ typename\ enable\_if<scifir::is\_number<T>::value>::type>}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00241}\mbox{\hyperlink{vector__unit__2d_8hpp_a429e86a1fc4a3e23e2389c4950253453}{00241}}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\ \mbox{\hyperlink{vector__unit__2d_8hpp_a429e86a1fc4a3e23e2389c4950253453}{operator\ /}}(\textcolor{keyword}{const}\ T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00242}00242\ \{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00243}00243\ \ \ \ \ vector<scifir::dimension>\ new\_dimensions\ =\ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_a39ed9ef8729a155b1a54ab848e8576c0}{get\_dimensions}}();}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00244}00244\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classscifir_1_1dimension}{scifir::dimension}}\&\ new\_dimension\ :\ new\_dimensions)}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00245}00245\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00246}00246\ \ \ \ \ \ \ \ \ new\_dimension.invert();}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00247}00247\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00248}00248\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}(y\ /\ x.\mbox{\hyperlink{classscifir_1_1scalar__unit_aeb2d34ea9de078b70babda80182e677a}{get\_value}}(),new\_dimensions,x.\mbox{\hyperlink{classscifir_1_1vector__unit__2d_a30fe14e1861d1d49905e6bc07e941107}{theta}});}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00249}00249\ \}}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00251}00251\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vector__unit__2d_8hpp_ab7074eadbf3f68f6dc5fffc915983935}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00253}00253\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vector__unit__2d_8hpp_ac528ed009d0c3e14833c32035cb01c03}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_vector\_2d);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00254}00254\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vector__unit__2d_8hpp_ab7074eadbf3f68f6dc5fffc915983935}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_vector\_2d);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00256}00256\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vector__unit__2d_8hpp_ac528ed009d0c3e14833c32035cb01c03}{operator\ ==}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_vector\_2d,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00257}00257\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vector__unit__2d_8hpp_ab7074eadbf3f68f6dc5fffc915983935}{operator\ !=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ init\_vector\_2d,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00259}00259\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vector__unit__2d_8hpp_aa9d7a5f47057cf5e212fdc56d9682e86}{operator\ +=}}(\textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00260}00260\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{vector__unit__2d_8hpp_ac15df444cc7dce7064cc85e27da69da6}{operator\ +}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ y);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00261}00261\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{vector__unit__2d_8hpp_ac15df444cc7dce7064cc85e27da69da6}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00263}00263\ ostream\&\ \mbox{\hyperlink{vector__unit__2d_8hpp_aca0d184f1ac3b4e92c6ca6fa8a66ca89}{operator\ <<}}(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00264}00264\ istream\&\ \mbox{\hyperlink{vector__unit__2d_8hpp_a7d02e223fcca3ec68666c3d62032914d}{operator\ >>}}(istream\&\ is,\ \mbox{\hyperlink{classscifir_1_1vector__unit__2d}{scifir::vector\_unit\_2d}}\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{vector__unit__2d_8hpp_source_l00266}00266\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCIFIR\_UNITS\_UNITS\_VECTOR\_UNIT\_2D\_HPP\_INCLUDED}}
 
 \end{DoxyCode}
