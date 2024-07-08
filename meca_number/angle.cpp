@@ -59,36 +59,36 @@ namespace scifir
 		else
 		{
 			cerr << "An angle cannot be initialized with dimensions" << endl;
-			value = 0;
+			value = 0.0f;
 		}
 	}
 
-	angle& angle::operator=(const angle& x)
+	angle& angle::operator =(const angle& x)
 	{
 		value = x.get_value();
 		return *this;
 	}
 
-	angle& angle::operator=(angle&& x)
+	angle& angle::operator =(angle&& x)
 	{
 		value = std::move(x.get_value());
 		return *this;
 	}
 
-	angle& angle::operator=(float new_value)
+	angle& angle::operator =(float new_value)
 	{
 		value = new_value;
 		normalize_value();
 		return *this;
 	}
 
-	angle& angle::operator=(const string& init_angle)
+	angle& angle::operator =(const string& init_angle)
 	{
 		initialize_from_string(init_angle);
 		return *this;
 	}
 
-	angle& angle::operator=(const scalar_unit& x)
+	angle& angle::operator =(const scalar_unit& x)
 	{
 		if (x.has_empty_dimensions())
 		{
@@ -185,7 +185,7 @@ namespace scifir
 
 	void angle::invert()
 	{
-		value += 180;
+		value += 180.0f;
 		normalize_value();
 	}
 

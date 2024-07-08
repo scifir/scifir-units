@@ -1,5 +1,5 @@
 /** \class scifir::angle
-* \brief Class that allows to work with angles.
+* \brief Class that allows to work with angles. Each angle sizes 4 bytes.
 
 * angle is a class that allows to work with angles, more in grades than in radians. The value of the angle is always stored inside the class in grades, and it can be get in radians with the to_radian() function.
 
@@ -148,10 +148,10 @@
 * \brief Value of the angle. It is stored in grades.
 
 * \fn void angle::normalize_value()
-* \brief Internal function. Normalizes the value, which means to maintain the same angle within 0 and 360. If the value is lower or greather it gets converted to their equivalent counterpart within this range.
+* \brief **Internal function**. Normalizes the value, which means to maintain the same angle within 0 and 360. If the value is lower or greather it gets converted to their equivalent counterpart within this range.
 
 * \fn void angle::initialize_from_string(string init_angle)
-* \brief Internal function. Sets the value of the angle to a new value using the initialization string of angles.
+* \brief **Internal function**. Sets the value of the angle to a new value using the initialization string of angles.
 
 * \fn string scifir::to_string(const angle &x)
 * \brief Converts an angle to their string representation.

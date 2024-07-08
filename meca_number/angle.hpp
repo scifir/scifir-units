@@ -37,11 +37,11 @@ namespace scifir
 			explicit angle(const string& init_angle);
 			explicit angle(const scalar_unit& x);
 
-			angle& operator=(const angle& x);
-			angle& operator=(angle&& x);
-			angle& operator=(float new_value);
-			angle& operator=(const string& init_angle);
-			angle& operator=(const scalar_unit& x);
+			angle& operator =(const angle& x);
+			angle& operator =(angle&& x);
+			angle& operator =(float new_value);
+			angle& operator =(const string& init_angle);
+			angle& operator =(const scalar_unit& x);
 
 			explicit operator float() const
 			{
