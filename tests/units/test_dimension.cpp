@@ -17,11 +17,11 @@ TEST_CASE("dimension class") {
 	SECTION("Base functionalities of dimension class") {
 		dimension a = dimension("m",dimension::NUMERATOR);
 		CHECK(a.dimension_type == dimension::METRE);
-		CHECK(a.dimension_sign == dimension::NUMERATOR);
+		CHECK(a.dimension_position == dimension::NUMERATOR);
 		CHECK(a.prefix.prefix_type == prefix::NONE);
 		CHECK(a.get_symbol() == "m");
 		dimension b = dimension("m",dimension::DENOMINATOR);
-		CHECK(b.dimension_sign == dimension::DENOMINATOR);
+		CHECK(b.dimension_position == dimension::DENOMINATOR);
 	}
 
 	SECTION("Constructors of dimension class")

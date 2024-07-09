@@ -38,9 +38,9 @@ namespace scifir
 			dimension();
 			dimension(const dimension& x);
 			dimension(dimension&& x);
-			explicit dimension(dimension::type new_dimension_type,scifir::prefix::type new_prefix,dimension::position new_sign);
-			explicit dimension(dimension::type new_dimension_type,const scifir::prefix& new_prefix,dimension::position new_sign);
-			explicit dimension(const string& init_dimension,dimension::position new_sign);
+			explicit dimension(dimension::type new_dimension_type,scifir::prefix::type new_prefix,dimension::position new_position);
+			explicit dimension(dimension::type new_dimension_type,const scifir::prefix& new_prefix,dimension::position new_position);
+			explicit dimension(const string& init_dimension,dimension::position new_position);
 
 			dimension& operator=(const dimension& x);
 			dimension& operator=(dimension&& x);
@@ -61,7 +61,7 @@ namespace scifir
 
 			scifir::prefix prefix;
 			dimension::type dimension_type;
-			dimension::position dimension_sign;
+			dimension::position dimension_position;
 			char symbol[3];
 
 			static void create_custom_dimension(const string& new_symbol,const string& init_dimensions)

@@ -407,12 +407,12 @@ namespace scifir
 			vector<dimension> new_dimensions = create_dimensions(init_dimensions);
 			for(const dimension& x_dimension : dimensions)
 			{
-				if (x_dimension.dimension_sign == dimension::NUMERATOR)
+				if (x_dimension.dimension_position == dimension::NUMERATOR)
 				{
 					new_value *= x_dimension.get_conversion_factor();
 					new_value *= x_dimension.prefix_math();
 				}
-				else if (x_dimension.dimension_sign == dimension::DENOMINATOR)
+				else if (x_dimension.dimension_position == dimension::DENOMINATOR)
 				{
 					new_value /= x_dimension.get_conversion_factor();
 					new_value /= x_dimension.prefix_math();
@@ -421,23 +421,23 @@ namespace scifir
 			vector<dimension> derived_dimensions = create_derived_dimensions(dimensions);
 			for(const dimension& x_dimension : derived_dimensions)
 			{
-				if (x_dimension.dimension_sign == dimension::NUMERATOR)
+				if (x_dimension.dimension_position == dimension::NUMERATOR)
 				{
 					new_value *= x_dimension.prefix_math();
 				}
-				else if (x_dimension.dimension_sign == dimension::DENOMINATOR)
+				else if (x_dimension.dimension_position == dimension::DENOMINATOR)
 				{
 					new_value /= x_dimension.prefix_math();
 				}
 			}
 			for(const dimension& x_new_dimension : new_dimensions)
 			{
-				if (x_new_dimension.dimension_sign == dimension::NUMERATOR)
+				if (x_new_dimension.dimension_position == dimension::NUMERATOR)
 				{
 					new_value /= x_new_dimension.get_conversion_factor();
 					new_value /= x_new_dimension.prefix_math();
 				}
-				else if (x_new_dimension.dimension_sign == dimension::DENOMINATOR)
+				else if (x_new_dimension.dimension_position == dimension::DENOMINATOR)
 				{
 					new_value *= x_new_dimension.get_conversion_factor();
 					new_value *= x_new_dimension.prefix_math();
@@ -473,12 +473,12 @@ namespace scifir
 
 	void scalar_unit::add_dimension(const dimension& new_dimension)
 	{
-		if (new_dimension.dimension_sign == dimension::NUMERATOR)
+		if (new_dimension.dimension_position == dimension::NUMERATOR)
 		{
 			value /= float(new_dimension.get_conversion_factor());
 			value /= float(new_dimension.prefix_math());
 		}
-		else if (new_dimension.dimension_sign == dimension::DENOMINATOR)
+		else if (new_dimension.dimension_position == dimension::DENOMINATOR)
 		{
 			value *= float(new_dimension.get_conversion_factor());
 			value *= float(new_dimension.prefix_math());
@@ -487,12 +487,12 @@ namespace scifir
 
 	void scalar_unit::remove_dimension(const dimension& old_dimension)
 	{
-		if (old_dimension.dimension_sign == dimension::NUMERATOR)
+		if (old_dimension.dimension_position == dimension::NUMERATOR)
 		{
 			value *= float(old_dimension.get_conversion_factor());
 			value *= float(old_dimension.prefix_math());
 		}
-		else if (old_dimension.dimension_sign == dimension::DENOMINATOR)
+		else if (old_dimension.dimension_position == dimension::DENOMINATOR)
 		{
 			value /= float(old_dimension.get_conversion_factor());
 			value /= float(old_dimension.prefix_math());

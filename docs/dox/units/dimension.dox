@@ -170,7 +170,7 @@
 * \brief Invented unit inside Scifir, it's not part of the SI system of units. It represents a unit of human or animal memory. Each memory of the brain has some size hypothetically measurable in memos.
 
 * \fn dimension::dimension()
-* \brief Default constructor. The dimension_type is NONE, the dimension_sign is NO_POSITION, and the prefix is NONE, the symbol is empty.
+* \brief Default constructor. The dimension_type is NONE, the dimension_position is NO_POSITION, and the prefix is NONE, the symbol is empty.
 
 * \fn dimension::dimension(const dimension& x)
 * \brief Copy constructor. The dimension is initialized to be a copy of the dimension x.
@@ -238,7 +238,7 @@
 * \var dimension::type dimension::dimension_type
 * \brief The type of the dimension.
 
-* \var dimension::position dimension::dimension_sign
+* \var dimension::position dimension::dimension_position
 * \brief The position of the dimension, which can be the NUMERATOR, the DENOMINATOR or NO_POSITION. NO_POSITION means that the dimension is not ready to be used, and must be changed if the dimension is intended to be used.
 
 * \var char dimension::symbol[3]

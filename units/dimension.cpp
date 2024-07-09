@@ -20,38 +20,38 @@ namespace scifir
 	int dimension::total_full_symbols = 0;
 	set<string> dimension::prefixes_options {"Y", "Z", "E", "P", "T", "G", "M", "k", "h", "d", "c", "m", "\u00B5", "u", "n", "p", "f", "a", "z", "y"};
 
-	dimension::dimension() : prefix(),dimension_type(dimension::NONE),dimension_sign(dimension::NO_POSITION),symbol()
+	dimension::dimension() : prefix(),dimension_type(dimension::NONE),dimension_position(dimension::NO_POSITION),symbol()
 	{}
 
 #ifdef IS_UNIX
-	dimension::dimension(const dimension& x) : prefix(x.prefix),dimension_type(x.dimension_type),dimension_sign(x.dimension_sign)
+	dimension::dimension(const dimension& x) : prefix(x.prefix),dimension_type(x.dimension_type),dimension_position(x.dimension_position)
 	{
 		std::strncpy(symbol, x.symbol, 3);
 	}
 
-	dimension::dimension(dimension&& x) : prefix(std::move(x.prefix)),dimension_type(std::move(x.dimension_type)),dimension_sign(std::move(x.dimension_sign))
+	dimension::dimension(dimension&& x) : prefix(std::move(x.prefix)),dimension_type(std::move(x.dimension_type)),dimension_position(std::move(x.dimension_position))
 	{
 		std::strncpy(symbol, std::move(x.symbol), 3);
 	}
 #elif IS_WINDOWS
-	dimension::dimension(const dimension& x) : prefix(x.prefix),dimension_type(x.dimension_type),dimension_sign(x.dimension_sign)
+	dimension::dimension(const dimension& x) : prefix(x.prefix),dimension_type(x.dimension_type),dimension_position(x.dimension_position)
 	{
 		strncpy_s(symbol, x.symbol, 3);
 	}
 
-	dimension::dimension(dimension&& x) : prefix(std::move(x.prefix)),dimension_type(std::move(x.dimension_type)),dimension_sign(std::move(x.dimension_sign))
+	dimension::dimension(dimension&& x) : prefix(std::move(x.prefix)),dimension_type(std::move(x.dimension_type)),dimension_position(std::move(x.dimension_position))
 	{
 		strncpy_s(symbol, std::move(x.symbol), 3);
 	}
 #endif
 
-	dimension::dimension(dimension::type new_dimension_type,scifir::prefix::type new_prefix,dimension::position new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
+	dimension::dimension(dimension::type new_dimension_type,scifir::prefix::type new_prefix,dimension::position new_position) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_position(new_position),symbol()
 	{}
 
-	dimension::dimension(dimension::type new_dimension_type,const scifir::prefix& new_prefix,dimension::position new_sign) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_sign(new_sign),symbol()
+	dimension::dimension(dimension::type new_dimension_type,const scifir::prefix& new_prefix,dimension::position new_position) : prefix(new_prefix),dimension_type(new_dimension_type),dimension_position(new_position),symbol()
 	{}
 
-	dimension::dimension(const string& init_dimension,dimension::position new_sign) : prefix(),dimension_type(dimension::NONE),dimension_sign(new_sign),symbol()
+	dimension::dimension(const string& init_dimension,dimension::position new_position) : prefix(),dimension_type(dimension::NONE),dimension_position(new_position),symbol()
 	{
 		string dimension_name;
 		string prefix_name;
@@ -285,7 +285,7 @@ namespace scifir
 	{
 		prefix = x.prefix;
 		dimension_type = x.dimension_type;
-		dimension_sign = x.dimension_sign;
+		dimension_position = x.dimension_position;
 		std::strncpy(symbol,x.symbol,3);
 		return *this;
 	}
@@ -294,7 +294,7 @@ namespace scifir
 	{
 		prefix = std::move(x.prefix);
 		dimension_type = std::move(x.dimension_type);
-		dimension_sign = std::move(x.dimension_sign);
+		dimension_position = std::move(x.dimension_position);
 		std::strncpy(symbol,std::move(x.symbol),3);
 		return *this;
 	}
@@ -303,7 +303,7 @@ namespace scifir
 	{
 		prefix = x.prefix;
 		dimension_type = x.dimension_type;
-		dimension_sign = x.dimension_sign;
+		dimension_position = x.dimension_position;
 		strncpy_s(symbol,x.symbol,3);
 		return *this;
 	}
@@ -312,7 +312,7 @@ namespace scifir
 	{
 		prefix = std::move(x.prefix);
 		dimension_type = std::move(x.dimension_type);
-		dimension_sign = std::move(x.dimension_sign);
+		dimension_position = std::move(x.dimension_position);
 		strncpy_s(symbol,std::move(x.symbol),3);
 		return *this;
 	}
@@ -1141,13 +1141,13 @@ namespace scifir
 
 	void dimension::invert()
 	{
-		if (dimension_sign == dimension::NUMERATOR)
+		if (dimension_position == dimension::NUMERATOR)
 		{
-			dimension_sign = dimension::DENOMINATOR;
+			dimension_position = dimension::DENOMINATOR;
 		}
 		else
 		{
-			dimension_sign = dimension::NUMERATOR;
+			dimension_position = dimension::NUMERATOR;
 		}
 	}
 
@@ -1172,7 +1172,7 @@ namespace scifir
 			bool first_print = true;
 			for (const dimension& x_dimension : x_dimensions)
 			{
-				if (x_dimension.dimension_sign == dimension::NUMERATOR)
+				if (x_dimension.dimension_position == dimension::NUMERATOR)
 				{
 					bool printed = false;
 					for (const dimension::type& print_dimension : printed_dimensions)
@@ -1215,7 +1215,7 @@ namespace scifir
 			bool first_negative_prefix = true;
 			for (const dimension& x_dimension : x_dimensions)
 			{
-				if (x_dimension.dimension_sign == dimension::DENOMINATOR)
+				if (x_dimension.dimension_position == dimension::DENOMINATOR)
 				{
 					if (first_negative_iteration == true)
 					{
@@ -1338,7 +1338,7 @@ namespace scifir
 			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
 			{
-				if (x[i].dimension_sign == dimension::DENOMINATOR)
+				if (x[i].dimension_position == dimension::DENOMINATOR)
 				{
 					x_subdimension.invert();
 				}
@@ -1353,12 +1353,12 @@ namespace scifir
 		vector<dimension> new_x = vector<dimension>();
 		for(unsigned int i = 0; i < x.size(); i++)
 		{
-			if (x[i].dimension_sign == dimension::NUMERATOR)
+			if (x[i].dimension_position == dimension::NUMERATOR)
 			{
 				value *= x[i].get_conversion_factor();
 				value *= x[i].prefix_math();
 			}
-			else if (x[i].dimension_sign == dimension::DENOMINATOR)
+			else if (x[i].dimension_position == dimension::DENOMINATOR)
 			{
 				value /= x[i].get_conversion_factor();
 				value /= x[i].prefix_math();
@@ -1366,7 +1366,7 @@ namespace scifir
 			vector<dimension> x_subdimensions = x[i].get_basic_dimensions();
 			for (dimension& x_subdimension : x_subdimensions)
 			{
-				if (x[i].dimension_sign == dimension::DENOMINATOR)
+				if (x[i].dimension_position == dimension::DENOMINATOR)
 				{
 					x_subdimension.invert();
 				}
@@ -1424,12 +1424,12 @@ namespace scifir
 		{
 			for (int i = 0; i < dimensions_count[x[0].dimension_type]; i++)
 			{
-				if (x[i].dimension_sign == dimension::NUMERATOR)
+				if (x[i].dimension_position == dimension::NUMERATOR)
 				{
 					value *= x[i].get_conversion_factor();
 					value *= x[i].prefix_math();
 				}
-				else if (x[i].dimension_sign == dimension::DENOMINATOR)
+				else if (x[i].dimension_position == dimension::DENOMINATOR)
 				{
 					value /= x[i].get_conversion_factor();
 					value /= x[i].prefix_math();
@@ -1513,7 +1513,7 @@ namespace scifir
 						continue;
 					}
 				}
-				if (new_x[i].dimension_type == new_x[j].dimension_type and new_x[i].dimension_sign != new_x[j].dimension_sign)
+				if (new_x[i].dimension_type == new_x[j].dimension_type and new_x[i].dimension_position != new_x[j].dimension_position)
 				{
 					skip_dimensions.push_back(i);
 					skip_dimensions.push_back(j);
@@ -1563,24 +1563,24 @@ namespace scifir
 						continue;
 					}
 				}
-				if (new_x[i].dimension_type == new_x[j].dimension_type and new_x[i].dimension_sign != new_x[j].dimension_sign)
+				if (new_x[i].dimension_type == new_x[j].dimension_type and new_x[i].dimension_position != new_x[j].dimension_position)
 				{
-					if (new_x[i].dimension_sign == dimension::NUMERATOR)
+					if (new_x[i].dimension_position == dimension::NUMERATOR)
 					{
 						value *= float(new_x[i].get_conversion_factor());
 						value *= float(new_x[i].prefix_math());
 					}
-					else if (new_x[i].dimension_sign == dimension::DENOMINATOR)
+					else if (new_x[i].dimension_position == dimension::DENOMINATOR)
 					{
 						value /= float(new_x[i].get_conversion_factor());
 						value /= float(new_x[i].prefix_math());
 					}
-					if (new_x[j].dimension_sign == dimension::NUMERATOR)
+					if (new_x[j].dimension_position == dimension::NUMERATOR)
 					{
 						value *= float(new_x[j].get_conversion_factor());
 						value *= float(new_x[j].prefix_math());
 					}
-					else if (new_x[j].dimension_sign == dimension::DENOMINATOR)
+					else if (new_x[j].dimension_position == dimension::DENOMINATOR)
 					{
 						value /= float(new_x[j].get_conversion_factor());
 						value /= float(new_x[j].prefix_math());
@@ -1728,7 +1728,7 @@ namespace scifir
 
 bool operator==(const scifir::dimension& x,const scifir::dimension& y)
 {
-	if (x.dimension_type == y.dimension_type and x.dimension_sign == y.dimension_sign)
+	if (x.dimension_type == y.dimension_type and x.dimension_position == y.dimension_position)
 	{
 		return true;
 	}
