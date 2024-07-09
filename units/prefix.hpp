@@ -13,7 +13,7 @@ namespace scifir
 	class prefix
 	{
 		public:
-			enum type : int8_t {no_prefix,Y,Z,E,P,T,G,M,k,h,da,d,c,m,u,n,p,f,a,z,y};
+			enum type : int8_t {NONE,YOTTA,ZETTA,EXA,PETA,TERA,GIGA,MEGA,KILO,HECTO,DECA,DECI,CENTI,MILLI,MICRO,NANO,PICO,FEMTO,ATTO,ZEPTO,YOCTO};
 
 			prefix();
 			prefix(const prefix& x);

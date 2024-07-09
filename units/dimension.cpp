@@ -73,191 +73,191 @@ namespace scifir
 		prefix = scifir::prefix(prefix_name);
 		if(dimension_name == "m")
 		{
-			dimension_type = dimension::m;
+			dimension_type = dimension::METRE;
 		}
 		else if(dimension_name == "grade")
 		{
-			dimension_type = dimension::grade;
+			dimension_type = dimension::GRADE;
 		}
 		else if(dimension_name == "rad")
 		{
-			dimension_type = dimension::radian;
+			dimension_type = dimension::RADIAN;
 		}
 		else if(dimension_name == "sr")
 		{
-			dimension_type = dimension::steradian;
+			dimension_type = dimension::STERADIAN;
 		}
 		else if(dimension_name == "s")
 		{
-			dimension_type = dimension::s;
+			dimension_type = dimension::SECOND;
 		}
 		else if(dimension_name == "g")
 		{
-			dimension_type = dimension::g;
+			dimension_type = dimension::GRAM;
 		}
 		else if(dimension_name == "C")
 		{
-			dimension_type = dimension::C;
+			dimension_type = dimension::COULOMB;
 		}
 		else if(dimension_name == "K")
 		{
-			dimension_type = dimension::K;
+			dimension_type = dimension::KELVIN;
 		}
 		else if(dimension_name == "mol")
 		{
-			dimension_type = dimension::mol;
+			dimension_type = dimension::MOLE;
 		}
 		else if(dimension_name == "cd")
 		{
-			dimension_type = dimension::cd;
+			dimension_type = dimension::CANDELA;
 		}
 		else if(dimension_name == "B")
 		{
-			dimension_type = dimension::B;
+			dimension_type = dimension::BYTE;
 		}
 		else if(dimension_name == "Hz")
 		{
-			dimension_type = dimension::Hz;
+			dimension_type = dimension::HERTZ;
 		}
 		else if(dimension_name == "N")
 		{
-			dimension_type = dimension::N;
+			dimension_type = dimension::NEWTON;
 		}
 		else if(dimension_name == "Pa")
 		{
-			dimension_type = dimension::Pa;
+			dimension_type = dimension::PASCAL;
 		}
 		else if(dimension_name == "J")
 		{
-			dimension_type = dimension::J;
+			dimension_type = dimension::JOULE;
 		}
 		else if(dimension_name == "W")
 		{
-			dimension_type = dimension::W;
+			dimension_type = dimension::WATT;
 		}
 		else if(dimension_name == "A")
 		{
-			dimension_type = dimension::A;
+			dimension_type = dimension::AMPERE;
 		}
 		else if(dimension_name == "V")
 		{
-			dimension_type = dimension::V;
+			dimension_type = dimension::VOLT;
 		}
 		else if(dimension_name == "F")
 		{
-			dimension_type = dimension::F;
+			dimension_type = dimension::FARADAY;
 		}
 		else if(dimension_name == "ohm" or dimension_name == "Ohm"/* or dimension_name == U"\U000003A9"*/)
 		{
-			dimension_type = dimension::Ohm;
+			dimension_type = dimension::OHM;
 		}
 		else if(dimension_name == "S")
 		{
-			dimension_type = dimension::S;
+			dimension_type = dimension::SIEMENS;
 		}
 		else if(dimension_name == "Wb")
 		{
-			dimension_type = dimension::Wb;
+			dimension_type = dimension::WEBER;
 		}
 		else if(dimension_name == "T")
 		{
-			dimension_type = dimension::T;
+			dimension_type = dimension::TESLA;
 		}
 		else if(dimension_name == "H")
 		{
-			dimension_type = dimension::H;
+			dimension_type = dimension::HENRY;
 		}
 		else if(dimension_name == "lm")
 		{
-			dimension_type = dimension::lm;
+			dimension_type = dimension::LUMEN;
 		}
 		else if(dimension_name == "lx")
 		{
-			dimension_type = dimension::lx;
+			dimension_type = dimension::LUX;
 		}
 		else if(dimension_name == "Bq")
 		{
-			dimension_type = dimension::Bq;
+			dimension_type = dimension::BECQUEREL;
 		}
 		else if(dimension_name == "Gy")
 		{
-			dimension_type = dimension::Gy;
+			dimension_type = dimension::GRAY;
 		}
 		else if(dimension_name == "Sv")
 		{
-			dimension_type = dimension::Sv;
+			dimension_type = dimension::SIEVERT;
 		}
 		else if(dimension_name == "kat")
 		{
-			dimension_type = dimension::kat;
+			dimension_type = dimension::KATAL;
 		}
 		else if(dimension_name == "angstrom" or u32string(dimension_name.begin(),dimension_name.end()) == U"\U0000212B")
 		{
-			dimension_type = dimension::angstrom;
+			dimension_type = dimension::ANGSTROM;
 		}
 		else if(dimension_name == "L")
 		{
-			dimension_type = dimension::L;
+			dimension_type = dimension::LITRE;
 		}
 		else if(dimension_name == "min")
 		{
-			dimension_type = dimension::minute;
+			dimension_type = dimension::MINUTE;
 		}
 		else if(dimension_name == "h")
 		{
-			dimension_type = dimension::h;
+			dimension_type = dimension::HOUR;
 		}
 		else if(dimension_name == "d")
 		{
-			dimension_type = dimension::d;
+			dimension_type = dimension::DAY;
 		}
 		else if(dimension_name == "ly")
 		{
-			dimension_type = dimension::ly;
+			dimension_type = dimension::LIGHT_YEAR;
 		}
 		else if(dimension_name == "AU")
 		{
-			dimension_type = dimension::AU;
+			dimension_type = dimension::ASTRONOMICAL_UNIT;
 		}
 		else if(dimension_name == "pc")
 		{
-			dimension_type = dimension::pc;
+			dimension_type = dimension::PARSEC;
 		}
 		else if(dimension_name == "eV")
 		{
-			dimension_type = dimension::eV;
+			dimension_type = dimension::ELECTRON_VOLT;
 		}
 		else if(dimension_name == "Da")
 		{
-			dimension_type = dimension::Da;
+			dimension_type = dimension::DALTON;
 		}
 		else if(dimension_name == "amu")
 		{
-			dimension_type = dimension::amu;
+			dimension_type = dimension::ATOMIC_MASS_UNIT;
 		}
 		else if(dimension_name == "barn")
 		{
-			dimension_type = dimension::barn;
+			dimension_type = dimension::BARN;
 		}
 		else if(dimension_name == "M")
 		{
-			dimension_type = dimension::M;
+			dimension_type = dimension::MOLARITY;
 		}
 		else if(dimension_name == "particles")
 		{
-			dimension_type = dimension::particles;
+			dimension_type = dimension::PARTICLES;
 		}
 		else if(dimension_name == "money")
 		{
-			dimension_type = dimension::money;
+			dimension_type = dimension::MONEY;
 		}
 		else if(dimension_name == "px")
 		{
-			dimension_type = dimension::pixel;
+			dimension_type = dimension::PIXEL;
 		}
 		else if(dimension_name == "memo")
 		{
-			dimension_type = dimension::memo;
+			dimension_type = dimension::MEMO;
 		}
 		else if(dimension_name == "")
 		{
@@ -265,17 +265,17 @@ namespace scifir
 		}
 		else
 		{
-			prefix = scifir::prefix(prefix::no_prefix);
+			prefix = scifir::prefix(prefix::NONE);
 			if (init_dimension.size() > 3)
 			{
 				string symbol_abreviation = dimension::create_full_symbol(init_dimension);
 				symbol_abreviation.copy(symbol, init_dimension.length());
-				dimension_type = dimension::custom_full_symbol;
+				dimension_type = dimension::CUSTOM_FULL_SYMBOL;
 			}
 			else
 			{
 				init_dimension.copy(symbol, init_dimension.length());
-				dimension_type = dimension::custom;
+				dimension_type = dimension::CUSTOM;
 			}
 		}
 	}
@@ -324,105 +324,105 @@ namespace scifir
 		{
 			case dimension::NONE:
 				return "empty";
-			case dimension::m:
-				return "meter";
-			case dimension::grade:
+			case dimension::METRE:
+				return "metre";
+			case dimension::GRADE:
 				return "grade";
-			case dimension::radian:
+			case dimension::RADIAN:
 				return "radian";
-			case dimension::steradian:
+			case dimension::STERADIAN:
 				return "steradian";
-			case dimension::s:
+			case dimension::SECOND:
 				return "second";
-			case dimension::g:
+			case dimension::GRAM:
 				return "gram";
-			case dimension::C:
+			case dimension::COULOMB:
 				return "coulomb";
-			case dimension::K:
+			case dimension::KELVIN:
 				return "kelvin";
-			case dimension::mol:
+			case dimension::MOLE:
 				return "mole";
-			case dimension::cd:
+			case dimension::CANDELA:
 				return "candela";
-			case dimension::B:
+			case dimension::BYTE:
 				return "byte";
-			case dimension::Hz:
+			case dimension::HERTZ:
 				return "hertz";
-			case dimension::N:
+			case dimension::NEWTON:
 				return "newton";
-			case dimension::Pa:
+			case dimension::PASCAL:
 				return "pascal";
-			case dimension::J:
+			case dimension::JOULE:
 				return "joule";
-			case dimension::W:
+			case dimension::WATT:
 				return "watt";
-			case dimension::A:
+			case dimension::AMPERE:
 				return "ampere";
-			case dimension::V:
+			case dimension::VOLT:
 				return "volt";
-			case dimension::F:
+			case dimension::FARADAY:
 				return "faraday";
-			case dimension::Ohm:
+			case dimension::OHM:
 				return "ohm";
-			case dimension::S:
+			case dimension::SIEMENS:
 				return "siemens";
-			case dimension::Wb:
+			case dimension::WEBER:
 				return "weber";
-			case dimension::T:
+			case dimension::TESLA:
 				return "tesla";
-			case dimension::H:
+			case dimension::HENRY:
 				return "henry";
-			case dimension::lm:
+			case dimension::LUMEN:
 				return "lumen";
-			case dimension::lx:
+			case dimension::LUX:
 				return "lux";
-			case dimension::Bq:
+			case dimension::BECQUEREL:
 				return "becquerel";
-			case dimension::Gy:
+			case dimension::GRAY:
 				return "gray";
-			case dimension::Sv:
+			case dimension::SIEVERT:
 				return "sievert";
-			case dimension::kat:
+			case dimension::KATAL:
 				return "katal";
-			case dimension::angstrom:
+			case dimension::ANGSTROM:
 				return "angstrom";
-			case dimension::L:
-				return "liter";
-			case dimension::minute:
+			case dimension::LITRE:
+				return "litre";
+			case dimension::MINUTE:
 				return "minute";
-			case dimension::h:
+			case dimension::HOUR:
 				return "hour";
-			case dimension::d:
+			case dimension::DAY:
 				return "day";
-			case dimension::ly:
+			case dimension::LIGHT_YEAR:
 				return "light year";
-			case dimension::AU:
+			case dimension::ASTRONOMICAL_UNIT:
 				return "astronomical unit";
-			case dimension::pc:
+			case dimension::PARSEC:
 				return "parsec";
-			case dimension::eV:
+			case dimension::ELECTRON_VOLT:
 				return "electronvolt";
-			case dimension::Da:
+			case dimension::DALTON:
 				return "dalton";
-			case dimension::amu:
+			case dimension::ATOMIC_MASS_UNIT:
 				return "atomic mass unit";
-			case dimension::barn:
+			case dimension::BARN:
 				return "barn";
-			case dimension::M:
+			case dimension::MOLARITY:
 				return "molarity";
-			case dimension::particles:
+			case dimension::PARTICLES:
 				return "particles";
-			case dimension::custom:
+			case dimension::CUSTOM:
 				return "custom-dimension";
-			case dimension::custom_basic:
+			case dimension::CUSTOM_BASIC:
 				return "custom-basic";
-			case dimension::custom_full_symbol:
+			case dimension::CUSTOM_FULL_SYMBOL:
 				return "custom-full-symbol";
-			case dimension::money:
+			case dimension::MONEY:
 				return "money";
-			case dimension::pixel:
+			case dimension::PIXEL:
 				return "pixel";
-			case dimension::memo:
+			case dimension::MEMO:
 				return "memo";
 		}
 		return "";
@@ -434,120 +434,120 @@ namespace scifir
 		{
 			case dimension::NONE:
 				return "empty";
-			case dimension::m:
+			case dimension::METRE:
 				return "m";
 #ifdef IS_UNIX
-			case dimension::grade:
+			case dimension::GRADE:
 				return "\U000003B8";
 #elif IS_WINDOWS
-			case dimension::grade:
+			case dimension::GRADE:
 				return "\U03B8";
 #endif
-			case dimension::radian:
+			case dimension::RADIAN:
 				return "rad";
-			case dimension::steradian:
+			case dimension::STERADIAN:
 				return "sr";
-			case dimension::s:
+			case dimension::SECOND:
 				return "s";
-			case dimension::g:
+			case dimension::GRAM:
 				return "g";
-			case dimension::C:
+			case dimension::COULOMB:
 				return "C";
-			case dimension::K:
+			case dimension::KELVIN:
 				return "K";
-			case dimension::mol:
+			case dimension::MOLE:
 				return "mol";
-			case dimension::cd:
+			case dimension::CANDELA:
 				return "cd";
-			case dimension::B:
+			case dimension::BYTE:
 				return "B";
-			case dimension::Hz:
+			case dimension::HERTZ:
 				return "Hz";
-			case dimension::N:
+			case dimension::NEWTON:
 				return "N";
-			case dimension::Pa:
+			case dimension::PASCAL:
 				return "Pa";
-			case dimension::J:
+			case dimension::JOULE:
 				return "J";
-			case dimension::W:
+			case dimension::WATT:
 				return "W";
-			case dimension::A:
+			case dimension::AMPERE:
 				return "A";
-			case dimension::V:
+			case dimension::VOLT:
 				return "V";
-			case dimension::F:
+			case dimension::FARADAY:
 				return "F";
 #ifdef IS_UNIX
-			case dimension::Ohm:
+			case dimension::OHM:
 				return "\U000003A9";
 #elif IS_WINDOWS
-			case dimension::Ohm:
+			case dimension::OHM:
 				return "\U03A9";
 #endif
-			case dimension::S:
+			case dimension::SIEMENS:
 				return "S";
-			case dimension::Wb:
+			case dimension::WEBER:
 				return "Wb";
-			case dimension::T:
+			case dimension::TESLA:
 				return "T";
-			case dimension::H:
+			case dimension::HENRY:
 				return "H";
-			case dimension::lm:
+			case dimension::LUMEN:
 				return "lm";
-			case dimension::lx:
+			case dimension::LUX:
 				return "lx";
-			case dimension::Bq:
+			case dimension::BECQUEREL:
 				return "Bq";
-			case dimension::Gy:
+			case dimension::GRAY:
 				return "Gy";
-			case dimension::Sv:
+			case dimension::SIEVERT:
 				return "Sv";
-			case dimension::kat:
+			case dimension::KATAL:
 				return "kat";
 #ifdef IS_UNIX
-			case dimension::angstrom:
+			case dimension::ANGSTROM:
 				return "\U0000212B";
 #elif IS_WINDOWS
-			case dimension::angstrom:
+			case dimension::ANGSTROM:
 				return "\U212B";
 #endif
-			case dimension::L:
+			case dimension::LITRE:
 				return "L";
-			case dimension::minute:
+			case dimension::MINUTE:
 				return "min";
-			case dimension::h:
+			case dimension::HOUR:
 				return "h";
-			case dimension::d:
+			case dimension::DAY:
 				return "d";
-			case dimension::ly:
+			case dimension::LIGHT_YEAR:
 				return "ly";
-			case dimension::AU:
+			case dimension::ASTRONOMICAL_UNIT:
 				return "AU";
-			case dimension::pc:
+			case dimension::PARSEC:
 				return "pc";
-			case dimension::eV:
+			case dimension::ELECTRON_VOLT:
 				return "eV";
-			case dimension::Da:
+			case dimension::DALTON:
 				return "Da";
-			case dimension::amu:
+			case dimension::ATOMIC_MASS_UNIT:
 				return "amu";
-			case dimension::barn:
+			case dimension::BARN:
 				return "barn";
-			case dimension::M:
+			case dimension::MOLARITY:
 				return "M";
-			case dimension::particles:
+			case dimension::PARTICLES:
 				return "particles";
-			case dimension::custom:
+			case dimension::CUSTOM:
 				return string("").assign(symbol, symbol + 3);
-			case dimension::custom_basic:
+			case dimension::CUSTOM_BASIC:
 				return "custom-basic";
-			case dimension::custom_full_symbol:
+			case dimension::CUSTOM_FULL_SYMBOL:
 				return dimension::get_full_symbol(symbol);
-			case dimension::money:
+			case dimension::MONEY:
 				return "money";
-			case dimension::pixel:
+			case dimension::PIXEL:
 				return "px";
-			case dimension::memo:
+			case dimension::MEMO:
 				return "memo";
 		}
 		return "";
@@ -559,105 +559,105 @@ namespace scifir
 		{
 			case dimension::NONE:
 				return 1.0l;
-			case dimension::m:
+			case dimension::METRE:
 				return 1.0l;
-			case dimension::grade:
+			case dimension::GRADE:
 				return PI / 180.0l;
-			case dimension::radian:
+			case dimension::RADIAN:
 				return 1.0l;
-			case dimension::steradian:
+			case dimension::STERADIAN:
 				return 1.0l;
-			case dimension::g:
+			case dimension::GRAM:
 				return 1.0l;
-			case dimension::s:
+			case dimension::SECOND:
 				return 1.0l;
-			case dimension::C:
+			case dimension::COULOMB:
 				return 1.0l;
-			case dimension::K:
+			case dimension::KELVIN:
 				return 1.0l;
-			case dimension::mol:
+			case dimension::MOLE:
 				return 1.0l;
-			case dimension::cd:
+			case dimension::CANDELA:
 				return 1.0l;
-			case dimension::B:
+			case dimension::BYTE:
 				return 1.0l;
-			case dimension::Hz:
+			case dimension::HERTZ:
 				return 1.0l;
-			case dimension::N:
+			case dimension::NEWTON:
 				return 1.0l;
-			case dimension::Pa:
+			case dimension::PASCAL:
 				return 1.0l;
-			case dimension::J:
+			case dimension::JOULE:
 				return 1.0l;
-			case dimension::W:
+			case dimension::WATT:
 				return 1.0l;
-			case dimension::A:
+			case dimension::AMPERE:
 				return 1.0l;
-			case dimension::V:
+			case dimension::VOLT:
 				return 1.0l;
-			case dimension::F:
+			case dimension::FARADAY:
 				return 1;
-			case dimension::Ohm:
+			case dimension::OHM:
 				return 1.0l;
-			case dimension::S:
+			case dimension::SIEMENS:
 				return 1.0l;
-			case dimension::Wb:
+			case dimension::WEBER:
 				return 1.0l;
-			case dimension::T:
+			case dimension::TESLA:
 				return 1.0l;
-			case dimension::H:
+			case dimension::HENRY:
 				return 1.0l;
-			case dimension::lm:
+			case dimension::LUMEN:
 				return 1.0l;
-			case dimension::lx:
+			case dimension::LUX:
 				return 1.0l;
-			case dimension::Bq:
+			case dimension::BECQUEREL:
 				return 1.0l;
-			case dimension::Gy:
+			case dimension::GRAY:
 				return 1.0l;
-			case dimension::Sv:
+			case dimension::SIEVERT:
 				return 1.0l;
-			case dimension::kat:
+			case dimension::KATAL:
 				return 1.0l;
-			case dimension::angstrom:
+			case dimension::ANGSTROM:
 				return 1.0l;
-			case dimension::L:
+			case dimension::LITRE:
 				return 1.0l;
-			case dimension::minute:
+			case dimension::MINUTE:
 				return 60l;
-			case dimension::h:
+			case dimension::HOUR:
 				return 3600l;
-			case dimension::d:
+			case dimension::DAY:
 				return 86400l;
-			case dimension::ly:
+			case dimension::LIGHT_YEAR:
 				return 9.4607379375591e15;
-			case dimension::AU:
+			case dimension::ASTRONOMICAL_UNIT:
 				return 149597870700.0l;
-			case dimension::pc:
+			case dimension::PARSEC:
 				return 30856775814913673.0l;
-			case dimension::eV:
+			case dimension::ELECTRON_VOLT:
 				return 0.0000000000000000001602176634l;
-			case dimension::Da:
+			case dimension::DALTON:
 				return 0.00000000000000000000000000166053886l;
-			case dimension::amu:
+			case dimension::ATOMIC_MASS_UNIT:
 				return 0.00000000000000000000000000166053886l;
-			case dimension::barn:
+			case dimension::BARN:
 				return 0.0000000000000000000000000001l;
-			case dimension::M:
+			case dimension::MOLARITY:
 				return 1.0l;
-			case dimension::particles:
+			case dimension::PARTICLES:
 				return 1.0l/AVOGADRO_CONSTANT;
-			case dimension::custom:
+			case dimension::CUSTOM:
 				return 1.0l;
-			case dimension::custom_basic:
+			case dimension::CUSTOM_BASIC:
 				return 1.0l;
-			case dimension::custom_full_symbol:
+			case dimension::CUSTOM_FULL_SYMBOL:
 				return 1.0l;
-			case dimension::money:
+			case dimension::MONEY:
 				return 1.0l;
-			case dimension::pixel:
+			case dimension::PIXEL:
 				return 0.00026l;
-			case dimension::memo:
+			case dimension::MEMO:
 				return 1.0l;
 		}
 		return 1.0l;
@@ -670,7 +670,7 @@ namespace scifir
 
 	long double dimension::prefix_math(const scifir::prefix& x_prefix) const
 	{
-		if (dimension_type == dimension::B)
+		if (dimension_type == dimension::BYTE)
 		{
 			return std::pow(1024, x_prefix.get_conversion_factor() / 3);
 		}
@@ -686,105 +686,105 @@ namespace scifir
 		{
 			case dimension::NONE:
 				return true;
-			case dimension::m:
+			case dimension::METRE:
 				return true;
-			case dimension::grade:
+			case dimension::GRADE:
 				return true;
-			case dimension::radian:
+			case dimension::RADIAN:
 				return true;
-			case dimension::steradian:
+			case dimension::STERADIAN:
 				return true;
-			case dimension::g:
+			case dimension::GRAM:
 				return true;
-			case dimension::s:
+			case dimension::SECOND:
 				return true;
-			case dimension::C:
+			case dimension::COULOMB:
 				return true;
-			case dimension::K:
+			case dimension::KELVIN:
 				return true;
-			case dimension::mol:
+			case dimension::MOLE:
 				return true;
-			case dimension::cd:
+			case dimension::CANDELA:
 				return true;
-			case dimension::B:
+			case dimension::BYTE:
 				return true;
-			case dimension::Hz:
+			case dimension::HERTZ:
 				return true;
-			case dimension::N:
+			case dimension::NEWTON:
 				return false;
-			case dimension::Pa:
+			case dimension::PASCAL:
 				return false;
-			case dimension::J:
+			case dimension::JOULE:
 				return false;
-			case dimension::W:
+			case dimension::WATT:
 				return false;
-			case dimension::A:
+			case dimension::AMPERE:
 				return true;
-			case dimension::V:
+			case dimension::VOLT:
 				return false;
-			case dimension::F:
+			case dimension::FARADAY:
 				return false;
-			case dimension::Ohm:
+			case dimension::OHM:
 				return false;
-			case dimension::S:
+			case dimension::SIEMENS:
 				return false;
-			case dimension::Wb:
+			case dimension::WEBER:
 				return false;
-			case dimension::T:
+			case dimension::TESLA:
 				return false;
-			case dimension::H:
+			case dimension::HENRY:
 				return false;
-			case dimension::lm:
+			case dimension::LUMEN:
 				return false;
-			case dimension::lx:
+			case dimension::LUX:
 				return false;
-			case dimension::Bq:
+			case dimension::BECQUEREL:
 				return true;
-			case dimension::Gy:
+			case dimension::GRAY:
 				return false;
-			case dimension::Sv:
+			case dimension::SIEVERT:
 				return false;
-			case dimension::kat:
+			case dimension::KATAL:
 				return false;
-			case dimension::angstrom:
+			case dimension::ANGSTROM:
 				return true;
-			case dimension::L:
+			case dimension::LITRE:
 				return false;
-			case dimension::minute:
+			case dimension::MINUTE:
 				return true;
-			case dimension::h:
+			case dimension::HOUR:
 				return true;
-			case dimension::d:
+			case dimension::DAY:
 				return true;
-			case dimension::ly:
+			case dimension::LIGHT_YEAR:
 				return true;
-			case dimension::AU:
+			case dimension::ASTRONOMICAL_UNIT:
 				return true;
-			case dimension::pc:
+			case dimension::PARSEC:
 				return true;
-			case dimension::eV:
+			case dimension::ELECTRON_VOLT:
 				return false;
-			case dimension::Da:
+			case dimension::DALTON:
 				return true;
-			case dimension::amu:
+			case dimension::ATOMIC_MASS_UNIT:
 				return true;
-			case dimension::barn:
+			case dimension::BARN:
 				return false;
-			case dimension::M:
+			case dimension::MOLARITY:
 				return false;
-			case dimension::particles:
+			case dimension::PARTICLES:
 				return true;
-			case dimension::custom:
+			case dimension::CUSTOM:
 				return false;
-			case dimension::custom_basic:
+			case dimension::CUSTOM_BASIC:
 				return true;
-			case dimension::custom_full_symbol:
+			case dimension::CUSTOM_FULL_SYMBOL:
 				return false;
-			case dimension::money:
+			case dimension::MONEY:
 				return true;
-			case dimension::pixel:
+			case dimension::PIXEL:
 				return true;
-			case dimension::memo:
+			case dimension::MEMO:
 				return true;
 		}
 		return false;
@@ -796,105 +796,105 @@ namespace scifir
 		{
 			case dimension::NONE:
 				return true;
-			case dimension::m:
+			case dimension::METRE:
 				return true;
-			case dimension::grade:
+			case dimension::GRADE:
 				return true;
-			case dimension::radian:
+			case dimension::RADIAN:
 				return true;
-			case dimension::steradian:
+			case dimension::STERADIAN:
 				return true;
-			case dimension::g:
+			case dimension::GRAM:
 				return true;
-			case dimension::s:
+			case dimension::SECOND:
 				return true;
-			case dimension::C:
+			case dimension::COULOMB:
 				return true;
-			case dimension::K:
+			case dimension::KELVIN:
 				return true;
-			case dimension::mol:
+			case dimension::MOLE:
 				return true;
-			case dimension::cd:
+			case dimension::CANDELA:
 				return true;
-			case dimension::B:
+			case dimension::BYTE:
 				return true;
-			case dimension::Hz:
+			case dimension::HERTZ:
 				return false;
-			case dimension::N:
+			case dimension::NEWTON:
 				return false;
-			case dimension::Pa:
+			case dimension::PASCAL:
 				return false;
-			case dimension::J:
+			case dimension::JOULE:
 				return false;
-			case dimension::W:
+			case dimension::WATT:
 				return false;
-			case dimension::A:
+			case dimension::AMPERE:
 				return false;
-			case dimension::V:
+			case dimension::VOLT:
 				return false;
-			case dimension::F:
+			case dimension::FARADAY:
 				return false;
-			case dimension::Ohm:
+			case dimension::OHM:
 				return false;
-			case dimension::S:
+			case dimension::SIEMENS:
 				return false;
-			case dimension::Wb:
+			case dimension::WEBER:
 				return false;
-			case dimension::T:
+			case dimension::TESLA:
 				return false;
-			case dimension::H:
+			case dimension::HENRY:
 				return false;
-			case dimension::lm:
+			case dimension::LUMEN:
 				return false;
-			case dimension::lx:
+			case dimension::LUX:
 				return false;
-			case dimension::Bq:
+			case dimension::BECQUEREL:
 				return false;
-			case dimension::Gy:
+			case dimension::GRAY:
 				return false;
-			case dimension::Sv:
+			case dimension::SIEVERT:
 				return false;
-			case dimension::kat:
+			case dimension::KATAL:
 				return false;
-			case dimension::angstrom:
+			case dimension::ANGSTROM:
 				return false;
-			case dimension::L:
+			case dimension::LITRE:
 				return false;
-			case dimension::minute:
+			case dimension::MINUTE:
 				return false;
-			case dimension::h:
+			case dimension::HOUR:
 				return false;
-			case dimension::d:
+			case dimension::DAY:
 				return false;
-			case dimension::ly:
+			case dimension::LIGHT_YEAR:
 				return false;
-			case dimension::AU:
+			case dimension::ASTRONOMICAL_UNIT:
 				return false;
-			case dimension::pc:
+			case dimension::PARSEC:
 				return false;
-			case dimension::eV:
+			case dimension::ELECTRON_VOLT:
 				return false;
-			case dimension::Da:
+			case dimension::DALTON:
 				return false;
-			case dimension::amu:
+			case dimension::ATOMIC_MASS_UNIT:
 				return false;
-			case dimension::barn:
+			case dimension::BARN:
 				return false;
-			case dimension::M:
+			case dimension::MOLARITY:
 				return false;
-			case dimension::particles:
+			case dimension::PARTICLES:
 				return false;
-			case dimension::custom:
+			case dimension::CUSTOM:
 				return false;
-			case dimension::custom_basic:
+			case dimension::CUSTOM_BASIC:
 				return true;
-			case dimension::custom_full_symbol:
+			case dimension::CUSTOM_FULL_SYMBOL:
 				return false;
-			case dimension::money:
+			case dimension::MONEY:
 				return true;
-			case dimension::pixel:
+			case dimension::PIXEL:
 				return false;
-			case dimension::memo:
+			case dimension::MEMO:
 				return true;
 		}
 		return true;
@@ -911,229 +911,229 @@ namespace scifir
 		switch (dimension_type)
 		{
 			case dimension::NONE:
-				basic_dimensions.push_back(dimension(dimension::NONE,prefix::no_prefix,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::m:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::METRE:
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::grade:
-				basic_dimensions.push_back(dimension(dimension::radian,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::GRADE:
+				basic_dimensions.push_back(dimension(dimension::RADIAN,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::radian:
-				basic_dimensions.push_back(dimension(dimension::radian,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::RADIAN:
+				basic_dimensions.push_back(dimension(dimension::RADIAN,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::steradian:
-				basic_dimensions.push_back(dimension(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::STERADIAN:
+				basic_dimensions.push_back(dimension(dimension::STERADIAN,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::s:
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::SECOND:
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::g:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::GRAM:
+				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::C:
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::COULOMB:
+				basic_dimensions.push_back(dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::K:
-				basic_dimensions.push_back(dimension(dimension::K,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::KELVIN:
+				basic_dimensions.push_back(dimension(dimension::KELVIN,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::mol:
-				basic_dimensions.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::MOLE:
+				basic_dimensions.push_back(dimension(dimension::MOLE,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::cd:
-				basic_dimensions.push_back(dimension(dimension::cd,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::CANDELA:
+				basic_dimensions.push_back(dimension(dimension::CANDELA,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::B:
-				basic_dimensions.push_back(dimension(dimension::B,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::BYTE:
+				basic_dimensions.push_back(dimension(dimension::BYTE,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::Hz:
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::HERTZ:
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::N:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::NEWTON:
+				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::Pa:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::PASCAL:
+				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::J:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::JOULE:
+				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::W:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::WATT:
+				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::A:
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::AMPERE:
+				basic_dimensions.push_back(dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::V:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::VOLT:
+				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::F:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::FARADAY:
+				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::Ohm:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::OHM:
+				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::S:
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::SIEMENS:
+				basic_dimensions.push_back(dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::Wb:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::WEBER:
+				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::T:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::TESLA:
+				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::H:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::HENRY:
+				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::lm:
-				basic_dimensions.push_back(dimension(dimension::cd,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::LUMEN:
+				basic_dimensions.push_back(dimension(dimension::CANDELA,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::STERADIAN,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::lx:
-				basic_dimensions.push_back(dimension(dimension::cd,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::LUX:
+				basic_dimensions.push_back(dimension(dimension::CANDELA,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::STERADIAN,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::Bq:
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::BECQUEREL:
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::Gy:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::GRAY:
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::Sv:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::SIEVERT:
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::kat:
-				basic_dimensions.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::KATAL:
+				basic_dimensions.push_back(dimension(dimension::MOLE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::angstrom:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::ANGSTROM:
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::L:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::LITRE:
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::minute:
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::MINUTE:
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::h:
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::HOUR:
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::d:
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::DAY:
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::ly:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::LIGHT_YEAR:
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::AU:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::ASTRONOMICAL_UNIT:
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::pc:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::PARSEC:
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::eV:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::ELECTRON_VOLT:
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::Da:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::k,dimension::NUMERATOR));
+			case dimension::DALTON:
+				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR));
 				break;
-			case dimension::amu:
-				basic_dimensions.push_back(dimension(dimension::g,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::ATOMIC_MASS_UNIT:
+				basic_dimensions.push_back(dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::barn:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::BARN:
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::M:
-				basic_dimensions.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR));
+			case dimension::MOLARITY:
+				basic_dimensions.push_back(dimension(dimension::MOLE,prefix::NONE,dimension::NUMERATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR));
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR));
 				break;
-			case dimension::particles:
-				basic_dimensions.push_back(dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::PARTICLES:
+				basic_dimensions.push_back(dimension(dimension::MOLE,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::custom:
+			case dimension::CUSTOM:
 			{
 				return dimension::base_dimensions[symbol];
 			}
-			case dimension::custom_basic:
+			case dimension::CUSTOM_BASIC:
 			{
 				basic_dimensions.push_back(*this);
 				break;
 			}
-			case dimension::custom_full_symbol:
+			case dimension::CUSTOM_FULL_SYMBOL:
 			{
 				return dimension::base_dimensions[dimension::get_full_symbol(symbol)];
 			}
-			case dimension::money:
-				basic_dimensions.push_back(dimension(dimension::money,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::MONEY:
+				basic_dimensions.push_back(dimension(dimension::MONEY,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::pixel:
-				basic_dimensions.push_back(dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::PIXEL:
+				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::memo:
-				basic_dimensions.push_back(dimension(dimension::memo,prefix::no_prefix,dimension::NUMERATOR));
+			case dimension::MEMO:
+				basic_dimensions.push_back(dimension(dimension::MEMO,prefix::NONE,dimension::NUMERATOR));
 				break;
 		}
 		return basic_dimensions;
@@ -1436,7 +1436,7 @@ namespace scifir
 				}
 			}
 			int total_dimensions = int(std::pow(dimensions_count[x[0].dimension_type], 1.0f / index));
-			x[0].prefix.prefix_type = prefix::no_prefix;
+			x[0].prefix.prefix_type = prefix::NONE;
 			for (int j = 0; j < total_dimensions; j++)
 			{
 				new_dimensions.push_back(x[0]);

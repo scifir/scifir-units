@@ -463,7 +463,7 @@ namespace scifir
 			vector<dimension> new_dimensions = dimensions;
 			for (dimension& x_new_dimension : new_dimensions)
 			{
-				x_new_dimension.prefix.prefix_type = prefix::no_prefix;
+				x_new_dimension.prefix.prefix_type = prefix::NONE;
 			}
 			int value_scale = int(log10(get_value()));
 			output << display_float(float(new_value / std::pow(10,value_scale)),number_of_decimals) << "e" << value_scale << " " << to_string(new_dimensions,with_brackets);

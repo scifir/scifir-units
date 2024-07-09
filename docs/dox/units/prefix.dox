@@ -4,71 +4,71 @@
 * \enum scifir::prefix::type
 * \brief Represents a prefix of the SI system of units. All the prefixes of the SI system of units are supported.
 
-* \var prefix::no_prefix
+* \var prefix::NONE
 * \brief There is no prefix. Then, the dimension is not increased or decreased by some factor.
 
-* \var prefix::Y
+* \var prefix::YOTTA
 * \brief Prefix of a factor of 10^24.
 
-* \var prefix::Z
+* \var prefix::ZETTA
 * \brief Prefix of a factor of 10^21.
 
-* \var prefix::E
+* \var prefix::EXA
 * \brief Prefix of a factor of 10^18.
 
-* \var prefix::P
+* \var prefix::PETA
 * \brief Prefix of a factor of 10^15.
 
-* \var prefix::T
+* \var prefix::TERA
 * \brief Prefix of a factor of 10^12.
 
-* \var prefix::G
+* \var prefix::GIGA
 * \brief Prefix of a factor of 10^9.
 
-* \var prefix::M
+* \var prefix::MEGA
 * \brief Prefix of a factor of 10^6.
 
-* \var prefix::k
+* \var prefix::KILO
 * \brief Prefix of a factor of 10^3.
 
-* \var prefix::h
+* \var prefix::HECTO
 * \brief Prefix of a factor of 10^2.
 
-* \var prefix::da
+* \var prefix::DECA
 * \brief Prefix of a factor of 10^1.
 
-* \var prefix::d
+* \var prefix::DECI
 * \brief Prefix of a factor of 10^-1.
 
-* \var prefix::c
+* \var prefix::CENTI
 * \brief Prefix of a factor of 10^-2.
 
-* \var prefix::m
+* \var prefix::MILLI
 * \brief Prefix of a factor of 10^-3.
 
-* \var prefix::u
+* \var prefix::MICRO
 * \brief Prefix of a factor of 10^-6.
 
-* \var prefix::n
+* \var prefix::NANO
 * \brief Prefix of a factor of 10^-9.
 
-* \var prefix::p
+* \var prefix::PICO
 * \brief Prefix of a factor of 10^-12.
 
-* \var prefix::f
+* \var prefix::FEMTO
 * \brief Prefix of a factor of 10^-15.
 
-* \var prefix::a
+* \var prefix::ATTO
 * \brief Prefix of a factor of 10^-18.
 
-* \var prefix::z
+* \var prefix::ZEPTO
 * \brief Prefix of a factor of 10^-21.
 
-* \var prefix::y
+* \var prefix::YOCTO
 * \brief Prefix of a factor of 10^-24.
 
 * \fn prefix::prefix()
-* \brief Default constructor. The prefix_type is set to no_prefix.
+* \brief Default constructor. The prefix_type is set to NONE.
  
 * \fn prefix::prefix(const prefix& x)
 * \brief Copy constructor. The prefix_type is copied from the prefix x.

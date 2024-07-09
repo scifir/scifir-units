@@ -16,9 +16,9 @@ using namespace scifir;
 TEST_CASE("dimension class") {
 	SECTION("Base functionalities of dimension class") {
 		dimension a = dimension("m",dimension::NUMERATOR);
-		CHECK(a.dimension_type == dimension::m);
+		CHECK(a.dimension_type == dimension::METRE);
 		CHECK(a.dimension_sign == dimension::NUMERATOR);
-		CHECK(a.prefix.prefix_type == prefix::no_prefix);
+		CHECK(a.prefix.prefix_type == prefix::NONE);
 		CHECK(a.get_symbol() == "m");
 		dimension b = dimension("m",dimension::DENOMINATOR);
 		CHECK(b.dimension_sign == dimension::DENOMINATOR);
@@ -28,16 +28,16 @@ TEST_CASE("dimension class") {
 	{
 		dimension a;
 		CHECK(a.dimension_type == dimension::NONE);
-		dimension b2(dimension::m,prefix::no_prefix,dimension::NUMERATOR);
+		dimension b2(dimension::METRE,prefix::NONE,dimension::NUMERATOR);
 		dimension b(b2);
-		CHECK(b.dimension_type == dimension::m);
-		dimension c2(dimension::m,prefix::no_prefix,dimension::NUMERATOR);
+		CHECK(b.dimension_type == dimension::METRE);
+		dimension c2(dimension::METRE,prefix::NONE,dimension::NUMERATOR);
 		dimension c(std::move(c2));
-		CHECK(c.dimension_type == dimension::m);
-		dimension d(dimension::m,prefix::k,dimension::NUMERATOR);
+		CHECK(c.dimension_type == dimension::METRE);
+		dimension d(dimension::METRE,prefix::KILO,dimension::NUMERATOR);
 		CHECK(to_string(d) == "km");
-		prefix e2(prefix::k);
-		dimension e(dimension::m,e2,dimension::NUMERATOR);
+		prefix e2(prefix::KILO);
+		dimension e(dimension::METRE,e2,dimension::NUMERATOR);
 		CHECK(to_string(e) == "km");
 	}
 
@@ -71,119 +71,119 @@ TEST_CASE("dimension class") {
 	SECTION("Creation of all dimension types")
 	{
 		dimension a("m",dimension::NUMERATOR);
-		CHECK(a.dimension_type == dimension::m);
+		CHECK(a.dimension_type == dimension::METRE);
 		dimension a1_2("grade",dimension::NUMERATOR);
-		CHECK(a1_2.dimension_type == dimension::grade);
+		CHECK(a1_2.dimension_type == dimension::GRADE);
 		dimension a2("rad",dimension::NUMERATOR);
-		CHECK(a2.dimension_type == dimension::radian);
+		CHECK(a2.dimension_type == dimension::RADIAN);
 		dimension a3("sr",dimension::NUMERATOR);
-		CHECK(a3.dimension_type == dimension::steradian);
+		CHECK(a3.dimension_type == dimension::STERADIAN);
 		dimension a4("s",dimension::NUMERATOR);
-		CHECK(a4.dimension_type == dimension::s);
+		CHECK(a4.dimension_type == dimension::SECOND);
 		dimension a5("g",dimension::NUMERATOR);
-		CHECK(a5.dimension_type == dimension::g);
+		CHECK(a5.dimension_type == dimension::GRAM);
 		dimension a6("C",dimension::NUMERATOR);
-		CHECK(a6.dimension_type == dimension::C);
+		CHECK(a6.dimension_type == dimension::COULOMB);
 		dimension a7("K",dimension::NUMERATOR);
-		CHECK(a7.dimension_type == dimension::K);
+		CHECK(a7.dimension_type == dimension::KELVIN);
 		dimension a8("mol",dimension::NUMERATOR);
-		CHECK(a8.dimension_type == dimension::mol);
+		CHECK(a8.dimension_type == dimension::MOLE);
 		dimension a9("cd",dimension::NUMERATOR);
-		CHECK(a9.dimension_type == dimension::cd);
+		CHECK(a9.dimension_type == dimension::CANDELA);
 		dimension a10("B",dimension::NUMERATOR);
-		CHECK(a10.dimension_type == dimension::B);
+		CHECK(a10.dimension_type == dimension::BYTE);
 		dimension a11("Hz",dimension::NUMERATOR);
-		CHECK(a11.dimension_type == dimension::Hz);
+		CHECK(a11.dimension_type == dimension::HERTZ);
 		dimension a12("N",dimension::NUMERATOR);
-		CHECK(a12.dimension_type == dimension::N);
+		CHECK(a12.dimension_type == dimension::NEWTON);
 		dimension a13("Pa",dimension::NUMERATOR);
-		CHECK(a13.dimension_type == dimension::Pa);
+		CHECK(a13.dimension_type == dimension::PASCAL);
 		dimension a14("J",dimension::NUMERATOR);
-		CHECK(a14.dimension_type == dimension::J);
+		CHECK(a14.dimension_type == dimension::JOULE);
 		dimension a15("W",dimension::NUMERATOR);
-		CHECK(a15.dimension_type == dimension::W);
+		CHECK(a15.dimension_type == dimension::WATT);
 		dimension a16("A",dimension::NUMERATOR);
-		CHECK(a16.dimension_type == dimension::A);
+		CHECK(a16.dimension_type == dimension::AMPERE);
 		dimension a17("V",dimension::NUMERATOR);
-		CHECK(a17.dimension_type == dimension::V);
+		CHECK(a17.dimension_type == dimension::VOLT);
 		dimension a18("F",dimension::NUMERATOR);
-		CHECK(a18.dimension_type == dimension::F);
+		CHECK(a18.dimension_type == dimension::FARADAY);
 		dimension a19("ohm",dimension::NUMERATOR);
-		CHECK(a19.dimension_type == dimension::Ohm);
+		CHECK(a19.dimension_type == dimension::OHM);
 		dimension a19_2("Ohm",dimension::NUMERATOR);
-		CHECK(a19_2.dimension_type == dimension::Ohm);
+		CHECK(a19_2.dimension_type == dimension::OHM);
 		/*dimension a19_3("\U000003A9",dimension::NUMERATOR);
-		CHECK(a19_3.dimension_type == dimension::Ohm);*/
+		CHECK(a19_3.dimension_type == dimension::OHM);*/
 		dimension a20("S",dimension::NUMERATOR);
-		CHECK(a20.dimension_type == dimension::S);
+		CHECK(a20.dimension_type == dimension::SIEMENS);
 		dimension a21("Wb",dimension::NUMERATOR);
-		CHECK(a21.dimension_type == dimension::Wb);
+		CHECK(a21.dimension_type == dimension::WEBER);
 		dimension a22("T",dimension::NUMERATOR);
-		CHECK(a22.dimension_type == dimension::T);
+		CHECK(a22.dimension_type == dimension::TESLA);
 		dimension a23("H",dimension::NUMERATOR);
-		CHECK(a23.dimension_type == dimension::H);
+		CHECK(a23.dimension_type == dimension::HENRY);
 		dimension a24("lm",dimension::NUMERATOR);
-		CHECK(a24.dimension_type == dimension::lm);
+		CHECK(a24.dimension_type == dimension::LUMEN);
 		dimension a25("lx",dimension::NUMERATOR);
-		CHECK(a25.dimension_type == dimension::lx);
+		CHECK(a25.dimension_type == dimension::LUX);
 		dimension a26("Bq",dimension::NUMERATOR);
-		CHECK(a26.dimension_type == dimension::Bq);
+		CHECK(a26.dimension_type == dimension::BECQUEREL);
 		dimension a27("Gy",dimension::NUMERATOR);
-		CHECK(a27.dimension_type == dimension::Gy);
+		CHECK(a27.dimension_type == dimension::GRAY);
 		dimension a28("Sv",dimension::NUMERATOR);
-		CHECK(a28.dimension_type == dimension::Sv);
+		CHECK(a28.dimension_type == dimension::SIEVERT);
 		dimension a29("kat",dimension::NUMERATOR);
-		CHECK(a29.dimension_type == dimension::kat);
+		CHECK(a29.dimension_type == dimension::KATAL);
 		dimension a30("angstrom",dimension::NUMERATOR); // MORE CASES
-		CHECK(a30.dimension_type == dimension::angstrom);
+		CHECK(a30.dimension_type == dimension::ANGSTROM);
 		dimension a31("L",dimension::NUMERATOR);
-		CHECK(a31.dimension_type == dimension::L);
+		CHECK(a31.dimension_type == dimension::LITRE);
 		dimension a32("min",dimension::NUMERATOR);
-		CHECK(a32.dimension_type == dimension::minute);
+		CHECK(a32.dimension_type == dimension::MINUTE);
 		dimension a33("h",dimension::NUMERATOR);
-		CHECK(a33.dimension_type == dimension::h);
+		CHECK(a33.dimension_type == dimension::HOUR);
 		dimension a34("d",dimension::NUMERATOR);
-		CHECK(a34.dimension_type == dimension::d);
+		CHECK(a34.dimension_type == dimension::DAY);
 		dimension a35_2("ly",dimension::NUMERATOR);
-		CHECK(a35_2.dimension_type == dimension::ly);
+		CHECK(a35_2.dimension_type == dimension::LIGHT_YEAR);
 		dimension a35("AU",dimension::NUMERATOR);
-		CHECK(a35.dimension_type == dimension::AU);
+		CHECK(a35.dimension_type == dimension::ASTRONOMICAL_UNIT);
 		dimension a36("pc",dimension::NUMERATOR);
-		CHECK(a36.dimension_type == dimension::pc);
+		CHECK(a36.dimension_type == dimension::PARSEC);
 		dimension a37("eV",dimension::NUMERATOR);
-		CHECK(a37.dimension_type == dimension::eV);
+		CHECK(a37.dimension_type == dimension::ELECTRON_VOLT);
 		dimension a38("Da",dimension::NUMERATOR);
-		CHECK(a38.dimension_type == dimension::Da);
+		CHECK(a38.dimension_type == dimension::DALTON);
 		dimension a39("amu",dimension::NUMERATOR);
-		CHECK(a39.dimension_type == dimension::amu);
+		CHECK(a39.dimension_type == dimension::ATOMIC_MASS_UNIT);
 		dimension a40("barn",dimension::NUMERATOR);
-		CHECK(a40.dimension_type == dimension::barn);
+		CHECK(a40.dimension_type == dimension::BARN);
 		dimension a41("M",dimension::NUMERATOR);
-		CHECK(a41.dimension_type == dimension::M);
+		CHECK(a41.dimension_type == dimension::MOLARITY);
 		dimension a42("particles",dimension::NUMERATOR);
-		CHECK(a42.dimension_type == dimension::particles);
+		CHECK(a42.dimension_type == dimension::PARTICLES);
 		dimension a43("money",dimension::NUMERATOR);
-		CHECK(a43.dimension_type == dimension::money);
+		CHECK(a43.dimension_type == dimension::MONEY);
 		dimension a44("px",dimension::NUMERATOR);
-		CHECK(a44.dimension_type == dimension::pixel);
+		CHECK(a44.dimension_type == dimension::PIXEL);
 		dimension a45("memo",dimension::NUMERATOR);
-		CHECK(a45.dimension_type == dimension::memo);
+		CHECK(a45.dimension_type == dimension::MEMO);
 		dimension a46("",dimension::NUMERATOR);
 		CHECK(a46.dimension_type == dimension::NONE);
 		dimension a47("hello",dimension::NUMERATOR);
-		CHECK(a47.dimension_type == dimension::custom_full_symbol);
+		CHECK(a47.dimension_type == dimension::CUSTOM_FULL_SYMBOL);
 	}
 
 	SECTION("Assignments of dimension class")
 	{
 		dimension a;
-		dimension b(dimension::g,prefix::no_prefix,dimension::NUMERATOR);
+		dimension b(dimension::GRAM,prefix::NONE,dimension::NUMERATOR);
 		a = b;
-		CHECK(a.dimension_type == dimension::g);
+		CHECK(a.dimension_type == dimension::GRAM);
 		dimension c;
-		dimension d(dimension::g,prefix::no_prefix,dimension::NUMERATOR);
+		dimension d(dimension::GRAM,prefix::NONE,dimension::NUMERATOR);
 		c = std::move(d);
-		CHECK(c.dimension_type == dimension::g);
+		CHECK(c.dimension_type == dimension::GRAM);
 	}
 
 	SECTION("Testing of length dimensions") {
@@ -236,271 +236,271 @@ TEST_CASE("dimension class") {
 
 	SECTION ("get_name(), get_symbol(), get_conversion_factor(), is_simple_dmension(), is_basic_dimension() of dimension class")
 	{
-		dimension a(dimension::NONE,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a(dimension::NONE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a.get_name() == "empty");
 		CHECK(a.get_symbol() == "empty");
 		CHECK(a.get_conversion_factor() == 1.0l);
 		CHECK(a.is_simple_dimension() == true);
 		CHECK(a.is_basic_dimension() == true);
-		dimension a2(dimension::m,prefix::no_prefix,dimension::NUMERATOR);
-		CHECK(a2.get_name() == "meter");
+		dimension a2(dimension::METRE,prefix::NONE,dimension::NUMERATOR);
+		CHECK(a2.get_name() == "metre");
 		CHECK(a2.get_symbol() == "m");
 		CHECK(a2.get_conversion_factor() == 1.0l);
 		CHECK(a2.is_simple_dimension() == true);
 		CHECK(a2.is_basic_dimension() == true);
-		dimension a3_2(dimension::grade,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a3_2(dimension::GRADE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a3_2.get_name() == "grade");
 		CHECK(a3_2.get_symbol() == "\u03B8");
 		CHECK(a3_2.get_conversion_factor() == PI / 180.0l);
 		CHECK(a3_2.is_simple_dimension() == true);
 		CHECK(a3_2.is_basic_dimension() == true);
-		dimension a3(dimension::radian,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a3(dimension::RADIAN,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a3.get_name() == "radian");
 		CHECK(a3.get_symbol() == "rad");
 		CHECK(a3.get_conversion_factor() == 1.0l);
 		CHECK(a3.is_simple_dimension() == true);
 		CHECK(a3.is_basic_dimension() == true);
-		dimension a4(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a4(dimension::STERADIAN,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a4.get_name() == "steradian");
 		CHECK(a4.get_symbol() == "sr");
 		CHECK(a4.get_conversion_factor() == 1.0l);
 		CHECK(a4.is_simple_dimension() == true);
 		CHECK(a4.is_basic_dimension() == true);
-		dimension a5(dimension::s,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a5(dimension::SECOND,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a5.get_name() == "second");
 		CHECK(a5.get_symbol() == "s");
 		CHECK(a5.get_conversion_factor() == 1.0l);
 		CHECK(a5.is_simple_dimension() == true);
 		CHECK(a5.is_basic_dimension() == true);
-		dimension a6(dimension::g,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a6(dimension::GRAM,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a6.get_name() == "gram");
 		CHECK(a6.get_symbol() == "g");
 		CHECK(a6.get_conversion_factor() == 1.0l);
 		CHECK(a6.is_simple_dimension() == true);
 		CHECK(a6.is_basic_dimension() == true);
-		dimension a7(dimension::C,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a7(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a7.get_name() == "coulomb");
 		CHECK(a7.get_symbol() == "C");
 		CHECK(a7.get_conversion_factor() == 1.0l);
 		CHECK(a7.is_simple_dimension() == true);
 		CHECK(a7.is_basic_dimension() == true);
-		dimension a8(dimension::K,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a8(dimension::KELVIN,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a8.get_name() == "kelvin");
 		CHECK(a8.get_symbol() == "K");
 		CHECK(a8.get_conversion_factor() == 1.0l);
 		CHECK(a8.is_simple_dimension() == true);
 		CHECK(a8.is_basic_dimension() == true);
-		dimension a9(dimension::mol,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a9(dimension::MOLE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a9.get_name() == "mole");
 		CHECK(a9.get_symbol() == "mol");
 		CHECK(a9.get_conversion_factor() == 1.0l);
 		CHECK(a9.is_simple_dimension() == true);
 		CHECK(a9.is_basic_dimension() == true);
-		dimension a10(dimension::cd,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a10(dimension::CANDELA,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a10.get_name() == "candela");
 		CHECK(a10.get_symbol() == "cd");
 		CHECK(a10.get_conversion_factor() == 1.0l);
 		CHECK(a10.is_simple_dimension() == true);
 		CHECK(a10.is_basic_dimension() == true);
-		dimension a11(dimension::B,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a11(dimension::BYTE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a11.get_name() == "byte");
 		CHECK(a11.get_symbol() == "B");
 		CHECK(a11.get_conversion_factor() == 1.0l);
 		CHECK(a11.is_simple_dimension() == true);
 		CHECK(a11.is_basic_dimension() == true);
-		dimension a12(dimension::Hz,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a12(dimension::HERTZ,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a12.get_name() == "hertz");
 		CHECK(a12.get_symbol() == "Hz");
 		CHECK(a12.get_conversion_factor() == 1.0l);
 		CHECK(a12.is_simple_dimension() == true);
 		CHECK(a12.is_basic_dimension() == false);
-		dimension a13(dimension::N,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a13(dimension::NEWTON,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a13.get_name() == "newton");
 		CHECK(a13.get_symbol() == "N");
 		CHECK(a13.get_conversion_factor() == 1.0l);
 		CHECK(a13.is_simple_dimension() == false);
 		CHECK(a13.is_basic_dimension() == false);
-		dimension a14(dimension::Pa,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a14(dimension::PASCAL,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a14.get_name() == "pascal");
 		CHECK(a14.get_symbol() == "Pa");
 		CHECK(a14.get_conversion_factor() == 1.0l);
 		CHECK(a14.is_simple_dimension() == false);
 		CHECK(a14.is_basic_dimension() == false);
-		dimension a15(dimension::J,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a15(dimension::JOULE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a15.get_name() == "joule");
 		CHECK(a15.get_symbol() == "J");
 		CHECK(a15.get_conversion_factor() == 1.0l);
 		CHECK(a15.is_simple_dimension() == false);
 		CHECK(a15.is_basic_dimension() == false);
-		dimension a16(dimension::W,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a16(dimension::WATT,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a16.get_name() == "watt");
 		CHECK(a16.get_symbol() == "W");
 		CHECK(a16.get_conversion_factor() == 1.0l);
 		CHECK(a16.is_simple_dimension() == false);
 		CHECK(a16.is_basic_dimension() == false);
-		dimension a17(dimension::A,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a17(dimension::AMPERE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a17.get_name() == "ampere");
 		CHECK(a17.get_symbol() == "A");
 		CHECK(a17.get_conversion_factor() == 1.0l);
 		CHECK(a17.is_simple_dimension() == true);
 		CHECK(a17.is_basic_dimension() == false);
-		dimension a18(dimension::V,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a18(dimension::VOLT,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a18.get_name() == "volt");
 		CHECK(a18.get_symbol() == "V");
 		CHECK(a18.get_conversion_factor() == 1.0l);
 		CHECK(a18.is_simple_dimension() == false);
 		CHECK(a18.is_basic_dimension() == false);
-		dimension a19(dimension::F,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a19(dimension::FARADAY,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a19.get_name() == "faraday");
 		CHECK(a19.get_symbol() == "F");
 		CHECK(a19.get_conversion_factor() == 1.0l);
 		CHECK(a19.is_simple_dimension() == false);
 		CHECK(a19.is_basic_dimension() == false);
-		dimension a20(dimension::Ohm,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a20(dimension::OHM,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a20.get_name() == "ohm");
 		CHECK(a20.get_symbol() == "\U000003A9");
 		CHECK(a20.get_conversion_factor() == 1.0l);
 		CHECK(a20.is_simple_dimension() == false);
 		CHECK(a20.is_basic_dimension() == false);
-		dimension a21(dimension::S,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a21(dimension::SIEMENS,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a21.get_name() == "siemens");
 		CHECK(a21.get_symbol() == "S");
 		CHECK(a21.get_conversion_factor() == 1.0l);
 		CHECK(a21.is_simple_dimension() == false);
 		CHECK(a21.is_basic_dimension() == false);
-		dimension a22(dimension::Wb,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a22(dimension::WEBER,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a22.get_name() == "weber");
 		CHECK(a22.get_symbol() == "Wb");
 		CHECK(a22.get_conversion_factor() == 1.0l);
 		CHECK(a22.is_simple_dimension() == false);
 		CHECK(a22.is_basic_dimension() == false);
-		dimension a23(dimension::T,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a23(dimension::TESLA,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a23.get_name() == "tesla");
 		CHECK(a23.get_symbol() == "T");
 		CHECK(a23.get_conversion_factor() == 1.0l);
 		CHECK(a23.is_simple_dimension() == false);
 		CHECK(a23.is_basic_dimension() == false);
-		dimension a24(dimension::H,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a24(dimension::HENRY,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a24.get_name() == "henry");
 		CHECK(a24.get_symbol() == "H");
 		CHECK(a24.get_conversion_factor() == 1.0l);
 		CHECK(a24.is_simple_dimension() == false);
 		CHECK(a24.is_basic_dimension() == false);
-		dimension a25(dimension::lm,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a25(dimension::LUMEN,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a25.get_name() == "lumen");
 		CHECK(a25.get_symbol() == "lm");
 		CHECK(a25.get_conversion_factor() == 1.0l);
 		CHECK(a25.is_simple_dimension() == false);
 		CHECK(a25.is_basic_dimension() == false);
-		dimension a26(dimension::lx,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a26(dimension::LUX,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a26.get_name() == "lux");
 		CHECK(a26.get_symbol() == "lx");
 		CHECK(a26.get_conversion_factor() == 1.0l);
 		CHECK(a26.is_simple_dimension() == false);
 		CHECK(a26.is_basic_dimension() == false);
-		dimension a27(dimension::Bq,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a27(dimension::BECQUEREL,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a27.get_name() == "becquerel");
 		CHECK(a27.get_symbol() == "Bq");
 		CHECK(a27.get_conversion_factor() == 1.0l);
 		CHECK(a27.is_simple_dimension() == true);
 		CHECK(a27.is_basic_dimension() == false);
-		dimension a28(dimension::Gy,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a28(dimension::GRAY,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a28.get_name() == "gray");
 		CHECK(a28.get_symbol() == "Gy");
 		CHECK(a28.get_conversion_factor() == 1.0l);
 		CHECK(a28.is_simple_dimension() == false);
 		CHECK(a28.is_basic_dimension() == false);
-		dimension a29(dimension::Sv,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a29(dimension::SIEVERT,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a29.get_name() == "sievert");
 		CHECK(a29.get_symbol() == "Sv");
 		CHECK(a29.get_conversion_factor() == 1.0l);
 		CHECK(a29.is_simple_dimension() == false);
 		CHECK(a29.is_basic_dimension() == false);
-		dimension a30(dimension::kat,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a30(dimension::KATAL,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a30.get_name() == "katal");
 		CHECK(a30.get_symbol() == "kat");
 		CHECK(a30.get_conversion_factor() == 1.0l);
 		CHECK(a30.is_simple_dimension() == false);
 		CHECK(a30.is_basic_dimension() == false);
-		dimension a31(dimension::angstrom,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a31(dimension::ANGSTROM,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a31.get_name() == "angstrom");
 		CHECK(a31.get_symbol() == "\U0000212B");
 		CHECK(a31.get_conversion_factor() == 1.0l);
 		CHECK(a31.is_simple_dimension() == true);
 		CHECK(a31.is_basic_dimension() == false);
-		dimension a32(dimension::L,prefix::no_prefix,dimension::NUMERATOR);
-		CHECK(a32.get_name() == "liter");
+		dimension a32(dimension::LITRE,prefix::NONE,dimension::NUMERATOR);
+		CHECK(a32.get_name() == "litre");
 		CHECK(a32.get_symbol() == "L");
 		CHECK(a32.get_conversion_factor() == 1.0l);
 		CHECK(a32.is_simple_dimension() == false);
 		CHECK(a32.is_basic_dimension() == false);
-		dimension a33(dimension::minute,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a33(dimension::MINUTE,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a33.get_name() == "minute");
 		CHECK(a33.get_symbol() == "min");
 		CHECK(a33.get_conversion_factor() == 60.0l);
 		CHECK(a33.is_simple_dimension() == true);
 		CHECK(a33.is_basic_dimension() == false);
-		dimension a34(dimension::h,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a34(dimension::HOUR,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a34.get_name() == "hour");
 		CHECK(a34.get_symbol() == "h");
 		CHECK(a34.get_conversion_factor() == 3600.0l);
 		CHECK(a34.is_simple_dimension() == true);
 		CHECK(a34.is_basic_dimension() == false);
-		dimension a35(dimension::d,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a35(dimension::DAY,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a35.get_name() == "day");
 		CHECK(a35.get_symbol() == "d");
 		CHECK(a35.get_conversion_factor() == 86400.0l);
 		CHECK(a35.is_simple_dimension() == true);
 		CHECK(a35.is_basic_dimension() == false);
-		dimension a36_2(dimension::ly,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a36_2(dimension::LIGHT_YEAR,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a36_2.get_name() == "light year");
 		CHECK(a36_2.get_symbol() == "ly");
 		CHECK(a36_2.get_conversion_factor() == 9.4607379375591e15);
 		CHECK(a36_2.is_simple_dimension() == true);
 		CHECK(a36_2.is_basic_dimension() == false);
-		dimension a36(dimension::AU,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a36(dimension::ASTRONOMICAL_UNIT,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a36.get_name() == "astronomical unit");
 		CHECK(a36.get_symbol() == "AU");
 		CHECK(a36.get_conversion_factor() == 149597870700.0l);
 		CHECK(a36.is_simple_dimension() == true);
 		CHECK(a36.is_basic_dimension() == false);
-		dimension a37(dimension::pc,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a37(dimension::PARSEC,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a37.get_name() == "parsec");
 		CHECK(a37.get_symbol() == "pc");
 		CHECK(a37.get_conversion_factor() == 30856775814913673.0l);
 		CHECK(a37.is_simple_dimension() == true);
 		CHECK(a37.is_basic_dimension() == false);
-		dimension a38(dimension::eV,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a38(dimension::ELECTRON_VOLT,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a38.get_name() == "electronvolt");
 		CHECK(a38.get_symbol() == "eV");
 		CHECK(a38.get_conversion_factor() == 0.0000000000000000001602176634l);
 		CHECK(a38.is_simple_dimension() == false);
 		CHECK(a38.is_basic_dimension() == false);
-		dimension a39(dimension::Da,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a39(dimension::DALTON,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a39.get_name() == "dalton");
 		CHECK(a39.get_symbol() == "Da");
 		CHECK(a39.get_conversion_factor() == 0.00000000000000000000000000166053886l);
 		CHECK(a39.is_simple_dimension() == true);
 		CHECK(a39.is_basic_dimension() == false);
-		dimension a40(dimension::amu,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a40(dimension::ATOMIC_MASS_UNIT,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a40.get_name() == "atomic mass unit");
 		CHECK(a40.get_symbol() == "amu");
 		CHECK(a40.get_conversion_factor() == 0.00000000000000000000000000166053886l);
 		CHECK(a40.is_simple_dimension() == true);
 		CHECK(a40.is_basic_dimension() == false);
-		dimension a41(dimension::barn,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a41(dimension::BARN,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a41.get_name() == "barn");
 		CHECK(a41.get_symbol() == "barn");
 		CHECK(a41.get_conversion_factor() == 0.0000000000000000000000000001l);
 		CHECK(a41.is_simple_dimension() == false);
 		CHECK(a41.is_basic_dimension() == false);
-		dimension a42(dimension::M,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a42(dimension::MOLARITY,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a42.get_name() == "molarity");
 		CHECK(a42.get_symbol() == "M");
 		CHECK(a42.get_conversion_factor() == 1.0l);
 		CHECK(a42.is_simple_dimension() == false);
 		CHECK(a42.is_basic_dimension() == false);
-		dimension a43(dimension::particles,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a43(dimension::PARTICLES,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a43.get_name() == "particles");
 		CHECK(a43.get_symbol() == "particles");
 		CHECK(a43.get_conversion_factor() == 1l/AVOGADRO_CONSTANT);
@@ -512,31 +512,31 @@ TEST_CASE("dimension class") {
 		CHECK(a44.get_conversion_factor() == 1.0);
 		CHECK(a44.is_simple_dimension() == false);
 		CHECK(a44.is_basic_dimension() == false);
-		dimension a45(dimension::custom_basic,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a45(dimension::CUSTOM_BASIC,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a45.get_name() == "custom-basic");
 		CHECK(a45.get_symbol() == "custom-basic");
 		CHECK(a45.get_conversion_factor() == 1.0);
 		CHECK(a45.is_simple_dimension() == false);
 		CHECK(a45.is_basic_dimension() == false);
-		dimension a46(dimension::custom_full_symbol,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a46(dimension::CUSTOM_FULL_SYMBOL,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a46.get_name() == "custom-full-symbol");
 		CHECK(a46.get_symbol() == "");
 		CHECK(a46.get_conversion_factor() == 1.0);
 		CHECK(a46.is_simple_dimension() == false);
 		CHECK(a46.is_basic_dimension() == false);*/
-		dimension a47(dimension::money,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a47(dimension::MONEY,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a47.get_name() == "money");
 		CHECK(a47.get_symbol() == "money");
 		CHECK(a47.get_conversion_factor() == 1.0l);
 		CHECK(a47.is_simple_dimension() == true);
 		CHECK(a47.is_basic_dimension() == true);
-		dimension a48(dimension::pixel,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a48(dimension::PIXEL,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a48.get_name() == "pixel");
 		CHECK(a48.get_symbol() == "px");
 		CHECK(a48.get_conversion_factor() == 0.00026l);
 		CHECK(a48.is_simple_dimension() == true);
 		CHECK(a48.is_basic_dimension() == false);
-		dimension a49(dimension::memo,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a49(dimension::MEMO,prefix::NONE,dimension::NUMERATOR);
 		CHECK(a49.get_name() == "memo");
 		CHECK(a49.get_symbol() == "memo");
 		CHECK(a49.get_conversion_factor() == 1.0l);
@@ -547,215 +547,215 @@ TEST_CASE("dimension class") {
 	SECTION ("get_basic_dimensions() of dimension class")
 	{
 		dimension a0("",dimension::NUMERATOR);
-		vector<dimension> b0 = { dimension(dimension::NONE,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b0 = { dimension(dimension::NONE,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a0.get_basic_dimensions(),b0));
 		dimension a("m",dimension::NUMERATOR);
-		vector<dimension> b = { dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b = { dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a.get_basic_dimensions(),b));
 		dimension a2_2("grade",dimension::NUMERATOR);
-		vector<dimension> b2_2 = { dimension(dimension::radian,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b2_2 = { dimension(dimension::RADIAN,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a2_2.get_basic_dimensions(),b2_2));
 		dimension a2("rad",dimension::NUMERATOR);
-		vector<dimension> b2 = { dimension(dimension::radian,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b2 = { dimension(dimension::RADIAN,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a2.get_basic_dimensions(),b2));
 		dimension a3("sr",dimension::NUMERATOR);
-		vector<dimension> b3 = { dimension(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b3 = { dimension(dimension::STERADIAN,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a3.get_basic_dimensions(),b3));
 		dimension a4("s",dimension::NUMERATOR);
-		vector<dimension> b4 = { dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b4 = { dimension(dimension::SECOND,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a4.get_basic_dimensions(),b4));
 		dimension a5("g",dimension::NUMERATOR);
-		vector<dimension> b5 = { dimension(dimension::g,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b5 = { dimension(dimension::GRAM,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a5.get_basic_dimensions(),b5));
 		dimension a6("C",dimension::NUMERATOR);
-		vector<dimension> b6 = { dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b6 = { dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a6.get_basic_dimensions(),b6));
 		dimension a7("K",dimension::NUMERATOR);
-		vector<dimension> b7 = { dimension(dimension::K,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b7 = { dimension(dimension::KELVIN,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a7.get_basic_dimensions(),b7));
 		dimension a8("mol",dimension::NUMERATOR);
-		vector<dimension> b8 = { dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b8 = { dimension(dimension::MOLE,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a8.get_basic_dimensions(),b8));
 		dimension a9("cd",dimension::NUMERATOR);
-		vector<dimension> b9 = { dimension(dimension::cd,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b9 = { dimension(dimension::CANDELA,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a9.get_basic_dimensions(),b9));
 		dimension a10("B",dimension::NUMERATOR);
-		vector<dimension> b10 = { dimension(dimension::B,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b10 = { dimension(dimension::BYTE,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a10.get_basic_dimensions(),b10));
 		dimension a11("Hz",dimension::NUMERATOR);
-		vector<dimension> b11 = { dimension(dimension::Hz,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b11 = { dimension(dimension::HERTZ,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a11.get_basic_dimensions(),b11));
 		dimension a12("N",dimension::NUMERATOR);
-		vector<dimension> b12 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b12 = { dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a12.get_basic_dimensions(),b12));
 		dimension a13("Pa",dimension::NUMERATOR);
-		vector<dimension> b13 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b13 = { dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a13.get_basic_dimensions(),b13));
 		dimension a14("J",dimension::NUMERATOR);
-		vector<dimension> b14 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b14 = { dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a14.get_basic_dimensions(),b14));
 		dimension a15("W",dimension::NUMERATOR);
-		vector<dimension> b15 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b15 = { dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a15.get_basic_dimensions(),b15));
 		dimension a16("A",dimension::NUMERATOR);
-		vector<dimension> b16 = { dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b16 = { dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a16.get_basic_dimensions(),b16));
 		dimension a17("V",dimension::NUMERATOR);
-		vector<dimension> b17 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b17 = { dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a17.get_basic_dimensions(),b17));
 		dimension a18("F",dimension::NUMERATOR);
-		vector<dimension> b18 = { dimension(dimension::g,prefix::k,dimension::DENOMINATOR),
-				dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR),
-				dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR),
-				dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
-				dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
-				dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR),
-				dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b18 = { dimension(dimension::GRAM,prefix::KILO,dimension::DENOMINATOR),
+				dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR),
+				dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR),
+				dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR),
+				dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR),
+				dimension(dimension::SECOND,prefix::NONE,dimension::NUMERATOR),
+				dimension(dimension::SECOND,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a18.get_basic_dimensions(),b18));
 		dimension a19("Ohm",dimension::NUMERATOR);
-		vector<dimension> b19 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b19 = { dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a19.get_basic_dimensions(),b19));
 		dimension a20("S",dimension::NUMERATOR);
-		vector<dimension> b20 = { dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::g,prefix::k,dimension::DENOMINATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b20 = { dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::GRAM,prefix::KILO,dimension::DENOMINATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a20.get_basic_dimensions(),b20));
 		dimension a21("Wb",dimension::NUMERATOR);
-		vector<dimension> b21 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b21 = { dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a21.get_basic_dimensions(),b21));
 		dimension a22("T",dimension::NUMERATOR);
-		vector<dimension> b22 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
-			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b22 = { dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR),
+			dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a22.get_basic_dimensions(),b22));
 		dimension a23("H",dimension::NUMERATOR);
-		vector<dimension> b23 = { dimension(dimension::g,prefix::k,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::C,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b23 = { dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::COULOMB,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a23.get_basic_dimensions(),b23));
 		dimension a24("lm",dimension::NUMERATOR);
-		vector<dimension> b24 = { dimension(dimension::cd,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b24 = { dimension(dimension::CANDELA,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::STERADIAN,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a24.get_basic_dimensions(),b24));
 		dimension a25("lx",dimension::NUMERATOR);
-		vector<dimension> b25 = { dimension(dimension::cd,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::steradian,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b25 = { dimension(dimension::CANDELA,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::STERADIAN,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a25.get_basic_dimensions(),b25));
 		dimension a26("Bq",dimension::NUMERATOR);
-		vector<dimension> b26 = { dimension(dimension::Bq,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b26 = { dimension(dimension::BECQUEREL,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a26.get_basic_dimensions(),b26));
 		dimension a27("Gy",dimension::NUMERATOR);
-		vector<dimension> b27 = { dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b27 = { dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a27.get_basic_dimensions(),b27));
 		dimension a28("Sv",dimension::NUMERATOR);
-		vector<dimension> b28 = { dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b28 = { dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a28.get_basic_dimensions(),b28));
 		dimension a29("kat",dimension::NUMERATOR);
-		vector<dimension> b29 = { dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b29 = { dimension(dimension::MOLE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a29.get_basic_dimensions(),b29));
 		dimension a30("angstrom",dimension::NUMERATOR);
-		vector<dimension> b30 = { dimension(dimension::angstrom,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b30 = { dimension(dimension::ANGSTROM,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a30.get_basic_dimensions(),b30));
 		dimension a31("L",dimension::NUMERATOR);
-		vector<dimension> b31 = { dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b31 = { dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a31.get_basic_dimensions(),b31));
 		dimension a32("min",dimension::NUMERATOR);
-		vector<dimension> b32 = { dimension(dimension::minute,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b32 = { dimension(dimension::MINUTE,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a32.get_basic_dimensions(),b32));
 		dimension a33("h",dimension::NUMERATOR);
-		vector<dimension> b33 = { dimension(dimension::h,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b33 = { dimension(dimension::HOUR,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a33.get_basic_dimensions(),b33));
 		dimension a34("d",dimension::NUMERATOR);
-		vector<dimension> b34 = { dimension(dimension::d,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b34 = { dimension(dimension::DAY,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a34.get_basic_dimensions(),b34));
 		dimension a35_2("ly",dimension::NUMERATOR);
-		vector<dimension> b35_2 = { dimension(dimension::ly,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b35_2 = { dimension(dimension::LIGHT_YEAR,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a35_2.get_basic_dimensions(),b35_2));
 		dimension a35("AU",dimension::NUMERATOR);
-		vector<dimension> b35 = { dimension(dimension::AU,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b35 = { dimension(dimension::ASTRONOMICAL_UNIT,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a35.get_basic_dimensions(),b35));
 		dimension a36("pc",dimension::NUMERATOR);
-		vector<dimension> b36 = { dimension(dimension::pc,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b36 = { dimension(dimension::PARSEC,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a36.get_basic_dimensions(),b36));
 		dimension a37("eV",dimension::NUMERATOR);
-		vector<dimension> b37 = { dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::g,prefix::k,dimension::NUMERATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR),
-			dimension(dimension::s,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b37 = { dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::GRAM,prefix::KILO,dimension::NUMERATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR),
+			dimension(dimension::SECOND,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a37.get_basic_dimensions(),b37));
 		dimension a38("Da",dimension::NUMERATOR);
-		vector<dimension> b38 = { dimension(dimension::Da,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b38 = { dimension(dimension::DALTON,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a38.get_basic_dimensions(),b38));
 		dimension a39("amu",dimension::NUMERATOR);
-		vector<dimension> b39 = { dimension(dimension::amu,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b39 = { dimension(dimension::ATOMIC_MASS_UNIT,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a39.get_basic_dimensions(),b39));
 		dimension a40("barn",dimension::NUMERATOR);
-		vector<dimension> b40 = { dimension(dimension::barn,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b40 = { dimension(dimension::BARN,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a40.get_basic_dimensions(),b40));
 		dimension a41("M",dimension::NUMERATOR);
-		vector<dimension> b41 = { dimension(dimension::mol,prefix::no_prefix,dimension::NUMERATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR),
-			dimension(dimension::m,prefix::no_prefix,dimension::DENOMINATOR) };
+		vector<dimension> b41 = { dimension(dimension::MOLE,prefix::NONE,dimension::NUMERATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR),
+			dimension(dimension::METRE,prefix::NONE,dimension::DENOMINATOR) };
 		CHECK(equal_dimensions(a41.get_basic_dimensions(),b41));
 		dimension a42("particles",dimension::NUMERATOR);
-		vector<dimension> b42 = { dimension(dimension::particles,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b42 = { dimension(dimension::PARTICLES,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a42.get_basic_dimensions(),b42));
 		dimension a43("money",dimension::NUMERATOR);
-		vector<dimension> b43 = { dimension(dimension::money,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b43 = { dimension(dimension::MONEY,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a43.get_basic_dimensions(),b43));
 		dimension a44("px",dimension::NUMERATOR);
-		vector<dimension> b44 = { dimension(dimension::pixel,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b44 = { dimension(dimension::PIXEL,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a44.get_basic_dimensions(),b44));
 		dimension a45("memo",dimension::NUMERATOR);
-		vector<dimension> b45 = { dimension(dimension::memo,prefix::no_prefix,dimension::NUMERATOR) };
+		vector<dimension> b45 = { dimension(dimension::MEMO,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a45.get_basic_dimensions(),b45));
 	}
 
@@ -936,12 +936,12 @@ TEST_CASE("dimension class") {
 
 	SECTION("common_dimension(), equal_dimensions() and equal_dimensions_and_prefixes()")
 	{
-		dimension a(dimension::m,prefix::no_prefix,dimension::NUMERATOR);
-		dimension b(dimension::AU,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a(dimension::METRE,prefix::NONE,dimension::NUMERATOR);
+		dimension b(dimension::ASTRONOMICAL_UNIT,prefix::NONE,dimension::NUMERATOR);
 		CHECK(common_dimension(a,b) == true);
 		CHECK(equal_dimensions("m","AU") == true);
 		CHECK(equal_dimensions("m","pc") == true);
-		dimension a2(dimension::g,prefix::no_prefix,dimension::NUMERATOR);
+		dimension a2(dimension::GRAM,prefix::NONE,dimension::NUMERATOR);
 		CHECK(common_dimension(a,a2) == false);
 		vector<dimension> c = create_dimensions("m/s");
 		vector<dimension> d = create_dimensions("AU/s");
@@ -957,10 +957,10 @@ TEST_CASE("dimension class") {
 
 	SECTION("Comparison of dimension class")
 	{
-		dimension a(dimension::m,prefix::no_prefix,dimension::NUMERATOR);
-		dimension b(dimension::m,prefix::no_prefix,dimension::NUMERATOR);
-		dimension c(dimension::AU,prefix::no_prefix,dimension::NUMERATOR);
-		dimension d(dimension::m,prefix::no_prefix,dimension::DENOMINATOR);
+		dimension a(dimension::METRE,prefix::NONE,dimension::NUMERATOR);
+		dimension b(dimension::METRE,prefix::NONE,dimension::NUMERATOR);
+		dimension c(dimension::ASTRONOMICAL_UNIT,prefix::NONE,dimension::NUMERATOR);
+		dimension d(dimension::METRE,prefix::NONE,dimension::DENOMINATOR);
 		CHECK((a == b) == true);
 		CHECK((a != c) == true);
 		CHECK((a == c) == false);

@@ -19,158 +19,158 @@
 * \var dimension::NONE
 * \brief No dimension. Default value for the default constructor.
 
-* \var dimension::m
+* \var dimension::METRE
 * \brief Meter. **SI dimension** of length.
 
-* \var dimension::grade
+* \var dimension::GRADE
 * \brief Grade. Dimension of angle.
 
-* \var dimension::radian
+* \var dimension::RADIAN
 * \brief Radian. Dimension of angle.
 
-* \var dimension::steradian
+* \var dimension::STERADIAN
 * \brief Steradian. Dimension of solid angle. A solid angle is an angle in volume.
 
-* \var dimension::s
+* \var dimension::SECOND
 * \brief Second. **SI dimension** of time.
 
-* \var dimension::g
+* \var dimension::GRAM
 * \brief Gram. **SI dimension** of mass.
 
-* \var dimension::C
+* \var dimension::COULOMB
 * \brief Coulomb. **SI dimension** of charge.
 
-* \var dimension::K
+* \var dimension::KELVIN
 * \brief Kelvin. **SI dimension** of temperature.
 
-* \var dimension::mol
+* \var dimension::MOLE
 * \brief Mole. **SI dimension** of quantity.
 
-* \var dimension::cd
+* \var dimension::CANDELA
 * \brief Candela. **SI dimension** of luminous intensity.
 
-* \var dimension::B
+* \var dimension::BYTE
 * \brief Byte. Dimension of amount of information.
 
-* \var dimension::Hz
+* \var dimension::HERTZ
 * \brief Hertz. Dimension of frequency.
 
-* \var dimension::N
+* \var dimension::NEWTON
 * \brief Newton. Dimension of force.
 
-* \var dimension::Pa
+* \var dimension::PASCAL
 * \brief Pascal. Dimension of pressure.
 
-* \var dimension::J
+* \var dimension::JOULE
 * \brief Joule. Dimension of energy.
 
-* \var dimension::W
+* \var dimension::WATT
 * \brief Watt. Dimension of power.
 
-* \var dimension::A
+* \var dimension::AMPERE
 * \brief Ampere. Dimension of electric current.
 
-* \var dimension::V
+* \var dimension::VOLT
 * \brief Volt. Dimension of voltage.
 
-* \var dimension::F
+* \var dimension::FARADAY
 * \brief Faraday. Dimension of electric capacitance.
 
-* \var dimension::Ohm
+* \var dimension::OHM
 * \brief Ohm. Dimension of electric resistance.
 
-* \var dimension::S
+* \var dimension::SIEMENS
 * \brief Siemens. Dimension of electric conductance.
 
-* \var dimension::Wb
+* \var dimension::WEBER
 * \brief Weber. Dimension of magnetic flux.
 
-* \var dimension::T
+* \var dimension::TESLA
 * \brief Tesla. Dimension of magnetic strength.
 
-* \var dimension::H
+* \var dimension::HENRY
 * \brief Henry. Dimension of electric inductance.
 
-* \var dimension::lm
+* \var dimension::LUMEN
 * \brief Lumen. Dimension of luminous flux.
 
-* \var dimension::lx
+* \var dimension::LUX
 * \brief Lux. Dimension of illuminance.
 
-* \var dimension::Bq
+* \var dimension::BECQUEREL
 * \brief Becquerel. Dimension of radioactivity.
 
-* \var dimension::Gy
+* \var dimension::GRAY
 * \brief Gray. Dimension of ionising radiation (absorbed dose).
 
-* \var dimension::Sv
+* \var dimension::SIEVERT
 * \brief Sievert. Dimension of ionising radiation (equivalent dose).
 
-* \var dimension::kat
+* \var dimension::KATAL
 * \brief Katal. Dimension of catalytic activity.
 
-* \var dimension::angstrom
+* \var dimension::ANGSTROM
 * \brief Ángstrom. Dimension of length, used mainly for wavelengths.
 
-* \var dimension::L
+* \var dimension::LITRE
 * \brief Litre. Dimension of volume.
 
-* \var dimension::minute
+* \var dimension::MINUTE
 * \brief Minute. Dimension of time.
 
-* \var dimension::h
+* \var dimension::HOUR
 * \brief Hour. Dimension of time.
 
-* \var dimension::d
+* \var dimension::DAY
 * \brief Day. Dimension of time.
 
-* \var dimension::ly
+* \var dimension::LIGHT_YEAR
 * \brief Light year. Dimension of length. Defined as all the distance travelled by light in one year.
 
-* \var dimension::AU
+* \var dimension::ASTRONOMICAL_UNIT
 * \brief Astronomical Unit. Dimension of length. Defined as the distance from the Sun to the Earth.
 
-* \var dimension::pc
+* \var dimension::PARSEC
 * \brief Parsec. Dimension of length. Defined as the distance where 1 AU subtends an angle of 1 second of arc. Equivalent to 3.26156 light years.
 
-* \var dimension::eV
+* \var dimension::ELECTRON_VOLT
 * \brief Electron volt. Dimension of energy.
 
-* \var dimension::Da
+* \var dimension::DALTON
 * \brief Dalton. Dimension of mass. Used to measure the mass of atoms and molecules. Defined as 1/12 of a C-12.
 
-* \var dimension::amu
+* \var dimension::ATOMIC_MASS_UNIT
 * \brief Atomic mass unit. Equivalent to the Dalton. Dimension of mass. Used to measure the mass of atoms and molecules.
 
-* \var dimension::barn
+* \var dimension::BARN
 * \brief Barn. Dimension of area. It's used inside nuclear physics to express the transversal section of nucleus and nuclear reactions.
 
-* \var dimension::M
+* \var dimension::MOLARITY
 * \brief Molarity. Dimension of concentration of a chemical species.
 
-* \var dimension::particles
+* \var dimension::PARTICLES
 * \brief Particles. It's not exactly a dimension, it corresponds to the brute amount of particles, as opposed to the mole.
 
-* \var dimension::custom
+* \var dimension::CUSTOM
 * \brief Custom dimension. It means the dimension is a custom dimension, which can have any value and meaning, defined freely by the programmer. Each custom dimension is unique to where it's defined and used.
 
-* \var dimension::custom_basic
+* \var dimension::CUSTOM_BASIC
 * \brief 
 
-* \var dimension::custom_full_symbol
+* \var dimension::CUSTOM_FULL_SYMBOL
 * \brief 
 
-* \var dimension::money
+* \var dimension::MONEY
 * \brief Money. The money is not specified in a specific currency, you must use the ISO 4217 of currencies for that purpose. Don't mistake mixing different currencies.
 
-* \var dimension::pixel
+* \var dimension::PIXEL
 * \brief Amount of pixels. Used for screen sizes. It can also be used as distance, in replacement of length dimensions, if in a virtual space it's thinked in pixels instead of normal dimensions of length.
 
-* \var dimension::memo
+* \var dimension::MEMO
 * \brief Invented unit inside Scifir, it's not part of the SI system of units. It represents a unit of human or animal memory. Each memory of the brain has some size hypothetically measurable in memos.
 
 * \fn dimension::dimension()
-* \brief Default constructor. The dimension_type is NONE, the dimension_sign is NO_POSITION, and the prefix is no_prefix, the symbol is empty.
+* \brief Default constructor. The dimension_type is NONE, the dimension_sign is NO_POSITION, and the prefix is NONE, the symbol is empty.
 
 * \fn dimension::dimension(const dimension& x)
 * \brief Copy constructor. The dimension is initialized to be a copy of the dimension x.
