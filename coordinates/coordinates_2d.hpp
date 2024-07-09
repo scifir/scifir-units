@@ -86,7 +86,7 @@ namespace scifir
 
 			angle get_theta() const
 			{
-				return angle(radian_to_grade(std::atan2(y.get_value(),x.get_value())));
+				return angle(radian_to_degree(std::atan2(y.get_value(),x.get_value())));
 			}
 
 			void set_position(const T& new_x,const T& new_y)
@@ -249,7 +249,7 @@ namespace scifir
 
 			angle get_theta() const
 			{
-				return angle(radian_to_grade(std::atan2(y,x)));
+				return angle(radian_to_degree(std::atan2(y,x)));
 			}
 
 			void set_position(float new_x,float new_y)
@@ -380,7 +380,7 @@ namespace scifir
 	inline angle cartesian_2d_to_polar_theta(const scalar_unit& x,scalar_unit y)
 	{
 		y.change_dimensions(x);
-		return scifir::angle(scifir::atan_grade(float(y)/float(x)));
+		return scifir::angle(scifir::atan_degree(float(y)/float(x)));
 	}
 
 	inline scalar_unit polar_to_cartesian_2d_x(const scalar_unit& p,const angle& theta)
@@ -400,7 +400,7 @@ namespace scifir
 
 	inline angle cartesian_2d_to_polar_theta(float x,float y)
 	{
-		return scifir::angle(scifir::atan_grade(y/x));
+		return scifir::angle(scifir::atan_degree(y/x));
 	}
 
 	inline float polar_to_cartesian_2d_x(float p,const angle& theta)

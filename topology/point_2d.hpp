@@ -75,7 +75,7 @@ namespace scifir
 
 			angle get_theta() const
 			{
-				return angle(radian_to_grade(std::atan2(y.get_value(),x.get_value())));
+				return angle(radian_to_degree(std::atan2(y.get_value(),x.get_value())));
 			}
 
 			void set_position(const T& new_x,const T& new_y)
@@ -226,7 +226,7 @@ namespace scifir
 
 			angle get_theta() const
 			{
-				return angle(radian_to_grade(std::atan2(y,x)));
+				return angle(radian_to_degree(std::atan2(y,x)));
 			}
 
 			void set_position(float new_x,float new_y)

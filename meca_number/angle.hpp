@@ -14,12 +14,12 @@ using namespace std;
 
 namespace scifir
 {
-	inline float radian_to_grade(float x)
+	inline float radian_to_degree(float x)
 	{
 		return x * 180.0f / PI;
 	}
 
-	inline float grade_to_radian(float x)
+	inline float degree_to_radian(float x)
 	{
 		return x * PI / 180.0f;
 	}
@@ -147,14 +147,14 @@ namespace scifir
 
 			string display(int number_of_decimals = 2) const;
 
-			inline float get_grade() const
+			inline float get_degree() const
 			{
 				return value;
 			}
 
 			inline float get_radian() const
 			{
-				return grade_to_radian(value);
+				return degree_to_radian(value);
 			}
 
 		private:
@@ -185,34 +185,34 @@ namespace scifir
 	angle acosh(float x);
 	angle atanh(float x);
 
-	inline float asin_grade(float x)
+	inline float asin_degree(float x)
 	{
-		return radian_to_grade(std::asin(x));
+		return radian_to_degree(std::asin(x));
 	}
 
-	inline float acos_grade(float x)
+	inline float acos_degree(float x)
 	{
-		return radian_to_grade(std::acos(x));
+		return radian_to_degree(std::acos(x));
 	}
 
-	inline float atan_grade(float x)
+	inline float atan_degree(float x)
 	{
-		return radian_to_grade(std::atan(x));
+		return radian_to_degree(std::atan(x));
 	}
 
-	inline float asinh_grade(float x)
+	inline float asinh_degree(float x)
 	{
-		return radian_to_grade(std::asinh(x));
+		return radian_to_degree(std::asinh(x));
 	}
 
-	inline float acosh_grade(float x)
+	inline float acosh_degree(float x)
 	{
-		return radian_to_grade(std::acosh(x));
+		return radian_to_degree(std::acosh(x));
 	}
 
-	inline float atanh_grade(float x)
+	inline float atanh_degree(float x)
 	{
-		return radian_to_grade(std::atanh(x));
+		return radian_to_degree(std::atanh(x));
 	}
 }
 

@@ -435,8 +435,8 @@ x++;
 ++x;
 x--;
 --x;
-float a_grade = x.get_grade();
-float a_radians = x.get_radian();
+float a_degree = x.get_degree();
+float a_radian = x.get_radian();
 x.invert(); // Inverts the angle, the orientation described by this angle points now in the opposite direction
 float y = float(x); // Angles can be converted to float
 ```

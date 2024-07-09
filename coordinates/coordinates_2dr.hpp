@@ -109,7 +109,7 @@ namespace scifir
 
 			angle get_polar_theta() const
 			{
-				return angle(radian_to_grade(std::atan2(y.get_value(),x.get_value())));
+				return angle(radian_to_degree(std::atan2(y.get_value(),x.get_value())));
 			}
 
 			void point_to(direction::name x)
@@ -342,7 +342,7 @@ namespace scifir
 
 			angle get_polar_theta() const
 			{
-				return angle(radian_to_grade(std::atan2(y,x)));
+				return angle(radian_to_degree(std::atan2(y,x)));
 			}
 
 			void point_to(direction::name x)

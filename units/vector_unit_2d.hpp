@@ -83,7 +83,7 @@ namespace scifir
 			static vector_unit_2d cartesian_2d(const string& new_dimensions,float new_x,float new_y)
 			{
 				float new_value = float(std::sqrt(std::pow(new_x,2) + std::pow(new_y,2)));
-				float new_theta = scifir::atan_grade(new_y / new_x);
+				float new_theta = scifir::atan_degree(new_y / new_x);
 				return vector_unit_2d(new_value,new_dimensions,angle(new_theta));
 			}
 

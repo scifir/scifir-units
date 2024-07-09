@@ -137,7 +137,7 @@ namespace scifir
 
 			angle get_spherical_phi() const
 			{
-				return angle(scifir::acos_grade(float(z/scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)))));
+				return angle(scifir::acos_degree(float(z/scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)))));
 			}
 
 			angle get_latitude() const
@@ -595,7 +595,7 @@ namespace scifir
 
 			angle get_spherical_phi() const
 			{
-				return angle(scifir::acos_grade(float(z/std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)))));
+				return angle(scifir::acos_degree(float(z/std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)))));
 			}
 
 			angle get_latitude() const

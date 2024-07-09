@@ -3,11 +3,11 @@
 
 * angle is a class that allows to work with angles, more in degrees than in radians. The value of the angle is always stored inside the class in degrees, and it can be get in radians with the to_radian() function.
 
-* \fn float scifir::radian_to_grade(float x)
-* \brief Converts a radian to grade.
+* \fn float scifir::radian_to_degree(float x)
+* \brief Converts a radian to degree.
 
-* \fn float scifir::grade_to_radian(float x)
-* \brief Converts a grade to a radian.
+* \fn float scifir::degree_to_radian(float x)
+* \brief Converts a degree to a radian.
 
 * \enum scifir::angle::type
 * \brief Represents an type of angle, which can be a degree or a radian. The value of the angle inside the angle class is always stored in degrees, but can be get in radian if it's needed.
@@ -147,7 +147,7 @@
 * \fn string angle::display(int number_of_decimals = 2) const
 * \brief Creates an string from the angle, with the value and the degrees symbol.
 
-* \fn float angle::get_grade() const
+* \fn float angle::get_degree() const
 * \brief Gets the value of the angle in degrees.
 
 * \fn float angle::get_radian() const
@@ -216,22 +216,22 @@
 * \fn angle scifir::atanh(float x)
 * \brief Calculates the atanh of some value x and returns the result as angle in degrees.
 
-* \fn float scifir::asin_grade(float x)
+* \fn float scifir::asin_degree(float x)
 * \brief Calculates the asin receiving x in degrees. It uses the asin() function of the standard library of C++, but the difference is that the argument is in degrees, not in radians.
 
-* \fn float scifir::acos_grade(float x)
+* \fn float scifir::acos_degree(float x)
 * \brief Calculates the acos receiving x in degrees. It uses the acos() function of the standard library of C++, but the difference is that the argument is in degrees, not in radians.
 
-* \fn float scifir::atan_grade(float x)
+* \fn float scifir::atan_degree(float x)
 * \brief Calculates the atan receiving x in degrees. It uses the atan() function of the standard library of C++, but the difference is that the argument is in degrees, not in radians.
 
-* \fn float scifir::asinh_grade(float x)
+* \fn float scifir::asinh_degree(float x)
 * \brief Calculates the asinh receiving x in degrees. It uses the asinh() function of the standard library of C++, but the difference is that the argument is in degrees, not in radians.
 
-* \fn float scifir::acosh_grade(float x)
+* \fn float scifir::acosh_degree(float x)
 * \brief Calculates the acosh receiving x in degrees. It uses the acosh() function of the standard library of C++, but the difference is that the argument is in degrees, not in radians.
 
-* \fn float scifir::atanh_grade(float x)
+* \fn float scifir::atanh_degree(float x)
 * \brief Calculates the atanh receiving x in degrees. It uses the atanh() function of the standard library of C++, but the difference is that the argument is in degrees, not in radians.
 
 * \fn scifir::angle operator +(T x, const scifir::angle &y)

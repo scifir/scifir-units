@@ -129,7 +129,7 @@ namespace scifir
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return angle(scifir::atan_grade(float(values[1]/values[0])));
+					return angle(scifir::atan_degree(float(values[1]/values[0])));
 				}
 				else
 				{
@@ -153,7 +153,7 @@ namespace scifir
 			{
 				if (get_nd() == 3)
 				{
-					return angle(scifir::acos_grade(float(values[2]/scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2)))));
+					return angle(scifir::acos_degree(float(values[2]/scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2)))));
 				}
 				else
 				{
@@ -642,7 +642,7 @@ namespace scifir
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return angle(scifir::atan_grade(float(values[1]/values[0])));
+					return angle(scifir::atan_degree(float(values[1]/values[0])));
 				}
 				else
 				{
@@ -666,7 +666,7 @@ namespace scifir
 			{
 				if (get_nd() == 3)
 				{
-					return angle(scifir::acos_grade(float(values[2]/std::sqrt(std::pow(values[0],2) + std::pow(values[1],2) + std::pow(values[2],2)))));
+					return angle(scifir::acos_degree(float(values[2]/std::sqrt(std::pow(values[0],2) + std::pow(values[1],2) + std::pow(values[2],2)))));
 				}
 				else
 				{

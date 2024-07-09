@@ -112,7 +112,7 @@ namespace scifir
 
 			angle get_phi() const
 			{
-				return angle(scifir::acos_grade(float(z/scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)))));
+				return angle(scifir::acos_degree(float(z/scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)))));
 			}
 
 			angle get_latitude() const
@@ -396,7 +396,7 @@ namespace scifir
 
 			angle get_phi() const
 			{
-				return angle(scifir::acos_grade(float(z/std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)))));
+				return angle(scifir::acos_degree(float(z/std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)))));
 			}
 
 			angle get_latitude() const
@@ -622,7 +622,7 @@ namespace scifir
 	inline angle cartesian_3d_to_cylindrical_theta(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
 	{
 		y.change_dimensions(x);
-		return angle(scifir::atan_grade(float(y) / float(x)));
+		return angle(scifir::atan_degree(float(y) / float(x)));
 	}
 
 	inline scalar_unit cartesian_3d_to_cylindrical_z(const scalar_unit& x,const scalar_unit& y,const scalar_unit& z)
@@ -640,14 +640,14 @@ namespace scifir
 	inline angle cartesian_3d_to_spherical_theta(const scalar_unit& x,scalar_unit y,const scalar_unit& z)
 	{
 		y.change_dimensions(x);
-		return angle(scifir::atan_grade(float(y) / float(x)));
+		return angle(scifir::atan_degree(float(y) / float(x)));
 	}
 
 	inline angle cartesian_3d_to_spherical_phi(const scalar_unit& x,scalar_unit y,scalar_unit z)
 	{
 		y.change_dimensions(x);
 		z.change_dimensions(x);
-		return angle(scifir::acos_grade(float(z) / float(std::sqrt(std::pow(float(x),2) + std::pow(float(y),2) + std::pow(float(z),2)))));
+		return angle(scifir::acos_degree(float(z) / float(std::sqrt(std::pow(float(x),2) + std::pow(float(y),2) + std::pow(float(z),2)))));
 	}
 
 	inline scalar_unit spherical_to_cartesian_3d_x(const scalar_unit& r,const angle& theta, const angle& phi)
@@ -709,7 +709,7 @@ namespace scifir
 	inline angle cylindrical_to_spherical_phi(const scalar_unit& p,const angle& theta,scalar_unit z)
 	{
 		z.change_dimensions(p);
-		return angle(scifir::atan_grade(float(p) / float(z)));
+		return angle(scifir::atan_degree(float(p) / float(z)));
 	}
 
 	inline float cartesian_3d_to_cylindrical_p(float x,float y,float z)
@@ -719,7 +719,7 @@ namespace scifir
 
 	inline angle cartesian_3d_to_cylindrical_theta(float x,float y,float z)
 	{
-		return angle(scifir::atan_grade(y / x));
+		return angle(scifir::atan_degree(y / x));
 	}
 
 	inline float cartesian_3d_to_cylindrical_z(float x,float y,float z)
@@ -734,12 +734,12 @@ namespace scifir
 
 	inline angle cartesian_3d_to_spherical_theta(float x,float y,float z)
 	{
-		return angle(scifir::atan_grade(y / x));
+		return angle(scifir::atan_degree(y / x));
 	}
 
 	inline angle cartesian_3d_to_spherical_phi(float x,float y,float z)
 	{
-		return angle(scifir::acos_grade(z / float(std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)))));
+		return angle(scifir::acos_degree(z / float(std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)))));
 	}
 
 	inline float spherical_to_cartesian_3d_x(float r,const angle& theta, const angle& phi)
@@ -799,7 +799,7 @@ namespace scifir
 
 	inline angle cylindrical_to_spherical_phi(float p,const angle& theta, float z)
 	{
-		return angle(scifir::atan_grade(p / z));
+		return angle(scifir::atan_degree(p / z));
 	}
 }
 

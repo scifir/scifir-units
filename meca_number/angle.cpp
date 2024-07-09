@@ -32,7 +32,7 @@ namespace scifir
 		}
 		else if (init_type == angle::RADIAN)
 		{
-			value = radian_to_grade(new_value);
+			value = radian_to_degree(new_value);
 		}
 		normalize_value();
 	}
@@ -45,7 +45,7 @@ namespace scifir
 		}
 		else if (init_type == angle::RADIAN)
 		{
-			value = radian_to_grade(float(new_value));
+			value = radian_to_degree(float(new_value));
 		}
 		normalize_value();
 	}
@@ -58,7 +58,7 @@ namespace scifir
 		}
 		else if (init_type == angle::RADIAN)
 		{
-			value = radian_to_grade(float(new_value));
+			value = radian_to_degree(float(new_value));
 		}
 		normalize_value();
 	}
@@ -71,7 +71,7 @@ namespace scifir
 		}
 		else if (init_type == angle::RADIAN)
 		{
-			value = radian_to_grade(float(new_value));
+			value = radian_to_degree(float(new_value));
 		}
 		normalize_value();
 	}
@@ -360,17 +360,17 @@ namespace scifir
 
 	angle asin(float x)
 	{
-		return angle(radian_to_grade(std::asin(x)));
+		return angle(radian_to_degree(std::asin(x)));
 	}
 
 	angle acos(float x)
 	{
-		return angle(radian_to_grade(std::acos(x)));
+		return angle(radian_to_degree(std::acos(x)));
 	}
 
 	angle atan(float x)
 	{
-		return angle(radian_to_grade(std::atan(x)));
+		return angle(radian_to_degree(std::atan(x)));
 	}
 
 	float sinh(const angle& x)
@@ -390,17 +390,17 @@ namespace scifir
 
 	angle asinh(float x)
 	{
-		return angle(radian_to_grade(std::asinh(x)));
+		return angle(radian_to_degree(std::asinh(x)));
 	}
 
 	angle acosh(float x)
 	{
-		return angle(radian_to_grade(std::acosh(x)));
+		return angle(radian_to_degree(std::acosh(x)));
 	}
 
 	angle atanh(float x)
 	{
-		return angle(radian_to_grade(std::atanh(x)));
+		return angle(radian_to_degree(std::atanh(x)));
 	}
 }
 
