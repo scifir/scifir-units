@@ -37,6 +37,10 @@ namespace scifir
 	{
 		switch (prefix_type)
 		{
+			case prefix::QUETTA:
+				return 30;
+			case prefix::RONNA:
+				return 27;
 			case prefix::YOTTA:
 				return 24;
 			case prefix::ZETTA:
@@ -79,6 +83,10 @@ namespace scifir
 				return -21;
 			case prefix::YOCTO:
 				return -24;
+			case prefix::RONTO:
+				return -27;
+			case prefix::QUECTO:
+				return -30;
 		}
 		return 0;
 	}
@@ -87,6 +95,10 @@ namespace scifir
 	{
 		switch (prefix_type)
 		{
+			case prefix::QUETTA:
+				return "quetta";
+			case prefix::RONNA:
+				return "ronna";
 			case prefix::YOTTA:
 				return "yotta";
 			case prefix::ZETTA:
@@ -129,6 +141,10 @@ namespace scifir
 				return "zepto";
 			case prefix::YOCTO:
 				return "yocto";
+			case prefix::RONTO:
+				return "ronto";
+			case prefix::QUECTO:
+				return "quecto";
 		}
 		return "";
 	}
@@ -137,6 +153,10 @@ namespace scifir
 	{
 		switch (prefix_type)
 		{
+			case prefix::QUETTA:
+				return "Q";
+			case prefix::RONNA:
+				return "R";
 			case prefix::YOTTA:
 				return "Y";
 			case prefix::ZETTA:
@@ -179,6 +199,10 @@ namespace scifir
 				return "z";
 			case prefix::YOCTO:
 				return "y";
+			case prefix::RONTO:
+				return "r";
+			case prefix::QUECTO:
+				return "q";
 		}
 		return "";
 	}
@@ -190,7 +214,15 @@ namespace scifir
 
 	prefix::type prefix_string(const string& x)
 	{
-		if (x == "Y")
+		if (x == "Q")
+		{
+			return prefix::QUETTA;
+		}
+		else if (x == "R")
+		{
+			return prefix::RONNA;
+		}
+		else if (x == "Y")
 		{
 			return prefix::YOTTA;
 		}
@@ -270,6 +302,14 @@ namespace scifir
 		{
 			return prefix::YOCTO;
 		}
+		else if(x == "r")
+		{
+			return prefix::RONTO;
+		}
+		else if(x == "q")
+		{
+			return prefix::QUECTO;
+		}
 		else if (x == "")
 		{
 			return prefix::NONE;
@@ -337,9 +377,17 @@ namespace scifir
 		{
 			return prefix(prefix::ZETTA);
 		}
-		else if (factor >= 24)
+		else if (factor >= 24 and factor < 27)
 		{
 			return prefix(prefix::YOTTA);
+		}
+		else if (factor >= 27 and factor < 30)
+		{
+			return prefix(prefix::RONNA);
+		}
+		else if (factor >= 30)
+		{
+			return prefix(prefix::QUETTA);
 		}
 		else if (factor <= -3 and factor > -6)
 		{
@@ -369,9 +417,17 @@ namespace scifir
 		{
 			return prefix(prefix::ZEPTO);
 		}
-		else if (factor <= -24)
+		else if (factor <= -24 and factor > -27)
 		{
 			return prefix(prefix::YOCTO);
+		}
+		else if (factor <= -27 and factor > -30)
+		{
+			return prefix(prefix::RONTO);
+		}
+		else if (factor <= -30)
+		{
+			return prefix(prefix::QUECTO);
 		}
 		return prefix();
 	}

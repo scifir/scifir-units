@@ -34,6 +34,10 @@ TEST_CASE("prefix class") {
 	}
 
 	SECTION("Creation of prefix class") {
+		prefix a2 = prefix("Q");
+		CHECK(a2.prefix_type == prefix::QUETTA);
+		prefix a1 = prefix("R");
+		CHECK(a1.prefix_type == prefix::RONNA);
 		prefix a = prefix("Y");
 		CHECK(a.prefix_type == prefix::YOTTA);
 		prefix b = prefix("Z");
@@ -76,6 +80,10 @@ TEST_CASE("prefix class") {
 		CHECK(s.prefix_type == prefix::ZEPTO);
 		prefix t = prefix("y");
 		CHECK(t.prefix_type == prefix::YOCTO);
+		prefix u = prefix("r");
+		CHECK(u.prefix_type == prefix::RONTO);
+		prefix v = prefix("q");
+		CHECK(v.prefix_type == prefix::QUECTO);
 	}
 
 	SECTION("get_conversion_factor(), get_name() and get_symbol()")
@@ -84,6 +92,14 @@ TEST_CASE("prefix class") {
 		CHECK(a0.get_conversion_factor() == 0);
 		CHECK(a0.get_name() == "");
 		CHECK(a0.get_symbol() == "");
+		prefix a02 = prefix(prefix::QUETTA);
+		CHECK(a02.get_conversion_factor() == 30);
+		CHECK(a02.get_name() == "quetta");
+		CHECK(a02.get_symbol() == "Q");
+		prefix a01 = prefix(prefix::RONNA);
+		CHECK(a01.get_conversion_factor() == 27);
+		CHECK(a01.get_name() == "ronna");
+		CHECK(a01.get_symbol() == "R");
 		prefix a = prefix(prefix::YOTTA);
 		CHECK(a.get_conversion_factor() == 24);
 		CHECK(a.get_name() == "yotta");
@@ -164,6 +180,14 @@ TEST_CASE("prefix class") {
 		CHECK(a20.get_conversion_factor() == -24);
 		CHECK(a20.get_name() == "yocto");
 		CHECK(a20.get_symbol() == "y");
+		prefix a21 = prefix(prefix::RONTO);
+		CHECK(a21.get_conversion_factor() == -27);
+		CHECK(a21.get_name() == "ronto");
+		CHECK(a21.get_symbol() == "r");
+		prefix a22 = prefix(prefix::QUECTO);
+		CHECK(a22.get_conversion_factor() == -30);
+		CHECK(a22.get_name() == "quecto");
+		CHECK(a22.get_symbol() == "q");
 	}
 
 	SECTION("Test of closest_prefix") {
@@ -197,6 +221,8 @@ TEST_CASE("prefix class") {
 		CHECK(create_prefix_by_factor(18).prefix_type == prefix::EXA);
 		CHECK(create_prefix_by_factor(21).prefix_type == prefix::ZETTA);
 		CHECK(create_prefix_by_factor(24).prefix_type == prefix::YOTTA);
+		CHECK(create_prefix_by_factor(27).prefix_type == prefix::RONNA);
+		CHECK(create_prefix_by_factor(30).prefix_type == prefix::QUETTA);
 		CHECK(create_prefix_by_factor(-3).prefix_type == prefix::MILLI);
 		CHECK(create_prefix_by_factor(-6).prefix_type == prefix::MICRO);
 		CHECK(create_prefix_by_factor(-9).prefix_type == prefix::NANO);
@@ -205,6 +231,8 @@ TEST_CASE("prefix class") {
 		CHECK(create_prefix_by_factor(-18).prefix_type == prefix::ATTO);
 		CHECK(create_prefix_by_factor(-21).prefix_type == prefix::ZEPTO);
 		CHECK(create_prefix_by_factor(-24).prefix_type == prefix::YOCTO);
+		CHECK(create_prefix_by_factor(-27).prefix_type == prefix::RONTO);
+		CHECK(create_prefix_by_factor(-30).prefix_type == prefix::QUECTO);
 	}
 
 	SECTION("Functionalities of prefix class") {
