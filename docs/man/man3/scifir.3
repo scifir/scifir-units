@@ -1734,12 +1734,6 @@ scifir \- The namespace scifir contains all scifir-units, excepting the string l
 .ti -1c
 .RI "\fBstring\fP \fBdisplay_float\fP (\fBconst\fP \fBfloat\fP &value, \fBint\fP \fBnumber_of_decimals\fP)"
 .br
-.ti -1c
-.RI "\fBstring\fP \fBdisplay_double\fP (\fBconst\fP \fBdouble\fP &value, \fBint\fP \fBnumber_of_decimals\fP)"
-.br
-.ti -1c
-.RI "\fBstring\fP \fBdisplay_long_double\fP (\fBconst\fP \fBlong\fP \fBdouble\fP &value, \fBint\fP \fBnumber_of_decimals\fP)"
-.br
 .in -1c
 .SS "Variables"
 
@@ -3056,32 +3050,6 @@ Definition at line \fB278\fP of file \fBunit_basic\&.cpp\fP\&..PP
 283     }
 .fi
 
-.SS "\fBstring\fP scifir::display_double (\fBconst\fP \fBdouble\fP & value, \fBint\fP number_of_decimals)"
-
-.PP
-Definition at line \fB57\fP of file \fBtypes\&.cpp\fP\&..PP
-.nf
-58     {
-59         ostringstream output;
-60         if (number_of_decimals > 0)
-61         {
-62             output << (value*std::pow(10,number_of_decimals) / std::pow(10,number_of_decimals));
-63         }
-64         else
-65         {
-66             output << value;
-67         }
-68         if (output\&.str() == "\-0")
-69         {
-70             return "0";
-71         }
-72         else
-73         {
-74             return output\&.str();
-75         }
-76     }
-.fi
-
 .SS "\fBstring\fP scifir::display_float (\fBconst\fP \fBfloat\fP & value, \fBint\fP number_of_decimals)"
 
 .PP
@@ -3118,32 +3086,6 @@ Definition at line \fB285\fP of file \fBunit_basic\&.cpp\fP\&..PP
 288         out << get_hours() << " h";
 289         return out\&.str();
 290     }
-.fi
-
-.SS "\fBstring\fP scifir::display_long_double (\fBconst\fP \fBlong\fP \fBdouble\fP & value, \fBint\fP number_of_decimals)"
-
-.PP
-Definition at line \fB78\fP of file \fBtypes\&.cpp\fP\&..PP
-.nf
-79     {
-80         ostringstream output;
-81         if (number_of_decimals > 0)
-82         {
-83             output << (std::trunc(value*std::pow(10\&.0l,number_of_decimals)) / std::pow(10\&.0l,number_of_decimals));
-84         }
-85         else
-86         {
-87             output << value;
-88         }
-89         if (output\&.str() == "\-0")
-90         {
-91             return "0";
-92         }
-93         else
-94         {
-95             return output\&.str();
-96         }
-97     }
 .fi
 
 .SS "\fBstring\fP scifir::time_duration::display_minutes () const"

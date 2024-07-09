@@ -3,7 +3,7 @@ var searchData=
   ['n_0',['n',['../classscifir_1_1prefix.html#afd8baa69668003ed6cc1227eb2a661f5a08f92d1bc74ae479f58312b156cd3d35',1,'scifir::prefix::n'],['../classscifir_1_1dimension.html#a7159ee72510ebcc26ee93da8900fb9fbada162a2bf0aae4c1c1a7a5d3b392f7d4',1,'scifir::dimension::N']]],
   ['n_5fprojection_1',['n_projection',['../classscifir_1_1vector__unit__nd.html#a4e0703c092bf1acca73a5258901a0f58',1,'scifir::vector_unit_nd']]],
   ['name_2',['name',['../classscifir_1_1direction.html#a3f9d1fd5a6c5f61b9fb49c4e56938319',1,'scifir::direction']]],
-  ['nd_3',['nd',['../index.html#autotoc_md48',1,'Sizes in 2D, 3D and ND'],['../index.html#autotoc_md40',1,'Vector units in ND']]],
+  ['nd_3',['nd',['../index.html#autotoc_md47',1,'Sizes in 2D, 3D and ND'],['../index.html#autotoc_md39',1,'Vector units in ND']]],
   ['neptune_4',['NEPTUNE',['../namespacescifir.html#a20683521b4e3fde1fac96fee7ca39e36a9baf2ee639a37d753fec5707bd21f38a',1,'scifir']]],
   ['news_5',['NEWS',['../md_NEWS.html',1,'']]],
   ['news_2emd_6',['NEWS.md',['../NEWS_8md.html',1,'']]],

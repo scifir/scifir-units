@@ -57,48 +57,6 @@
 \DoxyCodeLine{\Hypertarget{types_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}.str();}
 \DoxyCodeLine{\Hypertarget{types_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{types_8cpp_source_l00055}00055\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00057}\mbox{\hyperlink{namespacescifir_a76943d4b7ab2e9ba278182abafa5378a}{00057}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{namespacescifir_a76943d4b7ab2e9ba278182abafa5378a}{display\_double}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ value,\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}})}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00058}00058\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}};}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ >\ 0)}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}\ <<\ (value*std::pow(10,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}})\ /\ std::pow(10,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}));}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}\ <<\ value;}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}.str()\ ==\ \textcolor{stringliteral}{"{}-\/0"{}})}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}0"{}};}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}.str();}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00076}00076\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00077}00077\ }
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00078}\mbox{\hyperlink{namespacescifir_ab22ad226e1213d2c21d0f62848c03b39}{00078}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{namespacescifir_ab22ad226e1213d2c21d0f62848c03b39}{display\_long\_double}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\&\ value,\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}})}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00079}00079\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}};}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ >\ 0)}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}\ <<\ (std::trunc(value*std::pow(10.0l,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}))\ /\ std::pow(10.0l,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}));}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}\ <<\ value;}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}.str()\ ==\ \textcolor{stringliteral}{"{}-\/0"{}})}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}0"{}};}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}.str();}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00097}00097\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{types_8cpp_source_l00056}00056\ \}}
 
 \end{DoxyCode}

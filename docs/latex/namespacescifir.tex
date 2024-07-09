@@ -1244,10 +1244,6 @@ vector$<$ \mbox{\hyperlink{classscifir_1_1dimension}{dimension}} $>$ \mbox{\hype
 \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{namespacescifir_adfdadde9749704d6e679fd97651ca573}{parse\+\_\+int}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \&x)
 \item 
 \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a6fc5f876bdd1abb1118fc73288152eb0}{display\+\_\+float}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{float}} \&value, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\+\_\+of\+\_\+decimals}})
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_a76943d4b7ab2e9ba278182abafa5378a}{display\+\_\+double}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} \&value, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\+\_\+of\+\_\+decimals}})
-\item 
-\mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} \mbox{\hyperlink{namespacescifir_ab22ad226e1213d2c21d0f62848c03b39}{display\+\_\+long\+\_\+double}} (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{long}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} \&value, \mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\+\_\+of\+\_\+decimals}})
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -3202,39 +3198,6 @@ Definition at line \mbox{\hyperlink{unit__basic_8cpp_source_l00278}{278}} of fil
 \DoxyCodeLine{00283\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{namespacescifir_a76943d4b7ab2e9ba278182abafa5378a}\label{namespacescifir_a76943d4b7ab2e9ba278182abafa5378a} 
-\index{scifir@{scifir}!display\_double@{display\_double}}
-\index{display\_double@{display\_double}!scifir@{scifir}}
-\doxysubsubsection{\texorpdfstring{display\_double()}{display\_double()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} scifir\+::display\+\_\+double (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} \&}]{value,  }\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{number\+\_\+of\+\_\+decimals }\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{types_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{types_8cpp_source}{types.\+cpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00058\ \ \ \ \ \{}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}};}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ >\ 0)}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}\ <<\ (value*std::pow(10,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}})\ /\ std::pow(10,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}));}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ value;}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (output.str()\ ==\ \textcolor{stringliteral}{"{}-\/0"{}})}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}0"{}};}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00076\ \ \ \ \ \}}
-
-\end{DoxyCode}
 \Hypertarget{namespacescifir_a6fc5f876bdd1abb1118fc73288152eb0}\label{namespacescifir_a6fc5f876bdd1abb1118fc73288152eb0} 
 \index{scifir@{scifir}!display\_float@{display\_float}}
 \index{display\_float@{display\_float}!scifir@{scifir}}
@@ -3285,39 +3248,6 @@ Definition at line \mbox{\hyperlink{unit__basic_8cpp_source_l00285}{285}} of fil
 \DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}\ <<\ \mbox{\hyperlink{namespacescifir_a360bfcec678ee3bd2af74df13695a5bd}{get\_hours}}()\ <<\ \textcolor{stringliteral}{"{}\ h"{}};}
 \DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{out}}.str();}
 \DoxyCodeLine{00290\ \ \ \ \ \}}
-
-\end{DoxyCode}
-\Hypertarget{namespacescifir_ab22ad226e1213d2c21d0f62848c03b39}\label{namespacescifir_ab22ad226e1213d2c21d0f62848c03b39} 
-\index{scifir@{scifir}!display\_long\_double@{display\_long\_double}}
-\index{display\_long\_double@{display\_long\_double}!scifir@{scifir}}
-\doxysubsubsection{\texorpdfstring{display\_long\_double()}{display\_long\_double()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classscifir_1_1coordinates__1d}{string}} scifir\+::display\+\_\+long\+\_\+double (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{const}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{long}} \mbox{\hyperlink{classscifir_1_1coordinates__1d}{double}} \&}]{value,  }\item[{\mbox{\hyperlink{classscifir_1_1coordinates__1d}{int}}}]{number\+\_\+of\+\_\+decimals }\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{types_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{types_8cpp_source}{types.\+cpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00079\ \ \ \ \ \{}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{ostringstream}}\ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}};}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}\ >\ 0)}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classscifir_1_1coordinates__1d}{output}}\ <<\ (std::trunc(value*std::pow(10.0l,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}))\ /\ std::pow(10.0l,\mbox{\hyperlink{classscifir_1_1coordinates__1d}{number\_of\_decimals}}));}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ value;}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (output.str()\ ==\ \textcolor{stringliteral}{"{}-\/0"{}})}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}0"{}};}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00097\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{namespacescifir_a403dc718f3c77ae412c16c8fc0dba004}\label{namespacescifir_a403dc718f3c77ae412c16c8fc0dba004} 

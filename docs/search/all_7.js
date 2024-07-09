@@ -2,7 +2,7 @@ var searchData=
 [
   ['e_0',['E',['../classscifir_1_1prefix.html#afd8baa69668003ed6cc1227eb2a661f5a383a69a3a0cdbe459d1b326fc8b099d8',1,'scifir::prefix']]],
   ['earth_1',['EARTH',['../namespacescifir.html#a20683521b4e3fde1fac96fee7ca39e36ab6f13830e914e2068be5c1008a124857',1,'scifir']]],
-  ['electronic_20devices_2',['Electronic devices',['../index.html#autotoc_md27',1,'']]],
+  ['electronic_20devices_2',['Electronic devices',['../index.html#autotoc_md26',1,'']]],
   ['electronics_5funits_2ecpp_3',['electronics_units.cpp',['../electronics__units_8cpp.html',1,'']]],
   ['electronics_5funits_2ehpp_4',['electronics_units.hpp',['../electronics__units_8hpp.html',1,'']]],
   ['emotion_5',['emotion',['../namespacescifir.html#a689c4e163ef96d7d5dad93dce859d2c6',1,'scifir']]],
