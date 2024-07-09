@@ -72,8 +72,8 @@ TEST_CASE("dimension class") {
 	{
 		dimension a("m",dimension::NUMERATOR);
 		CHECK(a.dimension_type == dimension::METRE);
-		dimension a1_2("grade",dimension::NUMERATOR);
-		CHECK(a1_2.dimension_type == dimension::GRADE);
+		dimension a1_2("degree",dimension::NUMERATOR);
+		CHECK(a1_2.dimension_type == dimension::DEGREE);
 		dimension a2("rad",dimension::NUMERATOR);
 		CHECK(a2.dimension_type == dimension::RADIAN);
 		dimension a3("sr",dimension::NUMERATOR);
@@ -248,8 +248,8 @@ TEST_CASE("dimension class") {
 		CHECK(a2.get_conversion_factor() == 1.0l);
 		CHECK(a2.is_simple_dimension() == true);
 		CHECK(a2.is_basic_dimension() == true);
-		dimension a3_2(dimension::GRADE,prefix::NONE,dimension::NUMERATOR);
-		CHECK(a3_2.get_name() == "grade");
+		dimension a3_2(dimension::DEGREE,prefix::NONE,dimension::NUMERATOR);
+		CHECK(a3_2.get_name() == "degree");
 		CHECK(a3_2.get_symbol() == "\u03B8");
 		CHECK(a3_2.get_conversion_factor() == PI / 180.0l);
 		CHECK(a3_2.is_simple_dimension() == true);
@@ -552,7 +552,7 @@ TEST_CASE("dimension class") {
 		dimension a("m",dimension::NUMERATOR);
 		vector<dimension> b = { dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a.get_basic_dimensions(),b));
-		dimension a2_2("grade",dimension::NUMERATOR);
+		dimension a2_2("degree",dimension::NUMERATOR);
 		vector<dimension> b2_2 = { dimension(dimension::RADIAN,prefix::NONE,dimension::NUMERATOR) };
 		CHECK(equal_dimensions(a2_2.get_basic_dimensions(),b2_2));
 		dimension a2("rad",dimension::NUMERATOR);

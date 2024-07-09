@@ -55,7 +55,7 @@ namespace scifir
 	{
 		string dimension_name;
 		string prefix_name;
-		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "h" and init_dimension != "d" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo")
+		if(dimension::prefixes_options.count(init_dimension.substr(0,1)) and init_dimension != "degree" and init_dimension != "rad" and init_dimension != "sr" and init_dimension != "m" and init_dimension != "Pa" and init_dimension.substr(0,2) != "da" and init_dimension.substr(0,3) != "mol" and init_dimension != "cd" and init_dimension != "T" and init_dimension != "Gy" and init_dimension != "kat" and init_dimension != "angstrom" and init_dimension != "min" and init_dimension != "h" and init_dimension != "d" and init_dimension != "pc" and init_dimension != "amu" and init_dimension != "M" and init_dimension != "particles" and init_dimension != "money" and init_dimension != "px" and init_dimension != "memo")
 		{
 			prefix_name = init_dimension.substr(0,1);
 			dimension_name = init_dimension.substr(1);
@@ -75,9 +75,9 @@ namespace scifir
 		{
 			dimension_type = dimension::METRE;
 		}
-		else if(dimension_name == "grade")
+		else if(dimension_name == "degree")
 		{
-			dimension_type = dimension::GRADE;
+			dimension_type = dimension::DEGREE;
 		}
 		else if(dimension_name == "rad")
 		{
@@ -326,8 +326,8 @@ namespace scifir
 				return "empty";
 			case dimension::METRE:
 				return "metre";
-			case dimension::GRADE:
-				return "grade";
+			case dimension::DEGREE:
+				return "degree";
 			case dimension::RADIAN:
 				return "radian";
 			case dimension::STERADIAN:
@@ -437,10 +437,10 @@ namespace scifir
 			case dimension::METRE:
 				return "m";
 #ifdef IS_UNIX
-			case dimension::GRADE:
+			case dimension::DEGREE:
 				return "\U000003B8";
 #elif IS_WINDOWS
-			case dimension::GRADE:
+			case dimension::DEGREE:
 				return "\U03B8";
 #endif
 			case dimension::RADIAN:
@@ -561,7 +561,7 @@ namespace scifir
 				return 1.0l;
 			case dimension::METRE:
 				return 1.0l;
-			case dimension::GRADE:
+			case dimension::DEGREE:
 				return PI / 180.0l;
 			case dimension::RADIAN:
 				return 1.0l;
@@ -688,7 +688,7 @@ namespace scifir
 				return true;
 			case dimension::METRE:
 				return true;
-			case dimension::GRADE:
+			case dimension::DEGREE:
 				return true;
 			case dimension::RADIAN:
 				return true;
@@ -798,7 +798,7 @@ namespace scifir
 				return true;
 			case dimension::METRE:
 				return true;
-			case dimension::GRADE:
+			case dimension::DEGREE:
 				return true;
 			case dimension::RADIAN:
 				return true;
@@ -916,7 +916,7 @@ namespace scifir
 			case dimension::METRE:
 				basic_dimensions.push_back(dimension(dimension::METRE,prefix::NONE,dimension::NUMERATOR));
 				break;
-			case dimension::GRADE:
+			case dimension::DEGREE:
 				basic_dimensions.push_back(dimension(dimension::RADIAN,prefix::NONE,dimension::NUMERATOR));
 				break;
 			case dimension::RADIAN:
