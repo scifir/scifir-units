@@ -106,6 +106,22 @@ TEST_CASE("percentage class") {
 		CHECK(j.get_value() == 10.0f);
 		percentage j3(j2);
 		CHECK(j3.get_value() == 0.0f);
+		percentage k(30.0f,percentage::PARTS_PER_MILLION);
+		CHECK(k.get_value() == (30.0f / 10000.0f));
+		percentage k2(30.0,percentage::PARTS_PER_MILLION);
+		CHECK(k2.get_value() == (30.0f / 10000.0f));
+		percentage k3(30.0l,percentage::PARTS_PER_MILLION);
+		CHECK(k3.get_value() == (30.0f / 10000.0f));
+		percentage k4(30,percentage::PARTS_PER_MILLION);
+		CHECK(k4.get_value() == (30.0f / 10000.0f));
+		percentage l(30.0f,percentage::PARTS_PER_BILLION);
+		CHECK(l.get_value() == 0.0f);
+		percentage l2(30.0,percentage::PARTS_PER_BILLION);
+		CHECK(l2.get_value() == 0.0f);
+		percentage l3(30.0l,percentage::PARTS_PER_BILLION);
+		CHECK(l3.get_value() == 0.0f);
+		percentage l4(30,percentage::PARTS_PER_BILLION);
+		CHECK(l4.get_value() == 0.0f);
 	}
 
 	SECTION("Assignments of percentage class") {
