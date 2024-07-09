@@ -19,12 +19,22 @@
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>operator*,<sp/>cross_product(),<sp/>dot_product(),<sp/>hadamard_product()</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>TRAJECTORY<sp/>AND<sp/>PARAMETERIZATION</highlight></codeline>
-<codeline><highlight class="normal">//<sp/>TODO:<sp/>think<sp/>if<sp/>to<sp/>add<sp/>here<sp/>the<sp/>trajectory<sp/>and<sp/>te<sp/>parameterization</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>think<sp/>if<sp/>to<sp/>add<sp/>here<sp/>the<sp/>trajectory<sp/>and<sp/>the<sp/>parameterization</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>BUGS<sp/>AND<sp/>SIMILAR<sp/>PROBLEMS<sp/>(3)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>a<sp/>whitespace<sp/>between<sp/>operator<sp/>and<sp/>the<sp/>=<sp/>sign<sp/>to<sp/>all<sp/>those<sp/>functions</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>value<sp/>no_prefix<sp/>should<sp/>be<sp/>NONE</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>maybe<sp/>the<sp/>prefixes<sp/>Q<sp/>and<sp/>R<sp/>should<sp/>be<sp/>added<sp/>too</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>change<sp/>the<sp/>values<sp/>of<sp/>the<sp/>enum<sp/>prefix::type<sp/>to<sp/>their<sp/>fullname<sp/>in<sp/>uppercase</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>change<sp/>the<sp/>values<sp/>of<sp/>the<sp/>enum<sp/>dimension::type<sp/>to<sp/>their<sp/>fullname<sp/>in<sp/>uppercase</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>complex_number&lt;&gt;<sp/>and<sp/>lab_number&lt;&gt;<sp/>should<sp/>work<sp/>with<sp/>scalar_unit<sp/>class<sp/>as<sp/>template<sp/>parameter</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>angle<sp/>class<sp/>should<sp/>allow<sp/>with<sp/>an<sp/>enum<sp/>value<sp/>of<sp/>RADIAN<sp/>to<sp/>initialize<sp/>by<sp/>radians<sp/>instead<sp/>of<sp/>by<sp/>grades,<sp/>which<sp/>is<sp/>the<sp/>default<sp/>behaviour</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>light<sp/>units<sp/>somewhere</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>percentage<sp/>should<sp/>have<sp/>an<sp/>enum<sp/>percentage::type<sp/>with<sp/>the<sp/>values<sp/>PERCENTAGE,<sp/>PARTS_PER_MILLION,<sp/>PARTS_PER_BILLION,<sp/>PARTS_PER_TRILLION,<sp/>PARTS_PER_QUATRILLION</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>change<sp/>dimension_sign<sp/>to<sp/>have<sp/>dimension_position<sp/>as<sp/>name</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>custom<sp/>dimensions<sp/>should<sp/>allow<sp/>to<sp/>store<sp/>their<sp/>names<sp/>too,<sp/>not<sp/>only<sp/>their<sp/>symbols</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>there&apos;s<sp/>an<sp/>additional<sp/>declaration<sp/>of<sp/>create_derived_dimensions()</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>maybe<sp/>the<sp/>prefix<sp/>should<sp/>be<sp/>also<sp/>present<sp/>in<sp/>the<sp/>operator<sp/>==<sp/>of<sp/>dimensions,<sp/>and<sp/>then<sp/>it&apos;s<sp/>needed<sp/>another<sp/>function<sp/>to<sp/>do<sp/>what<sp/>this<sp/>operator<sp/>is<sp/>currently<sp/>doing</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>display_double()<sp/>and<sp/>display_long_double()<sp/>functions<sp/>of<sp/>types.cpp</highlight></codeline>
 <codeline></codeline>
@@ -73,12 +83,19 @@
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>test<sp/>of<sp/>unit<sp/>basic<sp/>classes</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>DOCUMENTATION<sp/>(23)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>change<sp/>in<sp/>the<sp/>master<sp/>branch<sp/>the<sp/>Doxyfile<sp/>in<sp/>order<sp/>to<sp/>only<sp/>generate<sp/>HTML,<sp/>in<sp/>order<sp/>to<sp/>improve<sp/>performance</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>create<sp/>all<sp/>the<sp/>dox<sp/>files<sp/>of<sp/>the<sp/>library</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>thinking<sp/>behind<sp/>the<sp/>geographic<sp/>coordinates<sp/>of<sp/>allowing<sp/>to<sp/>change<sp/>planet.<sp/>By<sp/>default<sp/>it&apos;s<sp/>the<sp/>Earth</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TOOD:<sp/>document<sp/>that<sp/>angle<sp/>always<sp/>uses<sp/>grades</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>use<sp/>of<sp/>special<sp/>characters<sp/>in<sp/>prefixes</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>special<sp/>characters<sp/>in<sp/>vector<sp/>units</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>special<sp/>character<sp/>in<sp/>angle<sp/>class</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>what<sp/>is<sp/>a<sp/>dimension,<sp/>what<sp/>is<sp/>a<sp/>derived<sp/>dimension,<sp/>and<sp/>what<sp/>is<sp/>a<sp/>basic<sp/>dimension</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>use<sp/>the<sp/>bold<sp/>for<sp/>&quot;internal<sp/>function&quot;<sp/>inside<sp/>the<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>the<sp/>abbreviations<sp/>in<sp/>the<sp/>groups<sp/>too</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>initialization<sp/>string<sp/>of<sp/>each<sp/>class<sp/>in<sp/>their<sp/>respective<sp/>page</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>latex<sp/>to<sp/>the<sp/>factors<sp/>of<sp/>prefixes<sp/>in<sp/>prefix.dox</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>how<sp/>the<sp/>england<sp/>and<sp/>united<sp/>states<sp/>units<sp/>work,<sp/>which<sp/>are<sp/>different<sp/>than<sp/>the<sp/>SI<sp/>system<sp/>of<sp/>units</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>document<sp/>the<sp/>coordinates<sp/>for<sp/>the<sp/>universe,<sp/>publish<sp/>that<sp/>too<sp/>as<sp/>an<sp/>standard<sp/>inside<sp/>scifir</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>check<sp/>what<sp/>to<sp/>do<sp/>with<sp/>the<sp/>libraries<sp/>of<sp/>ISOs<sp/>and<sp/>document<sp/>them<sp/>inside<sp/>the<sp/>README.md<sp/>file.<sp/>If<sp/>there<sp/>isn&apos;t<sp/>a<sp/>library<sp/>of<sp/>ISOs,<sp/>decide<sp/>if<sp/>to<sp/>create<sp/>one</highlight></codeline>
@@ -96,6 +113,7 @@
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>the<sp/>summary<sp/>sheet<sp/>somewhere</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>&quot;Things<sp/>to<sp/>remember&quot;<sp/>section,<sp/>which<sp/>explains<sp/>the<sp/>use<sp/>of<sp/>the<sp/>degree<sp/>for<sp/>vector_unit_nd<sp/>instead<sp/>of<sp/>the<sp/>other<sp/>two<sp/>cases,<sp/>the<sp/>use<sp/>of<sp/>fabs,<sp/>the<sp/>use<sp/>of<sp/>display<sp/>that<sp/>doesn&apos;t<sp/>displays<sp/>all<sp/>decimals</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>a<sp/>section<sp/>of<sp/>&quot;Optional<sp/>knowledge&quot;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>formulas<sp/>of<sp/>physics<sp/>related<sp/>to<sp/>units</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>formulas<sp/>of<sp/>chemistry<sp/>related<sp/>to<sp/>units</highlight></codeline>
@@ -134,6 +152,7 @@
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>is_algebraic_expression()<sp/>and<sp/>is_algebraic_term()<sp/>functions</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>static<sp/>variable<sp/>storing<sp/>scalar_units,<sp/>scalar_fields,<sp/>etc</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>search<sp/>if<sp/>there&apos;s<sp/>a<sp/>library<sp/>that<sp/>displays<sp/>equations<sp/>inside<sp/>the<sp/>command-line<sp/>with<sp/>math<sp/>format,<sp/>with<sp/>math<sp/>glyphs</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>to_latex()<sp/>function<sp/>that<sp/>gives<sp/>the<sp/>algebraic_expression<sp/>in<sp/>latex<sp/>format</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>C++<sp/>(6)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>use<sp/>constexpr<sp/>and<sp/>consteval<sp/>to<sp/>initialize<sp/>units<sp/>instantly,<sp/>possibly<sp/>use<sp/>it<sp/>in<sp/>more<sp/>parts<sp/>of<sp/>the<sp/>code</highlight></codeline>
@@ -146,6 +165,7 @@
 <codeline><highlight class="normal">//<sp/>DIMENSIONS<sp/>(7)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>support<sp/>the<sp/>binary<sp/>prefixes<sp/>too</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>a<sp/>new<sp/>function<sp/>to<sp/>display<sp/>dimensions<sp/>with<sp/>their<sp/>full<sp/>name,<sp/>including<sp/>the<sp/>prefix</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>function<sp/>get_frequent_dimensions(),<sp/>which<sp/>are<sp/>the<sp/>frequent<sp/>definitions<sp/>(J<sp/>is<sp/>N*m,<sp/>W<sp/>is<sp/>J/s,<sp/>etc)</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>allow<sp/>to<sp/>initalize<sp/>grade<sp/>dimensions<sp/>by<sp/>symbol</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>angle<sp/>class<sp/>needs<sp/>a<sp/>to_scalar_unit()<sp/>function<sp/>that<sp/>gives<sp/>an<sp/>equivalent<sp/>scalar_unit<sp/>class<sp/>with<sp/>the<sp/>same<sp/>value<sp/>and<sp/>grade<sp/>dimension</highlight></codeline>
@@ -162,6 +182,8 @@
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>use<sp/>the<sp/>PI<sp/>of<sp/>the<sp/>std<sp/>library</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>function<sp/>point_to()<sp/>to<sp/>a<sp/>point<sp/>and<sp/>point_to()<sp/>to<sp/>a<sp/>coordinate</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>support<sp/>the<sp/>brackets<sp/>inside<sp/>is_scalar_unit(),<sp/>is_complex()<sp/>and<sp/>is_lab_number()</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>possibly<sp/>add<sp/>the<sp/>light_scalar_unit<sp/>class<sp/>that<sp/>allows<sp/>operations<sp/>with<sp/>scalar_unit<sp/>classes,<sp/>which<sp/>must<sp/>contain<sp/>only<sp/>one<sp/>dimension,<sp/>not<sp/>a<sp/>vector&lt;dimension&gt;</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>function<sp/>to_latex()<sp/>for<sp/>dimensions<sp/>and<sp/>scalar_unit</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>Regex<sp/>that<sp/>checks<sp/>all<sp/>the<sp/>invalid<sp/>dimensions<sp/>initialization<sp/>inside<sp/>a<sp/>static_assert<sp/>(create<sp/>a<sp/>static<sp/>function<sp/>of<sp/>valid_initialization_string()).<sp/>Maybe<sp/>try<sp/>first<sp/>by<sp/>undefining<sp/>the<sp/>value<sp/>if<sp/>there&apos;s<sp/>something<sp/>that<sp/>doesn&apos;t<sp/>exist<sp/>(with<sp/>an<sp/>else).<sp/>It&apos;s<sp/>possible<sp/>to<sp/>test,<sp/>with<sp/>static_assert,<sp/>that<sp/>dimension<sp/>==<sp/>nullptr,<sp/>abbreviation<sp/>==<sp/>nullptr<sp/>and<sp/>conversion<sp/>==<sp/>nullptr</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>Detect<sp/>when<sp/>there&apos;s<sp/>the<sp/>same<sp/>dimension<sp/>at<sp/>the<sp/>numerator<sp/>and<sp/>at<sp/>the<sp/>denominator<sp/>of<sp/>the<sp/>string<sp/>initialization</highlight></codeline>
@@ -174,8 +196,9 @@
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>think<sp/>if<sp/>to<sp/>add<sp/>another<sp/>concentration<sp/>class,<sp/>the<sp/>previous<sp/>one<sp/>has<sp/>been<sp/>deprecated</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>move<sp/>cas_number<sp/>to<sp/>the<sp/>library<sp/>of<sp/>scifir-info,<sp/>or<sp/>even<sp/>to<sp/>another<sp/>category</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">//<sp/>MECA<sp/>NUMBERS<sp/>(1)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>MECA<sp/>NUMBERS<sp/>(2)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>add<sp/>the<sp/>allowed<sp/>typenames<sp/>to<sp/>lab_number,<sp/>and<sp/>don&apos;t<sp/>accept<sp/>any<sp/>other<sp/>type</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>_angle,<sp/>_grade<sp/>and<sp/>_radian<sp/>literals</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>SPECIAL<sp/>UNITS<sp/>-<sp/>EXTRA<sp/>(7)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>ip<sp/>class?<sp/>check<sp/>networking<sp/>libraries<sp/>of<sp/>C++<sp/>and<sp/>decide<sp/>if<sp/>to<sp/>add<sp/>it<sp/>here</highlight></codeline>
@@ -185,6 +208,8 @@
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>think<sp/>if<sp/>to<sp/>add<sp/>a<sp/>default<sp/>case<sp/>for<sp/>the<sp/>none<sp/>value<sp/>of<sp/>aid<sp/>and<sp/>for<sp/>the<sp/>none<sp/>value<sp/>of<sp/>zid</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>functions<sp/>is_aid()<sp/>and<sp/>is_zid()</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>initialize_from_string()<sp/>for<sp/>pH<sp/>and<sp/>pOH<sp/>classes<sp/>should<sp/>work<sp/>with<sp/>pH<sp/>and<sp/>pOH<sp/>at<sp/>the<sp/>start,<sp/>respectively</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>maybe<sp/>add<sp/>zoom<sp/>class,<sp/>which<sp/>allows<sp/>to<sp/>work<sp/>with<sp/>zooms</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>TODO:<sp/>_percentage<sp/>literal</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">//<sp/>EMOTIONAL<sp/>UNITS<sp/>(1)</highlight></codeline>
 <codeline><highlight class="normal">//<sp/>TODO:<sp/>finish<sp/>the<sp/>enums<sp/>of<sp/>mind.hpp</highlight></codeline>
