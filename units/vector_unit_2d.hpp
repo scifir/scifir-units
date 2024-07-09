@@ -18,7 +18,7 @@
 			name##_2d(); \
 			name##_2d(const name##_2d&); \
 			name##_2d(name##_2d&&); \
-			using vector_unit_2d::operator=; \
+			using vector_unit_2d::operator =; \
 			using vector_unit_2d::operator+=; \
 			using vector_unit_2d::operator-=
 
@@ -34,7 +34,7 @@
 			name##_2d(); \
 			name##_2d(const name##_2d&); \
 			name##_2d(name##_2d&&); \
-			using vector_unit_2d::operator=; \
+			using vector_unit_2d::operator =; \
 			using vector_unit_2d::operator+=; \
 			using vector_unit_2d::operator-=; \
 \

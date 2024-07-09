@@ -44,25 +44,25 @@ namespace scifir
 				initialize_from_string(init_point_2d);
 			}
 
-			point_2d<T>& operator=(const point_2d<T>& x_point)
+			point_2d<T>& operator =(const point_2d<T>& x_point)
 			{
 				x = x_point.x;
 				y = x_point.y;
 				return *this;
 			}
 
-			point_2d<T>& operator=(point_2d<T>&& x_point)
+			point_2d<T>& operator =(point_2d<T>&& x_point)
 			{
 				x = std::move(x_point.x);
 				y = std::move(x_point.y);
 				return *this;
 			}
 
-			point_2d<T>& operator=(const coordinates_2d<T>&);
+			point_2d<T>& operator =(const coordinates_2d<T>&);
 
-			point_2d<T>& operator=(coordinates_2d<T>&&);
+			point_2d<T>& operator =(coordinates_2d<T>&&);
 
-			point_2d<T>& operator=(const string& init_point_2d)
+			point_2d<T>& operator =(const string& init_point_2d)
 			{
 				initialize_from_string(init_point_2d);
 				return *this;
@@ -195,25 +195,25 @@ namespace scifir
 				initialize_from_string(init_point_2d);
 			}
 
-			point_2d<float>& operator=(const point_2d<float>& x_point)
+			point_2d<float>& operator =(const point_2d<float>& x_point)
 			{
 				x = x_point.x;
 				y = x_point.y;
 				return *this;
 			}
 
-			point_2d<float>& operator=(point_2d<float>&& x_point)
+			point_2d<float>& operator =(point_2d<float>&& x_point)
 			{
 				x = std::move(x_point.x);
 				y = std::move(x_point.y);
 				return *this;
 			}
 
-			point_2d<float>& operator=(const coordinates_2d<float>& x_coordinates);
+			point_2d<float>& operator =(const coordinates_2d<float>& x_coordinates);
 
-			point_2d<float>& operator=(coordinates_2d<float>&& x_coordinates);
+			point_2d<float>& operator =(coordinates_2d<float>&& x_coordinates);
 
-			point_2d<float>& operator=(const string& init_point_2d)
+			point_2d<float>& operator =(const string& init_point_2d)
 			{
 				initialize_from_string(init_point_2d);
 				return *this;

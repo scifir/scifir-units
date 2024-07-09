@@ -25,11 +25,11 @@ namespace scifir
 			explicit pOH(const string& init_pOH);
 			explicit pOH(const scalar_unit& x);
 
-			pOH& operator=(const pOH& x);
-			pOH& operator=(pOH&& x);
-			pOH& operator=(float new_value);
-			pOH& operator=(const string& init_pOH);
-			pOH& operator=(const scalar_unit& x);
+			pOH& operator =(const pOH& x);
+			pOH& operator =(pOH&& x);
+			pOH& operator =(float new_value);
+			pOH& operator =(const string& init_pOH);
+			pOH& operator =(const scalar_unit& x);
 
 			explicit operator float() const
 			{

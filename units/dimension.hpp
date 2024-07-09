@@ -42,8 +42,8 @@ namespace scifir
 			explicit dimension(dimension::type new_dimension_type,const scifir::prefix& new_prefix,dimension::position new_position);
 			explicit dimension(const string& init_dimension,dimension::position new_position);
 
-			dimension& operator=(const dimension& x);
-			dimension& operator=(dimension&& x);
+			dimension& operator =(const dimension& x);
+			dimension& operator =(dimension&& x);
 
 			string get_name() const;
 			string get_symbol() const;
@@ -184,7 +184,7 @@ namespace scifir
 	}*/
 }
 
-bool operator==(const scifir::dimension& x,const scifir::dimension& y);
+bool operator ==(const scifir::dimension& x,const scifir::dimension& y);
 bool operator!=(const scifir::dimension& x,const scifir::dimension& y);
 
 ostream& operator <<(ostream& os, const scifir::dimension& x);

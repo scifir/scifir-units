@@ -36,21 +36,21 @@ namespace scifir
 				initialize_from_string(init_size_2d);
 			}
 
-			size_2d<T>& operator=(const size_2d<T>& x)
+			size_2d<T>& operator =(const size_2d<T>& x)
 			{
 				width = x.width;
 				height = x.height;
 				return *this;
 			}
 
-			size_2d<T>& operator=(size_2d<T>&& x)
+			size_2d<T>& operator =(size_2d<T>&& x)
 			{
 				width = std::move(x.width);
 				height = std::move(x.height);
 				return *this;
 			}
 
-			size_2d<T>& operator=(const string& init_size_2d)
+			size_2d<T>& operator =(const string& init_size_2d)
 			{
 				initialize_from_string(init_size_2d);
 				return *this;
@@ -132,21 +132,21 @@ namespace scifir
 				initialize_from_string(init_size_2d);
 			}
 
-			size_2d<float>& operator=(const size_2d<float>& x)
+			size_2d<float>& operator =(const size_2d<float>& x)
 			{
 				width = x.width;
 				height = x.height;
 				return *this;
 			}
 
-			size_2d<float>& operator=(size_2d<float>&& x)
+			size_2d<float>& operator =(size_2d<float>&& x)
 			{
 				width = std::move(x.width);
 				height = std::move(x.height);
 				return *this;
 			}
 
-			size_2d<float>& operator=(const string& init_size_2d)
+			size_2d<float>& operator =(const string& init_size_2d)
 			{
 				initialize_from_string(init_size_2d);
 				return *this;

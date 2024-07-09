@@ -281,7 +281,7 @@ namespace scifir
 	}
 
 #ifdef IS_UNIX
-	dimension& dimension::operator=(const dimension& x)
+	dimension& dimension::operator =(const dimension& x)
 	{
 		prefix = x.prefix;
 		dimension_type = x.dimension_type;
@@ -290,7 +290,7 @@ namespace scifir
 		return *this;
 	}
 	
-	dimension& dimension::operator=(dimension&& x)
+	dimension& dimension::operator =(dimension&& x)
 	{
 		prefix = std::move(x.prefix);
 		dimension_type = std::move(x.dimension_type);
@@ -299,7 +299,7 @@ namespace scifir
 		return *this;
 	}
 #elif IS_WINDOWS
-	dimension& dimension::operator=(const dimension& x)
+	dimension& dimension::operator =(const dimension& x)
 	{
 		prefix = x.prefix;
 		dimension_type = x.dimension_type;
@@ -308,7 +308,7 @@ namespace scifir
 		return *this;
 	}
 	
-	dimension& dimension::operator=(dimension&& x)
+	dimension& dimension::operator =(dimension&& x)
 	{
 		prefix = std::move(x.prefix);
 		dimension_type = std::move(x.dimension_type);
@@ -1726,7 +1726,7 @@ namespace scifir
 	}
 }
 
-bool operator==(const scifir::dimension& x,const scifir::dimension& y)
+bool operator ==(const scifir::dimension& x,const scifir::dimension& y)
 {
 	if (x.dimension_type == y.dimension_type and x.dimension_position == y.dimension_position)
 	{

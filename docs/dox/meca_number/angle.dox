@@ -45,19 +45,19 @@
 * \fn angle::angle(const scalar_unit& x)
 * \brief Constructor of angle. The value is initialized from the scalar_unit x, if the scalar_unit has empty dimensions.
 
-* \fn angle& angle::operator=(const angle& x)
+* \fn angle& angle::operator =(const angle& x)
 * \brief Copy assignment of angle. The value is copied to the value of angle x.
 
-* \fn angle& angle::operator=(angle&& x)
+* \fn angle& angle::operator =(angle&& x)
 * \brief Move assignment of angle. The value is moved from the value of angle x.
 
-* \fn angle& angle::operator=(float new_value)
+* \fn angle& angle::operator =(float new_value)
 * \brief Assignment operator. The value is copied from the float.
 
-* \fn angle& angle::operator=(const string& init_angle)
+* \fn angle& angle::operator =(const string& init_angle)
 * \brief Assignment operator. An initialization string is used to set the value, which contains the character 00B0 or the character 00BA to represent grades.
 
-* \fn angle& angle::operator=(const scalar_unit& x)
+* \fn angle& angle::operator =(const scalar_unit& x)
 * \brief Assignment operator. The value of the angle is set to the value of the scalar_unit x, only if the scalar_unit has empty dimensions.
 
 * \fn angle::operator float() const

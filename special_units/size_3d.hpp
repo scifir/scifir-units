@@ -36,7 +36,7 @@ namespace scifir
 				initialize_from_string(init_size_3d);
 			}
 
-			size_3d<T>& operator=(const size_3d<T>& x)
+			size_3d<T>& operator =(const size_3d<T>& x)
 			{
 				width = x.width;
 				height = x.height;
@@ -44,7 +44,7 @@ namespace scifir
 				return *this;
 			}
 
-			size_3d<T>& operator=(size_3d<T>&& x)
+			size_3d<T>& operator =(size_3d<T>&& x)
 			{
 				width = std::move(x.width);
 				height = std::move(x.height);
@@ -52,7 +52,7 @@ namespace scifir
 				return *this;
 			}
 
-			size_3d<T>& operator=(const string& init_size_3d)
+			size_3d<T>& operator =(const string& init_size_3d)
 			{
 				initialize_from_string(init_size_3d);
 				return *this;
@@ -139,7 +139,7 @@ namespace scifir
 				initialize_from_string(init_size_3d);
 			}
 
-			size_3d<float>& operator=(const size_3d<float>& x)
+			size_3d<float>& operator =(const size_3d<float>& x)
 			{
 				width = x.width;
 				height = x.height;
@@ -147,7 +147,7 @@ namespace scifir
 				return *this;
 			}
 
-			size_3d<float>& operator=(size_3d<float>&& x)
+			size_3d<float>& operator =(size_3d<float>&& x)
 			{
 				width = std::move(x.width);
 				height = std::move(x.height);
@@ -155,7 +155,7 @@ namespace scifir
 				return *this;
 			}
 
-			size_3d<float>& operator=(const string& init_size_3d)
+			size_3d<float>& operator =(const string& init_size_3d)
 			{
 				initialize_from_string(init_size_3d);
 				return *this;

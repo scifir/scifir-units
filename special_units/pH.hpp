@@ -26,11 +26,11 @@ namespace scifir
 			explicit pH(const string& init_pH);
 			explicit pH(const scalar_unit& x);
 
-			pH& operator=(const pH& x);
-			pH& operator=(pH&& x);
-			pH& operator=(float new_value);
-			pH& operator=(const string& init_pH);
-			pH& operator=(const scalar_unit& x);
+			pH& operator =(const pH& x);
+			pH& operator =(pH&& x);
+			pH& operator =(float new_value);
+			pH& operator =(const string& init_pH);
+			pH& operator =(const scalar_unit& x);
 
 			explicit operator float() const
 			{

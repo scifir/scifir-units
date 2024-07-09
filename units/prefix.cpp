@@ -21,13 +21,13 @@ namespace scifir
 	prefix::prefix(const string& new_type) : prefix_type(prefix_string(new_type))
 	{}
 
-	prefix& prefix::operator=(const prefix& x)
+	prefix& prefix::operator =(const prefix& x)
 	{
 		prefix_type = x.prefix_type;
 		return *this;
 	}
 
-	prefix& prefix::operator=(prefix&& x)
+	prefix& prefix::operator =(prefix&& x)
 	{
 		prefix_type = std::move(x.prefix_type);
 		return *this;

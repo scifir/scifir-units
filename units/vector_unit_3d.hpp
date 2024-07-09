@@ -25,7 +25,7 @@
 			name##_3d(); \
 			name##_3d(const name##_3d&); \
 			name##_3d(name##_3d&&); \
-			using vector_unit_3d::operator=; \
+			using vector_unit_3d::operator =; \
 			using vector_unit_3d::operator+=; \
 			using vector_unit_3d::operator-=
 
@@ -41,7 +41,7 @@
 			name##_3d(); \
 			name##_3d(const name##_3d&); \
 			name##_3d(name##_3d&&); \
-			using vector_unit_3d::operator=; \
+			using vector_unit_3d::operator =; \
 			using vector_unit_3d::operator+=; \
 			using vector_unit_3d::operator-=; \
 \

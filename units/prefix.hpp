@@ -21,8 +21,8 @@ namespace scifir
 			explicit prefix(prefix::type new_type);
 			explicit prefix(const string& new_type);
 
-			prefix& operator=(const prefix& x);
-			prefix& operator=(prefix&& x);
+			prefix& operator =(const prefix& x);
+			prefix& operator =(prefix&& x);
 
 			int get_conversion_factor() const;
 			string get_name() const;

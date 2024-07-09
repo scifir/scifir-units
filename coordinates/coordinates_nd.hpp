@@ -79,31 +79,31 @@ namespace scifir
 				initialize_from_string(init_coordinates_nd);
 			}
 
-			coordinates_nd<T>& operator=(const coordinates_nd<T>& x_coordinates)
+			coordinates_nd<T>& operator =(const coordinates_nd<T>& x_coordinates)
 			{
 				values = x_coordinates.values;
 				return *this;
 			}
 
-			coordinates_nd<T>& operator=(coordinates_nd<T>&& x_coordinates)
+			coordinates_nd<T>& operator =(coordinates_nd<T>&& x_coordinates)
 			{
 				values = std::move(x_coordinates.values);
 				return *this;
 			}
 
-			coordinates_nd<T>& operator=(const point_nd<T>& x_point)
+			coordinates_nd<T>& operator =(const point_nd<T>& x_point)
 			{
 				values = x_point.values;
 				return *this;
 			}
 
-			coordinates_nd<T>& operator=(point_nd<T>&& x_point)
+			coordinates_nd<T>& operator =(point_nd<T>&& x_point)
 			{
 				values = std::move(x_point.values);
 				return *this;
 			}
 
-			coordinates_nd<T>& operator=(const string& init_coordinates_nd)
+			coordinates_nd<T>& operator =(const string& init_coordinates_nd)
 			{
 				initialize_from_string(init_coordinates_nd);
 				return *this;
@@ -602,31 +602,31 @@ namespace scifir
 				initialize_from_string(init_coordinates_nd);
 			}
 
-			coordinates_nd<float>& operator=(const coordinates_nd<float>& x_coordinates)
+			coordinates_nd<float>& operator =(const coordinates_nd<float>& x_coordinates)
 			{
 				values = x_coordinates.values;
 				return *this;
 			}
 
-			coordinates_nd<float>& operator=(coordinates_nd<float>&& x_coordinates)
+			coordinates_nd<float>& operator =(coordinates_nd<float>&& x_coordinates)
 			{
 				values = std::move(x_coordinates.values);
 				return *this;
 			}
 
-			coordinates_nd<float>& operator=(const point_nd<float>& x_point)
+			coordinates_nd<float>& operator =(const point_nd<float>& x_point)
 			{
 				values = x_point.values;
 				return *this;
 			}
 
-			coordinates_nd<float>& operator=(point_nd<float>&& x_point)
+			coordinates_nd<float>& operator =(point_nd<float>&& x_point)
 			{
 				values = std::move(x_point.values);
 				return *this;
 			}
 
-			coordinates_nd<float>& operator=(const string& init_coordinates_nd)
+			coordinates_nd<float>& operator =(const string& init_coordinates_nd)
 			{
 				initialize_from_string(init_coordinates_nd);
 				return *this;

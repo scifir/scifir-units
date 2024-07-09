@@ -40,23 +40,23 @@ namespace scifir
 				initialize_from_string(init_point_1d);
 			}
 
-			point_1d<T>& operator=(const point_1d<T>& x_point)
+			point_1d<T>& operator =(const point_1d<T>& x_point)
 			{
 				x = x_point.x;
 				return *this;
 			}
 
-			point_1d<T>& operator=(point_1d<T>&& x_point)
+			point_1d<T>& operator =(point_1d<T>&& x_point)
 			{
 				x = std::move(x_point.x);
 				return *this;
 			}
 
-			point_1d<T>& operator=(const coordinates_1d<T>&);
+			point_1d<T>& operator =(const coordinates_1d<T>&);
 
-			point_1d<T>& operator=(coordinates_1d<T>&&);
+			point_1d<T>& operator =(coordinates_1d<T>&&);
 
-			point_1d<T>& operator=(const string& init_point_1d)
+			point_1d<T>& operator =(const string& init_point_1d)
 			{
 				initialize_from_string(init_point_1d);
 				return *this;
@@ -126,23 +126,23 @@ namespace scifir
 				initialize_from_string(init_point_1d);
 			}
 
-			point_1d<float>& operator=(const point_1d<float>& x_point)
+			point_1d<float>& operator =(const point_1d<float>& x_point)
 			{
 				x = x_point.x;
 				return *this;
 			}
 
-			point_1d<float>& operator=(point_1d<float>&& x_point)
+			point_1d<float>& operator =(point_1d<float>&& x_point)
 			{
 				x = std::move(x_point.x);
 				return *this;
 			}
 
-			point_1d<float>& operator=(const coordinates_1d<float>&);
+			point_1d<float>& operator =(const coordinates_1d<float>&);
 
-			point_1d<float>& operator=(coordinates_1d<float>&&);
+			point_1d<float>& operator =(coordinates_1d<float>&&);
 
-			point_1d<float>& operator=(const string& init_point_1d)
+			point_1d<float>& operator =(const string& init_point_1d)
 			{
 				initialize_from_string(init_point_1d);
 				return *this;

@@ -57,7 +57,7 @@ namespace scifir
 				initialize_from_string(init_coordinates_3d);
 			}
 
-			coordinates_3d<T>& operator=(const coordinates_3d<T>& x_coordinates)
+			coordinates_3d<T>& operator =(const coordinates_3d<T>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
@@ -65,7 +65,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3d<T>& operator=(coordinates_3d<T>&& x_coordinates)
+			coordinates_3d<T>& operator =(coordinates_3d<T>&& x_coordinates)
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
@@ -73,7 +73,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3d<T>& operator=(const point_3d<T>& x_point)
+			coordinates_3d<T>& operator =(const point_3d<T>& x_point)
 			{
 				x = x_point.x;
 				y = x_point.y;
@@ -81,7 +81,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3d<T>& operator=(point_3d<T>&& x_point)
+			coordinates_3d<T>& operator =(point_3d<T>&& x_point)
 			{
 				x = std::move(x_point.x);
 				y = std::move(x_point.y);
@@ -89,7 +89,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3d<T>& operator=(const string& init_coordinates_3d)
+			coordinates_3d<T>& operator =(const string& init_coordinates_3d)
 			{
 				initialize_from_string(init_coordinates_3d);
 				return *this;
@@ -341,7 +341,7 @@ namespace scifir
 				initialize_from_string(init_coordinates_3d);
 			}
 
-			coordinates_3d<float>& operator=(const coordinates_3d<float>& x_coordinates)
+			coordinates_3d<float>& operator =(const coordinates_3d<float>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
@@ -349,7 +349,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3d<float>& operator=(coordinates_3d<float>&& x_coordinates)
+			coordinates_3d<float>& operator =(coordinates_3d<float>&& x_coordinates)
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
@@ -357,7 +357,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3d<float>& operator=(const point_3d<float>& x_point)
+			coordinates_3d<float>& operator =(const point_3d<float>& x_point)
 			{
 				x = x_point.x;
 				y = x_point.y;
@@ -365,7 +365,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3d<float>& operator=(point_3d<float>&& x_point)
+			coordinates_3d<float>& operator =(point_3d<float>&& x_point)
 			{
 				x = std::move(x_point.x);
 				y = std::move(x_point.y);
@@ -373,7 +373,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3d<float>& operator=(const string& init_coordinates_3d)
+			coordinates_3d<float>& operator =(const string& init_coordinates_3d)
 			{
 				initialize_from_string(init_coordinates_3d);
 				return *this;

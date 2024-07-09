@@ -23,7 +23,7 @@
 			name##_nd(); \
 			name##_nd(const name##_nd&); \
 			name##_nd(name##_nd&&); \
-			using vector_unit_nd::operator=; \
+			using vector_unit_nd::operator =; \
 			using vector_unit_nd::operator+=; \
 			using vector_unit_nd::operator-=
 
@@ -39,7 +39,7 @@
 			name##_nd(); \
 			name##_nd(const name##_nd&); \
 			name##_nd(name##_nd&&); \
-			using vector_unit_nd::operator=; \
+			using vector_unit_nd::operator =; \
 			using vector_unit_nd::operator+=; \
 			using vector_unit_nd::operator-=; \
 \

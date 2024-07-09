@@ -85,27 +85,27 @@ namespace scifir
 	
 	vector_unit_2d& vector_unit_2d::operator =(const vector_unit_2d& x)
 	{
-		scalar_unit::operator=(x);
+		scalar_unit::operator =(x);
 		theta = x.theta;
 		return *this;
 	}
 
 	vector_unit_2d& vector_unit_2d::operator =(vector_unit_2d&& x)
 	{
-		scalar_unit::operator=(std::move(x));
+		scalar_unit::operator =(std::move(x));
 		theta = std::move(x.theta);
 		return *this;
 	}
 
 	vector_unit_2d& vector_unit_2d::operator =(const scalar_unit& x)
 	{
-		scalar_unit::operator=(x);
+		scalar_unit::operator =(x);
 		return *this;
 	}
 
 	vector_unit_2d& vector_unit_2d::operator =(scalar_unit&& x)
 	{
-		scalar_unit::operator=(std::move(x));
+		scalar_unit::operator =(std::move(x));
 		return *this;
 	}
 

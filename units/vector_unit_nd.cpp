@@ -160,27 +160,27 @@ namespace scifir
 
 	vector_unit_nd& vector_unit_nd::operator =(const vector_unit_nd& x)
 	{
-		scalar_unit::operator=(x);
+		scalar_unit::operator =(x);
 		angles = x.angles;
 		return *this;
 	}
 
 	vector_unit_nd& vector_unit_nd::operator =(vector_unit_nd&& x)
 	{
-		scalar_unit::operator=(std::move(x));
+		scalar_unit::operator =(std::move(x));
 		angles = std::move(x.angles);
 		return *this;
 	}
 
 	vector_unit_nd& vector_unit_nd::operator =(const scalar_unit& x)
 	{
-		scalar_unit::operator=(x);
+		scalar_unit::operator =(x);
 		return *this;
 	}
 
 	vector_unit_nd& vector_unit_nd::operator =(scalar_unit&& x)
 	{
-		scalar_unit::operator=(std::move(x));
+		scalar_unit::operator =(std::move(x));
 		return *this;
 	}
 
