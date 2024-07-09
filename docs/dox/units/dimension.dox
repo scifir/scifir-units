@@ -1,0 +1,306 @@
+/** \class scifir::dimension
+* \brief Class that represents dimensions of the SI system of units. Each prefix sizes 6 bytes, 1 byte for the dimension type, 1 byte for the prefix, 1 byte for the position (which can be the NUMERATOR or the DENOMINATOR), and 3 bytes for the custom dimension (in case it's used one).
+
+* \enum scifir::dimension::position
+* \brief Represents the position of the dimension, which can be at the numerator or at the denominator. The value NO_POSITION is used when there's no position specified.
+
+* \var dimension::NO_POSITION
+* \brief The dimension is not ready and yet being used.
+
+* \var dimension::NUMERATOR
+* \brief The dimension is at the numerator.
+
+* \var dimension::DENOMINATOR
+* \brief The dimension is at the denominator.
+
+* \enum scifir::dimension::type
+* \brief Represents a dimension of the SI system of units. All the dimensions of the SI system of units are supported. There are also dimensions supported that aren't considered yet part of the SI system of units, but that are widely used.
+
+* \var dimension::NONE
+* \brief No dimension. Default value for the default constructor.
+
+* \var dimension::m
+* \brief Meter. **SI dimension** of length.
+
+* \var dimension::grade
+* \brief Grade. Dimension of angle.
+
+* \var dimension::radian
+* \brief Radian. Dimension of angle.
+
+* \var dimension::steradian
+* \brief Steradian. Dimension of solid angle. A solid angle is an angle in volume.
+
+* \var dimension::s
+* \brief Second. **SI dimension** of time.
+
+* \var dimension::g
+* \brief Gram. **SI dimension** of mass.
+
+* \var dimension::C
+* \brief Coulomb. **SI dimension** of charge.
+
+* \var dimension::K
+* \brief Kelvin. **SI dimension** of temperature.
+
+* \var dimension::mol
+* \brief Mole. **SI dimension** of quantity.
+
+* \var dimension::cd
+* \brief Candela. **SI dimension** of luminous intensity.
+
+* \var dimension::B
+* \brief Byte. Dimension of amount of information.
+
+* \var dimension::Hz
+* \brief Hertz. Dimension of frequency.
+
+* \var dimension::N
+* \brief Newton. Dimension of force.
+
+* \var dimension::Pa
+* \brief Pascal. Dimension of pressure.
+
+* \var dimension::J
+* \brief Joule. Dimension of energy.
+
+* \var dimension::W
+* \brief Watt. Dimension of power.
+
+* \var dimension::A
+* \brief Ampere. Dimension of electric current.
+
+* \var dimension::V
+* \brief Volt. Dimension of voltage.
+
+* \var dimension::F
+* \brief Faraday. Dimension of electric capacitance.
+
+* \var dimension::Ohm
+* \brief Ohm. Dimension of electric resistance.
+
+* \var dimension::S
+* \brief Siemens. Dimension of electric conductance.
+
+* \var dimension::Wb
+* \brief Weber. Dimension of magnetic flux.
+
+* \var dimension::T
+* \brief Tesla. Dimension of magnetic strength.
+
+* \var dimension::H
+* \brief Henry. Dimension of electric inductance.
+
+* \var dimension::lm
+* \brief Lumen. Dimension of luminous flux.
+
+* \var dimension::lx
+* \brief Lux. Dimension of illuminance.
+
+* \var dimension::Bq
+* \brief Becquerel. Dimension of radioactivity.
+
+* \var dimension::Gy
+* \brief Gray. Dimension of ionising radiation (absorbed dose).
+
+* \var dimension::Sv
+* \brief Sievert. Dimension of ionising radiation (equivalent dose).
+
+* \var dimension::kat
+* \brief Katal. Dimension of catalytic activity.
+
+* \var dimension::angstrom
+* \brief Ángstrom. Dimension of length, used mainly for wavelengths.
+
+* \var dimension::L
+* \brief Litre. Dimension of volume.
+
+* \var dimension::minute
+* \brief Minute. Dimension of time.
+
+* \var dimension::h
+* \brief Hour. Dimension of time.
+
+* \var dimension::d
+* \brief Day. Dimension of time.
+
+* \var dimension::ly
+* \brief Light year. Dimension of length. Defined as all the distance travelled by light in one year.
+
+* \var dimension::AU
+* \brief Astronomical Unit. Dimension of length. Defined as the distance from the Sun to the Earth.
+
+* \var dimension::pc
+* \brief Parsec. Dimension of length. Defined as the distance where 1 AU subtends an angle of 1 second of arc. Equivalent to 3.26156 light years.
+
+* \var dimension::eV
+* \brief Electron volt. Dimension of energy.
+
+* \var dimension::Da
+* \brief Dalton. Dimension of mass. Used to measure the mass of atoms and molecules. Defined as 1/12 of a C-12.
+
+* \var dimension::amu
+* \brief Atomic mass unit. Equivalent to the Dalton. Dimension of mass. Used to measure the mass of atoms and molecules.
+
+* \var dimension::barn
+* \brief Barn. Dimension of area. It's used inside nuclear physics to express the transversal section of nucleus and nuclear reactions.
+
+* \var dimension::M
+* \brief Molarity. Dimension of concentration of a chemical species.
+
+* \var dimension::particles
+* \brief Particles. It's not exactly a dimension, it corresponds to the brute amount of particles, as opposed to the mole.
+
+* \var dimension::custom
+* \brief Custom dimension. It means the dimension is a custom dimension, which can have any value and meaning, defined freely by the programmer. Each custom dimension is unique to where it's defined and used.
+
+* \var dimension::custom_basic
+* \brief 
+
+* \var dimension::custom_full_symbol
+* \brief 
+
+* \var dimension::money
+* \brief Money. The money is not specified in a specific currency, you must use the ISO 4217 of currencies for that purpose. Don't mistake mixing different currencies.
+
+* \var dimension::pixel
+* \brief Amount of pixels. Used for screen sizes. It can also be used as distance, in replacement of length dimensions, if in a virtual space it's thinked in pixels instead of normal dimensions of length.
+
+* \var dimension::memo
+* \brief Invented unit inside Scifir, it's not part of the SI system of units. It represents a unit of human or animal memory. Each memory of the brain has some size hypothetically measurable in memos.
+
+* \fn dimension::dimension()
+* \brief Default constructor. The dimension_type is NONE, the dimension_sign is NO_POSITION, and the prefix is no_prefix, the symbol is empty.
+
+* \fn dimension::dimension(const dimension& x)
+* \brief Copy constructor. The dimension is initialized to be a copy of the dimension x.
+
+* \fn dimension::dimension(dimension&& x)
+* \brief Move constructor. The dimension is initialized with a move of the dimension x.
+
+* \fn dimension::dimension(dimension::type new_dimension_type, scifir::prefix::type new_prefix, dimension::position new_sign)
+* \brief Constructor. The dimension is initialized to the dimension_type, the prefix type and the position given.
+
+* \fn dimension::dimension(dimension::type new_dimension_type, const scifir::prefix& new_prefix, dimension::position new_sign)
+* \brief Constructor. The dimension is initialized to the dimension_type, the prefix and the position given.
+
+* \fn dimension::dimension(const string& init_dimension, dimension::position new_sign)
+* \brief Constructor. The dimension is initialized with an initialization string of dimension and the position given.
+
+* \fn dimension& dimension::operator =(const dimension& x)
+* \brief Copy assignment. The dimension copies the dimension x.
+
+* \fn dimension& dimension::operator =(dimension&& x)
+* \brief Move assignment. The dimension values are all moved from the dimension x.
+
+* \fn string dimension::get_name() const
+* \brief Returns the name of the dimension.
+
+* \fn string dimension::get_symbol() const
+* \brief Returns the symbol of the dimension. In the case of a custom dimension, it returns the custom dimension defined.
+
+* \fn long double dimension::get_conversion_factor() const
+* \brief Returns the conversion factor of the dimension.
+
+* \fn long double dimension::prefix_math() const
+* \brief Returns the math between the prefix and the dimension, which varies if the dimension is a B or another. In the case of bytes the math with the prefix is different, it's done with 1024 instead of multiples of 10. It doesn't includes the conversion factor of dimensions.
+
+* \fn long double dimension::prefix_math(const prefix& x_prefix) const
+* \brief Returns the math between some prefix and the dimension. The difference with the other prefix_math() function is that the prefix is given as parameter.
+
+* \fn bool dimension::is_simple_dimension() const
+* \brief If the dimension doesn't has more derived dimensions, it's considered a simple dimension.
+
+* \fn bool dimension::is_basic_dimension() const
+* \brief If the dimension is an SI basic dimension, it's considered a basic dimension.
+
+* \fn bool dimension::is_derived_dimension() const
+* \brief If the dimension is not a basic dimension, it's considered a derived dimension.
+
+* \fn vector<dimension> dimension::get_basic_dimensions() const
+* \brief Returns the basic dimensions of the dimension, which are different than the dimension, and possible more than one, if the dimension is not basic.
+
+* \fn void dimension::invert()
+* \brief Changes the position of the dimension to the reverse, from the NUMERATOR to the DENOMINATOR, or from the DENOMINATOR to the NUMERATOR.
+
+* \fn static void dimension::create_custom_dimension(const string& new_symbol, const string& init_dimensions)
+* \brief Creates a new custom dimension, that's stored with its symbol, which is given as an string, and the dimensions it can be derived to, if this custom dimension is not a new basic dimension.
+
+* \fn static char* dimension::create_full_symbol(const string& full_symbol)
+* \brief Creates a new dimension that's stored in the private static map dimension::full_symbols.
+
+* \fn static string dimension::get_full_symbol(const char* x_symbol)
+* \brief Returns the symbol of a custom_full_symbol dimension stored in the private static map dimension::full_symbols.
+
+* \var scifir::prefix dimension::prefix
+* \brief The prefix of the dimension. It's used along with the symbol of the dimension when printing it.
+
+* \var dimension::type dimension::dimension_type
+* \brief The type of the dimension.
+
+* \var dimension::position dimension::dimension_sign
+* \brief The position of the dimension, which can be the NUMERATOR, the DENOMINATOR or NO_POSITION. NO_POSITION means that the dimension is not ready to be used, and must be changed if the dimension is intended to be used.
+
+* \var char dimension::symbol[3]
+* \brief The value of the position of the character of a custom dimension in the map of full_symbols.
+
+* \fn vector<dimension> scifir::create_dimensions(string init_dimensions)
+* \brief Creates the dimensions from an initialization string of dimensions
+
+* \fn vector<dimension> scifir::create_derived_dimensions(const string& init_dimensions)
+* \brief Creates the derived dimensions from an initialization string of dimensions
+
+* \fn string scifir::to_string(const dimension& x)
+* \brief Creates the string representation of a dimension
+
+* \fn string scifir::to_string(const vector<dimension>& x_dimensions, bool with_brackets)
+* \brief Creates the string representation of a vector of dimensions. Used to display the dimensions of scalar_unit and all vector_unit classes. The dimensions can be displayed optionally between brackets like '[]' too.
+
+* \fn vector<dimension> scifir::create_derived_dimensions(const vector<dimension>& x)
+* \brief Creates all the derived dimensions from a vector of dimensions.
+
+* \fn vector<dimension> scifir::create_derived_dimensions(const vector<dimension>& x, long double& value)
+* \brief Creates all the derived dimensions from a vector of dimensions, updating also the associated value related to those dimensions based on the prefix math and the conversion factor of the dimension, if that conversion factor is different than one.
+
+* \fn vector<dimension> scifir::multiply_dimensions(const vector<dimension>& x, const vector<dimension>& y)
+* \brief Multiplies two vectors of dimensions. The result is normalized after, which means that equal dimensions at the numerator and at the denominator are cancelled.
+
+* \fn vector<dimension> scifir::multiply_dimensions(vector<dimension> x, const vector<dimension>& y, long double& value)
+* \brief Multiplies two vectors of dimensions. The result is normalized after, which means that equal dimensions at the numerator and at the denominator are cancelled. It also updates the value associated with those two vectors of dimensions with the prefix m ath and the conversion factor of those dimensions.
+
+* \fn vector<dimension> scifir::divide_dimensions(vector<dimension> x, const vector<dimension>& y, long double& value)
+* \brief Divides the first vector of dimensions with the other. The result is normalized after, which means that equal dimensions at the numerator and at the denominator are cancelled. It also updates the value associated with those two vectors of dimensions with the prefix m ath and the conversion factor of those dimensions.
+
+* \fn vector<dimension> scifir::square_dimensions(vector<dimension> x, long double& value, int index)
+* \brief Squares a vector of dimensions by an index. The value is updated too related to the prefix math and the conversion factor of this operation.
+
+* \fn vector<dimension> scifir::power_dimensions(const vector<dimension>& x, int exponent)
+* \brief Powers the dimensions by an exponent.
+
+* \fn vector<dimension> scifir::normalize_dimensions(const vector<dimension>& x)
+* \brief Normalizes the dimensions, which means that repited dimensions at the numerator and at the denominator are cancelled.
+
+* \fn vector<dimension> scifir::normalize_dimensions(const vector<dimension>& x, long double& value)
+* \brief Normalizes the dimensions, which means that repited dimensions at the numerator and at the denominator are cancelled. The value is updated if there are dimensions cancelled.
+
+* \fn bool scifir::common_dimension(const dimension& x, const dimension& y)
+* \brief Checks if there's an equal basic dimension between the basic dimensions of those two dimensions.
+
+* \fn bool scifir::equal_dimensions(const string& init_dimensions_x, const string& init_dimensions_y)
+* \brief Checks if two initialization strings of dimensions initialize the same basic dimensions.
+
+* \fn bool scifir::equal_dimensions(const vector<dimension>& x, const vector<dimension>& y)
+* brief Checks if the derived dimensions of two vectors of dimensions are equal.
+
+* \fn bool scifir::equal_dimensions_and_prefixes(const vector<dimension>& x, const vector<dimension>& y)
+* \brief Checks if the derived dimensions of two vectors of dimensions are equal, and if they have also the same prefixes.
+
+* \fn bool operator ==(const scifir::dimension& x, const scifir::dimension& y)
+* \brief Checks if the dimension type and the position of two dimensions are the same. The prefix can possibly be different.
+
+* \fn bool operator !=(const scifir::dimension& x, const scifir::dimension& y)
+* \brief Checks if the dimension type and the position of two dimensions are any of them different. The prefix is not compared.
+
+* \fn ostream& operator <<(ostream& os, const scifir::dimension& x)
+* \brief Adds the string representation of a dimension to an output stream.
+*/
