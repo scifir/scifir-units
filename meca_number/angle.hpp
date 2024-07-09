@@ -27,13 +27,15 @@ namespace scifir
 	class angle
 	{
 		public:
+			enum type : int8_t {DEGREE,RADIAN};
+
 			angle();
 			angle(const angle& x);
 			angle(angle&& x);
-			explicit angle(float new_value);
-			explicit angle(double new_value);
-			explicit angle(long double new_value);
-			explicit angle(int new_value);
+			explicit angle(float new_value,angle::type init_type = angle::DEGREE);
+			explicit angle(double new_value,angle::type init_type = angle::DEGREE);
+			explicit angle(long double new_value,angle::type init_type = angle::DEGREE);
+			explicit angle(int new_value,angle::type init_type = angle::DEGREE);
 			explicit angle(const string& init_angle);
 			explicit angle(const scalar_unit& x);
 

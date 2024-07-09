@@ -397,7 +397,7 @@ Inside scifir-units a **basic dimension** is a dimension considered basic under 
 
 ### Angle
 
-An angle object manages angles. It stores angles in grades, rather than in radians. It can be initialized to any grade between 0 and 360 (without including 360, cause this is identical to 0 in meaning), and any initialization that's not inside this range of values gets automatically converted inside it, to his equivalent value between the range.
+An angle object manages angles. It stores angles in degrees, rather than in radians. It can be initialized to any degree between 0 and 360 (without including 360, cause this is identical to 0 in meaning), and any initialization that's not inside this range of values gets automatically converted inside it, to his equivalent value between the range.
 
 An example of use of angle is the following:
 

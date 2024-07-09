@@ -15,7 +15,7 @@ using namespace std;
 
 namespace scifir
 {
-	angle::angle() : value(0)
+	angle::angle() : value(0.0f)
 	{}
 
 	angle::angle(const angle& x) : value(x.get_value())
@@ -24,23 +24,55 @@ namespace scifir
 	angle::angle(angle&& x) : value(std::move(x.get_value()))
 	{}
 
-	angle::angle(float new_value) : value(new_value)
+	angle::angle(float new_value,angle::type init_type) : value()
 	{
+		if (init_type == angle::DEGREE)
+		{
+			value = new_value;
+		}
+		else if (init_type == angle::RADIAN)
+		{
+			value = radian_to_grade(new_value);
+		}
 		normalize_value();
 	}
 
-	angle::angle(double new_value) : value(float(new_value))
+	angle::angle(double new_value,angle::type init_type) : value()
 	{
+		if (init_type == angle::DEGREE)
+		{
+			value = float(new_value);
+		}
+		else if (init_type == angle::RADIAN)
+		{
+			value = radian_to_grade(float(new_value));
+		}
 		normalize_value();
 	}
 
-	angle::angle(long double new_value) : value(float(new_value))
+	angle::angle(long double new_value,angle::type init_type) : value()
 	{
+		if (init_type == angle::DEGREE)
+		{
+			value = float(new_value);
+		}
+		else if (init_type == angle::RADIAN)
+		{
+			value = radian_to_grade(float(new_value));
+		}
 		normalize_value();
 	}
 
-	angle::angle(int new_value) : value(float(new_value))
+	angle::angle(int new_value,angle::type init_type) : value()
 	{
+		if (init_type == angle::DEGREE)
+		{
+			value = float(new_value);
+		}
+		else if (init_type == angle::RADIAN)
+		{
+			value = radian_to_grade(float(new_value));
+		}
 		normalize_value();
 	}
 
