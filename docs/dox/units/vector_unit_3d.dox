@@ -1,0 +1,257 @@
+/** \class vector_unit_3d
+* \brief Class that creates a vector unit in 3D. The vector is in **spherical coordinates** with a value and dimensions of the scalar_unit, and an angle theta and another angle phi for his direction.
+
+* \fn vector_unit_3d::vector_unit_3d()
+* \brief Default constructor. The value is set to 0, the dimensions are empty and theta and phi are 0.
+
+* \fn vector_unit_3d::vector_unit_3d(const vector_unit_3d& x)
+* \brief Copy constructor. The member-variables are copied from vector_unit_3d x.
+
+* \fn vector_unit_3d::vector_unit_3d(vector_unit_3d&& x)
+* \brief Move constructor. The member-variables are moved from vector_unit_3d x.
+
+* \fn vector_unit_3d::vector_unit_3d(float new_value,const string& init_dimensions,float new_theta,float new_phi)
+* \brief The value is new_value, the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(float new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi)
+* \brief The value is new_value, the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(double new_value,const string& init_dimensions,float new_theta,float new_phi)
+* \brief The value is new_value (the double is casted to a float), the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(double new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi)
+* \brief The value is new_value (the double is casted to a float), the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(long double new_value,const string& init_dimensions,float new_theta,float new_phi)
+* \brief The value is new_value (the long double is casted to a float), the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(long double new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi)
+* \brief The value is new_value (the long double is casted to a float), the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(int new_value,const string& init_dimensions,float new_theta,float new_phi)
+* \brief The value is new_value (the int is casted to a float), the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(int new_value,const string& init_dimensions,const angle& new_theta,const angle& new_phi)
+* \brief The value is new_value (the int is casted to a float), the dimensions are initialized with the initialization string of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(float new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi)
+* \brief The value is new_value, the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(float new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi)
+* \brief The value is new_value, the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(double new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi)
+* \brief The value is new_value (the double is casted to a float), the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(double new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi)
+* \brief The value is new_value (the double is casted to a float), the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(long double new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi)
+* \brief The value is new_value (the long double is casted to a float), the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi)
+* \brief The value is new_value (the long double is casted to a float), the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(int new_value,const vector<dimension>& new_dimensions,float new_theta,float new_phi)
+* \brief The value is new_value (the int is casted to a float), the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(int new_value,const vector<dimension>& new_dimensions,const angle& new_theta,const angle& new_phi)
+* \brief The value is new_value (the int is casted to a float), the dimensions are initialized with a vector of dimensions, theta is new_theta and phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(const scalar_unit& x,float new_theta,float new_phi)
+* \brief The value and the dimensions are copied from the scalar_unit x, theta is new_theta, phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(const scalar_unit& x,const angle& new_theta,const angle& new_phi)
+* \brief The value and the dimensions are copied from the scalar_unit x, theta is new_theta, phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(const string& init_scalar,float new_theta,float new_phi)
+* \brief The value and the dimensions are copied from the initialization string of scalar_unit init_scalar, theta is new_theta, phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(const string& init_scalar,const angle& new_theta,const angle& new_phi)
+* \brief The value and the dimensions are copied from the initialization string of scalar_unit init_scalar, theta is new_theta, phi is new_phi.
+
+* \fn vector_unit_3d::vector_unit_3d(const string& init_vector_3d)
+* \brief The value, the dimensions and thera are initialized from the initialization string of vector_unit_3d init_vector_3d.
+
+* \fn vector_unit_3d vector_unit_3d::cartesian_3d(const string& init_dimensions,float new_x,float new_y,float new_z)
+* \brief The dimensions are initialized from the initialization string of dimensions new_dimensions, the cartesian coordinates new_x, new_y and new_z are converted to spherical coordinates and then set the value, theta and phi.
+
+* \fn vector_unit_3d vector_unit_3d::cylindrical(const string& init_dimensions,float new_p,angle new_theta,float new_z)
+* \brief The dimensions are initialized from the initialization string of dimensions new_dimensions, the cylindrical coordinates new_p, new_theta and new_z are converted to spherical coordinates and then set the value, theta and phi.
+
+* \fn vector_unit_3d& vector_unit_3d::operator =(const vector_unit_3d& x)
+* \brief Copy assignment. The member-variables are copied from the vector_unit_3d x.
+
+* \fn vector_unit_3d& vector_unit_3d::operator =(vector_unit_3d&& x)
+* \brief Move assignment. The member-variables are moved from the vector_unit_3d x.
+
+* \fn vector_unit_3d& vector_unit_3d::operator =(const scalar_unit& x)
+* \brief The value and the dimensions are copied from the scalar_unit x, theta and phi are not changed.
+
+* \fn vector_unit_3d& vector_unit_3d::operator =(scalar_unit&& x)
+* \brief The value and the dimensions are moved from the scalar_unit x, theta and phi are not changed.
+
+* \fn vector_unit_3d& vector_unit_3d::operator =(const string& init_vector_3d)
+* \brief The value, the dimensions, theta and phi are set from the initialization string init_vector_3d.
+
+* \fn bool vector_unit_3d::operator ==(vector_unit_3d x)
+* \brief Comparison operator. Two vector_unit_3d are equal if their value, dimensions, theta and phi are the same.
+
+* \fn void vector_unit_3d::point_to(direction::name x)
+* \brief Theta is set to the direction specified in 3D. Possible values are LEFT, RIGHT, TOP, BOTTOM, LEFT_TOP, RIGHT_TOP, RIGHT_BOTTOM, LEFT_BOTTOM, FRONT, BACK, LEFT_FRONT, RIGHT_FRONT, TOP_FRONT, BOTTOM_FRONT, LEFT_BACK, RIGHT_BACK, TOP_BACK, BOTTOM_BACK, LEFT_TOP_FRONT, RIGHT_TOP_FRONT, LEFT_BOTTOM_FRONT, RIGHT_BOTTOM_FRONT, LEFT_TOP_BACK, RIGHT_TOP_BACK, LEFT_BOTTOM_BACK, RIGHT_BOTTOM_BACK.
+
+* \fn void vector_unit_3d::operator +=(const vector_unit_3d& x)
+* \brief The vector_unit_3d is summed as vector, in spherical coordinates. The addition of vectors is used for the calculation.
+
+* \fn void vector_unit_3d::operator -=(vector_unit_3d x)
+* \brief The vector_unit_3d is substracted as vector, in spherical coordinates. The substraction of vectors is used for the calculation.
+
+* \fn vector_unit_3d vector_unit_3d::operator +(const vector_unit_3d& x) const
+* \brief Addition of vectors in 3D. It creates a new vector as the addition of the other two.
+
+* \fn vector_unit_3d vector_unit_3d::operator -(vector_unit_3d x) const
+* \brief Substraction of vectors in 3D. It creates a new vector as the difference of the other two.
+
+* \fn vector_unit_3d vector_unit_3d::operator *(const scalar_unit& x) const
+* \brief It creates a new vector_unit_3d scaling a vector_unit_3d by the scalar_unit x.
+
+* \fn vector_unit_3d vector_unit_3d::operator /(const scalar_unit& x) const
+* \brief It creates a new vector_unit_3d scaling a vector_unit_3d by the inverse of the scalar_unit x.
+
+* \fn vector_unit_3d vector_unit_3d::operator ^(const scalar_unit& x) const
+* \brief It powers a vector by a scalar_unit x if that scalar_unit has empty dimensions.
+
+* \fn vector_unit_3d vector_unit_3d::operator +(T x) const
+* \brief It creates a new vector as the addition of the numeric type x to the value. Theta and phi are not changed.
+
+* \fn vector_unit_3d vector_unit_3d::operator -(T x) const
+* \brief It creates a new vector as the substraction of the numeric type x to the value. Theta and phi are not changed.
+
+* \fn vector_unit_3d vector_unit_3d::operator *(T x) const
+* \brief It creates a new vector as the multiplication of the numeric type x to the value. Theta and phi are not changed.
+
+* \fn vector_unit_3d vector_unit_3d::operator /(T x) const
+* \brief It creates a new vector as the division of the value with the numeric type x. Theta and phi are not changed.
+
+* \fn vector_unit_3d vector_unit_3d::operator ^(T x) const
+* \brief It creates a new vector as the power of the value with the numeric type x. Theta and phi are not changed.
+
+* \fn void vector_unit_3d::operator +=(T x)
+* \brief It sums the numeric type x to the value. Theta and phi are not changed.
+
+* \fn void vector_unit_3d::operator -=(T x)
+* \brief It substracts the numeric type x to the value. Theta and phi are not changed.
+
+* \fn void vector_unit_3d::operator *=(T x)
+* \brief It multiplies the numeric type x to the value. Theta and phi are not changed.
+
+* \fn void vector_unit_3d::operator /=(T x)
+* \brief It divides the numeric type x to the value. Theta and phi are not changed.
+
+* \fn scalar_unit vector_unit_3d::x_projection()
+* \brief It creates the x projection of the vector, returning it as a scalar_unit of the same dimensions, and the value corresponds to the projection.
+
+* \fn scalar_unit vector_unit_3d::y_projection()
+* \brief It creates the y projection of the vector, returning it as a scalar_unit of the same dimensions, and the value corresponds to the projection.
+
+* \fn scalar_unit vector_unit_3d::z_projection()
+* \brief It creates the z projection of the vector, returning it as a scalar_unit of the same dimensions, and the value corresponds to the projection.
+
+* \fn void vector_unit_3d::invert()
+* \brief Changes the direction of the vector to the opposite direction. It does that by adding 180 degrees to theta and calculating the new phi as "180 - phi".
+
+* \fn string vector_unit_3d::vectorial_display(int number_of_decimals)
+* \brief Displays the vector as the string representation of the scalar unit adding also the angle theta and the angle phi.
+
+* \fn string vector_unit_3d::vectorial_derived_display(int number_of_decimals)
+* \brief Displays the vector as the string representation of the scalar unit adding also the angle theta and the angle phi. It displays the dimensions with its derived dimensions.
+
+* \fn string vector_unit_3d::vectorial_custom_display(const string& init_dimensions,int number_of_decimals)
+* \brief Displays the vector as the string representation of the scalar unit adding also the angle theta and the angle phi. It displays the vector in the dimensions specified in the initialization string of dimensions init_dimensions.
+
+* \var angle vector_unit_3d::theta
+* \brief Angle theta of the vector in 3D space, in spherical coordinates. As all angles of scifir-units, it's stored in degrees.
+
+* \var angle vector_unit_3d::phi
+* \brief Angle phi of the vector in 3D space, in spherical coordinates. As all angles of scifir-units, it's stored in degrees.
+
+* \fn void vector_unit_3d::initialize_from_string(string init_vector_3d)
+* \brief Initializes the member-variables with the initialization string of vector_unit_3d init_vector_3d.
+
+* \fn string scifir::to_string(const vector_unit_3d& x)
+* \brief It geneates a string representation of vector_unit_3d.
+
+* \fn scalar_unit scifir::norm(const vector_unit_3d& x)
+* \brief It returns the value of the vector in spherical coordinates, r.
+
+* \fn vector_unit_3d scifir::sqrt(const vector_unit_3d& x)
+* \brief It squares the vector, creating a vector_unit_3d with the value squared and always the same theta and the same phi. The dimensions are squared with the same rules for the square of dimensions than scalar_unit classes.
+
+* \fn vector_unit_3d scifir::sqrt_nth(const vector_unit_3d& x,int index)
+* \brief It takes the root of the vector with the index given, creating a vector_unit_3d with the value rooted to that index and always maintains the same theta and the same phi. The dimensions are squared with the same rules for the square of dimensions than scalar_unit classes.
+
+* \fn scalar_unit scifir::dot_product(const vector_unit_3d& x,const vector_unit_3d& y)
+* \brief Creates a scalar_unit as the dot product of the two vectors x and y.
+
+* \fn vector_unit_3d scifir::cross_product(const vector_unit_3d& x,const vector_unit_3d& y)
+* \brief Creates a vector_unit_3d as the cross product of the two vectors x and y.
+
+* \fn angle scifir::angle_between(const vector_unit_3d& x,const vector_unit_3d& y)
+* \brief Returns the angle between two vectors x and y inside a 3D space.
+
+* \fn bool scifir::same_direction(const vector_unit_3d& x,const vector_unit_3d& y)
+* \brief Checks if two vectors x and y have the same direction.
+
+* \fn bool scifir::parallel(const vector_unit_3d& x,const vector_unit_3d& y)
+* \brief Checks if two vectors x and y are parallel, which meas that their direction is the same or the exact opposite.
+
+* \fn bool scifir::orthogonal(const vector_unit_3d& x,const vector_unit_3d& y)
+* \brief Checks if two vectors x and y are orthogonal, that's, if they have 90 degrees between them.
+
+* \fn scifir::vector_unit_3d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_3d& y)
+* \brief It creates a new vector_unit_3d scaling a vector_unit_3d by the scalar_unit x.
+
+* \fn scifir::vector_unit_3d operator +(const T y,const scifir::vector_unit_3d& x)
+* \brief It creates a new vector as the addition of the numeric type x to the value. Theta and phi are not changed.
+
+* \fn scifir::vector_unit_3d operator -(const T y,const scifir::vector_unit_3d& x)
+* \brief It creates a new vector as the substraction of the numeric type x with the value. Theta and phi are not changed.
+
+* \fn scifir::vector_unit_3d operator *(const T y,const scifir::vector_unit_3d& x)
+* \brief It creates a new vector as the multiplication of the numeric type x to the value. Theta and phi are not changed.
+
+* \fn scifir::vector_unit_3d operator /(const T y,const scifir::vector_unit_3d& x)
+* \brief It creates a new vector as the division of the numeric type x with the value. Theta and phi are not changed.
+
+* \fn bool operator !=(const scifir::vector_unit_3d& x, const scifir::vector_unit_3d& y)
+* \brief Comparison operator. Two vector_unit_3d are not equal if their value, dimensions, theta or phi are different.
+
+* \fn bool operator ==(const scifir::vector_unit_3d& x, const string& init_vector_3d)
+* \brief Returns true if x is equal to the vector_unit_3d initialized with the string being compared. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers.
+
+* \fn bool operator !=(const scifir::vector_unit_3d& x, const string& init_vector_3d)
+* \brief Returns true if x is not equal to the vector_unit_3d initialized with the string being compared. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers.
+
+* \fn bool operator ==(const string& init_vector_3d, const scifir::vector_unit_3d& x)
+* \brief Returns true if x is equal to the vector_unit_3d initialized with the string being compared. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers.
+
+* \fn bool operator !=(const string& init_vector_3d, const scifir::vector_unit_3d& x)
+* \brief Returns true if x is not equal to the vector_unit_3d initialized with the string being compared. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers.
+
+* \fn void operator +=(string& x, const scifir::vector_unit_3d& y)
+* \brief Concatenates the string representation of the vector_unit_3d y to the string x.
+
+* \fn string operator +(const string& x, const scifir::vector_unit_3d& y)
+* \brief Creates a new string as the concatenation of the string x with the representation string of the vector_unit_3d y.
+
+* \fn string operator +(const scifir::vector_unit_3d& y, const string& x)
+* \brief Creates a new string as the concatenation of the string x with the representation string of the vector_unit_3d y.
+
+* \fn ostream& operator <<(ostream& os, const scifir::vector_unit_3d& x)
+* \brief Adds the string representation of the vector_unit_3d x to an output stream os.
+
+* \fn istream& operator >>(istream& is, scifir::vector_unit_3d& x)
+* \brief Allows that an istream initializes by string a vector_unit_3d x.
+
+#endif // SCIFIR_UNITS_UNITS_VECTOR_UNIT_3D_HPP_INCLUDED
+*/

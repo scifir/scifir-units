@@ -103,34 +103,34 @@
 * \fn void vector_unit_2d::operator -=(vector_unit_2d x)
 * \brief The vector_unit_2d is substracted as vector, in polar coordinates. The substraction of vectors is used for the calculation.
 
-* \fn vector_unit_2d vector_unit_2d::operator +(const vector_unit_2d& x)
+* \fn vector_unit_2d vector_unit_2d::operator +(const vector_unit_2d& x) const
 * \brief Addition of vectors in 2D. It creates a new vector as the addition of the other two.
 
-* \fn vector_unit_2d vector_unit_2d::operator -(vector_unit_2d x)
+* \fn vector_unit_2d vector_unit_2d::operator -(vector_unit_2d x) const
 * \brief Substraction of vectors in 2D. It creates a new vector as the difference of the other two.
 
-* \fn vector_unit_2d vector_unit_2d::operator *(const scalar_unit& x)
-* \brief It creates a new vector scaling a vector by the scalar_unit x.
+* \fn vector_unit_2d vector_unit_2d::operator *(const scalar_unit& x) const
+* \brief It creates a new vector_unit_2d scaling a vector_unit_2d by the scalar_unit x.
 
-* \fn vector_unit_2d vector_unit_2d::operator /(const scalar_unit& x)
-* \brief It creates a new vector scaling a vector by the inverse of the scalar_unit x.
+* \fn vector_unit_2d vector_unit_2d::operator /(const scalar_unit& x) const
+* \brief It creates a new vector_unit_2d scaling a vector_unit_2d by the inverse of the scalar_unit x.
 
-* \fn vector_unit_2d vector_unit_2d::operator ^(const scalar_unit& x)
+* \fn vector_unit_2d vector_unit_2d::operator ^(const scalar_unit& x) const
 * \brief It powers a vector by a scalar_unit x if that scalar_unit has empty dimensions.
 
-* \fn vector_unit_2d vector_unit_2d::operator +(T x)
+* \fn vector_unit_2d vector_unit_2d::operator +(T x) const
 * \brief It creates a new vector as the addition of the numeric type x to the value. Theta is not changed.
 
-* \fn vector_unit_2d vector_unit_2d::operator -(T x)
+* \fn vector_unit_2d vector_unit_2d::operator -(T x) const
 * \brief It creates a new vector as the substraction of the numeric type x to the value. Theta is not changed.
 
-* \fn vector_unit_2d vector_unit_2d::operator *(T x)
+* \fn vector_unit_2d vector_unit_2d::operator *(T x) const
 * \brief It creates a new vector as the multiplication of the numeric type x to the value. Theta is not changed.
 
-* \fn vector_unit_2d vector_unit_2d::operator /(T x)
+* \fn vector_unit_2d vector_unit_2d::operator /(T x) const
 * \brief It creates a new vector as the division of the numeric type x to the value. Theta is not changed.
 
-* \fn vector_unit_2d vector_unit_2d::operator ^(T x)
+* \fn vector_unit_2d vector_unit_2d::operator ^(T x) const
 * \brief It creates a new vector as the power of the numeric type x to the value. Theta is not changed.
 
 * \fn void vector_unit_2d::operator +=(T x)
@@ -176,7 +176,7 @@
 * \brief It returns the value of the vector in polar coordinates, p.
 
 * \fn vector_unit_2d scifir::sqrt(const vector_unit_2d& x)
-* \brief It squares the vector, creating a vector_unit_2d with the value squared and the always the same theta. The dimensions are squared with the same rules for the square of dimensions than scalar_unit classes.
+* \brief It squares the vector, creating a vector_unit_2d with the value squared and always the same theta. The dimensions are squared with the same rules for the square of dimensions than scalar_unit classes.
 
 * \fn vector_unit_2d scifir::sqrt_nth(const vector_unit_2d& x,int index)
 * \brief It takes the root of the vector with the index given, creating a vector_unit_2d with the value rooted to that index and always maintains the same theta. The dimensions are squared with the same rules for the square of dimensions than scalar_unit classes.
@@ -197,7 +197,7 @@
 * \brief Checks if two vectors x and y are orthogonal, that's, if they have 90 degrees of difference.
 
 * \fn scifir::vector_unit_2d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_2d& y)
-* \brief It creates a new vector scaling a vector by the scalar_unit x.
+* \brief It creates a new vector_unit_3d scaling a vector_unit_3d by the scalar_unit x.
 
 * \fn scifir::vector_unit_2d operator +(const T y,const scifir::vector_unit_2d& x)
 * \brief It creates a new vector as the addition of the numeric type x to the value. Theta is not changed.
