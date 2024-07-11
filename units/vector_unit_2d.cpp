@@ -243,7 +243,7 @@ namespace scifir
 	{
 		if(x.has_empty_dimensions())
 		{
-			scalar_unit new_unit = scalar_unit::operator^(x);
+			scalar_unit new_unit = scalar_unit::operator ^(x);
 			return vector_unit_2d(new_unit, theta);
 		}
 		else

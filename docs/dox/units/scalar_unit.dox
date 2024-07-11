@@ -1,5 +1,5 @@
 /** \class scifir::scalar_unit
-* \brief Class that allows to create scalar units.
+* \brief Class that allows to create scalar units, which are cmoposed of a value (as a float) and dimensions. The dimensions can be of any number, and be basic dimensions and/or abbreviations of dimensions.
 
 * scalar_unit is a class that allows to have a scalar unit, which is composed of a value and one or more dimensions. All dimensions of the SI system of units are supported, and also all of its abbreviations. The abbreviations can be converted to its derived dimensions, too. scalar_unit classes have operators with all numeric types, and have operators with themselves. They can be displayed by its dimensions, its derived dimensions, or any custom combination of dimensions. When they change dimensions, like, for example, from meters to kilometers, their numeric value is changed accordingly.
 * POSSIBLE FEATURES
@@ -300,17 +300,17 @@
 * \brief Returns true if the value of x is equal or greather than the numeric type, ignoring the dimensions.
 
 * \fn void operator +=(string& x, const scifir::scalar_unit& y)
-* \brief Adds the scalar_unit y converted to string to the string x.
+* \brief Concatenates the string representation of the scalar_unit y to the string x.
 
 * \fn string operator +(const string& x, const scifir::scalar_unit& y)
-* \brief Concatenates the string x with the string representation of the scalar_unit y.
+* \brief Creates a new string as the concatenation of the string x with the representation string of the scalar_unit y.
 
 * \fn string operator +(const scifir::scalar_unit& y, const string& x)
-* \brief Concatenates the string x with the string representation of the scalar_unit y.
+* \brief Creates a new string as the concatenation of the string x with the representation string of the scalar_unit y.
 
 * \fn ostream& operator <<(ostream& os, const scifir::scalar_unit& x)
 * \brief Adds the string representation of the scalar_unit x to an output stream os.
 
 * \fn istream& operator >>(istream& is, scifir::scalar_unit& x)
-* \brief Allows that an istream is initializes by string an scalar_unit x.
+* \brief Allows that an istream initializes by string a scalar_unit x.
 */

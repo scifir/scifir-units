@@ -1,0 +1,243 @@
+/** \class vector_unit_2d
+* \brief Class that creates a vector unit in 2D. The vector is in **polar coordinates** with a value and dimensions of the scalar_unit, and an angle theta for his direction.
+
+* \fn vector_unit_2d::vector_unit_2d()
+* \brief Default constructor. The value is set to 0, the dimensions are empty and theta is 0.
+
+* \fn vector_unit_2d::vector_unit_2d(const vector_unit_2d& x)
+* \brief Copy constructor. The member-variables are copied from the vector_unit_2d x.
+
+* \fn vector_unit_2d::vector_unit_2d(vector_unit_2d&& x)
+* \brief Move constructor. The member-variables are moved from the vector_unit_2d x.
+
+* \fn vector_unit_2d::vector_unit_2d(float new_value,const string& init_dimensions,float new_theta)
+* \brief The value is new_value, the dimensions are initialized with the initialization string of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(float new_value,const string& init_dimensions,const angle& new_theta)
+* \brief The value is new_value, the dimensions are initialized with the initialization string of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(double new_value,const string& init_dimensions,float new_theta)
+* \brief The value is new_value (the double is casted to a float), the dimensions are initialized with the initialization string of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(double new_value,const string& init_dimensions,const angle& new_theta)
+* \brief The value is new_value (the double is casted to a float), the dimensions are initialized with the initialization string of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(long double new_value,const string& init_dimensions,float new_theta)
+* \brief The value is new_value (the long double is casted to a float), the dimensions are initialized with the initialization string of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(long double new_value,const string& init_dimensions,const angle& new_theta)
+* \brief The value is new_value (the long double is casted to a float), the dimensions are initialized with the initialization string of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(int new_value,const string& init_dimensions,float new_theta)
+* \brief The value is new_value (the int is casted to a float), the dimensions are initialized with the initialization string of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(int new_value,const string& init_dimensions,const angle& new_theta)
+* \brief The value is new_value (the int is casted to a float), the dimensions are initialized with the initialization string of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(float new_value,const vector<dimension>& new_dimensions,float new_theta)
+* \brief The value is new_value, the dimensions are initialized with a vector of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(float new_value,const vector<dimension>& new_dimensions,const angle& new_theta)
+* \brief The value is new_value, the dimensions are initialized with a vector of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(double new_value,const vector<dimension>& new_dimensions,float new_theta)
+* \brief The value is new_value (the double is casted to a float), the dimensions are initialized with a vector of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(double new_value,const vector<dimension>& new_dimensions,const angle& new_theta)
+* \brief The value is new_value (the double is casted to a float), the dimensions are initialized with a vector of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(long double new_value,const vector<dimension>& new_dimensions,float new_theta)
+* \brief The value is new_value (the long double is casted to a float), the dimensions are initialized with a vector of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(long double new_value,const vector<dimension>& new_dimensions,const angle& new_theta)
+* \brief The value is new_value (the long double is casted to a float), the dimensions are initialized with a vector of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(int new_value,const vector<dimension>& new_dimensions,float new_theta)
+* \brief The value is new_value (the int is casted to a float), the dimensions are initialized with a vector of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(int new_value,const vector<dimension>& new_dimensions,const angle& new_theta)
+* \brief The value is new_value (the int is casted to a float), the dimensions are initialized with a vector of dimensions, and theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(const scalar_unit& x,float new_theta)
+* \brief The value and the dimensions are copied from the scalar_unit x, theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(const scalar_unit& x,const angle& new_theta)
+* \brief The value and the dimensions are copied from the scalar_unit x, theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(const string& init_scalar,float new_theta)
+* \brief The value and the dimensions are copied from the initialization string of scalar_unit init_scalar, theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(const string& init_scalar,const angle& new_theta)
+* \brief The value and the dimensions are copied from the initialization string of scalar_unit init_scalar, theta is new_theta.
+
+* \fn vector_unit_2d::vector_unit_2d(const string& init_vector_2d)
+* \brief The value, the dimensions and thera are initialized from the initialization string of vector_unit_2d init_vector_2d.
+
+* \fn vector_unit_2d vector_unit_2d::cartesian_2d(const string& init_dimensions,float new_x,float new_y)
+* \brief The dimensions are initialized from the initialization string of dimensions new_dimensions, the cartesian coordinates new_x and new_y are converted to polar coordinates and then set the value and theta.
+
+* \fn vector_unit_2d& vector_unit_2d::operator =(const vector_unit_2d& x)
+* \brief Copy assignment. The member-variables are copied from the vector_unit_2d x.
+
+* \fn vector_unit_2d& vector_unit_2d::operator =(vector_unit_2d&& x)
+* \brief Move assignment. The member-variables are moved from the vector_unit_2d x.
+
+* \fn vector_unit_2d& vector_unit_2d::operator =(const scalar_unit& x)
+* \brief The value and the dimensions are copied from the scalar_unit x, theta is not changed.
+
+* \fn vector_unit_2d& vector_unit_2d::operator =(scalar_unit&& x)
+* \brief The value and the dimensions are moved from the scalar_unit x, theta is not changed.
+
+* \fn vector_unit_2d& vector_unit_2d::operator =(const string& init_vector_2d)
+* \brief The value, the dimensions and theta are set from the initialization string init_vector_2d.
+
+* \fn bool vector_unit_2d::operator ==(vector_unit_2d x)
+* \brief Comparison operator. Two vector_unit_2d are equal if their value, dimensions and theta are the same.
+
+* \fn void vector_unit_2d::point_to(direction::name x)
+* \brief Theta is set to the direction specified in 2D. Possible values are LEFT, RIGHT, TOP, BOTTOM, LEFT_TOP, RIGHT_TOP, RIGHT_BOTTOM, LEFT_BOTTOM.
+
+* \fn void vector_unit_2d::operator +=(const vector_unit_2d& x)
+* \brief The vector_unit_2d is summed as vector, in polar coordinates. The addition of vectors is used for the calculation.
+
+* \fn void vector_unit_2d::operator -=(vector_unit_2d x)
+* \brief The vector_unit_2d is substracted as vector, in polar coordinates. The substraction of vectors is used for the calculation.
+
+* \fn vector_unit_2d vector_unit_2d::operator +(const vector_unit_2d& x)
+* \brief Addition of vectors in 2D. It creates a new vector as the addition of the other two.
+
+* \fn vector_unit_2d vector_unit_2d::operator -(vector_unit_2d x)
+* \brief Substraction of vectors in 2D. It creates a new vector as the difference of the other two.
+
+* \fn vector_unit_2d vector_unit_2d::operator *(const scalar_unit& x)
+* \brief It creates a new vector scaling a vector by the scalar_unit x.
+
+* \fn vector_unit_2d vector_unit_2d::operator /(const scalar_unit& x)
+* \brief It creates a new vector scaling a vector by the inverse of the scalar_unit x.
+
+* \fn vector_unit_2d vector_unit_2d::operator ^(const scalar_unit& x)
+* \brief It powers a vector by a scalar_unit x if that scalar_unit has empty dimensions.
+
+* \fn vector_unit_2d vector_unit_2d::operator +(T x)
+* \brief It creates a new vector as the addition of the numeric type x to the value. Theta is not changed.
+
+* \fn vector_unit_2d vector_unit_2d::operator -(T x)
+* \brief It creates a new vector as the substraction of the numeric type x to the value. Theta is not changed.
+
+* \fn vector_unit_2d vector_unit_2d::operator *(T x)
+* \brief It creates a new vector as the multiplication of the numeric type x to the value. Theta is not changed.
+
+* \fn vector_unit_2d vector_unit_2d::operator /(T x)
+* \brief It creates a new vector as the division of the numeric type x to the value. Theta is not changed.
+
+* \fn vector_unit_2d vector_unit_2d::operator ^(T x)
+* \brief It creates a new vector as the power of the numeric type x to the value. Theta is not changed.
+
+* \fn void vector_unit_2d::operator +=(T x)
+* \brief It sums the numeric type x to the value. Theta is not changed.
+
+* \fn void vector_unit_2d::operator -=(T x)
+* \brief It substracts the numeric type x to the value. Theta is not changed.
+
+* \fn void vector_unit_2d::operator *=(T x)
+* \brief It multiplies the numeric type x to the value. Theta is not changed.
+
+* \fn void vector_unit_2d::operator /=(T x)
+* \brief It divides the numeric type x to the value. Theta is not changed.
+
+* \fn scalar_unit vector_unit_2d::x_projection()
+* \brief It creates the x projection of the vector, returning it as a scalar_unit of the same dimensions, and the value corresponds to the projection.
+
+* \fn scalar_unit vector_unit_2d::y_projection()
+* \brief It creates the y projection of the vector, returning it as a scalar_unit of the same dimensions, and the value corresponds to the projection.
+
+* \fn void vector_unit_2d::invert()
+* \brief Changes the direction of the vector to the opposite direction. It does that by adding 180 degrees to theta.
+
+* \fn string vector_unit_2d::vectorial_display(int number_of_decimals)
+* \brief Displays the vector as the string representation of the scalar unit adding also the angle theta.
+
+* \fn string vector_unit_2d::vectorial_derived_display(int number_of_decimals)
+* \brief Displays the vector as the string representation of the scalar unit adding also the angle theta. It displays the dimensions with its derived dimensions.
+
+* \fn string vector_unit_2d::vectorial_custom_display(const string& init_dimensions,int number_of_decimals)
+* \brief Displays the vector as the string representation of the scalar unit adding also the angle theta. It displays the vector in the dimensions specified in the initialization string of dimensions init_dimensions.
+
+* \fn angle vector_unit_2d::theta
+* \brief Angle of the vector in 2D space, in polar coordinates. As all angles of scifir-units, it's stored in degrees.
+
+* \fn void vector_unit_2d::initialize_from_string(string init_vector_2d)
+* \brief Initializes the member-variables with the initialization string of vector_unit_2d init_vector_2d.
+
+* \fn string scifir::to_string(const vector_unit_2d& x)
+* \brief It geneates a string representation of vector_unit_2d.
+
+* \fn scalar_unit scifir::norm(const vector_unit_2d& x)
+* \brief It returns the value of the vector in polar coordinates, p.
+
+* \fn vector_unit_2d scifir::sqrt(const vector_unit_2d& x)
+* \brief It squares the vector, creating a vector_unit_2d with the value squared and the always the same theta. The dimensions are squared with the same rules for the square of dimensions than scalar_unit classes.
+
+* \fn vector_unit_2d scifir::sqrt_nth(const vector_unit_2d& x,int index)
+* \brief It takes the root of the vector with the index given, creating a vector_unit_2d with the value rooted to that index and always maintains the same theta. The dimensions are squared with the same rules for the square of dimensions than scalar_unit classes.
+
+* \fn scalar_unit scifir::dot_product(const vector_unit_2d& x,const vector_unit_2d& y)
+* \brief Creates a scalar_unit as the dot product of the two vectors x and y.
+
+* \fn angle scifir::angle_between(const vector_unit_2d& x,const vector_unit_2d& y)
+* \brief Returns the angle between two vectors x and y inside a 2D space.
+
+* \fn bool scifir::same_direction(const vector_unit_2d& x,const vector_unit_2d& y)
+* \brief Checks if two vectors x and y have the same direction.
+
+* \fn bool scifir::parallel(const vector_unit_2d& x,const vector_unit_2d& y)
+* \brief Checks if two vectors x and y are parallel, which meas that their direction is the same or the exact opposite.
+
+* \fn bool scifir::orthogonal(const vector_unit_2d& x,const vector_unit_2d& y)
+* \brief Checks if two vectors x and y are orthogonal, that's, if they have 90 degrees of difference.
+
+* \fn scifir::vector_unit_2d operator *(const scifir::scalar_unit& x,const scifir::vector_unit_2d& y)
+* \brief It creates a new vector scaling a vector by the scalar_unit x.
+
+* \fn scifir::vector_unit_2d operator +(const T y,const scifir::vector_unit_2d& x)
+* \brief It creates a new vector as the addition of the numeric type x to the value. Theta is not changed.
+
+* \fn scifir::vector_unit_2d operator -(const T y,const scifir::vector_unit_2d& x)
+* \brief Substraction of vectors in 2D. It creates a new vector as the difference of the other two.
+
+* \fn scifir::vector_unit_2d operator *(const T y,const scifir::vector_unit_2d& x)
+* \brief It creates a new vector as the multiplication of the numeric type x to the value. Theta is not changed.
+
+* \fn scifir::vector_unit_2d operator /(const T y,const scifir::vector_unit_2d& x)
+* \brief It creates a new vector as the division of the value x to the numeric type. Theta is not changed.
+
+* \fn bool operator !=(const scifir::vector_unit_2d& x, const scifir::vector_unit_2d& y)
+* \brief Comparison operator. Two vector_unit_2d are not equal if their value, dimensions or theta are different.
+
+* \fn bool operator ==(const scifir::vector_unit_2d& x, const string& init_vector_2d)
+* \brief Returns true if x is equal to the vector_unit_2d initialized with the string being compared. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers.
+
+* \fn bool operator !=(const scifir::vector_unit_2d& x, const string& init_vector_2d)
+* \brief Returns true if x is not equal to the vector_unit_2d initialized with the string being compared. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers.
+
+* \fn bool operator ==(const string& init_vector_2d, const scifir::vector_unit_2d& x)
+* \brief Returns true if x is equal to the vector_unit_2d initialized with the string being compared. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers.
+
+* \fn bool operator !=(const string& init_vector_2d, const scifir::vector_unit_2d& x)
+* \brief Returns true if x is not equal to the vector_unit_2d initialized with the string being compared. The vectorial_display() function is not used, and so the values are compared with all its decimal numbers.
+
+* \fn void operator +=(string& x, const scifir::vector_unit_2d& y)
+* \brief Concatenates the string representation of the vector_unit_2d y to the string x.
+
+* \fn string operator +(const string& x, const scifir::vector_unit_2d& y)
+* \brief Creates a new string as the concatenation of the string x with the representation string of the vector_unit_2d y.
+
+* \fn string operator +(const scifir::vector_unit_2d& y, const string& x)
+* \brief Creates a new string as the concatenation of the string x with the representation string of the vector_unit_2d y.
+
+* \fn ostream& operator <<(ostream& os, const scifir::vector_unit_2d& x)
+* \brief Adds the string representation of the vector_unit_2d x to an output stream os.
+
+* \fn istream& operator >>(istream& is, scifir::vector_unit_2d& x)
+* \brief Allows that an istream initializes by string a vector_unit_2d x.
+*/
