@@ -6,6 +6,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Set git config email
+        id: set-git-config-email
+        run: echo "git-config-email=ismael.correa.castro@gmail.com" >> $GITHUB_OUTPUT
       - name: Checkout
         uses: actions/checkout@v4
       - name: Action Doxygen and GitHub Pages
@@ -18,4 +21,3 @@ jobs:
           html-output-folder: ./docs
           branch: gh-pages
           target_folder: docs
-          git-config-email: ismael.correa.castro@gmail.com
