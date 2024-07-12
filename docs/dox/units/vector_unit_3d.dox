@@ -1,4 +1,4 @@
-/** \class vector_unit_3d
+/** \class scifir::vector_unit_3d
 * \brief Class that creates a vector unit in 3D. The vector is in **spherical coordinates** with a value and dimensions of the scalar_unit, and an angle theta and another angle phi for his direction.
 
 * \fn vector_unit_3d::vector_unit_3d()
@@ -71,7 +71,7 @@
 * \brief The value and the dimensions are copied from the initialization string of scalar_unit init_scalar, theta is new_theta, phi is new_phi.
 
 * \fn vector_unit_3d::vector_unit_3d(const string& init_vector_3d)
-* \brief The value, the dimensions and thera are initialized from the initialization string of vector_unit_3d init_vector_3d.
+* \brief The value, the dimensions, theta and phi are initialized from the initialization string of vector_unit_3d init_vector_3d.
 
 * \fn vector_unit_3d vector_unit_3d::cartesian_3d(const string& init_dimensions,float new_x,float new_y,float new_z)
 * \brief The dimensions are initialized from the initialization string of dimensions new_dimensions, the cartesian coordinates new_x, new_y and new_z are converted to spherical coordinates and then set the value, theta and phi.

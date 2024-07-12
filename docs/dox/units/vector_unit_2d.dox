@@ -1,4 +1,4 @@
-/** \class vector_unit_2d
+/** \class scifir::vector_unit_2d
 * \brief Class that creates a vector unit in 2D. The vector is in **polar coordinates** with a value and dimensions of the scalar_unit, and an angle theta for his direction.
 
 * \fn vector_unit_2d::vector_unit_2d()
@@ -71,7 +71,7 @@
 * \brief The value and the dimensions are copied from the initialization string of scalar_unit init_scalar, theta is new_theta.
 
 * \fn vector_unit_2d::vector_unit_2d(const string& init_vector_2d)
-* \brief The value, the dimensions and thera are initialized from the initialization string of vector_unit_2d init_vector_2d.
+* \brief The value, the dimensions and theta are initialized from the initialization string of vector_unit_2d init_vector_2d.
 
 * \fn vector_unit_2d vector_unit_2d::cartesian_2d(const string& init_dimensions,float new_x,float new_y)
 * \brief The dimensions are initialized from the initialization string of dimensions new_dimensions, the cartesian coordinates new_x and new_y are converted to polar coordinates and then set the value and theta.
