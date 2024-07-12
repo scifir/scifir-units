@@ -815,14 +815,18 @@ namespace scifir
 
 	bool same_direction(const vector_unit_nd& x, const vector_unit_nd& y)
 	{
-		for(unsigned int i = 0; i < x.angles.size(); i++)
+		if (same_nd(x,y))
 		{
-			if(x.angles[i] != y.angles[i])
+			for(unsigned int i = 0; i < x.angles.size(); i++)
 			{
-				return false;
+				if(x.angles[i] != y.angles[i])
+				{
+					return false;
+				}
 			}
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	bool parallel(const vector_unit_nd& x, const vector_unit_nd& y)
