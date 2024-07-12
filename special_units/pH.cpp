@@ -48,33 +48,33 @@ namespace scifir
 		}
 	}
 
-	pH& pH::operator=(const pH& x)
+	pH& pH::operator =(const pH& x)
 	{
 		value = x.get_value();
 		return *this;
 	}
 
-	pH& pH::operator=(pH&& x)
+	pH& pH::operator =(pH&& x)
 	{
 		value = std::move(x.get_value());
 		return *this;
 	}
 
-	pH& pH::operator=(float x)
+	pH& pH::operator =(float x)
 	{
 		value = x;
 		normalize_value();
 		return *this;
 	}
 
-	pH& pH::operator=(const string& x)
+	pH& pH::operator =(const string& x)
 	{
 		value = stof(x);
 		normalize_value();
 		return *this;
 	}
 
-	pH& pH::operator=(const scalar_unit& x)
+	pH& pH::operator =(const scalar_unit& x)
 	{
 		if (x.has_empty_dimensions())
 		{

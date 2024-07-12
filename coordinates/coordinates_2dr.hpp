@@ -52,7 +52,7 @@ namespace scifir
 				initialize_from_string(init_coordinates_2dr);
 			}
 
-			coordinates_2dr<T>& operator=(const coordinates_2dr<T>& x_coordinates)
+			coordinates_2dr<T>& operator =(const coordinates_2dr<T>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
@@ -60,7 +60,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_2dr<T>& operator=(coordinates_2dr<T>&& x_coordinates)
+			coordinates_2dr<T>& operator =(coordinates_2dr<T>&& x_coordinates)
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
@@ -68,35 +68,35 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_2dr<T>& operator=(const point_2d<T>& x_point)
+			coordinates_2dr<T>& operator =(const point_2d<T>& x_point)
 			{
 				x = x_point.x;
 				y = x_point.y;
 				return *this;
 			}
 
-			coordinates_2dr<T>& operator=(point_2d<T>&& x_point)
+			coordinates_2dr<T>& operator =(point_2d<T>&& x_point)
 			{
 				x = std::move(x_point.x);
 				y = std::move(x_point.y);
 				return *this;
 			}
 
-			coordinates_2dr<T>& operator=(const coordinates_2d<T>& x_coordinates)
+			coordinates_2dr<T>& operator =(const coordinates_2d<T>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
 				return *this;
 			}
 
-			coordinates_2dr<T>& operator=(coordinates_2d<T>&& x_coordinates)
+			coordinates_2dr<T>& operator =(coordinates_2d<T>&& x_coordinates)
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
 				return *this;
 			}
 
-			coordinates_2dr<T>& operator=(const string& init_coordinates_2dr)
+			coordinates_2dr<T>& operator =(const string& init_coordinates_2dr)
 			{
 				initialize_from_string(init_coordinates_2dr);
 				return *this;
@@ -109,7 +109,7 @@ namespace scifir
 
 			angle get_polar_theta() const
 			{
-				return angle(radian_to_grade(std::atan2(y.get_value(),x.get_value())));
+				return angle(radian_to_degree(std::atan2(y.get_value(),x.get_value())));
 			}
 
 			void point_to(direction::name x)
@@ -285,7 +285,7 @@ namespace scifir
 				initialize_from_string(init_coordinates_2dr);
 			}
 
-			coordinates_2dr<float>& operator=(const coordinates_2dr<float>& x_coordinates)
+			coordinates_2dr<float>& operator =(const coordinates_2dr<float>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
@@ -293,7 +293,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_2dr<float>& operator=(coordinates_2dr<float>&& x_coordinates)
+			coordinates_2dr<float>& operator =(coordinates_2dr<float>&& x_coordinates)
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
@@ -301,35 +301,35 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_2dr<float>& operator=(const point_2d<float>& x_point)
+			coordinates_2dr<float>& operator =(const point_2d<float>& x_point)
 			{
 				x = x_point.x;
 				y = x_point.y;
 				return *this;
 			}
 
-			coordinates_2dr<float>& operator=(point_2d<float>&& x_point)
+			coordinates_2dr<float>& operator =(point_2d<float>&& x_point)
 			{
 				x = std::move(x_point.x);
 				y = std::move(x_point.y);
 				return *this;
 			}
 
-			coordinates_2dr<float>& operator=(const coordinates_2d<float>& x_coordinates)
+			coordinates_2dr<float>& operator =(const coordinates_2d<float>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
 				return *this;
 			}
 
-			coordinates_2dr<float>& operator=(coordinates_2d<float>&& x_coordinates)
+			coordinates_2dr<float>& operator =(coordinates_2d<float>&& x_coordinates)
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
 				return *this;
 			}
 
-			coordinates_2dr<float>& operator=(const string& init_coordinates_2dr)
+			coordinates_2dr<float>& operator =(const string& init_coordinates_2dr)
 			{
 				initialize_from_string(init_coordinates_2dr);
 				return *this;
@@ -342,7 +342,7 @@ namespace scifir
 
 			angle get_polar_theta() const
 			{
-				return angle(radian_to_grade(std::atan2(y,x)));
+				return angle(radian_to_degree(std::atan2(y,x)));
 			}
 
 			void point_to(direction::name x)

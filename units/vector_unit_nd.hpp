@@ -23,7 +23,7 @@
 			name##_nd(); \
 			name##_nd(const name##_nd&); \
 			name##_nd(name##_nd&&); \
-			using vector_unit_nd::operator=; \
+			using vector_unit_nd::operator =; \
 			using vector_unit_nd::operator+=; \
 			using vector_unit_nd::operator-=
 
@@ -39,7 +39,7 @@
 			name##_nd(); \
 			name##_nd(const name##_nd&); \
 			name##_nd(name##_nd&&); \
-			using vector_unit_nd::operator=; \
+			using vector_unit_nd::operator =; \
 			using vector_unit_nd::operator+=; \
 			using vector_unit_nd::operator-=; \
 \
@@ -94,26 +94,26 @@ namespace scifir
 			explicit vector_unit_nd(const string& init_scalar,const vector<angle>& new_angles);
 			explicit vector_unit_nd(const string& init_vector_nd);
 
-			static vector_unit_nd cartesian_2d(const string& new_dimensions,float new_x,float new_y)
+			static vector_unit_nd cartesian_2d(const string& init_dimensions,float new_x,float new_y)
 			{
 				float new_value = float(std::sqrt(std::pow(new_x,2) + std::pow(new_y,2)));
-				float new_theta = scifir::atan_grade(new_y / new_x);
-				return vector_unit_nd(new_value,new_dimensions, {angle(new_theta)});
+				float new_theta = scifir::atan_degree(new_y / new_x);
+				return vector_unit_nd(new_value,init_dimensions, {angle(new_theta)});
 			}
 
-			static vector_unit_nd cartesian_3d(const string& new_dimensions,float new_x,float new_y,float new_z)
+			static vector_unit_nd cartesian_3d(const string& init_dimensions,float new_x,float new_y,float new_z)
 			{
 				float new_value = float(std::sqrt(std::pow(new_x,2) + std::pow(new_y,2) + std::pow(new_z,2)));
-				float new_theta = scifir::atan_grade(new_y / new_x);
-				float new_phi = scifir::acos_grade(new_z / new_value);
-				return vector_unit_nd(new_value,new_dimensions, {angle(new_theta), angle(new_phi)});
+				float new_theta = scifir::atan_degree(new_y / new_x);
+				float new_phi = scifir::acos_degree(new_z / new_value);
+				return vector_unit_nd(new_value,init_dimensions, {angle(new_theta), angle(new_phi)});
 			}
 
-			static vector_unit_nd cylindrical(const string& new_dimensions,float new_p,angle new_theta,float new_z)
+			static vector_unit_nd cylindrical(const string& init_dimensions,float new_p,angle new_theta,float new_z)
 			{
 				float new_value = float(std::sqrt(std::pow(new_p,2) + std::pow(new_z,2)));
-				float new_phi = scifir::atan_grade(new_p / new_z);
-				return vector_unit_nd(new_value,new_dimensions, {new_theta, angle(new_phi)});
+				float new_phi = scifir::atan_degree(new_p / new_z);
+				return vector_unit_nd(new_value,init_dimensions, {new_theta, angle(new_phi)});
 			}
 
 			vector_unit_nd& operator =(const vector_unit_nd& x);
@@ -136,58 +136,58 @@ namespace scifir
 			vector_unit_nd operator /(const scalar_unit& x) const;
 			vector_unit_nd operator ^(const scalar_unit& x) const;
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_nd operator +(U x) const
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			vector_unit_nd operator +(T x) const
 			{
 				vector_unit_nd y = *this;
 				y += x;
 				return y;
 			}
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_nd operator -(U x) const
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			vector_unit_nd operator -(T x) const
 			{
 				vector_unit_nd y = *this;
 				y -= x;
 				return y;
 			}
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_nd operator *(U x) const
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			vector_unit_nd operator *(T x) const
 			{
 				vector_unit_nd y = *this;
 				y *= x;
 				return y;
 			}
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_nd operator /(U x) const
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			vector_unit_nd operator /(T x) const
 			{
 				vector_unit_nd y = *this;
 				y /= x;
 				return y;
 			}
 
-			template<typename U, typename = typename enable_if<is_integer_number<U>::value>::type>
-			vector_unit_nd operator ^(U x) const
+			template<typename T, typename = typename enable_if<is_integer_number<T>::value>::type>
+			vector_unit_nd operator ^(T x) const
 			{
 				return vector_unit_nd(std::pow(get_value(),x),power_dimensions(get_dimensions(),x),angles);
 			}
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator +=(U x)
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			void operator +=(T x)
 			{
 				scalar_unit::value += x;
 			}
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator -=(U x)
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			void operator -=(T x)
 			{
 				scalar_unit::value -= x;
 			}
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator *=(U x)
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			void operator *=(T x)
 			{
 				scalar_unit::value *= std::abs(x);
 				if(x < 0)
@@ -196,8 +196,8 @@ namespace scifir
 				}
 			}
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator /=(U x)
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			void operator /=(T x)
 			{
 				scalar_unit::value /= std::abs(x);
 				if(x < 0)

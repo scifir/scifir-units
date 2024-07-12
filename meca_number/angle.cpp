@@ -15,7 +15,7 @@ using namespace std;
 
 namespace scifir
 {
-	angle::angle() : value(0)
+	angle::angle() : value(0.0f)
 	{}
 
 	angle::angle(const angle& x) : value(x.get_value())
@@ -24,23 +24,55 @@ namespace scifir
 	angle::angle(angle&& x) : value(std::move(x.get_value()))
 	{}
 
-	angle::angle(float new_value) : value(new_value)
+	angle::angle(float new_value,angle::type init_type) : value()
 	{
+		if (init_type == angle::DEGREE)
+		{
+			value = new_value;
+		}
+		else if (init_type == angle::RADIAN)
+		{
+			value = radian_to_degree(new_value);
+		}
 		normalize_value();
 	}
 
-	angle::angle(double new_value) : value(float(new_value))
+	angle::angle(double new_value,angle::type init_type) : value()
 	{
+		if (init_type == angle::DEGREE)
+		{
+			value = float(new_value);
+		}
+		else if (init_type == angle::RADIAN)
+		{
+			value = radian_to_degree(float(new_value));
+		}
 		normalize_value();
 	}
 
-	angle::angle(long double new_value) : value(float(new_value))
+	angle::angle(long double new_value,angle::type init_type) : value()
 	{
+		if (init_type == angle::DEGREE)
+		{
+			value = float(new_value);
+		}
+		else if (init_type == angle::RADIAN)
+		{
+			value = radian_to_degree(float(new_value));
+		}
 		normalize_value();
 	}
 
-	angle::angle(int new_value) : value(float(new_value))
+	angle::angle(int new_value,angle::type init_type) : value()
 	{
+		if (init_type == angle::DEGREE)
+		{
+			value = float(new_value);
+		}
+		else if (init_type == angle::RADIAN)
+		{
+			value = radian_to_degree(float(new_value));
+		}
 		normalize_value();
 	}
 
@@ -59,36 +91,36 @@ namespace scifir
 		else
 		{
 			cerr << "An angle cannot be initialized with dimensions" << endl;
-			value = 0;
+			value = 0.0f;
 		}
 	}
 
-	angle& angle::operator=(const angle& x)
+	angle& angle::operator =(const angle& x)
 	{
 		value = x.get_value();
 		return *this;
 	}
 
-	angle& angle::operator=(angle&& x)
+	angle& angle::operator =(angle&& x)
 	{
 		value = std::move(x.get_value());
 		return *this;
 	}
 
-	angle& angle::operator=(float new_value)
+	angle& angle::operator =(float new_value)
 	{
 		value = new_value;
 		normalize_value();
 		return *this;
 	}
 
-	angle& angle::operator=(const string& init_angle)
+	angle& angle::operator =(const string& init_angle)
 	{
 		initialize_from_string(init_angle);
 		return *this;
 	}
 
-	angle& angle::operator=(const scalar_unit& x)
+	angle& angle::operator =(const scalar_unit& x)
 	{
 		if (x.has_empty_dimensions())
 		{
@@ -185,7 +217,7 @@ namespace scifir
 
 	void angle::invert()
 	{
-		value += 180;
+		value += 180.0f;
 		normalize_value();
 	}
 
@@ -328,17 +360,17 @@ namespace scifir
 
 	angle asin(float x)
 	{
-		return angle(radian_to_grade(std::asin(x)));
+		return angle(radian_to_degree(std::asin(x)));
 	}
 
 	angle acos(float x)
 	{
-		return angle(radian_to_grade(std::acos(x)));
+		return angle(radian_to_degree(std::acos(x)));
 	}
 
 	angle atan(float x)
 	{
-		return angle(radian_to_grade(std::atan(x)));
+		return angle(radian_to_degree(std::atan(x)));
 	}
 
 	float sinh(const angle& x)
@@ -358,17 +390,17 @@ namespace scifir
 
 	angle asinh(float x)
 	{
-		return angle(radian_to_grade(std::asinh(x)));
+		return angle(radian_to_degree(std::asinh(x)));
 	}
 
 	angle acosh(float x)
 	{
-		return angle(radian_to_grade(std::acosh(x)));
+		return angle(radian_to_degree(std::acosh(x)));
 	}
 
 	angle atanh(float x)
 	{
-		return angle(radian_to_grade(std::atanh(x)));
+		return angle(radian_to_degree(std::atanh(x)));
 	}
 }
 

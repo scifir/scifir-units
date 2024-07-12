@@ -81,23 +81,23 @@ namespace scifir
 				initialize_from_string(init_point_nd);
 			}
 
-			point_nd<T>& operator=(const point_nd<T>& x_point)
+			point_nd<T>& operator =(const point_nd<T>& x_point)
 			{
 				values = x_point.values;
 				return *this;
 			}
 
-			point_nd<T>& operator=(point_nd<T>&& x_point)
+			point_nd<T>& operator =(point_nd<T>&& x_point)
 			{
 				values = std::move(x_point.values);
 				return *this;
 			}
 
-			point_nd<T>& operator=(const coordinates_nd<T>&);
+			point_nd<T>& operator =(const coordinates_nd<T>&);
 
-			point_nd<T>& operator=(coordinates_nd<T>&&);
+			point_nd<T>& operator =(coordinates_nd<T>&&);
 
-			point_nd<T>& operator=(const string& init_point_nd)
+			point_nd<T>& operator =(const string& init_point_nd)
 			{
 				initialize_from_string(init_point_nd);
 				return *this;
@@ -129,7 +129,7 @@ namespace scifir
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return angle(scifir::atan_grade(float(values[1]/values[0])));
+					return angle(scifir::atan_degree(float(values[1]/values[0])));
 				}
 				else
 				{
@@ -153,7 +153,7 @@ namespace scifir
 			{
 				if (get_nd() == 3)
 				{
-					return angle(scifir::acos_grade(float(values[2]/scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2)))));
+					return angle(scifir::acos_degree(float(values[2]/scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2)))));
 				}
 				else
 				{
@@ -594,23 +594,23 @@ namespace scifir
 				initialize_from_string(init_point_nd);
 			}
 
-			point_nd<float>& operator=(const point_nd<float>& x_point)
+			point_nd<float>& operator =(const point_nd<float>& x_point)
 			{
 				values = x_point.values;
 				return *this;
 			}
 
-			point_nd<float>& operator=(point_nd<float>&& x_point)
+			point_nd<float>& operator =(point_nd<float>&& x_point)
 			{
 				values = std::move(x_point.values);
 				return *this;
 			}
 
-			point_nd<float>& operator=(const coordinates_nd<float>&);
+			point_nd<float>& operator =(const coordinates_nd<float>&);
 
-			point_nd<float>& operator=(coordinates_nd<float>&&);
+			point_nd<float>& operator =(coordinates_nd<float>&&);
 
-			point_nd<float>& operator=(const string& init_point_nd)
+			point_nd<float>& operator =(const string& init_point_nd)
 			{
 				initialize_from_string(init_point_nd);
 				return *this;
@@ -642,7 +642,7 @@ namespace scifir
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return angle(scifir::atan_grade(float(values[1]/values[0])));
+					return angle(scifir::atan_degree(float(values[1]/values[0])));
 				}
 				else
 				{
@@ -666,7 +666,7 @@ namespace scifir
 			{
 				if (get_nd() == 3)
 				{
-					return angle(scifir::acos_grade(float(values[2]/std::sqrt(std::pow(values[0],2) + std::pow(values[1],2) + std::pow(values[2],2)))));
+					return angle(scifir::acos_degree(float(values[2]/std::sqrt(std::pow(values[0],2) + std::pow(values[1],2) + std::pow(values[2],2)))));
 				}
 				else
 				{

@@ -20,7 +20,7 @@
 			name(); \
 			name(const scalar_unit&); \
 			name(scalar_unit&&); \
-			using scalar_unit::operator=; \
+			using scalar_unit::operator =; \
 			using scalar_unit::operator+=; \
 			using scalar_unit::operator-=
 
@@ -38,7 +38,7 @@
 			name(); \
 			name(const scalar_unit&); \
 			name(scalar_unit&&); \
-			using scalar_unit::operator=; \
+			using scalar_unit::operator =; \
 			using scalar_unit::operator+=; \
 			using scalar_unit::operator-=; \
 \

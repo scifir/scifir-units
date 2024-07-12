@@ -53,4 +53,46 @@ namespace scifir
 			return output.str();
 		}
 	}
+
+	string display_double(const double& value,int number_of_decimals)
+	{
+		ostringstream output;
+		if (number_of_decimals > 0)
+		{
+			output << (value*std::pow(10,number_of_decimals) / std::pow(10,number_of_decimals));
+		}
+		else
+		{
+			output << value;
+		}
+		if (output.str() == "-0")
+		{
+			return "0";
+		}
+		else
+		{
+			return output.str();
+		}
+	}
+
+	string display_long_double(const long double& value,int number_of_decimals)
+	{
+		ostringstream output;
+		if (number_of_decimals > 0)
+		{
+			output << (std::trunc(value*std::pow(10.0l,number_of_decimals)) / std::pow(10.0l,number_of_decimals));
+		}
+		else
+		{
+			output << value;
+		}
+		if (output.str() == "-0")
+		{
+			return "0";
+		}
+		else
+		{
+			return output.str();
+		}
+	}
 }

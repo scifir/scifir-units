@@ -438,6 +438,7 @@ TEST_CASE("class vector_unit_nd")
 		vector_unit_nd g5("2 N",vector<float>{10.0f});
 		vector_unit_nd g6("1 m",{10.0f,20.0f});
 		CHECK(scifir::same_nd(g5,g6) == false);
+		CHECK(scifir::same_direction(g5,g6) == false);
 		CHECK(scifir::parallel(g5,g6) == false);
 		CHECK(scifir::orthogonal(g5,g6) == false);
 		vector_unit_nd g7("2 N",vector<float>{10.0f});

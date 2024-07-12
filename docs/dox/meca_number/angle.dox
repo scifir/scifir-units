@@ -1,8 +1,332 @@
 /** \class scifir::angle
-* \brief Class that allows to work with angles.
+* \brief Class that allows to work with angles. Each angle sizes 4 bytes.
 
-* angle is a class that allows to work with angles, more in grades than in radians. The value of the angle is always stored inside the class in grades, and it can be get in radians with the to_radian() function.
+* angle is a class that allows to work with angles, more in degrees than in radians. The value of the angle is always stored inside the class in degrees, and it can be get in radians with the to_radian() function.
+
+* \fn float scifir::radian_to_degree(float x)
+* \brief Converts a radian to degree.
+
+* \fn float scifir::degree_to_radian(float x)
+* \brief Converts a degree to a radian.
+
+* \enum scifir::angle::type
+* \brief Represents an type of angle, which can be a degree or a radian. The value of the angle inside the angle class is always stored in degrees, but can be get in radian if it's needed.
+
+* \var angle::DEGREE
+* \brief The angle is in DEGREE. A degree is defined as a 1/360 part of a circle. The entire circle corresponds to 360 degrees.
+
+* \var angle::RADIAN
+* \brief The angle is in RADIAN. A radian is defined as the length of the perimeter of the circle that conforms an angle.
+
+* \fn angle::angle()
+* \brief Default constructor of angle. The value is set to 0.
+
+* \fn angle::angle(const angle& x)
+* \brief Copy constructor of angle. The value is copied from the angle x.
+
+* \fn angle::angle(angle&& x)
+* \brief Move constructor of angle. The value is moved from the angle x.
+
+* \fn angle::angle(float new_value,angle::type init_type)
+* \brief Constructor of angle. The value is initialized to the float new_value. init_type is not stored as a member-variable, but instead allows to select if the value is given in DEGREE or in RADIAN. By default it's in DEGREE.
+
+* \fn angle::angle(double new_value,angle::type init_type)
+* \brief Constructor of angle. The value is initialized from the double new_value casted to a float. init_type is not stored as a member-variable, but instead allows to select if the value is given in DEGREE or in RADIAN. By default it's in DEGREE.
+
+* \fn angle::angle(long double new_value,angle::type init_type)
+* \brief Constructor of angle. The value is initialized from the long double new_value casted to a float. init_type is not stored as a member-variable, but instead allows to select if the value is given in DEGREE or in RADIAN. By default it's in DEGREE.
+
+* \fn angle::angle(int new_value,angle::type init_type)
+* \brief Constructor of angle. The value is initialized from the int new_value casted to a float. init_type is not stored as a member-variable, but instead allows to select if the value is given in DEGREE or in RADIAN. By default it's in DEGREE.
+
+* \fn angle::angle(const string& init_angle)
+* \brief Constructor of angle. The value is initialized from the initialization string of angle, which uses the character 00B0 or the character 00BA to represent degrees.
+
+* \fn angle::angle(const scalar_unit& x)
+* \brief Constructor of angle. The value is initialized from the scalar_unit x, if the scalar_unit has empty dimensions.
+
+* \fn angle& angle::operator =(const angle& x)
+* \brief Copy assignment of angle. The value is copied to the value of angle x.
+
+* \fn angle& angle::operator =(angle&& x)
+* \brief Move assignment of angle. The value is moved from the value of angle x.
+
+* \fn angle& angle::operator =(float new_value)
+* \brief Assignment operator. The value is copied from the float.
+
+* \fn angle& angle::operator =(const string& init_angle)
+* \brief Assignment operator. An initialization string is used to set the value, which contains the character 00B0 or the character 00BA to represent degrees.
+
+* \fn angle& angle::operator =(const scalar_unit& x)
+* \brief Assignment operator. The value of the angle is set to the value of the scalar_unit x, only if the scalar_unit has empty dimensions.
+
+* \fn angle::operator float() const
+* \brief Cast angle to a float.
+
+* \fn const float& angle::get_value() const
+* \brief Gets the value of the angle, in degrees.
+
+* \fn angle angle::operator +(const angle& x) const
+* \brief Creates a new angle as the sum of other two.
+
+* \fn angle angle::operator -(const angle& x) const
+* \brief Creates a new angle as the substraction of this angle and another angle x.
+
+* \fn angle angle::operator *(const angle& x) const
+* \brief Creates a new angle as the multiplication of other two.
+
+* \fn angle angle::operator /(const angle& x) const
+* \brief Creates a new angle as the division of this angle and another angle x.
+
+* \fn angle angle::operator ^(const angle& x) const
+* \brief Creates a new angle by powering the angle class with the value of another angle x.
+
+* \fn void angle::operator +=(const angle& x)
+* \brief Sums the value of the angle x to the value of this angle. The value is normalized after.
+
+* \fn void angle::operator -=(const angle& x)
+* \brief Substract the value of the angle x to the value of this angle. The value is normalized after.
+
+* \fn void angle::operator *=(const angle& x)
+* \brief Multiplies the value of this angle with the value of angle x. The value is normalized after.
+
+* \fn void angle::operator /=(const angle& x)
+* \brief Divides the value of this angle with the value of angle x. The value is normalized after.
+
+* \fn void angle::operator ^=(const angle& x)
+* \brief Powers the value of this angle with the value of angle x. The value is normalized after.
+
+* \fn void angle::operator =(T new_value)
+* \brief Sets the value to the value of some numeric type, casting it to a float first, and normalizing the value after that.
+
+* \fn angle angle::operator +(T x) const
+* \brief Creates a new angle as the sum of a numeric type with the value of this angle.
+
+* \fn angle angle::operator -(T x) const
+* \brief Creates a new angle as the substraction of the value of this angle with a numeric type.
+
+* \fn angle angle::operator *(T x) const
+* \brief Creates a new angle as the multiplication of a numeric type with the value of this angle.
+
+* \fn angle angle::operator /(T x) const
+* \brief Creates a new angle as the division of a numeric type with the value of this angle.
+
+* \fn angle angle::operator ^(T x) const
+* \brief Creates a new angle as the power of the value of this angle with a numeric type.
+
+* \fn void angle::operator +=(T x)
+* \brief Sums a numeric type to the value of this angle.
+
+* \fn void angle::operator -=(T x)
+* \brief Substracts a numeric type to the value of this angle.
+
+* \fn void angle::operator *=(T x)
+* \brief Multiplies a numeric type to the value of this angle.
+
+* \fn void angle::operator /=(T x)
+* \brief Divides a numeric type to the value of this angle.
+
+* \fn void angle::operator ^=(T x)
+* \brief Powers a numeric type to the value of this angle.
+
+* \fn angle& angle::operator++()
+* \brief Increments the value by one.
+
+* \fn angle angle::operator++(int)
+* \brief Increments the value by one.
+
+* \fn angle& angle::operator--()
+* \brief Decrements the value by one.
+
+* \fn angle angle::operator--(int)
+* \brief Decrements the value by one.
+
+* \fn void angle::invert()
+* \brief Inverts the angle to the opposite direction in a 2D plane, which is to add 180 degrees. The value is normalized after.
+
+* \fn string angle::display(int number_of_decimals = 2) const
+* \brief Creates an string from the angle, with the value and the degrees symbol.
+
+* \fn float angle::get_degree() const
+* \brief Gets the value of the angle in degrees.
+
+* \fn float angle::get_radian() const
+* \brief Gets the value of the angle in radians.
 
 * \var angle::value
-* \brief Value of the angle. It is stored always in grades.
+* \brief Value of the angle. It is stored in degrees.
+
+* \fn void angle::normalize_value()
+* \brief **Internal function**. Normalizes the value, which means to maintain the same angle within 0 and 360. If the value is lower or greather it gets converted to their equivalent counterpart within this range.
+
+* \fn void angle::initialize_from_string(string init_angle)
+* \brief **Internal function**. Sets the value of the angle to a new value using the initialization string of angles.
+
+* \fn string scifir::to_string(const angle &x)
+* \brief Converts an angle to their string representation.
+
+* \fn bool scifir::is_angle(const string &init_angle)
+* \brief Checks if some string is an initialization string of an angle.
+
+* \fn bool scifir::parallel(const angle &x, const angle &y)
+* \brief Checks if two angles in a 2D correspond to parallel lines (or parallel vectors).
+
+* \fn bool scifir::orthogonal(const angle &x, const angle &y)
+* \brief Checks if two angles in a 2D correspond to orthogonal lines (or orthogonal vectors).
+
+* \fn angle scifir::sqrt(const angle &x)
+* \brief Calculates the square root of the angle x and returns that new angle.
+
+* \fn angle scifir::sqrt_nth(const angle &x, int index)
+* \brief Calculates the nth root of the angle x and returns that new angle.
+
+* \fn float scifir::sin(const angle &x)
+* \brief Calculates the sin of angle x. It uses the sin() function of the standard library of C++, the difference is that angle is in degrees, not in radians.
+
+* \fn float scifir::cos(const angle &x)
+* \brief Calculates the cos of angle x. It uses the cos() function of the standard library of C++, the difference is that angle is in degrees, not in radians.
+
+* \fn float scifir::tan(const angle &x)
+* \brief Calculates the tan of angle x. It uses the tan() function of the standard library of C++, the difference is that angle is in degrees, not in radians.
+
+* \fn angle scifir::asin(float x)
+* \brief Calculates the asin of some value x and returns the result as angle in degrees.
+
+* \fn angle scifir::acos(float x)
+* \brief Calculates the acos of some value x and returns the result as angle in degrees.
+
+* \fn angle scifir::atan(float x)
+* \brief Calculates the atan of some value x and returns the result as angle in degrees.
+
+* \fn float scifir::sinh(const angle &x)
+* \brief Calculates the sinh of angle x. It uses the sinh() function of the standard library of C++, the difference is that angle is in degrees, not in radians.
+
+* \fn float scifir::cosh(const angle &x)
+* \brief Calculates the cosh of angle x. It uses the cosh() function of the standard library of C++, the difference is that angle is in degrees, not in radians.
+
+* \fn float scifir::tanh(const angle &x)
+* \brief Calculates the tanh of angle x. It uses the tanh() function of the standard library of C++, the difference is that angle is in degrees, not in radians.
+
+* \fn angle scifir::asinh(float x)
+* \brief Calculates the asinh of some value x and returns the result as angle in degrees.
+
+* \fn angle scifir::acosh(float x)
+* \brief Calculates the acosh of some value x and returns the result as angle in degrees.
+
+* \fn angle scifir::atanh(float x)
+* \brief Calculates the atanh of some value x and returns the result as angle in degrees.
+
+* \fn float scifir::asin_degree(float x)
+* \brief Calculates the asin receiving x in degrees. It uses the asin() function of the standard library of C++, but the difference is that the argument is in degrees, not in radians.
+
+* \fn float scifir::acos_degree(float x)
+* \brief Calculates the acos receiving x in degrees. It uses the acos() function of the standard library of C++, but the difference is that the argument is in degrees, not in radians.
+
+* \fn float scifir::atan_degree(float x)
+* \brief Calculates the atan receiving x in degrees. It uses the atan() function of the standard library of C++, but the difference is that the argument is in degrees, not in radians.
+
+* \fn float scifir::asinh_degree(float x)
+* \brief Calculates the asinh receiving x in degrees. It uses the asinh() function of the standard library of C++, but the difference is that the argument is in degrees, not in radians.
+
+* \fn float scifir::acosh_degree(float x)
+* \brief Calculates the acosh receiving x in degrees. It uses the acosh() function of the standard library of C++, but the difference is that the argument is in degrees, not in radians.
+
+* \fn float scifir::atanh_degree(float x)
+* \brief Calculates the atanh receiving x in degrees. It uses the atanh() function of the standard library of C++, but the difference is that the argument is in degrees, not in radians.
+
+* \fn scifir::angle operator +(T x, const scifir::angle &y)
+* \brief Creates a new angle as the sum of a numeric type with the value of this angle.
+
+* \fn scifir::angle operator -(T x, const scifir::angle &y)
+* \brief Creates a new angle as the substraction of the numeric type with the value of this angle.
+
+* \fn scifir::angle operator *(T x, const scifir::angle &y)
+* \brief Creates a new angle as the multiplication of a numeric type with the value of this angle.
+
+* \fn scifir::angle operator /(T x, const scifir::angle &y)
+* \brief Creates a new angle as the division of the value of this angle with the numeric type.
+
+* \fn scifir::angle operator ^(T x, const scifir::angle &y)
+* \brief Creates a new angle as the power of a numeric type with the value of this angle.
+
+* \fn bool operator ==(T x, const scifir::angle &y)
+* \brief Checks if the value of angle y is equal to a numeric type x.
+
+* \fn bool operator !=(T x, const scifir::angle &y)
+* \brief Checks if the value of angle y is not equal to a numeric type x.
+
+* \fn bool operator <(T x, const scifir::angle &y)
+* \brief Checks if the value of angle y is greather to a numeric type x.
+
+* \fn bool operator >(T x, const scifir::angle &y)
+* \brief Checks if the value of angle y is lower to a numeric type x.
+
+* \fn bool operator <=(T x, const scifir::angle &y)
+* \brief Checks if the value of angle y is equal or greather than a numeric type x.
+
+* \fn bool operator >=(T x, const scifir::angle &y)
+* \brief Checks if the value of angle y is lower or equal than a numeric type x.
+
+* \fn bool operator ==(const scifir::angle &y, T x)
+* \brief Checks if the value of angle y is equal to a numeric type x.
+
+* \fn bool operator !=(const scifir::angle &y, T x)
+* \brief Checks if the value of angle y is not equal to a numeric type x.
+
+* \fn bool operator <(const scifir::angle &y, T x)
+* \brief Checks if the value of angle y is lower to a numeric type x.
+
+* \fn bool operator >(const scifir::angle &y, T x)
+* \brief Checks if the value of angle y is greather to a numeric type x.
+
+* \fn bool operator <=(const scifir::angle &y, T x)
+* \brief Checks if the value of angle y is lower or equal than a numeric type x.
+
+* \fn bool operator >=(const scifir::angle &y, T x)
+* \brief Checks if the value of angle y is equal or greather than a numeric type x.
+
+* \fn bool operator ==(const scifir::angle &x, const scifir::angle &y)
+* \brief Checks if two angles have equal value.
+
+* \fn bool operator !=(const scifir::angle &x, const scifir::angle &y)
+* \brief Checks if two angles have not equal value.
+
+* \fn bool operator <(const scifir::angle &x, const scifir::angle &y)
+* \brief Checks if the value of angle x is lower than the value of angle y.
+
+* \fn bool operator >(const scifir::angle &x, const scifir::angle &y)
+* \brief Checks if the value of angle x is greather than the value of angle y.
+
+* \fn bool operator <=(const scifir::angle &x, const scifir::angle &y)
+* \brief Checks if the value of angle x is lower or equal than the value of angle y.
+
+* \fn bool operator >=(const scifir::angle &x, const scifir::angle &y)
+* \brief Checks if the value of angle x is equal or greather than the value of angle y.
+
+* \fn bool operator ==(const scifir::angle &x, const string &init_angle)
+* \brief Checks if the angle x is equal than the angle initialized with the initialization string of angle init_angle.
+
+* \fn bool operator !=(const scifir::angle &x, const string &init_angle)
+* \brief Checks if the angle x is not equal than the angle initialized with the initialization string of angle init_angle.
+
+* \fn bool operator ==(const string &init_angle, const scifir::angle &x)
+* \brief Checks if the angle x is equal than the angle initialized with the initialization string of angle init_angle.
+
+* \fn bool operator !=(const string &init_angle, const scifir::angle &x)
+* \brief Checks if the angle x is not equal than the angle initialized with the initialization string of angle init_angle.
+
+* \fn void operator +=(string &x, const scifir::angle &y)
+* \brief Concatenates to string x the string representation of angle y.
+
+* \fn string operator +(const string &x, const scifir::angle &y)
+* \brief Concatenates the string x with the string representation of angle y into a new string.
+
+* \fn string operator +(const scifir::angle &y, const string &x)
+* \brief Concatenates the string x with the string representation of angle y into a new string.
+
+* \fn ostream & operator <<(ostream &os, const scifir::angle &x)
+* \brief Sends the string representation of angle x to an output stream.
+
+* \fn istream & operator >>(istream &is, scifir::angle &x)
+* \brief Initializes an angle with an initialization string obtained from an input stream.
 */

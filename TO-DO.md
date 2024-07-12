@@ -2,10 +2,27 @@ SCIFIR UNITS - VERSION 2
 
 // NUMBER OF TODOS: 52
 
-// BUGS AND SIMILAR PROBLEMS (4)
+// MATERIAL_VECTOR_UNIT (1)
+// TODO: add operator== and operator!=
 
-// TODO: is_lab_number() function
-// TODO: add the possibility of using different template parameters for the comparison operators of coordinates and point classes
+// TENSORS (2)
+// TODO: add display functions without new lines and other equivalents with new lines, they should allow to display like the other units related to dimensions
+// TODO: add operator*, cross_product(), dot_product(), hadamard_product()
+
+// TRAJECTORY AND PARAMETERIZATION
+// TODO: think if to add here the trajectory and the parameterization
+
+// BUGS AND SIMILAR PROBLEMS (3)
+// TODO: add a whitespace between operator and the = sign to all those functions
+
+// TODO: update all the uses of grade in a function name or any other part by degree, which is a more precise word
+// TODO: percentage should have an enum percentage::type with the values PERCENTAGE, PARTS_PER_MILLION, PARTS_PER_BILLION, PARTS_PER_TRILLION, PARTS_PER_QUATRILLION
+// TODO: document the light units somewhere
+
+// TODO: complex_number<> and lab_number<> should work with scalar_unit class as template parameter too, not only with their derived classes
+
+// TODO: custom dimensions should allow to store their names too, not only their symbols
+// TODO: maybe the prefix should be also present in the operator == of dimensions, and then it's needed another function to do what this operator is currently doing
 
 // TODO: display_double() and display_long_double() functions of types.cpp
 
@@ -53,27 +70,39 @@ SCIFIR UNITS - VERSION 2
 // TODO: verify the titles of sections of tests of units, meca_number and special_units
 // TODO: test of unit basic classes
 
-// DOCUMENTATION (25)
+// DOCUMENTATION (23)
+// TODO: change in the master branch the Doxyfile in order to only generate HTML, in order to improve performance
+// TODO: configure to update gh-pages based on some factor, maybe a pull request
+// TODO: create all the dox files of the library
+// TODO: document the thinking behind the geographic coordinates of allowing to change planet. By default it's the Earth
+// TOOD: document that angle always uses grades
+// TODO: document the use of special characters in prefixes
+// TODO: document the special characters in vector units
+// TODO: document the special character in angle class
+// TODO: document what is a dimension, what is a derived dimension, and what is a basic dimension
+// TODO: use the bold for "internal function" inside the documentation
+// TODO: add the abbreviations in the groups too
+// TODO: document the initialization string of each class in their respective page
+// TODO: add latex to the factors of prefixes in prefix.dox
+// TODO: document how the england and united states units work, which are different than the SI system of units
+
 // TODO: document the coordinates for the universe, publish that too as an standard inside scifir
-// TODO: document example of use cases (laboratory machines,medical devices,robotics)
-// TODO: document how to create scientific inventions in the library, how to create laboratory machines and how to create medical devices
-// TODO: document how to use the library for robots
 // TODO: check what to do with the libraries of ISOs and document them inside the README.md file. If there isn't a library of ISOs, decide if to create one
 // TODO: reference books related to the physics, chemistry, biology or math implemented
 // TODO: explain the custom dimensions in the file README.md
 // TODO: display as plain text the <T> inside the md file
-// TODO: configure the use of dox files
-// TODO: add the file Doxyfile.in to the master branch
-// TODO: document the special initialization of mass and mole with percentage
 // TODO: document the demonstration of why a number or a scalar unit divided by a vector should give a vector, explaining that it's the reverse as the multiplication
 
 // TODO: document the use of the custom_display "sci"
 // TODO: think on the different cases of use of coordinates and document them, including the use of an origin
 // TODO: mention the WGS in the part of coordinates
 // TODO: document the use of fabs() and display() to compare values of units
+// TODO: document the special initialization of mass and mole with percentage
+// TODO: add initialization of lab_number<> inside README.md file
 
 // TODO: add the summary sheet somewhere
 // TODO: "Things to remember" section, which explains the use of the degree for vector_unit_nd instead of the other two cases, the use of fabs, the use of display that doesn't displays all decimals
+// TODO: add a section of "Optional knowledge"
 
 // TODO: formulas of physics related to units
 // TODO: formulas of chemistry related to units
@@ -86,7 +115,7 @@ SCIFIR UNITS - VERSION 2
 
 // TODO: write an specification of scifir-units to be implemented in any programming language. Write there too the generic method for writing bindings which is to maintain all function names and classnames equal, changing only their spelling to snake-case or camel-case as used in the programming language, and also document equivalencies like using static methods in Java inside a class instead of normal functions in C++.
 
-// COORDINATES AND POINTS (4)
+// COORDINATES AND POINTS (5)
 // TODO: add coordinates_3d::origin() to allow to initialize with an origin (another coordinates class of the same type), it's specially useful for geographic coordinates
 
 // TODO: the case when the initialization string contains only the character ',', without a value, has to initialize to zero
@@ -112,6 +141,7 @@ SCIFIR UNITS - VERSION 2
 // TODO: is_algebraic_expression() and is_algebraic_term() functions
 // TODO: static variable storing scalar_units, scalar_fields, etc
 // TODO: search if there's a library that displays equations inside the command-line with math format, with math glyphs
+// TODO: to_latex() function that gives the algebraic_expression in latex format
 
 // C++ (6)
 // TODO: use constexpr and consteval to initialize units instantly, possibly use it in more parts of the code
@@ -124,11 +154,14 @@ SCIFIR UNITS - VERSION 2
 // DIMENSIONS (7)
 // TODO: support the binary prefixes too
 // TODO: a new function to display dimensions with their full name, including the prefix
+// TODO: function get_frequent_dimensions(), which are the frequent definitions (J is N*m, W is J/s, etc)
+// TODO: functions get_plural(), get_fullname() and get_fullplural()
 
 // TODO: allow to initalize grade dimensions by symbol
 // TODO: angle class needs a to_scalar_unit() function that gives an equivalent scalar_unit class with the same value and grade dimension
 // TODO: some dimensions like grade, rad and money shouldn't be allowed to have a prefix
 // TODO: check the literal with e
+// TODO: read the ISO 80000
 
 // TODO: finish the test of custom_basic dimensions and document them in the README.md file
 
@@ -140,6 +173,8 @@ SCIFIR UNITS - VERSION 2
 // TODO: use the PI of the std library
 // TODO: function point_to() to a point and point_to() to a coordinate
 // TODO: support the brackets inside is_scalar_unit(), is_complex() and is_lab_number()
+// TODO: possibly add the light_scalar_unit class that allows operations with scalar_unit classes, which must contain only one dimension, not a vector<dimension>
+// TODO: function to_latex() for dimensions and scalar_unit
 
 // TODO: Regex that checks all the invalid dimensions initialization inside a static_assert (create a static function of valid_initialization_string()). Maybe try first by undefining the value if there's something that doesn't exist (with an else). It's possible to test, with static_assert, that dimension == nullptr, abbreviation == nullptr and conversion == nullptr
 // TODO: Detect when there's the same dimension at the numerator and at the denominator of the string initialization
@@ -152,19 +187,22 @@ SCIFIR UNITS - VERSION 2
 // TODO: think if to add another concentration class, the previous one has been deprecated
 // TODO: move cas_number to the library of scifir-info, or even to another category
 
-// MECA NUMBERS (3)
+// MECA NUMBERS (2)
 // TODO: add the allowed typenames to lab_number, and don't accept any other type
-// TODO: function is_lab_number()
-// TODO: add initialization of lab_number inside README.md file
+// TODO: _angle, _grade and _radian literals
+// TODO: angle should read initialization strings in radian too, maybe with "radian" name, possibly "rad" should be supported too
+// TODO: add obtusangle, rect angle, acutangle, etc
 
-// SPECIAL UNITS - EXTRA (5)
+// SPECIAL UNITS - EXTRA (7)
 // TODO: ip class? check networking libraries of C++ and decide if to add it here
 // TODO: nutrition_information
-// TODO: Class for geographical position including ZID and coordinates_3d
+// TODO: class for geographical position including ZID and coordinates_3d
 // TODO: maybe pixel should be called pixel_length
 // TODO: think if to add a default case for the none value of aid and for the none value of zid
 // TODO: functions is_aid() and is_zid()
 // TODO: initialize_from_string() for pH and pOH classes should work with pH and pOH at the start, respectively
+// TODO: maybe add zoom class, which allows to work with zooms
+// TODO: _percentage literal
 
 // EMOTIONAL UNITS (1)
 // TODO: finish the enums of mind.hpp
@@ -174,13 +212,6 @@ SCIFIR UNITS - VERSION 2
 // TODO: pixel_color<>. Use monochrome_pixel, truecolor_pixel, etc, as typedefs of pixel_color<>
 // TODO: complex_number<> should have trigonometric functions for complex numbers
 // TODO: maybe create a mesh_3d class, or vector<point_3d<>>
-
-// MATERIAL_VECTOR_UNIT (1)
-// TODO: add operator== and operator!=
-
-// TENSORS (2)
-// TODO: add display functions without new lines and other equivalents with new lines, they should allow to display like the other units related to dimensions
-// TODO: add operator*, cross_product(), dot_product(), hadamard_product()
 
 // PREDEFINED PHYSICS UNITS (4)
 // TODO: electric_field which calculates based on coulomb charges

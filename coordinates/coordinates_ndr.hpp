@@ -207,7 +207,7 @@ namespace scifir
 				initialize_from_string(init_coordinates_ndr);
 			}
 
-			coordinates_ndr<T>& operator=(const coordinates_ndr<T>& x_coordinates)
+			coordinates_ndr<T>& operator =(const coordinates_ndr<T>& x_coordinates)
 			{
 				if (x_coordinates.values.size() == (x_coordinates.angles.size() + 1))
 				{
@@ -217,7 +217,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_ndr<T>& operator=(coordinates_ndr<T>&& x_coordinates)
+			coordinates_ndr<T>& operator =(coordinates_ndr<T>&& x_coordinates)
 			{
 				if (x_coordinates.values.size() == (x_coordinates.angles.size() + 1))
 				{
@@ -227,7 +227,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_ndr<T>& operator=(const point_nd<T>& x_point)
+			coordinates_ndr<T>& operator =(const point_nd<T>& x_point)
 			{
 				if (x_point.values.size() == (angles.size() + 1))
 				{
@@ -236,7 +236,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_ndr<T>& operator=(point_nd<T>&& x_point)
+			coordinates_ndr<T>& operator =(point_nd<T>&& x_point)
 			{
 				if (x_point.values.size() == (angles.size() + 1))
 				{
@@ -245,7 +245,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_ndr<T>& operator=(const coordinates_nd<T>& x_coordinates)
+			coordinates_ndr<T>& operator =(const coordinates_nd<T>& x_coordinates)
 			{
 				if (x_coordinates.values.size() == (angles.size() + 1))
 				{
@@ -254,7 +254,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_ndr<T>& operator=(coordinates_nd<T>&& x_coordinates)
+			coordinates_ndr<T>& operator =(coordinates_nd<T>&& x_coordinates)
 			{
 				if (x_coordinates.values.size() == (angles.size() + 1))
 				{
@@ -263,7 +263,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_ndr<T>& operator=(const string& init_coordinates_ndr)
+			coordinates_ndr<T>& operator =(const string& init_coordinates_ndr)
 			{
 				initialize_from_string(init_coordinates_ndr);
 				return *this;
@@ -403,7 +403,7 @@ namespace scifir
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return angle(scifir::atan_grade(float(values[1]/values[0])));
+					return angle(scifir::atan_degree(float(values[1]/values[0])));
 				}
 				else
 				{
@@ -427,7 +427,7 @@ namespace scifir
 			{
 				if (get_nd() == 3)
 				{
-					return angle(scifir::acos_grade(float(values[2]/scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2)))));
+					return angle(scifir::acos_degree(float(values[2]/scifir::sqrt(scifir::pow(values[0],2) + scifir::pow(values[1],2) + scifir::pow(values[2],2)))));
 				}
 				else
 				{
@@ -1273,7 +1273,7 @@ namespace scifir
 				initialize_from_string(init_coordinates_ndr);
 			}
 
-			coordinates_ndr<float>& operator=(const coordinates_ndr<float>& x_coordinates)
+			coordinates_ndr<float>& operator =(const coordinates_ndr<float>& x_coordinates)
 			{
 				if (x_coordinates.values.size() == (x_coordinates.angles.size() + 1))
 				{
@@ -1283,7 +1283,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_ndr<float>& operator=(coordinates_ndr<float>&& x_coordinates)
+			coordinates_ndr<float>& operator =(coordinates_ndr<float>&& x_coordinates)
 			{
 				if (x_coordinates.values.size() == (x_coordinates.angles.size() + 1))
 				{
@@ -1293,7 +1293,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_ndr<float>& operator=(const point_nd<float>& x_point)
+			coordinates_ndr<float>& operator =(const point_nd<float>& x_point)
 			{
 				if (x_point.values.size() == (angles.size() + 1))
 				{
@@ -1302,7 +1302,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_ndr<float>& operator=(point_nd<float>&& x_point)
+			coordinates_ndr<float>& operator =(point_nd<float>&& x_point)
 			{
 				if (x_point.values.size() == (angles.size() + 1))
 				{
@@ -1311,7 +1311,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_ndr<float>& operator=(const coordinates_nd<float>& x_coordinates)
+			coordinates_ndr<float>& operator =(const coordinates_nd<float>& x_coordinates)
 			{
 				if (x_coordinates.values.size() == (angles.size() + 1))
 				{
@@ -1320,7 +1320,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_ndr<float>& operator=(coordinates_nd<float>&& x_coordinates)
+			coordinates_ndr<float>& operator =(coordinates_nd<float>&& x_coordinates)
 			{
 				if (x_coordinates.values.size() == (angles.size() + 1))
 				{
@@ -1329,7 +1329,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_ndr<float>& operator=(const string& init_coordinates_ndr)
+			coordinates_ndr<float>& operator =(const string& init_coordinates_ndr)
 			{
 				initialize_from_string(init_coordinates_ndr);
 				return *this;
@@ -1469,7 +1469,7 @@ namespace scifir
 			{
 				if (get_nd() == 2 or get_nd() == 3)
 				{
-					return angle(scifir::atan_grade(float(values[1]/values[0])));
+					return angle(scifir::atan_degree(float(values[1]/values[0])));
 				}
 				else
 				{
@@ -1493,7 +1493,7 @@ namespace scifir
 			{
 				if (get_nd() == 3)
 				{
-					return angle(scifir::acos_grade(float(values[2]/std::sqrt(std::pow(values[0],2) + std::pow(values[1],2) + std::pow(values[2],2)))));
+					return angle(scifir::acos_degree(float(values[2]/std::sqrt(std::pow(values[0],2) + std::pow(values[1],2) + std::pow(values[2],2)))));
 				}
 				else
 				{

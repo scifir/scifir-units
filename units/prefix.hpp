@@ -13,7 +13,7 @@ namespace scifir
 	class prefix
 	{
 		public:
-			enum type : int8_t {no_prefix,Y,Z,E,P,T,G,M,k,h,da,d,c,m,u,n,p,f,a,z,y};
+			enum type : int8_t {NONE,QUETTA,RONNA,YOTTA,ZETTA,EXA,PETA,TERA,GIGA,MEGA,KILO,HECTO,DECA,DECI,CENTI,MILLI,MICRO,NANO,PICO,FEMTO,ATTO,ZEPTO,YOCTO,RONTO,QUECTO};
 
 			prefix();
 			prefix(const prefix& x);
@@ -21,8 +21,8 @@ namespace scifir
 			explicit prefix(prefix::type new_type);
 			explicit prefix(const string& new_type);
 
-			prefix& operator=(const prefix& x);
-			prefix& operator=(prefix&& x);
+			prefix& operator =(const prefix& x);
+			prefix& operator =(prefix&& x);
 
 			int get_conversion_factor() const;
 			string get_name() const;

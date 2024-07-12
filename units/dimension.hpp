@@ -30,7 +30,7 @@ namespace scifir
 		public:
 			enum type : int8_t
 			{
-				NONE, m, grade, radian, steradian, s, g, C, K, mol, cd, B, Hz, N, Pa, J, W, A, V, F, Ohm, S, Wb, T, H, lm, lx, Bq, Gy, Sv, kat, angstrom, L, minute, h, d, ly, AU, pc, eV, Da, amu, barn, M, particles, custom, custom_basic, custom_full_symbol, money, pixel, memo
+				NONE, METRE, DEGREE, RADIAN, STERADIAN, SECOND, GRAM, COULOMB, KELVIN, MOLE, CANDELA, BYTE, HERTZ, NEWTON, PASCAL, JOULE, WATT, AMPERE, VOLT, FARADAY, OHM, SIEMENS, WEBER, TESLA, HENRY, LUMEN, LUX, BECQUEREL, GRAY, SIEVERT, KATAL, ANGSTROM, LITRE, MINUTE, HOUR, DAY, LIGHT_YEAR, ASTRONOMICAL_UNIT, PARSEC, ELECTRON_VOLT, DALTON, ATOMIC_MASS_UNIT, BARN, MOLARITY, PARTICLES, CUSTOM, CUSTOM_BASIC, CUSTOM_FULL_SYMBOL, MONEY, PIXEL, MEMO
 			};
 
 			enum position : int8_t {NO_POSITION, NUMERATOR, DENOMINATOR};
@@ -38,12 +38,12 @@ namespace scifir
 			dimension();
 			dimension(const dimension& x);
 			dimension(dimension&& x);
-			explicit dimension(dimension::type new_dimension_type,scifir::prefix::type new_prefix,dimension::position new_sign);
-			explicit dimension(dimension::type new_dimension_type,const scifir::prefix& new_prefix,dimension::position new_sign);
-			explicit dimension(const string& init_dimension,dimension::position new_sign);
+			explicit dimension(dimension::type new_dimension_type,scifir::prefix::type new_prefix,dimension::position new_position);
+			explicit dimension(dimension::type new_dimension_type,const scifir::prefix& new_prefix,dimension::position new_position);
+			explicit dimension(const string& init_dimension,dimension::position new_position);
 
-			dimension& operator=(const dimension& x);
-			dimension& operator=(dimension&& x);
+			dimension& operator =(const dimension& x);
+			dimension& operator =(dimension&& x);
 
 			string get_name() const;
 			string get_symbol() const;
@@ -61,7 +61,7 @@ namespace scifir
 
 			scifir::prefix prefix;
 			dimension::type dimension_type;
-			dimension::position dimension_sign;
+			dimension::position dimension_position;
 			char symbol[3];
 
 			static void create_custom_dimension(const string& new_symbol,const string& init_dimensions)
@@ -161,7 +161,6 @@ namespace scifir
 	string to_string(const dimension& x);
 	string to_string(const vector<dimension>& x_dimensions,bool with_brackets = false);
 
-	vector<dimension> create_derived_dimensions(const string& init_dimensions);
 	vector<dimension> create_derived_dimensions(const vector<dimension>& x);
 	vector<dimension> create_derived_dimensions(const vector<dimension>& x,long double& value);
 
@@ -185,7 +184,7 @@ namespace scifir
 	}*/
 }
 
-bool operator==(const scifir::dimension& x,const scifir::dimension& y);
+bool operator ==(const scifir::dimension& x,const scifir::dimension& y);
 bool operator!=(const scifir::dimension& x,const scifir::dimension& y);
 
 ostream& operator <<(ostream& os, const scifir::dimension& x);

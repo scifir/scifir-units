@@ -17,13 +17,15 @@ namespace scifir
 	class percentage
 	{
 		public:
+			enum type : int8_t {PERCENTAGE,PARTS_PER_MILLION,PARTS_PER_BILLION,PARTS_PER_TRILLION,PARTS_PER_QUATRILLION};
+
 			percentage();
 			percentage(const percentage& x);
 			percentage(percentage&& x);
-			explicit percentage(float new_value);
-			explicit percentage(double new_value);
-			explicit percentage(long double new_value);
-			explicit percentage(int new_value);
+			explicit percentage(float new_value,percentage::type init_type = percentage::PERCENTAGE);
+			explicit percentage(double new_value,percentage::type init_type = percentage::PERCENTAGE);
+			explicit percentage(long double new_value,percentage::type init_type = percentage::PERCENTAGE);
+			explicit percentage(int new_value,percentage::type init_type = percentage::PERCENTAGE);
 			explicit percentage(float new_value,const string& init_dimensions);
 			explicit percentage(double new_value,const string& init_dimensions);
 			explicit percentage(long double new_value,const string& init_dimensions);

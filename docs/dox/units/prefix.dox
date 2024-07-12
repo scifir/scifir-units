@@ -1,0 +1,144 @@
+/** \class scifir::prefix
+* \brief Class that represents prefixes of the SI system of units. Each prefix sizes 1 byte.
+
+* \enum scifir::prefix::type
+* \brief Represents a prefix of the SI system of units. All the prefixes of the SI system of units are supported.
+
+* \var prefix::NONE
+* \brief There is no prefix. Then, the dimension is not increased or decreased by some factor.
+
+* \var prefix::QUETTA
+* \brief Prefix of a factor of 10^30.
+
+* \var prefix::RONNA
+* \brief Prefix of a factor of 10^27.
+
+* \var prefix::YOTTA
+* \brief Prefix of a factor of 10^24.
+
+* \var prefix::ZETTA
+* \brief Prefix of a factor of 10^21.
+
+* \var prefix::EXA
+* \brief Prefix of a factor of 10^18.
+
+* \var prefix::PETA
+* \brief Prefix of a factor of 10^15.
+
+* \var prefix::TERA
+* \brief Prefix of a factor of 10^12.
+
+* \var prefix::GIGA
+* \brief Prefix of a factor of 10^9.
+
+* \var prefix::MEGA
+* \brief Prefix of a factor of 10^6.
+
+* \var prefix::KILO
+* \brief Prefix of a factor of 10^3.
+
+* \var prefix::HECTO
+* \brief Prefix of a factor of 10^2.
+
+* \var prefix::DECA
+* \brief Prefix of a factor of 10^1.
+
+* \var prefix::DECI
+* \brief Prefix of a factor of 10^-1.
+
+* \var prefix::CENTI
+* \brief Prefix of a factor of 10^-2.
+
+* \var prefix::MILLI
+* \brief Prefix of a factor of 10^-3.
+
+* \var prefix::MICRO
+* \brief Prefix of a factor of 10^-6.
+
+* \var prefix::NANO
+* \brief Prefix of a factor of 10^-9.
+
+* \var prefix::PICO
+* \brief Prefix of a factor of 10^-12.
+
+* \var prefix::FEMTO
+* \brief Prefix of a factor of 10^-15.
+
+* \var prefix::ATTO
+* \brief Prefix of a factor of 10^-18.
+
+* \var prefix::ZEPTO
+* \brief Prefix of a factor of 10^-21.
+
+* \var prefix::YOCTO
+* \brief Prefix of a factor of 10^-24.
+
+* \var prefix::RONTO
+* \brief Prefix of a factor of 10^-27.
+
+* \var prefix::QUECTO
+* \brief Prefix of a factor of 10^-30.
+
+* \fn prefix::prefix()
+* \brief Default constructor. The prefix_type is set to NONE.
+ 
+* \fn prefix::prefix(const prefix& x)
+* \brief Copy constructor. The prefix_type is copied from the prefix x.
+ 
+* \fn prefix::prefix(prefix&& x)
+* \brief Move constructor. The prefix_type is moved from the prefix x.
+ 
+* \fn prefix::prefix(prefix::type new_type)
+* \brief Constructor. The prefix_type is set to the new_type given.
+ 
+* \fn prefix::prefix(const string& new_type)
+* \brief Constructor. The prefix_type is set to the new_type specified in the string.
+ 
+* \fn prefix& prefix::operator =(const prefix& x)
+* \brief Copy assignment. The prefix_type is copied from the prefix x.
+ 
+* \fn prefix& prefix::operator =(prefix&& x)
+* \brief Move assignment. The prefix_type is moved from the prefix x.
+ 
+* \fn int prefix::get_conversion_factor() const
+* \brief Returns the conversion factor of the prefix given the prefix_type. It uses the SI system of units for the value of each conversion factor.
+ 
+* \fn string prefix::get_name() const
+* \brief Name of the prefix given the prefix_type.
+ 
+* \fn string prefix::get_symbol() const
+* \brief Symbol of the prefix given the prefix_type. The symbol of micro is supported in his Unicode version.
+ 
+* \fn bool prefix::operator <(const scifir::prefix &x) const
+* \brief This operator allows to order the prefixes from the lower to the greather.
+
+* \var prefix::prefix_type
+* \brief It stores the prefix type currently being used.
+
+* \fn prefix::type scifir::prefix_string(const string& x)
+* \brief Returns the value of the enum prefix::type associated with the string x given.
+
+* \fn prefix scifir::closest_prefix(const prefix& actual_prefix, int actual_scale)
+* \brief Returns the closes prefix related to the scale of the current value. It is used when displaying a scalar_unit to the most close prefix available.
+
+* \fn prefix scifir::create_prefix_by_factor(int factor)
+* \brief Creates the prefix of the factor given, which is always between a range.
+
+* \fn bool operator ==(const scifir::prefix& x, const scifir::prefix& y)
+* \brief Comparison operator. Compares if two prefixes are the same, that's, if they have the same prefix::type.
+
+* \fn bool operator !=(const scifir::prefix& x, const scifir::prefix& y)
+* \brief Comparison operator. Compares if two prefixes are different, that's, if they don't have the same prefix::type.
+
+* \fn bool operator <=(const scifir::prefix& x, const scifir::prefix& y)
+* \brief Checks if prefix x is of a lower or equal factor than prefix y.
+
+* \fn bool operator >(const scifir::prefix& x, const scifir::prefix& y)
+* \brief Checks if prefix x is of a greather factor than prefix y.
+
+* \fn bool operator >=(const scifir::prefix& x, const scifir::prefix& y)
+* \brief Checks if prefix x is of an equal or greather factor than prefix y.
+
+* \fn ostream& 	operator <<(ostream& os, const scifir::prefix& x)
+* \brief Adds the string representation of the prefix x to an output stream.
+*/

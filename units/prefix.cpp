@@ -6,7 +6,7 @@ using namespace std;
 
 namespace scifir
 {
-	prefix::prefix(): prefix_type(prefix::no_prefix)
+	prefix::prefix(): prefix_type(prefix::NONE)
 	{}
 
 	prefix::prefix(const prefix& x) : prefix_type(x.prefix_type)
@@ -21,13 +21,13 @@ namespace scifir
 	prefix::prefix(const string& new_type) : prefix_type(prefix_string(new_type))
 	{}
 
-	prefix& prefix::operator=(const prefix& x)
+	prefix& prefix::operator =(const prefix& x)
 	{
 		prefix_type = x.prefix_type;
 		return *this;
 	}
 
-	prefix& prefix::operator=(prefix&& x)
+	prefix& prefix::operator =(prefix&& x)
 	{
 		prefix_type = std::move(x.prefix_type);
 		return *this;
@@ -37,48 +37,56 @@ namespace scifir
 	{
 		switch (prefix_type)
 		{
-			case prefix::Y:
+			case prefix::QUETTA:
+				return 30;
+			case prefix::RONNA:
+				return 27;
+			case prefix::YOTTA:
 				return 24;
-			case prefix::Z:
+			case prefix::ZETTA:
 				return 21;
-			case prefix::E:
+			case prefix::EXA:
 				return 18;
-			case prefix::P:
+			case prefix::PETA:
 				return 15;
-			case prefix::T:
+			case prefix::TERA:
 				return 12;
-			case prefix::G:
+			case prefix::GIGA:
 				return 9;
-			case prefix::M:
+			case prefix::MEGA:
 				return 6;
-			case prefix::k:
+			case prefix::KILO:
 				return 3;
-			case prefix::h:
+			case prefix::HECTO:
 				return 2;
-			case prefix::da:
+			case prefix::DECA:
 				return 1;
-			case prefix::no_prefix:
+			case prefix::NONE:
 				return 0;
-			case prefix::d:
+			case prefix::DECI:
 				return -1;
-			case prefix::c:
+			case prefix::CENTI:
 				return -2;
-			case prefix::m:
+			case prefix::MILLI:
 				return -3;
-			case prefix::u:
+			case prefix::MICRO:
 				return -6;
-			case prefix::n:
+			case prefix::NANO:
 				return -9;
-			case prefix::p:
+			case prefix::PICO:
 				return -12;
-			case prefix::f:
+			case prefix::FEMTO:
 				return -15;
-			case prefix::a:
+			case prefix::ATTO:
 				return -18;
-			case prefix::z:
+			case prefix::ZEPTO:
 				return -21;
-			case prefix::y:
+			case prefix::YOCTO:
 				return -24;
+			case prefix::RONTO:
+				return -27;
+			case prefix::QUECTO:
+				return -30;
 		}
 		return 0;
 	}
@@ -87,48 +95,56 @@ namespace scifir
 	{
 		switch (prefix_type)
 		{
-			case prefix::Y:
+			case prefix::QUETTA:
+				return "quetta";
+			case prefix::RONNA:
+				return "ronna";
+			case prefix::YOTTA:
 				return "yotta";
-			case prefix::Z:
+			case prefix::ZETTA:
 				return "zetta";
-			case prefix::E:
+			case prefix::EXA:
 				return "exa";
-			case prefix::P:
+			case prefix::PETA:
 				return "peta";
-			case prefix::T:
+			case prefix::TERA:
 				return "tera";
-			case prefix::G:
+			case prefix::GIGA:
 				return "giga";
-			case prefix::M:
+			case prefix::MEGA:
 				return "mega";
-			case prefix::k:
+			case prefix::KILO:
 				return "kilo";
-			case prefix::h:
+			case prefix::HECTO:
 				return "hecto";
-			case prefix::da:
+			case prefix::DECA:
 				return "deca";
-			case prefix::no_prefix:
+			case prefix::NONE:
 				return "";
-			case prefix::d:
+			case prefix::DECI:
 				return "deci";
-			case prefix::c:
+			case prefix::CENTI:
 				return "centi";
-			case prefix::m:
+			case prefix::MILLI:
 				return "milli";
-			case prefix::u:
+			case prefix::MICRO:
 				return "micro";
-			case prefix::n:
+			case prefix::NANO:
 				return "nano";
-			case prefix::p:
+			case prefix::PICO:
 				return "pico";
-			case prefix::f:
+			case prefix::FEMTO:
 				return "femto";
-			case prefix::a:
+			case prefix::ATTO:
 				return "atto";
-			case prefix::z:
+			case prefix::ZEPTO:
 				return "zepto";
-			case prefix::y:
+			case prefix::YOCTO:
 				return "yocto";
+			case prefix::RONTO:
+				return "ronto";
+			case prefix::QUECTO:
+				return "quecto";
 		}
 		return "";
 	}
@@ -137,48 +153,56 @@ namespace scifir
 	{
 		switch (prefix_type)
 		{
-			case prefix::Y:
+			case prefix::QUETTA:
+				return "Q";
+			case prefix::RONNA:
+				return "R";
+			case prefix::YOTTA:
 				return "Y";
-			case prefix::Z:
+			case prefix::ZETTA:
 				return "Z";
-			case prefix::E:
+			case prefix::EXA:
 				return "E";
-			case prefix::P:
+			case prefix::PETA:
 				return "P";
-			case prefix::T:
+			case prefix::TERA:
 				return "T";
-			case prefix::G:
+			case prefix::GIGA:
 				return "G";
-			case prefix::M:
+			case prefix::MEGA:
 				return "M";
-			case prefix::k:
+			case prefix::KILO:
 				return "k";
-			case prefix::h:
+			case prefix::HECTO:
 				return "h";
-			case prefix::da:
+			case prefix::DECA:
 				return "da";
-			case prefix::no_prefix:
+			case prefix::NONE:
 				return "";
-			case prefix::d:
+			case prefix::DECI:
 				return "d";
-			case prefix::c:
+			case prefix::CENTI:
 				return "c";
-			case prefix::m:
+			case prefix::MILLI:
 				return "m";
-			case prefix::u:
+			case prefix::MICRO:
 				return "\u00B5";
-			case prefix::n:
+			case prefix::NANO:
 				return "n";
-			case prefix::p:
+			case prefix::PICO:
 				return "p";
-			case prefix::f:
+			case prefix::FEMTO:
 				return "f";
-			case prefix::a:
+			case prefix::ATTO:
 				return "a";
-			case prefix::z:
+			case prefix::ZEPTO:
 				return "z";
-			case prefix::y:
+			case prefix::YOCTO:
 				return "y";
+			case prefix::RONTO:
+				return "r";
+			case prefix::QUECTO:
+				return "q";
 		}
 		return "";
 	}
@@ -190,93 +214,109 @@ namespace scifir
 
 	prefix::type prefix_string(const string& x)
 	{
-		if (x == "Y")
+		if (x == "Q")
 		{
-			return prefix::Y;
+			return prefix::QUETTA;
+		}
+		else if (x == "R")
+		{
+			return prefix::RONNA;
+		}
+		else if (x == "Y")
+		{
+			return prefix::YOTTA;
 		}
 		else if (x == "Z")
 		{
-			return prefix::Z;
+			return prefix::ZETTA;
 		}
 		else if (x == "E")
 		{
-			return prefix::E;
+			return prefix::EXA;
 		}
 		else if (x == "P")
 		{
-			return prefix::P;
+			return prefix::PETA;
 		}
 		else if (x == "T")
 		{
-			return prefix::T;
+			return prefix::TERA;
 		}
 		else if(x == "G")
 		{
-			return prefix::G;
+			return prefix::GIGA;
 		}
 		else if(x == "M")
 		{
-			return prefix::M;
+			return prefix::MEGA;
 		}
 		else if(x == "k")
 		{
-			return prefix::k;
+			return prefix::KILO;
 		}
 		else if(x == "h")
 		{
-			return prefix::h;
+			return prefix::HECTO;
 		}
 		else if(x == "da")
 		{
-			return prefix::da;
+			return prefix::DECA;
 		}
 		else if(x == "d")
 		{
-			return prefix::d;
+			return prefix::DECI;
 		}
 		else if(x == "c")
 		{
-			return prefix::c;
+			return prefix::CENTI;
 		}
 		else if(x == "m")
 		{
-			return prefix::m;
+			return prefix::MILLI;
 		}
 		else if(x == "u" or x == "\u00B5")
 		{
-			return prefix::u;
+			return prefix::MICRO;
 		}
 		else if(x == "n")
 		{
-			return prefix::n;
+			return prefix::NANO;
 		}
 		else if(x == "p")
 		{
-			return prefix::p;
+			return prefix::PICO;
 		}
 		else if(x == "f")
 		{
-			return prefix::f;
+			return prefix::FEMTO;
 		}
 		else if(x == "a")
 		{
-			return prefix::a;
+			return prefix::ATTO;
 		}
 		else if(x == "z")
 		{
-			return prefix::z;
+			return prefix::ZEPTO;
 		}
 		else if(x == "y")
 		{
-			return prefix::y;
+			return prefix::YOCTO;
+		}
+		else if(x == "r")
+		{
+			return prefix::RONTO;
+		}
+		else if(x == "q")
+		{
+			return prefix::QUECTO;
 		}
 		else if (x == "")
 		{
-			return prefix::no_prefix;
+			return prefix::NONE;
 		}
 		else
 		{
-			return prefix::no_prefix;
+			return prefix::NONE;
 		}
 	}
 
@@ -291,87 +331,103 @@ namespace scifir
 	{
 		if (factor == 0)
 		{
-			return prefix(prefix::no_prefix);
+			return prefix(prefix::NONE);
 		}
 		else if (factor == 1)
 		{
-			return prefix(prefix::da);
+			return prefix(prefix::DECA);
 		}
 		else if (factor == 2)
 		{
-			return prefix(prefix::h);
+			return prefix(prefix::HECTO);
 		}
 		else if (factor == -1)
 		{
-			return prefix(prefix::d);
+			return prefix(prefix::DECI);
 		}
 		else if (factor == -2)
 		{
-			return prefix(prefix::c);
+			return prefix(prefix::CENTI);
 		}
 		else if (factor >= 3 and factor < 6)
 		{
-			return prefix(prefix::k);
+			return prefix(prefix::KILO);
 		}
 		else if (factor >= 6 and factor < 9)
 		{
-			return prefix(prefix::M);
+			return prefix(prefix::MEGA);
 		}
 		else if (factor >= 9 and factor < 12)
 		{
-			return prefix(prefix::G);
+			return prefix(prefix::GIGA);
 		}
 		else if (factor >= 12 and factor < 15)
 		{
-			return prefix(prefix::T);
+			return prefix(prefix::TERA);
 		}
 		else if (factor >= 15 and factor < 18)
 		{
-			return prefix(prefix::P);
+			return prefix(prefix::PETA);
 		}
 		else if (factor >= 18 and factor < 21)
 		{
-			return prefix(prefix::E);
+			return prefix(prefix::EXA);
 		}
 		else if (factor >= 21 and factor < 24)
 		{
-			return prefix(prefix::Z);
+			return prefix(prefix::ZETTA);
 		}
-		else if (factor >= 24)
+		else if (factor >= 24 and factor < 27)
 		{
-			return prefix(prefix::Y);
+			return prefix(prefix::YOTTA);
+		}
+		else if (factor >= 27 and factor < 30)
+		{
+			return prefix(prefix::RONNA);
+		}
+		else if (factor >= 30)
+		{
+			return prefix(prefix::QUETTA);
 		}
 		else if (factor <= -3 and factor > -6)
 		{
-			return prefix(prefix::m);
+			return prefix(prefix::MILLI);
 		}
 		else if (factor <= -6 and factor > -9)
 		{
-			return prefix(prefix::u);
+			return prefix(prefix::MICRO);
 		}
 		else if (factor <= -9 and factor > -12)
 		{
-			return prefix(prefix::n);
+			return prefix(prefix::NANO);
 		}
 		else if (factor <= -12 and factor > -15)
 		{
-			return prefix(prefix::p);
+			return prefix(prefix::PICO);
 		}
 		else if (factor <= -15 and factor > -18)
 		{
-			return prefix(prefix::f);
+			return prefix(prefix::FEMTO);
 		}
 		else if (factor <= -18 and factor > -21)
 		{
-			return prefix(prefix::a);
+			return prefix(prefix::ATTO);
 		}
 		else if (factor <= -21 and factor > -24)
 		{
-			return prefix(prefix::z);
+			return prefix(prefix::ZEPTO);
 		}
-		else if (factor <= -24)
+		else if (factor <= -24 and factor > -27)
 		{
-			return prefix(prefix::y);
+			return prefix(prefix::YOCTO);
+		}
+		else if (factor <= -27 and factor > -30)
+		{
+			return prefix(prefix::RONTO);
+		}
+		else if (factor <= -30)
+		{
+			return prefix(prefix::QUECTO);
 		}
 		return prefix();
 	}

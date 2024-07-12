@@ -42,19 +42,19 @@ namespace scifir
 				initialize_from_string(init_size_nd);
 			}
 
-			size_nd<T>& operator=(const size_nd<T>& x)
+			size_nd<T>& operator =(const size_nd<T>& x)
 			{
 				widths = x.widths;
 				return *this;
 			}
 
-			size_nd<T>& operator=(size_nd<T>&& x)
+			size_nd<T>& operator =(size_nd<T>&& x)
 			{
 				widths = std::move(x.widths);
 				return *this;
 			}
 
-			size_nd<T>& operator=(const string& init_size_nd)
+			size_nd<T>& operator =(const string& init_size_nd)
 			{
 				initialize_from_string(init_size_nd);
 				return *this;
@@ -200,19 +200,19 @@ namespace scifir
 				initialize_from_string(init_size_nd);
 			}
 
-			size_nd<float>& operator=(const size_nd<float>& x)
+			size_nd<float>& operator =(const size_nd<float>& x)
 			{
 				widths = x.widths;
 				return *this;
 			}
 
-			size_nd<float>& operator=(size_nd<float>&& x)
+			size_nd<float>& operator =(size_nd<float>&& x)
 			{
 				widths = std::move(x.widths);
 				return *this;
 			}
 
-			size_nd<float>& operator=(const string& init_size_nd)
+			size_nd<float>& operator =(const string& init_size_nd)
 			{
 				initialize_from_string(init_size_nd);
 				return *this;

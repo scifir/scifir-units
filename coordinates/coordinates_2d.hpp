@@ -45,35 +45,35 @@ namespace scifir
 				initialize_from_string(init_coordinates_2d);
 			}
 
-			coordinates_2d<T>& operator=(const coordinates_2d<T>& x_coordinates)
+			coordinates_2d<T>& operator =(const coordinates_2d<T>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
 				return *this;
 			}
 
-			coordinates_2d<T>& operator=(coordinates_2d<T>&& x_coordinates)
+			coordinates_2d<T>& operator =(coordinates_2d<T>&& x_coordinates)
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
 				return *this;
 			}
 
-			coordinates_2d<T>& operator=(const point_2d<T>& x_point)
+			coordinates_2d<T>& operator =(const point_2d<T>& x_point)
 			{
 				x = x_point.x;
 				y = x_point.y;
 				return *this;
 			}
 
-			coordinates_2d<T>& operator=(point_2d<T>&& x_point)
+			coordinates_2d<T>& operator =(point_2d<T>&& x_point)
 			{
 				x = std::move(x_point.x);
 				y = std::move(x_point.y);
 				return *this;
 			}
 
-			coordinates_2d<T>& operator=(const string& init_coordinates_2d)
+			coordinates_2d<T>& operator =(const string& init_coordinates_2d)
 			{
 				initialize_from_string(init_coordinates_2d);
 				return *this;
@@ -86,7 +86,7 @@ namespace scifir
 
 			angle get_theta() const
 			{
-				return angle(radian_to_grade(std::atan2(y.get_value(),x.get_value())));
+				return angle(radian_to_degree(std::atan2(y.get_value(),x.get_value())));
 			}
 
 			void set_position(const T& new_x,const T& new_y)
@@ -208,35 +208,35 @@ namespace scifir
 				initialize_from_string(init_coordinates_2d);
 			}
 
-			coordinates_2d<float>& operator=(const coordinates_2d<float>& x_coordinates)
+			coordinates_2d<float>& operator =(const coordinates_2d<float>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
 				return *this;
 			}
 
-			coordinates_2d<float>& operator=(coordinates_2d<float>&& x_coordinates)
+			coordinates_2d<float>& operator =(coordinates_2d<float>&& x_coordinates)
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
 				return *this;
 			}
 
-			coordinates_2d<float>& operator=(const point_2d<float>& x_point)
+			coordinates_2d<float>& operator =(const point_2d<float>& x_point)
 			{
 				x = x_point.x;
 				y = x_point.y;
 				return *this;
 			}
 
-			coordinates_2d<float>& operator=(point_2d<float>&& x_point)
+			coordinates_2d<float>& operator =(point_2d<float>&& x_point)
 			{
 				x = std::move(x_point.x);
 				y = std::move(x_point.y);
 				return *this;
 			}
 
-			coordinates_2d<float>& operator=(const string& init_coordinates_2d)
+			coordinates_2d<float>& operator =(const string& init_coordinates_2d)
 			{
 				initialize_from_string(init_coordinates_2d);
 				return *this;
@@ -249,7 +249,7 @@ namespace scifir
 
 			angle get_theta() const
 			{
-				return angle(radian_to_grade(std::atan2(y,x)));
+				return angle(radian_to_degree(std::atan2(y,x)));
 			}
 
 			void set_position(float new_x,float new_y)
@@ -380,7 +380,7 @@ namespace scifir
 	inline angle cartesian_2d_to_polar_theta(const scalar_unit& x,scalar_unit y)
 	{
 		y.change_dimensions(x);
-		return scifir::angle(scifir::atan_grade(float(y)/float(x)));
+		return scifir::angle(scifir::atan_degree(float(y)/float(x)));
 	}
 
 	inline scalar_unit polar_to_cartesian_2d_x(const scalar_unit& p,const angle& theta)
@@ -400,7 +400,7 @@ namespace scifir
 
 	inline angle cartesian_2d_to_polar_theta(float x,float y)
 	{
-		return scifir::angle(scifir::atan_grade(y/x));
+		return scifir::angle(scifir::atan_degree(y/x));
 	}
 
 	inline float polar_to_cartesian_2d_x(float p,const angle& theta)

@@ -13,13 +13,13 @@ namespace scifir
 	point_nd<float>::point_nd(coordinates_nd<float>&& x_coordinates) : values(std::move(x_coordinates.values))
 	{}
 
-	point_nd<float>& point_nd<float>::operator=(const coordinates_nd<float>& x_coordinates)
+	point_nd<float>& point_nd<float>::operator =(const coordinates_nd<float>& x_coordinates)
 	{
 		values = x_coordinates.values;
 		return *this;
 	}
 
-	point_nd<float>& point_nd<float>::operator=(coordinates_nd<float>&& x_coordinates)
+	point_nd<float>& point_nd<float>::operator =(coordinates_nd<float>&& x_coordinates)
 	{
 		values = std::move(x_coordinates.values);
 		return *this;

@@ -22,17 +22,69 @@ namespace scifir
 	percentage::percentage(percentage&& x) : value(std::move(x.get_value()))
 	{}
 
-	percentage::percentage(float new_value) : value(new_value)
-	{}
+	percentage::percentage(float new_value,percentage::type init_type) : value()
+	{
+		if (init_type == percentage::PERCENTAGE)
+		{
+			value = new_value;
+		}
+		else if (init_type == percentage::PARTS_PER_MILLION)
+		{
+			value = new_value / 10000.0f;
+		}
+		else
+		{
+			value = 0.0f;
+		}
+	}
 
-	percentage::percentage(double new_value) : value(float(new_value))
-	{}
+	percentage::percentage(double new_value,percentage::type init_type) : value(float(new_value))
+	{
+		if (init_type == percentage::PERCENTAGE)
+		{
+			value = float(new_value);
+		}
+		else if (init_type == percentage::PARTS_PER_MILLION)
+		{
+			value = float(new_value) / 10000.0f;
+		}
+		else
+		{
+			value = 0.0f;
+		}
+	}
 
-	percentage::percentage(long double new_value) : value(float(new_value))
-	{}
+	percentage::percentage(long double new_value,percentage::type init_type) : value(float(new_value))
+	{
+		if (init_type == percentage::PERCENTAGE)
+		{
+			value = float(new_value);
+		}
+		else if (init_type == percentage::PARTS_PER_MILLION)
+		{
+			value = float(new_value) / 10000.0f;
+		}
+		else
+		{
+			value = 0.0f;
+		}
+	}
 
-	percentage::percentage(int new_value) : value(float(new_value))
-	{}
+	percentage::percentage(int new_value,percentage::type init_type) : value(float(new_value))
+	{
+		if (init_type == percentage::PERCENTAGE)
+		{
+			value = float(new_value);
+		}
+		else if (init_type == percentage::PARTS_PER_MILLION)
+		{
+			value = float(new_value) / 10000.0f;
+		}
+		else
+		{
+			value = 0.0f;
+		}
+	}
 
 	percentage::percentage(float new_value,const string& init_dimensions)
 	{

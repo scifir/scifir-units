@@ -13,7 +13,7 @@ namespace scifir
 	point_3d<float>::point_3d(coordinates_3d<float>&& x_coordinates) : x(std::move(x_coordinates.x)),y(std::move(x_coordinates.y)),z(std::move(x_coordinates.z))
 	{}
 
-	point_3d<float>& point_3d<float>::operator=(const coordinates_3d<float>& x_coordinates)
+	point_3d<float>& point_3d<float>::operator =(const coordinates_3d<float>& x_coordinates)
 	{
 		x = x_coordinates.x;
 		y = x_coordinates.y;
@@ -21,7 +21,7 @@ namespace scifir
 		return *this;
 	}
 
-	point_3d<float>& point_3d<float>::operator=(coordinates_3d<float>&& x_coordinates)
+	point_3d<float>& point_3d<float>::operator =(coordinates_3d<float>&& x_coordinates)
 	{
 		x = std::move(x_coordinates.x);
 		y = std::move(x_coordinates.y);

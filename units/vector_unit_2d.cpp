@@ -85,27 +85,27 @@ namespace scifir
 	
 	vector_unit_2d& vector_unit_2d::operator =(const vector_unit_2d& x)
 	{
-		scalar_unit::operator=(x);
+		scalar_unit::operator =(x);
 		theta = x.theta;
 		return *this;
 	}
 
 	vector_unit_2d& vector_unit_2d::operator =(vector_unit_2d&& x)
 	{
-		scalar_unit::operator=(std::move(x));
+		scalar_unit::operator =(std::move(x));
 		theta = std::move(x.theta);
 		return *this;
 	}
 
 	vector_unit_2d& vector_unit_2d::operator =(const scalar_unit& x)
 	{
-		scalar_unit::operator=(x);
+		scalar_unit::operator =(x);
 		return *this;
 	}
 
 	vector_unit_2d& vector_unit_2d::operator =(scalar_unit&& x)
 	{
-		scalar_unit::operator=(std::move(x));
+		scalar_unit::operator =(std::move(x));
 		return *this;
 	}
 
@@ -243,7 +243,7 @@ namespace scifir
 	{
 		if(x.has_empty_dimensions())
 		{
-			scalar_unit new_unit = scalar_unit::operator^(x);
+			scalar_unit new_unit = scalar_unit::operator ^(x);
 			return vector_unit_2d(new_unit, theta);
 		}
 		else
@@ -344,7 +344,7 @@ namespace scifir
 
 	angle angle_between(const vector_unit_2d& x,const vector_unit_2d& y)
 	{
-		return angle(radian_to_grade(std::atan2(float(y.y_projection() * x.x_projection() - y.x_projection() * x.y_projection()),float(y.x_projection() * x.x_projection() + y.y_projection() * x.y_projection()))));
+		return angle(radian_to_degree(std::atan2(float(y.y_projection() * x.x_projection() - y.x_projection() * x.y_projection()),float(y.x_projection() * x.x_projection() + y.y_projection() * x.y_projection()))));
 	}
 
 	bool same_direction(const vector_unit_2d& x, const vector_unit_2d& y)

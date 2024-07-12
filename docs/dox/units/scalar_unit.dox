@@ -1,7 +1,9 @@
 /** \class scifir::scalar_unit
-* \brief Class that allows to create scalar units.
+* \brief Class that allows to create scalar units, which are cmoposed of a value (as a float) and dimensions. The dimensions can be of any number, and be basic dimensions and/or abbreviations of dimensions.
 
 * scalar_unit is a class that allows to have a scalar unit, which is composed of a value and one or more dimensions. All dimensions of the SI system of units are supported, and also all of its abbreviations. The abbreviations can be converted to its derived dimensions, too. scalar_unit classes have operators with all numeric types, and have operators with themselves. They can be displayed by its dimensions, its derived dimensions, or any custom combination of dimensions. When they change dimensions, like, for example, from meters to kilometers, their numeric value is changed accordingly.
+* POSSIBLE FEATURES
+* At the present scalar_unit classes use a vector<dimension> to allow to have any number of dimensions, which can be basic or abbreviations. In order to size less, it's possible for some scalar_unit classes to have only one dimension, instead of a vector, that saves memory. With that approach, the dimension needs only 3 bytes. The possibility to switch between a single dimension and a vector<dimension> doesn't yet exists in C++, and so this important feature has been postposed.
 
 * \fn scalar_unit::scalar_unit()
 * \brief Default constructor, the value is 0 and the dimensions are empty.
@@ -147,22 +149,22 @@
 * \brief Read-only getter of the value.
 
 * \fn string scalar_unit::display(int number_of_decimals=2, bool with_brackets=false, bool use_close_prefix=false) const
-* \brief Generates an string of the scalar_unit, with the value and the dimensions. The dimensions can be enclosed by brackets, and the value can be set to have the closest prefix.
+* \brief Generates an string representation of the scalar_unit, with the value and the dimensions. The dimensions can be enclosed by brackets, and the value can be set to have the closest prefix.
 
 * \fn string scalar_unit::derived_display(int number_of_decimals=2, bool with_brackets=false, bool use_close_prefix=false) const
-* \brief Generates an string of the scalar_unit, with all dimensions converted to their derived counterpart.
+* \brief Generates an string representation of the scalar_unit, with all dimensions converted to their derived counterpart.
 
 * \fn string scalar_unit::custom_display(const string& init_dimensions, int number_of_decimals=2, bool with_brackets=false) const
-* \brief Generates an string of the scalar_unit, with the dimensions changed to any set of dimensions, specified by an initialization string of dimensions.
+* \brief Generates an string representation of the scalar_unit, with the dimensions changed to any set of dimensions, specified by an initialization string of dimensions.
 
 * \fn void scalar_unit::add_dimension(const dimension& new_dimension)
-* \brief Internal function. It adds a dimension, changing the value according to the conversion factor of the added dimension and the prefix.
+* \brief **Internal function**. It adds a dimension, changing the value according to the conversion factor of the added dimension and the prefix.
 
 * \fn void scalar_unit::remove_dimension(const dimension& old_dimension)
-* \brief Internal function. It removes a dimension, changing the value according to the conversion factor of the removed dimension and the prefix.
+* \brief **Internal function**. It removes a dimension, changing the value according to the conversion factor of the removed dimension and the prefix.
 
 * \fn void scalar_unit::initialize_from_string(string init_scalar)
-* \brief Internal function. It sets the value and the dimensions of the scalar_unit to the value and dimensions specified by the initialization string of scalar_unit.
+* \brief **Internal function**. It sets the value and the dimensions of the scalar_unit to the value and dimensions specified by the initialization string of scalar_unit.
 
 * \var scalar_unit::dimensions
 * \brief Dimensions of the scalar_unit. They can be basic dimensions or abbreviations.
@@ -176,7 +178,7 @@
 * \brief The namespace scifir contains all scifir-units, excepting the string literals, which are outside.
 
 * \fn string scifir::to_string(const scalar_unit& x)
-* \brief Generates an string from the scalar_unit, it uses the display of the scalar_unit with 2 decimals, without brackets and without a close prefix.
+* \brief Generates an string representation of the scalar_unit, it uses the display of the scalar_unit with 2 decimals, without brackets and without a close prefix.
 * \param x scalar_unit to generate the string.
 
 * \fn bool scifir::is_scalar_unit(const string& init_scalar)
@@ -298,17 +300,17 @@
 * \brief Returns true if the value of x is equal or greather than the numeric type, ignoring the dimensions.
 
 * \fn void operator +=(string& x, const scifir::scalar_unit& y)
-* \brief Adds the scalar_unit y converted to string to the string x.
+* \brief Concatenates the string representation of the scalar_unit y to the string x.
 
 * \fn string operator +(const string& x, const scifir::scalar_unit& y)
-* \brief Concatenates the string x with the string representation of the scalar_unit y.
+* \brief Creates a new string as the concatenation of the string x with the representation string of the scalar_unit y.
 
 * \fn string operator +(const scifir::scalar_unit& y, const string& x)
-* \brief Concatenates the string x with the string representation of the scalar_unit y.
+* \brief Creates a new string as the concatenation of the string x with the representation string of the scalar_unit y.
 
 * \fn ostream& operator <<(ostream& os, const scifir::scalar_unit& x)
-* \brief Adds the string representation of the scalar_unit x to an ostream os.
+* \brief Adds the string representation of the scalar_unit x to an output stream os.
 
 * \fn istream& operator >>(istream& is, scifir::scalar_unit& x)
-* \brief Allows that an istream is initializes by string an scalar_unit x.
+* \brief Allows that an istream initializes by string a scalar_unit x.
 */

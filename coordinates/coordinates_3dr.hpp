@@ -62,7 +62,7 @@ namespace scifir
 				initialize_from_string(init_coordinates_3dr);
 			}
 
-			coordinates_3dr<T>& operator=(const coordinates_3dr<T>& x_coordinates)
+			coordinates_3dr<T>& operator =(const coordinates_3dr<T>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
@@ -72,7 +72,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3dr<T>& operator=(coordinates_3dr<T>&& x_coordinates)
+			coordinates_3dr<T>& operator =(coordinates_3dr<T>&& x_coordinates)
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
@@ -82,7 +82,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3dr<T>& operator=(const point_3d<T>& x_point)
+			coordinates_3dr<T>& operator =(const point_3d<T>& x_point)
 			{
 				x = x_point.x;
 				y = x_point.y;
@@ -90,7 +90,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3dr<T>& operator=(point_3d<T>&& x_point)
+			coordinates_3dr<T>& operator =(point_3d<T>&& x_point)
 			{
 				x = std::move(x_point.x);
 				y = std::move(x_point.y);
@@ -98,7 +98,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3dr<T>& operator=(const coordinates_3d<T>& x_coordinates)
+			coordinates_3dr<T>& operator =(const coordinates_3d<T>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
@@ -106,7 +106,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3dr<T>& operator=(coordinates_3d<T>&& x_coordinates)
+			coordinates_3dr<T>& operator =(coordinates_3d<T>&& x_coordinates)
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
@@ -114,7 +114,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3dr<T>& operator=(const string& init_coordinates_3dr)
+			coordinates_3dr<T>& operator =(const string& init_coordinates_3dr)
 			{
 				initialize_from_string(init_coordinates_3dr);
 				return *this;
@@ -137,7 +137,7 @@ namespace scifir
 
 			angle get_spherical_phi() const
 			{
-				return angle(scifir::acos_grade(float(z/scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)))));
+				return angle(scifir::acos_degree(float(z/scifir::sqrt(scifir::pow(x,2) + scifir::pow(y,2) + scifir::pow(z,2)))));
 			}
 
 			angle get_latitude() const
@@ -520,7 +520,7 @@ namespace scifir
 				initialize_from_string(init_coordinates_3dr);
 			}
 
-			coordinates_3dr<float>& operator=(const coordinates_3dr<float>& x_coordinates)
+			coordinates_3dr<float>& operator =(const coordinates_3dr<float>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
@@ -530,7 +530,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3dr<float>& operator=(coordinates_3dr<float>&& x_coordinates)
+			coordinates_3dr<float>& operator =(coordinates_3dr<float>&& x_coordinates)
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
@@ -540,7 +540,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3dr<float>& operator=(const point_3d<float>& x_point)
+			coordinates_3dr<float>& operator =(const point_3d<float>& x_point)
 			{
 				x = x_point.x;
 				y = x_point.y;
@@ -548,7 +548,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3dr<float>& operator=(point_3d<float>&& x_point)
+			coordinates_3dr<float>& operator =(point_3d<float>&& x_point)
 			{
 				x = std::move(x_point.x);
 				y = std::move(x_point.y);
@@ -556,7 +556,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3dr<float>& operator=(const coordinates_3d<float>& x_coordinates)
+			coordinates_3dr<float>& operator =(const coordinates_3d<float>& x_coordinates)
 			{
 				x = x_coordinates.x;
 				y = x_coordinates.y;
@@ -564,7 +564,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3dr<float>& operator=(coordinates_3d<float>&& x_coordinates)
+			coordinates_3dr<float>& operator =(coordinates_3d<float>&& x_coordinates)
 			{
 				x = std::move(x_coordinates.x);
 				y = std::move(x_coordinates.y);
@@ -572,7 +572,7 @@ namespace scifir
 				return *this;
 			}
 
-			coordinates_3dr<float>& operator=(const string& init_coordinates_3dr)
+			coordinates_3dr<float>& operator =(const string& init_coordinates_3dr)
 			{
 				initialize_from_string(init_coordinates_3dr);
 				return *this;
@@ -595,7 +595,7 @@ namespace scifir
 
 			angle get_spherical_phi() const
 			{
-				return angle(scifir::acos_grade(float(z/std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)))));
+				return angle(scifir::acos_degree(float(z/std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2)))));
 			}
 
 			angle get_latitude() const

@@ -160,27 +160,27 @@ namespace scifir
 
 	vector_unit_nd& vector_unit_nd::operator =(const vector_unit_nd& x)
 	{
-		scalar_unit::operator=(x);
+		scalar_unit::operator =(x);
 		angles = x.angles;
 		return *this;
 	}
 
 	vector_unit_nd& vector_unit_nd::operator =(vector_unit_nd&& x)
 	{
-		scalar_unit::operator=(std::move(x));
+		scalar_unit::operator =(std::move(x));
 		angles = std::move(x.angles);
 		return *this;
 	}
 
 	vector_unit_nd& vector_unit_nd::operator =(const scalar_unit& x)
 	{
-		scalar_unit::operator=(x);
+		scalar_unit::operator =(x);
 		return *this;
 	}
 
 	vector_unit_nd& vector_unit_nd::operator =(scalar_unit&& x)
 	{
-		scalar_unit::operator=(std::move(x));
+		scalar_unit::operator =(std::move(x));
 		return *this;
 	}
 
@@ -815,14 +815,18 @@ namespace scifir
 
 	bool same_direction(const vector_unit_nd& x, const vector_unit_nd& y)
 	{
-		for(unsigned int i = 0; i < x.angles.size(); i++)
+		if (same_nd(x,y))
 		{
-			if(x.angles[i] != y.angles[i])
+			for(unsigned int i = 0; i < x.angles.size(); i++)
 			{
-				return false;
+				if(x.angles[i] != y.angles[i])
+				{
+					return false;
+				}
 			}
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	bool parallel(const vector_unit_nd& x, const vector_unit_nd& y)

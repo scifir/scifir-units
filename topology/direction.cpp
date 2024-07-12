@@ -23,25 +23,25 @@ namespace scifir
 	direction::direction(const string& init_direction) : value(create_direction(init_direction))
 	{}
 
-	direction& direction::operator=(const direction& x)
+	direction& direction::operator =(const direction& x)
 	{
 		value = x.value;
 		return *this;
 	}
 
-	direction& direction::operator=(direction&& x)
+	direction& direction::operator =(direction&& x)
 	{
 		value = std::move(x.value);
 		return *this;
 	}
 
-	direction& direction::operator=(direction::name new_direction)
+	direction& direction::operator =(direction::name new_direction)
 	{
 		value = new_direction;
 		return *this;
 	}
 
-	direction& direction::operator=(const string& init_direction)
+	direction& direction::operator =(const string& init_direction)
 	{
 		value = create_direction(init_direction);
 		return *this;

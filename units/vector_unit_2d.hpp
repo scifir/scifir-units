@@ -18,7 +18,7 @@
 			name##_2d(); \
 			name##_2d(const name##_2d&); \
 			name##_2d(name##_2d&&); \
-			using vector_unit_2d::operator=; \
+			using vector_unit_2d::operator =; \
 			using vector_unit_2d::operator+=; \
 			using vector_unit_2d::operator-=
 
@@ -34,7 +34,7 @@
 			name##_2d(); \
 			name##_2d(const name##_2d&); \
 			name##_2d(name##_2d&&); \
-			using vector_unit_2d::operator=; \
+			using vector_unit_2d::operator =; \
 			using vector_unit_2d::operator+=; \
 			using vector_unit_2d::operator-=; \
 \
@@ -80,11 +80,11 @@ namespace scifir
 			explicit vector_unit_2d(const string& init_scalar,const angle& new_theta);
 			explicit vector_unit_2d(const string& init_vector_2d); // Example of initialization string "1N 50º"
 
-			static vector_unit_2d cartesian_2d(const string& new_dimensions,float new_x,float new_y)
+			static vector_unit_2d cartesian_2d(const string& init_dimensions,float new_x,float new_y)
 			{
 				float new_value = float(std::sqrt(std::pow(new_x,2) + std::pow(new_y,2)));
-				float new_theta = scifir::atan_grade(new_y / new_x);
-				return vector_unit_2d(new_value,new_dimensions,angle(new_theta));
+				float new_theta = scifir::atan_degree(new_y / new_x);
+				return vector_unit_2d(new_value,init_dimensions,angle(new_theta));
 			}
 
 			vector_unit_2d& operator =(const vector_unit_2d& x);
@@ -107,58 +107,58 @@ namespace scifir
 			vector_unit_2d operator /(const scalar_unit& x) const;
 			vector_unit_2d operator ^(const scalar_unit& x) const;
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_2d operator +(U x) const
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			vector_unit_2d operator +(T x) const
 			{
 				vector_unit_2d y = *this;
 				y += x;
 				return y;
 			}
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_2d operator -(U x) const
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			vector_unit_2d operator -(T x) const
 			{
 				vector_unit_2d y = *this;
 				y -= x;
 				return y;
 			}
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_2d operator *(U x) const
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			vector_unit_2d operator *(T x) const
 			{
 				vector_unit_2d y = *this;
 				y *= x;
 				return y;
 			}
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			vector_unit_2d operator /(U x) const
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			vector_unit_2d operator /(T x) const
 			{
 				vector_unit_2d y = *this;
 				y /= x;
 				return y;
 			}
 
-			template<typename U, typename = typename enable_if<is_integer_number<U>::value>::type>
-			vector_unit_2d operator ^(U x) const
+			template<typename T, typename = typename enable_if<is_integer_number<T>::value>::type>
+			vector_unit_2d operator ^(T x) const
 			{
 				return vector_unit_2d(std::pow(get_value(),x),power_dimensions(get_dimensions(),x),theta);
 			}
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator +=(U x)
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			void operator +=(T x)
 			{
 				scalar_unit::value += x;
 			}
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator -=(U x)
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			void operator -=(T x)
 			{
 				scalar_unit::value -= x;
 			}
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator *=(U x)
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			void operator *=(T x)
 			{
 				scalar_unit::value *= std::abs(x);
 				if(x < 0)
@@ -167,8 +167,8 @@ namespace scifir
 				}
 			}
 
-			template<typename U, typename = typename enable_if<scifir::is_number<U>::value>::type>
-			void operator /=(U x)
+			template<typename T, typename = typename enable_if<scifir::is_number<T>::value>::type>
+			void operator /=(T x)
 			{
 				scalar_unit::value /= std::abs(x);
 				if(x < 0)
@@ -250,11 +250,11 @@ scifir::vector_unit_2d operator /(const T y,const scifir::vector_unit_2d& x)
 
 bool operator !=(const scifir::vector_unit_2d& x, const scifir::vector_unit_2d& y);
 
-bool operator ==(const scifir::vector_unit_2d&, const string& init_vector_2d);
-bool operator !=(const scifir::vector_unit_2d&, const string& init_vector_2d);
+bool operator ==(const scifir::vector_unit_2d& x, const string& init_vector_2d);
+bool operator !=(const scifir::vector_unit_2d& x, const string& init_vector_2d);
 
-bool operator ==(const string& init_vector_2d, const scifir::vector_unit_2d&);
-bool operator !=(const string& init_vector_2d, const scifir::vector_unit_2d&);
+bool operator ==(const string& init_vector_2d, const scifir::vector_unit_2d& x);
+bool operator !=(const string& init_vector_2d, const scifir::vector_unit_2d& x);
 
 void operator +=(string& x, const scifir::vector_unit_2d& y);
 string operator +(const string& x, const scifir::vector_unit_2d& y);

@@ -38,6 +38,14 @@ TEST_CASE("angle class") {
         scalar_unit k3("2 N");
         angle k(scalar_unit(k2/k3));
         CHECK(k.get_value() == 3.5f);
+        angle l(0.349f,angle::RADIAN);
+        CHECK(l.display() == "19.99\u00B0");
+        angle l2(0.349,angle::RADIAN);
+        CHECK(l2.display() == "19.99\u00B0");
+        angle l3(0.349l,angle::RADIAN);
+        CHECK(l3.display() == "19.99\u00B0");
+        angle l4(5,angle::RADIAN);
+        CHECK(l4.display() == "286.47\u00B0");
     }
 
     SECTION("Assignments of angle class")
