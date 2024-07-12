@@ -14,6 +14,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           working-directory: .
-          doxyfile-path: Doxyfile.in
-          html-output-folder: docs
+          doxyfile-path: ${{github.workspace}}/Doxyfile.in
+          html-output-folder: ${{github.workspace}}/docs
           branch: gh-pages
