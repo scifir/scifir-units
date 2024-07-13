@@ -37,6 +37,7 @@ jobs:
       run: |
         git config --local user.email "ismael.correa.castro@gmail.com"
         git config --local user.name "iarfen"
+        git add docs/*
         git commit -m "Documentation updated"
     
     - name: Push changes
