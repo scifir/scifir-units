@@ -13,7 +13,7 @@ jobs:
         --workdir ${{ github.workspace }}
         --volume ${{ github.workspace }}:${{ github.workspace }}:rw
         ghcr.io/agarwalsaurav/doxygen-arch:latest
-        .
+        ./
         Doxyfile
         ./docs
 
