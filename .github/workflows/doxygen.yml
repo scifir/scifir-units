@@ -3,21 +3,39 @@ permissions:
   contents: write
 
 jobs:
-  deploy:
+  build-doxygen:
     runs-on: ubuntu-latest
     steps:
-      - name: Set git config email
-        id: set-git-config-email
-        run: echo "git-config-email=ismael.correa.castro@gmail.com" >> $GITHUB_OUTPUT
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Action Doxygen and GitHub Pages
-        id: ghaction
-        uses: AgarwalSaurav/ghaction-doxygen-ghpages@release/v2
-        with:
-          github_token: ${{ secrets.DOXYGEN_SECRET }}
-          working-directory: .
-          doxyfile-path: ./Doxyfile
-          html-output-folder: ./docs
-          branch: gh-pages
-          target_folder: docs
+    - name: Run Doxygen Documentation Generation Container
+      shell: bash
+      run: >
+        docker run --rm
+        --workdir ${{ github.workspace }}
+        --volume ${{ github.workspace }}:${{ github.workspace }}:rw
+        ghcr.io/agarwalsaurav/doxygen-arch:latest
+        .
+        ./Doxyfile
+        ./docs
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4.5.0
+      with:
+        token: ${{ secrets.DOXYGEN_SECRET }}
+        branch: gh-pages
+        folder: ./docs
+        target-folder: docs
+        git-config-email: ismael.correa.castro@gmail.com
+    #steps:
+      #- name: Checkout
+      #  uses: actions/checkout@v4
+      #- name: Action Doxygen and GitHub Pages
+      #  id: ghaction
+      #  uses: AgarwalSaurav/ghaction-doxygen-ghpages@release/v2
+      #  with:
+      #    github_token: ${{ secrets.DOXYGEN_SECRET }}
+      #    working-directory: .
+      #    doxyfile-path: ./Doxyfile
+      #    html-output-folder: ./docs
+      #    branch: gh-pages
+      #    target_folder: docs
+      #    git-config-email: ismael.correa.castro@gmail.com
